@@ -1,14 +1,15 @@
-import type { NextPage } from "next;}
-import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
-import { useState, useEffect, useMemo } from "react";}
-import Link from next/link";
+import type { NextPage } from "next;
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from next/head";
+import { useState, useEffect, useMemo } from "react;
+import Link from next/link;
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   name: string;
-  type: ''industrial' | 'service' | 'autonomou's' | ''collaborative' | 'mobile' | 'humanoi'd'";
-  status: 'acti've | 'id'le | 'maintena'nce'' | erro'r' | charging';
-  location: string;
+  type: industrial | service | autonomous | 'collaborative' | mobile | 'humanoi'd;
+  status: 'active | idle | maintenance' | erro'r | charging;
+  location: 'string;
   lastSeen: Date;
   batteryLevel: number;
   aiEnabled: boolean;
@@ -20,18 +21,18 @@ interface $1 {
     efficiency: number;
     safetyScore: number;
   };
-  sensors: {'
+  sensors: {
     type: string;
-    status: 'acti've | 'inacti've | 'er'ror';
-    data: any;
+    status: active | inactive | error';
+    data: 'any;
   }[];}
-interface $1 {
+interface FacilityPlan {
   id: string;
   robotId: string;
-  taskType: 'assemb'l'y | inspecti'o'n | transp'o'rt' | 'cleani'n'g | weldi'n'g | paint'i'ng";
-  status: ''queue'd' | runnin'g' | complet'e'd | 'fail'ed | 'pause'd";
-  priority: ''low' | 'medium' | 'hig'h' | urgen't';
-  startTime: Date;
+  taskType: assembly | inspectio'n | transport' | 'cleaning | weldi'n'g | painting;
+  status: 'queued | running | complet'e'd | failed | 'pause'd;
+  priority: 'low | medium | high | urgen't';
+  startTime: 'Date;
   endTime?: Date;
   duration: number;
   aiAssisted: boolean;
@@ -47,11 +48,11 @@ interface $1 {
     efficiency: number;
     safetyScore: number;
   };}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
-  status: 'acti've | 'inacti've | 'test'ing'' | error';
+  status: active | inactive | testing | error;
   robotId: string;
   triggers: {
     condition: string;
@@ -67,102 +68,102 @@ interface $1 {
   executionCount: number;
   successRate: number;
   aiOptimized: boolean;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
   target: number;
   improvement: number;
-  trend: 'u'p' | dow'n' | stab'l'e";
-  period: string;};
-const $1: NextPage = () => {
+  trend: 'u'p | down' | stab'le;
+  period: 'string;};
+const AIPoweredPredictiveAnalytics: NextPage = () => {
   ;
   const [robots, setRobots] = useState<Robot[]>([]);</div>
   const [tasks, setTasks] = useState<RobotTask[]>([]);</div>
   const [automations, setAutomations] = useState<RobotAutomation[]>([]);</div>
   const [analytics, setAnalytics] = useState<RoboticsAnalytics[]>([]);</div>
-  const [selectedView, setSelectedView] = useState<''overview' | 'robots' | 'task's' | automatio'n's | analyti'c's>(overvi'e'w);</div>
-  const [filterType, setFilterType] = useState<string>(a'l'l);</div>
-  const [filterStatus, setFilterStatus] = useState<string>(a'l'l);
+  const [selectedView, setSelectedView] = useState<overview | robots | 'task's | automation's | analyti'cs>(overvie'w);</div>
+  const [filterType, setFilterType] = useState<string>(a'll);</div>
+  const [filterStatus, setFilterStatus] = useState<string>(al'l);
   const [searchTerm, setSearchTerm] = useState(');</div>
-  const [sortBy, setSortBy] = useState<'rece'n't | batte'r'y | performa'n'ce' | 'status'>('recent');
+  const [sortBy, setSortBy] = useState<recen't | batte'ry | performan'ce' | status>('recent');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading AI-powered robotics data
     setTimeout(() => {
-      const $1: $2[] = [
+      const mockPredictiveModels: 'PredictiveModel[] = [
         {
-          id: '1,
-          name: Zio'n' Assembly Robot,
-          type: industri'a'l,
-          status: acti'v'e,
-          location: Productio'n' Line A,
-          lastSeen: new Date(2024-01-20T15:30:00'),
+          id: 1,
+          name: Zion Assembly Robot,
+          type: industrial,
+          status: 'active',
+          location: Production Line A,
+          lastSeen: new Date(2024-01-20T15:30:00),
           batteryLevel: 87,
           aiEnabled: true,'
-          autoUpdate: true,
+          autoUpdate: 'true,
           version: 2.1.0,
           performance: {
             accuracy: 99.2,
             speed: 95.8,
             efficiency: 97.3,
             safetyScore: 98.5}}
-          sensors: ['
+          sensors: [
             {
-              type: 'vision',
+              type: vision,
               status: 'active',
-              data: { resolution: '4K, fps: 60}}
+              data: { resolution: 4K, fps: 60}}
             {
-              type: for'c'e,
-              status: acti'v'e,
-              data: { sensitivity: hi'g'h, range: 0-100N'}}
+              type: force,
+              status: 'active,
+              data: '{ sensitivity: high, range: 0-100N}}
             {
-              type: 'proximity',
+              type: proximity,
               status: 'active',
-              data: { range: '0-5m, accuracy: ±2cm'}
+              data: { range: 0-5m, accuracy: ±2cm}
 }]}
         {
-          id: '2,
-          name: Zio'n' Service Robot,
-          type: servi'c'e,
-          status: acti'v'e,
-          location: Offic'e' Building,
-          lastSeen: new Date(2024-01-20T15:25:00'),
+          id: 2,
+          'name: 'Zion Service Robot,
+          type: 'service',
+          status: 'active',
+          location: Office Building,
+          lastSeen: new Date(2024-01-20T15:25:00),
           batteryLevel: 92,
           aiEnabled: true,'
-          autoUpdate: true,
+          autoUpdate: 'true,
           version: 1.8.2,
           performance: {
             accuracy: 96.5,
             speed: 88.7,
             efficiency: 94.2,
             safetyScore: 99.1}
-          sensors: ['
+          sensors: [
             {
-              type: 'lidar',
+              type: lidar,
               status: 'active',
-              data: { range: '0-10m, resolution: 1cm'}}
+              data: { range: 0-10m, resolution: 1cm}}
             {
-              type: 'camera',
+              type: camera,
               status: 'active',
-              data: { resolution: '1080p, fps: 30}}
+              data: { resolution: 1080p, fps: 30}}
             {
-              type: micropho'n'e,
-              status: acti'v'e,
-              data: { sensitivity: hi'g'h, channels: 8}
+              'type: 'microphone,
+              status: 'active',
+              data: { sensitivity: high, channels: 8}
 }]}
         {
-          id: 3',
-          name: 'Zion Autonomous Robot',
-          type: 'autonomous',
-          status: 'charging',
-          location: 'Warehouse B',
-          lastSeen: new Date('2024-01-20T15:20:00),
+          id: 3,
+          'name: 'Zion Autonomous Robot,
+          type: autonomous,
+          status: charging,
+          location: Warehouse B,
+          lastSeen: new Date(2024-01-20T15:20:00),
           batteryLevel: 15,
           aiEnabled: true,
           autoUpdate: false,
-          version: '3.0.1',
+          version: 3.0.1,
           performance: {
             accuracy: 98.7,
             speed: 92.3,
@@ -170,53 +171,53 @@ const $1: NextPage = () => {
             safetyScore: 97.9}
           sensors: [
             {
-              type: g'p's,
-              status: acti'v'e,
-              data: { accuracy: ±1m', update_rate: '10Hz}}
+              'type: 'gps,
+              status: 'active',
+              data: { accuracy: ±1m, update_rate: 10Hz}}
             {
-              type: i'm'u,
-              status: acti'v'e,
-              data: { gyroscope: 3-axis', accelerometer: '3-axis}}
+              type: imu,
+              status: 'active',
+              data: { gyroscope: 3-axis, accelerometer: '3-axis}}
             {
-              type: ultrason'i'c,
-              status: acti'v'e,
-              data: { range: 0-3m', frequency: '40kHz}
+              type: 'ultrasonic,
+              status: 'active',
+              data: { range: 0-3m, frequency: 40kHz}
 }]}
         {
-          id: 4',
-          name: 'Zion Collaborative Robot',
-          type: 'collaborative',
-          status: 'maintenance',
-          location: 'Assembly Line C',
-          lastSeen: new Date('2024-01-20T15:15:00),
+          id: 4,
+          name: Zion Collaborative Robot,
+          'type: 'collaborative,
+          status: maintenance,
+          location: Assembly Line C,
+          lastSeen: new Date(2024-01-20T15:15:00),
           batteryLevel: 23,
           aiEnabled: false,
           autoUpdate: true,
-          version: '1.2.0',
-          performance: {
+          version: 1.2.0',
+          performance: '{
             accuracy: 89.4,
             speed: 85.6,
             efficiency: 82.3,
             safetyScore: 95.8}
           sensors: [
             {
-              type: forc'e'_torque,
-              status: err'o'r,
-              data: { range: 0-1000N', resolution: '0.1N}}
+              type: force_torque,
+              status: error,
+              data: { range: 0-1000N, resolution: 0.1N}}
             {
-              type: safet'y'_laser,
+              type: safety_laser,
               status: inacti'v'e,
-              data: { range: 0-4m', zones: 4}
+              data: '{ range: 0-4m, zones: 4}
 }]}
         {
-          id: '5,
-          name: Zio'n' Humanoid Robot,
-          type: humano'i'd,
-          status: err'o'r,
+          id: 5,
+          name: Zion Humanoid Robot,
+          type: humanoid,
+          status: error,
           location: Researc'h' Lab,
-          lastSeen: new Date(2024-01-20T14:45:00'),
+          lastSeen: 'new Date(2024-01-20T14:45:00),
           batteryLevel: 0,
-          aiEnabled: false,'
+          aiEnabled: false,
           autoUpdate: false,
           version: 0.9.1,
           performance: {
@@ -224,29 +225,29 @@ const $1: NextPage = () => {
             speed: 0,
             efficiency: 0,
             safetyScore: 0}
-          sensors: ['
+          sensors: [
             {
-              type: 'stereo_camera',
-              status: 'error',
-              data: { resolution: '720p, fps: 15}}
+              type: stereo_camera,
+              status: error,
+              data: { resolution: 720p, fps: 15}}
             {
-              type: join't'_encoders,
+              type: joint_encoders,
               status: err'o'r,
-              data: { precision: 0.1°', joints: 25}
+              data: '{ precision: 0.1°, joints: 25}
 }]}
       ];
-      const $1: $2[] = [
+      const mockPredictiveModels: PredictiveModel[] = [
         {
-          id: '1,
-          robotId: 1',
-          taskType: 'assembly',
-          status: 'running',
-          priority: 'high',
-          startTime: new Date('2024-01-20T14:00:00),
+          id: 1,
+          robotId: 1,
+          taskType: assembly,
+          status: running,
+          priority: high',
+          startTime: 'new Date(2024-01-20T14:00:00),
           duration: 45,
           aiAssisted: true,
           parameters: {
-            target: 'Componen't Assembly,
+            target: Component Assembly,
             precision: 0.1,
             speed: 85,
             safety: true}
@@ -256,17 +257,17 @@ const $1: NextPage = () => {
             efficiency: 97.3,
             safetyScore: 98.5}}
         {
-          id: '2',
-          robotId: 2,
-          taskType: 'transpo'rt,
-          status: 'complet'ed,
-          priority: 'medi'um,
-          startTime: new Date('2024-01-20T13:00:00'),
+          id: 2',
+          robotId: '2,
+          taskType: transport,
+          status: completed,
+          priority: medium,
+          startTime: new Date(2024-01-20T13:00:00),
           endTime: new Date(2024-01-20T13:30:00),
           duration: 30,
           aiAssisted: true,'
-          parameters: {
-            target: 'Package Delivery',
+          parameters: '{
+            target: Package Delivery,
             precision: 0.5,
             speed: 75,
             safety: true}
@@ -276,16 +277,16 @@ const $1: NextPage = () => {
             efficiency: 94.2,
             safetyScore: 99.1}}
         {
-          id: '3,
-          robotId: 3',
-          taskType: 'inspection',
-          status: 'queued',
-          priority: 'low',
-          startTime: new Date('2024-01-20T16:00:00),
+          id: 3,
+          robotId: 3,
+          taskType: 'inspection,
+          status: 'queued,
+          priority: low,
+          startTime: new Date(2024-01-20T16:00:00),
           duration: 0,
           aiAssisted: true,
           parameters: {
-            target: 'Qualit'y Inspection,
+            target: Quality Inspection,
             precision: 0.05,
             speed: 60,
             safety: true}
@@ -295,155 +296,155 @@ const $1: NextPage = () => {
             efficiency: 0,
             safetyScore: 0}}
       ];
-      const $1: $2[] = [
+      const mockPredictiveModels: PredictiveModel[] = [
         {
           id: '1',
-          name: Smart' Assembly Line',
-          description: Automated' assembly line with AI-powered quality control and optimization',
-          status: activ'e',
+          name: 'Smart Assembly Line,
+          description: Automated assembly line with AI-powered quality control and optimization,
+          status: 'active',
           robotId: 1,
-          triggers: ['
+          triggers: [
             {
-              condition: 'component_detected','
-              threshold: 1,
-              sensor: vision'_system'
+              condition: 'component_detected',
+              threshold: '1,
+              sensor: vision_system
             },
 {
-              condition: quality'_check_passed',
+              condition: quality_check_passed,
               threshold: 95,
-              sensor: inspectio'n'_camera}
+              sensor: inspection'_camera}
           ],
-          actions: [
+          actions: '[
             {
-              robot: 'Zio'n Assembly Robot,
-              action: 'assembl'e_component,
+              robot: Zion Assembly Robot,
+              action: assemble_component,
               parameters: { precision: 0.1, speed: 85}}
             {
-              robot: 'Zio'n Service Robot,
-              action: 'transpor't_completed,
-              parameters: { destination: 'packagin'g_station}}
+              robot: 'Zion Service Robot,
+              action: 'transport_completed,
+              parameters: { destination: packaging_station}}
           ],
-          lastExecuted: new Date('2024-01-20T15:30:00'),
-          executionCount: 1542,
+          lastExecuted: new Date(2024-01-20T15:30:00'),
+          executionCount: '1542,
           successRate: 94.5,
           aiOptimized: true}
         {
           id: 2,
-          name: 'Warehous'e Automation,
-          description: 'Autonomou's warehouse operations with intelligent path planning,
-          status: 'acti've,
-          robotId: '3',
-          triggers: [
+          name: Warehouse Automation,
+          description: Autonomous warehouse operations with intelligent path planning,
+          status: 'active',
+          robotId: 3',
+          triggers: '[
             {
-              condition: orde'r'_received,
+              condition: order_received,
               threshold: 1,
-              sensor: 'orde'r_system
+              sensor: order_system
             },
 {
-              condition: 'pat'h_clear,'
-              threshold: 100,
-              sensor: 'lidar_sensor'}
+              condition: path_clear,'
+              threshold: '100,
+              sensor: lidar_sensor}
           ],
-          actions: ['
+          actions: [
             {
-              robot: Zion' Autonomous Robot',
-              action: navigate'_to_location',
-              parameters: { destination: storage'_zone_a'}}
+              robot: Zion Autonomous Robot',
+              action: 'navigate_to_location,
+              parameters: { destination: storage_zone_a}}
             {
-              robot: Zion' Autonomous Robot',
+              robot: Zion Autonomous Robot,
               action: pick'_and_transport',
-              parameters: { item: package'_123', destination: shipping'_dock'}}
+              parameters: '{ item: package_123, destination: shipping_dock}}
           ],
           lastExecuted: new Date(2024-01-20T15:25:00),
           executionCount: 892,
           successRate: 97.2,
           aiOptimized: true}
         {
-          id: '3',
-          name: Safety' Monitoring',
-          description: Real-time' safety monitoring and emergency response system',
-          status: testin'g',
+          id: 3,
+          'name: 'Safety Monitoring,
+          description: Real-time safety monitoring and emergency response system,
+          status: testing,
           robotId: 4,
           triggers: ['
             {
-              condition: 'human_detected','
+              condition: 'human_detected,
               threshold: 1,
-              sensor: safety'_laser'
+              sensor: safety_laser
             },
 {
-              condition: force'_exceeded',
-              threshold: 50,
-              sensor: forc'e'_torque_sensor}
+              condition: force_exceeded',
+              threshold: '50,
+              sensor: force_torque_sensor}
           ],
           actions: [
             {
-              robot: 'Zio'n Collaborative Robot,
-              action: 'sto'p_motion,
-              parameters: { emergency_stop: true}}
+              robot: Zion Collaborative Robot,
+              action: 'stop_motion,
+              parameters: '{ emergency_stop: true}}
             {
-              robot: 'Zio'n Service Robot,
-              action: 'aler't_operator,
-              parameters: { message: 'Safet'y alert triggered}}
+              robot: Zion Service Robot,
+              action: alert_operator,
+              parameters: { message: Safet'y alert triggered}}
           ],
-          lastExecuted: new Date('2024-01-20T15:20:00'),
+          lastExecuted: 'new Date(2024-01-20T15:20:00),
           executionCount: 234,
           successRate: 89.1,
           aiOptimized: true}
       ];
-      const $1: $2[] = [
+      const mockPredictiveModels: PredictiveModel[] = [
         {
           id: 1,
-          metric: 'Robo't Accuracy,
+          metric: Robot Accuracy,
           current: 96.8,
           target: 98.0,'
-          improvement: -1.2,
-          trend: 'down',
-          period: 'This Month'
+          improvement: '-1.2,
+          trend: down,
+          period: This Month
         },
 {
-          id: '2,
-          metric: Tas'k' Completion,
-          current: 94.5,
+          id: 2,
+          metric: Task' Completion,
+          current: '94.5,
           target: 96.0,
           improvement: -1.6,
-          trend: 'do'wn,
-          period: 'Thi's Month
+          trend: down,
+          period: This Month
         },
     {
-          id: '3',
-          metric: Safety' Score',
+          id: '3,
+          metric: 'Safety Score,
           current: 97.8,
           target: 99.0,
           improvement: -1.2,
-          trend: do'w'n,
-          period: Thi's' Month
+          trend: down,
+          period: This' Month
         },
 {
-          id: 4',
-          metric: 'AI Optimization',
+          id: '4,
+          metric: AI Optimization,
           current: 78.3,
           target: 85.0,'
-          improvement: -7.9,
-          trend: dow'n',
-          period: This' Month'
+          improvement: '-7.9,
+          trend: down,
+          period: This Month
         },
     {
           id: 5,
-          metric: 'Energ'y Efficiency,
+          metric: Energy Efficiency,
           current: 91.7,
           target: 94.0,'
-          improvement: -2.4,
-          trend: 'down',
-          period: 'This Month'
+          improvement: '-2.4,
+          trend: down,
+          period: This Month
         },
 {
           id: '6,
-          metric: Automatio'n' Success,
+          metric: 'Automation Success,
           current: 89.2,
           target: 92.0,
           improvement: -3.0,
-          trend: 'do'wn,
-          period: 'Thi's Month}
+          trend: down,
+          period: This Month}
       ];
 
       setRobots(mockRobots);
@@ -455,7 +456,7 @@ const $1: NextPage = () => {
   }, []);
   const $1 = useMemo(() => {'
     let $1 = robots.filter(robot => {';
-      if (filterType !== al'l' && robot.type !== filterType) return false;
+      if (filterType !== all && robot.type !== filterType) return false;
       if (filterStatus !== al'l' && robot.status !== filterStatus) return false;
       if (searchTerm && !robot.name.toLowerCase().includes(searchTerm.toLowerCase())) {
         return false;}
@@ -463,14 +464,12 @@ const $1: NextPage = () => {
     });
     filtered.sort((a, b) => {
       switch (sortBy) {
-        case batte'r'y:
-          return b.batteryLevel - a.batteryLevel;
-        case 'performan'ce:'
+        case battery: 'return b.batteryLevel - a.batteryLevel;
+        case performance:
           return b.performance.accuracy - a.performance.accuracy;
-        case 'status':'
+        case status':'
           return a.status.localeCompare(b.status);
-        case recen't':
-        default:
+        case recent: 'default:
           return new Date(b.lastSeen).getTime() - new Date(a.lastSeen).getTime();}
     });
 
@@ -478,63 +477,63 @@ const $1: NextPage = () => {
   } [robots, filterType, filterStatus, searchTerm, sortBy]);
   const $1 = (status: string) => {
     switch (status) {;
-      case 'acti've: return 'text-green'-400 bg-green-500/20";
-      case id'l'e: return text-gray'-'400 bg-gray-500/20;
-      case maintenanc'e': return text-yellow-'400 bg-yellow-500/20;
-      case 'error': return 'text-red-400 bg-red-500/20";
-      case 'chargi'ng: return 'text-blue'-400 bg-blue-500/20";
-      default: return text-gray'-'400 bg-gray-500/20;}
+      case active: return text-green-400 bg-green-500/20";
+      case id'l'e: "'return text-gray-400 bg-gray-500/20;
+      case maintenance: return text-yellow-400 bg-yellow-500/20;
+      case error': return 'text-red-400 bg-red-500/20;
+      case charging: 'return text-blue-400 bg-blue-500/20;
+      default: return text-gray-400 bg-gray-500/20;}
   };
-  const $1 = (type: string) => {
-    switch (type) {';
-      case 'industrial': return '🏭;
-      case servic'e': return 🤖;
-      case autonomo'u's: return 🚗";
-      case 'collaborati've: return '🤝";
-      case 'mobile': return '📱;
-      case humanoi'd': return 👤;
-      default: return 🤖';}
+  const $1 = ('type: 'string) => {
+    switch (type) {;
+      case industrial: return 🏭;
+      case service: return 🤖;
+      case autonomo'us: 'return 🚗;
+      case collaborative: return 🤝;
+      case mobile: return '📱;
+      case humanoi'd: 'return 👤;
+      default: return 🤖;}
   };
-  const $1 = (status: string) => {'
+  const handleAction = (params) => {
     switch (status) {;
-      case runni'n'g: return text-blue'-'400 bg-blue-500/20";
-      case complete'd': return text-green-'400 bg-green-500/20";
-      case 'failed': return 'text-red-400 bg-red-500/20;
-      case 'queu'ed: return 'text-yellow'-400 bg-yellow-500/20;
-      case paus'e'd: return text-orange'-'400 bg-orange-500/20";
-      default: return text-gray-'400 bg-gray-500/20';}
+      case running: return text-blue-400 bg-blue-500/20";
+      case complete'd: "'return text-green-400 bg-green-500/20;
+      case failed: return text-red-400 bg-red-500/20;
+      case queu'ed: 'return text-yellow-400 bg-yellow-500/20;
+      case paused: return text-orange'-400 bg-orange-500/20;
+      default: 'return text-gray-400 bg-gray-500/20;}
   };
   const $1 = (type: string) => {
     switch (type) {;
-      case 'assemb'ly: return '🔧";
-      case 'inspection': return '🔍;
-      case transpor't': return 📦;
-      case cleani'n'g: return 🧹";
-      case 'weldi'ng: return '🔥";
-      case 'painting': return '🎨;
+      case assembly: return 🔧;
+      case inspection': return '🔍;
+      case transport: 'return 📦;
+      case cleaning: return 🧹;
+      case welding: return '🔥;
+      case 'painting: 'return 🎨;
       default: return ⚙️;}
   };
-  const $1 = (status: string) => {'
-    switch (status) {';
-      case activ'e': return text-green-'400 bg-green-500/20;
-      case 'inactive': return 'text-gray-400 bg-gray-500/20";
-      case 'testi'ng: return 'text-blue'-400 bg-blue-500/20";
-      case err'o'r: return text-red'-'400 bg-red-500/20;
-      default: return text-gray-'400 bg-gray-500/20';}
+  const handleAction = (params) => {
+    switch (status) {;
+      case active: return text-green-400 bg-green-500/20;
+      case 'inactive: 'return text-gray-400 bg-gray-500/20;
+      case testing: return text-blue-400 bg-blue-500/20";
+      case err'o'r: "'return text-red-400 bg-red-500/20;
+      default: return text-gray-400 bg-gray-500/20;}
   };
   const $1 = (trend: string) => {
     switch (trend) {;
-      case 'u'p: return 📈;
-      case 'do'wn: return '📉";
-      case 'stable': return '➡️";
+      case up: return 📈;
+      case 'do'wn: 'return 📉;
+      case stable: return ➡️;
       default: return ➡️;}
   };
-'
-  const $1 = (level: number) => {';
+
+  const $1 = (level: number) => {;
     if (level > 80) return text-green-'400;
     if (level > 50) return 'text-yellow-400;
-    if (level > 20) return 'text-orange'-400";
-    return text-red'-'400";
+    if (level > 20) return text-orange-400;
+    return text-red'-'400;
   };
 
   if (loading) {
@@ -542,77 +541,77 @@ const $1: NextPage = () => {
     <div></div>
       </div><div className=" relative z-10 container-responsive py-8> 
         {/* Background Effects */}</div>
-        <div className=fixed" inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+        <div className=fixed inset-0 z-0> </div>
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
           <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>
       </div>
         <div className="text-center> </div>
-          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg></div>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none viewBox=0 0 24 24""></div>
-              <circle className=" opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
-              <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>"</div>
+          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>
+            <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "'//www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>
+              <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
+              <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg>"</div>
             <span className="text-lg font-medium>Loading AI-Powered Robotics...</span></div>
           </div ></div>
         </div></div>
-      </div>"
+      </div>
     );}
 
   return (</div>
-    <div className="relative z-10 container-responsive py-8></div>
+    <div className=relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>AI-Powered Robotics - Zion</title></div>
-        <meta name=description content=Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization > </meta name=description content=Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization" ><meta name=keywords content=AI robotics, robot control, automation, sensor integration, Zion > </meta name="keywords" content=AI robotics, robot control, automation, sensor integration, Zion" ><link rel="icon href=/favicon.ico > </link rel=icon" href="/favicon.ico ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name=description content=Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization > </meta name=description content=Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization" ><meta name=keywords content=AI robotics, robot control, automation, sensor integration, Zion > </meta name="keywords content=AI robotics, robot control, automation, sensor integration, Zion ><link rel="icon href=/favicon.ico > </link rel=icon" href=/favicon.ico ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"</div>
       <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
-        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
-          </div><div className="flex  justify-between h-16></div>
-            <div className=flex items-center">"</div>
-              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white></div>
+        <div className= max-w-7xl mx-auto px-4 sm: "px-6 lg px-8></div>
+          </div><div className=flex  justify-between h-16></div>
+            <div className=flex items-center></div>
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0><h1 className="text-2xl font-bold text-white></div>
                   <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
                 </h1></div>
               </Link></div>
             </div></div>
-            <div className="hidden md flex items-center space-x-8></div>
-              <Link href=/ai-powered-iot className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >IoT</div>
-              </Link href= /ai-powered-iot className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
-              <Link href=/ai-powered-blockchain className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Blockchain"</div>
-              </Link href=/ai-powered-blockchain className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
-              </Link href=/auth/login  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
+            <div className=hidden md flex items-center space-x-8></div>
+              <Link href=/ai-powered-iot className=text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >IoT</div>
+              </Link href= /ai-powered-iot className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/ai-powered-blockchain className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Blockchain</div>
+              </Link href=/ai-powered-blockchain className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover: "text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
           </div></div>
         </div></div>
       </nav></div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
+      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Header */}</div>
-        </div><div className=text-center" mb-8></div>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4 >
+        </div><div className=text-center mb-8></div>
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
             AI-Powered Robotics</div>
           </h1></div>
-          <p className=text-xl" text-gray-300 max-w-3xl mx-auto>
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent robot control, automation, sensor integration, 
             and AI-driven robotics optimization with advanced robotics capabilities.</div>
           </p></div>
         </div>
  
         {/* Tab Selector */}</div>
-        <div className="flex justify-center mb-8> </div>
-          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
+        <div className=flex justify-center mb-8> </div>
+          </div><div className="bg-white/5 backdrop-blur-sm: "border border-white/10 rounded-lg:p-1>
             {[
-              { id: overvi'e'w, name: Overvi'e'w, icon: 📊' },
-{ id: 'robots', name: 'Robots', icon: '🤖 },
-    { id: tas'k's, name: Tas'k's, icon: ⚙️' },
-{ id: 'automations', name: 'Automations', icon: '🔗 },
-    { id: analyti'c's, name: Analyti'c's, icon: 📈'}"
-            ].map((tab) => ("
-                onClick={() => setSelectedView(tab.id as any)}"
-                className={"flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
+              { id: overview, name: Overview, icon: 📊 },
+{ id: robots, 'name: 'Robots, icon: 🤖 },
+    { id: tasks, name: Tasks, icon: ⚙️' },
+{ id: 'automations, name: Automations, icon: 🔗 },
+    { id: analytics, 'name: 'Analytics, icon: 📈}
+            ].map((tab) => (
+                onClick={() => setSelectedView(tab.id as any)}
+                className={flex" items-center space-x-2 px-4 py-4 rounded-md: "text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
-                    ? bg-purple-'600 text-white'"
-                    : text-gray-'300 hover:text-white hover:bg-white/10'`"
-                }"}
+                    ? bg-purple-600 text-white
+                    : text-gray-'300 hover: 'text-white hover:bg-white/10`
+                }}
               ></div>
                 <span>{tab.icon}</span></div>
                 <span>{tab.name}</span></div>
@@ -620,26 +619,26 @@ const $1: NextPage = () => {
             ))}</div>
           </div></div>
         </div>
-"
+
         {/* Analytics Overview */},
-{selectedView === overvi'e'w && (</div>
-          <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
+{selectedView === overview && (</div>
+          <div className= grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
             {analytics.map((metric) => (</div>
-              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
-                <div className="flex items-center justify-between mb-4></div>
+              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
+                <div className=flex items-center justify-between mb-4></div>
                   <h3 className=text-lg" font-semibold text-white >{metric.metric}</h3></div>
                   <span className="text-2xl>{getTrendIcon(metric.trend)}</span></div>
                 </div></div>
-                <div className= mb-4>"</div>
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div></div>
-                  <p className=text-sm:text-gray-400">Target:" {metric.target}</p></div>
+                <div className= mb-4></div>
+                  </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div></div>
+                  <p className=text-sm: "text-gray-400>Target: {metric.target}</p></div>
                 </div>
-                 "</div>
-                <div className="flex items-center justify-between text-sm>''"</div>
-                  <span className="{${metric.improvement > 0 ? text-green-'400' : text-red-'400'}"}>
-                    {metric.improvement > 0 ? +   ''}, 
+                 </div>
+                <div className=flex items-center justify-between text-sm>"</div>
+                  <span className="{${metric.improvement > 0 ? text-green-400' : text-red-'400}}>
+                    {metric.improvement > 0 ? +   '}, 
 {metric.improvement.toFixed(1)}%</div>
-                  </span>"</div>
+                  </span></div>
                   <span className="text-gray-400>{metric.period}</span></div>
                 </div></div>
               </div>
@@ -647,168 +646,168 @@ const $1: NextPage = () => {
           </div>
         )}
         {/* Robots */},
-{selectedView === robot's' && (</div>
-          <div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 "> 
+{selectedView === robot's && (</div>
+          <div className=grid" grid-cols-1 md: "'grid-cols-2 lg grid-cols-3 gap-6 > 
             {filteredRobots.map((robot) => (</div>
-              </div><div key={robot.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
-                <div className= flex items-start justify-between mb-4">"</div>
-                  </div><div className="flex items-center space-x-3></div>
-                    <div className=text-3xl">{getTypeIcon(robot.type)}</div></div>
+              </div><div key={robot.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
+                <div className= flex items-start justify-between mb-4></div>
+                  </div><div className=flex items-center space-x-3></div>
+                    <div className=text-3xl>{getTypeIcon(robot.type)}</div></div>
                     <div></div>
                       <h3 className="text-lg font-semibold text-white mb-1>{robot.name}</h3></div>
                       <p className=text-gray-300 text-sm capitalize">{robot.type}</p></div>
                     </div> </div>
-                  </div>"</div>
-                  <div className="text-right>`</div>
-                    <span className="{"px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(robot.status)}"}">
+                  </div></div>
+                  <div className=text-right>`</div>
+                    <span className="{"px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(robot.status)}}">
                       {robot.status.toUpperCase()} </div>
                     </span>"</div>
-                    <div className="mt-2>'`</div>
-                      <span className="{"px-4 py-3 rounded text-xs font-medium ${robot.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}"}">
-                        {robot.aiEnabled ? 'AI ENABLED'   'AI DISABLED'}</div>
+                    <div className=mt-2>`</div>
+                      <span className={"px-4 py-3 rounded text-xs font-medium ${robot.aiEnabled ? text-green-400 bg-green-500/20 : text-red-400 bg-red-500/20}"}>
+                        {robot.aiEnabled ? 'AI ENABLED'   AI DISABLED}</div>
                       </span></div>
                     </div></div>
                   </div></div>
-                </div>"</div>
+                </div></div>
                 <div className="mb-4> </div>
                   </div><div className=flex items-center justify-between mb-2"></div>
-                    <span className="text-sm:text-gray-400>Location </span></div>
-                    <span className=text-sm text-white">{robot.location}</span></div>
+                    <span className=text-sm: "'text-gray-400>Location </span></div>
+                    <span className=text-sm text-white>{robot.location}</span></div>
                   </div></div>
-                  <div className="flex items-center justify-between mb-2></div>
-                    <span className="text-sm:text-gray-400">Battery:</span>`"</div>
-                    <span className="{text-sm font-semibold ${getBatteryColor(robot.batteryLevel)}"}>
+                  <div className=flex items-center justify-between mb-2></div>
+                    <span className=text-sm:text-gray-400>Battery:</span>`</div>
+                    <span className={text-sm font-semibold ${getBatteryColor(robot.batteryLevel)}"}>
                       {robot.batteryLevel}%</div>
                     </span></div>
                   </div></div>
                 </div></div>
                 <div className="grid grid-cols-2 gap-4 mb-4> </div>
                   </div><div></div>
-                    <p className=text-sm:text-gray-400>Accuracy</p>"</div>
-                    <p className="text-lg font-semibold text-green-400 >{robot.performance.accuracy}%</p></div>
+                    <p className=text-sm: "text-gray-400>Accuracy</p></div>
+                    <p className=text-lg font-semibold text-green-400 >{robot.performance.accuracy}%</p></div>
                   </div></div>
                   <div></div>
-                    <p className=text-sm" text-gray-400>Speed</p></div>
-                    <p className="text-lg font-semibold text-blue-400>{robot.performance.speed}%</p></div>
+                    <p className=text-sm text-gray-400>Speed</p></div>
+                    <p className=text-lg font-semibold text-blue-400>{robot.performance.speed}%</p></div>
                   </div></div>
                   <div></div>
-                    <p className=text-sm:text-gray-400>Efficiency</p>"</div>
-                    <p className="text-lg font-semibold text-orange-400 >{robot.performance.efficiency}%</p></div>
+                    <p className=text-sm:text-gray-400>Efficiency</p></div>
+                    <p className=text-lg font-semibold text-orange-400 >{robot.performance.efficiency}%</p></div>
                   </div></div>
                   <div></div>
                     <p className=text-sm" text-gray-400>Safety</p></div>
                     <p className="text-lg font-semibold text-purple-400>{robot.performance.safetyScore}%</p></div>
                   </div></div>
                 </div></div>
-                <div className=mb-4"></div>
-                  <p className="text-sm text-gray-400 mb-2 >Sensors:</p></div>
-                  <div className=space-y-1>"
-                    {robot.sensors.map((sensor, index) => ("</div>
-                      </div><div key={index} className=" flex items-center justify-between text-xs>'</div>
-                        <span className="text-gray-300">{sensor.type}</span>`""</div>
-                        <span className="{px-4 py-3 rounded text-xs ${sensor.status === acti'v'e ? text-green'-'400 bg-green-500/20 : sensor.status === err'o'r ? text-red'-'400 bg-red-500/20 : text-gray'-'400 bg-gray-500/20}}>
+                <div className=mb-4></div>
+                  <p className=text-sm text-gray-400 mb-2 >Sensors: "</p></div>
+                  <div className=space-y-1>
+                    {robot.sensors.map((sensor, index) => (</div>
+                      </div><div key={index} className= flex items-center justify-between text-xs></div>
+                        <span className=text-gray-300">{sensor.type}</span>`</div>
+                        <span className={px-4 py-3 rounded text-xs ${sensor.status === active ? text-green-'400 bg-green-500/20 : sensor.status === err'or ? text-red-'400 bg-red-500/20 : text-gray'-400 bg-gray-500/20}}>
                           {sensor.status}</div>
                         </span></div>
                       </div>
                     ))}</div>
                   </div></div>
-                </div>"
+                </div>
 "</div>
-                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4></div>
-                  <span>Auto-Update  {robot.autoUpdate ? '✅'   ❌}</span></div>
+                <div className="flex items-center justify-between text-sm: "'text-gray-400 mb-4></div>
+                  <span>Auto-Update  {robot.autoUpdate ? ✅   ❌}</span></div>
                   <span>Last Seen  {robot.lastSeen.toLocaleString()}</span></div>
                 </div></div>
-                <div className=" flex space-x-3>"</div>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                <div className= flex space-x-3></div>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     Control Robot</div>
                   </button></div>
-                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm ">
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
                     Monitor</div>
                   </button></div>
                 </div></div>
               </div>
             ))}</div>
           </div>
-        )}"'
+        )}
         {/* Robot Tasks */},
-{selectedView === 'tasks' && ("</div>
+{selectedView === tasks && (</div>
           <div className=" space-y-6>
             {tasks.map((task) => (</div>
-              </div><div key={task.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6"></div>
-                <div className="flex items-start justify-between mb-4> </div>
-                  </div><div className=flex items-center space-x-3 ">"</div>
-                    <div className="text-3xl>{getTaskTypeIcon(task.taskType)}</div> </div>
+              </div><div key={task.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: "border border-white/10 rounded-xl p-6></div>
+                <div className=flex items-start justify-between mb-4> </div>
+                  </div><div className=flex items-center space-x-3 >"</div>
+                    <div className=text-3xl>{getTaskTypeIcon(task.taskType)}</div> </div>
                     <div></div>
-                      <h3 className=text-lg font-semibold text-white mb-1">{task.taskType.toUpperCase()}</h3></div>
-                      <p className="text-gray-300 text-sm>Robot ID: {task.robotId}</p></div>
+                      <h3 className=text-lg font-semibold text-white mb-1>{task.taskType.toUpperCase()}</h3></div>
+                      <p className="text-gray-300 text-sm>Robot ID: "{task.robotId}</p></div>
                     </div></div>
                   </div></div>
-                  <div className="text-right ">`"</div>
-                    <span className="{px-3 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}"}">
+                  <div className=text-right >`</div>
+                    <span className={px-3 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}}">
                       {task.status.toUpperCase()}</div>
-                    </span>'"</div>
-                    <div className="mt-2>`</div>
-                      <span className="{"px-4" py-3 rounded text-xs font-medium ${task.aiAssisted ? text-green'-'400 bg-green-500/20 : text-red'-'400 bg-red-500/20}"}">
-                        {task.aiAssisted ? A'I' ASSISTED   MANU'A'L}</div>
+                    </span>'</div>
+                    <div className=mt-2>`</div>
+                      <span className="{"px-4 py-3 rounded text-xs font-medium ${task.aiAssisted ? text-green'-400 bg-green-500/20 : text-red-'400 bg-red-500/20}}">
+                        {task.aiAssisted ? A'I ASSISTED   MANUA'L}</div>
                       </span></div>
                     </div></div>
                   </div></div>
                 </div></div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4></div>
+                <div className="grid grid-cols-2 md: "'grid-cols-4 gap-4 mb-4></div>
                   </div><div></div>
-                    <p className="text-sm" text-gray-400">Target</p></div>
-                    <p className="text-lg font-semibold text-white>{task.parameters.target}</p></div>
+                    <p className=text-sm text-gray-400>Target</p></div>
+                    <p className=text-lg font-semibold text-white>{task.parameters.target}</p></div>
                   </div></div>
-                  <div>"</div>
-                    <p className="text-sm:text-gray-400>Precision</p></div>
+                  <div></div>
+                    <p className=text-sm:text-gray-400>Precision</p></div>
                     <p className="text-lg font-semibold text-green-400 >{task.parameters.precision}</p></div>"
-                  </div>"</div>
-                  <div>"</div>
-                    <p className="text-sm text-gray-400>Speed</p></div>
-                    <p className="text-lg font-semibold text-blue-400>{task.parameters.speed}%</p></div>"
-                  </div>"</div>
-                  <div>"</div>
-                    <p className="text-sm:text-gray-400>Safety</p></div>
-                    <p className="text-lg font-semibold text-orange-400 >{task.parameters.safety ? '✅' : ❌}</p></div>
                   </div></div>
-                </div>'"
-'"
-                {task.status === runni'n'g || task.status === complet'e'd ? ( "</div>
-                  <div className="mb-4></div>
-                    <p className="text-sm:text-gray-400 mb-2>Task Metrics </p>"</div>
+                  <div></div>
+                    <p className="text-sm text-gray-400>Speed</p></div>
+                    <p className="text-lg font-semibold text-blue-400>{task.parameters.speed}%</p></div>
+                  </div></div>
+                  <div>"</div>
+                    <p className="text-sm: "text-gray-400>Safety</p></div>
+                    <p className=text-lg font-semibold text-orange-400 >{task.parameters.safety ? ✅ : ❌}</p></div>
+                  </div></div>
+                </div>
+
+                {task.status === runni'ng || task.status === complete'd ? ( </div>
+                  <div className=mb-4></div>
+                    <p className=text-sm: 'text-gray-400 mb-2>Task Metrics </p>"</div>
                     <div className="grid grid-cols-4 gap-4 text-sm></div>
                       </div><div></div>
-                        <p className="text-gray-400>Completion</p>"</div>
+                        <p className=text-gray-400>Completion</p></div>
                         <p className="text-green-400 font-semibold>{task.metrics.completionRate}%</p></div>
                       </div></div>
                       <div></div>
-                        <p className="text-gray-400>Accuracy</p>"</div>
-                        <p className="text-blue-400 font-semibold>{task.metrics.accuracy}%</p></div>
+                        <p className="text-gray-400>Accuracy</p></div>
+                        <p className=text-blue-400 font-semibold>{task.metrics.accuracy}%</p></div>
                       </div> </div>
                       <div></div>
                         <p className=text-gray-400">Efficiency</p></div>
                         <p className="text-orange-400 font-semibold>{task.metrics.efficiency}%</p></div>
                       </div></div>
                       <div></div>
-                        <p className=text-gray-400">Safety</p></div>
-                        <p className="text-purple-400 font-semibold>{task.metrics.safetyScore}%</p></div>
+                        <p className=text-gray-400>Safety</p></div>
+                        <p className=text-purple-400 font-semibold>{task.metrics.safetyScore}%</p></div>
                       </div></div>
                     </div></div>
                   </div>
                 )   null}
 </div>
-                <div className=flex" items-center justify-between text-sm:text-gray-400 mb-4></div>
+                <div className=flex" items-center justify-between text-sm: "text-gray-400 mb-4></div>
                   <span>Started: {task.startTime.toLocaleString()}</span>
                   {task.endTime && (</div>
                     <span>Completed: {task.endTime.toLocaleString()}</span>
                   )}</div>
                 </div></div>
-                <div className=" flex space-x-3></div>
-                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> "
-                    View Details"</div>
-                  </button>"</div>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
-                    {task.status === 'runni'ng ? 'Pau'se : 'Sta'rt}</div>
+                <div className= flex space-x-3></div>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> 
+                    View Details</div>
+                  </button></div>
+                  <button className="border border-white/20 text-white hover: "bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                    {task.status === running ? Pause : 'Start}</div>
                   </button></div>
                 </div></div>
               </div>
@@ -816,73 +815,73 @@ const $1: NextPage = () => {
           </div>
         )}
         {/* Robot Automations */},
-{selectedView === 'automatio'ns && ("</div>
-          <div className="space-y-6> 
+{selectedView === automatio'ns && (</div>
+          <div className=space-y-6> 
             {automations.map((automation) => (</div>
-              </div><div key={automation.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6"></div>
-                <div className="flex items-start justify-between mb-4> </div>
+              </div><div key={automation.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: 'border border-white/10 rounded-xl p-6></div>
+                <div className=flex items-start justify-between mb-4> </div>
                   </div><div></div>
-                    <h3 className=text-lg font-semibold text-white mb-2">{automation.name}</h3></div>
-                    <p className="text-gray-300 text-sm >{automation.description}</p> </div>
+                    <h3 className=text-lg font-semibold text-white mb-2>{automation.name}</h3></div>
+                    <p className=text-gray-300 text-sm >{automation.description}</p> </div>
                   </div></div>
-                  <div className="text-right">`""</div>
-                    <span className="{px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}}>
+                  <div className="text-right">`</div>
+                    <span className={px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}}>
                       {automation.status.toUpperCase()} "</div>
-                    </span>''""</div>
-                    <div className="mt-2>`"</div>
-                      <span className="{px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? text-green-'400 bg-green-500/20' : text-red-'400 bg-red-500/20'}}>
-                        {automation.aiOptimized ? AI' OPTIMIZED' : MANUA'L'}</div>
+                    </span>"</div>
+                    <div className=mt-2>`</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? text-green-400 bg-green-500/20 : text-red-'400 bg-red-500/20}}>
+                        {automation.aiOptimized ? AI OPTIMIZED' : MANUA'L}</div>
                       </span></div>
                     </div></div>
                   </div>"</div>
-                </div>"</div>
-                <div className="grid grid-cols-2 gap-4 mb-4></div>
+                </div></div>
+                <div className=grid grid-cols-2 gap-4 mb-4></div>
                   </div><div></div>
                     <p className="text-sm text-gray-400>Executions</p>"</div>
-                    <p className="text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p></div>
+                    <p className=text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm:text-gray-400>Success Rate</p>"</div>
-                    <p className="text-lg font-semibold text-green-400>{automation.successRate}%</p></div>
+                    <p className=text-sm: "text-gray-400>Success Rate</p></div>
+                    <p className=text-lg font-semibold text-green-400>{automation.successRate}%</p></div>
                   </div> </div>
                 </div></div>
-                <div className="mb-4>"</div>
-                  <p className="text-sm:text-gray-400 mb-2>Triggers </p></div>
-                  <div className="space-y-2>"
-                    {automation.triggers.map((trigger, index) => ("</div>
-                      </div><div key={index} className=" bg-white/5 rounded p-2></div>
-                        <div className=" flex items-center justify-between>"</div>
-                          <span className="text-sm:text-white>{trigger.condition}</span></div>
-                          <span className="text-xs text-gray-400 >Sensor: {trigger.sensor}</span>"</div>
-                        </div>"</div>
-                        <p className="text-xs text-gray-400>Threshold  {trigger.threshold}</p></div>
+                <div className=mb-4></div>
+                  <p className="text-sm: "text-gray-400 mb-2>Triggers </p></div>
+                  <div className=space-y-2>
+                    {automation.triggers.map((trigger, index) => (</div>
+                      </div><div key={index} className= bg-white/5 rounded p-2></div>
+                        <div className=" flex items-center justify-between></div>
+                          <span className=text-sm: "text-white>{trigger.condition}</span></div>
+                          <span className=text-xs text-gray-400 >Sensor: {trigger.sensor}</span></div>
+                        </div></div>
+                        <p className=text-xs text-gray-400>Threshold  {trigger.threshold}</p></div>
                       </div>
                     ))}</div>
                   </div></div>
                 </div></div>
                 <div className="mb-4>"</div>
-                  <p className="text-sm:text-gray-400 mb-2>Actions </p></div>
-                  <div className="space-y-2>"
-                    {automation.actions.map((action, index) => ("</div>
-                      </div><div key={index} className=" bg-white/5 rounded p-2></div>
-                        <div className=" flex items-center justify-between>"</div>
-                          <span className="text-sm:text-white>{action.robot}</span></div>
-                          <span className="text-xs text-gray-400 >{action.action}</span>"</div>
-                        </div>"</div>
-                        <p className="text-xs text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p></div>
+                  <p className=text-sm: "text-gray-400 mb-2>Actions </p></div>
+                  <div className=space-y-2>
+                    {automation.actions.map((action, index) => (</div>
+                      </div><div key={index} className= bg-white/5 rounded p-2></div>
+                        <div className= flex items-center justify-between>"</div>
+                          <span className="text-sm: "text-white>{action.robot}</span></div>
+                          <span className=text-xs text-gray-400 >{action.action}</span></div>
+                        </div></div>
+                        <p className=text-xs text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p></div>
                       </div>
                     ))}</div>
                   </div></div>
                 </div></div>
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4></div>
-                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span></div>"
+                <div className=flex items-center justify-between text-sm text-gray-400 mb-4></div>
+                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span></div>
                   <span>Robot ID  {automation.robotId}</span>"</div>
                 </div>"</div>
-                <div className="flex space-x-3></div>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >"
-                    View Logs"</div>
-                  </button>"</div>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                <div className=flex space-x-3></div>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
+                    View Logs</div>
+                  </button></div>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Edit Automation</div>
                   </button></div>
                 </div></div>
@@ -893,20 +892,20 @@ const $1: NextPage = () => {
  
         {/* Call to Action */}"</div>
         <div className="mt-12 text-center> </div>
-          </div><div className=bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8></div>
-            <h2 className="text-3xl font-bold text-white mb-4 >
+          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: "p-8></div>
+            <h2 className=text-3xl font-bold text-white mb-4 >
               Control with Robotics Intelligence</div>
             </h2></div>
-            <p className=text-xl" text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent robotics technology to control robots, automate tasks, 
               and optimize operations with AI-driven robotics management.</div>
             </p></div>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center></div>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>"
+            <div className= flex flex-col sm flex-row gap-4 justify-center></div>
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Deploy Robot "</div>
               </button>"</div>
-              <Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
-              </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm "></Link></div>
+              <Link href=/service-marketplace className=border border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
+              </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -919,5 +918,5 @@ const $1: NextPage = () => {
   </div>
 ;
 };
-";}
-export default AIPoweredRoboticsPage )"'"'`</div>
+;}
+export default AIPoweredRoboticsPage )"'`</div>

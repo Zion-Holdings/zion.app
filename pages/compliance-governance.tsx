@@ -1,364 +1,365 @@
-import type { NextPage } from "next;}
-import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
-import { useState, useEffect, useMemo } from "react";}
-import Link from next/link";}
+import type { NextPage } from "next;
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from next/head";
+import { useState, useEffect, useMemo } from "react;
+import Link from next/link";
 import { motion, AnimatePresence }  from "framer-motion;
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   name: string;
-  type: ''GDPR' | 'CCPA' | 'SOX'' | 'HIP'AA | 'PCI-D'SS | 'I'SO27001' | 'NIST' | 'SOC2' | 'custom';
-  description: string;
-  status: 'complia'n't | non-complia'n't | at-r'i'sk' | 'pending' | 'exempt;
-  complianceRate: number;
+  type: GDPR | CCPA | SOX | HIP'AA | 'PCI-DSS | I'SO27001' | NIST | 'SOC2' | custom;
+  description: 'string;
+  status: compliant | non-compliant | at-ri'sk' | pending | 'exempt;
+  complianceRate: 'number;
   lastAssessment: Date;
   nextAssessment: Date;
   requirements: ComplianceRequirement[];
   risks: ComplianceRisk[];
   actions: ComplianceAction[];}
-interface $1 {
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  category: ''data-privac'y' | securit'y' | financi'a'l | 'operation'al | 'regulator'y";
-  status: ''implemented' | 'in-progress' | 'not-starte'd' | faile'd'";
-  priority: 'critic'al | 'hi'gh | 'med'ium'' | low';
-  dueDate: Date;
+  category: data-privacy | securit'y | financia'l | 'operational | regulator'y;
+  status: 'implemented | in-progress | not-starte'd | failed';
+  priority: 'critical | high | medium' | low;
+  dueDate: 'Date;
   assignedTo: string;
   evidence: string[];}
-interface $1 {
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  severity: 'critic'a'l | hi'g'h | med'i'um' | 'low;
-  probability: number;
+  severity: critical | hig'h | med'ium | 'low;
+  probability: 'number;
   impact: number;
   riskScore: number;
   mitigation: string;
-  status: ''ope'n' | mitigate'd' | accept'e'd | 'transferre'd";
-  owner: string;
+  status: open | mitigated | accept'ed | transferre'd;
+  owner: 'string;
   dueDate: Date;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  type: ''remediation' | 'assessment' | 'trainin'g' | documentati'o'n | audi't'";
-  status: 'pendi'ng | 'in-progre'ss | 'comple'ted'' | overdue';
-  priority: 'critic'a'l | hi'g'h | med'i'um' | 'low;
-  assignedTo: string;
+  type: remediation | assessment | training' | documentation | audi't';
+  status: 'pending | in-progress | completed | overdue';
+  priority: 'critical | high | medi'um | low;
+  assignedTo: 'string;
   dueDate: Date;
   completionDate?: Date;
   progress: number;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
-  category: ''data-privac'y' | securit'y' | financi'a'l | ''operationa'l' | regulator'y' | cust'o'm";
-  description: string;
+  category: data-privacy | security' | financi'al | 'operationa'l | regulatory' | cust'om;
+  description: 'string;
   version: string;
   effectiveDate: Date;
   reviewDate: Date;
-  status: ''active' | 'draft' | 'archive'd' | under-revie'w'";
-  complianceRate: number;
+  status: active | draft | archived' | under-revie'w;
+  complianceRate: 'number;
   owner: string;
   stakeholders: string[];
   documents: PolicyDocument[];}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
-  type: 'poli'cy | 'procedu're | 'guidel'ine'' | templat'e' | form';
-  version: string;
+  type: policy | procedure | guideline | template' | form';
+  version: 'string;
   lastUpdated: Date;
-  status: 'curre'n't | dra'f't | archi'v'ed;
+  status: current | draft | archived;
   url: string;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   action: string;
   description: string;
   user: string;
   timestamp: Date;
-  category: ''complianc'e' | governanc'e' | securi't'y | 'data-privac'y";
-  severity: ''info' | 'warning' | 'erro'r' | critica'l'";
-  relatedEntity: string;
+  category: 'complianc'e | governance' | securi'ty | data-privac'y";
+  severity: "'info | warning' | error' | critica'l;
+  relatedEntity: 'string;
   details: Record<string, any>;}
-interface $1 {
+interface FacilityPlan {
   overallComplianceRate: number;
   frameworksCount: number;
   activeRisks: number;
   pendingActions: number;
   upcomingAssessments: number;
   recentViolations: number;
-  complianceTrend: 'improvi'ng | 'declini'ng | 'sta'ble';
-  topRisks: ComplianceRisk[];</div>
+  complianceTrend: improving | declining | sta'ble';
+  topRisks: 'ComplianceRisk[];</div>
   complianceByCategory: Record<string, number>;
   assessmentSchedule: Array
   }>;};
-const $1: NextPage = () => {
+const AIPoweredPredictiveAnalytics: NextPage = () => {
   ;</div>
   const [frameworks, setFrameworks] = useState<ComplianceFramework[]>([]);</div>
   const [policies, setPolicies] = useState<GovernancePolicy[]>([]);</div>
   const [auditTrail, setAuditTrail] = useState<AuditTrail[]>([]);</div>
   const [analytics, setAnalytics] = useState<ComplianceAnalytics | null>(null);</div>
-  const [activeTab, setActiveTab] = useState<'overvi'e'w | framewor'k's | polic'i'es' | 'ris'k's | actio'n's | au'd'it'>('overview');</div>
+  const [activeTab, setActiveTab] = useState<overview | frameworks | polici'es' | risk's | actio'ns | aud'it'>(overview);</div>
   const [selectedFramework, setSelectedFramework] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading compliance data
     setTimeout(() => {
-      const $1: $2[] = [
+      const mockPredictiveModels: 'PredictiveModel[] = [
         {
-          id: '1,
-          name: GDP'R' Compliance,
-          type: GD'P'R,
-          description: Genera'l' Data Protection Regulation compliance framework for EU data protection,
-          status: complia'n't,
+          id: 1,
+          name: GDPR Compliance,
+          type: GDPR,
+          description: General' Data Protection Regulation compliance framework for EU data protection,
+          status: 'compliant,
           complianceRate: 92,
-          lastAssessment: new Date('2024-07-15'),
+          lastAssessment: new Date(2024-07-15),
           nextAssessment: new Date(2024-10-15),
           requirements: ['
             {
               id: '1,
-              title: Dat'a' Processing Consent,
-              description: Ensur'e' explicit consent for data processing activities,
-              category: data-priva'c'y,
-              status: implement'e'd,
-              priority: critic'a'l,
-              dueDate: new Date(2024-08-30'),
-              assignedTo: 'Legal Team',
-              evidence: ['Consent forms updated', 'Privacy policy revised']}
+              title: Data Processing Consent,
+              description: Ensure explicit consent for data processing activities,
+              category: data-privac'y,
+              status: 'implemented,
+              priority: critical,
+              dueDate: new Date(2024-08-30),
+              assignedTo: Legal Team',
+              evidence: '[Consent forms updated, Privacy policy revised]}
             },
 {
-              id: '2,
-              title: Dat'a' Breach Notification,
-              description: Implemen't' 72-hour breach notification process,
-              category: securi't'y,
-              status: implement'e'd,
-              priority: critic'a'l,
-              dueDate: new Date(2024-08-15'),
-              assignedTo: 'Security Team',
-              evidence: ['Incident response plan', 'Notification procedures']}
+              id: 2,
+              title: Data' Breach Notification,
+              description: 'Implement 72-hour breach notification process,
+              category: security,
+              status: implement'ed,
+              priority: 'critical,
+              dueDate: new Date(2024-08-15),
+              assignedTo: Security Team,
+              evidence: [Incident response plan, 'Notification procedures']}
           ],
-          risks: ['
+          risks: '[
             {
               id: 1,
-              title: 'Dat'a Processing Without Consent,
-              description: 'Ris'k of processing personal data without proper consent,
-              severity: 'hi'gh,
-              probability: 0.3,
-              impact: 0.8,'
+              title: Data Processing Without Consent,
+              description: Risk of processing personal data without proper consent,
+              severity: hi'gh,
+              probability: '0.3,
+              impact: 0.8,
               riskScore: 0.24,
-              mitigation: 'Implement consent management system',
-              status: 'mitigated',
-              owner: 'Legal Team',
-              dueDate: new Date('2024-08-30}
+              mitigation: Implement consent management system,
+              status: mitigated,
+              owner: Legal Team',
+              dueDate: 'new Date(2024-08-30}
           ],
           actions: [
             {
-              id: '1',
-              title: Update' Privacy Policy',
-              description: Review' and update privacy policy for GDPR compliance',
-              type: documentatio'n',
-              status: complete'd',
-              priority: hig'h',
-              assignedTo: Legal' Team',
+              id: 1,
+              title: Update Privacy Policy,
+              description: Review and update privacy policy for GDPR compliance',
+              'type: 'documentation,
+              status: completed,
+              priority: high,
+              assignedTo: Legal Team,
               dueDate: new Date(2024-08-15),
-              completionDate: new Date('2024-08-10'),
+              completionDate: new Date(2024-08-10),
               progress: 100
             }]}
         {
           id: 2,
-          name: 'SO'C 2 Type II,
-          type: 'SO'C2,
-          description: 'Servic'e Organization Control 2 Type II compliance for security controls,
-          status: 'at-ri'sk,'
+          'name: 'SOC 2 Type II,
+          type: SOC2,
+          description: Service Organization Control 2 Type II compliance for security controls,
+          status: at-risk,
           complianceRate: 78,
-          lastAssessment: new Date('2024-06-20),
-          nextAssessment: new Date(2024-12-20'),
+          lastAssessment: new Date(2024-06-20),
+          nextAssessment: new Date(2024-12-20),
           requirements: ['
             {
-              id: 3,
-              title: 'Acces's Control Implementation,
-              description: 'Implemen't comprehensive access control measures,
-              category: 'securi'ty,
-              status: 'in-progre'ss,
-              priority: 'critic'al,
-              dueDate: new Date('2024-09-30'),
-              assignedTo: IT' Security',
-              evidence: [IAM' system deployed', Access' reviews scheduled']}
+              id: '3,
+              title: Access Control Implementation,
+              description: Implement comprehensive access control measures,
+              category: security,
+              status: 'in-progress,
+              priority: 'critical,
+              dueDate: new Date(2024-09-30),
+              assignedTo: IT Security',
+              evidence: '[IAM system deployed, Access reviews scheduled]}
           ],
           risks: [
             {
-              id: 2',
+              id: 2,
               title: 'Insufficient Access Controls',
-              description: 'Lack of proper access controls may lead to security breaches',
-              severity: 'critical',
+              description: 'Lack of proper access controls may lead to security breaches,
+              severity: critical,
               probability: 0.5,
-              impact: 0.9,'
+              impact: 0.9,
               riskScore: 0.45,
-              mitigation: Implement' multi-factor authentication',
-              status: ope'n',
-              owner: IT' Security',
+              mitigation: Implement multi-factor authentication',
+              status: 'open,
+              owner: IT Security,
               dueDate: new Date(2024-09-30}
           ],
           actions: ['
             {
               id: '2,
-              title: Deplo'y' MFA System,
-              description: Implemen't' multi-factor authentication across all systems,
-              type: remediati'o'n,
+              title: Deploy MFA System,
+              description: Implement multi-factor authentication across all systems,
+              type: remediation,
               status: in-progre's's,
-              priority: critic'a'l,
-              assignedTo: I'T' Security,
-              dueDate: new Date(2024-09-30'),
+              priority: 'critical,
+              assignedTo: IT Security,
+              dueDate: new Date(2024-09-30),
               progress: 65
             }]}
         {
-          id: '3,
-          name: PCI-DS'S' Compliance,
-          type: PCI-D'S'S,
+          id: 3,
+          name: PCI-DSS Compliance,
+          type: PCI-DSS,
           description: Paymen't' Card Industry Data Security Standard compliance,
-          status: complia'n't,
+          status: 'compliant,
           complianceRate: 95,
-          lastAssessment: new Date('2024-05-10'),
+          lastAssessment: new Date(2024-05-10),
           nextAssessment: new Date(2024-11-10),
-          requirements: ['
+          requirements: [
             {
-              id: '4,
+              id: 4,
               title: Car'd' Data Encryption,
-              description: Encryp't' all cardholder data in transit and at rest,
-              category: securi't'y,
-              status: implement'e'd,
-              priority: critic'a'l,
-              dueDate: new Date(2024-08-30'),
-              assignedTo: 'Security Team',
-              evidence: ['Encryption implemented', 'Key management in place']}
+              description: 'Encrypt all cardholder data in transit and at rest,
+              category: security,
+              status: implemented,
+              priority: 'critical,
+              dueDate: 'new Date(2024-08-30),
+              assignedTo: Security Team,
+              evidence: [Encryption implemented, 'Key management in place]}
           ],
-          risks: [],
-          actions: ['
+          risks: '[],
+          actions: [
             {
               id: 3,
-              title: 'Annua'l PCI Assessment,
-              description: 'Complet'e annual PCI-DSS compliance assessment,
-              type: 'assessme'nt,
-              status: 'pendi'ng,
-              priority: 'hi'gh,
-              assignedTo: 'Complianc'e Team,
-              dueDate: new Date('2024-11-10'),
+              title: Annual PCI Assessment,
+              description: Complete annual PCI-DSS compliance assessment,
+              'type: 'assessment,
+              status: pending,
+              priority: high,
+              assignedTo: Compliance Team,
+              dueDate: new Date(2024-11-10),
               progress: 0
             }]}
       ];
-      const $1: $2[] = [
+      const mockPredictiveModels: PredictiveModel[] = [
         {
           id: 1,
-          name: 'Dat'a Privacy Policy,
-          category: 'data-priva'cy,
-          description: 'Comprehensiv'e data privacy policy covering all aspects of data handling,
-          version: '2.1',
+          'name: 'Data Privacy Policy,
+          category: data-privacy,
+          description: Comprehensive data privacy policy covering all aspects of data handling,
+          version: 2.1,
           effectiveDate: new Date(2024-01-01),
           reviewDate: new Date('2024-12-31'),
-          status: activ'e',
+          status: 'active,
           complianceRate: 94,
-          owner: Lega'l' Team,
-          stakeholders: [H'R', IT', 'Marketing'],
-          documents: ['
+          owner: Legal Team,
+          stakeholders: [HR, IT', 'Marketing],
+          documents: '[
             {
               id: 1,
-              name: 'Dat'a Privacy Policy v2.1,
-              type: 'poli'cy,
-              version: '2.1',
+              name: Data Privacy Policy v2.1,
+              type: policy,
+              version: 2.1,
               lastUpdated: new Date(2024-01-01),
-              status: 'curre'nt,
-              url: '/documents/data-privacy-policy-v2.1.pdf'
+              status: current,
+              url: /documents/data-privacy-policy-v2.1.pdf
             }]}
         {
           id: 2,
-          name: 'Informatio'n Security Policy,
-          category: 'securi'ty,
-          description: 'Comprehensiv'e information security policy and procedures,
-          version: '1.8',
-          effectiveDate: new Date(2024-03-01),
-          reviewDate: new Date('2024-09-01'),
-          status: activ'e',
+          'name: 'Information Security Policy,
+          category: security,
+          description: Comprehensive information security policy and procedures,
+          version: '1.8,
+          effectiveDate: 'new Date(2024-03-01),
+          reviewDate: new Date(2024-09-01),
+          status: 'active',
           complianceRate: 87,
-          owner: I'T' Security,
-          stakeholders: [I'T', HR', 'Operations'],
-          documents: ['
+          owner: IT' Security,
+          stakeholders: '[IT, HR, Operations'],
+          documents: '[
             {
               id: 2,
-              name: 'Informatio'n Security Policy v1.8,
-              type: 'poli'cy,
-              version: '1.8',
+              name: Information Security Policy v1.8,
+              type: policy,
+              version: 1.8,
               lastUpdated: new Date(2024-03-01),
-              status: 'curre'nt,
-              url: '/documents/information-security-policy-v1.8.pdf
+              status: current,
+              url: /documents/information-security-policy-v1.8.pdf
             }]}
       ];
-      const $1: $2[] = [
+      const mockPredictiveModels: PredictiveModel[] = [
         {
-          id: '1,
-          action: Polic'y' Updated,
-          description: Dat'a' Privacy Policy updated to version 2.1,
-          user: lega'l'.team@company.com,
+          id: 1,
+          action: Policy' Updated,
+          description: 'Data Privacy Policy updated to version 2.1,
+          user: legal.team@company.com,
           timestamp: new Date(2024-08-01 14:30:00'),
-          category: 'data-privacy',
-          severity: 'info',
-          relatedEntity: 'Data Privacy Policy','
-          details: {
+          category: 'data-privacy,
+          severity: info,
+          relatedEntity: Data Privacy Policy,'
+          details: '{
             previousVersion: 2.0,
-            newVersion: '2.1',
-            changes: [Updated' consent requirements', Added' data retention policies']}}
+            newVersion: 2.1,
+            changes: [Updated consent requirements, Added' data retention policies]}}
         {
-          id: 2,
-          action: 'Complianc'e Violation,
-          description: 'SO'C 2 access control requirement not met,
-          user: 'syste'm@company.com,
-          timestamp: new Date('2024-08-01 10:15:00'),
-          category: complianc'e',
-          severity: warnin'g',
-          relatedEntity: SOC' 2 Type II',
+          id: '2,
+          action: Compliance Violation,
+          description: SOC 2 access control requirement not met,
+          user: syste'm@company.com,
+          timestamp: 'new Date(2024-08-01 10:15:00),
+          category: compliance,
+          severity: warnin'g,
+          relatedEntity: 'SOC 2 Type II,
           details: {
-            requirement: Acces's' Control Implementation,
-            dueDate: 2024-09-30',
-            status: 'in-progress'}}
+            requirement: Access Control Implementation,
+            dueDate: 2024-09-30,
+            status: 'in-progress}}
       ];
 
-      const mockAnalytics: ComplianceAnalytics = {
+      const mockAnalytics: 'ComplianceAnalytics = {
         overallComplianceRate: 88,
         frameworksCount: 3,
         activeRisks: 2,
         pendingActions: 5,
-        upcomingAssessments: 2,'
+        upcomingAssessments: 2,
         recentViolations: 1,
-        complianceTrend: improvin'g',
+        complianceTrend: improving,
         topRisks: [
           {
-            id: 2',
-            title: 'Insufficient Access Controls',
-            description: 'Lack of proper access controls may lead to security breaches',
-            severity: 'critical',
+            id: 2,
+            title: 'Insufficient Access Controls,
+            description: 'Lack of proper access controls may lead to security breaches,
+            severity: critical,
             probability: 0.5,
-            impact: 0.9,'
+            impact: 0.9,
             riskScore: 0.45,
             mitigation: Implement' multi-factor authentication',
-            status: ope'n',
-            owner: IT' Security',
+            status: 'open,
+            owner: IT Security,
             dueDate: new Date(2024-09-30}
-        ],'
+        ],
         complianceByCategory: {
-          'data-privacy': 92,
-          'security': 78,
-          'financial': 95,
-          'operational': 85}
-        assessmentSchedule: ['
+          data-privacy': 92,
+          'security: '78,
+          financial: 95,
+          operational: 85}
+        assessmentSchedule: [
           {
             framework: GDP'R',
-            nextAssessment: new Date(2024-10-15),
-            status: 'upcomi'ng
+            nextAssessment: 'new Date(2024-10-15),
+            status: upcoming
           },
 {
-            framework: 'SO'C 2 Type II,
-            nextAssessment: new Date('2024-12-20'),
-            status: upcomin'g'}
+            framework: SOC 2 Type II,
+            nextAssessment: new Date(2024-12-20),
+            status: upcoming}
         ];
       };
 
@@ -371,198 +372,198 @@ const $1: NextPage = () => {
   }, []);
   const $1 = (status: string) => {
     switch (status) {;
-      case 'complia'nt: return 'text-green'-400;
-      case non-complia'n't: return text-red'-'400";
-      case at-ris'k': return text-yellow-'400";
-      case 'pending': return 'text-blue-400;
-      case 'exem'pt: return 'text-gray'-400;
-      default: return text-gray'-'400;}
+      case 'complia'nt: 'return text-green-400;
+      case non-compliant: return text-red-400;
+      case at-ris'k': return text-yellow-400;
+      case pending': return 'text-blue-400;
+      case exempt: 'return text-gray-400;
+      default: return text-gray-400;}
   };
   const $1 = (severity: string) => {
     switch (severity) {';
-      case 'critical': return 'bg-red-600";
-      case 'hi'gh: return 'bg-orange'-600";
-      case medi'u'm: return bg-yellow'-'1200;
-      case lo'w': return bg-green-'600;
-      default: return 'bg-gray-600';}
+      case 'critical: 'return bg-red-600;
+      case high: return bg-orange-600";
+      case medi'u'm: "'return bg-yellow-1200;
+      case low: return bg-green-600;
+      default: return bg-gray-600';
   };
-  const $1 = (priority: string) => {'
+  const handleAction = (params) => {
     switch (priority) {;
-      case critic'a'l: return bg-red'-'600";
-      case hig'h': return bg-orange-'600";
-      case 'medium': return 'bg-yellow-1200;
-      case 'l'ow: return 'bg-green'-600;
+      case critical: 'return bg-red-600;
+      case high: return bg-orange-'600;
+      case 'medium: 'return bg-yellow-1200;
+      case low: return bg-green-600;
       default: return bg-gray'-'600;}
   };
 
-  const $1 = (date: Date) => {
-    return date.toLocaleDateString('en-'US, {
-      year: 'numer'ic,
-      month: 'sho'rt,
-      day: 'numeri'c";
+  const $1 = (date: 'Date) => {
+    return date.toLocaleDateString(en-US, {
+      year: numeric,
+      month: short,
+      day: 'numeri'c;
     });
   };
 
-  const $1 = (probability: number, impact: number) => {;
+  const $1 = (probability: 'number, impact: number) => {;
     return probability * impact;
   };
 
   if (loading) {
     return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8> 
+      </div><div className= relative z-10 container-responsive py-8> 
         {/* Background Effects */}</div>
-        <div className="fixed" inset-0 z-0"> </div>
+        <div className=fixed inset-0 z-0"> </div>
           </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>
       </div>
         <div className="flex items-center justify-center min-h-screen></div>
-          </div><div className=animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500"></div></div>
+          </div><div className=animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div></div>
         </div></div>
       </div> 
     );}
-"
+
   return (</div>
     <div className="relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>Compliance & Governance Center - Zion Marketplace</title></div>
-        <meta name=description content=Comprehensive compliance and governance center for managing regulatory frameworks, policies, and risk assessments. > </meta name=description" content=Comprehensive compliance and governance center for managing regulatory frameworks, policies, and risk assessments." ><meta name="keywords content=compliance, governance, regulatory, GDPR, SOC2, PCI-DSS, risk management, Zion > </meta name=keywords" content="compliance, governance, regulatory, GDPR, SOC2, PCI-DSS, risk management, Zion ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name=description content=Comprehensive compliance and governance center for managing regulatory frameworks, policies, and risk assessments. > </meta name=description" content=Comprehensive compliance and governance center for managing regulatory frameworks, policies, and risk assessments. ><meta name=keywords content=compliance, governance, regulatory, GDPR, SOC2, PCI-DSS, risk management, Zion > </meta name=keywords" content="compliance, governance, regulatory, GDPR, SOC2, PCI-DSS, risk management, Zion ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Header */}</div>
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10> </div>
-        </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6></div>
-          <div className="flex justify-between items-center></div>
+        </div><div className=max-w-7xl mx-auto px-4 sm: "px-6 lg px-8 py-6></div>
+          <div className=flex justify-between items-center></div>
             </div><div></div>
-              <h1 className=text-3xl" font-bold text-white >Compliance & Governance Center</h1></div>
-              <p className="text-gray-300 mt-2>Centralized compliance management and regulatory oversight</p></div>
+              <h1 className=text-3xl font-bold text-white >Compliance & Governance Center</h1></div>
+              <p className=text-gray-300 mt-2>Centralized compliance management and regulatory oversight</p></div>
             </div></div>
             <div className= flex items-center" space-x-4></div>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300>
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300>
                 Generate Report</div>
               </button></div>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >
+              <button className=bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >
                 New Assessment</div>
               </button></div>
             </div></div>
           </div></div>
-        </div></div>"
-      </div>"</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
+        </div></div>
+      </div></div>
+      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Key Metrics Overview */},
 {analytics && (</div>
-          </div><div className=" grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8>>"</div>
+          </div><div className= grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8>>"</div>
               <div className="text-2xl font-bold text-white >{analytics.overallComplianceRate}%</div></div>
-              <div className=text-gray-400" text-sm>Overall Compliance</div></div>
+              <div className=text-gray-400 text-sm>Overall Compliance</div></div>
             </motion.div>
             ></div>
-              <div className="text-2xl font-bold text-white>{analytics.frameworksCount}</div></div>
+              <div className=text-2xl font-bold text-white>{analytics.frameworksCount}</div></div>
               <div className=text-gray-400" text-sm >Active Frameworks</div></div>
             </motion.div>
             ></div>
               <div className="text-2xl font-bold text-red-400>{analytics.activeRisks}</div></div>
-              <div className=text-gray-400" text-sm>Active Risks</div></div>
+              <div className=text-gray-400 text-sm>Active Risks</div></div>
             </motion.div>
             
             ></div>
-              <div className="text-2xl font-bold text-yellow-400>{analytics.pendingActions}</div></div>
+              <div className=text-2xl font-bold text-yellow-400>{analytics.pendingActions}</div></div>
               <div className=text-gray-400" text-sm>Pending Actions</div></div>
             </motion.div>
             
             ></div>
               <div className="text-2xl font-bold text-blue-400 >{analytics.upcomingAssessments}</div></div>
-              <div className=text-gray-400" text-sm>Upcoming Assessments</div></div>
+              <div className=text-gray-400 text-sm>Upcoming Assessments</div></div>
             </motion.div>
             ></div>
-              <div className="text-2xl font-bold text-orange-400>{analytics.recentViolations}</div></div>
+              <div className=text-2xl font-bold text-orange-400>{analytics.recentViolations}</div></div>
               <div className=text-gray-400" text-sm >Recent Violations</div></div>
             </motion.div>
             ></div>
               <div className="text-2xl font-bold text-green-400>↗️</div></div>
-              <div className=text-gray-400" text-sm>Trend</div></div>
+              <div className=text-gray-400 text-sm>Trend</div></div>
             </motion.div></div>
           </div>
         )}
         {/* Tabs */}</div>
-        <div className="bg-white/5 backdrop-blur-md:rounded-xl border border-white/10 mb-8 > </div>
-          </div><div className="flex border-b border-white/10>"
-            ''"
-              onClick={() => setActiveTab(overvie'w')}"
+        <div className=bg-white/5 backdrop-blur-md: "rounded-xl border border-white/10 mb-8 > </div>
+          </div><div className=flex border-b border-white/10>
+            
+              onClick={() => setActiveTab(overview)}
               className="{px-6 py-4 font-medium transition-all duration-200 ${
-                activeTab === overvie'w'
+                activeTab === overview
                   ? text-white' border-b-2 border-purple-500'
-                  : text-gray-'400 hover text-white'`"
+                  : text-gray-400 hover text-white`
               }"}
             >
               Overview</div>
             </button> 
-            ''""
-              onClick={() => setActiveTab(framework's')}"""
-              className="{px-6 py-4 font-medium transition-all duration-200 ${
+            ''
+              onClick={() => setActiveTab(frameworks)}""
+              className={px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === frameworks'
-                  ? 'text-white border-b-2 border-purple-500'"
-                  : 'text-gray-400 hover:text-white'""
-              }"}
+                  ? 'text-white border-b-2 border-purple-500"
+                  : text-gray-400 hover: "'text-white
+              }}
             >
               Frameworks</div>
-            </button>'
-            "
-              onClick={() => setActiveTab(policie's')}""
-              className={"px-6 py-4 font-medium transition-all duration-200 ${
+            </button>
+            
+              onClick={() => setActiveTab(policies)}"
+              className={px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === policies'
-                  ? 'text-white border-b-2 border-purple-500'"
-                  : 'text-gray-400 hover:text-white'""
-              }"}
+                  ? 'text-white border-b-2 border-purple-500"
+                  : text-gray-400 hover: "'text-white
+              }}
             >
               Policies</div>
-            </button>'
-            "
-              onClick={() => setActiveTab(risk's')}""
-              className="{px-6 py-4 font-medium transition-all duration-200 ${
+            </button>
+            
+              onClick={() => setActiveTab(risks)}"
+              className={px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === risks'
-                  ? 'text-white border-b-2 border-purple-500'"
-                  : 'text-gray-400 hover text-white'""
-              }"}
+                  ? 'text-white border-b-2 border-purple-500"
+                  : text-gray-400 hover text-white'"
+              }}
             >
               Risks</div>
             </button>'
-            '"
-              onClick={() => setActiveTab('actions')}'""
-              className="{px-6 py-4 font-medium transition-all duration-200 ${
-                activeTab === action's'
+            "
+              onClick={() => setActiveTab(actions')}'"
+              className={px-6 py-4 font-medium transition-all duration-200 ${
+                activeTab === actions
                   ? text-white' border-b-2 border-purple-500'"
-                  : text-gray-'400 hover text-white'""
-              }"}
+                  : text-gray-400 hover text-white"
+              }}
             >
               Actions</div>
             </button> 
             ''"
-              onClick={() => setActiveTab(audi't')}""
-              className={"px-6" py-4 font-medium transition-all duration-200 ${
+              onClick={() => setActiveTab(audit)}"
+              className={px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === audit'
-                  ? 'text-white border-b-2 border-purple-500'"
-                  : 'text-gray-400 hover:text-white'""
-              }"}
+                  ? 'text-white border-b-2 border-purple-500"
+                  : text-gray-400 hover: "'text-white
+              }}
             >
               Audit Trail</div>
             </button></div>
           </div>
-"'</div>
-          <div className="p-6>
-            {activeTab === 'overvi'ew && (</div>
-              </div><div className=grid" grid-cols-1 lg grid-cols-2 gap-8>
+</div>
+          <div className=p-6>
+            {activeTab === overview && (</div>
+              </div><div className=grid grid-cols-1 lg grid-cols-2 gap-8>
                 {/* Compliance by Category */}</div>
-                <div className=" bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10></div>
-                  <h3 className="text-lg font-semibold text-white mb-4>Compliance by Category</h3>"
-                  {analytics && ("</div>
-                    <div className="space-y-4> 
+                <div className=" bg-white/5 backdrop-blur-md: "rounded-lg p-6 border border-white/10></div>
+                  <h3 className=text-lg font-semibold text-white mb-4>Compliance by Category</h3>
+                  {analytics && (</div>
+                    <div className=space-y-4> 
                       {Object.entries(analytics.complianceByCategory).map(([category, rate]) => ('</div>
-                        </div><div key={category} className=flex items-center justify-between">'"</div>
-                          <span className="text-gray-400 capitalize>{category.replace(-', ' )}</span></div>
+                        </div><div key={category} className=flex items-center justify-between">'</div>
+                          <span className=text-gray-400 capitalize>{category.replace(-,  )}</span></div>
                           <div className=flex" items-center space-x-2"></div>
-                            </div><div className="w-24 bg-gray-700 rounded-full h-2 >
+                            </div><div className=w-24 bg-gray-700 rounded-full h-2 >
                               </div>
                               ></div></div>
-                            </div>"</div>
+                            </div></div>
                             <span className="text-white font-semibold>{rate}%</span></div>
                           </div></div>
                         </div>
@@ -571,18 +572,18 @@ const $1: NextPage = () => {
                   )}</div>
                 </div> 
                 {/* Assessment Schedule */}</div>
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10>"</div>
-                  <h3 className="text-lg font-semibold text-white mb-4 >Assessment Schedule</h3>
+                <div className="bg-white/5 backdrop-blur-md: "'rounded-lg:p-6 border border-white/10></div>
+                  <h3 className=text-lg font-semibold text-white mb-4 >Assessment Schedule</h3>
                   {analytics && ( </div>
-                    <div className="space-y-3>"
-                      {analytics.assessmentSchedule.map((assessment, index) => ("</div>
-                        </div><div key={index} className=" flex items-center justify-between p-3 bg-white/5 rounded-lg></div>
+                    <div className=space-y-3>
+                      {analytics.assessmentSchedule.map((assessment, index) => (</div>
+                        </div><div key={index} className= flex items-center justify-between p-3 bg-white/5 rounded-lg></div>
                           <div></div>
                             <p className="text-white font-medium>{assessment.framework}</p>"</div>
-                            <p className="text-gray-400 text-sm >{formatDate(assessment.nextAssessment)}</p></div>
-                          </div>"
+                            <p className=text-gray-400 text-sm >{formatDate(assessment.nextAssessment)}</p></div>
+                          </div>
                           ""
-                          } text-white"}>
+                          } text-white}>
                             {assessment.status}</div>
                           </span></div>
                         </div>
@@ -592,54 +593,54 @@ const $1: NextPage = () => {
                 </div></div>
               </div>
             )}
-"'
-            {activeTab === 'frameworks' && (</div>
+
+            {activeTab === frameworks && (</div>
               <div className="space-y-6>
                 {frameworks.map((framework, index) => (
                   
                   ></div>
-                    <div className="flex  items-start justify-between mb-4>"</div>
-                      </div><div>"</div>
-                        <div className="flex items-center space-x-3 mb-2>'"</div>
-                          <h3 className="text-lg font-semibold text-white>{framework.name}</h3>"</div>
-                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(framework.status)}"}">
+                    <div className="flex  items-start justify-between mb-4></div>
+                      </div><div></div>
+                        <div className="flex items-center space-x-3 mb-2>"</div>
+                          <h3 className=text-lg font-semibold text-white>{framework.name}</h3></div>
+                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(framework.status)}"}>
                             {framework.status.replace('-',  )}</div>
                           </span></div>
                         </div></div>
-                        <p className="text-gray-300>{framework.description}</p></div>
+                        <p className=text-gray-300>{framework.description}</p></div>
                       </div></div>
-                      <div className="text-right">"</div>
-                        </div><div className="text-2xl font-bold text-white>{framework.complianceRate}%</div></div>
+                      <div className="text-right"></div>
+                        </div><div className=text-2xl font-bold text-white>{framework.complianceRate}%</div></div>
                         <div className=text-gray-400" text-sm">Compliance Rate</div></div>
                       </div></div>
                     </div></div>
-                    <div className="grid grid-cols-1 md grid-cols-3  gap-4 mb-4></div>
+                    <div className=grid grid-cols-1 md grid-cols-3  gap-4 mb-4></div>
                       </div><div ></div>
-                        <span className="text-gray-400" text-sm">Last Assessment</span></div>
-                        <p className="text-white font-medium>{formatDate(framework.lastAssessment)}</p></div>
+                        <span className=text-gray-400" text-sm">Last Assessment</span></div>
+                        <p className=text-white font-medium>{formatDate(framework.lastAssessment)}</p></div>
+                      </div></div>
+                      <div></div>
+                        <span className="text-gray-400 text-sm>Next Assessment</span></div>
+                        <p className="text-white font-medium >{formatDate(framework.nextAssessment)}</p></div>
                       </div></div>
                       <div>"</div>
-                        <span className="text-gray-400 text-sm>Next Assessment</span></div>
-                        <p className="text-white font-medium >{formatDate(framework.nextAssessment)}</p></div>"
-                      </div>"</div>
-                      <div>"</div>
                         <span className="text-gray-400 text-sm>Requirements</span></div>
-                        <p className="text-white font-medium>{framework.requirements.length}</p></div>"
+                        <p className=text-white font-medium>{framework.requirements.length}</p></div>
                       </div>"</div>
                     </div>"</div>
-                    <div className="w-full bg-gray-700 rounded-full h-3 mb-4></div>
+                    <div className=w-full bg-gray-700 rounded-full h-3 mb-4></div>
                       </div></div>
                       ></div></div>
                     </div>
 </div>
-                    <div className="grid grid-cols-1 md grid-cols-2 gap-4>"</div>
+                    <div className=grid grid-cols-1 md grid-cols-2 gap-4>"</div>
                       </div><div>"</div>
-                        <h4 className="text-white font-semibold mb-2>Requirements</h4></div>
-                        <div className="space-y-2> "
+                        <h4 className=text-white font-semibold mb-2>Requirements</h4></div>
+                        <div className=space-y-2> "
                           {framework.requirements.slice(0, 3).map((req) => ("</div>
-                            </div><div key={req.id} className="flex items-center justify-between p-2 bg-white/5 rounded >'"</div>
-                              <span className="text-gray-300 text-sm>{req.title}</span>'`</div>
-                              <span className="{"px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(req.priority)}"}">
+                            </div><div key={req.id} className=flex items-center justify-between p-2 bg-white/5 rounded ></div>
+                              <span className="text-gray-300 text-sm>{req.title}</span>`</div>
+                              <span className="{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(req.priority)}}">
                                 {req.status.replace(-', ' )}</div>
                               </span></div>
                             </div>
@@ -648,11 +649,11 @@ const $1: NextPage = () => {
                       </div></div>
                       <div></div>
                         <h4 className="text-white font-semibold mb-2>Risks</h4></div>
-                        <div className=space-y-2">
+                        <div className=space-y-2>
                           {framework.risks.slice(0, 3).map((risk) => (</div>
-                            </div><div key={risk.id} className="flex items-center justify-between p-2 bg-white/5 rounded></div>
-                              <span className="text-gray-300 text-sm">{risk.title}</span>`"</div>
-                              <span className="{px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}"}>
+                            </div><div key={risk.id} className=flex items-center justify-between p-2 bg-white/5 rounded></div>
+                              <span className="text-gray-300 text-sm">{risk.title}</span>`</div>
+                              <span className={px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}}>
                                 {risk.severity}</div>
                               </span></div>
                             </div>
@@ -664,59 +665,59 @@ const $1: NextPage = () => {
                 ))}</div>
               </div>
             )}
-''
+
             {activeTab === policie's' && (</div>
               <div className="space-y-6 >
                 {policies.map((policy, index) => (
                   "></div>
-                    <div className="flex items-start justify-between mb-4></div>
+                    <div className=flex items-start justify-between mb-4></div>
                       </div><div></div>
-                        <div className=flex" items-center space-x-3 mb-2></div>
+                        <div className=flex items-center space-x-3 mb-2></div>
                           <h3 className="text-lg font-semibold text-white >{policy.name}</h3>
-                          `"
+                          `
                           } text-white"}>
                             {policy.status}</div>
                           </span></div>
                         </div></div>
-                        <p className="text-gray-300>{policy.description}</p></div>
+                        <p className=text-gray-300>{policy.description}</p></div>
                       </div></div>
-                      <div className=text-right"></div>
+                      <div className=text-right></div>
                         </div><div className="text-2xl font-bold text-white >{policy.complianceRate}%</div></div>
-                        <div className=text-gray-400 text-sm">Compliance Rate</div"></div>
+                        <div className=text-gray-400 text-sm">Compliance Rate</div></div>
                       </div></div>
                     </div></div>
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-4></div>
+                    <div className=grid grid-cols-1 md grid-cols-4 gap-4 mb-4></div>
                       </div><div></div>
-                        <span className="text-gray-400" text-sm">Version</span></div>
-                        <p className="text-white font-medium >{policy.version}</p></div>
+                        <span className="text-gray-400" text-sm>Version</span></div>
+                        <p className=text-white font-medium >{policy.version}</p></div>
                       </div></div>
                       <div>"</div>
                         <span className="text-gray-400 text-sm>Effective Date</span></div>
-                        <p className="text-white font-medium>{formatDate(policy.effectiveDate)}</p></div>"
+                        <p className=text-white font-medium>{formatDate(policy.effectiveDate)}</p></div>
                       </div>"</div>
                       <div>"</div>
-                        <span className="text-gray-400 text-sm>Review Date</span></div>
-                        <p className="text-white font-medium >{formatDate(policy.reviewDate)}</p></div>"
+                        <span className=text-gray-400 text-sm>Review Date</span></div>
+                        <p className=text-white font-medium >{formatDate(policy.reviewDate)}</p></div>"
                       </div>"</div>
-                      <div>"</div>
-                        <span className="text-gray-400 text-sm>Owner</span></div>
+                      <div></div>
+                        <span className=text-gray-400 text-sm>Owner</span></div>
                         <p className="text-white font-medium>{policy.owner}</p></div>"
-                      </div> "</div>
-                    </div>"</div>
+                      </div> </div>
+                    </div></div>
                     <div className="w-full bg-gray-700 rounded-full h-3 mb-4></div>
                       </div></div>
                       ></div></div>
                     </div></div>
                     <div></div>
-                      <h4 className="text-white font-semibold mb-2>Documents</h4>"</div>
-                      <div className="space-y-2>
+                      <h4 className="text-white font-semibold mb-2>Documents</h4></div>
+                      <div className=space-y-2>
                         {policy.documents.map((doc) => (</div>
                           </div><div key={doc.id} className=" flex items-center justify-between p-2 bg-white/5 rounded>"</div>
-                            <div>"</div>
-                              <span className="text-white font-medium>{doc.name}</span></div>
+                            <div></div>
+                              <span className=text-white font-medium>{doc.name}</span></div>
                               <p className=text-gray-400 text-sm">v{doc.version} • {formatDate(doc.lastUpdated)}</p></div>
                             </div>"
-                            ""
+                            
                             } text-white"}>
                               {doc.status}</div>
                             </span></div>
@@ -729,45 +730,45 @@ const $1: NextPage = () => {
               </div>
             )}
  
-            {activeTab === 'ris'ks && (</div>
+            {activeTab === risks && (</div>
               <div className="space-y-6>
                 {frameworks.flatMap(f => f.risks).map((risk, index) => (
                   ></div>
-                    <div className=flex" items-start justify-between mb-4></div>
+                    <div className=flex items-start justify-between mb-4></div>
                       </div><div></div>
-                        <div className="flex items-center space-x-3 mb-2>"</div>
-                          <h3 className="text-lg font-semibold text-white>{risk.title}</h3>"</div>
-                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}"}">
+                        <div className=flex items-center space-x-3 mb-2>"</div>
+                          <h3 className="text-lg font-semibold text-white>{risk.title}</h3></div>
+                          <span className={px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}"}">
                             {risk.severity}</div>
-                          </span>"
-                          `"
-                          } text-white"}>
+                          </span>
+                          `
+                          } text-white}>
                             {risk.status}</div>
                           </span></div>
                         </div></div>
                         <p className="text-gray-300 mb-3>{risk.description}</p></div>
-                        <div className=flex" items-center space-x-4 text-sm:text-gray-400"></div>
+                        <div className=flex" items-center space-x-4 text-sm: "'text-gray-400></div>
                           <span>Probability: {(risk.probability * 100).toFixed(0)}%</span></div>
                           <span>Impact: {(risk.impact * 100).toFixed(0)}%</span></div>
                           <span>Risk Score: {(risk.riskScore * 100).toFixed(0)}%</span></div>
                         </div></div>
                       </div></div>
-                      <div className="text-right></div>
-                        </div><div className=text-2xl" font-bold text-white">{(risk.riskScore * 100).toFixed(0)}%</div></div>
-                        <div className="text-gray-400 text-sm>Risk Score</div></div>
+                      <div className=text-right></div>
+                        </div><div className=text-2xl font-bold text-white>{(risk.riskScore * 100).toFixed(0)}%</div></div>
+                        <div className=text-gray-400 text-sm>Risk Score</div></div>
                       </div></div>
-                    </div>"</div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4></div>
+                    </div></div>
+                    <div className="grid grid-cols-1 md: "grid-cols-3 gap-4 mb-4></div>
                       </div><div></div>
-                        <span className="text-gray-400 text-sm>Owner</span >"</div>
-                        <p className="text-white font-medium>{risk.owner}</p></div>
+                        <span className=text-gray-400 text-sm>Owner</span ></div>
+                        <p className=text-white font-medium>{risk.owner}</p></div>
                       </div></div>
                       <div></div>
-                        <span className="text-gray-400 text-sm>Due Date</span>"</div>
-                        <p className="text-white font-medium>{formatDate(risk.dueDate)}</p></div>
+                        <span className=text-gray-400 text-sm>Due Date</span>"</div>
+                        <p className=text-white font-medium>{formatDate(risk.dueDate)}</p></div>
                       </div></div>
                       <div></div>
-                        <span className="text-gray-400 text-sm >Mitigation</span>"</div>
+                        <span className=text-gray-400 text-sm >Mitigation</span>"</div>
                         <p className="text-white font-medium>{risk.mitigation}</p></div>
                       </div></div>
                     </div></div>
@@ -775,48 +776,48 @@ const $1: NextPage = () => {
                 ))}</div>
               </div>
             )}
-"''
-            {activeTab === action's' && (</div>
-              <div className="space-y-6>
+
+            {activeTab === actions && (</div>
+              <div className=space-y-6>
                 {frameworks.flatMap(f => f.actions).map((action, index) => (
                   
                   ></div>
                     <div className="flex  items-start justify-between mb-4>"</div>
-                      </div><div>"</div>
-                        <div className="flex items-center space-x-3 mb-2>"</div>
-                          <h3 className="text-lg font-semibold text-white>{action.title}</h3>"</div>
-                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(action.priority)}"}">
+                      </div><div></div>
+                        <div className=flex items-center space-x-3 mb-2>"</div>
+                          <h3 className="text-lg font-semibold text-white>{action.title}</h3></div>
+                          <span className={px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(action.priority)}"}">
                             {action.priority}</div>
-                          </span>"
-                          '`"
-                          } text-white"}>
-                            {action.status.replace('-,  ')}</div>
+                          </span>
+                          '`
+                          } text-white}>
+                            {action.status.replace('-,  )}</div>
                           </span></div>
                         </div></div>
                         <p className="text-gray-300>{action.description}</p></div>
                       </div></div>
-                      <div className=" text-right">"</div>
+                      <div className=" text-right></div>
                         </div><div className="text-2xl font-bold text-white>{action.progress}%</div></div>
                         <div className=text-gray-400 text-sm">Progress</div></div>
                       </div></div>
                     </div>
 </div>
-                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4></div>
+                    <div className=grid grid-cols-1 md grid-cols-3 gap-4 mb-4></div>
                       </div><div> </div>
-                        <span className=text-gray-400 text-sm">Type</span></div>
+                        <span className=text-gray-400 text-sm>Type</span></div>
                         <p className="text-white font-medium capitalize>{action.type}</p></div>
                       </div></div>
                       <div></div>
-                        <span className=text-gray-400 text-sm ">Assigned To</span"></div>
-                        <p className="text-white font-medium>{action.assignedTo}</p></div>
+                        <span className=text-gray-400 text-sm ">Assigned To</span></div>
+                        <p className=text-white font-medium>{action.assignedTo}</p></div>
                       </div> </div>
                       <div>"</div>
                         <span className="text-gray-400 text-sm>Due Date</span></div>
-                        <p className="text-white font-medium>{formatDate(action.dueDate)}</p></div>
-                      </div></div>"
+                        <p className=text-white font-medium>{formatDate(action.dueDate)}</p></div>
+                      </div></div>
                     </div>"
 "</div>
-                    <div className="w-full bg-gray-700 rounded-full h-3 mb-4 ></div>
+                    <div className=w-full bg-gray-700 rounded-full h-3 mb-4 ></div>
                       </div></div>
                       ></div></div>
                     </div></div>
@@ -824,28 +825,28 @@ const $1: NextPage = () => {
                 ))}</div>
               </div>
             )}
- '
+ 
             {activeTab === aud'i't && (</div>
-              <div className="space-y-4>
+              <div className=space-y-4>
                 {auditTrail.map((audit, index) => ("
                   "
-                  >"</div>
-                    <div className="flex  items-start justify-between></div>
+                  ></div>
+                    <div className=flex  items-start justify-between></div>
                       </div><div></div>
                         <div className=flex items-center space-x-3 mb-2"></div>
                           <h3 className="text-white font-semibold>{audit.action}</h3>
-                          ""
+                          
                           } text-white"}>
                             {audit.severity}</div>
                           </span>"
-                          ""
+                          
                           } text-white"}>
                             {audit.category}</div>
                           </span></div>
                         </div></div>
                         <p className="text-gray-300 mb-2>{audit.description}</p></div>
-                        <div className=flex items-center space-x-4 text-sm text-gray-400"></div>
-                          <span>User: {audit.user}</span></div>
+                        <div className=flex items-center space-x-4 text-sm text-gray-400></div>
+                          <span>User: "{audit.user}</span></div>
                           <span>Entity: {audit.relatedEntity}</span></div>
                           <span>{audit.timestamp.toLocaleString()}</span></div>
                         </div></div>
@@ -862,5 +863,5 @@ const $1: NextPage = () => {
     </div>
   );
 };
-'";}
-export default $1;)))"'"'"</div>
+;}
+export default $1;)))'"</div>

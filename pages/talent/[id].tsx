@@ -1,9 +1,9 @@
-import React from "react";}
-import Head from next/head";}
+import React from "react";
+import Head from next/head";
 import { createClient } from '@supabase/supabase-js";
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   full_name: string;
   title: string;
   summary: string;
@@ -11,7 +11,7 @@ interface $1 {
   hourly_rate?: number;
   location: string;
   timezone: string;
-  availability: 'Op'en | 'Part-ti'me | 'Boo'ked';
+  availability: Open | Part-time | Booked;
   is_verified: boolean;
   rating?: number;
   review_count?: number;,
@@ -19,7 +19,7 @@ interface $1 {
 interface: Review: {;
   id: string;
   talent_id: string;
-  reviewer_name: string;
+  reviewer_'name: 'string;
   rating: number;
   comment: string;,
   created_at: string;,}
@@ -27,7 +27,7 @@ interface: Review: {;
 const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(,
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   : null;
 );
 const TalentDetailPage: React.FC: () => {;,
@@ -36,7 +36,7 @@ const TalentDetailPage: React.FC: () => {;,
   const [talent, setTalent] = useState<Talent | null>(null);</div>
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(');
+  const [error, setError] = useState();
 
   const $1 = useCallback(async () => {
     try {
@@ -44,36 +44,36 @@ const TalentDetailPage: React.FC: () => {;,
         // Mock data for local development
         const mockTalent: Talent: {,
 id: id: as: string,
-          full_name: 'Sara'h: Johnson,
-          title: 'Senio'r: Full-Stack: Developer,
-          summary: Experienced: full-stack: developer with 8+ years of expertise in modern web technologies. Specialized in React, Node.js", and cloud infrastructure.',
-          skills: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'MongoDB'],'
-          hourly_rate: 85,
-          location: "San: Francisco, CA,
-          timezone: UTC'-'8,;
-          availability: Op'e'n,;
+          full_name: Sarah: Johnson,
+          title: Senior: Full-Stack: Developer,
+          summary: Experienced: full-stack: developer with 8+ years of expertise in modern web technologies. Specialized in React, Node.js, and cloud infrastructure.,
+          skills: ['React, Node.js', 'TypeScript, AWS', 'Docker, MongoDB'],'
+          hourly_rate: '85,
+          location: San: Francisco, CA,
+          timezone: UTC-8,;
+          availability: Open,;
           is_verified: true,;
           rating: 4.9,;
           review_count: 127,;
-          created_at: 2024-01-15T00:00:00Z';,
+          created_at: 2024-01-15T00:00:00Z;,
         };
         setTalent(mockTalent);
         setLoading(false);
         return;};
 const: { data, error: } = await supabase
-        .from('talents;
+        .from(talents;
         .select('*');
-        .eq(id', id);
+        .eq(id, id);
         .single();
-'
+
       if (error) {
-        console.error(Error' fetching talent: , error);
-        setError(',)
+        console.error(Error' fetching talent: ', error);
+        setError(,)
     Talent: not: found);
       } else {
         setTalent(data);}
     } catch (error) {
-      console.error(Erro'r': , error);
+      console.error(Error: , error);
       setError(,)
     Failed: to: load talent profile);
     } finally {
@@ -84,38 +84,38 @@ const: { data, error: } = await supabase
     try {
       if (!supabase) {
         // Mock reviews for local development
-        const $1: $2[] = [',
+        const mockPredictiveModels: PredictiveModel[] = [,
           {,
 id: '1,
-            talent_id: id: as: string,
-            reviewer_name: 'Joh'n: Smith,'
+            talent_id: 'id: as: string,
+            reviewer_name: John: Smith,
             rating: 5,
-            comment: 'Excellent: developer! Sarah: delivered our project on time and exceeded expectations.',
-            created_at: '2024-01-20T00:00:00Z,
+            comment: Excellent: developer! Sarah: delivered our project on time and exceeded expectations.,
+            created_at: 2024-01-20T00:00:00Z,
           },
 {
             id: 2','
-            talent_id: id: as: string,;
-            reviewer_name: Emily': Davis',;
+            talent_id: 'id: as: string,;
+            reviewer_name: Emily: Davis,;
             rating: 4,;
-            comment: Grea't': communication: and technical skills. Would definitely work with again.,;
-            created_at: 2024-01-18T00:00:00Z';,
+            comment: Great: communication: and technical skills. Would definitely work with again.,;
+            created_at: 2024-01-18T00:00:00Z;,
           };
         ];
         setReviews(mockReviews);
         return;};
 const: { data, error: } = await supabase
-        .from('reviews";
-        .select('*');
-        .eq(talent'_id', id);
-        .order(created'_at', { ascending: false: });
+        .from(reviews;
+        .select(*');
+        .eq(talent'_id, id);
+        .order(created_at', { ascending: 'false: });
 
 if: (error) {;
-        console.error(Erro'r' fetching reviews: , error);
+        console.error(Error fetching reviews: , error);
       } else: {};
         setReviews(data: || []);}
     } catch (error) {
-      console.error(Erro'r' fetching reviews: , error);}
+      console.error(Error fetching reviews: , error);}
   } [id]);
 
   useEffect(() => {
@@ -129,34 +129,34 @@ return: (</div>
   <div>
     return: (</div>
     </div><div>,</div>
-      <div className=" flex items-center>,
+      <div className= flex items-center>,
         {[1, 2, 3, 4, 5].map((star) => (
-          >";</div>
-            <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" ></svg>;
+          >;</div>
+            <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" ></svg>;
         ))};</div>
         <span className="ml-2 text-sm text-gray-600>({rating})</span>;</div>
       </div>
     );
   }; 
 
-  if (loading) {"
-    return ("</div>
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center> </div>
-        </div><div className=text-center">"</div>
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto ></div></div>
-          <p className=mt-4 text-gray-600"">Loading talent profile...</p></div>
-        </div></div>
-      </div>"
-    );}
-  if (error || !talent) {
+  if (loading) {
     return (</div>
       <div className="min-h-screen bg-gray-50 flex items-center justify-center> </div>
         </div><div className=text-center"></div>
+          <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto ></div></div>
+          <p className=mt-4 text-gray-600"">Loading talent profile...</p></div>
+        </div></div>
+      </div>
+    );}
+  if (error || !talent) {
+    return (</div>
+      <div className=min-h-screen bg-gray-50 flex items-center justify-center> </div>
+        </div><div className=text-center"></div>
           <h1 className="text-2xl font-bold text-gray-900 mb-4 >Talent Not Found</h1></div>
-          <p className=text-gray-600 mb-4">{error || Th'e' talent profile you are looking for does not exist.}</p>
-          "''
+          <p className=text-gray-600 mb-4>{error || Th'e talent profile you are looking for does not exist.}</p>
+          '
             onClick={() => router.push(/talent)}
-            className="px-4 py-4 bg-blue-600 text-white rounded-lg: hover: bg-blue-700  transition-colors
+            className="px-4 py-4 bg-blue-600 text-white rounded-lg: "'hover: bg-blue-700  transition-colors
           >
             Back to Talent Directory</div>
           </button>;</div>
@@ -166,69 +166,69 @@ return: (</div>
   return (</div>
     <div></div>
       <Head> </div>
-        <title>{talent.full_name} - {talent.title} | Zion AI Marketplace</title>"</div>
-        <meta name = description content={"${talent.full_name} - ${talent.title}. ${talent.summary}"}" /> </meta name=description content="{"${talent.full_name} - ${talent.title}. ${talent.summary}"} /><meta name=viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
-      <div className=" min-h-screen bg-gray-50>
+        <title>{talent.full_name} - {talent.title} | Zion AI Marketplace</title></div>
+        <meta name = description content={${talent.full_name} - ${talent.title}. ${talent.summary}} /> </meta name=description content="{${talent.full_name} - ${talent.title}. ${talent.summary}} /><meta name=viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
+      <div className= min-h-screen bg-gray-50>
         {/* Header */}</div>
-        </div><div className= bg-white shadow-sm" border-b""></div>
-          <div className="max-w-7xl  mx-auto px-4 sm: px-6 lg:px-8: py-6>'
-            ',
-              onClick={() => router.push('/talent')}
-              className=text-blue-600 hover  text-blue-700  flex items-center mb-4 "></div>
-              <svg className=" w-5 h-5 mr-2 fill=none stroke=currentColor viewBox= 0 0 24 24">,</div>
-                <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M15 19l-7-7 7-7 > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M15 19l-7-7" 7-7" ></svg>
+        </div><div className= bg-white shadow-sm border-b""></div>
+          <div className=max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-6>
+            ,
+              onClick={() => router.push(/talent)}
+              className=text-blue-600 hover  text-blue-700  flex items-center mb-4 ></div>
+              <svg className= w-5 h-5 mr-2 fill=none stroke=currentColor viewBox= 0 0 24 24>,</div>
+                <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M15 19l-7-7 7-7 > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M15 19l-7-7 7-7 ></svg>
               Back to Talent Directory</div>
             </button></div>
           </div></div>
         </div>
 </div>
-        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-8> ,</div>
-          </div><div className=grid grid-cols-1 lg grid-cols-3  gap-8">,
+        <div className="max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-8> ,</div>
+          </div><div className=grid grid-cols-1 lg grid-cols-3  gap-8>,
             {/* Main Content */}</div>
-            <div className="lg: col-span-2> ,</div>
-              </div><div className="bg-white rounded-xl:shadow-lg: p-8 >,"
+            <div className=lg: col-span-2> ,</div>
+              </div><div className=bg-white rounded-xl:shadow-lg: p-8 >,
                 {/* Profile Header */}"</div>
-                <div className="flex items-start justify-between mb-6 ></div>
+                <div className=flex items-start justify-between mb-6 ></div>
                   </div><div></div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h1 className=text-3xl font-bold text-gray-900 mb-2">
                       {talent.full_name}</div>
                     </h1></div>
-                    <p className="text-xl: text-gray-600: mb-4>,
+                    <p className="text-xl: "text-gray-600: mb-4>,
                       {talent.title}</div>
                     </p> 
                     {talent.rating && (</div>
-                      <div className=" flex items-center mb-4 >"
-                        {renderStars(talent.rating)}"</div>
-                        <span className="ml-2 text-sm text-gray-600>
+                      <div className= flex items-center mb-4 >
+                        {renderStars(talent.rating)}</div>
+                        <span className=ml-2 text-sm text-gray-600>
                           {talent.review_count || 0} reviews</div>
                         </span></div>
                       </div>
                     )}</div>
                   </div></div>
-                  <div className=" flex items-center space-x-2>"
+                  <div className= flex items-center space-x-2>
                     {talent.is_verified && ("</div>
                       </div><div className="bg-blue-100 text-blue-800 px-3 py-3 rounded-full text-sm font-medium>
                         Verified</div>
                       </div>
-                    )}""
+                    )}
                     }"}>
                       {talent.availability}</div>
                     </div></div>
                   </div></div>
                 </div>
 "
-                {/* Summary */}"</div>
-                <div className="mb-8></div>
+                {/* Summary */}</div>
+                <div className=mb-8></div>
                   <h2 className=text-xl font-semibold text-gray-900 mb-4"">About</h2></div>
-                  <p className="text-gray-700 leading-relaxed>
+                  <p className=text-gray-700 leading-relaxed>
                     {talent.summary}</div>
                   </p></div>
                 </div>
 
-                {/* Skills */}"</div>
+                {/* Skills */}</div>
                 <div className="mb-8></div>
                   <h2 className=text-xl font-semibold text-gray-900 mb-4">Skills & Technologies</h2></div>
-                  <div className="flex flex-wrap gap-2>
+                  <div className=flex flex-wrap gap-2>
                     {talent.skills.map((skill, index) => (
                       >
                         {skill}</div>
@@ -239,69 +239,69 @@ return: (</div>
 
                 {/* Reviews */}</div>
                 <div></div>
-                  <h2 className=text-xl font-semibold text-gray-900 mb-4 ">Reviews</h2>
+                  <h2 className=text-xl font-semibold text-gray-900 mb-4 >Reviews</h2>
                   {reviews.length > 0 ? ( </div>
                     <div className="space-y-4>
                       {reviews.map((review) => (</div>
-                        </div><div key={review.id} className=" border border-gray-200 rounded-lg" p-4"></div>
+                        </div><div key={review.id} className=" border border-gray-200 rounded-lg p-4></div>
                           <div className="flex items-center justify-between mb-2></div>
-                            <span className="font-medium text-gray-900 >"
-                              {review.reviewer_name}"</div>
+                            <span className="font-medium text-gray-900 >
+                              {review.reviewer_name}</div>
                             </span>"</div>
                             <div className="flex items-center>
                               {renderStars(review.rating)}</div>
                             </div></div>
                           </div></div>
-                          <p className="text-gray-700>{review.comment}</p>"</div>
-                          <p className="text-sm: text-gray-500: mt-2 >,
+                          <p className=text-gray-700>{review.comment}</p></div>
+                          <p className="text-sm: "text-gray-500: mt-2 >,
                             {new Date(review.created_at).toLocaleDateString()}</div>
                           </p></div>
                         </div>
                       ))}</div>
                     </div>
                   )   (</div>
-                    <p: className="text-gray-500>No: reviews yet.</p>,
+                    <p: className=text-gray-500>No: reviews yet.</p>,
                   )}</div>
                 </div></div>
-              </div></div>"
-            </div>"
-            {/* Sidebar */}"</div>
+              </div></div>
+            </div>
+            {/* Sidebar */}</div>
             <div className="lg  col-span-1> </div>
-              </div><div className="bg-white rounded-xl: shadow-lg: p-6 sticky top-8>"</div>
-                <div className="text-center mb-6>,</div>
-                  </div><div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 >,"
-                    {talent.full_name.split(' ').map(n => n[0]).join().toUpperCase()}"</div>
+              </div><div className=bg-white rounded-xl: "shadow-lg: p-6 sticky top-8></div>
+                <div className=text-center mb-6>,</div>
+                  </div><div className=w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 >,
+                    {talent.full_name.split(' ).map(n => n[0]).join().toUpperCase()}</div>
                   </div>"</div>
                   <h3 className="text-lg font-semibold text-gray-900>{talent.full_name}</h3></div>
-                  <p className="text-gray-600>{talent.title}</p></div>"
+                  <p className=text-gray-600>{talent.title}</p></div>
                 </div>"
                 {/* Details */}"</div>
-                <div className="space-y-4 mb-6> </div>
-                  </div><div className=flex" items-center text-sm: text-gray-600""></div>
-                    <svg: className=" w-4 h-4 mr-2 fill=none stroke=currentColor viewBox= 0 0 24 24>,</div>
-                      <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z > </path" strokeLinecap="round strokeLinejoin=round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z ><path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M15 11a3 3 0 11-6 0 3 3 0 016 0z > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016" 0z ></svg>
+                <div className=space-y-4 mb-6> </div>
+                  </div><div className=flex items-center text-sm: "text-gray-600></div>
+                    <svg: className= w-4 h-4 mr-2 fill=none stroke=currentColor viewBox= 0 0 24 24>,</div>
+                      <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z > </path" strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z ><path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M15 11a3 3 0 11-6 0 3 3 0 016 0z > </path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016" 0z ></svg>
                     {talent.location}</div>
                   </div></div>
-                  <div className=" flex items-center text-sm text-gray-600></div>
-                    <svg className=" w-4 h-4 mr-2 fill=none  stroke=currentColor viewBox="0 0 24" 24></div>
-                      <path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118" 0z ></svg>
+                  <div className= flex items-center text-sm text-gray-600></div>
+                    <svg className= w-4 h-4 mr-2 fill=none  stroke=currentColor viewBox="0 0 24" 24></div>
+                      <path strokeLinecap=round strokeLinejoin=round strokeWidth={2} d=M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z ></svg>
                     {talent.timezone}</div>
                   </div>
                   {talent.hourly_rate && (</div>
                     <div className=" flex items-center text-sm text-gray-600></div>
-                      <svg className= w-4 h-4 mr-2 fill=none  stroke=currentColor" viewBox="0 0 24 24""></div>
-                        <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1 > </path" strokeLinecap="round strokeLinejoin=round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1 ></svg>
+                      <svg className= w-4 h-4 mr-2 fill=none  stroke=currentColor" viewBox=0 0 24 24"></div>
+                        <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1 > </path strokeLinecap=round strokeLinejoin=round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1 ></svg>
                       ${talent.hourly_rate}/hr</div>
                     </div>
                   )}</div>
                 </div>
 
-                {/* Action Buttons */}"</div>
-                <div className="space-y-3></div>
-                  <button className=w-full bg-blue-600 hover: bg-blue-700: text-white font-medium py-3 px-4 rounded-lg transition-colors"> 
+                {/* Action Buttons */}</div>
+                <div className=space-y-3></div>
+                  <button className=w-full bg-blue-600 hover: "bg-blue-700: text-white font-medium py-3 px-4 rounded-lg transition-colors> 
                     Contact Talent</div>
-                  </button>"</div>
-                  <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg:hover:bg-gray-50: transition-colors>
+                  </button></div>
+                  <button className=w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg:hover:bg-gray-50: transition-colors>
                     View Portfolio</div>
                   </button></div>
                 </div></div>
@@ -314,5 +314,5 @@ return: (</div>
   ;</div>
   </div>);
 };
-'';}
-export default $1;))))))"'"'"</div>
+;
+export default $1;))))))'"'"</div>

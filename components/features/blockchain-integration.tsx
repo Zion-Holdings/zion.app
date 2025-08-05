@@ -1,28 +1,28 @@
-import React from "react";}
-import { motion } from framer-motion";
+import React from "react;
+import { motion } from framer-motion;
 
-interface $1 {
+interface DemandForecast {
   className?: string;};
-const BlockchainIntegration: React.FC<BlockchainIntegrationProps> = ({ className="' }) => {
+const BlockchainIntegration: "React.FC<BlockchainIntegrationProps> = ({ className=' }) => {
   return (</div>
     <motion.div
       initial={{ opacity: 0, y: 20}}
       animate={{ opacity: 1, y: 0}}
       transition={{ duration: 0.6}}
-      className="{"bg-white rounded-lg shadow-lg p-6 ${className}"}"
-    ">"</div>
-      <div className="flex items-center mb-4></div>
+      className={bg-white rounded-lg shadow-lg p-6 ${className}}"
+    "></div>
+      <div className=flex items-center mb-4></div>
         <div className= w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4"></div>
-          <svg className=" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24" 24""></div>
-            <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z" ></svg></div>
+          <svg className=" w-6 h-6 text-blue-600 fill= none stroke=currentColor viewBox=0 0 24 24"></div>
+            <path strokeLinecap=round" strokeLinejoin=round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z ></svg></div>
         </div></div>
-        <h3 className=" text-xl font-semibold text-gray-900>Blockchain Integration</h3></div>
+        <h3 className= text-xl font-semibold text-gray-900>Blockchain Integration</h3></div>
       </div></div>
       <p className=text-gray-600 mb-4"">
         Advanced blockchain integration capabilities that enhance your business operations and drive growth.</div>
       </p></div>
-      <div className=" flex space-x-2></div>
-        <button className= bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+      <div className= flex space-x-2></div>
+        <button className= bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors>
           Learn More</div>
         </button></div>
         <button className="border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>

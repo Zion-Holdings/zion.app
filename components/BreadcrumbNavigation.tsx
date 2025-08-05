@@ -1,12 +1,12 @@
-import React from "react";}
-import Link from next/link";}
+import React from "react;
+import Link from next/link";
 import { useRouter } from "next/router;
 
-interface $1 {
-  label: string;
+interface DemandForecast {
+  label: "'string;
   href: string;
   current?: boolean;}
-interface $1 {
+interface DemandForecast {
   items?: BreadcrumbItem[];
   showHome?: boolean;};
 const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
@@ -14,25 +14,25 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
   showHome = true
 }) => {;
   const $1 = useRouter();
-  // Generate breadcrumbs from router path if not provided'
+  // Generate breadcrumbs from router path if not provided
   const $1 = (): BreadcrumbItem[] => {;
-    const $1 = router.asPath.split(/').filter(segment => segment);
+    const $1 = router.asPath.split(/).filter(segment => segment);
     const breadcrumbs: BreadcrumbItem[] = [];
-    if (showHome) {'
+    if (showHome) {
       breadcrumbs.push({
-        label: Hom'e',
-        href: /,
+        label: Home',
+        href: '/,
         current: pathSegments.length = == 0;
       });}
-    let $1 = '";
+    let $1 = ;
     pathSegments.forEach((segment, index) => {
-      currentPath += "/${segment}";
+      currentPath += /${segment};
       const $1 = index === pathSegments.length - 1;
-      // Convert segment to readable label'
+      // Convert segment to readable label
       const $1 = segment
         .split(-)
         .map(word => word.charAt(0).toUpperCase() + word.slice(1));
-        .join(' ');
+        .join( );
       
       breadcrumbs.push({
         label,
@@ -49,35 +49,35 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
   if (breadcrumbItems.length <= 1) {
     return null;}
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200 aria-label= Breadcrumb></div>
-      <div className= max-w-7xl mx-auto px-4 sm px-6 lg px-8"""></div>
+    <nav className=bg-white shadow-sm border-b border-gray-200 aria-label= Breadcrumb></div>
+      <div className= max-w-7xl mx-auto px-4 sm px-6 lg px-8"></div>
         <div className=" flex items-center space-x-4 py-3></div>
-          <ol className=" flex items-center space-x-4>"
+          <ol className= flex items-center space-x-4>
             {breadcrumbItems.map((item, index) => ("</div>
               <li key={item.href} className=" flex items-center>
                 {index > 0 && (</div>
-                  <svg"
-                    className=" flex-shrink-0 h-5 w-5 text-gray-400 fill= currentColor 
+                  <svg
+                    className= flex-shrink-0 h-5 w-5 text-gray-400 fill= currentColor 
                     viewBox=0 0 20 20
                     aria-hidden="true 
                   "></div>
                     <path
                       fillRule=evenodd 
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z
+                      d=M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z
                       clipRule=evenodd 
-                    > </path"
+                    > </path
                       fillRule=evenodd 
                       d=M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414" 0z
                       clipRule="evenodd
                     ></svg>
                 )},
     {item.current ? (</div>
-                  <span className="text-sm font-medium text-gray-500 aria-current= page>
+                  <span className=text-sm font-medium text-gray-500 aria-current= page>
                     {item.label}</div>
                   </span>
                 ) : (</div>
                   <Link href={item.href}
-                    className=text-sm font-medium text-gray-500 hover text-gray-700 transition-colors ">
+                    className=text-sm font-medium text-gray-500 hover text-gray-700 transition-colors >
                     {item.label}</div>
                   </Link>
                 )}</div>

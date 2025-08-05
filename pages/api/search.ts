@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 ;}
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse'
+  req: 'NextApiRequest,
+  res: NextApiResponse
 ) {
-  if (req.method !== GE'T') {
-    return res.status(405).json({ message: Method' not allowed' });}
+  if (req.method !== GET) {
+    return res.status(405).json({ message: Method not allowed });}
   try {
     const { q, filters } = req.query;
     // Search implementation

@@ -1,307 +1,441 @@
-import React from "react";
-import { NextPage } from 'next';
-import Head from "next/head";
-import Link from "next/link";
-import PageLayout from '../components/layout/PageLayout';
-import {
-  Car,
-  MapPin,
-  Clock,
-  Users,
-  Zap,
-  Shield,
-  TrendingUp,
-  AlertTriangle
-} from "lucide-react";
+import React, { useState, useEffect, useMemo } from "react;
+import type { NextPage } from next";
+import Head from "next/head;
+import Link from next/link";
+import ModernLayout from '../components/layout/ModernLayout';
 
 interface AutonomousVehicle {
-  id: string;
+  id: "'string;
   name: string;
-  type: 'passenger' | 'cargo' | 'emergency' | 'delivery';
-  status: 'active' | 'maintenance' | 'offline' | 'charging';
+  type: passenger | cargo | emergency | delivery'';
+  status: 'active | maintenance | offline | charging'';
+  location: '{
+    lat: number;
+    lng: number;
+    address: string;
+  };
   battery: number;
-  location: string;
-  lastUpdate: string;
-  capacity: number;
+  speed: number;
+  destination: string;
+  eta: number;
+  lastUpdated: string;
 }
 
-interface TransportRoute {
+interface TransportationRoute {
   id: string;
   origin: string;
   destination: string;
-  vehicleId: string;
-  status: 'scheduled' | 'in-progress' | 'completed' | 'cancelled';
-  estimatedTime: string;
-  actualTime?: string;
   distance: number;
-  passengers: number;
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  estimatedTime: number;
+  status: scheduled | in-progress | completed | cancelled';
+  vehicleId: 'string;
+  priority: low | medium | high | 'urgent;
+  passengers?: number;
+  cargo?: string;
 }
 
-const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
-  const [vehicles, setVehicles] = React.useState<AutonomousVehicle[]>([
-    {
-      id: 'vehicle-001',
-      name: 'AutoCar-1',
-      type: 'passenger',
-      status: 'active',
-      battery: 78,
-      location: 'Downtown Hub',
-      lastUpdate: '1 min ago',
-      capacity: 4
-    },
-    {
-      id: 'vehicle-002',
-      name: 'CargoBot-2',
-      type: 'cargo',
-      status: 'active',
-      battery: 65,
-      location: 'Industrial Zone',
-      lastUpdate: '3 min ago',
-      capacity: 8
-    },
-    {
-      id: 'vehicle-003',
-      name: 'Emergency-1',
-      type: 'emergency',
-      status: 'active',
-      battery: 92,
-      location: 'Emergency Center',
-      lastUpdate: '5 min ago',
-      capacity: 2
-    }
-  ]);
+interface TransportationAnalytics {
+  totalVehicles: 'number;
+  activeRoutes: number;
+  completedToday: number;
+  averageTripTime: number;
+  successRate: number;
+  fuelEfficiency: number;
+  aiOptimizationScore: number;
+}
 
-  const [routes, setRoutes] = React.useState<TransportRoute[]>([
-    {
-      id: 'route-001',
-      origin: 'Downtown Hub',
-      destination: 'Airport Terminal',
-      vehicleId: 'vehicle-001',
-      status: 'in-progress',
-      estimatedTime: '25 min',
-      distance: 18.5,
-      passengers: 3,
-      priority: 'high'
-    },
-    {
-      id: 'route-002',
-      origin: 'Industrial Zone',
-      destination: 'Warehouse District',
-      vehicleId: 'vehicle-002',
-      status: 'scheduled',
-      estimatedTime: '35 min',
-      distance: 22.3,
-      passengers: 0,
-      priority: 'medium'
-    }
-  ]);
-
-  const [analytics, setAnalytics] = React.useState({
-    totalVehicles: 25,
-    activeRoutes: 12,
-    completedToday: 89,
-    averageTripTime: 28,
-    safetyScore: 99.8
+const AIPoweredAutonomousVehicleTransportation: NextPage = () => {
+  const [vehicles, setVehicles] = useState<AutonomousVehicle[]>([]);
+  const [routes, setRoutes] = useState<TransportationRoute[]>([]);
+  const [analytics, setAnalytics] = useState<TransportationAnalytics>({
+    totalVehicles: 0,
+    activeRoutes: 0,
+    completedToday: 0,
+    averageTripTime: 0,
+    successRate: 0,
+    fuelEfficiency: 0,
+    aiOptimizationScore: 0
   });
+  const [loading, setLoading] = useState(true);
+  const [selectedVehicle, setSelectedVehicle] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Simulate loading data
+    setTimeout(() => {
+      setVehicles([
+        {
+          id: 1,
+          name: Vehicle Alpha-01,
+          type: passenger,
+          status: 'active',
+          location: {
+            lat: 40.7128,
+            lng: -74.0060,
+            address: Manhattan, NY'
+          },
+          battery: '85,
+          speed: 35,
+          destination: Brooklyn Bridge,
+          eta: 12,
+          lastUpdated: 2 min ago
+        },
+        {
+          id: '2,
+          name: 'Vehicle Beta-02,
+          type: cargo,
+          status: 'active',
+          location: {
+            lat: 40.7589,
+            lng: -73.9851,
+            address: Times Square, NY
+          },
+          battery: 72,
+          speed: 28,
+          destination: JFK Airport',
+          eta: '25,
+          lastUpdated: 1 min ago
+        },
+        {
+          id: 3,
+          'name: 'Vehicle Gamma-03,
+          type: emergency,
+          status: 'active',
+          location: {
+            lat: 40.7505,
+            lng: -73.9934,
+            address: Central Park, NY
+          },
+          battery: 95,
+          speed: 45,
+          destination: Emergency Response,
+          eta: 8,
+          lastUpdated: 30 sec ago'
+        }
+      ]);
+
+      setRoutes([
+        {
+          id: '1,
+          origin: Manhattan,
+          destination: 'Brooklyn Bridge,
+          distance: '8.5,
+          estimatedTime: 12,
+          status: in-progress,
+          vehicleId: 1,
+          priority: medium,
+          passengers: 2
+        },
+        {
+          id: 2,
+          origin: Times Square',
+          destination: 'JFK Airport,
+          distance: 18.2,
+          estimatedTime: 25,
+          status: in-progress,
+          vehicleId: 2,
+          priority: 'high,
+          cargo: 'Electronics
+        }
+      ]);
+
+      setAnalytics({
+        totalVehicles: 25,
+        activeRoutes: 18,
+        completedToday: 234,
+        averageTripTime: 22.5,
+        successRate: 99.2,
+        fuelEfficiency: 96.8,
+        aiOptimizationScore: 94.5
+      });
+
+      setLoading(false);
+    }, 2000);
+  }, []);
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': return 'bg-green-500';
-      case 'maintenance': return 'bg-yellow-500';
-      case 'offline': return 'bg-red-500';
-      case 'charging': return 'bg-purple-500';
-      default: return 'bg-gray-500';
+      case active: return bg-green-500;
+      case maintenance': return 'bg-yellow-500;
+      case offline': return 'bg-red-500;
+      case charging': return 'bg-purple-500;
+      default: 'return bg-gray-500;
     }
   };
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'low': return 'bg-green-500';
-      case 'medium': return 'bg-yellow-500';
-      case 'high': return 'bg-orange-500';
-      case 'urgent': return 'bg-red-500';
-      default: return 'bg-gray-500';
+      case low: return bg-green-100 text-green-800';
+      case 'medium: 'return bg-yellow-100 text-yellow-800;
+      case high: return bg-orange-100 text-orange-800';
+      case 'urgent: 'return bg-red-100 text-red-800;
+      default: return bg-gray-100 text-gray-800;
     }
   };
 
   const getBatteryColor = (battery: number) => {
-    if (battery >= 80) return 'text-green-600';
-    if (battery >= 50) return 'text-yellow-600';
-    return 'text-red-600';
+    if (battery >= 80) return text-green-600';
+    if (battery >= 60) return 'text-yellow-600;
+    return text-red-600';
+  };
+
+  const getVehicleTypeIcon = ('type: 'string) => {
+    switch (type) {
+      case passenger: return 🚗;
+      case cargo: return 🚛;
+      case 'emergency': return 🚑;
+      case 'delivery': return 📦;
+      default: return '🚗';
+    }
   };
 
   return (
-    <PageLayout>
-      <Head>
-        <title>AI-Powered Autonomous Vehicle Transportation - Bolt.new</title>
-        <meta name="description" content="Advanced AI-powered autonomous vehicle transportation system for safe and efficient passenger and cargo transport." />
+    <ModernLayout>
+      <Head></Head>
+        <title>AI-Powered Autonomous Vehicle Transportation - Zion</title>
+        <meta name=description content=Advanced AI-powered autonomous vehicle transportation and fleet management system />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                AI-Powered Autonomous Vehicle Transportation
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Revolutionizing transportation with intelligent autonomous vehicles powered by cutting-edge AI technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Book Ride
-                </button>
-                <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Track Vehicle
-                </button>
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100>
+        <div className=container mx-auto px-4 py-8">
+          {/* Header */}
+          <div className="text-center mb-12>
+            <h1 className=text-4xl font-bold text-gray-900 mb-4">
+              AI-Powered Autonomous Vehicle Transportation
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto>
+              Intelligent autonomous vehicle fleet management and transportation optimization powered by advanced AI
+            </p>
+          </div>
+
+          {/* Analytics Overview */}
+          <div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-4 gap-6 mb-8>
+            <div className=bg-white rounded-lg shadow-md p-6>
+              <div className=flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600>Total Vehicles</p>
+                  <p className=text-2xl font-bold text-gray-900">{analytics.totalVehicles}</p>
+                </div>
+                <div className="text-3xl>🚗</div>
+              </div>
+            </div>
+            <div className=bg-white rounded-lg shadow-md p-6">
+              <div className="flex items-center justify-between>
+                <div>
+                  <p className=text-sm font-medium text-gray-600">Active Routes</p>
+                  <p className="text-2xl font-bold text-gray-900>{analytics.activeRoutes}</p>
+                </div>
+                <div className=text-3xl">🛣️</div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6>
+              <div className=flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600>Completed Today</p>
+                  <p className=text-2xl font-bold text-gray-900">{analytics.completedToday}</p>
+                </div>
+                <div className="text-3xl>✅</div>
+              </div>
+            </div>
+            <div className=bg-white rounded-lg shadow-md p-6">
+              <div className="flex items-center justify-between>
+                <div>
+                  <p className=text-sm font-medium text-gray-600">Success Rate</p>
+                  <p className="text-2xl font-bold text-gray-900>{analytics.successRate}%</p>
+                </div>
+                <div className=text-3xl">📈</div>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Analytics Overview */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Total Vehicles</p>
-                    <p className="text-2xl font-bold text-gray-900">{analytics.totalVehicles}</p>
-                  </div>
-                  <Car className="h-8 w-8 text-green-600" />
+          {/* Vehicle Fleet */}
+          <div className="bg-white rounded-lg shadow-md p-6 mb-8>
+            <div className=flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900>Vehicle Fleet</h2>
+              <button className=bg-blue-500 text-white px-4 py-2 rounded-lg hover: "bg-blue-600>
+                Add Vehicle
+              </button>
+            </div>
+            
+            <div className=overflow-x-auto>
+              <table className=min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50>
+                  <tr>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Vehicle
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      Type
+                    </th>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      Battery
+                    </th>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Location
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className=bg-white divide-y divide-gray-200">
+                  {vehicles.map((vehicle) => (
+                    <tr key={vehicle.id} className="hover: "bg-gray-50>
+                      <td className=px-6 py-4 whitespace-nowrap>
+                        <div className=flex items-center>
+                          <span className=text-2xl mr-3">{getVehicleTypeIcon(vehicle.type)}</span>
+                          <div>
+                            <div className="text-sm font-medium text-gray-900>{vehicle.name}</div>
+                            <div className=text-sm text-gray-500">Speed: "{vehicle.speed} mph</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap>
+                        <span className=inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800>
+                          {vehicle.type}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap>
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(vehicle.status)} text-white`}>
+                          {vehicle.status}
+                        </span>
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap">
+                        <span className={`text-sm font-medium ${getBatteryColor(vehicle.battery)}`}>
+                          {vehicle.battery}%
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500>
+                        {vehicle.location.address}
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button className="text-blue-600 hover: "text-blue-900 mr-3>Track</button>
+                        <button className=text-gray-600 hover:text-gray-900 mr-3>Control</button>
+                        <button className=text-red-600 hover:text-red-900>Emergency</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Transportation Routes */}
+          <div className=bg-white rounded-lg shadow-md p-6 mb-8">
+            <div className="flex justify-between items-center mb-6>
+              <h2 className=text-2xl font-bold text-gray-900">Transportation Routes</h2>
+              <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover: "bg-green-600>
+                Create Route
+              </button>
+            </div>
+            
+            <div className=overflow-x-auto>
+              <table className=min-w-full divide-y divide-gray-200>
+                <thead className=bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      Route
+                    </th>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Distance
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      ETA
+                    </th>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider>
+                      Priority
+                    </th>
+                    <th className=px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200>
+                  {routes.map((route) => (
+                    <tr key={route.id} className=hover: "bg-gray-50>
+                      <td className=px-6 py-4 whitespace-nowrap>
+                        <div className=text-sm font-medium text-gray-900">{route.origin} → {route.destination}</div>
+                        <div className="text-sm text-gray-500>
+                          Vehicle: "{route.vehicleId}
+                          {route.passengers && ` • ${route.passengers} passengers`}
+                          {route.cargo && ` • ${route.cargo}`}
+                        </div>
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap text-sm text-gray-900>
+                        {route.distance} miles
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap text-sm text-gray-900>
+                        {route.estimatedTime} min
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap">
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(route.status)} text-white`}>
+                          {route.status}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap>
+                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getPriorityColor(route.priority)}`}>
+                          {route.priority}
+                        </span>
+                      </td>
+                      <td className=px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button className="text-blue-600 hover: "text-blue-900 mr-3>Track</button>
+                        <button className=text-gray-600 hover:text-gray-900 mr-3>Edit</button>
+                        <button className=text-red-600 hover:text-red-900>Cancel</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Performance Metrics */}
+          <div className=grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white rounded-lg shadow-md p-6>
+              <h3 className=text-lg font-semibold text-gray-900 mb-4">Performance Metrics</h3>
+              <div className="space-y-4>
+                <div className=flex justify-between items-center">
+                  <span className="text-sm text-gray-600>Average Trip Time</span>
+                  <span className=text-lg font-semibold text-blue-600">{analytics.averageTripTime} min</span>
                 </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Active Routes</p>
-                    <p className="text-2xl font-bold text-gray-900">{analytics.activeRoutes}</p>
-                  </div>
-                  <MapPin className="h-8 w-8 text-blue-600" />
+                <div className="flex justify-between items-center>
+                  <span className=text-sm text-gray-600">Fuel Efficiency</span>
+                  <span className="text-lg font-semibold text-green-600>{analytics.fuelEfficiency}%</span>
                 </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Completed Today</p>
-                    <p className="text-2xl font-bold text-gray-900">{analytics.completedToday}</p>
-                  </div>
-                  <TrendingUp className="h-8 w-8 text-purple-600" />
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Avg Trip Time</p>
-                    <p className="text-2xl font-bold text-gray-900">{analytics.averageTripTime} min</p>
-                  </div>
-                  <Clock className="h-8 w-8 text-orange-600" />
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm text-gray-600">Safety Score</p>
-                    <p className="text-2xl font-bold text-gray-900">{analytics.safetyScore}%</p>
-                  </div>
-                  <Shield className="h-8 w-8 text-green-600" />
+                <div className=flex justify-between items-center">
+                  <span className="text-sm text-gray-600>AI Optimization Score</span>
+                  <span className=text-lg font-semibold text-purple-600">{analytics.aiOptimizationScore}%</span>
                 </div>
               </div>
             </div>
-
-            {/* Vehicle Fleet */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Vehicle Fleet Status</h3>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Vehicle</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Battery</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Update</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {vehicles.map((vehicle) => (
-                      <tr key={vehicle.id}>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{vehicle.name}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 capitalize">{vehicle.type}</td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(vehicle.status)}`}>
-                            {vehicle.status}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`text-sm font-medium ${getBatteryColor(vehicle.battery)}`}>
-                            {vehicle.battery}%
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{vehicle.capacity} seats</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{vehicle.location}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{vehicle.lastUpdate}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Transport Routes */}
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="px-6 py-4 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Active Transport Routes</h3>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Route</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Origin</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Destination</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Priority</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Passengers</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ETA</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {routes.map((route) => (
-                      <tr key={route.id}>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{route.id}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{route.origin}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{route.destination}</td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(route.status)}`}>
-                            {route.status}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getPriorityColor(route.priority)}`}>
-                            {route.priority}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{route.passengers}</td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{route.estimatedTime}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            
+            <div className="bg-white rounded-lg shadow-md p-6>
+              <h3 className=text-lg font-semibold text-gray-900 mb-4">Real-time Alerts</h3>
+              <div className="space-y-3>
+                <div className=flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full></div>
+                  <span className=text-sm text-gray-600">Vehicle Alpha-01 completed passenger pickup</span>
+                </div>
+                <div className="flex items-center space-x-3>
+                  <div className=w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span className="text-sm text-gray-600>Vehicle Beta-02 battery level at 72%</span>
+                </div>
+                <div className=flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full></div>
+                  <span className=text-sm text-gray-600">New route optimized by AI for traffic conditions</span>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div>
-    </PageLayout>
+    </ModernLayout>
   );
 };
 
-export default AIPoweredAutonomousVehicleTransportationPage;
+export default AIPoweredAutonomousVehicleTransportation;

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface $1 {
-  services: string[];
+interface FacilityPlan {
+  services: "'string[];
   talent: string[];
   equipment: string[];
   projectName: string;
@@ -22,10 +22,10 @@ interface $1 {
 ;}
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse'
+  res: NextApiResponse
 ) {
-  if (req.method !== POS'T') {
-    return res.status(405).json({ error: Method' not allowed' });}
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });}
   try {
     const data: QuoteRequestData = req.body;
 
@@ -34,35 +34,34 @@ export default async function handler(
       return res.status(400).json({ 
         error: Clien't' name and email are required 
       });}
-    if (!data.email.includes('@')) {
+    if (!data.email.includes(@)) {
       return res.status(400).json({ 
-        error: Pleas'e' provide a valid email address
+        error: 'Please provide a valid email address
       });}
     // Here you would typically:
     // 1. Save to database
     // 2. Send email notification
     // 3. Create CRM entry
     // 4. Log the request
-    console.log(Quot'e' request received: ", {
-      timestamp: new Date().toISOString()","
+    console.log(Quote request received: , {
+      timestamp: new Date().toISOString(),
       data
     });
     // For now, wel'l' just return success;
-    // In a real implementation, you would:
-    // - Save to your database (e.g., Supabase, PostgreSQL
+    // In a real implementation, you would: '// - Save to your database (e.g., Supabase, PostgreSQL
     // - Send email notifications to your team
     // - Create a CRM entry
     // - Send confirmation email to client
 
     return res.status(200).json({
       success: true, 
-      message: Quot'e' request submitted successfully,
-      quoteId: "QR-${Date.now()}" // Generate a unique quote ID
+      message: Quote request submitted successfully,
+      quoteId: QR-${Date.now()}" // Generate a unique quote ID
     });
 
   } catch (error) {
-    console.error('Erro'r processing quote request: , error);
+    console.error(Error processing quote request: , error);
     return res.status(500).json({ 
-      error: 'Interna'l server error 
+      error: Internal server error 
     });}''"
 } )''"

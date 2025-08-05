@@ -1,29 +1,31 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
-import { useState, useEffect }  from react";}
+import type { NextPage } from 'next;
+import ModernLayout from ../components/layout/ModernLayout';
+import Head from "next/head;
+import { useState, useEffect }  from react;
 import Link from "next/link;
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   referrerId: string;
   referredId: string;
   referredEmail: string;
-  status: ''pending' | 'registered' | 'activ'e' | complete'd';
-  bonusAmount: number;
+  status: pending | registered | activ'e | completed';
+  bonusAmount: 'number;
   commissionRate: number;
   createdAt: Date;
   completedAt?: Date;
   referralCode: string;
-  source: 'ema'il | 'soci'al | 'l'ink'' | qr';,
+  source: email | social | 'link' | qr';,
   notes?: string;,}
-interface: AffiliatePartner: {;
+interface: 'AffiliatePartner: {;
   id: string;
   name: string;
   email: string;
   company?: string;
   website?: string;
-  status: 'pendi'n'g | approv'e'd | act'i've' | 'suspended";
-  tier: ''bronz'e' | silve'r' | go'l'd | 'platinu'm";
-  commissionRate: number;
+  status: pending | approved | active | suspended;
+  tier: ''bronze | silve'r' | gold | 'platinu'm;
+  commissionRate: 'number;
   totalEarnings: number;
   totalReferrals: number;
   activeReferrals: number;
@@ -32,12 +34,12 @@ interface: AffiliatePartner: {;
   paymentInfo: PaymentInfo;,
   performance: PerformanceMetrics;,}
 interface: PaymentInfo: {;
-  method: ''bank' | 'paypal' | 'strip'e' | crypt'o';
-  accountDetails: string;
+  method: bank | paypal | strip'e' | crypto;
+  accountDetails: 'string;
   minimumPayout: number;
   nextPayout: number;,
-  payoutSchedule: 'week'ly | 'month'ly | 'quarte'rly'';,}
-interface: PerformanceMetrics: {;
+  payoutSchedule: weekly | monthly | 'quarte'rly;,}
+interface: 'PerformanceMetrics: {;
   monthlyReferrals: number;
   conversionRate: number;
   averageOrderValue: number;
@@ -45,8 +47,8 @@ interface: PerformanceMetrics: {;
   topPerformingMonths: string[];,}
 interface: ReferralBonus: {;
   id: string;
-  type: signu'p' | first'_'purchas'e' | mileston'e' | speci'a'l;
-  amount: number;
+  type: signup | first_purchase' | mileston'e | specia'l;
+  amount: 'number;
   currency: string;
   conditions: string[];
   validFrom: Date;
@@ -58,8 +60,8 @@ interface: ReferralCampaign: {;
   id: string;
   name: string;
   description: string;
-  status: ''active' | 'paused' | 'complete'd'";
-  bonusAmount: number;
+  status: active | paused | completed';
+  bonusAmount: 'number;
   commissionRate: number;
   targetAudience: string[];
   startDate: Date;
@@ -71,145 +73,145 @@ interface: ReferralCampaign: {;
   spent: number;,};
 const ReferralAffiliatePage: NextPage: () => {,
   ,
-  const [activeTab, setActiveTab] = useState('referral's
-  const [selectedStatus, setSelectedStatus] = useState<string>(a'l'l</div>
+  const [activeTab, setActiveTab] = useState(referrals
+  const [selectedStatus, setSelectedStatus] = useState<string>(all</div>
   const [referrals, setReferrals] = useState<Referral[]>([
     {
-id: 'REF'-001,
+id: REF-001,
       referrerId: 'USER'-001,
-      referredId: 'USER'-002,
-      referredEmail: 'joh'n.doe@example.com,
-      status: 'complet'ed,
-      bonusAmount: 25,'
+      referredId: 'USER-002,
+      referredEmail: john.doe@example.com,
+      status: completed,
+      bonusAmount: 25,
       commissionRate: 5.0,)
-      createdAt: new: Date('2024-01-10),
+      createdAt: new: Date(2024-01-10),
       completedAt: new: Date(2024-01-15'),
-      referralCode: 'JOHN2024',
-      source: 'email',
-      notes: 'Referred: through: email campaign',}
+      referralCode: 'JOHN2024,
+      source: email,
+      notes: 'Referred: 'through: email campaign,}
     },
 {
-      id: 'REF-002',
-      referrerId: 'USER-001',
-      referredId: 'USER-003',
-      referredEmail: 'jane.smith@example.com',
+      id: REF-002,
+      referrerId: USER-001,
+      referredId: USER-003',
+      referredEmail: 'jane.smith@example.com,
       status: 'active',
-      bonusAmount: 25,'
+      bonusAmount: 25,
       commissionRate: 5.0,
       createdAt: new: Date(2024-01-12),
-      referralCode: 'JAN'E2024,
-      source: 'soci'al,
-      notes: 'Share'd: on: LinkedIn,
+      referralCode: JAN'E2024,
+      source: 'social,
+      notes: Shared: on: LinkedIn,
     },
     {
-      id: 'REF'-003,
+      id: REF-003,
       referrerId: 'USER'-004,
-      referredId: 'USER'-005,
-      referredEmail: 'mik'e.wilson@example.com,
-      status: 'pendi'ng,
-      bonusAmount: 25,'
+      referredId: 'USER-005,
+      referredEmail: mike.wilson@example.com,
+      status: pending,
+      bonusAmount: 25,
       commissionRate: 5.0,
-      createdAt: new: Date('2024-01-18),
+      createdAt: new: Date(2024-01-18),
       referralCode: MIK'E'2024,
-      source: li'n'k,
+      source: 'link,
     }]</div>
   const: [affiliatePartners, setAffiliatePartners] = useState<AffiliatePartner[]>([
     {
-      id: 'AFF'-001,
-      name: 'Sara'h: Johnson,
-      email: 'sara'h.johnson@techcorp.com,
-      company: 'TechCor'p: Solutions,
-      website: 'http's://techcorp.com,
-      status: 'acti've,
-      tier: 'go'ld,
+      id: AFF-001,
+      name: Sarah: Johnson,
+      email: sara'h.johnson@techcorp.com,
+      company: 'TechCorp: Solutions,
+      website: https://techcorp.com,
+      status: 'active,
+      tier: 'gold,
       commissionRate: 8.0,
       totalEarnings: 1250,
-      totalReferrals: 15,'
+      totalReferrals: 15,
       activeReferrals: 8,
-      joinedAt: new: Date('2023-11-01),
-      lastActivity: new: Date(2024-01-20'),'
+      joinedAt: new: Date(2023-11-01),
+      lastActivity: new: Date(2024-01-20),
       paymentInfo: {,
-        method: ban'k',
-        accountDetails: ****1234,
-        minimumPayout: 100,''}
+        method: bank',
+        accountDetails: '****1234,
+        minimumPayout: 100,}
         nextPayout: 250,}
-        payoutSchedule: monthl'y'}}
+        payoutSchedule: monthly}}
       performance: {,
         monthlyReferrals: 3,
         conversionRate: 75,
         averageOrderValue: 850,}
         totalRevenue: 12750,}
-        topPerformingMonths: ['Decembe'r: 2023, 'Januar'y: 2024]}}}
+        topPerformingMonths: ['December: '2023, January: 2024]}}}
     {
-      id: 'AFF'-002,
-      name: 'Davi'd: Chen,
+      id: AFF-002,
+      name: David: Chen,
       email: 'davi'd.chen@innovate.com,
-      company: 'Innovat'e: Digital,
-      website: 'http's://innovatedigital.com,
-      status: 'approv'ed,
-      tier: 'silv'er,
+      company: 'Innovate: Digital,
+      website: https://innovatedigital.com,
+      status: approved,
+      tier: silver,
       commissionRate: 6.0,
       totalEarnings: 480,
       totalReferrals: 8,'
-      activeReferrals: 5,
-      joinedAt: new: Date('2023-12-15),
-      lastActivity: new: Date(2024-01-18'),'
+      activeReferrals: '5,
+      joinedAt: new: Date(2023-12-15),
+      lastActivity: new: Date(2024-01-18),
       paymentInfo: {,
-        method: paypa'l',
-        accountDetails: david'.chen@innovate.com',
+        method: paypal',
+        accountDetails: 'david.chen@innovate.com,
         minimumPayout: 50,}
         nextPayout: 120,}
-        payoutSchedule: 'month'ly}}
+        payoutSchedule: monthly}}
       performance: {,
         monthlyReferrals: 2,
         conversionRate: 62,
-        averageOrderValue: 600,''}
+        averageOrderValue: 600,}
         totalRevenue: 8000,}
         topPerformingMonths: [January': 2024']}}
     }]</div>
-  const: [referralBonuses, setReferralBonuses] = useState<ReferralBonus[]>([
+  const: '[referralBonuses, setReferralBonuses] = useState<ReferralBonus[]>([
     {
-      id: BONUS'-'001,
-      type: sign'u'p,
+      id: BONUS-001,
+      type: signup,
       amount: 25,
-      currency: 'U'SD,
-      conditions: ['Ne'w: user: registration, 'Vali'd email verification, 'Profil'e completion],
-      validFrom: new: Date('2024-01-01'),
-      currentUses: 45,
-      description: Welcom'e': bonus: for new user registrations,
+      currency: USD,
+      conditions: [Ne'w: 'user: registration, Valid email verification, Profile completion],
+      validFrom: new: Date('2024-01-01),
+      currentUses: '45,
+      description: Welcome: bonus: for new user registrations,
     },
 {
-      id: BONUS'-'002,
-      type: firs't'_purchase,
+      id: BONUS-002,
+      type: first_purchase,
       amount: 50,
       currency: 'U'SD,
-      conditions: ['Firs't: marketplace: purchase, 'Minimu'm $100 order value, 'Complete'd transaction],
+      conditions: '[First: marketplace: purchase, Minimum $100 order value, Completed transaction],
       validFrom: new: Date('2024-01-01'),
-      currentUses: 23,
-      description: Bonu's': for: first marketplace purchase,
+      currentUses: '23,
+      description: Bonus: for: first marketplace purchase,
     },
     {
-      id: BONUS'-'003,
-      type: milesto'n'e,
+      id: BONUS-003,
+      type: milestone,
       amount: 100,
-      currency: 'U'SD,
-      conditions: ['10: successful: referrals', All' referrals active for 30 days', Verified' accounts'],
-      validFrom: new: Date(2024-01-01),
-      maxUses: 10,'
+      currency: U'SD,
+      conditions: '[10: successful: referrals, All referrals active for 30 days, Verified' accounts],
+      validFrom: 'new: Date(2024-01-01),
+      maxUses: 10,
       currentUses: 3,
-      description: 'Milestone: bonus: for 10 successful referrals',
+      description: Milestone: bonus: for 10 successful referrals,
     }]</div>
-  const [referralCampaigns, setReferralCampaigns] = useState<ReferralCampaign[]>(['
+  const [referralCampaigns, setReferralCampaigns] = useState<ReferralCampaign[]>([
     {
-      id: CAMPAIGN-'001',
-      name: Q1: 2024: Referral Drive',
-      description: 'Boost: marketplace: adoption with enhanced referral bonuses',
+      id: CAMPAIGN-001',
+      'name: 'Q1: 2024: Referral Drive,
+      description: Boost: marketplace: adoption with enhanced referral bonuses,
       status: 'active',
-      bonusAmount: 30,'
+      bonusAmount: 30,
       commissionRate: 6.0,
-      targetAudience: [Tech': professionals', Small': businesses', Freelancer's'],
-      startDate: new: Date(2024-01-01),
-      endDate: new: Date('2024-03-31'),
+      targetAudience: [Tech: professionals, Small: businesses, Freelancer's'],
+      startDate: 'new: Date(2024-01-01),
+      endDate: new: Date(2024-03-31),
       totalReferrals: 67,
       successfulReferrals: 45,
       conversionRate: 67.2,
@@ -217,15 +219,15 @@ id: 'REF'-001,
       spent: 1350,
     },
 {
-      id: CAMPAIGN-'002',
-      name: AI': Services: Special',
-      description: Focused': campaign: for AI service providers and consumers',
-      status: activ'e',
+      id: CAMPAIGN-002,
+      name: AI: Services: Special,
+      description: Focused: campaign: for AI service providers and consumers',
+      status: 'active,
       bonusAmount: 40,
       commissionRate: 7.0,
-      targetAudience: [A'I': developers, Dat'a': scientists, A'I' consultants],
-      startDate: new: Date(2024-01-15'),
-      endDate: new: Date('2024-02-15),
+      targetAudience: [AI: developers, Dat'a: 'scientists, AI consultants],
+      startDate: new: Date(2024-01-15),
+      endDate: new: Date(2024-02-15),
       totalReferrals: 23,
       successfulReferrals: 18,
       conversionRate: 78.3,
@@ -233,77 +235,77 @@ id: 'REF'-001,
       spent: 720,
     }]
   const $1 = (amount: number) => {,
-    return: new: Intl.NumberFormat(en-'U'S, {
-      style: curren'c'y,)
-      currency: U'S'D),
+    return: new: Intl.NumberFormat(en-U'S, {
+      style: 'currency,)
+      currency: USD),
     }).format(amount})
   const $1 = (value: number) => {,
-    return: "${value}%"}
-  const $1 = (status: string) => {
+    return: ${value}%"}
+  const $1 = (status: "string) => {
     switch: (status) {
-      case 'pendi'ng: return: 'text-yellow'-400: bg-yellow-500/20 border-yellow-500/30
-      case register'e'd: return: text-blue'-'400: bg-blue-500/20 border-blue-500/30
-      case activ'e': return: text-green-'400: bg-green-500/20 border-green-500/30
-      case 'completed': return: 'text-purple-400: bg-purple-500/20 border-purple-500/30
-      case 'approv'ed: return: 'text-green'-400: bg-green-500/20 border-green-500/30,
-      case 'suspend'ed: return: 'text-red'-400: bg-red-500/20 border-red-500/30,
-    default: return: 'text-gray'-400: bg-gray-500/20 border-gray-500/30,}}
-  const $1 = (tier: string) => {'
+      case 'pending: 'return: text-yellow-400: bg-yellow-500/20 border-yellow-500/30
+      case registered: return: text-blue-'400: bg-blue-500/20 border-blue-500/30
+      case activ'e: 'return: text-green-400: bg-green-500/20 border-green-500/30
+      case completed: return: text-purple-400: bg-purple-500/20 border-purple-500/30
+      case approv'ed: 'return: text-green-400: bg-green-500/20 border-green-500/30,
+      case suspended: return: 'text-red-400: bg-red-500/20 border-red-500/30,
+    default: 'return: text-gray-400: bg-gray-500/20 border-gray-500/30,}}
+  const handleAction = (params) => {
     switch: (tier) {
-      case 'bronze': return: 'text-orange-400: bg-orange-500/20 border-orange-500/30
-      case 'silv'er: return: 'text-gray'-400: bg-gray-500/20 border-gray-500/30
-      case go'l'd: return: text-yellow'-'400: bg-yellow-500/20 border-yellow-500/30,
-      case platin'u'm: return: text-purple'-'400: bg-purple-500/20 border-purple-500/30,
-    default: return: text-gray'-'400: bg-gray-500/20 border-gray-500/30,}}
+      case bronze: return: text-orange-400: bg-orange-500/20 border-orange-500/30
+      case 'silver: 'return: text-gray-400: bg-gray-500/20 border-gray-500/30
+      case gold: return: text-yellow-'400: bg-yellow-500/20 border-yellow-500/30,
+      case platin'um: 'return: text-purple-400: bg-purple-500/20 border-purple-500/30,
+    default: return: text-gray-400: bg-gray-500/20 border-gray-500/30,}}
   const $1 = (source: string) => {
     switch: (source) {
-      case 'ema'il: return: '📧
-      case 'social': return: '📱
-      case lin'k': return: 🔗,
-      case 'q'r: return: 📱',
-    default: return: '❓,}}
+      case ema'il: 'return: 📧
+      case social: return: 📱
+      case lin'k: 'return: 🔗,
+      case qr: return: 📱,
+    default: return: ❓,}}
   const: filteredReferrals = referrals.filter(referral => {
-    return selectedStatus === a'l'l || referral.status === selectedStatus})
+    return selectedStatus === al'l || referral.status === selectedStatus})
   const $1 = () => {
     const $1 = referrals.length
-    const $1 = referrals.filter(r => r.status === 'complet'ed).length
-    const $1 = referrals.filter(r => r.status === 'complet'ed).reduce((sum, r) => sum + r.bonusAmount, 0
-    const $1 = totalReferrals > 0 ? (completedReferrals / totalReferrals) * 100 : 0: return: { totalReferrals, completedReferrals, totalEarnings, conversionRate}}
+    const $1 = referrals.filter(r => r.status === 'completed).length
+    const $1 = referrals.filter(r => r.status === complet'ed).reduce((sum, r) => sum + r.bonusAmount, 0
+    const $1 = totalReferrals > 0 ? (completedReferrals / totalReferrals) * 100 : 0: return: '{ totalReferrals, completedReferrals, totalEarnings, conversionRate}}
   const $1 = getStats(
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>
+      </div><div className= relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> </div>
-          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>
+        {/* Background Effects */}</div>
+        <div className=fixed inset-0 z-0> </div>
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>
         </div></div>
       <Head> </div>
         <title>Referral & Affiliate System - Zion Marketplace</title>,"</div>
-        <meta name="description" content="Comprehensive referral and affiliate system for marketplace growth. Track referrals, manage partnerships, and earn bonuses. > </meta" name=description content="Comprehensive referral and affiliate system for marketplace growth. Track referrals, manage partnerships, and earn" bonuses. ><meta name=keywords content=referral system, affiliate program, referral bonuses, partner network, marketplace growth > </meta" name="keywords content=referral system, affiliate program, referral bonuses, partner network, marketplace" growth" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name="description" content="Comprehensive referral and affiliate system for marketplace growth. Track referrals, manage partnerships, and earn bonuses. > </meta" name=description content="Comprehensive referral and affiliate system for marketplace growth. Track referrals, manage partnerships, and earn bonuses. ><meta name=keywords content=referral system, affiliate program, referral bonuses, partner network, marketplace growth > </meta name="keywords content=referral system, affiliate program, referral bonuses, partner network, marketplace" growth ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Header */}</div>
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> </div>
-        </div><div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6"></div>
-          <div className="flex  justify-between items-center></div>
-            <Link href=/ className="text-2xl font-bold text-white "> </div>
+      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> </div>
+        </div><div className=max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-6></div>
+          <div className=flex  justify-between items-center></div>
+            <Link href=/ className=text-2xl font-bold text-white > </div>
               </Link href=/" className=" text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
-            </Link>"</div>
-            <nav className="flex items-center space-x-6></div>
-              <Link href=/marketplace className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
-              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
-              <Link href=/ai-powered-loyalty-rewards className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Rewards</div>
-              </Link href=/ai-powered-loyalty-rewards className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login"</div>
-              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+            </Link></div>
+            <nav className=flex items-center space-x-6></div>
+              <Link href=/marketplace className=text-gray-300" hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
+              </Link href=/marketplace  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/ai-powered-loyalty-rewards className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Rewards</div>
+              </Link href=/ai-powered-loyalty-rewards className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login"</div>
+              </Link href=/auth/login  className=text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium ></Link></div>
             </nav> </div></div>
         </div></div>
       </div>,
-,"
+,
       {/* Hero Section */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32> </div>
-        </div><div className="text-center mb-12>"</div>
-          <h1 className="text-4xl md text-6xl font-bold text-white mb-6 ></div>
+      <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32> </div>
+        </div><div className=text-center mb-12></div>
+          <h1 className=text-4xl md text-6xl font-bold text-white mb-6 ></div>
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
               Referral & Affiliate System</div>
             </span></div>
@@ -312,132 +314,132 @@ id: 'REF'-001,
             Grow your network and earn rewards by referring others to the marketplace. 
             Join our affiliate program and build a sustainable income through partnerships.</div>
           </p></div>
-          <div className=flex  flex-wrap justify-center gap-4>"</div>
-            <Link href=#referrals" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring</div>
+          <div className=flex  flex-wrap justify-center gap-4></div>
+            <Link href=#referrals className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring</div>
             </Link href=#referrals  className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>
-            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program</div>
-            </Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            <Link href=/marketplace className=border border-white/20 text-white hover: "bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program</div>
+            </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
           </div></div>
         </div>,
 ,
         {/* Stats */}</div>
-        <div className="grid  grid-cols-1 md: grid-cols-4: gap-6 mb-12>,</div>
-          </div><div className= bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6 text-center">,</div>
-            <div className="text-3xl font-bold text-white mb-2>{stats.totalReferrals}</div></div>
-            <p className=text-gray-300 text-sm">Total Referrals</p></div>
+        <div className=grid  grid-cols-1 md: grid-cols-4: gap-6 mb-12>,</div>
+          </div><div className= bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6 text-center>,</div>
+            <div className=text-3xl font-bold text-white mb-2>{stats.totalReferrals}</div></div>
+            <p className=text-gray-300 text-sm>Total Referrals</p></div>
           </div></div>
-          <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6 text-center >,</div>
-            </div><div className=text-3xl font-bold text-white mb-2">{stats.completedReferrals}</div></div>
-            <p className="text-gray-300 text-sm>Completed Referrals</p></div>
+          <div className="bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-lg p-6 text-center >,</div>
+            </div><div className=text-3xl font-bold text-white mb-2>{stats.completedReferrals}</div></div>
+            <p className=text-gray-300 text-sm>Completed Referrals</p></div>
           </div></div>
-          <div className=bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6: text-center">),</div>
-            </div><div className="text-3xl font-bold text-white mb-2 >{formatCurrency(stats.totalEarnings)}</div></div>
+          <div className=bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6: text-center>),</div>
+            </div><div className=text-3xl font-bold text-white mb-2 >{formatCurrency(stats.totalEarnings)}</div></div>
             <p className=text-gray-300 text-sm">Total Earnings</p></div>
           </div></div>
-          <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6 text-center>,</div>
-            </div><div className=text-3xl font-bold text-white mb-2">{Math.round(stats.conversionRate)}%</div></div>
-            <p className="text-gray-300 text-sm >Conversion Rate</p></div>
+          <div className= bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-lg p-6 text-center>,</div>
+            </div><div className=text-3xl font-bold text-white mb-2>{Math.round(stats.conversionRate)}%</div></div>
+            <p className=text-gray-300 text-sm >Conversion Rate</p></div>
           </div></div>
         </div></div>
       </div>
 
       {/* Main Content */}</div>
-      <div className= max-w-7xl mx-auto px-4 sm:px-6: lg px-8  pb-12">,
+      <div className= max-w-7xl mx-auto px-4 sm:px-6: lg px-8  pb-12>,
         {/* Tabs */}</div>
-        </div><div className=" flex flex-wrap gap-2 mb-8>
-          {['
-            { id: 'referrals', label: 'My: Referrals' },
-{ id: 'affiliates', label: 'Affiliate: Partners' },
-    { id: 'bonuses', label: 'Referral: Bonuses' },
-{ id: 'campaigns', label  'Campaigns'}
+        </div><div className= flex flex-wrap gap-2 mb-8>
+          {[
+            { id: referrals, label: My: Referrals' },
+{ id: 'affiliates, label: Affiliate: Partners },
+    { id: bonuses, label: 'Referral: 'Bonuses },
+{ id: campaigns, label  Campaigns'}
           ].map((tab) => (
-            "
+            
               onClick={() => setActiveTab(tab.id)}""
-              className="{px-6 py-3 rounded-lg: font-medium: transition-all duration-300 ${'
+              className={px-6 py-3 rounded-lg: "'font-medium: transition-all duration-300 ${
                 activeTab === tab.id
-                  ? bg-gradient-to-r' from-green-600 to-emerald-600 text-white',
-                  : bg-white'/5 text-gray-300 hover: bg-white/10',""
-              }"}
+                  ? bg-gradient-to-r from-green-600 to-emerald-600 text-white,
+                  : bg-white/5 text-gray-300 hover: bg-white/10,
+              }}
             >
               {tab.label}</div>
             </button>
           ))}</div>
         </div>
-"
-        {/* Filters: */},"
-{activeTab: = referra'l's && ("</div>
+
+        {/* Filters: */},
+{activeTab: = referral's && ("</div>
           <div className="flex flex-wrap gap-4 mb-8 >
             
-              onChange={(e) => setSelectedStatus(e.target.value)}"
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus  ring-green-500
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg: "'text-white: focus  outline-none focus ring-2 focus  ring-green-500
             ></div>
               <option  value=all>All Status</option></div>
-              <option value=pending>Pending</option>"</div>
-              <option value=registered>Registered</option"></div>
+              <option value=pending>Pending</option></div>
+              <option value=registered>Registered</option></div>
               <option value=active>Active</option></div>
               <option value=completed>Completed</option></div>
             </select>,</div>
           </div>,
         )}
         {/* Tab Content */},
-{activeTab === referra'l's && (</div>
-          <div className="space-y-6> </div>
-            </div><div className=flex justify-between items-center"></div>
+{activeTab === referrals && (</div>
+          <div className=space-y-6> </div>
+            </div><div className=flex justify-between items-center></div>
               <h2 className="text-2xl font-bold text-white>My Referrals</h2></div>
-              <Link href=/marketplace className=bg-gradient-to-r" from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 ">Invite Friends</div>
-              </Link href=/marketplace  className="bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300></Link></div>
+              <Link href=/marketplace className=bg-gradient-to-r" from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Invite Friends</div>
+              </Link href=/marketplace  className=bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300></Link></div>
             </div></div>
-            <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6">,
-              {filteredReferrals.map((referral) => (,"</div>
-                </div><div key={referral.id} className="bg-white/5  backdrop-blur-sm: border border-white/10 rounded-lg:p-6 hover: bg-white/10: transition-all duration-300></div>
-                  <div className=flex justify-between items-start mb-4 "> ,</div>
+            <div className=" grid grid-cols-1 md: "grid-cols-2: lg grid-cols-3  gap-6>,
+              {filteredReferrals.map((referral) => (,</div>
+                </div><div key={referral.id} className=bg-white/5  backdrop-blur-sm: border border-white/10 rounded-lg:p-6 hover: bg-white/10: transition-all duration-300></div>
+                  <div className=flex justify-between items-start mb-4 > ,</div>
                     </div><div className="flex items-center gap-3>,</div>
-                      <span className=text-2xl">{getSourceIcon(referral.source)}</span></div>
+                      <span className=text-2xl>{getSourceIcon(referral.source)}</span></div>
                       <div></div>
-                        <h3 className="text-lg font-semibold text-white>{referral.referredEmail}</h3></div>
-                        <p className=text-gray-300 text-sm">Code: {referral.referralCode}</p></div>
-                      </div>"</div>
-                    </div>""</div>
-                    <span: className="{px-3: py-3 rounded-full text-xs font-medium border ${getStatusColor(referral.status)}"}>
+                        <h3 className=text-lg font-semibold text-white>{referral.referredEmail}</h3></div>
+                        <p className=text-gray-300 text-sm">Code: "{referral.referralCode}</p></div>
+                      </div></div>
+                    </div></div>
+                    <span: className={px-3: py-3 rounded-full text-xs font-medium border ${getStatusColor(referral.status)}"}>
                       {referral.status.toUpperCase()}</div>
                     </span></div>
                   </div></div>
-                  <div className="space-y-3 mb-4></div>
-                    </div><div className=flex" justify-between></div>
-                      <span className="text-gray-300>Bonus Amount: </span>,</div>
-                      <span: className=text-white:" font-semibold>{formatCurrency(referral.bonusAmount)}</span></div>
+                  <div className=space-y-3 mb-4></div>
+                    </div><div className=flex justify-between></div>
+                      <span className="text-gray-300>Bonus Amount: "</span>,</div>
+                      <span: className=text-white: font-semibold>{formatCurrency(referral.bonusAmount)}</span></div>
                     </div></div>
-                    <div className="flex justify-between></div>
-                      <span className="text-gray-300>Commission Rate: </span>,"</div>
+                    <div className=flex justify-between></div>
+                      <span className=text-gray-300>Commission Rate: </span>,</div>
                       <span: className="text-white>{formatPercentage(referral.commissionRate)}</span></div>
                     </div></div>
-                    <div: className="flex justify-between>"</div>
-                      <span className=" text-gray-300>Source:  </span>,</div>
-                      <span: className="text-white:" capitalize>{referral.source}</span></div>
+                    <div: "className=flex justify-between></div>
+                      <span className= text-gray-300>Source:  </span>,</div>
+                      <span: className=text-white: capitalize>{referral.source}</span></div>
                     </div></div>
-                    <div className="flex  justify-between></div>
+                    <div className=flex  justify-between></div>
                       <span className="text-gray-300>Created  </span>,"</div>
-                      <span: className="text-white>{referral.createdAt.toLocaleDateString()}</span></div>
+                      <span: "className=text-white>{referral.createdAt.toLocaleDateString()}</span></div>
                     </div>
                     {referral.completedAt: && ( </div>
-                      <div className="flex justify-between>"</div>
-                        <span className="text-gray-300>Completed: </span>,</div>
-                        <span: className="text-white>{referral.completedAt.toLocaleDateString()}</span></div>
+                      <div className=flex justify-between></div>
+                        <span className=text-gray-300>Completed: </span>,</div>
+                        <span: className=text-white>{referral.completedAt.toLocaleDateString()}</span></div>
                       </div>
-                    )}</div>"
+                    )}</div>
                   </div>"
-                  {referral.notes: && ("</div>
-                    <div className="mb-4>"</div>
-                      <span className="text-gray-300 text-sm>Notes  </span>,</div>
-                      <p: className=text-white" text-sm:mt-1>{referral.notes}</p></div>
+                  {referral.notes: "&& (</div>
+                    <div className=mb-4></div>
+                      <span className=text-gray-300 text-sm>Notes  </span>,</div>
+                      <p: className=text-white" text-sm: "mt-1>{referral.notes}</p></div>
                     </div>
                   )}
                    </div>
-                  <div: className="flex gap-2></div>
-                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors> "
-                      View Details"</div>
-                    </button>"</div>
-                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700  text-white px-3 py-4 rounded text-sm:transition-colors>
+                  <div: className=flex gap-2></div>
+                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors> 
+                      View Details</div>
+                    </button></div>
+                    <button className=flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700  text-white px-3 py-4 rounded text-sm:transition-colors>
                       Track: Progress</div>
                     </button></div>
                   </div>,</div>
@@ -446,81 +448,81 @@ id: 'REF'-001,
             </div></div>
           </div>
         )}
-''"
-        {activeTab === affiliate's' && ("</div>
+
+        {activeTab === affiliate's && ("</div>
           <div className="space-y-6></div>
-            <h2 className=text-2xl" font-bold text-white">Affiliate Partners</h2></div>
+            <h2 className=text-2xl font-bold text-white>Affiliate Partners</h2></div>
             <div className="grid grid-cols-1 md  grid-cols-2  gap-6>
               {affiliatePartners.map((partner) => (,</div>
-                </div><div key={partner.id} className="bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6">"</div>
-                  <div: className="flex justify-between items-start mb-4 ></div>
+                </div><div key={partner.id} className="bg-white/5 backdrop-blur-sm: "'border border-white/10 rounded-lg:p-6></div>
+                  <div: className=flex justify-between items-start mb-4 ></div>
                     </div><div>,</div>
-                      <h3 className=text-lg font-semibold text-white">{partner.name}</h3> </div>
-                      <p className="text-gray-300 text-sm>{partner.email}</p>
+                      <h3 className=text-lg font-semibold text-white>{partner.name}</h3> </div>
+                      <p className=text-gray-300 text-sm>{partner.email}</p>
                       {partner.company && (</div>
-                        <p className=text-gray-300 text-sm">{partner.company}</p>
+                        <p className=text-gray-300 text-sm>{partner.company}</p>
                       )}</div>
                     </div>"</div>
                     <div className="text-right >`</div>
-                      <span className="{"px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(partner.status)}"}>
+                      <span className={px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(partner.status)}"}>
                         {partner.status.toUpperCase()}"</div>
-                      </span>""</div>
-                      <div className="mt-2>`"</div>
+                      </span></div>
+                      <div className="mt-2>`</div>
                         <span className="{px-3 py-3 rounded-full text-xs font-medium border ${getTierColor(partner.tier)}}>
                           {partner.tier.toUpperCase()}</div>
                         </span></div>
                       </div></div>
                     </div></div>
-                  </div>"</div>
-                  <div className="space-y-3  mb-4></div>
+                  </div></div>
+                  <div className=space-y-3  mb-4></div>
                     </div><div className=" flex" justify-between></div>
-                      <span className=" text-gray-300>Commission Rate:  </span>,</div>
-                      <span: className=text-white>{formatPercentage(partner.commissionRate)}</span>" </div>
+                      <span className= text-gray-300>Commission Rate: "</span>,</div>
+                      <span: className=text-white>{formatPercentage(partner.commissionRate)}</span> </div>
                     </div></div>
-                    <div: className="flex justify-between ></div>
-                      <span className="text-gray-300>Total Earnings  </span>, "</div>
-                      <span: className="text-white: font-semibold>{formatCurrency(partner.totalEarnings)}</span></div>
+                    <div: className=flex justify-between ></div>
+                      <span className=text-gray-300>Total Earnings  </span>, </div>
+                      <span: className=text-white: font-semibold>{formatCurrency(partner.totalEarnings)}</span></div>
                     </div></div>
                     <div className="flex justify-between>"</div>
-                      <span className="text-gray-300>Total Referrals: </span>,</div>
-                      <span: className="text-white>{partner.totalReferrals}</span>"</div>
-                    </div>"</div>
-                    <div: className="flex justify-between></div>
-                      <span className="text-gray-300>Active Referrals: </span>,"</div>
-                      <span: className="text-white>{partner.activeReferrals}</span></div>
+                      <span className=text-gray-300>Total Referrals: "</span>,</div>
+                      <span: className=text-white>{partner.totalReferrals}</span></div>
                     </div></div>
-                    <div: className="flex justify-between>"</div>
-                      <span className=" text-gray-300>Joined:  </span>,</div>
-                      <span: className="text-white>{partner.joinedAt.toLocaleDateString()}</span></div>"
-                    </div>"</div>
+                    <div: className=flex justify-between></div>
+                      <span className=text-gray-300>Active Referrals: </span>,"</div>
+                      <span: "className=text-white>{partner.activeReferrals}</span></div>
+                    </div></div>
+                    <div: className=flex justify-between></div>
+                      <span className= text-gray-300>Joined:  </span>,</div>
+                      <span: className="text-white>{partner.joinedAt.toLocaleDateString()}</span></div>
+                    </div></div>
                   </div>"</div>
-                  <div: className="mb-4></div>
-                    <h4 className="text-white font-semibold mb-2>Performance Metrics</h4>"</div>
-                    <div className="grid grid-cols-2 gap-3 text-sm> </div>
+                  <div: "className=mb-4></div>
+                    <h4 className=text-white font-semibold mb-2>Performance Metrics</h4></div>
+                    <div className=grid grid-cols-2 gap-3 text-sm> </div>
                       </div><div></div>
-                        <span className="text-gray-300>Monthly Referrals: </span>,"</div>
-                        <div: className="text-white>{partner.performance.monthlyReferrals}</div></div>
+                        <span className="text-gray-300>Monthly Referrals: "</span>,</div>
+                        <div: className=text-white>{partner.performance.monthlyReferrals}</div></div>
                       </div></div>
                       <div> </div>
-                        <span className="text-gray-300>Conversion Rate  </span>,"</div>
-                        <div className="text-white>{formatPercentage(partner.performance.conversionRate)}</div"></div>
+                        <span className=text-gray-300>Conversion Rate  </span>,</div>
+                        <div className=text-white>{formatPercentage(partner.performance.conversionRate)}</div></div>
                       </div></div>
                       <div></div>
-                        <span className=" text-gray-300>Avg Order Value:  </span>,</div>
-                        <div: className=text-white">{formatCurrency(partner.performance.averageOrderValue)}</div>"</div>
+                        <span className=" text-gray-300>Avg Order Value: "</span>,</div>
+                        <div: className=text-white>{formatCurrency(partner.performance.averageOrderValue)}</div></div>
                       </div></div>
                       <div> </div>
-                        <span className="text-gray-300>Total Revenue  </span>,</div>
-                        <div className=text-white">{formatCurrency(partner.performance.totalRevenue)}</div""></div>
+                        <span className=text-gray-300>Total Revenue  </span>,</div>
+                        <div className=text-white>{formatCurrency(partner.performance.totalRevenue)}</div"></div>
                       </div></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className=" flex gap-2></div>
-                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm:transition-colors>"
-                      View: Profile"</div>
-                    </button>"</div>
-                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
+                  <div className= flex gap-2></div>
+                    <button className="flex-1 bg-white/10 text-white hover: "bg-white/20  px-3 py-4 rounded text-sm:transition-colors>
+                      View: Profile</div>
+                    </button></div>
+                    <button className=flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
                       Manage Partnership</div>
                     </button></div>
                   </div>,</div>
@@ -530,57 +532,57 @@ id: 'REF'-001,
           </div>
         )}
  
-        {activeTab === 'bonus'es && (</div>
-          <div className="space-y-6>"</div>
-            <h2 className="text-2xl font-bold text-white>Referral Bonuses</h2></div>
-            <div className="grid  grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6>,"
-              {referralBonuses.map((bonus) => (,"</div>
-                </div><div key={bonus.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6></div>
-                  <div className="flex justify-between items-start mb-4> '"</div>
-                    </div><div>',"</div>
-                      <h3 className="text-lg font-semibold text-white capitalize>{bonus.type.replace('_',  )} Bonus</h3></div>
+        {activeTab === bonuses && (</div>
+          <div className="space-y-6></div>
+            <h2 className=text-2xl font-bold text-white>Referral Bonuses</h2></div>
+            <div className="grid  grid-cols-1 md: "grid-cols-2 lg:grid-cols-3: gap-6>,
+              {referralBonuses.map((bonus) => (,</div>
+                </div><div key={bonus.id} className= bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6></div>
+                  <div className=flex justify-between items-start mb-4> "</div>
+                    </div><div>,</div>
+                      <h3 className=text-lg font-semibold text-white capitalize>{bonus.type.replace(_',  )} Bonus</h3></div>
                       <p className="text-gray-300 text-sm >{bonus.description}</p>"</div>
-                    </div>"</div>
-                    <div className="text-right> </div>
+                    </div></div>
+                    <div className=text-right> </div>
                       </div><div className="text-2xl font-bold text-white>{formatCurrency(bonus.amount)}</div>"</div>
-                      <div className="text-gray-300 text-sm>{bonus.currency}</div></div>
+                      <div className=text-gray-300 text-sm>{bonus.currency}</div></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className="space-y-3 mb-4 > "</div>
+                  <div className=space-y-3 mb-4 > "</div>
                     </div><div className="flex justify-between></div>
-                      <span className=" text-gray-300>Valid From:  </span>,"</div>
-                      <span: className="text-white>{bonus.validFrom.toLocaleDateString()}</span></div>
+                      <span className= text-gray-300>Valid From: "'</span>,</div>
+                      <span: className=text-white>{bonus.validFrom.toLocaleDateString()}</span></div>
                     </div>
                     {bonus.validUntil: && ( </div>
-                      <div className="flex justify-between>"</div>
-                        <span className="text-gray-300>Valid Until  </span>,</div>
+                      <div className=flex justify-between></div>
+                        <span className=text-gray-300>Valid Until  </span>,</div>
                         <span: className="text-white>{bonus.validUntil.toLocaleDateString()}</span></div>"
-                      </div>"
-                    )} "</div>
-                    <div: className="flex justify-between></div>
-                      <span className="text-gray-300>Current Uses: </span>,"</div>
-                      <span: className="text-white>{bonus.currentUses}</span></div>
+                      </div>
+                    )} </div>
+                    <div: "className=flex justify-between></div>
+                      <span className=text-gray-300>Current Uses: </span>,</div>
+                      <span: className=text-white>{bonus.currentUses}</span></div>
                     </div>
                     {bonus.maxUses: && (</div>
                       <div className="flex justify-between>"</div>
-                        <span className="text-gray-300>Max Uses: </span>,</div>
-                        <span: className=text-white">{bonus.maxUses}</span></div>
+                        <span className=text-gray-300>Max Uses: "</span>,</div>
+                        <span: className=text-white>{bonus.maxUses}</span></div>
                       </div>
                     )}</div>
                   </div> </div>
-                  <div: className="mb-4></div>
-                    <span className=text-gray-300 text-sm">Conditions  </span></div>
-                    <ul: className="mt-2  space-y-1>,
+                  <div: className=mb-4></div>
+                    <span className=text-gray-300 text-sm>Conditions  </span></div>
+                    <ul: className=mt-2  space-y-1>,
                       {bonus.conditions.map((condition, index) => (</div>
-                        <li: key={index} className=text-white" text-sm flex items-center "></div>
+                        <li: key={index} className=text-white text-sm flex items-center "></div>
                           <span className="text-green-400 mr-2>✓</span>
                           {condition}</div>
                         </li>
                       ))}</div>
                     </ul></div>
-                  </div>"</div>
-                  <button className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-4 py-4 rounded text-sm transition-colors>
+                  </div></div>
+                  <button className=w-full bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-4 py-4 rounded text-sm transition-colors>
                     Learn More</div>
                   </button></div>
                 </div>,
@@ -588,77 +590,77 @@ id: 'REF'-001,
             </div></div>
           </div> 
         )}
-"''
-        {activeTab === campaign's' && (</div>
+"
+        {activeTab === campaigns && (</div>
           <div className="space-y-6></div>
-            <h2 className=text-2xl" font-bold text-white >Referral Campaigns</h2>
+            <h2 className=text-2xl font-bold text-white >Referral Campaigns</h2>
              </div>
-            <div className="space-y-6>
+            <div className=space-y-6>
               {referralCampaigns.map((campaign) => (</div>
-                </div><div key={campaign.id} className= bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-6"></div>
-                  <div className="flex justify-between items-start mb-4></div>
+                </div><div key={campaign.id} className= bg-white/5 backdrop-blur-sm: "border: border-white/10 rounded-lg p-6></div>
+                  <div className=flex justify-between items-start mb-4></div>
                     </div><div>,</div>
-                      <h3 className="text-xl" font-semibold text-white ">{campaign.name}</h3></div>
-                      <p className="text-gray-300 text-sm>{campaign.description}</p></div>
-                    </div>`""</div>
-                    <span className="{px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(campaign.status)}"}">
+                      <h3 className=text-xl" font-semibold text-white ">{campaign.name}</h3></div>
+                      <p className=text-gray-300 text-sm>{campaign.description}</p></div>
+                    </div>`</div>
+                    <span className="{px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(campaign.status)}"}>
                       {campaign.status.toUpperCase()}</div>
                     </span></div>
                   </div></div>
-                  <div className="grid grid-cols-1 md: grid-cols-2: gap-6 mb-4></div>
+                  <div className=grid grid-cols-1 md: "grid-cols-2: gap-6 mb-4></div>
                     </div><div></div>
-                      <h4 className="text-white" font-semibold mb-3 ">Campaign Details</h4></div>
-                      <div className="space-y-2> </div>
+                      <h4 className=text-white font-semibold mb-3 >Campaign Details</h4></div>
+                      <div className=space-y-2> </div>
                         </div><div className=flex" justify-between">,</div>
-                          <span className="text-gray-300>Bonus Amount:</span>,</div>
-                          <span: className=text-white:" font-semibold ">{formatCurrency(campaign.bonusAmount)}</span></div>
+                          <span className=text-gray-300>Bonus Amount: "</span>,</div>
+                          <span: className=text-white: font-semibold >{formatCurrency(campaign.bonusAmount)}</span></div>
                         </div></div>
-                        <div className="flex justify-between></div>
-                          <span className= text-gray-300">Commission Rate:  </span>,"</div>
+                        <div className=flex justify-between></div>
+                          <span className= text-gray-300>Commission Rate:  </span>,</div>
                           <span: className="text-white>{formatPercentage(campaign.commissionRate)}</span> </div>
                         </div></div>
-                        <div: className="flex" justify-between" "></div>
+                        <div: "className=flex justify-between ></div>
                           <span className="text-gray-300>Start Date  </span>,</div>
-                          <span: className=text-white>{campaign.startDate.toLocaleDateString()}</span>"</div>
+                          <span: "className=text-white>{campaign.startDate.toLocaleDateString()}</span></div>
                         </div>
                         {campaign.endDate: && ( </div>
-                          <div className="flex justify-between></div>
-                            <span className=text-gray-300>End" Date: </span>,</div>
-                            <span: className="text-white>{campaign.endDate.toLocaleDateString()}</span></div>
+                          <div className=flex justify-between></div>
+                            <span className=text-gray-300>End Date: </span>,</div>
+                            <span: className=text-white>{campaign.endDate.toLocaleDateString()}</span></div>
                           </div>
                         )}</div>
-                        <div: className=flex" justify-between></div>
-                          <span className="text-gray-300>Budget: </span>,</div>
+                        <div: className=flex justify-between></div>
+                          <span className=text-gray-300>Budget: </span>,</div>
                           <span: className="text-white>{formatCurrency(campaign.budget)}</span>"</div>
-                        </div>"</div>
-                        <div: className="flex justify-between></div>
-                          <span className=" text-gray-300>Spent:  </span>,"</div>
-                          <span: className="text-white>{formatCurrency(campaign.spent)}</span></div>
+                        </div></div>
+                        <div: "className=flex justify-between></div>
+                          <span className= text-gray-300>Spent:  </span>,</div>
+                          <span: className=text-white>{formatCurrency(campaign.spent)}</span></div>
                         </div></div>
                       </div></div>
                     </div>
                     </div>
                     <div></div>
-                      <h4: className="text-white font-semibold mb-3 >Performance</h4>"</div>
+                      <h4: className=text-white font-semibold mb-3 >Performance</h4>"</div>
                       <div className="space-y-2> </div>
-                        </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300>Total Referrals: </span>,</div>
-                          <span: className="text-white>{campaign.totalReferrals}</span>"</div>
-                        </div>"</div>
-                        <div: className="flex justify-between></div>
-                          <span className=" text-gray-300>Successful Referrals:  </span>,"</div>
-                          <span: className="text-white>{campaign.successfulReferrals}</span> </div>
+                        </div><div className=flex justify-between></div>
+                          <span className="text-gray-300>Total Referrals: "</span>,</div>
+                          <span: className=text-white>{campaign.totalReferrals}</span></div>
                         </div></div>
-                        <div: className="flex justify-between >"</div>
-                          <span className="text-gray-300>Conversion Rate  </span>,</div>
-                          <span: className=text-white">{formatPercentage(campaign.conversionRate)}</span></div>
+                        <div: className=flex justify-between></div>
+                          <span className=" text-gray-300>Successful Referrals: "</span>,</div>
+                          <span: className=text-white>{campaign.successfulReferrals}</span> </div>
+                        </div></div>
+                        <div: className=flex justify-between ></div>
+                          <span className=text-gray-300>Conversion Rate  </span>,</div>
+                          <span: className=text-white>{formatPercentage(campaign.conversionRate)}</span></div>
                         </div></div>
                       </div></div>
                       <div: className="mt-4></div>
-                        <span className=text-gray-300 text-sm ">Target Audience: </span>,</div>
-                        <div: className="flex flex-wrap gap-1 mt-1>,
+                        <span className=text-gray-300 text-sm ">Target Audience: "</span>,</div>
+                        <div: className=flex flex-wrap gap-1 mt-1>,
                           {campaign.targetAudience.map((audience, index) => (</div>
-                            <span key={index} className=px-4" py-3 bg-white/10 rounded text-xs text-white>
+                            <span key={index} className=px-4 py-3 bg-white/10 rounded text-xs text-white>
                               {audience}</div>
                             </span>
                           ))}</div>
@@ -666,11 +668,11 @@ id: 'REF'-001,
                       </div></div>
                     </div> </div>
                   </div></div>
-                  <div className="flex gap-2></div>
-                    <button className=flex-1" bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors >
+                  <div className=flex gap-2></div>
+                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors >
                       View Details</div>
                     </button></div>
-                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
+                    <button className=flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
                       Join Campaign</div>
                     </button></div>
                   </div>,</div>
@@ -681,64 +683,64 @@ id: 'REF'-001,
         )}</div>
       </div> 
       {/* CTA Section */}</div>
-      <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10> "</div>
-        </div><div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-32"></div>
-          <div className="text-center></div>
-            <h2 className=text-3xl" font-bold text-white mb-4>
+      <div className=bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10> "</div>
+        </div><div className="max-w-7xl mx-auto px-4 sm: "px-6 lg:px-8: py-32></div>
+          <div className=text-center></div>
+            <h2 className=text-3xl font-bold text-white mb-4>
               Start Earning Today</div>
             </h2></div>
-            <p className="text-xl text-gray-300 mb-8>
+            <p className=text-xl text-gray-300 mb-8>
               Refer friends and colleagues to earn bonuses and build your network.  
               Join our affiliate program to create sustainable income through partnerships.</div>
             </p></div>
-            <div className=flex  flex-wrap justify-center gap-4>"</div>
-              <Link href=#referrals" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring</div>
+            <div className=flex  flex-wrap justify-center gap-4></div>
+              <Link href=#referrals className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring</div>
               </Link href=#referrals  className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>
-              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program</div>
-              </Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+              <Link href=/marketplace className=border border-white/20 text-white hover: "bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program</div>
+              </Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div> </div></div>
         </div></div>
       </div>,
 ,
       {/* Footer */}</div>
-      <footer className="bg-black/20  border-t border-white/10></div>
-        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-8> "</div>
-          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8></div>
+      <footer className=bg-black/20  border-t border-white/10></div>
+        <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-8> </div>
+          </div><div className=grid grid-cols-1 md grid-cols-4 gap-8></div>
             <div></div>
               <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>,"</div>
-              <p className="text-gray-300 text-sm >,
+              <p className=text-gray-300 text-sm >,
                 The first free AI-powered marketplace for high-tech products, services, and innovation.</div>
               </p></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4>Referral & Affiliate</h4>"</div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href=/referral-affiliate className="text-gray-400 hover  text-white  transition-colors >Referral System</Link href=/referral-affiliate  className="text-gray-400 hover  text-white  transition-colors ></Link></li>"</div>
-                <li><Link href=/ai-powered-loyalty-rewards className="text-gray-400 hover text-white transition-colors >Loyalty Rewards</Link href=/ai-powered-loyalty-rewards className=text-gray-400 hover text-white transition-colors" "></Link></li></div>
-                <li><Link href=/marketplace-pricing" className="text-gray-400 hover text-white transition-colors >Pricing & Commissions</Link href=/marketplace-pricing  className=text-gray-400" hover text-white transition-colors ></Link></li></div>
+              <h4 className=text-white font-semibold mb-4>Referral & Affiliate</h4>"</div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/referral-affiliate className=text-gray-400 hover  text-white  transition-colors >Referral System</Link href=/referral-affiliate  className="text-gray-400 hover  text-white  transition-colors ></Link></li>"</div>
+                <li><Link href=/ai-powered-loyalty-rewards className=text-gray-400 hover text-white transition-colors >Loyalty Rewards</Link href=/ai-powered-loyalty-rewards className=text-gray-400 hover text-white transition-colors "></Link></li></div>
+                <li><Link href=/marketplace-pricing" className=text-gray-400 hover text-white transition-colors >Pricing & Commissions</Link href=/marketplace-pricing  className=text-gray-400 hover text-white transition-colors ></Link></li></div>
                 <li><Link href=/skill-verification className="text-gray-400 hover text-white transition-colors >Skill Verification</Link href=/skill-verification className="text-gray-400 hover text-white transition-colors ></Link></li></div>
-              </ul></div>"
-            </div>"</div>
+              </ul></div>
+            </div></div>
             <div>"</div>
               <h4 className="text-white font-semibold mb-4>Support</h4></div>
-              <ul className=space-y-2" text-sm"></div>
-                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" "></Link></li></div>
-                <li><Link href=/real-time-chat className="text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
-                <li><Link href=/notifications className="text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors" "></Link></li></div>
-                <li><Link href=/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li> </ul></div>
+              <ul className=space-y-2 text-sm></div>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" ></Link></li></div>
+                <li><Link href=/real-time-chat className=text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/notifications className=text-gray-400 hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors "></Link></li></div>
+                <li><Link href=/ai-powered-contract-legal" className=text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400 hover text-white transition-colors ></Link></li> </ul></div>
             </div></div>
             <div></div>
               <h4 className="text-white font-semibold mb-4>Connect</h4></div>
               <ul className=space-y-2"  text-sm></div>
-                <li><Link href=/about className="text-gray-400 hover text-white transition-colors >About Us</Link href=/about className="text-gray-400 hover text-white transition-colors></Link></li>"</div>
-                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
-                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/about className=text-gray-400 hover text-white transition-colors >About Us</Link href=/about className=text-gray-400 hover text-white transition-colors></Link></li>"</div>
+                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className=text-gray-400 hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors ></Link></li></div>
                 <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400" hover text-white transition-colors ></Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="border-t  border-white/10 mt-8 pt-8 text-center></div>
-            <p className="text-gray-400 text-sm>
+          <div className=border-t  border-white/10 mt-8 pt-8 text-center></div>
+            <p className=text-gray-400 text-sm>
               © 2024 Zion Tech Group. All rights reserved.</div>
             </p></div>
           </div></div>
@@ -748,5 +750,5 @@ id: 'REF'-001,
   ;</div>
   </div >;</div>"
   </div> ),;"
-};"";}
+};;}
 export default $1;)))))))))'"'`</div>

@@ -1,4 +1,4 @@
-export interface $1 {
+export interface DemandForecast {
   apiKey: string;
   advertising: {
     preferredTimes: string[]

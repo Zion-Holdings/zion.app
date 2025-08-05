@@ -1,10 +1,10 @@
-import React from "react";}
-import { motion } from framer-motion";}
+import React from "react;}
+import { motion } from framer-motion;
 import { Star, MapPin, Clock, DollarSign, User } from "lucide-react;}
 import { Service } from '../../utils/types/service";
 
-interface $1 {
-  service: Service;
+interface DemandForecast {
+  service: "'Service;
   onRequestQuote: (service: Service) => void;};
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) => {
   const $1 = (rating: number) => {;
@@ -14,60 +14,60 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
 </div>
     for (let $1 = 0; i < fullStars; i++) {
       stars.push(
-        <Star key={i} className=" w-4 h-4 text-yellow-400 fill-current >);}
+        <Star key={i} className= w-4 h-4 text-yellow-400 fill-current >);}
     if (hasHalfStar) {
       stars.push(</div>
         </ fullStars; i++) {
-      stars.push('"
-        <Star key={i} className=" w-4 h-4 text-yellow-400 fill-current ><Star key=" half className="w-4 h-4 text-yellow-400 fill-current style={{ clipPath: 'inset(0 50% 0 0) }} >);}
-    const $1 = 5 - fullStars - (hasHalfStar ? 1 : 0); ''</div>
-    for (let $1 = 0; i </Star key= half className= w-4 h-4 text-yellow-400 fill-current style={{ clipPath:" inset'(0 50% 0 0) }} >< emptyStars; i++) {
       stars.push(
-        <Star key={"empty-${i}"} className="w-4 h-4 text-gray-300 >);}
+        <Star key={i} className= w-4 h-4 text-yellow-400 fill-current ><Star key= half className=w-4 h-4 text-yellow-400 fill-current style={{ clipPath: inset(0 50% 0 0) }} >);}
+    const $1 = 5 - fullStars - (hasHalfStar ? 1 : 0); </div>
+    for (let $1 = 0; i </Star key= half className= w-4 h-4 text-yellow-400 fill-current style={{ clipPath: inset(0 50% 0 0) }} >< emptyStars; i++) {
+      stars.push(
+        <Star key={"empty-${i}"} className=w-4 h-4 text-gray-300 >);}
     return stars;
   };
-  const $1 = (price: Service['price']) => {
-    const $1 = new Intl.NumberFormat('en-US', {
-      style: 'currency',
+  const $1 = (price: "Service[price']) => {
+    const $1 = new Intl.NumberFormat('en-US, {
+      style: 'currency,
       currency: price.currency,
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,;
     });
     const $1 = formatter.format(price.from);
     
-    if (price.type = == 'hourly') {;""
-      return "From ${formattedPrice}/hr";"
-    } else if (price.type = == 'monthly') {;`"
-      return "From ${formattedPrice}/mo";"
+    if (price.type = == hourly) {;
+      return From ${formattedPrice}/hr;
+    } else if (price.type = == monthly') {;`"
+      return "From ${formattedPrice}/mo;
     } else {`"
-      return "From ${formattedPrice}";}
+      return "From ${formattedPrice};}
   };
- "
+ 
   return ("</div>
-    </ emptyStars; i++) {""
-      stars.push(`"
-        <Star key = {"empty-${i}"} className="w-4 h-4 text-gray-300  ><motion.div
-      initial={{ opacity: 0, y: 20}}
+    </ emptyStars; i++) {"
+      stars.push(`
+        <Star key = {"empty-${i}"} className=w-4 h-4 text-gray-300  ><motion.div
+      initial={{ opacity: "0, y: 20}}
       animate={{ opacity: 1, y: 0}}
       transition={{ duration: 0.3}}
       whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-lg hover shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group>"
-      {/* Card Header with Gradient */}"</div>
-      <div className="relative h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 ></div>
-        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+      className=bg-white rounded-xl shadow-lg hover shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group>
+      {/* Card Header with Gradient */}</div>
+      <div className=relative h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 ></div>
+        <div className=absolute inset-0 bg-black bg-opacity-10"></div>
         
         {/* AI Score Badge */}</div>
-        <div className=" absolute top-4 right-4"></div>
-          <div className=" bg-white bg-opacity-95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg></div>
+        <div className=" absolute top-4 right-4></div>
+          <div className= bg-white bg-opacity-95 backdrop-blur-sm rounded-full px-3 py-1 shadow-lg></div>
             <span className="text-sm font-bold text-gray-800>
-              AI Score: {service.aiScore}</div>
+              AI Score: "{service.aiScore}</div>
             </span ></div>
           </div></div>
-        </div>"
-"
-        {/* Category Badge */}"</div>
-        <div className=" absolute bottom-4 left-4></div>
-          <div className= bg-white bg-opacity-95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg"""></div>
+        </div>
+
+        {/* Category Badge */}</div>
+        <div className= absolute bottom-4 left-4></div>
+          <div className= bg-white bg-opacity-95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg"></div>
             <span className="text-sm font-semibold text-gray-800>
               {service.category}</div>
             </span ></div>
@@ -75,62 +75,62 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
         </div>
 
         {/* Price Badge */}</div>
-        <div className=" absolute bottom-4 right-4>"</div>
-          <div className=" bg-green-500 bg-opacity-95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg></div>
-            <span className= text-sm font-bold text-white flex items-center"""></div>
-              <DollarSign className="w-4 h-4 mr-1 >{formatPrice(service.price)}</div>
+        <div className=" absolute bottom-4 right-4></div>
+          <div className= bg-green-500 bg-opacity-95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg></div>
+            <span className= text-sm font-bold text-white flex items-center""></div>
+              <DollarSign className=w-4 h-4 mr-1 >{formatPrice(service.price)}</div>
             </DollarSign className=w-4 h-4 mr-1 "></span> </div></div>
         </div></div>
       </div>
       {/* Card Content */}</div>
       <div className="p-6 >
         {/* Title and Provider */}</div>
-        <div className="mb-4>"</div>
+        <div className=mb-4></div>
           <h3 className=" text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover text-blue-600 transition-colors>
             {service.title}</div>
           </h3></div>
-          <div className=" flex items-center text-sm text-gray-600>"</div>
-            <User className="w-4 h-4 mr-1 > </User className=w-4 h-4 mr-1 ""><span>{service.providerName}</span></div>
+          <div className=" flex items-center text-sm text-gray-600></div>
+            <User className=w-4 h-4 mr-1 > </User className=w-4 h-4 mr-1 ""><span>{service.providerName}</span></div>
           </div></div>
         </div>
-"
+
         {/* Description */}</div>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3>
+        <p className=text-gray-600 text-sm mb-4 line-clamp-3>
           {service.description}</div>
         </p>
 
         {/* Rating */}</div>
         <div className=" flex items-center mb-4>"</div>
-          <div className=" flex items-center mr-2>
+          <div className= flex items-center mr-2>
             {renderStars(service.rating)}</div>
           </div></div>
-          <span className=text-sm text-gray-600">
+          <span className=text-sm text-gray-600>
             {service.rating} ({service.reviewCount} reviews)</div>
           </span></div>
         </div>
 
         {/* Details Grid */}"</div>
         <div className=" grid grid-cols-2 gap-3 mb-4></div>
-          <div className= flex items-center text-sm text-gray-600"></div>
-            <MapPin className="w-4 h-4 mr-2 flex-shrink-0 > </div>
+          <div className= flex items-center text-sm text-gray-600></div>
+            <MapPin className=w-4 h-4 mr-2 flex-shrink-0 > </div>
             </MapPin className="w-4 h-4 mr-2 flex-shrink-0 ><span className="truncate>{service.location}</span></div>
           </div></div>
-          <div className="flex items-center text-sm text-gray-600"></div>
-            <Clock className="w-4 h-4 mr-2 flex-shrink-0 > </Clock className="w-4 h-4 mr-2 flex-shrink-0 ><span>{service.deliveryTime}</span></div>"
-          </div>"</div>
+          <div className=flex items-center text-sm text-gray-600></div>
+            <Clock className="w-4 h-4 mr-2 flex-shrink-0 > </Clock className="w-4 h-4 mr-2 flex-shrink-0 ><span>{service.deliveryTime}</span></div>
+          </div></div>
         </div>"
 "
         {/* Specialties */}</div>
-        <div className="mb-4 ></div>
-          <div className=flex flex-wrap gap-1"">
+        <div className=mb-4 ></div>
+          <div className=flex flex-wrap gap-1">
             {service.specialties.slice(0, 3).map((specialty, index) => (</div>
               <span key={index}
                 className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium >
                 {specialty}</div>
               </span> 
             ))}
-            {service.specialties.length > 3 && ("</div>
-              <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full>
+            {service.specialties.length > 3 && (</div>
+              <span className=inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full>
                 +{service.specialties.length - 3} more</div>
               </span>
             )}</div>

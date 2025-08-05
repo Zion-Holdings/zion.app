@@ -1,34 +1,34 @@
-import React from "react";
-interface $1 {
-  children: React.ReactNode'
+import React from "react;
+interface DemandForecast {
+  children: "'React.ReactNode
   className?: string
-  containerType?: 'responsi've | 'flu'id | 'nar'row'' | wide'
-  padding?: 'no'n'e | s'm' | ba's'e | 'l'g
+  containerType?: responsive | flu'id | narrow'' | wide
+  padding?: no'n'e | sm | ba's'e | lg
   maxWidth?: string};
-const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
+const ResponsiveContainer: 'React.FC<ResponsiveContainerProps> = ({
   children,
-  className='',"
-  containerType = responsiv'e',
+  className=,
+  containerType = responsive,
   padding = bas'e',
   maxWidth
 }) => {
   const $1 = {
-    responsive: container-responsi'v'e,
-    fluid: container-flu'i'd,
-    narrow: container-narr'o'w,
+    responsive: 'container-responsive,
+    fluid: container-fluid,
+    narrow: container-narrow,
     wide: container-wi'd'e}
   const $1 = {
     none: ',
-    sm: 'section-padding-sm',
-    base: 'section-padding',
-    lg: 'section-padding-lg'}
+    sm: section-padding-sm,
+    base: section-padding,
+    lg: section-padding-lg'}
   const $1 = containerClasses[containerType]
   const $1 = paddingClasses[padding]
   return (</div>
     <div 
-      className="{${containerClass} ${paddingClass} ${className}}"
-      style={maxWidth ? { maxWidth } : undefined}"
-    ">
+      className={${containerClass} ${paddingClass} ${className}}
+      style={maxWidth ? { maxWidth } : undefined}
+    >
       {children}</div>
     </div>
   );

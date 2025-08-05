@@ -1,333 +1,290 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-interface $1 {
-  candidates: Array
-  }>;
-  employees: Array
-  }>;
-  jobPostings: Array
-  }>;
-  performanceReviews: Array
-  }>;
-  analytics: {
-    recruitment: {
-      timeToHire: number;
-      costPerHire: number;
-      qualityOfHire: number;
-      diversityScore: number;
-    };
-    employee: {
-      satisfaction: number;
-      retentionRate: number;
-      averagePerformance: number;
-      engagementScore: number;
-    };
-    predictions: {
-      highPerformers: number;
-      retentionRisk: number;
-      skillGaps: number;
-    };
-    trends: {
-      employeeGrowth: number;
-      diversityImprovement: number;
-      trainingCompletion: number;
-    };
-  };
-  insights: Array
-  }>;
-};
-;}
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<HRData>'
-) {
-  if (req.method !== POS'T') {
-    return res.status(405).json({} as HRData);}
-  // Mock HR data
-  const hrData: HRData = {
-    candidates: [
-      {
-        id: 1',
-        name: 'Sarah Johnson',
-        position: 'Senior Software Engineer',
-        experience: '8 years,
-        skills: [Rea'c't, Nod'e'.js, Pyth'o'n, A'W'S],
-        status: interviewi'n'g,
-        score: 92,
-        aiInsights: {
-          culturalFit: 88,
-          skillMatch: 95,
-          growthPotential: 90,
-          riskAssessment: 12
-        }
-        lastUpdated: '2024-01-15'}
-      {
-        id: 2',
-        name: 'Michael Chen',
-        position: 'Product Manager',
-        experience: '6 years,
-        skills: [Produc't' Strategy, Agi'l'e, Dat'a' Analysis, Use'r' Research],
-        status: screeni'n'g,
-        score: 87,
-        aiInsights: {
-          culturalFit: 85,
-          skillMatch: 88,
-          growthPotential: 92,
-          riskAssessment: 18
-        }
-        lastUpdated: '2024-01-14'}
-      {
-        id: 3',
-        name: 'Emily Rodriguez',
-        position: 'UX Designer',
-        experience: '4 years,
-        skills: [Fig'm'a, Use'r' Research, Prototypi'n'g, Desig'n' Systems],
-        status: appli'e'd,
-        score: 89,
-        aiInsights: {
-          culturalFit: 92,
-          skillMatch: 86,
-          growthPotential: 88,
-          riskAssessment: 15
-        }
-        lastUpdated: '2024-01-13'}
-      {
-        id: 4',
-        name: 'Alex Thompson',
-        position: 'Data Scientist',
-        experience: '5 years,
-        skills: [Pyth'o'n, Machin'e' Learning, S'Q'L, Statisti'c's],
-        status: offer'e'd,
-        score: 94,
-        aiInsights: {
-          culturalFit: 90,
-          skillMatch: 96,
-          growthPotential: 93,
-          riskAssessment: 8
-        }
-        lastUpdated: '2024-01-12'}
-    ],
-    employees: [
-      {
-        id: 1',
-        name: 'David Kim',
-        position: 'Lead Developer',
-        department: 'Engineering',
-        startDate: '2022-03-15,
-        performance: {
-          overall: 92,
-          productivity: 94,
-          collaboration: 89,
-          innovation: 91}
-        engagement: 88,
-        retentionRisk: 15,
-        developmentNeeds: ['Leadershi'p Skills, 'Syste'm Architecture]}'
-      {
-        id: '2,
-        name: Lis'a' Wang,
-        position: Marketin'g' Manager,
-        department: Marketi'n'g,
-        startDate: 2021-08-20',
-        performance: {
-          overall: 89,
-          productivity: 87,
-          collaboration: 93,
-          innovation: 88}
-        engagement: 92,'
-        retentionRisk: 8,
-        developmentNeeds: [Data' Analytics', Strategic' Planning']}
-      {
-        id: 3',
-        name: 'James Wilson',
-        position: 'Sales Director',
-        department: 'Sales',
-        startDate: '2020-11-10,
-        performance: {
-          overall: 85,
-          productivity: 82,
-          collaboration: 88,
-          innovation: 79}
-        engagement: 75,
-        retentionRisk: 35,
-        developmentNeeds: ['Performanc'e Coaching, 'Tea'm Leadership]}'
-      {
-        id: '4,
-        name: Mari'a' Garcia,
-        position: H'R' Specialist,
-        department: Huma'n' Resources,
-        startDate: 2023-01-15',
-        performance: {
-          overall: 91,
-          productivity: 89,
-          collaboration: 94,
-          innovation: 87}
-        engagement: 95,'
-        retentionRisk: 5,
-        developmentNeeds: [HR' Analytics', Employee' Relations']}
-    ],
-    jobPostings: [
-      {
-        id: 1',
-        title: 'Senior Full Stack Developer',
-        department: 'Engineering',
-        location: "San Francisco, CA',
-        type: full-tim'e',
-        status: activ'e',
-        applications: 45,
-        aiOptimization: {
-          keywordOptimization: 92,
-          diversityScore: 78,
-          marketCompetitiveness: 85}}
-      {
-        id: 2',
-        title: 'Product Marketing Specialist',
-        department: 'Marketing',
-        location: 'Remote',
-        type: 'full-time',
-        status: 'active',
-        applications: 32,
-        aiOptimization: {
-          keywordOptimization: 88,
-          diversityScore: 82,
-          marketCompetitiveness: 79}}'
-      {
-        id: 3,
-        title: 'Dat'a Scientist,
-        department: 'Analyti'cs,
-        location: New York", NY',
-        type: 'full-time',
-        status: 'paused',
-        applications: 28,
-        aiOptimization: {
-          keywordOptimization: 85,
-          diversityScore: 75,
-          marketCompetitiveness: 92}}'
-      {
-        id: 4,
-        title: 'U'X/UI Designer,
-        department: 'Desi'gn,
-        location: "Austin, TX',
-        type: 'full-time',
-        status: 'active',
-        applications: 38,
-        aiOptimization: {
-          keywordOptimization: 90,
-          diversityScore: 85,
-          marketCompetitiveness: 88}}
-    ],
-    performanceReviews: ['
-      {
-        id: 1,
-        employeeId: '1',
-        employeeName: David' Kim',
-        period: Q4 2023','
-        overallRating: 92,
-        goals: [Lead' technical architecture decisions', Mentor' junior developers'],
-        achievements: [Successfully' launched new product feature', Improved' team productivity by 25%'],
-        areasForImprovement: [Communication' with non-technical stakeholders'],
-        aiRecommendations: [Consider' leadership training program', Schedule' regular stakeholder updates']
-      },
-    {
-        id: 2',
-        employeeId: '2,
-        employeeName: Lis'a' Wang,
-        period: Q'4 2023',
-        overallRating: 89,
-        goals: [Increas'e' brand awareness, Improv'e' campaign ROI],
-        achievements: [Launche'd' successful social media campaign, Increase'd' conversion rates by 30%],
-        areasForImprovement: [Data-drive'n' decision making],
-        aiRecommendations: [Enrol'l' in advanced analytics course, Implemen't' A/B testing framework]
-      },
-    {
-        id: '3',
-        employeeId: 3,
-        employeeName: 'Jame's Wilson,
-        period: 'Q'4 2023,
-        overallRating: 85,
-        goals: ['Increas'e sales revenue, 'Improv'e team performance],
-        achievements: ['Exceede'd quarterly targets by 15%, 'Implemente'd new sales process],
-        areasForImprovement: ['Tea'm leadership and coaching],
-        aiRecommendations: ['Atten'd leadership development program, 'Implemen't regular team feedback sessions]}
-    ],
-    analytics: {
-      recruitment: {
-        timeToHire: 24,
-        costPerHire: 8500,
-        qualityOfHire: 87,
-        diversityScore: 78}
-      employee: {
-        satisfaction: 92,
-        retentionRate: 94,
-        averagePerformance: 88,
-        engagementScore: 89}
-      predictions: {
-        highPerformers: 15,
-        retentionRisk: 3,
-        skillGaps: 8}
-      trends: {
-        employeeGrowth: 12,
-        diversityImprovement: 8,
-        trainingCompletion: 87}}
-    insights: ['
-      {
-        type: 'retention_risk',
-        title: 'High Retention Risk Detected',
-        description: '3 employees showing signs of disengagement and potential departure,
-        severity: hi'g'h,
-        affectedCount: 3,
-        recommendations: [
-          'Schedul'e one-on-one meetings with affected employees,
-          'Revie'w compensation and benefits packages,
-          'Implemen't employee engagement initiatives]
-      },'
-    {
-        type: 'skill_gap',
-        title: 'Skill Gap Identified',
-        description: 'Engineering team needs upskilling in emerging technologies',
-        severity: 'medium',
-        affectedCount: 12,'
-        recommendations: [
-          Implement' technical training programs',
-          Provide' access to online learning platforms',
-          Schedule' regular skill assessment reviews']
-      },
-    {
-        type: diversi't'y,
-        title: Diversit'y' Improvement,
-        description: Positive trend in leadership diversity", but room for improvement,
-        severity: 'l'ow,
-        affectedCount: 8,'
-        recommendations: [
-          'Continue diversity-focused recruitment efforts',
-          'Implement mentorship programs for underrepresented groups',
-          'Review promotion processes for bias']
-      },'
-    {
-        type: performanc'e',
-        title: Performance' Distribution',
-        description: Strong' performance across teams with 35 employees in top 20%',
-        severity: lo'w',
-        affectedCount: 35,
-        recommendations: [
-          Recogniz'e' high performers publicly,
-          Provid'e' career development opportunities,
-          Shar'e' best practices across teams]
-      },
-    {
-        type: 'recruitme'nt,
-        title: 'Recruitmen't Pipeline Optimization,
-        description: 'Jo'b postings need optimization for better candidate quality,
-        severity: 'medi'um,
-        affectedCount: 3,'
-        recommendations: [
-          'Update job descriptions with AI-optimized keywords',
-          'Improve diversity in candidate sourcing',
-          'Enhance employer branding materials']}
-    ];
-  };
+interface Employee {
+  id: string;
+  name: string;
+  position: string;
+  department: string;
+  hireDate: string;
+  salary: number;
+  performance: number;
+  satisfaction: number;
+  retentionRisk: number;
+  aiAnalysis: EmployeeAnalysis;
+}
 
-  // Simulate processing delay
-  setTimeout(() => {
-    res.status(200).json(hrData);
-  } 1000);'
-} '</div>
+interface EmployeeAnalysis {
+  id: string;
+  performanceScore: number;
+  satisfactionScore: number;
+  retentionScore: number;
+  recommendations: string[];
+}
+
+interface JobPosting {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: 'full-time' | 'part-time' | 'contract' | 'internship';
+  status: 'open' | 'in-review' | 'closed' | 'filled';
+  applications: number;
+  aiOptimization: JobOptimization;
+}
+
+interface JobOptimization {
+  id: string;
+  visibilityScore: number;
+  applicationQuality: number;
+  diversityScore: number;
+  recommendations: string[];
+}
+
+interface HRAnalytics {
+  totalEmployees: number;
+  activeJobPostings: number;
+  averagePerformance: number;
+  employeeSatisfaction: number;
+  retentionRate: number;
+  aiOptimizationScore: number;
+}
+
+const mockEmployees: Employee[] = [
+  {
+    id: 'emp-1',
+    name: 'John Smith',
+    position: 'Senior Software Engineer',
+    department: 'Engineering',
+    hireDate: '2022-03-15',
+    salary: 95000,
+    performance: 92,
+    satisfaction: 88,
+    retentionRisk: 15,
+    aiAnalysis: {
+      id: 'analysis-1',
+      performanceScore: 90,
+      satisfactionScore: 85,
+      retentionScore: 85,
+      recommendations: ['Consider promotion opportunities', 'Provide additional training', 'Increase recognition']
+    }
+  },
+  {
+    id: 'emp-2',
+    name: 'Sarah Johnson',
+    position: 'Product Manager',
+    department: 'Product',
+    hireDate: '2021-08-20',
+    salary: 110000,
+    performance: 95,
+    satisfaction: 92,
+    retentionRisk: 8,
+    aiAnalysis: {
+      id: 'analysis-2',
+      performanceScore: 94,
+      satisfactionScore: 90,
+      retentionScore: 92,
+      recommendations: ['High performer - consider leadership role', 'Maintain current engagement level']
+    }
+  },
+  {
+    id: 'emp-3',
+    name: 'Mike Davis',
+    position: 'Data Analyst',
+    department: 'Analytics',
+    hireDate: '2023-01-10',
+    salary: 75000,
+    performance: 78,
+    satisfaction: 65,
+    retentionRisk: 45,
+    aiAnalysis: {
+      id: 'analysis-3',
+      performanceScore: 75,
+      satisfactionScore: 62,
+      retentionScore: 55,
+      recommendations: ['Provide performance coaching', 'Address work-life balance', 'Consider role adjustment']
+    }
+  },
+  {
+    id: 'emp-4',
+    name: 'Lisa Brown',
+    position: 'UX Designer',
+    department: 'Design',
+    hireDate: '2022-11-05',
+    salary: 85000,
+    performance: 88,
+    satisfaction: 82,
+    retentionRisk: 25,
+    aiAnalysis: {
+      id: 'analysis-4',
+      performanceScore: 86,
+      satisfactionScore: 80,
+      retentionScore: 78,
+      recommendations: ['Provide career development opportunities', 'Increase project variety', 'Improve team collaboration']
+    }
+  }
+];
+
+const mockJobPostings: JobPosting[] = [
+  {
+    id: 'job-1',
+    title: 'Frontend Developer',
+    department: 'Engineering',
+    location: 'Remote',
+    type: 'full-time',
+    status: 'open',
+    applications: 45,
+    aiOptimization: {
+      id: 'opt-1',
+      visibilityScore: 85,
+      applicationQuality: 78,
+      diversityScore: 82,
+      recommendations: ['Optimize job description keywords', 'Improve diversity outreach', 'Enhance application process']
+    }
+  },
+  {
+    id: 'job-2',
+    title: 'Data Scientist',
+    department: 'Analytics',
+    location: 'New York',
+    type: 'full-time',
+    status: 'in-review',
+    applications: 32,
+    aiOptimization: {
+      id: 'opt-2',
+      visibilityScore: 92,
+      applicationQuality: 88,
+      diversityScore: 75,
+      recommendations: ['Increase diversity initiatives', 'Streamline interview process', 'Improve candidate experience']
+    }
+  },
+  {
+    id: 'job-3',
+    title: 'Marketing Intern',
+    department: 'Marketing',
+    location: 'San Francisco',
+    type: 'internship',
+    status: 'open',
+    applications: 28,
+    aiOptimization: {
+      id: 'opt-3',
+      visibilityScore: 78,
+      applicationQuality: 65,
+      diversityScore: 90,
+      recommendations: ['Enhance job posting visibility', 'Improve application screening', 'Add mentorship program details']
+    }
+  }
+];
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  try {
+    const { action, filters } = req.body;
+
+    switch (action) {
+      case 'getEmployees':
+        return res.status(200).json({
+          success: true,
+          data: mockEmployees,
+          analytics: {
+            totalEmployees: mockEmployees.length,
+            averagePerformance: mockEmployees.reduce((sum, e) => sum + e.performance, 0) / mockEmployees.length,
+            averageSatisfaction: mockEmployees.reduce((sum, e) => sum + e.satisfaction, 0) / mockEmployees.length,
+            highRiskEmployees: mockEmployees.filter(e => e.retentionRisk > 30).length
+          }
+        });
+
+      case 'getJobPostings':
+        return res.status(200).json({
+          success: true,
+          data: mockJobPostings,
+          analytics: {
+            totalPostings: mockJobPostings.length,
+            openPostings: mockJobPostings.filter(j => j.status === 'open').length,
+            totalApplications: mockJobPostings.reduce((sum, j) => sum + j.applications, 0),
+            averageApplications: mockJobPostings.reduce((sum, j) => sum + j.applications, 0) / mockJobPostings.length
+          }
+        });
+
+      case 'getHRAnalytics':
+        return res.status(200).json({
+          success: true,
+          analytics: {
+            totalEmployees: 4,
+            activeJobPostings: 3,
+            averagePerformance: 88.25,
+            employeeSatisfaction: 81.75,
+            retentionRate: 92.5,
+            aiOptimizationScore: 89.3,
+            recommendations: [
+              'Implement AI-powered performance tracking',
+              'Enhance employee engagement programs',
+              'Optimize recruitment processes',
+              'Develop retention strategies for high-risk employees'
+            ]
+          }
+        });
+
+      case 'getEmployeeDetails':
+        const { employeeId } = req.body;
+        const employee = mockEmployees.find(e => e.id === employeeId);
+        
+        if (!employee) {
+          return res.status(404).json({ error: 'Employee not found' });
+        }
+
+        return res.status(200).json({
+          success: true,
+          data: employee,
+          analytics: {
+            performanceTrend: 'stable',
+            satisfactionTrend: 'improving',
+            retentionRisk: employee.retentionRisk,
+            careerProgression: 'on-track',
+            developmentOpportunities: 3
+          }
+        });
+
+      case 'analyzeEmployee':
+        const { employeeId: analyzeEmployeeId } = req.body;
+        const analyzeEmployee = mockEmployees.find(e => e.id === analyzeEmployeeId);
+        
+        if (!analyzeEmployee) {
+          return res.status(404).json({ error: 'Employee not found' });
+        }
+
+        // Simulate AI analysis
+        const analysis = {
+          performanceInsights: [
+            'Consistent high performance in technical tasks',
+            'Strong collaboration with team members',
+            'Areas for improvement in communication'
+          ],
+          satisfactionFactors: [
+            'Positive work environment',
+            'Good compensation package',
+            'Opportunities for growth'
+          ],
+          retentionStrategies: [
+            'Provide career development opportunities',
+            'Increase recognition and rewards',
+            'Improve work-life balance'
+          ]
+        };
+
+        return res.status(200).json({
+          success: true,
+          analysis,
+          recommendations: analyzeEmployee.aiAnalysis.recommendations
+        });
+
+      default:
+        return res.status(400).json({ error: 'Invalid action' });
+    }
+  } catch (error) {
+    console.error('AI HR Management API Error:', error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}

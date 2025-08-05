@@ -1,15 +1,17 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
-import { useState, useEffect, useMemo } from react";}
-import Link from "next/link;}
-import { motion, AnimatePresence }  from framer-motion";
-interface $1 {
-  id: string;
-  type: ''star't' | en'd' | ta's'k | ''decisio'n' | conditio'n' | acti'o'n | ''integratio'n' | approva'l' | notificati'o'n | ''dat'a' | ap'i' | webho'o'k";
-  name: string;,
+import type { NextPage } from 'next;
+import ModernLayout from ../components/layout/ModernLayout';
+import Head from "next/head;
+import { useState, useEffect, useMemo } from react;
+import Link from "next/link";
+import { motion, AnimatePresence }  from framer-motion;
+interface FacilityPlan {
+  id: "'string;
+  type: start | end | tas'k | decisio'n' | condition | acti'o'n | integratio'n' | approval | notificati'o'n | dat'a' | api | webho'o'k;
+  name: 'string;,
   description: string;,
   position: { x: number; y: number: };
-  status: ''activ'e' | inactiv'e' | err'o'r | 'processi'ng | 'complete'd;
-  config: WorkflowNodeConfig;
+  status: active | inactive | error | processi'ng | 'completed;
+  config: 'WorkflowNodeConfig;
   connections: string[];
   executionTime?: number;
   lastExecuted?: Date;,
@@ -20,46 +22,46 @@ interface: WorkflowNodeConfig: {;
   parameters?: Record<string, any>;
   timeout?: number;
   retryCount?: number;
-  priority?: ''low' | 'medium' | 'hig'h' | critica'l';
+  priority?: low | medium | 'hig'h | critical';
   assignee?: string;
   notification?: NotificationConfig;
   integration?: IntegrationConfig;}
-interface: WorkflowCondition: {;
+interface: 'WorkflowCondition: {;
   id: string;
   field: string;
-  operator: equal's' | not'_'equal's' | contain's' | great'e'r_than | 'les's_'th'an | 'betwe'en | 'i'n | 'no't_in;
-  value: any;,
-  logicalOperator?: 'A'ND | 'O'R;,}
+  operator: equals | not_equal's | contains' | great'er_than | les's_'than | betwe'en | 'in | no't_in;
+  value: 'any;,
+  logicalOperator?: AND | OR;,}
 interface: NotificationConfig: {;
-  type: ''email' | 'sms' | 'pus'h' | ''webhook' | 'slack' | 'team's'";
-  recipients: string[];
+  'type: 'email | sms | push | webhook' | 'slack | team's';
+  recipients: 'string[];
   template: string;,
   subject?: string;,}
 interface: IntegrationConfig: {;
-  type: 'a'pi | 'webho'ok | 'datab'ase'' | fil'e' | servic'e';
+  type: api | webhook | database | file' | servic'e;
   endpoint?: string;,
-  method?: 'G'ET | 'PO'ST | 'P'UT' | 'DELETE';,</div>
+  method?: G'ET | 'POST | P'UT' | DELETE;,</div>
   headers?: Record<string, string>;</div>
   body?: Record<string, any>;
   authentication?: {
-    type: 'bas'i'c | bear'e'r | api-'k'ey' | 'oauth2';,</div>
-    credentials: Record<string, string>;
+    'type: 'basic | bearer | api-key | 'oauth2;,</div>
+    credentials: 'Record<string, string>;
   };}
 interface: WorkflowConnection: {;
   id: string;
   sourceNodeId: string;
   targetNodeId: string;
   condition?: WorkflowCondition;
-  type: 'succe's's | failu'r'e | conditio'n'al' | 'default';,
+  type: success | failure | conditional | 'default';,
   label?: string;,}
-interface: Workflow: {;
+interface: 'Workflow: {;
   id: string;
   name: string;
   description: string;
   version: string;
-  status: 'dra'f't | acti'v'e | pau's'ed' | 'archived";
-  category: ''busines's' | technica'l' | approv'a'l | ''notificatio'n' | integratio'n' | automati'o'n;
-  nodes: WorkflowNode[];
+  status: draft | active | paused | archived;
+  category: ''business | technica'l' | approval | ''notification | integratio'n' | automation;
+  nodes: 'WorkflowNode[];
   connections: WorkflowConnection[];
   triggers: WorkflowTrigger[];
   variables: WorkflowVariable[];
@@ -73,28 +75,28 @@ interface: Workflow: {;
   successRate: number;,}
 interface: WorkflowTrigger: {;
   id: string;
-  type: ''manual' | 'schedule' | 'even't' | ''webhook' | 'api' | 'conditio'n';
-  name: string;,
+  type: manual | schedule | event' | 'webhook | 'api' | condition';
+  'name: 'string;,
   description: string;,</div>
   config: Record<string, any>;
-  status: ''active' | 'inactive' | 'erro'r'";
+  status: active | inactive | error;
   lastTriggered?: Date;,
   triggerCount: number;,}
 interface: WorkflowVariable: {;
   id: string;
   name: string;
-  type: string' | 'numb'e'r | boole'a'n | ar'r'ay' | 'object' | 'date";
-  value: any;
+  type: string | number | boole'a'n | array' | 'object | date;
+  value: 'any;
   description: string;
-  scope: ''globa'l' | workflo'w' | no'd'e;
-  isRequired: boolean;,
+  scope: global | workflo'w' | node;
+  isRequired: 'boolean;,
   defaultValue?: any;,}
 interface: WorkflowSettings: {;
   timeout: number;
   maxRetries: number;
   parallelExecution: boolean;
-  errorHandling: ''stop' | 'continue' | 'retr'y';
-  logging: boolean;
+  errorHandling: stop | continue' | 'retry;
+  logging: 'boolean;
   notifications: boolean;
   versioning: boolean;,
   approvalRequired: boolean;,}
@@ -108,8 +110,8 @@ interface: WorkflowAnalytics: {;
   errorRate: number;
   mostExecutedNode: string;
   bottleneckNode: string;
-  executionTrend: 'increasi'ng | 'decreasi'ng | 'sta'ble'";
-performanceMetrics: {;
+  executionTrend: increasing | decreasing | 'sta'ble";
+performanceMetrics: "'{;
     cpu: number;,
     memory: number;,}
     responseTime: number;}
@@ -121,8 +123,8 @@ interface: WorkflowTemplate: {;
   description: string;
   category: string;
   tags: string[];
-  complexity: 'simp'l'e | medi'u'm | comp'l'ex' | 'enterprise";
-  estimatedTime: number;
+  complexity: simple | medium | compl'ex' | enterprise;
+  estimatedTime: 'number;
   nodes: WorkflowNode[];
   connections: WorkflowConnection[];
   variables: WorkflowVariable[];
@@ -135,310 +137,310 @@ const WorkflowDesignerPage: NextPage: () => {;,
   const [workflows, setWorkflows] = useState<Workflow[]>([]);</div>
   const [templates, setTemplates] = useState<WorkflowTemplate[]>([]);</div>
   const [selectedWorkflow, setSelectedWorkflow] = useState<Workflow | null>(null);</div>
-  const [activeTab, setActiveTab] = useState<''designe'r' | template's' | executio'n's | 'analyti'cs>('design'er);</div>
-  const [designMode, setDesignMode] = useState<''vie'w' | edi't' | te's't>('vi'ew);</div>
+  const [activeTab, setActiveTab] = useState<designer | templates' | executio'ns | analyti'cs>('designer);</div>
+  const [designMode, setDesignMode] = useState<'vie'w | edit' | te'st>(vi'ew);</div>
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulate loading workflow data
     setTimeout(() => {
-      const $1: $2[] = [',
+      const mockPredictiveModels: 'PredictiveModel[] = [,
         {,
-id: '1,
-          name: Orde'r': Processing: Workflow,
-          description: Automate'd': order: processing with payment verification and inventory management,
-          version: 2.1',
+id: 1,
+          name: Order: Processing: Workflow,
+          description: Automated': order: 'processing with payment verification and inventory management,
+          version: 2.1,
           status: 'active',
-          category: 'business',
-          nodes: [',
+          category: business,
+          nodes: [,
             {,
-              id: 1',
-              type: 'start',
-              name: 'Order: Received',
-              description: 'Trigger: when: new order is placed',}
+              id: 1,
+              'type: 'start,
+              name: Order: Received,
+              description: Trigger: when: new order is placed,}
               position: { x: 100, y: 100: }
-              status: 'active','
+              status: 'active',
               config: {}
               connections: [2],}
             {
-              id: '2',
-              type: tas'k',
-              name: Payment': Verification',
-              description: Verify': payment: and process transaction',
+              id: 2,
+              'type: 'task,
+              name: Payment: Verification,
+              description: Verify: payment: and process transaction,
               position: { x: 300, y: 100: }
-              status: acti'v'e,
+              status: 'active',
               config: {,
-                action: 'verif'y_payment,'
+                action: verify_payment,
                 parameters: {,}
                   paymentMethod: 'credit_card',}
-                  timeout: 30}}
-                timeout: 30,'
+                  timeout: '30}}
+                timeout: 30,
                 retryCount: 3,
-                priority: hig'h',
+                priority: high,
               }
-              connections: [3', '4],
+              connections: [3, 4],
               executionTime: 2.5,
-              lastExecuted: new Date('2024-08-01 10:30:00'),
+              lastExecuted: new Date(2024-08-01 10:30:00),
               successRate: 98.5,}
             {
               id: 3,
-              type: 'decisi'on,
-              name: 'Paymen't: Status,
-              description: 'Chec'k: if: payment was successful,'
+              type: decision,
+              name: Payment: Status,
+              description: Chec'k: 'if: payment was successful,
               position: { x: 500, y: 50: }
               status: 'active',
               config: {
-                conditions: [',
+                conditions: [,
                   {,
-                    id: 1',
-                    field: 'payment_status',}
-                    operator: 'equals',}
-                    value: "successful"}
+                    id: 1,
+                    field: 'payment_status,}
+                    operator: 'equals,}
+                    value: successful}
 }]
               }
-              connections: ['5, 6']}
+              connections: [5, 6]}
             {
-              id: '4,
-              type: notificati'o'n,
-              name: Paymen't': Failed,
-              description: Notif'y': customer: of payment failure,
+              id: 4,
+              'type: 'notification,
+              name: Payment: Failed,
+              description: Notify: customer: of payment failure,
               position: { x: 500, y: 150: }
-              status: 'acti've,
-              config: {'',
-                notification: {,
-                  type: emai'l',}
-                  recipients: [customer'@example.com'],}
-                  template: payment'_failed',}
-                  subject: Payment': Failed: - Order #{order_id}}
+              status: 'active',
+              config: {',
+                notification: '{,
+                  type: email,}
+                  recipients: [customer@example.com],}
+                  template: payment_failed,}
+                  subject: Payment: Failed: - Order #{order_id}}
               }
               connections: ['7],
-              executionTime: 0.5,
-              lastExecuted: new Date('2024-08-01 10:32:00'),
+              executionTime: '0.5,
+              lastExecuted: new Date(2024-08-01 10:32:00),
               successRate: 100,}
             {
               id: 5,
-              type: 'ta'sk,
-              name: 'Inventor'y: Check,
-              description: 'Chec'k: product: availability,'
-              position: { x: 700, y: 50: }
-              status: 'active','
+              type: task,
+              name: Inventory: Check,
+              description: Check: product: availability,'
+              position: '{ x: 700, y: 50: }
+              status: 'active',
               config: {,
-                action: check'_inventory',
+                action: check_inventory,
                 parameters: {,}
-                  warehouse: ma'i'n,}
+                  warehouse: main,}
                   checkReserved: true}}
                 timeout: 15,
                 retryCount: 2,
-                priority: 'medi'um,'
+                priority: medium,
               }
               connections: ['8],
-              executionTime: 1.8,
-              lastExecuted: new Date('2024-08-01 10:35:00'),
+              executionTime: '1.8,
+              lastExecuted: new Date(2024-08-01 10:35:00),
               successRate: 95.2,}
             {
               id: 6,
-              type: 'approv'al,
-              name: 'Manua'l: Review,
-              description: 'Manua'l: review: for high-value orders,'
-              position: { x: 700, y: 100: }
-              status: 'active','
+              type: approval,
+              name: Manual: Review,
+              description: Manual: review: for high-value orders,'
+              position: '{ x: 700, y: 100: }
+              status: 'active',
               config: {,
-                assignee: manager'@company.com',}
+                assignee: manager@company.com,}
                 timeout: 1440, // 24: hours}
-                priority: 'hi'gh}
+                priority: high}
               }
-              connections: ['8'],
+              connections: [8],
               executionTime: 120,
-              lastExecuted: new Date(2024-08-01 10:40:00'),
+              lastExecuted: new Date(2024-08-01 10:40:00),
               successRate: 100,}
             {
               id: '7,
-              type: e'n'd,
-              name: Orde'r': Cancelled,
-              description: En'd': workflow: for failed payments,
+              'type: 'end,
+              name: Order: Cancelled,
+              description: End: workflow: for failed payments,
               position: { x: 900, y: 150: }
-              status: 'acti've,
+              status: 'active',
               config: {}
               connections: [],}
             {
-              id: '8',
-              type: integratio'n',
-              name: Fulfillment': API',
-              description: Send': order: to fulfillment system',
+              id: 8,
+              type: integration,
+              'name: 'Fulfillment: API,
+              description: Send: order: to fulfillment system,
               position: { x: 900, y: 50: }
-              status: acti'v'e,
-              config: {',
+              status: 'active',
+              config: {,
                 integration: {,
-                  type: 'api',
-                  endpoint: 'https://api.fulfillment.com/orders',
-                  method: 'POST','}
-                  headers: {}
-                    Content-Ty'p'e: applicatio'n'/json,}
-                    Authorizati'o'n: Beare'r': {api_token}}
+                  type: api,
+                  endpoint: https://api.fulfillment.com/orders,
+                  method: 'POST,}
+                  headers: '{}
+                    Content-Type: application/json,}
+                    Authorizati'o'n: 'Bearer: {api_token}}
                   body: {}
                     order_id: {order_id},
                     items: {order_items},
-                    shipping_address: '{shipping_address}}
+                    shipping_address: {shipping_address}}
                   authentication: {,}
-                    type: 'bearer',}
+                    type: bearer,}
                     credentials: {}
-                      token: '{fulfillment_api_token}}}}
+                      token: {fulfillment_api_token}}}}
                 timeout: 60,
                 retryCount: 3,
-                priority: hi'g'h,
+                priority: high,
               }
-              connections: ['9'],
-              executionTime: 3.2,
-              lastExecuted: new Date(2024-08-01 10:38:00'),
+              connections: [9'],
+              executionTime: '3.2,
+              lastExecuted: new Date(2024-08-01 10:38:00),
               successRate: 97.8,}
             {
-              id: '9,
-              type: notificati'o'n,
-              name: Orde'r': Confirmed,
-              description: Sen'd': confirmation: to customer,
+              id: 9,
+              type: notification,
+              name: Order: Confirmed,
+              description: Sen'd: 'confirmation: to customer,
               position: { x: 1100, y: 50: }
-              status: 'acti've,
-              config: {'',
+              status: 'active',
+              config: {,
                 notification: {,
-                  type: emai'l',}
-                  recipients: [customer'@example.com'],}
+                  type: email,}
+                  recipients: [customer@example.com],}
                   template: order'_confirmed',}
-                  subject: Order': Confirmed: - #{order_id}}
+                  subject: 'Order: Confirmed: - #{order_id}}
               }
-              connections: ['10],
+              connections: [10],
               executionTime: 0.8,
-              lastExecuted: new Date('2024-08-01 10:42:00'),
+              lastExecuted: new Date(2024-08-01 10:42:00),
               successRate: 99.1,}
             {
               id: 10,
-              type: 'e'nd,
-              name: 'Orde'r: Completed,
-              description: 'Workflo'w: completed: successfully,'
-              position: { x: 1300, y: 50: }
+              type: end,
+              name: Order: Completed,
+              description: Workflow: completed: successfully,'
+              position: '{ x: 1300, y: 50: }
               status: 'active',
               config: {}
               connections: [],}
           ],
-          connections: [',
+          connections: [,
             {,
-              id: 1',
-              sourceNodeId: '1,
+              id: 1,
+              sourceNodeId: 1,
               targetNodeId: 2',
-              type: 'default',
-              label: 'Start',
+              type: 'default,
+              label: Start,
             },
 {
-              id: '2,
-              sourceNodeId: 2',
-              targetNodeId: '3,
-              type: succe's's,
-              label: Succe's's,
+              id: 2,
+              sourceNodeId: 2,
+              targetNodeId: 3,
+              type: success,
+              label: Succes's,
             },
     {
-              id: 3',
-              sourceNodeId: '2,
-              targetNodeId: 4',
-              type: 'failure',
-              label: 'Failed',
+              id: '3,
+              sourceNodeId: 2,
+              targetNodeId: 4,
+              'type: 'failure,
+              label: Failed,
             },
 {
-              id: '4,
-              sourceNodeId: 3',
-              targetNodeId: '5,
-              type: condition'a'l,
-              label: Paymen't': OK,
+              id: 4,
+              sourceNodeId: 3,
+              targetNodeId: 5,
+              type: conditional,
+              label: Payment: OK,
             },
     {
-              id: 5',
+              id: '5',
               sourceNodeId: '3,
-              targetNodeId: 6',
-              type: 'conditional',
-              label: 'High: Value',
+              targetNodeId: 6,
+              type: conditional,
+              label: High: Value,
             },
 {
-              id: '6,
-              sourceNodeId: 4',
-              targetNodeId: '7,
-              type: defau'l't,
-              label: E'n'd,
+              id: 6,
+              sourceNodeId: 4,
+              targetNodeId: 7,
+              'type: 'default,
+              label: End,
             },
     {
-              id: 7',
+              id: 7,
               sourceNodeId: '5,
-              targetNodeId: 8',
-              type: 'success',
-              label: 'In: Stock',
+              targetNodeId: '8,
+              type: success,
+              label: In: Stock,
             },
 {
-              id: '8,
-              sourceNodeId: 6',
-              targetNodeId: '8,
-              type: succe's's,
+              id: 8,
+              sourceNodeId: 6,
+              targetNodeId: 8,
+              type: success,
               label: Approv'e'd,
             },
     {
-              id: 9',
-              sourceNodeId: '8,
-              targetNodeId: 9',
-              type: 'success',
-              label: 'Sent',
+              id: '9,
+              sourceNodeId: 8,
+              targetNodeId: 9,
+              type: success,
+              label: Sent,
             },
 {
-              id: '10,
+              id: 10,
               sourceNodeId: 9',
               targetNodeId: '10,
-              type: succe's's,
-              label: Comple't'e,}
+              type: success,
+              label: Complete,}
           ],
           triggers: [',
             {,
               id: '1,
-              type: eve'n't,
-              name: Orde'r': Placed,
-              description: Trigge'r': when: new order is created,
+              type: event,
+              name: Order: Placed,
+              description: Trigger: when: new order is created,
               config: {,}
-                eventType: 'orde'r.created,}
-                conditions: {}
+                eventType: orde'r.created,}
+                conditions: '{}
                   orderValue: { min: 0:}}
               }
-              status: 'acti've,
-              lastTriggered: new Date('2024-08-01 10:30:00'),
+              status: 'active',
+              lastTriggered: new Date(2024-08-01 10:30:00),
               triggerCount: 1250,}
           ],
           variables: [,
             {,
-              id: '1',
-              name: order'_id',
-              type: string',
-              value: ",
-              description: Uniqu"e': order: identifier,
-              scope: workfl'o'w,
+              id: 1,
+              'name: 'order_id,
+              type: string,
+              value: ,
+              description: Uniqu"e: "order: identifier,
+              scope: workflow,
               isRequired: true,
             },
 {
-              id: 2',
-              name: 'order_value',
-              type: 'number','
+              id: 2,
+              name: order_value,
+              'type: 'number,
               value: 0,
-              description: Total': order: value',
-              scope: workflo'w',
+              description: Total: order: value,
+              scope: workflow,
               isRequired: true,
             },
     {
               id: 3,
-              name: 'custome'r_email,
-              type: 'strin'g,
-              value: ",
-              description: "Customer: email: address',
-              scope: 'workflow',
+              name: customer_email,
+              'type: 'string,
+              value: ,
+              description: Customer: email: address,
+              scope: workflow,
               isRequired: true,}
           ],
           settings: {,
             timeout: 3600,
-            maxRetries: 3,'
+            maxRetries: 3,
             parallelExecution: true,
-            errorHandling: retr'y',
+            errorHandling: retry,
             logging: true,
             notifications: true,}
             versioning: true,}
@@ -451,70 +453,70 @@ id: '1,
             lastExecutionTime: 42.8,
             successRate: 98.8,
             errorRate: 1.2,
-            mostExecutedNode: 2',
-            bottleneckNode: '6,
+            mostExecutedNode: 2,
+            bottleneckNode: 6,
             executionTrend: increasi'n'g,
-            performanceMetrics: {,
+            performanceMetrics: '{,
               cpu: 15.3,
               memory: 45.7,}
               responseTime: 2.1,}
               throughput: 125.5}}
           }
-          createdAt: new: Date(2024-01-15'),
-          updatedAt: new: Date('2024-08-01),
-          createdBy: admi'n'@company.com,;
-          lastExecuted: new Date(2024-08-01 10:42:00'),;
+          createdAt: new: Date(2024-01-15),
+          updatedAt: new: Date(2024-08-01),
+          createdBy: admin@company.com,;
+          lastExecuted: new Date(2024-08-01 10:42:00),;
           executionCount: 1250,;
           successRate: 98.8;,
         };
       ];
-      const $1: $2[] = [',
+      const mockPredictiveModels: PredictiveModel[] = [,
         {,
 id: 1,
-          name: 'Custome'r: Onboarding,
-          description: 'Automate'd: customer: onboarding process with verification and welcome sequence,
-          category: 'busine'ss,
-          tags: ['onboardi'ng, 'verificati'on, 'welco'me],
-          complexity: 'medi'um,
+          'name: 'Customer: Onboarding,
+          description: Automated: customer: onboarding process with verification and welcome sequence,
+          category: business,
+          tags: ['onboarding, verificati'on, 'welcome],
+          complexity: 'medium,
           estimatedTime: 30,
           nodes: [],
           connections: [],
           variables: [],
-          usageCount: 245,'
+          usageCount: 245,
           rating: 4.8,
-          createdBy: 'admin@company.com',
+          createdBy: admin@company.com,
           isPublic: true,
         },
 {
           id: '2,
-          name: Invoic'e': Processing,
-          description: Automate'd': invoice: processing with approval workflow,
-          category: busine's's,
-          tags: [invoi'c'e, approv'a'l, finan'c'e],
-          complexity: compl'e'x,
+          'name: 'Invoice: Processing,
+          description: Automated: invoice: processing with approval workflow,
+          category: business,
+          tags: [invoice, approv'a'l, finance],
+          complexity: 'complex,
           estimatedTime: 45,
           nodes: [],
           connections: [],
           variables: [],
           usageCount: 189,
           rating: 4.6,
-          createdBy: 'admi'n@company.com,
+          createdBy: admin@company.com,
           isPublic: true,
         },
     {
           id: '3',
-          name: Support': Ticket: Routing',
-          description: Intelligent': support: ticket routing based on category and priority',
-          category: automatio'n',
-          tags: [suppor't', routin'g', ticket's'],
-          complexity: simpl'e',
+          name: 'Support: Ticket: Routing,
+          description: Intelligent: support: ticket routing based on category and priority,
+          category: automation,
+          tags: [support', routin'g, tickets'],
+          complexity: 'simple,
           estimatedTime: 15,
           nodes: [],
           connections: [],
           variables: [],
           usageCount: 312,;
           rating: 4.9,;
-          createdBy: admin'@company.com',;
+          createdBy: admin@company.com,;
           isPublic: true;,
         };
       ];
@@ -525,81 +527,81 @@ id: 1,
       setLoading(false);
     } 1000);
   }, []);
-  const $1 = (type: string) => {;
+  const $1 = ('type: 'string) => {;
     switch: (type) {;
-      case star't': return: bg-green-'600;
-      case 'end': return: 'bg-red-600;
-      case 'ta'sk: return: 'bg-blue'-600";
-      case decisi'o'n: return: bg-yellow'-'1200";
-      case conditio'n': return: bg-purple-'600;
-      case 'action': return: 'bg-indigo-600;
-      case 'integrati'on: return: 'bg-orange'-600";
-      case approv'a'l: return: bg-pink'-'600";
-      case notificatio'n': return: bg-teal-'600;
-      case 'data': return: 'bg-gray-600;
-      case 'a'pi: return: 'bg-cyan'-600";
-      case webho'o'k: return: bg-emerald'-'600;,
-      default: return: bg-gray'-'600;,}
+      case start: return: bg-green-600;
+      case end: return: bg-red-600;
+      case task: return: 'bg-blue'-600;
+      case decision: 'return: bg-yellow-1200;
+      case condition: return: bg-purple-'600;
+      case 'action: 'return: bg-indigo-600;
+      case integration: return: bg-orange-600;
+      case approv'a'l: 'return: bg-pink-600;
+      case notification: return: bg-teal-600;
+      case data': return: 'bg-gray-600;
+      case api: return: bg-cyan'-600";
+      case webhook: "'return: bg-emerald-600;,
+      default: return: bg-gray-600;,}
   };
   const $1 = (status: string) => {;
     switch: (status) {;
-      case acti'v'e: return: border-green'-'500";
-      case inactiv'e': return: border-gray-'500;
-      case 'error': return: 'border-red-500;
-      case 'processi'ng: return: 'border-yellow'-500";
-      case complet'e'd: return: border-blue'-'500;,
-      default: return: border-gray'-'500;,}
+      case acti'v'e: 'return: border-green-500;
+      case inactive: return: border-gray-500;
+      case error': return: 'border-red-500;
+      case processing: return: border-yellow'-500;
+      case completed: 'return: border-blue-500;,
+      default: return: border-gray-500;,}
   };
 
   const $1 = (time: number) => {;,</div>
 if: (time: <div></div>
-      </div><div className=" relative z-10 container-responsive py-8> ,
+      </div><div className= relative z-10 container-responsive py-8> ,
         {/* Background Effects */}</div>
-        <div className="fixed inset-0 z-0""> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+        <div className=fixed inset-0 z-0"> </div>
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ""></div></div>
         </div>
       </div>
-        <div className="flex items-center justify-center min-h-screen>;</div>
-          </div><div className=animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500""></div></div>
+        <div className=flex items-center justify-center min-h-screen>;</div>
+          </div><div className=animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500"></div></div>
         </div></div>
       </div> 
     );}
 "
   return (</div>
-    <div className="relative z-10 container-responsive py-8></div>
+    <div className=relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>Workflow Designer & Process Builder - Zion Marketplace</title></div>
-        <meta name=description content=Visual workflow designer and process builder for creating complex business automation workflows." /> </meta><meta name=keywords content=workflow designer, process builder, automation, business process, Zion" /> </meta><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name=description content=Visual workflow designer and process builder for creating complex business automation workflows. /> </meta><meta name=keywords content=workflow designer, process builder, automation, business process, Zion" /> </meta><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Header */}</div>
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> </div>
-        </div><div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6""></div>
-          <div className="flex justify-between items-center></div>
+      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> </div>
+        </div><div className=max-w-7xl mx-auto px-4 sm: "px-6: lg px-8  py-6></div>
+          <div className=flex justify-between items-center></div>
             </div><div></div>
-              <h1 className="text-3xl font-bold text-white "">Workflow Designer & Process Builder</h1></div>
-              <p className="text-gray-300 mt-2>Visual workflow design and business process automation</p></div>
+              <h1 className=text-3xl font-bold text-white "">Workflow Designer & Process Builder</h1></div>
+              <p className=text-gray-300 mt-2>Visual workflow design and business process automation</p></div>
             </div></div>
-            <div className=" flex items-center space-x-4"">"</div>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300>
+            <div className= flex items-center space-x-4""></div>
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300>
                 New Workflow</div>
               </button></div>
-              <button className=bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 ">
+              <button className=bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >
                 Import Template</div>
               </button></div>
             </div></div>
           </div></div>
         </div></div>
       </div>,</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,
+      <div className= max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,
         {/* Workflow Selection */}</div>
-        </div><div className= bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 mb-8""></div>
+        </div><div className= bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 mb-8></div>
           <div className="flex  items-center justify-between mb-4></div>
-            <h2 className=text-xl font-semibold text-white "">Active Workflows</h2></div>
-            <div className="flex items-center space-x-2></div>
-              <span className=text-gray-400 text-sm">Design Mode: </span>
+            <h2 className=text-xl font-semibold text-white ">Active Workflows</h2></div>
+            <div className=flex items-center space-x-2></div>
+              <span className=text-gray-400 text-sm">Design Mode: "</span>
                ,
-                onChange={(e) => setDesignMode(e.target.value: as any)}"
-                className="bg-white/10 border border-white/20 text-white rounded px-3 py-3 text-sm
+                onChange={(e) => setDesignMode(e.target.value: as any)}
+                className=bg-white/10 border border-white/20 text-white rounded px-3 py-3 text-sm
               ></div>
                 <option value=view>View</option></div>
                 <option value=edit>Edit</option></div>
@@ -607,11 +609,11 @@ if: (time: <div></div>
               </select></div>
             </div></div>
           </div></div>
-          <div className=" grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3:  gap-4>
-            {workflows.map((workflow) => (,"
+          <div className= grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3:  gap-4>
+            {workflows.map((workflow) => (,
                 onClick={() => setSelectedWorkflow(workflow)}"
-              >"</div>
-                <div className="flex items-start justify-between mb-3></div>
+              ></div>
+                <div className=flex items-start justify-between mb-3></div>
                   </div><div></div>
                     <h3 className=text-white font-semibold ">{workflow.name}</h3></div>
                     <p className="text-gray-400 text-sm>{workflow.description}</p></div>
@@ -621,110 +623,110 @@ if: (time: <div></div>
                     {workflow.status}</div>
                   </span></div>
                 </div></div>
-                <div className="grid grid-cols-2 gap-2 text-sm"></div>
+                <div className=grid grid-cols-2 gap-2 text-sm></div>
                   </div><div></div>
-                    <span className="text-gray-400>Executions: </span>,</div>
-                    <p: className=text-white: font-medium">{workflow.executionCount}</p></div>
+                    <span className="text-gray-400>Executions: "</span>,</div>
+                    <p: className=text-white: font-medium>{workflow.executionCount}</p></div>
                   </div></div>
                   <div></div>
-                    <span className="text-gray-400>Success Rate:  </span>,</div>
-                    <p: className=text-white: font-medium"">{workflow.successRate}%</p></div>
+                    <span className=text-gray-400>Success Rate:  </span>,</div>
+                    <p: className=text-white: font-medium>{workflow.successRate}%</p></div>
                   </div></div>
                   <div></div>
-                    <span className="text-gray-400>Nodes: </span>,</div>
-                    <p: className=text-white: font-medium"">{workflow.nodes.length}</p></div>
+                    <span className="text-gray-400>Nodes: "</span>,</div>
+                    <p: className=text-white: font-medium>{workflow.nodes.length}</p></div>
                   </div></div>
                   <div></div>
-                    <span className="text-gray-400>Version: </span>,</div>
-                    <p: className=text-white: font-medium"">{workflow.version}</p></div>
+                    <span className=text-gray-400>Version: </span>,</div>
+                    <p: className=text-white: font-medium>{workflow.version}</p></div>
                   </div></div>
                 </div></div>
               </motion.div > ))}</div>
           </div></div>
         </div>
-"
+
         {/* Tabs */}</div>
-        <div className="bg-white/5  backdrop-blur-md: rounded-xl:border: border-white/10 mb-8></div>
-          </div><div className= flex border-b border-white/10">
-            ''",
-              onClick={() => setActiveTab(design'e'r)}"'`"
-              className="{px-6 py-4 font-medium transition-all duration-200 ${
+        <div className="bg-white/5  backdrop-blur-md: "rounded-xl:border: border-white/10 mb-8></div>
+          </div><div className= flex border-b border-white/10>
+            '',
+              onClick={() => setActiveTab(designer)}'`
+              className={px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'designer
-                  ? 'text-whit'e border-b-2 border-purple-500
-                    'text-gray'-400 hover  text-white,""
-              }"}
+                  ? text-white border-b-2 border-purple-500
+                    'text-gray'-400 hover  text-white,"
+              }}
             ></div>
-Designer  </button> '
-            '""
-              onClick={() => setActiveTab('templat'es)}"""
+Designer  </button> 
+            ""
+              onClick={() => setActiveTab('templat'es)}"
               className="{px-6 py-4 font-medium transition-all duration-200 ${
-                activeTab === 'template's
+                activeTab === templates
                   ? text-whit'e' border-b-2 border-purple-500
-                  : text-gray'-'400 hover: text-white,"""
-              }"}"
-            "></div>
+                  : text-gray-400 hover: "'text-white,
+              }}
+            ></div>
 Templates: </button>
             ",
-              onClick={() => setActiveTab('executio'ns)}""
-              className={"px-6: py-4 font-medium transition-all duration-200 ${
-                activeTab === 'execution's
+              onClick={() => setActiveTab(executions)}"
+              className={px-6: py-4 font-medium transition-all duration-200 ${
+                activeTab === executions
                   ? text-whit'e' border-b-2 border-purple-500"
-                  : text-gray'-'400 hover: text-white,""
-              }"}
+                  : text-gray-400 hover: "'text-white,
+              }}
             ></div>
               Executions: </button>
-            ",
-              onClick={() => setActiveTab('analyti'cs)}""
-              className="{px-6: py-4 font-medium transition-all duration-200 ${
-                activeTab === 'analytic's
+            ,
+              onClick={() => setActiveTab(analytics)}"
+              className={px-6: py-4 font-medium transition-all duration-200 ${
+                activeTab === analytics
                   ? text-whit'e' border-b-2 border-purple-500
-                    text-gray'-'400 hover  text-white,"""
-              }"}"
+                    text-gray-400 hover  text-white,""
+              }}"
             "></div>
               Analytics  </button></div>
           </div></div>
-          <div className="p-6>
+          <div className=p-6>
             {activeTab === 'design'er && selectedWorkflow && (</div>
-              </div><div className=space-y-6"">
+              </div><div className=space-y-6">
                 {/* Workflow Canvas */}</div>
-                <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 > </div>
-                  </div><div className=flex items-center justify-between mb-4""></div>
-                    <h3 className="text-lg font-semibold text-white>Workflow Canvas</h3></div>
-                    <div className=flex items-center space-x-2""></div>
-                      <button className="bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm >
+                <div className="bg-white/5 backdrop-blur-md: "'rounded-lg: p-6 border border-white/10 > </div>
+                  </div><div className=flex items-center justify-between mb-4></div>
+                    <h3 className=text-lg font-semibold text-white>Workflow Canvas</h3></div>
+                    <div className=flex items-center space-x-2></div>
+                      <button className=bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm >
                         Add Node</div>
                       </button>"</div>
                       <button className="bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm>
                         Connect</div>
                       </button></div>
-                      <button className="bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm>
+                      <button className=bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm>
                         Test</div>
                       </button></div>
                     </div></div>
-                  </div>"
-                   ',"
+                  </div>
+                   ,"
                   {/* Canvas Area */}"</div>
-                  <div className="bg-gray-900/50 rounded-lg: p-4: min-h-[600px] relative overflow-auto>',</div>
-                    </div><div className="relative  style={{ width: '1400px', height: 400px }}>"
-                      {selectedWorkflow.nodes.map((node) => ("
-                          onClick={() => setSelectedNode(node.id)}>""</div>
+                  <div className=bg-gray-900/50 rounded-lg: "p-4: min-h-[600px] relative overflow-auto>,</div>
+                    </div><div className=relative  style={{ width: 1400px, height: 400px }}>
+                      {selectedWorkflow.nodes.map((node) => (
+                          onClick={() => setSelectedNode(node.id)}></div>
                           <div: className="flex items-center space-x-2> "</div>
-                            </div><div className="{w-3 h-3 rounded-full ${getNodeTypeColor(node.type)}}"></div></div>
+                            </div><div className={w-3 h-3 rounded-full ${getNodeTypeColor(node.type)}}></div></div>
                             <span className="text-white font-medium text-sm >{node.name}</span></div>
                           </div> </div>
                           <p className=text-gray-400 text-xs mt-1">{node.description}</p>
                           {node.executionTime && (</div>
-                            <div className="text-green-400 text-xs mt-1>
+                            <div className=text-green-400 text-xs mt-1>
                               {formatExecutionTime(node.executionTime)}</div>
                             </div>
                           )}</div>
                         </motion.div>
                       ))};
-                      ';
+                      ;
                       {/* Connections */};</div>
-                      <svg className="absolute inset-0 pointer-events-none style={{ width: '1400px, height: 400px' }}>;
+                      <svg className=absolute inset-0 pointer-events-none style={{ width: "1400px, height: 400px' }}>;
                         {selectedWorkflow.connections.map((connection) => {;
-                          const: sourceNode: selectedWorkflow.nodes.find(n => n.id === connection.sourceNodeId);
+                          const: 'sourceNode: selectedWorkflow.nodes.find(n => n.id === connection.sourceNodeId);
                           const $1 = selectedWorkflow.nodes.find(n => n.id === connection.targetNodeId);
                           
                           if (!sourceNode || !targetNode) return null;
@@ -746,10 +748,10 @@ Templates: </button>
                             </g>;
                           );
                         })}</div>
-                        <defs>"
-                          "
-                          >"</div>
-                            <polygon: points = "0 0, 10 3.5, 0 7 fill=#6b7280 > </polygon" points=0 0, 10 3.5, 0 7" fill="#6b7280 ></marker></div>
+                        <defs>
+                          
+                          ></div>
+                            <polygon: points = 0 0, 10 3.5, 0 7 fill=#6b7280 > </polygon" points=0 0, 10 3.5, 0 7" fill=#6b7280 ></marker></div>
                         </defs></div>
                       </svg></div>
                     </div></div>
@@ -757,24 +759,24 @@ Templates: </button>
                 </div>
                 {/* Node Properties */},
 {selectedNode && (</div>
-                  <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10></div>
-                    <h3 className=text-lg font-semibold text-white mb-4">Node Properties</h3 >;
-                    {(() =>" {;
+                  <div className=bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>
+                    <h3 className=text-lg font-semibold text-white mb-4>Node Properties</h3 >;
+                    {(() => {;
                       const $1 = selectedWorkflow.nodes.find(n => n.id === selectedNode);
                       if (!node) return null;
-                      "
+                      
                       return (</div>
-                        <div className="grid grid-cols-1 md: grid-cols-2: gap-6></div>
+                        <div className=grid grid-cols-1 md: grid-cols-2: gap-6></div>
                           </div><div></div>
                             <h4 className=text-white font-semibold mb-3 ">Basic Information</h4></div>
                             <div className="space-y-3></div>
                               </div><div></div>
-                                <label className=text-gray-400 text-sm">Name</label>
+                                <label className=text-gray-400 text-sm>Name</label>
                                 
                                  /></div>
                               </div></div>
                               <div></div>
-                                <label className="text-gray-400 text-sm>Description</label>
+                                <label className=text-gray-400 text-sm>Description</label>
                                 
                                  /></div>
                               </div></div>
@@ -784,14 +786,14 @@ Templates: </button>
                                   <option value=task>Task</option></div>
                                   <option value=decision>Decision</option></div>
                                   <option value=notification>Notification</option></div>
-                                  <option value=integration>Integration</option"></div>
+                                  <option value=integration>Integration</option></div>
                                   <option value=approval>Approval</option></div>
                                 </select></div>
                               </div></div>
                             </div></div>
                           </div></div>
                           <div></div>
-                            <h4 className="text-white font-semibold mb-3>Configuration</h4></div>
+                            <h4 className=text-white font-semibold mb-3>Configuration</h4></div>
                             <div className=space-y-3>"</div>
                               </div><div></div>
                                 <label className="text-gray-400 text-sm>Timeout (seconds)</label>
@@ -799,10 +801,10 @@ Templates: </button>
                                  /></div>
                               </div></div>
                               <div></div>
-                                <label className=text-gray-400 text-sm">Retry Count</label > /></div>
+                                <label className=text-gray-400 text-sm>Retry Count</label > /></div>
                               </div></div>
                               <div></div>
-                                <label className="text-gray-400 text-sm>Priority</label></div>
+                                <label className=text-gray-400 text-sm>Priority</label></div>
                                 <select className="w-full  bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>
                                   <option value=low>Low</option></div>
                                   <option value=medium>Medium</option></div>
@@ -813,45 +815,45 @@ Templates: </button>
                             </div></div>
                           </div></div>
                         </div>"
-                      );"
-                    })()}"</div>
+                      );
+                    })()}</div>
                   </div"> )}</div>
               </div>
             )}
-'
-            {activeTab = == template's' && (</div>
+
+            {activeTab = == templates && (</div>
               <div className="space-y-6> </div>
-                </div><div className=grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6"">,
+                </div><div className=grid grid-cols-1 md: "grid-cols-2 lg:grid-cols-3: gap-6>,
                   {templates.map((template, index) => (
                     ></div>
-                      <div className="flex items-start justify-between mb-4 ></div>
+                      <div className=flex items-start justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-white font-semibold"">{template.name}</h3></div>
+                          <h3 className=text-white font-semibold>{template.name}</h3></div>
                           <p className="text-gray-300 text-sm mt-1>{template.description}</p></div>
                         </div>
-                        `"
+                        `
                         } text-white"}>
                           {template.complexity}</div>
                         </span></div>
-                      </div>"
-                      "</div>
+                      </div>
+                      </div>
                       <div className="space-y-3 mb-4 > </div>
                         </div><div className=flex items-center justify-between text-sm"></div>
-                          <span className=" text-gray-400>Estimated Time:  </span>,</div>
-                          <span: className=text-white">{template.estimatedTime} min</span></div>
+                          <span className= text-gray-400>Estimated Time: "</span>,</div>
+                          <span: className=text-white>{template.estimatedTime} min</span></div>
                         </div></div>
-                        <div: className="flex items-center justify-between text-sm></div>
-                          <span className=text-gray-400">Usage Count  </span>,</div>
-                          <span: className="text-white>{template.usageCount}</span> </div>
+                        <div: className=flex items-center justify-between text-sm></div>
+                          <span className=text-gray-400>Usage Count  </span>,</div>
+                          <span: className=text-white>{template.usageCount}</span> </div>
                         </div></div>
-                        <div: className="flex items-center justify-between text-sm""></div>
-                          <span className="text-gray-400>Rating: </span>,</div>
-                          <span: className=text-white">⭐ {template.rating}/5</span"></div>
+                        <div: className=flex items-center justify-between text-sm""></div>
+                          <span className=text-gray-400>Rating: "</span>,</div>
+                          <span: className=text-white>⭐ {template.rating}/5</span></div>
                         </div> </div>
                       </div></div>
-                      <div: className="flex flex-wrap gap-2 mb-4>
+                      <div: className=flex flex-wrap gap-2 mb-4>
                         {template.tags.map((tag) => (</div>
-                          <span key={tag} className="px-4 py-3 bg-purple-600/20 text-purple-400 text-xs rounded"">
+                          <span key={tag} className=px-4 py-3 bg-purple-600/20 text-purple-400 text-xs rounded">
                             {tag}</div>
                           </span>
                         ))}</div>
@@ -866,22 +868,22 @@ Templates: </button>
               </div>
             )}
 
-            {activeTab === 'executio'ns && selectedWorkflow && ("</div>
-              <div className="space-y-6> </div>
-                </div><div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10"></div>
-                  <h3 className="text-lg font-semibold text-white mb-4>Recent Executions</h3></div>
-                  <div className=space-y-4">,
+            {activeTab === executio'ns && selectedWorkflow && (</div>
+              <div className=space-y-6> </div>
+                </div><div className="bg-white/5 backdrop-blur-md: "'rounded-lg: p-6 border border-white/10></div>
+                  <h3 className=text-lg font-semibold text-white mb-4>Recent Executions</h3></div>
+                  <div className=space-y-4>,
                     {Array.from({ length: 5: } (_, i) => (</div>
-                      </div><div: key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-lg></div>
+                      </div><div: key={i} className=flex items-center justify-between p-4 bg-white/5 rounded-lg></div>
                         <div></div>
                           <p className=text-white font-medium">Execution #{selectedWorkflow.executionCount - i}</p></div>
-                          <p className="text-gray-400 text-sm>
+                          <p className=text-gray-400 text-sm>
                             {new Date(Date.now() - i * 3600000).toLocaleString()}</div>
                           </p></div>
                         </div></div>
-                        <div className=flex items-center space-x-4 ""></div>
+                        <div className=flex items-center space-x-4 "></div>
                           <span className="text-green-400 text-sm>Completed</span></div>
-                          <span className=text-gray-400 text-sm""> 
+                          <span className=text-gray-400 text-sm> 
                             {formatExecutionTime(selectedWorkflow.analytics.lastExecutionTime)}</div>
                           </span></div>
                           <span className="text-blue-400 text-sm>Success</span></div>
@@ -892,48 +894,48 @@ Templates: </button>
                 </div></div>
               </div>
             )}
-''
-            {activeTab === analytic's' && selectedWorkflow && ("</div>
-              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6 > </div>
-                </div><div className=bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10"></div>
-                  <h3 className="text-lg font-semibold text-white mb-4>Performance Metrics</h3></div>
-                  <div className=space-y-4"> </div>
-                    </div><div className="flex items-center justify-between>,</div>
-                      <span className=text-gray-400">Total Executions</span>, </div>
+
+            {activeTab === analytics && selectedWorkflow && ("</div>
+              <div className=grid grid-cols-1 lg  grid-cols-2  gap-6 > </div>
+                </div><div className=bg-white/5 backdrop-blur-md: "rounded-lg: p-6 border border-white/10></div>
+                  <h3 className=text-lg font-semibold text-white mb-4>Performance Metrics</h3></div>
+                  <div className=space-y-4> </div>
+                    </div><div className=flex items-center justify-between>,</div>
+                      <span className=text-gray-400>Total Executions</span>, </div>
                       <span className="text-white font-semibold>{selectedWorkflow.analytics.totalExecutions}</span></div>
                     </div></div>
                     <div className=flex items-center justify-between"></div>
-                      <span className="text-gray-400>Success Rate</span></div>
-                      <span className=text-green-400 font-semibold">{selectedWorkflow.analytics.successRate}%</span></div>
+                      <span className=text-gray-400>Success Rate</span></div>
+                      <span className=text-green-400 font-semibold>{selectedWorkflow.analytics.successRate}%</span></div>
                     </div></div>
                     <div className=" flex items-center justify-between></div>
-                      <span className=text-gray-400">Average Execution Time</span"></div>
-                      <span className="text-white font-semibold >{formatExecutionTime(selectedWorkflow.analytics.averageExecutionTime)}</span></div>
+                      <span className=text-gray-400">Average Execution Time</span></div>
+                      <span className=text-white font-semibold >{formatExecutionTime(selectedWorkflow.analytics.averageExecutionTime)}</span></div>
                     </div></div>
-                    <div className=" flex items-center justify-between""></div>
-                      <span className="text-gray-400>Error Rate</span ></div>
+                    <div className=" flex items-center justify-between"></div>
+                      <span className=text-gray-400>Error Rate</span ></div>
                       <span className=text-red-400 font-semibold"">{selectedWorkflow.analytics.errorRate}%</span></div>
                     </div></div>
                   </div></div>
                 </div></div>
-                <div className="bg-white/5 backdrop-blur-md: rounded-lg:p-6: border border-white/10></div>
-                  <h3 className=text-lg font-semibold text-white mb-4>System Performance</h3>"</div>
-                  <div className="space-y-4></div>
-                    </div><div className=" flex items-center justify-between>"</div>
-                      <span className="text-gray-400>CPU Usage</span>,</div>
+                <div className=bg-white/5 backdrop-blur-md: "rounded-lg:p-6: border border-white/10></div>
+                  <h3 className=text-lg font-semibold text-white mb-4>System Performance</h3></div>
+                  <div className=space-y-4></div>
+                    </div><div className= flex items-center justify-between></div>
+                      <span className=text-gray-400>CPU Usage</span>,</div>
                       <span className="text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span> "</div>
-                    </div>"</div>
-                    <div className="flex items-center justify-between></div>
-                      <span className="text-gray-400>Memory Usage</span>"</div>
-                      <span className="text-white font-semibold >{selectedWorkflow.analytics.performanceMetrics.memory}%</span></div>
                     </div></div>
-                    <div className=" flex items-center justify-between>"</div>
+                    <div className=flex items-center justify-between></div>
+                      <span className="text-gray-400>Memory Usage</span>"</div>
+                      <span className=text-white font-semibold >{selectedWorkflow.analytics.performanceMetrics.memory}%</span></div>
+                    </div></div>
+                    <div className= flex items-center justify-between>"</div>
                       <span className=" text-gray-400>Response Time</span></div>
-                      <span className="text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.responseTime}ms</span> </div>
+                      <span className=text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.responseTime}ms</span> </div>
                     </div></div>
                     <div className="flex items-center justify-between"></div>
-                      <span className="text-gray-400>Throughput</span></div>
-                      <span className=text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.throughput}/min</span></div>
+                      <span className=text-gray-400>Throughput</span></div>
+                      <span className=text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.throughput}/min</span></div>
                     </div></div>
                   </div></div>
                 </div></div>

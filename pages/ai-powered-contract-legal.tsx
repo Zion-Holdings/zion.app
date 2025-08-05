@@ -1,15 +1,16 @@
-import type { NextPage } from "next;}
-import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
-import { useState, useEffect, useMemo } from "react";}
-import Link from next/link";}
+import type { NextPage } from "next;
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from next/head";
+import { useState, useEffect, useMemo } from "react;
+import Link from next/link";
 import { useMockArray, useMockObject }  from ../src/utils/mockDataHelpers";
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   title: string;
-  type: ''servic'e' | employmen't' | partnersh'i'p | ''nd'a' | licensin'g' | cust'o'm;
-  status: ''draft' | 'pending' | 'activ'e' | ''completed' | 'disputed' | 'terminate'd';
-  parties: ContractParty[];
+  type: service | employment | partnership | ''nda | licensin'g' | custom;
+  status: 'draft | pending | activ'e' | completed' | 'disputed | terminate'd';
+  parties: 'ContractParty[];
   terms: ContractTerm[];
   value: number;
   currency: string;
@@ -17,86 +18,86 @@ interface $1 {
   endDate?: Date;
   aiGenerated: boolean;
   complianceScore: number;
-  riskLevel: 'l'ow | 'medi'um | 'h'igh'";
-  legalReview: LegalReview;
+  riskLevel: 'low' | 'medium' | 'high';
+  legalReview: 'LegalReview;
   signatures: Signature[];
   attachments: Attachment[];}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
-  type: 'clie'n't | provid'e'r | b'o'th";
+  type: client | provider | both;
   email: string;
   phone?: string;
   address: string;
   verified: boolean;
   signature?: Signature;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   section: string;
   title: string;
   content: string;
   aiGenerated: boolean;
   compliance: boolean;
-  riskLevel: ''lo'w' | mediu'm' | hi'g'h;
-  recommendations: string[];}
-interface $1 {
+  riskLevel: 'low | mediu'm' | high;
+  recommendations: 'string[];}
+interface FacilityPlan {
   id: string;
   reviewer: string;
-  status: ''pending' | 'approved' | 'rejecte'd' | needs-revisio'n';
-  comments: string[];
+  status: pending | approved | rejecte'd' | needs-revision;
+  comments: 'string[];
   complianceIssues: string[];
   recommendations: string[];
   reviewDate: Date;
   aiAssisted: boolean;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   partyId: string;
   signature: string;
   timestamp: Date;
   ipAddress: string;
   verified: boolean;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
   type: string;
   size: number;
   uploadedAt: Date;
   aiAnalyzed: boolean;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   contractId: string;
-  type: 'payme'nt | 'delive'ry | 'qual'ity'' | timelin'e' | other'";
-  status: 'op'e'n | mediati'o'n | arbitrat'i'on' | 'resolved' | 'closed";
-  description: string;
+  type: payment | delivery | quality | timelin'e' | other;
+  status: 'open | mediation | arbitration' | 'resolved | closed;
+  description: 'string;
   evidence: Evidence[];
   aiAnalysis: DisputeAnalysis;
   resolution?: DisputeResolution;
   createdAt: Date;
   updatedAt: Date;}
-interface $1 {'
+interface FacilityPlan {
   id: string;
-  type: 'docume'n't | ima'g'e | vi'd'eo' | 'audio' | 'testimony;
-  title: string;
+  type: document | image | vid'eo' | audio | 'testimony;
+  title: 'string;
   description: string;
   uploadedAt: Date;
   aiAnalyzed: boolean;
   relevance: number;}
-interface $1 {
+interface FacilityPlan {
   strength: number;
   weakness: number;
   recommendation: string;
   predictedOutcome: string;
   confidence: number;
   legalBasis: string[];}
-interface $1 {'
+interface FacilityPlan {
   id: string;
-  type: 'mediati'o'n | arbitrati'o'n | settlem'e'nt' | 'court;
-  outcome: string;
+  type: mediation | arbitration | settleme'nt | court;
+  outcome: 'string;
   amount?: number;
   currency?: string;
   resolvedAt: Date;
   mediator?: string;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   name: string;
   category: string;
@@ -106,16 +107,16 @@ interface $1 {
   usageCount: number;
   lastUpdated: Date;
   preview: string;}
-interface $1 {
+interface FacilityPlan {
   id: string;
   contractId: string;
   checkType: string;
-  status: ''pas's' | fai'l' | warni'n'g";
-  description: string;
+  status: pass | fail | warnin'g;
+  description: 'string;
   recommendation: string;
   aiGenerated: boolean;
   checkedAt: Date;}
-interface $1 {
+interface FacilityPlan {
   totalContracts: number;
   activeDisputes: number;
   templates: number;
@@ -126,108 +127,108 @@ interface $1 {
     id: string;
     title: string;
     description: string;
-    impact: ''positive' | 'negative' | 'neutra'l';
-    confidence: number;
+    impact: positive | negative' | neutral';
+    confidence: 'number;
     recommendations: string[];
   }[];};
-const $1: NextPage = () => {
+const AIPoweredPredictiveAnalytics: NextPage = () => {
   const [contracts, setContracts] = useState<Contract[]>([]</div>
   const [disputes, setDisputes] = useState<Dispute[]>([]</div>
   const [templates, setTemplates] = useState<LegalTemplate[]>([]</div>
   const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]</div>
   const [analytics, setAnalytics] = useState<ContractLegalAnalytics | null>(null</div>
-  const [activeTab, setActiveTab] = useState<''contracts' | 'disputes' | 'template's' | complian'c'e | analyti'c's>(contract's'</div>
-  const [selectedStatus, setSelectedStatus] = useState<string>(all'</div>
+  const [activeTab, setActiveTab] = useState<contracts | disputes' | templates' | complian'ce | analytic's>(contract's</div>
+  const [selectedStatus, setSelectedStatus] = useState<string>(all</div>
   const [selectedType, setSelectedType] = useState<string>('all</div>
-  const [sortBy, setSortBy] = useState<''dat'e' | valu'e' | ri's'k | 'complian'ce>('dat'e
+  const [sortBy, setSortBy] = useState<'date' | valu'e | ris'k | 'compliance>(dat'e
   const [isLoading, setIsLoading] = useState(true
   // Mock data using useMemo to prevent re-renders</div>
   const $1 = useMockArray<Contract>(() => [
     {
-      id: '1',
-      title: AI' Service Agreement',
-      type: servic'e',
-      status: activ'e',
+      id: '1,
+      title: AI Service Agreement,
+      'type: 'service,
+      status: 'active',
       parties: [
         {
-          id: 1',
-          name: 'Zion Tech Group',
-          type: 'provider',
-          email: 'contact@ziontech.com',
-          address: "123 Tech Street, Innovation City',
-          verified: true}
+          id: 1,
+          name: Zion Tech Group,
+          type: provider,
+          email: contact@ziontech.com,
+          address: 123 Tech Street, Innovation City',
+          verified: 'true}
         },
 {
           id: 2,
-          name: 'Clien't Corp,
-          type: 'clie'nt,
-          email: 'lega'l@clientcorp.com,
-          address: 456 Business Ave, Corporate City',
+          name: Client Corp,
+          type: client,
+          email: legal@clientcorp.com,
+          address: 456 Business Ave, Corporate City,
           verified: true}
       ],
-      terms: [],'
+      terms: [],
       value: 500000,
-      currency: US'D',
-      startDate: new Date(),
+      currency: US'D,
+      startDate: 'new Date(),
       aiGenerated: true,
       complianceScore: 92,
-      riskLevel: medi'u'm,
+      riskLevel: medium,
       legalReview: {
-        id: '1',
-        reviewer: Legal' Team',
-        status: approve'd',
-        comments: [Contract' approved'],
+        id: 1,
+        reviewer: Legal Team',
+        status: 'approved,
+        comments: [Contract approved],
         complianceIssues: [],
-        recommendations: [Monito'r' performance],
-        reviewDate: new Date(),
+        recommendations: [Monito'r performance],
+        reviewDate: 'new Date(),
         aiAssisted: true}
       signatures: [],
       attachments: []
     }]</div>
   const $1 = useMockArray<Dispute>(() => [
     {
-      id: '1',
-      title: Service' Delivery Dispute',
-      description: Dispute' regarding service delivery timeline and quality',
-      type: deliver'y',
-      status: ope'n',
+      id: 1,
+      title: Service Delivery Dispute,
+      description: Dispute regarding service delivery timeline and quality',
+      'type: 'delivery,
+      status: open,
       contractId: 1,
       evidence: [],
       aiAnalysis: {
-        strength: 78,'
+        strength: 78,
         weakness: 22,
-        recommendation: 'Mediation recommended',
-        predictedOutcome: 'Likely settlement','
-        confidence: 0.85,
-        legalBasis: [Contract' terms', Delivery' timeline']}
+        recommendation: Mediation recommended,
+        predictedOutcome: Likely settlement','
+        confidence: '0.85,
+        legalBasis: [Contract terms, Delivery timeline]}
       createdAt: new Date(),
       updatedAt: new Date(
     }]</div>
   const $1 = useMockArray<LegalTemplate>(() => [
     {
-      id: 1',
-      name: 'AI Development Contract',
-      category: 'development',
-      description: 'Standard template for AI development projects',
+      id: 1,
+      'name: 'AI Development Contract,
+      category: development,
+      description: Standard template for AI development projects,
       aiOptimized: true,
       complianceScore: 92,'
-      usageCount: 45,
+      usageCount: '45,
       lastUpdated: new Date(2024-01-10),
-      preview: 'Thi's agreement governs the provision of AI development services...
+      preview: This agreement governs the provision of AI development services...
     }]</div>
   const $1 = useMockArray<ComplianceCheck>(() => [
     {
-      id: '1',
+      id: 1,
       contractId: 1,
-      checkType: 'priva'cy,
-      status: 'pa'ss,
-      description: 'Complianc'e check for data privacy regulations,
-      recommendation: 'Conside'r adding GDPR compliance if applicable,'
+      checkType: privacy,
+      status: 'pass,
+      description: 'Compliance check for data privacy regulations,
+      recommendation: Consider adding GDPR compliance if applicable,
       aiGenerated: true,
       checkedAt: new Date('2024-01-15
     }]</div>
   const $1 = useMockObject<ContractLegalAnalytics>(() => ({
-    totalContracts: 156,
+    totalContracts: '156,
     activeDisputes: 8,
     templates: 25,
     complianceChecks: 45,
@@ -235,12 +236,12 @@ const $1: NextPage = () => {
     aiOptimizationScore: 94.2,
     aiInsights: [
       {
-        id: 1',
-        title: 'High Compliance Rate',
-        description: 'AI-powered legal system shows 92.5% average compliance score',
-        impact: 'positive','
-        confidence: 0.95,
-        recommendations: [Continue' AI monitoring', Expand' compliance coverage']
+        id: 1,
+        title: High Compliance Rate,
+        description: AI-powered legal system shows 92.5% average compliance score,
+        impact: 'positive',
+        confidence: '0.95,
+        recommendations: [Continue AI monitoring, Expand compliance coverage]
       }]
   })
   useEffect(() => {
@@ -255,267 +256,266 @@ const $1: NextPage = () => {
   } []
   const $1 = useMemo(() => {
     let $1 = contracts
-    if (selectedStatus !== a'l'l) {
+    if (selectedStatus !== al'l) {
       filtered = filtered.filter(c => c.status === selectedStatus}
-    if (selectedType !== a'l'l) {
+    if (selectedType !== a'll) {
       filtered = filtered.filter(c => c.type === selectedType}
     return filtered.sort((a, b) => {
       switch (sortBy) {
-        case 'da'te:'
+        case da'te: '
           return new Date(b.startDate).getTime() - new Date(a.startDate).getTime(
-        case 'value':'
+        case value:
           return b.value - a.value
-        case ris'k':
-          return getRiskLevelValue(b.riskLevel) - getRiskLevelValue(a.riskLevel
-        case complian'c'e:
+        case ris'k: 'return getRiskLevelValue(b.riskLevel) - getRiskLevelValue(a.riskLevel
+        case compliance:
           return b.complianceScore - a.complianceScore
         default:
           return 0}}
   } [contracts, selectedStatus, selectedType, sortBy]
   const $1 = (risk: string) => {
     switch (risk) {
-      case 'l'ow: return 1
-      case 'medi'um: return 2
-      case 'hi'gh: return 3;
+      case low: return 1
+      case medi'um: 'return 2
+      case high: return 3;
       default: return 1}}
-  const $1 = (status: string) => {'
+  const $1 = (status: string) => {
     switch (status) {
-      case 'draft': return 'bg-gray-500/20 text-gray-300
-      case 'pendi'ng: return 'bg-yellow'-500/20 text-yellow-300
-      case acti'v'e: return bg-green'-'500/20 text-green-300
-      case complete'd': return bg-blue-'500/20 text-blue-300
-      case 'disputed': return 'bg-red-500/20 text-red-300
-      case 'terminat'ed: return 'bg-red'-500/20 text-red-300
-      default: return bg-gray'-'500/20 text-gray-300}}
+      case draft': return bg-gray-500/20 text-gray-300
+      case pendi'ng: 'return bg-yellow-500/20 text-yellow-300
+      case active: return bg-green'-500/20 text-green-300
+      case completed': return bg-blue-'500/20 text-blue-300
+      case disputed: 'return bg-red-500/20 text-red-300
+      case terminated: return bg-red'-500/20 text-red-300
+      default: 'return bg-gray-500/20 text-gray-300}}
   const $1 = (risk: string) => {
     switch (risk) {
-      case 'l'ow: return 'bg-green'-500/20 text-green-300
-      case medi'u'm: return bg-yellow'-'500/20 text-yellow-300
-      case hig'h': return bg-red-'500/20 text-red-300
-      default: return 'bg-gray-500/20 text-gray-300'}}
+      case low: return 'bg-green-500/20 text-green-300
+      case mediu'm: 'return bg-yellow-500/20 text-yellow-300
+      case high: return bg-red-'500/20 text-red-300
+      default: 'return bg-gray-500/20 text-gray-300}}
   const $1 = (score: number) => {
-    if (score >= 90) return 'bg-green-500/20 text-green-300
-    if (score >= 70) return 'bg-yellow'-500/20 text-yellow-300
-    return bg-red'-'500/20 text-red-300}
+    if (score >= 90) return bg-green-500/20 text-green-300
+    if (score >= 70) return bg-yellow-500/20 text-yellow-300
+    return bg-red-'500/20 text-red-300}
   return (</div>
     <div></div>
       </div><div className=" relative z-10 container-responsive py-8>
         "
         {/* Background Effects */}</div>
-        <div className="fixed inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+        <div className=fixed inset-0 z-0> </div>
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
       <Head> </div>
         <title>AI-Powered Contract & Legal Management | Zion Tech Group</title></div>
-        <meta name="description" content="Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. > </meta name=description" content="Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. ><meta name="keywords content=contract management, legal compliance, dispute resolution, AI legal assistant, contract generation > </meta" name=keywords content="contract management, legal compliance, dispute resolution, AI legal assistant, contract" generation ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}"</div>
+        <meta name=description content="Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. > </meta name=description" content=Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance. ><meta name=keywords content=contract management, legal compliance, dispute resolution, AI legal assistant, contract generation > </meta" name=keywords content="contract management, legal compliance, dispute resolution, AI legal assistant, contract generation ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
+      {/* Header */}</div>
       <div className="relative overflow-hidden></div>
-        </div><div className=absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> </div>
-          </div><div className=text-center">"</div>
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
+        </div><div className=absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>
+        <div className=relative max-w-7xl mx-auto px-4 sm: "'px-6 lg:px-8 py-44> </div>
+          </div><div className=text-center></div>
+            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Contract & Legal Management</div>
-            </h1>"</div>
+            </h1></div>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Generate contracts, ensure legal compliance, resolve disputes, and manage all legal aspects "
               of your marketplace transactions with intelligent AI assistance.</div>
             </p></div>
-            <div className="flex flex-wrap justify-center gap-4> </div>
-              </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
-                <span className="text-white font-semibold>📄 Generate Contracts</span> </div>
+            <div className=flex flex-wrap justify-center gap-4> </div>
+              </div><div className=bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>
+                <span className=text-white font-semibold>📄 Generate Contracts</span> </div>
               </div></div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3"></div>
+              <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3></div>
                 <span className="text-white font-semibold>⚖️ Legal Compliance</span></div>
               </div></div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
-                <span className="text-white font-semibold>🤝 Dispute Resolution</span></div>
+              <div className="bg-white/10 backdrop-blur-sm: "rounded-lg px-6 py-3 ></div>
+                <span className=text-white font-semibold>🤝 Dispute Resolution</span></div>
               </div></div>
             </div></div>
           </div></div>
         </div></div>
-      </div>"
-"
+      </div>
+
       {/* Main Content */}</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
+      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? (</div>
-          </div><div className="flex justify-center items-center py-40">"</div>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
+          </div><div className="flex justify-center items-center py-40"></div>
+            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
           </div>
         ) : (</div>
           </>
             {/* Tabs */}</div>
             <div className= flex flex-wrap justify-center" mb-8>
-              ''
-                onClick={() => setActiveTab(contract's')}
+              
+                onClick={() => setActiveTab(contracts)}
                 className="{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === contract's'
-                    ? bg-gradient-to-r' from-purple-600 to-pink-600 text-white'"
-                      bg-white'/10 text-gray-300 hover bg-white/20'`"
-                }"}
+                  activeTab === contract's
+                    ? bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      bg-white'/10 text-gray-300 hover bg-white/20`
+                }}
               >
                 Contracts ({contracts.length}</div>
               </button> 
-              ''"
-                onClick={() => setActiveTab(dispute's')}""
-                className={"px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
-                  activeTab === disputes'
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'"
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'""
-                }"}
+              '"
+                onClick={() => setActiveTab(dispute's)}"
+                className={px-6" py-3 rounded-lg: "'font-semibold transition-all duration-300 ${
+                  activeTab === disputes
+                    ? bg-gradient-to-r from-purple-600 to-pink-600 text-white
+                    : bg-white/10 text-gray-300 hover:bg-white/20
+                }}
               >
                 Disputes ({disputes.length}</div>
               </button>'
               "
-                onClick={() => setActiveTab(template's')}""
-                className="{px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
-                  activeTab === templates'
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'""
-                }"}
+                onClick={() => setActiveTab(template's)}
+                className="{px-6 py-3 rounded-lg: "'font-semibold transition-all duration-300 ${
+                  activeTab === templates
+                    ? bg-gradient-to-r from-purple-600 to-pink-600 text-white
+                    : bg-white/10 text-gray-300 hover:bg-white/20
+                }}
               >
                 Templates ({templates.length}</div>
               </button>'
-              ""
-                onClick={() => setActiveTab(complianc'e')}"""
-                className={"px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === compliance'
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'"
-                      'bg-white/10 text-gray-300 hover bg-white/20'""
-                }"}
+              "
+                onClick={() => setActiveTab(complianc'e)}"
+                className={"px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === compliance
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      bg-white/10 text-gray-300 hover bg-white/20""
+                }}
               >
                 Compliance Checks</div>
               </button>'
-              "'"
-                onClick={() => setActiveTab('analytics')}""
-                className={"px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              '"
+                onClick={() => setActiveTab(analytics)}"
+                className={px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
-                    ? 'bg-gradient-to-'r from-purple-600 to-pink-600 text-white"
-                      'bg-whit'e/10 text-gray-300 hover bg-white/20""
-                }"}
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                      bg-whit'e/10 text-gray-300 hover bg-white/20"
+                }}
               >
                 Analytics</div>
               </button></div>
             </div>
 '
-            {/* Contracts Tab */}, '
-{activeTab === contrac't's && (</div>
+            {/* Contracts Tab */}, 
+{activeTab === contract's && (</div>
               <div className="space-y-8>
                 {/* Controls */}</div>
-                </div><div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6">"</div>
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0> </div>
-                    </div><div className=flex items-center" space-x-4">
-                      "
+                </div><div className=bg-white/10 backdrop-blur-sm: "'rounded-xl p-6></div>
+                  <div className=flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0> </div>
+                    </div><div className=flex items-center space-x-4">
+                      
                         onChange={(e) => setSelectedStatus(e.target.value)}
-                        className="bg-white/10  border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className=bg-white/10  border border-white/20 rounded-lg: "px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       ></div>
-                        <option value=all className=bg-slate-800>All" Status</option></div>
-                        <option value=draft className="bg-slate-800>Draft</option></div>
-                        <option value=pending className=bg-slate-800>Pending</option>"</div>
-                        <option value=active className="bg-slate-800>Active</option></div>
+                        <option value=all className=bg-slate-800>All Status</option></div>
+                        <option value=draft className=bg-slate-800>Draft</option></div>
+                        <option value=pending className=bg-slate-800>Pending</option></div>
+                        <option value=active className=bg-slate-800>Active</option></div>
                         <option value=completed className=bg-slate-800>Completed</option>"</div>
                         <option value=disputed className="bg-slate-800>Disputed</option></div>
                       </select> 
                       
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 >"</div>
+                        className=bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 ></div>
                         <option value="all className="bg-slate-800>All Types</option></div>
-                        <option value=service className=bg-slate-800">Service</option>"</div>
+                        <option value=service className=bg-slate-800>Service</option></div>
                         <option value=employment className="bg-slate-800>Employment</option></div>
-                        <option value=partnership className=bg-slate-800">Partnership</option>"</div>
-                        <option value=nda className="bg-slate-800>NDA</option></div>
+                        <option value=partnership className=bg-slate-800">Partnership</option></div>
+                        <option value=nda className=bg-slate-800>NDA</option></div>
                       </select>
                        
                         onChange={(e) => setSortBy(e.target.value as any)}"
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       ></div>
-                        <option value=date className="bg-slate-800>Date</option></div>
+                        <option value=date className=bg-slate-800>Date</option></div>
                         <option value=value className="bg-slate-800>Value</option>"</div>
-                        <option value=risk className="bg-slate-800>Risk Level</option></div>
-                        <option value=compliance className="bg-slate-800>Compliance</option></div>"
+                        <option value=risk className=bg-slate-800>Risk Level</option></div>
+                        <option value=compliance className=bg-slate-800>Compliance</option></div>"
                       </select>"</div>
-                    </div>"</div>
-                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
+                    </div></div>
+                    <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
                       Create Contract</div>
                     </button> </div></div>
                 </div>
 
                 {/* Contracts Grid */} </div>
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>"
-                  {filteredContracts.map((contract) => ("</div>
-                    </div><div key={contract.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
-                      <div className="flex"  items-start justify-between mb-4></div>
-                        <h3 className="text-lg font-semibold text-white >{contract.title}</h3></div>
-                        <div className="flex" space-x-2>""</div>
-                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(contract.status)}"}">
-                            {contract.status} "</div>
-                          </span>`"</div>
-                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(contract.riskLevel)}}>
+                  {filteredContracts.map((contract) => (</div>
+                    </div><div key={contract.id} className= bg-white/10 backdrop-blur-sm: "rounded-xl p-6 border border-white/10></div>
+                      <div className=flex  items-start justify-between mb-4></div>
+                        <h3 className=text-lg font-semibold text-white >{contract.title}</h3></div>
+                        <div className=flex" space-x-2>"</div>
+                          <span className={px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(contract.status)}"}">
+                            {contract.status} </div>
+                          </span>`</div>
+                          <span className={px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(contract.riskLevel)}}>
                             {contract.riskLevel} risk</div>
                           </span></div>
                         </div></div>
                       </div>"
 "</div>
-                      <div className="space-y-3 mb-4 > </div>
-                        </div><div className="flex justify-between text-sm>"</div>
-                          <span className="text-gray-400>Value:</span></div>
-                          <span className="text-white>{contract.currency},</div>
-{contract.value.toLocaleString()}</span></div>"
-                        </div>"</div>
-                        <div className="flex justify-between text-sm></div>
-                          <span className="text-gray-400>Parties" </span></div>
+                      <div className=space-y-3 mb-4 > </div>
+                        </div><div className=flex justify-between text-sm>"</div>
+                          <span className="text-gray-400>Value: "</span></div>
+                          <span className=text-white>{contract.currency},</div>
+{contract.value.toLocaleString()}</span></div>
+                        </div></div>
+                        <div className=flex justify-between text-sm></div>
+                          <span className=text-gray-400>Parties </span></div>
                           <span className="text-white>{contract.parties.length}</span></div>
                         </div></div>
-                        <div className=flex justify-between" text-sm>"</div>
-                          <span className="text-gray-400>Compliance Score:</span>`</div>
-                          <span className="{"px-4" py-3 rounded-full text-xs font-medium ${getComplianceColor(contract.complianceScore)}"}>
+                        <div className=flex justify-between" text-sm></div>
+                          <span className=text-gray-400>Compliance Score: "</span>`</div>
+                          <span className={px-4 py-3 rounded-full text-xs font-medium ${getComplianceColor(contract.complianceScore)}}>
                             {contract.complianceScore}%</div>
                           </span></div>
                         </div></div>
                         <div className="flex justify-between text-sm></div>
-                          <span className="text-gray-400>AI Generated:</span>"</div>
-                          <span className="text-white>{contract.aiGenerated ? 'Y'es : 'N'o}</span></div>
+                          <span className="text-gray-400>AI Generated: "</span></div>
+                          <span className=text-white>{contract.aiGenerated ? Yes : No}</span></div>
                         </div></div>
                       </div>
 
-                      {/* Parties */}"</div>
-                      <div className="mb-4></div>
-                        </div><div className=text-sm" font-medium text-gray-400 mb-2>Parties </div></div>
-                        <div className="space-y-2> 
+                      {/* Parties */}</div>
+                      <div className=mb-4></div>
+                        </div><div className=text-sm font-medium text-gray-400 mb-2>Parties </div></div>
+                        <div className=space-y-2> 
                           {contract.parties.map((party) => (</div>
                             </div><div key={party.id} className=flex" items-center justify-between text-sm ></div>
                               <span className="text-white>{party.name}</span>
-                              `"
-                              }"}>
+                              `
+                              }}>
                                 {party.type}</div>
                               </span></div>
                             </div> ))}</div>
                         </div></div>
                       </div>
                       {/* Legal Review */}</div>
-                      <div className="mb-4></div>
-                        </div><div className=text-sm font-medium text-gray-400 mb-2 ">Legal Review:</div></div>
-                        <div className="space-y-2 text-sm></div>
-                          </div><div className= flex justify-between">"</div>
-                            <span className="text-gray-400>Status:</span>
+                      <div className=mb-4></div>
+                        </div><div className=text-sm font-medium text-gray-400 mb-2 ">Legal Review: "</div></div>
+                        <div className=space-y-2 text-sm></div>
+                          </div><div className= flex justify-between></div>
+                            <span className=text-gray-400>Status:</span>
                             "
-                            }"}>
+                            }}>
                               {contract.legalReview.status}</div>
-                            </span>"</div>
+                            </span></div>
                           </div>"</div>
                           <div className="flex justify-between></div>
-                            <span className="text-gray-400>Reviewer:</span>"</div>
-                            <span className="text-white>{contract.legalReview.reviewer}</span></div>
-                          </div"></div>
+                            <span className=text-gray-400>Reviewer: "</span></div>
+                            <span className=text-white>{contract.legalReview.reviewer}</span></div>
+                          </div></div>
                         </div></div>
                       </div>
 
                       {/* Action Buttons */}</div>
-                      <div className="flex space-x-2 ></div>
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>"
+                      <div className=flex space-x-2 ></div>
+                        <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>"
                           View Details"</div>
-                        </button>"</div>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                        </button></div>
+                        <button className=flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Edit</div>
                         </button></div>
                       </div></div>
@@ -524,14 +524,14 @@ const $1: NextPage = () => {
                 </div></div>
               </div>
             )}
-            {/* Disputes Tab */},"'
-{activeTab === 'disputes' && (</div>
-              <div className="space-y-6> 
+            {/* Disputes Tab */},'
+{activeTab === disputes && (</div>
+              <div className=space-y-6> 
                 {disputes.map((dispute) => (</div>
-                  </div><div key={dispute.id} className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                    <div className="flex items-start justify-between mb-4></div>
+                  </div><div key={dispute.id} className=bg-white/10 backdrop-blur-sm: 'rounded-xl p-6 border border-white/10></div>
+                    <div className=flex items-start justify-between mb-4></div>
                       <h3 className=text-lg" font-semibold text-white>Dispute #{dispute.id}</h3>"
-                      ""
+                      
                       }"}>
                         {dispute.status}</div>
                       </span></div>
@@ -539,62 +539,62 @@ const $1: NextPage = () => {
 </div>
                     <div className="space-y-4></div>
                       </div><div></div>
-                        <div className=text-sm" font-medium text-gray-400 mb-1>Type </div ></div>
-                        <div className="text-white capitalize>{dispute.type}</div></div>
+                        <div className=text-sm font-medium text-gray-400 mb-1>Type </div ></div>
+                        <div className=text-white capitalize>{dispute.type}</div></div>
                       </div>
 </div>
                       <div></div>
-                        </div><div className=text-sm" font-medium text-gray-400 mb-1>Description:</div></div>
-                        <div className="text-white>{dispute.description}</div></div>
+                        </div><div className=text-sm" font-medium text-gray-400 mb-1>Description: "</div></div>
+                        <div className=text-white>{dispute.description}</div></div>
                       </div>
 
                       {/* AI Analysis */}</div>
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>"</div>
-                        </div><div className="text-sm font-medium text-gray-400 mb-2>AI Analysis </div></div>
-                        <div className="space-y-2 text-sm> "</div>
-                          </div><div className="flex justify-between></div>
+                      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4></div>
+                        </div><div className=text-sm font-medium text-gray-400 mb-2>AI Analysis </div></div>
+                        <div className="space-y-2 text-sm> </div>
+                          </div><div className=flex justify-between></div>
                             <span className="text-gray-400>Strength </span>"</div>
-                            <span className="text-white>{Math.round(dispute.aiAnalysis.strength * 100)}%</span></div>
+                            <span className=text-white>{Math.round(dispute.aiAnalysis.strength * 100)}%</span></div>
                           </div></div>
-                          <div className=" flex justify-between>"</div>
-                            <span className="text-gray-400>Weakness:</span></div>
-                            <span className="text-white>{Math.round(dispute.aiAnalysis.weakness * 100)}%</span> "</div>
-                          </div>"</div>
-                          <div className="flex justify-between></div>
-                            <span className="text-gray-400>Confidence:</span>"</div>
+                          <div className= flex justify-between>"</div>
+                            <span className="text-gray-400>Weakness: "</span></div>
+                            <span className=text-white>{Math.round(dispute.aiAnalysis.weakness * 100)}%</span> </div>
+                          </div></div>
+                          <div className=flex justify-between></div>
+                            <span className=text-gray-400>Confidence:</span></div>
                             <span className="text-white>{Math.round(dispute.aiAnalysis.confidence * 100)}%</span></div>
                           </div></div>
                         </div></div>
-                        <div className="mt-3>"</div>
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendation </div></div>
+                        <div className="mt-3></div>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendation </div></div>
                           <div className="text-white text-sm>{dispute.aiAnalysis.recommendation}</div></div>
                         </div></div>
                       </div>
 "
-                      {/* Evidence */}"</div>
-                      <div>"</div>
+                      {/* Evidence */}</div>
+                      <div></div>
                         </div><div className="text-sm font-medium text-gray-400 mb-2 >Evidence ({dispute.evidence.length}):</div></div>
-                        <div className="space-y-2>"
-                          {dispute.evidence.map((evidence) => ("</div>
+                        <div className="space-y-2>
+                          {dispute.evidence.map((evidence) => (</div>
                             </div><div key={evidence.id} className="flex items-center justify-between bg-white/5 rounded-lg p-3> </div>
                               <div></div>
-                                </div><div className="text-white font-semibold>{evidence.title}</div>"</div>
-                                <div className="text-gray-400 text-sm >{evidence.description}</div></div>
+                                </div><div className="text-white font-semibold>{evidence.title}</div></div>
+                                <div className=text-gray-400 text-sm >{evidence.description}</div></div>
                               </div></div>
                               <div className="text-right>"</div>
-                                </div><div className="text-sm text-gray-400>Relevance: {Math.round(evidence.relevance * 100)}%</div></div>
-                                <div className="text-xs text-gray-500>{evidence.uploadedAt.toLocaleDateString()}</div></div>
+                                </div><div className=text-sm text-gray-400>Relevance: "{Math.round(evidence.relevance * 100)}%</div></div>
+                                <div className=text-xs text-gray-500>{evidence.uploadedAt.toLocaleDateString()}</div></div>
                               </div></div>
                             </div > ))}</div>
                         </div></div>
-                      </div>"
-"
-                      {/* Action Buttons */}"</div>
-                      <div className="flex  space-x-2></div>
+                      </div>
+
+                      {/* Action Buttons */}</div>
+                      <div className=flex  space-x-2></div>
                         <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details</div>
                         </button></div>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                        <button className="flex-1 border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Add Evidence</div>
                         </button></div>
                       </div></div>
@@ -603,109 +603,109 @@ const $1: NextPage = () => {
                 ))}</div>
               </div>
             )}
-            {/* Templates Tab */},'
-{activeTab === templat'e's && (</div>
-              <div className=grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+            {/* Templates Tab */},
+{activeTab === templates && (</div>
+              <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                 {templates.map((template) => (</div>
-                  </div><div key={template.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
-                    <div className=flex items-start justify-between mb-4""></div>
-                      <h3 className="text-lg font-semibold text-white>{template.name}</h3>
+                  </div><div key={template.id} className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                    <div className=flex items-start justify-between mb-4></div>
+                      <h3 className=text-lg font-semibold text-white>{template.name}</h3>
                       {template.aiOptimized && (</div>
-                        <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                        <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
                           AI Optimized</div>
                         </span>
                       )}</div>
                     </div>
                     </div>
-                    <p className="text-gray-300 text-sm mb-4 >{template.description}</p>
+                    <p className=text-gray-300 text-sm mb-4 >{template.description}</p>
                     </div>
-                    <div className="space-y-3 mb-4""></div>
-                      </div><div className=" flex justify-between text-sm></div>
-                        <span className=text-gray-400>Category:</span>"</div>
-                        <span className="text-white>{template.category}</span></div>
+                    <div className="space-y-3 mb-4"></div>
+                      </div><div className= flex justify-between text-sm></div>
+                        <span className=text-gray-400>Category: "</span></div>
+                        <span className=text-white>{template.category}</span></div>
                       </div></div>
-                      <div className= flex justify-between" text-sm>"</div>
-                        <span className="text-gray-400>Compliance Score:</span >""</div>
-                        <span className="{px-4 py-3 rounded-full text-xs font-medium  ${getComplianceColor(template.complianceScore)}}>
+                      <div className= flex justify-between text-sm></div>
+                        <span className="text-gray-400>Compliance Score: "</span ></div>
+                        <span className={px-4 py-3 rounded-full text-xs font-medium  ${getComplianceColor(template.complianceScore)}}>
                           {template.complianceScore}%</div>
-                        </span>"</div>
+                        </span></div>
                       </div>"</div>
-                      <div className="flex justify-between text-sm"></div>
+                      <div className=flex justify-between text-sm></div>
                         <span className="text-gray-400>Usage Count </span></div>
-                        <span className="text-white>{template.usageCount}</span></div>"
-                      </div>"</div>
+                        <span className="text-white>{template.usageCount}</span></div>
+                      </div></div>
                     </div> "</div>
                     <div className="mb-4></div>
-                      </div><div className="text-sm font-medium text-gray-400 mb-2 >Preview:</div>"</div>
-                      <div className="text-xs text-gray-300 bg-white/5 rounded-lg p-3>
+                      </div><div className=text-sm font-medium text-gray-400 mb-2 >Preview: "</div></div>
+                      <div className=text-xs text-gray-300 bg-white/5 rounded-lg p-3>
                         {template.preview}</div>
                       </div></div>
                     </div></div>
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                    <button className=w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       Use Template</div>
                     </button></div>
                   </div > ))}</div>
               </div>
-            )}"
-            {/* Compliance Tab */},'"
+            )}
+            {/* Compliance Tab */},
 {activeTab === 'compliance' && ("</div>
               <div className="space-y-6> 
                 {complianceChecks.map((check) => (</div>
-                  </div><div key={check.id} className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                    <div className="flex items-start justify-between mb-4></div>
-                      <h3 className=text-lg font-semibold text-white">{check.checkType}</h3>"
-                      `"
-                      }"}>
+                  </div><div key={check.id} className=bg-white/10 backdrop-blur-sm: "'rounded-xl p-6 border border-white/10></div>
+                    <div className=flex items-start justify-between mb-4></div>
+                      <h3 className=text-lg font-semibold text-white>{check.checkType}</h3>
+                      `
+                      }}>
                         {check.status}</div>
                       </span></div>
                     </div > </div>
-                    <div className="space-y-3 mb-4 ></div>
+                    <div className=space-y-3 mb-4 ></div>
                       </div><div> </div>
                         <div className=text-sm font-medium text-gray-400 mb-1">Description </div></div>
                         <div className="text-white>{check.description}</div></div>
                       </div></div>
                       <div></div>
-                        </div><div className=text-sm" font-medium text-gray-400 mb-1">Recommendation </div></div>
+                        </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendation </div></div>
                         <div className="text-white>{check.recommendation}</div></div>
                       </div>
                        "</div>
-                      <div className="flex justify-between text-sm>'</div>
-                        <span className=" text-gray-400>AI Generated:</span>"</div>
-                        <span className=" text-white>{check.aiGenerated ? 'Y'es : 'N'o}</span></div>
+                      <div className=flex justify-between text-sm></div>
+                        <span className= text-gray-400>AI Generated: "</span></div>
+                        <span className= text-white>{check.aiGenerated ? Yes : No}</span></div>
                       </div></div>
-                      <div className="flex justify-between text-sm""></div>
+                      <div className=flex justify-between text-sm"></div>
                         <span className="text-gray-400>Checked </span></div>
-                        <span className=text-white">{check.checkedAt.toLocaleDateString()}</span>"</div>
+                        <span className=text-white>{check.checkedAt.toLocaleDateString()}</span></div>
                       </div></div>
                     </div>
 </div>
-                    <button className="w-full border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                    <button className="w-full border border-white/20 text-white hover: "bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       View Details</div>
                     </button></div>
                   </div > ))}</div>
               </div>
             )}
-            {/* Analytics Tab */},'
-{activeTab === 'analytics' && ("</div>
-              <div className="space-y-6>
+            {/* Analytics Tab */},
+{activeTab === 'analytics' && (</div>
+              <div className=space-y-6>
                 {analytics?.aiInsights.map((insight) => (</div>
-                  </div><div key={insight.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                    <div className="flex items-start justify-between mb-4></div>
-                      <h3 className=text-lg font-semibold text-white">{insight.title}</h3>"
-                      ""
+                  </div><div key={insight.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                    <div className=flex items-start justify-between mb-4></div>
+                      <h3 className=text-lg font-semibold text-white">{insight.title}</h3>
+                      "
                       }"}>
                         {insight.impact}</div>
                       </span></div>
                     </div></div>
-                    <p className="text-gray-300 text-sm mb-4>{insight.description}</p></div>
-                    <div className=space-y-3 mb-4"></div>
+                    <p className=text-gray-300 text-sm mb-4>{insight.description}</p></div>
+                    <div className=space-y-3 mb-4></div>
                       </div><div className="flex justify-between text-sm></div>
-                        <span className=text-gray-400">Confidence:</span></div>
-                        <span className="text-white>{Math.round(insight.confidence * 100)}%</span> </div>
+                        <span className=text-gray-400">Confidence: "</span></div>
+                        <span className=text-white>{Math.round(insight.confidence * 100)}%</span> </div>
                       </div></div>
-                      <div className=flex justify-between text-sm"></div>
-                        <span className="text-gray-400>Recommendations:</span></div>
-                        <ul className=text-white text-sm list-disc list-inside ">
+                      <div className=flex justify-between text-sm></div>
+                        <span className=text-gray-400>Recommendations:</span></div>
+                        <ul className=text-white text-sm list-disc list-inside >
                           {insight.recommendations.map((rec, index) => (</div>
                             <li key={index}>{rec}</li>
                           ))}</div>
@@ -720,21 +720,21 @@ const $1: NextPage = () => {
         )}</div>
       </div>
       {/* CTA Section */}</div>
-      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16></div>
-        </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">"</div>
+      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16></div>
+        </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"</div>
           <div className="text-center></div>
-            <h2 className=text-3xl" font-bold text-white mb-4 ">
+            <h2 className=text-3xl font-bold text-white mb-4 >
               Ready to Manage Your Legal Affairs?</div>
             </h2></div>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start creating contracts, ensuring compliance, and resolving disputes  
               with our AI-powered legal management system.</div>
             </p>"</div>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center></div>
-              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Create Contract"</div>
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 "></Link></div>
-              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Legal Templates</div>
-              </Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            <div className= flex flex-col sm flex-row gap-4 justify-center></div>
+              <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Create Contract</div>
+              </Link href=/ai-service-matcher  className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>
+              <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Legal Templates</div>
+              </Link href=/talent-directory className=border" border-white/20 text-white hover: "bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -748,5 +748,5 @@ const $1: NextPage = () => {
   </div>
 ;
 };
-'";}
-export default AIPoweredContractLegalPage )))))))))))))))))))))))))))))))))))"'"</div>
+';
+export default AIPoweredContractLegalPage )))))))))))))))))))))))))))))))))))'"</div>

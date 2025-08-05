@@ -1,6 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next
-interface $1 {
-  id: string
+import type { NextApiRequest, NextApiResponse } from 'next';;
+interface FacilityPlan {
+  id: "'string
   title: string
   category: string
   description: string
@@ -12,7 +12,7 @@ interface $1 {
   technologies: string[]
   responseTime: string
   availability: string}
-interface $1 {
+interface FacilityPlan {
   userNeeds: string
   industry?: string
   budget?: string
@@ -21,34 +21,33 @@ interface $1 {
 ;}
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse'
+  res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed'}}
+    return res.status(405).json({ error: Method not allowed}}
   try {
     const { userNeeds, industry, budget, timeline }: AnalysisRequest = req.body
 '
     if (!userNeeds) {
-      return res.status(400).json({ error: User' needs are required'}}
+      return res.status(400).json({ error: 'User needs are required}}
     // Simulate AI analysis delay
     await new Promise(resolve => setTimeout(resolve, 2000)
     // Mock AI analysis based on user needs
     const matches: ServiceMatch[] = []
     // AI Development Services
-    if (userNeeds.toLowerCase().includes(a'i') || userNeeds.toLowerCase().includes(machine' learning') || userNeeds.toLowerCase().includes(artificial' intelligence')) {
+    if (userNeeds.toLowerCase().includes(ai) || userNeeds.toLowerCase().includes(machine' learning) || userNeeds.toLowerCase().includes(artificial intelligence')) {
       matches.push({
-        id: ai-dev'-'001,
-        title: A'I' Development Services,
-        category: A'I' Talent,
-        description: "Expert AI developers specializing in machine learning, deep learning, and AI integration. Perfect for your technology needs.,
-        price: '$150-500/hr',
+        id: 'ai-dev-001,
+        title: AI Development Services,
+        category: A'I Talent,
+        description: 'Expert AI developers specializing in machine learning, deep learning, and AI integration. Perfect for your technology needs.,
+        price: $150-500/hr,
         rating: 4.9,
-        provider: A'I' Solutions Pro,
+        provider: AI Solutions Pro,
         matchScore: 95,
-        features: ['Machin'e Learning, 'Dee'p Learning, 'A'I Integration, 'Custo'm Models],
-        technologies: ['Pyth'on, 'TensorFl'ow, 'PyTor'ch, 'OpenA'I API],
-        responseTime: 
-    matches.sort((a, b) => b.matchScore - a.matchScore
+        features: [Machin'e Learning, 'Deep Learning, A'I Integration, 'Custom Models],
+        technologies: '[Python, TensorFlow, PyTor'ch, 'OpenAI API],
+        responseTime: 'matches.sort((a, b) => b.matchScore - a.matchScore
     // Limit to top 4 matches
     const $1 = matches.slice(0, 4
     return res.status(200).json({
@@ -58,12 +57,12 @@ export default async function handler(
         userNeeds,
         industry,
         budget,
-        timeline","
+        timeline,"
         totalMatches: matches.length,
-        analysisTime: new Date().toISOString(}}'
+        analysisTime: new Date().toISOString(}}
   } catch (error) {
-    console.error('AI Service Matcher API Error: , error'
+    console.error(AI Service Matcher API Error: , error
     return res.status(500).json({ 
-      error: 'Internal server error',
+      error: Internal server error,
       message: 'Failed to analyze service requirements'}}'
 } )))))))))))))))))';

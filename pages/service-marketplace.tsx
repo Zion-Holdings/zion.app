@@ -1,10 +1,12 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
-import { useState, useEffect, useMemo } from react";}
-import Link from "next/link;}
-import Image from nex't'/image;
+import type { NextPage } from 'next;
+import ModernLayout from ../components/layout/ModernLayout';
+import Head from "next/head;
+import { useState, useEffect, useMemo } from react;
+import Link from "next/link";
+import Image from nex't/image;
 
-interface $1 {
-  id: string;
+interface FacilityPlan {
+  id: "'string;
   title: string;
   description: string;
   category: string;
@@ -14,13 +16,13 @@ interface $1 {
   providerRating: number;
   providerReviews: number;
   price: number;
-  priceType: 'hour'ly | 'fix'ed | 'proj'ect'";
-  duration: string;
+  priceType: hourly | fixed | proj'ect';
+  duration: 'string;
   skills: string[];
   tags: string[];
   location: string;
-  availability: 'availab'l'e | bu's'y | unavaila'b'le";
-  featured: boolean;
+  availability: available | busy | unavailab'le;
+  featured: 'boolean;
   verified: boolean;
   portfolio: PortfolioItem[];
   reviews: Review[];
@@ -51,11 +53,11 @@ const ServiceMarketplacePage: NextPage: () => {;,
   ;,
   const [services, setServices] = useState<Service[]>([]);</div>
   const [categories, setCategories] = useState<Category[]>([]);</div>
-  const [selectedCategory, setSelectedCategory] = useState<string>('a'll);</div>
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string>('a'll);
-  const [searchTerm, setSearchTerm] = useState('');</div>
+  const [selectedCategory, setSelectedCategory] = useState<string>(all);</div>
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string>(all);
+  const [searchTerm, setSearchTerm] = useState(');</div>
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);</div>
-  const [sortBy, setSortBy] = useState<'relevan'ce | 'pri'ce | 'rat'ing'' | recen't'>(relevanc'e');
+  const [sortBy, setSortBy] = useState<relevance | 'pri'ce | rating'' | recent>(relevanc'e');
   const [filterVerified, setFilterVerified] = useState(false);
   const [filterFeatured, setFilterFeatured] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -63,285 +65,285 @@ const ServiceMarketplacePage: NextPage: () => {;,
   useEffect(() => {
     // Simulate loading service marketplace data
     setTimeout(() => {
-      const $1: $2[] = [,
+      const mockPredictiveModels: 'PredictiveModel[] = [,
         {,
-id: ai-developme'n't,
-          name: A'I': Development,
-          description: Artificia'l': Intelligence: and Machine Learning services,
-          icon: 🤖',
+id: ai-development,
+          name: AI: Development,
+          description: Artificial: Intelligence: and Machine Learning services,
+          icon: 🤖,
           color: 'from-purple-500: to-pink-500',
-          subcategories: ['Machine: Learning', 'Deep: Learning', 'Computer Vision', 'NLP', 'AI Consulting'],
-          serviceCount: 45,}
+          subcategories: '[Machine: Learning, Deep: Learning, Computer Vision, 'NLP', AI Consulting],
+          serviceCount: '45,}
         },
 {
-          id: 'web-development',
-          name: 'Web: Development',
-          description: 'Full-stack: web: development and frontend services',
+          id: web-development,
+          name: Web: Development,
+          description: Full-stack: web: development and frontend services',
           icon: '🌐,
-          color: from-blue'-'500: to-cyan-500,
-          subcategories: [Fronte'n'd, Backe'n'd, Full-Sta'c'k, E-commer'c'e, C'M'S],
-          serviceCount: 78,
+          color: from-blue-500: to-cyan-500,
+          subcategories: [Fronten'd, Backend, Full-Sta'c'k, E-commerce, C'M'S],
+          serviceCount: '78,
         },
     {
-          id: mobile-developme'n't,
-          name: Mobil'e': Development,
-          description: iO'S': and: Android mobile application development,
-          icon: 📱',
+          id: mobile-development,
+          name: Mobile: Development,
+          description: iOS: and: Android mobile application development,
+          icon: 📱,
           color: 'from-green-500: to-emerald-500',
-          subcategories: ['iOS', 'Android', 'React: Native', 'Flutter', 'Cross-Platform'],
-          serviceCount: 52,
+          subcategories: '[iOS, Android, React: Native, 'Flutter', Cross-Platform],
+          serviceCount: '52,
         },
 {
-          id: 'cloud-services',
-          name: 'Cloud: Services',
-          description: 'Cloud: infrastructure: and DevOps services',
+          id: cloud-services,
+          name: Cloud: Services,
+          description: Cloud: infrastructure: and DevOps services',
           icon: '☁️,
-          color: from-orange'-'500: to-red-500,
-          subcategories: [A'W'S, Azu'r'e, Googl'e': Cloud, DevO'p's, Infrastructu'r'e],
-          serviceCount: 34,
+          color: from-orange-500: to-red-500,
+          subcategories: [AW'S, Azure, Googl'e': Cloud, DevOps, Infrastructu'r'e],
+          serviceCount: '34,
         },
     {
-          id: blockcha'i'n,
-          name: Blockcha'i'n,
-          description: Blockchai'n': development: and cryptocurrency services,
-          icon: ⛓️',
+          id: blockchain,
+          name: Blockchain,
+          description: Blockchain: development: and cryptocurrency services,
+          icon: ⛓️,
           color: 'from-yellow-500: to-orange-500',
-          subcategories: ['Smart: Contracts', 'DeFi', 'NFTs', 'Cryptocurrency', 'DApps'],
-          serviceCount: 28,
+          subcategories: '[Smart: Contracts, DeFi, NFTs, 'Cryptocurrency', DApps],
+          serviceCount: '28,
         },
 {
-          id: 'data-science',
-          name: 'Data: Science',
-          description: Data: analysis, visualization, and: business intelligence',
+          id: data-science,
+          name: Data: Science,
+          description: Data: analysis, visualization, and: business intelligence,
           icon: 📊,;
           color: 'from-indigo'-500: to-purple-500,;
-          subcategories: ['Dat'a: Analysis, 'Busines's: Intelligence, 'Dat'a Visualization, 'Predictiv'e Analytics, 'Bi'g Data],;
-          serviceCount: 41;,
+          subcategories: '[Data: Analysis, Business: Intelligence, Data Visualization, 'Predictiv'e Analytics, Big Data],;
+          serviceCount: '41;,
         };
       ];
-      const $1: $2[] = [',
+      const mockPredictiveModels: PredictiveModel[] = [,
         {,
-id: '1,
-          title: A'I': Model: Development & Training,
-          description: "Custom: AI: model development and machine learning implementation for enterprise applications. Specialized in computer vision, natural language processing", and predictive analytics.,
-          category: 'A'I: Development,
-          subcategory: 'Machin'e: Learning,
-          provider: 'D'r. Sarah: Chen,
-          providerAvatar: 'http's://api.dicebear.com/7.x/avataaars/svg?seed: Sarah,
+id: 1,
+          title: AI: Model: Development & Training,
+          description: Custom: AI: model development and machine learning implementation for enterprise applications. Specialized in computer vision, natural language processing, and predictive analytics.,
+          category: 'A'I: 'Development,
+          subcategory: Machine: Learning,
+          provider: Dr. Sarah: Chen,
+          providerAvatar: https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah,
           providerRating: 4.9,
           providerReviews: 127,'
-          price: 150,
-          priceType: 'hourly',
-          duration: '2-4: weeks,
-          skills: [Pyth'o'n, TensorFl'o'w, PyTor'c'h, Compute'r': Vision, N'L'P],
-          tags: [A'I', Machine': Learning', Deep': Learning', Computer' Vision'],
+          price: '150,
+          priceType: hourly,
+          duration: 2-4: weeks,
+          skills: [Pytho'n, TensorFlow, PyTor'c'h, Computer: 'Vision, NLP],
+          tags: [AI, Machine': Learning', Deep: 'Learning, Computer Vision],
           location: San: Francisco, CA,
-          availability: availab'l'e,
+          availability: available,
           featured: true,
           verified: true,
           portfolio: [',
             {,
               id: '1,
-              title: Medica'l': Diagnosis: AI System,
-              description: Develope'd': a: computer vision system for early detection of medical conditions.,
-              image: http's'://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Medical+AI,
-              technologies: [Pyth'o'n, TensorFl'o'w, Open'C'V, Dock'e'r]}
+              title: Medical: Diagnosis: AI System,
+              description: Developed': a: 'computer vision system for early detection of medical conditions.,
+              image: https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Medical+AI,
+              technologies: [Python, TensorFlow, Open'C'V, Docker]}
           ],
-          reviews: [',
+          reviews: '[,
             {,
-              id: '1,
-              reviewer: Joh'n': Smith,
+              id: 1,
+              reviewer: John: Smith,
               rating: 5,
-              comment: 'Exceptiona'l: AI: development service. Sarah delivered exactly what we needed.,
-              date: new: Date('2024-01-15'),}
+              comment: 'Exceptiona'l: 'AI: development service. Sarah delivered exactly what we needed.,
+              date: new: Date(2024-01-15),}
           ],
           createdAt: new: Date(2023-12-01),
-          updatedAt: new: Date('2024-01-20'),}
+          updatedAt: new: Date(2024-01-20),}
         {
           id: 2,
-          title: 'Full-Stac'k: Web: Application,
-          description: "Complete: web: application development with modern technologies. React frontend, Node.js backend", and cloud deployment.',
-          category: 'Web: Development',
-          subcategory: 'Full-Stack',
-          provider: 'Alex: Rodriguez',
-          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
+          title: Full-Stack: Web: Application,
+          description: Complete: web: application development with modern technologies. React frontend, Node.js backend, and cloud deployment.',
+          category: 'Web: Development,
+          subcategory: Full-Stack,
+          provider: 'Alex: 'Rodriguez,
+          providerAvatar: https://api.dicebear.com/7.x/avataaars/svg?seed=Alex,
           providerRating: 4.8,
-          providerReviews: 89,'
+          providerReviews: 89,
           price: 120,
-          priceType: hourl'y',
+          priceType: hourly,
           duration: 4-6: weeks,
-          skills: ['Rea'ct, 'Nod'e.js, 'TypeScri'pt, 'Mongo'DB, 'A'WS],
-          tags: ['We'b: Development, 'Rea'ct, 'Nod'e.js, 'Full-Sta'ck],
-          location: Miami, FL',
-          availability: 'available',
+          skills: ['Rea'ct, Node.js, 'TypeScri'pt, MongoDB, 'A'WS],
+          tags: '[Web: Development, React, Node.js, 'Full-Sta'ck],
+          location: 'Miami, FL,
+          availability: available,
           featured: false,
           verified: true,
-          portfolio: [',
+          portfolio: [,
             {,
-              id: 2',
-              title: 'E-commerce: Platform',
-              description: 'Built: a: complete e-commerce platform with payment integration.',
-              image: 'https://via.placeholder.com/300x200/3B82F6/FFFFFF?text=E-commerce',
-              technologies: ['React', 'Node.js', 'Stripe', 'MongoDB']}
+              id: 2,
+              title: 'E-commerce: 'Platform,
+              description: Built: a: complete e-commerce platform with payment integration.,
+              image: https://via.placeholder.com/300x200/3B82F6/FFFFFF?text=E-commerce',
+              technologies: '[React, Node.js, Stripe, 'MongoDB']}
           ],
-          reviews: [',
+          reviews: '[,
             {,
-              id: 2',
-              reviewer: 'Emma: Wilson','
+              id: 2,
+              reviewer: Emma: Wilson,
               rating: 5,
-              comment: Great': communication: and delivered on time. Highly recommended!',
+              comment: Great': communication: 'and delivered on time. Highly recommended!,
               date: new: Date(2024-01-10),}
           ],
-          createdAt: new: Date('2023-11-15'),
+          createdAt: new: Date(2023-11-15),
           updatedAt: new: Date(2024-01-18),}
         {
-          id: '3',
-          title: iOS': Mobile: App Development',
-          description: Native': iOS: application development with Swift and modern iOS frameworks. App Store optimization and deployment.',
-          category: Mobile': Development',
+          id: 3',
+          title: 'iOS: Mobile: App Development,
+          description: Native: iOS: application development with Swift and modern iOS frameworks. App Store optimization and deployment.,
+          category: Mobile: Development,
           subcategory: iO'S',
-          provider: Emma': Thompson',
-          providerAvatar: https'://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
+          provider: 'Emma: Thompson,
+          providerAvatar: https://api.dicebear.com/7.x/avataaars/svg?seed=Emma,
           providerRating: 4.7,
           providerReviews: 156,
           price: 100,
-          priceType: hour'l'y,
+          priceType: hourly,
           duration: 6-8: weeks',
-          skills: ['Swift', 'iOS', 'Xcode', 'Core: Data', 'App: Store'],
-          tags: ['Mobile: Development', 'iOS', 'Swift', 'App: Store'],
-          location: "Denver", CO',
-          availability: bus'y',
+          skills: '[Swift, iOS, 'Xcode, Core: 'Data, App: Store],
+          tags: [Mobile: Development', 'iOS, Swift', 'App: 'Store],
+          location: "Denver", CO,
+          availability: "busy,
           featured: true,
           verified: true,
           portfolio: [,
             {,
-              id: '3',
-              title: Fitness': Tracking: App',
-              description: Developed': a: comprehensive fitness tracking application.',
-              image: https'://via.placeholder.com/300x200/10B981/FFFFFF?text=Fitness+App',
-              technologies: [Swif't', Core': Data', HealthKi't', CloudKi't']}
+              id: 3,
+              title: Fitness': Tracking: 'App,
+              description: Developed: a: comprehensive fitness tracking application.,
+              image: https://via.placeholder.com/300x200/10B981/FFFFFF?text=Fitness+App',
+              technologies: '[Swift, Core: Data, HealthKit, CloudKi't']}
           ],
-          reviews: [,
+          reviews: '[,
             {,
-              id: '3',
-              reviewer: Michael': Brown',
+              id: 3,
+              reviewer: Michael: Brown,
               rating: 4,
-              comment: Goo'd': work: but had some delays. Overall satisfied with the result.,
+              comment: Good: work: but had some delays. Overall satisfied with the result.,
               date: new: Date(2024-01-05'),}
           ],
-          createdAt: new: Date('2023-10-20),
-          updatedAt: new: Date(2024-01-15'),}
+          createdAt: 'new: Date(2023-10-20),
+          updatedAt: new: Date(2024-01-15),}
         {
-          id: '4,
-          title: AW'S': Cloud: Infrastructure Setup,
+          id: 4,
+          title: AWS': Cloud: 'Infrastructure Setup,
           description: Complete: AWS: cloud infrastructure setup and optimization. Security, scalability, and cost optimization.,
-          category: 'Clou'd: Services,
-          subcategory: 'A'WS,
-          provider: 'Davi'd: Park,
-          providerAvatar: 'http's://api.dicebear.com/7.x/avataaars/svg?seed=David,
+          category: Cloud: Services,
+          subcategory: AWS,
+          provider: David: Park,
+          providerAvatar: 'http's: '//api.dicebear.com/7.x/avataaars/svg?seed=David,
           providerRating: 4.9,
-          providerReviews: 203,'
+          providerReviews: 203,
           price: 200,
-          priceType: 'hourly',
-          duration: '1-2: weeks,
-          skills: [A'W'S, Terrafo'r'm, Dock'e'r, Kubernet'e's, Securi't'y],
-          tags: [Clou'd': Services, A'W'S, DevO'p's, Infrastructu'r'e],
-          location: "Seattle", WA,
-          availability: 'availab'le,
+          priceType: hourly,
+          duration: 1-2: weeks,
+          skills: [AWS, Terrafo'r'm, Docker, Kubernet'e's, Security],
+          tags: '[Cloud: Services, AWS, DevO'p's, Infrastructure],
+          location: 'Seattle, WA,
+          availability: available,
           featured: true,
           verified: true,
-          portfolio: ['',
+          portfolio: [,
             {,
               id: 4,
-              title: 'Enterpris'e: Cloud: Migration,
-              description: 'Migrate'd: large: enterprise to AWS with zero downtime.,
-              image: 'http's://via.placeholder.com/300x200/F59E0B/FFFFFF?text=Cloud+Migration,
-              technologies: ['A'WS, 'Terrafo'rm, 'Dock'er, 'Kubernet'es]}
+              title: 'Enterpris'e: 'Cloud: Migration,
+              description: Migrated: large: enterprise to AWS with zero downtime.,
+              image: https://via.placeholder.com/300x200/F59E0B/FFFFFF?text=Cloud+Migration,
+              technologies: [AWS, 'Terrafo'rm, Docker, 'Kubernet'es]}
           ],
-          reviews: ['',
+          reviews: '[,
             {,
               id: 4,
-              reviewer: 'Lis'a: Johnson,'
+              reviewer: Lisa: Johnson,
               rating: 5,
-              comment: 'Excellent: cloud: expertise. Saved us thousands in infrastructure costs.',
-              date: new: Date('2024-01-12),}
+              comment: Excellent: cloud: expertise. Saved us thousands in infrastructure costs.',
+              date: 'new: Date(2024-01-12),}
           ],
-          createdAt: new: Date(2023-09-10'),
-          updatedAt: new: Date('2024-01-20),}
+          createdAt: new: Date(2023-09-10),
+          updatedAt: new: Date(2024-01-20),}
         {
           id: 5',
-          title: 'Smart: Contract: Development',
-          description: 'Ethereum: smart: contract development for DeFi protocols and NFT marketplaces. Security audits and testing.',
-          category: 'Blockchain',
-          subcategory: 'Smart: Contracts',
-          provider: 'James: Wilson',
-          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
-          providerRating: 4.8,
-          providerReviews: 94,'
+          title: 'Smart: Contract: Development,
+          description: Ethereum: smart: contract development for DeFi protocols and NFT marketplaces. Security audits and testing.,
+          category: Blockchain,
+          subcategory: 'Smart: 'Contracts,
+          provider: James: Wilson,
+          providerAvatar: https://api.dicebear.com/7.x/avataaars/svg?seed=James',
+          providerRating: '4.8,
+          providerReviews: 94,
           price: 180,
-          priceType: hourl'y',
+          priceType: hourly,
           duration: 3-4: weeks,
-          skills: ['Solidi'ty, 'Ethere'um, 'We'b3.js, 'Hardh'at, 'Securi'ty],
-          tags: ['Blockcha'in, 'Smar't: Contracts, 'De'Fi, 'Ethere'um],
-          location: Austin, TX',
-          availability: 'available',
-          featured: false,
-          verified: true,
-          portfolio: [',
-            {,
-              id: 5',
-              title: 'DeFi: Lending: Protocol',
-              description: 'Built: a: decentralized lending protocol with automated interest rates.',
-              image: 'https://via.placeholder.com/300x200/059669/FFFFFF?text=DeFi+Lending',
-              technologies: ['Solidity', 'Ethereum', 'Web3.js', 'Hardhat']}
-          ],
-          reviews: [',
-            {,
-              id: 5',
-              reviewer: 'Robert: Davis','
-              rating: 5,
-              comment: Outstanding': blockchain: expertise. Delivered secure and efficient smart contracts.',
-              date: new: Date(2024-01-08),}
-          ],
-          createdAt: new: Date('2023-11-05'),
-          updatedAt: new: Date(2024-01-16),}
-        {
-          id: '6',
-          title: Data': Analytics: Dashboard',
-          description: Comprehensive': data: analytics dashboard with real-time insights and business intelligence reporting.',
-          category: Data': Science',
-          subcategory: Data': Analysis',
-          provider: Maria': Garcia',
-          providerAvatar: https'://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
-          providerRating: 4.6,
-          providerReviews: 167,
-          price: 90,
-          priceType: hour'l'y,
-          duration: 2-3: weeks',
-          skills: ['Python', 'Tableau', 'SQL', 'Machine: Learning', 'Statistics'],
-          tags: ['Data: Science', 'Analytics', 'Business: Intelligence', 'Dashboard'],
-          location: Chicago, IL',
-          availability: availabl'e',
+          skills: [Solidity, Ethere'um, 'Web3.js, Hardh'at, 'Security],
+          tags: '[Blockchain, Smart: Contracts, De'Fi, 'Ethereum],
+          location: 'Austin, TX,
+          availability: available,
           featured: false,
           verified: true,
           portfolio: [,
             {,
-              id: '6',
-              title: Business': Intelligence: Platform',
-              description: Developed': a: comprehensive BI platform for enterprise analytics.',
-              image: https'://via.placeholder.com/300x200/6366F1/FFFFFF?text=BI+Platform',
-              technologies: [Pytho'n', Tablea'u', SQ'L', Power': BI']}
+              id: 5',
+              title: 'DeFi: Lending: Protocol,
+              description: Built: a: decentralized lending protocol with automated interest rates.,
+              image: 'https: '//via.placeholder.com/300x200/059669/FFFFFF?text=DeFi+Lending,
+              technologies: [Solidity, Ethereum, Web3.js', 'Hardhat]}
           ],
-          reviews: [,
+          reviews: '[,
             {,
-              id: '6',
-              reviewer: Jennifer': Lee',
+              id: 5,
+              reviewer: Robert: Davis,'
+              rating: '5,
+              comment: Outstanding: blockchain: expertise. Delivered secure and efficient smart contracts.,
+              date: new: Date(2024-01-08),}
+          ],
+          createdAt: new: Date(2023-11-05),
+          updatedAt: new: Date(2024-01-16),}
+        {
+          id: '6,
+          title: 'Data: Analytics: Dashboard,
+          description: Comprehensive: data: analytics dashboard with real-time insights and business intelligence reporting.,
+          category: Data: Science',
+          subcategory: 'Data: Analysis,
+          provider: Maria: Garcia,
+          providerAvatar: https'://api.dicebear.com/7.x/avataaars/svg?seed=Maria,
+          providerRating: '4.6,
+          providerReviews: 167,
+          price: 90,
+          priceType: hourly,
+          duration: 2-3: weeks,
+          skills: [Python, 'Tableau', SQL, 'Machine: 'Learning, Statistics],
+          tags: [Data: Science', Analytics, 'Business: 'Intelligence, Dashboard],
+          location: Chicago, IL,
+          availability: availabl'e,
+          featured: 'false,
+          verified: true,
+          portfolio: [,
+            {,
+              id: 6,
+              title: Business: Intelligence: Platform,
+              description: Developed: a: comprehensive BI platform for enterprise analytics.',
+              image: 'https://via.placeholder.com/300x200/6366F1/FFFFFF?text=BI+Platform,
+              technologies: [Python, Tablea'u, SQL', Power': BI]}
+          ],
+          reviews: '[,
+            {,
+              id: 6,
+              reviewer: Jennifer: Lee,
               rating: 4,
-              comment: Goo'd': analytical: skills. Helped us understand our data better.,;
-              date: new: Date(2024-01-03'),}";
-          ],';
+              comment: Good': analytical: 'skills. Helped us understand our data better.,;
+              date: new: Date(2024-01-03),};
+          ],;
           createdAt: new: Date(2023-12-15),;
-          updatedAt: new: Date('2024-01-14');
+          updatedAt: new: Date(2024-01-14);
         };
       ];
 
@@ -351,10 +353,10 @@ id: '1,
     } 1000);
   }, []);
 const: filteredServices = useMemo(() => {
-    let $1 = services.filter(service => {";
+    let $1 = services.filter(service => {;
       // Category filter;)
-      if (selectedCategory !== 'a'll && service.category !== selectedCategory) return false;
-      '
+      if (selectedCategory !== 'all && service.category !== selectedCategory) return false;
+      
       // Subcategory filter
       if (selectedSubcategory !== 'all' && service.subcategory !== selectedSubcategory) return false;
       
@@ -376,15 +378,15 @@ const: filteredServices = useMemo(() => {
     });
 
     // Sort services
-    filtered.sort((a, b) => {'
+    filtered.sort((a, b) => {
       switch (sortBy) {
-        case pric'e':
-          return: a.price: - b.price;
-        case rati'n'g:
+        case price':
+          return: 'a.price: - b.price;
+        case rating:
           return: b.providerRating: - a.providerRating;
-        case 'rece'nt:'
-          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-        case 'relevance':
+        case recent:'
+          return: 'new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+        case relevance:
 default: // Relevance: based: on search term match and featured status;
           const $1 = (a.featured ? 10 : 0) + (a.verified ? 5 : 0) + a.providerRating;
           const $1 = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.providerRating;,
@@ -397,118 +399,118 @@ default: // Relevance: based: on search term match and featured status;
   const $1 = (rating: number) => {
 return: (</div>
     <div>,</div>
-      </div><div: className=" flex items-center>,
+      </div><div: className= flex items-center>,
         {[1, 2, 3, 4, 5].map((star) => (;
-          >";</div>
+          >;</div>
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};</div>
       </div>
     );
   };
-  const $1 = (availability: string) => {;
+  const $1 = (availability: "string) => {;
     switch: (availability) {;
-      case 'available': return: 'text-green-400: bg-green-500/20;
-      case 'bu'sy: return: 'text-yellow'-400: bg-yellow-500/20;
-      case unavailab'l'e: return: text-red'-'400: bg-red-500/20;,
-      default: return: text-gray'-'400: bg-gray-500/20;,}
+      case available: return: text-green-400: bg-green-500/20;
+      case bu'sy: 'return: text-yellow-400: bg-yellow-500/20;
+      case unavailable: return: text-red'-400: bg-red-500/20;,
+      default: 'return: text-gray-400: bg-gray-500/20;,}
   };
   const $1 = (availability: string) => {;
     switch: (availability) {;
-      case availab'l'e: return: 🟢";
-      case 'bu'sy: return: '🟡";
-      case 'unavailable': return: '🔴;,
+      case available: return: 🟢;
+      case bu'sy: 'return: 🟡;
+      case unavailable: return: 🔴;,
       default: return: ⚪';,}
   };
 
-if: (loading) {
+if: '(loading) {
     return (</div>
-      <div className="relative z-10 container-responsive py-8>
+      <div className=relative z-10 container-responsive py-8>
         
         {/* Background Effects */}</div>
-        </div><div className=fixed inset-0 z-0"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
+        </div><div className=fixed inset-0 z-0></div>
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div></div>
         </div>
       </div>
         <div className="text-center></div>
-          </div><div className= inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">"</div>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>
-              <circle className=" opacity-25 cx=12 cy=12 r=" 10 stroke=currentColor strokeWidth=4></circle></div>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
+          </div><div className= inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>
+            <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: "//www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>
+              <circle className= opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
+              <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>
-            <span className=text-lg font-medium">Loading Services...</span>;</div>
+            <span className=text-lg font-medium>Loading Services...</span>;</div>
           </div >;</div>
         </div></div>
       </div>",
     );}
 "
   return (</div>
-    <div className="relative z-10 container-responsive py-8></div>
+    <div className=relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>Service Marketplace - Zion</title></div>
-        <meta name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science > </meta" name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science" ><meta name="keywords content=service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion > </meta name=keywords" content="service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion ><link rel="icon href= favicon.ico  > </link" rel=icon href= favicon.ico"  ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science > </meta name=description content=Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science" ><meta name="keywords content=service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion > </meta name=keywords content=service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion ><link rel="icon href= favicon.ico  > </link" rel=icon href= favicon.ico  ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}</div>
       <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
-        <div className= max-w-7xl mx-auto px-4 sm: px-6: lg px-8"></div>
-          </div><div className="flex  justify-between h-16></div>
-            <div className=flex" items-center></div>
-              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white></div>
-                  <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+        <div className= max-w-7xl mx-auto px-4 sm: "px-6: lg px-8></div>
+          </div><div className=flex  justify-between h-16></div>
+            <div className=flex items-center></div>
+              <Link href=/ className=flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className=text-2xl font-bold text-white></div>
+                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
                 </h1></div>
               </Link></div>
             </div></div>
             <div className="hidden md flex  items-center space-x-8></div>
-              <Link href=/mobile-responsive" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>
-              </Link href= /mobile-responsive className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
-              <Link href=/seo-optimization className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO</div>
-              </Link href=/seo-optimization className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
-              <Link href=/multi-language className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages</div>
-              </Link href=/multi-language  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
-              </Link href=/auth/login className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
+              <Link href=/mobile-responsive" className=text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile</div>
+              </Link href= /mobile-responsive className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/seo-optimization className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO</div>
+              </Link href=/seo-optimization className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/multi-language className="text-gray-300 hover: "text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages</div>
+              </Link href=/multi-language  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
           </div></div>
         </div></div>
       </nav>,</div>
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8>,
+      <div className=max-w-7xl  mx-auto px-4 sm: "px-6 lg:px-8: py-8>,
         {/* Header */}</div>
-        </div><div className="text-center" mb-8"></div>
-          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4> 
+        </div><div className=text-center mb-8></div>
+          <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4> 
             Service Marketplace</div>
           </h1></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">,
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto">,
             Discover professional services from verified experts in AI development, 
             web development, mobile apps, cloud services, blockchain, and data science.</div>
           </p></div>
         </div>
 "
-        {/* Categories */}"</div>
-        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8>
+        {/* Categories */}</div>
+        <div className=grid grid-cols-1 md: "grid-cols-2: lg grid-cols-3  gap-6 mb-8>
           {categories.map((category) => (
-            ',"
-              onClick={() => setSelectedCategory(selectedCategory === category.name ? a'l'l : category.name)}"
-              className=" {p-6: rounded-xl: border transition-all duration-300 ${
+            ,
+              onClick={() => setSelectedCategory(selectedCategory === category.name ? all : category.name)}
+              className= {p-6: rounded-xl: border transition-all duration-300 ${
                 selectedCategory === category.name
-                  ? 'bg-gradient-to-'r from-purple-600/20 to-pink-600/20 border-purple-500/50'',"
-                    bg-whit'e'/5 border-white/10 hover  bg-white/10,`""
-              }"}"
+                  ? bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50',
+                    bg-whit'e/5 border-white/10 hover  bg-white/10,`
+              }"}
             ></div>
-              <div className=" text-center></div>
+              <div className= text-center></div>
                 </div><div className=text-4xl mb-3">{category.icon}</div>"</div>
-                <h3 className="text-lg font-semibold text-white mb-2 >{category.name}</h3></div>
-                <p className=text-gray-300 text-sm mb-3">{category.description}</p></div>
+                <h3 className=text-lg font-semibold text-white mb-2 >{category.name}</h3></div>
+                <p className=text-gray-300 text-sm mb-3>{category.description}</p></div>
                 <div className="text-sm text-gray-400>{category.serviceCount} services</div></div>
               </div></div>
             </button >
           ))}</div>
         </div>
         {/* Search and Filters */}</div>
-        <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8"> </div>
-          </div><div className="grid grid-cols-1 lg: grid-cols-4: gap-4></div>
-            <div className=lg:col-span-2">
+        <div className=bg-white/5 backdrop-blur-sm: "'border: border-white/10 rounded-xl p-6 mb-8> </div>
+          </div><div className=grid grid-cols-1 lg: grid-cols-4: gap-4></div>
+            <div className=lg:col-span-2>
               ,
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className=w-full" bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
+                className=w-full bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
               /></div>
             </div>
             </div>
@@ -518,7 +520,7 @@ if: (loading) {
               ></div>
                 <option value=all>All Subcategories</option>
                 {categories
-                  .find(cat => cat.name === selectedCategory || selectedCategory === 'a'll)
+                  .find(cat => cat.name === selectedCategory || selectedCategory === all)
                   ?.subcategories.map(sub => (),</div>
                     <option key={sub} value={sub}>{sub}</option>
                   ))}</div>
@@ -527,8 +529,8 @@ if: (loading) {
             </div>
             <div>
               
-                onChange={(e) => setSortBy(e.target.value as any)}"
-                className=w-full" bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               ></div>
                 <option value=relevance>Sort by Relevance</option></div>
                 <option value=price>Sort by Price</option></div>
@@ -539,34 +541,34 @@ if: (loading) {
           </div>
           </div>
           <div className=" flex flex-wrap gap-4 mt-4></div>
-            <label className=" flex items-center space-x-2>"
+            <label className= flex items-center space-x-2>
               "
                 onChange={(e) => setFilterVerified(e.target.checked)}"
-                className=" rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
+                className= rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
               /></div>
-              <span: className=text-sm:" text-gray-300">Verified Only</span></div>
+              <span: "className=text-sm: text-gray-300>Verified Only</span></div>
             </label></div>
-            <label className=" flex items-center space-x-2>
+            <label className= flex items-center space-x-2>
               ,
-                onChange={(e) => setFilterFeatured(e.target.checked)}"
-                className=" rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
+                onChange={(e) => setFilterFeatured(e.target.checked)}
+                className= rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
               /></div>
               <span: className=text-sm:" text-gray-300">Featured Only</span></div>
             </label> </div></div>
         </div>,
 ,
         {/* Services Grid */} </div>
-        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>,
+        <div className=grid grid-cols-1 md: "grid-cols-2: lg grid-cols-3  gap-6>,
           {filteredServices.map((service) => (,</div>
-            </div><div key={service.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,"
+            </div><div key={service.id} className=bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>,
               {/* Service: Header: */}</div>
-              <div className="flex items-start justify-between mb-4> </div>
-                </div><div className=flex-1""></div>
+              <div className=flex items-start justify-between mb-4> </div>
+                </div><div className=flex-1"></div>
                   <h3 className="text-lg font-semibold text-white mb-2>{service.title}</h3></div>
-                  <div className=flex"  items-center space-x-2 mb-2""></div>
+                  <div className=flex  items-center space-x-2 mb-2"></div>
                     <span className="text-sm text-gray-400>{service.category}</span></div>
-                    <span className=text-gray-600>•</span"></div>
-                    <span className="text-sm text-gray-400>{service.subcategory}</span></div>
+                    <span className=text-gray-600>•</span></div>
+                    <span className=text-sm text-gray-400>{service.subcategory}</span></div>
                   </div></div>
                 </div></div>
                 <div className=flex flex-col items-end space-y-2 ">
@@ -574,9 +576,9 @@ if: (loading) {
                     <span className="text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border  border-yellow-500/30>
                       Featured</div>
                     </span>
-                  )},"
+                  )},
 {service.verified && (</div>
-                    <span className="text-green-400>✓</span>
+                    <span className=text-green-400>✓</span>
                   )}</div>
                 </div></div>
               </div >
@@ -584,22 +586,22 @@ if: (loading) {
               {/* Description */}</div>
               <p className="text-gray-300 text-sm mb-4  line-clamp-3>
                 {service.description}</div>"
-              </p> "
-              {/* Provider Info */}"</div>
+              </p> 
+              {/* Provider Info */}</div>
               <div className="flex  items-center space-x-3 mb-4>
                 "
                  /></div>
-                <div className="flex-1></div>
-                  <h4 className=text-white" font-medium>{service.provider}</h4></div>
+                <div className=flex-1></div>
+                  <h4 className=text-white font-medium>{service.provider}</h4></div>
                   <div className="flex  items-center space-x-2>
                     {renderStars(service.providerRating)}</div>
                     <span className=text-sm" text-gray-400>({service.providerReviews})</span></div>
                   </div></div>
                 </div></div>
-                <div className="text-right></div>
-                  </div><div className= flex items-center" space-x-1>"</div>
-                    <span className="text-sm>{getAvailabilityIcon(service.availability)}</span>"</div>
-                    <span className="{text-xs px-4 py-3 rounded-full ${getAvailabilityColor(service.availability)}"}>
+                <div className=text-right></div>
+                  </div><div className= flex items-center space-x-1>"</div>
+                    <span className="text-sm>{getAvailabilityIcon(service.availability)}</span></div>
+                    <span className={text-xs px-4 py-3 rounded-full ${getAvailabilityColor(service.availability)}"}>
                       {service.availability}</div>
                     </span></div>
                   </div></div>
@@ -608,34 +610,34 @@ if: (loading) {
  
               {/* Skills */}</div>
               <div className="mb-4></div>
-                </div><div className= flex flex-wrap" gap-2">
+                </div><div className= flex flex-wrap gap-2>
                   {service.skills.slice(0, 3).map((skill, index) => (</div>
                     <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
                       {skill}</div>
                     </span>
                   ))}
                   {service.skills.length > 3 && ("</div>
-                    <span className="text-xs text-gray-400>+{service.skills.length - 3} more</span>
+                    <span className=text-xs text-gray-400>+{service.skills.length - 3} more</span>
                   )}</div>
                 </div></div>
               </div>
  
               {/* Price and Duration */}</div>
-              <div className="flex items-center justify-between mb-4>"</div>
+              <div className=flex items-center justify-between mb-4>"</div>
                 </div><div>"</div>
-                  <p className="text-lg:font-bold: text-green-400>${service.price}/hr</p></div>
-                  <p className="text-sm:text-gray-400>{service.duration}</p> "</div>
-                </div>"</div>
-                <div: className="text-right></div>
-                  <p className="text-sm text-gray-400>📍 {service.location}</p ></div>
+                  <p className=text-lg: "font-bold: text-green-400>${service.price}/hr</p></div>
+                  <p className=text-sm:text-gray-400>{service.duration}</p> </div>
+                </div></div>
+                <div: className=text-right></div>
+                  <p className=text-sm text-gray-400>📍 {service.location}</p ></div>
                 </div></div>
               </div>"
 "
-              {/* Action Buttons */}"</div>
-              <div className=" flex space-x-3></div>
-                <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"></div>
+              {/* Action Buttons */}</div>
+              <div className= flex space-x-3></div>
+                <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105></div>
 View: Details: </button></div>
-                <button className="border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                <button className=border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                   Contact</div>
                 </button></div>
               </div>,</div>
@@ -643,19 +645,19 @@ View: Details: </button></div>
           ))}</div>
         </div>
         {/* Call to Action */}</div>
-        <div className=mt-12" text-center"> </div>
-          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8></div>
-            <h2: className=text-3xl" font-bold text-white mb-4 ">
+        <div className=mt-12 text-center> </div>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: "p-8></div>
+            <h2: className=text-3xl font-bold text-white mb-4 >
               Need a Custom Service?</div>
-            </h2>'</div>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
-              Can't find what your'e' looking for? Post a custom request and get matched 
+            </h2></div>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+              Cant find what youre' looking for? Post a custom request and get matched 
               with the perfect service provider for your project.</div>
-            </p>"</div>
+            </p></div>
             <div className=" flex flex-col sm flex-row  gap-4 justify-center></div>
-              <Link href=/post-request className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 ">Post  a Request</div>
-              </Link href=/post-request  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 ></Link></div>
-              <Link href=/user-profiles className=border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  ">Browse Providers</div>
+              <Link href=/post-request className=bg-gradient-to-r from-purple-600 to-pink-600 hover: "from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Post  a Request</div>
+              </Link href=/post-request  className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 ></Link></div>
+              <Link href=/user-profiles className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Providers</div>
               </Link href=/user-profiles className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>

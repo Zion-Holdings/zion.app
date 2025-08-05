@@ -1,12 +1,12 @@
-import React from "react";}
-import { motion } from framer-motion";}
+import React from "react;}
+import { motion } from framer-motion;
 import { Filter, Star, DollarSign, Clock, X } from "lucide-react;}
 import type { ServiceFilters } from '../../utils/types/service";}
-import { DELIVERY_TIMES } from ../../utils/types/service";}
+import { DELIVERY_TIMES } from ../../utils/types/service;
 import { serviceCategories } from ../../utils/data/services;
 
-interface $1 {
-  filters: ServiceFilters;
+interface DemandForecast {
+  filters: "'ServiceFilters;
   onFilterChange: (filters: ServiceFilters) => void;
   onClearFilters: () => void;
   isMobile: boolean;
@@ -24,50 +24,50 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
       [key]: value;
     });
   };
-  const $1 = () => {'
+  const $1 = () => {
     return (
-      filters.category !== 'All Categories' ||
+      filters.category !== All Categories ||
       filters.priceRange[0] !== 0 ||
-      filters.priceRange[1] !== 100000 ||'
+      filters.priceRange[1] !== 100000 ||
       filters.rating > 0 ||
-      filters.deliveryTime !== Any' time' ||
+      filters.deliveryTime !== Any time ||
       filters.searchTerm !== ;
     );
   };
 
   const $1 = ({ title, children }: { title: string; children: React.ReactNode }) => (</div>
-    <div className="mb-6></div>
-      <h3 className=text-lg font-semibold text-gray-900 mb-3">{title}</h3 >
+    <div className=mb-6></div>
+      <h3 className=text-lg font-semibold text-gray-900 mb-3>{title}</h3 >
       {children}</div>
-    </div>"
+    </div>
   );
 
-  const $1 = ("</div>
-    <div className="space-y-6>
+  const $1 = (</div>
+    <div className=space-y-6>
       {/* Categories */}</div>
       <FilterSection title="Categories>"</div>
-        <div className="space-y-2></div>
-          <label className=" flex items-center>"</div>
+        <div className=space-y-2></div>
+          <label className= flex items-center>"</div>
             <input"
-              type="radio 
+              type=radio 
               name=category 
-              value=All" Categories"''
-              checked={filters.category === All' Categories'}
+              value=All Categories"''
+              checked={filters.category === All Categories}
               onChange={(e) => handleFilterChange(categor'y', e.target.value)}
               className=" mr-2 text-blue-600 focus ring-blue-500 /></div>
-            <span className=text-sm text-gray-700">All Categories</span></div>
+            <span className=text-sm text-gray-700>All Categories</span></div>
           </label>
-          {serviceCategories.map((category) => ("</div>
+          {serviceCategories.map((category) => (</div>
             <label key={category.id} className=" flex items-center></div>
               <input
                 type="radio 
                 name=category
-                value={category.name}"
+                value={category.name}
                 checked={filters.category === category.name}
-                onChange={(e) => handleFilterChange(catego'r'y, e.target.value)}"
+                onChange={(e) => handleFilterChange(category, e.target.value)}
                 className=" mr-2 text-blue-600 focus ring-blue-500 /></div>
               <span className=text-sm text-gray-700 flex items-center "></div>
-                <span className="mr-2>{category.icon}</span>
+                <span className=mr-2>{category.icon}</span>
                 {category.name}</div>
               </span></div>
             </label>
@@ -75,29 +75,29 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
         </div></div>
       </FilterSection>
 
-      {/* Price Range */}"</div>
+      {/* Price Range */}</div>
       <FilterSection title=Price Range"></div>
         <div className="space-y-4></div>
-          <div className=flex justify-between text-sm text-gray-600""></div>
+          <div className=flex justify-between text-sm text-gray-600></div>
             <span>${filters.priceRange[0].toLocaleString()}</span></div>
             <span>${filters.priceRange[1].toLocaleString()}</span></div>
           </div></div>
           <div className="relative></div>
             <input
               type="range 
-              min="0 
+              min=0 
               max=100000 
               step=1000 
               value={filters.priceRange[0]}
-              onChange={(e) => handleFilterChange('priceRan'ge, [parseInt(e.target.value), filters.priceRange[1]])}"
+              onChange={(e) => handleFilterChange('priceRan'ge, [parseInt(e.target.value), filters.priceRange[1]])}
               className=" w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider /></div>
             <input
               type=range"
-              min="0 
-              max="100000 
-              step=1000'
+              min=0 
+              max=100000 
+              step=1000
               value={filters.priceRange[1]}
-              onChange={(e) => handleFilterChange('priceRange', [filters.priceRange[0], parseInt(e.target.value)])}
+              onChange={(e) => handleFilterChange(priceRange', [filters.priceRange[0], parseInt(e.target.value)])}
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider absolute top-0 /></div>
           </div></div>
         </div></div>
@@ -105,30 +105,30 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
  
       {/* Rating */}</div>
       <FilterSection title=Minimum Rating"></div>
-        <div className="space-y-2>
+        <div className=space-y-2>
           {[4.5, 4.0, 3.5, 3.0, 2.5, 2.0].map((rating) => (</div>
-            <label key={rating} className=" flex items-center>"</div>
+            <label key={rating} className= flex items-center>"</div>
               <input"
-                type="radio 
+                type=radio 
                 name=rating
-                value={rating}"'
+                value={rating}'
                 checked={filters.rating === rating}
-                onChange={(e) => handleFilterChange(ratin'g', parseFloat(e.target.value))}"
+                onChange={(e) => handleFilterChange(rating, parseFloat(e.target.value))}"
                 className=" mr-2 text-blue-600 focus ring-blue-500 /></div>
-              <div className=flex items-center >"</div>
-                <div className="flex mr-2>
+              <div className=flex items-center ></div>
+                <div className=flex mr-2>
                   {[1, 2, 3, 4, 5].map((star) => (</div>
                     <Star key={star}"
                       className="{w-4 h-4 ${
-                        star <= rating ? 'text-yellow'-400 fill-current : 'text-gray'-300`""
+                        star <= rating ? 'text-yellow'-400 fill-current : text-gray-300`
                       }"}"
-                    ">))}</div>
-                </Star'"
+                    >))}</div>
+                </Star'
                       key={star}""
-                      className="{w-4 h-4 ${
-                        star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300' ""
-                      }"}"
-                    "></div></div>
+                      className={w-4 h-4 ${
+                        star <= rating ? 'text-yellow-400 fill-current : text-gray-300' "
+                      }"}
+                    ></div></div>
                 <span className="text-sm text-gray-700>{rating}+</span></div>
               </div></div>
             </label>
@@ -138,15 +138,15 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
 
       {/* Delivery Time */}</div>
       <FilterSection title=Delivery" Time></div>
-        <div className="space-y-2>
-          {DELIVERY_TIMES.map((time) => ("</div>
+        <div className=space-y-2>
+          {DELIVERY_TIMES.map((time) => (</div>
             <label key={time} className=" flex items-center></div>
               <input"
                 type=radio 
-                name=deliveryTime"
-                value={time}"'
+                name=deliveryTime
+                value={time}'
                 checked={filters.deliveryTime === time}
-                onChange={(e) => handleFilterChange(deliveryTim'e', e.target.value)}
+                onChange={(e) => handleFilterChange(deliveryTime, e.target.value)}
                 className=" mr-2 text-blue-600 focus ring-blue-500 /></div>
               <span className="text-sm text-gray-700>{time}</span></div>
             </label>
@@ -154,12 +154,12 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
         </div></div>
       </FilterSection>
 
-      {/* Clear Filters */},"
-    {hasActiveFilters() && ("</div>
+      {/* Clear Filters */},
+    {hasActiveFilters() && (</div>
         <button"
           onClick={onClearFilters}"
-          className="w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors flex items-center justify-center></div>
-          <X className=w-4 h-4 mr-2 "">Clear All Filters</div>
+          className=w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors flex items-center justify-center></div>
+          <X className=w-4 h-4 mr-2 ">Clear All Filters</div>
         </X className="w-4 h-4 mr-2 ></button>
       )}</div>
     </div>
@@ -168,27 +168,27 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
   return (</div>
     </>
       {/* Mobile Filter Toggle */},
-    {isMobile && ( "</div>
-        <div className = lg hidden mb-4"></div>
+    {isMobile && ( </div>
+        <div className = lg hidden mb-4></div>
           <button
             onClick={onToggleMobile}"
             className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-between hover bg-gray-50></div>
-            <span className=flex items-center text-gray-700 >"</div>
-              <Filter className="w-4 h-4 mr-2 >Filters</div>
+            <span className=flex items-center text-gray-700 ></div>
+              <Filter className=w-4 h-4 mr-2 >Filters</div>
             </Filter className=w-4 h-4 mr-2" ></span></div>
             <span className="text-sm text-gray-500>
-              {hasActiveFilters() ? Acti'v'e : A'l'l}</div>
+              {hasActiveFilters() ? Acti'v'e : All}</div>
             </span></div>
           </button></div>
         </div>
-      )}"'"
+      )}'
       {/* Desktop Sidebar */}""</div>
-      <div className="{${isMobile ? 'hidden' : 'block'} lg:block}"></div>
-        <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100"></div>
-          <div className=" flex items-center justify-between mb-6"></div>
+      <div className={${isMobile ? 'hidden : block'} lg: "block}></div>
+        <div className=bg-white rounded-xl shadow-lg p-6 border border-gray-100></div>
+          <div className= flex items-center justify-between mb-6></div>
             <h2 className=" text-xl font-bold text-gray-900 flex items-center></div>
-              <Filter className="w-5 h-5 mr-2 >Filters"</div>
-            </Filter className="w-5 h-5 mr-2 "></h2>
+              <Filter className="w-5 h-5 mr-2 >Filters</div>
+            </Filter className=w-5 h-5 mr-2 "></h2>
             {hasActiveFilters() && (</div>
               <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full>
                 Active</div>
@@ -202,16 +202,16 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
       {/* Mobile Filter Panel */},
     {isMobile && (</div>
         <motion.div
-          initial={{ opacity: 0, x: -300}}
+          initial={{ opacity: "0, x: -300}}
           animate={{ opacity: 1, x: 0}}
-          exit={{ opacity: 0, x: -300 }}"
-          className="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl border-r border-gray-200 overflow-y-auto></div>
-          <div className=p-6 >"</div>
-            <div className="flex items-center justify-between mb-6></div>
-              <h2 className=text-xl font-bold text-gray-900">Filters</h2></div>
+          exit={{ opacity: 0, x: -300 }}
+          className=fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl border-r border-gray-200 overflow-y-auto></div>
+          <div className=p-6 ></div>
+            <div className=flex items-center justify-between mb-6></div>
+              <h2 className=text-xl font-bold text-gray-900>Filters</h2></div>
               <button
                 onClick={onToggleMobile}
-                className="text-gray-400 hover text-gray-600></div>
+                className=text-gray-400 hover text-gray-600></div>
                 <X className="w-6 h-6 > </X className="w-6 h-6 "></button></div>
             </div>
             {filterContent}</div>
