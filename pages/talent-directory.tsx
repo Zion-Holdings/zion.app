@@ -91,7 +91,7 @@ const TalentDirectoryPage: NextPage = () => {
     setTimeout(() => {
       const mockCategories: Category[] = [
         {
-          id: 'ai-ml',
+id: 'ai-ml',
           name: 'AI & Machine Learning',
           description: 'Experts in artificial intelligence, machine learning, and data science',
           icon: '🤖',
@@ -137,12 +137,12 @@ const TalentDirectoryPage: NextPage = () => {
           icon: '📊',
           color: 'from-indigo-500 to-purple-500',
           talentCount: 41
-        }
+        };
       ];
 
       const mockTalents: Talent[] = [
         {
-          id: '1',
+id: '1',
           name: 'Dr. Sarah Chen',
           title: 'Senior AI Research Scientist',
           avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
@@ -485,7 +485,7 @@ const TalentDirectoryPage: NextPage = () => {
           bio: 'Data Scientist with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',
           joinedDate: new Date('2021-09-15'),
           lastActive: new Date('2024-01-14')
-        }
+        };
       ];
 
       setCategories(mockCategories);
@@ -496,7 +496,7 @@ const TalentDirectoryPage: NextPage = () => {
 
   const filteredTalents = useMemo(() => {
     let filtered = talents.filter(talent => {
-      // Category filter
+      // Category filter)
       if (selectedCategory !== 'all' && !talent.expertise.some(exp => exp.toLowerCase().includes(selectedCategory.toLowerCase()))) {
         return false;
       }
@@ -535,8 +535,7 @@ const TalentDirectoryPage: NextPage = () => {
         case 'recent':
           return new Date(b.lastActive).getTime() - new Date(a.lastActive).getTime();
         case 'relevance':
-        default:
-          // Relevance based on featured status, rating, and verification
+default: // Relevance based on featured status, rating, and verification;
           const aScore = (a.featured ? 10 : 0) + (a.verified ? 5 : 0) + a.rating;
           const bScore = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.rating;
           return bScore - aScore;
@@ -591,7 +590,7 @@ const TalentDirectoryPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -613,13 +612,13 @@ const TalentDirectoryPage: NextPage = () => {
         <title>Talent Directory - Zion</title>
         <meta name="description" content="Comprehensive talent directory with verified professionals in AI, web development, mobile apps, cloud services, blockchain, and data science" />
         <meta name="keywords" content="talent directory, professionals, developers, AI experts, web developers, mobile developers, cloud architects, blockchain developers, data scientists, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -630,7 +629,7 @@ const TalentDirectoryPage: NextPage = () => {
             </div>
             
             {/* Desktop Navigation - Main Links */}
-            <div className="hidden lg:flex items-center space-x-6">
+            <div className="hidden lg: flex items-center space-x-6">
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
@@ -649,7 +648,7 @@ const TalentDirectoryPage: NextPage = () => {
             </div>
 
             {/* Desktop Navigation - Auth & Actions */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg: flex items-center space-x-4">
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
@@ -659,7 +658,7 @@ const TalentDirectoryPage: NextPage = () => {
             </div>
 
             {/* Tablet Navigation - Reduced Links */}
-            <div className="hidden md:flex lg:hidden items-center space-x-4">
+            <div className="hidden md: flex lg:hidden items-center space-x-4">
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
@@ -678,10 +677,10 @@ const TalentDirectoryPage: NextPage = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            <div className="md: hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                className="text-gray-300 hover: text-white focus:outline-none focus:text-white"
               >
                 <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -692,12 +691,12 @@ const TalentDirectoryPage: NextPage = () => {
 
           {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
+            <div className="md: hidden bg-black/90 backdrop-blur-md border-t border-white/10">
               <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
                 {/* Main Navigation */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Main</h3>
-                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/marketplace" className="text-gray-300 hover: text-white block px-3 py-4 rounded-md text-base font-medium">
                     Marketplace
                   </Link>
                   <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
@@ -717,7 +716,7 @@ const TalentDirectoryPage: NextPage = () => {
                 {/* Tools & Features */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3>
-                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/real-time-chat" className="text-gray-300 hover: text-white block px-3 py-4 rounded-md text-base font-medium">
                     Live Chat
                   </Link>
                   <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
@@ -734,7 +733,7 @@ const TalentDirectoryPage: NextPage = () => {
                 {/* Resources */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Resources</h3>
-                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/blog" className="text-gray-300 hover: text-white block px-3 py-4 rounded-md text-base font-medium">
                     Blog
                   </Link>
                   <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
@@ -747,7 +746,7 @@ const TalentDirectoryPage: NextPage = () => {
 
                 {/* Authentication */}
                 <div className="border-t border-white/10 pt-4">
-                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/auth/login" className="text-gray-300 hover: text-white block px-3 py-4 rounded-md text-base font-medium">
                     Login
                   </Link>
                   <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-4 rounded-md text-base font-medium">
@@ -760,10 +759,10 @@ const TalentDirectoryPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Talent Directory
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -773,7 +772,7 @@ const TalentDirectoryPage: NextPage = () => {
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -781,7 +780,7 @@ const TalentDirectoryPage: NextPage = () => {
               className={`p-6 rounded-xl border transition-all duration-300 ${
                 selectedCategory === category.name
                   ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50'
-                  : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  : 'bg-white/5 border-white/10 hover: bg-white/10'
               }`}
             >
               <div className="text-center">
@@ -796,14 +795,14 @@ const TalentDirectoryPage: NextPage = () => {
 
         {/* Search and Filters */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg: grid-cols-4 gap-4">
             <div className="lg:col-span-2">
               <input
                 type="text"
                 placeholder="Search talents, skills, or expertise..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
               />
             </div>
             
@@ -811,7 +810,7 @@ const TalentDirectoryPage: NextPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="relevance">Sort by Relevance</option>
                 <option value="rating">Sort by Rating</option>
@@ -828,7 +827,7 @@ const TalentDirectoryPage: NextPage = () => {
                   const [min, max] = e.target.value.split('-').map(Number);
                   setPriceRange([min, max]);
                 }}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="0-500">All Rates</option>
                 <option value="0-50">$0 - $50/hr</option>
@@ -845,7 +844,7 @@ const TalentDirectoryPage: NextPage = () => {
                 type="checkbox"
                 checked={filterVerified}
                 onChange={(e) => setFilterVerified(e.target.checked)}
-                className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
               />
               <span className="text-sm text-gray-300">Verified Only</span>
             </label>
@@ -855,7 +854,7 @@ const TalentDirectoryPage: NextPage = () => {
                 type="checkbox"
                 checked={filterAvailable}
                 onChange={(e) => setFilterAvailable(e.target.checked)}
-                className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
               />
               <span className="text-sm text-gray-300">Available Only</span>
             </label>
@@ -863,19 +862,19 @@ const TalentDirectoryPage: NextPage = () => {
         </div>
 
         {/* Talents Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTalents.map((talent) => (
-            <div key={talent.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+            <div key={talent.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
               {/* Talent Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <Image 
                     src={talent.avatar}
                     alt={talent.name}
-                    className="w-16 h-16 rounded-full border-2 border-purple-500/30"
+                    className="w-16 h-16 rounded-full border-2 border-purple-500 30"
                     width={64} 
                     height={64} 
-                  />
+                   />
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white">{talent.name}</h3>
                     <p className="text-high-contrast-tertiary text-sm">{talent.title}</p>
@@ -952,7 +951,7 @@ const TalentDirectoryPage: NextPage = () => {
               <div className="flex space-x-3">
                 <button 
                   onClick={() => setSelectedTalent(talent)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   View Profile
                 </button>
@@ -974,7 +973,7 @@ const TalentDirectoryPage: NextPage = () => {
               Are you a skilled professional? Join our talent directory and connect 
               with clients seeking your expertise.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Join as Talent
               </Link>
@@ -987,8 +986,6 @@ const TalentDirectoryPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

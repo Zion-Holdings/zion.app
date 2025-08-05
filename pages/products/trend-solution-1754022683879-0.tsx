@@ -173,8 +173,6 @@ const trend_solution_1754022683879_0Page: NextPage = () => {
     </div>
   
   </ModernLayout>
-
-  </ModernLayout>
   );
 };
 

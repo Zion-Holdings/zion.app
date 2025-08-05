@@ -74,7 +74,7 @@ const ServiceMarketplacePage: NextPage = () => {
     setTimeout(() => {
       const mockCategories: Category[] = [
         {
-          id: 'ai-development',
+id: 'ai-development',
           name: 'AI Development',
           description: 'Artificial Intelligence and Machine Learning services',
           icon: '🤖',
@@ -126,12 +126,12 @@ const ServiceMarketplacePage: NextPage = () => {
           color: 'from-indigo-500 to-purple-500',
           subcategories: ['Data Analysis', 'Business Intelligence', 'Data Visualization', 'Predictive Analytics', 'Big Data'],
           serviceCount: 41
-        }
+        };
       ];
 
       const mockServices: Service[] = [
         {
-          id: '1',
+id: '1',
           title: 'AI Model Development & Training',
           description: 'Custom AI model development and machine learning implementation for enterprise applications. Specialized in computer vision, natural language processing, and predictive analytics.',
           category: 'AI Development',
@@ -369,7 +369,7 @@ const ServiceMarketplacePage: NextPage = () => {
           ],
           createdAt: new Date('2023-12-15'),
           updatedAt: new Date('2024-01-14')
-        }
+        };
       ];
 
       setCategories(mockCategories);
@@ -380,7 +380,7 @@ const ServiceMarketplacePage: NextPage = () => {
 
   const filteredServices = useMemo(() => {
     let filtered = services.filter(service => {
-      // Category filter
+      // Category filter)
       if (selectedCategory !== 'all' && service.category !== selectedCategory) return false;
       
       // Subcategory filter
@@ -415,8 +415,7 @@ const ServiceMarketplacePage: NextPage = () => {
         case 'recent':
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
         case 'relevance':
-        default:
-          // Relevance based on search term match and featured status
+default: // Relevance based on search term match and featured status;
           const aScore = (a.featured ? 10 : 0) + (a.verified ? 5 : 0) + a.providerRating;
           const bScore = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.providerRating;
           return bScore - aScore;
@@ -469,7 +468,7 @@ const ServiceMarketplacePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -491,13 +490,13 @@ const ServiceMarketplacePage: NextPage = () => {
         <title>Service Marketplace - Zion</title>
         <meta name="description" content="Comprehensive service marketplace with professional services in AI, web development, mobile apps, cloud services, blockchain, and data science" />
         <meta name="keywords" content="service marketplace, professional services, AI development, web development, mobile development, cloud services, blockchain, data science, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -528,7 +527,7 @@ const ServiceMarketplacePage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Service Marketplace
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -538,7 +537,7 @@ const ServiceMarketplacePage: NextPage = () => {
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -546,7 +545,7 @@ const ServiceMarketplacePage: NextPage = () => {
               className={`p-6 rounded-xl border transition-all duration-300 ${
                 selectedCategory === category.name
                   ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50'
-                  : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  : 'bg-white/5 border-white/10 hover: bg-white/10'
               }`}
             >
               <div className="text-center">
@@ -561,14 +560,14 @@ const ServiceMarketplacePage: NextPage = () => {
 
         {/* Search and Filters */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg: grid-cols-4 gap-4">
             <div className="lg:col-span-2">
               <input
                 type="text"
                 placeholder="Search services, skills, or providers..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
               />
             </div>
             
@@ -576,13 +575,13 @@ const ServiceMarketplacePage: NextPage = () => {
               <select
                 value={selectedSubcategory}
                 onChange={(e) => setSelectedSubcategory(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="all">All Subcategories</option>
                 {categories
                   .find(cat => cat.name === selectedCategory || selectedCategory === 'all')
                   ?.subcategories.map(sub => (
-                    <option key={sub} value={sub}>{sub}</option>
+                    <option key={sub} value={sub}>{sub}</option>)
                   ))}
               </select>
             </div>
@@ -591,7 +590,7 @@ const ServiceMarketplacePage: NextPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="relevance">Sort by Relevance</option>
                 <option value="price">Sort by Price</option>
@@ -607,7 +606,7 @@ const ServiceMarketplacePage: NextPage = () => {
                 type="checkbox"
                 checked={filterVerified}
                 onChange={(e) => setFilterVerified(e.target.checked)}
-                className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
               />
               <span className="text-sm text-gray-300">Verified Only</span>
             </label>
@@ -617,7 +616,7 @@ const ServiceMarketplacePage: NextPage = () => {
                 type="checkbox"
                 checked={filterFeatured}
                 onChange={(e) => setFilterFeatured(e.target.checked)}
-                className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
               />
               <span className="text-sm text-gray-300">Featured Only</span>
             </label>
@@ -625,9 +624,9 @@ const ServiceMarketplacePage: NextPage = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
-            <div key={service.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+            <div key={service.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
               {/* Service Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
@@ -660,10 +659,10 @@ const ServiceMarketplacePage: NextPage = () => {
                 <Image 
                   src={service.providerAvatar}
                   alt={service.provider}
-                  className="w-12 h-12 rounded-full border-2 border-purple-500/30"
+                  className="w-12 h-12 rounded-full border-2 border-purple-500 30"
                   width={48} 
                   height={48} 
-                />
+                 />
                 <div className="flex-1">
                   <h4 className="text-white font-medium">{service.provider}</h4>
                   <div className="flex items-center space-x-2">
@@ -708,7 +707,7 @@ const ServiceMarketplacePage: NextPage = () => {
 
               {/* Action Buttons */}
               <div className="flex space-x-3">
-                <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                   View Details
                 </button>
                 <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -729,7 +728,7 @@ const ServiceMarketplacePage: NextPage = () => {
               Can't find what you're looking for? Post a custom request and get matched 
               with the perfect service provider for your project.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/post-request" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Post a Request
               </Link>
@@ -742,8 +741,6 @@ const ServiceMarketplacePage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

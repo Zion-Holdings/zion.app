@@ -10,7 +10,7 @@ const SupportPage: NextPage = () => {
       <Head>
         <title>Support Center - Zion</title>
         <meta name="description" content="Get help and support for all your needs" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
@@ -25,7 +25,7 @@ const SupportPage: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-cyber-card p-8 rounded-lg border border-cyber-border">
               <h3 className="text-xl font-semibold text-high-contrast mb-4">Help Desk</h3>
               <p className="text-high-contrast-secondary mb-4">
@@ -60,8 +60,6 @@ const SupportPage: NextPage = () => {
       </div>
     </>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

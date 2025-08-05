@@ -132,11 +132,11 @@ interface WorkflowAnalytics {
   mostExecutedNode: string;
   bottleneckNode: string;
   executionTrend: 'increasing' | 'decreasing' | 'stable';
-  performanceMetrics: {
+performanceMetrics: {;
     cpu: number;
     memory: number;
     responseTime: number;
-    throughput: number;
+    throughput: number;}
   };
 }
 
@@ -171,7 +171,7 @@ const WorkflowDesignerPage: NextPage = () => {
     setTimeout(() => {
       const mockWorkflows: Workflow[] = [
         {
-          id: '1',
+id: '1',
           name: 'Order Processing Workflow',
           description: 'Automated order processing with payment verification and inventory management',
           version: '2.1',
@@ -199,7 +199,7 @@ const WorkflowDesignerPage: NextPage = () => {
                 action: 'verify_payment',
                 parameters: {
                   paymentMethod: 'credit_card',
-                  timeout: 30
+                  timeout: 30}
                 },
                 timeout: 30,
                 retryCount: 3,
@@ -223,7 +223,7 @@ const WorkflowDesignerPage: NextPage = () => {
                     id: '1',
                     field: 'payment_status',
                     operator: 'equals',
-                    value: 'successful'
+                    value: 'successful'}
                   }
                 ]
               },
@@ -240,7 +240,7 @@ const WorkflowDesignerPage: NextPage = () => {
                 notification: {
                   type: 'email',
                   recipients: ['customer@example.com'],
-                  template: 'payment_failed',
+                  template: 'payment_failed',}
                   subject: 'Payment Failed - Order #{order_id}'
                 }
               },
@@ -260,7 +260,7 @@ const WorkflowDesignerPage: NextPage = () => {
                 action: 'check_inventory',
                 parameters: {
                   warehouse: 'main',
-                  checkReserved: true
+                  checkReserved: true}
                 },
                 timeout: 15,
                 retryCount: 2,
@@ -281,7 +281,7 @@ const WorkflowDesignerPage: NextPage = () => {
               config: {
                 assignee: 'manager@company.com',
                 timeout: 1440, // 24 hours
-                priority: 'high'
+                priority: 'high'}
               },
               connections: ['8'],
               executionTime: 120,
@@ -311,17 +311,17 @@ const WorkflowDesignerPage: NextPage = () => {
                   endpoint: 'https://api.fulfillment.com/orders',
                   method: 'POST',
                   headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json',}
                     'Authorization': 'Bearer {api_token}'
                   },
-                  body: {
+                  body: {}
                     order_id: '{order_id}',
                     items: '{order_items}',
                     shipping_address: '{shipping_address}'
                   },
                   authentication: {
                     type: 'bearer',
-                    credentials: {
+                    credentials: {}
                       token: '{fulfillment_api_token}'
                     }
                   }
@@ -346,7 +346,7 @@ const WorkflowDesignerPage: NextPage = () => {
                 notification: {
                   type: 'email',
                   recipients: ['customer@example.com'],
-                  template: 'order_confirmed',
+                  template: 'order_confirmed',}
                   subject: 'Order Confirmed - #{order_id}'
                 }
               },
@@ -446,7 +446,7 @@ const WorkflowDesignerPage: NextPage = () => {
               description: 'Trigger when new order is created',
               config: {
                 eventType: 'order.created',
-                conditions: {
+                conditions: {}
                   orderValue: { min: 0 }
                 }
               },
@@ -492,7 +492,7 @@ const WorkflowDesignerPage: NextPage = () => {
             logging: true,
             notifications: true,
             versioning: true,
-            approvalRequired: false
+            approvalRequired: false}
           },
           analytics: {
             totalExecutions: 1250,
@@ -509,7 +509,7 @@ const WorkflowDesignerPage: NextPage = () => {
               cpu: 15.3,
               memory: 45.7,
               responseTime: 2.1,
-              throughput: 125.5
+              throughput: 125.5}
             }
           },
           createdAt: new Date('2024-01-15'),
@@ -518,12 +518,12 @@ const WorkflowDesignerPage: NextPage = () => {
           lastExecuted: new Date('2024-08-01 10:42:00'),
           executionCount: 1250,
           successRate: 98.8
-        }
+        };
       ];
 
       const mockTemplates: WorkflowTemplate[] = [
         {
-          id: '1',
+id: '1',
           name: 'Customer Onboarding',
           description: 'Automated customer onboarding process with verification and welcome sequence',
           category: 'business',
@@ -569,7 +569,7 @@ const WorkflowDesignerPage: NextPage = () => {
           rating: 4.9,
           createdBy: 'admin@company.com',
           isPublic: true
-        }
+        };
       ];
 
       setWorkflows(mockWorkflows);
@@ -622,7 +622,7 @@ const WorkflowDesignerPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -643,7 +643,7 @@ const WorkflowDesignerPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Workflow Designer & Process Builder</h1>
@@ -667,7 +667,7 @@ const WorkflowDesignerPage: NextPage = () => {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-white">Active Workflows</h2>
             <div className="flex items-center space-x-2">
-              <span className="text-gray-400 text-sm">Design Mode:</span>
+              <span className="text-gray-400 text-sm">Design Mode: </span>
               <select 
                 value={designMode}
                 onChange={(e) => setDesignMode(e.target.value as any)}
@@ -679,13 +679,13 @@ const WorkflowDesignerPage: NextPage = () => {
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-4">
             {workflows.map((workflow) => (
               <motion.div
                 key={workflow.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 cursor-pointer transition-all duration-200 hover:bg-white/10 ${
+                className={`bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 cursor-pointer transition-all duration-200 hover: bg-white/10 ${
                   selectedWorkflow?.id === workflow.id ? 'border-purple-500 bg-purple-500/10' : ''
                 }`}
                 onClick={() => setSelectedWorkflow(workflow)}
@@ -705,19 +705,19 @@ const WorkflowDesignerPage: NextPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-sm">
                   <div>
-                    <span className="text-gray-400">Executions:</span>
+                    <span className="text-gray-400">Executions: </span>
                     <p className="text-white font-medium">{workflow.executionCount}</p>
                   </div>
                   <div>
-                    <span className="text-gray-400">Success Rate:</span>
+                    <span className="text-gray-400">Success Rate: </span>
                     <p className="text-white font-medium">{workflow.successRate}%</p>
                   </div>
                   <div>
-                    <span className="text-gray-400">Nodes:</span>
+                    <span className="text-gray-400">Nodes: </span>
                     <p className="text-white font-medium">{workflow.nodes.length}</p>
                   </div>
                   <div>
-                    <span className="text-gray-400">Version:</span>
+                    <span className="text-gray-400">Version: </span>
                     <p className="text-white font-medium">{workflow.version}</p>
                   </div>
                 </div>
@@ -734,7 +734,7 @@ const WorkflowDesignerPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'designer'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Designer
@@ -744,7 +744,7 @@ const WorkflowDesignerPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'templates'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Templates
@@ -754,7 +754,7 @@ const WorkflowDesignerPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'executions'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Executions
@@ -764,7 +764,7 @@ const WorkflowDesignerPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Analytics
@@ -779,7 +779,7 @@ const WorkflowDesignerPage: NextPage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-white">Workflow Canvas</h3>
                     <div className="flex items-center space-x-2">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-sm">
+                      <button className="bg-blue-600 hover: bg-blue-700 text-white px-3 py-3 rounded text-sm">
                         Add Node
                       </button>
                       <button className="bg-green-600 hover:bg-green-700 text-white px-3 py-3 rounded text-sm">
@@ -799,7 +799,7 @@ const WorkflowDesignerPage: NextPage = () => {
                           key={node.id}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          className={`absolute p-3 rounded-lg border-2 cursor-pointer transition-all duration-200 hover:scale-105 ${
+                          className={`absolute p-3 rounded-lg border-2 cursor-pointer transition-all duration-200 hover: scale-105 ${
                             selectedNode === node.id ? 'ring-2 ring-purple-500' : ''
                           } ${getNodeStatusColor(node.status)}`}
                           style={{ left: node.position.x, top: node.position.y }}
@@ -882,7 +882,7 @@ const WorkflowDesignerPage: NextPage = () => {
                       if (!node) return null;
                       
                       return (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                           <div>
                             <h4 className="text-white font-semibold mb-3">Basic Information</h4>
                             <div className="space-y-3">
@@ -891,18 +891,18 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <input
                                   type="text"
                                   value={node.name}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
+                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1"
                                   placeholder="Node name"
-                                />
+                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Description</label>
                                 <textarea
                                   value={node.description}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
+                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1"
                                   rows={3}
                                   placeholder="Node description"
-                                />
+                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Type</label>
@@ -924,16 +924,16 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <input
                                   type="number"
                                   value={node.config.timeout || 30}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
-                                />
+                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1"
+                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Retry Count</label>
                                 <input
                                   type="number"
                                   value={node.config.retryCount || 3}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
-                                />
+                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1"
+                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Priority</label>
@@ -956,7 +956,7 @@ const WorkflowDesignerPage: NextPage = () => {
 
             {activeTab === 'templates' && (
               <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
                   {templates.map((template, index) => (
                     <motion.div
                       key={template.id}
@@ -981,15 +981,15 @@ const WorkflowDesignerPage: NextPage = () => {
                       
                       <div className="space-y-3 mb-4">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Estimated Time:</span>
+                          <span className="text-gray-400">Estimated Time: </span>
                           <span className="text-white">{template.estimatedTime} min</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Usage Count:</span>
+                          <span className="text-gray-400">Usage Count: </span>
                           <span className="text-white">{template.usageCount}</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-400">Rating:</span>
+                          <span className="text-gray-400">Rating: </span>
                           <span className="text-white">⭐ {template.rating}/5</span>
                         </div>
                       </div>
@@ -1002,7 +1002,7 @@ const WorkflowDesignerPage: NextPage = () => {
                         ))}
                       </div>
                       
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         Use Template
                       </button>
                     </motion.div>
@@ -1039,7 +1039,7 @@ const WorkflowDesignerPage: NextPage = () => {
             )}
 
             {activeTab === 'analytics' && selectedWorkflow && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg: grid-cols-2 gap-6">
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3>
                   <div className="space-y-4">
@@ -1090,8 +1090,6 @@ const WorkflowDesignerPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

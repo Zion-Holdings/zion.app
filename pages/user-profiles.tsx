@@ -92,7 +92,7 @@ const UserProfilesPage: NextPage = () => {
     setTimeout(() => {
       const mockProfiles: UserProfile[] = [
         {
-          id: '1',
+id: '1',
           username: 'sarah-chen',
           fullName: 'Dr. Sarah Chen',
           email: 'sarah.chen@example.com',
@@ -331,7 +331,7 @@ const UserProfilesPage: NextPage = () => {
           ],
           createdAt: new Date('2020-08-20'),
           lastActive: new Date()
-        }
+        };
       ];
 
       setProfiles(mockProfiles);
@@ -340,7 +340,7 @@ const UserProfilesPage: NextPage = () => {
   }, []);
 
   const filteredProfiles = useMemo(() => {
-    let filtered = profiles.filter(profile => {
+    let filtered = profiles.filter(profile => {)
       if (filterType !== 'all' && profile.userType !== filterType) return false;
       
       if (searchTerm && !profile.fullName.toLowerCase().includes(searchTerm.toLowerCase()) && 
@@ -362,7 +362,7 @@ const UserProfilesPage: NextPage = () => {
           return new Date(b.lastActive).getTime() - new Date(a.lastActive).getTime();
         case 'name':
           return a.fullName.localeCompare(b.fullName);
-        default:
+default: ;
           return b.rating - a.rating;
       }
     });
@@ -422,7 +422,7 @@ const UserProfilesPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -444,13 +444,13 @@ const UserProfilesPage: NextPage = () => {
         <title>User Profiles - Zion Marketplace</title>
         <meta name="description" content="Comprehensive user profiles with skills, experience, portfolio, and social connections" />
         <meta name="keywords" content="user profiles, skills, experience, portfolio, marketplace profiles, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -481,7 +481,7 @@ const UserProfilesPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             User Profiles
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -492,21 +492,21 @@ const UserProfilesPage: NextPage = () => {
 
         {/* Search and Filters */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg: flex-row gap-4">
             <div className="flex-1">
               <input
                 type="text"
                 placeholder="Search by name, skills, or expertise..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
               />
             </div>
             <div className="flex space-x-4">
               <select
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value as any)}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="all">All Types</option>
                 <option value="service-provider">Service Providers</option>
@@ -516,7 +516,7 @@ const UserProfilesPage: NextPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="rating">Sort by Rating</option>
                 <option value="experience">Sort by Experience</option>
@@ -528,19 +528,19 @@ const UserProfilesPage: NextPage = () => {
         </div>
 
         {/* Profiles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProfiles.map((profile) => (
-            <div key={profile.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+            <div key={profile.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
               {/* Profile Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <Image 
                     src={profile.avatar}
                     alt={profile.fullName}
-                    className="w-16 h-16 rounded-full border-2 border-purple-500/30"
+                    className="w-16 h-16 rounded-full border-2 border-purple-500 30"
                     width={64} 
                     height={64} 
-                  />
+                   />
                   <div>
                     <h3 className="text-lg font-semibold text-white">{profile.fullName}</h3>
                     <p className="text-sm text-gray-400">@{profile.username}</p>
@@ -616,7 +616,7 @@ const UserProfilesPage: NextPage = () => {
               <div className="flex space-x-3">
                 <button
                   onClick={() => setSelectedProfile(profile)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   View Profile
                 </button>
@@ -637,10 +637,10 @@ const UserProfilesPage: NextPage = () => {
                   <Image 
                     src={selectedProfile.avatar}
                     alt={selectedProfile.fullName}
-                    className="w-20 h-20 rounded-full border-2 border-purple-500/30"
+                    className="w-20 h-20 rounded-full border-2 border-purple-500 30"
                     width={64} 
                     height={64} 
-                  />
+                   />
                   <div>
                     <h2 className="text-2xl font-bold text-white">{selectedProfile.fullName}</h2>
                     <p className="text-gray-400">@{selectedProfile.username}</p>
@@ -652,14 +652,14 @@ const UserProfilesPage: NextPage = () => {
                 </div>
                 <button
                   onClick={() => setSelectedProfile(null)}
-                  className="text-gray-400 hover:text-white text-2xl"
+                  className="text-gray-400 hover: text-white text-2xl"
                 >
                   ×
                 </button>
               </div>
 
               {/* Bio and Stats */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 lg: grid-cols-3 gap-6 mb-8">
                 <div className="lg:col-span-2">
                   <h3 className="text-lg font-semibold text-white mb-3">About</h3>
                   <p className="text-gray-300 mb-4">{selectedProfile.bio}</p>
@@ -702,7 +702,7 @@ const UserProfilesPage: NextPage = () => {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
+                        className="flex items-center space-x-2 text-gray-300 hover: text-white transition-colors"
                       >
                         <span className="text-lg">
                           {link.platform === 'linkedin' ? '🔗' : 
@@ -719,7 +719,7 @@ const UserProfilesPage: NextPage = () => {
               {/* Portfolio */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4">Portfolio</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
                   {selectedProfile.portfolio.map((item) => (
                     <div key={item.id} className="bg-white/5 rounded-lg p-4">
                       <Image 
@@ -743,7 +743,7 @@ const UserProfilesPage: NextPage = () => {
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-purple-400 hover:text-purple-300 text-sm"
+                          className="text-purple-400 hover: text-purple-300 text-sm"
                         >
                           View Project →
                         </a>
@@ -756,7 +756,7 @@ const UserProfilesPage: NextPage = () => {
               {/* Certifications */}
               <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4">Certifications</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
                   {selectedProfile.certifications.map((cert) => (
                     <div key={cert.id} className="flex items-center space-x-3 bg-white/5 rounded-lg p-4">
                       <Image 
@@ -778,7 +778,7 @@ const UserProfilesPage: NextPage = () => {
 
               {/* Action Buttons */}
               <div className="flex space-x-4">
-                <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                   Hire Now
                 </button>
                 <button className="flex-1 border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -798,7 +798,7 @@ const UserProfilesPage: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Showcase your skills, experience, and portfolio to connect with clients and opportunities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Create Profile
               </Link>
@@ -811,8 +811,6 @@ const UserProfilesPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

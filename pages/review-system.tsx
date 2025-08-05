@@ -39,12 +39,12 @@ interface ReviewStats {
 const ReviewSystemPage: NextPage = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [stats, setStats] = useState<ReviewStats>({
-    totalReviews: 0,
+totalReviews: 0,
     averageRating: 0,
     ratingDistribution: {},
     recentReviews: 0,
     helpfulReviews: 0,
-    verifiedReviews: 0
+    verifiedReviews: 0;
   });
   const [selectedTab, setSelectedTab] = useState<'write' | 'my-reviews' | 'browse' | 'analytics'>('write');
   const [filterType, setFilterType] = useState<'all' | 'service' | 'talent' | 'equipment' | 'product'>('all');
@@ -52,7 +52,7 @@ const ReviewSystemPage: NextPage = () => {
   const [loading, setLoading] = useState(false);
 
   const [newReview, setNewReview] = useState({
-    itemId: '',
+itemId: '',
     itemType: 'service' as const,
     itemTitle: '',
     itemProvider: '',
@@ -60,7 +60,7 @@ const ReviewSystemPage: NextPage = () => {
     title: '',
     comment: '',
     pros: [''],
-    cons: ['']
+    cons: ['']);
   });
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const ReviewSystemPage: NextPage = () => {
     setTimeout(() => {
       const mockReviews: Review[] = [
         {
-          id: '1',
+id: '1',
           itemId: 'service-1',
           itemType: 'service',
           itemTitle: 'AI Model Development',
@@ -166,7 +166,7 @@ const ReviewSystemPage: NextPage = () => {
           verified: true,
           createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
           status: 'approved'
-        }
+        };
       ];
 
       setReviews(mockReviews);
@@ -178,7 +178,7 @@ const ReviewSystemPage: NextPage = () => {
         acc[review.rating] = (acc[review.rating] || 0) + 1;
         return acc;
       }, {} as { [key: number]: number });
-      const recentReviews = mockReviews.filter(r => 
+      const recentReviews = mockReviews.filter(r => )
         new Date(r.createdAt).getTime() > Date.now() - 7 * 24 * 60 * 60 * 1000
       ).length;
       const helpfulReviews = mockReviews.filter(r => r.helpful > r.notHelpful).length;
@@ -190,7 +190,7 @@ const ReviewSystemPage: NextPage = () => {
         ratingDistribution,
         recentReviews,
         helpfulReviews,
-        verifiedReviews
+        verifiedReviews)
       });
       
       setLoading(false);
@@ -198,7 +198,7 @@ const ReviewSystemPage: NextPage = () => {
   }, []);
 
   const filteredReviews = useMemo(() => {
-    let filtered = reviews.filter(review => {
+    let filtered = reviews.filter(review => {)
       if (filterType !== 'all' && review.itemType !== filterType) return false;
       return true;
     });
@@ -215,7 +215,7 @@ const ReviewSystemPage: NextPage = () => {
         case 'verified':
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
         case 'recent':
-        default:
+default: ;
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
     });
@@ -234,7 +234,7 @@ const ReviewSystemPage: NextPage = () => {
     // Simulate review submission
     setTimeout(() => {
       const review: Review = {
-        id: `review-${Date.now()}`,
+id: `review-${Date.now()}`,
         itemId: newReview.itemId,
         itemType: newReview.itemType,
         itemTitle: newReview.itemTitle,
@@ -251,12 +251,12 @@ const ReviewSystemPage: NextPage = () => {
         notHelpful: 0,
         verified: true,
         createdAt: new Date(),
-        status: 'pending'
+        status: 'pending';
       };
 
       setReviews(prev => [review, ...prev]);
       setNewReview({
-        itemId: '',
+itemId: '',
         itemType: 'service',
         itemTitle: '',
         itemProvider: '',
@@ -264,7 +264,7 @@ const ReviewSystemPage: NextPage = () => {
         title: '',
         comment: '',
         pros: [''],
-        cons: ['']
+        cons: ['']);
       });
       setSelectedTab('my-reviews');
       setLoading(false);
@@ -314,20 +314,20 @@ const ReviewSystemPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
         <title>Review System - Zion Marketplace</title>
         <meta name="description" content="Comprehensive review and rating system for marketplace services, talents, equipment, and products" />
         <meta name="keywords" content="reviews, ratings, feedback, marketplace reviews, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -358,7 +358,7 @@ const ReviewSystemPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Review System
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -368,7 +368,7 @@ const ReviewSystemPage: NextPage = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md: grid-cols-4 gap-6 mb-8">
           <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -425,7 +425,7 @@ const ReviewSystemPage: NextPage = () => {
                 className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    : 'text-gray-300 hover: text-white hover:bg-white/10'
                 }`}
               >
                 <span className="text-lg">{tab.icon}</span>
@@ -442,13 +442,13 @@ const ReviewSystemPage: NextPage = () => {
                 <p className="text-gray-300 mb-6">Share your experience and help others make informed decisions.</p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg: grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Item Type</label>
                   <select
                     value={newReview.itemType}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemType: e.target.value as any }))}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                   >
                     <option value="service">Service</option>
                     <option value="talent">Talent</option>
@@ -464,7 +464,7 @@ const ReviewSystemPage: NextPage = () => {
                     value={newReview.itemTitle}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemTitle: e.target.value }))}
                     placeholder="e.g., AI Model Development"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                   />
                 </div>
 
@@ -475,7 +475,7 @@ const ReviewSystemPage: NextPage = () => {
                     value={newReview.itemProvider}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemProvider: e.target.value }))}
                     placeholder="e.g., AI Solutions Pro"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                   />
                 </div>
 
@@ -495,14 +495,14 @@ const ReviewSystemPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="lg: col-span-2">
                   <label className="block text-sm font-medium text-gray-300 mb-2">Review Title</label>
                   <input
                     type="text"
                     value={newReview.title}
                     onChange={(e) => setNewReview(prev => ({ ...prev, title: e.target.value }))}
                     placeholder="Brief summary of your experience"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                   />
                 </div>
 
@@ -513,7 +513,7 @@ const ReviewSystemPage: NextPage = () => {
                     onChange={(e) => setNewReview(prev => ({ ...prev, comment: e.target.value }))}
                     placeholder="Share your detailed experience..."
                     rows={4}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                   />
                 </div>
 
@@ -533,7 +533,7 @@ const ReviewSystemPage: NextPage = () => {
                           setNewReview(prev => ({ ...prev, pros: newPros }));
                         }}
                         placeholder="Add a pro..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                       />
                       {index < newReview.pros.length - 1 && (
                         <button
@@ -541,7 +541,7 @@ const ReviewSystemPage: NextPage = () => {
                             const newPros = newReview.pros.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, pros: newPros }));
                           }}
-                          className="text-red-400 hover:text-red-300"
+                          className="text-red-400 hover: text-red-300"
                         >
                           ✕
                         </button>
@@ -550,7 +550,7 @@ const ReviewSystemPage: NextPage = () => {
                   ))}
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="lg: col-span-2">
                   <label className="block text-sm font-medium text-gray-300 mb-2">Cons (What could be improved)</label>
                   {newReview.cons.map((con, index) => (
                     <div key={index} className="flex space-x-2 mb-2">
@@ -566,7 +566,7 @@ const ReviewSystemPage: NextPage = () => {
                           setNewReview(prev => ({ ...prev, cons: newCons }));
                         }}
                         placeholder="Add a con..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                       />
                       {index < newReview.cons.length - 1 && (
                         <button
@@ -574,7 +574,7 @@ const ReviewSystemPage: NextPage = () => {
                             const newCons = newReview.cons.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, cons: newCons }));
                           }}
-                          className="text-red-400 hover:text-red-300"
+                          className="text-red-400 hover: text-red-300"
                         >
                           ✕
                         </button>
@@ -588,7 +588,7 @@ const ReviewSystemPage: NextPage = () => {
                 <button
                   onClick={handleSubmitReview}
                   disabled={loading}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   {loading ? 'Submitting...' : 'Submit Review'}
                 </button>
@@ -623,7 +623,7 @@ const ReviewSystemPage: NextPage = () => {
 
                     {review.pros.length > 0 && review.pros[0] && (
                       <div className="mb-3">
-                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros:</h6>
+                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros: </h6>
                         <ul className="text-sm text-gray-300">
                           {review.pros.filter(p => p.trim()).map((pro, index) => (
                             <li key={index} className="flex items-center space-x-2">
@@ -637,7 +637,7 @@ const ReviewSystemPage: NextPage = () => {
 
                     {review.cons.length > 0 && review.cons[0] && (
                       <div className="mb-4">
-                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons:</h6>
+                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons: </h6>
                         <ul className="text-sm text-gray-300">
                           {review.cons.filter(c => c.trim()).map((con, index) => (
                             <li key={index} className="flex items-center space-x-2">
@@ -671,7 +671,7 @@ const ReviewSystemPage: NextPage = () => {
                   <select
                     value={filterType}
                     onChange={(e) => setFilterType(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                   >
                     <option value="all">All Types</option>
                     <option value="service">Services</option>
@@ -682,7 +682,7 @@ const ReviewSystemPage: NextPage = () => {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                   >
                     <option value="recent">Sort by Recent</option>
                     <option value="rating">Sort by Rating</option>
@@ -722,7 +722,7 @@ const ReviewSystemPage: NextPage = () => {
 
                     {review.pros.length > 0 && review.pros[0] && (
                       <div className="mb-3">
-                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros:</h6>
+                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros: </h6>
                         <ul className="text-sm text-gray-300">
                           {review.pros.filter(p => p.trim()).map((pro, index) => (
                             <li key={index} className="flex items-center space-x-2">
@@ -736,7 +736,7 @@ const ReviewSystemPage: NextPage = () => {
 
                     {review.cons.length > 0 && review.cons[0] && (
                       <div className="mb-4">
-                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons:</h6>
+                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons: </h6>
                         <ul className="text-sm text-gray-300">
                           {review.cons.filter(c => c.trim()).map((con, index) => (
                             <li key={index} className="flex items-center space-x-2">
@@ -754,11 +754,11 @@ const ReviewSystemPage: NextPage = () => {
                         {review.verified && <span className="text-green-400">✓ Verified</span>}
                       </div>
                       <div className="flex items-center space-x-4">
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover:text-white transition-colors">
+                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white transition-colors">
                           <span>👍</span>
                           <span>{review.helpful}</span>
                         </button>
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover:text-white transition-colors">
+                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white transition-colors">
                           <span>👎</span>
                           <span>{review.notHelpful}</span>
                         </button>
@@ -774,7 +774,7 @@ const ReviewSystemPage: NextPage = () => {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Review Analytics</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md: grid-cols-2 gap-8">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                   <h4 className="text-lg font-semibold text-white mb-4">Rating Distribution</h4>
                   <div className="space-y-3">
@@ -836,7 +836,7 @@ const ReviewSystemPage: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Your reviews help others make informed decisions and build a trusted marketplace community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Explore Marketplace
               </Link>
@@ -849,8 +849,6 @@ const ReviewSystemPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

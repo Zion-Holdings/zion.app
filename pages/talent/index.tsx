@@ -22,7 +22,7 @@ interface Talent {
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     )
   : null;
 
@@ -44,7 +44,7 @@ const TalentPage: React.FC = () => {
         // Mock data for local development
         const mockTalents: Talent[] = [
           {
-            id: '1',
+id: '1',
             name: 'Sarah Johnson',
             title: 'Senior Full-Stack Developer',
             skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
@@ -70,7 +70,7 @@ const TalentPage: React.FC = () => {
             availability: 'Available',
             bio: 'DevOps specialist with strong background in cloud infrastructure and automation.',
             image_url: '/api/placeholder/150/150'
-          }
+          };
         ];
         setTalents(mockTalents);
         setFilteredTalents(mockTalents);
@@ -99,7 +99,7 @@ const TalentPage: React.FC = () => {
   };
 
   const filterTalents = useCallback(() => {
-    const filtered = talents.filter(talent => {
+    const filtered = talents.filter(talent => {)
       const matchesSearch = talent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            talent.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesSkills = selectedSkills.length === 0 || 
@@ -115,7 +115,7 @@ const TalentPage: React.FC = () => {
   }, [talents, searchTerm, selectedSkills, filterTalents]);
 
   const handleSkillToggle = (skill: string) => {
-    setSelectedSkills(prev =>
+    setSelectedSkills(prev =>)
       prev.includes(skill)
         ? prev.filter(s => s !== skill)
         : [...prev, skill]
@@ -165,7 +165,7 @@ const TalentPage: React.FC = () => {
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 IT Talents
@@ -179,25 +179,25 @@ const TalentPage: React.FC = () => {
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
             <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
               {/* Search */}
-              <div className="w-full lg:w-96">
+              <div className="w-full lg: w-96">
                 <input
                   type="text"
                   placeholder="Search talents, skills, or titles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               {/* Sort */}
-              <div className="w-full lg:w-48">
+              <div className="w-full lg: w-48">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'rating' | 'rate' | 'experience')}
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="rating">Sort by Rating</option>
                   <option value="rate">Sort by Rate</option>
@@ -216,7 +216,7 @@ const TalentPage: React.FC = () => {
                     className={`px-3 py-3 rounded-full text-sm font-medium transition-colors ${
                       selectedSkills.includes(skill)
                         ? 'bg-blue-600 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : 'bg-gray-100 text-gray-700 hover: bg-gray-200'
                     }`}
                   >
                     {skill}
@@ -228,7 +228,7 @@ const TalentPage: React.FC = () => {
         </div>
 
         {/* Results */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">
@@ -237,11 +237,11 @@ const TalentPage: React.FC = () => {
           </div>
 
           {/* Talent Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredTalents.map((talent) => (
               <div
                 key={talent.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
+                className="bg-white rounded-lg shadow-md hover: shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
               >
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
@@ -318,7 +318,7 @@ const TalentPage: React.FC = () => {
                   </div>
 
                   {/* Contact Button */}
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     Contact Talent
                   </button>
                 </div>
@@ -342,8 +342,6 @@ const TalentPage: React.FC = () => {
       </div>
     </>
   
-  </ModernLayout>
-
   </ModernLayout>
   );
 };

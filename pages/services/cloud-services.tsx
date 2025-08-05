@@ -12,13 +12,13 @@ const Https___ziontechgroup_netlify_app_services_cloud_sPage: NextPage = () => {
       <Head>
         <title>Our Services - Zion Tech Group</title>
         <meta name="description" content="Explore our comprehensive service offerings" />
-        <meta name="keywords" content="https://ziontechgroup.netlify.app/services/cloud-services/, Zion, AI marketplace" />
+        <meta name="keywords" content="https://ziontechgroup.netlify.app/services/cloud-services , Zion, AI marketplace"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -53,7 +53,7 @@ const Https___ziontechgroup_netlify_app_services_cloud_sPage: NextPage = () => {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-44 lg:py-32">
             <div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -81,7 +81,7 @@ const Https___ziontechgroup_netlify_app_services_cloud_sPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -123,8 +123,6 @@ const Https___ziontechgroup_netlify_app_services_cloud_sPage: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 )
 }

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface Message {
-  id: string
+id: string
   sender: string
   content: string
   timestamp: Date
@@ -108,7 +108,7 @@ const RealTimeChatPage: NextPage = () => {
         
         // Update chat room last message
         setChatRooms(prev => prev.map(room => 
-          room.id === selectedRoom 
+          room.id === selectedRoom )
             ? { ...room, lastMessage: randomMessage, lastMessageTime: new Date() }
             : room
         ))
@@ -189,20 +189,20 @@ const RealTimeChatPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
         <title>Real-Time Chat - Zion Marketplace</title>
         <meta name="description" content="Connect with users, service providers, and AI assistants in real-time on Zion Marketplace" />
         <meta name="keywords" content="real-time chat, marketplace communication, AI assistant, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -239,7 +239,7 @@ const RealTimeChatPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Real-Time Chat
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -249,7 +249,7 @@ const RealTimeChatPage: NextPage = () => {
 
         {/* Chat Interface */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-4 h-[600px]">
+          <div className="grid grid-cols-1 lg: grid-cols-4 h-[600px]">
             {/* Chat Rooms Sidebar */}
             <div className="bg-black/20 border-r border-white/10 p-4">
               <h3 className="text-lg font-semibold text-white mb-4">Chat Rooms</h3>
@@ -261,7 +261,7 @@ const RealTimeChatPage: NextPage = () => {
                     className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                       selectedRoom === room.id
                         ? 'bg-purple-600/20 border border-purple-500/30 text-white'
-                        : 'bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white'
+                        : 'bg-white/5 hover: bg-white/10 text-gray-300 hover:text-white'
                     }`}
                   >
                     <div className="flex justify-between items-start">
@@ -288,7 +288,7 @@ const RealTimeChatPage: NextPage = () => {
             </div>
 
             {/* Chat Messages */}
-            <div className="lg:col-span-3 flex flex-col">
+            <div className="lg: col-span-3 flex flex-col">
               {/* Chat Header */}
               <div className="bg-black/20 border-b border-white/10 p-4">
                 <div className="flex items-center justify-between">
@@ -324,12 +324,12 @@ const RealTimeChatPage: NextPage = () => {
                       <div className={`flex max-w-xs lg:max-w-md ${message.sender === 'You' ? 'flex-row-reverse' : 'flex-row'}`}>
                         <div className="flex-shrink-0">
                           <Image 
-                            src={message.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=User"}
+                            src={message.avatar || "https://api.dicebear.com/7.x/avataaars svg?seed=User"}
                             alt={message.sender}
                             className="w-12 h-12 rounded-full" 
                             width={32} 
                             height={32} 
-                          />
+                           />
                         </div>
                         <div className={`ml-3 ${message.sender === 'You' ? 'mr-3' : ''}`}>
                           <div className={`rounded-lg px-4 py-4 ${
@@ -353,15 +353,15 @@ const RealTimeChatPage: NextPage = () => {
                 
                 {isTyping && (
                   <div className="flex justify-start">
-                    <div className="flex max-w-xs lg:max-w-md">
+                    <div className="flex max-w-xs lg: max-w-md">
                       <div className="flex-shrink-0">
                         <Image 
-                          src="https://api.dicebear.com/7.x/bottts/svg?seed=AI"
+                          src="https://api.dicebear.com/7.x/bottts svg?seed=AI"
                           alt="AI Assistant"
                           className="w-12 h-12 rounded-full"
                           width={32} 
                           height={32} 
-                        />
+                         />
                       </div>
                       <div className="ml-3">
                         <div className="bg-blue-600 text-white rounded-lg px-4 py-4">
@@ -390,12 +390,12 @@ const RealTimeChatPage: NextPage = () => {
                     onChange={(e) => setInputMessage(e.target.value)}
                     onKeyPress={handleKeyPress}
                     placeholder="Type your message..."
-                    className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                    className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                   />
                   <button
                     onClick={handleSendMessage}
                     disabled={!inputMessage.trim()}
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                   >
                     Send
                   </button>
@@ -406,7 +406,7 @@ const RealTimeChatPage: NextPage = () => {
         </div>
 
         {/* Features Section */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-12 grid grid-cols-1 md: grid-cols-3 gap-8">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
             <div className="text-4xl mb-4">🤖</div>
             <h3 className="text-xl font-bold text-white mb-3">AI Assistant</h3>
@@ -441,7 +441,7 @@ const RealTimeChatPage: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of users already connecting, collaborating, and building amazing projects together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Join Zion Now
               </Link>
@@ -457,9 +457,7 @@ const RealTimeChatPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default RealTimeChatPage 
+export default RealTimeChatPage ;

@@ -18,17 +18,17 @@ interface GeneratedDescription {
 
 export default function ServiceDescriptionGenerator() {
   const [formData, setFormData] = useState<ServiceFormData>({
-    title: '',
+title: '',
     keyFeatures: '',
     targetAudience: '',
     industry: '',
     pricing: '',
-    location: ''
+    location: '';
   });
 
   const [generatedDescription, setGeneratedDescription] = useState<GeneratedDescription>({
-    content: '',
-    isEditing: false
+content: '',
+    isEditing: false;
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +39,7 @@ export default function ServiceDescriptionGenerator() {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value)
     }));
   };
 
@@ -51,11 +51,11 @@ export default function ServiceDescriptionGenerator() {
 
     try {
       const response = await fetch('/api/generate-service-description', {
-        method: 'POST',
+method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+          'Content-Type': 'application/json',}
+        },)
+        body: JSON.stringify(formData),;
       });
 
       if (!response.ok) {
@@ -64,8 +64,8 @@ export default function ServiceDescriptionGenerator() {
 
       const data = await response.json();
       setGeneratedDescription({
-        content: data.description,
-        isEditing: false
+content: data.description,
+        isEditing: false);
       });
       
       if (data.note) {
@@ -82,14 +82,14 @@ export default function ServiceDescriptionGenerator() {
   const handleEditToggle = () => {
     setGeneratedDescription(prev => ({
       ...prev,
-      isEditing: !prev.isEditing
+isEditing: !prev.isEditing);
     }));
   };
 
   const handleDescriptionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setGeneratedDescription(prev => ({
       ...prev,
-      content: e.target.value
+content: e.target.value);
     }));
   };
 
@@ -113,7 +113,7 @@ export default function ServiceDescriptionGenerator() {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -148,7 +148,7 @@ export default function ServiceDescriptionGenerator() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg: grid-cols-2 gap-8">
             {/* Form Section */}
             <div className="bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">
@@ -167,7 +167,7 @@ export default function ServiceDescriptionGenerator() {
                     value={formData.title}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Professional Web Development Services"
                   />
                 </div>
@@ -183,9 +183,9 @@ export default function ServiceDescriptionGenerator() {
                     onChange={handleInputChange}
                     required
                     rows={3}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="e.g., Responsive design, SEO optimization, 24/7 support"
-                  />
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="e.g., Responsive design, SEO optimization, 24 7 support"
+                   />
                 </div>
 
                 <div>
@@ -198,7 +198,7 @@ export default function ServiceDescriptionGenerator() {
                     name="targetAudience"
                     value={formData.targetAudience}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Small businesses, startups, e-commerce"
                   />
                 </div>
@@ -213,7 +213,7 @@ export default function ServiceDescriptionGenerator() {
                     name="industry"
                     value={formData.industry}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Technology, Healthcare, Finance"
                   />
                 </div>
@@ -228,7 +228,7 @@ export default function ServiceDescriptionGenerator() {
                     name="pricing"
                     value={formData.pricing}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Hourly rates, project-based, subscription"
                   />
                 </div>
@@ -243,7 +243,7 @@ export default function ServiceDescriptionGenerator() {
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Remote, Local, Worldwide"
                   />
                 </div>
@@ -251,7 +251,7 @@ export default function ServiceDescriptionGenerator() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover: bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   {isLoading ? (
                     <div className="flex items-center justify-center">
@@ -289,13 +289,13 @@ export default function ServiceDescriptionGenerator() {
                     <div className="flex space-x-2">
                       <button
                         onClick={handleEditToggle}
-                        className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                        className="text-blue-600 hover: text-blue-700 text-sm font-medium"
                       >
                         {generatedDescription.isEditing ? 'Preview' : 'Edit'}
                       </button>
                       <button
                         onClick={handleAccept}
-                        className="text-green-600 hover:text-green-700 text-sm font-medium"
+                        className="text-green-600 hover: text-green-700 text-sm font-medium"
                       >
                         Accept
                       </button>
@@ -307,7 +307,7 @@ export default function ServiceDescriptionGenerator() {
                       value={generatedDescription.content}
                       onChange={handleDescriptionChange}
                       rows={12}
-                      className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   ) : (
                     <div className="bg-gray-50 p-4 rounded-md">
@@ -320,7 +320,7 @@ export default function ServiceDescriptionGenerator() {
                   <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                     <button
                       onClick={handleCopyToClipboard}
-                      className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                      className="text-blue-600 hover: text-blue-700 text-sm font-medium"
                     >
                       Copy to Clipboard
                     </button>
@@ -349,7 +349,7 @@ export default function ServiceDescriptionGenerator() {
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               Tips for Better Results
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+            <div className="grid grid-cols-1 md: grid-cols-2 gap-4 text-sm text-gray-600">
               <ul className="space-y-2">
                 <li>• Be specific about your key features and benefits</li>
                 <li>• Include your target audience to make it more relevant</li>
@@ -366,8 +366,6 @@ export default function ServiceDescriptionGenerator() {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

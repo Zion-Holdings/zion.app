@@ -19,20 +19,20 @@ interface SmartNotification {
   archived: boolean;
   createdAt: Date;
   expiresAt?: Date;
-  metadata: {
+metadata: {;
     projectId?: string;
     serviceId?: string;
     paymentId?: string;
     userId?: string;
     amount?: number;
     currency?: string;
-    status?: string;
+    status?: string;}
   };
-  smartFeatures: {
+smartFeatures: {;
     aiAnalyzed: boolean;
     personalized: boolean;
     predictive: boolean;
-    automated: boolean;
+    automated: boolean;}
   };
 }
 
@@ -52,7 +52,7 @@ interface NotificationPreferences {
   push: boolean;
   sms: boolean;
   inApp: boolean;
-  categories: {
+categories: {;
     messages: boolean;
     projects: boolean;
     payments: boolean;
@@ -60,18 +60,18 @@ interface NotificationPreferences {
     recommendations: boolean;
     alerts: boolean;
     reminders: boolean;
-    updates: boolean;
+    updates: boolean;}
   };
-  priority: {
+priority: {;
     low: boolean;
     medium: boolean;
     high: boolean;
-    urgent: boolean;
+    urgent: boolean;}
   };
-  quietHours: {
+quietHours: {;
     enabled: boolean;
     start: string;
-    end: string;
+    end: string;}
   };
 }
 
@@ -79,7 +79,7 @@ const SmartNotificationsPage: NextPage = () => {
   const [notifications, setNotifications] = useState<SmartNotification[]>([]);
   const [stats, setStats] = useState<NotificationStats | null>(null);
   const [preferences, setPreferences] = useState<NotificationPreferences>({
-    email: true,
+email: true,
     push: true,
     sms: false,
     inApp: true,
@@ -91,19 +91,19 @@ const SmartNotificationsPage: NextPage = () => {
       recommendations: true,
       alerts: true,
       reminders: true,
-      updates: true
+      updates: true}
     },
     priority: {
       low: true,
       medium: true,
       high: true,
-      urgent: true
+      urgent: true}
     },
     quietHours: {
       enabled: false,
       start: '22:00',
-      end: '08:00'
-    }
+      end: '08:00'}
+    };
   });
   const [selectedTab, setSelectedTab] = useState<'all' | 'unread' | 'urgent' | 'smart' | 'settings'>('all');
   const [filterType, setFilterType] = useState<string>('all');
@@ -117,7 +117,7 @@ const SmartNotificationsPage: NextPage = () => {
     setTimeout(() => {
       const mockNotifications: SmartNotification[] = [
         {
-          id: '1',
+id: '1',
           type: 'project',
           priority: 'high',
           title: 'Project Milestone Completed',
@@ -132,13 +132,13 @@ const SmartNotificationsPage: NextPage = () => {
           createdAt: new Date(Date.now() - 30 * 60 * 1000), // 30 minutes ago
           metadata: {
             projectId: 'proj-1',
-            status: 'milestone-completed'
+            status: 'milestone-completed'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: false,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -159,13 +159,13 @@ const SmartNotificationsPage: NextPage = () => {
             paymentId: 'pay-123',
             amount: 2500,
             currency: 'USD',
-            status: 'completed'
+            status: 'completed'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: true,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -184,13 +184,13 @@ const SmartNotificationsPage: NextPage = () => {
           createdAt: new Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago
           metadata: {
             userId: 'user-sarah-chen',
-            serviceId: 'blockchain-dev'
+            serviceId: 'blockchain-dev'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: true,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -208,13 +208,13 @@ const SmartNotificationsPage: NextPage = () => {
           archived: false,
           createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
           metadata: {
-            projectId: 'proj-1'
+            projectId: 'proj-1'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: false,
-            automated: false
+            automated: false}
           }
         },
         {
@@ -233,13 +233,13 @@ const SmartNotificationsPage: NextPage = () => {
           createdAt: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
           metadata: {
             projectId: 'proj-2',
-            status: 'deadline-approaching'
+            status: 'deadline-approaching'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: true,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -257,13 +257,13 @@ const SmartNotificationsPage: NextPage = () => {
           archived: false,
           createdAt: new Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago
           metadata: {
-            status: 'weekly-review'
+            status: 'weekly-review'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: true,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -281,13 +281,13 @@ const SmartNotificationsPage: NextPage = () => {
           archived: false,
           createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago
           metadata: {
-            serviceId: 'ai-dev-services'
+            serviceId: 'ai-dev-services'}
           },
           smartFeatures: {
             aiAnalyzed: true,
             personalized: true,
             predictive: false,
-            automated: true
+            automated: true}
           }
         },
         {
@@ -306,26 +306,26 @@ const SmartNotificationsPage: NextPage = () => {
           createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago
           metadata: {
             userId: 'user-1',
-            status: 'profile-updated'
+            status: 'profile-updated'}
           },
           smartFeatures: {
             aiAnalyzed: false,
             personalized: true,
             predictive: false,
-            automated: true
+            automated: true}
           }
-        }
+        };
       ];
 
       const mockStats: NotificationStats = {
-        totalNotifications: 156,
+totalNotifications: 156,
         unreadCount: 23,
         urgentCount: 5,
         todayCount: 12,
         weeklyCount: 45,
         monthlyCount: 156,
         readRate: 85.3,
-        responseRate: 78.2
+        responseRate: 78.2;
       };
 
       setNotifications(mockNotifications);
@@ -336,7 +336,7 @@ const SmartNotificationsPage: NextPage = () => {
 
   const filteredNotifications = useMemo(() => {
     let filtered = notifications.filter(notification => {
-      // Tab filter
+      // Tab filter)
       if (selectedTab === 'unread' && notification.read) return false;
       if (selectedTab === 'urgent' && notification.priority !== 'urgent') return false;
       if (selectedTab === 'smart' && !notification.smartFeatures.aiAnalyzed) return false;
@@ -370,7 +370,7 @@ const SmartNotificationsPage: NextPage = () => {
           const bScore = (b.smartFeatures.aiAnalyzed ? 1 : 0) + (b.smartFeatures.personalized ? 1 : 0) + (b.smartFeatures.predictive ? 1 : 0);
           return bScore - aScore;
         case 'recent':
-        default:
+default: ;
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
     });
@@ -383,7 +383,7 @@ const SmartNotificationsPage: NextPage = () => {
       prev.map(notification => 
         notification.id === notificationId 
           ? { ...notification, read: true }
-          : notification
+          : notification)
       )
     );
   };
@@ -393,7 +393,7 @@ const SmartNotificationsPage: NextPage = () => {
       prev.map(notification => 
         notification.id === notificationId 
           ? { ...notification, archived: true }
-          : notification
+          : notification)
       )
     );
   };
@@ -460,7 +460,7 @@ const SmartNotificationsPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -482,13 +482,13 @@ const SmartNotificationsPage: NextPage = () => {
         <title>Smart Notifications - Zion</title>
         <meta name="description" content="Intelligent notification system with AI-powered alerts, personalized recommendations, and automated notification management" />
         <meta name="keywords" content="smart notifications, AI alerts, personalized notifications, notification management, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -519,7 +519,7 @@ const SmartNotificationsPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Smart Notifications
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -530,7 +530,7 @@ const SmartNotificationsPage: NextPage = () => {
 
         {/* Stats Overview */}
         {stats && (
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md: grid-cols-4 gap-6 mb-8">
             <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl p-6 text-center">
               <div className="text-3xl font-bold text-white mb-2">{stats.totalNotifications}</div>
               <p className="text-blue-300 text-sm">Total Notifications</p>
@@ -566,7 +566,7 @@ const SmartNotificationsPage: NextPage = () => {
                 className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    : 'text-gray-300 hover: text-white hover:bg-white/10'
                 }`}
               >
                 <span>{tab.icon}</span>
@@ -579,14 +579,14 @@ const SmartNotificationsPage: NextPage = () => {
         {/* Search and Filters */}
         {selectedTab !== 'settings' && (
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 lg: grid-cols-4 gap-4">
               <div className="lg:col-span-2">
                 <input
                   type="text"
                   placeholder="Search notifications..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
                 />
               </div>
               
@@ -594,7 +594,7 @@ const SmartNotificationsPage: NextPage = () => {
                 <select
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                 >
                   <option value="all">All Types</option>
                   <option value="message">Messages</option>
@@ -612,7 +612,7 @@ const SmartNotificationsPage: NextPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                 >
                   <option value="recent">Sort by Recent</option>
                   <option value="priority">Sort by Priority</option>
@@ -630,7 +630,7 @@ const SmartNotificationsPage: NextPage = () => {
             {filteredNotifications.map((notification) => (
               <div 
                 key={notification.id} 
-                className={`bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 ${
+                className={`bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 transition-all duration-300 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 ${
                   !notification.read ? 'border-purple-500/30 bg-purple-500/5' : ''
                 }`}
               >
@@ -699,20 +699,20 @@ const SmartNotificationsPage: NextPage = () => {
                         {notification.actionUrl && notification.actionText && (
                           <Link 
                             href={notification.actionUrl}
-                            className="text-purple-400 hover:text-purple-300 transition-colors"
+                            className="text-purple-400 hover: text-purple-300 transition-colors"
                           >
                             {notification.actionText}
                           </Link>
                         )}
                         <button
                           onClick={() => markAsRead(notification.id)}
-                          className="text-gray-400 hover:text-white transition-colors"
+                          className="text-gray-400 hover: text-white transition-colors"
                         >
                           Mark as Read
                         </button>
                         <button
                           onClick={() => archiveNotification(notification.id)}
-                          className="text-gray-400 hover:text-white transition-colors"
+                          className="text-gray-400 hover: text-white transition-colors"
                         >
                           Archive
                         </button>
@@ -734,7 +734,7 @@ const SmartNotificationsPage: NextPage = () => {
               {/* Delivery Methods */}
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Delivery Methods</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
                   {[
                     { key: 'email', label: 'Email Notifications', description: 'Receive notifications via email' },
                     { key: 'push', label: 'Push Notifications', description: 'Receive push notifications on device' },
@@ -747,9 +747,9 @@ const SmartNotificationsPage: NextPage = () => {
                         checked={preferences[method.key as keyof NotificationPreferences] as boolean}
                         onChange={(e) => setPreferences(prev => ({
                           ...prev,
-                          [method.key]: e.target.checked
+                          [method.key]: e.target.checked)
                         }))}
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                        className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
                       />
                       <div>
                         <p className="text-white font-medium">{method.label}</p>
@@ -763,7 +763,7 @@ const SmartNotificationsPage: NextPage = () => {
               {/* Categories */}
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Notification Categories</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
                   {Object.entries(preferences.categories).map(([category, enabled]) => (
                     <label key={category} className="flex items-center space-x-3">
                       <input
@@ -771,12 +771,12 @@ const SmartNotificationsPage: NextPage = () => {
                         checked={enabled}
                         onChange={(e) => setPreferences(prev => ({
                           ...prev,
-                          categories: {
+categories: {
                             ...prev.categories,
-                            [category]: e.target.checked
-                          }
+                            [category]: e.target.checked}
+                          })
                         }))}
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                        className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
                       />
                       <span className="text-white capitalize">{category}</span>
                     </label>
@@ -787,7 +787,7 @@ const SmartNotificationsPage: NextPage = () => {
               {/* Priority Levels */}
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Priority Levels</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-4">
                   {Object.entries(preferences.priority).map(([priority, enabled]) => (
                     <label key={priority} className="flex items-center space-x-3">
                       <input
@@ -797,10 +797,10 @@ const SmartNotificationsPage: NextPage = () => {
                           ...prev,
                           priority: {
                             ...prev.priority,
-                            [priority]: e.target.checked
-                          }
+                            [priority]: e.target.checked}
+                          })
                         }))}
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                        className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
                       />
                       <span className="text-white capitalize">{priority}</span>
                     </label>
@@ -820,10 +820,10 @@ const SmartNotificationsPage: NextPage = () => {
                         ...prev,
                         quietHours: {
                           ...prev.quietHours,
-                          enabled: e.target.checked
-                        }
+                          enabled: e.target.checked}
+                        })
                       }))}
-                      className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                      className="rounded border-white/20 bg-white/10 text-purple-500 focus: ring-purple-500"
                     />
                     <span className="text-white">Enable Quiet Hours</span>
                   </label>
@@ -839,10 +839,10 @@ const SmartNotificationsPage: NextPage = () => {
                             ...prev,
                             quietHours: {
                               ...prev.quietHours,
-                              start: e.target.value
-                            }
+                              start: e.target.value}
+                            })
                           }))}
-                          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                         />
                       </div>
                       <div>
@@ -854,10 +854,10 @@ const SmartNotificationsPage: NextPage = () => {
                             ...prev,
                             quietHours: {
                               ...prev.quietHours,
-                              end: e.target.value
-                            }
+                              end: e.target.value}
+                            })
                           }))}
-                          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                          className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
                         />
                       </div>
                     </div>
@@ -878,7 +878,7 @@ const SmartNotificationsPage: NextPage = () => {
               Get intelligent alerts, personalized recommendations, and automated notifications 
               to enhance your marketplace experience and stay updated on important activities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Configure Notifications
               </button>
@@ -894,9 +894,7 @@ const SmartNotificationsPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default SmartNotificationsPage 
+export default SmartNotificationsPage ;

@@ -20,7 +20,7 @@ const QuantumComputing = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <section className="relative py-40 px-4 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ const QuantumComputing = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl md: text-6xl font-bold text-gray-900 mb-6">
                 Quantum Computing
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ const QuantumComputing = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md: text-4xl font-bold text-gray-900 mb-4">
                 Key Features
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.30000000000000004 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,7 +136,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@ const QuantumComputing = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
+                className="bg-gray-50 p-6 rounded-lg hover: shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ const QuantumComputing = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-40 px-4 sm: px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ const QuantumComputing = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md: text-4xl font-bold text-gray-900 mb-4">
                 Why Choose Our Quantum Computing
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -261,14 +261,14 @@ const QuantumComputing = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm:px-6 lg:px-8 bg-blue-600">
+        <section className="py-40 px-4 sm: px-6 lg:px-8 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md: text-4xl font-bold text-white mb-4">
                 Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-blue-100 mb-8">
@@ -288,8 +288,6 @@ const QuantumComputing = () => {
       </div>
     </Layout>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

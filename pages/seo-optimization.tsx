@@ -61,10 +61,10 @@ interface PerformanceData {
   accessibility: number;
   bestPractices: number;
   seoScore: number;
-  coreWebVitals: {
+coreWebVitals: {;
     lcp: number;
     fid: number;
-    cls: number;
+    cls: number;}
   };
 }
 
@@ -96,7 +96,7 @@ const SEOOptimizationPage: NextPage = () => {
     // Simulate loading SEO data
     setTimeout(() => {
       const mockData: SEOData = {
-        keywords: [
+keywords: [
           {
             keyword: 'AI marketplace',
             searchVolume: 12000,
@@ -176,7 +176,7 @@ const SEOOptimizationPage: NextPage = () => {
             'AI marketplace': 2.1,
             'tech services': 1.8,
             'blockchain': 1.5,
-            'cloud computing': 1.2
+            'cloud computing': 1.2}
           },
           headingStructure: [
             { level: 1, text: 'Zion Marketplace - AI-Powered Tech Services', keywordIncluded: true },
@@ -202,7 +202,7 @@ const SEOOptimizationPage: NextPage = () => {
           coreWebVitals: {
             lcp: 2.1,
             fid: 45,
-            cls: 0.08
+            cls: 0.08}
           }
         },
         competitors: [
@@ -272,7 +272,7 @@ const SEOOptimizationPage: NextPage = () => {
             impact: 5,
             effort: 3
           }
-        ]
+        ];
       };
 
       setSeoData(mockData);
@@ -327,7 +327,7 @@ const SEOOptimizationPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -349,13 +349,13 @@ const SEOOptimizationPage: NextPage = () => {
         <title>SEO Optimization - Zion Marketplace</title>
         <meta name="description" content="Comprehensive SEO optimization tools for marketplace visibility and search engine performance" />
         <meta name="keywords" content="SEO optimization, keyword research, meta tags, content analysis, search engine optimization, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -386,7 +386,7 @@ const SEOOptimizationPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             SEO Optimization
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -412,7 +412,7 @@ const SEOOptimizationPage: NextPage = () => {
                 className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    : 'text-gray-300 hover: text-white hover:bg-white/10'
                 }`}
               >
                 <span className="text-lg">{tab.icon}</span>
@@ -426,7 +426,7 @@ const SEOOptimizationPage: NextPage = () => {
         {selectedTab === 'overview' && seoData && (
           <div className="space-y-8">
             {/* SEO Score Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4 gap-6">
               <div className={`backdrop-blur-sm border rounded-xl p-6 ${getScoreBg(seoData.performance.seoScore)}`}>
                 <div className="flex items-center justify-between">
                   <div>
@@ -532,7 +532,7 @@ const SEOOptimizationPage: NextPage = () => {
             {/* Related Keywords */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-6">Related Keywords</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-4">
                 {seoData.keywords[0].relatedKeywords.map((keyword, index) => (
                   <div key={index} className="bg-white/5 rounded-lg p-3">
                     <span className="text-white font-medium">{keyword}</span>
@@ -555,7 +555,7 @@ const SEOOptimizationPage: NextPage = () => {
                       <div>
                         <h4 className="text-white font-semibold mb-2">{meta.page}</h4>
                         <div className={`inline-block px-3 py-3 rounded-full text-sm font-medium ${getScoreBg(meta.score)}`}>
-                          Score: {meta.score}/100
+Score: {meta.score}/100
                         </div>
                       </div>
                     </div>
@@ -606,7 +606,7 @@ const SEOOptimizationPage: NextPage = () => {
         {selectedTab === 'content' && seoData && (
           <div className="space-y-8">
             {/* Content Analysis */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Content Metrics</h3>
                 <div className="space-y-4">
@@ -671,7 +671,7 @@ const SEOOptimizationPage: NextPage = () => {
         {selectedTab === 'performance' && seoData && (
           <div className="space-y-8">
             {/* Performance Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
                 <h3 className="text-lg font-bold text-white mb-4">Core Web Vitals</h3>
                 <div className="space-y-3">
@@ -771,7 +771,7 @@ const SEOOptimizationPage: NextPage = () => {
               Improve your search engine visibility and drive more traffic to your marketplace 
               with our comprehensive SEO optimization tools and analytics.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Explore Marketplace
               </Link>
@@ -787,9 +787,7 @@ const SEOOptimizationPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default SEOOptimizationPage 
+export default SEOOptimizationPage ;

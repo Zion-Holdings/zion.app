@@ -173,8 +173,6 @@ const AIPoweredsustainabilitySolutionPage: NextPage = () => {
     </div>
   
   </ModernLayout>
-
-  </ModernLayout>
   );
 };
 

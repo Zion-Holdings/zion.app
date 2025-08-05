@@ -43,7 +43,7 @@ const WarrantyProtectionPage: NextPage = () => {
   
   const [warrantyPlans, setWarrantyPlans] = useState<WarrantyPlan[]>([
     {
-      id: 'basic',
+id: 'basic',
       name: 'Basic Protection',
       type: 'basic',
       duration: '1 Year',
@@ -149,7 +149,7 @@ const WarrantyProtectionPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -161,7 +161,7 @@ const WarrantyProtectionPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -182,7 +182,7 @@ const WarrantyProtectionPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -194,7 +194,7 @@ const WarrantyProtectionPage: NextPage = () => {
             Extended protection plans, easy claim processing, and peace of mind for every transaction.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#plans" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#plans" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               View Plans
             </Link>
             <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -204,7 +204,7 @@ const WarrantyProtectionPage: NextPage = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md: grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">98%</div>
             <p className="text-gray-300 text-sm">Claim Approval Rate</p>
@@ -225,7 +225,7 @@ const WarrantyProtectionPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -240,7 +240,7 @@ const WarrantyProtectionPage: NextPage = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10'
+                  : 'bg-white/5 text-gray-300 hover: bg-white/10'
               }`}
             >
               {tab.label}
@@ -259,9 +259,9 @@ const WarrantyProtectionPage: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4 gap-6">
               {warrantyPlans.map((plan) => (
-                <div key={plan.id} className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 ${
+                <div key={plan.id} className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-white/10 transition-all duration-300 ${
                   plan.popular ? 'border-blue-500/50 bg-blue-500/5' : ''
                 }`}>
                   {plan.popular && (
@@ -279,7 +279,7 @@ const WarrantyProtectionPage: NextPage = () => {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Coverage Includes:</h4>
+                    <h4 className="text-white font-semibold mb-3">Coverage Includes: </h4>
                     <ul className="space-y-2">
                       {plan.coverage.map((item, index) => (
                         <li key={index} className="flex items-center text-gray-300 text-sm">
@@ -291,7 +291,7 @@ const WarrantyProtectionPage: NextPage = () => {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Features:</h4>
+                    <h4 className="text-white font-semibold mb-3">Features: </h4>
                     <ul className="space-y-2">
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-center text-gray-300 text-sm">
@@ -314,7 +314,7 @@ const WarrantyProtectionPage: NextPage = () => {
                     onClick={() => setSelectedPlan(plan.id)}
                     className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700'
+                        ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover: from-blue-700 hover:to-cyan-700'
                         : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
@@ -378,7 +378,7 @@ const WarrantyProtectionPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Your Claims</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Submit New Claim
               </Link>
             </div>
@@ -398,15 +398,15 @@ const WarrantyProtectionPage: NextPage = () => {
                   
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Claim Amount:</span>
+                      <span className="text-gray-300">Claim Amount: </span>
                       <span className="text-white font-semibold">${claim.claimAmount}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Submitted:</span>
+                      <span className="text-gray-300">Submitted: </span>
                       <span className="text-white">{claim.submittedDate.toLocaleDateString()}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Estimated Resolution:</span>
+                      <span className="text-gray-300">Estimated Resolution: </span>
                       <span className="text-white">{claim.estimatedResolution.toLocaleDateString()}</span>
                     </div>
                   </div>
@@ -414,7 +414,7 @@ const WarrantyProtectionPage: NextPage = () => {
                   <p className="text-gray-300 text-sm mb-4">{claim.description}</p>
                   
                   <div>
-                    <h4 className="text-white font-semibold mb-2">Evidence:</h4>
+                    <h4 className="text-white font-semibold mb-2">Evidence: </h4>
                     <div className="flex flex-wrap gap-2">
                       {claim.evidence.map((item, index) => (
                         <span key={index} className="bg-white/10 text-gray-300 px-4 py-3 rounded text-xs">
@@ -433,7 +433,7 @@ const WarrantyProtectionPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Protection Account</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Active Plans</h3>
                 <div className="text-3xl font-bold text-white mb-2">{protectionAccount.activePlans}</div>
@@ -458,7 +458,7 @@ const WarrantyProtectionPage: NextPage = () => {
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4">Claim Statistics</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Approval Rate</span>
@@ -498,7 +498,7 @@ const WarrantyProtectionPage: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md: grid-cols-2 gap-8">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">What's Covered</h3>
                 <ul className="space-y-3">
@@ -599,7 +599,7 @@ const WarrantyProtectionPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Protect Your Investments
@@ -621,7 +621,7 @@ const WarrantyProtectionPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
@@ -632,7 +632,7 @@ const WarrantyProtectionPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Protection</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/warranty-protection" className="text-gray-400 hover:text-white transition-colors">Warranty Plans</Link></li>
+                <li><Link href="/warranty-protection" className="text-gray-400 hover: text-white transition-colors">Warranty Plans</Link></li>
                 <li><Link href="/escrow-services" className="text-gray-400 hover:text-white transition-colors">Escrow Services</Link></li>
                 <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Marketplace</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="text-gray-400 hover:text-white transition-colors">AI Assistant</Link></li>
@@ -669,9 +669,7 @@ const WarrantyProtectionPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default WarrantyProtectionPage 
+export default WarrantyProtectionPage ;

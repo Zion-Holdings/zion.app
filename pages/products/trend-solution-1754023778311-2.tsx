@@ -173,8 +173,6 @@ const AIPoweredAISolutionPage: NextPage = () => {
     </div>
   
   </ModernLayout>
-
-  </ModernLayout>
   );
 };
 

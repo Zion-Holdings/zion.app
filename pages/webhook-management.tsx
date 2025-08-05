@@ -16,15 +16,15 @@ interface Webhook {
   events: string[];
   headers: Record<string, string>;
   payload: Record<string, any>;
-  retryPolicy: {
+retryPolicy: {;
     maxRetries: number;
     retryDelay: number;
-    backoffMultiplier: number;
+    backoffMultiplier: number;}
   };
-  security: {
+security: {;
     authentication: 'none' | 'basic' | 'bearer' | 'api-key' | 'oauth2';
     apiKey?: string;
-    secret?: string;
+    secret?: string;}
   };
   createdAt: Date;
   updatedAt: Date;
@@ -54,11 +54,11 @@ interface WebhookTemplate {
   name: string;
   description: string;
   category: 'payment' | 'notification' | 'integration' | 'automation' | 'monitoring';
-  template: {
+template: {;
     endpoint: string;
     method: string;
     headers: Record<string, string>;
-    payload: Record<string, any>;
+    payload: Record<string, any>;}
   };
   events: string[];
   documentation: string;
@@ -84,9 +84,9 @@ const WebhookManagementPage: NextPage = () => {
   const [selectedWebhook, setSelectedWebhook] = useState<Webhook | null>(null);
   const [activeTab, setActiveTab] = useState<'webhooks' | 'events' | 'templates' | 'analytics'>('webhooks');
   const [filters, setFilters] = useState({
-    status: 'all',
+status: 'all',
     trigger: 'all',
-    category: 'all'
+    category: 'all');
   });
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
@@ -96,7 +96,7 @@ const WebhookManagementPage: NextPage = () => {
     setTimeout(() => {
       const mockWebhooks: Webhook[] = [
         {
-          id: '1',
+id: '1',
           name: 'Payment Success Webhook',
           description: 'Triggers when a payment is successfully processed',
           endpoint: 'https://api.ziontechgroup.com/webhooks/payment-success',
@@ -106,11 +106,11 @@ const WebhookManagementPage: NextPage = () => {
           events: ['payment.success', 'payment.completed'],
           headers: {
             'Content-Type': 'application/json',
-            'X-Webhook-Signature': 'sha256=abc123'
+            'X-Webhook-Signature': 'sha256=abc123'}
           },
           payload: {
             event: 'payment.success',
-            data: {
+            data: {}
               payment_id: '{{payment_id}}',
               amount: '{{amount}}',
               currency: '{{currency}}'
@@ -119,11 +119,11 @@ const WebhookManagementPage: NextPage = () => {
           retryPolicy: {
             maxRetries: 3,
             retryDelay: 5000,
-            backoffMultiplier: 2
+            backoffMultiplier: 2}
           },
           security: {
             authentication: 'bearer',
-            apiKey: 'sk_live_123456789'
+            apiKey: 'sk_live_123456789'}
           },
           createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
           updatedAt: new Date(Date.now() - 2 * 60 * 60 * 1000),
@@ -143,10 +143,10 @@ const WebhookManagementPage: NextPage = () => {
           trigger: 'event',
           events: ['order.created', 'order.updated', 'order.shipped'],
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json',}
             'Authorization': 'Bearer {{token}}'
           },
-          payload: {
+          payload: {}
             order_id: '{{order_id}}',
             status: '{{status}}',
             updated_at: '{{timestamp}}'
@@ -154,10 +154,10 @@ const WebhookManagementPage: NextPage = () => {
           retryPolicy: {
             maxRetries: 5,
             retryDelay: 10000,
-            backoffMultiplier: 1.5
+            backoffMultiplier: 1.5}
           },
           security: {
-            authentication: 'oauth2'
+            authentication: 'oauth2'}
           },
           createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000),
           updatedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000),
@@ -177,9 +177,9 @@ const WebhookManagementPage: NextPage = () => {
           trigger: 'event',
           events: ['inventory.updated', 'inventory.low'],
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json'}
           },
-          payload: {
+          payload: {}
             product_id: '{{product_id}}',
             quantity: '{{quantity}}',
             action: '{{action}}'
@@ -187,11 +187,11 @@ const WebhookManagementPage: NextPage = () => {
           retryPolicy: {
             maxRetries: 3,
             retryDelay: 5000,
-            backoffMultiplier: 2
+            backoffMultiplier: 2}
           },
           security: {
             authentication: 'api-key',
-            apiKey: 'inv_sync_key_456'
+            apiKey: 'inv_sync_key_456'}
           },
           createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
           updatedAt: new Date(Date.now() - 6 * 60 * 60 * 1000),
@@ -200,12 +200,12 @@ const WebhookManagementPage: NextPage = () => {
           failureCount: 45,
           averageResponseTime: 312,
           uptime: 92.1
-        }
+        };
       ];
 
       const mockEvents: WebhookEvent[] = [
         {
-          id: '1',
+id: '1',
           webhookId: '1',
           eventType: 'payment.success',
           status: 'success',
@@ -215,7 +215,7 @@ const WebhookManagementPage: NextPage = () => {
           payload: {
             payment_id: 'pay_123456789',
             amount: 150.00,
-            currency: 'USD'
+            currency: 'USD'}
           },
           response: '{"status": "received", "id": "webhook_123"}',
           retryCount: 0
@@ -231,7 +231,7 @@ const WebhookManagementPage: NextPage = () => {
           payload: {
             order_id: 'ord_987654321',
             status: 'shipped',
-            updated_at: new Date().toISOString()
+            updated_at: new Date().toISOString()}
           },
           response: '{"status": "updated"}',
           retryCount: 0
@@ -247,16 +247,16 @@ const WebhookManagementPage: NextPage = () => {
           payload: {
             product_id: 'prod_456',
             quantity: 10,
-            action: 'decrease'
+            action: 'decrease'}
           },
           error: 'Internal server error',
           retryCount: 2
-        }
+        };
       ];
 
       const mockTemplates: WebhookTemplate[] = [
         {
-          id: '1',
+id: '1',
           name: 'Payment Processing',
           description: 'Standard webhook for payment processing events',
           category: 'payment',
@@ -264,12 +264,12 @@ const WebhookManagementPage: NextPage = () => {
             endpoint: 'https://your-domain.com/webhooks/payment',
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/json',}
               'X-Webhook-Signature': 'sha256={{signature}}'
             },
-            payload: {
+            payload: {}
               event: '{{event_type}}',
-              data: {
+              data: {}
                 payment_id: '{{payment_id}}',
                 amount: '{{amount}}',
                 currency: '{{currency}}'
@@ -288,10 +288,10 @@ const WebhookManagementPage: NextPage = () => {
             endpoint: 'https://your-domain.com/webhooks/orders',
             method: 'PUT',
             headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/json',}
               'Authorization': 'Bearer {{token}}'
             },
-            payload: {
+            payload: {}
               order_id: '{{order_id}}',
               status: '{{status}}',
               updated_at: '{{timestamp}}'
@@ -299,11 +299,11 @@ const WebhookManagementPage: NextPage = () => {
           },
           events: ['order.created', 'order.updated', 'order.shipped', 'order.delivered'],
           documentation: 'Template for order management webhooks'
-        }
+        };
       ];
 
       const mockStats: WebhookStats = {
-        totalWebhooks: mockWebhooks.length,
+totalWebhooks: mockWebhooks.length,
         activeWebhooks: mockWebhooks.filter(w => w.status === 'active').length,
         totalEvents: mockEvents.length,
         successRate: 95.2,
@@ -311,7 +311,7 @@ const WebhookManagementPage: NextPage = () => {
         totalUptime: 98.6,
         eventsToday: 156,
         eventsThisWeek: 1247,
-        eventsThisMonth: 5234
+        eventsThisMonth: 5234;
       };
 
       setWebhooks(mockWebhooks);
@@ -323,7 +323,7 @@ const WebhookManagementPage: NextPage = () => {
   }, []);
 
   const filteredWebhooks = useMemo(() => {
-    return webhooks.filter(webhook => {
+    return webhooks.filter(webhook => {)
       if (filters.status !== 'all' && webhook.status !== filters.status) return false;
       if (filters.trigger !== 'all' && webhook.trigger !== filters.trigger) return false;
       if (searchTerm && !webhook.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
@@ -376,7 +376,7 @@ const WebhookManagementPage: NextPage = () => {
     setWebhooks(prev => prev.map(webhook => 
       webhook.id === webhookId 
         ? { ...webhook, status: webhook.status === 'active' ? 'inactive' : 'active' }
-        : webhook
+        : webhook)
     ));
   };
 
@@ -388,7 +388,7 @@ const WebhookManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -409,14 +409,14 @@ const WebhookManagementPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Webhook Management Center</h1>
               <p className="text-gray-300 mt-2">Manage, monitor, and orchestrate your webhooks</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Create Webhook
               </button>
             </div>
@@ -427,7 +427,7 @@ const WebhookManagementPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
+          <div className="grid grid-cols-2 md: grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
             <div className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10">
               <div className="text-2xl font-bold text-white">{stats.totalWebhooks}</div>
               <div className="text-gray-400 text-sm">Total Webhooks</div>
@@ -471,7 +471,7 @@ const WebhookManagementPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'webhooks'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Webhooks ({webhooks.length})
@@ -481,7 +481,7 @@ const WebhookManagementPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'events'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Events ({events.length})
@@ -491,7 +491,7 @@ const WebhookManagementPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'templates'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Templates ({templates.length})
@@ -501,7 +501,7 @@ const WebhookManagementPage: NextPage = () => {
               className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover:text-white'
+                  : 'text-gray-400 hover: text-white'
               }`}
             >
               Analytics
@@ -516,12 +516,12 @@ const WebhookManagementPage: NextPage = () => {
                 placeholder="Search webhooks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-500"
               />
               <select
                 value={filters.status}
                 onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value }))}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>
@@ -532,7 +532,7 @@ const WebhookManagementPage: NextPage = () => {
               <select
                 value={filters.trigger}
                 onChange={(e) => setFilters(prev => ({ ...prev, trigger: e.target.value }))}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="all">All Triggers</option>
                 <option value="event">Event</option>
@@ -560,7 +560,7 @@ const WebhookManagementPage: NextPage = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ delay: index * 0.1 }}
-                        className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                        className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50 transition-all duration-300"
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -575,21 +575,21 @@ const WebhookManagementPage: NextPage = () => {
                               </span>
                             </div>
                             <p className="text-gray-300 mb-3">{webhook.description}</p>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div className="grid grid-cols-2 md: grid-cols-4 gap-4 text-sm">
                               <div>
                                 <span className="text-gray-400">Endpoint:</span>
                                 <p className="text-white font-mono text-xs truncate">{webhook.endpoint}</p>
                               </div>
                               <div>
-                                <span className="text-gray-400">Success Rate:</span>
+                                <span className="text-gray-400">Success Rate: </span>
                                 <p className="text-green-400">{((webhook.successCount / (webhook.successCount + webhook.failureCount)) * 100).toFixed(1)}%</p>
                               </div>
                               <div>
-                                <span className="text-gray-400">Avg Response:</span>
+                                <span className="text-gray-400">Avg Response: </span>
                                 <p className="text-yellow-400">{webhook.averageResponseTime}ms</p>
                               </div>
                               <div>
-                                <span className="text-gray-400">Uptime:</span>
+                                <span className="text-gray-400">Uptime: </span>
                                 <p className="text-cyan-400">{webhook.uptime}%</p>
                               </div>
                             </div>
@@ -604,7 +604,7 @@ const WebhookManagementPage: NextPage = () => {
                               onClick={() => toggleWebhookStatus(webhook.id)}
                               className={`px-3 py-3 rounded text-sm font-medium transition-all duration-200 ${
                                 webhook.status === 'active'
-                                  ? 'bg-red-600 text-white hover:bg-red-700'
+                                  ? 'bg-red-600 text-white hover: bg-red-700'
                                   : 'bg-green-600 text-white hover:bg-green-700'
                               }`}
                             >
@@ -612,7 +612,7 @@ const WebhookManagementPage: NextPage = () => {
                             </button>
                             <button
                               onClick={() => setSelectedWebhook(webhook)}
-                              className="px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover:bg-purple-700 transition-all duration-200"
+                              className="px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover: bg-purple-700 transition-all duration-200"
                             >
                               View Details
                             </button>
@@ -660,14 +660,14 @@ const WebhookManagementPage: NextPage = () => {
             )}
 
             {activeTab === 'templates' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                 {templates.map((template, index) => (
                   <motion.div
                     key={template.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50 transition-all duration-300"
                   >
                     <div className="flex items-center space-x-3 mb-3">
                       <span className="text-2xl">📋</span>
@@ -679,15 +679,15 @@ const WebhookManagementPage: NextPage = () => {
                     <p className="text-gray-300 mb-4">{template.description}</p>
                     <div className="space-y-2 text-sm">
                       <div>
-                        <span className="text-gray-400">Method:</span>
+                        <span className="text-gray-400">Method: </span>
                         <span className="text-white ml-2">{template.template.method}</span>
                       </div>
                       <div>
-                        <span className="text-gray-400">Events:</span>
+                        <span className="text-gray-400">Events: </span>
                         <span className="text-white ml-2">{template.events.length}</span>
                       </div>
                     </div>
-                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white py-4 rounded-lg font-medium transition-all duration-300">
                       Use Template
                     </button>
                   </motion.div>
@@ -696,7 +696,7 @@ const WebhookManagementPage: NextPage = () => {
             )}
 
             {activeTab === 'analytics' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Webhook Performance</h3>
                   <div className="space-y-4">
@@ -753,7 +753,7 @@ const WebhookManagementPage: NextPage = () => {
                   </div>
                   <button
                     onClick={() => setSelectedWebhook(null)}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover: text-white transition-colors"
                   >
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -761,7 +761,7 @@ const WebhookManagementPage: NextPage = () => {
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-3">Configuration</h4>
                     <div className="space-y-3">
@@ -770,20 +770,20 @@ const WebhookManagementPage: NextPage = () => {
                         <p className="text-white font-mono text-sm break-all">{selectedWebhook.endpoint}</p>
                       </div>
                       <div>
-                        <span className="text-gray-400">Method:</span>
+                        <span className="text-gray-400">Method: </span>
                         <p className="text-white">{selectedWebhook.method}</p>
                       </div>
                       <div>
-                        <span className="text-gray-400">Trigger:</span>
+                        <span className="text-gray-400">Trigger: </span>
                         <p className="text-white capitalize">{selectedWebhook.trigger}</p>
                       </div>
                       <div>
-                        <span className="text-gray-400">Events:</span>
+                        <span className="text-gray-400">Events: </span>
                         <div className="flex flex-wrap gap-1 mt-1">
                           {selectedWebhook.events.map(event => (
                             <span key={event} className="px-4 py-3 bg-purple-600 text-white rounded text-xs">
                               {event}
-                            </span>
+                            </span>)
                           ))}
                         </div>
                       </div>
@@ -794,19 +794,19 @@ const WebhookManagementPage: NextPage = () => {
                     <h4 className="text-lg font-semibold text-white mb-3">Statistics</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Success Count:</span>
+                        <span className="text-gray-400">Success Count: </span>
                         <span className="text-green-400">{selectedWebhook.successCount}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Failure Count:</span>
+                        <span className="text-gray-400">Failure Count: </span>
                         <span className="text-red-400">{selectedWebhook.failureCount}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Average Response Time:</span>
+                        <span className="text-gray-400">Average Response Time: </span>
                         <span className="text-yellow-400">{selectedWebhook.averageResponseTime}ms</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Uptime:</span>
+                        <span className="text-gray-400">Uptime: </span>
                         <span className="text-cyan-400">{selectedWebhook.uptime}%</span>
                       </div>
                     </div>
@@ -814,7 +814,7 @@ const WebhookManagementPage: NextPage = () => {
                 </div>
 
                 <div className="mt-6 flex space-x-3">
-                  <button className="px-4 py-4 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-purple-600 text-white rounded-lg font-medium hover: bg-purple-700 transition-all duration-200">
                     Edit Webhook
                   </button>
                   <button className="px-4 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-200">
@@ -831,8 +831,6 @@ const WebhookManagementPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

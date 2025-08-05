@@ -81,7 +81,7 @@ const ServiceCategoriesPage: NextPage = () => {
   
   const [categories, setCategories] = useState<ServiceCategory[]>([
     {
-      id: 'tech-development',
+id: 'tech-development',
       name: 'Technology Development',
       description: 'Comprehensive technology development services including web development, mobile apps, AI/ML, and blockchain solutions.',
       icon: '💻',
@@ -297,7 +297,7 @@ const ServiceCategoriesPage: NextPage = () => {
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'USD'
+      currency: 'USD')
     }).format(amount)
   }
 
@@ -322,7 +322,7 @@ const ServiceCategoriesPage: NextPage = () => {
   }
 
   const filteredCategories = categories.filter(category => {
-    const matchesSearch = searchTerm === '' || 
+    const matchesSearch = searchTerm === '' || )
       category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       category.description.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesFilter = selectedCategory === 'all' || category.id === selectedCategory
@@ -330,7 +330,7 @@ const ServiceCategoriesPage: NextPage = () => {
   })
 
   const filteredProviders = providers.filter(provider => {
-    const matchesSearch = searchTerm === '' || 
+    const matchesSearch = searchTerm === '' || )
       provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       provider.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))
     const matchesCategory = selectedCategory === 'all' || provider.category === selectedCategory
@@ -355,7 +355,7 @@ const ServiceCategoriesPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -367,7 +367,7 @@ const ServiceCategoriesPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -388,7 +388,7 @@ const ServiceCategoriesPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -400,7 +400,7 @@ const ServiceCategoriesPage: NextPage = () => {
             explore detailed subcategories, and access category-specific features and requirements.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Browse Categories
             </Link>
             <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -410,7 +410,7 @@ const ServiceCategoriesPage: NextPage = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md: grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">{stats.totalCategories}</div>
             <p className="text-gray-300 text-sm">Service Categories</p>
@@ -431,7 +431,7 @@ const ServiceCategoriesPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -445,7 +445,7 @@ const ServiceCategoriesPage: NextPage = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10'
+                  : 'bg-white/5 text-gray-300 hover: bg-white/10'
               }`}
             >
               {tab.label}
@@ -460,16 +460,16 @@ const ServiceCategoriesPage: NextPage = () => {
             placeholder="Search categories or providers..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 flex-1 min-w-124"
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-500 flex-1 min-w-124"
           />
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-500"
           >
             <option value="all">All Categories</option>
             {categories.map(category => (
-              <option key={category.id} value={category.id}>{category.name}</option>
+              <option key={category.id} value={category.id}>{category.name}</option>)
             ))}
           </select>
         </div>
@@ -479,14 +479,14 @@ const ServiceCategoriesPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Service Categories</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 View All Services
               </Link>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredCategories.map((category) => (
-                <div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover: bg-white/10 transition-all duration-300">
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-4xl">{category.icon}</div>
                     {category.featured && (
@@ -501,25 +501,25 @@ const ServiceCategoriesPage: NextPage = () => {
                   
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Providers:</span>
+                      <span className="text-gray-300">Providers: </span>
                       <span className="text-white">{category.totalProviders}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Services:</span>
+                      <span className="text-gray-300">Services: </span>
                       <span className="text-white">{category.totalServices}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Avg Rating:</span>
+                      <span className="text-gray-300">Avg Rating: </span>
                       <span className="text-white">⭐ {category.averageRating}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Avg Price:</span>
+                      <span className="text-gray-300">Avg Price: </span>
                       <span className="text-white">{formatCurrency(category.avgPrice)}/hr</span>
                     </div>
                   </div>
                   
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm">Subcategories:</span>
+                    <span className="text-gray-300 text-sm">Subcategories: </span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {category.subcategories.slice(0, 3).map((sub) => (
                         <span key={sub.id} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
@@ -535,7 +535,7 @@ const ServiceCategoriesPage: NextPage = () => {
                   </div>
                   
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm">Requirements:</span>
+                    <span className="text-gray-300 text-sm">Requirements: </span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {category.requirements.slice(0, 2).map((req, index) => (
                         <span key={index} className="px-4 py-3 bg-purple-500/20 rounded text-xs text-purple-300">
@@ -546,7 +546,7 @@ const ServiceCategoriesPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
@@ -563,9 +563,9 @@ const ServiceCategoriesPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Expert Providers</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProviders.map((provider) => (
-                <div key={provider.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div key={provider.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover: bg-white/10 transition-all duration-300">
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-lg font-semibold text-white">{provider.name}</h3>
@@ -587,29 +587,29 @@ const ServiceCategoriesPage: NextPage = () => {
                   
                   <div className="space-y-3 mb-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Rating:</span>
+                      <span className="text-gray-300">Rating: </span>
                       <span className="text-white">⭐ {provider.rating} ({provider.reviews} reviews)</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Hourly Rate:</span>
+                      <span className="text-gray-300">Hourly Rate: </span>
                       <span className="text-white">{formatCurrency(provider.hourlyRate)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Experience:</span>
+                      <span className="text-gray-300">Experience: </span>
                       <span className="text-white">{provider.experience} years</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Projects:</span>
+                      <span className="text-gray-300">Projects: </span>
                       <span className="text-white">{provider.completedProjects} completed</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Location:</span>
+                      <span className="text-gray-300">Location: </span>
                       <span className="text-white">{provider.location}</span>
                     </div>
                   </div>
                   
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm">Skills:</span>
+                    <span className="text-gray-300 text-sm">Skills: </span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {provider.skills.slice(0, 3).map((skill, index) => (
                         <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
@@ -625,7 +625,7 @@ const ServiceCategoriesPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       View Profile
                     </button>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
@@ -642,7 +642,7 @@ const ServiceCategoriesPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Category Analytics</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md: grid-cols-3 gap-6 mb-8">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">{analytics.totalCategories}</div>
                 <p className="text-gray-300 text-sm">Total Categories</p>
@@ -657,7 +657,7 @@ const ServiceCategoriesPage: NextPage = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Top Categories</h3>
                 <div className="space-y-3">
@@ -694,7 +694,7 @@ const ServiceCategoriesPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Find Your Perfect Service Match
@@ -704,7 +704,7 @@ const ServiceCategoriesPage: NextPage = () => {
               From technology development to creative design, we have the right expertise for your project.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 Browse Categories
               </Link>
               <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -717,7 +717,7 @@ const ServiceCategoriesPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
@@ -728,7 +728,7 @@ const ServiceCategoriesPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Service Categories</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/service-categories" className="text-gray-400 hover:text-white transition-colors">Browse Categories</Link></li>
+                <li><Link href="/service-categories" className="text-gray-400 hover: text-white transition-colors">Browse Categories</Link></li>
                 <li><Link href="/project-management" className="text-gray-400 hover:text-white transition-colors">Project Management</Link></li>
                 <li><Link href="/marketplace-pricing" className="text-gray-400 hover:text-white transition-colors">Pricing & Commissions</Link></li>
                 <li><Link href="/referral-affiliate" className="text-gray-400 hover:text-white transition-colors">Referral System</Link></li>
@@ -765,9 +765,7 @@ const ServiceCategoriesPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default ServiceCategoriesPage 
+export default ServiceCategoriesPage ;

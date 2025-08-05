@@ -11,19 +11,19 @@ const Https___ziontechgroup_netlify_app_terms_of_servicePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
         <title>Terms of Service - Zion Tech Group</title>
         <meta name="description" content="Terms and conditions for using our services" />
-        <meta name="keywords" content="https://ziontechgroup.netlify.app/terms-of-service, Zion, AI marketplace" />
+        <meta name="keywords" content="https://ziontechgroup.netlify.app terms-of-service, Zion, AI marketplace"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -58,7 +58,7 @@ const Https___ziontechgroup_netlify_app_terms_of_servicePage: NextPage = () => {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-44 lg:py-32">
             <div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -86,7 +86,7 @@ const Https___ziontechgroup_netlify_app_terms_of_servicePage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -128,8 +128,6 @@ const Https___ziontechgroup_netlify_app_terms_of_servicePage: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

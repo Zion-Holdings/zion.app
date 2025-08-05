@@ -84,7 +84,7 @@ const SkillVerificationPage: NextPage = () => {
   
   const [skillTests, setSkillTests] = useState<SkillTest[]>([
     {
-      id: 'TEST-001',
+id: 'TEST-001',
       title: 'JavaScript Fundamentals',
       category: 'Programming',
       difficulty: 'beginner',
@@ -106,7 +106,7 @@ const SkillVerificationPage: NextPage = () => {
         status: 'active',
         verificationCode: 'JS-FUND-2024-001',
         skills: ['JavaScript', 'ES6', 'DOM Manipulation'],
-        level: 'beginner'
+        level: 'beginner'}
       }
     },
     {
@@ -279,7 +279,7 @@ const SkillVerificationPage: NextPage = () => {
   const filteredTests = skillTests.filter(test => {
     const categoryMatch = selectedCategory === 'all' || test.category === selectedCategory
     const difficultyMatch = filterDifficulty === 'all' || test.difficulty === filterDifficulty
-    return categoryMatch && difficultyMatch
+    return categoryMatch && difficultyMatch)
   })
 
   const getStats = () => {
@@ -302,7 +302,7 @@ const SkillVerificationPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -314,7 +314,7 @@ const SkillVerificationPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -335,7 +335,7 @@ const SkillVerificationPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -347,7 +347,7 @@ const SkillVerificationPage: NextPage = () => {
             Take skill tests, demonstrate your abilities, and showcase your professional qualifications.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Take Skill Test
             </Link>
             <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -357,7 +357,7 @@ const SkillVerificationPage: NextPage = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md: grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">{stats.totalTests}</div>
             <p className="text-gray-300 text-sm">Available Tests</p>
@@ -378,7 +378,7 @@ const SkillVerificationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -393,7 +393,7 @@ const SkillVerificationPage: NextPage = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
-                  : 'bg-white/5 text-gray-300 hover:bg-white/10'
+                  : 'bg-white/5 text-gray-300 hover: bg-white/10'
               }`}
             >
               {tab.label}
@@ -407,17 +407,17 @@ const SkillVerificationPage: NextPage = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Categories</option>
               {skillCategories.map(category => (
-                <option key={category.id} value={category.name}>{category.name}</option>
+                <option key={category.id} value={category.name}>{category.name}</option>)
               ))}
             </select>
             <select
               value={filterDifficulty}
               onChange={(e) => setFilterDifficulty(e.target.value)}
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Difficulties</option>
               <option value="beginner">Beginner</option>
@@ -433,14 +433,14 @@ const SkillVerificationPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Skill Tests</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Start New Test
               </Link>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredTests.map((test) => (
-                <div key={test.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div key={test.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover: bg-white/10 transition-all duration-300">
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="text-lg font-semibold text-white">{test.title}</h3>
@@ -459,31 +459,31 @@ const SkillVerificationPage: NextPage = () => {
                   <div className="space-y-3 mb-4">
                     <p className="text-gray-300 text-sm line-clamp-2">{test.description}</p>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Duration:</span>
+                      <span className="text-gray-300">Duration: </span>
                       <span className="text-white">{test.duration} min</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Questions:</span>
+                      <span className="text-gray-300">Questions: </span>
                       <span className="text-white">{test.questions}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Passing Score:</span>
+                      <span className="text-gray-300">Passing Score: </span>
                       <span className="text-white">{test.passingScore}%</span>
                     </div>
                     {test.bestScore && (
                       <div className="flex justify-between">
-                        <span className="text-gray-300">Best Score:</span>
+                        <span className="text-gray-300">Best Score: </span>
                         <span className="text-white">{test.bestScore}%</span>
                       </div>
                     )}
                     <div className="flex justify-between">
-                      <span className="text-gray-300">Attempts:</span>
+                      <span className="text-gray-300">Attempts: </span>
                       <span className="text-white">{test.attempts}</span>
                     </div>
                   </div>
                   
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm">Skills:</span>
+                    <span className="text-gray-300 text-sm">Skills: </span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {test.skills.map((skill, index) => (
                         <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
@@ -495,26 +495,26 @@ const SkillVerificationPage: NextPage = () => {
                   
                   <div className="flex gap-2">
                     {test.status === 'available' && (
-                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Start Test
                       </button>
                     )}
                     {test.status === 'in_progress' && (
-                      <button className="flex-1 bg-gradient-to-r from-yellow-1200 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-yellow-1200 to-orange-600 hover: from-yellow-700 hover:to-orange-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Continue Test
                       </button>
                     )}
                     {test.status === 'completed' && (
-                      <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-white/10 text-white hover: bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                         View Results
                       </button>
                     )}
                     {test.status === 'certified' && (
-                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         View Certificate
                       </button>
                     )}
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       Details
                     </button>
                   </div>
@@ -528,28 +528,28 @@ const SkillVerificationPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Skill Categories</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4 gap-6">
               {skillCategories.map((category) => (
-                <div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover: bg-white/10 transition-all duration-300">
                   <div className="text-4xl mb-4">{category.icon}</div>
                   <h3 className="text-lg font-semibold text-white mb-2">{category.name}</h3>
                   <p className="text-gray-300 text-sm mb-4">{category.description}</p>
                   
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between">
-                      <span className="text-gray-300 text-sm">Total Tests:</span>
+                      <span className="text-gray-300 text-sm">Total Tests: </span>
                       <span className="text-white text-sm">{category.totalTests}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300 text-sm">Available:</span>
+                      <span className="text-gray-300 text-sm">Available: </span>
                       <span className="text-white text-sm">{category.availableTests}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300 text-sm">Completed:</span>
+                      <span className="text-gray-300 text-sm">Completed: </span>
                       <span className="text-white text-sm">{category.completedTests}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-300 text-sm">Certifications:</span>
+                      <span className="text-gray-300 text-sm">Certifications: </span>
                       <span className="text-white text-sm">{category.certifications}</span>
                     </div>
                   </div>
@@ -561,7 +561,7 @@ const SkillVerificationPage: NextPage = () => {
                     ></div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
                     Explore Tests
                   </button>
                 </div>
@@ -594,7 +594,7 @@ const SkillVerificationPage: NextPage = () => {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div className="grid grid-cols-1 md: grid-cols-3 gap-4 mb-4">
                     <div className="text-center">
                       <div className="text-white font-semibold">{result.score}/{result.maxScore}</div>
                       <div className="text-gray-300 text-sm">Score</div>
@@ -611,7 +611,7 @@ const SkillVerificationPage: NextPage = () => {
                   
                   {result.feedback.length > 0 && (
                     <div className="mb-4">
-                      <h4 className="text-white font-semibold mb-2">Feedback:</h4>
+                      <h4 className="text-white font-semibold mb-2">Feedback: </h4>
                       <ul className="space-y-1">
                         {result.feedback.map((item, index) => (
                           <li key={index} className="text-gray-300 text-sm">• {item}</li>
@@ -621,7 +621,7 @@ const SkillVerificationPage: NextPage = () => {
                   )}
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
                     <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-4 rounded text-sm transition-colors">
@@ -638,7 +638,7 @@ const SkillVerificationPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Skill Badges</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
               {skillBadges.map((badge) => (
                 <div key={badge.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                   <div className="flex justify-between items-start mb-4">
@@ -657,7 +657,7 @@ const SkillVerificationPage: NextPage = () => {
                   <p className="text-gray-300 text-sm mb-4">{badge.description}</p>
                   
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm">Requirements:</span>
+                    <span className="text-gray-300 text-sm">Requirements: </span>
                     <ul className="mt-2 space-y-1">
                       {badge.requirements.map((req, index) => (
                         <li key={index} className="text-gray-300 text-sm">• {req}</li>
@@ -675,7 +675,7 @@ const SkillVerificationPage: NextPage = () => {
                     </div>
                   )}
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
                     {badge.earnedAt ? 'View Badge' : 'Work Towards Badge'}
                   </button>
                 </div>
@@ -687,7 +687,7 @@ const SkillVerificationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Validate Your Expertise
@@ -697,7 +697,7 @@ const SkillVerificationPage: NextPage = () => {
               Demonstrate your abilities and showcase your professional qualifications.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 Start Testing
               </Link>
               <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -710,7 +710,7 @@ const SkillVerificationPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
@@ -721,7 +721,7 @@ const SkillVerificationPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Skill Verification</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/skill-verification" className="text-gray-400 hover:text-white transition-colors">Skill Tests</Link></li>
+                <li><Link href="/skill-verification" className="text-gray-400 hover: text-white transition-colors">Skill Tests</Link></li>
                 <li><Link href="/ai-powered-learning-platform" className="text-gray-400 hover:text-white transition-colors">Learning Platform</Link></li>
                 <li><Link href="/dispute-resolution" className="text-gray-400 hover:text-white transition-colors">Dispute Resolution</Link></li>
                 <li><Link href="/invoice-billing" className="text-gray-400 hover:text-white transition-colors">Invoice & Billing</Link></li>
@@ -758,9 +758,7 @@ const SkillVerificationPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-
-  </ModernLayout>
 )
 }
 
-export default SkillVerificationPage 
+export default SkillVerificationPage ;

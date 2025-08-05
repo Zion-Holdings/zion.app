@@ -10,15 +10,15 @@ interface QuoteRequest {
   description: string;
   category: string;
   subcategory: string;
-  budget: {
+budget: {;
     min: number;
     max: number;
-    currency: string;
+    currency: string;}
   };
-  timeline: {
+timeline: {;
     startDate: Date;
     endDate: Date;
-    urgency: 'low' | 'medium' | 'high' | 'urgent';
+    urgency: 'low' | 'medium' | 'high' | 'urgent';}
   };
   requirements: string[];
   skills: string[];
@@ -38,14 +38,14 @@ interface QuoteResponse {
   providerName: string;
   providerAvatar: string;
   providerRating: number;
-  quote: {
+quote: {;
     amount: number;
     currency: string;
     breakdown: QuoteBreakdown[];
-    timeline: {
+timeline: {;
       startDate: Date;
       endDate: Date;
-      milestones: Milestone[];
+      milestones: Milestone[];}
     };
     terms: string[];
     conditions: string[];
@@ -101,7 +101,7 @@ const QuoteRequestsPage: NextPage = () => {
   const [loading, setLoading] = useState(true);
 
   const newRequestForm = useState({
-    title: '',
+title: '',
     description: '',
     category: '',
     subcategory: '',
@@ -111,12 +111,12 @@ const QuoteRequestsPage: NextPage = () => {
     timeline: {
       startDate: '',
       endDate: '',
-      urgency: 'medium' as const
+      urgency: 'medium' as const}
     },
     requirements: [''],
     skills: [''],
     priority: 'medium' as const,
-    visibility: 'public' as const
+    visibility: 'public' as const);
   });
 
   useEffect(() => {
@@ -124,7 +124,7 @@ const QuoteRequestsPage: NextPage = () => {
     setTimeout(() => {
       const mockQuoteRequests: QuoteRequest[] = [
         {
-          id: '1',
+id: '1',
           title: 'AI-Powered E-commerce Platform Development',
           description: 'Need a comprehensive e-commerce platform with AI-powered product recommendations, personalized user experience, and advanced analytics dashboard. The platform should support multiple payment gateways, inventory management, and mobile responsiveness.',
           category: 'Web Development',
@@ -132,12 +132,12 @@ const QuoteRequestsPage: NextPage = () => {
           budget: {
             min: 15000,
             max: 35000,
-            currency: 'USD'
+            currency: 'USD'}
           },
           timeline: {
             startDate: new Date('2024-02-01'),
             endDate: new Date('2024-05-01'),
-            urgency: 'high'
+            urgency: 'high'}
           },
           requirements: [
             'AI-powered product recommendations',
@@ -187,7 +187,7 @@ const QuoteRequestsPage: NextPage = () => {
                     description: 'React-based user interface with responsive design',
                     quantity: 1,
                     unitPrice: 8000,
-                    total: 8000
+                    total: 8000}
                   },
                   {
                     item: 'Backend Development',
@@ -221,7 +221,7 @@ const QuoteRequestsPage: NextPage = () => {
                       description: 'UI/UX design and project planning',
                       dueDate: new Date('2024-02-15'),
                       deliverables: ['Wireframes', 'Design mockups', 'Project plan'],
-                      paymentPercentage: 20
+                      paymentPercentage: 20}
                     },
                     {
                       id: '2',
@@ -281,12 +281,12 @@ const QuoteRequestsPage: NextPage = () => {
           budget: {
             min: 8000,
             max: 15000,
-            currency: 'USD'
+            currency: 'USD'}
           },
           timeline: {
             startDate: new Date('2024-02-15'),
             endDate: new Date('2024-04-15'),
-            urgency: 'medium'
+            urgency: 'medium'}
           },
           requirements: [
             'Cross-platform mobile app (iOS & Android)',
@@ -326,12 +326,12 @@ const QuoteRequestsPage: NextPage = () => {
           budget: {
             min: 12000,
             max: 25000,
-            currency: 'USD'
+            currency: 'USD'}
           },
           timeline: {
             startDate: new Date('2024-03-01'),
             endDate: new Date('2024-05-01'),
-            urgency: 'high'
+            urgency: 'high'}
           },
           requirements: [
             'Smart contract development for lending protocol',
@@ -361,7 +361,7 @@ const QuoteRequestsPage: NextPage = () => {
           createdAt: new Date('2024-01-05'),
           updatedAt: new Date('2024-01-05'),
           expiresAt: new Date('2024-02-05')
-        }
+        };
       ];
 
       setQuoteRequests(mockQuoteRequests);
@@ -371,7 +371,7 @@ const QuoteRequestsPage: NextPage = () => {
 
   const categories: Category[] = [
     {
-      id: 'web-development',
+id: 'web-development',
       name: 'Web Development',
       description: 'Website and web application development',
       icon: '🌐',
@@ -411,12 +411,12 @@ const QuoteRequestsPage: NextPage = () => {
       description: 'Data analysis and business intelligence',
       icon: '📊',
       subcategories: ['Data Analysis', 'Business Intelligence', 'Data Visualization', 'Predictive Analytics']
-    }
+    };
   ];
 
   const filteredRequests = useMemo(() => {
     let filtered = quoteRequests.filter(request => {
-      // Category filter
+      // Category filter)
       if (selectedCategory !== 'all' && request.category !== selectedCategory) return false;
       
       // Status filter
@@ -442,7 +442,7 @@ const QuoteRequestsPage: NextPage = () => {
         case 'deadline':
           return new Date(a.timeline.endDate).getTime() - new Date(b.timeline.endDate).getTime();
         case 'recent':
-        default:
+default: ;
           return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       }
     });
@@ -485,18 +485,18 @@ const QuoteRequestsPage: NextPage = () => {
 
   const formatCurrency = (amount: number, currency: string) => {
     return new Intl.NumberFormat('en-US', {
-      style: 'currency',
+style: 'currency',
       currency: currency,
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      maximumFractionDigits: 0);
     }).format(amount);
   };
 
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat('en-US', {
-      year: 'numeric',
+year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric');
     }).format(date);
   };
 
@@ -508,7 +508,7 @@ const QuoteRequestsPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -530,13 +530,13 @@ const QuoteRequestsPage: NextPage = () => {
         <title>Quote Requests - Zion</title>
         <meta name="description" content="Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional responses" />
         <meta name="keywords" content="quote requests, project quotes, custom projects, budget planning, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -567,7 +567,7 @@ const QuoteRequestsPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl font-bold text-white mb-4">
             Quote Requests
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -580,7 +580,7 @@ const QuoteRequestsPage: NextPage = () => {
         <div className="flex justify-center mb-8">
           <button
             onClick={() => setShowNewRequestModal(true)}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
           >
             Submit New Request
           </button>
@@ -588,14 +588,14 @@ const QuoteRequestsPage: NextPage = () => {
 
         {/* Search and Filters */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg: grid-cols-4 gap-4">
             <div className="lg:col-span-2">
               <input
                 type="text"
                 placeholder="Search quote requests..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500 transition-colors"
               />
             </div>
             
@@ -603,11 +603,11 @@ const QuoteRequestsPage: NextPage = () => {
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="all">All Categories</option>
                 {categories.map(category => (
-                  <option key={category.id} value={category.name}>{category.name}</option>
+                  <option key={category.id} value={category.name}>{category.name}</option>)
                 ))}
               </select>
             </div>
@@ -616,7 +616,7 @@ const QuoteRequestsPage: NextPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500 transition-colors"
               >
                 <option value="recent">Sort by Recent</option>
                 <option value="priority">Sort by Priority</option>
@@ -630,7 +630,7 @@ const QuoteRequestsPage: NextPage = () => {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-purple-500 transition-colors"
+              className="bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white focus: outline-none focus:border-purple-500 transition-colors"
             >
               <option value="all">All Status</option>
               <option value="draft">Draft</option>
@@ -645,9 +645,9 @@ const QuoteRequestsPage: NextPage = () => {
         </div>
 
         {/* Quote Requests Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg: grid-cols-2 gap-6">
           {filteredRequests.map((request) => (
-            <div key={request.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+            <div key={request.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
               {/* Request Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
@@ -724,7 +724,7 @@ const QuoteRequestsPage: NextPage = () => {
               <div className="flex space-x-3">
                 <button 
                   onClick={() => setSelectedRequest(request)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   View Details
                 </button>
@@ -746,10 +746,10 @@ const QuoteRequestsPage: NextPage = () => {
               Submit your project requirements and receive competitive quotes from 
               verified professionals across all technical domains.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm: flex-row gap-4 justify-center">
               <button
                 onClick={() => setShowNewRequestModal(true)}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
               >
                 Submit Request
               </button>
@@ -762,8 +762,6 @@ const QuoteRequestsPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
   </ModernLayout>
 
   </ModernLayout>

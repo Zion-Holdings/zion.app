@@ -8,14 +8,14 @@ import { createClient } from '@supabase/supabase-js';
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     )
   : null;
 
 const CreateTalentPage: React.FC = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    full_name: '',
+full_name: '',
     title: '',
     summary: '',
     skills: [] as string[],
@@ -23,7 +23,7 @@ const CreateTalentPage: React.FC = () => {
     hourly_rate: '',
     location: '',
     timezone: '',
-    is_verified: false
+    is_verified: false);
   });
 
   const [loading, setLoading] = useState(false);
@@ -45,9 +45,9 @@ const CreateTalentPage: React.FC = () => {
       const { error } = await supabase
         .from('talents')
         .insert([{
-          ...formData,
-          hourly_rate: formData.hourly_rate ? parseInt(formData.hourly_rate) : null,
-          created_at: new Date().toISOString()
+          ...formData,)
+hourly_rate: formData.hourly_rate ? parseInt(formData.hourly_rate) : null,
+          created_at: new Date().toISOString();
         }]);
 
       if (error) throw error;
@@ -63,10 +63,10 @@ const CreateTalentPage: React.FC = () => {
 
   const handleSkillToggle = (skill: string) => {
     setFormData(prev => ({
-      ...prev,
-      skills: prev.skills.includes(skill)
+      ...prev,)
+skills: prev.skills.includes(skill)
         ? prev.skills.filter(s => s !== skill)
-        : [...prev.skills, skill]
+        : [...prev.skills, skill];
     }));
   };
 
@@ -90,7 +90,7 @@ const CreateTalentPage: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -103,7 +103,7 @@ const CreateTalentPage: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Basic Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
@@ -113,7 +113,7 @@ const CreateTalentPage: React.FC = () => {
                     required
                     value={formData.full_name}
                     onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value }))}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -127,7 +127,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.title}
                     onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                     placeholder="e.g., Senior Full-Stack Developer"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -143,7 +143,7 @@ const CreateTalentPage: React.FC = () => {
                   value={formData.summary}
                   onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value }))}
                   placeholder="Describe your expertise, experience, and what makes you unique..."
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -152,14 +152,14 @@ const CreateTalentPage: React.FC = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-3">
                   Skills & Technologies *
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="grid grid-cols-2 md: grid-cols-4 gap-2">
                   {availableSkills.map(skill => (
                     <label key={skill} className="flex items-center">
                       <input
-                        type="checkbox"
+                        type="checkbox")
                         checked={formData.skills.includes(skill)}
                         onChange={() => handleSkillToggle(skill)}
-                        className="mr-2 text-blue-600 focus:ring-blue-500"
+                        className="mr-2 text-blue-600 focus: ring-blue-500"
                       />
                       <span className="text-sm text-gray-700">{skill}</span>
                     </label>
@@ -168,7 +168,7 @@ const CreateTalentPage: React.FC = () => {
               </div>
 
               {/* Availability & Rate */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Availability *
@@ -177,7 +177,7 @@ const CreateTalentPage: React.FC = () => {
                     required
                     value={formData.availability}
                     onChange={(e) => setFormData(prev => ({ ...prev, availability: e.target.value as any }))}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="Open">Open</option>
                     <option value="Part-time">Part-time</option>
@@ -194,7 +194,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.hourly_rate}
                     onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value }))}
                     placeholder="e.g., 75"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -208,7 +208,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.location}
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                     placeholder="e.g., San Francisco, CA"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -222,7 +222,7 @@ const CreateTalentPage: React.FC = () => {
                   required
                   value={formData.timezone}
                   onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value }))}
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">Select timezone</option>
                   <option value="UTC-8">Pacific Time (UTC-8)</option>
@@ -244,7 +244,7 @@ const CreateTalentPage: React.FC = () => {
                   id="verified"
                   checked={formData.is_verified}
                   onChange={(e) => setFormData(prev => ({ ...prev, is_verified: e.target.checked }))}
-                  className="mr-2 text-blue-600 focus:ring-blue-500"
+                  className="mr-2 text-blue-600 focus: ring-blue-500"
                 />
                 <label htmlFor="verified" className="text-sm text-gray-700">
                   I want to be verified as a professional
@@ -263,14 +263,14 @@ const CreateTalentPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => router.back()}
-                  className="px-6 py-4 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                  className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200 rounded-lg transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+                  className="px-6 py-4 bg-blue-600 hover: bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
                 >
                   {loading ? 'Creating...' : 'Create Profile'}
                 </button>
@@ -281,8 +281,6 @@ const CreateTalentPage: React.FC = () => {
       </div>
     </>
   
-  </ModernLayout>
-
   </ModernLayout>
   );
 };

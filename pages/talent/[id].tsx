@@ -33,7 +33,7 @@ interface Review {
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     )
   : null;
 
@@ -50,7 +50,7 @@ const TalentDetailPage: React.FC = () => {
       if (!supabase) {
         // Mock data for local development
         const mockTalent: Talent = {
-          id: id as string,
+id: id as string,
           full_name: 'Sarah Johnson',
           title: 'Senior Full-Stack Developer',
           summary: 'Experienced full-stack developer with 8+ years of expertise in modern web technologies. Specialized in React, Node.js, and cloud infrastructure.',
@@ -62,7 +62,7 @@ const TalentDetailPage: React.FC = () => {
           is_verified: true,
           rating: 4.9,
           review_count: 127,
-          created_at: '2024-01-15T00:00:00Z'
+          created_at: '2024-01-15T00:00:00Z';
         };
         setTalent(mockTalent);
         setLoading(false);
@@ -95,7 +95,7 @@ const TalentDetailPage: React.FC = () => {
         // Mock reviews for local development
         const mockReviews: Review[] = [
           {
-            id: '1',
+id: '1',
             talent_id: id as string,
             reviewer_name: 'John Smith',
             rating: 5,
@@ -109,7 +109,7 @@ const TalentDetailPage: React.FC = () => {
             rating: 4,
             comment: 'Great communication and technical skills. Would definitely work with again.',
             created_at: '2024-01-18T00:00:00Z'
-          }
+          };
         ];
         setReviews(mockReviews);
         return;
@@ -178,7 +178,7 @@ const TalentDetailPage: React.FC = () => {
           <p className="text-gray-600 mb-4">{error || 'The talent profile you are looking for does not exist.'}</p>
           <button
             onClick={() => router.push('/talent')}
-            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover: bg-blue-700 transition-colors"
           >
             Back to Talent Directory
           </button>
@@ -198,10 +198,10 @@ const TalentDetailPage: React.FC = () => {
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
             <button
               onClick={() => router.push('/talent')}
-              className="text-blue-600 hover:text-blue-700 flex items-center mb-4"
+              className="text-blue-600 hover: text-blue-700 flex items-center mb-4"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -211,10 +211,10 @@ const TalentDetailPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Main Content */}
-            <div className="lg:col-span-2">
+            <div className="lg: col-span-2">
               <div className="bg-white rounded-xl shadow-lg p-8">
                 {/* Profile Header */}
                 <div className="flex items-start justify-between mb-6">
@@ -303,7 +303,7 @@ const TalentDetailPage: React.FC = () => {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <div className="lg: col-span-1">
               <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
                 <div className="text-center mb-6">
                   <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
@@ -340,7 +340,7 @@ const TalentDetailPage: React.FC = () => {
 
                 {/* Action Buttons */}
                 <div className="space-y-3">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                  <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
                     Contact Talent
                   </button>
                   <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
@@ -354,8 +354,6 @@ const TalentDetailPage: React.FC = () => {
       </div>
     </>
   
-  </ModernLayout>
-
   </ModernLayout>
   );
 };
