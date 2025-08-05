@@ -293,7 +293,7 @@ const AiPoweredReporting = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AiPoweredReporting;

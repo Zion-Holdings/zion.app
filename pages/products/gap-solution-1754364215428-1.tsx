@@ -200,7 +200,7 @@ const AI_automation_SolutionPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AI_automation_SolutionPage;

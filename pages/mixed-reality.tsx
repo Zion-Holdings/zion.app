@@ -293,7 +293,7 @@ const MixedReality = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default MixedReality;

@@ -200,7 +200,7 @@ const AI_Powered_business_opportunity_SolutionPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AI_Powered_business_opportunity_SolutionPage;

@@ -1077,7 +1077,7 @@ Designer: </button>
   </ModernLayout>
 
   </ModernLayout>;
-    );
+      );
 };
 
 export default WorkflowDesignerPage;

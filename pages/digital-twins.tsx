@@ -293,7 +293,7 @@ const DigitalTwins = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default DigitalTwins;

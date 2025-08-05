@@ -293,7 +293,7 @@ const AiPoweredIntegration = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AiPoweredIntegration;

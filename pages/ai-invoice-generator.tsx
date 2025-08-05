@@ -534,7 +534,7 @@ const InvoiceGenerator = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default InvoiceGenerator;

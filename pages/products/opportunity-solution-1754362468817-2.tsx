@@ -200,7 +200,7 @@ const AI_Powered_market_gap_SolutionPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AI_Powered_market_gap_SolutionPage;

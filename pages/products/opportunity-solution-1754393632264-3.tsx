@@ -200,7 +200,7 @@ const Intelligent_market_gap_PlatformPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default Intelligent_market_gap_PlatformPage;

@@ -606,7 +606,7 @@ const BusinessIntelligenceDashboard = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default BusinessIntelligenceDashboard;

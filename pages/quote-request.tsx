@@ -534,7 +534,7 @@ const QuoteRequestForm = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default QuoteRequestForm;

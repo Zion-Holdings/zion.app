@@ -200,7 +200,7 @@ const opportunity_solution_1754022651945_1Page: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default opportunity_solution_1754022651945_1Page;

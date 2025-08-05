@@ -419,7 +419,7 @@ const ContractGenerator = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default ContractGenerator;

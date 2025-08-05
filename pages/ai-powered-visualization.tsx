@@ -293,7 +293,7 @@ const AiPoweredVisualization = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AiPoweredVisualization;

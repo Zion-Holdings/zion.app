@@ -1014,7 +1014,7 @@ const ComplianceGovernancePage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default ComplianceGovernancePage;

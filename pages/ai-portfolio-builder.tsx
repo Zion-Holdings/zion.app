@@ -109,7 +109,7 @@ const PortfolioBuilder = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default PortfolioBuilder;

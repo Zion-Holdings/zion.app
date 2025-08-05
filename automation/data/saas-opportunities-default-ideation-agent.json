@@ -212,5 +212,170 @@
       ],
       "differentiationStrategy": "Leverage AI for competitive advantage"
     }
+  },
+  {
+    "id": "3a5a5818-2556-41bf-806a-3cbf44945ca9",
+    "name": "Enterprise project-management optimization platform",
+    "serviceType": "b2b-saas",
+    "category": "project-management",
+    "description": "A comprehensive project-management solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$50M-$100M",
+    "competitionLevel": "High",
+    "revenuePotential": 6318,
+    "developmentComplexity": "Low",
+    "timeToMarket": "6-8 months",
+    "createdAt": "2025-08-05T17:28:10.139Z",
+    "score": 0.73,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T17:28:10.139Z",
+    "nextSteps": [
+      "Conduct detailed market research",
+      "Launch beta version",
+      "Create MVP prototype",
+      "Design user experience",
+      "Develop business plan"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "High",
+      "barriersToEntry": [
+        "High development costs"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "Project-managementPro",
+        "Project-managementHub",
+        "Project-managementSuite"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Create seamless integrations"
+    }
+  },
+  {
+    "id": "c2ab2c20-0361-436a-8398-e1bf1e408273",
+    "name": "Enterprise accounting optimization platform",
+    "serviceType": "b2b-saas",
+    "category": "accounting",
+    "description": "A comprehensive accounting solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+    "marketSize": "$100M-$500M",
+    "competitionLevel": "Medium",
+    "revenuePotential": 6229,
+    "developmentComplexity": "Low",
+    "timeToMarket": "2-4 months",
+    "createdAt": "2025-08-05T17:28:10.139Z",
+    "score": 0.85,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T17:28:10.139Z",
+    "nextSteps": [
+      "Design user experience",
+      "Create MVP prototype",
+      "Conduct detailed market research",
+      "Plan marketing strategy",
+      "Launch beta version"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Small businesses",
+        "Medium enterprises",
+        "Large corporations"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability"
+      ],
+      "growthPotential": "Medium",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "AccountingPro",
+        "AccountingHub"
+      ],
+      "indirectCompetitors": [
+        "Manual processes",
+        "Spreadsheets"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Offer unique feature set"
+    }
+  },
+  {
+    "id": "defc4c82-1d42-4989-b33e-5b26268059b1",
+    "name": "Intelligent translation automation",
+    "serviceType": "ai-saas",
+    "category": "translation",
+    "description": "Leverage the power of artificial intelligence to revolutionize translation. Our AI-powered platform delivers intelligent insights and automation for better results.",
+    "marketSize": "$500M+",
+    "competitionLevel": "Medium",
+    "revenuePotential": 8864,
+    "developmentComplexity": "High",
+    "timeToMarket": "12-18 months",
+    "createdAt": "2025-08-05T17:28:10.139Z",
+    "score": 0.7,
+    "validationStatus": "validated",
+    "validationDate": "2025-08-05T17:28:10.139Z",
+    "nextSteps": [
+      "Secure initial funding",
+      "Design user experience",
+      "Create MVP prototype",
+      "Conduct detailed market research",
+      "Develop business plan"
+    ],
+    "marketResearch": {
+      "targetAudience": [
+        "Developers",
+        "Businesses",
+        "Content creators"
+      ],
+      "marketTrends": [
+        "remote-work",
+        "ai-automation",
+        "sustainability",
+        "health-tech"
+      ],
+      "growthPotential": "Medium",
+      "barriersToEntry": [
+        "High development costs",
+        "Regulatory compliance"
+      ]
+    },
+    "competitiveAnalysis": {
+      "directCompetitors": [
+        "TranslationPro",
+        "TranslationHub",
+        "TranslationSuite"
+      ],
+      "indirectCompetitors": [
+        "Manual processes"
+      ],
+      "competitiveAdvantages": [
+        "AI-powered automation",
+        "Superior user experience"
+      ],
+      "differentiationStrategy": "Build strong community"
+    }
   }
 ]

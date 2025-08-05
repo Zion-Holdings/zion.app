@@ -200,7 +200,7 @@ const AI_prediction_SolutionPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AI_prediction_SolutionPage;

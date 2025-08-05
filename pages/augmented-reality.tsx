@@ -293,7 +293,7 @@ const AugmentedReality = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AugmentedReality;

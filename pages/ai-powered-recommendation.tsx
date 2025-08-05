@@ -293,7 +293,7 @@ const AiPoweredRecommendation = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AiPoweredRecommendation;

@@ -423,7 +423,7 @@ const ITServicesPage: React.FC = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default ITServicesPage;

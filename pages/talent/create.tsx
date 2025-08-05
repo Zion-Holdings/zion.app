@@ -279,7 +279,7 @@ const: availableSkills = [
     </>
   
   </ModernLayout>;
-    );
+      );
 };
 
 export default CreateTalentPage;

@@ -988,7 +988,7 @@ const ExecutiveDashboardPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default ExecutiveDashboardPage;

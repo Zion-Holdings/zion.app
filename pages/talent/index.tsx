@@ -341,7 +341,7 @@ Contact: Talent
     </>
   ;
   </ModernLayout>;
-    );
+      );
 };
 
 export default TalentPage;

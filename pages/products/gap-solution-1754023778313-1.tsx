@@ -200,7 +200,7 @@ const gap_solution_1754023778313_1Page: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default gap_solution_1754023778313_1Page;

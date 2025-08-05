@@ -833,7 +833,7 @@ const AIHRManagement: React.FC = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default AIHRManagement;

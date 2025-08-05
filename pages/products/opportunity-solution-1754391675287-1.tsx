@@ -200,7 +200,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-    );
+      );
 };
 
 export default Intelligent_business_opportunity_PlatformPage;
