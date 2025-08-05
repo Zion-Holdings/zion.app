@@ -369,13 +369,9 @@ default: ;
   const renderStars = (rating: number) => {
 return: (
     <div>
-      <div className="flex items-center>,
+      </div><div className="flex items-center>,
         {[1, 2, 3, 4, 5].map((star) => (
-          <svg
-            key={star}"
-            className="{`w-4 h-4 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}"
-            fill=currentColor""
-            viewBox="0: 0 20 20"
+          
           >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
@@ -416,13 +412,13 @@ return: (
       <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
+        </div><div className="fixed inset-0 z-0>"
           <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
         <div className="text-center>"
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24 24">
               <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -446,8 +442,8 @@ return: (
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <Link href=/ className=""flex-shrink-0 />
                 <h1 className="text-2xl font-bold text-white>"
@@ -456,17 +452,17 @@ return: (
               </Link>
             </div>
             
-            <div className="hidden md:flex  items-center space-x-8"">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+            <div className="hidden md flex  items-center space-x-8"">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/analytics-dashboard className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/analytics-dashboard className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Analytics
               </Link>"
-              <Link href=/review-system"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/review-system"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Reviews
               </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
@@ -476,8 +472,8 @@ return: (
 "
       <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8">,
         {/* Header */}
-        <div className="text-center mb-8>"
-          <h1 className="text-4xl:md: text-5xl: font-bold text-white mb-4>
+        </div><div className="text-center mb-8>"
+          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4>
             User Profiles
           </h1>"
           <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>,
@@ -487,20 +483,16 @@ return: (
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8"">
-          <div className="flex flex-col lg: flex-row  gap-4>"
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8"">
+          </div><div className="flex flex-col lg  flex-row  gap-4>"
             <div className="flex-1">
-              <input
-                type=text",
-                placeholder="Search by name, skills, or expertise..."
-                value={searchTerm}
+              
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
               />
             </div>"
             <div className="flex space-x-4>
-              <select,
-                value={filterType}
+              
                 onChange={(e) => setFilterType(e.target.value as any)}"
                 className=""bg-white/10" border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               >
@@ -509,10 +501,9 @@ return: (
                 <option value="talent">Talents</option>
                 <option value="buyer">Buyers</option>
               </select>
-              <select,
-                value={sortBy}
+              
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               >
                 <option value=rating>Sort by Rating</option>"
                 <option value=experience">Sort by Experience</option>
@@ -524,25 +515,20 @@ return: (
         </div>
 ,
         {/* Profiles Grid */}
-        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>
+        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6>
           {filteredProfiles.map((profile) => (,"
-            <div key={profile.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>,
-              {/* Profile: Header */}"
+            </div><div key={profile.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover to-white/20 transition-all duration-300 transform hover scale-105>,
+              {/* Profile  Header */}"
               <div className=""flex" items-start justify-between mb-4>
-                <div className="flex items-center space-x-3"">
-                  <Image 
-                    src={profile.avatar}
-                    alt={profile.fullName}
-                    className="w-16 h-16 rounded-full border-2 border-purple-500 30
-                    width={64} 
-                    height={64} 
+                </div><div className="flex items-center space-x-3"">
+                  
                    />
                   <div>"
                     <h3 className="text-lg font-semibold text-white>{profile.fullName}</h3>"
                     <p className=""text-sm:text-gray-400">@{profile.username}</p>
                     <div className="flex items-center space-x-2 mt-1"">
                       {renderStars(profile.rating)}
-                      <span className="text-sm:text-gray-400>({profile.reviewCount})</span>
+                      <span className="text-sm text-gray-400>({profile.reviewCount})</span>
                     </div>
                   </div>
                 </div>"
@@ -581,40 +567,40 @@ return: (
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mb-4>"
-                <div className="text-center">
-                  <p className="text-lg:font-bold text-white>{profile.experience}+</p>"
+                </div><div className="text-center">
+                  <p className="text-lg font-bold text-white>{profile.experience}+</p>"
                   <p className=""text-xs" text-gray-400">Years</p>
                 </div>
                 <div className="text-center>"
-                  <p className="text-lg:font-bold text-white>{profile.portfolio.length}</p>"
+                  <p className="text-lg font-bold text-white>{profile.portfolio.length}</p>"
                   <p className=""text-xs" text-gray-400>Projects</p>
                 </div>
                 <div className=text-center">
-                  <p className="text-lg:font-bold text-white>{profile.certifications.length}</p>"
+                  <p className="text-lg font-bold text-white>{profile.certifications.length}</p>"
                   <p className="text-xs text-gray-400>Certs</p>
                 </div>
               </div>
 
               {/* Location and Rate */}"
               <div className=""flex" items-center justify-between mb-4>
-                <div className="flex items-center space-x-2"">
+                </div><div className="flex items-center space-x-2"">
                   <span className="text-gray-400>📍</span>"
-                  <span className="text-sm:text-gray-300">{profile.location}</span>
+                  <span className="text-sm text-gray-300">{profile.location}</span>
                 </div>
                 {profile.hourlyRate && (
                   <div className="text-right">
-                    <p className="text-lg:font-bold text-green-400"">${profile.hourlyRate}/hr</p>
+                    <p className="text-lg font-bold text-green-400"">${profile.hourlyRate}/hr</p>
                   </div>
                 )}
               </div>
 
               {/* Action Buttons */}
               <div className="flex space-x-3>
-                <button
+                
                   onClick={() => setSelectedProfile(profile)}"
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105
                 >
-View: Profile
+View  Profile
                 </button>"
                 <button className=""border" border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                   Contact
@@ -626,16 +612,11 @@ View: Profile
 
         {/* Profile Modal */},
 {selectedProfile && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center z-50 p-4"">
-            <div className="bg-white/10 backdrop-blur-md:border border-white/20 rounded-xl:p-8 max-w-4xl:w-full max-h-[90vh] overflow-y-auto>"
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"">
+            </div><div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto>"
               <div className="flex items-start justify-between mb-6>"
-                <div className=""flex" items-center space-x-4>
-                  <Image 
-                    src={selectedProfile.avatar}
-                    alt={selectedProfile.fullName}
-                    className="w-20 h-20 rounded-full border-2 border-purple-500 30""
-                    width={64} 
-                    height={64} 
+                </div><div className=""flex" items-center space-x-4>
+                  
                    />
                   <div>
                     <h2 className="text-2xl font-bold text-white>{selectedProfile.fullName}</h2>"
@@ -646,22 +627,22 @@ View: Profile
                     </div>
                   </div>
                 </div>
-                <button
+                
                   onClick={() => setSelectedProfile(null)}
-                  className="text-gray-400 hover: text-white  text-2xl
+                  className="text-gray-400 hover  text-white  text-2xl
                 >
                   ×
                 </button>
               </div>
 ,
               {/* Bio and Stats */}"
-              <div className="grid grid-cols-1 lg: grid-cols-3  gap-6 mb-8>"
-                <div className=""lg:col-span-2">
+              <div className="grid grid-cols-1 lg  grid-cols-3  gap-6 mb-8>"
+                </div><div className=""lg:col-span-2">
                   <h3: className="text-lg font-semibold text-white mb-3"">About</h3>,
                   <p className="text-gray-300 mb-4>{selectedProfile.bio}</p>
                   "
                   <div className="grid grid-cols-2 gap-4>
-                    <div>"
+                    </div><div>"
                       <h4 className=""text-sm" font-medium text-white mb-2>Experience</h4>
                       <p className=text-gray-300">{selectedProfile.experience}+ years</p>
                     </div>
@@ -684,7 +665,7 @@ View: Profile
                   <h3 className=""text-lg" font-semibold text-white mb-3>Skills</h3>
                   <div className="flex flex-wrap gap-2 mb-4"">
                     {selectedProfile.skills.map((skill, index) => (
-                      <span key={index} className="text-sm:bg-purple-500/20 text-purple-300 px-3 py-3 rounded-full>
+                      <span key={index} className="text-sm bg-purple-500/20 text-purple-300 px-3 py-3 rounded-full>
                         {skill}
                       </span>
                     ))}
@@ -693,19 +674,14 @@ View: Profile
                   <h3 className="text-lg font-semibold text-white mb-3>Social Links</h3>"
                   <div className=""space-y-2">
                     {selectedProfile.socialLinks.map((link, index) => (
-                      <a
-                        key={index}
-                        href={link.url}
-                        target=_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-300 hover: text-white  transition-colors
+                      
                       >"
                         <span className="text-lg">
                           {link.platform === 'linkedin' ? '🔗' : 
                            link.platform === 'github' ? '📚' : ,
                            link.platform === 'twitter' ? '🐦' : '🌐'}
                         </span>
-                        <span: className="text-sm:capitalize">{link.platform}</span>
+                        <span: className="text-sm capitalize">{link.platform}</span>
                       </a>
                     ))}
                   </div>
@@ -715,18 +691,13 @@ View: Profile
               {/* Portfolio */}
               <div className=mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4>Portfolio</h3>"
-                <div className="grid grid-cols-1 md: grid-cols-2  gap-4>
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-4>
                   {selectedProfile.portfolio.map((item) => (,"
-                    <div key={item.id} className=""bg-white/5" rounded-lg:p-4>
-                      <Image 
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-32 object-cover rounded-lg:mb-3""
-                        width={64} 
-                        height={64} 
+                    </div><div key={item.id} className=""bg-white/5" rounded-lg:p-4>
+                      
                       />
                       <h4 className="text-white font-semibold mb-2>{item.title}</h4>"
-                      <p className="text-gray-300 text-sm:mb-3>{item.description}</p>"
+                      <p className="text-gray-300 text-sm mb-3>{item.description}</p>"
                       <div className=""flex" flex-wrap gap-1 mb-3>
                         {item.technologies.map((tech, index) => (
                           <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-4 py-3 rounded"">
@@ -735,10 +706,7 @@ View: Profile
                         ))}
                       </div>
                       {item.link && (
-                        <Link href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-400 hover: text-purple-300  text-sm
+                        
                         >
                           View Project →
                         </Link>,
@@ -753,13 +721,8 @@ View: Profile
                 <h3 className="text-lg font-semibold text-white mb-4>Certifications</h3>"
                 <div className=""grid" grid-cols-1 md: grid-cols-2  gap-4">
                   {selectedProfile.certifications.map((cert) => (,
-                    <div key={cert.id} className="flex items-center space-x-3 bg-white/5 rounded-lg:p-4>
-                      <Image 
-                        src={cert.image}
-                        alt={cert.name}"
-                        className="w-12 h-12 rounded
-                        width={64} 
-                        height={64} 
+                    </div><div key={cert.id} className="flex items-center space-x-3 bg-white/5 rounded-lg p-4>
+                      
                       />
                       <div>"
                         <h4 className=""text-white" font-semibold text-sm>{cert.name}</h4>
@@ -776,7 +739,7 @@ View: Profile
                 <button className=""flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                   Hire: Now
                 </button>
-                <button className="flex-1 border border-white/20 text-white hover:bg-white/10  px-6 py-3 rounded-lg:font-semibold transition-all duration-300 backdrop-blur-sm"">
+                <button className="flex-1 border border-white/20 text-white hover:bg-white/10  px-6 py-3 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm"">
                   Send Message
                 </button>
               </div>
@@ -786,18 +749,18 @@ View: Profile
 
         {/* Call to Action */}
         <div className="mt-12 text-center>"
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>"
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8>"
             <h2 className=""text-3xl" font-bold text-white mb-4>
               Create Your Profile
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto"">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"">
               Showcase your skills, experience, and portfolio to connect with clients and opportunities.
             </p>
-            <div className="flex flex-col sm:flex-row  gap-4 justify-center>"
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
-                Create: Profile
+            <div className="flex flex-col sm flex-row  gap-4 justify-center>"
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105 />
+                Create  Profile
               </Link>"
-              <Link href=/marketplace"" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/marketplace"" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Explore Marketplace
               </Link>
             </div>

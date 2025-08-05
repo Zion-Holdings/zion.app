@@ -143,12 +143,12 @@ const FAQ: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -159,30 +159,30 @@ const FAQ: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <Link href=/ className=""text-2xl font-bold />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
               </Link>
             </div>"
             <div className=""flex" items-center space-x-4>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white transition-colors />
+              <Link href=/marketplace" className="text-gray-300 hover text-white transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/about className="text-gray-300 hover:text-white transition-colors />
+              <Link href=/about className="text-gray-300 hover text-white transition-colors />
                 About
               </Link>"
-              <Link href=/contact"" className="text-gray-300 hover:text-white transition-colors />
+              <Link href=/contact"" className="text-gray-300 hover text-white transition-colors />
                 Contact
               </Link>"
-              <Link href=/help-center className="text-gray-300 hover:text-white transition-colors />
+              <Link href=/help-center className="text-gray-300 hover text-white transition-colors />
                 Help Center
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white transition-colors />
+              <Link href=/auth/login"" className="text-gray-300 hover text-white transition-colors />
                 Login
               </Link>"
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:transition-all duration-200 />
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 />
                 Join Zion Now
               </Link>
             </div>
@@ -193,7 +193,7 @@ const FAQ: NextPage = () => {
       <main className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12>"
-          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4>
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4>
             Frequently Asked Questions
           </h1>"
           <p className=""text-xl" text-gray-300 mb-8>
@@ -202,18 +202,17 @@ const FAQ: NextPage = () => {
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-2 md:grid-cols-3"" lg:grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md grid-cols-3"" lg:grid-cols-6 gap-4 mb-12">
           {categories.map((category) => (
-            <button
-              key={category.id}
+            
               onClick={() => setActiveCategory(category.id)}
               className="{`p-4 rounded-lg:border transition-all duration-200 ${
                 activeCategory === category.id
                   ? 'bg-purple-600/20 border-purple-500 text-purple-300'
-                  : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
+                    'bg-white/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20'
               }`}
             >"
-              <div className="text-2xl:mb-2">{category.icon}</div>
+              <div className="text-2xl mb-2">{category.icon}</div>
               <div className="font-medium">{category.name}</div>
             </button>
           ))}
@@ -221,22 +220,17 @@ const FAQ: NextPage = () => {
 
         {/* FAQs */}
         <div className=max-w-4xl:mx-auto">
-          <div className="space-y-4>
+          </div><div className="space-y-4>
             {filteredFAQs.map((faq, index) => ("
-              <div key={index} className="bg-white/5 border border-white/10 rounded-lg:backdrop-blur-sm>
-                <button
+              <div key={index} className="bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm>
+                
                   onClick={() => toggleItem(index)}"
                   className=""w-full" px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors
                 >
                   <h3 className="text-lg font-semibold text-white pr-4"">
                     {faq.question}
                   </h3>
-                  <svg
-                    className="{`w-5 h-5 text-gray-400 transition-transform ${
-                      openItems.has(index) ? 'rotate-180' : ''
-                    }`}
-                    fill=none"
-                    stroke=currentColor viewBox=""0 0 24 24"
+                  
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -255,35 +249,35 @@ const FAQ: NextPage = () => {
 
         {/* Additional Help */}"
         <div className=""mt-16" grid grid-cols-1 md:grid-cols-3 gap-8>
-          <div className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm"">
-            <div className="text-3xl:mb-4>📧</div>"
+          </div><div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm"">
+            <div className="text-3xl mb-4>📧</div>"
             <h3 className="text-xl font-semibold text-white mb-2>Still Need Help?</h3>"
             <p className=""text-gray-300" mb-4>
               Can't find what you're looking for? Our support team is here to help.
             </p>
-            <Link href=/contact" className="text-purple-400 hover:text-purple-300 font-medium />
+            <Link href=/contact" className="text-purple-400 hover text-purple-300 font-medium />
               Contact Support →
             </Link>
           </div>
 "
-          <div className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm>"
-            <div className=""text-3xl:mb-4">📚</div>
+          <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>"
+            </div><div className=""text-3xl:mb-4">📚</div>
             <h3 className="text-xl font-semibold text-white mb-2"">Help Center</h3>
             <p className="text-gray-300 mb-4>
               Detailed guides and tutorials for using Zion's features effectively.
             </p>"
-            <Link href=/help-center className="text-purple-400 hover:text-purple-300 font-medium />
+            <Link href=/help-center className="text-purple-400 hover text-purple-300 font-medium />
               Visit Help Center →
             </Link>
           </div>
 "
           <div className=""bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm">
-            <div className="text-3xl:mb-4>💬</div>"
+            </div><div className="text-3xl mb-4>💬</div>"
             <h3 className="text-xl font-semibold text-white mb-2>Community</h3>"
             <p className=""text-gray-300" mb-4>
               Connect with other users and share tips in our community forum.
             </p>
-            <Link href=/marketplace" className="text-purple-400 hover:text-purple-300 font-medium />
+            <Link href=/marketplace" className="text-purple-400 hover text-purple-300 font-medium />
               Join Community →
             </Link>
           </div>
@@ -291,26 +285,26 @@ const FAQ: NextPage = () => {
       </main>
 
       {/* Footer */}"
-      <footer className="bg-black/40 backdrop-blur-md:border-t border-white/10 mt-16>"
+      <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16>"
         <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-          <div className="text-center text-gray-400"">
+          </div><div className="text-center text-gray-400"">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>
         </div>
       </footer>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>"
-          <div className="flex justify-around items-center py-2>"
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>"
+          </div><div className="flex justify-around items-center py-2>"
             <button className=""flex" flex-col items-center p-2 text-gray-400 hover:text-white>
               <Home className="w-5 h-5"" />
               <span className="text-xs>Home</span>
             </button>"
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white>"
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
               <Search className=""w-5" h-5 />
               <span className=text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white>"
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
               <User className="w-5 h-5 />"
               <span className=text-xs"">Profile</span>
             </button>

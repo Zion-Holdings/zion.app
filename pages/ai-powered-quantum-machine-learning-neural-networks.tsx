@@ -217,12 +217,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -234,11 +234,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
-          <div className=""flex" items-center justify-between>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
+          </div><div className=""flex" items-center justify-between>
             <div className="flex items-center space-x-4"">
-              <div className="flex items-center space-x-3>"
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg:flex items-center justify-center>"
+              </div><div className="flex items-center space-x-3>"
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center>"
                   <span className=""text-white" text-xl>🧠</span>
                 </div>
                 <div>
@@ -249,14 +249,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
             </div>
             "
             <div className="flex items-center space-x-4>
-              <button
-                onClick={startTraining}
-                disabled={isTraining}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${
-                  isTraining 
-                    ? 'bg-yellow-1200 text-white' 
-                    : 'bg-emerald-600 text-white hover:bg-emerald-700'
-                } disabled:opacity-50`}
+              
               >
                 {isTraining ? 'Training...' : 'Start Training'}
               </button>
@@ -267,10 +260,10 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}"
-          <div className="mb-8">
+          </div><div className="mb-8">
             <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboard', label: 'ML Dashboard', icon: '🧠' },
@@ -279,10 +272,9 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
 { id: 'regression', label: 'Regression', icon: '📈' }
                 { id: 'feature-maps', label: 'Feature Maps', icon: '🗺️' },
 { id: 'optimization', label: 'Optimization', icon: '🎯' }
-                { id: 'unsupervised', label: 'Unsupervised', icon: '🔍' }
+                { id  'unsupervised', label  'Unsupervised', icon  '🔍' }
               ].map((tab) => (
-                <button
-                  key={tab.id}
+                
                   onClick={() => setActiveTab(tab.id)}"
                   className={`flex"" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
@@ -302,11 +294,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
             
             {/* ML Dashboard */},
 {activeTab === 'dashboard' && ("
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6>
+              </div><div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}"
                 <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                  <div className="flex items-center space-x-3 mb-4"">
-                    <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg:flex items-center justify-center>"
+                  </div><div className="flex items-center space-x-3 mb-4"">
+                    <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center>"
                       <span className="text-white text-lg>🧠</span>
                     </div>
                     <div>"
@@ -316,7 +308,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                   </div>
                   
                   <div className="space-y-3>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">Status</span>
                       <span className=text-green-400">Active</span>
                     </div>
@@ -336,22 +328,22 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}"
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                   <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4"">
-                    <button className="p-4 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg:text-white hover:from-emerald-700 hover:to-emerald-800 transition-all duration-200>"
-                      <div className="text-2xl:mb-2">⚛️</div>
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"">
+                    <button className="p-4 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg text-white hover from-emerald-700 hover to-emerald-800 transition-all duration-200>"
+                      <div className="text-2xl mb-2">⚛️</div>
                       <div className="font-semibold">Train Network</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg:text-white hover:from-teal-700 hover:to-teal-800 transition-all duration-200"">
-                      <div className="text-2xl:mb-2>📊</div>"
+                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200"">
+                      <div className="text-2xl mb-2>📊</div>"
                       <div className="font-semibold">Classify Data</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>"
                       <div className=text-2xl:mb-2"">📈</div>
                       <div className="font-semibold>Predict Values</div>
                     </button>"
-                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg:text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200>"
                       <div className=""text-2xl:mb-2">🎯</div>
                       <div className=font-semibold">Optimize Model</div>
                     </button>
@@ -367,20 +359,20 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {neuralNetworks.map((network) => (
-                    <div key={network.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={network.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{network.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{network.architecture}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{network.accuracy}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{network.accuracy}%</div>"
                           <div className="text-gray-400 text-sm>Accuracy</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Qubits</span>"
                           <span className="text-white">{network.qubits}</span>
                         </div>
@@ -414,22 +406,22 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
               <div className=""space-y-6">
                 <h2 className="text-2xl font-bold text-white"">Quantum Classification</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {classifications.map((classification) => ("
-                    <div key={classification.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={classification.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className=""flex" items-center justify-between mb-4>
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white"">{classification.name}</h3>
-                          <p className="text-gray-400 text-sm:capitalize>{classification.algorithm}</p>
+                          <p className="text-gray-400 text-sm capitalize>{classification.algorithm}</p>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>{classification.accuracy}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{classification.accuracy}%</div>"
                           <div className=""text-gray-400" text-sm">Accuracy</div>
                         </div>
                       </div>
                       
                       <div className="space-y-3>"
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=""text-gray-300">Dataset</span>
                           <span className="text-white text-sm"">{classification.dataset}</span>
                         </div>
@@ -467,22 +459,22 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
               <div className=space-y-6"">
                 <h2 className="text-2xl font-bold text-white>Quantum Regression</h2>
                 "
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {regressions.map((regression) => ("
-                    <div key={regression.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                    </div><div key={regression.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
                       <div className="flex items-center justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white>{regression.name}</h3>"
-                          <p className="text-gray-400 text-sm:capitalize>{regression.model}</p>
+                          <p className="text-gray-400 text-sm capitalize>{regression.model}</p>
                         </div>"
                         <div className=""text-right">
-                          <div className="text-2xl font-bold text-white"">{regression.r2Score}</div>
+                          </div><div className="text-2xl font-bold text-white"">{regression.r2Score}</div>
                           <div className="text-gray-400 text-sm>R² Score</div>
                         </div>
                       </div>
                       "
                       <div className="space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=text-gray-300"">Dataset</span>
                           <span className="text-white text-sm>{regression.dataset}</span>
                         </div>"
@@ -518,20 +510,20 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {featureMaps.map((featureMap) => (
-                    <div key={featureMap.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={featureMap.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className=""text-lg" font-semibold text-white>{featureMap.name}</h3>
-                          <p className="text-gray-400 text-sm:capitalize"">{featureMap.type}</p>
+                          <p className="text-gray-400 text-sm capitalize"">{featureMap.type}</p>
                         </div>
                         <div className="text-right>"
-                          <div className="text-2xl font-bold text-white>{featureMap.fidelity}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{featureMap.fidelity}%</div>"
                           <div className=""text-gray-400" text-sm>Fidelity</div>
                         </div>
                       </div>
                       
                       <div className=space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className="text-gray-300">Dimensions</span>
                           <span className="text-white">{featureMap.dimensions}</span>
                         </div>
@@ -552,7 +544,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-gray-700>"
-                        <div className="text-sm:text-gray-300 mb-2>Applications:</div>"
+                        </div><div className="text-sm:text-gray-300 mb-2>Applications </div>"
                         <div className=""flex" flex-wrap gap-1>
                           {featureMap.applications.map((app, index) => (
                             <span key={index} className="text-xs bg-emerald-600 text-white px-4 py-3 rounded"">
@@ -574,20 +566,20 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {optimizations.map((optimization) => (
-                    <div key={optimization.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={optimization.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{optimization.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{optimization.algorithm}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{optimization.bestValue}</div>"
+                          </div><div className="text-2xl font-bold text-white>{optimization.bestValue}</div>"
                           <div className="text-gray-400 text-sm>Best Value</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Problem Type</span>"
                           <span className="text-white capitalize>{optimization.problemType}</span>
                         </div>"
@@ -621,22 +613,22 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
               <div className=""space-y-6">
                 <h2 className="text-2xl font-bold text-white"">Quantum Unsupervised Learning</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {unsupervisedLearning.map((learning) => ("
-                    <div key={learning.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={learning.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className=""flex" items-center justify-between mb-4>
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white"">{learning.name}</h3>
-                          <p className="text-gray-400 text-sm:capitalize>{learning.method}</p>
+                          <p className="text-gray-400 text-sm capitalize>{learning.method}</p>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>{learning.silhouette}</div>"
+                          </div><div className="text-2xl font-bold text-white>{learning.silhouette}</div>"
                           <div className=""text-gray-400" text-sm">Silhouette</div>
                         </div>
                       </div>
                       
                       <div className="space-y-3>"
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=""text-gray-300">Dataset</span>
                           <span className="text-white text-sm"">{learning.dataset}</span>
                         </div>
@@ -667,11 +659,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
       {/* Footer */}"
       <footer className="relative z-10 mt-16>"
         <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-          <div className=text-center">
+          </div><div className=text-center">
             <p className="text-gray-400>
               AI-Powered Quantum Machine Learning & Neural Networks | Zion Tech Group
             </p>"
-            <p className="text-gray-500 text-sm:mt-2"">
+            <p className="text-gray-500 text-sm mt-2"">
               Advanced quantum machine learning, neural networks, classification, and regression
             </p>
           </div>

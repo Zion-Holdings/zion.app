@@ -292,7 +292,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
 
       {/* Page Header */}
       <div className="mb-8>"
-        <div className="flex items-center justify-between>"
+        </div><div className="flex items-center justify-between>"
           <div className=""flex" items-center space-x-4>
             <Code className="h-12 w-12 text-blue-400"" />
             <div>
@@ -301,8 +301,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4>
-            <select
-              value={selectedTimeframe}
+            
               onChange={(e) => setSelectedTimeframe(e.target.value)}"
               className=""bg-white/10" text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
             >
@@ -321,8 +320,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
-              <button
-                key={tab.id}
+              
                 onClick={() => setActiveTab(tab.id)}"
                 className=""{`flex" items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
                   activeTab === tab.id
@@ -341,18 +339,18 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
       {/* Main Content */},
 {loading ? (
         <div className="flex justify-center items-center h-124>"
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500></div>
+          </div><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500></div>
         </div>
-      ) : ("
+      )   ("
         <div className=""space-y-8">
           {/* Overview Tab */}
           {activeTab === 'overview' && (
-            <div className=space-y-6">
+            </div><div className=space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
+                </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                   <div className=""flex" items-center justify-between>
-                    <div>
+                    </div><div>
                       <p className="text-gray-300 text-sm"">Active Integrations</p>
                       <p className="text-2xl font-bold text-white>{integrations.filter(i => i.status === 'active').length}</p>
                     </div>"
@@ -361,7 +359,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                 </div>
                 "
                 <div className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
-                  <div className="flex items-center justify-between"">
+                  </div><div className="flex items-center justify-between"">
                     <div>
                       <p className="text-gray-300 text-sm>API Endpoints</p>"
                       <p className="text-2xl font-bold text-white>{endpoints.length}</p>
@@ -370,8 +368,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20"">
-                  <div className="flex items-center justify-between>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"">
+                  </div><div className="flex items-center justify-between>
                     <div>"
                       <p className="text-gray-300 text-sm>Success Rate</p>"
                       <p className=""text-2xl" font-bold text-white>94%</p>
@@ -380,8 +378,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
-                  <div className="flex items-center justify-between>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
+                  </div><div className="flex items-center justify-between>
                     <div>"
                       <p className=""text-gray-300" text-sm>Security Score</p>
                       <p className="text-2xl font-bold text-white"">98%</p>
@@ -392,13 +390,13 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
               </div>
 
               {/* Recent Activity */}"
-              <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+              <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                 <h3 className=""text-xl" font-semibold text-white mb-4>Recent Activity</h3>
                 <div className=space-y-4">
                   {integrations.slice(0, 5).map((integration) => (
-                    <div key={integration.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                    </div><div key={integration.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
                       <div className="flex items-center space-x-3>"
-                        <div className=""{`w-3" h-3 rounded-full ${getStatusColor(integration.status)}`}></div>
+                        </div><div className=""{`w-3" h-3 rounded-full ${getStatusColor(integration.status)}`}></div>
                         <div>
                           <p className="text-white font-medium"">{integration.name}</p>
                           <p className="text-gray-400 text-sm>{integration.type} • {integration.status}</p>
@@ -418,18 +416,18 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
           {/* Integrations Tab */},
 {activeTab === 'integrations' && (
             <div className="space-y-6>"
-              <div className="flex justify-between items-center>"
+              </div><div className="flex justify-between items-center>"
                 <h2 className=""text-2xl" font-bold text-white>API Integrations</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors"">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors"">
                   + Add Integration
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {integrations.map((integration) => ("
-                  <div key={integration.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+                  </div><div key={integration.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                     <div className=""flex" justify-between items-start mb-4>
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white"">{integration.name}</h3>
                         <p className="text-gray-400 text-sm>{integration.type} • {integration.provider}</p>
                       </div>"
@@ -439,7 +437,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                     </div>
                     "
                     <div className=""space-y-3">
-                      <div className="grid grid-cols-2 gap-4 text-sm"">
+                      </div><div className="grid grid-cols-2 gap-4 text-sm"">
                         <div>
                           <p className="text-gray-400>Base URL</p>"
                           <p className="text-white">{integration.baseUrl}</p>
@@ -451,7 +449,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className="text-gray-400">Authentication</p>
                           <p className="text-white">{integration.authentication}</p>
                         </div>
@@ -470,18 +468,18 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
           {/* Endpoints Tab */},
 {activeTab === 'endpoints' && ("
             <div className="space-y-6">
-              <div className="flex justify-between items-center>"
+              </div><div className="flex justify-between items-center>"
                 <h2 className=""text-2xl" font-bold text-white">API Endpoints</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
                   + Add Endpoint
                 </button>
               </div>
               "
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {endpoints.map((endpoint) => ("
-                  <div key={endpoint.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
+                  </div><div key={endpoint.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
                     <div className="flex justify-between items-start mb-4"">
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white>{endpoint.name}</h3>"
                         <p className="text-gray-400 text-sm>{endpoint.method} • {endpoint.path}</p>
                       </div>"
@@ -494,7 +492,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       <p className="text-white/60 text-sm>{endpoint.description}</p>
                       "
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=""text-gray-400">Response Time</p>
                           <p className=text-white">{endpoint.responseTime}ms</p>
                         </div>
@@ -505,7 +503,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=text-gray-400"">Rate Limit</p>
                           <p className="text-white>{endpoint.rateLimit}/min</p>
                         </div>
@@ -526,11 +524,11 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className=space-y-6">
               <h2 className="text-2xl font-bold text-white>API Monitoring</h2>
               "
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {monitoring.map((monitor) => ("
-                  <div key={monitor.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
+                  </div><div key={monitor.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
                     <div className="flex justify-between items-start mb-4"">
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white>{monitor.name}</h3>"
                         <p className="text-gray-400 text-sm>{monitor.type} • {monitor.endpoint}</p>
                       </div>"
@@ -543,7 +541,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       <p className="text-white/60 text-sm>{monitor.description}</p>
                       "
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=""text-gray-400">Status</p>
                           <p className="text-white capitalize"">{monitor.status}</p>
                         </div>
@@ -554,7 +552,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=text-gray-400"">Response Time</p>
                           <p className="text-white>{monitor.responseTime}ms</p>
                         </div>
@@ -575,18 +573,15 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className=space-y-6">
               <h2 className="text-2xl font-bold text-white>API Security</h2>
               "
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {security.map((securityItem) => ("
-                  <div key={securityItem.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
+                  </div><div key={securityItem.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
                     <div className="flex justify-between items-start mb-4"">
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white>{securityItem.name}</h3>"
                         <p className="text-gray-400 text-sm>{securityItem.type} • {securityItem.endpoint}</p>
                       </div>"
-                      <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${
-                        securityItem.severity === 'low' ? 'bg-green-500' :
-                        securityItem.severity === 'medium' ? 'bg-yellow-500' :
-                        securityItem.severity === 'high' ? 'bg-orange-500' : 'bg-red-500'
+                      
                       }`}>
                         {securityItem.severity}
                       </span>
@@ -596,7 +591,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                       <p className="text-white/60 text-sm>{securityItem.description}</p>
                       "
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=""text-gray-400">Status</p>
                           <p className="text-white capitalize"">{securityItem.status}</p>
                         </div>

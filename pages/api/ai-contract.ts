@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Mock AI generation (replace with real AI integration as needed
   const contract = `
     <div style="font-family: 'Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;">
-      <div style="text-align: center; margin-bottom: 30px;">
+      </div><div style="text-align: center; margin-bottom: 30px;">
         <h1 style="font-size: 24px; margin-bottom: 10px; color: #333;">${contractType}</h1>
         <p style="font-size: 14px; color: #666;">Generated on ${new Date().toLocaleDateString()}</p>
       </div>
@@ -76,13 +76,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       <div style="margin-bottom: 30px;">
         <h2 style="font-size: 18px; margin-bottom: 15px; color: #333;">8. SIGNATURES</h2>
         <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-          <div style="text-align: center; width: 45%;">
+          </div><div style="text-align: center; width: 45%;">
             <div style="border-bottom: 1px solid #333; height: 40px; margin-bottom: 10px;"></div>
             <p style="font-size: 14px; color: #666;">${party1Name}</p>
             <p style="font-size: 12px; color: #999;">Date: ________________</p>
           </div>
           <div style="text-align: center; width: 45%;">
-            <div style="border-bottom: 1px solid #333; height: 40px; margin-bottom: 10px;"></div>
+            </div><div style="border-bottom: 1px solid #333; height: 40px; margin-bottom: 10px;"></div>
             <p style="font-size: 14px; color: #666;">${party2Name}</p>
             <p style="font-size: 12px; color: #999;">Date: ________________</p>
           </div>

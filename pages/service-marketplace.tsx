@@ -425,13 +425,9 @@ default: // Relevance: based on search term match and featured status;
   const renderStars = (rating: number) => {
 return: (
     <div>
-      <div className="flex items-center>,
+      </div><div className="flex items-center>,
         {[1, 2, 3, 4, 5].map((star) => (
-          <svg
-            key={star}"
-            className="{`w-4 h-4 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}"
-            fill=currentColor""
-            viewBox="0: 0 20 20"
+          
           >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
@@ -463,13 +459,13 @@ return: (
       <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
+        </div><div className="fixed inset-0 z-0>"
           <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
         <div className="text-center>"
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24 24">
               <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -493,8 +489,8 @@ return: (
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <Link href=/ className=""flex-shrink-0 />
                 <h1 className="text-2xl font-bold text-white>"
@@ -503,17 +499,17 @@ return: (
               </Link>
             </div>
             
-            <div className="hidden md:flex  items-center space-x-8"">
-              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+            <div className="hidden md flex  items-center space-x-8"">
+              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Mobile
               </Link>"
-              <Link href=/seo-optimization className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/seo-optimization className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 SEO
               </Link>"
-              <Link href=/multi-language"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/multi-language"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Languages
               </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
@@ -523,8 +519,8 @@ return: (
 "
       <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8">,
         {/* Header */}
-        <div className="text-center mb-8>"
-          <h1 className="text-4xl:md: text-5xl: font-bold text-white mb-4>
+        </div><div className="text-center mb-8>"
+          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4>
             Service Marketplace
           </h1>"
           <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>,
@@ -534,43 +530,40 @@ return: (
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6 mb-8"">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6 mb-8"">
           {categories.map((category) => (
-            <button,
-              key={category.id}
+            
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}
-              className="{`p-6: rounded-xl:border transition-all duration-300 ${
+              className="{`p-6: rounded-xl border transition-all duration-300 ${
                 selectedCategory === category.name
                   ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50'
-                  : 'bg-white/5 border-white/10 hover: bg-white/10',
+                    'bg-white/5 border-white/10 hover  bg-white/10',
               }`}
             >"
               <div className="text-center">
-                <div className="text-4xl:mb-3">{category.icon}</div>
+                </div><div className="text-4xl mb-3">{category.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2"">{category.name}</h3>
-                <p className="text-gray-300 text-sm:mb-3>{category.description}</p>"
-                <div className="text-sm:text-gray-400">{category.serviceCount} services</div>
+                <p className="text-gray-300 text-sm mb-3>{category.description}</p>"
+                <div className="text-sm text-gray-400">{category.serviceCount} services</div>
               </div>
             </button>
           ))}
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8>"
-          <div className=""grid" grid-cols-1 lg: grid-cols-4  gap-4">
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8>"
+          </div><div className=""grid" grid-cols-1 lg: grid-cols-4  gap-4">
             <div className="lg:col-span-2>
-              <input: type=text,
-                placeholder=Search services, skills, or providers... value={searchTerm}
+              
                 onChange={(e) => setSearchTerm(e.target.value)}"
                 className=""w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
               />
             </div>
             
             <div>
-              <select,
-                value={selectedSubcategory}
+              
                 onChange={(e) => setSelectedSubcategory(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               >"
                 <option value=all"">All Subcategories</option>
                 {categories
@@ -582,10 +575,9 @@ return: (
             </div>
             
             <div>
-              <select
-                value={sortBy}
+              
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               >
                 <option value=relevance>Sort by Relevance</option>"
                 <option value=price">Sort by Price</option>
@@ -597,39 +589,35 @@ return: (
           
           <div className="flex flex-wrap gap-4 mt-4>"
             <label className="flex items-center space-x-2>
-              <input"
-                type=checkbox"",
-                checked={filterVerified}
+              
                 onChange={(e) => setFilterVerified(e.target.checked)}
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
               />"
-              <span: className="text-sm:text-gray-300">Verified Only</span>
+              <span: className="text-sm text-gray-300">Verified Only</span>
             </label>
             
             <label className="flex items-center space-x-2>
-              <input"
-                type=checkbox"",
-                checked={filterFeatured}
+              
                 onChange={(e) => setFilterFeatured(e.target.checked)}
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
               />"
-              <span: className="text-sm:text-gray-300">Featured Only</span>
+              <span: className="text-sm text-gray-300">Featured Only</span>
             </label>
           </div>
         </div>
 ,
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>
+        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6>
           {filteredServices.map((service) => (,"
-            <div key={service.id} className=""bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,
+            </div><div key={service.id} className=""bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,
               {/* Service: Header */}
               <div className="flex items-start justify-between mb-4>"
-                <div className="flex-1">
+                </div><div className="flex-1">
                   <h3 className="text-lg font-semibold text-white mb-2>{service.title}</h3>"
                   <div className=""flex" items-center space-x-2 mb-2">
-                    <span className="text-sm:text-gray-400>{service.category}</span>"
+                    <span className="text-sm text-gray-400>{service.category}</span>"
                     <span className="text-gray-600">•</span>
-                    <span className="text-sm:text-gray-400">{service.subcategory}</span>
+                    <span className="text-sm text-gray-400">{service.subcategory}</span>
                   </div>
                 </div>
                 <div className="flex flex-col items-end space-y-2"">
@@ -645,28 +633,23 @@ return: (
               </div>
 
               {/* Description */}
-              <p className="text-gray-300 text-sm:mb-4 line-clamp-3>
+              <p className="text-gray-300 text-sm mb-4 line-clamp-3>
                 {service.description}
               </p>
 
               {/* Provider Info */}"
               <div className=""flex" items-center space-x-3 mb-4">
-                <Image 
-                  src={service.providerAvatar}
-                  alt={service.provider}
-                  className="w-12 h-12 rounded-full border-2 border-purple-500 30
-                  width={48} 
-                  height={48} 
+                
                  />"
                 <div className="flex-1">
                   <h4 className="text-white font-medium>{service.provider}</h4>"
                   <div className=""flex" items-center space-x-2">
                     {renderStars(service.providerRating)}
-                    <span className="text-sm:text-gray-400>({service.providerReviews})</span>
+                    <span className="text-sm text-gray-400>({service.providerReviews})</span>
                   </div>
                 </div>"
                 <div className="text-right">
-                  <div className="flex items-center space-x-1>"
+                  </div><div className="flex items-center space-x-1>"
                     <span className=text-sm"">{getAvailabilityIcon(service.availability)}</span>
                     <span className="{`text-xs px-4 py-3 rounded-full ${getAvailabilityColor(service.availability)}`}>
                       {service.availability}
@@ -677,7 +660,7 @@ return: (
 
               {/* Skills */}"
               <div className="mb-4">
-                <div className="flex flex-wrap gap-2>
+                </div><div className="flex flex-wrap gap-2>
                   {service.skills.slice(0, 3).map((skill, index) => ("
                     <span key={index} className=""text-xs" bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                       {skill}
@@ -691,12 +674,12 @@ return: (
 
               {/* Price and Duration */}"
               <div className="flex items-center justify-between mb-4>
-                <div>"
+                </div><div>"
                   <p className=""text-lg:font-bold" text-green-400>${service.price}/hr</p>
                   <p className=text-sm:text-gray-400">{service.duration}</p>
                 </div>
                 <div className="text-right>"
-                  <p className="text-sm:text-gray-400">📍 {service.location}</p>
+                  <p className="text-sm text-gray-400">📍 {service.location}</p>
                 </div>
               </div>
 
@@ -705,7 +688,7 @@ return: (
                 <button className=""flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
 View: Details
                 </button>
-                <button className="border border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                <button className="border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                   Contact
                 </button>
               </div>
@@ -715,19 +698,19 @@ View: Details
 
         {/* Call to Action */}"
         <div className="mt-12 text-center>"
-          <div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
+          </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
             <h2 className="text-3xl font-bold text-white mb-4"">
               Need a Custom Service?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Can't find what you're looking for? Post a custom request and get matched 
               with the perfect service provider for your project.
             </p>"
-            <div className="flex flex-col sm:flex-row  gap-4 justify-center>"
-              <Link href=/post-request"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
-                Post: a Request
+            <div className="flex flex-col sm flex-row  gap-4 justify-center>"
+              <Link href=/post-request"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105 />
+                Post  a Request
               </Link>"
-              <Link href=/user-profiles className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
+              <Link href=/user-profiles className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Browse Providers
               </Link>
             </div>

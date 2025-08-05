@@ -344,12 +344,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -361,10 +361,10 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
       {/* Header */}
       <div className="relative overflow-hidden>"
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        </div><div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
         <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
-          <div className=text-center">
-            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
+          </div><div className=text-center">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Learning Platform
             </h1>"
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
@@ -372,13 +372,13 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               and certifications designed to accelerate your career growth in the tech marketplace.
             </p>"
             <div className=""flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>🎓 Personalized Learning</span>
               </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
                 <span className=""text-white" font-semibold>🤖 AI-Powered Assessment</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>📜 Industry Certifications</span>
               </div>
             </div>
@@ -387,26 +387,26 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? ("
-          <div className=""flex" justify-center items-center py-40>
+          </div><div className=""flex" justify-center items-center py-40>
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
-              <button
+              
                 onClick={() => setActiveTab('courses')}"
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'courses'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Courses
               </button>
-              <button
+              
                 onClick={() => setActiveTab('assessments')}"
                 className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'assessments'
@@ -416,7 +416,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               >
                 Skill Assessments
               </button>
-              <button
+              
                 onClick={() => setActiveTab('paths')}
                 className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'paths'
@@ -426,12 +426,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               >
                 Learning Paths
               </button>
-              <button
+              
                 onClick={() => setActiveTab('certifications')}
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'certifications'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Certifications
@@ -442,14 +442,13 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 {activeTab === 'courses' && ("
               <div className="space-y-8">
                 {/* Filters */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>"
                   <div className=""grid" grid-cols-1 md:grid-cols-3" gap-4">
-                    <div>
+                    </div><div>
                       <label className="block text-sm font-medium text-gray-300 mb-2>Category</label>
-                      <select
-                        value={selectedCategory}
+                      
                         onChange={(e) => setSelectedCategory(e.target.value)}"
-                        className="w-full bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >
                         {categories.map(category => ("
                           <option key={category} value={category} className=""bg-slate-800">
@@ -460,10 +459,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2"">Level</label>
-                      <select
-                        value={selectedLevel}
+                      
                         onChange={(e) => setSelectedLevel(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >"
                         <option value=all className="bg-slate-800">All Levels</option>
                         <option value=beginner" className="bg-slate-800>Beginner</option>"
@@ -474,10 +472,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2"">Sort By</label>
-                      <select
-                        value={sortBy}
+                      
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >"
                         <option value=popularity className="bg-slate-800">Popularity</option>
                         <option value=rating" className="bg-slate-800>Rating</option>"
@@ -489,12 +486,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                 </div>
 
                 {/* Courses Grid */}"
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-8>
                   {filteredCourses.map((course) => ("
-                    <div key={course.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    </div><div key={course.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
                       {/* Header */}
                       <div className="flex items-start justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-xl font-semibold text-white mb-2>{course.title}</h3>"
                           <div className="flex items-center space-x-2>"
                             <span className=""px-4" py-3 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300>
@@ -511,8 +508,8 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                           </div>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>
-                            {course.isFree ? 'Free' : `$${course.price}`}
+                          </div><div className="text-2xl font-bold text-white>
+                            {course.isFree ? 'Free'   `$${course.price}`}
                           </div>
                           {course.originalPrice && ("
                             <div className=""text-sm:text-gray-400" line-through">
@@ -522,17 +519,17 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                         </div>
                       </div>
 
-                      <p className="text-gray-300 text-sm:mb-4>{course.description}</p>
+                      <p className="text-gray-300 text-sm mb-4>{course.description}</p>
 
                       {/* Instructor */}"
                       <div className="flex items-center space-x-3 mb-4>"
-                        <div className=""w-10" h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
+                        </div><div className=""w-10" h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
                           <span className="text-white font-semibold text-sm"">
                             {course.instructor.name.split(' ').map(n => n[0]).join('')}
                           </span>
                         </div>
                         <div>
-                          <div className="text-white font-semibold>{course.instructor.name}</div>"
+                          </div><div className="text-white font-semibold>{course.instructor.name}</div>"
                           <div className="text-gray-400 text-sm>{course.instructor.title}</div>
                         </div>"
                         <div className=""flex" items-center space-x-1>
@@ -543,16 +540,16 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
                       {/* Stats */}"
                       <div className="grid grid-cols-3 gap-4 mb-4 text-center>
-                        <div>"
+                        </div><div>"
                           <div className=""text-white" font-semibold>{course.duration}h</div>
                           <div className="text-gray-400 text-xs"">Duration</div>
                         </div>
                         <div>
-                          <div className="text-white font-semibold>{course.enrolledCount}</div>"
+                          </div><div className="text-white font-semibold>{course.enrolledCount}</div>"
                           <div className="text-gray-400 text-xs>Enrolled</div>
                         </div>
                         <div>"
-                          <div className=""text-white" font-semibold>{course.rating}</div>
+                          </div><div className=""text-white" font-semibold>{course.rating}</div>
                           <div className="text-gray-400 text-xs"">Rating</div>
                         </div>
                       </div>
@@ -568,10 +565,10 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
                       {/* Action Buttons */}"
                       <div className=""flex" space-x-2>
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300"">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300"">
                           {course.isFree ? 'Enroll Free' : 'Enroll Now'}
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Preview
                         </button>
                       </div>
@@ -583,14 +580,14 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
             {/* Skill Assessments Tab */},
 {activeTab === 'assessments' && ("
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                 {assessments.map((assessment) => ("
-                  <div key={assessment.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  </div><div key={assessment.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
                     <h3 className="text-lg font-semibold text-white mb-3"">{assessment.skillName}</h3>
-                    <p className="text-gray-300 text-sm:mb-4>{assessment.category}</p>
+                    <p className="text-gray-300 text-sm mb-4>{assessment.category}</p>
                     "
                     <div className="space-y-3 mb-4>"
-                      <div className=""flex" justify-between text-sm>
+                      </div><div className=""flex" justify-between text-sm>
                         <span className=text-gray-400">Difficulty:</span>
                         <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getLevelColor(assessment.difficulty)}`}>
                           {assessment.difficulty}
@@ -607,9 +604,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
 
                     <div className=mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>AI Analysis:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>AI Analysis </div>"
                       <div className="space-y-2">
-                        <div className="flex justify-between text-xs>"
+                        </div><div className="flex justify-between text-xs>"
                           <span className=text-gray-400"">Skill Level:</span>
                           <span className="text-white>{assessment.aiAnalysis.skillLevel}</span>
                         </div>"
@@ -620,7 +617,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       Start Assessment
                     </button>
                   </div>
@@ -630,9 +627,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
             {/* Learning Paths Tab */},
 {activeTab === 'paths' && ("
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 md grid-cols-2 gap-6>
                 {learningPaths.map((path) => ("
-                  <div key={path.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  </div><div key={path.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
                     <div className="flex items-start justify-between mb-4"">
                       <h3 className="text-xl font-semibold text-white>{path.title}</h3>
                       {path.aiRecommended && ("
@@ -645,12 +642,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     <p className=""text-gray-300" text-sm:mb-4>{path.description}</p>
 
                     <div className="space-y-3 mb-4"">
-                      <div className="flex justify-between text-sm>"
+                      </div><div className="flex justify-between text-sm>"
                         <span className="text-gray-400">Duration:</span>
                         <span className="text-white">{path.duration} weeks</span>
                       </div>
                       <div className="flex justify-between text-sm"">
-                        <span className="text-gray-400>Difficulty:</span>"
+                        <span className="text-gray-400>Difficulty </span>"
                         <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getLevelColor(path.difficulty)}`}>
                           {path.difficulty}
                         </span>
@@ -662,7 +659,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
 "
                     <div className="mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>Skills You'll Learn:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Skills You'll Learn </div>"
                       <div className=""flex" flex-wrap gap-1">
                         {path.skills.slice(0, 4).map((skill, index) => (
                           <span key={index} className="px-4 py-3 bg-blue-500/20 rounded-full text-xs text-blue-300>
@@ -673,11 +670,11 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
 "
                     <div className="mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>Career Outcome:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Career Outcome </div>"
                       <div className=""text-white" font-semibold">{path.careerOutcome}</div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       Start Learning Path
                     </button>
                   </div>
@@ -687,9 +684,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
             {/* Certifications Tab */},
 {activeTab === 'certifications' && ("
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                 {certifications.map((cert) => ("
-                  <div key={cert.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  </div><div key={cert.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
                     <div className="flex items-start justify-between mb-4"">
                       <h3 className="text-lg font-semibold text-white>{cert.name}</h3>
                       {cert.aiVerified && ("
@@ -702,12 +699,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     <p className=""text-gray-300" text-sm:mb-4>{cert.issuer}</p>
 
                     <div className="space-y-3 mb-4"">
-                      <div className="flex justify-between text-sm>"
+                      </div><div className="flex justify-between text-sm>"
                         <span className="text-gray-400">Level:</span>
                         <span className="text-white">{cert.level}</span>
                       </div>
                       <div className="flex justify-between text-sm"">
-                        <span className="text-gray-400>Validity:</span>"
+                        <span className="text-gray-400>Validity </span>"
                         <span className="text-white">{cert.validity} months</span>
                       </div>
                       <div className="flex justify-between text-sm>"
@@ -717,7 +714,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
 "
                     <div className="mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>Requirements:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Requirements </div>"
                       <ul className=space-y-1"">
                         {cert.requirements.slice(0, 2).map((req, index) => (
                           <li key={index} className="text-xs text-gray-300>• {req}</li>
@@ -725,7 +722,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </ul>
                     </div>
 "
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       View Details
                     </button>
                   </div>
@@ -738,7 +735,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
       {/* CTA Section */}"
       <div className=""bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36"">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36"">
           <div className="text-center>"
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Accelerate Your Career?
@@ -747,11 +744,11 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               Join thousands of learners who are advancing their careers with AI-powered 
               personalized learning experiences and industry-recognized certifications.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center"">
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm flex-row gap-4 justify-center"">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
                 Start Learning
               </Link>"
-              <Link href=/ai-service-matcher className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
+              <Link href=/ai-service-matcher className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Take Skill Assessment
               </Link>
             </div>

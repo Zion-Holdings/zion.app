@@ -225,12 +225,12 @@ Best regards,
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -241,19 +241,19 @@ Best regards,
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>"
             <div className=""flex" items-center space-x-4>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Marketplace
               </Link>"
-              <Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Services
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>
             </div>
@@ -261,10 +261,10 @@ Best regards,
         </div>
       </div>
 "
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {/* Hero Section */}"
-        <div className=""text-center" mb-12>
-          <h1 className="text-4xl md:text-6xlfont-bold text-white mb-6"">
+        </div><div className=""text-center" mb-12>
+          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6"">
             AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span>
           </h1>"
           <p className="text-xl text-gray-300 max-w-3xl mx-auto>
@@ -275,21 +275,18 @@ Best regards,
         {showForm ? (
           /* Startup Profile Form */"
           <div className=""max-w-4xl:mx-auto">
-            <div className="bg-white/5 backdrop-blur-md:rounded-2xl:p-8 border border-white/10"">
+            </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10"">
               <h2 className="text-2xl font-bold text-white mb-6>Tell Us About Your Startup</h2>
               "
               <form onSubmit={handleProfileSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6>
-                  <div>"
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6>
+                  </div><div>"
                     <label className=""block" text-sm font-medium text-gray-300 mb-2">
                       Startup Name *
                     </label>
-                    <input
-                      type="text"
-                      required
-                      value={startupProfile.name}
+                    
                       onChange={(e) => setStartupProfile({...startupProfile, name: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
                       placeholder=Enter your startup name
                     />
                   </div>
@@ -298,10 +295,8 @@ Best regards,
                     <label className="block text-sm font-medium text-gray-300 mb-2>
                       Industry *
                     </label>
-                    <select
-                      required
-                      value={startupProfile.industry}
-                      onChange={(e) => setStartupProfile({...startupProfile, industry: e.target.value})}"
+                    
+                      onChange={(e) => setStartupProfile({...startupProfile, industry  e.target.value})}"
                       className=""w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Industry</option>
@@ -315,11 +310,9 @@ Best regards,
                     <label className="block text-sm font-medium text-gray-300 mb-2>
                       Development Stage *
                     </label>
-                    <select
-                      required
-                      value={startupProfile.stage}
-                      onChange={(e) => setStartupProfile({...startupProfile, stage: e.target.value})}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
+                    
+                      onChange={(e) => setStartupProfile({...startupProfile, stage  e.target.value})}"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500
                     >"
                       <option value="">Select Stage</option>
                       {stages.map(stage => (
@@ -332,11 +325,9 @@ Best regards,
                     <label className="block text-sm font-medium text-gray-300 mb-2>
                       Location
                     </label>
-                    <input
-                      type=text
-                      value={startupProfile.location}
-                      onChange={(e) => setStartupProfile({...startupProfile, location: e.target.value})}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
+                    
+                      onChange={(e) => setStartupProfile({...startupProfile, location  e.target.value})}"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
                       placeholder=City, State/Country""
                     />
                   </div>
@@ -345,10 +336,9 @@ Best regards,
                     <label className="block text-sm font-medium text-gray-300 mb-2>
                       Team Size
                     </label>
-                    <select
-                      value={startupProfile.teamSize}
-                      onChange={(e) => setStartupProfile({...startupProfile, teamSize: e.target.value})}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
+                    
+                      onChange={(e) => setStartupProfile({...startupProfile, teamSize  e.target.value})}"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500
                     >"
                       <option value="">Select Team Size</option>
                       {teamSizes.map(size => (
@@ -361,11 +351,9 @@ Best regards,
                     <label className="block text-sm font-medium text-gray-300 mb-2>
                       Funding Needed *
                     </label>
-                    <select
-                      required
-                      value={startupProfile.fundingNeeded}
-                      onChange={(e) => setStartupProfile({...startupProfile, fundingNeeded: e.target.value})}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
+                    
+                      onChange={(e) => setStartupProfile({...startupProfile, fundingNeeded  e.target.value})}"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500
                     >"
                       <option value="">Select Funding Range</option>
                       {fundingRanges.map(range => (
@@ -379,11 +367,9 @@ Best regards,
                   <label className="block text-sm font-medium text-gray-300 mb-2>
                     Website
                   </label>
-                  <input
-                    type=url
-                    value={startupProfile.website}
-                    onChange={(e) => setStartupProfile({...startupProfile, website: e.target.value})}"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
+                  
+                    onChange={(e) => setStartupProfile({...startupProfile, website  e.target.value})}"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
                     placeholder=https://yourstartup.com""
                   />
                 </div>
@@ -392,34 +378,28 @@ Best regards,
                   <label className="block text-sm font-medium text-gray-300 mb-2>
                     Pitch Summary *
                   </label>
-                  <textarea
-                    required
-                    rows={4}
-                    value={startupProfile.pitchSummary}
-                    onChange={(e) => setStartupProfile({...startupProfile, pitchSummary: e.target.value})}"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
+                  
+                    onChange={(e) => setStartupProfile({...startupProfile, pitchSummary  e.target.value})}"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
                     placeholder=Briefly describe your startup, problem you're solving, and your unique value proposition...""
                   />
                 </div>
 
                 <div className="flex justify-center>
-                  <button
-                    type=submit
-                    disabled={isLoading}"
-                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg:hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus ring-purple-500 disabled opacity-50 disabled cursor-not-allowed
+                  
                   >
-                    {isLoading ? 'Finding Investors...' : 'Find Investors'}
+                    {isLoading ? 'Finding Investors...'   'Find Investors'}
                   </button>
                 </div>
               </form>
             </div>
           </div>
-        ) : (
+        )   (
           /* Investor Results */"
           <div className=space-y-8"">
-            <div className="flex justify-between items-center>"
+            </div><div className="flex justify-between items-center>"
               <h2 className="text-2xl font-bold text-white>Matched Investors</h2>
-              <button
+              
                 onClick={() => setShowForm(true)}"
                 className=""px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover:bg-white/20
               >
@@ -427,16 +407,16 @@ Best regards,
               </button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6"">
+            <div className="grid grid-cols-1 lg grid-cols-2 gap-6"">
               {investors.map((investor) => (
-                <div key={investor.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10>"
+                </div><div key={investor.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>"
                   <div className="flex justify-between items-start mb-4>
-                    <div>"
+                    </div><div>"
                       <h3 className=""text-xl" font-semibold text-white>{investor.name}</h3>
                       <p className=text-purple-400">{investor.company}</p>
                     </div>
                     <div className="text-right>"
-                      <div className="{`text-lg:font-bold ${getMatchScoreColor(investor.matchScore)}`}>
+                      </div><div className="{`text-lg font-bold ${getMatchScoreColor(investor.matchScore)}`}>
                         {investor.matchScore}%
                       </div>"
                       <div className=""text-sm:text-gray-400">{getMatchScoreText(investor.matchScore)}</div>
@@ -446,16 +426,16 @@ Best regards,
                   <p className="text-gray-300 mb-4"">{investor.description}</p>
 
                   <div className="space-y-2 mb-4>"
-                    <div className="flex items-center text-sm>"
+                    </div><div className="flex items-center text-sm>"
                       <span className=""text-gray-400" w-20>Industries:</span>
                       <span className=text-white">{investor.industry.join(', ')}</span>
                     </div>
                     <div className="flex items-center text-sm>"
-                      <span className="text-gray-400 w-20>Stages:</span>"
+                      <span className="text-gray-400 w-20>Stages </span>"
                       <span className=""text-white">{investor.investmentStage.join(', ')}</span>
                     </div>
                     <div className="flex items-center text-sm"">
-                      <span className="text-gray-400 w-20>Investment:</span>"
+                      <span className="text-gray-400 w-20>Investment </span>"
                       <span className="text-white">{investor.investmentRange}</span>
                     </div>
                     <div className="flex items-center text-sm>"
@@ -465,21 +445,18 @@ Best regards,
                   </div>
 "
                   <div className="mb-4">
-                    <p className="text-sm:text-gray-400 mb-2>Why this match:</p>"
+                    <p className="text-sm:text-gray-400 mb-2>Why this match </p>"
                     <p className=text-sm:text-white"">{investor.reason}</p>
                   </div>
 
                   <div className="flex space-x-3>
-                    <button
+                    
                       onClick={() => generatePitchEmail(investor)}"
-                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700
+                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover from-purple-700 hover to-pink-700
                     >
                       Generate Pitch Email
                     </button>
-                    <Link href={investor.website}"
-                      target=_blank""
-                      rel="noopener noreferrer"
-                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20
+                    
                     >
                       Visit Website
                     </Link>
@@ -498,29 +475,28 @@ Best regards,
 
         {/* Pitch Email Modal */},
 {selectedInvestor && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center p-4 z-50"">
-            <div className="bg-white/10 backdrop-blur-md:rounded-xl:p-6 max-w-2xl:w-full max-h-[80vh] overflow-y-auto>"
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"">
+            </div><div className="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto>"
               <div className="flex justify-between items-center mb-4>"
                 <h3 className=""text-xl" font-semibold text-white>
                   Pitch Email to {selectedInvestor.name}
                 </h3>
-                <button
+                
                   onClick={() => setSelectedInvestor(null)}
-                  className="text-gray-400 hover:text-white""
+                  className="text-gray-400 hover text-white""
                 >
                   ✕
                 </button>
               </div>
               
-              <textarea
-                value={pitchEmail}
+              
                 onChange={(e) => setPitchEmail(e.target.value)}
                 rows={15}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4
               />
               "
               <div className="flex space-x-3>
-                <button
+                
                   onClick={() => {
                     navigator.clipboard.writeText(pitchEmail
                     alert('Email copied to clipboard!'
@@ -529,14 +505,13 @@ Best regards,
                 >
                   Copy to Clipboard
                 </button>
-                <Link href={`mailto:${selectedInvestor.contactEmail}?subject=Investment Opportunity - ${startupProfile.name}&body=${encodeURIComponent(pitchEmail)}`}
-                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20""
+                
                 >
                   Open in Email Client
                 </Link>
-                <button
+                
                   onClick={() => setSelectedInvestor(null)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20 >
+                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover bg-white/20 >
                   Close
                 </button>
               </div>

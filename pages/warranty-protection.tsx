@@ -138,12 +138,12 @@ id: 'basic',
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
       <Head>
@@ -155,19 +155,19 @@ id: 'basic',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>"
             <nav className=""flex" items-center space-x-6>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/escrow-services className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/escrow-services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Escrow
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>
             </nav>
@@ -176,9 +176,9 @@ id: 'basic',
       </div>
 ,
       {/* Hero Section */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-32>"
-        <div className=""text-center" mb-12>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
+        </div><div className=""text-center" mb-12>
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6"">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>
               Warranty & Protection
             </span>
@@ -188,10 +188,10 @@ id: 'basic',
             Extended protection plans, easy claim processing, and peace of mind for every transaction.
           </p>"
           <div className=""flex" flex-wrap justify-center gap-4>
-            <Link href=#plans" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+            <Link href=#plans" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
               View Plans
             </Link>"
-            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
               Shop Securely
             </Link>
           </div>
@@ -199,37 +199,36 @@ id: 'basic',
 ,
         {/* Stats */}"
         <div className=""grid" grid-cols-1 md: grid-cols-4  gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"
             <div className="text-3xl font-bold text-white mb-2>98%</div>"
             <p className=""text-gray-300" text-sm>Claim Approval Rate</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center"">
-            <div className="text-3xl font-bold text-white mb-2>24hrs</div>"
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center"">
+            </div><div className="text-3xl font-bold text-white mb-2>24hrs</div>"
             <p className="text-gray-300 text-sm>Average Response Time</p>
           </div>"
           <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            <div className="text-3xl font-bold text-white mb-2"">$2.1M</div>
+            </div><div className="text-3xl font-bold text-white mb-2"">$2.1M</div>
             <p className="text-gray-300 text-sm>Total Claims Paid</p>
           </div>"
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"
-            <div className=""text-3xl" font-bold text-white mb-2>50K+</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"
+            </div><div className=""text-3xl" font-bold text-white mb-2>50K+</div>
             <p className="text-gray-300 text-sm"">Protected Purchases</p>
           </div>
         </div>
       </div>
 ,
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  pb-12>,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  pb-12>,
         {/* Tabs */}"
-        <div className="flex flex-wrap gap-2 mb-8>
+        </div><div className="flex flex-wrap gap-2 mb-8>
           {[
             { id: 'plans', label: 'Protection: Plans' },
 { id: 'claims', label: 'Claims' }
             { id: 'account', label: 'Account' },
-{ id: 'coverage', label: 'Coverage: Guide' }
+{ id  'coverage', label  'Coverage  Guide' }
           ].map((tab) => (
-            <button
-              key={tab.id}
+            
               onClick={() => setActiveTab(tab.id)}"
               className=""{`px-6" py-3 rounded-lg:font-medium transition-all duration-300 ${
                 activeTab === tab.id
@@ -245,7 +244,7 @@ id: 'basic',
         {/* Tab: Content */},
 {activeTab === 'plans' && (
           <div className=space-y-8">
-            <div className="text-center mb-8>"
+            </div><div className="text-center mb-8>"
               <h2 className="text-3xl font-bold text-white mb-4>Choose Your Protection Plan</h2>"
               <p className=""text-gray-300" max-w-2xl:mx-auto>
                 Select the perfect protection plan for your marketplace purchases. 
@@ -253,12 +252,11 @@ id: 'basic',
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4  gap-6"">
+            <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-4  gap-6"">
               {warrantyPlans.map((plan) => (,
-                <div key={plan.id} className="{`relative bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-white/10: transition-all duration-300 ${
-                  plan.popular ? 'border-blue-500/50 bg-blue-500/5' : '',
+                </div>
                 }`}>
-                  {plan.popular: && ("
+                  {plan.popular  && ("
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2>"
                       <span className=""bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-3 rounded-full text-sm:font-semibold>
                         Most Popular
@@ -267,13 +265,13 @@ id: 'basic',
                   )}
                   
                   <div className="text-center mb-6"">
-                    <h3 className="text-xl:font-bold text-white mb-2>{plan.name}</h3>"
+                    <h3 className="text-xl font-bold text-white mb-2>{plan.name}</h3>"
                     <div className="text-3xl font-bold text-white mb-1>${plan.price}</div>"
                     <div className=""text-gray-400" text-sm>{plan.duration}</div>
                   </div>
 
                   <div className=mb-6">
-                    <h4 className="text-white font-semibold mb-3>Coverage Includes: </h4>"
+                    <h4 className="text-white font-semibold mb-3>Coverage Includes  </h4>"
                     <ul: className="space-y-2">,
                       {plan.coverage.map((item, index) => (
                         <li key={index} className="flex items-center text-gray-300 text-sm>"
@@ -285,7 +283,7 @@ id: 'basic',
                   </div>
 
                   <div className="mb-6>"
-                    <h4 className="text-white font-semibold mb-3>Features: </h4>"
+                    <h4 className="text-white font-semibold mb-3>Features  </h4>"
                     <ul: className=""space-y-2">,
                       {plan.features.map((feature, index) => (
                         <li key={index} className="flex items-center text-gray-300 text-sm"">
@@ -304,7 +302,7 @@ id: 'basic',
                     </div>
                   )}
 
-                  <button
+                  
                     onClick={() => setSelectedPlan(plan.id)}
                     className={`w-full" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                       plan.popular
@@ -319,7 +317,7 @@ id: 'basic',
             </div>
 
             {/* Plan Comparison */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-8>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-8>"
               <h3 className="text-2xl font-bold text-white mb-6 text-center>Plan Comparison</h3>"
               <div className=""overflow-x-auto">
                 <table className=w-full">
@@ -370,18 +368,18 @@ id: 'basic',
 
         {activeTab === 'claims' && (
           <div className=space-y-6">
-            <div className="flex justify-between items-center>"
+            </div><div className="flex justify-between items-center>"
               <h2 className="text-2xl font-bold text-white>Your Claims</h2>"
-              <Link href=/marketplace"" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300 />
+              <Link href=/marketplace"" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 />
                 Submit New Claim
               </Link>
             </div>
             "
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-6>
+            <div className="grid grid-cols-1 md grid-cols-2  gap-6>
               {claims.map((claim) => (,"
-                <div key={claim.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
+                </div><div key={claim.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
                   <div className="flex justify-between items-start mb-4"">
-                    <div>
+                    </div><div>
                       <h3 className="text-lg font-semibold text-white>{claim.product}</h3>"
                       <p className="text-gray-300 text-sm>{claim.issue}</p>
                     </div>"
@@ -391,12 +389,12 @@ id: 'basic',
                   </div>
                   
                   <div className="space-y-3 mb-4"">
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className="text-gray-300">Claim Amount: </span>,
                       <span: className="text-white font-semibold>${claim.claimAmount}</span>
                     </div>"
                     <div className=""flex" justify-between">
-                      <span className="text-gray-300>Submitted: </span>,"
+                      <span className="text-gray-300>Submitted  </span>,"
                       <span: className="text-white">{claim.submittedDate.toLocaleDateString()}</span>
                     </div>
                     <div className="flex justify-between>"
@@ -405,7 +403,7 @@ id: 'basic',
                     </div>
                   </div>
                   "
-                  <p className="text-gray-300 text-sm:mb-4>{claim.description}</p>
+                  <p className="text-gray-300 text-sm mb-4>{claim.description}</p>
                   
                   <div>"
                     <h4 className=""text-white" font-semibold mb-2>Evidence: </h4>
@@ -428,32 +426,32 @@ id: 'basic',
             <h2 className="text-2xl font-bold text-white>Protection Account</h2>
             "
             <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-4  gap-6">
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className="text-lg font-semibold text-white mb-4>Active Plans</h3>,"
                 <div className=""text-3xl" font-bold text-white mb-2>{protectionAccount.activePlans}</div>
                 <p className="text-gray-300 text-sm"">Currently protected</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className="text-lg font-semibold text-white mb-4>Total Coverage</h3>"
                 <div className=""text-3xl" font-bold text-white mb-2>${protectionAccount.totalCoverage.toLocaleString()}</div>
                 <p className="text-gray-300 text-sm"">Coverage value</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className="text-lg font-semibold text-white mb-4>Claims Submitted</h3>"
                 <div className=""text-3xl" font-bold text-white mb-2>{protectionAccount.claimsSubmitted}</div>
                 <p className="text-gray-300 text-sm"">Total claims</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className="text-lg font-semibold text-white mb-4>Total Savings</h3>"
                 <div className=""text-3xl" font-bold text-white mb-2>${protectionAccount.totalSavings.toLocaleString()}</div>
                 <p className="text-gray-300 text-sm"">From protection</p>
               </div>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
               <h3 className="text-lg font-semibold text-white mb-4>Claim Statistics</h3>"
               <div className=""grid" grid-cols-1 md: grid-cols-2  gap-6>
-                <div>
+                </div><div>
                   <div className="flex justify-between items-center mb-2"">
                     <span className="text-gray-300>Approval Rate</span>"
                     <span className="text-white font-semibold>,
@@ -461,21 +459,19 @@ id: 'basic',
                     </span>
                   </div>"
                   <div className=""w-full" bg-gray-700 rounded-full h-2>
-                    <div 
-                      className="bg-gradient-to-r from-green-600 to-emerald-600 h-2 rounded-full"" 
-                      style={{ width: `${(protectionAccount.claimsApproved: / protectionAccount.claimsSubmitted) * 100}%` }}
+                    </div>
                     ></div>
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between items-center mb-2>"
+                  </div><div className="flex justify-between items-center mb-2>"
                     <span className="text-gray-300">Average Savings</span>
                     <span className="text-white font-semibold>
                       ${Math.round(protectionAccount.totalSavings / protectionAccount.claimsApproved)}
                     </span>
                   </div>"
                   <div className=""w-full" bg-gray-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full style={{ width: '85%' }}></div>
+                    </div><div className="bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full style={{ width: '85%' }}></div>
                   </div>
                 </div>
               </div>
@@ -483,17 +479,17 @@ id: 'basic',
           </div>
         )}
 
-        {activeTab: === 'coverage' && ("
+        {activeTab  === 'coverage' && ("
           <div className="space-y-8">
-            <div className="text-center mb-8>"
+            </div><div className="text-center mb-8>"
               <h2 className=""text-3xl" font-bold text-white mb-4">Coverage Guide</h2>
-              <p className="text-gray-300 max-w-2xl:mx-auto>
+              <p className="text-gray-300 max-w-2xl mx-auto>
                 Understand what's covered under each protection plan and how to file claims effectively.
               </p>
             </div>
 "
-            <div className="grid grid-cols-1 md: grid-cols-2  gap-8>"
-              <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
+            <div className="grid grid-cols-1 md  grid-cols-2  gap-8>"
+              </div><div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
                 <h3 className="text-xl font-semibold text-white mb-4"">What's Covered</h3>
                 <ul className="space-y-3>"
                   <li className="flex items-start>"
@@ -527,7 +523,7 @@ id: 'basic',
                 </ul>
               </div>
 "
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className=""text-xl" font-semibold text-white mb-4>What's Not Covered</h3>
                 <ul className=space-y-3">
                   <li className="flex items-start>"
@@ -562,26 +558,26 @@ id: 'basic',
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border border-white/10 rounded-lg:p-8>"
+            <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border border-white/10 rounded-lg p-8>"
               <h3 className="text-2xl font-bold text-white mb-6 text-center>How to File a Claim</h3>"
               <div className=""grid" grid-cols-1 md:grid-cols-4  gap-6>
-                <div className=text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl:mx-auto mb-4>1</div>"
+                </div><div className=text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>1</div>"
                   <h4 className="text-lg font-semibold text-white mb-2>Identify Issue</h4>"
                   <p className=""text-gray-300" text-sm>Document the problem with photos and descriptions</p>
                 </div>
                 <div className=text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl:mx-auto mb-4>2</div>"
+                  </div><div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>2</div>"
                   <h4 className="text-lg font-semibold text-white mb-2>Submit Claim</h4>"
                   <p className=""text-gray-300" text-sm>Fill out the claim form with all required details</p>
                 </div>
                 <div className=text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl:mx-auto mb-4>3</div>"
+                  </div><div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>3</div>"
                   <h4 className="text-lg font-semibold text-white mb-2>Review Process</h4>"
                   <p className=""text-gray-300" text-sm>Our team reviews and evaluates your claim</p>
                 </div>
                 <div className=text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl:mx-auto mb-4>4</div>"
+                  </div><div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4>4</div>"
                   <h4 className="text-lg font-semibold text-white mb-2>Resolution</h4>,"
                   <p className=""text-gray-300" text-sm>Receive repair, replacement, or compensation</p>
                 </div>
@@ -593,7 +589,7 @@ id: 'basic',
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-32>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Protect Your Investments
@@ -602,10 +598,10 @@ id: 'basic',
               Don't let unexpected issues derail your projects. Get comprehensive protection for all your marketplace purchases.
             </p>
             <div className="flex flex-wrap justify-center gap-4>"
-              <Link href=#plans className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+              <Link href=#plans className="bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
                 Get Protected
               </Link>"
-              <Link href=/marketplace"" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/marketplace"" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Shop Securely
               </Link>
             </div>
@@ -616,7 +612,7 @@ id: 'basic',
       {/* Footer */}"
       <footer className="bg-black/20 border-t border-white/10>"
         <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"">
+          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8"">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>"
               <p className="text-gray-300 text-sm>,
@@ -626,28 +622,28 @@ id: 'basic',
             <div>"
               <h4 className=""text-white" font-semibold mb-4>Protection</h4>
               <ul className="space-y-2 text-sm"">
-                <li><Link href="/warranty-protection" className="text-gray-400 hover: text-white  transition-colors />Warranty Plans</Link></li>"
-                <li><Link href=/escrow-services className="text-gray-400 hover:text-white transition-colors />Escrow Services</Link></li>"
-                <li><Link href=/marketplace"" className="text-gray-400 hover:text-white transition-colors />Marketplace</Link></li>"
-                <li><Link href=/ai-virtual-assistant className="text-gray-400 hover:text-white transition-colors />AI Assistant</Link></li>
+                <li><Link href="/warranty-protection" className="text-gray-400 hover  text-white  transition-colors />Warranty Plans</Link></li>"
+                <li><Link href=/escrow-services className="text-gray-400 hover text-white transition-colors />Escrow Services</Link></li>"
+                <li><Link href=/marketplace"" className="text-gray-400 hover text-white transition-colors />Marketplace</Link></li>"
+                <li><Link href=/ai-virtual-assistant className="text-gray-400 hover text-white transition-colors />AI Assistant</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className=""text-white" font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm>"
-                <li><Link href=/contact className="text-gray-400 hover:text-white transition-colors />Contact Us</Link></li>"
-                <li><Link href=/real-time-chat"" className="text-gray-400 hover:text-white transition-colors />Live Chat</Link></li>"
-                <li><Link href=/notifications className="text-gray-400 hover:text-white transition-colors />Notifications</Link></li>"
-                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover:text-white transition-colors />Legal Support</Link></li>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors />Contact Us</Link></li>"
+                <li><Link href=/real-time-chat"" className="text-gray-400 hover text-white transition-colors />Live Chat</Link></li>"
+                <li><Link href=/notifications className="text-gray-400 hover text-white transition-colors />Notifications</Link></li>"
+                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover text-white transition-colors />Legal Support</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className="text-white font-semibold mb-4>Connect</h4>"
               <ul className=""space-y-2" text-sm>
-                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors />About Us</Link></li>"
-                <li><Link href=/blog className="text-gray-400 hover:text-white transition-colors />Blog</Link></li>"
-                <li><Link href=/auth/signup"" className="text-gray-400 hover:text-white transition-colors />Sign Up</Link></li>"
-                <li><Link href=/auth/login className="text-gray-400 hover:text-white transition-colors />Login</Link></li>
+                <li><Link href=/about" className="text-gray-400 hover text-white transition-colors />About Us</Link></li>"
+                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors />Blog</Link></li>"
+                <li><Link href=/auth/signup"" className="text-gray-400 hover text-white transition-colors />Sign Up</Link></li>"
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors />Login</Link></li>
               </ul>
             </div>
           </div>"

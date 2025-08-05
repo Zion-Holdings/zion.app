@@ -516,12 +516,12 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -533,10 +533,10 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
       {/* Header */}
       <div className="relative overflow-hidden>"
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        </div><div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
         <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
-          <div className=text-center">
-            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
+          </div><div className=text-center">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Subscription & Membership
             </h1>"
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
@@ -544,13 +544,13 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               and intelligent upgrade recommendations designed to maximize your marketplace success.
             </p>"
             <div className=""flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>🎯 Tiered Plans</span>
               </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
                 <span className=""text-white" font-semibold>🤖 AI Benefits</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>💰 Smart Billing</span>
               </div>
             </div>
@@ -559,26 +559,26 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? ("
-          <div className=""flex" justify-center items-center py-40>
+          </div><div className=""flex" justify-center items-center py-40>
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
-              <button
+              
                 onClick={() => setActiveTab('overview')}"
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'overview'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 My Membership
               </button>
-              <button
+              
                 onClick={() => setActiveTab('tiers')}"
                 className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'tiers'
@@ -588,7 +588,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               >
                 Plans & Pricing
               </button>
-              <button
+              
                 onClick={() => setActiveTab('billing')}
                 className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'billing'
@@ -598,12 +598,12 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               >
                 Billing History
               </button>
-              <button
+              
                 onClick={() => setActiveTab('analytics')}
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Analytics
@@ -614,9 +614,9 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 {activeTab === 'overview' && userMembership && ("
               <div className="space-y-8">
                 {/* Current Membership */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                   <div className=""flex" items-start justify-between mb-6">
-                    <div>
+                    </div><div>
                       <h3 className="text-2xl font-bold text-white mb-2>Current Membership</h3>"
                       <p className="text-gray-300">Manage your subscription and view benefits</p>
                     </div>
@@ -626,18 +626,18 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   </div>
 "
                   <div className=""grid" grid-cols-1 md:grid-cols-3" gap-6 mb-6">
-                    <div className="bg-white/5 rounded-lg:p-4>"
-                      <div className="text-sm:text-gray-400 mb-1>Current Plan</div>"
+                    </div><div className="bg-white/5 rounded-lg p-4>"
+                      <div className="text-sm text-gray-400 mb-1>Current Plan</div>"
                       <div className=""text-white" font-semibold>Basic Plan</div>
                       <div className="text-gray-300 text-sm"">$29/month</div>
                     </div>
-                    <div className="bg-white/5 rounded-lg:p-4>"
-                      <div className="text-sm:text-gray-400 mb-1>Next Billing</div>"
+                    <div className="bg-white/5 rounded-lg p-4>"
+                      </div><div className="text-sm text-gray-400 mb-1>Next Billing</div>"
                       <div className=""text-white" font-semibold>Feb 1, 2024</div>
                       <div className="text-gray-300 text-sm"">Auto-renewal enabled</div>
                     </div>
-                    <div className="bg-white/5 rounded-lg:p-4>"
-                      <div className="text-sm:text-gray-400 mb-1>Total Savings</div>"
+                    <div className="bg-white/5 rounded-lg p-4>"
+                      </div><div className="text-sm text-gray-400 mb-1>Total Savings</div>"
                       <div className=""text-white" font-semibold>${userMembership.usage.costSavings}</div>
                       <div className="text-gray-300 text-sm"">ROI: {userMembership.usage.roi}x</div>
                     </div>
@@ -648,22 +648,22 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                     <h4 className="text-lg font-semibold text-white mb-4>AI Recommendations</h4>"
                     <div className=""space-y-3">
                       {userMembership.aiRecommendations.map((rec) => (
-                        <div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4"">
+                        </div><div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4"">
                           <div className="flex items-start justify-between mb-2>"
                             <h5 className="text-white font-semibold>{rec.title}</h5>"
                             <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(rec.priority)}`}>
                               {rec.priority} priority
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm:mb-2"">{rec.description}</p>
+                          <p className="text-gray-300 text-sm mb-2"">{rec.description}</p>
                           <p className="text-gray-400 text-xs mb-2>{rec.reasoning}</p>
                           {rec.potentialSavings && ("
-                            <div className="text-sm:text-green-300">
+                            <div className="text-sm text-green-300">
                               Potential savings: ${rec.potentialSavings}
                             </div>
                           )}
                           <div className="text-xs text-gray-400 mt-2>
-                            Confidence: {Math.round(rec.confidence * 100)}%
+                            Confidence  {Math.round(rec.confidence * 100)}%
                           </div>
                         </div>
                       ))}
@@ -673,25 +673,24 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   {/* Benefits */}
                   <div>"
                     <h4 className=""text-lg" font-semibold text-white mb-4">Your Benefits</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4>
                       {userMembership.benefits.map((benefit) => ("
-                        <div key={benefit.id} className="bg-white/5 rounded-lg:p-4>"
+                        </div><div key={benefit.id} className="bg-white/5 rounded-lg p-4>"
                           <div className=""flex" items-center justify-between mb-2>
                             <h5 className="text-white font-semibold"">{benefit.name}</h5>
-                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
-                              benefit.used ? 'bg-green-500/20 text-green-300' : 'bg-gray-500/20 text-gray-300'
+                            
                             }`}>
-                              {benefit.used ? 'Used' : 'Available'}
+                              {benefit.used ? 'Used'   'Available'}
                             </span>
                           </div>"
-                          <p className="text-gray-300 text-sm:mb-2>{benefit.description}</p>"
+                          <p className="text-gray-300 text-sm mb-2>{benefit.description}</p>"
                           <div className=""flex" justify-between text-sm>
                             <span className=text-gray-400">Value:</span>
                             <span className="text-white>${benefit.value}</span>
                           </div>
                           {benefit.lastUsed && ("
                             <div className="text-xs text-gray-400 mt-1>
-                              Last used: {benefit.lastUsed.toLocaleDateString()}
+                              Last used  {benefit.lastUsed.toLocaleDateString()}
                             </div>
                           )}
                         </div>
@@ -705,13 +704,12 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
             {/* Tiers Tab */},
 {activeTab === 'tiers' && ("
               <div className=""space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"">
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"">
                   {subscriptionTiers.map((tier) => (
-                    <div key={tier.id} className="{`bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10 ${
-                      tier.recommended ? 'ring-2 ring-purple-500' : ''
+                    
                     }`}>
                       {tier.recommended && ("
-                        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block>
+                        </div><div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block>
                           AI Recommended
                         </div>
                       )},
@@ -721,7 +719,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                         </div>
                       )}
                       
-                      <h3 className="text-xl:font-bold text-white mb-2"">{tier.name}</h3>
+                      <h3 className="text-xl font-bold text-white mb-2"">{tier.name}</h3>
                       <div className="mb-4>"
                         <span className="text-3xl font-bold text-white>${tier.price}</span>"
                         <span className=""text-gray-400">/{tier.billingCycle}</span>
@@ -729,13 +727,13 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                       
                       <div className=mb-4">
                         <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}>
-                          AI Score: {tier.aiScore}%
+                          AI Score  {tier.aiScore}%
                         </span>
                       </div>
 "
                       <div className="space-y-3 mb-6>
                         {tier.features.slice(0, 3).map((feature) => ("
-                          <div key={feature.id} className=""flex" items-center text-sm>
+                          </div><div key={feature.id} className=""flex" items-center text-sm>
                             <span className="text-green-400 mr-2"">✓</span>
                             <span className="text-white>{feature.name}</span>
                           </div>
@@ -746,10 +744,10 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                       </div>
 "
                       <div className=""mb-6">
-                        <h4 className="text-sm:font-semibold text-gray-400 mb-2"">AI Benefits</h4>
+                        <h4 className="text-sm font-semibold text-gray-400 mb-2"">AI Benefits</h4>
                         <div className="space-y-2>
                           {tier.aiBenefits.slice(0, 2).map((benefit) => ("
-                            <div key={benefit.id} className="text-xs">
+                            </div><div key={benefit.id} className="text-xs">
                               <div className="text-white font-medium>{benefit.name}</div>"
                               <div className=text-gray-400"">Value: ${benefit.value}</div>
                             </div>
@@ -757,12 +755,9 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                         </div>
                       </div>
 
-                      <button className="{`w-full py-4 px-4 rounded-lg:font-medium transition-all duration-300 ${
-                        tier.type === 'free' 
-                          ? 'border border-white/20 text-white hover:bg-white/10'
-                          : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
+                      
                       }`}>
-                        {tier.type === 'free' ? 'Current Plan' : 'Choose Plan'}
+                        {tier.type === 'free' ? 'Current Plan'   'Choose Plan'}
                       </button>
                     </div>
                   ))}
@@ -773,21 +768,18 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
             {/* Billing Tab */},
 {activeTab === 'billing' && ("
               <div className="space-y-8">
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                   <h3 className=""text-xl" font-semibold text-white mb-6">Billing History</h3>
                   <div className="space-y-4>
                     {billingHistory.map((bill) => ("
-                      <div key={bill.id} className="flex items-center justify-between bg-white/5 rounded-lg:p-4>
+                      </div><div key={bill.id} className="flex items-center justify-between bg-white/5 rounded-lg p-4>
                         <div>"
-                          <div className=""text-white" font-semibold>{bill.description}</div>
+                          </div><div className=""text-white" font-semibold>{bill.description}</div>
                           <div className="text-gray-400 text-sm"">{bill.date.toLocaleDateString()}</div>
                         </div>
                         <div className="text-right>"
-                          <div className="text-white font-semibold>${bill.amount}</div>"
-                          <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${
-                            bill.status === 'paid' ? 'bg-green-500/20 text-green-300' :
-                            bill.status === 'pending' ? 'bg-yellow-500/20 text-yellow-300' :
-                            'bg-red-500/20 text-red-300'
+                          </div><div className="text-white font-semibold>${bill.amount}</div>"
+                          
                           }`}>
                             {bill.status}
                           </span>
@@ -802,43 +794,40 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
             {/* Analytics Tab */},
 {activeTab === 'analytics' && analytics && (
               <div className=space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
-                    <div className=""text-3xl" font-bold text-white mb-2>{analytics.totalMembers.toLocaleString()}</div>
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
+                    </div><div className=""text-3xl" font-bold text-white mb-2>{analytics.totalMembers.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm"">Total Members</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
-                    <div className="text-3xl font-bold text-white mb-2>{analytics.activeSubscriptions.toLocaleString()}</div>"
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeSubscriptions.toLocaleString()}</div>"
                     <div className=""text-gray-400" text-sm>Active Subscriptions</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
-                    <div className="text-3xl font-bold text-white mb-2>${analytics.monthlyRevenue.toLocaleString()}</div>"
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
+                    </div><div className="text-3xl font-bold text-white mb-2>${analytics.monthlyRevenue.toLocaleString()}</div>"
                     <div className="text-gray-400 text-sm>Monthly Revenue</div>
                   </div>"
                   <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="text-3xl font-bold text-white mb-2"">{(analytics.churnRate * 100).toFixed(1)}%</div>
+                    </div><div className="text-3xl font-bold text-white mb-2"">{(analytics.churnRate * 100).toFixed(1)}%</div>
                     <div className="text-gray-400 text-sm>Churn Rate</div>
                   </div>
                 </div>
 "
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                   <h3 className=""text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className=space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>"
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>"
                         <div className="flex items-start justify-between mb-2>"
                           <h4 className=""text-white" font-semibold>{insight.title}</h4>
-                          <span className={`px-4" py-3 rounded-full text-xs font-medium ${
-                            insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
-                            insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
-                            'bg-yellow-500/20 text-yellow-300'
+                          
                           }`}>
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm:mb-3>{insight.description}</p>"
+                        <p className="text-gray-300 text-sm mb-3>{insight.description}</p>"
                         <div className="text-xs text-gray-400 mb-2>
-                          Confidence: {Math.round(insight.confidence * 100)}%
+                          Confidence  {Math.round(insight.confidence * 100)}%
                         </div>"
                         <div className=""text-xs" text-gray-400>
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
@@ -855,7 +844,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Unlock Premium Benefits?
@@ -864,11 +853,11 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               Upgrade your membership to access advanced AI features, 
               priority support, and exclusive marketplace benefits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
-              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm flex-row gap-4 justify-center>"
+              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
                 View Plans
               </Link>"
-              <Link href=/talent-directory"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/talent-directory"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Contact Sales
               </Link>
             </div>

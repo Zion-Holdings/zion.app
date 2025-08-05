@@ -338,12 +338,12 @@ id: 'tech-development',
   const stats = getStats(
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
       <Head>
@@ -355,19 +355,19 @@ id: 'tech-development',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>"
             <nav className=""flex" items-center space-x-6>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/project-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/project-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Projects
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>
             </nav>
@@ -376,9 +376,9 @@ id: 'tech-development',
       </div>
 ,
       {/* Hero Section */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-32>"
-        <div className=""text-center" mb-12>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
+        </div><div className=""text-center" mb-12>
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6"">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               Service Categories & Specialization
             </span>
@@ -388,10 +388,10 @@ id: 'tech-development',
             explore detailed subcategories, and access category-specific features and requirements.
           </p>"
           <div className=""flex" flex-wrap justify-center gap-4>
-            <Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+            <Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
               Browse Categories
             </Link>"
-            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
               Find Providers
             </Link>
           </div>
@@ -399,35 +399,35 @@ id: 'tech-development',
 ,
         {/* Stats */}"
         <div className=""grid" grid-cols-1 md: grid-cols-4  gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>,"
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>,"
             <div className="text-3xl font-bold text-white mb-2>{stats.totalCategories}</div>"
             <p className=""text-gray-300" text-sm>Service Categories</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center"">
-            <div className="text-3xl font-bold text-white mb-2>{stats.totalProviders}</div>"
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center"">
+            </div><div className="text-3xl font-bold text-white mb-2>{stats.totalProviders}</div>"
             <p className="text-gray-300 text-sm>Expert Providers</p>
           </div>"
           <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            <div className="text-3xl font-bold text-white mb-2"">{stats.totalServices}</div>
+            </div><div className="text-3xl font-bold text-white mb-2"">{stats.totalServices}</div>
             <p className="text-gray-300 text-sm>Available Services</p>
           </div>"
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"
-            <div className=""text-3xl" font-bold text-white mb-2>{stats.averageRating.toFixed(1)}</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"
+            </div><div className=""text-3xl" font-bold text-white mb-2>{stats.averageRating.toFixed(1)}</div>
             <p className="text-gray-300 text-sm"">Avg Rating</p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  pb-12>,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  pb-12>,
         {/* Tabs */}"
-        <div className="flex flex-wrap gap-2 mb-8>
+        </div><div className="flex flex-wrap gap-2 mb-8>
           {[
             { id: 'categories', label: 'Categories' },
 { id: 'providers', label: 'Providers' }
-            { id: 'analytics', label: 'Analytics' }
+            { id  'analytics', label  'Analytics' }
           ].map((tab) => (
-            <button: key={tab.id}
+            
               onClick={() => setActiveTab(tab.id)}"
               className=""{`px-6" py-3 rounded-lg:font-medium transition-all duration-300 ${
                 activeTab === tab.id
@@ -442,17 +442,13 @@ id: 'tech-development',
 
         {/* Filters: */}
         <div className="flex flex-wrap gap-4 mb-8"">
-          <input
-            type="text"
-            placeholder="Search categories or providers..."
-            value={searchTerm}
+          
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus: outline-none focus ring-2 focus ring-purple-500  flex-1 min-w-124
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500  flex-1 min-w-124
           />
-          <select,
-            value={selectedCategory}
+          
             onChange={(e) => setSelectedCategory(e.target.value)}"
-            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus ring-purple-500
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500
           >"
             <option: value=all"">All Categories</option>
             {categories.map(category => (),
@@ -464,18 +460,18 @@ id: 'tech-development',
         {/* Tab Content */},
 {activeTab === 'categories' && (
           <div className="space-y-6>"
-            <div className="flex justify-between items-center>"
+            </div><div className="flex justify-between items-center>"
               <h2 className=""text-2xl" font-bold text-white>Service Categories</h2>
-              <Link href=/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300 />
+              <Link href=/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 />
                 View All Services
               </Link>
             </div>
             "
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3  gap-6>
               {filteredCategories.map((category) => (,"
-                <div key={category.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>
+                </div><div key={category.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>
                   <div className="flex items-center justify-between mb-4"">,
-                    <div className="text-4xl>{category.icon}</div>
+                    </div><div className="text-4xl>{category.icon}</div>
                     {category.featured && ("
                       <span className="px-3 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-medium rounded-full>
                         Featured
@@ -484,10 +480,10 @@ id: 'tech-development',
                   </div>
                   "
                   <h3 className=""text-xl" font-semibold text-white mb-2>{category.name}</h3>
-                  <p className="text-gray-300 text-sm:mb-4 line-clamp-2"">{category.description}</p>
+                  <p className="text-gray-300 text-sm mb-4 line-clamp-2"">{category.description}</p>
                   
                   <div className="space-y-3 mb-4>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">Providers: </span>,
                       <span: className=text-white">{category.totalProviders}</span>
                     </div>
@@ -496,7 +492,7 @@ id: 'tech-development',
                       <span: className="text-white">{category.totalServices}</span>
                     </div>
                     <div className="flex justify-between"">
-                      <span className="text-gray-300>Avg Rating: </span>,"
+                      <span className="text-gray-300>Avg Rating  </span>,"
                       <span: className="text-white">⭐ {category.averageRating}</span>
                     </div>
                     <div className="flex justify-between>"
@@ -506,7 +502,7 @@ id: 'tech-development',
                   </div>
                   "
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm>Subcategories: </span>"
+                    <span className="text-gray-300 text-sm>Subcategories  </span>"
                     <div className=""flex" flex-wrap gap-1 mt-1">,
                       {category.subcategories.slice(0, 3).map((sub) => (
                         <span key={sub.id} className="px-4 py-3 bg-white/10 rounded text-xs text-white>
@@ -533,10 +529,10 @@ id: 'tech-development',
                   </div>
                   "
                   <div className=""flex" gap-2>
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-3 py-4 rounded text-sm:transition-colors"">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-3 py-4 rounded text-sm transition-colors"">
                       View Details
                     </button>
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm:transition-colors>
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm transition-colors>
                       Browse Providers
                     </button>
                   </div>
@@ -552,9 +548,9 @@ id: 'tech-development',
             "
             <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">
               {filteredProviders.map((provider) => (,
-                <div key={provider.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>"
+                </div><div key={provider.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover  bg-white/10  transition-all duration-300>"
                   <div className="flex justify-between items-start mb-4>
-                    <div>,"
+                    </div><div>,"
                       <h3 className=""text-lg" font-semibold text-white>{provider.name}</h3>
                       <p className="text-gray-300 text-sm"">{categories.find(c => c.id === provider.category)?.name}</p>
                     </div>
@@ -573,7 +569,7 @@ id: 'tech-development',
                   </div>
                   
                   <div className="space-y-3 mb-4>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">Rating: </span>,
                       <span: className=text-white">⭐ {provider.rating} ({provider.reviews} reviews)</span>
                     </div>
@@ -582,7 +578,7 @@ id: 'tech-development',
                       <span: className="text-white">{formatCurrency(provider.hourlyRate)}</span>
                     </div>
                     <div className="flex justify-between"">
-                      <span className="text-gray-300>Experience: </span>,"
+                      <span className="text-gray-300>Experience  </span>,"
                       <span: className="text-white">{provider.experience} years</span>
                     </div>
                     <div className="flex justify-between>"
@@ -596,7 +592,7 @@ id: 'tech-development',
                   </div>
                   
                   <div className="mb-4>"
-                    <span className="text-gray-300 text-sm>Skills: </span>"
+                    <span className="text-gray-300 text-sm>Skills  </span>"
                     <div className=""flex" flex-wrap gap-1 mt-1>,
                       {provider.skills.slice(0, 3).map((skill, index) => (
                         <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white"">
@@ -615,7 +611,7 @@ id: 'tech-development',
                     <button className=""flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-3 py-4 rounded text-sm:transition-colors>
                       View Profile
                     </button>
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm:transition-colors"">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm transition-colors"">
                       Contact
                     </button>
                   </div>
@@ -630,29 +626,29 @@ id: 'tech-development',
             <h2 className="text-2xl font-bold text-white>Category Analytics</h2>
             "
             <div className=""grid" grid-cols-1 md:grid-cols-3  gap-6 mb-8>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center">,
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center">,
                 <div className="text-3xl font-bold text-white mb-2>{analytics.totalCategories}</div>"
                 <p className="text-gray-300 text-sm>Total Categories</p>
               </div>"
               <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-                <div className="text-3xl font-bold text-white mb-2"">{analytics.totalProviders}</div>
+                </div><div className="text-3xl font-bold text-white mb-2"">{analytics.totalProviders}</div>
                 <p className="text-gray-300 text-sm>Total Providers</p>
               </div>"
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"
-                <div className=""text-3xl" font-bold text-white mb-2>{analytics.totalServices}</div>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"
+                </div><div className=""text-3xl" font-bold text-white mb-2>{analytics.totalServices}</div>
                 <p className="text-gray-300 text-sm"">Total Services</p>
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md: grid-cols-2  gap-6>"
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+            <div className="grid grid-cols-1 md  grid-cols-2  gap-6>"
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className=""text-lg" font-semibold text-white mb-4>Top Categories</h3>
                 <div className=space-y-3">,
                   {analytics.topCategories.map((category, index) => (
-                    <div key={index} className="flex justify-between items-center>"
+                    </div><div key={index} className="flex justify-between items-center>"
                       <span className="text-gray-300">{category.name}</span>
                       <div className="text-right">
-                        <div className="text-white font-semibold"">{formatCurrency(category.revenue)}</div>
+                        </div><div className="text-white font-semibold"">{formatCurrency(category.revenue)}</div>
                         <div className="text-gray-300 text-sm>+{category.growth}% growth</div>
                       </div>
                     </div>
@@ -660,14 +656,14 @@ id: 'tech-development',
                 </div>
               </div>
               "
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                 <h3 className=""text-lg" font-semibold text-white mb-4>Category Growth</h3>
                 <div className=space-y-3">
                   {analytics.categoryGrowth.map((growth, index) => (
-                    <div key={index} className="flex justify-between items-center>"
+                    </div><div key={index} className="flex justify-between items-center>"
                       <span className="text-gray-300">{growth.category}</span>
                       <div className="text-right">
-                        <div className="text-white font-semibold"">+{growth.growth}%</div>
+                        </div><div className="text-white font-semibold"">+{growth.growth}%</div>
                         <div className="text-gray-300 text-sm>{growth.newProviders} new providers</div>
                       </div>
                     </div>
@@ -681,7 +677,7 @@ id: 'tech-development',
 
       {/* CTA Section */}"
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10>"
-        <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-32>
+        </div><div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-32>
           <div className=text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Find Your Perfect Service Match
@@ -691,10 +687,10 @@ id: 'tech-development',
               From technology development to creative design, we have the right expertise for your project.
             </p>"
             <div className=""flex" flex-wrap justify-center gap-4>
-              <Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+              <Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
                 Browse Categories
               </Link>"
-              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Find Providers
               </Link>
             </div>
@@ -704,8 +700,8 @@ id: 'tech-development',
 ,
       {/* Footer */}"
       <footer className=""bg-black/20" border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8>"
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8>"
+          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8>
             <div>"
               <h3 className=""text-lg" font-semibold text-white mb-4>Zion Marketplace</h3>
               <p className="text-gray-300 text-sm"">,
@@ -715,28 +711,28 @@ id: 'tech-development',
             <div>
               <h4 className="text-white font-semibold mb-4>Service Categories</h4>"
               <ul className="space-y-2 text-sm>"
-                <li><Link href=/service-categories"" className="text-gray-400 hover: text-white  transition-colors />Browse Categories</Link></li>"
-                <li><Link href=/project-management className="text-gray-400 hover:text-white transition-colors />Project Management</Link></li>"
-                <li><Link href=/marketplace-pricing"" className="text-gray-400 hover:text-white transition-colors />Pricing & Commissions</Link></li>"
-                <li><Link href=/referral-affiliate className="text-gray-400 hover:text-white transition-colors />Referral System</Link></li>
+                <li><Link href=/service-categories"" className="text-gray-400 hover  text-white  transition-colors />Browse Categories</Link></li>"
+                <li><Link href=/project-management className="text-gray-400 hover text-white transition-colors />Project Management</Link></li>"
+                <li><Link href=/marketplace-pricing"" className="text-gray-400 hover text-white transition-colors />Pricing & Commissions</Link></li>"
+                <li><Link href=/referral-affiliate className="text-gray-400 hover text-white transition-colors />Referral System</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className=""text-white" font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm>"
-                <li><Link href=/contact className="text-gray-400 hover:text-white transition-colors />Contact Us</Link></li>"
-                <li><Link href=/real-time-chat"" className="text-gray-400 hover:text-white transition-colors />Live Chat</Link></li>"
-                <li><Link href=/notifications className="text-gray-400 hover:text-white transition-colors />Notifications</Link></li>"
-                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover:text-white transition-colors />Legal Support</Link></li>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors />Contact Us</Link></li>"
+                <li><Link href=/real-time-chat"" className="text-gray-400 hover text-white transition-colors />Live Chat</Link></li>"
+                <li><Link href=/notifications className="text-gray-400 hover text-white transition-colors />Notifications</Link></li>"
+                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover text-white transition-colors />Legal Support</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className="text-white font-semibold mb-4>Connect</h4>"
               <ul className=""space-y-2" text-sm>
-                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors />About Us</Link></li>"
-                <li><Link href=/blog className="text-gray-400 hover:text-white transition-colors />Blog</Link></li>"
-                <li><Link href=/auth/signup"" className="text-gray-400 hover:text-white transition-colors />Sign Up</Link></li>"
-                <li><Link href=/auth/login className="text-gray-400 hover:text-white transition-colors />Login</Link></li>
+                <li><Link href=/about" className="text-gray-400 hover text-white transition-colors />About Us</Link></li>"
+                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors />Blog</Link></li>"
+                <li><Link href=/auth/signup"" className="text-gray-400 hover text-white transition-colors />Sign Up</Link></li>"
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors />Login</Link></li>
               </ul>
             </div>
           </div>"

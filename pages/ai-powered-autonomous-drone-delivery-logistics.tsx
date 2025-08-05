@@ -326,18 +326,18 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
       <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
+        </div><div className="fixed inset-0 z-0>"
           <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
         {/* Header */}
         <header className="relative z-10>"
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
-            <div className=""flex" items-center justify-between>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
+            </div><div className=""flex" items-center justify-between>
               <div className="flex items-center space-x-4"">
-                <div className="flex items-center space-x-3>"
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg:flex items-center justify-center>"
+                </div><div className="flex items-center space-x-3>"
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center>"
                     <span className=""text-white" text-xl>🚁</span>
                   </div>
                   <div>
@@ -348,15 +348,12 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               </div>
               "
               <div className="flex items-center space-x-4>
-                <button
-                  onClick={initializeDroneSystem}
-                  disabled={isLoading}"
-                  className=""px-6" py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 disabled:opacity-50
+                
                 >
                   {isLoading ? 'Initializing...' : 'Initialize System'}
                 </button>
                 
-                <button
+                
                   onClick={() => setRealTimeTracking(!realTimeTracking)}
                   className={`px-4" py-4 rounded-lg:font-medium transition-all duration-200 ${
                     realTimeTracking 
@@ -373,11 +370,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
         {/* Main Content */}
         <main className="relative z-10>"
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
             
             {/* Tab Navigation */}"
-            <div className=""mb-8">
-              <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1"">
+            </div><div className=""mb-8">
+              <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1"">
                 {[
                   { id: 'overview', label: 'System Overview', icon: '📊' },
 { id: 'fleet', label: 'Drone Fleet', icon: '🚁' }
@@ -386,13 +383,12 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                   { id: 'weather', label: 'Weather & Airspace', icon: '🌤️' },
 { id: 'analytics', label: 'Analytics', icon: '📈' }
                 ].map((tab) => (
-                  <button
-                    key={tab.id}
+                  
                     onClick={() => setActiveTab(tab.id)}
                     className="{`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                       activeTab === tab.id
                         ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
+                          'text-gray-300 hover text-white hover bg-gray-700/50'
                     }`}
                   >
                     <span>{tab.icon}</span>
@@ -407,11 +403,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               
               {/* System Overview */},
 {activeTab === 'overview' && (
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6>
+                </div><div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                   {/* System Status */}"
                   <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700">
-                    <div className="flex items-center space-x-3 mb-4>"
-                      <div className="w-10 h-10 bg-green-500 rounded-lg:flex items-center justify-center>"
+                    </div><div className="flex items-center space-x-3 mb-4>"
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center>"
                         <span className=""text-white" text-lg>✅</span>
                       </div>
                       <div>
@@ -421,7 +417,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                     </div>
                     "
                     <div className="space-y-3">
-                      <div className="flex justify-between>"
+                      </div><div className="flex justify-between>"
                         <span className=text-gray-300"">Active Drones</span>
                         <span className="text-white font-semibold>{mockDroneFleet.filter(d => d.status === 'available').length}</span>
                       </div>"
@@ -442,43 +438,41 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
                   {/* Real-time Map */}"
                   <div className=""lg:col-span-2" bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                    <div className="flex items-center justify-between mb-4"">
+                    </div><div className="flex items-center justify-between mb-4"">
                       <h3 className="text-lg font-semibold text-white>Live Fleet Tracking</h3>"
                       <div className="flex items-center space-x-2>"
-                        <div className=""w-3" h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse></div>
+                        </div><div className=""w-3" h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse></div>
                         <span className="text-green-400 text-sm"">Live</span>
                       </div>
                     </div>
                     
-                    <div 
-                      ref={mapRef}
-                      className="w-full h-124 bg-gray-900 rounded-lg:border border-gray-600 flex items-center justify-center
+                    
                     >"
-                      <div className="text-center">
-                        <div className="text-4xl:mb-2">🗺️</div>
+                      </div><div className="text-center">
+                        <div className="text-4xl mb-2">🗺️</div>
                         <p className=text-gray-400">Interactive Drone Fleet Map</p>
-                        <p className="text-sm:text-gray-500>Real-time GPS tracking and route visualization</p>
+                        <p className="text-sm text-gray-500>Real-time GPS tracking and route visualization</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Quick Actions */}"
-                  <div className="lg:col-span-3 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <div className="lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                     <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4"">
-                      <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200>"
-                        <div className="text-2xl:mb-2">📦</div>
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-4"">
+                      <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200>"
+                        <div className="text-2xl mb-2">📦</div>
                         <div className="font-semibold">Schedule Delivery</div>
                       </button>
-                      <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200"">
-                        <div className="text-2xl:mb-2>🚁</div>"
+                      <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200"">
+                        <div className="text-2xl mb-2>🚁</div>"
                         <div className="font-semibold">Deploy Drone</div>
                       </button>
-                      <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>"
+                      <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200>"
                         <div className=text-2xl:mb-2"">📊</div>
                         <div className="font-semibold>View Analytics</div>
                       </button>"
-                      <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg:text-white hover:from-orange-700 hover:to-orange-800 transition-all duration-200>"
+                      <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>"
                         <div className=""text-2xl:mb-2">⚙️</div>
                         <div className=font-semibold">System Settings</div>
                       </button>
@@ -490,19 +484,19 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               {/* Drone Fleet */},
 {activeTab === 'fleet' && (
                 <div className="space-y-6>"
-                  <div className="flex items-center justify-between>"
+                  </div><div className="flex items-center justify-between>"
                     <h2 className=""text-2xl" font-bold text-white>Drone Fleet Management</h2>
-                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:hover:from-blue-700 hover:to-purple-700 transition-all duration-200"">
+                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200"">
                       Add New Drone
                     </button>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 xl grid-cols-3 gap-6>
                     {mockDroneFleet.map((drone) => ("
-                      <div key={drone.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700 hover:border-gray-600 transition-all duration-200>"
+                      </div><div key={drone.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700 hover border-gray-600 transition-all duration-200>"
                         <div className=""flex" items-center justify-between mb-4>
-                          <div className="flex items-center space-x-3"">
-                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg:flex items-center justify-center>"
+                          </div><div className="flex items-center space-x-3"">
+                            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center>"
                               <span className="text-white text-xl>🚁</span>
                             </div>
                             <div>"
@@ -516,13 +510,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                         </div>
                         "
                         <div className="space-y-3">
-                          <div className="flex justify-between>"
+                          </div><div className="flex justify-between>"
                             <span className=text-gray-300"">Battery</span>
                             <div className="flex items-center space-x-2>"
-                              <div className="w-20 bg-gray-700 rounded-full h-2>
-                                <div "
-                                  className=""bg-green-500" h-2 rounded-full transition-all duration-300
-                                  style={{ width: `${drone.battery}%` }}
+                              </div><div className="w-20 bg-gray-700 rounded-full h-2>
+                                
                                 ></div>
                               </div>
                               <span className="text-white text-sm"">{drone.battery}%</span>
@@ -556,14 +548,14 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                         </div>
                         
                         <div className="mt-4 pt-4 border-t border-gray-700"">
-                          <div className="flex space-x-2>"
-                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg:text-sm:hover:bg-blue-700 transition-colors>
+                          </div><div className="flex space-x-2>"
+                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors>
                               Deploy
                             </button>"
                             <button className=""flex-1" px-3 py-4 bg-gray-600 text-white rounded-lg:text-sm:hover:bg-gray-700 transition-colors>
                               Details
                             </button>
-                            <button className="flex-1 px-3 py-4 bg-yellow-1200 text-white rounded-lg:text-sm:hover:bg-yellow-700 transition-colors"">
+                            <button className="flex-1 px-3 py-4 bg-yellow-1200 text-white rounded-lg text-sm hover bg-yellow-700 transition-colors"">
                               Maintain
                             </button>
                           </div>
@@ -577,19 +569,19 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               {/* Delivery Routes */},
 {activeTab === 'routes' && (
                 <div className="space-y-6>"
-                  <div className="flex items-center justify-between>"
+                  </div><div className="flex items-center justify-between>"
                     <h2 className=""text-2xl" font-bold text-white>Delivery Routes</h2>
-                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:hover:from-blue-700 hover:to-purple-700 transition-all duration-200"">
+                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200"">
                       Create Route
                     </button>
                   </div>
                   
                   <div className="space-y-4>
                     {mockDeliveryRoutes.map((route) => ("
-                      <div key={route.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                      </div><div key={route.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                         <div className=""flex" items-center justify-between mb-4>
-                          <div className="flex items-center space-x-3"">
-                            <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg:flex items-center justify-center>"
+                          </div><div className="flex items-center space-x-3"">
+                            <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>"
                               <span className="text-white text-lg>📦</span>
                             </div>
                             <div>"
@@ -598,21 +590,18 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                             </div>
                           </div>
                           <div className="flex items-center space-x-3>"
-                            <div className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(route.priority)} text-white`}>
+                            </div><div className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(route.priority)} text-white`}>
                               {route.priority}
                             </div>"
-                            <div className=""{`px-3" py-3 rounded-full text-xs font-medium ${
-                              route.status === 'completed' ? 'bg-green-500' :
-                              route.status === 'in-progress' ? 'bg-blue-500' :
-                              route.status === 'failed' ? 'bg-red-500' : 'bg-yellow-500'
+                            
                             } text-white`}>
                               {route.status}
                             </div>
                           </div>
                         </div>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"">
-                          <div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-4"">
+                          </div><div>
                             <span className="text-gray-300 text-sm>Distance</span>"
                             <p className="text-white font-semibold>{route.distance} km</p>
                           </div>
@@ -631,18 +620,18 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                         </div>
                         
                         <div className="mt-4 pt-4 border-t border-gray-700>"
-                          <div className="flex space-x-2>
-                            <button 
+                          </div><div className="flex space-x-2>
+                            
                               onClick={() => scheduleDelivery(route)}
                               disabled={isLoading}"
                               className=""flex-1" px-3 py-4 bg-green-600 text-white rounded-lg:text-sm:hover:bg-green-700 transition-colors disabled opacity-50
                             >
                               {isLoading ? 'Scheduling...' : 'Schedule Delivery'}
                             </button>
-                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg:text-sm:hover:bg-blue-700 transition-colors"">
+                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors"">
                               Track Route
                             </button>
-                            <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg:text-sm:hover:bg-gray-700 transition-colors>
+                            <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover bg-gray-700 transition-colors>
                               Details
                             </button>
                           </div>
@@ -656,19 +645,19 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               {/* Logistics Hubs */},
 {activeTab === 'hubs' && ("
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between>"
+                  </div><div className="flex items-center justify-between>"
                     <h2 className=""text-2xl" font-bold text-white">Logistics Hubs</h2>
-                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:hover:from-blue-700 hover:to-purple-700 transition-all duration-200>
+                    <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200>
                       Add Hub
                     </button>
                   </div>
                   "
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+                  <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                     {mockLogisticsHubs.map((hub) => ("
-                      <div key={hub.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                      </div><div key={hub.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
                         <div className="flex items-center justify-between mb-4"">
-                          <div className="flex items-center space-x-3>"
-                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg:flex items-center justify-center>"
+                          </div><div className="flex items-center space-x-3>"
+                            <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center>"
                               <span className=""text-white" text-xl>🏢</span>
                             </div>
                             <div>
@@ -677,13 +666,13 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                             </div>
                           </div>"
                           <div className="text-right">
-                            <div className="text-green-400 font-semibold>{hub.operatingHours}</div>"
+                            </div><div className="text-green-400 font-semibold>{hub.operatingHours}</div>"
                             <div className=""text-gray-400" text-sm">Operating</div>
                           </div>
                         </div>
                         
                         <div className="space-y-3>"
-                          <div className="flex justify-between>"
+                          </div><div className="flex justify-between>"
                             <span className=""text-gray-300">Capacity</span>
                             <span className=text-white">{hub.currentInventory}/{hub.capacity} packages</span>
                           </div>
@@ -705,14 +694,14 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                         </div>
                         "
                         <div className="mt-4 pt-4 border-t border-gray-700>"
-                          <div className=""flex" space-x-2>
-                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg:text-sm:hover:bg-blue-700 transition-colors"">
+                          </div><div className=""flex" space-x-2>
+                            <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors"">
                               Manage
                             </button>
-                            <button className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg:text-sm:hover:bg-green-700 transition-colors>
+                            <button className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors>
                               Inventory
                             </button>"
-                            <button className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg:text-sm:hover:bg-purple-700 transition-colors>
+                            <button className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg text-sm hover bg-purple-700 transition-colors>
                               Contact
                             </button>
                           </div>
@@ -727,11 +716,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 {activeTab === 'weather' && ("
                 <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {/* Weather Conditions */}
-                  <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                  </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                     <h3 className="text-lg font-semibold text-white mb-4>Weather Conditions</h3>
                     {weatherData && ("
                       <div className="space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=text-gray-300"">Temperature</span>
                           <span className="text-white>{weatherData.temperature}°F</span>
                         </div>"
@@ -756,17 +745,14 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                   </div>
 
                   {/* Airspace Restrictions */}"
-                  <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                     <h3 className=""text-lg" font-semibold text-white mb-4>Airspace Restrictions</h3>
                     <div className=space-y-3">
                       {airspaceRestrictions.map((restriction) => (
-                        <div key={restriction.id} className="p-3 bg-gray-700/50 rounded-lg>"
+                        </div><div key={restriction.id} className="p-3 bg-gray-700/50 rounded-lg>"
                           <div className="flex items-center justify-between mb-2>"
                             <span className=""text-white" font-medium>{restriction.type}</span>
-                            <div className={`px-4" py-3 rounded text-xs ${
-                              restriction.severity === 'critical' ? 'bg-red-500' :
-                              restriction.severity === 'high' ? 'bg-orange-500' :
-                              restriction.severity === 'medium' ? 'bg-yellow-500' : 'bg-green-500'
+                            
                             } text-white`}>
                               {restriction.severity}
                             </div>
@@ -785,9 +771,9 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                   <h2 className="text-2xl font-bold text-white>Analytics Dashboard</h2>
                   "
                   <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className="flex items-center space-x-3>"
-                        <div className=""w-10" h-10 bg-green-500 rounded-lg:flex items-center justify-center>
+                        </div><div className=""w-10" h-10 bg-green-500 rounded-lg:flex items-center justify-center>
                           <span className="text-white text-lg"">📦</span>
                         </div>
                         <div>
@@ -798,8 +784,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                     </div>
                     "
                     <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex items-center space-x-3"">
-                        <div className="w-10 h-10 bg-blue-500 rounded-lg:flex items-center justify-center>"
+                      </div><div className="flex items-center space-x-3"">
+                        <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center>"
                           <span className="text-white text-lg>⏱️</span>
                         </div>
                         <div>"
@@ -809,8 +795,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
-                      <div className="flex items-center space-x-3>"
+                    <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
+                      </div><div className="flex items-center space-x-3>"
                         <div className=""w-10" h-10 bg-purple-500 rounded-lg:flex items-center justify-center>
                           <span className="text-white text-lg"">✅</span>
                         </div>
@@ -822,8 +808,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                     </div>
                     "
                     <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex items-center space-x-3"">
-                        <div className="w-10 h-10 bg-orange-500 rounded-lg:flex items-center justify-center>"
+                      </div><div className="flex items-center space-x-3"">
+                        <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center>"
                           <span className="text-white text-lg>💰</span>
                         </div>
                         <div>"
@@ -834,11 +820,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>"
-                    <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <div className="grid grid-cols-1 lg grid-cols-2 gap-6>"
+                    </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <h3 className=""text-lg" font-semibold text-white mb-4>Delivery Performance</h3>
                       <div className=space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className="text-gray-300">On-time Deliveries</span>
                           <span className="text-green-400">96.8%</span>
                         </div>
@@ -853,10 +839,10 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       </div>
                     </div>
                     "
-                    <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <h3 className=""text-lg" font-semibold text-white mb-4>Fleet Utilization</h3>
                       <div className=space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className="text-gray-300">Active Drones</span>
                           <span className="text-blue-400">85%</span>
                         </div>
@@ -880,11 +866,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
         {/* Footer */}"
         <footer className="relative z-10 mt-16>"
           <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-            <div className=text-center">
+            </div><div className=text-center">
               <p className="text-gray-400>
                 AI-Powered Autonomous Drone Delivery & Logistics System | Zion Tech Group
               </p>"
-              <p className="text-gray-500 text-sm:mt-2"">
+              <p className="text-gray-500 text-sm mt-2"">
                 Advanced fleet management, real-time tracking, and intelligent route optimization
               </p>
             </div>

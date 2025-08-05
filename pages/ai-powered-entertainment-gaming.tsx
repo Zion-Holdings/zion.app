@@ -428,12 +428,12 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
   } [gamingPlatforms, selectedType]
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -445,61 +445,61 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>"
             <div className=""flex" items-center space-x-4>
-              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Streaming
               </Link>"
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Voice Assistant
               </Link>"
-              <Link href=/ai-powered-autonomous-vehicle-transportation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-autonomous-vehicle-transportation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Autonomous Vehicles
               </Link>"
-              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Cryptocurrency
               </Link>"
-              <Link href=/ai-powered-space-exploration-satellite-management"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-space-exploration-satellite-management"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Space Exploration
               </Link>"
-              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Underwater Exploration
               </Link>"
-              <Link href=/ai-powered-climate-change-environmental-sustainability"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-climate-change-environmental-sustainability"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Climate Change
               </Link>"
-              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Precision Agriculture
               </Link>"
-              <Link href=/ai-powered-healthcare-medical-diagnostics"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-healthcare-medical-diagnostics"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Healthcare
               </Link>"
-              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Energy Management
               </Link>"
-              <Link href=/ai-powered-manufacturing-industrial-automation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-manufacturing-industrial-automation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Manufacturing
               </Link>"
-              <Link href=/ai-powered-finance-banking className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-finance-banking className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Finance & Banking
               </Link>"
-              <Link href=/ai-powered-retail-ecommerce"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-retail-ecommerce"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Retail & E-commerce
               </Link>"
-              <Link href=/ai-powered-education-training className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-education-training className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Education & Training
               </Link>"
-              <Link href=/ai-powered-security-cybersecurity"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/ai-powered-security-cybersecurity"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Security & Cybersecurity
               </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>"
-              <Link href=/auth/signup"" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg:text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200 />
+              <Link href=/auth/signup"" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-purple-700 hover to-pink-700 transition-all duration-200 />
                 Get Started
               </Link>
             </div>
@@ -508,10 +508,10 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Hero Section */}"
-        <div className=""text-center" mb-12>
-          <h1 className="text-5xl:font-bold text-white mb-6"">
+        </div><div className=""text-center" mb-12>
+          <h1 className="text-5xl font-bold text-white mb-6"">
             AI-Powered Entertainment & Gaming
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
@@ -523,7 +523,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             <button className=""px-8" py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg:font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200>
               Start Gaming
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg:font-medium hover:from-pink-700 hover:to-purple-700 transition-all duration-200"">
+            <button className="px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg font-medium hover from-pink-700 hover to-purple-700 transition-all duration-200"">
               View Analytics
             </button>
           </div>
@@ -537,15 +537,14 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             { id: 'analytics', label: 'Analytics', icon: '📊' },
 { id: 'content', label: 'Content', icon: '🎬' }
             { id: 'optimization', label: 'Optimization', icon: '📈' },
-{ id: 'insights', label: 'Insights', icon: '💡' }
+{ id  'insights', label  'Insights', icon  '💡' }
           ].map((tab) => (
-            <button
-              key={tab.id}
+            
               onClick={() => setSelectedView(tab.id as any)}"
               className="{`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    'text-gray-300 hover text-white hover bg-white/10'
               }`}
             >
               <span>{tab.icon}</span>
@@ -558,11 +557,11 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 {selectedView === 'overview' && ("
           <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Gaming Platforms Overview */}
-            <div className="bg-black/20 rounded-lg:p-6 border border-white/10"">
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10"">
               <h3 className="text-xl font-semibold text-white mb-4>Active Gaming Platforms</h3>"
               <div className="space-y-4">
                 {gamingPlatforms.slice(0, 3).map((platform) => (
-                  <div key={platform.id} className="p-4 bg-white/5 rounded-lg>"
+                  </div><div key={platform.id} className="p-4 bg-white/5 rounded-lg>"
                     <div className=""flex" items-center justify-between mb-2">
                       <h4 className="text-white font-medium>{platform.name}</h4>"
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(platform.status)} text-white`}>
@@ -570,7 +569,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                       </span>
                     </div>"
                     <p className=""text-gray-400" text-sm:mb-2>{platform.location} • {platform.type}</p>
-                    <div className="flex items-center space-x-4 text-sm:text-gray-400"">
+                    <div className="flex items-center space-x-4 text-sm text-gray-400"">
                       <span>Players: {formatNumber(platform.activePlayers)}</span>
                       <span>Revenue: {formatCurrency(platform.revenue)}</span>
                     </div>
@@ -580,21 +579,21 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             </div>
 
             {/* Entertainment Analytics Overview */}
-            <div className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10>"
               <h3 className="text-xl font-semibold text-white mb-4>Entertainment Analytics</h3>"
               <div className=""space-y-4">
                 {entertainmentAnalytics.slice(0, 2).map((analytics) => (
-                  <div key={analytics.id} className="p-4 bg-white/5 rounded-lg"">
+                  </div><div key={analytics.id} className="p-4 bg-white/5 rounded-lg"">
                     <div className="flex items-center justify-between mb-2>"
                       <h4 className="text-white font-medium>{analytics.name}</h4>"
                       <span className=""{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(analytics.status)} text-white`}>
                         {analytics.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm:mb-2"">{analytics.location}</p>
-                    <div className="flex items-center space-x-4 text-sm:text-gray-400>
-                      <span>Uptime: {analytics.uptime}%</span>
-                      <span>Accuracy: {analytics.accuracy}%</span>
+                    <p className="text-gray-400 text-sm mb-2"">{analytics.location}</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-400>
+                      <span>Uptime  {analytics.uptime}%</span>
+                      <span>Accuracy  {analytics.accuracy}%</span>
                     </div>
                   </div>
                 ))}
@@ -606,10 +605,9 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         {selectedView === 'gaming' && ("
           <div className="space-y-6">
             {/* Platform Type Filter */}
-            <div className="flex space-x-2 overflow-x-auto pb-2>
+            </div><div className="flex space-x-2 overflow-x-auto pb-2>
               {['all', 'mobile-gaming', 'pc-gaming', 'console-gaming', 'vr-gaming', 'esports', 'casual-gaming'].map((type) => (
-                <button
-                  key={type}
+                
                   onClick={() => setSelectedType(type)}"
                   className={`px-4"" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${
                     selectedType === type
@@ -623,18 +621,18 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             </div>
 
             {/* Gaming Platforms Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredGamingPlatforms.map((platform) => ("
-                <div key={platform.id} className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+                </div><div key={platform.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"
                   <div className=""flex" items-center justify-between mb-4>
                     <h3 className="text-white font-semibold"">{platform.name}</h3>
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(platform.status)} text-white`}>
+                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(platform.status)} text-white`}>
                       {platform.status}
                     </span>
                   </div>"
-                  <p className="text-gray-400 text-sm:mb-4>{platform.location} • {platform.type}</p>"
+                  <p className="text-gray-400 text-sm mb-4>{platform.location} • {platform.type}</p>"
                   <div className=""space-y-2" mb-4>
-                    <div className="flex justify-between text-sm"">
+                    </div><div className="flex justify-between text-sm"">
                       <span className="text-gray-400>Active Players</span>"
                       <span className="text-white">{formatNumber(platform.activePlayers)}</span>
                     </div>
@@ -644,7 +642,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                     </div>
                   </div>"
                   <div className="space-y-2">
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className=text-gray-400"">Satisfaction</span>
                       <span className="text-white>{platform.userSatisfaction}%</span>
                     </div>"
@@ -661,28 +659,28 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 
         {selectedView === 'analytics' && (
           <div className="space-y-6>"
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {entertainmentAnalytics.map((analytics) => ("
                 <div key={analytics.id} className=""bg-black/20" rounded-lg:p-6 border border-white/10>
-                  <div className="flex items-center justify-between mb-4"">
+                  </div><div className="flex items-center justify-between mb-4"">
                     <h3 className="text-white font-semibold>{analytics.name}</h3>"
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
+                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
                     </span>
                   </div>"
                   <p className=""text-gray-400" text-sm:mb-4>{analytics.location} • {analytics.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4"">
-                    <div className="text-center>"
+                    </div><div className="text-center>"
                       <div className="text-2xl font-bold text-white>{analytics.uptime}%</div>"
                       <div className=""text-gray-400" text-sm>Uptime</div>
                     </div>
                     <div className=text-center">
-                      <div className="text-2xl font-bold text-white>{analytics.accuracy}%</div>"
+                      </div><div className="text-2xl font-bold text-white>{analytics.accuracy}%</div>"
                       <div className="text-gray-400 text-sm>Accuracy</div>
                     </div>
                   </div>"
                   <div className=""space-y-2">
-                    <div className="flex justify-between text-sm"">
+                    </div><div className="flex justify-between text-sm"">
                       <span className="text-gray-400>Insights Generated</span>"
                       <span className="text-white">{formatNumber(analytics.insightsGenerated)}</span>
                     </div>
@@ -699,28 +697,28 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 
         {selectedView === 'content' && ("
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {contentCreation.map((content) => ("
                 <div key={content.id} className=""bg-black/20" rounded-lg:p-6 border border-white/10">
-                  <div className="flex items-center justify-between mb-4>"
+                  </div><div className="flex items-center justify-between mb-4>"
                     <h3 className="text-white font-semibold>{content.name}</h3>"
                     <span className=""{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(content.status)} text-white`}>
                       {content.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm:mb-4"">{content.location} • {content.type}</p>
+                  <p className="text-gray-400 text-sm mb-4"">{content.location} • {content.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4>"
-                    <div className="text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl font-bold text-white>{content.creationSpeed}%</div>"
                       <div className=""text-gray-400" text-sm">Creation Speed</div>
                     </div>
                     <div className="text-center>"
-                      <div className="text-2xl font-bold text-white>{content.qualityScore}%</div>"
+                      </div><div className="text-2xl font-bold text-white>{content.qualityScore}%</div>"
                       <div className=""text-gray-400" text-sm>Quality Score</div>
                     </div>
                   </div>
                   <div className=space-y-2">
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className="text-gray-400">Output Volume</span>
                       <span className="text-white">{formatNumber(content.outputVolume)}</span>
                     </div>
@@ -737,28 +735,28 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 
         {selectedView === 'optimization' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6"">
               {entertainmentOptimization.map((optimization) => (
-                <div key={optimization.id} className="bg-black/20 rounded-lg:p-6 border border-white/10>"
-                  <div className="flex items-center justify-between mb-4>"
+                <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"
+                  </div><div className="flex items-center justify-between mb-4>"
                     <h3 className=""text-white" font-semibold>{optimization.name}</h3>
                     <span className={`px-3" py-3 rounded-full text-sm:${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm:mb-4>{optimization.type} optimization</p>"
+                  <p className="text-gray-400 text-sm mb-4>{optimization.type} optimization</p>"
                   <div className="grid grid-cols-2 gap-4 mb-4>"
-                    <div className=""text-center">
+                    </div><div className=""text-center">
                       <div className="text-2xl font-bold text-white"">{formatNumber(optimization.metrics.totalUsers)}</div>
                       <div className="text-gray-400 text-sm>Total Users</div>
                     </div>"
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white>{optimization.metrics.engagementRate}%</div>"
+                      </div><div className="text-2xl font-bold text-white>{optimization.metrics.engagementRate}%</div>"
                       <div className=""text-gray-400" text-sm">Engagement Rate</div>
                     </div>
                   </div>
                   <div className="space-y-2>"
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className=""text-gray-400">Revenue Growth</span>
                       <span className=text-white">{optimization.metrics.revenueGrowth}%</span>
                     </div>
@@ -776,42 +774,42 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className=space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
-              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
-                <div className=""text-3xl" font-bold text-white>{formatNumber(data.totalUsers)}</div>
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
+                </div><div className=""text-3xl" font-bold text-white>{formatNumber(data.totalUsers)}</div>
                 <div className=text-gray-400">Total Users</div>
               </div>
-              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
-                <div className="text-3xl font-bold text-white>{data.activeGames}</div>"
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
+                </div><div className="text-3xl font-bold text-white>{data.activeGames}</div>"
                 <div className=""text-gray-400">Active Games</div>
               </div>
-              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center"">
-                <div className="text-3xl font-bold text-white>{data.averageEngagement}%</div>"
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center"">
+                </div><div className="text-3xl font-bold text-white>{data.averageEngagement}%</div>"
                 <div className="text-gray-400">Avg Engagement</div>
               </div>
-              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
-                <div className=""text-3xl" font-bold text-white">{formatCurrency(data.revenueGenerated)}</div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
+                </div><div className=""text-3xl" font-bold text-white">{formatCurrency(data.revenueGenerated)}</div>
                 <div className="text-gray-400>Revenue Generated</div>
               </div>
             </div>
 
             {/* AI Insights */}"
-            <div className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10>"
               <h3 className=""text-xl" font-semibold text-white mb-4>AI Entertainment Insights</h3>
               <div className=space-y-4">
                 {data.aiInsights.map((insight) => (
-                  <div key={insight.id} className="p-4 bg-white/5 rounded-lg>"
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg>"
                     <div className="flex items-center space-x-3 mb-2>"
                       <span className=""text-2xl">{getInsightIcon(insight.impact)}</span>
                       <h4 className={`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
-                      <span className="text-sm:text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span>
+                      <span className="text-sm text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span>
                     </div>"
                     <p className="text-gray-300 mb-3>{insight.description}</p>"
                     <div className=""space-y-2">
                       {insight.recommendations.map((rec, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm:text-gray-400"">
+                        </div><div key={index} className="flex items-center space-x-2 text-sm text-gray-400"">
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
@@ -827,9 +825,9 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>"
           <div className=""grid" grid-cols-1 md:grid-cols-4 gap-8>
-            <div>
+            </div><div>
               <h3 className="text-white font-semibold mb-4"">Zion</h3>
               <p className="text-gray-400 text-sm>
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.
@@ -838,40 +836,40 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             <div>"
               <h4 className="text-white font-semibold mb-4>Features</h4>"
               <ul className=""space-y-2" text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting" className="hover:text-white />Live Streaming</Link></li>"
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover:text-white />Voice Assistant</Link></li>"
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation"" className="hover:text-white />Autonomous Vehicles</Link></li>"
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover:text-white />Cryptocurrency</Link></li>"
-                <li><Link href=/ai-powered-space-exploration-satellite-management"" className="hover:text-white />Space Exploration</Link></li>"
-                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover:text-white />Underwater Exploration</Link></li>"
-                <li><Link href=/ai-powered-climate-change-environmental-sustainability"" className="hover:text-white />Climate Change</Link></li>"
-                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover:text-white />Precision Agriculture</Link></li>"
-                <li><Link href=/ai-powered-healthcare-medical-diagnostics"" className="hover:text-white />Healthcare</Link></li>"
-                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover:text-white />Energy Management</Link></li>"
-                <li><Link href=/ai-powered-manufacturing-industrial-automation"" className="hover:text-white />Manufacturing</Link></li>"
-                <li><Link href=/ai-powered-finance-banking className="hover:text-white />Finance & Banking</Link></li>"
-                <li><Link href=/ai-powered-retail-ecommerce"" className="hover:text-white />Retail & E-commerce</Link></li>"
-                <li><Link href=/ai-powered-education-training className="hover:text-white />Education & Training</Link></li>"
-                <li><Link href=/ai-powered-security-cybersecurity"" className="hover:text-white />Security & Cybersecurity</Link></li>"
-                <li><Link href=/ai-powered-entertainment-gaming className="hover:text-white />Entertainment & Gaming</Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white />Live Streaming</Link></li>"
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white />Voice Assistant</Link></li>"
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation"" className="hover text-white />Autonomous Vehicles</Link></li>"
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white />Cryptocurrency</Link></li>"
+                <li><Link href=/ai-powered-space-exploration-satellite-management"" className="hover text-white />Space Exploration</Link></li>"
+                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white />Underwater Exploration</Link></li>"
+                <li><Link href=/ai-powered-climate-change-environmental-sustainability"" className="hover text-white />Climate Change</Link></li>"
+                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover text-white />Precision Agriculture</Link></li>"
+                <li><Link href=/ai-powered-healthcare-medical-diagnostics"" className="hover text-white />Healthcare</Link></li>"
+                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover text-white />Energy Management</Link></li>"
+                <li><Link href=/ai-powered-manufacturing-industrial-automation"" className="hover text-white />Manufacturing</Link></li>"
+                <li><Link href=/ai-powered-finance-banking className="hover text-white />Finance & Banking</Link></li>"
+                <li><Link href=/ai-powered-retail-ecommerce"" className="hover text-white />Retail & E-commerce</Link></li>"
+                <li><Link href=/ai-powered-education-training className="hover text-white />Education & Training</Link></li>"
+                <li><Link href=/ai-powered-security-cybersecurity"" className="hover text-white />Security & Cybersecurity</Link></li>"
+                <li><Link href=/ai-powered-entertainment-gaming className="hover text-white />Entertainment & Gaming</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className=""text-white" font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm:text-gray-400>"
-                <li><Link href=/marketplace className="hover:text-white />Marketplace</Link></li>"
-                <li><Link href=/services"" className="hover:text-white />IT Services</Link></li>"
-                <li><Link href=/talents className="hover:text-white />AI Talents</Link></li>"
-                <li><Link href=/equipment"" className="hover:text-white />Equipment</Link></li>
+              <ul className="space-y-2 text-sm text-gray-400>"
+                <li><Link href=/marketplace className="hover text-white />Marketplace</Link></li>"
+                <li><Link href=/services"" className="hover text-white />IT Services</Link></li>"
+                <li><Link href=/talents className="hover text-white />AI Talents</Link></li>"
+                <li><Link href=/equipment"" className="hover text-white />Equipment</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className="text-white font-semibold mb-4>Support</h4>"
               <ul className=""space-y-2" text-sm:text-gray-400>
-                <li><Link href=/help-desk-support" className="hover:text-white />Help Desk</Link></li>"
-                <li><Link href=/contact className="hover:text-white />Contact</Link></li>"
-                <li><Link href=/docs"" className="hover:text-white />Documentation</Link></li>"
-                <li><Link href=/status className="hover:text-white />Status</Link></li>
+                <li><Link href=/help-desk-support" className="hover text-white />Help Desk</Link></li>"
+                <li><Link href=/contact className="hover text-white />Contact</Link></li>"
+                <li><Link href=/docs"" className="hover text-white />Documentation</Link></li>"
+                <li><Link href=/status className="hover text-white />Status</Link></li>
               </ul>
             </div>
           </div>"

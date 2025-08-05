@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <h2 style="color: #2c3e50; margin: 0 0 15px 0; font-size: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 5px;">Professional Experience</h2>
           ${experience.map((exp: any) => `
             <div style="margin-bottom: 20px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+              </div><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                 <h3 style="color: #2c3e50; margin: 0; font-size: 18px; font-weight: bold;">${exp.position}</h3>
                 <span style="color: #7f8c8d; font-size: 14px;">
                   ${exp.startDate ? new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} - 
@@ -76,7 +76,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <h2 style="color: #2c3e50; margin: 0 0 15px 0; font-size: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 5px;">Education</h2>
           ${education.map((edu: any) => `
             <div style="margin-bottom: 20px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+              </div><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                 <h3 style="color: #2c3e50; margin: 0; font-size: 18px; font-weight: bold;">${edu.degree} ${edu.field ? `in ${edu.field}` : ''}</h3>
                 <span style="color: #7f8c8d; font-size: 14px;">
                   ${edu.startDate ? new Date(edu.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} - 

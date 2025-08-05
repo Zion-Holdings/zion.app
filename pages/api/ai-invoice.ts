@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     <div style="font-family: 'Arial', sans-serif; max-width: 800px; margin: auto; padding: 20px; background: white; color: #333;">
       <!-- Header -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #e0e0e0; padding-bottom: 20px;">
-        <div>
+        </div><div>
           <h1 style="color: #2c3e50; margin: 0; font-size: 28px;">INVOICE</h1>
           <p style="color: #7f8c8d; margin: 5px 0; font-size: 14px;">Invoice #: ${invoiceNumber}</p>
           <p style="color: #7f8c8d; margin: 5px 0; font-size: 14px;">Issue Date: ${issueDate}</p>
@@ -78,9 +78,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       <!-- Totals -->
       <div style="margin-bottom: 30px;">
-        <div style="display: flex; justify-content: flex-end;">
+        </div><div style="display: flex; justify-content: flex-end;">
           <div style="width: 300px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            </div><div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
               <span style="color: #7f8c8d;">Subtotal:</span>
               <span style="color: #2c3e50; font-weight: bold;">$${subtotal.toFixed(2)}</span>
             </div>

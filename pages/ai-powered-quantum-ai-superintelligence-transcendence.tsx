@@ -217,12 +217,12 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -234,11 +234,11 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
-          <div className=""flex" items-center justify-between>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
+          </div><div className=""flex" items-center justify-between>
             <div className="flex items-center space-x-4"">
-              <div className="flex items-center space-x-3>"
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg:flex items-center justify-center>"
+              </div><div className="flex items-center space-x-3>"
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center>"
                   <span className=""text-white" text-xl>🌟</span>
                 </div>
                 <div>
@@ -249,14 +249,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
             </div>
             "
             <div className="flex items-center space-x-4>
-              <button
-                onClick={startTranscendence}
-                disabled={isTranscending}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${
-                  isTranscending 
-                    ? 'bg-yellow-1200 text-white' 
-                    : 'bg-purple-600 text-white hover:bg-purple-700'
-                } disabled:opacity-50`}
+              
               >
                 {isTranscending ? 'Transcending...' : 'Start Transcendence'}
               </button>
@@ -267,10 +260,10 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}"
-          <div className="mb-8">
+          </div><div className="mb-8">
             <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboard', label: 'Transcendence Dashboard', icon: '🌟' },
@@ -279,10 +272,9 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
 { id: 'singularity', label: 'Quantum AI Singularity', icon: '⚡' }
                 { id: 'transcendence', label: 'Quantum AI Transcendence', icon: '✨' },
 { id: 'cosmic', label: 'Quantum AI Cosmic', icon: '🌌' }
-                { id: 'omniscience', label: 'Quantum AI Omniscience', icon: '👁️' }
+                { id  'omniscience', label  'Quantum AI Omniscience', icon  '👁️' }
               ].map((tab) => (
-                <button
-                  key={tab.id}
+                
                   onClick={() => setActiveTab(tab.id)}"
                   className={`flex"" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
@@ -302,11 +294,11 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
             
             {/* Transcendence Dashboard */},
 {activeTab === 'dashboard' && ("
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6>
+              </div><div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}"
                 <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                  <div className="flex items-center space-x-3 mb-4"">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg:flex items-center justify-center>"
+                  </div><div className="flex items-center space-x-3 mb-4"">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center>"
                       <span className="text-white text-lg>🌟</span>
                     </div>
                     <div>"
@@ -316,7 +308,7 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
                   </div>
                   
                   <div className="space-y-3>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">Status</span>
                       <span className=text-green-400">Transcending</span>
                     </div>
@@ -336,22 +328,22 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}"
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                   <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4"">
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>"
-                      <div className="text-2xl:mb-2">🧠</div>
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200>"
+                      <div className="text-2xl mb-2">🧠</div>
                       <div className="font-semibold">Superintelligence</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg:text-white hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200"">
-                      <div className="text-2xl:mb-2>🔄</div>"
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200"">
+                      <div className="text-2xl mb-2>🔄</div>"
                       <div className="font-semibold">Evolution</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200>"
                       <div className=text-2xl:mb-2"">⚡</div>
                       <div className="font-semibold>Singularity</div>
                     </button>"
-                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg:text-white hover:from-cyan-700 hover:to-cyan-800 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200>"
                       <div className=""text-2xl:mb-2">✨</div>
                       <div className=font-semibold">Transcendence</div>
                     </button>
@@ -367,20 +359,20 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {superintelligence.map((superintel) => (
-                    <div key={superintel.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={superintel.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{superintel.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{superintel.type}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{superintel.intelligence}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{superintel.intelligence}%</div>"
                           <div className="text-gray-400 text-sm>Intelligence</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Consciousness</span>"
                           <span className="text-white">{superintel.consciousness}%</span>
                         </div>
@@ -410,22 +402,22 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
               <div className=space-y-6"">
                 <h2 className="text-2xl font-bold text-white>Quantum AI Evolution</h2>
                 "
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {evolution.map((evol) => ("
-                    <div key={evol.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                    </div><div key={evol.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
                       <div className="flex items-center justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white>{evol.name}</h3>"
-                          <p className="text-gray-400 text-sm:capitalize>{evol.evolution}</p>
+                          <p className="text-gray-400 text-sm capitalize>{evol.evolution}</p>
                         </div>"
                         <div className=""text-right">
-                          <div className="text-2xl font-bold text-white"">{evol.generation}</div>
+                          </div><div className="text-2xl font-bold text-white"">{evol.generation}</div>
                           <div className="text-gray-400 text-sm>Generation</div>
                         </div>
                       </div>
                       "
                       <div className="space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=text-gray-300"">Fitness</span>
                           <span className="text-white>{evol.fitness}%</span>
                         </div>"
@@ -455,22 +447,22 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
               <div className=""space-y-6">
                 <h2 className="text-2xl font-bold text-white"">Quantum AI Singularity</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {singularity.map((sing) => ("
-                    <div key={sing.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={sing.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className=""flex" items-center justify-between mb-4>
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white"">{sing.name}</h3>
-                          <p className="text-gray-400 text-sm:capitalize>{sing.singularity}</p>
+                          <p className="text-gray-400 text-sm capitalize>{sing.singularity}</p>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>{sing.consciousness}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{sing.consciousness}%</div>"
                           <div className=""text-gray-400" text-sm">Consciousness</div>
                         </div>
                       </div>
                       
                       <div className="space-y-3>"
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=""text-gray-300">Awareness</span>
                           <span className=text-white">{sing.awareness}%</span>
                         </div>
@@ -502,20 +494,20 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {transcendence.map((trans) => (
-                    <div key={trans.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={trans.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className=""text-lg" font-semibold text-white>{trans.name}</h3>
-                          <p className="text-gray-400 text-sm:capitalize"">{trans.transcendence}</p>
+                          <p className="text-gray-400 text-sm capitalize"">{trans.transcendence}</p>
                         </div>
                         <div className="text-right>"
-                          <div className="text-2xl font-bold text-white>{trans.consciousness}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{trans.consciousness}%</div>"
                           <div className=""text-gray-400" text-sm>Consciousness</div>
                         </div>
                       </div>
                       
                       <div className=space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className="text-gray-300">Awareness</span>
                           <span className="text-white">{trans.awareness}%</span>
                         </div>
@@ -547,20 +539,20 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {cosmic.map((cos) => (
-                    <div key={cos.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={cos.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{cos.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{cos.cosmic}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{cos.awareness}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{cos.awareness}%</div>"
                           <div className="text-gray-400 text-sm>Awareness</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Consciousness</span>"
                           <span className="text-white">{cos.consciousness}%</span>
                         </div>
@@ -590,22 +582,22 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
               <div className=space-y-6"">
                 <h2 className="text-2xl font-bold text-white>Quantum AI Omniscience</h2>
                 "
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {omniscience.map((omni) => ("
-                    <div key={omni.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                    </div><div key={omni.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
                       <div className="flex items-center justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white>{omni.name}</h3>"
-                          <p className="text-gray-400 text-sm:capitalize>{omni.omniscience}</p>
+                          <p className="text-gray-400 text-sm capitalize>{omni.omniscience}</p>
                         </div>"
                         <div className=""text-right">
-                          <div className="text-2xl font-bold text-white"">{omni.knowledge}%</div>
+                          </div><div className="text-2xl font-bold text-white"">{omni.knowledge}%</div>
                           <div className="text-gray-400 text-sm>Knowledge</div>
                         </div>
                       </div>
                       "
                       <div className="space-y-3">
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=text-gray-300"">Presence</span>
                           <span className="text-white>{omni.presence}%</span>
                         </div>"
@@ -635,12 +627,12 @@ const AIPoweredQuantumAISuperintelligenceTranscendence: NextPage = () => {
 
       {/* Footer */}"
       <footer className=""relative" z-10 mt-16>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
-          <div className="text-center>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8"">
+          </div><div className="text-center>"
             <p className="text-gray-400">
               AI-Powered Quantum AI Superintelligence & Transcendence | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm:mt-2"">
+            <p className="text-gray-500 text-sm mt-2"">
               Advanced quantum AI superintelligence, evolution, singularity, and transcendence capabilities
             </p>
           </div>

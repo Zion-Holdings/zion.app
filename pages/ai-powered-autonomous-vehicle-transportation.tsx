@@ -413,32 +413,32 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
       <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
+        </div><div className="fixed inset-0 z-0>"
           <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>Zion</span>
             </Link>"
             <div className=""flex" items-center space-x-4>
-              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
+              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium />
                 Streaming
               </Link>"
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium />
                 Voice Assistant
               </Link>"
-              <Link href=/ai-powered-holographic-display"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
+              <Link href=/ai-powered-holographic-display"" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium />
                 Holographic
               </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
+              <Link href=/auth/login className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>"
-              <Link href=/auth/signup"" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 />
+              <Link href=/auth/signup"" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200 />
                 Get Started
               </Link>
             </div>
@@ -447,9 +447,9 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Hero Section */}"
-        <div className=""text-center" mb-12>
+        </div><div className=""text-center" mb-12>
           <h1 className="text-5xl font-bold text-white mb-6"">
             AI-Powered Autonomous Vehicle & Transportation
           </h1>
@@ -462,7 +462,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             <button className=""px-8" py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200>
               Deploy Vehicle
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200"">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200"">
               Optimize Traffic
             </button>
           </div>
@@ -476,15 +476,14 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             { id: 'traffic', label: 'Traffic Optimization', icon: '🚦' },
 { id: 'routes', label: 'Route Planning', icon: '🗺️' }
             { id: 'logistics', label: 'Logistics', icon: '📦' },
-{ id: 'analytics', label: 'Analytics', icon: '📈' }
+{ id  'analytics', label  'Analytics', icon  '📈' }
           ].map((tab) => (
-            <button
-              key={tab.id}
+            
               onClick={() => setSelectedView(tab.id as any)}"
               className="{`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
-                  : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    'text-gray-300 hover text-white hover bg-white/10'
               }`}
             >
               <span>{tab.icon}</span>
@@ -497,11 +496,11 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
 {selectedView === 'overview' && ("
           <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Autonomous Vehicles Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10"">
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10"">
               <h3 className="text-xl font-semibold text-white mb-4>Autonomous Vehicles</h3>"
               <div className="space-y-4">
                 {vehicles.slice(0, 3).map((vehicle) => (
-                  <div key={vehicle.id} className="p-4 bg-white/5 rounded-lg>"
+                  </div><div key={vehicle.id} className="p-4 bg-white/5 rounded-lg>"
                     <div className=""flex" items-center justify-between mb-2">
                       <h4 className="text-white font-medium>{vehicle.name}</h4>"
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
@@ -509,7 +508,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                       </span>
                     </div>"
                     <p className=""text-gray-400" text-sm:mb-2>{vehicle.type} • {vehicle.location.address}</p>
-                    <div className="flex items-center space-x-4 text-sm:text-gray-400"">
+                    <div className="flex items-center space-x-4 text-sm text-gray-400"">
                       <span>{vehicle.battery}% battery</span>
                       <span>{vehicle.speed} mph</span>
                     </div>
@@ -523,15 +522,15 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               <h3 className="text-xl font-semibold text-white mb-4>Traffic Optimization</h3>"
               <div className=""space-y-4">
                 {trafficOptimizations.slice(0, 2).map((optimization) => (
-                  <div key={optimization.id} className="p-4 bg-white/5 rounded-lg"">
+                  </div><div key={optimization.id} className="p-4 bg-white/5 rounded-lg"">
                     <div className="flex items-center justify-between mb-2>"
                       <h4 className="text-white font-medium>{optimization.location}</h4>"
                       <span className=""{`px-4" py-3 rounded text-xs font-medium ${getCongestionColor(optimization.congestionLevel)}`}>
                         {optimization.congestionLevel}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm:mb-2"">{optimization.optimizationType} optimization</p>
-                    <div className="flex items-center space-x-4 text-sm:text-gray-400>
+                    <p className="text-gray-400 text-sm mb-2"">{optimization.optimizationType} optimization</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-400>
                       <span>{optimization.impact}% improvement</span>
                       <span>{optimization.optimizedFlow} vehicles/hr</span>
                     </div>
@@ -545,10 +544,9 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         {selectedView === 'vehicles' && ("
           <div className="space-y-6">
             {/* Vehicle Type Filter */}
-            <div className="flex space-x-2 overflow-x-auto pb-2>
+            </div><div className="flex space-x-2 overflow-x-auto pb-2>
               {['all', 'passenger', 'cargo', 'emergency', 'delivery'].map((type) => (
-                <button
-                  key={type}
+                
                   onClick={() => setSelectedType(type)}"
                   className={`px-4"" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
@@ -562,18 +560,18 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </div>
 
             {/* Vehicles Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredVehicles.map((vehicle) => ("
-                <div key={vehicle.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"
+                </div><div key={vehicle.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"
                   <div className=""flex" items-center justify-between mb-4>
                     <h3 className="text-white font-semibold"">{vehicle.name}</h3>
                     <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
                       {vehicle.status}
                     </span>
                   </div>"
-                  <p className="text-gray-400 text-sm:mb-4>{vehicle.type} • {vehicle.location.address}</p>"
+                  <p className="text-gray-400 text-sm mb-4>{vehicle.type} • {vehicle.location.address}</p>"
                   <div className=""space-y-2" mb-4>
-                    <div className="flex justify-between text-sm"">
+                    </div><div className="flex justify-between text-sm"">
                       <span className="text-gray-400>Battery</span>"
                       <span className="text-white">{vehicle.battery}%</span>
                     </div>
@@ -587,7 +585,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>"
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className=""text-gray-400">Performance</span>
                       <span className=text-white">{vehicle.aiAnalysis.performanceScore}/10</span>
                     </div>
@@ -604,28 +602,28 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
 
         {selectedView === 'traffic' && (
           <div className=space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6>
+            </div><div className="grid grid-cols-1 md grid-cols-2 gap-6>
               {trafficOptimizations.map((optimization) => ("
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"
-                  <div className=""flex" items-center justify-between mb-4>
+                  </div><div className=""flex" items-center justify-between mb-4>
                     <h3 className="text-white font-semibold text-lg"">{optimization.location}</h3>
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getCongestionColor(optimization.congestionLevel)}`}>
+                    <span className="{`px-3 py-3 rounded-full text-sm ${getCongestionColor(optimization.congestionLevel)}`}>
                       {optimization.congestionLevel}
                     </span>
                   </div>"
                   <p className="text-gray-400 mb-4>{optimization.optimizationType} optimization</p>"
                   <div className=""grid" grid-cols-2 gap-4 mb-4>
-                    <div className=text-center">
+                    </div><div className=text-center">
                       <div className="text-2xl font-bold text-white>{optimization.impact}%</div>"
                       <div className="text-gray-400 text-sm>Improvement</div>
                     </div>"
                     <div className=""text-center">
-                      <div className="text-2xl font-bold text-white"">{optimization.optimizedFlow}</div>
+                      </div><div className="text-2xl font-bold text-white"">{optimization.optimizedFlow}</div>
                       <div className="text-gray-400 text-sm>Vehicles/hr</div>
                     </div>
                   </div>"
                   <div className="space-y-2">
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className=text-gray-400"">Accuracy</span>
                       <span className="text-white>{Math.round(optimization.aiAnalysis.accuracy * 100)}%</span>
                     </div>"
@@ -642,28 +640,28 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
 
         {selectedView === 'routes' && (
           <div className="space-y-6>"
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6>
+            </div><div className="grid grid-cols-1 md grid-cols-2 gap-6>
               {routes.map((route) => ("
                 <div key={route.id} className=""bg-black/20" rounded-lg p-6 border border-white/10>
-                  <div className="flex items-center justify-between mb-4"">
+                  </div><div className="flex items-center justify-between mb-4"">
                     <h3 className="text-white font-semibold text-lg>{route.origin} → {route.destination}</h3>"
-                    <span className="px-3 py-3 rounded-full text-sm:bg-blue-500/20 text-blue-400>
+                    <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400>
                       {route.routeType}
                     </span>
                   </div>"
                   <p className=""text-gray-400" mb-4>{route.trafficConditions} traffic</p>
                   <div className="grid grid-cols-2 gap-4 mb-4"">
-                    <div className="text-center>"
+                    </div><div className="text-center>"
                       <div className="text-2xl font-bold text-white>{route.distance} mi</div>"
                       <div className=""text-gray-400" text-sm>Distance</div>
                     </div>
                     <div className=text-center">
-                      <div className="text-2xl font-bold text-white>{route.duration} min</div>"
+                      </div><div className="text-2xl font-bold text-white>{route.duration} min</div>"
                       <div className="text-gray-400 text-sm>Duration</div>
                     </div>
                   </div>"
                   <div className=""space-y-2">
-                    <div className="flex justify-between text-sm"">
+                    </div><div className="flex justify-between text-sm"">
                       <span className="text-gray-400>Efficiency</span>"
                       <span className="text-white">{Math.round(route.aiAnalysis.efficiency * 100)}%</span>
                     </div>
@@ -680,10 +678,10 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
 
         {selectedView === 'logistics' && ("
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6>
+            </div><div className="grid grid-cols-1 md grid-cols-2 gap-6>
               {logistics.map((order) => ("
                 <div key={order.id} className=""bg-black/20" rounded-lg p-6 border border-white/10">
-                  <div className="flex items-center justify-between mb-4>"
+                  </div><div className="flex items-center justify-between mb-4>"
                     <h3 className="text-white font-semibold text-lg>{order.customer}</h3>"
                     <span className=""{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(order.status)} text-white`}>
                       {order.status}
@@ -691,19 +689,19 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400 mb-4"">{order.cargo} • {order.weight} lbs</p>
                   <div className="grid grid-cols-2 gap-4 mb-4>"
-                    <div className="text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl font-bold text-white>{order.eta} min</div>"
                       <div className=""text-gray-400" text-sm">ETA</div>
                     </div>
                     <div className="text-center>"
-                      <div className="{`text-2xl font-bold ${getPriorityColor(order.priority)}`}>
+                      </div><div className="{`text-2xl font-bold ${getPriorityColor(order.priority)}`}>
                         {order.priority}
                       </div>"
                       <div className=""text-gray-400" text-sm>Priority</div>
                     </div>
                   </div>
                   <div className=space-y-2">
-                    <div className="flex justify-between text-sm>"
+                    </div><div className="flex justify-between text-sm>"
                       <span className="text-gray-400">Optimization</span>
                       <span className="text-white">{Math.round(order.aiAnalysis.optimizationScore * 100)}%</span>
                     </div>
@@ -721,25 +719,25 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-5 gap-6"">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
-                <div className="text-3xl font-bold text-white>{analytics.totalVehicles}</div>"
+                </div><div className="text-3xl font-bold text-white>{analytics.totalVehicles}</div>"
                 <div className=""text-gray-400">Total Vehicles</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center"">
-                <div className="text-3xl font-bold text-white>{analytics.activeRoutes}</div>"
+                </div><div className="text-3xl font-bold text-white>{analytics.activeRoutes}</div>"
                 <div className="text-gray-400">Active Routes</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
-                <div className=""text-3xl" font-bold text-white">{analytics.averageSpeed} mph</div>
+                </div><div className=""text-3xl" font-bold text-white">{analytics.averageSpeed} mph</div>
                 <div className="text-gray-400>Avg Speed</div>
               </div>"
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
-                <div className=""text-3xl" font-bold text-white>{analytics.deliverySuccessRate}%</div>
+                </div><div className=""text-3xl" font-bold text-white>{analytics.deliverySuccessRate}%</div>
                 <div className=text-gray-400">Success Rate</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>"
-                <div className="text-3xl font-bold text-white>24/7</div>"
+                </div><div className="text-3xl font-bold text-white>24/7</div>"
                 <div className=""text-gray-400">Operation</div>
               </div>
             </div>
@@ -749,7 +747,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               <h3 className="text-xl font-semibold text-white mb-4>AI Insights</h3>"
               <div className="space-y-4">
                 {analytics.aiInsights.map((insight) => (
-                  <div key={insight.id} className="p-4 bg-white/5 rounded-lg>"
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg>"
                     <div className=""flex" items-center space-x-3 mb-2">
                       <span className="text-2xl>{getInsightIcon(insight.impact)}</span>"
                       <h4 className="{`text-lg font-medium ${getInsightColor(insight.impact)}`}>
@@ -760,7 +758,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                     <p className="text-gray-300 mb-3"">{insight.description}</p>
                     <div className="space-y-2>
                       {insight.recommendations.map((rec, index) => ("
-                        <div key={index} className="flex items-center space-x-2 text-sm:text-gray-400>
+                        </div><div key={index} className="flex items-center space-x-2 text-sm text-gray-400>
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
@@ -776,9 +774,9 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
 
       {/* Footer */}"
       <div className=""bg-black/20" border-t border-white/10 mt-16>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8>
-            <div>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8"">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8>
+            </div><div>"
               <h3 className="text-white font-semibold mb-4>Zion</h3>"
               <p className=""text-gray-400" text-sm>
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.
@@ -786,29 +784,29 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4"">Features</h4>
-              <ul className="space-y-2 text-sm:text-gray-400>"
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover:text-white />Live Streaming</Link></li>"
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition"" className="hover:text-white />Voice Assistant</Link></li>"
-                <li><Link href=/ai-powered-holographic-display className="hover:text-white />Holographic Display</Link></li>"
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation"" className="hover:text-white />Autonomous Vehicles</Link></li>
+              <ul className="space-y-2 text-sm text-gray-400>"
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover text-white />Live Streaming</Link></li>"
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition"" className="hover text-white />Voice Assistant</Link></li>"
+                <li><Link href=/ai-powered-holographic-display className="hover text-white />Holographic Display</Link></li>"
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation"" className="hover text-white />Autonomous Vehicles</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className="text-white font-semibold mb-4>Services</h4>"
               <ul className=""space-y-2" text-sm:text-gray-400>
-                <li><Link href=/marketplace" className="hover:text-white />Marketplace</Link></li>"
-                <li><Link href=/services className="hover:text-white />IT Services</Link></li>"
-                <li><Link href=/talents"" className="hover:text-white />AI Talents</Link></li>"
-                <li><Link href=/equipment className="hover:text-white />Equipment</Link></li>
+                <li><Link href=/marketplace" className="hover text-white />Marketplace</Link></li>"
+                <li><Link href=/services className="hover text-white />IT Services</Link></li>"
+                <li><Link href=/talents"" className="hover text-white />AI Talents</Link></li>"
+                <li><Link href=/equipment className="hover text-white />Equipment</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className=""text-white" font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm:text-gray-400>"
-                <li><Link href=/help-desk-support className="hover:text-white />Help Desk</Link></li>"
-                <li><Link href=/contact"" className="hover:text-white />Contact</Link></li>"
-                <li><Link href=/docs className="hover:text-white />Documentation</Link></li>"
-                <li><Link href=/status"" className="hover:text-white />Status</Link></li>
+              <ul className="space-y-2 text-sm text-gray-400>"
+                <li><Link href=/help-desk-support className="hover text-white />Help Desk</Link></li>"
+                <li><Link href=/contact"" className="hover text-white />Contact</Link></li>"
+                <li><Link href=/docs className="hover text-white />Documentation</Link></li>"
+                <li><Link href=/status"" className="hover text-white />Status</Link></li>
               </ul>
             </div>
           </div>"

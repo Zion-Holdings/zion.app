@@ -308,16 +308,16 @@ const AIPoweredMachineLearningPage: NextPage = () => {
   if (loading) {
     return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
         <div className="text-center>"
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -341,8 +341,8 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <Link href=/ className=""flex-shrink-0 />
                 <h1 className="text-2xl font-bold text-white>"
@@ -351,14 +351,14 @@ const AIPoweredMachineLearningPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8"">
-              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+            <div className="hidden md flex items-center space-x-8"">
+              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Analytics
               </Link>"
-              <Link href=/ai-powered-customer-support className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/ai-powered-customer-support className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Support
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
@@ -366,10 +366,10 @@ const AIPoweredMachineLearningPage: NextPage = () => {
         </div>
       </nav>
 "
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Header */}"
-        <div className=""text-center" mb-8>
-          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4"">
+        </div><div className=""text-center" mb-8>
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4"">
             AI-Powered Machine Learning
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto>
@@ -380,15 +380,14 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
         {/* Tab Selector */}"
         <div className="flex justify-center mb-8>"
-          <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
+          </div><div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
 { id: 'models', name: 'Models', icon: '🤖' }
               { id: 'training', name: 'Training', icon: '🏋️' },
 { id: 'analytics', name: 'Analytics', icon: '📈' }
             ].map((tab) => (
-              <button
-                key={tab.id}
+              
                 onClick={() => setSelectedView(tab.id as any)}
                 className={`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
@@ -405,22 +404,22 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
         {/* Analytics Overview */},
 {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8>
+          <div className="grid grid-cols-1 md grid-cols-2 gap-6 mb-8>
             {analytics.map((metric) => ("
-              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
                 <div className=""flex" items-center justify-between mb-4>
                   <h3 className="text-lg font-semibold text-white"">{metric.metric}</h3>
                   <span className="text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
                 "
                 <div className="mb-4">
-                  <div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
+                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
                   <p className=text-sm:text-gray-400"">Target: {metric.target}</p>
                 </div>
                 
                 <div className="flex items-center justify-between text-sm>"
                   <span className="{`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
-                    {metric.improvement > 0 ? '+' : ''},
+                    {metric.improvement > 0 ? '+'   ''},
 {metric.improvement.toFixed(1)}%
                   </span>"
                   <span className=""text-gray-400">{metric.period}</span>
@@ -432,15 +431,15 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
         {/* ML Models */},
 {selectedView === 'models' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6"">
             {filteredModels.map((model) => (
-              <div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+              </div><div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
                 <div className="flex items-start justify-between mb-4>"
-                  <div className=""flex" items-center space-x-3>
+                  </div><div className=""flex" items-center space-x-3>
                     <div className=text-3xl">{getTypeIcon(model.type)}</div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1>{model.name}</h3>"
-                      <p className="text-gray-300 text-sm:capitalize>{model.type}</p>
+                      <p className="text-gray-300 text-sm capitalize>{model.type}</p>
                     </div>
                   </div>"
                   <div className=""text-right">
@@ -449,19 +448,19 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                     </span>
                     <div className="mt-2>"
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${model.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {model.aiOptimized ? 'AI OPTIMIZED' : 'AI DISABLED'}
+                        {model.aiOptimized ? 'AI OPTIMIZED'   'AI DISABLED'}
                       </span>
                     </div>
                   </div>
                 </div>
 "
                 <div className=""grid" grid-cols-2 gap-4 mb-4>
-                  <div>
+                  </div><div>
                     <p className=text-sm:text-gray-400">Accuracy</p>
                     <p className="text-lg font-semibold text-green-400>{model.accuracy}%</p>
                   </div>
                   <div>"
-                    <p className="text-sm:text-gray-400">F1 Score</p>
+                    <p className="text-sm text-gray-400">F1 Score</p>
                     <p className="text-lg font-semibold text-blue-400>{model.f1Score}%</p>
                   </div>
                   <div>"
@@ -469,7 +468,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                     <p className="text-lg font-semibold text-orange-400>{model.trainingData.toLocaleString()}</p>
                   </div>
                   <div>"
-                    <p className="text-sm:text-gray-400">Version</p>
+                    <p className="text-sm text-gray-400">Version</p>
                     <p className="text-lg font-semibold text-purple-400>{model.version}</p>
                   </div>
                 </div>
@@ -480,7 +479,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3>"
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                     View Details
                   </button>"
                   <button className=""border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
@@ -496,13 +495,13 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 {selectedView === 'training' && (
           <div className=space-y-6">
             {trainingJobs.map((job) => (
-              <div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+              </div><div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
                 <div className="flex items-start justify-between mb-4>"
-                  <div className=""flex" items-center space-x-3>
+                  </div><div className=""flex" items-center space-x-3>
                     <div className=text-3xl">🏋️</div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-1>{job.modelName}</h3>"
-                      <p className="text-gray-300 text-sm:capitalize>{job.type}</p>
+                      <p className="text-gray-300 text-sm capitalize>{job.type}</p>
                     </div>
                   </div>"
                   <div className=""text-right">
@@ -511,28 +510,26 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                     </span>
                     <div className="mt-2>"
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${job.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {job.aiAssisted ? 'AI ASSISTED' : 'MANUAL'}
+                        {job.aiAssisted ? 'AI ASSISTED'   'MANUAL'}
                       </span>
                     </div>
                   </div>
                 </div>
 "
                 <div className=""mb-4">
-                  <div className="flex items-center justify-between mb-2"">
-                    <span className="text-sm:text-gray-400>Progress</span>"
-                    <span className="text-sm:text-white">{job.progress}%</span>
+                  </div><div className="flex items-center justify-between mb-2"">
+                    <span className="text-sm text-gray-400>Progress</span>"
+                    <span className="text-sm text-white">{job.progress}%</span>
                   </div>
                   <div className="w-full bg-gray-700 rounded-full h-2>
-                    <div "
-                      className=""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${job.progress}%` }}
+                    </div>
                     ></div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4>
-                  <div>"
-                    <p className="text-sm:text-gray-400">Dataset</p>
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
+                  </div><div>"
+                    <p className="text-sm text-gray-400">Dataset</p>
                     <p className="text-lg font-semibold text-white>{job.dataset}</p>
                   </div>
                   <div>"
@@ -540,7 +537,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                     <p className="text-lg font-semibold text-blue-400>{job.hyperparameters.learningRate}</p>
                   </div>
                   <div>"
-                    <p className="text-sm:text-gray-400">Batch Size</p>
+                    <p className="text-sm text-gray-400">Batch Size</p>
                     <p className="text-lg font-semibold text-green-400>{job.hyperparameters.batchSize}</p>
                   </div>
                   <div>"
@@ -549,19 +546,19 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                   </div>
                 </div>
 "
-                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4>
-                  <span>Started: {job.startTime.toLocaleString()}</span>
+                <div className="flex items-center justify-between text-sm text-gray-400 mb-4>
+                  <span>Started  {job.startTime.toLocaleString()}</span>
                   {job.endTime && (
-                    <span>Completed: {job.endTime.toLocaleString()}</span>
+                    <span>Completed  {job.endTime.toLocaleString()}</span>
                   )}
                 </div>
 "
                 <div className=""flex" space-x-3>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"">
                     View Logs
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
-                    {job.status === 'running' ? 'Stop' : 'Restart'}
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                    {job.status === 'running' ? 'Stop'   'Restart'}
                   </button>
                 </div>
               </div>
@@ -571,19 +568,19 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
         {/* Call to Action */}"
         <div className="mt-12 text-center>"
-          <div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
+          </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
             <h2 className="text-3xl font-bold text-white mb-4"">
               Train with AI Intelligence
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent machine learning to build models with AI-driven 
               training, deployment, and optimization for advanced ML capabilities.
             </p>"
-            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
+            <div className="flex flex-col sm flex-row gap-4 justify-center>"
               <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Create Model
               </button>
-              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 View Services
               </Link>
             </div>

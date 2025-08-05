@@ -283,12 +283,12 @@ id: 'TEST-001',
   const stats = getStats(
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
       <Head>
@@ -300,19 +300,19 @@ id: 'TEST-001',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6>"
           <div className=""flex" justify-between items-center>
             <Link href=/" className="text-2xl font-bold text-white />"
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>"
             <nav className=""flex" items-center space-x-6>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/ai-powered-learning-platform className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/ai-powered-learning-platform className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Learning
               </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
                 Login
               </Link>
             </nav>
@@ -321,9 +321,9 @@ id: 'TEST-001',
       </div>
 ,
       {/* Hero Section */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-32>"
-        <div className=""text-center" mb-12>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
+        </div><div className=""text-center" mb-12>
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6"">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>
               Skill Verification & Certification
             </span>
@@ -333,10 +333,10 @@ id: 'TEST-001',
             Take skill tests, demonstrate your abilities, and showcase your professional qualifications.
           </p>"
           <div className=""flex" flex-wrap justify-center gap-4>
-            <Link href=#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+            <Link href=#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
               Take Skill Test
             </Link>"
-            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
               View Certifications
             </Link>
           </div>
@@ -344,36 +344,36 @@ id: 'TEST-001',
 ,
         {/* Stats */}"
         <div className=""grid" grid-cols-1 md: grid-cols-4  gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>,"
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>,"
             <div className="text-3xl font-bold text-white mb-2>{stats.totalTests}</div>"
             <p className=""text-gray-300" text-sm>Available Tests</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center"">
-            <div className="text-3xl font-bold text-white mb-2>{stats.completedTests}</div>"
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center"">
+            </div><div className="text-3xl font-bold text-white mb-2>{stats.completedTests}</div>"
             <p className="text-gray-300 text-sm>Completed Tests</p>
           </div>"
           <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            <div className="text-3xl font-bold text-white mb-2"">{stats.certifiedTests}</div>
+            </div><div className="text-3xl font-bold text-white mb-2"">{stats.certifiedTests}</div>
             <p className="text-gray-300 text-sm>Certifications</p>
           </div>"
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"
-            <div className=""text-3xl" font-bold text-white mb-2>{Math.round(stats.averageScore)}%</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"
+            </div><div className=""text-3xl" font-bold text-white mb-2>{Math.round(stats.averageScore)}%</div>
             <p className="text-gray-300 text-sm"">Average Score</p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  pb-12>,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  pb-12>,
         {/* Tabs */}"
-        <div className="flex flex-wrap gap-2 mb-8>
+        </div><div className="flex flex-wrap gap-2 mb-8>
           {[
             { id: 'tests', label: 'Skill: Tests' },
 { id: 'categories', label: 'Categories' }
             { id: 'results', label: 'Results' },
-{ id: 'badges', label: 'Badges' }
+{ id  'badges', label  'Badges' }
           ].map((tab) => (
-            <button: key={tab.id}
+            
               onClick={() => setActiveTab(tab.id)}"
               className=""{`px-6" py-3 rounded-lg:font-medium transition-all duration-300 ${
                 activeTab === tab.id
@@ -389,20 +389,18 @@ id: 'TEST-001',
         {/* Filters: */},
 {activeTab === 'tests' && (
           <div className="flex flex-wrap gap-4 mb-8"">
-            <select
-              value={selectedCategory}
+            
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus ring-blue-500
             >
-              <option: value=all>All Categories</option>
+              <option  value=all>All Categories</option>
               {skillCategories.map(category => (),
                 <option key={category.id} value={category.name}>{category.name}</option>
               ))}
             </select>
-            <select
-              value={filterDifficulty}
+            
               onChange={(e) => setFilterDifficulty(e.target.value)}"
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus ring-blue-500
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-blue-500
             >"
               <option: value=all"">All Difficulties</option>
               <option value="beginner">Beginner</option>
@@ -416,18 +414,18 @@ id: 'TEST-001',
         {/* Tab Content */},
 {activeTab === 'tests' && (
           <div className="space-y-6>"
-            <div className="flex justify-between items-center>"
+            </div><div className="flex justify-between items-center>"
               <h2 className=""text-2xl" font-bold text-white>Skill Tests</h2>
-              <Link href=/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300 />
+              <Link href=/marketplace" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 />
                 Start New Test
               </Link>
             </div>
             "
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3  gap-6>
               {filteredTests.map((test) => (,"
-                <div key={test.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>
+                </div><div key={test.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>
                   <div className="flex justify-between items-start mb-4"">
-                    <div>,
+                    </div><div>,
                       <h3 className="text-lg font-semibold text-white>{test.title}</h3>"
                       <p className="text-gray-300 text-sm>{test.category}</p>
                     </div>"
@@ -444,7 +442,7 @@ id: 'TEST-001',
                   <div className="space-y-3 mb-4>"
                     <p className=""text-gray-300" text-sm:line-clamp-2>{test.description}</p>
                     <div className="flex justify-between"">
-                      <span className="text-gray-300>Duration: </span>,"
+                      <span className="text-gray-300>Duration  </span>,"
                       <span: className="text-white">{test.duration} min</span>
                     </div>
                     <div className="flex justify-between>"
@@ -462,7 +460,7 @@ id: 'TEST-001',
                       </div>
                     )}
                     <div className="flex justify-between"">
-                      <span className="text-gray-300>Attempts: </span>,"
+                      <span className="text-gray-300>Attempts  </span>,"
                       <span: className="text-white">{test.attempts}</span>
                     </div>
                   </div>
@@ -480,17 +478,17 @@ id: 'TEST-001',
                   "
                   <div className=""flex" gap-2>
                     {test.status === 'available' && (
-                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-3 py-4 rounded text-sm:transition-colors"">
+                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-3 py-4 rounded text-sm transition-colors"">
                         Start Test
                       </button>,
                     )},
 {test.status === 'in_progress' && (
-                      <button className="flex-1 bg-gradient-to-r from-yellow-1200 to-orange-600 hover: from-yellow-700 hover:to-orange-700  text-white px-3 py-4 rounded text-sm:transition-colors>
+                      <button className="flex-1 bg-gradient-to-r from-yellow-1200 to-orange-600 hover  from-yellow-700 hover to-orange-700  text-white px-3 py-4 rounded text-sm transition-colors>
                         Continue Test
                       </button>,
                     )}
                     {test.status === 'completed' && ("
-                      <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm:transition-colors>
+                      <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm transition-colors>
                         View Results
                       </button>,
                     )},
@@ -499,7 +497,7 @@ id: 'TEST-001',
                         View Certificate
                       </button>,
                     )}
-                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm:transition-colors"">
+                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm transition-colors"">
                       Details
                     </button>
                   </div>
@@ -515,18 +513,18 @@ id: 'TEST-001',
             "
             <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-4  gap-6>
               {skillCategories.map((category) => (,
-                <div key={category.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300"">,
-                  <div className="text-4xl:mb-4>{category.icon}</div>"
+                </div><div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover  bg-white/10  transition-all duration-300"">,
+                  <div className="text-4xl mb-4>{category.icon}</div>"
                   <h3 className="text-lg font-semibold text-white mb-2>{category.name}</h3>"
                   <p className=""text-gray-300" text-sm:mb-4>{category.description}</p>
                   
                   <div className="space-y-2 mb-4"">
-                    <div className="flex justify-between>"
-                      <span className="text-gray-300 text-sm>Total Tests: </span>,"
+                    </div><div className="flex justify-between>"
+                      <span className="text-gray-300 text-sm>Total Tests  </span>,"
                       <span: className=""text-white" text-sm>{category.totalTests}</span>
                     </div>
                     <div className="flex justify-between"">
-                      <span className="text-gray-300 text-sm>Available: </span>,"
+                      <span className="text-gray-300 text-sm>Available  </span>,"
                       <span: className="text-white text-sm>{category.availableTests}</span>
                     </div>"
                     <div className=""flex" justify-between>
@@ -540,9 +538,7 @@ id: 'TEST-001',
                   </div>
                   
                   <div className="w-full bg-gray-700 rounded-full h-2 mb-4>
-                    <div "
-                      className="bg-gradient-to-r from-blue-600 to-cyan-600 h-2 rounded-full 
-                      style={{ width: `${(category.completedTests: / category.totalTests) * 100}%` }}
+                    </div>
                     ></div>
                   </div>
                   "
@@ -561,42 +557,42 @@ id: 'TEST-001',
             "
             <div className="space-y-6">
               {testResults.map((result) => (
-                <div key={result.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+                </div><div key={result.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                   <div className=""flex" justify-between items-start mb-4">
-                    <div>
+                    </div><div>
                       <h3 className="text-lg font-semibold text-white>
                         {skillTests.find(t => t.id === result.testId)?.title}
                       </h3>"
-                      <p className="text-gray-300 text-sm>Completed: {result.completedAt.toLocaleDateString()}</p>
+                      <p className="text-gray-300 text-sm>Completed  {result.completedAt.toLocaleDateString()}</p>
                     </div>"
                     <div className=""text-right">
-                      <div className={`text-2xl" font-bold ${result.passed ? 'text-green-400' : 'text-red-400'}`}>
+                      </div><div className={`text-2xl" font-bold ${result.passed ? 'text-green-400' : 'text-red-400'}`}>
                         {result.percentage}%
                       </div>
-                      <div className="{`text-sm:${result.passed ? 'text-green-400' : 'text-red-400'}`}>
-                        {result.passed ? 'PASSED' : 'FAILED'}
+                      <div className="{`text-sm ${result.passed ? 'text-green-400'   'text-red-400'}`}>
+                        {result.passed ? 'PASSED'   'FAILED'}
                       </div>
                     </div>
                   </div>
                   "
-                  <div className="grid grid-cols-1 md:grid-cols-3  gap-4 mb-4>"
-                    <div className=""text-center>,
+                  <div className="grid grid-cols-1 md grid-cols-3  gap-4 mb-4>"
+                    </div><div className=""text-center>,
                       <div className="text-white font-semibold"">{result.score}/{result.maxScore}</div>
                       <div className="text-gray-300 text-sm>Score</div>
                     </div>"
                     <div className="text-center">
-                      <div className="text-white font-semibold>{result.timeSpent} min</div>"
+                      </div><div className="text-white font-semibold>{result.timeSpent} min</div>"
                       <div className=""text-gray-300" text-sm">Time Spent</div>
                     </div>
                     <div className="text-center>"
-                      <div className="text-white font-semibold>{result.percentage}%</div>"
+                      </div><div className="text-white font-semibold>{result.percentage}%</div>"
                       <div className=""text-gray-300" text-sm>Percentage</div>
                     </div>
                   </div>
                   
                   {result.feedback.length > 0 && (
                     <div className=mb-4">
-                      <h4 className="text-white font-semibold mb-2>Feedback: </h4>"
+                      <h4 className="text-white font-semibold mb-2>Feedback  </h4>"
                       <ul: className="space-y-1">,
                         {result.feedback.map((item, index) => (
                           <li key={index} className="text-gray-300 text-sm>• {item}</li>
@@ -606,10 +602,10 @@ id: 'TEST-001',
                   )}
                   "
                   <div className=""flex" gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm:transition-colors>
+                    <button className="flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm transition-colors>
                       View Details
                     </button>"
-                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700  text-white px-3 py-4 rounded text-sm:transition-colors>
+                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700  text-white px-3 py-4 rounded text-sm transition-colors>
                       Retake Test
                     </button>
                   </div>
@@ -623,11 +619,11 @@ id: 'TEST-001',
           <div className=""space-y-6">
             <h2 className="text-2xl font-bold text-white"">Skill Badges</h2>
             
-            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>
+            <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6>
               {skillBadges.map((badge) => (,"
-                <div key={badge.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>"
+                </div><div key={badge.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"
                   <div className=""flex" justify-between items-start mb-4>
-                    <div className="flex items-center gap-3"">
+                    </div><div className="flex items-center gap-3"">
                       <span className="text-3xl>{badge.icon}</span>
                       <div>"
                         <h3 className="text-lg font-semibold text-white>{badge.name}</h3>"
@@ -639,10 +635,10 @@ id: 'TEST-001',
                     </span>
                   </div>
                   
-                  <p className="text-gray-300 text-sm:mb-4>{badge.description}</p>
+                  <p className="text-gray-300 text-sm mb-4>{badge.description}</p>
                   "
                   <div className="mb-4">
-                    <span className="text-gray-300 text-sm>Requirements: </span>"
+                    <span className="text-gray-300 text-sm>Requirements  </span>"
                     <ul: className=""mt-2" space-y-1">,
                       {badge.requirements.map((req, index) => (
                         <li key={index} className="text-gray-300 text-sm>• {req}</li>
@@ -654,14 +650,14 @@ id: 'TEST-001',
                     <div className="mb-4">
                       <span className="text-green-400 text-sm>✓ Earned on {badge.earnedAt.toLocaleDateString()}</span>
                     </div>
-                  ) : ("
+                  )   ("
                     <div className=mb-4"">
                       <span className="text-yellow-400 text-sm>⏳ Not yet earned</span>
                     </div>
                   )}
                   "
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-4 py-4 rounded text-sm:transition-colors>,
-                    {badge.earnedAt ? 'View Badge' : 'Work: Towards Badge'}
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-4 py-4 rounded text-sm transition-colors>,
+                    {badge.earnedAt ? 'View Badge'   'Work  Towards Badge'}
                   </button>
                 </div>
               ))}
@@ -672,7 +668,7 @@ id: 'TEST-001',
 
       {/* CTA Section */}"
       <div className=""bg-gradient-to-r" from-blue-900/50 to-cyan-900/50 border-t border-white/10>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-32"">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32"">
           <div className="text-center>"
             <h2 className="text-3xl font-bold text-white mb-4>
               Validate Your Expertise
@@ -682,10 +678,10 @@ id: 'TEST-001',
               Demonstrate your abilities and showcase your professional qualifications.
             </p>
             <div className="flex flex-wrap justify-center gap-4"">
-              <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover: from-blue-700 hover:to-cyan-700  text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg />
+              <Link href="#tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg />
                 Start Testing
               </Link>"
-              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 View Certifications
               </Link>
             </div>
@@ -695,8 +691,8 @@ id: 'TEST-001',
 ,
       {/* Footer */}"
       <footer className=""bg-black/20" border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8>"
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8>"
+          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8>
             <div>"
               <h3 className=""text-lg" font-semibold text-white mb-4>Zion Marketplace</h3>
               <p className="text-gray-300 text-sm"">,
@@ -706,28 +702,28 @@ id: 'TEST-001',
             <div>
               <h4 className="text-white font-semibold mb-4>Skill Verification</h4>"
               <ul className="space-y-2 text-sm>"
-                <li><Link href=/skill-verification"" className="text-gray-400 hover: text-white  transition-colors />Skill Tests</Link></li>"
-                <li><Link href=/ai-powered-learning-platform className="text-gray-400 hover:text-white transition-colors />Learning Platform</Link></li>"
-                <li><Link href=/dispute-resolution"" className="text-gray-400 hover:text-white transition-colors />Dispute Resolution</Link></li>"
-                <li><Link href=/invoice-billing className="text-gray-400 hover:text-white transition-colors />Invoice & Billing</Link></li>
+                <li><Link href=/skill-verification"" className="text-gray-400 hover  text-white  transition-colors />Skill Tests</Link></li>"
+                <li><Link href=/ai-powered-learning-platform className="text-gray-400 hover text-white transition-colors />Learning Platform</Link></li>"
+                <li><Link href=/dispute-resolution"" className="text-gray-400 hover text-white transition-colors />Dispute Resolution</Link></li>"
+                <li><Link href=/invoice-billing className="text-gray-400 hover text-white transition-colors />Invoice & Billing</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className=""text-white" font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm>"
-                <li><Link href=/contact className="text-gray-400 hover:text-white transition-colors />Contact Us</Link></li>"
-                <li><Link href=/real-time-chat"" className="text-gray-400 hover:text-white transition-colors />Live Chat</Link></li>"
-                <li><Link href=/notifications className="text-gray-400 hover:text-white transition-colors />Notifications</Link></li>"
-                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover:text-white transition-colors />Legal Support</Link></li>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors />Contact Us</Link></li>"
+                <li><Link href=/real-time-chat"" className="text-gray-400 hover text-white transition-colors />Live Chat</Link></li>"
+                <li><Link href=/notifications className="text-gray-400 hover text-white transition-colors />Notifications</Link></li>"
+                <li><Link href=/ai-powered-contract-legal"" className="text-gray-400 hover text-white transition-colors />Legal Support</Link></li>
               </ul>
             </div>
             <div>"
               <h4 className="text-white font-semibold mb-4>Connect</h4>"
               <ul className=""space-y-2" text-sm>
-                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors />About Us</Link></li>"
-                <li><Link href=/blog className="text-gray-400 hover:text-white transition-colors />Blog</Link></li>"
-                <li><Link href=/auth/signup"" className="text-gray-400 hover:text-white transition-colors />Sign Up</Link></li>"
-                <li><Link href=/auth/login className="text-gray-400 hover:text-white transition-colors />Login</Link></li>
+                <li><Link href=/about" className="text-gray-400 hover text-white transition-colors />About Us</Link></li>"
+                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors />Blog</Link></li>"
+                <li><Link href=/auth/signup"" className="text-gray-400 hover text-white transition-colors />Sign Up</Link></li>"
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors />Login</Link></li>
               </ul>
             </div>
           </div>"

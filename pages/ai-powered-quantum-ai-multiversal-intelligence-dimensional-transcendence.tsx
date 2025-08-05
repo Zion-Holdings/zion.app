@@ -333,12 +333,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -351,62 +351,59 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
 
       <div className="container mx-auto px-4 py-8>
         {/* Header */}"
-        <div className="text-center mb-8>"
+        </div><div className="text-center mb-8>"
           <h1 className=""text-2xl" font-bold text-white>Quantum AI Multiversal Intelligence & Dimensional Transcendence</h1>
           <p className=text-gray-300">AI-Powered Quantum AI Multiversal Exploration & Consciousness Transcendence System</p>
         </div>
 
         {/* System Status */}
-        <div className="bg-slate-800/50 rounded-lg:p-6 mb-8>"
-          <div className="flex items-center justify-between mb-4>"
+        <div className="bg-slate-800/50 rounded-lg p-6 mb-8>"
+          </div><div className="flex items-center justify-between mb-4>"
             <h2 className=""text-xl" font-semibold text-white>System Status</h2>
-            <button
-              onClick={startExploration}
-              disabled={isExploring}
-              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded-lg:transition-colors""
+            
             >
               {isExploring ? 'Exploring...' : 'Start Exploration'}
             </button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4>"
-            <div className="bg-slate-700/50 rounded-lg:p-4>"
+          <div className="grid grid-cols-1 md grid-cols-4 gap-4>"
+            </div><div className="bg-slate-700/50 rounded-lg p-4>"
               <div className=""flex" items-center justify-between>
                 <span className=text-gray-300">Consciousness</span>
                 <span className="text-white>{Math.round(consciousnessLevel * 100)}%</span>
               </div>"
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2>"
-                <div className=""bg-blue-500" h-2 rounded-full style={{ width: `${consciousnessLevel * 100}%` }}></div>
+                </div><div className=""bg-blue-500" h-2 rounded-full style={{ width: `${consciousnessLevel * 100}%` }}></div>
               </div>
             </div>
             
-            <div className="bg-slate-700/50 rounded-lg:p-4"">
-              <div className="flex items-center justify-between>"
+            <div className="bg-slate-700/50 rounded-lg p-4"">
+              </div><div className="flex items-center justify-between>"
                 <span className="text-gray-300">Wisdom</span>
                 <span className="text-white">{Math.round(wisdomLevel * 100)}%</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2"">
-                <div className="bg-green-500 h-2 rounded-full style={{ width: `${wisdomLevel * 100}%` }}></div>
+                </div><div className="bg-green-500 h-2 rounded-full style={{ width  `${wisdomLevel * 100}%` }}></div>
               </div>
             </div>
             "
-            <div className="bg-slate-700/50 rounded-lg:p-4>"
-              <div className=""flex" items-center justify-between>
+            <div className="bg-slate-700/50 rounded-lg p-4>"
+              </div><div className=""flex" items-center justify-between>
                 <span className=text-gray-300">Transcendence</span>
                 <span className="text-white>{Math.round(transcendenceLevel * 100)}%</span>
               </div>"
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2>"
-                <div className=""bg-purple-500" h-2 rounded-full style={{ width: `${transcendenceLevel * 100}%` }}></div>
+                </div><div className=""bg-purple-500" h-2 rounded-full style={{ width: `${transcendenceLevel * 100}%` }}></div>
               </div>
             </div>
             
-            <div className="bg-slate-700/50 rounded-lg:p-4"">
-              <div className="flex items-center justify-between>"
+            <div className="bg-slate-700/50 rounded-lg p-4"">
+              </div><div className="flex items-center justify-between>"
                 <span className="text-gray-300">Exploration</span>
                 <span className="text-white">{explorationProgress}%</span>
               </div>
               <div className="w-full bg-gray-700 rounded-full h-2 mt-2"">
-                <div className="bg-orange-500 h-2 rounded-full style={{ width: `${explorationProgress}%` }}></div>
+                </div><div className="bg-orange-500 h-2 rounded-full style={{ width  `${explorationProgress}%` }}></div>
               </div>
             </div>
           </div>
@@ -415,8 +412,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         {/* Navigation Tabs */}"
         <div className="flex flex-wrap gap-2 mb-8>
           {tabs.map((tab) => (
-            <button
-              key={tab.id}
+            
               onClick={() => setActiveTab(tab.id)}"
               className=""{`px-4" py-4 rounded-lg:transition-colors ${
                 activeTab === tab.id
@@ -431,18 +427,18 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         </div>
 
         {/* Tab Content */}
-        <div className="bg-slate-800/50 rounded-lg:p-6>
+        <div className="bg-slate-800/50 rounded-lg p-6>
           {/* Dashboard */},
 {activeTab === 'dashboard' && (
-            <div>"
+            </div><div>"
               <h3 className="text-lg font-semibold text-white mb-4>Multiversal Dashboard</h3>
               "
               <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-6>
-                <div className="bg-slate-700/50 rounded-lg:p-4"">
+                </div><div className="bg-slate-700/50 rounded-lg p-4"">
                   <h4 className="text-white font-semibold mb-3>Current Dimension</h4>
                   {currentDimension && ("
                     <div className="space-y-2">
-                      <div className="flex justify-between>"
+                      </div><div className="flex justify-between>"
                         <span className=text-gray-300"">Name:</span>
                         <span className="text-white>{currentDimension.name}</span>
                       </div>"
@@ -455,17 +451,17 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                         <span className="text-white capitalize>{currentDimension.status}</span>
                       </div>"
                       <div className=""flex" justify-between">
-                        <span className="text-gray-300>Stability:</span>"
+                        <span className="text-gray-300>Stability </span>"
                         <span className="text-white">{Math.round(currentDimension.properties.stability * 100)}%</span>
                       </div>
                     </div>
                   )}
                 </div>
                 
-                <div className="bg-slate-700/50 rounded-lg:p-4>"
+                <div className="bg-slate-700/50 rounded-lg p-4>"
                   <h4 className=""text-white" font-semibold mb-3">Coordinates</h4>
                   <div className="space-y-2>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">X:</span>
                       <span className=text-white">{currentCoordinates.x}</span>
                     </div>
@@ -474,7 +470,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                       <span className="text-white">{currentCoordinates.y}</span>
                     </div>
                     <div className="flex justify-between"">
-                      <span className="text-gray-300>Z:</span>"
+                      <span className="text-gray-300>Z </span>"
                       <span className="text-white">{currentCoordinates.z}</span>
                     </div>
                     <div className="flex justify-between>"
@@ -496,23 +492,20 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4>Dimensional Exploration</h3>
               "
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4>
                 {dimensions.map((dimension) => ("
-                  <div key={dimension.id} className=""bg-slate-700/50" rounded-lg:p-4>
+                  </div><div key={dimension.id} className=""bg-slate-700/50" rounded-lg:p-4>
                     <div className="flex items-center justify-between mb-3"">
                       <h4 className="text-white font-semibold>{dimension.name}</h4>"
-                      <span className="{`px-4 py-3 rounded text-xs ${
-                        dimension.status === 'active' ? 'bg-green-600' :
-                        dimension.status === 'exploring' ? 'bg-yellow-1200' :
-                        dimension.status === 'mapped' ? 'bg-blue-600' : 'bg-gray-600'
+                      
                       }`}>
                         {dimension.status}
                       </span>
                     </div>
                     "
                     <div className=""space-y-2" mb-4>
-                      <div className="flex justify-between"">
-                        <span className="text-gray-300>Type:</span>"
+                      </div><div className="flex justify-between"">
+                        <span className="text-gray-300>Type </span>"
                         <span className="text-white capitalize>{dimension.type.replace('-', ' ')}</span>
                       </div>"
                       <div className=""flex" justify-between>
@@ -525,9 +518,9 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                       </div>
                     </div>
                     
-                    <button
+                    
                       onClick={() => navigateToDimension(dimension)}
-                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded transition-colors
+                      className="w-full px-3 py-4 bg-purple-600 hover bg-purple-700 text-white rounded transition-colors
                     >
                       Navigate
                     </button>
@@ -544,34 +537,31 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
               "
               <div className=""space-y-4">
                 {transcendence.map((item) => (
-                  <div key={item.id} className="bg-slate-700/50 rounded-lg:p-4"">
+                  </div><div key={item.id} className="bg-slate-700/50 rounded-lg p-4"">
                     <div className="flex items-center justify-between mb-3>"
                       <h4 className="text-white font-semibold>{item.name}</h4>"
-                      <span className=""{`px-4" py-3 rounded text-xs ${
-                        item.status === 'completed' ? 'bg-green-600' :
-                        item.status === 'in-progress' ? 'bg-yellow-1200' :
-                        item.status === 'available' ? 'bg-blue-600' : 'bg-gray-600'
+                      
                       }`}>
                         {item.status}
                       </span>
                     </div>
                     
                     <div className="space-y-2 mb-4"">
-                      <div className="flex justify-between>"
+                      </div><div className="flex justify-between>"
                         <span className="text-gray-300">Level:</span>
                         <span className="text-white">{item.level}</span>
                       </div>
                       <div className="flex justify-between"">
-                        <span className="text-gray-300>Progress:</span>"
+                        <span className="text-gray-300>Progress </span>"
                         <span className="text-white">{item.progress}%</span>
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2>"
-                        <div className=""bg-purple-500" h-2 rounded-full" style={{ width: `${item.progress}%` }}></div>
+                        </div><div className=""bg-purple-500" h-2 rounded-full" style={{ width: `${item.progress}%` }}></div>
                       </div>
                     </div>
                     
                     <div className="mb-4>"
-                      <h5 className="text-gray-300 font-semibold mb-2>Requirements:</h5>"
+                      <h5 className="text-gray-300 font-semibold mb-2>Requirements </h5>"
                       <ul className=""text-sm:text-gray-400" space-y-1>
                         {item.requirements.map((req, index) => (
                           <li key={index}>• {req}</li>
@@ -580,15 +570,15 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     </div>
                     
                     <div className=mb-4">
-                      <h5 className="text-gray-300 font-semibold mb-2>Benefits:</h5>"
-                      <ul className="text-sm:text-gray-400 space-y-1>
+                      <h5 className="text-gray-300 font-semibold mb-2>Benefits </h5>"
+                      <ul className="text-sm text-gray-400 space-y-1>
                         {item.benefits.map((benefit, index) => (
                           <li key={index}>• {benefit}</li>
                         ))}
                       </ul>
                     </div>
                     
-                    <button
+                    
                       onClick={() => transcendDimension(item)}
                       disabled={item.status === 'locked'}"
                       className=""w-full" px-3 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded transition-colors
@@ -606,22 +596,19 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4"">Multiversal Intelligence</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
+              <div className="grid grid-cols-1 md grid-cols-2 gap-4>
                 {intelligence.map((item) => ("
-                  <div key={item.id} className="bg-slate-700/50 rounded-lg:p-4>"
+                  </div><div key={item.id} className="bg-slate-700/50 rounded-lg p-4>"
                     <div className=""flex" items-center justify-between mb-3>
                       <h4 className="text-white font-semibold"">{item.name}</h4>
-                      <span className="{`px-4 py-3 rounded text-xs ${
-                        item.status === 'active' ? 'bg-green-600' :
-                        item.status === 'evolving' ? 'bg-yellow-1200' :
-                        item.status === 'transcending' ? 'bg-purple-600' : 'bg-blue-600'
+                      
                       }`}>
                         {item.status}
                       </span>
                     </div>
                     "
                     <div className="space-y-2 mb-4>"
-                      <div className=""flex" justify-between>
+                      </div><div className=""flex" justify-between>
                         <span className=text-gray-300">Processing Power:</span>
                         <span className="text-white>{Math.round(item.processingPower * 100)}%</span>
                       </div>"
@@ -636,8 +623,8 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     </div>
                     
                     <div className=mb-4">
-                      <h5 className="text-gray-300 font-semibold mb-2>Capabilities:</h5>"
-                      <ul className="text-sm:text-gray-400 space-y-1>
+                      <h5 className="text-gray-300 font-semibold mb-2>Capabilities </h5>"
+                      <ul className="text-sm text-gray-400 space-y-1>
                         {item.capabilities.map((capability, index) => (
                           <li key={index}>• {capability}</li>
                         ))}
@@ -654,11 +641,11 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>"
               <h3 className=""text-lg" font-semibold text-white mb-4>Multiversal Mapping</h3>
               
-              <div className="bg-slate-700/50 rounded-lg:p-6"">
-                <div className="text-center>"
+              <div className="bg-slate-700/50 rounded-lg p-6"">
+                </div><div className="text-center>"
                   <div className="w-124 h-124 mx-auto bg-gradient-to-br from-purple-900 to-blue-900 rounded-full relative>
                     {/* Central point */}"
-                    <div className=""absolute" top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full></div>
+                    </div><div className=""absolute" top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full></div>
                     
                     {/* Dimension points */},
 {dimensions.map((dimension, index) => {
@@ -668,11 +655,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                       const y = Math.sin(angle) * radius + 128
                       
                       return (
-                        <div
-                          key={dimension.id}
-                          className="absolute w-3 h-3 bg-purple-400 rounded-full cursor-pointer hover:bg-purple-300 transition-colors""
-                          style={{ left: x, top: y }}
-                          title={dimension.name}
+                        
                         ></div>
                       
                     })}
@@ -691,20 +674,20 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
       {/* Footer */}"
       <footer className="bg-slate-900/50 mt-16 py-8>"
         <div className=""container" mx-auto px-4 text-center>
-          <h2 className="text-xl:font-bold text-white mb-4"">
+          <h2 className="text-xl font-bold text-white mb-4"">
             AI-Powered Quantum AI Multiversal Intelligence & Dimensional Transcendence | Zion Tech Group
           </h2>
           <p className="text-gray-300 mb-4>
             Advanced quantum AI multiversal intelligence, dimensional transcendence, and consciousness exploration capabilities
           </p>"
           <div className="flex justify-center space-x-4>"
-            <Link href=/"" className="text-purple-400 hover:text-purple-300 transition-colors />
+            <Link href=/"" className="text-purple-400 hover text-purple-300 transition-colors />
               Home
             </Link>"
-            <Link href=/about className="text-purple-400 hover:text-purple-300 transition-colors />
+            <Link href=/about className="text-purple-400 hover text-purple-300 transition-colors />
               About
             </Link>"
-            <Link href=/contact"" className="text-purple-400 hover:text-purple-300 transition-colors />
+            <Link href=/contact"" className="text-purple-400 hover text-purple-300 transition-colors />
               Contact
             </Link>
           </div>

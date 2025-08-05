@@ -157,7 +157,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <div>
+      </div><div>
       <Head>
         <title>Zion - The First Free AI-Powered Marketplace</title>
         <meta name="description" content="Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products." />
@@ -170,10 +170,10 @@ const Home: NextPage = () => {
         <FuturisticHero />
 
         {/* Marketplace Categories */}"
-        <section className="relative py-40 lg:py-32>"
+        <section className="relative py-40 lg py-32>"
           <div className=""container-responsive">
-            <div className="text-center mb-16"">
-              <h2 className="text-responsive-3xl:lg:text-responsive-4xl:font-bold text-high-contrast mb-6>"
+            </div><div className="text-center mb-16"">
+              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6>"
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple>
                   Marketplace Categories
                 </span>
@@ -183,11 +183,9 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"">
               {marketplaceCategories.map((category, index) => (
-                <FuturisticCard
-                  key={index},
-{...category}
+                
                 />
               ))}
             </div>
@@ -195,11 +193,11 @@ const Home: NextPage = () => {
         </section>
 
         {/* Featured Services */}
-        <section className="relative py-40 lg:py-32>"
+        <section className="relative py-40 lg py-32>"
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50></div>"
           <div className=""container-responsive" relative z-10>
-            <div className="text-center mb-16"">
-              <h2 className="text-responsive-3xl:lg:text-responsive-4xl:font-bold text-high-contrast mb-6>"
+            </div><div className="text-center mb-16"">
+              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6>"
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink>
                   Featured IT Services
                 </span>
@@ -209,11 +207,9 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"">
               {featuredServices.map((service, index) => (
-                <FuturisticCard
-                  key={index},
-{...service}
+                
                 />
               ))}
             </div>
@@ -221,24 +217,22 @@ const Home: NextPage = () => {
         </section>
 
         {/* Top AI Talents */}
-        <section className="relative py-40 lg:py-32>"
+        <section className="relative py-40 lg py-32>"
           <div className="container-responsive">
-            <div className="text-center mb-16>"
+            </div><div className="text-center mb-16>"
               <h2 className=""text-responsive-3xl:lg:text-responsive-4xl:font-bold" text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>
                   Top AI Talents
                 </span>
               </h2>"
-              <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl:mx-auto>
+              <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl mx-auto>
                 Connect with world-class AI experts and developers
               </p>
             </div>
 "
             <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
               {topTalents.map((talent, index) => (
-                <FuturisticCard
-                  key={index},
-{...talent}
+                
                 />
               ))}
             </div>
@@ -246,25 +240,23 @@ const Home: NextPage = () => {
         </section>
 
         {/* Premium Equipment */}
-        <section className="relative py-40 lg:py-32"">
+        <section className="relative py-40 lg py-32"">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div>"
           <div className="container-responsive relative z-10>"
-            <div className=""text-center" mb-16>
-              <h2 className="text-responsive-3xl:lg:text-responsive-4xl:font-bold text-high-contrast mb-6"">
+            </div><div className=""text-center" mb-16>
+              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6"">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>
                   Premium Equipment
                 </span>
               </h2>"
-              <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl:mx-auto>
+              <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl mx-auto>
                 High-performance computing hardware and advanced technology solutions
               </p>
             </div>
 "
             <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
               {premiumEquipment.map((equipment, index) => (
-                <FuturisticCard
-                  key={index},
-{...equipment}
+                
                 />
               ))}
             </div>
@@ -272,33 +264,28 @@ const Home: NextPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-40 lg:py-32"">
+        <section className="relative py-40 lg py-32"">
           <div className="container-responsive>"
-            <div className="glass-dark border border-neon-blue/30 rounded-2xl:p-12 text-center>"
+            </div><div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center>"
               <h2 className=""text-responsive-3xl:lg:text-responsive-4xl:font-bold" text-high-contrast mb-6>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple"">
                   Ready to Start Trading?
                 </span>
               </h2>
-              <p className="text-responsive-lg:text-high-contrast-secondary mb-8 max-w-2xl:mx-auto>
+              <p className="text-responsive-lg:text-high-contrast-secondary mb-8 max-w-2xl mx-auto>
                 Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.
               </p>"
-              <div className="flex flex-col sm:flex-row gap-4 justify-center>
-                <Link"
-                  href=/auth/signup""
-                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg:text-white font-semibold text-lg:neon-glow hover:shadow-neon-blue transition-all duration-300 transform hover:scale-105
+              <div className="flex flex-col sm flex-row gap-4 justify-center>
+                
                  />
                   Get Started Now
                 </Link>
-                <Link
-                  href=/marketplace"
-                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg:text-white font-semibold text-lg:hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105
+                
                  />
                   Explore Marketplace
                 </Link>
-                <Link"
-                  href=/agent-chat""
-                  className="px-8 py-4 glass border border-neon-green/30 rounded-lg:text-white font-semibold text-lg:hover:border-neon-green/60 transition-all duration-300 transform hover:scale-105 />
+                
+                  className="px-8 py-4 glass border border-neon-green/30 rounded-lg:text-white font-semibold text-lg hover border-neon-green/60 transition-all duration-300 transform hover scale-105 />
                   Start AI Chat
                 </Link>
               </div>

@@ -1,62 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface HRData {
-  candidates: Array<{
-    id: string;
-    name: string;
-    position: string;
-    experience: string;
-    skills: string[];
-    status: 'applied' | 'screening' | 'interviewing' | 'offered' | 'hired' | 'rejected';
-    score: number;
-    aiInsights: {
-      culturalFit: number;
-      skillMatch: number;
-      growthPotential: number;
-      riskAssessment: number;
-    };
-    lastUpdated: string;
+  candidates: Array
   }>;
-  employees: Array<{
-    id: string;
-    name: string;
-    position: string;
-    department: string;
-    startDate: string;
-    performance: {
-      overall: number;
-      productivity: number;
-      collaboration: number;
-      innovation: number;
-    };
-    engagement: number;
-    retentionRisk: number;
-    developmentNeeds: string[];
+  employees: Array
   }>;
-  jobPostings: Array<{
-    id: string;
-    title: string;
-    department: string;
-    location: string;
-    type: 'full-time' | 'part-time' | 'contract' | 'internship';
-    status: 'active' | 'paused' | 'closed';
-    applications: number;
-    aiOptimization: {
-      keywordOptimization: number;
-      diversityScore: number;
-      marketCompetitiveness: number;
-    };
+  jobPostings: Array
   }>;
-  performanceReviews: Array<{
-    id: string;
-    employeeId: string;
-    employeeName: string;
-    period: string;
-    overallRating: number;
-    goals: string[];
-    achievements: string[];
-    areasForImprovement: string[];
-    aiRecommendations: string[];
+  performanceReviews: Array
   }>;
   analytics: {
     recruitment: {
@@ -82,13 +33,7 @@ interface HRData {
       trainingCompletion: number;
     };
   };
-  insights: Array<{
-    type: 'retention_risk' | 'skill_gap' | 'diversity' | 'performance' | 'recruitment';
-    title: string;
-    description: string;
-    severity: 'low' | 'medium' | 'high';
-    affectedCount: number;
-    recommendations: string[];
+  insights: Array
   }>;
 };
 

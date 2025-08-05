@@ -184,12 +184,12 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -201,11 +201,11 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
-          <div className=""flex" items-center justify-between>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
+          </div><div className=""flex" items-center justify-between>
             <div className="flex items-center space-x-4"">
-              <div className="flex items-center space-x-3>"
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg:flex items-center justify-center>"
+              </div><div className="flex items-center space-x-3>"
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg flex items-center justify-center>"
                   <span className=""text-white" text-xl>⚛️</span>
                 </div>
                 <div>
@@ -216,14 +216,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
             </div>
             "
             <div className="flex items-center space-x-4>
-              <button
-                onClick={startTeleportation}
-                disabled={isTeleporting}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${
-                  isTeleporting 
-                    ? 'bg-yellow-1200 text-white' 
-                    : 'bg-purple-600 text-white hover:bg-purple-700'
-                } disabled:opacity-50`}
+              
               >
                 {isTeleporting ? 'Teleporting...' : 'Start Teleportation'}
               </button>
@@ -234,10 +227,10 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}"
-          <div className="mb-8">
+          </div><div className="mb-8">
             <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboard', label: 'Quantum Dashboard', icon: '⚛️' },
@@ -245,10 +238,9 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 { id: 'entanglement', label: 'Entanglement', icon: '🔗' },
 { id: 'teleportation', label: 'Teleportation', icon: '🚀' }
                 { id: 'networks', label: 'Quantum Networks', icon: '🌐' },
-{ id: 'memory', label: 'Quantum Memory', icon: '💾' }
+{ id  'memory', label  'Quantum Memory', icon  '💾' }
               ].map((tab) => (
-                <button
-                  key={tab.id}
+                
                   onClick={() => setActiveTab(tab.id)}"
                   className={`flex"" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
@@ -268,11 +260,11 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
             
             {/* Quantum Dashboard */},
 {activeTab === 'dashboard' && ("
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6>
+              </div><div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}"
                 <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                  <div className="flex items-center space-x-3 mb-4"">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg:flex items-center justify-center>"
+                  </div><div className="flex items-center space-x-3 mb-4"">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg flex items-center justify-center>"
                       <span className="text-white text-lg>⚛️</span>
                     </div>
                     <div>"
@@ -282,7 +274,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                   </div>
                   
                   <div className="space-y-3>"
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=""text-gray-300">Status</span>
                       <span className=text-green-400">Active</span>
                     </div>
@@ -302,22 +294,22 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}"
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                   <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4"">
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>"
-                      <div className="text-2xl:mb-2">🔬</div>
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200>"
+                      <div className="text-2xl mb-2">🔬</div>
                       <div className="font-semibold">Create State</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200"">
-                      <div className="text-2xl:mb-2>🔗</div>"
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200"">
+                      <div className="text-2xl mb-2>🔗</div>"
                       <div className="font-semibold">Entangle Qubits</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>"
                       <div className=text-2xl:mb-2"">🚀</div>
                       <div className="font-semibold>Teleport State</div>
                     </button>"
-                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg:text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200>"
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200>"
                       <div className=""text-2xl:mb-2">🌐</div>
                       <div className=font-semibold">Build Network</div>
                     </button>
@@ -333,20 +325,20 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {quantumStates.map((state) => (
-                    <div key={state.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={state.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{state.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{state.type}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{state.fidelity}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{state.fidelity}%</div>"
                           <div className="text-gray-400 text-sm>Fidelity</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Coherence</span>"
                           <span className="text-white">{state.coherence}%</span>
                         </div>
@@ -361,7 +353,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-gray-700>"
-                        <div className="text-xs text-gray-400 font-mono bg-gray-900 p-2 rounded>
+                        </div><div className="text-xs text-gray-400 font-mono bg-gray-900 p-2 rounded>
                           {state.state}
                         </div>
                       </div>
@@ -376,22 +368,22 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
               <div className=""space-y-6">
                 <h2 className="text-2xl font-bold text-white"">Entangled Pair Management</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {entangledPairs.map((pair) => ("
-                    <div key={pair.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={pair.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className=""flex" items-center justify-between mb-4>
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white"">{pair.qubitA} ↔ {pair.qubitB}</h3>
-                          <p className="text-gray-400 text-sm:capitalize>{pair.entanglementType}</p>
+                          <p className="text-gray-400 text-sm capitalize>{pair.entanglementType}</p>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>{pair.fidelity}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{pair.fidelity}%</div>"
                           <div className=""text-gray-400" text-sm">Fidelity</div>
                         </div>
                       </div>
                       
                       <div className="space-y-3>"
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=""text-gray-300">Distance</span>
                           <span className=text-white">{pair.distance} km</span>
                         </div>
@@ -417,22 +409,22 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
               <div className=""space-y-6">
                 <h2 className="text-2xl font-bold text-white"">Teleportation Protocols</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {teleportationProtocols.map((protocol) => ("
-                    <div key={protocol.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                    </div><div key={protocol.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
                       <div className=""flex" items-center justify-between mb-4>
-                        <div>
+                        </div><div>
                           <h3 className="text-lg font-semibold text-white"">{protocol.name}</h3>
                           <p className="text-gray-400 text-sm>{protocol.source} → {protocol.destination}</p>
                         </div>"
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white>{protocol.fidelity}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{protocol.fidelity}%</div>"
                           <div className=""text-gray-400" text-sm">Fidelity</div>
                         </div>
                       </div>
                       
                       <div className="space-y-3>"
-                        <div className="flex justify-between>"
+                        </div><div className="flex justify-between>"
                           <span className=""text-gray-300">Qubit</span>
                           <span className="text-white text-sm"">{protocol.qubit}</span>
                         </div>
@@ -468,20 +460,20 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {quantumNetworks.map((network) => (
-                    <div key={network.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={network.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{network.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{network.topology} topology</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{network.averageFidelity}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{network.averageFidelity}%</div>"
                           <div className="text-gray-400 text-sm>Avg Fidelity</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Total Qubits</span>"
                           <span className="text-white">{network.totalQubits}</span>
                         </div>
@@ -496,10 +488,10 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-gray-700>"
-                        <div className="text-sm:text-gray-300 mb-2>Connections:</div>"
+                        </div><div className="text-sm:text-gray-300 mb-2>Connections </div>"
                         <div className=""space-y-1">
                           {network.connections.map((conn, index) => (
-                            <div key={index} className="text-xs text-gray-400"">
+                            </div><div key={index} className="text-xs text-gray-400"">
                               {conn.from} ↔ {conn.to} ({conn.fidelity}%
                             </div>
                           ))}
@@ -518,20 +510,20 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 "
                 <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {quantumMemories.map((memory) => (
-                    <div key={memory.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
+                    </div><div key={memory.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-lg font-semibold text-white>{memory.name}</h3>"
                           <p className=""text-gray-400" text-sm:capitalize>{memory.type}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{memory.retrievalEfficiency}%</div>"
+                          </div><div className="text-2xl font-bold text-white>{memory.retrievalEfficiency}%</div>"
                           <div className="text-gray-400 text-sm>Efficiency</div>
                         </div>
                       </div>
                       "
                       <div className=""space-y-3">
-                        <div className="flex justify-between"">
+                        </div><div className="flex justify-between"">
                           <span className="text-gray-300>Capacity</span>"
                           <span className="text-white">{memory.capacity} qubits</span>
                         </div>
@@ -546,10 +538,10 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-gray-700>"
-                        <div className="text-sm:text-gray-300 mb-2>Stored States:</div>"
+                        </div><div className="text-sm:text-gray-300 mb-2>Stored States </div>"
                         <div className=""space-y-1">
                           {memory.storedStates.map((state, index) => (
-                            <div key={index} className="text-xs text-gray-400 font-mono bg-gray-900 p-1 rounded"">
+                            </div><div key={index} className="text-xs text-gray-400 font-mono bg-gray-900 p-1 rounded"">
                               {state}
                             </div>
                           ))}
@@ -566,12 +558,12 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>"
-          <div className=""text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>"
+          </div><div className=""text-center">
             <p className=text-gray-400">
               AI-Powered Quantum Entanglement & Teleportation | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm:mt-2">
+            <p className="text-gray-500 text-sm mt-2">
               Advanced quantum communication, entanglement management, and quantum state teleportation
             </p>
           </div>

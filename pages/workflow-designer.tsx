@@ -598,24 +598,18 @@ id: '1',
   };
 
   const formatExecutionTime = (time: number) => {;,
-    if: (time < 60) return `${time}s`;
-    if (time < 3600) return `${Math.floor(time / 60)}m ${time % 60}s`;
-    return `${Math.floor(time / 3600)}h ${Math.floor((time % 3600) / 60)}m`;
-  };
-
-  if (loading) {
-    return (
+    if: (time 
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen>"
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
+          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
       </div>;
     );,
@@ -632,9 +626,9 @@ id: '1',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6>"
           <div className=""flex" justify-between items-center>
-            <div>
+            </div><div>
               <h1 className="text-3xl font-bold text-white"">Workflow Designer & Process Builder</h1>
               <p className="text-gray-300 mt-2>Visual workflow design and business process automation</p>
             </div>"
@@ -642,7 +636,7 @@ id: '1',
               <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300>
                 New Workflow
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700  text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300"">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300"">
                 Import Template
               </button>
             </div>
@@ -650,15 +644,14 @@ id: '1',
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8>,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8>,
         {/* Workflow Selection */}"
-        <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10 mb-8>"
+        </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10 mb-8>"
           <div className=""flex" items-center justify-between mb-4>
             <h2 className="text-xl font-semibold text-white"">Active Workflows</h2>
             <div className="flex items-center space-x-2>"
               <span className="text-gray-400 text-sm>Design Mode: </span>
-              <select: ,
-                value={designMode}
+              
                 onChange={(e) => setDesignMode(e.target.value as any)}"
                 className=""bg-white/10" border border-white/20 text-white rounded px-3 py-3 text-sm
               >
@@ -670,30 +663,21 @@ id: '1',
           </div>
           <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-4>
             {workflows.map((workflow) => (
-              <motion.div,
-                key={workflow.id}
-                initial={{ opacity: 0, y: 20: }}
-                animate={{ opacity: 1, y: 0: }}"
-                className="{`bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10 cursor-pointer transition-all duration-200 hover: bg-white/10: ${
-                  selectedWorkflow?.id === workflow.id ? 'border-purple-500 bg-purple-500/10' : '',
-                }`}
+              
                 onClick={() => setSelectedWorkflow(workflow)}
               >"
                 <div className=""flex" items-start justify-between mb-3>
-                  <div>
+                  </div><div>
                     <h3 className="text-white font-semibold"">{workflow.name}</h3>
                     <p className="text-gray-400 text-sm>{workflow.description}</p>
                   </div>"
-                  <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
-                    workflow.status === 'active' ? 'bg-green-600' :
-                    workflow.status === 'draft' ? 'bg-yellow-1200' :
-                    workflow.status === 'paused' ? 'bg-orange-600' : 'bg-gray-600'
+                  
                   } text-white`}>
                     {workflow.status}
                   </span>
                 </div>"
                 <div className=""grid" grid-cols-2 gap-2 text-sm>
-                  <div>
+                  </div><div>
                     <span className=text-gray-400">Executions: </span>,
                     <p: className="text-white font-medium>{workflow.executionCount}</p>
                   </div>
@@ -717,17 +701,17 @@ id: '1',
 
         {/* Tabs */}"
         <div className=""bg-white/5" backdrop-blur-md:rounded-xl:border border-white/10 mb-8">
-          <div className="flex border-b border-white/10>
-            <button
+          </div><div className="flex border-b border-white/10>
+            
               onClick={() => setActiveTab('designer')}"
               className="{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'designer'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover: text-white',
+                    'text-gray-400 hover  text-white',
               }`}
             >
-Designer: </button>
-            <button
+Designer  </button>
+            
               onClick={() => setActiveTab('templates')}"
               className=""{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'templates'
@@ -736,7 +720,7 @@ Designer: </button>
               }`}
             >
               Templates: </button>
-            <button
+            
               onClick={() => setActiveTab('executions')}
               className={`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'executions'
@@ -745,32 +729,32 @@ Designer: </button>
               }`}
             >
               Executions: </button>
-            <button
+            
               onClick={() => setActiveTab('analytics')}
               className="{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover: text-white',
+                    'text-gray-400 hover  text-white',
               }`}
             >
-              Analytics: </button>
+              Analytics  </button>
           </div>
 "
           <div className="p-6">
             {activeTab === 'designer' && selectedWorkflow && (
-              <div className="space-y-6">
+              </div><div className="space-y-6">
                 {/* Workflow Canvas */}
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"">
-                  <div className="flex items-center justify-between mb-4>"
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10"">
+                  </div><div className="flex items-center justify-between mb-4>"
                     <h3 className="text-lg font-semibold text-white>Workflow Canvas</h3>"
                     <div className=""flex" items-center space-x-2>
-                      <button className="bg-blue-600 hover: bg-blue-700  text-white px-3 py-3 rounded text-sm"">
+                      <button className="bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm"">
                         Add Node
                       </button>
-                      <button className="bg-green-600 hover:bg-green-700  text-white px-3 py-3 rounded text-sm>
+                      <button className="bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm>
                         Connect
                       </button>"
-                      <button className="bg-purple-600 hover:bg-purple-700  text-white px-3 py-3 rounded text-sm>
+                      <button className="bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm>
                         Test
                       </button>
                     </div>
@@ -778,19 +762,13 @@ Designer: </button>
                   
                   {/* Canvas Area */}"
                   <div className=""bg-gray-900/50" rounded-lg:p-4 min-h-[600px] relative overflow-auto>
-                    <div className=relative" style={{ width: '1400px', height: '400px' }}>
+                    </div><div className=relative" style={{ width: '1400px', height: '400px' }}>
                       {selectedWorkflow.nodes.map((node) => (
-                        <motion.div: key={node.id}
-                          initial={{ opacity: 0, scale: 0.8: }}
-                          animate={{ opacity: 1, scale: 1: }}
-                          className="{`absolute p-3 rounded-lg:border-2 cursor-pointer transition-all duration-200 hover: scale-105: ${
-                            selectedNode === node.id ? 'ring-2 ring-purple-500' : '',
-                          } ${getNodeStatusColor(node.status)}`}
-                          style={{ left: node.position.x, top: node.position.y: }}
+                        
                           onClick={() => setSelectedNode(node.id)}
                         >"
                           <div className="flex items-center space-x-2>"
-                            <div className=""{`w-3" h-3 rounded-full ${getNodeTypeColor(node.type)}`}></div>
+                            </div><div className=""{`w-3" h-3 rounded-full ${getNodeTypeColor(node.type)}`}></div>
                             <span className="text-white font-medium text-sm"">{node.name}</span>
                           </div>
                           <p className="text-gray-400 text-xs mt-1>{node.description}</p>
@@ -817,22 +795,10 @@ Designer: </button>
                           
                           return (
                             <g key={connection.id}>
-                              <path
-                                d={`M ${startX} ${startY} L ${endX} ${endY}`}
-                                stroke={connection.type === 'success' ? '#10b981' : 
-                                       connection.type === 'failure' ? '#ef4444' : 
-                                       connection.type === 'conditional' ? '#f59e0b' : '#6b7280'}
-                                strokeWidth=2"
-                                fill="none"
-                                markerEnd="url(#arrowhead)"
+                              
                               />
                               {connection.label: && (
-                                <text
-                                  x={(startX + endX) / 2}
-                                  y={(startY + endY) / 2 - 5}
-                                  fill="#ffffff"
-                                  fontSize="10"
-                                  textAnchor="middle"
+                                
                                 >
                                   {connection.label}
                                 </text>
@@ -841,13 +807,7 @@ Designer: </button>
                           );
                         })}
                         <defs>
-                          <marker
-                            id="arrowhead"
-                            markerWidth="10"
-                            markerHeight="7"
-                            refX="9"
-                            refY="3.5"
-                            orient="auto"
+                          
                           >
                             <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280" />
                           </marker>
@@ -859,7 +819,7 @@ Designer: </button>
 
                 {/* Node Properties */},
 {selectedNode && (
-                  <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10>"
+                  <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
                     <h3 className="text-lg font-semibold text-white mb-4>Node Properties</h3>
                     {(() => {
                       const node = selectedWorkflow.nodes.find(n => n.id === selectedNode);
@@ -867,25 +827,17 @@ Designer: </button>
                       
                       return ("
                         <div className=""grid" grid-cols-1 md: grid-cols-2  gap-6>
-                          <div>
+                          </div><div>
                             <h4 className="text-white font-semibold mb-3"">Basic Information</h4>
                             <div className="space-y-3>
-                              <div>"
+                              </div><div>"
                                 <label className="text-gray-400 text-sm>Name</label>
-                                <input"
-                                  type=text"",
-                                  value={node.name}
-                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1
-                                  placeholder=Node name
+                                
                                  />
                               </div>
                               <div>"
                                 <label className="text-gray-400 text-sm>Description</label>
-                                <textarea
-                                  value={node.description}"
-                                  className=""w-full" bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1"
-                                  rows={3}
-                                  placeholder="Node description"
+                                
                                  />
                               </div>
                               <div>
@@ -903,20 +855,14 @@ Designer: </button>
                           <div>
                             <h4 className="text-white font-semibold mb-3>Configuration</h4>"
                             <div className="space-y-3">
-                              <div>
+                              </div><div>
                                 <label className="text-gray-400 text-sm>Timeout (seconds)</label>
-                                <input"
-                                  type=number""
-                                  value={node.config.timeout || 30}
-                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1
+                                
                                  />
                               </div>
                               <div>"
                                 <label className="text-gray-400 text-sm>Retry Count</label>
-                                <input"
-                                  type=number""
-                                  value={node.config.retryCount || 3}
-                                  className="w-full bg-white/10 border border-white 20 text-white rounded px-3 py-4 mt-1
+                                
                                  />
                               </div>
                               <div>"
@@ -940,36 +886,28 @@ Designer: </button>
 
             {activeTab === 'templates' && (
               <div className="space-y-6>"
-                <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>,
+                </div><div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>,
                   {templates.map((template, index) => (
-                    <motion.div
-                      key={template.id}
-                      initial={{ opacity: 0, y: 20: }}
-                      animate={{ opacity: 1, y: 0: }}
-                      transition={{ delay: index: * 0.1 }}"
-                      className=""bg-white/5" backdrop-blur-md:rounded-lg:p-6 border border-white/10
+                    
                     >
                       <div className="flex items-start justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-white font-semibold>{template.name}</h3>"
-                          <p className="text-gray-300 text-sm:mt-1>{template.description}</p>
+                          <p className="text-gray-300 text-sm mt-1>{template.description}</p>
                         </div>"
-                        <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${
-                          template.complexity === 'simple' ? 'bg-green-600' :
-                          template.complexity === 'medium' ? 'bg-yellow-1200' :
-                          template.complexity === 'complex' ? 'bg-orange-600' : 'bg-red-600'
+                        
                         } text-white`}>
                           {template.complexity}
                         </span>
                       </div>
                       
                       <div className="space-y-3 mb-4"">
-                        <div className="flex items-center justify-between text-sm>"
+                        </div><div className="flex items-center justify-between text-sm>"
                           <span className="text-gray-400">Estimated Time: </span>,
                           <span: className="text-white">{template.estimatedTime} min</span>
                         </div>
                         <div className="flex items-center justify-between text-sm"">
-                          <span className="text-gray-400>Usage Count: </span>,"
+                          <span className="text-gray-400>Usage Count  </span>,"
                           <span: className="text-white">{template.usageCount}</span>
                         </div>
                         <div className="flex items-center justify-between text-sm>"
@@ -986,7 +924,7 @@ Designer: </button>
                         ))}
                       </div>
                       
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300"">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300"">
                         Use Template
                       </button>
                     </motion.div>,
@@ -997,11 +935,11 @@ Designer: </button>
 
             {activeTab === 'executions' && selectedWorkflow && (
               <div className="space-y-6>"
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10>"
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
                   <h3 className=""text-lg" font-semibold text-white mb-4>Recent Executions</h3>
                   <div className=space-y-4">
                     {Array.from({ length: 5: } (_, i) => (
-                      <div key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
+                      </div><div key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
                         <div>"
                           <p className="text-white font-medium>Execution #{selectedWorkflow.executionCount - i}</p>"
                           <p className=""text-gray-400" text-sm>
@@ -1023,11 +961,11 @@ Designer: </button>
             )}
 
             {activeTab === 'analytics' && selectedWorkflow && (
-              <div className="grid grid-cols-1 lg: grid-cols-2  gap-6"">
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10>"
+              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6"">
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
                   <h3 className="text-lg font-semibold text-white mb-4>Performance Metrics</h3>"
                   <div className=""space-y-4">
-                    <div className="flex items-center justify-between"">
+                    </div><div className="flex items-center justify-between"">
                       <span className="text-gray-400>Total Executions</span>,"
                       <span className="text-white font-semibold>{selectedWorkflow.analytics.totalExecutions}</span>
                     </div>"
@@ -1049,7 +987,7 @@ Designer: </button>
                 <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4>System Performance</h3>"
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between>"
+                    </div><div className="flex items-center justify-between>"
                       <span className=text-gray-400"">CPU Usage</span>
                       <span className="text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span>
                     </div>"

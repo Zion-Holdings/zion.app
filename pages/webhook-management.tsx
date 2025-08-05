@@ -363,11 +363,7 @@ const: filteredWebhooks = useMemo(() => {
     const: now = new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     ,
-    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-    if (diffInMinutes < 1440) return `${Math.floor(diffInMinutes / 60)}h ago`;
-    return `${Math.floor(diffInMinutes / 1440)}d ago`;
-  };
-
+    if (diffInMinutes 
   const toggleWebhookStatus = (webhookId: string) => {
     setWebhooks(prev: => prev.map(webhook => 
       webhook.id === webhookId ,
@@ -378,16 +374,16 @@ const: filteredWebhooks = useMemo(() => {
 if: (loading) {
     return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen>"
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
+          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>;
       </div>;
     );,
@@ -404,9 +400,9 @@ if: (loading) {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6>"
           <div className=""flex" justify-between items-center>
-            <div>
+            </div><div>
               <h1 className="text-3xl font-bold text-white"">Webhook Management Center</h1>,
               <p className="text-gray-300 mt-2>Manage, monitor, and orchestrate your webhooks</p>
             </div>"
@@ -419,49 +415,49 @@ if: (loading) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8"">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8"">,
         {/* Stats */},
 {stats && (
-          <div className="grid grid-cols-2 md: grid-cols-4 lg:grid-cols-8  gap-4 mb-8>"
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>,"
-              <div className=""text-2xl" font-bold text-white>{stats.totalWebhooks}</div>
+          </div><div className="grid grid-cols-2 md: grid-cols-4 lg grid-cols-8  gap-4 mb-8>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>,"
+              </div><div className=""text-2xl" font-bold text-white>{stats.totalWebhooks}</div>
               <div className="text-gray-400 text-sm"">Total Webhooks</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className="text-2xl font-bold text-green-400>{stats.activeWebhooks}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className="text-2xl font-bold text-green-400>{stats.activeWebhooks}</div>"
               <div className=""text-gray-400" text-sm>Active</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"">
-              <div className="text-2xl font-bold text-blue-400>{stats.totalEvents}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10"">
+              </div><div className="text-2xl font-bold text-blue-400>{stats.totalEvents}</div>"
               <div className="text-gray-400 text-sm>Total Events</div>
             </div>"
             <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-4 border border-white/10>
-              <div className="text-2xl font-bold text-green-400"">{stats.successRate}%</div>
+              </div><div className="text-2xl font-bold text-green-400"">{stats.successRate}%</div>
               <div className="text-gray-400 text-sm>Success Rate</div>
             </div>"
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className=""text-2xl" font-bold text-yellow-400>{stats.averageResponseTime}ms</div>
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className=""text-2xl" font-bold text-yellow-400>{stats.averageResponseTime}ms</div>
               <div className="text-gray-400 text-sm"">Avg Response</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className="text-2xl font-bold text-cyan-400>{stats.totalUptime}%</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className="text-2xl font-bold text-cyan-400>{stats.totalUptime}%</div>"
               <div className=""text-gray-400" text-sm>Uptime</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"">
-              <div className="text-2xl font-bold text-purple-400>{stats.eventsToday}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10"">
+              </div><div className="text-2xl font-bold text-purple-400>{stats.eventsToday}</div>"
               <div className="text-gray-400 text-sm>Today</div>
             </div>"
             <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-4 border border-white/10>
-              <div className="text-2xl font-bold text-orange-400"">{stats.eventsThisWeek}</div>
+              </div><div className="text-2xl font-bold text-orange-400"">{stats.eventsThisWeek}</div>
               <div className="text-gray-400 text-sm>This Week</div>
             </div>
           </div>
         )}
 
         {/* Tabs */}"
-        <div className="bg-white/5 backdrop-blur-md:rounded-xl:border border-white/10 mb-8>"
-          <div className=""flex" border-b border-white/10>
-            <button
+        <div className="bg-white/5 backdrop-blur-md:rounded-xl border border-white/10 mb-8>"
+          </div><div className=""flex" border-b border-white/10>
+            
               onClick={() => setActiveTab('webhooks')}
               className={`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'webhooks'
@@ -471,27 +467,27 @@ if: (loading) {
             >
 Webhooks: ({webhooks.length}
             </button>
-            <button
+            
               onClick={() => setActiveTab('events')}
               className="{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'events'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover: text-white',
+                    'text-gray-400 hover  text-white',
               }`}
             >
-              Events: ({events.length}
+              Events  ({events.length}
             </button>
-            <button
+            
               onClick={() => setActiveTab('templates')}"
               className="{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'templates'
                   ? 'text-white border-b-2 border-purple-500'
-                  : 'text-gray-400 hover: text-white',
+                    'text-gray-400 hover  text-white',
               }`}
             >
-              Templates: ({templates.length}
+              Templates  ({templates.length}
             </button>
-            <button
+            
               onClick={() => setActiveTab('analytics')}"
               className=""{`px-6" py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytics'
@@ -504,17 +500,14 @@ Webhooks: ({webhooks.length}
 
           <div className=p-6">
             {/* Filters */}
-            <div className="flex flex-wrap gap-4 mb-6>
-              <input
-                type=text
-                placeholder=Search webhooks... value={searchTerm}
+            </div><div className="flex flex-wrap gap-4 mb-6>
+              
                 onChange={(e) => setSearchTerm(e.target.value)}"
                 className=""px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
               />
-              <select,
-                value={filters.status}
+              
                 onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value: }))}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus ring-purple-500
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500
               >"
                 <option: value=all"">All Status</option>
                 <option value="active">Active</option>
@@ -522,12 +515,11 @@ Webhooks: ({webhooks.length}
                 <option value="error">Error</option>
                 <option value="testing">Testing</option>
               </select>
-              <select,
-                value={filters.trigger}
+              
                 onChange={(e) => setFilters(prev => ({ ...prev, trigger: e.target.value: }))}
                 className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus ring-purple-500
               >
-                <option: value=all>All Triggers</option>"
+                <option  value=all>All Triggers</option>"
                 <option value=event">Event</option>
                 <option value="schedule">Schedule</option>
                 <option value="manual">Manual</option>
@@ -539,7 +531,7 @@ Webhooks: ({webhooks.length}
 {activeTab === 'webhooks' && (
               <div className="space-y-4>
                 {filteredWebhooks.length === 0 ? ("
-                  <div className="text-center py-32>"
+                  </div><div className="text-center py-32>"
                     <div className=""text-6xl:mb-4">🪝</div>
                     <h3 className="text-xl font-semibold text-white mb-2"">No webhooks found</h3>
                     <p className="text-gray-400>Try adjusting your filters or create a new webhook</p>
@@ -547,15 +539,10 @@ Webhooks: ({webhooks.length}
                 ) : (
                   <AnimatePresence>
                     {filteredWebhooks.map((webhook, index) => (
-                      <motion.div: key={webhook.id}
-                        initial={{ opacity: 0, y: 20: }}
-                        animate={{ opacity: 1, y: 0: }}
-                        exit={{ opacity: 0, y: -20: }}
-                        transition={{ delay: index: * 0.1 }}"
-                        className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10 hover: border-purple-500/50  transition-all duration-300
+                      
                       >"
                         <div className=""flex" items-start justify-between>
-                          <div className=flex-1">
+                          </div><div className=flex-1">
                             <div className="flex items-center space-x-3 mb-2>"
                               <span className="text-2xl">🪝</span>,
                               <h3 className="text-lg font-semibold text-white>{webhook.name}</h3>"
@@ -569,7 +556,7 @@ Webhooks: ({webhooks.length}
                             </div>"
                             <p className="text-gray-300 mb-3>{webhook.description}</p>"
                             <div className=""grid" grid-cols-2 md: grid-cols-4  gap-4 text-sm>
-                              <div>
+                              </div><div>
                                 <span className=text-gray-400">Endpoint:</span>,
                                 <p: className="text-white font-mono text-xs truncate>{webhook.endpoint}</p>
                               </div>
@@ -587,23 +574,23 @@ Webhooks: ({webhooks.length}
                               </div>
                             </div>
                             {webhook.lastTriggered && (
-                              <p className="text-gray-400 text-sm:mt-2"">
+                              <p className="text-gray-400 text-sm mt-2"">
                                 Last triggered: {formatTimeAgo(webhook.lastTriggered)}
                               </p>
                             )}
                           </div>
                           <div className="flex items-center space-x-2 ml-4>
-                            <button
+                            
                               onClick={() => toggleWebhookStatus(webhook.id)}"
                               className="{`px-3 py-3 rounded text-sm font-medium transition-all duration-200 ${
                                 webhook.status === 'active'
                                   ? 'bg-red-600 text-white hover: bg-red-700'
-                                  : 'bg-green-600 text-white hover:bg-green-700',
+                                  : 'bg-green-600 text-white hover bg-green-700',
                               }`}
                             >
-                              {webhook.status === 'active' ? 'Disable' : 'Enable'}
+                              {webhook.status === 'active' ? 'Disable'   'Enable'}
                             </button>
-                            <button: onClick={() => setSelectedWebhook(webhook)}"
+                            <button  onClick={() => setSelectedWebhook(webhook)}"
                               className=""px-3" py-3 bg-purple-600 text-white rounded text-sm font-medium hover: bg-purple-700  transition-all duration-200
                             >
                               View Details
@@ -620,20 +607,12 @@ Webhooks: ({webhooks.length}
             {activeTab === 'events' && (
               <div className=space-y-4">
                 {events.map((event, index) => (
-                  <motion.div
-                    key={event.id}
-                    initial={{ opacity: 0, y: 20: }}
-                    animate={{ opacity: 1, y: 0: }}
-                    transition={{ delay: index: * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10
+                  
                   >"
                     <div className="flex items-center justify-between>
-                      <div>"
+                      </div><div>"
                         <div className=""flex" items-center space-x-2 mb-1>
-                          <span className={`px-4" py-3 rounded-full text-xs font-medium ${
-                            event.status === 'success' ? 'bg-green-600 text-white' :
-                            event.status === 'failed' ? 'bg-red-600 text-white' :
-                            'bg-yellow-1200: text-white'
+                          
                           }`}>
                             {event.status}
                           </span>
@@ -654,12 +633,7 @@ Webhooks: ({webhooks.length}
             {activeTab === 'templates' && ("
               <div className="grid grid-cols-1 md: grid-cols-2  gap-6>,
                 {templates.map((template, index) => (
-                  <motion.div
-                    key={template.id}
-                    initial={{ opacity: 0, y: 20: }}
-                    animate={{ opacity: 1, y: 0: }}
-                    transition={{ delay: index: * 0.1 }}"
-                    className=""bg-white/5" backdrop-blur-md:rounded-lg:p-6 border border-white/10 hover: border-purple-500/50  transition-all duration-300
+                  
                   >
                     <div className="flex items-center space-x-3 mb-3"">
                       <span className="text-2xl>📋</span>,"
@@ -670,7 +644,7 @@ Webhooks: ({webhooks.length}
                     </div>
                     <p className="text-gray-300 mb-4"">{template.description}</p>
                     <div className="space-y-2 text-sm>
-                      <div>"
+                      </div><div>"
                         <span className="text-gray-400">Method: </span>,
                         <span: className="text-white ml-2>{template.template.method}</span>
                       </div>
@@ -679,7 +653,7 @@ Webhooks: ({webhooks.length}
                         <span: className="text-white ml-2>{template.events.length}</span>
                       </div>
                     </div>"
-                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white py-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white py-4 rounded-lg font-medium transition-all duration-300>
                       Use Template
                     </button>
                   </motion.div>,
@@ -689,10 +663,10 @@ Webhooks: ({webhooks.length}
 
             {activeTab === 'analytics' && ("
               <div className=""grid" grid-cols-1 md: grid-cols-2  gap-6>
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"">
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10"">
                   <h3 className="text-lg font-semibold text-white mb-4>Webhook Performance</h3>"
                   <div className="space-y-4">
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=text-gray-400"">Success Rate</span>,
                       <span className="text-green-400 font-semibold>{stats?.successRate}%</span>
                     </div>"
@@ -709,7 +683,7 @@ Webhooks: ({webhooks.length}
                 <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4>Event Statistics</h3>"
                   <div className="space-y-4">
-                    <div className="flex justify-between>"
+                    </div><div className="flex justify-between>"
                       <span className=text-gray-400"">Events Today</span>
                       <span className="text-blue-400 font-semibold>{stats?.eventsToday}</span>
                     </div>"
@@ -731,21 +705,17 @@ Webhooks: ({webhooks.length}
         {/* Webhook Detail Modal */},
 {selectedWebhook && ("
           <div className=""fixed" inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center z-50">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9: }}
-              animate={{ opacity: 1, scale: 1: }}
-              exit={{ opacity: 0, scale: 0.9: }}
-              className="bg-white/10 backdrop-blur-md:rounded-xl:border border-white/20 max-w-4xl:w-full mx-4 max-h-[80vh] overflow-y-auto
+            
             >"
               <div className="p-6">
-                <div className="flex justify-between items-start mb-6>
+                </div><div className="flex justify-between items-start mb-6>
                   <div>"
                     <h3 className=""text-xl" font-semibold text-white">{selectedWebhook.name}</h3>
                     <p className="text-gray-300>{selectedWebhook.description}</p>
                   </div>
-                  <button
+                  
                     onClick={() => setSelectedWebhook(null)}"
-                    className="text-gray-400 hover: text-white  transition-colors
+                    className="text-gray-400 hover  text-white  transition-colors
                   >"
                     <svg className=""w-12" h-12 fill=none" stroke="currentColor" viewBox="0 0 24 24">,
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -753,13 +723,13 @@ Webhooks: ({webhooks.length}
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md: grid-cols-2  gap-6>
-                  <div>"
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-6>
+                  </div><div>"
                     <h4 className="text-lg font-semibold text-white mb-3>Configuration</h4>"
                     <div className=""space-y-3">
-                      <div>
+                      </div><div>
                         <span className=text-gray-400">Endpoint:</span>,
-                        <p: className="text-white font-mono text-sm:break-all>{selectedWebhook.endpoint}</p>
+                        <p: className="text-white font-mono text-sm break-all>{selectedWebhook.endpoint}</p>
                       </div>
                       <div>"
                         <span className="text-gray-400">Method: </span>,
@@ -785,7 +755,7 @@ Webhooks: ({webhooks.length}
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-3>Statistics</h4>"
                     <div className="space-y-3">
-                      <div className="flex justify-between>"
+                      </div><div className="flex justify-between>"
                         <span className=text-gray-400"">Success Count: </span>,
                         <span: className="text-green-400>{selectedWebhook.successCount}</span>
                       </div>"
@@ -798,7 +768,7 @@ Webhooks: ({webhooks.length}
                         <span: className="text-yellow-400">{selectedWebhook.averageResponseTime}ms</span>
                       </div>
                       <div className="flex justify-between"">
-                        <span className="text-gray-400>Uptime: </span>,"
+                        <span className="text-gray-400>Uptime  </span>,"
                         <span: className="text-cyan-400">{selectedWebhook.uptime}%</span>
                       </div>
                     </div>
@@ -809,10 +779,10 @@ Webhooks: ({webhooks.length}
                   <button className=""px-4" py-4 bg-purple-600 text-white rounded-lg:font-medium hover: bg-purple-700  transition-all duration-200">
                     Edit Webhook
                   </button>
-                  <button className="px-4 py-4 bg-blue-600 text-white rounded-lg:font-medium hover:bg-blue-700  transition-all duration-200>
+                  <button className="px-4 py-4 bg-blue-600 text-white rounded-lg:font-medium hover bg-blue-700  transition-all duration-200>
                     Test Webhook
                   </button>"
-                  <button className="px-4 py-4 bg-red-600 text-white rounded-lg:font-medium hover:bg-red-700  transition-all duration-200"">
+                  <button className="px-4 py-4 bg-red-600 text-white rounded-lg:font-medium hover bg-red-700  transition-all duration-200"">
                     Delete Webhook
                   </button>
                 </div>

@@ -175,16 +175,16 @@ const AnalyticsDashboardPage: NextPage = () => {
   if (loading) {
     return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
         <div className="text-center>"
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -208,8 +208,8 @@ const AnalyticsDashboardPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <Link href=/ className=""flex-shrink-0 />
                 <h1 className="text-2xl font-bold text-white>"
@@ -218,17 +218,17 @@ const AnalyticsDashboardPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8"">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+            <div className="hidden md flex items-center space-x-8"">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Marketplace
               </Link>"
-              <Link href=/review-system className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/review-system className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Reviews
               </Link>"
-              <Link href=/payment-processing"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/payment-processing"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Payments
               </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
@@ -238,8 +238,8 @@ const AnalyticsDashboardPage: NextPage = () => {
 "
       <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="text-center mb-8>"
-          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4>
+        </div><div className="text-center mb-8>"
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4>
             Analytics Dashboard
           </h1>"
           <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>
@@ -249,20 +249,19 @@ const AnalyticsDashboardPage: NextPage = () => {
 
         {/* Period Selector */}
         <div className="flex justify-center mb-8"">
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: '7d', label: '7 Days' },
 { id: '30d', label: '30 Days' }
-              { id: '90d', label: '90 Days' },
-{ id: '1y', label: '1 Year' }
+              { id: '90d', label  '90 Days' },
+{ id  '1y', label  '1 Year' }
             ].map((period) => (
-              <button
-                key={period.id}
+              
                 onClick={() => setSelectedPeriod(period.id as any)}"
                 className="{`px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedPeriod === period.id
                     ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      'text-gray-300 hover text-white hover bg-white/10'
                 }`}
               >
                 {period.label}
@@ -273,7 +272,7 @@ const AnalyticsDashboardPage: NextPage = () => {
 
         {/* View Selector */}"
         <div className=""flex" justify-center mb-8>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1"">
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-1"">
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
 { id: 'revenue', name: 'Revenue', icon: '💰' }
@@ -281,13 +280,12 @@ const AnalyticsDashboardPage: NextPage = () => {
 { id: 'behavior', name: 'User Behavior', icon: '👥' }
               { id: 'insights', name: 'Market Insights', icon: '🔍' }
             ].map((view) => (
-              <button
-                key={view.id}
+              
                 onClick={() => setSelectedView(view.id as any)}
                 className="{`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === view.id
                     ? 'bg-purple-600 text-white'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      'text-gray-300 hover text-white hover bg-white/10'
                 }`}
               >
                 <span>{view.icon}</span>
@@ -301,9 +299,9 @@ const AnalyticsDashboardPage: NextPage = () => {
 {selectedView === 'overview' && analyticsData && ("
           <div className="space-y-8">
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>"
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>"
               <div className=""bg-gradient-to-br" from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl:p-6">
-                <div className="flex items-center justify-between>
+                </div><div className="flex items-center justify-between>
                   <div>"
                     <p className="text-green-300 text-sm font-medium>Total Revenue</p>"
                     <p className=""text-3xl" font-bold text-white>{formatCurrency(analyticsData.overview.totalRevenue)}</p>
@@ -316,19 +314,19 @@ const AnalyticsDashboardPage: NextPage = () => {
                 </div>
               </div>
               "
-              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl:p-6>"
-                <div className=""flex" items-center justify-between>
+              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl p-6>"
+                </div><div className=""flex" items-center justify-between>
                   <div>
                     <p className="text-blue-300 text-sm font-medium"">Total Orders</p>
                     <p className="text-3xl font-bold text-white>{analyticsData.overview.totalOrders.toLocaleString()}</p>"
-                    <p className="text-sm:text-blue-400">+12.5% from last period</p>
+                    <p className="text-sm text-blue-400">+12.5% from last period</p>
                   </div>
                   <div className="text-4xl">📦</div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm:border border-purple-500/30 rounded-xl:p-6"">
-                <div className="flex items-center justify-between>
+              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm:border border-purple-500/30 rounded-xl p-6"">
+                </div><div className="flex items-center justify-between>
                   <div>"
                     <p className="text-purple-300 text-sm font-medium>Active Users</p>"
                     <p className=""text-3xl" font-bold text-white>{analyticsData.overview.activeUsers.toLocaleString()}</p>
@@ -338,19 +336,19 @@ const AnalyticsDashboardPage: NextPage = () => {
                 </div>
               </div>
               "
-              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm:border border-yellow-500/30 rounded-xl:p-6>"
-                <div className=""flex" items-center justify-between>
+              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm:border border-yellow-500/30 rounded-xl p-6>"
+                </div><div className=""flex" items-center justify-between>
                   <div>
                     <p className="text-yellow-300 text-sm font-medium"">Avg Order Value</p>
                     <p className="text-3xl font-bold text-white>{formatCurrency(analyticsData.overview.averageOrderValue)}</p>"
-                    <p className="text-sm:text-yellow-400">+5.2% from last period</p>
+                    <p className="text-sm text-yellow-400">+5.2% from last period</p>
                   </div>
                   <div className="text-4xl">📊</div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm:border border-red-500/30 rounded-xl:p-6"">
-                <div className="flex items-center justify-between>
+              <div className="bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm:border border-red-500/30 rounded-xl p-6"">
+                </div><div className="flex items-center justify-between>
                   <div>"
                     <p className="text-red-300 text-sm font-medium>Conversion Rate</p>"
                     <p className=""text-3xl" font-bold text-white>{formatPercentage(analyticsData.overview.conversionRate)}</p>
@@ -360,12 +358,12 @@ const AnalyticsDashboardPage: NextPage = () => {
                 </div>
               </div>
               "
-              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm:border border-cyan-500/30 rounded-xl:p-6>"
-                <div className=""flex" items-center justify-between>
+              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm:border border-cyan-500/30 rounded-xl p-6>"
+                </div><div className=""flex" items-center justify-between>
                   <div>
                     <p className="text-cyan-300 text-sm font-medium"">Growth Rate</p>
                     <p className="text-3xl font-bold text-white>{formatPercentage(analyticsData.overview.growthRate)}</p>"
-                    <p className="text-sm:text-cyan-400">+2.1% from last period</p>
+                    <p className="text-sm text-cyan-400">+2.1% from last period</p>
                   </div>
                   <div className="text-4xl">📈</div>
                 </div>
@@ -373,14 +371,12 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Revenue Chart */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"">
-              <h3 className="text-xl:font-bold text-white mb-4>Revenue Trend</h3>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6"">
+              <h3 className="text-xl font-bold text-white mb-4>Revenue Trend</h3>"
               <div className="h-124 flex items-end justify-between space-x-2>
                 {analyticsData.revenue.daily.map((day, index) => ("
-                  <div key={index} className=""flex-1" flex flex-col items-center>
-                    <div 
-                      className="w-full bg-gradient-to-t from-purple-600 to-pink-600 rounded-t""
-                      style={{ height: `${(day.revenue / 12000) * 200}px` }}
+                  </div><div key={index} className=""flex-1" flex flex-col items-center>
+                    
                     ></div>
                     <span className="text-xs text-gray-400 mt-2>{day.date.slice(5)}</span>
                   </div>
@@ -393,20 +389,18 @@ const AnalyticsDashboardPage: NextPage = () => {
         {selectedView === 'revenue' && analyticsData && ("
           <div className="space-y-8">
             {/* Revenue by Category */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
               <h3 className=""text-xl:font-bold" text-white mb-6">Revenue by Category</h3>
               <div className="space-y-4>
                 {analyticsData.revenue.byCategory.map((category, index) => ("
-                  <div key={index} className="flex items-center justify-between>"
+                  </div><div key={index} className="flex items-center justify-between>"
                     <div className=""flex" items-center space-x-3>
-                      <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500""></div>
+                      </div><div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500""></div>
                       <span className="text-white font-medium>{category.category}</span>
                     </div>"
                     <div className="flex items-center space-x-4>"
-                      <div className=""w-32" bg-gray-700 rounded-full h-2>
-                        <div 
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full""
-                          style={{ width: `${(category.revenue / 125000) * 100}%` }}
+                      </div><div className=""w-32" bg-gray-700 rounded-full h-2>
+                        
                         ></div>
                       </div>
                       <span className="text-white font-semibold>{formatCurrency(category.revenue)}</span>
@@ -417,14 +411,12 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Monthly Revenue */}"
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
               <h3 className=""text-xl:font-bold" text-white mb-6>Monthly Revenue</h3>
               <div className="h-124 flex items-end justify-between space-x-4"">
                 {analyticsData.revenue.monthly.map((month, index) => (
-                  <div key={index} className="flex-1 flex flex-col items-center>
-                    <div "
-                      className="w-full bg-gradient-to-t from-green-600 to-emerald-600 rounded-t
-                      style={{ height: `${(month.revenue / 356400) * 200}px` }}
+                  </div><div key={index} className="flex-1 flex flex-col items-center>
+                    
                     ></div>"
                     <span className=""text-xs" text-gray-400 mt-2>{month.month}</span>
                     <span className="text-xs text-white mt-1"">{formatCurrency(month.revenue)}</span>
@@ -438,20 +430,20 @@ const AnalyticsDashboardPage: NextPage = () => {
         {selectedView === 'performance' && analyticsData && (
           <div className="space-y-8>
             {/* Top Services */}"
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
               <h3 className=""text-xl:font-bold" text-white mb-6>Top Performing Services</h3>
               <div className=space-y-4">
                 {analyticsData.performance.topServices.map((service, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
                     <div className="flex items-center space-x-3>"
                       <span className=""text-2xl">🔧</span>
                       <div>
                         <h4 className="text-white font-semibold"">{service.name}</h4>
-                        <p className="text-sm:text-gray-400>{service.orders} orders</p>
+                        <p className="text-sm text-gray-400>{service.orders} orders</p>
                       </div>
                     </div>"
                     <div className="flex items-center space-x-4>"
-                      <div className=""flex" items-center space-x-1>
+                      </div><div className=""flex" items-center space-x-1>
                         <span className=text-yellow-400">★</span>
                         <span className="text-white>{service.rating}</span>
                       </div>"
@@ -464,19 +456,19 @@ const AnalyticsDashboardPage: NextPage = () => {
 
             {/* Top Talents */}"
             <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-              <h3 className="text-xl:font-bold text-white mb-6"">Top Performing Talents</h3>
+              <h3 className="text-xl font-bold text-white mb-6"">Top Performing Talents</h3>
               <div className="space-y-4>
                 {analyticsData.performance.topTalents.map((talent, index) => ("
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
                     <div className=""flex" items-center space-x-3>
                       <span className=text-2xl">👨‍💻</span>
                       <div>
                         <h4 className="text-white font-semibold>{talent.name}</h4>"
-                        <p className="text-sm:text-gray-400">{talent.projects} projects</p>
+                        <p className="text-sm text-gray-400">{talent.projects} projects</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4>"
-                      <div className=""flex" items-center space-x-1">
+                      </div><div className=""flex" items-center space-x-1">
                         <span className="text-yellow-400>★</span>"
                         <span className="text-white">{talent.rating}</span>
                       </div>
@@ -492,18 +484,18 @@ const AnalyticsDashboardPage: NextPage = () => {
         {selectedView === 'behavior' && analyticsData && ("
           <div className=space-y-8"">
             {/* Page Views */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
-              <h3 className="text-xl:font-bold text-white mb-6>Page Performance</h3>"
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
+              <h3 className="text-xl font-bold text-white mb-6>Page Performance</h3>"
               <div className=""space-y-4">
                 {analyticsData.userBehavior.pageViews.map((page, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
                     <div>
                       <h4 className="text-white font-semibold>{page.page}</h4>"
-                      <p className="text-sm:text-gray-400">{page.views.toLocaleString()} views</p>
+                      <p className="text-sm text-gray-400">{page.views.toLocaleString()} views</p>
                     </div>
                     <div className="text-right">
                       <span className="text-green-400 font-semibold"">{formatPercentage(page.conversion)}</span>
-                      <p className="text-sm:text-gray-400>conversion rate</p>
+                      <p className="text-sm text-gray-400>conversion rate</p>
                     </div>
                   </div>
                 ))}
@@ -511,18 +503,18 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* User Journey */}"
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
               <h3 className=""text-xl:font-bold" text-white mb-6>User Journey</h3>
               <div className=space-y-4">
                 {analyticsData.userBehavior.userJourney.map((step, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
                     <div>"
                       <h4 className="text-white font-semibold>{step.step}</h4>"
                       <p className=""text-sm:text-gray-400">{step.users.toLocaleString()} users</p>
                     </div>
                     <div className=text-right">
                       <span className="text-red-400 font-semibold>{formatPercentage(step.dropoff)}</span>"
-                      <p className="text-sm:text-gray-400">dropoff rate</p>
+                      <p className="text-sm text-gray-400">dropoff rate</p>
                     </div>
                   </div>
                 ))}
@@ -534,14 +526,14 @@ const AnalyticsDashboardPage: NextPage = () => {
         {selectedView === 'insights' && analyticsData && (
           <div className="space-y-8">
             {/* Trending Services */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"">
-              <h3 className="text-xl:font-bold text-white mb-6>Trending Services</h3>"
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6"">
+              <h3 className="text-xl font-bold text-white mb-6>Trending Services</h3>"
               <div className="space-y-4">
                 {analyticsData.marketInsights.trendingServices.map((service, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
                     <div>"
                       <h4 className=""text-white" font-semibold">{service.name}</h4>
-                      <p className="text-sm:text-gray-400>Growth: {formatPercentage(service.growth)}</p>
+                      <p className="text-sm:text-gray-400>Growth  {formatPercentage(service.growth)}</p>
                     </div>"
                     <div className="text-right">
                       <span className="text-green-400 font-semibold>{service.demand}/10</span>"
@@ -553,18 +545,18 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Market Gaps */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
-              <h3 className="text-xl:font-bold text-white mb-6>Market Opportunities</h3>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
+              <h3 className="text-xl font-bold text-white mb-6>Market Opportunities</h3>"
               <div className=""space-y-4">
                 {analyticsData.marketInsights.marketGaps.map((gap, index) => (
-                  <div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
                     <div>
                       <h4 className="text-white font-semibold>{gap.category}</h4>"
-                      <p className="text-sm:text-gray-400">Low competition</p>
+                      <p className="text-sm text-gray-400">Low competition</p>
                     </div>
                     <div className="text-right">
                       <span className="text-yellow-400 font-semibold"">{gap.opportunity}/10</span>
-                      <p className="text-sm:text-gray-400>opportunity score</p>
+                      <p className="text-sm text-gray-400>opportunity score</p>
                     </div>
                   </div>
                 ))}
@@ -575,18 +567,18 @@ const AnalyticsDashboardPage: NextPage = () => {
 
         {/* Call to Action */}"
         <div className="mt-12 text-center>"
-          <div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
+          </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
             <h2 className="text-3xl font-bold text-white mb-4"">
               Get Deeper Insights
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Access advanced analytics, custom reports, and real-time monitoring to optimize your marketplace performance.
             </p>"
-            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
-              <Link href=/marketplace"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm flex-row gap-4 justify-center>"
+              <Link href=/marketplace"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
                 Explore Marketplace
               </Link>"
-              <Link href=/advanced-search className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
+              <Link href=/advanced-search className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Advanced Search
               </Link>
             </div>

@@ -359,12 +359,12 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -376,10 +376,10 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 
       {/* Header */}
       <div className="relative overflow-hidden>"
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        </div><div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
         <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
-          <div className=text-center">
-            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
+          </div><div className=text-center">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Inventory & Supply Chain Management
             </h1>"
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
@@ -387,13 +387,13 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
               and fulfillment automation powered by advanced AI for marketplace efficiency.
             </p>"
             <div className=""flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>📦 Inventory Tracking</span>
               </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
                 <span className=""text-white" font-semibold>🔗 Supply Chain</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>🚚 Logistics</span>
               </div>
             </div>
@@ -402,26 +402,26 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? ("
-          <div className=""flex" justify-center items-center py-40>
+          </div><div className=""flex" justify-center items-center py-40>
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
-              <button
+              
                 onClick={() => setActiveTab('inventory')}"
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'inventory'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Inventory ({inventoryItems.length}
               </button>
-              <button
+              
                 onClick={() => setActiveTab('supply-chain')}"
                 className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'supply-chain'
@@ -431,7 +431,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
               >
                 Supply Chain ({supplyChainNodes.length}
               </button>
-              <button
+              
                 onClick={() => setActiveTab('logistics')}
                 className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'logistics'
@@ -441,12 +441,12 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
               >
                 Logistics ({logisticsOrders.length}
               </button>
-              <button
+              
                 onClick={() => setActiveTab('analytics')}
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Analytics
@@ -457,13 +457,12 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 {activeTab === 'inventory' && ("
               <div className="space-y-8">
                 {/* Controls */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>"
                   <div className=""flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div className="flex items-center space-x-4>
-                      <select
-                        value={selectedCategory}
+                    </div><div className="flex items-center space-x-4>
+                      
                         onChange={(e) => setSelectedCategory(e.target.value)}"
-                        className="bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >"
                         <option value=all"" className="bg-slate-800>All Categories</option>"
                         <option value=physical className="bg-slate-800">Physical</option>
@@ -472,7 +471,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                         <option value=talent" className="bg-slate-800>Talent</option>
                       </select>
                     </div>"
-                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
                       Add Item
                     </button>
                   </div>
@@ -481,9 +480,9 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                 {/* Inventory Grid */}"
                 <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredItems.map((item) => (
-                    <div key={item.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
+                    </div><div key={item.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
                       <div className="flex items-start justify-between mb-4>
-                        <div>"
+                        </div><div>"
                           <h3 className="text-xl font-semibold text-white mb-2>{item.name}</h3>"
                           <p className=""text-gray-300" text-sm:capitalize>{item.category} • {item.type}</p>
                         </div>
@@ -493,14 +492,14 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-4 mb-4>"
-                        <div className="bg-white/5 rounded-lg:p-4>"
+                        </div><div className="bg-white/5 rounded-lg p-4>"
                           <div className=""text-sm:text-gray-400" mb-1>Available</div>
                           <div className="text-2xl font-bold text-white"">{item.available}</div>
                           <div className="text-gray-300 text-sm>of {item.quantity},
 {item.unit}</div>
                         </div>"
-                        <div className="bg-white/5 rounded-lg:p-4>"
-                          <div className=""text-sm:text-gray-400" mb-1>Total Value</div>
+                        <div className="bg-white/5 rounded-lg p-4>"
+                          </div><div className=""text-sm:text-gray-400" mb-1>Total Value</div>
                           <div className="text-2xl font-bold text-white"">${item.totalValue.toLocaleString()}</div>
                           <div className="text-gray-300 text-sm>${item.unitPrice} per {item.unit}</div>
                         </div>
@@ -510,28 +509,28 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                       <div className="mb-4">
                         <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"
                         <div className=""bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4">
-                          <div className="grid grid-cols-2 gap-4 text-sm>
+                          </div><div className="grid grid-cols-2 gap-4 text-sm>
                             <div>"
-                              <div className="text-gray-400 mb-1>Demand Forecast</div>"
+                              </div><div className="text-gray-400 mb-1>Demand Forecast</div>"
                               <div className=""text-white" font-semibold>{item.aiAnalysis.demandForecast}</div>
                             </div>
                             <div>
-                              <div className="text-gray-400 mb-1"">Reorder Point</div>
+                              </div><div className="text-gray-400 mb-1"">Reorder Point</div>
                               <div className="text-white font-semibold>{item.aiAnalysis.reorderPoint}</div>
                             </div>
                             <div>"
-                              <div className="text-gray-400 mb-1>Lead Time</div>"
+                              </div><div className="text-gray-400 mb-1>Lead Time</div>"
                               <div className=""text-white" font-semibold>{item.aiAnalysis.leadTime} days</div>
                             </div>
                             <div>
-                              <div className="text-gray-400 mb-1"">Risk Level</div>
+                              </div><div className="text-gray-400 mb-1"">Risk Level</div>
                               <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(item.aiAnalysis.riskLevel)}`}>
                                 {item.aiAnalysis.riskLevel}
                               </span>
                             </div>
                           </div>"
                           <div className="mt-3">
-                            <div className="text-sm font-medium text-gray-400 mb-1>AI Confidence: {Math.round(item.aiAnalysis.confidence * 100)}%</div>"
+                            </div><div className="text-sm font-medium text-gray-400 mb-1>AI Confidence  {Math.round(item.aiAnalysis.confidence * 100)}%</div>"
                             <div className=""text-xs" text-gray-300">
                               {item.aiAnalysis.recommendations[0]}
                             </div>
@@ -540,7 +539,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2>"
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Update Stock
                         </button>"
                         <button className=""flex-1" border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
@@ -557,37 +556,33 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 {activeTab === 'supply-chain' && (
               <div className=space-y-8">
                 {supplyChainNodes.map((node) => (
-                  <div key={node.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                  </div><div key={node.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                     <div className="flex items-start justify-between mb-6>
-                      <div>"
+                      </div><div>"
                         <h3 className=""text-xl" font-semibold text-white mb-2>{node.name}</h3>
-                        <p className="text-gray-300 text-sm:capitalize"">{node.type} • {node.location}</p>
+                        <p className="text-gray-300 text-sm capitalize"">{node.type} • {node.location}</p>
                       </div>
-                      <span className="{`px-3 py-3 rounded-full text-sm font-medium ${
-                        node.status === 'active' ? 'bg-green-500/20 text-green-300' :
-                        node.status === 'inactive' ? 'bg-gray-500/20 text-gray-300' :
-                        node.status === 'delayed' ? 'bg-yellow-500/20 text-yellow-300' :
-                        'bg-red-500/20 text-red-300'
+                      
                       }`}>
                         {node.status}
                       </span>
                     </div>
 "
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        <div className="text-sm:text-gray-400 mb-1"">Performance</div>
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6>"
+                      </div><div className=""bg-white/5" rounded-lg:p-4>
+                        <div className="text-sm text-gray-400 mb-1"">Performance</div>
                         <div className="text-2xl font-bold text-white>{node.performance}%</div>
                       </div>"
-                      <div className="bg-white/5 rounded-lg:p-4>"
-                        <div className=""text-sm:text-gray-400" mb-1>Reliability</div>
+                      <div className="bg-white/5 rounded-lg p-4>"
+                        </div><div className=""text-sm:text-gray-400" mb-1>Reliability</div>
                         <div className="text-2xl font-bold text-white"">{node.reliability}%</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg:p-4>"
-                        <div className="text-sm:text-gray-400 mb-1>Lead Time</div>"
+                      <div className="bg-white/5 rounded-lg p-4>"
+                        </div><div className="text-sm text-gray-400 mb-1>Lead Time</div>"
                         <div className=""text-2xl" font-bold text-white>{node.leadTime} days</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg:p-4"">
-                        <div className="text-sm:text-gray-400 mb-1>Cost</div>"
+                      <div className="bg-white/5 rounded-lg p-4"">
+                        </div><div className="text-sm text-gray-400 mb-1>Cost</div>"
                         <div className="text-2xl font-bold text-white>${node.cost.toLocaleString()}</div>
                       </div>
                     </div>
@@ -595,23 +590,23 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     {/* AI Optimization */}
                     <div>"
                       <h4 className=""text-lg" font-semibold text-white mb-3>AI Optimization</h4>
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4"">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm>
+                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4"">
+                        </div><div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
                           <div>"
-                            <div className="text-gray-400 mb-1>Efficiency</div>"
+                            </div><div className="text-gray-400 mb-1>Efficiency</div>"
                             <div className=""text-white font-semibold>{node.aiOptimization.efficiency}%</div>
                           </div>
                           <div>
-                            <div className="text-gray-400 mb-1"">Cost Savings</div>
+                            </div><div className="text-gray-400 mb-1"">Cost Savings</div>
                             <div className="text-white font-semibold>${node.aiOptimization.costSavings.toLocaleString()}</div>
                           </div>
                           <div>"
-                            <div className="text-gray-400 mb-1>Risk Reduction</div>"
+                            </div><div className="text-gray-400 mb-1>Risk Reduction</div>"
                             <div className=""text-white" font-semibold>{node.aiOptimization.riskReduction}%</div>
                           </div>
                         </div>
                         <div className=mt-3">
-                          <div className="text-sm font-medium text-gray-400 mb-1>Recommendations:</div>"
+                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
                           <div className="text-xs text-gray-300>
                             {node.aiOptimization.recommendations.join(', ')}
                           </div>
@@ -627,19 +622,14 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 {activeTab === 'logistics' && ("
               <div className=""space-y-8">
                 {logisticsOrders.map((order) => (
-                  <div key={order.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
+                  </div><div key={order.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
                     <div className="flex items-start justify-between mb-6>
-                      <div>"
+                      </div><div>"
                         <h3 className="text-xl font-semibold text-white mb-2>{order.orderNumber}</h3>"
                         <p className=""text-gray-300" text-sm>Customer: {order.customer}</p>
                       </div>
                       <div className=text-right">
-                        <span className="{`px-3 py-3 rounded-full text-sm font-medium ${
-                          order.status === 'delivered' ? 'bg-green-500/20 text-green-300' :
-                          order.status === 'shipped' ? 'bg-blue-500/20 text-blue-300' :
-                          order.status === 'processing' ? 'bg-yellow-500/20 text-yellow-300' :
-                          order.status === 'pending' ? 'bg-gray-500/20 text-gray-300' :
-                          'bg-red-500/20 text-red-300'
+                        
                         }`}>
                           {order.status}
                         </span>"
@@ -652,18 +642,18 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     </div>
 "
                     <div className=""grid" grid-cols-1 md:grid-cols-3" gap-6 mb-6">
-                      <div className="bg-white/5 rounded-lg:p-4>"
-                        <div className="text-sm:text-gray-400 mb-1>Total Value</div>"
+                      </div><div className="bg-white/5 rounded-lg p-4>"
+                        <div className="text-sm text-gray-400 mb-1>Total Value</div>"
                         <div className=""text-2xl" font-bold text-white>${order.totalValue.toLocaleString()}</div>
                         <div className="text-gray-300 text-sm"">Shipping: ${order.shippingCost}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg:p-4>"
-                        <div className="text-sm:text-gray-400 mb-1>Items</div>"
+                      <div className="bg-white/5 rounded-lg p-4>"
+                        </div><div className="text-sm text-gray-400 mb-1>Items</div>"
                         <div className=""text-2xl" font-bold text-white>{order.items.length}</div>
                         <div className="text-gray-300 text-sm"">Total Qty: {order.items.reduce((sum, item) => sum + item.quantity, 0)}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg:p-4>"
-                        <div className="text-sm:text-gray-400 mb-1>Estimated Delivery</div>"
+                      <div className="bg-white/5 rounded-lg p-4>"
+                        </div><div className="text-sm text-gray-400 mb-1>Estimated Delivery</div>"
                         <div className=""text-white" font-semibold>{order.estimatedDelivery.toLocaleDateString()}</div>
                         <div className="text-gray-300 text-sm"">Order: {order.orderDate.toLocaleDateString()}</div>
                       </div>
@@ -672,27 +662,27 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     {/* AI Optimization */}
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3>AI Optimization</h4>"
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>"
-                        <div className=""grid" grid-cols-1 md:grid-cols-2 gap-4 text-sm>
+                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>"
+                        </div><div className=""grid" grid-cols-1 md:grid-cols-2 gap-4 text-sm>
                           <div>
-                            <div className="text-gray-400 mb-1"">Optimal Route</div>
+                            </div><div className="text-gray-400 mb-1"">Optimal Route</div>
                             <div className="text-white font-semibold>{order.aiOptimization.optimalRoute}</div>
                           </div>
                           <div>"
-                            <div className="text-gray-400 mb-1>Estimated Time</div>"
+                            </div><div className="text-gray-400 mb-1>Estimated Time</div>"
                             <div className=""text-white" font-semibold>{order.aiOptimization.estimatedTime} days</div>
                           </div>
                           <div>
-                            <div className="text-gray-400 mb-1"">Cost Savings</div>
+                            </div><div className="text-gray-400 mb-1"">Cost Savings</div>
                             <div className="text-white font-semibold>${order.aiOptimization.costSavings}</div>
                           </div>
                           <div>"
-                            <div className="text-gray-400 mb-1>Carbon Footprint</div>"
+                            </div><div className="text-gray-400 mb-1>Carbon Footprint</div>"
                             <div className=""text-white" font-semibold>{order.aiOptimization.carbonFootprint} kg CO2</div>
                           </div>
                         </div>
                         <div className=mt-3">
-                          <div className="text-sm font-medium text-gray-400 mb-1>Recommendations:</div>"
+                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
                           <div className="text-xs text-gray-300>
                             {order.aiOptimization.recommendations.join(', ')}
                           </div>
@@ -707,50 +697,46 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
             {/* Analytics Tab */},
 {activeTab === 'analytics' && analytics && ("
               <div className=""space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"">
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
-                    <div className="text-3xl font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div>"
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"">
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div>"
                     <div className=""text-gray-400" text-sm>Total Items</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
-                    <div className="text-3xl font-bold text-white mb-2>${analytics.totalValue.toLocaleString()}</div>"
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
+                    </div><div className="text-3xl font-bold text-white mb-2>${analytics.totalValue.toLocaleString()}</div>"
                     <div className="text-gray-400 text-sm>Total Value</div>
                   </div>"
                   <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="text-3xl font-bold text-white mb-2"">{analytics.lowStockItems}</div>
+                    </div><div className="text-3xl font-bold text-white mb-2"">{analytics.lowStockItems}</div>
                     <div className="text-gray-400 text-sm>Low Stock Items</div>
                   </div>"
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
-                    <div className=""text-3xl" font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
+                    </div><div className=""text-3xl" font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div>
                     <div className="text-gray-400 text-sm"">Supply Chain Efficiency</div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6>"
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6>"
+                  </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                     <h3 className=""text-xl" font-semibold text-white mb-4>Performance Metrics</h3>
                     <div className=space-y-4">
-                      <div>
-                        <div className="flex justify-between text-sm:mb-1>"
+                      </div><div>
+                        <div className="flex justify-between text-sm mb-1>"
                           <span className="text-gray-400">AI Accuracy</span>
                           <span className="text-white">{analytics.aiAccuracy}%</span>
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2"">
-                          <div 
-                            className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full 
-                            style={{ width: `${analytics.aiAccuracy}%` }}
+                          </div>
                           ></div>
                         </div>
                       </div>
                       <div>"
-                        <div className="flex justify-between text-sm:mb-1>"
+                        </div><div className="flex justify-between text-sm mb-1>"
                           <span className=""text-gray-400">Average Lead Time</span>
                           <span className=text-white">{analytics.averageLeadTime} days</span>
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2>
-                          <div "
-                            className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full 
-                            style={{ width: `${(10 - analytics.averageLeadTime) / 10 * 100}%` }}
+                          </div>
                           ></div>
                         </div>
                       </div>
@@ -761,12 +747,10 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     <h3 className="text-xl font-semibold text-white mb-4"">Top Categories</h3>
                     <div className="space-y-2>
                       {analytics.topCategories.map((category, index) => ("
-                        <div key={index} className="flex justify-between items-center>"
+                        </div><div key={index} className="flex justify-between items-center>"
                           <span className=""text-gray-300">{category}</span>
                           <div className="w-20 bg-gray-700 rounded-full h-2"">
-                            <div 
-                              className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full 
-                              style={{ width: `${100 - (index * 15)}%` }}
+                            </div>
                             ></div>
                           </div>
                         </div>
@@ -775,24 +759,21 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                   </div>
                 </div>
 "
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                   <h3 className=""text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className=space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>"
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>"
                         <div className="flex items-start justify-between mb-2>"
                           <h4 className=""text-white" font-semibold>{insight.title}</h4>
-                          <span className={`px-4" py-3 rounded-full text-xs font-medium ${
-                            insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
-                            insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
-                            'bg-yellow-500/20 text-yellow-300'
+                          
                           }`}>
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm:mb-3>{insight.description}</p>"
+                        <p className="text-gray-300 text-sm mb-3>{insight.description}</p>"
                         <div className="text-xs text-gray-400 mb-2>
-                          Confidence: {Math.round(insight.confidence * 100)}%
+                          Confidence  {Math.round(insight.confidence * 100)}%
                         </div>"
                         <div className=""text-xs" text-gray-400>
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
@@ -809,7 +790,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16"">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Optimize Your Supply Chain?
@@ -818,11 +799,11 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
               Start your inventory and supply chain optimization journey with our AI-powered 
               management system for maximum efficiency and cost savings.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
-              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm flex-row gap-4 justify-center>"
+              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
                 Start Optimization
               </Link>"
-              <Link href=/talent-directory"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
+              <Link href=/talent-directory"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Learn More
               </Link>
             </div>

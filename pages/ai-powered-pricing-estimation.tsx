@@ -499,12 +499,12 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -516,10 +516,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
       {/* Header */}
       <div className="relative overflow-hidden>"
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        </div><div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
         <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
-          <div className=text-center">
-            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
+          </div><div className=text-center">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Pricing & Cost Estimation
             </h1>"
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
@@ -527,13 +527,13 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               powered by advanced AI algorithms and market data analysis.
             </p>"
             <div className=""flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>💰 Smart Pricing</span>
               </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
                 <span className=""text-white" font-semibold>📊 Market Analysis</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
                 <span className="text-white font-semibold>🎯 Budget Optimization</span>
               </div>
             </div>
@@ -542,26 +542,26 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? ("
-          <div className=""flex" justify-center items-center py-40>
+          </div><div className=""flex" justify-center items-center py-40>
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
-              <button
+              
                 onClick={() => setActiveTab('estimates')}"
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'estimates'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                      'bg-white/10 text-gray-300 hover bg-white/20'
                 }`}
               >
                 Cost Estimates
               </button>
-              <button
+              
                 onClick={() => setActiveTab('models')}"
                 className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'models'
@@ -571,7 +571,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               >
                 Pricing Models
               </button>
-              <button
+              
                 onClick={() => setActiveTab('optimization')}
                 className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'optimization'
@@ -587,14 +587,13 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 {activeTab === 'estimates' && (
               <div className="space-y-8>
                 {/* Filters */}"
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>"
                   <div className=""grid" grid-cols-1 md:grid-cols-3 gap-4>
-                    <div>
+                    </div><div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
-                      <select
-                        value={selectedCategory}
+                      
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >
                         {categories.map(category => ("
                           <option key={category} value={category} className="bg-slate-800">
@@ -605,8 +604,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2>Complexity</label>
-                      <select
-                        value={selectedComplexity}
+                      
                         onChange={(e) => setSelectedComplexity(e.target.value)}"
                         className=""w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500"
                       >
@@ -619,8 +617,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                     </div>
                     <div>"
                       <label className="block text-sm font-medium text-gray-300 mb-2>Sort By</label>
-                      <select
-                        value={sortBy}
+                      
                         onChange={(e) => setSortBy(e.target.value as any)}"
                         className=""w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                       >
@@ -633,12 +630,12 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                 </div>
 
                 {/* Estimates Grid */}"
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-8>
                   {filteredEstimates.map((estimate) => ("
-                    <div key={estimate.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    </div><div key={estimate.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
                       {/* Header */}
                       <div className="flex items-start justify-between mb-4"">
-                        <div>
+                        </div><div>
                           <h3 className="text-xl font-semibold text-white mb-2>{estimate.projectType}</h3>"
                           <div className="flex items-center space-x-2>"
                             <span className=""px-4" py-3 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300>
@@ -650,7 +647,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                           </div>
                         </div>
                         <div className="text-right>"
-                          <div className="text-2xl font-bold text-white>
+                          </div><div className="text-2xl font-bold text-white>
                             ${estimate.estimatedCost.toLocaleString()}
                           </div>"
                           <div className=""{`text-sm:font-semibold" ${getConfidenceColor(estimate.confidence)}`}>
@@ -661,7 +658,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* AI Factors */}
                       <div className=mb-4">
-                        <div className="text-sm:text-gray-400 mb-2>AI-Powered Features:</div>"
+                        </div><div className="text-sm:text-gray-400 mb-2>AI-Powered Features </div>"
                         <div className="flex flex-wrap gap-2>
                           {estimate.aiFactors.map((factor, index) => ("
                             <span key={index} className=""px-4" py-3 bg-purple-500/20 rounded-full text-xs text-purple-300>
@@ -673,12 +670,12 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* Cost Breakdown */}
                       <div className=mb-4">
-                        <div className="text-sm:text-gray-400 mb-2>Cost Breakdown:</div>"
+                        </div><div className="text-sm:text-gray-400 mb-2>Cost Breakdown </div>"
                         <div className="space-y-2">
                           {estimate.breakdown.map((item, index) => (
-                            <div key={index} className="flex justify-between items-center>"
+                            </div><div key={index} className="flex justify-between items-center>"
                               <span className=text-sm:text-gray-300"">{item.category}</span>
-                              <span className="text-sm:text-white font-semibold>
+                              <span className="text-sm text-white font-semibold>
                                 ${item.cost.toLocaleString()} ({item.percentage}%
                               </span>
                             </div>
@@ -688,10 +685,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* Market Comparison */}"
                       <div className="mb-4 p-3 bg-white/5 rounded-lg>"
-                        <div className=""text-sm:text-gray-400" mb-2>Market Analysis:</div>
+                        </div><div className=""text-sm:text-gray-400" mb-2>Market Analysis:</div>
                         <div className="grid grid-cols-2 gap-2 text-xs"">
-                          <div>
-                            <span className="text-gray-400>Market Average:</span>"
+                          </div><div>
+                            <span className="text-gray-400>Market Average </span>"
                             <div className="text-white font-semibold>${estimate.marketComparison.averageMarketPrice.toLocaleString()}</div>
                           </div>
                           <div>"
@@ -705,7 +702,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2>"
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           View Details
                         </button>"
                         <button className=""flex-1" border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
@@ -720,17 +717,17 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
             {/* Pricing Models Tab */},
 {activeTab === 'models' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6"">
                 {pricingModels.map((model) => (
-                  <div key={model.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                  </div><div key={model.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
                     <h3 className="text-xl font-semibold text-white mb-3>{model.name}</h3>"
                     <p className=""text-gray-300" text-sm:mb-4>{model.description}</p>
                     
                     <div className=mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>Advantages:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Advantages </div>"
                       <ul className="space-y-1">
                         {model.advantages.map((advantage, index) => (
-                          <li key={index} className="text-sm:text-green-300 flex items-center>"
+                          <li key={index} className="text-sm text-green-300 flex items-center>"
                             <span className=mr-2"">✓</span>
                             {advantage}
                           </li>
@@ -739,10 +736,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                     </div>
 
                     <div className="mb-4>"
-                      <div className="text-sm font-medium text-gray-400 mb-2>Disadvantages:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Disadvantages </div>"
                       <ul className=""space-y-1">
                         {model.disadvantages.map((disadvantage, index) => (
-                          <li key={index} className="text-sm:text-red-300 flex items-center"">
+                          <li key={index} className="text-sm text-red-300 flex items-center"">
                             <span className="mr-2>✗</span>
                             {disadvantage}
                           </li>
@@ -751,7 +748,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                     </div>
 "
                     <div className="mb-4">
-                      <div className="text-sm font-medium text-gray-400 mb-2>Best For:</div>"
+                      </div><div className="text-sm font-medium text-gray-400 mb-2>Best For </div>"
                       <div className=""flex" flex-wrap gap-1">
                         {model.bestFor.map((item, index) => (
                           <span key={index} className="px-4 py-3 bg-blue-500/20 rounded-full text-xs text-blue-300>
@@ -761,7 +758,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       </div>
                     </div>
 "
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                       Learn More
                     </button>
                   </div>
@@ -773,19 +770,19 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 {activeTab === 'optimization' && ("
               <div className=""space-y-8">
                 {budgetOptimizations.map((optimization, index) => (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6>"
-                      <div className="text-center">
+                  </div><div key={index} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-6>"
+                      </div><div className="text-center">
                         <div className="text-2xl font-bold text-red-400>${optimization.originalBudget.toLocaleString()}</div>"
                         <div className=text-sm:text-gray-400">Original Budget</div>
                       </div>
                       <div className="text-center>"
-                        <div className="text-2xl font-bold text-green-400>${optimization.optimizedBudget.toLocaleString()}</div>"
+                        </div><div className="text-2xl font-bold text-green-400>${optimization.optimizedBudget.toLocaleString()}</div>"
                         <div className=""text-sm:text-gray-400">Optimized Budget</div>
                       </div>
                       <div className=text-center">
-                        <div className="text-2xl font-bold text-purple-400>${optimization.savings.toLocaleString()}</div>"
-                        <div className="text-sm:text-gray-400">Total Savings</div>
+                        </div><div className="text-2xl font-bold text-purple-400>${optimization.savings.toLocaleString()}</div>"
+                        <div className="text-sm text-gray-400">Total Savings</div>
                       </div>
                     </div>
 
@@ -793,12 +790,12 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <h4 className="text-lg font-semibold text-white mb-3"">Optimization Recommendations:</h4>
                       <div className="space-y-3>
                         {optimization.recommendations.map((rec, recIndex) => ("
-                          <div key={recIndex} className="bg-white/5 rounded-lg:p-3>"
+                          </div><div key={recIndex} className="bg-white/5 rounded-lg p-3>"
                             <div className=""flex" justify-between items-start mb-2>
                               <h5 className="font-semibold text-white"">{rec.action}</h5>
                               <span className="text-green-400 font-semibold>-${rec.savings.toLocaleString()}</span>
                             </div>"
-                            <p className="text-sm:text-gray-300 mb-2>{rec.impact}</p>"
+                            <p className="text-sm text-gray-300 mb-2>{rec.impact}</p>"
                             <p className=""text-xs" text-gray-400>{rec.implementation}</p>
                           </div>
                         ))}
@@ -809,11 +806,11 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <h4 className="text-lg font-semibold text-white mb-3"">Trade-offs Analysis:</h4>
                       <div className="space-y-3>
                         {optimization.tradeoffs.map((tradeoff, tradeIndex) => ("
-                          <div key={tradeIndex} className="bg-white/5 rounded-lg:p-3>"
+                          </div><div key={tradeIndex} className="bg-white/5 rounded-lg p-3>"
                             <h5 className=""font-semibold" text-white mb-2>{tradeoff.option}</h5>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4"">
-                              <div>
-                                <div className="text-sm font-medium text-green-400 mb-1>Pros:</div>"
+                            <div className="grid grid-cols-1 md grid-cols-2 gap-4"">
+                              </div><div>
+                                <div className="text-sm font-medium text-green-400 mb-1>Pros </div>"
                                 <ul className="space-y-1">
                                   {tradeoff.pros.map((pro, proIndex) => (
                                     <li key={proIndex} className="text-xs text-gray-300>• {pro}</li>
@@ -821,7 +818,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                                 </ul>
                               </div>
                               <div>"
-                                <div className=""text-sm" font-medium text-red-400 mb-1">Cons:</div>
+                                </div><div className=""text-sm" font-medium text-red-400 mb-1">Cons:</div>
                                 <ul className="space-y-1>
                                   {tradeoff.cons.map((con, conIndex) => ("
                                     <li key={conIndex} className="text-xs text-gray-300>• {con}</li>
@@ -843,7 +840,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
       {/* CTA Section */}"
       <div className=""bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36"">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36"">
           <div className="text-center>"
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Get Accurate Pricing Estimates?
@@ -852,11 +849,11 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               Our AI-powered pricing system analyzes market data, project complexity, and your specific requirements 
               to provide accurate cost estimates and optimization recommendations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center"">
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm flex-row gap-4 justify-center"">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
                 Get Free Estimate
               </Link>"
-              <Link href=/ai-service-matcher className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
+              <Link href=/ai-service-matcher className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Try AI Matcher
               </Link>
             </div>

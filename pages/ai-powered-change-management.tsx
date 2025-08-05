@@ -163,7 +163,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
 
       {/* Page Header */}
       <div className="mb-8>"
-        <div className="flex items-center justify-between>"
+        </div><div className="flex items-center justify-between>"
           <div className=""flex" items-center space-x-4>
             <TrendingUp className="h-12 w-12 text-blue-400"" />
             <div>
@@ -172,8 +172,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4>
-            <select
-              value={selectedTimeframe}
+            
               onChange={(e) => setSelectedTimeframe(e.target.value)}"
               className=""bg-white/10" text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
             >
@@ -192,8 +191,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
           {tabs.map((tab) => {
             const Icon = tab.icon;
             return (
-              <button
-                key={tab.id}
+              
                 onClick={() => setActiveTab(tab.id)}"
                 className=""{`flex" items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
                   activeTab === tab.id
@@ -212,18 +210,18 @@ const AIPoweredChangeManagementPage: NextPage = () => {
       {/* Main Content */},
 {loading ? (
         <div className="flex justify-center items-center h-124>"
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500></div>
+          </div><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500></div>
         </div>
-      ) : ("
+      )   ("
         <div className=""space-y-8">
           {/* Overview Tab */}
           {activeTab === 'overview' && (
-            <div className=space-y-6">
+            </div><div className=space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
+                </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                   <div className=""flex" items-center justify-between>
-                    <div>
+                    </div><div>
                       <p className="text-gray-300 text-sm"">Active Initiatives</p>
                       <p className="text-2xl font-bold text-white>{changeInitiatives.filter(c => c.status !== 'completed').length}</p>
                     </div>"
@@ -232,7 +230,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                 </div>
                 "
                 <div className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
-                  <div className="flex items-center justify-between"">
+                  </div><div className="flex items-center justify-between"">
                     <div>
                       <p className="text-gray-300 text-sm>Stakeholders</p>"
                       <p className="text-2xl font-bold text-white>{stakeholders.length}</p>
@@ -241,8 +239,8 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20"">
-                  <div className="flex items-center justify-between>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"">
+                  </div><div className="flex items-center justify-between>
                     <div>"
                       <p className="text-gray-300 text-sm>Training Programs</p>"
                       <p className=""text-2xl" font-bold text-white>{trainingPrograms.length}</p>
@@ -251,8 +249,8 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
-                  <div className="flex items-center justify-between>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
+                  </div><div className="flex items-center justify-between>
                     <div>"
                       <p className=""text-gray-300" text-sm>Success Rate</p>
                       <p className="text-2xl font-bold text-white"">87%</p>
@@ -263,13 +261,13 @@ const AIPoweredChangeManagementPage: NextPage = () => {
               </div>
 
               {/* Recent Activity */}"
-              <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+              <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                 <h3 className=""text-xl" font-semibold text-white mb-4>Recent Activity</h3>
                 <div className=space-y-4">
                   {changeInitiatives.slice(0, 5).map((initiative) => (
-                    <div key={initiative.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                    </div><div key={initiative.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
                       <div className="flex items-center space-x-3>"
-                        <div className=""{`w-3" h-3 rounded-full ${getStatusColor(initiative.status)}`}></div>
+                        </div><div className=""{`w-3" h-3 rounded-full ${getStatusColor(initiative.status)}`}></div>
                         <div>
                           <p className="text-white font-medium"">{initiative.name}</p>
                           <p className="text-gray-400 text-sm>{initiative.type} • {initiative.progress}% complete</p>
@@ -289,18 +287,18 @@ const AIPoweredChangeManagementPage: NextPage = () => {
           {/* Initiatives Tab */},
 {activeTab === 'initiatives' && (
             <div className="space-y-6>"
-              <div className="flex justify-between items-center>"
+              </div><div className="flex justify-between items-center>"
                 <h2 className=""text-2xl" font-bold text-white>Change Initiatives</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors"">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors"">
                   + New Initiative
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {changeInitiatives.map((initiative) => ("
-                  <div key={initiative.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+                  </div><div key={initiative.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                     <div className=""flex" justify-between items-start mb-4>
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white"">{initiative.name}</h3>
                         <p className="text-gray-400 text-sm>{initiative.type}</p>
                       </div>"
@@ -315,19 +313,17 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                     </div>
                     
                     <div className="space-y-3>"
-                      <div className="flex justify-between text-sm>"
+                      </div><div className="flex justify-between text-sm>"
                         <span className=""text-gray-400">Progress</span>
                         <span className=text-white">{initiative.progress}%</span>
                       </div>
                       <div className="w-full bg-gray-700 rounded-full h-2>
-                        <div "
-                          className="bg-blue-500 h-2 rounded-full transition-all duration-300
-                          style={{ width: `${initiative.progress}%` }}
+                        </div>
                         ></div>
                       </div>
                       "
                       <div className=""grid" grid-cols-2 gap-4 text-sm>
-                        <div>
+                        </div><div>
                           <p className=text-gray-400">Start Date</p>
                           <p className="text-white>{initiative.startDate}</p>
                         </div>
@@ -338,7 +334,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm"">
-                        <div>
+                        </div><div>
                           <p className="text-gray-400>Budget</p>"
                           <p className="text-white">${initiative.budget.toLocaleString()}</p>
                         </div>
@@ -357,18 +353,18 @@ const AIPoweredChangeManagementPage: NextPage = () => {
           {/* Stakeholders Tab */},
 {activeTab === 'stakeholders' && (
             <div className="space-y-6>"
-              <div className="flex justify-between items-center>"
+              </div><div className="flex justify-between items-center>"
                 <h2 className=""text-2xl" font-bold text-white>Stakeholders</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors"">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors"">
                   + Add Stakeholder
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {stakeholders.map((stakeholder) => ("
-                  <div key={stakeholder.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"
+                  </div><div key={stakeholder.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
                     <div className=""flex" justify-between items-start mb-4>
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white"">{stakeholder.name}</h3>
                         <p className="text-gray-400 text-sm>{stakeholder.role} • {stakeholder.department}</p>
                       </div>"
@@ -380,7 +376,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                     </div>
                     
                     <div className=space-y-3">
-                      <div className="grid grid-cols-2 gap-4 text-sm>
+                      </div><div className="grid grid-cols-2 gap-4 text-sm>
                         <div>"
                           <p className="text-gray-400">Influence</p>
                           <p className="text-white capitalize>{stakeholder.influence}</p>
@@ -392,7 +388,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       </div>
                       "
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=""text-gray-400">Last Contact</p>
                           <p className=text-white">{stakeholder.lastContact}</p>
                         </div>
@@ -411,31 +407,29 @@ const AIPoweredChangeManagementPage: NextPage = () => {
           {/* Training Tab */},
 {activeTab === 'training' && (
             <div className="space-y-6">
-              <div className="flex justify-between items-center"">
+              </div><div className="flex justify-between items-center"">
                 <h2 className="text-2xl font-bold text-white>Training Programs</h2>"
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
                   + New Program
                 </button>
               </div>
               "
               <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-6>
                 {trainingPrograms.map((program) => (
-                  <div key={program.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20"">
+                  </div><div key={program.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"">
                     <div className="flex justify-between items-start mb-4>
-                      <div>"
+                      </div><div>"
                         <h3 className="text-lg font-semibold text-white>{program.title}</h3>"
                         <p className=""text-gray-400" text-sm>{program.type} • {program.targetAudience}</p>
                       </div>
-                      <span className={`px-4" py-3 rounded-full text-xs font-medium ${
-                        program.status === 'completed' ? 'bg-green-500' :
-                        program.status === 'in-progress' ? 'bg-yellow-500' : 'bg-blue-500'
+                      
                       }`}>
                         {program.status}
                       </span>
                     </div>
                     
                     <div className="space-y-3>"
-                      <div className="grid grid-cols-2 gap-4 text-sm>
+                      </div><div className="grid grid-cols-2 gap-4 text-sm>
                         <div>"
                           <p className=""text-gray-400">Duration</p>
                           <p className=text-white">{program.duration}</p>
@@ -447,7 +441,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       </div>
                       
                       <div className="grid grid-cols-2 gap-4 text-sm>
-                        <div>"
+                        </div><div>"
                           <p className=text-gray-400"">Satisfaction</p>
                           <p className="text-white>{program.satisfactionScore}/5</p>
                         </div>
@@ -468,24 +462,22 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className=space-y-6">
               <h2 className="text-2xl font-bold text-white>Change Metrics</h2>
               "
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {changeMetrics.map((metric) => ("
-                  <div key={metric.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
+                  </div><div key={metric.id} className=""bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
                     <div className="flex justify-between items-start mb-4"">
-                      <div>
+                      </div><div>
                         <h3 className="text-lg font-semibold text-white>{metric.name}</h3>"
                         <p className="text-gray-400 text-sm>{metric.category}</p>
                       </div>"
-                      <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${
-                        metric.trend === 'increasing' ? 'bg-green-500' :
-                        metric.trend === 'decreasing' ? 'bg-red-500' : 'bg-yellow-500'
+                      
                       }`}>
                         {metric.trend}
                       </span>
                     </div>
                     
                     <div className=space-y-3">
-                      <div className="grid grid-cols-2 gap-4 text-sm>
+                      </div><div className="grid grid-cols-2 gap-4 text-sm>
                         <div>"
                           <p className="text-gray-400">Current Value</p>
                           <p className="text-white">{metric.currentValue},

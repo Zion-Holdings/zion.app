@@ -5,7 +5,7 @@ const SustainableTechnologyConsultingPage: NextPage = () => {
   
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
+      </div><div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
       <Head>
         <title>Sustainable Technology Consulting - Zion Tech Group</title>
         <meta name=description content=Professional sustainable technology consulting services from Zion Tech Group. Expert solutions for your business needs. />
@@ -13,8 +13,8 @@ const SustainableTechnologyConsultingPage: NextPage = () => {
         <meta name=""viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
-          <div className=""flex" justify-between h-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+          </div><div className=""flex" justify-between h-16>
             <div className="flex items-center>"
               <h1 className="text-2xl font-bold text-white"">
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 />
@@ -28,9 +28,9 @@ const SustainableTechnologyConsultingPage: NextPage = () => {
 "
       <main className="flex-1">
         <div className="relative overflow-hidden>"
-          <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
+          </div><div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
             <div className="text-center>"
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6>"
+              <h1 className="text-4xl md text-6xl font-bold text-white mb-6>"
                 <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                   Sustainable Technology Consulting
                 </span>
@@ -42,8 +42,8 @@ const SustainableTechnologyConsultingPage: NextPage = () => {
           </div>
         </div>
         
-        <div className="max-w-4xl:mx-auto px-4 sm:px-6 lg:px-8  py-36>"
-          <div className="prose prose-invert prose-lg:max-w-none>"
+        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8  py-36>"
+          </div><div className="prose prose-invert prose-lg max-w-none>"
             <div className=""text-gray-300" leading-relaxed>
               <p className=mb-6">Sustainable Technology Consulting represents a comprehensive solution designed to address the complex challenges facing modern businesses. Our expert team delivers customized sustainable technology consulting services that drive measurable results and sustainable growth.</p>
 

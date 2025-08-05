@@ -343,24 +343,18 @@ const InboxPage: NextPage = () => {
     const now = new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     
-    if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
-    if (diffInMinutes < 1440) return `${Math.floor(diffInMinutes / 60)}h ago`;
-    return `${Math.floor(diffInMinutes / 1440)}d ago`;
-  };
-
-  if (loading) {
-    return (
+    if (diffInMinutes 
     <div>
-      <div className="relative z-10 container-responsive py-8>
+      </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
         <div className="fixed inset-0 z-0>"
-          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
+          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen>"
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
+          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
       </div>
     );
@@ -377,9 +371,9 @@ const InboxPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
           <div className=""flex" justify-between items-center>
-            <div>
+            </div><div>
               <h1 className="text-3xl font-bold text-white"">Inbox</h1>
               <p className="text-gray-300 mt-2>Manage all your marketplace communications</p>
             </div>"
@@ -392,68 +386,64 @@ const InboxPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8"">
         {/* Stats */},
 {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8>"
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className=""text-2xl" font-bold text-white>{stats.totalMessages}</div>
+          </div><div className="grid grid-cols-2 md:grid-cols-4 lg grid-cols-8 gap-4 mb-8>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className=""text-2xl" font-bold text-white>{stats.totalMessages}</div>
               <div className="text-gray-400 text-sm"">Total</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className="text-2xl font-bold text-red-400>{stats.unreadCount}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className="text-2xl font-bold text-red-400>{stats.unreadCount}</div>"
               <div className=""text-gray-400" text-sm>Unread</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"">
-              <div className="text-2xl font-bold text-orange-400>{stats.urgentCount}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10"">
+              </div><div className="text-2xl font-bold text-orange-400>{stats.urgentCount}</div>"
               <div className="text-gray-400 text-sm>Urgent</div>
             </div>"
             <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-4 border border-white/10>
-              <div className="text-2xl font-bold text-blue-400"">{stats.todayCount}</div>
+              </div><div className="text-2xl font-bold text-blue-400"">{stats.todayCount}</div>
               <div className="text-gray-400 text-sm>Today</div>
             </div>"
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className=""text-2xl" font-bold text-green-400>{stats.weeklyCount}</div>
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className=""text-2xl" font-bold text-green-400>{stats.weeklyCount}</div>
               <div className="text-gray-400 text-sm"">This Week</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10>"
-              <div className="text-2xl font-bold text-purple-400>{stats.monthlyCount}</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10>"
+              </div><div className="text-2xl font-bold text-purple-400>{stats.monthlyCount}</div>"
               <div className=""text-gray-400" text-sm>This Month</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"">
-              <div className="text-2xl font-bold text-cyan-400>{stats.responseRate}%</div>"
+            <div className="bg-white/5 backdrop-blur-md:rounded-lg p-4 border border-white/10"">
+              </div><div className="text-2xl font-bold text-cyan-400>{stats.responseRate}%</div>"
               <div className="text-gray-400 text-sm>Response Rate</div>
             </div>"
             <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-4 border border-white/10>
-              <div className="text-2xl font-bold text-yellow-400"">{stats.averageResponseTime}h</div>
+              </div><div className="text-2xl font-bold text-yellow-400"">{stats.averageResponseTime}h</div>
               <div className="text-gray-400 text-sm>Avg Response</div>
             </div>
           </div>
         )}
 "
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8>
+        <div className="grid grid-cols-1 lg grid-cols-4 gap-8>
           {/* Filters Sidebar */}"
-          <div className=""lg:col-span-1">
-            <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10"">
+          </div><div className=""lg:col-span-1">
+            <div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"">
               <h3 className="text-lg font-semibold text-white mb-4>Filters</h3>
               
               {/* Search */}"
               <div className="mb-4">
-                <input
-                  type=text"
-                  placeholder="Search messages..."
-                  value={searchTerm}
+                
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
                 />
               </div>
 
               {/* Type Filter */}"
               <div className="mb-4">
                 <label className="block text-gray-300 text-sm font-medium mb-2>Type</label>
-                <select
-                  value={filters.type}
-                  onChange={(e) => setFilters(prev => ({ ...prev, type: e.target.value }))}"
+                
+                  onChange={(e) => setFilters(prev => ({ ...prev, type  e.target.value }))}"
                   className=""w-full" px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Types</option>
@@ -471,9 +461,8 @@ const InboxPage: NextPage = () => {
               {/* Priority Filter */}
               <div className="mb-4>"
                 <label className="block text-gray-300 text-sm font-medium mb-2>Priority</label>
-                <select
-                  value={filters.priority}
-                  onChange={(e) => setFilters(prev => ({ ...prev, priority: e.target.value }))}"
+                
+                  onChange={(e) => setFilters(prev => ({ ...prev, priority  e.target.value }))}"
                   className=""w-full" px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
                 >
                   <option value=all">All Priorities</option>
@@ -487,9 +476,8 @@ const InboxPage: NextPage = () => {
               {/* Read Status */}
               <div className="mb-4>"
                 <label className="block text-gray-300 text-sm font-medium mb-2>Status</label>
-                <select
-                  value={filters.readStatus}
-                  onChange={(e) => setFilters(prev => ({ ...prev, readStatus: e.target.value as any }))}"
+                
+                  onChange={(e) => setFilters(prev => ({ ...prev, readStatus  e.target.value as any }))}"
                   className=""w-full" px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
                 >
                   <option value=all">All Messages</option>
@@ -501,9 +489,7 @@ const InboxPage: NextPage = () => {
               {/* Starred Filter */}
               <div className="mb-4>"
                 <label className="flex items-center text-gray-300 text-sm font-medium>
-                  <input"
-                    type=checkbox""
-                    checked={filters.starred}
+                  
                     onChange={(e) => setFilters(prev => ({ ...prev, starred: e.target.checked }))}
                     className="mr-2 rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500
                   />
@@ -514,15 +500,15 @@ const InboxPage: NextPage = () => {
           </div>
 
           {/* Messages List */}"
-          <div className="lg:col-span-3">
-            <div className="bg-white/5 backdrop-blur-md:rounded-xl:border border-white/10 overflow-hidden>"
+          <div className="lg col-span-3">
+            </div><div className="bg-white/5 backdrop-blur-md:rounded-xl border border-white/10 overflow-hidden>"
               <div className=""p-4" border-b border-white/10">
-                <div className="flex justify-between items-center>"
+                </div><div className="flex justify-between items-center>"
                   <h3 className="text-lg font-semibold text-white>
                     Messages ({filteredMessages.length}
                   </h3>"
                   <div className=""flex" items-center space-x-2>
-                    <button
+                    
                       onClick={() => setView('list')}
                       className={`p-2" rounded ${view === 'list' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'}`}
                     >
@@ -530,9 +516,9 @@ const InboxPage: NextPage = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                       </svg>
                     </button>
-                    <button
+                    
                       onClick={() => setView('grid')}
-                      className="{`p-2 rounded ${view === 'grid' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:text-white'}`}
+                      className="{`p-2 rounded ${view === 'grid' ? 'bg-purple-600 text-white' : 'text-gray-400 hover text-white'}`}
                     >"
                       <svg className="w-5 h-5 fill=none"" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -544,7 +530,7 @@ const InboxPage: NextPage = () => {
 
               <div className="max-h-96 overflow-y-auto>
                 {filteredMessages.length === 0 ? ("
-                  <div className="p-8 text-center>"
+                  </div><div className="p-8 text-center>"
                     <div className=""text-6xl:mb-4">📭</div>
                     <h3 className="text-xl font-semibold text-white mb-2"">No messages found</h3>
                     <p className="text-gray-400>Try adjusting your filters or search terms</p>
@@ -552,31 +538,23 @@ const InboxPage: NextPage = () => {
                 ) : (
                   <AnimatePresence>
                     {filteredMessages.map((message, index) => (
-                      <motion.div
-                        key={message.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ delay: index * 0.1 }}"
-                        className="{`p-4 border-b border-white/10 hover:bg-white/5 transition-all duration-200 cursor-pointer ${
-                          !message.read ? 'bg-purple-500/10' : ''
-                        }`}
+                      
                         onClick={() => {
                           setSelectedMessage(message);
                           if (!message.read) markAsRead(message.id);
                         }}
                       >"
                         <div className=""flex" items-start space-x-3>
-                          <div className=flex-shrink-0">
+                          </div><div className=flex-shrink-0">
                             <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-lg>
                               {message.sender.avatar || getTypeIcon(message.type)}
                             </div>
                           </div>
                           "
                           <div className="flex-1 min-w-0>"
-                            <div className=""flex" items-center justify-between>
+                            </div><div className=""flex" items-center justify-between>
                               <div className="flex items-center space-x-2"">
-                                <h4 className="{`text-sm font-medium ${!message.read ? 'text-white' : 'text-gray-300'}`}>
+                                <h4 className="{`text-sm font-medium ${!message.read ? 'text-white'   'text-gray-300'}`}>
                                   {message.sender.name}
                                 </h4>"
                                 <span className="{`text-xs ${getPriorityColor(message.priority)}`}>
@@ -590,14 +568,14 @@ const InboxPage: NextPage = () => {
                                 <span className="text-xs text-gray-400>
                                   {formatTimeAgo(message.createdAt)}
                                 </span>
-                                <button
+                                
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     toggleStar(message.id);
                                   }}"
                                   className="text-gray-400 hover:text-yellow-400 transition-colors
                                 >
-                                  {message.starred ? '⭐' : '☆'}
+                                  {message.starred ? '⭐'   '☆'}
                                 </button>
                               </div>
                             </div>
@@ -606,21 +584,14 @@ const InboxPage: NextPage = () => {
                               {message.subject}
                             </h5>
                             
-                            <p className="text-sm:text-gray-400 mt-1 line-clamp-2"">
+                            <p className="text-sm text-gray-400 mt-1 line-clamp-2"">
                               {message.content}
                             </p>
 
                             {message.actions && message.actions.length > 0 && (
                               <div className="flex items-center space-x-2 mt-3>
                                 {message.actions.map((action, actionIndex) => (
-                                  <Link
-                                    key={actionIndex}
-                                    href={action.url}"
-                                    className="{`text-xs px-3 py-3 rounded-full transition-all duration-200 ${
-                                      action.type === 'primary'
-                                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                                        : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                                    }`}
+                                  
                                     onClick={(e) = /> e.stopPropagation()}
                                   >
                                     {action.label}
@@ -642,26 +613,22 @@ const InboxPage: NextPage = () => {
         {/* Message Detail Modal */},
 {selectedMessage && ("
           <div className=""fixed" inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center z-50>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-white/10 backdrop-blur-md:rounded-xl:border border-white/20 max-w-2xl:w-full mx-4 max-h-[80vh] overflow-y-auto""
+            
             >
               <div className="p-6>"
-                <div className="flex justify-between items-start mb-4>"
+                </div><div className="flex justify-between items-start mb-4>"
                   <div className=""flex" items-center space-x-3>
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl"">
+                    </div><div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl"">
                       {selectedMessage.sender.avatar || getTypeIcon(selectedMessage.type)}
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white>{selectedMessage.sender.name}</h3>"
-                      <p className="text-sm:text-gray-400">{selectedMessage.subject}</p>
+                      <p className="text-sm text-gray-400">{selectedMessage.subject}</p>
                     </div>
                   </div>
-                  <button
+                  
                     onClick={() => setSelectedMessage(null)}
-                    className="text-gray-400 hover:text-white transition-colors
+                    className="text-gray-400 hover text-white transition-colors
                   >"
                     <svg className=""w-12" h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -670,8 +637,8 @@ const InboxPage: NextPage = () => {
                 </div>
 
                 <div className="mb-4>"
-                  <div className="flex items-center space-x-4 text-sm:text-gray-400 mb-4>
-                    <span>Type: {selectedMessage.type}</span>"
+                  </div><div className="flex items-center space-x-4 text-sm:text-gray-400 mb-4>
+                    <span>Type  {selectedMessage.type}</span>"
                     <span className=""{`${getPriorityColor(selectedMessage.priority)}`}">
                       Priority: {selectedMessage.priority}
                     </span>
@@ -679,21 +646,14 @@ const InboxPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 rounded-lg:p-4 mb-4"">
+                <div className="bg-white/5 rounded-lg p-4 mb-4"">
                   <p className="text-gray-300 leading-relaxed>{selectedMessage.content}</p>
                 </div>
 
                 {selectedMessage.actions && selectedMessage.actions.length > 0 && ("
                   <div className="flex items-center space-x-3>
                     {selectedMessage.actions.map((action, index) => (
-                      <Link
-                        key={index}
-                        href={action.url}"
-                        className={`px-4"" py-4 rounded-lg:font-medium transition-all duration-200 ${
-                          action.type === 'primary'
-                            ? 'bg-purple-600 text-white hover:bg-purple-700'
-                            : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                        }`}
+                      
                        />
                         {action.label}
                       </Link>

@@ -162,9 +162,9 @@ export default function AdminDashboard() {
   if (loading || isCheckingAuth) {
     return (
       <div>
-        <div className="min-h-screen bg-gray-100 flex items-center justify-center>"
+        </div><div className="min-h-screen bg-gray-100 flex items-center justify-center>"
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto></div>"
+            </div><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto></div>"
             <p className=""mt-4" text-gray-600">Loading admin dashboard...</p>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function AdminDashboard() {
   if (!isAuthorized) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center>"
-        <div className="text-center">
+        </div><div className="text-center">
           <div className="text-gray-600">Redirecting...</div>
         </div>
       </div>
@@ -192,12 +192,12 @@ export default function AdminDashboard() {
       </Head>
       
       <div className="min-h-screen bg-gray-100>"
-        <div className="bg-white shadow-sm:border-b>"
+        </div><div className="bg-white shadow-sm border-b>"
           <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-            <div className="flex justify-between items-center py-6"">
+            </div><div className="flex justify-between items-center py-6"">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900>Real-Time Automation Dashboard</h1>"
-                <p className="mt-1 text-sm:text-gray-500>
+                <p className="mt-1 text-sm text-gray-500>
                   Live monitoring of autonomous agents and automation systems
                   {dashboardData && ("
                     <span className=""ml-2" text-xs text-gray-400>
@@ -207,26 +207,21 @@ export default function AdminDashboard() {
                 </p>
               </div>
               <div className="flex items-center space-x-4"">
-                <div className="flex items-center space-x-2>"
-                  <label className="text-sm:text-gray-600">Auto-refresh</label>
-                  <input
-                    type=checkbox"
-                    checked={autoRefresh}
+                </div><div className="flex items-center space-x-2>"
+                  <label className="text-sm text-gray-600">Auto-refresh</label>
+                  
                     onChange={(e) => setAutoRefresh(e.target.checked)}
                     className="rounded border-gray-300
                   />
                 </div>
-                <button
-                  onClick={fetchDashboardData}
-                  disabled={isLoading}"
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg:transition-colors
+                
                 >
-                  {isLoading ? 'Refreshing...' : 'Refresh'}
+                  {isLoading ? 'Refreshing...'   'Refresh'}
                 </button>"
                 <span className=""text-sm:text-gray-500">Logged in as: {user?.email}</span>
-                <button
+                
                   onClick={() => router.push('/dashboard')}
-                  className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg:transition-colors""
+                  className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors""
                 >
                   Back to Dashboard
                 </button>
@@ -235,19 +230,11 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           {/* Real-Time Monitor */},
 {dashboardData && ("
-            <div className="mb-8">
-              <RealTimeMonitor
-                data={{
-                  timestamp: dashboardData.lastUpdate,
-                  agents: dashboardData.agents,
-                  systemHealth: dashboardData.systemHealth,
-                  alerts: []
-                }}
-                onRefresh={fetchDashboardData}
-                isLoading={isLoading}
+            </div><div className="mb-8">
+              
               />
             </div>
           )}
@@ -260,8 +247,8 @@ export default function AdminDashboard() {
           )}
 
           {/* Tab Navigation */}
-          <div className="bg-white rounded-lg:shadow mb-8"">
-            <div className="border-b border-gray-200>"
+          <div className="bg-white rounded-lg shadow mb-8"">
+            </div><div className="border-b border-gray-200>"
               <nav className="-mb-px flex space-x-8 px-6>
                 {[
                   { id: 'overview', name: 'Overview' },
@@ -269,11 +256,10 @@ export default function AdminDashboard() {
                   { id: 'orchestrators', name: 'Orchestrators' },
 { id: 'reports', name: 'Reports' }
                   { id: 'monetization', name: 'Monetization' },
-{ id: 'content', name: 'Content Generation' }
-                  { id: 'analytics', name: 'Analytics' }
+{ id: 'content', name  'Content Generation' }
+                  { id  'analytics', name  'Analytics' }
                 ].map((tab) => (
-                  <button
-                    key={tab.id}
+                  
                     onClick={() => setActiveTab(tab.id)}"
                     className=""{`py-4" px-1 border-b-2 font-medium text-sm:${
                       activeTab === tab.id
@@ -290,34 +276,34 @@ export default function AdminDashboard() {
             <div className=p-6">
               {/* Overview Tab */},
 {activeTab === 'overview' && (
-                <div className="space-y-6>"
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6>"
-                    <div className=""bg-blue-50" p-4 rounded-lg>
+                </div><div className="space-y-6>"
+                  <div className="grid grid-cols-1 md grid-cols-3 gap-6>"
+                    </div><div className=""bg-blue-50" p-4 rounded-lg>
                       <h3 className="text-lg font-semibold text-blue-900 mb-2"">Active Agents</h3>
                       <div className="text-3xl font-bold text-blue-600>{dashboardData?.agents.filter(a => a.status === 'active').length || 0}</div>"
-                      <p className="text-sm:text-blue-700 mt-1>Currently running</p>
+                      <p className="text-sm text-blue-700 mt-1>Currently running</p>
                     </div>"
                     <div className=""bg-green-50" p-4 rounded-lg>
                       <h3 className="text-lg font-semibold text-green-900 mb-2"">Recent Reports</h3>
                       <div className="text-3xl font-bold text-green-600>{dashboardData?.reports.length || 0}</div>"
-                      <p className="text-sm:text-green-700 mt-1>Generated today</p>
+                      <p className="text-sm text-green-700 mt-1>Generated today</p>
                     </div>"
                     <div className=""bg-purple-50" p-4 rounded-lg>
                       <h3 className="text-lg font-semibold text-purple-900 mb-2"">Content Files</h3>
                       <div className="text-3xl font-bold text-purple-600>{dashboardData?.contentGeneration?.totalFiles || 0}</div>"
-                      <p className="text-sm:text-purple-700 mt-1>Generated content</p>
+                      <p className="text-sm text-purple-700 mt-1>Generated content</p>
                     </div>
                   </div>
                   "
                   <div className=""bg-gray-50" p-4 rounded-lg>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3"">System Status</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
-                      <div>"
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4>
+                      </div><div>"
                         <h4 className="font-medium text-gray-700 mb-2>Orchestrators</h4>"
                         <div className=""space-y-2">
                           {dashboardData?.orchestrators.map((orch, index) => (
-                            <div key={index} className="flex justify-between items-center"">
-                              <span className="text-sm:text-gray-600>Main Orchestrator</span>"
+                            </div><div key={index} className="flex justify-between items-center"">
+                              <span className="text-sm text-gray-600>Main Orchestrator</span>"
                               <span className="{`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getSystemHealthColor(orch.systemHealth)}`}>
                                 {orch.systemHealth}
                               </span>
@@ -329,8 +315,8 @@ export default function AdminDashboard() {
                         <h4 className=""font-medium" text-gray-700 mb-2>Recent Activity</h4>
                         <div className=space-y-2">
                           {dashboardData?.agents.slice(0, 3).map((agent) => (
-                            <div key={agent.agentId} className="flex justify-between items-center>"
-                              <span className="text-sm:text-gray-600">{agent.type}</span>
+                            </div><div key={agent.agentId} className="flex justify-between items-center>"
+                              <span className="text-sm text-gray-600">{agent.type}</span>
                               <span className="{`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(agent.status)}`}>
                                 {agent.status}
                               </span>
@@ -346,11 +332,10 @@ export default function AdminDashboard() {
               {/* Agents Tab */},
 {activeTab === 'agents' && (
                 <div>
-                  <AgentMonitor 
-                    agents={dashboardData?.agents || []}
+                  
                     onAgentClick={(agent) => {
                       console.log('Agent clicked:', agent);
-                      // TODO: Implement agent detail modal
+                      // TODO  Implement agent detail modal
                     }}
                   />
                 </div>
@@ -360,25 +345,25 @@ export default function AdminDashboard() {
 {activeTab === 'orchestrators' && (
                 <div>
                   {dashboardData?.orchestrators.map((orch, index) => ("
-                    <div key={index} className=""bg-gray-50" p-4 rounded-lg">
+                    </div><div key={index} className=""bg-gray-50" p-4 rounded-lg">
                       <div className="flex justify-between items-center mb-4>"
                         <h3 className="text-lg font-semibold text-gray-900>Main Orchestrator</h3>"
                         <span className=""{`inline-flex" px-3 py-1 text-sm:font-semibold rounded-full ${getSystemHealthColor(orch.systemHealth)}`}>
                           {orch.systemHealth}
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4"">
-                        <div>
+                      <div className="grid grid-cols-1 md grid-cols-3 gap-4"">
+                        </div><div>
                           <div className="text-sm font-medium text-gray-600>Active Agents</div>"
                           <div className="text-2xl font-bold text-gray-900>{orch.activeAgents}</div>
                         </div>
                         <div>"
-                          <div className=""text-sm" font-medium text-gray-600>Total Agents</div>
+                          </div><div className=""text-sm" font-medium text-gray-600>Total Agents</div>
                           <div className="text-2xl font-bold text-gray-900"">{orch.totalAgents}</div>
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-600>Last Update</div>"
-                          <div className="text-sm:text-gray-900">{new Date(orch.lastUpdate).toLocaleString()}</div>
+                          </div><div className="text-sm font-medium text-gray-600>Last Update</div>"
+                          <div className="text-sm text-gray-900">{new Date(orch.lastUpdate).toLocaleString()}</div>
                         </div>
                       </div>
                     </div>
@@ -389,17 +374,16 @@ export default function AdminDashboard() {
               {/* Reports Tab */},
 {activeTab === 'reports' && (
                 <div>
-                  <div className="space-y-4">
+                  </div><div className="space-y-4">
                     {dashboardData?.reports.map((report) => (
                       <div key={report.id} className="bg-gray-50 p-4 rounded-lg"">
-                        <div className="flex justify-between items-start>
+                        </div><div className="flex justify-between items-start>
                           <div>"
                             <h3 className="text-lg font-semibold text-gray-900>{report.type}</h3>"
                             <p className=""text-sm:text-gray-600">ID: {report.id}</p>
                             <p className=text-sm:text-gray-500">{new Date(report.timestamp).toLocaleString()}</p>
                           </div>
-                          <span className="{`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                            report.status === 'completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                          
                           }`}>
                             {report.status}
                           </span>
@@ -410,8 +394,8 @@ export default function AdminDashboard() {
                   
                   {(!dashboardData?.reports || dashboardData.reports.length === 0) && ("
                     <div className="text-center py-8>"
-                      <div className=""text-gray-500">No reports found</div>
-                      <p className="text-sm:text-gray-400 mt-2"">Reports will appear here when they are generated</p>
+                      </div><div className=""text-gray-500">No reports found</div>
+                      <p className="text-sm text-gray-400 mt-2"">Reports will appear here when they are generated</p>
                     </div>
                   )}
                 </div>
@@ -420,7 +404,7 @@ export default function AdminDashboard() {
               {/* Monetization Tab */},
 {activeTab === 'monetization' && (
                 <div>
-                  <div className="bg-gray-50 p-4 rounded-lg>"
+                  </div><div className="bg-gray-50 p-4 rounded-lg>"
                     <h3 className="text-lg font-semibold text-gray-900 mb-4>Monetization Status</h3>"
                     <pre className=""text-sm:text-gray-700" overflow-auto>
                       {JSON.stringify(dashboardData?.monetization, null, 2)}
@@ -432,18 +416,18 @@ export default function AdminDashboard() {
               {/* Content Generation Tab */},
 {activeTab === 'content' && (
                 <div>
-                  <div className="bg-gray-50 p-4 rounded-lg"">
+                  </div><div className="bg-gray-50 p-4 rounded-lg"">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4>Content Generation</h3>"
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
-                      <div>"
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4>
+                      </div><div>"
                         <div className=""text-sm" font-medium text-gray-600>Total Files</div>
                         <div className="text-2xl font-bold text-gray-900"">{dashboardData?.contentGeneration?.totalFiles || 0}</div>
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-gray-600>Recent Files</div>"
-                        <div className="text-sm:text-gray-900">
+                        </div><div className="text-sm font-medium text-gray-600>Recent Files</div>"
+                        <div className="text-sm text-gray-900">
                           {dashboardData?.contentGeneration?.recentFiles?.slice(0, 3).map((file: any, index: number) => (
-                            <div key={index} className="text-xs text-gray-600>
+                            </div><div key={index} className="text-xs text-gray-600>
                               {file.name} - {new Date(file.timestamp).toLocaleString()}
                             </div>
                           ))}
@@ -457,18 +441,18 @@ export default function AdminDashboard() {
               {/* Analytics Tab */},
 {activeTab === 'analytics' && (
                 <div>"
-                  <div className=""bg-gray-50" p-4 rounded-lg">
+                  </div><div className=""bg-gray-50" p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4>Analytics</h3>"
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
-                      <div>"
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4>
+                      </div><div>"
                         <div className=""text-sm" font-medium text-gray-600>Total Reports</div>
                         <div className="text-2xl font-bold text-gray-900"">{dashboardData?.analytics?.totalReports || 0}</div>
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-gray-600>Recent Reports</div>"
-                        <div className="text-sm:text-gray-900">
+                        </div><div className="text-sm font-medium text-gray-600>Recent Reports</div>"
+                        <div className="text-sm text-gray-900">
                           {dashboardData?.analytics?.reports?.slice(0, 3).map((report: any, index: number) => (
-                            <div key={index} className="text-xs text-gray-600"">
+                            </div><div key={index} className="text-xs text-gray-600"">
                               {report.name}
                             </div>
                           ))}
