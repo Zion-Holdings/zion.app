@@ -4,7 +4,7 @@ import ModernFooter from '../ui/ModernFooter'
 import ModernBreadcrumbNavigation from '../ui/ModernBreadcrumbNavigation'
 import ModernQuickNavigation from '../ui/ModernQuickNavigation'
 import NavigationShortcuts from '../ui/NavigationShortcuts'
-import NavigationProgress from '../ui/NavigationProgress'
+import ModernNavigationProgress from '../ui/ModernNavigationProgress'
 import { useHeaderTransparency } from '../../src/hooks/useHeaderTransparency'
 
 interface ModernLayoutProps {
@@ -43,7 +43,7 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({
       </div>
 
       {/* Navigation Progress */}
-      {showNavigationProgress && <NavigationProgress />}
+      {showNavigationProgress && <ModernNavigationProgress />}
 
       {/* Modern Navigation */}
       <ModernNavigation />
