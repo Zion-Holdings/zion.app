@@ -37,7 +37,7 @@ const AiConsultingChatPage: NextPage = () => {
                 Expert discussion about ai consulting services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>analytical-research • how-to-guide • real-world-examples</span>
+                <span>business-strategic • comparison-review • trend-discussion</span>
               </div>
             </div>
           </div>

@@ -567,7 +567,7 @@ const TalentDirectoryPage: NextPage = () => {
       case 'part-time': return 'text-yellow-400 bg-yellow-500/20';
       case 'busy': return 'text-orange-400 bg-orange-500/20';
       case 'unavailable': return 'text-red-400 bg-red-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      default: return 'text-high-contrast-tertiary bg-gray-500/20';
     }
   };
 
@@ -777,7 +777,7 @@ const TalentDirectoryPage: NextPage = () => {
                 <div className="text-4xl mb-3">{category.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2">{category.name}</h3>
                 <p className="text-gray-300 text-sm mb-3">{category.description}</p>
-                <div className="text-sm text-gray-400">{category.talentCount} talents</div>
+                <div className="text-sm text-high-contrast-tertiary">{category.talentCount} talents</div>
               </div>
             </button>
           ))}
@@ -865,7 +865,7 @@ const TalentDirectoryPage: NextPage = () => {
                   />
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white">{talent.name}</h3>
-                    <p className="text-gray-400 text-sm">{talent.title}</p>
+                    <p className="text-high-contrast-tertiary text-sm">{talent.title}</p>
                   </div>
                 </div>
                 <div className="flex flex-col items-end space-y-2">
@@ -884,18 +884,18 @@ const TalentDirectoryPage: NextPage = () => {
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   {renderStars(talent.rating)}
-                  <span className="text-sm text-gray-400">({talent.reviewCount})</span>
+                  <span className="text-sm text-high-contrast-tertiary">({talent.reviewCount})</span>
                 </div>
                 <div className="text-right">
                   <p className="text-lg font-bold text-green-400">${talent.hourlyRate}/hr</p>
-                  <p className="text-sm text-gray-400">{talent.experience} years exp.</p>
+                  <p className="text-sm text-high-contrast-tertiary">{talent.experience} years exp.</p>
                 </div>
               </div>
 
               {/* Location and Availability */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-gray-400">📍 {talent.location}</span>
+                  <span className="text-sm text-high-contrast-tertiary">📍 {talent.location}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span className="text-sm">{getAvailabilityIcon(talent.availability)}</span>
@@ -914,7 +914,7 @@ const TalentDirectoryPage: NextPage = () => {
                     </span>
                   ))}
                   {talent.skills.length > 4 && (
-                    <span className="text-xs text-gray-400">+{talent.skills.length - 4} more</span>
+                    <span className="text-xs text-high-contrast-tertiary">+{talent.skills.length - 4} more</span>
                   )}
                 </div>
               </div>
@@ -922,15 +922,15 @@ const TalentDirectoryPage: NextPage = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mb-4 text-center">
                 <div>
-                  <p className="text-sm text-gray-400">Completion</p>
+                  <p className="text-sm text-high-contrast-tertiary">Completion</p>
                   <p className="text-lg font-semibold text-green-400">{talent.completionRate}%</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Projects</p>
+                  <p className="text-sm text-high-contrast-tertiary">Projects</p>
                   <p className="text-lg font-semibold text-blue-400">{talent.totalProjects}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-400">Response</p>
+                  <p className="text-sm text-high-contrast-tertiary">Response</p>
                   <p className="text-lg font-semibold text-purple-400">{talent.responseTime}</p>
                 </div>
               </div>

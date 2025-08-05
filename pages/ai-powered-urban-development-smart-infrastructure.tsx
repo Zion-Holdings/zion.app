@@ -563,8 +563,8 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                         {planning.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{planning.location} • {planning.type}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-high-contrast-tertiary text-sm mb-2">{planning.location} • {planning.type}</p>
+                    <div className="flex items-center space-x-4 text-sm text-high-contrast-tertiary">
                       <span>Population: {formatNumber(planning.population)}</span>
                       <span>Efficiency: {planning.efficiencyScore}%</span>
                     </div>
@@ -585,8 +585,8 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                         {infrastructure.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{infrastructure.location}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-high-contrast-tertiary text-sm mb-2">{infrastructure.location}</p>
+                    <div className="flex items-center space-x-4 text-sm text-high-contrast-tertiary">
                       <span>Uptime: {infrastructure.uptime}%</span>
                       <span>Efficiency: {infrastructure.efficiency}%</span>
                     </div>
@@ -626,24 +626,24 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                       {planning.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{planning.location} • {planning.type}</p>
+                  <p className="text-high-contrast-tertiary text-sm mb-4">{planning.location} • {planning.type}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Population</span>
+                      <span className="text-high-contrast-tertiary">Population</span>
                       <span className="text-white">{formatNumber(planning.population)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Area Covered</span>
+                      <span className="text-high-contrast-tertiary">Area Covered</span>
                       <span className="text-white">{planning.areaCovered} km²</span>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Efficiency Score</span>
+                      <span className="text-high-contrast-tertiary">Efficiency Score</span>
                       <span className="text-white">{planning.efficiencyScore}%</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Planning Accuracy</span>
+                      <span className="text-high-contrast-tertiary">Planning Accuracy</span>
                       <span className="text-white">{planning.aiAnalysis.planningAccuracy}/10</span>
                     </div>
                   </div>
@@ -664,24 +664,24 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                       {infrastructure.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{infrastructure.location} • {infrastructure.type}</p>
+                  <p className="text-high-contrast-tertiary text-sm mb-4">{infrastructure.location} • {infrastructure.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{infrastructure.uptime}%</div>
-                      <div className="text-gray-400 text-sm">Uptime</div>
+                      <div className="text-high-contrast-tertiary text-sm">Uptime</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{infrastructure.efficiency}%</div>
-                      <div className="text-gray-400 text-sm">Efficiency</div>
+                      <div className="text-high-contrast-tertiary text-sm">Efficiency</div>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Capacity</span>
+                      <span className="text-high-contrast-tertiary">Capacity</span>
                       <span className="text-white">{formatNumber(infrastructure.capacity)} MW</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Operational Efficiency</span>
+                      <span className="text-high-contrast-tertiary">Operational Efficiency</span>
                       <span className="text-white">{infrastructure.aiAnalysis.operationalEfficiency}/10</span>
                     </div>
                   </div>
@@ -702,24 +702,24 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                       {analytics.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{analytics.location} • {analytics.type}</p>
+                  <p className="text-high-contrast-tertiary text-sm mb-4">{analytics.location} • {analytics.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{formatNumber(analytics.dataPoints)}</div>
-                      <div className="text-gray-400 text-sm">Data Points</div>
+                      <div className="text-high-contrast-tertiary text-sm">Data Points</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{analytics.accuracy}%</div>
-                      <div className="text-gray-400 text-sm">Accuracy</div>
+                      <div className="text-high-contrast-tertiary text-sm">Accuracy</div>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Response Time</span>
+                      <span className="text-high-contrast-tertiary">Response Time</span>
                       <span className="text-white">{analytics.responseTime}s</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Data Accuracy</span>
+                      <span className="text-high-contrast-tertiary">Data Accuracy</span>
                       <span className="text-white">{analytics.aiAnalysis.dataAccuracy}/10</span>
                     </div>
                   </div>
@@ -740,24 +740,24 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                       {development.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{development.type} development</p>
+                  <p className="text-high-contrast-tertiary text-sm mb-4">{development.type} development</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{development.metrics.totalProjects}</div>
-                      <div className="text-gray-400 text-sm">Total Projects</div>
+                      <div className="text-high-contrast-tertiary text-sm">Total Projects</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-white">{development.metrics.completionRate}%</div>
-                      <div className="text-gray-400 text-sm">Completion Rate</div>
+                      <div className="text-high-contrast-tertiary text-sm">Completion Rate</div>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Cost Savings</span>
+                      <span className="text-high-contrast-tertiary">Cost Savings</span>
                       <span className="text-white">{formatCurrency(development.metrics.costSavings)}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Impact Score</span>
+                      <span className="text-high-contrast-tertiary">Impact Score</span>
                       <span className="text-white">{development.aiAnalysis.impactScore}/10</span>
                     </div>
                   </div>
@@ -773,19 +773,19 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{formatNumber(data.totalPopulation)}</div>
-                <div className="text-gray-400">Total Population</div>
+                <div className="text-high-contrast-tertiary">Total Population</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{data.activeProjects}</div>
-                <div className="text-gray-400">Active Projects</div>
+                <div className="text-high-contrast-tertiary">Active Projects</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{data.infrastructureEfficiency}%</div>
-                <div className="text-gray-400">Infrastructure Efficiency</div>
+                <div className="text-high-contrast-tertiary">Infrastructure Efficiency</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{data.sustainabilityIndex}%</div>
-                <div className="text-gray-400">Sustainability Index</div>
+                <div className="text-high-contrast-tertiary">Sustainability Index</div>
               </div>
             </div>
 
@@ -800,12 +800,12 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                       <h4 className={`text-lg font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
-                      <span className="text-sm text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span>
+                      <span className="text-sm text-high-contrast-tertiary">{Math.round(insight.confidence * 100)}% confidence</span>
                     </div>
                     <p className="text-gray-300 mb-3">{insight.description}</p>
                     <div className="space-y-2">
                       {insight.recommendations.map((rec, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm text-gray-400">
+                        <div key={index} className="flex items-center space-x-2 text-sm text-high-contrast-tertiary">
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
