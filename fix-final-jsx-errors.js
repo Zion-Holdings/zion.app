@@ -1,89 +1,72 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to fix final JSX structure errors
-function fixFinalJSXErrors(filePath) {
+// Function to fix JSX syntax errors
+function fixJSXErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
 
-    // Fix malformed JSX structure with missing closing tags
-    const malformedStructurePattern = /<\/div>\s*<\/div>\s*\);\s*\};\s*\n\nexport default/g;
-    if (malformedStructurePattern.test(content)) {
-      content = content.replace(malformedStructurePattern, '      </div>\n    </div>\n  );\n};\n\nexport default');
-      modified = true;
-    }
+    // Fix common JSX syntax errors
+    const fixes = [
+      // Fix missing commas in arrays
+      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
+      // Fix malformed JSX attributes
+      { pattern: /className="([^"]*)"\s*"([^"]*)"/g, replacement: 'className="$1 $2"' },
+      // Fix malformed JSX closing tags
+      { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: '<$1>$2</$1>' },
+      // Fix malformed quotes in attributes
+      { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: '$1="$2 $3"' },
+      // Fix malformed className with missing spaces
+      { pattern: /className="([^"]*):([^"]*)"/g, replacement: 'className="$1:$2"' },
+      // Fix malformed JSX structure
+      { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: '<$1>$2' },
+      // Fix malformed closing tags
+      { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: '$1</$2>' },
+      // Fix malformed array syntax
+      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
+      // Fix malformed useEffect dependencies
+      { pattern: /(\}\s*\[[^\]]*\]\)/g, replacement: '$1' },
+      // Fix malformed JSX fragments
+      { pattern: /<>\s*"([^"]*)/g, replacement: '<>$1' },
+      // Fix malformed closing fragments
+      { pattern: /"([^"]*)\s*<>/g, replacement: '$1</>' },
+    ];
 
-    // Fix malformed JSX structure with missing closing tags
-    const malformedStructurePattern2 = /<\/div>\s*\);\s*\};\s*\n\nexport default/g;
-    if (malformedStructurePattern2.test(content)) {
-      content = content.replace(malformedStructurePattern2, '    </div>\n  );\n};\n\nexport default');
-      modified = true;
-    }
-
-    // Fix malformed JSX structure with missing closing tags
-    const malformedStructurePattern3 = /\);\s*\};\s*\n\nexport default/g;
-    if (malformedStructurePattern3.test(content)) {
-      content = content.replace(malformedStructurePattern3, '  );\n};\n\nexport default');
-      modified = true;
-    }
-
-    // Fix malformed JSX structure with missing closing tags
-    const malformedStructurePattern4 = /<\/div>\s*<\/div>\s*<\/div>\s*\);\s*\};\s*\n\nexport default/g;
-    if (malformedStructurePattern4.test(content)) {
-      content = content.replace(malformedStructurePattern4, '        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default');
-      modified = true;
-    }
-
-    // Fix malformed JSX structure with missing closing tags
-    const malformedStructurePattern5 = /<\/div>\s*<\/div>\s*<\/div>\s*<\/div>\s*\);\s*\};\s*\n\nexport default/g;
-    if (malformedStructurePattern5.test(content)) {
-      content = content.replace(malformedStructurePattern5, '          </div>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default');
-      modified = true;
-    }
+    fixes.forEach(fix => {
+      const newContent = content.replace(fix.pattern, fix.replacement);
+      if (newContent !== content) {
+        content = newContent;
+        modified = true;
+      }
+    });
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed: ${filePath}`);
-      return true;
+      console.log(`Fixed JSX errors: ${filePath}`);
     }
-    return false;
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
-    return false;
   }
 }
 
-// Function to recursively find TypeScript files
-function findTsxFiles(dir) {
-  const files = [];
-  const items = fs.readdirSync(dir);
+// Function to recursively find and fix TypeScript/JSX files
+function processDirectory(dir) {
+  const files = fs.readdirSync(dir);
   
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
-      files.push(...findTsxFiles(fullPath));
-    } else if (item.endsWith('.tsx')) {
-      files.push(fullPath);
+    if (stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
+      processDirectory(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+      fixJSXErrors(filePath);
     }
-  }
-  
-  return files;
+  });
 }
 
-// Main execution
-const pagesDir = path.join(__dirname, 'pages');
-const files = findTsxFiles(pagesDir);
-
-console.log(`Found ${files.length} TypeScript files to process...`);
-
-let fixedCount = 0;
-for (const file of files) {
-  if (fixFinalJSXErrors(file)) {
-    fixedCount++;
-  }
-}
-
-console.log(`Fixed ${fixedCount} files.`); 
+// Start processing from the current directory
+console.log('Fixing JSX syntax errors...');
+processDirectory('.');
+console.log('Done!'); 
