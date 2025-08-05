@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface MLModel {
   id: string;'
   name: string;
-  type: 'classification' | 'regression' | 'clustering' | 'nlp' | 'computer-vision' | 'recommendation';
-  status: 'training' | 'deployed' | 'failed' | 'archived' | 'monitoring';
+  type: 'classification' | 'regression' | 'clustering' | 'nlp' | 'computer-vision' | 'recommendation";
+  status: 'training' | 'deployed' | 'failed' | 'archived' | 'monitoring";
   accuracy: number;
   precision: number;
   recall: number;
@@ -28,7 +28,7 @@ interface TrainingJob {
   id: string;
   modelName: string;'
   type: string;
-  status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled';
+  status: 'queued' | 'running' | 'completed' | 'failed' | 'cancelled";
   progress: number;
   startTime: Date;
   endTime?: Date;
@@ -51,7 +51,7 @@ interface MLAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredMachineLearningPage: NextPage = () => {
   ;
@@ -67,7 +67,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      const mockModels: MLModel[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Customer Churn Predictor',
@@ -129,7 +129,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             cpuUsage: 31,
             memoryUsage: 78}}
       ];
-      const mockTrainingJobs: TrainingJob[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           modelName: 'Sentiment Analysis Model',
@@ -168,7 +168,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             validationAccuracy: 87.8}
           aiAssisted: true}
       ];
-      const mockAnalytics: MLAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Model Accuracy',
@@ -237,37 +237,37 @@ const AIPoweredMachineLearningPage: NextPage = () => {
   } [models, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'deployed': return 'text-green-400 bg-green-500/20';
-      case 'training': return 'text-blue-400 bg-blue-500/20';
-      case 'monitoring': return 'text-yellow-400 bg-yellow-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'archived': return 'text-gray-400 bg-gray-500/20';
+      case 'deployed': return 'text-green-400 bg-green-500/20";
+      case 'training': return 'text-blue-400 bg-blue-500/20";
+      case 'monitoring': return 'text-yellow-400 bg-yellow-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'archived': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'classification': return '🎯';
-      case 'regression': return '📈';
-      case 'clustering': return '🎪';
-      case 'nlp': return '💬';
-      case 'computer-vision': return '👁️';
-      case 'recommendation': return '💡';
+      case 'classification': return '🎯";
+      case 'regression': return '📈";
+      case 'clustering': return '🎪";
+      case 'nlp': return '💬";
+      case 'computer-vision': return '👁️";
+      case 'recommendation': return '💡";
       default: return '🤖';}
   };
   const getJobStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'running': return 'text-blue-400 bg-blue-500/20';
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'queued': return 'text-yellow-400 bg-yellow-500/20';
-      case 'cancelled': return 'text-gray-400 bg-gray-500/20';
+      case 'running': return 'text-blue-400 bg-blue-500/20";
+      case 'completed': return 'text-green-400 bg-green-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'queued': return 'text-yellow-400 bg-yellow-500/20";
+      case 'cancelled': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 
@@ -290,7 +290,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Machine Learning...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -304,14 +304,14 @@ const AIPoweredMachineLearningPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-data-analytics" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics
-              </Link href= /ai-powered-data-analytics" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-customer-support className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Support
               </Link href=/ai-powered-customer-support className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -463,7 +463,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="mb-4>" 
-                  </div><div className="flex items-center justify-between mb-2" >
+                  </div><div className="flex items-center justify-between mb-2">
                     <span className="text-sm" text-gray-400>Progress</span>
                     <span className="text-sm" text-white>{job.progress}%</span>
                   </div>
@@ -536,6 +536,6 @@ const AIPoweredMachineLearningPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredMachineLearningPage ")"'"'`

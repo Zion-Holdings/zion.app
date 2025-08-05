@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 
 interface ExecutiveMetric {
   id: string;
@@ -12,7 +12,7 @@ interface ExecutiveMetric {
   unit: string;
   trend: 'up' | 'down' | 'stable';'
   changePercent: number;
-  category: 'financial' | 'operational' | 'customer' | 'market' | 'technology' | 'strategic';
+  category: 'financial' | 'operational' | 'customer' | 'market' | 'technology' | 'strategic";
   priority: 'high' | 'medium' | 'low';'
   target?: number;
   status: 'on-track' | 'at-risk' | 'behind' | 'exceeding';}
@@ -20,22 +20,22 @@ interface StrategicInitiative {
   id: string;
   name: string;'
   description: string;
-  category: 'growth' | 'efficiency' | 'innovation' | 'risk' | 'compliance';
-  status: 'on-track' | 'at-risk' | 'behind' | 'completed';
+  category: 'growth' | 'efficiency' | 'innovation' | 'risk' | 'compliance";
+  status: 'on-track' | 'at-risk' | 'behind' | 'completed";
   progress: number;
   startDate: Date;
   endDate: Date;
   budget: number;
   spent: number;'
   owner: string;
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  priority: 'critical' | 'high' | 'medium' | 'low";
   kpis: string[];}
 interface MarketInsight {
   id: string;
   title: string;'
   description: string;
-  category: 'opportunity' | 'threat' | 'trend' | 'competition';
-  impact: 'high' | 'medium' | 'low';
+  category: 'opportunity' | 'threat' | 'trend' | 'competition";
+  impact: 'high' | 'medium' | 'low";
   confidence: number;
   source: string;
   date: Date;
@@ -108,7 +108,7 @@ const ExecutiveDashboardPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading executive data
     setTimeout(() => {
-      const mockMetrics: ExecutiveMetric[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Revenue Growth',
@@ -187,7 +187,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           target: 90,
           status: 'exceeding'}
       ];
-      const mockInitiatives: StrategicInitiative[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Digital Transformation',
@@ -233,7 +233,7 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high',
           kpis: ['Automation Rate', 'Decision Speed', 'Cost Savings']}
       ];
-      const mockInsights: MarketInsight[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           title: 'AI Market Opportunity',
@@ -359,30 +359,30 @@ const ExecutiveDashboardPage: NextPage = () => {
   } []);
   const getTrendColor = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return 'text-green-400';
-      case 'down': return 'text-red-400';
+      case 'up': return 'text-green-400";
+      case 'down': return 'text-red-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '↗️';
-      case 'down': return '↘️';
+      case 'up': return '↗️";
+      case 'down': return '↘️";
       default: return '→';}
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'on-track': return 'text-green-400';
-      case 'at-risk': return 'text-yellow-400';
-      case 'behind': return 'text-red-400';
-      case 'exceeding': return 'text-blue-400';
+      case 'on-track': return 'text-green-400";
+      case 'at-risk': return 'text-yellow-400";
+      case 'behind': return 'text-red-400";
+      case 'exceeding': return 'text-blue-400";
       default: return 'text-gray-400';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'critical': return 'bg-red-600';
-      case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-1200';
-      case 'low': return 'bg-green-600';
+      case 'critical': return 'bg-red-600";
+      case 'high': return 'bg-orange-600";
+      case 'medium': return 'bg-yellow-1200";
+      case 'low': return 'bg-green-600";
       default: return 'bg-gray-600';}
   };
 '
@@ -412,7 +412,7 @@ const ExecutiveDashboardPage: NextPage = () => {
         <div className="flex" items-center justify-center min-h-screen>
           </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
-      </div>; 
+      </div> 
     );}
 "
   return (
@@ -431,8 +431,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             <div className=" flex items-center" space-x-4>"
               "
                 onChange={(e) => setTimeframe(e.target.value as any)}
-                className="px-4  py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
-              >
+                className="px-4  py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">
                 <option value=month>Monthly</option>
                 <option value=quarter>Quarterly</option">
                 <option value=year>Yearly</option>
@@ -449,7 +448,7 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div><div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8>
           {metrics.slice(0, 6).map((metric, index) => (
             "
-              className=" bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300" >
+              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300">
               <div className="flex" items-center justify-between mb-2>'`
                 <span className="text-gray-400" text-sm>{metric.name}</span>''``
                 <span className="{`text-xs" font-medium ${getStatusColor(metric.status)}`}>
@@ -543,7 +542,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                   {financial && (
                     <div className="space-y-4>"
                       </div><div className=" flex" justify-between>
-                        <span className="text-gray-400>Revenue</span" >
+                        <span className="text-gray-400>Revenue</span">
                         <span className="text-white" font-semibold>{formatCurrency(financial.revenue.current)}</span>
                       </div>
                       <div className="flex"  justify-between>
@@ -591,7 +590,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                   <div className="space-y-4>"
                     </div><div>
                       <div className=" flex justify-between" mb-2>
-                        <span className="text-gray-400>Revenue</span" >
+                        <span className="text-gray-400>Revenue</span">
                         <span className="text-white" font-semibold>{formatCurrency(financial.revenue.current)}</span>
                       </div>
                       <div className="w-full" bg-gray-700 rounded-full h-2>
@@ -605,7 +604,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                     </div>
                     <div>
                       </div><div className=" flex justify-between" mb-2>
-                        <span className="text-gray-400>Profit</span" >
+                        <span className="text-gray-400>Profit</span">
                         <span className="text-white" font-semibold>{formatCurrency(financial.profit.current)}</span>
                       </div>
                       <div className="w-full" bg-gray-700 rounded-full h-2>
@@ -648,7 +647,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}"'
 ''
             {activeTab === 'strategic' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 {initiatives.map((initiative, index) => (
                   "
                   >
@@ -719,7 +718,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                     </div>
                     <div> 
                       </div><div className="flex justify-between" mb-2>
-                        <span className="text-gray-400>Utilization</span" >
+                        <span className="text-gray-400>Utilization</span">
                         <span className="text-white" font-semibold>{operations.efficiency.utilization}%</span>
                       </div>`
                       <div className="w-full" bg-gray-700 rounded-full h-2>``
@@ -777,7 +776,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                   <div className="space-y-4>"
                     </div><div>
                       <div className="flex" justify-between mb-2 >
-                        <span className="text-gray-400>Headcount</span" >
+                        <span className="text-gray-400>Headcount</span">
                         <span className="text-white" font-semibold>{operations.people.headcount}</span>
                       </div>
                     </div>
@@ -903,6 +902,6 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
       </div>
     </div >;  );"
-};"
+};
 ''`
 export default ExecutiveDashboardPage;"'"'`

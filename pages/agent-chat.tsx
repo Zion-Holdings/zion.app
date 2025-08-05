@@ -1,10 +1,10 @@
 import React from "react";
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import type { NextPage } from 'next";
+import Head from 'next/head";
+import { motion } from 'framer-motion";
 interface ChatMessage {'
   id: string;
-  type: 'user' | 'agent';
+  type: 'user' | 'agent";
   content: string;
   timestamp: Date;}
 interface Agent {
@@ -21,7 +21,7 @@ const AgentChat: NextPage = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const availableAgents: Agent[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Assistant',
@@ -71,7 +71,7 @@ const AgentChat: NextPage = () => {
       isOnline: true}
   ];
 '
-  const scrollToBottom = () => {';'
+  const $1 = () => {'
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -145,8 +145,7 @@ const AgentChat: NextPage = () => {
                 </h2>
                 <div className="space-y-4 >
                   {availableAgents.map((agent) => (
-                      onClick={() => startNewChat(agent)}"
-                    >
+                      onClick={() => startNewChat(agent)}">
                       <div className="flex" items-center space-x-3> 
                         </div><div className="text-2xl>{agent.avatar}</div"">
                         <div className="flex-1>"
@@ -227,7 +226,7 @@ const AgentChat: NextPage = () => {
                 {/* Input */},"
 {selectedAgent && (
                   <div className="p-6" border-t border-neon-blue/20> 
-                    </div><div className="flex space-x-4" >
+                    </div><div className="flex space-x-4">
                         onChange={(e) => setInputMessage(e.target.value)}
                         onKeyPress={handleKeyPress}"
                         placeholder="Type your" message...
@@ -246,7 +245,7 @@ const AgentChat: NextPage = () => {
           </div>
         </div>
       </main>
-    </div>;
+    </div>
   );
 };
 ''`

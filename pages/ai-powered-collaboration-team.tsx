@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Team {
   id: string;
   name: string;'
   description: string;
-  type: 'project' | 'department' | 'cross-functional' | 'virtual' | 'partnership' | 'alliance';
-  status: 'active' | 'inactive' | 'forming' | 'storming' | 'norming' | 'performing';
+  type: 'project' | 'department' | 'cross-functional' | 'virtual' | 'partnership' | 'alliance";
+  status: 'active' | 'inactive' | 'forming' | 'storming' | 'norming' | 'performing";
   members: TeamMember[];
   projects: TeamProject[];
   performance: TeamPerformance;
@@ -26,7 +26,7 @@ interface TeamMember {
 interface TeamProject {
   id: string;'
   name: string;
-  status: 'planning' | 'active' | 'completed' | 'on-hold';
+  status: 'planning' | 'active' | 'completed' | 'on-hold";
   progress: number;'
   deadline: Date;
   priority: 'low' | 'medium' | 'high' | 'critical';}
@@ -47,7 +47,7 @@ interface Workspace {
   id: string;
   name: string;'
   description: string;
-  type: 'virtual' | 'hybrid' | 'physical' | 'project-based';
+  type: 'virtual' | 'hybrid' | 'physical' | 'project-based";
   teams: string[];
   tools: WorkspaceTool[];
   performance: WorkspacePerformance;
@@ -55,8 +55,8 @@ interface Workspace {
 interface WorkspaceTool {
   id: string;'
   name: string;
-  category: 'communication' | 'project-management' | 'file-sharing' | 'collaboration' | 'analytics';
-  status: 'active' | 'inactive' | 'maintenance';
+  category: 'communication' | 'project-management' | 'file-sharing' | 'collaboration' | 'analytics";
+  status: 'active' | 'inactive' | 'maintenance";
   usage: number;
   effectiveness: number;}
 interface WorkspacePerformance {
@@ -73,8 +73,8 @@ interface AIWorkspaceOptimization {
 interface Partnership {
   id: string;'
   name: string;
-  type: 'strategic' | 'operational' | 'research' | 'marketing' | 'technical';
-  status: 'active' | 'pending' | 'completed' | 'terminated';
+  type: 'strategic' | 'operational' | 'research' | 'marketing' | 'technical";
+  status: 'active' | 'pending' | 'completed' | 'terminated";
   partners: PartnershipMember[];
   objectives: PartnershipObjective[];
   performance: PartnershipPerformance;
@@ -89,7 +89,7 @@ interface PartnershipMember {
 interface PartnershipObjective {
   id: string;'
   description: string;
-  status: 'pending' | 'in-progress' | 'completed' | 'delayed';
+  status: 'pending' | 'in-progress' | 'completed' | 'delayed";
   progress: number;
   deadline: Date;}
 interface PartnershipPerformance {
@@ -116,7 +116,7 @@ interface CollaborationTeamInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredCollaborationTeamPage: NextPage = () => {
@@ -393,7 +393,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                 {/* Teams Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredTeams.map((team) => (
-                    </div><div key={team.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={team.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{team.name}</h3>
@@ -417,7 +417,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-teal-600/20 to-cyan-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm>
@@ -518,7 +518,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
 {activeTab === 'partnerships' && (
               <div className="space-y-8>"
                 {partnerships.map((partnership) => (
-                  </div><div key={partnership.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={partnership.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{partnership.name}</h3>
@@ -599,7 +599,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -640,7 +640,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-teal-500/25 transform hover scale-105 >Start Collaboration
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-teal-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-teal-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -655,6 +655,6 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredCollaborationTeamPage ))))))))))))))))))))))))))))))"'"'`

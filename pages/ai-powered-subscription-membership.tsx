@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface SubscriptionTier {
   id: string;'
   name: string;
   type: 'free' | 'basic' | 'premium' | 'enterprise' | 'vip';'
   price: number;
-  billingCycle: 'monthly' | 'yearly' | 'lifetime';
+  billingCycle: 'monthly' | 'yearly' | 'lifetime";
   features: SubscriptionFeature[];
   aiBenefits: AIBenefit[];
   limitations: string[];
@@ -20,7 +20,7 @@ interface SubscriptionFeature {
   id: string;
   name: string;'
   description: string;
-  category: 'core' | 'ai' | 'premium' | 'enterprise';
+  category: 'core' | 'ai' | 'premium' | 'enterprise";
   included: boolean;
   usage?: {
     current: number;
@@ -32,13 +32,13 @@ interface AIBenefit {
   name: string;
   description: string;'
   value: number;
-  category: 'productivity' | 'analytics' | 'support' | 'exclusive';
+  category: 'productivity' | 'analytics' | 'support' | 'exclusive";
   aiPowered: boolean;}
 interface UserMembership {
   id: string;
   userId: string;'
   tierId: string;
-  status: 'active' | 'cancelled' | 'expired' | 'suspended';
+  status: 'active' | 'cancelled' | 'expired' | 'suspended";
   startDate: Date;
   endDate?: Date;
   autoRenew: boolean;
@@ -48,7 +48,7 @@ interface UserMembership {
   benefits: UserBenefit[];}
 interface PaymentMethod {'
   id: string;
-  type: 'card' | 'paypal' | 'bank';
+  type: 'card' | 'paypal' | 'bank";
   last4?: string;
   brand?: string;
   expiryDate?: string;
@@ -61,7 +61,7 @@ interface UsageStats {
   roi: number;}
 interface AIRecommendation {'
   id: string;
-  type: 'upgrade' | 'downgrade' | 'feature' | 'optimization';
+  type: 'upgrade' | 'downgrade' | 'feature' | 'optimization";
   title: string;
   description: string;
   reasoning: string;
@@ -81,7 +81,7 @@ interface BillingHistory {
   userId: string;
   amount: number;'
   currency: string;
-  status: 'paid' | 'pending' | 'failed' | 'refunded';
+  status: 'paid' | 'pending' | 'failed' | 'refunded";
   date: Date;
   description: string;
   invoiceUrl?: string;}
@@ -97,7 +97,7 @@ interface AIInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredSubscriptionMembershipPage: NextPage = () => {
@@ -108,7 +108,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'tiers' | 'billing' | 'analytics'>('overview
   const [isLoading, setIsLoading] = useState(true
   // Mock subscription tiers
-  const mockSubscriptionTiers: SubscriptionTier[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Free',
@@ -371,7 +371,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         category: 'productivity
       }]}
   // Mock billing history
-  const mockBillingHistory: BillingHistory[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       userId: 'user123','
@@ -578,11 +578,11 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   </div>
 
                   {/* AI Recommendations */}"
-                  <div className=" mb-6">
+                  <div className="mb-6">
                     <h4 className="text-lg" font-semibold text-white mb-4>AI Recommendations</h4>
                     <div className="space-y-3>" 
                       {userMembership.aiRecommendations.map((rec) => (
-                        </div><div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4" >
+                        </div><div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
                           <div className=" flex items-start justify-between" mb-2>`
                             <h5 className="text-white" font-semibold>{rec.title}</h5>``
                             <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(rec.priority)}`}>
@@ -654,7 +654,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                         <span className="text-3xl" font-bold text-white>${tier.price}</span>
                         <span className="text-gray-400>/{tier.billingCycle}</span>"
                       </div>`
-                      <div className="mb-4" >``
+                      <div className="mb-4">``
                         <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}>
                           AI Score  {tier.aiScore}%
                         </span>
@@ -670,11 +670,11 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                           <div className="text-gray-400" text-sm>+{tier.features.length - 3} more features</div>
                         )}
                       </div>
-                      <div className="mb-6" >
+                      <div className="mb-6">
                         <h4 className="text-sm" font-semibold text-gray-400 mb-2 >AI Benefits</h4>
                         <div className="space-y-2>
                           {tier.aiBenefits.slice(0, 2).map((benefit) => (
-                            </div><div key={benefit.id} className=" text-xs">
+                            </div><div key={benefit.id} className="text-xs">
                               <div className="text-white" font-medium>{benefit.name}</div>
                               <div className="text-gray-400>Value:" ${benefit.value}</div>
                             </div>
@@ -768,7 +768,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Unlock Premium Benefits? 
             </h2>
@@ -792,6 +792,6 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredSubscriptionMembershipPage ")))))))))))))))"'"'`

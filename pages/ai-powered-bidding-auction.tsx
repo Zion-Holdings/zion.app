@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState, useEffect }  from 'react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState, useEffect }  from 'react";
 
 const AIPoweredBiddingAuction: NextPage = () => {
   
@@ -42,7 +42,7 @@ const AIPoweredBiddingAuction: NextPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex items-center>
-              <Link href=/ className=" flex-shrink-0 > </Link href=/ className=" flex-shrink-0" ><h1 className=" text-2xl" font-bold text-white>
+              <Link href=/ className=" flex-shrink-0 > </Link href=/ className="flex-shrink-0"><h1 className=" text-2xl" font-bold text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
@@ -176,7 +176,7 @@ const AIPoweredBiddingAuction: NextPage = () => {
             </div>
             
             <div className=" bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg:border border-white/10 hover border-purple-500/50 transition-all duration-300 >
-              </div><div className="text-3xl" mb-4>⚡</div>
+              </div><div className="text-3xl mb-4">⚡</div>
               <h3 className="text-lg font-semibold text-white mb-2>Real-time Updates</h3>
               <p className="text-gray-300"  text-sm>
                 Instant bid notifications and live auction updates with WebSocket technology
@@ -224,7 +224,7 @@ const AIPoweredBiddingAuction: NextPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=" grid" grid-cols-1 md grid-cols-4 gap-8>
             <div>
-              <h3 className=" text-lg:font-bold" mb-4>
+              <h3 className="text-lg:font-bold mb-4">
                 <span className="text-transparent"  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
               </h3>
               <p className="text-gray-300" text-sm >

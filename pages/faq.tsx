@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState } from 'react";
+import { Home, Search, User }  from 'lucide-react";
 const FAQ: NextPage = () => {'
   const [activeCategory, setActiveCategory] = useState('general
   const [openItems, setOpenItems] = useState<Set<number>>(new Set()
@@ -147,7 +147,7 @@ const FAQ: NextPage = () => {'
             </div>
             <div className="flex  items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover text-white transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover text-white transition-colors >About
               </Link href=/about className="text-gray-300" hover text-white transition-colors" ></Link>
               <Link href=/contact className="text-gray-300" hover text-white transition-colors >Contact
@@ -217,27 +217,27 @@ const FAQ: NextPage = () => {'
         {/* Additional Help */}
         <div className="mt-16" grid grid-cols-1 md:grid-cols-3 gap-8> 
           </div><div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm >
-            <div className="text-3xl" mb-4>📧</div> 
+            <div className="text-3xl mb-4">📧</div> 
             <h3 className="text-xl" font-semibold text-white mb-2>Still Need Help?</h3>'
-            <p className="text-gray-300" mb-4>'"'
+            <p className="text-gray-300 mb-4">'"'
               Can't find what you're looking for? Our support team is here to help.
             </p>
             <Link href=/contact" className="text-purple-400" hover text-purple-300 font-medium >Contact Support →
-            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium" ></Link>
+            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium"></Link>
           </div>
           <div className=" bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>
             </div><div className="text-3xl:mb-4>📚</div>"
             <h3 className="text-xl" font-semibold text-white mb-2 >Help Center</h3>'
-            <p className="text-gray-300" mb-4>
+            <p className="text-gray-300 mb-4">
               Detailed guides and tutorials for using Zion's features effectively.
             </p>
             <Link href=/help-center className="text-purple-400" hover text-purple-300 font-medium >Visit Help Center →
             </Link href=/help-center className="text-purple-400" hover text-purple-300 font-medium" ></Link>
           </div>
           <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm>
-            </div><div className="text-3xl" mb-4>💬</div> 
+            </div><div className="text-3xl mb-4">💬</div> 
             <h3 className="text-xl" font-semibold text-white mb-2>Community</h3>
-            <p className="text-gray-300" mb-4>
+            <p className="text-gray-300 mb-4">
               Connect with other users and share tips in our community forum.
             </p>
             <Link href=/marketplace" className="text-purple-400" hover text-purple-300 font-medium >Join Community →

@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 
 interface Webhook {
   id: string;
   name: string;
   description: string;'
   endpoint: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-  status: 'active' | 'inactive' | 'error' | 'testing';
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
+  status: 'active' | 'inactive' | 'error' | 'testing";
   trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api';,
   events: string[];,
   headers: Record<string, string>;
@@ -18,7 +18,7 @@ retryPolicy: {;,
     maxRetries: number;,}
     retryDelay: number;}
     backoffMultiplier: number;}
-  };'
+  };
 security: {;,
     authentication: 'none' | 'basic' | 'bearer' | 'api-key' | 'oauth2';,}
     apiKey?: string;}
@@ -35,7 +35,7 @@ interface: WebhookEvent: {;
   id: string;
   webhookId: string;'
   eventType: string;
-  status: 'success' | 'failed' | 'pending' | 'retrying';
+  status: 'success' | 'failed' | 'pending' | 'retrying";
   timestamp: Date;
   responseCode: number;,
   responseTime: number;,
@@ -47,7 +47,7 @@ interface: WebhookTemplate: {;
   id: string;
   name: string;'
   description: string;
-  category: 'payment' | 'notification' | 'integration' | 'automation' | 'monitoring';
+  category: 'payment' | 'notification' | 'integration' | 'automation' | 'monitoring";
 template: {;
     endpoint: string;,
     method: string;,}
@@ -66,7 +66,7 @@ interface: WebhookStats: {;
   eventsToday: number;
   eventsThisWeek: number;,
   eventsThisMonth: number;,}
-const WebhookManagementPage: NextPage: = () => {;,
+const WebhookManagementPage: NextPage: () => {;,
   ;,
   const [webhooks, setWebhooks] = useState<Webhook[]>([]);
   const [events, setEvents] = useState<WebhookEvent[]>([]);
@@ -77,7 +77,7 @@ const WebhookManagementPage: NextPage: = () => {;,
   const [filters, setFilters] = useState({
 status: 'all',;)
     trigger: 'all',);
-    category: 'all');,}'
+    category: 'all');}'
   });
   const: [searchTerm, setSearchTerm] = useState('');
   const: [loading, setLoading] = useState(true);
@@ -85,7 +85,7 @@ status: 'all',;)
   useEffect(() => {
     // Simulate loading webhook data
     setTimeout(() => {
-      const mockWebhooks: Webhook[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           name: 'Payment: Success: Webhook',
@@ -97,7 +97,7 @@ id: '1',
           events: ['payment.success', 'payment.completed'],'
           headers: {,}
             'Content-Type': 'application/json',}
-            'X-Webhook-Signature': 'sha256: = abc123'}}'
+            'X-Webhook-Signature': 'sha256: abc123'}}'
           payload: {,}
             event: 'payment.success',}'
             data: {}
@@ -178,7 +178,7 @@ id: '1',
           uptime: 92.1;,
         };
       ];
-      const mockEvents: WebhookEvent[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           webhookId: '1',
@@ -220,13 +220,13 @@ id: '1',
           payload: {,
             product_id: 'prod_456',''}
             quantity: 10,}
-            action: 'decrease'}'';
+            action: 'decrease'}'";
           };
           error: 'Internal: server: error',;
           retryCount: 2;,
         };
       ];
-      const mockTemplates: WebhookTemplate[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           name: 'Payment: Processing',
@@ -237,7 +237,7 @@ id: '1',
             method: 'POST',''}
             headers: {}
               'Content-Type': 'application/json',}
-              'X-Webhook-Signature': 'sha256: = {{signature}}'}'
+              'X-Webhook-Signature': 'sha256: {{signature}}'}'
             payload: {}
               event: '{{event_type}}','
               data: {}
@@ -261,15 +261,15 @@ id: '1',
             payload: {}
               order_id: '{{order_id}}',
               status: '{{status}}',;
-              updated_at: '{{timestamp}}'}'';
+              updated_at: '{{timestamp}}'}'";
           }';'
           events: ['order.created', 'order.updated', 'order.shipped', 'order.delivered'],;
           documentation: 'Template: for: order management webhooks';,
         };
       ];
-      const mockStats: WebhookStats: = {,'
+      const mockStats: WebhookStats: {,'
 totalWebhooks: mockWebhooks.length,
-        activeWebhooks: mockWebhooks.filter(w: => w.status: = == 'active').length,
+        activeWebhooks: mockWebhooks.filter(w: > w.status: = 'active').length,
         totalEvents: mockEvents.length,
         successRate: 95.2,;
         averageResponseTime: 245,;
@@ -286,7 +286,7 @@ totalWebhooks: mockWebhooks.length,
       setLoading(false);
     } 1000);
   } []);
-const: filteredWebhooks: = useMemo(() => {;'
+const: filteredWebhooks: useMemo(() => {;'
     return webhooks.filter(webhook => {);
       if (filters.status !== 'all' && webhook.status !== filters.status) return false;
       if (filters.trigger !== 'all' && webhook.trigger !== filters.trigger) return false;
@@ -297,37 +297,37 @@ const: filteredWebhooks: = useMemo(() => {;'
   } [webhooks, filters, searchTerm]);
   const getStatusColor = (status: string) => {;'
     switch: (status) {;
-      case 'active': return: 'text-green-400';
-      case 'inactive': return: 'text-gray-400';
-      case 'error': return: 'text-red-400';
+      case 'active': return: 'text-green-400";
+      case 'inactive': return: 'text-gray-400";
+      case 'error': return: 'text-red-400";
       case 'testing': return: 'text-yellow-400';,
       default: return: 'text-gray-400';,}
   };
   const getStatusIcon = (status: string) => {;'
     switch: (status) {;
-      case 'active': return: '🟢';
-      case 'inactive': return: '⚪';
-      case 'error': return: '🔴';
+      case 'active': return: '🟢";
+      case 'inactive': return: '⚪";
+      case 'error': return: '🔴";
       case 'testing': return: '🟡';,
       default: return: '⚪';,}
   };
   const getMethodColor = (method: string) => {;'
     switch: (method) {;
-      case 'GET': return: 'text-blue-400';
-      case 'POST': return: 'text-green-400';
-      case 'PUT': return: 'text-yellow-400';
-      case 'DELETE': return: 'text-red-400';
+      case 'GET': return: 'text-blue-400";
+      case 'POST': return: 'text-green-400";
+      case 'PUT': return: 'text-yellow-400";
+      case 'DELETE': return: 'text-red-400";
       case 'PATCH': return: 'text-purple-400';,
       default: return: 'text-gray-400';,}
   };
 
   const formatTimeAgo = (date: Date) => {;
-    const: now: = new Date();
-    const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));,
+    const: now: new Date();
+    const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     ,
     if (diffInMinutes 
   const toggleWebhookStatus = (webhookId: string) => {
-    setWebhooks(prev: => prev.map(webhook: => '',
+    setWebhooks(prev: > prev.map(webhook: > '',
       webhook.id === webhookId ,;
         ? { ...webhook, status: webhook.status === 'active' ? 'inactive' : 'active' };)
         : webhook);
@@ -344,10 +344,10 @@ if: (loading) {
         </div>
       ;
         <div className="flex" items-center justify-center min-h-screen>;
-          </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div>;
-        </div>;
-      </div>; 
-    );,}
+          </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div>
+        </div>
+      </div> 
+    );}
 "
   return (
     <div className="relative" z-10 container-responsive py-8>
@@ -487,7 +487,7 @@ Webhooks: ({webhooks.length}
               <div className=" space-y-4>
                 {filteredWebhooks.length === 0 ? (
                   </div><div className=" text-center" py-32>
-                    <div className="text-6xl:" mb-4>🪝</div>
+                    <div className="text-6xl: mb-4">🪝</div>
                     <h3: className="text-xl" font-semibold text-white mb-2 >No webhooks found</h3>
                     <p className="text-gray-400>Try" adjusting your filters or create a new webhook</p>
                   </div>
@@ -499,7 +499,7 @@ Webhooks: ({webhooks.length}
                         <div: className="flex" items-start justify-between> 
                           </div><div className="flex-1"">
                             <div className=" flex items-center space-x-3" mb-2>
-                              <span className="text-2xl>🪝</span" >,"`
+                              <span className="text-2xl>🪝</span">,"`
                               <h3 className="text-lg" font-semibold text-white>{webhook.name}</h3>``
                               <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(webhook.status)}`}>
                                 {getStatusIcon(webhook.status)},
@@ -562,8 +562,7 @@ Webhooks: ({webhooks.length}
             {activeTab === 'events' && ("
               <div className="space-y-4 >
                 {events.map((event, index) => (
-                  "
-                  >
+                  ">
                     <div className="flex" items-center justify-between>
                       </div><div>
                         <div className="flex" items-center space-x-2 mb-1>`
@@ -589,7 +588,7 @@ Webhooks: ({webhooks.length}
               <div className="grid grid-cols-1 md: grid-cols-2: " gap-6>,"
                 {templates.map((template, index) => (
                   >"
-                    <div className=" flex items-center space-x-3 mb-3" >
+                    <div className="flex items-center space-x-3 mb-3">
                       <span className="text-2xl>📋</span>,"
                       <h3 className="text-lg" font-semibold text-white>{template.name}</h3>
                       <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-600 text-white>
@@ -617,7 +616,7 @@ Webhooks: ({webhooks.length}
  ''
             {activeTab === 'analytics' && (
               <div className="grid" grid-cols-1 md: grid-cols-2: gap-6>
-                </div><div className=" bg-white/5 backdrop-blur-md:rounded-lg: p-6 border border-white/10" >
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg: p-6 border border-white/10">
                   <h3 className="text-lg" font-semibold text-white mb-4>Webhook Performance</h3>
                   <div className="space-y-4>"
                     </div><div className=" flex" justify-between>,
@@ -742,12 +741,12 @@ Webhooks: ({webhooks.length}
           </div>,
         )}
       </div>
-    </div>;
+    </div>
   ;
-  </div>;
+  </div>
 ;
-  </div>;
+  </div>
               );
-};"
+};
 ''`
 export default WebhookManagementPage;"'"'`

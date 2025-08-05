@@ -1,6 +1,6 @@
 import React, { useState, useEffect , useCallback } from 'react
 import Link from 'next/link
-import { ChevronUp, Mail, Phone, MapPin, ExternalLink } from 'lucide-react
+import { ChevronUp, Mail, Phone, MapPin, ExternalLink } from "lucide-react"
 const Footer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false)
   useEffect(() => {
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
           {/* AI-Powered Services */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>AI Services</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/ai-powered-analytics" className="text-gray-400" hover text-white transition-colors touch-target>AI Analytics</Link></li>
               <li><Link href="/ai-powered-automation" className="text-gray-400" hover text-white transition-colors touch-target>AI Automation</Link></li>
               <li><Link href="/ai-powered-data-analytics" className="text-gray-400" hover text-white transition-colors touch-target>Data Analytics</Link></li>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
           {/* Business Tools */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Business Tools</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/executive-dashboard" className="text-gray-400" hover text-white transition-colors touch-target>Executive Dashboard</Link></li>
               <li><Link href="/analytics-dashboard" className="text-gray-400" hover text-white transition-colors touch-target>Analytics Dashboard</Link></li>
               <li><Link href="/project-management" className="text-gray-400" hover text-white transition-colors touch-target>Project Management</Link></li>
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
           {/* Security & Payments */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Security & Payments</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/escrow-services" className="text-gray-400" hover text-white transition-colors touch-target>Escrow Services</Link></li>
               <li><Link href="/warranty-protection" className="text-gray-400" hover text-white transition-colors touch-target>Warranty Protection</Link></li>
               <li><Link href="/payment-processing" className="text-gray-400" hover text-white transition-colors touch-target>Payment Processing</Link></li>
@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
           {/* Immersive & VR */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Immersive & VR</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/ai-immersive-marketplace" className="text-gray-400" hover text-white transition-colors touch-target>Immersive Marketplace</Link></li>
               <li><Link href="/ai-powered-mixed-reality-spatial-computing" className="text-gray-400" hover text-white transition-colors touch-target>Mixed Reality</Link></li>
               <li><Link href="/ai-powered-augmented-reality" className="text-gray-400" hover text-white transition-colors touch-target>Augmented Reality</Link></li>
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
           {/* Legal & Contracts */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Legal & Contracts</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/ai-contract-generator" className="text-gray-400" hover text-white transition-colors touch-target>Contract Generator</Link></li>
               <li><Link href="/ai-invoice-generator" className="text-gray-400" hover text-white transition-colors touch-target>Invoice Generator</Link></li>
               <li><Link href="/ai-powered-biometric-authentication" className="text-gray-400" hover text-white transition-colors touch-target>Biometric Auth</Link></li>
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
           {/* Specialized AI */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Specialized AI</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/ai-powered-quantum-computing" className="text-gray-400" hover text-white transition-colors touch-target>Quantum Computing</Link></li>
               <li><Link href="/ai-powered-quantum-machine-learning-neural-networks" className="text-gray-400" hover text-white transition-colors touch-target>Quantum ML</Link></li>
               <li><Link href="/ai-powered-quantum-entanglement-teleportation" className="text-gray-400" hover text-white transition-colors touch-target>Quantum Teleportation</Link></li>
@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
           {/* Industry Solutions */}
           <div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Industry Solutions</h4>
-            <ul className=" space-y-3">
+            <ul className="space-y-3">
               <li><Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-400" hover text-white transition-colors touch-target>Energy Management</Link></li>
               <li><Link href="/ai-powered-manufacturing-industrial-automation" className="text-gray-400" hover text-white transition-colors touch-target>Manufacturing</Link></li>
               <li><Link href="/ai-powered-finance-banking" className="text-gray-400" hover text-white transition-colors touch-target>Finance & Banking</Link></li>
@@ -185,12 +185,12 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 pt-8" mt-12">
           <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg" space-y-0">
             <div className=" text-center lg" text-left">
-              <p className=" text-responsive-sm text-gray-400">;
+              <p className="text-responsive-sm text-gray-400">;
                 &copy;"
  2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace
               </p>
             </div>
-            <div className=" flex flex-wrap items-center justify-center gap-4 lg gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 lg gap-6">
               <Link href="/sitemap" className=" text-gray-400 hover text-white transition-colors" touch-target>
                 Sitemap
               </Link>
@@ -210,6 +210,6 @@ const Footer: React.FC = () => {
       {/* Animated Border */} 
       <div className="absolute" bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-pulse></div>
     </footer"> );"
-};"
+};
 '
 export default Footer "'"

@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { sanitizeHtml } from '../utils/sanitizeHtml';
+import { useState } from 'react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { sanitizeHtml } from '../utils/sanitizeHtml";
 
 interface Experience {
   id: string;
@@ -24,7 +24,7 @@ interface Education {
 interface Skill {
   id: string;'
   name: string;
-  level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  level: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   category: string;}
 interface ResumeInput {
   personalInfo: {
@@ -225,7 +225,7 @@ const ResumeBuilder = () => {;'
       setLoading(false);}
   };
 '
-  const downloadResume = () => {';'
+  const $1 = () => {'
     const element = document.createElement('a');
     const file = new Blob([resume], { type: 'text/html' });
     element.href = URL.createObjectURL(file);
@@ -425,7 +425,7 @@ const ResumeBuilder = () => {;'
                         Add Experience
                       </button>
                     </div>
-                    <div className=" space-y-6">
+                    <div className="space-y-6">
                       {input.experience.map((exp, index) => (
                         </div><div key={exp.id} className=" bg-white/10 rounded-lg" p-6>
                           <div className="flex" justify-between items-start mb-4>
@@ -538,7 +538,7 @@ const ResumeBuilder = () => {;'
                         Add Education
                       </button>
                     </div>
-                    <div className=" space-y-6">
+                    <div className="space-y-6">
                       {input.education.map((edu, index) => (
                         </div><div key={edu.id} className=" bg-white/10 rounded-lg" p-6>
                           <div className="flex" justify-between items-start mb-4>
@@ -634,7 +634,7 @@ const ResumeBuilder = () => {;'
                         Add Skill
                       </button>
                     </div>
-                    <div className=" space-y-4">
+                    <div className="space-y-4">
                       {input.skills.map((skill, index) => (
                         </div><div key={skill.id} className=" bg-white/10 rounded-lg" p-4>
                           <div className="flex" justify-between items-start mb-4>
@@ -664,8 +664,7 @@ const ResumeBuilder = () => {;'
                               </label>'
                               "''
                                 onChange={(e) => updateSkill(index, 'level', e.target.value)}
-                                className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
-                              >
+                                className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent">
                                 <option value=beginner>Beginner</option">
                                 <option value=intermediate>Intermediate</option>
                                 <option value=advanced>Advanced</option">
@@ -690,7 +689,7 @@ const ResumeBuilder = () => {;'
                 )}"'
                 {/* Additional Tab */},''
 {activeTab === 'additional' && ("
-                  <div className=" space-y-6">
+                  <div className="space-y-6">
                     <h2 className="text-2xl" font-bold text-white mb-6>Additional Information</h2>
  
                     {/* Certifications */}
@@ -812,8 +811,7 @@ const ResumeBuilder = () => {;'
                       </label>
                       
                         onChange={(e) => setInput({ ...input, template: e.target.value })}"
-                        className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent "
-                      >
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent ">
                         <option value=modern>Modern</option">
                         <option value=classic>Classic</option>
                         <option value=creative>Creative</option">
@@ -823,9 +821,7 @@ const ResumeBuilder = () => {;'
                   </div">
                 )}"
                 {/* Generate Button" */}"
-                <div className="mt-8>"
-                  
-                  >'
+                <div className="mt-8>">'
                     {loading ? 'Generating Resume...'   'Generate Resume'}
                   </button>
                 </div>
@@ -834,7 +830,7 @@ const ResumeBuilder = () => {;'
  
             {/* Preview */}
             <div className="space-y-8>"
-              </div><div className=" bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10" >
+              </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10">
                 <div className=" flex justify-between items-center" mb-6>
                   <h2 className="text-2xl" font-bold text-white>Resume Preview</h2>
                   {generated && (
@@ -855,8 +851,8 @@ const ResumeBuilder = () => {;'
                     </div><div dangerouslySetInnerHTML={{ __html  resume }} > </div dangerouslySetInnerHTML={{ __html  resume }} ></div>
                 )   (
                   <div className="bg-white/10" rounded-lg:p-6 h-96 flex items-center justify-center> 
-                    </div><div className="text-center text-gray-400" >
-                      <div className="text-6xl" mb-4>📄</div>
+                    </div><div className="text-center text-gray-400">
+                      <div className="text-6xl mb-4">📄</div>
                       <p className="text-lg>Your" resume will appear here</p>
                       <p className="text-sm>Fill" out the form and click Generate Resume</p>
                     </div>
@@ -868,7 +864,7 @@ const ResumeBuilder = () => {;'
               <div className=" bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>
                 <h3 className="text-xl" font-bold text-white mb-4>AI Resume Builder Features</h3>
                 <div className="space-y-3>" 
-                  </div><div className="flex items-center space-x-3" >
+                  </div><div className="flex items-center space-x-3">
                     <div className="w-2" h-2 bg-green-400 rounded-full></div>
                     <span className="text-gray-300>AI-powered" resume generation</span>
                   </div>
@@ -896,8 +892,8 @@ const ResumeBuilder = () => {;'
       </div>
     </div>
   
-                      </div>;
+                      </div>
     );
-};"
+};
 ''`
 export default ResumeBuilder;"'"'`

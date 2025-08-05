@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface Invoice {
   id: string;
   invoiceNumber: string;
   client: string;'
   amount: number;
-  status: 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled';
+  status: 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled";
   dueDate: Date;
   issueDate: Date;
   items: InvoiceItem[];
@@ -26,7 +26,7 @@ interface InvoiceItem {
 interface BillingCycle {
   id: string;'
   name: string;
-  type: 'monthly' | 'quarterly' | 'yearly' | 'custom';
+  type: 'monthly' | 'quarterly' | 'yearly' | 'custom";
   startDate: Date;
   endDate: Date;
   totalInvoices: number;
@@ -39,7 +39,7 @@ interface Payment {
   amount: number;
   method: string;'
   date: Date;
-  status: 'pending' | 'completed' | 'failed' | 'refunded';
+  status: 'pending' | 'completed' | 'failed' | 'refunded";
   transactionId: string;}
 const InvoiceBillingPage: NextPage = () => {'
   const [activeTab, setActiveTab] = useState('invoices
@@ -185,7 +185,7 @@ const InvoiceBillingPage: NextPage = () => {'
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/payment-processing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
               </Link href=/payment-processing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -207,7 +207,7 @@ const InvoiceBillingPage: NextPage = () => {'
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#invoices" className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Invoices
-            </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Create Invoice
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -280,12 +280,12 @@ const InvoiceBillingPage: NextPage = () => {'
                   
                   <div className="space-y-3" mb-4 > 
                     </div><div className="flex" justify-between>
-                      <span className="text-gray-300>Amount:</span" >
+                      <span className="text-gray-300>Amount:</span">
                       <span className="text-white" font-semibold>{formatCurrency(invoice.total)}</span>
                     </div>
                     <div className="flex  justify-between">
                       <span className="text-gray-300>Issue" Date </span>
-                      <span className="text-white>{invoice.issueDate.toLocaleDateString()}</span" >
+                      <span className="text-white>{invoice.issueDate.toLocaleDateString()}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Due" Date:</span>
@@ -313,7 +313,7 @@ const InvoiceBillingPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'billing' && ("
-          <div className="space-y-6" >
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Billing Cycles</h2>
             <div className="grid grid-cols-1 md grid-cols-2 gap-6>
               {billingCycles.map((cycle) => (
@@ -330,14 +330,14 @@ const InvoiceBillingPage: NextPage = () => {'
                   
                   <div className="space-y-3" mb-4 > 
                     </div><div className="flex" justify-between>
-                      <span className="text-gray-300>Period:</span" >
+                      <span className="text-gray-300>Period:</span">
                       <span className="text-white>
                         {cycle.startDate.toLocaleDateString()} - {cycle.endDate.toLocaleDateString()}
                       </span>
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Total" Invoices </span>
-                      <span className="text-white>{cycle.totalInvoices}</span" >
+                      <span className="text-white>{cycle.totalInvoices}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Total" Amount:</span>
@@ -348,7 +348,7 @@ const InvoiceBillingPage: NextPage = () => {'
                       <span className="text-white>{formatCurrency(cycle.paidAmount)}</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Outstanding:</span" >
+                      <span className="text-gray-300>Outstanding:</span">
                       <span className="text-white>{formatCurrency(cycle.outstandingAmount)}</span>"
                     </div>
                   </div">
@@ -371,12 +371,12 @@ const InvoiceBillingPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'payments' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Payment History</h2>
             <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:overflow-hidden> 
               </div><div className="overflow-x-auto"">
-                <table className=" w-full">
-                  <thead className=" bg-white/10">
+                <table className="w-full">
+                  <thead className="bg-white/10">
                     <tr>
                       <th className="text-left" text-gray-300 py-3 px-6>Payment ID</th>
                       <th className="text-left" text-gray-300 py-3 px-6>Invoice</th>
@@ -415,10 +415,10 @@ const InvoiceBillingPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'reports' && ("
-          <div className=" space-y-8">
+          <div className="space-y-8">
             <h2 className="text-2xl" font-bold text-white>Financial Reports</h2>
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
-              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg" font-semibold text-white mb-4>Revenue Summary</h3>
                 <div className="space-y-3>"
                   </div><div className=" flex" justify-between>
@@ -441,9 +441,9 @@ const InvoiceBillingPage: NextPage = () => {'
               <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
                 <h3 className="text-lg" font-semibold text-white mb-4>Payment Methods</h3>
                 <div className="space-y-3>" 
-                  </div><div className="flex justify-between" >
+                  </div><div className="flex justify-between">
                     <span className="text-gray-300>Credit" Card </span>
-                    <span className="text-white>65%</span" >
+                    <span className="text-white>65%</span">
                   </div>
                   <div className="flex" justify-between>
                     <span className="text-gray-300>Bank" Transfer:</span>
@@ -467,7 +467,7 @@ const InvoiceBillingPage: NextPage = () => {'
                   </div>
                   <div className="flex"" justify-between">
                     <span className="text-gray-300>Overdue" </span>
-                    <span className="text-red-400>{formatCurrency(1980)}</span" >
+                    <span className="text-red-400>{formatCurrency(1980)}</span">
                   </div>
                   <div className="flex" justify-between>
                     <span className="text-gray-300>Due" This Week:</span>
@@ -512,7 +512,7 @@ const InvoiceBillingPage: NextPage = () => {'
             </p>
             <div className="flex  flex-wrap justify-center gap-4>
               <Link href=#invoices" className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started
-              </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Explore Marketplace
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -548,7 +548,7 @@ const InvoiceBillingPage: NextPage = () => {'
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -568,6 +568,6 @@ const InvoiceBillingPage: NextPage = () => {'
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default InvoiceBillingPage ))))))))))))"'"'`

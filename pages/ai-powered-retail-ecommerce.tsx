@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SmartRetail {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockSmartRetail: SmartRetail[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Smart Inventory Management',
@@ -132,7 +132,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         customerInsights: ['Chat support preferred', 'Response time critical', 'Self-service growing'],
         recommendations: ['Improve response times', 'Enhance self-service options', 'Expand chat capabilities']}
 }]
-  const mockEcommerceManagement: EcommerceManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Online Store Platform',
@@ -176,7 +176,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         optimizationOpportunities: ['Enhance app performance', 'Improve push notifications', 'Optimize in-app purchases'],
         growthStrategies: ['Expand app features', 'Implement AR shopping', 'Enhance personalization']}
 }]
-  const mockCustomerAnalytics: CustomerAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Customer Segmentation Engine',
@@ -220,7 +220,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         improvementAreas: ['Enhance reward personalization', 'Improve engagement metrics', 'Expand program features'],
         recommendations: ['Implement personalized rewards', 'Enhance engagement tracking', 'Expand loyalty features']}
 }]
-  const mockRetailOptimization: RetailOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Dynamic Pricing Engine',
@@ -373,7 +373,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -515,30 +515,30 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
             {/* Retail Systems Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredSmartRetail.map((store) => (
-                </div><div key={store.id} className="bg-black/20 rounded-lg p-6 border border-white/10" >
-                  <div className=" flex items-center justify-between" mb-4>`
+                </div><div key={store.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{store.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(store.status)} text-white`}>
                       {store.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{store.location} • {store.type}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className=" flex justify-between" text-sm>"
                       <span className="text-gray-400>Efficiency</span>"
                       <span className="text-white>{store.efficiency}%</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
                       <span className=" text-gray-400>Sales Volume</span>
-                      <span className="text-white>{formatCurrency(store.salesVolume)}</span" >
+                      <span className="text-white>{formatCurrency(store.salesVolume)}</span">
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Customer Satisfaction</span>
-                      <span className="text-white>{store.customerSatisfaction}%</span" >
+                      <span className="text-white>{store.customerSatisfaction}%</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance" Score</span>
                       <span className="text-white>{store.aiAnalysis.performanceScore}/10</span>"
                     </div>
@@ -551,10 +551,10 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
 "'
         {selectedView === 'ecommerce' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {ecommerceManagement.map((platform) => (
                 <div key={platform.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{platform.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(platform.status)} text-white`}>
                       {platform.status}
@@ -609,7 +609,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                       <div className="text-gray-400" text-sm>Coverage</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Insights" Generated</span>
                       <span className="text-white>{formatNumber(analytics.insightsGenerated)}</span>" 
@@ -648,9 +648,9 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Cost" Savings</span>
-                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span" >
+                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Impact" Score</span>
@@ -686,7 +686,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Retail Insights</h3>
               <div className="space-y-4>"
                 {data.aiInsights.map((insight) => (
@@ -716,7 +716,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -753,7 +753,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

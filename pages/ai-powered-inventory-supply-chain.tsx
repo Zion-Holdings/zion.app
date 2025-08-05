@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface InventoryItem {
   id: string;'
   name: string;
-  category: 'physical' | 'digital' | 'service' | 'talent';
-  type: 'product' | 'service' | 'equipment' | 'material';
-  status: 'in-stock' | 'low-stock' | 'out-of-stock' | 'discontinued';
+  category: 'physical' | 'digital' | 'service' | 'talent";
+  type: 'product' | 'service' | 'equipment' | 'material";
+  status: 'in-stock' | 'low-stock' | 'out-of-stock' | 'discontinued";
   quantity: number;
   reserved: number;
   available: number;
@@ -33,7 +33,7 @@ interface SupplyChainNode {
   name: string;
   type: 'supplier' | 'manufacturer' | 'distributor' | 'warehouse' | 'retailer';'
   location: string;
-  status: 'active' | 'inactive' | 'delayed' | 'blocked';
+  status: 'active' | 'inactive' | 'delayed' | 'blocked";
   performance: number;
   reliability: number;
   leadTime: number;
@@ -60,8 +60,8 @@ interface LogisticsOrder {
   orderNumber: string;
   customer: string;'
   items: LogisticsOrderItem[];
-  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   orderDate: Date;
   estimatedDelivery: Date;
   actualDelivery?: Date;
@@ -96,7 +96,7 @@ interface InventoryInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredInventorySupplyChainPage: NextPage = () => {
@@ -108,7 +108,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockInventoryItems: InventoryItem[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Development Workstation',
@@ -158,7 +158,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
         recommendations: ['Purchase additional 500 credits', 'Monitor usage patterns'],
         riskLevel: 'medium'}
 }]
-  const mockSupplyChainNodes: SupplyChainNode[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'TechCorp Solutions',
@@ -214,7 +214,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
             aiScore: 88
           }]}
 }]
-  const mockLogisticsOrders: LogisticsOrder[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       orderNumber: 'ORD-2024-001',
@@ -422,7 +422,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                 {/* Inventory Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredItems.map((item) => (
-                    </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={item.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{item.name}</h3>
@@ -447,7 +447,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm>
@@ -559,7 +559,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 {activeTab === 'logistics' && (
               <div className="space-y-8>"
                 {logisticsOrders.map((order) => (
-                  </div><div key={order.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={order.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{order.orderNumber}</h3>
@@ -632,7 +632,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div>
                     <div className="text-gray-400" text-sm>Total Items</div>
@@ -723,7 +723,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Optimize Your Supply Chain? 
             </h2>
@@ -747,6 +747,6 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredInventorySupplyChainPage "))))))))))))))))))))"'"'`

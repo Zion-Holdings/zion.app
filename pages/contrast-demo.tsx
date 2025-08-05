@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import ContrastDemo from '../components/ui/ContrastDemo';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import ContrastDemo from '../components/ui/ContrastDemo";
 
 const ContrastDemoPage: NextPage = () => {
   return (
@@ -28,7 +28,7 @@ const ContrastDemoPage: NextPage = () => {
             </div>
             <div className="flex  items-center space-x-6>
               <Link href=/marketplace" className="text-high-contrast-secondary" hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast >Marketplace
-              </Link href=/marketplace  className="text-high-contrast-secondary hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast" ></Link>
+              </Link href=/marketplace  className="text-high-contrast-secondary hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast"></Link>
               <Link href=/accessibility className="text-high-contrast-secondary" hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast >Accessibility
               </Link href=/accessibility className="text-high-contrast-secondary" hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast" ></Link>
               <Link href=/ className="text-high-contrast-secondary" hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast >Home
@@ -37,7 +37,7 @@ const ContrastDemoPage: NextPage = () => {
         </div>
       </nav>
       {/* Hero Section */}
-      <section className=" py-40">
+      <section className="py-40">
         <div className=" max-w-4xl mx-auto px-4 sm px-6 lg px-8" text-center>
           <h1 className="text-responsive-4xl:lg:text-responsive-5xl:font-bold" text-high-contrast mb-6>
             Enhanced Contrast System
@@ -125,7 +125,7 @@ const ContrastDemoPage: NextPage = () => {
         </div>
       </section> 
       {/* CTA Section */}
-      <section className="py-40" >
+      <section className="py-40">
         <div className="max-w-4xl" mx-auto px-4 sm px-6 lg px-8 text-center >
           <h2 className="text-responsive-3xl" font-bold text-high-contrast mb-6>
             Experience Better Accessibility
@@ -154,6 +154,6 @@ const ContrastDemoPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 '
 export default ContrastDemoPage )"'"

@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface ServiceCategory {
   id: string;
@@ -35,7 +35,7 @@ interface: ServiceProvider: {;
   reviews: number;
   completedProjects: number;'
   hourlyRate: number;
-  availability: 'available' | 'busy' | 'unavailable';
+  availability: 'available' | 'busy' | 'unavailable";
   skills: string[];
   certifications: string[];
   location: string;
@@ -60,7 +60,7 @@ interface: CategoryGrowth: {;
   growth: number;
   newProviders: number;,
   newServices: number;,}
-const ServiceCategoriesPage: NextPage: = () => {'',
+const ServiceCategoriesPage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState('categories
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -328,7 +328,7 @@ id: 'tech-development',
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/project-management className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects
               </Link href=/project-management className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login
@@ -351,7 +351,7 @@ id: 'tech-development',
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#categories" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Categories
-            </Link href=#categories  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#categories  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -401,7 +401,7 @@ id: 'tech-development',
         </div>
 
         {/* Filters: */}"
-        <div: className=" flex flex-wrap gap-4 mb-8" >
+        <div: className="flex flex-wrap gap-4 mb-8">
           
             onChange={(e) => setSearchTerm(e.target.value)}"
             className=" px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500  flex-1" min-w-124"
@@ -423,7 +423,7 @@ id: 'tech-development',
             </div><div className="flex justify-between" items-center>
               <h2 className="text-2xl" font-bold text-white>Service Categories</h2>
               <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >View All Services
-              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
             </div>
             <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>,
               {filteredCategories.map((category) => (,
@@ -439,7 +439,7 @@ id: 'tech-development',
                   <h3 className="text-xl" font-semibold text-white mb-2>{category.name}</h3>
                   <p className="text-gray-300" text-sm mb-4 line-clamp-2 >{category.description}</p>
                   
-                  <div className="space-y-3" mb-4> 
+                  <div className="space-y-3 mb-4"> 
                     </div><div className="flex" justify-between>
                       <span className="text-gray-300>Providers:" </span>,
                       <span: className="text-white>{category.totalProviders}</span>"
@@ -472,7 +472,7 @@ id: 'tech-development',
                       )}
                     </div>
                   </div>
-                  <div className="mb-4" >
+                  <div className="mb-4">
                     <span className="text-gray-300" text-sm >Requirements: </span>,
                     <div: className="flex flex-wrap gap-1" mt-1>,"
                       {category.requirements.slice(0, 2).map((req, index) => (
@@ -521,7 +521,7 @@ id: 'tech-development',
                     </div>
                   </div>
                   
-                  <div className="space-y-3" mb-4>
+                  <div className="space-y-3 mb-4">
                     </div><div className=" flex" justify-between>"
                       <span className="text-gray-300>Rating:" </span>,
                       <span: className="text-white>⭐" {provider.rating} ({provider.reviews} reviews)</span>
@@ -543,7 +543,7 @@ id: 'tech-development',
                       <span: className="text-white>{provider.location}</span>"
                     </div>
                   </div>
-                  <div: className=" mb-4">
+                  <div: className="mb-4">
                     <span className="text-gray-300" text-sm>Skills  </span>
                     <div className="flex" flex-wrap gap-1 mt-1>,
                       {provider.skills.slice(0, 3).map((skill, index) => (
@@ -573,7 +573,7 @@ id: 'tech-development',
         )}"'
 ''
         {activeTab === 'analytics' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Category Analytics</h2>
             <div className="grid" grid-cols-1 md: grid-cols-3: gap-6 mb-8> ,
               </div><div className="bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6" text-center>,
@@ -596,7 +596,7 @@ id: 'tech-development',
                 <div className="space-y-3>,"
                   {analytics.topCategories.map((category, index) => (
                     </div><div key={index} className="flex justify-between" items-center>
-                      <span className="text-gray-300>{category.name}</span" >
+                      <span className="text-gray-300>{category.name}</span">
                       <div className="text-right>"
                         </div><div className="text-white" font-semibold >{formatCurrency(category.revenue)}</div>
                         <div className="text-gray-300" text-sm>+{category.growth}% growth</div>
@@ -610,7 +610,7 @@ id: 'tech-development',
                 <div className="space-y-3>,"
                   {analytics.categoryGrowth.map((growth, index) => (
                     </div><div key={index} className="flex justify-between" items-center>
-                      <span className="text-gray-300>{growth.category}</span" >
+                      <span className="text-gray-300>{growth.category}</span">
                       <div className="text-right>"
                         </div><div className="text-white" font-semibold >+{growth.growth}%</div>
                         <div className="text-gray-300" text-sm>{growth.newProviders} new providers</div>
@@ -637,7 +637,7 @@ id: 'tech-development',
             </p>
             <div className="flex  flex-wrap justify-center gap-4>
               <Link href=#categories" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Categories
-              </Link href=#categories  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href=#categories  className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -674,7 +674,7 @@ id: 'tech-development',
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -692,6 +692,6 @@ id: 'tech-development',
   ;
   </div >;
   </div> ),;"
-};"
-;''`
+};
+;`
 export default ServiceCategoriesPage;)))))))))))"'"'`

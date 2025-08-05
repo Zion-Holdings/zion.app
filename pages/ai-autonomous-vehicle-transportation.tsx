@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next";
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface AutonomousVehicle {
   id: string'
@@ -99,7 +99,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
   const [selectedVehicleType, setSelectedVehicleType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockVehicles: AutonomousVehicle[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Zion Auto-001',
@@ -170,7 +170,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         gps: true,
         ultrasonic: true}
 }]
-  const mockRoutes: TransportationRoute[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'NYC Express Route',
@@ -226,7 +226,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
           type: 'delivery
         }]
     }]
-  const mockLogistics: LogisticsOperation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Express Delivery NYC',
@@ -264,7 +264,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         timeOptimization: 15,
         recommendations: ['Schedule during off-peak hours', 'Optimize cargo loading']}
 }]
-  const mockTrafficAnalysis: TrafficAnalysis[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       location: 'New York City',
@@ -296,7 +296,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         recommendations: ['Current routes are optimal', 'No major delays expected']}
       incidents: []
     }]
-  const mockInsights: AIInsight[] = ['
+  const $1: $2[] = [
     {
       type: 'optimization',
       title: 'Route Optimization Success',
@@ -393,7 +393,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
               </Link>
               <div className="flex"" items-center space-x-4>
                 <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-                </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+                </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
                 <Link href=/ai-immersive-marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Immersive
                 </Link href=/ai-immersive-marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
                 <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -467,7 +467,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
               )}'
               {/* Vehicles */},"''
 {selectedView === 'vehicles' && (
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white mb-6>Autonomous Vehicle Fleet</h2>
                   <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6>
                     {vehicles.map((vehicle) => (
@@ -485,14 +485,14 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             <div className="text-gray-400" text-sm>{vehicle.battery}% Battery</div>
                           </div>
                         </div>
-                        <div className=" space-y-3" mb-4>
+                        <div className="space-y-3 mb-4">
                           </div><div className="grid" grid-cols-2 gap-4 text-sm>
                             <div>
                               <span className="text-gray-400>Location:</span>"
                               <div className="text-white>{vehicle.location.address}</div>"
                             </div>
                             <div>
-                              <span className="text-gray-400>Speed:</span" >
+                              <span className="text-gray-400>Speed:</span">
                               <div className="text-white>{vehicle.speed}" mph</div>
                             </div">
                           </div> 
@@ -502,12 +502,12 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                               <div className="text-white>{vehicle.aiScore}/10</div"">
                             </div>
                             <div>
-                              <span className="text-gray-400>Safety:</span" >
+                              <span className="text-gray-400>Safety:</span">
                               <div className="text-white>{vehicle.safetyScore}/10</div>"
                             </div>
                             <div>
                               <span className="text-gray-400>Efficiency" </span>
-                              <div className="text-white>{vehicle.efficiencyScore}/10</div" >
+                              <div className="text-white>{vehicle.efficiencyScore}/10</div">
                             </div>
                           </div>
 
@@ -534,9 +534,9 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             <span className="{vehicle.sensors.radar" ? 'text-green-400'   'text-red-400'}>●</span>
                             <span className="text-gray-300>Radar</span>"
                           </div>
-                          <div className="flex items-center space-x-2" >'
+                          <div className="flex items-center space-x-2">'
                             <span className="{vehicle.sensors.cameras" ? 'text-green-400'   'text-red-400'}>●</span>
-                            <span className="text-gray-300>Cameras</span" >
+                            <span className="text-gray-300>Cameras</span">
                           </div>'
                           <div className="flex items-center" space-x-2>''
                             <span className="{vehicle.sensors.gps" ? 'text-green-400' : 'text-red-400'}>●</span>
@@ -571,7 +571,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                         <div className="space-y-3  mb-4>
                           </div><div className=" grid grid-cols-2 gap-4" text-sm>
                             <div>
-                              <span className="text-gray-400>Distance:</span" >
+                              <span className="text-gray-400>Distance:</span">
                               <div className="text-white>{route.distance}" miles</div>
                             </div>
                             <div">
@@ -587,13 +587,13 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className=" space-y-2" mb-4>
+                        <div className="space-y-2 mb-4">
                           </div><div className="text-sm" font-medium text-gray-400>Route:</div>
                           <div className="text-sm:text-gray-300>"
                             {route.startLocation} → {route.endLocation}
                           </div>
                         </div>
-                        <div className="space-y-2" mb-4>
+                        <div className="space-y-2 mb-4">
                           </div><div className="text-sm" font-medium text-gray-400>Recommendations </div>
                           {route.aiOptimization.recommendations.map((rec, index) => (
                             <div key={index} className="flex" items-center space-x-2 text-sm>
@@ -622,7 +622,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             <h3 className="text-xl" font-semibold text-white >{operation.title}</h3>
                             <p className="text-gray-300" text-sm capitalize>{operation.type} Operation</p>
                           </div>
-                          <div className=" text-right">`
+                          <div className="text-right">`
                             </div>``"
                             }`}>"
                               {operation.priority} Priority
@@ -631,7 +631,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                           </div>
                         </div>
 
-                        <div className="space-y-3" mb-4> 
+                        <div className="space-y-3 mb-4"> 
                           </div><div className="grid grid-cols-2 gap-4" text-sm>
                             <div>
                               <span className="text-gray-400>Cargo" Type:</span>
@@ -651,11 +651,11 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-2" mb-4>
+                        <div className="space-y-2 mb-4">
                           </div><div className="text-sm" font-medium text-gray-400 >Recommendations:</div>
                           {operation.aiOptimization.recommendations.map((rec, index) => ("
                             <div key={index} className=" flex items-center space-x-2" text-sm>
-                              <span className="text-blue-400>•</span" >
+                              <span className="text-blue-400>•</span">
                               <span className="text-gray-300>{rec}</span>"
                             </div>
                           ))}
@@ -671,11 +671,11 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
               )}
               {/* Traffic Analysis */},"'
 {selectedView === 'traffic' && ("
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white mb-6>Real-time Traffic Analysis</h2>
                   <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                     {trafficAnalysis.map((analysis) => (
-                      </div><div key={analysis.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+                      </div><div key={analysis.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
                         <div className="flex" justify-between items-start mb-4>
                           </div><div>
                             <h3 className="text-xl" font-semibold text-white>{analysis.location}</h3>
@@ -688,7 +688,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className=" space-y-3" mb-4>
+                        <div className="space-y-3 mb-4">
                           </div><div className="grid" grid-cols-2 gap-4 text-sm>
                             <div>
                               <span className="text-gray-400>Density:</span>"
@@ -741,22 +741,22 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
               )}"'
               {/* AI Insights */},''
 {selectedView === 'insights' && ("
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2>
                   <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                     {insights.map((insight, index) => (
-                      </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+                      </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
                         <div className="flex" items-start space-x-3 mb-4> 
                           </div><div className="text-2xl>{getInsightIcon(insight.type)}</div"">
                           <div className=" flex-1>
-                            </div><div className=" flex items-center space-x-2 mb-2" >'`
+                            </div><div className="flex items-center space-x-2 mb-2">'`
                               <h3 className="text-lg" font-semibold text-white>{insight.title}</h3>''``
                               <span className="{`px-4" py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                                 {insight.type}
                               </span>
                             </div>
                             <p className="text-gray-300" text-sm:mb-3>{insight.description}</p>
-                            <div className="flex items-center space-x-4 text-sm" >
+                            <div className="flex items-center space-x-4 text-sm">
                               <span className="text-gray-400>Confidence" </span>
                               <span className="text-white>{insight.confidence}%</span>`"
                               ``
@@ -766,7 +766,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-2" >
+                        <div className="space-y-2">
                           </div><div className="text-sm" font-medium text-gray-400>Action Items </div>
                           {insight.actionItems.map((item, itemIndex) => (
                             <div key={itemIndex} className="flex items-center space-x-2" text-sm>
@@ -786,6 +786,6 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
       </div>
     </>
   ;
-};"
+};
 ''`
 export default AIAutonomousVehicleTransportationPage ))))))))))))))))))"'"'`

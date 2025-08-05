@@ -127,16 +127,19 @@ class AutonomousSolutionCreatorAgent {
         const solutions = [];
         
         trends.slice(0, 5).forEach((trend, index) => {
+            const keyConcept = this.extractKeyConcept(trend.title);
+            const safeId = `trend-${keyConcept.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${index + 1}`;
+            
             const solution = {
-                id: `trend-solution-${Date.now()}-${index}`,
-                name: `AI-Powered ${this.extractKeyConcept(trend.title)} Solution`,
+                id: safeId,
+                name: `AI-Powered ${keyConcept} Solution`,
                 category: 'Trend-Based',
                 description: `Innovative solution leveraging the latest trend: ${trend.title}`,
                 inspiration: trend.title,
                 features: this.generateFeaturesFromTrend(trend),
                 pricing: this.generatePricingStrategy(trend),
                 targetMarket: this.determineTargetMarket(trend),
-                competitiveAdvantage: `First-mover advantage in ${this.extractKeyConcept(trend.title)}`,
+                competitiveAdvantage: `First-mover advantage in ${keyConcept}`,
                 marketPotential: 'High',
                 developmentTime: '3-6 months',
                 estimatedRevenue: '$500K - $2M annually',
@@ -154,8 +157,11 @@ class AutonomousSolutionCreatorAgent {
         const solutions = [];
         
         tools.slice(0, 5).forEach((tool, index) => {
+            const toolName = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+            const safeId = `tool-${toolName}-${index + 1}`;
+            
             const solution = {
-                id: `tool-solution-${Date.now()}-${index}`,
+                id: safeId,
                 name: `Enhanced ${tool.name} Alternative`,
                 category: 'Tool-Based',
                 description: `Improved version of ${tool.name} with advanced features`,
@@ -181,8 +187,11 @@ class AutonomousSolutionCreatorAgent {
         const solutions = [];
         
         opportunities.slice(0, 5).forEach((opportunity, index) => {
+            const keyword = opportunity.keyword.toLowerCase().replace(/[^a-z0-9]/g, '-');
+            const safeId = `opportunity-${keyword}-${index + 1}`;
+            
             const solution = {
-                id: `opportunity-solution-${Date.now()}-${index}`,
+                id: safeId,
                 name: opportunity.title,
                 category: 'Opportunity-Based',
                 description: opportunity.description,
@@ -211,8 +220,11 @@ class AutonomousSolutionCreatorAgent {
         const gaps = this.identifyMarketGaps(marketResearchData);
         
         gaps.forEach((gap, index) => {
+            const area = gap.area.toLowerCase().replace(/[^a-z0-9]/g, '-');
+            const safeId = `gap-${area}-${index + 1}`;
+            
             const solution = {
-                id: `gap-solution-${Date.now()}-${index}`,
+                id: safeId,
                 name: `AI ${gap.area} Solution`,
                 category: 'Gap-Based',
                 description: `Fills the market gap in ${gap.area} with intelligent automation`,

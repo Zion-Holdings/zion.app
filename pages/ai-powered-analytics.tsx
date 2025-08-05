@@ -1,7 +1,7 @@
 import React from "react;
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import type { NextPage } from 'next";
+import Head from 'next/head";
+import { motion } from 'framer-motion";
 
 const AiPoweredAnalytics: NextPage = () => {
   ;
@@ -43,7 +43,7 @@ const AiPoweredAnalytics: NextPage = () => {
             </p>
           </div>
         </div>
-      </div>;
+      </div>
     );}
   return (
     <div>
@@ -172,6 +172,6 @@ const AiPoweredAnalytics: NextPage = () => {
       </div>
     </div">;"
  " );"
-};"
+};
 '
 export default AiPoweredAnalytics; "'"

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion";
 
 interface IntelligentSearchProps {
   className?: string;}'
@@ -18,7 +18,7 @@ const IntelligentSearch: React.FC<IntelligentSearchProps> = ({ className="'' }) 
         </div>
         <h3 className=" text-xl font-semibold text-gray-900>Intelligent Search</h3>
       </div>
-      <p className=" text-gray-600" mb-4>
+      <p className="text-gray-600 mb-4">
         Advanced intelligent search capabilities that enhance your business operations and drive growth.
       </p>
       <div className=" flex" space-x-2">
@@ -30,6 +30,6 @@ const IntelligentSearch: React.FC<IntelligentSearchProps> = ({ className="'' }) 
         </button>
       </div>
     </motion.div >;  );"
-};"
+};
 ''`
 export default IntelligentSearch;"'"'`

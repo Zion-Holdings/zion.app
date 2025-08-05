@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface Dispute {
   id: string;
   title: string;'
   description: string;
-  status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  type: 'payment' | 'service' | 'quality' | 'delivery' | 'communication';
+  status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
+  type: 'payment' | 'service' | 'quality' | 'delivery' | 'communication";
   parties: {
     complainant: string;
     respondent: string;
@@ -24,7 +24,7 @@ interface Dispute {
   timeline: TimelineEvent[];}
 interface Evidence {'
   id: string;
-  type: 'document' | 'image' | 'video' | 'audio' | 'testimony';
+  type: 'document' | 'image' | 'video' | 'audio' | 'testimony";
   title: string;
   description: string;
   uploadedBy: string;
@@ -32,7 +32,7 @@ interface Evidence {'
   url: string;}
 interface TimelineEvent {'
   id: string;
-  type: 'created' | 'assigned' | 'mediation_started' | 'evidence_submitted' | 'arbitration_requested' | 'resolution_proposed' | 'resolved' | 'closed';
+  type: 'created' | 'assigned' | 'mediation_started' | 'evidence_submitted' | 'arbitration_requested' | 'resolution_proposed' | 'resolved' | 'closed";
   title: string;
   description: string;
   timestamp: Date;
@@ -43,23 +43,23 @@ interface Mediator {
   specialization: string[];
   rating: number;'
   casesResolved: number;
-  availability: 'available' | 'busy' | 'unavailable';
+  availability: 'available' | 'busy' | 'unavailable";
   hourlyRate: number;}
 interface ResolutionProposal {
   id: string;
   disputeId: string;'
   proposedBy: string;
-  type: 'refund' | 'partial_refund' | 'service_redo' | 'compensation' | 'apology' | 'other';
+  type: 'refund' | 'partial_refund' | 'service_redo' | 'compensation' | 'apology' | 'other";
   amount?: number;'
   description: string;
-  status: 'pending' | 'accepted' | 'rejected' | 'modified';
+  status: 'pending' | 'accepted' | 'rejected' | 'modified";
   createdAt: Date;
   responses: ResolutionResponse[];}
 interface ResolutionResponse {
   id: string;
   proposalId: string;'
   partyId: string;
-  response: 'accept' | 'reject' | 'modify';
+  response: 'accept' | 'reject' | 'modify";
   comment?: string;
   timestamp: Date;}
 const DisputeResolutionPage: NextPage = () => {'
@@ -321,7 +321,7 @@ const DisputeResolutionPage: NextPage = () => {'
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/escrow-services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Escrow
               </Link href=/escrow-services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -343,7 +343,7 @@ const DisputeResolutionPage: NextPage = () => {'
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#disputes" className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Disputes
-            </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >File Dispute
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -402,8 +402,7 @@ const DisputeResolutionPage: NextPage = () => {'
           <div className="flex"" flex-wrap gap-4 mb-8>
             
               onChange={(e) => setFilterStatus(e.target.value)}"
-              className=" px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-orange-500 "
-            >"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-orange-500 ">"
               <option value="all>All Status</option>
               <option value=open>Open</option">
               <option value=mediation>Mediation</option>
@@ -430,14 +429,14 @@ const DisputeResolutionPage: NextPage = () => {'
             </div><div className="flex justify-between" items-center>
               <h2 className="text-2xl" font-bold text-white>Disputes</h2>
               <Link href=/marketplace" className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >File New Dispute
-              </Link href=/marketplace  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
             </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredDisputes.map((dispute) => (
                 </div><div key={dispute.id} className="bg-white/5  backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300>"
                   <div className="flex" justify-between items-start mb-4 > 
                     </div><div className="flex items-center" gap-2>
-                      <span className="text-2xl>{getTypeIcon(dispute.type)}</span" >
+                      <span className="text-2xl>{getTypeIcon(dispute.type)}</span">
                       <div>
                         <h3 className="text-lg" font-semibold text-white>{dispute.title}</h3>
                         <p className="text-gray-300" text-sm>{dispute.id}</p>
@@ -452,19 +451,19 @@ const DisputeResolutionPage: NextPage = () => {'
                       </span>
                     </div>
                   </div>
-                  <div className=" space-y-3 mb-4" >
+                  <div className="space-y-3 mb-4">
                     <p className="text-gray-300" text-sm line-clamp-2>{dispute.description}</p>
                     <div className="flex"" justify-between>
                       <span className="text-gray-300>Amount:</span>"
                       <span className="text-white" font-semibold >{formatCurrency(dispute.amount)}</span>
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Parties:</span" >
+                      <span className="text-gray-300>Parties:</span">
                       <span className="text-white" text-sm>{dispute.parties.complainant} vs {dispute.parties.respondent}</span>
                     </div>
                     <div className="flex  justify-between">
                       <span className="text-gray-300>Created" </span>
-                      <span className="text-white>{dispute.createdAt.toLocaleDateString()}</span" >
+                      <span className="text-white>{dispute.createdAt.toLocaleDateString()}</span">
                     </div>
                     {dispute.assignedMediator && ("
                       <div className=" flex" justify-between>
@@ -488,11 +487,11 @@ const DisputeResolutionPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'mediators' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Professional Mediators</h2>
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {mediators.map((mediator) => (
-                </div><div key={mediator.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+                </div><div key={mediator.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                   <div className="flex" justify-between items-start mb-4>
                     </div><div>
                       <h3 className="text-lg" font-semibold text-white>{mediator.name}</h3>
@@ -504,18 +503,18 @@ const DisputeResolutionPage: NextPage = () => {'
                     </span>
                   </div>
                   
-                  <div className="space-y-3" mb-4>
+                  <div className="space-y-3 mb-4">
                     </div><div className=" flex" justify-between>"
                       <span className="text-gray-300>Rating:</span>"
                       <span className="text-white>⭐" {mediator.rating}/5.0</span>
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Cases Resolved:</span>
-                      <span className="text-white>{mediator.casesResolved}</span" >
+                      <span className="text-white>{mediator.casesResolved}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Hourly" Rate </span>
-                      <span className="text-white>{formatCurrency(mediator.hourlyRate)}</span" >
+                      <span className="text-white>{formatCurrency(mediator.hourlyRate)}</span">
                     </div>
                     <div>
                       <span className="text-gray-300" text-sm>Specializations </span>
@@ -543,11 +542,11 @@ const DisputeResolutionPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'proposals' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Resolution Proposals</h2>
             <div className="space-y-6>" 
               {resolutionProposals.map((proposal) => (
-                </div><div key={proposal.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+                </div><div key={proposal.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                   <div className="flex" justify-between items-start mb-4>
                     </div><div>
                       <h3 className="text-lg" font-semibold text-white>Resolution Proposal</h3>
@@ -559,13 +558,13 @@ const DisputeResolutionPage: NextPage = () => {'
                     </span>
                   </div>
                   
-                  <div className="space-y-3" mb-4>
+                  <div className="space-y-3 mb-4">
                     </div><div className=" flex" justify-between>"
                       <span className="text-gray-300>Proposed" By:</span>
                       <span className="text-white>{proposal.proposedBy}</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Type:</span" >'
+                      <span className="text-gray-300>Type:</span">'
                       <span className="text-white" capitalize>{proposal.type.replace('_', ' ')}</span>
                     </div>
                     {proposal.amount && (
@@ -579,12 +578,12 @@ const DisputeResolutionPage: NextPage = () => {'
                       <p className="text-white" mt-1 >{proposal.description}</p>
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Created:</span" >
+                      <span className="text-gray-300>Created:</span">
                       <span className="text-white>{proposal.createdAt.toLocaleDateString()}</span"">
                     </div>
                   </div>
                   "
-                  <div className="space-y-3" >
+                  <div className="space-y-3">
                     <h4 className="text-white" font-semibold>Responses </h4>
                     {proposal.responses.map((response) => ("
                       <div key={response.id} className="bg-white/5" rounded p-3> 
@@ -688,7 +687,7 @@ const DisputeResolutionPage: NextPage = () => {'
             </p>
             <div className="flex  flex-wrap justify-center gap-4>
               <Link href=#disputes" className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started
-              </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -724,7 +723,7 @@ const DisputeResolutionPage: NextPage = () => {'
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -744,6 +743,6 @@ const DisputeResolutionPage: NextPage = () => {'
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default DisputeResolutionPage ))))))))))))))"'"'`

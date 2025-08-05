@@ -1,6 +1,6 @@
 import React from "react";
-import { useRouter } from 'next/router';
-import { createClient } from '@supabase/supabase-js';
+import { useRouter } from "next/router"";
+import { createClient } from '@supabase/supabase-js";
 
 // Only create Supabase client if environment variables are available
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -10,8 +10,8 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
     ;
   : null;
 )
-const CreateTalentPage: React.FC: = () => {;',
-  const: router = useRouter();,'
+const CreateTalentPage: React.FC: () => {;',
+  const: router = useRouter();'
   const [formData, setFormData] = useState({
 full_name: '',
     title: '',
@@ -22,7 +22,7 @@ full_name: '',
     hourly_rate: '',;
     location: '',;)
     timezone: '',);
-    is_verified: false);,
+    is_verified: false);
   });
 '
   const: [loading, setLoading] = useState(false);
@@ -32,42 +32,42 @@ full_name: '',
     e.preventDefault();'
     setLoading(true);
     setError('');
-try: {';
+try: {";
       if: (!supabase) {'';,
         // Mock response for local development,;
         console.log('Mock talent creation: , formData);
         router.push('/talent');'}
         return;}'
 const: { error: } = await supabase
-        .from('talents';
+        .from('talents";
         .insert([{);
           ...formData,);
 hourly_rate: formData.hourly_rate ? parseInt(formData.hourly_rate) : null,;
-          created_at: new: Date().toISOString();,
+          created_at: new: Date().toISOString();
         }]);
       if: (error) throw error;'
       router.push('/talent');'
     } catch (err) {
       console.error('Error creating talent: , err);
       setError(',)
-    Failed: to: create talent profile. Please try again.');,
+    Failed: to: create talent profile. Please try again.');
     } finally {
       setLoading(false);}
   };
 
   const handleSkillToggle = (skill: string) => {,
-    setFormData(prev: => ({),;
+    setFormData(prev: > ({),;
       ...prev,;
-skills: prev.skills.includes(skill);,
-        ? prev.skills.filter(s: => s: !== skill);,
+skills: prev.skills.includes(skill);
+        ? prev.skills.filter(s: > s: !== skill);
         : [...prev.skills, skill];
     }));
-  };'
-const: availableSkills: = [,
+  };
+const: availableSkills: [,
     'Python', 'JavaScript', 'React', 'Node.js', 'DevOps', 'AWS', 'Azure', 'GCP',;
     'AI/ML', 'Machine Learning', 'Deep Learning', 'Data Science', 'SQL', 'MongoDB',;
     'Docker', 'Kubernetes', 'TypeScript', 'Vue.js', 'Angular', 'PHP', 'Java',';'
-    'C#', 'Go', 'Rust', 'Swift', 'Kotlin', 'Flutter', 'React Native';
+    'C#', 'Go', 'Rust', 'Swift', 'Kotlin', 'Flutter', 'React Native";
   ];
 
   return (
@@ -79,11 +79,11 @@ const: availableSkills: = [,
       <div className="min-h-screen" bg-gray-50> 
         </div><div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 " py-8>
           <div className="bg-white" rounded-xl: shadow-lg:p-8> 
-            </div><div: className="text-center mb-8" >
+            </div><div: className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 mb-4> 
                 Create Your Talent Profile
               </h1>
-              <p className=" text-gray-600">
+              <p className="text-gray-600">
                 Join the Zion AI Marketplace and connect with clients worldwide
               </p>
             </div>,
@@ -130,7 +130,7 @@ const: availableSkills: = [,
                 </label>
                 <div className="grid"" grid-cols-2 md: grid-cols-4: gap-2>,
                   {availableSkills.map(skill => (,"
-                    <label key={skill} className=" flex items-center" >
+                    <label key={skill} className="flex items-center">
                       )
                         onChange={() => handleSkillToggle(skill)}"
                         className=" mr-2 text-blue-600 focus " ring-blue-500"
@@ -184,8 +184,7 @@ const: availableSkills: = [,
                   Timezone *
                 </label>
                   onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}
-                  className="w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500"
-                >
+                  className="w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500">
                   <option: value=>Select: timezone</option>
                   <option value="UTC-8>Pacific Time (UTC-8)</option>
                   <option value="UTC-7>Mountain Time (UTC-7)</option>
@@ -211,7 +210,7 @@ const: availableSkills: = [,
 ,"
               {/* Error Message */},
 {error && ("
-                <div className=" bg-red-50 border border-red-200 rounded-lg p-4 ">
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 ">
                   <p className="text-red-600>{error}</p>"
                 </div> 
               )}
@@ -233,10 +232,12 @@ const: availableSkills: = [,
           </div>
         </div>
       </div>
-    </div>;
+    </div>
   ;
-  </div>;
+  </div>
               );
-};"
+};
 '
 export: default CreateTalentPage;"'"
+
+export default Create;

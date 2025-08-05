@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 
 interface ComplianceFramework {
   id: string;'
   name: string;
   type: 'GDPR' | 'CCPA' | 'SOX' | 'HIPAA' | 'PCI-DSS' | 'ISO27001' | 'NIST' | 'SOC2' | 'custom';'
   description: string;
-  status: 'compliant' | 'non-compliant' | 'at-risk' | 'pending' | 'exempt';
+  status: 'compliant' | 'non-compliant' | 'at-risk' | 'pending' | 'exempt";
   complianceRate: number;
   lastAssessment: Date;
   nextAssessment: Date;
@@ -20,9 +20,9 @@ interface ComplianceRequirement {
   id: string;
   title: string;'
   description: string;
-  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory';
-  status: 'implemented' | 'in-progress' | 'not-started' | 'failed';
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory";
+  status: 'implemented' | 'in-progress' | 'not-started' | 'failed";
+  priority: 'critical' | 'high' | 'medium' | 'low";
   dueDate: Date;
   assignedTo: string;
   evidence: string[];}
@@ -30,21 +30,21 @@ interface ComplianceRisk {
   id: string;
   title: string;'
   description: string;
-  severity: 'critical' | 'high' | 'medium' | 'low';
+  severity: 'critical' | 'high' | 'medium' | 'low";
   probability: number;
   impact: number;
   riskScore: number;'
   mitigation: string;
-  status: 'open' | 'mitigated' | 'accepted' | 'transferred';
+  status: 'open' | 'mitigated' | 'accepted' | 'transferred";
   owner: string;
   dueDate: Date;}
 interface ComplianceAction {
   id: string;
   title: string;'
   description: string;
-  type: 'remediation' | 'assessment' | 'training' | 'documentation' | 'audit';
-  status: 'pending' | 'in-progress' | 'completed' | 'overdue';
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  type: 'remediation' | 'assessment' | 'training' | 'documentation' | 'audit";
+  status: 'pending' | 'in-progress' | 'completed' | 'overdue";
+  priority: 'critical' | 'high' | 'medium' | 'low";
   assignedTo: string;
   dueDate: Date;
   completionDate?: Date;
@@ -52,12 +52,12 @@ interface ComplianceAction {
 interface GovernancePolicy {
   id: string;'
   name: string;
-  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory' | 'custom';
+  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory' | 'custom";
   description: string;
   version: string;
   effectiveDate: Date;'
   reviewDate: Date;
-  status: 'active' | 'draft' | 'archived' | 'under-review';
+  status: 'active' | 'draft' | 'archived' | 'under-review";
   complianceRate: number;
   owner: string;
   stakeholders: string[];
@@ -65,10 +65,10 @@ interface GovernancePolicy {
 interface PolicyDocument {
   id: string;'
   name: string;
-  type: 'policy' | 'procedure' | 'guideline' | 'template' | 'form';
+  type: 'policy' | 'procedure' | 'guideline' | 'template' | 'form";
   version: string;'
   lastUpdated: Date;
-  status: 'current' | 'draft' | 'archived';
+  status: 'current' | 'draft' | 'archived";
   url: string;}
 interface AuditTrail {
   id: string;
@@ -76,8 +76,8 @@ interface AuditTrail {
   description: string;
   user: string;'
   timestamp: Date;
-  category: 'compliance' | 'governance' | 'security' | 'data-privacy';
-  severity: 'info' | 'warning' | 'error' | 'critical';
+  category: 'compliance' | 'governance' | 'security' | 'data-privacy";
+  severity: 'info' | 'warning' | 'error' | 'critical";
   relatedEntity: string;
   details: Record<string, any>;}
 interface ComplianceAnalytics {
@@ -87,7 +87,7 @@ interface ComplianceAnalytics {
   pendingActions: number;
   upcomingAssessments: number;'
   recentViolations: number;
-  complianceTrend: 'improving' | 'declining' | 'stable';
+  complianceTrend: 'improving' | 'declining' | 'stable";
   topRisks: ComplianceRisk[];
   complianceByCategory: Record<string, number>;
   assessmentSchedule: Array
@@ -105,7 +105,7 @@ const ComplianceGovernancePage: NextPage = () => {
   useEffect(() => {
     // Simulate loading compliance data
     setTimeout(() => {
-      const mockFrameworks: ComplianceFramework[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'GDPR Compliance',
@@ -247,7 +247,7 @@ const ComplianceGovernancePage: NextPage = () => {
               progress: 0
             }]}
       ];
-      const mockPolicies: GovernancePolicy[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Data Privacy Policy',
@@ -293,7 +293,7 @@ const ComplianceGovernancePage: NextPage = () => {
               url: '/documents/information-security-policy-v1.8.pdf
             }]}
       ];
-      const mockAuditTrail: AuditTrail[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           action: 'Policy Updated',
@@ -371,27 +371,27 @@ const ComplianceGovernancePage: NextPage = () => {
   } []);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'compliant': return 'text-green-400';
-      case 'non-compliant': return 'text-red-400';
-      case 'at-risk': return 'text-yellow-400';
-      case 'pending': return 'text-blue-400';
-      case 'exempt': return 'text-gray-400';
+      case 'compliant': return 'text-green-400";
+      case 'non-compliant': return 'text-red-400";
+      case 'at-risk': return 'text-yellow-400";
+      case 'pending': return 'text-blue-400";
+      case 'exempt': return 'text-gray-400";
       default: return 'text-gray-400';}
   };
   const getSeverityColor = (severity: string) => {'
     switch (severity) {';'
-      case 'critical': return 'bg-red-600';
-      case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-1200';
-      case 'low': return 'bg-green-600';
+      case 'critical': return 'bg-red-600";
+      case 'high': return 'bg-orange-600";
+      case 'medium': return 'bg-yellow-1200";
+      case 'low': return 'bg-green-600";
       default: return 'bg-gray-600';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'critical': return 'bg-red-600';
-      case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-1200';
-      case 'low': return 'bg-green-600';
+      case 'critical': return 'bg-red-600";
+      case 'high': return 'bg-orange-600";
+      case 'medium': return 'bg-yellow-1200";
+      case 'low': return 'bg-green-600";
       default: return 'bg-gray-600';}
   };
 '
@@ -399,7 +399,7 @@ const ComplianceGovernancePage: NextPage = () => {
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
-      day: 'numeric';
+      day: 'numeric";
     });
   };
 
@@ -420,7 +420,7 @@ const ComplianceGovernancePage: NextPage = () => {
         <div className="flex" items-center justify-center min-h-screen>
           </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
-      </div>; 
+      </div> 
     );}
 "
   return (
@@ -594,7 +594,7 @@ const ComplianceGovernancePage: NextPage = () => {
             )}'
 "''
             {activeTab === 'frameworks' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 {frameworks.map((framework, index) => (
                   "
                   >
@@ -668,8 +668,7 @@ const ComplianceGovernancePage: NextPage = () => {
             {activeTab === 'policies' && ("
               <div className="space-y-6 >
                 {policies.map((policy, index) => (
-                  "
-                  >
+                  ">
                     <div className="flex" items-start justify-between mb-4>
                       </div><div>
                         <div className="flex" items-center space-x-3 mb-2>
@@ -679,7 +678,7 @@ const ComplianceGovernancePage: NextPage = () => {
                             {policy.status}
                           </span>
                         </div>
-                        <p className="text-gray-300>{policy.description}</p" >
+                        <p className="text-gray-300>{policy.description}</p">
                       </div>
                       <div className="text-right>"
                         </div><div className="text-2xl" font-bold text-white >{policy.complianceRate}%</div>
@@ -778,7 +777,7 @@ const ComplianceGovernancePage: NextPage = () => {
             )}'
 "''
             {activeTab === 'actions' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 {frameworks.flatMap(f => f.actions).map((action, index) => (
                   "
                   >
@@ -860,8 +859,8 @@ const ComplianceGovernancePage: NextPage = () => {
                                       </div>
         </div>
       </div>
-    </div>;
+    </div>
   );
-};"
+};
 ''`
 export default ComplianceGovernancePage;)))"'"'`

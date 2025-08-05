@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react";
 
 interface EnhancedContrastDemoProps {
   className?: string;}'
@@ -48,19 +48,19 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
           <div className=" grid grid-cols-1 md grid-cols-2" gap-6">
             <div className=" bg-high-contrast-card border-high-contrast-primary rounded-lg" p-6">
               <h3 className=" text-high-contrast text-lg font-semibold mb-4>Primary Text</h3>
-              <p className=" text-high-contrast">
+              <p className="text-high-contrast">
                 This is primary text with enhanced contrast and text shadow for better visibility.
               </p>
             </div>
             <div className=" bg-high-contrast-card border-high-contrast-primary rounded-lg" p-6">
               <h3 className=" text-high-contrast-secondary text-lg font-semibold mb-4>Secondary Text</h3>
-              <p className=" text-high-contrast-secondary">
+              <p className="text-high-contrast-secondary">
                 This is secondary text with improved contrast ratios for accessibility.
               </p>
             </div>
             <div className=" bg-high-contrast-card border-high-contrast-primary rounded-lg" p-6">
               <h3 className=" text-high-contrast-accent text-lg font-semibold mb-4>Accent Text</h3>
-              <p className=" text-high-contrast-accent">
+              <p className="text-high-contrast-accent">
                 This is accent text with neon glow effects and enhanced visibility.
               </p>
             </div>
@@ -100,7 +100,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
                 <span className="status-indicator" active></span>
                 <span className="text-high-contrast-success" font-semibold>Active</span>
               </div>
-              <p className=" text-high-contrast-secondary text-sm">
+              <p className="text-high-contrast-secondary text-sm">
                 System is running normally
               </p>
             </div>
@@ -109,7 +109,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
                 <span className="status-indicator" warning></span>
                 <span className="text-high-contrast-warning" font-semibold>Warning</span>
               </div>
-              <p className=" text-high-contrast-secondary text-sm">
+              <p className="text-high-contrast-secondary text-sm">
                 Attention required
               </p>
             </div>
@@ -118,7 +118,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
                 <span className="status-indicator" error></span>
                 <span className="text-high-contrast-error" font-semibold>Error</span>
               </div>
-              <p className=" text-high-contrast-secondary text-sm">
+              <p className="text-high-contrast-secondary text-sm">
                 System error detected
               </p>
             </div>
@@ -174,22 +174,22 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
         {/* Alert Messages Demo */}"
         <section className=" alert-messages-demo" mb-8">
           <h2 className=" text-high-contrast text-2xl font-bold mb-6>Enhanced Alert Messages</h2>
-          <div className=" space-y-4">
+          <div className="space-y-4">
             <div className=" alert alert-success border-high-contrast-success rounded-lg" p-4">
               <h4 className=" text-high-contrast-success font-semibold mb-2>Success Alert</h4>
-              <p className=" text-high-contrast-secondary">
+              <p className="text-high-contrast-secondary">
                 This is a success message with enhanced contrast and proper styling.
               </p>
             </div>
             <div className=" alert alert-warning border-high-contrast-warning rounded-lg" p-4">
               <h4 className=" text-high-contrast-warning font-semibold mb-2>Warning Alert</h4>
-              <p className=" text-high-contrast-secondary">
+              <p className="text-high-contrast-secondary">
                 This is a warning message with improved visibility and contrast.
               </p>
             </div>
             <div className=" alert alert-error border-high-contrast-error rounded-lg" p-4">
               <h4 className=" text-high-contrast-error font-semibold mb-2>Error Alert</h4>
-              <p className=" text-high-contrast-secondary">
+              <p className="text-high-contrast-secondary">
                 This is an error message with enhanced contrast for better readability.
               </p>
             </div>
@@ -205,7 +205,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
         {/* Progress Indicators Demo */}"
         <section className=" progress-indicators-demo" mb-8">
           <h2 className=" text-high-contrast text-2xl font-bold mb-6>Progress Indicators</h2>
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <div className=" bg-high-contrast-card border-high-contrast-primary rounded-lg" p-6">
               <div className=" flex justify-between items-center" mb-2">
                 <span className=" text-high-contrast font-semibold>Loading Progress</span>
@@ -260,6 +260,6 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
         </section>
       </div>
     </div >;  );"
-};"
+};
 ''`
 export default EnhancedContrastDemo;"'"'`

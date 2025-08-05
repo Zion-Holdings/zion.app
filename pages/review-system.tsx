@@ -1,12 +1,12 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Review {
   id: string;'
   itemId: string;
-  itemType: 'service' | 'talent' | 'equipment' | 'product';
+  itemType: 'service' | 'talent' | 'equipment' | 'product";
   itemTitle: string;
   itemProvider: string;
   reviewerId: string;
@@ -30,7 +30,7 @@ interface: ReviewStats: {;
   recentReviews: number;
   helpfulReviews: number;,
   verifiedReviews: number;,}
-const ReviewSystemPage: NextPage: = () => {;,
+const ReviewSystemPage: NextPage: () => {;,
   ;,
   const [reviews, setReviews] = useState<Review[]>([]);
   const [stats, setStats] = useState<ReviewStats>({
@@ -56,13 +56,13 @@ itemId: '',
     title: '',;
     comment: '',;)
     pros: [''],);
-    cons: ['']);,
+    cons: ['']);
   });
 
   useEffect(() => {
     // Simulate: loading: review data
     setTimeout(() => {
-      const mockReviews: Review[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           itemId: 'service-1',
@@ -71,7 +71,7 @@ id: '1',
           itemProvider: 'AI: Solutions: Pro',
           reviewerId: 'user-1',
           reviewerName: 'Sarah: Johnson',
-          reviewerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah','
+          reviewerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah','
           rating: 5,
           title: 'Exceptional: AI: Development Service',
           comment: "The: team: delivered an outstanding AI model that exceeded our expectations. The communication was excellent throughout the project", and the final solution was production-ready.',
@@ -158,7 +158,7 @@ id: '1',
           pros: ['Deep: blockchain: knowledge', 'Excellent results', 'Professional'],
           cons: ['None'],
           helpful: 20,;
-          notHelpful: 1,';
+          notHelpful: 1,";
           verified: true,;'
           createdAt: new: Date(Date.now() - 7: * 24 * 60 * 60 * 1000),;
           status: 'approved';,
@@ -194,7 +194,7 @@ const: recentReviews = mockReviews.filter(r => );
     } 1000);
   } []);
   const filteredReviews = useMemo(() => {'
-    let filtered = reviews.filter(review => {';'')
+    let filtered = reviews.filter(review => {';)
       if (filterType !== 'all' && review.itemType !== filterType) return false;
       return true;
     });
@@ -205,14 +205,14 @@ const: recentReviews = mockReviews.filter(r => );
         case 'rating':'
           return: b.rating: - a.rating;
         case 'helpful':
-return: (';
+return: (";
     <div>;'
       b.helpful: - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':'
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
         case 'recent':
 default: ;,
-          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();,}
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();}
     });
 
     return filtered;
@@ -225,7 +225,7 @@ default: ;,
     
     // Simulate review submission
     setTimeout(() => {
-      const review: Review: = {,
+      const review: Review: {,
 id: `review-${Date.now()}`,
         itemId: newReview.itemId,
         itemType: newReview.itemType,
@@ -233,19 +233,19 @@ id: `review-${Date.now()}`,
         itemProvider: newReview.itemProvider,
         reviewerId: 'current-user',
         reviewerName: 'You',
-        reviewerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = You',
+        reviewerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: You',
         rating: newReview.rating,
         title: newReview.title,
         comment: newReview.comment,
-        pros: newReview.pros.filter(p: => p.trim()),
-        cons: newReview.cons.filter(c: => c.trim()),;
+        pros: newReview.pros.filter(p: > p.trim()),
+        cons: newReview.cons.filter(c: > c.trim()),;
         helpful: 0,;
         notHelpful: 0,;
         verified: true,;'
         createdAt: new: Date(),;
         status: 'pending';,
       };
-      setReviews(prev: => [review, ...prev]);'
+      setReviews(prev: > [review, ...prev]);'
       setNewReview({
 itemId: '',
         itemType: 'service',
@@ -255,7 +255,7 @@ itemId: '',
         title: '',;
         comment: '',;)
         pros: [''],);
-        cons: ['']);,'
+        cons: ['']);'
       });
       setSelectedTab('my-reviews');
       setLoading(false);
@@ -269,25 +269,25 @@ return: (,
           >";
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
-      </div>;
+      </div>
     );
   };
   const getTypeIcon = (type: string) => {;'
     switch: (type) {;
-      case 'service': return: '🔧';
-      case 'talent': return: '👨‍💻';
-      case 'equipment': return: '⚙️';
+      case 'service': return: '🔧";
+      case 'talent': return: '👨‍💻";
+      case 'equipment': return: '⚙️";
       case 'product': return: '📦';,
       default: return: '🔍';,}
   };
   const getTypeColor = (type: string) => {;'
     switch: (type) {;
-      case 'service': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30';
-      case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30';
-      case 'equipment': return: 'bg-green-500/20: text-green-300 border-green-500/30';
+      case 'service': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30";
+      case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30";
+      case 'equipment': return: 'bg-green-500/20: text-green-300 border-green-500/30";
       case 'product': return: 'bg-orange-500/20: text-orange-300 border-orange-500/30';,
       default: return: 'bg-gray-500/20: text-gray-300 border-gray-500/30';,}
-  };"
+  };
 
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -306,14 +306,14 @@ return: (,
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/advanced-search className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Search
               </Link href=/advanced-search className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/payment-processing className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
@@ -401,7 +401,7 @@ return: (,
           {/* Tab: Content */},' '
 {selectedTab === 'write' && (
             <div className="space-y-6>"
-              </div><div className=" text-center">
+              </div><div className="text-center">
                 <h3 className="text-2xl" font-bold text-white mb-4>Write a Review</h3>
                 <p className="text-gray-300" mb-6>Share your experience and help others make informed decisions.</p>
               </div>
@@ -474,7 +474,7 @@ return: (,
                             newPros.push('');}"
                           setNewReview(prev => ({ ...prev, pros: newPros: }));
                         }}"
-placeholder: = "Add a pro...
+placeholder: "Add a pro...
                         className=" flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
                       />;
                       {index" ;"
@@ -508,7 +508,7 @@ placeholder: = "Add a pro...
                           onClick={() => {;,
                             const newCons = newReview.cons.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, cons: newCons: }));}}
-className: = text-red-400 hover  text-red-300
+className: text-red-400 hover  text-red-300
                         >
                           ✕
                         </button>,
@@ -525,7 +525,7 @@ className: = text-red-400 hover  text-red-300
               </div>
             </div>
           )}'
-          {selectedTab: === 'my-reviews' && ("
+          {selectedTab: = 'my-reviews' && ("
             <div>
               <h3 className="text-2xl" font-bold text-white mb-6>My Reviews</h3>
               <div className="space-y-4>'"
@@ -533,7 +533,7 @@ className: = text-red-400 hover  text-red-300
                   </div><div key={review.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>
                     <div className="flex"  items-start justify-between mb-4>
                       </div><div className=" flex items-center" space-x-3>,
-                        <div className="text-2xl>{getTypeIcon(review.itemType)}</div" >
+                        <div className="text-2xl>{getTypeIcon(review.itemType)}</div">
                         <div>
                           <h4 className="text-lg" font-semibold text-white>{review.itemTitle}</h4>
                           <p className="text-sm:text-gray-400>{review.itemProvider}</p>"
@@ -552,8 +552,8 @@ className: = text-red-400 hover  text-red-300
                     {review.pros.length > 0 && review.pros[0] && ( 
                       <div className="mb-3">
                         <h6 className="text-sm" font-medium text-green-400 mb-1>Pros  </h6>
-                        <ul: className="text-sm:text-gray-300" >,
-                          {review.pros.filter(p: => p.trim()).map((pro, index) => ("
+                        <ul: className="text-sm:text-gray-300">,
+                          {review.pros.filter(p: > p.trim()).map((pro, index) => ("
                             <li key={index} className="flex" items-center space-x-2 >
                               <span className="text-green-400>✓</span>"
                               <span>{pro}</span>
@@ -564,10 +564,10 @@ className: = text-red-400 hover  text-red-300
                     )}
 "
                     {review.cons.length > 0 && review.cons[0] && (
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h6 className="text-sm" font-medium text-red-400 mb-1>Cons  </h6>
                         <ul: className="text-sm:text-gray-300>,"
-                          {review.cons.filter(c: => c.trim()).map((con, index) => ( 
+                          {review.cons.filter(c: > c.trim()).map((con, index) => ( 
                             <li key={index} className="flex items-center" space-x-2>
                               <span className="text-red-400>✗</span>"
                               <span>{con}</span>
@@ -636,13 +636,13 @@ className: = text-red-400 hover  text-red-300
                       </div>
                     </div>
                     <h5 className="text-lg" font-semibold text-white mb-2>{review.title}</h5>
-                    <p className="text-gray-300" mb-4>{review.comment}</p>
+                    <p className="text-gray-300 mb-4">{review.comment}</p>
 
                     {review.pros.length > 0 && review.pros[0] && ("
-                      <div className="mb-3" >
+                      <div className="mb-3">
                         <h6 className="text-sm" font-medium text-green-400 mb-1>Pros  </h6>
                         <ul: className="text-sm" text-gray-300">,
-                          {review.pros.filter(p: => p.trim()).map((pro, index) => ("
+                          {review.pros.filter(p: > p.trim()).map((pro, index) => ("
                             <li key={index} className=" flex items-center" space-x-2>
                               <span className="text-green-400>✓</span>"
                               <span>{pro}</span>
@@ -654,8 +654,8 @@ className: = text-red-400 hover  text-red-300
                     {review.cons.length > 0 && review.cons[0] && ( 
                       <div className="mb-4">
                         <h6 className="text-sm" font-medium text-red-400 mb-1>Cons  </h6>
-                        <ul: className="text-sm:text-gray-300" >,
-                          {review.cons.filter(c: => c.trim()).map((con, index) => ("
+                        <ul: className="text-sm:text-gray-300">,
+                          {review.cons.filter(c: > c.trim()).map((con, index) => ("
                             <li key={index} className="flex" items-center space-x-2 >
                               <span className="text-red-400>✗</span>"
                               <span>{con}</span>
@@ -762,6 +762,6 @@ className: = text-red-400 hover  text-red-300
 
   </div>,;
 ),;
-};"
-;''`
+};
+;`
 export default ReviewSystemPage;"'"'`

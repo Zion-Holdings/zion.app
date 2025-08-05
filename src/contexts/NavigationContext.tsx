@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react
-import { useRouter } from 'next/router
+import { useRouter } from "next/router"
 interface NavigationState {
   isSearchOpen: boolean
   isMobileMenuOpen: boolean
@@ -144,4 +144,6 @@ export const useNavigation = (): NavigationContextType => {
   if (context === undefined) {
     throw new Error('useNavigation must be used within a NavigationProvider')}
   return context'
-} ';
+} ";
+
+export default NavigationContext;

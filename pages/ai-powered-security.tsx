@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 interface SecurityThreat {'
   id: string;
-  type: 'malware' | 'phishing' | 'ddos' | 'brute-force' | 'sql-injection' | 'xss' | 'data-breach' | 'insider-threat';
-  severity: 'low' | 'medium' | 'high' | 'critical';
+  type: 'malware' | 'phishing' | 'ddos' | 'brute-force' | 'sql-injection' | 'xss' | 'data-breach' | 'insider-threat";
+  severity: 'low' | 'medium' | 'high' | 'critical";
   source: string;
   target: string;
   description: string;'
   detectedAt: Date;
-  status: 'active' | 'contained' | 'resolved' | 'investigating';
+  status: 'active' | 'contained' | 'resolved' | 'investigating";
   aiConfidence: number;
   automatedResponse: boolean;
   impact: {
@@ -21,7 +21,7 @@ interface SecurityThreat {'
   };}
 interface SecurityEvent {'
   id: string;
-  type: 'login-attempt' | 'data-access' | 'system-change' | 'network-traffic' | 'file-access' | 'api-call';
+  type: 'login-attempt' | 'data-access' | 'system-change' | 'network-traffic' | 'file-access' | 'api-call";
   user: string;
   ipAddress: string;
   location: string;
@@ -29,7 +29,7 @@ interface SecurityEvent {'
   riskScore: number;
   aiAnalysis: {'
     suspicious: boolean;
-    threatLevel: 'low' | 'medium' | 'high' | 'critical';
+    threatLevel: 'low' | 'medium' | 'high' | 'critical";
     confidence: number;
     recommendations: string[];'
   };
@@ -39,7 +39,7 @@ interface SecurityPolicy {
   name: string;
   type: 'authentication' | 'authorization' | 'data-protection' | 'network-security' | 'compliance';'
   description: string;
-  status: 'active' | 'inactive' | 'draft';
+  status: 'active' | 'inactive' | 'draft";
   aiEnabled: boolean;
   rules: {
     id: string;
@@ -55,7 +55,7 @@ interface SecurityAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredSecurityPage: NextPage = () => {
   ;
@@ -73,7 +73,7 @@ const AIPoweredSecurityPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered security data
     setTimeout(() => {
-      const mockThreats: SecurityThreat[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'phishing',
@@ -155,7 +155,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             systemDowntime: 30,
             financialLoss: 15000}}
       ];
-      const mockEvents: SecurityEvent[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'login-attempt',
@@ -232,7 +232,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           }
           action: 'allowed'}
       ];
-      const mockPolicies: SecurityPolicy[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Multi-Factor Authentication',
@@ -322,7 +322,7 @@ const AIPoweredSecurityPage: NextPage = () => {
           lastUpdated: new Date('2024-01-08'),
           compliance: ['SOC2', 'ISO27001']}
       ];
-      const mockAnalytics: SecurityAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Threat Detection Rate',
@@ -405,7 +405,7 @@ const AIPoweredSecurityPage: NextPage = () => {
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'severity':
-          const severityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };'
+          const severityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
           return severityOrder[b.severity] - severityOrder[a.severity];
         case 'confidence':'
           return b.aiConfidence - a.aiConfidence;
@@ -420,53 +420,53 @@ const AIPoweredSecurityPage: NextPage = () => {
   } [threats, filterSeverity, filterStatus, searchTerm, sortBy]);
   const getSeverityColor = (severity: string) => {'
     switch (severity) {';'
-      case 'critical': return 'text-red-400 bg-red-500/20';
-      case 'high': return 'text-orange-400 bg-orange-500/20';
-      case 'medium': return 'text-yellow-400 bg-yellow-500/20';
-      case 'low': return 'text-green-400 bg-green-500/20';
+      case 'critical': return 'text-red-400 bg-red-500/20";
+      case 'high': return 'text-orange-400 bg-orange-500/20";
+      case 'medium': return 'text-yellow-400 bg-yellow-500/20";
+      case 'low': return 'text-green-400 bg-green-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-red-400 bg-red-500/20';
-      case 'contained': return 'text-yellow-400 bg-yellow-500/20';
-      case 'resolved': return 'text-green-400 bg-green-500/20';
-      case 'investigating': return 'text-blue-400 bg-blue-500/20';
+      case 'active': return 'text-red-400 bg-red-500/20";
+      case 'contained': return 'text-yellow-400 bg-yellow-500/20";
+      case 'resolved': return 'text-green-400 bg-green-500/20";
+      case 'investigating': return 'text-blue-400 bg-blue-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getThreatIcon = (type: string) => {'
     switch (type) {';'
-      case 'malware': return '🦠';
-      case 'phishing': return '🎣';
-      case 'ddos': return '🌊';
-      case 'brute-force': return '🔨';
-      case 'sql-injection': return '💉';
-      case 'xss': return '🕷️';
-      case 'data-breach': return '💥';
-      case 'insider-threat': return '👤';
+      case 'malware': return '🦠";
+      case 'phishing': return '🎣";
+      case 'ddos': return '🌊";
+      case 'brute-force': return '🔨";
+      case 'sql-injection': return '💉";
+      case 'xss': return '🕷️";
+      case 'data-breach': return '💥";
+      case 'insider-threat': return '👤";
       default: return '⚠️';}
   };
   const getActionColor = (action: string) => {'
     switch (action) {';'
-      case 'blocked': return 'text-red-400';
-      case 'allowed': return 'text-green-400';
-      case 'flagged': return 'text-yellow-400';
-      case 'investigated': return 'text-blue-400';
+      case 'blocked': return 'text-red-400";
+      case 'allowed': return 'text-green-400";
+      case 'flagged': return 'text-yellow-400";
+      case 'investigated': return 'text-blue-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
   const getRiskScoreColor = (score: number) => {';'
-    if (score >= 80) return 'text-red-400';
-    if (score >= 60) return 'text-orange-400';
-    if (score >= 40) return 'text-yellow-400';
-    return 'text-green-400';
+    if (score >= 80) return 'text-red-400";
+    if (score >= 60) return 'text-orange-400";
+    if (score >= 40) return 'text-yellow-400";
+    return 'text-green-400";
   };
 
   if (loading) {
@@ -488,7 +488,7 @@ const AIPoweredSecurityPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Security...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -502,14 +502,14 @@ const AIPoweredSecurityPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-content-management" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content
-              </Link href= /ai-powered-content-management" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-content-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-mobile-responsive className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
               </Link href=/ai-powered-mobile-responsive className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -708,7 +708,7 @@ const AIPoweredSecurityPage: NextPage = () => {
                   </div><div>
                     <p className="text-sm:text-gray-400" mb-2>AI Analysis </p>
                     <div className="space-y-2>" 
-                      </div><div className="flex items-center justify-between" >
+                      </div><div className="flex items-center justify-between">
                         <span className="text-sm:text-gray-300>Suspicious" </span>'
                         <span className="{event.aiAnalysis.suspicious" ? 'text-red-400' : 'text-green-400'}>
                           {event.aiAnalysis.suspicious ? 'Yes'   'No'}
@@ -731,7 +731,7 @@ const AIPoweredSecurityPage: NextPage = () => {
                     <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getActionColor(event.action)} bg-opacity-20`}>
                       {event.action.toUpperCase()}
                     </span>
-                    <div className="mt-4" >
+                    <div className="mt-4">
                       <p className="text-sm" text-gray-400 mb-2 >Recommendations:</p>
                       <ul className="space-y-1">
                         {event.aiAnalysis.recommendations.map((rec, index) => (
@@ -775,12 +775,12 @@ const AIPoweredSecurityPage: NextPage = () => {
                     </span>
                   </div>
                   <div className="flex items-center justify-between" text-sm>
-                    <span className="text-gray-400>Rules:</span" >
+                    <span className="text-gray-400>Rules:</span">
                     <span className="text-white>{policy.rules.length}</span"">
                   </div>
                 </div>
 "
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Compliance </p>
                   <div className="flex flex-wrap" gap-2>
                     {policy.compliance.map((comp, index) => (
@@ -790,7 +790,7 @@ const AIPoweredSecurityPage: NextPage = () => {
                     ))}
                   </div>
                 </div>
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Rules </p>
                   <div className="space-y-2>
                     {policy.rules.map((rule) => (
@@ -844,6 +844,6 @@ const AIPoweredSecurityPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredSecurityPage ")"'"'`

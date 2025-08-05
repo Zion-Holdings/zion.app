@@ -1,12 +1,12 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next";
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 interface SearchResult {'
   id: string;
-  type: 'service' | 'talent' | 'equipment' | 'product';
+  type: 'service' | 'talent' | 'equipment' | 'product";
   title: string;
   description: string;
   category: string;
@@ -56,19 +56,19 @@ const AdvancedSearchPage: NextPage = () => {'
 '
   const locations = [
     'San Francisco, CA', 'New York, NY', 'Austin, TX', 'Seattle, WA', 'Boston, MA', 'Chicago, IL',
-    'Los Angeles, CA', 'Denver, CO', 'Atlanta, GA', 'Miami, FL', 'Remote', 'Worldwide';
+    'Los Angeles, CA', 'Denver, CO', 'Atlanta, GA', 'Miami, FL', 'Remote', 'Worldwide";
   ];
 '
   const tags = [
     'AI', 'Machine Learning', 'Deep Learning', 'Cloud Computing', 'Cybersecurity', 'Data Science',
     'Blockchain', 'IoT', 'Quantum Computing', 'DevOps', 'Microservices', 'Serverless',
-    'Big Data', 'Analytics', 'Automation', 'Digital Transformation', 'Edge Computing', '5G';
+    'Big Data', 'Analytics', 'Automation', 'Digital Transformation', 'Edge Computing', '5G";
   ];
 
   useEffect(() => {
     // Simulate loading search results
     setTimeout(() => {
-      const mockResults: SearchResult[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'service',
@@ -266,18 +266,18 @@ const AdvancedSearchPage: NextPage = () => {'
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'service': return '🔧';
-      case 'talent': return '👨‍💻';
-      case 'equipment': return '⚙️';
-      case 'product': return '📦';
+      case 'service': return '🔧";
+      case 'talent': return '👨‍💻";
+      case 'equipment': return '⚙️";
+      case 'product': return '📦";
       default: return '🔍';}
   };
   const getTypeColor = (type: string) => {'
     switch (type) {';'
-      case 'service': return 'bg-blue-500/20 text-blue-300 border-blue-500/30';
-      case 'talent': return 'bg-purple-500/20 text-purple-300 border-purple-500/30';
-      case 'equipment': return 'bg-green-500/20 text-green-300 border-green-500/30';
-      case 'product': return 'bg-orange-500/20 text-orange-300 border-orange-500/30';
+      case 'service': return 'bg-blue-500/20 text-blue-300 border-blue-500/30";
+      case 'talent': return 'bg-purple-500/20 text-purple-300 border-purple-500/30";
+      case 'equipment': return 'bg-green-500/20 text-green-300 border-green-500/30";
+      case 'product': return 'bg-orange-500/20 text-orange-300 border-orange-500/30";
       default: return 'bg-gray-500/20 text-gray-300 border-gray-500/30';}
   };
 
@@ -298,16 +298,16 @@ const AdvancedSearchPage: NextPage = () => {'
         <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
           <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
             </div><div className="flex  justify-between h-16>
-              <div className="flex items-center" >
-                <Link href="/" className="flex-shrink-0" > 
+              <div className="flex items-center">
+                <Link href="/" className="flex-shrink-0"> 
                   </Link href="/" className=" flex-shrink-0 ><h1" className=" text-2xl font-bold" text-white>
                     <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                   </h1>
                 </Link>
               </div>
-              <div className=" hidden md flex items-center space-x-8" >
+              <div className="hidden md flex items-center space-x-8">
                 <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-                </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+                </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
                 <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
                 </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
                 <Link href=/equipment-rental className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Rent Equipment
@@ -343,8 +343,7 @@ const AdvancedSearchPage: NextPage = () => {'
               <div className=" flex" space-x-4>
                 "
                   onChange={(e) => setSelectedType(e.target.value as any)}
-                  className="bg-white/10  border border-white/20 rounded-lg:px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-                >
+                  className="bg-white/10  border border-white/20 rounded-lg:px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors">
                   <option value=all>All Types</option>
                   <option value=service>Services</option">
                   <option value=talent>Talents</option>
@@ -411,11 +410,11 @@ const AdvancedSearchPage: NextPage = () => {'
                   </div>
                 </div>
                 {/* Rating Filter */}
-                <div className=" mb-6">
+                <div className="mb-6">
                   <h4 className="text-sm" font-medium text-white mb-3>Minimum Rating</h4>
                   <div className="flex"  items-center space-x-2">
                     <span className="text-yellow-400>★</span>"
-                    <span className="text-white>{filters.rating}+</span" >
+                    <span className="text-white>{filters.rating}+</span">
                     '
                       onChange={(e) => handleFilterChange('rating', parseFloat(e.target.value))}
                       className="flex-1"
@@ -490,7 +489,7 @@ const AdvancedSearchPage: NextPage = () => {'
             {/* Results */}"
             <div className=" lg col-span-3>
               {/* Results Header */}
-              </div><div className=" flex items-center justify-between mb-6" >
+              </div><div className="flex items-center justify-between mb-6">
                 <div className=" flex items-center" space-x-4>
                   <h3 className="text-xl font-semibold text-white> 
                     {filteredResults.length} Results
@@ -537,7 +536,7 @@ const AdvancedSearchPage: NextPage = () => {'
                     </div><div key={result.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>"
                       <div className="flex" items-start justify-between mb-4 > 
                         </div><div className="flex items-center" space-x-3>
-                          <div className="text-2xl>{getTypeIcon(result.type)}</div" >
+                          <div className="text-2xl>{getTypeIcon(result.type)}</div">
                           <div>`
                             <h3 className="text-lg" font-semibold text-white>{result.title}</h3>``
                             <span className="{`px-4" py-3 rounded-full text-xs font-medium border ${getTypeColor(result.type)}`}>
@@ -571,7 +570,7 @@ const AdvancedSearchPage: NextPage = () => {'
                           )}
                           {result.rating && ("
                             <div className="flex" items-center space-x-1 >
-                              <span className="text-yellow-400>★</span" >
+                              <span className="text-yellow-400>★</span">
                               <span className="text-white" text-sm>{result.rating}</span>
                             </div>
                           )}
@@ -620,6 +619,6 @@ const AdvancedSearchPage: NextPage = () => {'
         </div> </div>
     </ModernLayout>;"
           );
-};"
+};
 ''`
 export default AdvancedSearchPage;")"'"'`

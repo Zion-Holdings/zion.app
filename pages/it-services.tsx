@@ -1,5 +1,5 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
 
 interface ServiceProvider {
   id: string;
@@ -13,7 +13,7 @@ interface ServiceProvider {
   experience: string;
   specialties: string[];
   imageUrl: string;}
-const serviceProviders: ServiceProvider[] = ['
+const $1: $2[] = [
   {
     id: '1',
     title: 'TechFlow Solutions',
@@ -128,7 +128,7 @@ const categories = [
   'Network Services',
   'Software Development',
   'IT Support',
-  'Digital Transformation';
+  'Digital Transformation";
 ];
 '
 const ITServicesPage: React.FC = () => {';'
@@ -253,7 +253,7 @@ const ITServicesPage: React.FC = () => {';'
               </div>
 
               {/* Sort */}"
-              <div className=" w-full lg w-48" >
+              <div className="w-full lg w-48">
                 "'
                   onChange={(e) => setSortBy(e.target.value as 'aiScore' | 'rating' | 'reviewCount')}
                   className="block" w-full px-3 py-4 border border-gray-300 rounded-md:shadow-sm focus outline-none focus ring-blue-500 focus border-blue-500
@@ -270,7 +270,7 @@ const ITServicesPage: React.FC = () => {';'
         {/* Results */}"
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           {/* Results count */}
-          </div><div className=" mb-6">
+          </div><div className="mb-6">
             <p className="text-gray-600>"
               Showing {filteredProviders.length} of {serviceProviders.length} providers
             </p>
@@ -375,8 +375,8 @@ const ITServicesPage: React.FC = () => {';'
       </div>
     </div>
   
-                      </div>;
+                      </div>
     );
-};"
+};
 ''`
 export default ITServicesPage;)))"'"'`

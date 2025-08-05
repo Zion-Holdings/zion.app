@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface CityInfrastructure {
   id: string'
@@ -82,7 +82,7 @@ const AISmartCityManagementPage: NextPage = () => {
   const [selectedView, setSelectedView] = useState<'overview' | 'infrastructure' | 'planning' | 'services' | 'environmental' | 'insights'>('overview
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockInfrastructure: CityInfrastructure[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Smart Grid System',
@@ -118,7 +118,7 @@ const AISmartCityManagementPage: NextPage = () => {
         { type: 'Vehicle Counter', status: 'active', data: { count: 1200}
 }]
     }]
-  const mockPlanning: UrbanPlanning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Green Energy District',
@@ -152,7 +152,7 @@ const AISmartCityManagementPage: NextPage = () => {
       }
       stakeholders: ['Transit Authority', 'Commuters', 'Local Businesses']
     }]
-  const mockServices: CityService[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Emergency Response System',
@@ -184,7 +184,7 @@ const AISmartCityManagementPage: NextPage = () => {
         population: 100,
         accessibility: 92}
 }]
-  const mockEnvironmental: EnvironmentalMonitoring[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       location: 'City Center',
@@ -216,7 +216,7 @@ const AISmartCityManagementPage: NextPage = () => {
         energyDemand: 'Moderate demand forecast',
         recommendations: ['Maintain current systems', 'Monitor for changes']}
 }]
-  const mockInsights: AIInsight[] = ['
+  const $1: $2[] = [
     {
       type: 'optimization',
       title: 'Infrastructure Efficiency Gains',
@@ -313,7 +313,7 @@ const AISmartCityManagementPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Transport
               </Link href=/ai-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -387,7 +387,7 @@ const AISmartCityManagementPage: NextPage = () => {
             )}'
             {/* Infrastructure */},"''
 {selectedView === 'infrastructure' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6>Smart City Infrastructure</h2>
                 <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6>
                   {infrastructure.map((item) => (
@@ -405,14 +405,14 @@ const AISmartCityManagementPage: NextPage = () => {
                           <div className="text-gray-400" text-sm>{item.location}</div>
                         </div>
                       </div>
-                      <div className=" space-y-3" mb-4>
+                      <div className="space-y-3 mb-4">
                         </div><div className="grid" grid-cols-3 gap-4 text-sm>
                           <div>
                             <span className="text-gray-400>Capacity:</span>"
                             <div className="text-white>{item.capacity}%</div>"
                           </div>
                           <div>
-                            <span className="text-gray-400>Utilization:</span" >
+                            <span className="text-gray-400>Utilization:</span">
                             <div className="text-white>{item.utilization}%</div>"
                           </div>
                           <div">
@@ -428,10 +428,10 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
                       </div>
-                      <div className=" space-y-2" mb-4>
+                      <div className="space-y-2 mb-4">
                         </div><div className="text-sm" font-medium text-gray-400>Recommendations:</div>
                         {item.aiOptimization.recommendations.slice(0, 2).map((rec, index) => ("
-                          <div key={index} className=" flex items-center space-x-2 text-sm" >
+                          <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400>•</span>"
                             <span className="text-gray-300>{rec}</span>"
                           </div>
@@ -465,7 +465,7 @@ const AISmartCityManagementPage: NextPage = () => {
                         </div>
                       </div>
 
-                      <div className="space-y-3" mb-4> 
+                      <div className="space-y-3 mb-4"> 
                         </div><div className="grid grid-cols-2 gap-4" text-sm>
                           <div>
                             <span className="text-gray-400>Area:</span>"
@@ -482,7 +482,7 @@ const AISmartCityManagementPage: NextPage = () => {
                             <div className="text-white>{project.aiAnalysis.impactScore}/10</div>"
                           </div>
                           <div>
-                            <span className="text-gray-400>Sustainability:</span" >
+                            <span className="text-gray-400>Sustainability:</span">
                             <div className="text-white>{project.aiAnalysis.sustainabilityScore}/10</div>"
                           </div>
                           <div">
@@ -496,10 +496,10 @@ const AISmartCityManagementPage: NextPage = () => {
                           <div className="text-green-400" text-sm>Timeline  {project.timeline}</div>
                         </div>
                       </div>
-                      <div className=" space-y-2" mb-4>
+                      <div className="space-y-2 mb-4">
                         </div><div className="text-sm" font-medium text-gray-400>Recommendations:</div>
                         {project.aiAnalysis.recommendations.map((rec, index) => ("
-                          <div key={index} className=" flex items-center space-x-2 text-sm" >
+                          <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400>•</span>"
                             <span className="text-gray-300>{rec}</span>"
                           </div>
@@ -533,7 +533,7 @@ const AISmartCityManagementPage: NextPage = () => {
                         </div>
                       </div>
 
-                      <div className="space-y-3" mb-4> 
+                      <div className="space-y-3 mb-4"> 
                         </div><div className="grid grid-cols-2 gap-4" text-sm>
                           <div>
                             <span className="text-gray-400>Response" Time:</span>
@@ -541,7 +541,7 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                           <div>
                             <span className="text-gray-400>Satisfaction" </span>
-                            <div className="text-white>{service.satisfaction}%</div" >
+                            <div className="text-white>{service.satisfaction}%</div">
                           </div>
                         </div>
 
@@ -558,7 +558,7 @@ const AISmartCityManagementPage: NextPage = () => {
                             <div className="text-white>{service.coverage.area}%</div>"
                           </div>
                           <div>
-                            <span className="text-gray-400>Population:</span" >
+                            <span className="text-gray-400>Population:</span">
                             <div className="text-white>{service.coverage.population}%</div>"
                           </div>
                           <div>
@@ -567,10 +567,10 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="space-y-2" mb-4>
+                      <div className="space-y-2 mb-4">
                         </div><div className="text-sm" font-medium text-gray-400>Improvements:</div>
                         {service.aiOptimization.improvements.map((improvement, index) => ("
-                          <div key={index} className=" flex items-center space-x-2 text-sm" >
+                          <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400>•</span>"
                             <span className="text-gray-300>{improvement}</span>"
                           </div>
@@ -598,11 +598,11 @@ const AISmartCityManagementPage: NextPage = () => {
                           <p className="text-gray-300" text-sm>{monitor.timestamp}</p>
                         </div> 
                       </div>
-                      <div className="space-y-3" mb-4>
-                        </div><div className=" grid grid-cols-2 gap-4 text-sm" >
+                      <div className="space-y-3 mb-4">
+                        </div><div className="grid grid-cols-2 gap-4 text-sm">
                           <div>
                             <span className="text-gray-400>Air" Quality </span>
-                            <div className="text-white>{monitor.airQuality}/100</div" >
+                            <div className="text-white>{monitor.airQuality}/100</div">
                           </div>
                           <div>
                             <span className="text-gray-400>Noise" Level:</span">
@@ -614,7 +614,7 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                           <div>
                             <span className="text-gray-400>Humidity:</span>"
-                            <div className="text-white>{monitor.humidity}%</div" >
+                            <div className="text-white>{monitor.humidity}%</div">
                           </div>
                         </div>
 
@@ -624,7 +624,7 @@ const AISmartCityManagementPage: NextPage = () => {
                           <div className="text-green-400" text-sm>{monitor.aiPredictions.trafficPrediction}</div>
                         </div>
                       </div>
-                      <div className="space-y-2" mb-4> 
+                      <div className="space-y-2 mb-4"> 
                         </div><div className="text-sm" font-medium text-gray-400>Recommendations </div>
                         {monitor.aiPredictions.recommendations.map((rec, index) => (
                           <div key={index} className="flex" items-center space-x-2 text-sm>
@@ -640,7 +640,7 @@ const AISmartCityManagementPage: NextPage = () => {
             )}'
             {/* AI Insights */},"''
 {selectedView === 'insights' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2>
                 <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6>
                   {insights.map((insight, index) => (
@@ -656,7 +656,7 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                           <p className="text-gray-300" text-sm mb-3 >{insight.description}</p>
                           <div className="flex" items-center space-x-4" text-sm>
-                            <span className="text-gray-400>Confidence:</span" >
+                            <span className="text-gray-400>Confidence:</span">
                             <span className="text-white>{insight.confidence}%</span>`"
                             ``
                             }`}>
@@ -688,6 +688,6 @@ const AISmartCityManagementPage: NextPage = () => {
 
   </div">
   </div> ;"
-};"
+};
 ''`
 export default AISmartCityManagementPage )))))))))))))))))"'"'`

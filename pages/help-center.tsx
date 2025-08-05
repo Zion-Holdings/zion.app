@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState } from 'react";
+import { Home, Search, User }  from 'lucide-react";
 const HelpCenter: NextPage = () => {'
   const [activeCategory, setActiveCategory] = useState('general
   const [searchQuery, setSearchQuery] = useState(
@@ -117,7 +117,7 @@ const HelpCenter: NextPage = () => {'
             </div>
             <div className="flex  items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover text-white transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover text-white transition-colors >About
               </Link href=/about className="text-gray-300" hover text-white transition-colors" ></Link>
               <Link href=/contact className="text-gray-300" hover text-white transition-colors >Contact
@@ -140,7 +140,7 @@ const HelpCenter: NextPage = () => {'
           </p>
           {/* Search */}
           <div className=" max-w-2xl" mx-auto>
-            </div><div className=" relative">
+            </div><div className="relative">
               
                 onChange={(e) => setSearchQuery(e.target.value)}"
                 className=" w-full px-6 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent" backdrop-blur-sm"
@@ -189,27 +189,27 @@ const HelpCenter: NextPage = () => {'
         {/* Additional Help */}
         <div className="mt-16" grid grid-cols-1 md:grid-cols-3 gap-8> 
           </div><div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm >
-            <div className="text-3xl" mb-4>📧</div> 
+            <div className="text-3xl mb-4">📧</div> 
             <h3 className="text-xl" font-semibold text-white mb-2>Contact Support</h3>'
-            <p className="text-gray-300" mb-4>'"'
+            <p className="text-gray-300 mb-4">'"'
               Can't find what you're looking for? Our support team is here to help.
             </p>
             <Link href=/contact" className="text-purple-400" hover text-purple-300 font-medium >Get in touch →
-            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium" ></Link>
+            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium"></Link>
           </div>
           <div className=" bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>
             </div><div className="text-3xl:mb-4>📚</div>"
             <h3 className="text-xl" font-semibold text-white mb-2 >Documentation</h3>'
-            <p className="text-gray-300" mb-4>
+            <p className="text-gray-300 mb-4">
               Detailed guides and tutorials for using Zion's features effectively.
             </p>
             <Link href=/blog className="text-purple-400" hover text-purple-300 font-medium >Read guides →
             </Link href=/blog className="text-purple-400" hover text-purple-300 font-medium" ></Link>
           </div>
           <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm>
-            </div><div className="text-3xl" mb-4>💬</div> 
+            </div><div className="text-3xl mb-4">💬</div> 
             <h3 className="text-xl" font-semibold text-white mb-2>Community</h3>
-            <p className="text-gray-300" mb-4>
+            <p className="text-gray-300 mb-4">
               Connect with other users and share tips in our community forum.
             </p>
             <Link href=/marketplace" className="text-purple-400" hover text-purple-300 font-medium >Join community →

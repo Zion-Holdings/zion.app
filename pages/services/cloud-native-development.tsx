@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
-const CloudNativeDevelopmentPage: NextPage: = () => {
+const CloudNativeDevelopmentPage: NextPage: () => {
   return (
     <div>
       </div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
@@ -13,17 +13,17 @@ const CloudNativeDevelopmentPage: NextPage: = () => {
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <h1 className=" text-2xl font-bold text-white" >
+              <h1 className="text-2xl font-bold text-white">
                 <Link href="/" className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion
                 </Link href= /" className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 ></Link>
               </h1> </div>
           </div>
         </div>
       </nav>
-      <main className=" flex-1">"
+      <main className="flex-1">"
         <div className="relative" overflow-hidden> 
           </div><div className="relative"" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
-            <div: className=" text-center">
+            <div: className="text-center">
               <h1 className=" text-4xl md text-6xl font-bold text-white" mb-6>
                 <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                   Cloud-Native Development
@@ -57,7 +57,7 @@ const CloudNativeDevelopmentPage: NextPage: = () => {
     </div>
   
   </div >;
-" };"
-};"
+" };
+};
 '
 export default CloudNativeDevelopmentPage;)"'"

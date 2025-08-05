@@ -1,5 +1,5 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';import { useRouter } from 'next/router';
+import ModernLayout from '../components/layout/ModernLayout';import { useRouter } from "next/router"";
 
 interface QuoteFormData {
   services: string[];
@@ -45,28 +45,28 @@ const QuoteRequestForm = () => {;
   const services = [
     'Video Production', 'Photography', 'Live Streaming', 'Audio Recording',
     'Post-Production', 'Equipment Rental', 'Event Coverage', 'Corporate Content',
-    'Commercial Production', 'Documentary';
+    'Commercial Production', 'Documentary";
   ];
 '
   const talent = [
     'Videographer', 'Photographer', 'Audio Engineer', 'Video Editor',
     'Colorist', 'Motion Graphics Artist', 'Drone Operator', 'Lighting Technician',
-    'Production Assistant', 'Director';
+    'Production Assistant', 'Director";
   ];
 '
   const equipment = [
     '4K Camera', 'Professional Lighting', 'Audio Equipment', 'Drone',
     'Gimbal Stabilizer', 'Green Screen', 'Teleprompter', 'Live Streaming Kit',
-    'Editing Suite', 'Mobile Studio';
+    'Editing Suite', 'Mobile Studio";
   ];
 '
   const budgetRanges = [
     'Under $1,000', '$1,000 - $5,000', '$5,000 - $10,000',
-    '$10,000 - $25,000', '$25,000 - $50,000', '$50,000+';
+    '$10,000 - $25,000', '$25,000 - $50,000', '$50,000+";
   ];
 '
   const urgencyLevels = [
-    'Standard (2-4 weeks)', 'Rush (1-2 weeks)', 'Express (3-7 days)', 'Same Day';
+    'Standard (2-4 weeks)', 'Rush (1-2 weeks)', 'Express (3-7 days)', 'Same Day";
   ];
 
   const handleInputChange = (field: keyof QuoteFormData, value: any) => {;
@@ -112,7 +112,7 @@ const QuoteRequestForm = () => {;
         <h3 className="text-lg" font-semibold mb-4 text-responsive-lg>Select Services</h3>
         <div className="grid"  grid-cols-2 gap-3>
           {services.map(service => ("
-            <label key={service} className=" flex items-center space-x-2 cursor-pointer" >'
+            <label key={service} className="flex items-center space-x-2 cursor-pointer">'
               ''
                 onChange={() => handleMultiSelect('services', service)}"
                 className=" rounded" border-gray-300"
@@ -150,7 +150,7 @@ const QuoteRequestForm = () => {;
           ))}
         </div>
       </div >
-    </div>;"
+    </div>"
   );"
 
   const renderStep2 = () => ("
@@ -209,12 +209,12 @@ const QuoteRequestForm = () => {;
           />
         </div>
       </div>
-    </div>; 
+    </div> 
   );
 "
   const renderStep3 = () => (
     <div className=" space-y-6>
-      </div><div className=" grid grid-cols-2 gap-4" >
+      </div><div className="grid grid-cols-2 gap-4">
         <div>
           <label className="block" text-sm font-medium mb-2 text-responsive-lg>Start Date</label> '
           "''
@@ -243,7 +243,7 @@ const QuoteRequestForm = () => {;
           ))}
         </select>
       </div>
-    </div>;
+    </div>
   );
 
   const renderStep4 = () => (
@@ -307,12 +307,12 @@ const QuoteRequestForm = () => {;
           </div>
         </div>
       </div>
-    </div>;"
+    </div>"
   );
 "
   const renderStep5 = () => (
     <div className=" space-y-6>
-      </div><div className=" bg-gray-50 p-6 rounded-lg" >
+      </div><div className="bg-gray-50 p-6 rounded-lg">
         <h3 className="text-lg" font-semibold mb-4 text-responsive-lg>Quote Request Summary</h3>
         <div className="space-y-4>"
           </div><div>
@@ -373,7 +373,7 @@ const QuoteRequestForm = () => {;
           Our team will review your requirements and provide a detailed quote tailored to your needs.
         </p>
       </div>
-    </div>;
+    </div>
   );
 
   const renderStepContent = () = > {
@@ -384,14 +384,14 @@ const QuoteRequestForm = () => {;
       case 4  return renderStep4();
       case 5  return renderStep5();"
       default  return" null;}"
-  };"
+  };
 
   const stepTitles = ["'
     'Select Services & Equipment',
     'Project Details',
     'Timeline',
     'Budget & Contact',
-    'Review & Submit';
+    'Review & Submit";
   ];
 
   return (
@@ -399,13 +399,13 @@ const QuoteRequestForm = () => {;
       </div><div className="min-h-screen  bg-gray-50 py-8>"
       <div className="max-w-4xl" mx-auto px-4 > 
         </div><div className="bg-white rounded-lg:shadow-lg" p-8>
-          <div className=" mb-8">'
+          <div className="mb-8">'
             <h1 className="text-3xl" font-bold text-gray-900 mb-2 text-responsive-lg>Request a Quote</h1>''
             <p className="text-gray-600" text-responsive-lg>Tell us about your project and we'll provide a detailed quote</p>
           </div>
 
           <div className="mb-8>" 
-            </div><div className="flex items-center justify-between" mb-4>
+            </div><div className="flex items-center justify-between mb-4">
               {stepTitles.map((title, index) => (
                 <div key={index} className="flex" items-center>
                   </div>'
@@ -454,7 +454,7 @@ const QuoteRequestForm = () => {;
                                     </div>
         </div>
       </div>
-    </div>;
+    </div>
   );
 };
 ''`

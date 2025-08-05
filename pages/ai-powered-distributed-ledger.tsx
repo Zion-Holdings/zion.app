@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface DistributedLedger {
   id: string;
   name: string;'
   description: string;
-  type: 'blockchain' | 'hashgraph' | 'dag' | 'tangle' | 'holochain' | 'tempo';
-  status: 'active' | 'inactive' | 'syncing' | 'error' | 'offline';
+  type: 'blockchain' | 'hashgraph' | 'dag' | 'tangle' | 'holochain' | 'tempo";
+  status: 'active' | 'inactive' | 'syncing' | 'error' | 'offline";
   nodes: number;
   transactions: number;
   blockTime: number;
@@ -23,8 +23,8 @@ interface ConsensusMechanism:{
   id: string;
   title: string;'
   description: string;
-  type: 'proof_of_work' | 'proof_of_stake' | 'delegated_proof_of_stake' | 'proof_of_authority' | 'byzantine_fault_tolerance' | 'practical_byzantine_fault_tolerance';
-  status: 'active' | 'inactive' | 'validating' | 'error' | 'offline';
+  type: 'proof_of_work' | 'proof_of_stake' | 'delegated_proof_of_stake' | 'proof_of_authority' | 'byzantine_fault_tolerance' | 'practical_byzantine_fault_tolerance";
+  status: 'active' | 'inactive' | 'validating' | 'error' | 'offline";
   validators: number;
   consensusTime: number;
   aiOptimization: ConsensusOptimization;}
@@ -38,8 +38,8 @@ interface SmartContract {
   id: string;
   name: string;'
   description: string;
-  type: 'defi' | 'nft' | 'governance' | 'oracle' | 'identity' | 'supply_chain';
-  status: 'active' | 'inactive' | 'deploying' | 'error' | 'offline';
+  type: 'defi' | 'nft' | 'governance' | 'oracle' | 'identity' | 'supply_chain";
+  status: 'active' | 'inactive' | 'deploying' | 'error' | 'offline";
   gasUsed: number;
   complexity: number;
   aiAnalysis: ContractAnalysis;}
@@ -54,8 +54,8 @@ interface BlockchainGovernance {
   governanceId: string;
   title: string;'
   description: string;
-  type: 'dao' | 'on_chain_governance' | 'off_chain_governance' | 'hybrid_governance' | 'consensus_governance' | 'stakeholder_governance';
-  status: 'active' | 'inactive' | 'voting' | 'error' | 'offline';
+  type: 'dao' | 'on_chain_governance' | 'off_chain_governance' | 'hybrid_governance' | 'consensus_governance' | 'stakeholder_governance";
+  status: 'active' | 'inactive' | 'voting' | 'error' | 'offline";
   proposals: number;
   participants: number;
   aiAnalysis: GovernanceAnalysis;}
@@ -70,8 +70,8 @@ interface DecentralizedApplication {
   appId: string;
   title: string;'
   description: string;
-  type: 'defi_application' | 'gaming_application' | 'social_application' | 'enterprise_application' | 'identity_application' | 'supply_chain_application';
-  status: 'active' | 'inactive' | 'developing' | 'error' | 'offline';
+  type: 'defi_application' | 'gaming_application' | 'social_application' | 'enterprise_application' | 'identity_application' | 'supply_chain_application";
+  status: 'active' | 'inactive' | 'developing' | 'error' | 'offline";
   users: number;
   transactions: number;
   aiAnalysis: DAppAnalysis;}
@@ -86,8 +86,8 @@ interface DistributedLedgerManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'network' | 'security' | 'performance' | 'governance' | 'development' | 'maintenance';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'network' | 'security' | 'performance' | 'governance' | 'development' | 'maintenance";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   networks: number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;}
@@ -111,7 +111,7 @@ interface DistributedLedgerInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredDistributedLedgerPage: NextPage = () => {
@@ -126,7 +126,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockDistributedLedgers: DistributedLedger[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Enterprise Blockchain Network',
@@ -143,7 +143,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
         scalabilityScore: 92,
         recommendations: ['Optimize consensus mechanism', 'Enhance network security']}}
     }]
-  const mockConsensusMechanisms: ConsensusMechanism[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Proof of Stake Consensus',
@@ -159,7 +159,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
         efficiencyScore: 97,
         recommendations: ['Increase validator count', 'Optimize stake distribution']}
 }]
-  const mockSmartContracts: SmartContract[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'DeFi Lending Protocol',
@@ -175,7 +175,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
         auditScore: 96,
         recommendations: ['Optimize gas usage', 'Enhance security measures']}
 }]
-  const mockBlockchainGovernance: BlockchainGovernance[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       governanceId: 'BG-001',
@@ -192,7 +192,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
         transparencyScore: 95,
         recommendations: ['Increase participation', 'Enhance transparency measures']}
 }]
-  const mockDecentralizedApplications: DecentralizedApplication[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       appId: 'DAPP-001',
@@ -209,7 +209,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
         userExperienceScore: 91,
         recommendations: ['Improve user onboarding', 'Optimize transaction speed']}
 }]
-  const mockDistributedLedgerManagement: DistributedLedgerManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'DLM-001',
@@ -436,7 +436,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-indigo-500"
@@ -493,7 +493,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -552,7 +552,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -593,7 +593,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105 >Start Building
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -608,6 +608,6 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredDistributedLedgerPage )))))))))))))))))))))))))))))"'"'`

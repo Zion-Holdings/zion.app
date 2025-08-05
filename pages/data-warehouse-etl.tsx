@@ -1,22 +1,22 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 
 interface DataSource {
   id: string;'
   name: string;
-  type: 'database' | 'api' | 'file' | 'stream';
-  status: 'connected' | 'disconnected' | 'error';
+  type: 'database' | 'api' | 'file' | 'stream";
+  status: 'connected' | 'disconnected' | 'error";
   recordCount: number;
   size: number;
   lastSync?: Date;}
 interface ETLPipeline {
   id: string;'
   name: string;
-  status: 'active' | 'inactive' | 'running' | 'error';
-  schedule: 'manual' | 'hourly' | 'daily' | 'weekly';
+  status: 'active' | 'inactive' | 'running' | 'error";
+  schedule: 'manual' | 'hourly' | 'daily' | 'weekly";
   lastRun?: Date;
   performance: {
     recordsProcessed: number;
@@ -26,8 +26,8 @@ interface ETLPipeline {
 interface DataWarehouse {
   id: string;'
   name: string;
-  type: 'snowflake' | 'redshift' | 'bigquery';
-  status: 'active' | 'inactive';
+  type: 'snowflake' | 'redshift' | 'bigquery";
+  status: 'active' | 'inactive";
   size: number;
   recordCount: number;
   tables: number;}
@@ -38,7 +38,7 @@ const DataWarehouseETL: NextPage = () => {'
   const [etlPipelines, setEtlPipelines] = useState<ETLPipeline[]>([]
   const [dataWarehouses, setDataWarehouses] = useState<DataWarehouse[]>([]
   useEffect(() => {
-    const mockDataSources: DataSource[] = ['
+    const $1: $2[] = [
       {
         id: '1',
         name: 'PostgreSQL Production DB',
@@ -57,7 +57,7 @@ const DataWarehouseETL: NextPage = () => {'
         size: 450000000,
         lastSync: new Date(Date.now() - 7200000
       }]
-    const mockPipelines: ETLPipeline[] = ['
+    const $1: $2[] = [
       {
         id: '1',
         name: 'User Data Pipeline',
@@ -69,7 +69,7 @@ const DataWarehouseETL: NextPage = () => {'
           processingTime: 45,
           successRate: 99.8}
 }]
-    const mockWarehouses: DataWarehouse[] = ['
+    const $1: $2[] = [
       {
         id: '1',
         name: 'Zion Analytics Warehouse',
@@ -139,7 +139,7 @@ const DataWarehouseETL: NextPage = () => {'
         </div>
       </header>
       <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className=" mb-8">
+        <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4> 
             Data Warehouse & ETL Platform
           </h1>
@@ -148,7 +148,7 @@ const DataWarehouseETL: NextPage = () => {'
             Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.
           </p>
         </div>
-        <div className=" grid grid-cols-1 md grid-cols-4 gap-6 mb-8" >"
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">"
           "
           >
             <div className="flex" items-center justify-between>
@@ -165,7 +165,7 @@ const DataWarehouseETL: NextPage = () => {'
                 <p className="text-gray-400" text-sm >ETL Pipelines</p>
                 <p className="text-2xl" font-bold text-white>{etlPipelines.length}</p>
               </div>
-              <div className="text-3xl>⚙️</div" >
+              <div className="text-3xl>⚙️</div">
             </div>
           </motion.div> 
           >
@@ -227,7 +227,7 @@ const DataWarehouseETL: NextPage = () => {'
                           <p className="text-gray-400" text-sm>Last run  {pipeline.lastRun?.toLocaleString()}</p>
                         </div>
                       </div>
-                      <div className=" text-right">
+                      <div className="text-right">
                         <p className="text-white" font-medium>{pipeline.performance.recordsProcessed.toLocaleString()} records</p>
                         <p className="text-gray-400" text-sm>{pipeline.performance.processingTime}s</p>
                       </div>
@@ -279,7 +279,7 @@ const DataWarehouseETL: NextPage = () => {'
           {activeTab === 'pipelines' && (
             "
             >
-              <div className=" space-y-4">
+              <div className="space-y-4">
                 {etlPipelines.map((pipeline) => (
                   "
                   >
@@ -313,7 +313,7 @@ const DataWarehouseETL: NextPage = () => {'
 '"'
           {activeTab === 'warehouse' && (
             "
-              className=" space-y-6" >
+              className="space-y-6">
               <div className="space-y-6>"
                 {dataWarehouses.map((warehouse) => (
                    
@@ -356,6 +356,6 @@ const DataWarehouseETL: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default DataWarehouseETL )))))))))))))))"'"'`

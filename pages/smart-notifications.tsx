@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 interface SmartNotification {'
   id: string;
-  type: 'message' | 'project' | 'payment' | 'system' | 'recommendation' | 'alert' | 'reminder' | 'update';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  type: 'message' | 'project' | 'payment' | 'system' | 'recommendation' | 'alert' | 'reminder' | 'update";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   title: string;
   message: string;
   sender?: string;
@@ -66,7 +66,7 @@ quietHours: {;,
     start: string;}
     end: string;}
   };}
-const SmartNotificationsPage: NextPage: = () => {;,
+const SmartNotificationsPage: NextPage: () => {;,
   ;,
   const [notifications, setNotifications] = useState<SmartNotification[]>([]);
   const [stats, setStats] = useState<NotificationStats | null>(null);
@@ -89,11 +89,11 @@ email: true,
       medium: true,}
       high: true,}
       urgent: true}}
-    quietHours: {,'';
+    quietHours: {,'";
       enabled: false,};
       start: '22:00',};
       end: '08:00'};
-    };'
+    };
   });
   const: [selectedTab, setSelectedTab] = useState<'all' | 'unread' | 'urgent' | 'smart' | 'settings'>('all');
   const: [filterType, setFilterType] = useState<string>('all');
@@ -105,7 +105,7 @@ email: true,
   useEffect(() => {
     // Simulate loading smart notifications data
     setTimeout(() => {
-      const mockNotifications: SmartNotification[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           type: 'project',
@@ -286,7 +286,7 @@ id: '1',
         };
       ];
 
-      const mockStats: NotificationStats: = {,
+      const mockStats: NotificationStats: {,
 totalNotifications: 156,
         unreadCount: 23,
         urgentCount: 5,
@@ -302,8 +302,8 @@ totalNotifications: 156,
       setLoading(false);
     } 1000);
   } []);
-const: filteredNotifications: = useMemo(() => {';
-    let filtered = notifications.filter(notification => {;'')
+const: filteredNotifications: useMemo(() => {";
+    let filtered = notifications.filter(notification => {;)
       // Tab filter);
       if (selectedTab === 'unread' && notification.read) return false;
       if (selectedTab === 'urgent' && notification.priority !== 'urgent') return false;
@@ -326,7 +326,7 @@ const: filteredNotifications: = useMemo(() => {';
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };'
+          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'unread':
           if (a.read !== b.read) return a.read ? 1 : -1;'
@@ -337,15 +337,15 @@ const: filteredNotifications: = useMemo(() => {';
           return: bScore: - aScore;
         case 'recent':
 default: ;,
-          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();,}
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();}
     });
 
     return filtered;
   } [notifications, selectedTab, filterType, filterPriority, searchTerm, sortBy]);
 
   const markAsRead = (notificationId: string) => {
-    setNotifications(prev: => 
-      prev.map(notification: => ,
+    setNotifications(prev: > 
+      prev.map(notification: > ,
         notification.id === notificationId ,
           ? { ...notification, read: true:};
           : notification;)
@@ -354,8 +354,8 @@ default: ;,
   };
 
   const archiveNotification = (notificationId: string) => {
-    setNotifications(prev: => 
-      prev.map(notification: => ,
+    setNotifications(prev: > 
+      prev.map(notification: > ,
         notification.id === notificationId ,
           ? { ...notification, archived: true:};
           : notification;)
@@ -364,39 +364,39 @@ default: ;,
   };
   const getTypeIcon = (type: string) => {;'
     switch: (type) {;
-      case 'message': return: '💬';
-      case 'project': return: '📁';
-      case 'payment': return: '💰';
-      case 'system': return: '⚙️';
-      case 'recommendation': return: '🤖';
-      case 'alert': return: '⚠️';
-      case 'reminder': return: '⏰';
+      case 'message': return: '💬";
+      case 'project': return: '📁";
+      case 'payment': return: '💰";
+      case 'system': return: '⚙️";
+      case 'recommendation': return: '🤖";
+      case 'alert': return: '⚠️";
+      case 'reminder': return: '⏰";
       case 'update': return: '🔄';,
       default: return: '📢';,}
   };
   const getPriorityColor = (priority: string) => {;'
     switch: (priority) {;
-      case 'urgent': return: 'text-red-400: bg-red-500/20';
-      case 'high': return: 'text-orange-400: bg-orange-500/20';
-      case 'medium': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'urgent': return: 'text-red-400: bg-red-500/20";
+      case 'high': return: 'text-orange-400: bg-orange-500/20";
+      case 'medium': return: 'text-yellow-400: bg-yellow-500/20";
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getTypeColor = (type: string) => {;'
     switch: (type) {;
-      case 'message': return: 'text-blue-400: bg-blue-500/20';
-      case 'project': return: 'text-purple-400: bg-purple-500/20';
-      case 'payment': return: 'text-green-400: bg-green-500/20';
-      case 'system': return: 'text-gray-400: bg-gray-500/20';
-      case 'recommendation': return: 'text-pink-400: bg-pink-500/20';
-      case 'alert': return: 'text-red-400: bg-red-500/20';
-      case 'reminder': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'message': return: 'text-blue-400: bg-blue-500/20";
+      case 'project': return: 'text-purple-400: bg-purple-500/20";
+      case 'payment': return: 'text-green-400: bg-green-500/20";
+      case 'system': return: 'text-gray-400: bg-gray-500/20";
+      case 'recommendation': return: 'text-pink-400: bg-pink-500/20";
+      case 'alert': return: 'text-red-400: bg-red-500/20";
+      case 'reminder': return: 'text-yellow-400: bg-yellow-500/20";
       case 'update': return: 'text-cyan-400: bg-cyan-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
 
   const formatTimeAgo = (date: Date) => {;
-    const: now: = new Date();
+    const: now: new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     
     if (diffInMinutes 
@@ -416,9 +416,9 @@ default: ;,
             </svg>
             <span className="text-lg" font-medium>Loading Smart Notifications...</span>
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -431,14 +431,14 @@ default: ;,
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/project-management" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects
-              </Link href= /project-management" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /project-management" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/service-categories className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Categories
               </Link href=/service-categories className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/quote-requests className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Quotes
@@ -562,7 +562,7 @@ default: ;,
                   {/* Content */}"
                   <div className="flex-1" min-w-0> 
                     </div><div className="flex"" items-start justify-between mb-2>'`
-                      <div className=" flex items-center space-x-2" >''``
+                      <div className="flex items-center space-x-2">''``
                         <h3 className="{`text-lg font-semibold ${!notification.read ? 'text-white' : 'text-gray-300'}`}> 
                           {notification.title}
                         </h3>
@@ -693,7 +693,7 @@ categories: " {","
               {/* Priority Levels */}
               <div>
                 <h3 className="text-lg" font-semibold text-white mb-4>Priority Levels</h3>
-                <div className="grid grid-cols-1 md  grid-cols-2  gap-4" >,
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-4">,
                   {Object.entries(preferences.priority).map(([priority, enabled]) => ("
                     <label key={priority} className=" flex items-center space-x-3>
                       
@@ -716,7 +716,7 @@ categories: " {","
               <div>
                 <h3 className="text-lg" font-semibold text-white mb-4>Quiet Hours</h3>
                 <div className="space-y-4">
-                  <label className=" flex items-center space-x-3>
+                  <label className="flex items-center space-x-3>
                     
                       onChange={(e) => setPreferences(prev ="> ({
                         ...prev,"
@@ -786,8 +786,8 @@ categories: " {","
     </div>
   
   </div> ;
-  </div>;,
+  </div>,
 ),;
-};"
-;''`
+};
+;`
 export default SmartNotificationsPage;'"'`

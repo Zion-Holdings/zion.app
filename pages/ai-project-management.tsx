@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface Project {
   id: string
@@ -61,7 +61,7 @@ const AIProjectManagementPage: NextPage = () => {
   const [view, setView] = useState<'overview' | 'projects' | 'tasks' | 'workflows' | 'insights'>('overview
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockProjects: Project[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Marketplace Enhancement',
@@ -104,7 +104,7 @@ const AIProjectManagementPage: NextPage = () => {
       aiScore: 95,
       automationLevel: 90
     }]
-  const mockTasks: Task[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       projectId: '1',
@@ -147,7 +147,7 @@ const AIProjectManagementPage: NextPage = () => {
       dependencies: [],
       aiOptimized: true
     }]
-  const mockWorkflows: Workflow[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Feature Development Pipeline',
@@ -210,7 +210,7 @@ const AIProjectManagementPage: NextPage = () => {
       successRate: 95,
       avgCompletionTime: 5
     }]
-  const mockInsights: AIInsight[] = ['
+  const $1: $2[] = [
     {
       type: 'optimization',
       title: 'Project Timeline Optimization',
@@ -308,7 +308,7 @@ const AIProjectManagementPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/investor-matchmaking className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Investors
               </Link href=/investor-matchmaking className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -381,7 +381,7 @@ const AIProjectManagementPage: NextPage = () => {
             )}'
             {/* Projects */},"''
 {view === 'projects' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6>AI-Optimized Projects</h2>
                 <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6>
                   {projects.map((project) => (
@@ -403,7 +403,7 @@ const AIProjectManagementPage: NextPage = () => {
 
                       <div className="space-y-3" mb-4 > 
                         </div><div className="flex justify-between" text-sm>`
-                          <span className="text-gray-400>Progress</span" >``"
+                          <span className="text-gray-400>Progress</span">``"
                           <span className="{`font-medium"  ${getProgressColor(project.progress)}`}>
                             {project.progress}%
                           </span>
@@ -455,12 +455,12 @@ const AIProjectManagementPage: NextPage = () => {
                           </div>
                           <p className="text-gray-300" text-sm mb-3 >{task.description}</p>
                           <div className="flex items-center space-x-4" text-sm>
-                            <span className="text-gray-400>Assignee:</span" >
+                            <span className="text-gray-400>Assignee:</span">
                             <span className="text-white>{task.assignee}</span"">
                             <span className="text-gray-400>Due:</span>" 
                             <span className="text-white>{new" Date(task.dueDate).toLocaleDateString()}</span>
                             <span className="text-gray-400>Hours:</span"">
-                            <span className="text-white>{task.actualHours}/{task.estimatedHours}</span" >
+                            <span className="text-white>{task.actualHours}/{task.estimatedHours}</span">
                           </div>
                         </div>`
                         <div className="text-right>'``"
@@ -479,7 +479,7 @@ const AIProjectManagementPage: NextPage = () => {
             )}'
             {/* Workflows */},"''
 {view === 'workflows' && (
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6 >Automated Workflows</h2>
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                   {workflows.map((workflow) => (
@@ -489,13 +489,13 @@ const AIProjectManagementPage: NextPage = () => {
                           <h3 className="text-xl" font-semibold text-white >{workflow.name}</h3>
                           <p className="text-gray-300" text-sm>{workflow.description}</p>
                         </div>
-                        <div className=" text-right">
+                        <div className="text-right">
                           </div><div className="text-sm" text-gray-400>Success Rate</div>
                           <div className="text-lg" font-bold text-green-500 >{workflow.successRate}%</div >
                         </div>
                       </div>
 
-                      <div className="space-y-3" mb-4> 
+                      <div className="space-y-3 mb-4"> 
                         </div><div className="flex justify-between" text-sm>
                           <span className="text-gray-400>Automation" Level</span>
                           <span className="text-white>{workflow.automationLevel}%</span>"
@@ -525,24 +525,24 @@ const AIProjectManagementPage: NextPage = () => {
             )}"'
             {/* AI Insights */},''
 {view === 'insights' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2>
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                   {insights.map((insight, index) => (
-                    </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+                    </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start space-x-3 mb-4> 
                         </div><div className="text-2xl>{getInsightIcon(insight.type)}</div"">
                         <div className=" flex-1>
-                          </div><div className=" flex items-center space-x-2 mb-2" >'`
+                          </div><div className="flex items-center space-x-2 mb-2">'`
                             <h3 className="text-lg" font-semibold text-white>{insight.title}</h3>''``
                             <span className="{`px-4" py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.impact}
                             </span>
                           </div>
                           <p className="text-gray-300" text-sm:mb-3>{insight.description}</p>
-                          <div className="flex items-center space-x-4 text-sm" >
+                          <div className="flex items-center space-x-4 text-sm">
                             <span className="text-gray-400>Confidence" </span>
-                            <span className="text-white>{insight.confidence}%</span" >
+                            <span className="text-white>{insight.confidence}%</span">
                           </div>
                         </div>
                       </div> 
@@ -569,6 +569,6 @@ const AIProjectManagementPage: NextPage = () => {
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default AIProjectManagementPage ))))))))))))))))"'"'`

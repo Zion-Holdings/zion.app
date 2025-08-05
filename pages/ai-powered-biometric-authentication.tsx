@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface BiometricAuthentication {
   id: string;
   name: string;'
   description: string;
-  type: 'facial_recognition' | 'fingerprint_scanning' | 'voice_recognition' | 'iris_scanning' | 'gait_analysis' | 'behavioral_biometrics';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'facial_recognition' | 'fingerprint_scanning' | 'voice_recognition' | 'iris_scanning' | 'gait_analysis' | 'behavioral_biometrics";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   accuracy: number;
   falsePositiveRate: number;
   processingTime: number;
@@ -24,8 +24,8 @@ interface FacialRecognition {
   id: string;
   title: string;'
   description: string;
-  type: 'face_detection' | 'face_verification' | 'face_identification' | 'emotion_recognition' | 'age_estimation' | 'gender_detection';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'face_detection' | 'face_verification' | 'face_identification' | 'emotion_recognition' | 'age_estimation' | 'gender_detection";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   confidence: number;
   livenessScore: number;
   aiOptimization: FacialOptimization;}
@@ -39,8 +39,8 @@ interface FingerprintScanning {
   id: string;
   name: string;'
   description: string;
-  type: 'optical_scanning' | 'capacitive_scanning' | 'ultrasonic_scanning' | 'thermal_scanning' | 'pressure_scanning' | 'multispectral_scanning';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'optical_scanning' | 'capacitive_scanning' | 'ultrasonic_scanning' | 'thermal_scanning' | 'pressure_scanning' | 'multispectral_scanning";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   minutiaePoints: number;
   qualityScore: number;
   aiAnalysis: FingerprintAnalysis;}
@@ -55,8 +55,8 @@ interface VoiceRecognition {
   voiceId: string;
   title: string;'
   description: string;
-  type: 'speaker_identification' | 'speaker_verification' | 'voice_biometrics' | 'emotion_detection' | 'language_detection' | 'accent_recognition';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'speaker_identification' | 'speaker_verification' | 'voice_biometrics' | 'emotion_detection' | 'language_detection' | 'accent_recognition";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   samples: number;
   confidence: number;
   aiAnalysis: VoiceAnalysis;}
@@ -71,8 +71,8 @@ interface IrisScanning {
   irisId: string;
   title: string;'
   description: string;
-  type: 'iris_detection' | 'iris_verification' | 'iris_identification' | 'pupil_tracking' | 'eye_movement' | 'retinal_scanning';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'iris_detection' | 'iris_verification' | 'iris_identification' | 'pupil_tracking' | 'eye_movement' | 'retinal_scanning";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   resolution: number;
   accuracy: number;
   aiAnalysis: IrisAnalysis;}
@@ -87,8 +87,8 @@ interface BiometricSecurityManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   devices: number;
   securityLevel: number;
   aiAnalysis: SecurityAnalysis;}
@@ -112,7 +112,7 @@ interface BiometricAuthenticationInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredBiometricAuthenticationPage: NextPage = () => {
@@ -585,7 +585,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
       {/* CTA Section */}"
       <div className="bg-gradient-to-r" from-green-600/20 to-emerald-600/20 mt-16>
         </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl"  font-bold text-white mb-4>
               Ready to Secure with Biometric Authentication?
             </h2>
@@ -604,6 +604,6 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
       </div>
     </>
   ;
-};"
+};
 ''`
 export default AIPoweredBiometricAuthenticationPage ))))))))))))))))))))))))))))))))))))"'"'`

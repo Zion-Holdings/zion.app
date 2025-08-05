@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface QuoteRequest {
   id: string;
@@ -21,9 +21,9 @@ timeline: {;',
   requirements: string[];
   skills: string[];'
   attachments: Attachment[];
-  status: 'draft' | 'submitted' | 'reviewing' | 'quoted' | 'accepted' | 'rejected' | 'expired';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  visibility: 'public' | 'private' | 'invite-only';
+  status: 'draft' | 'submitted' | 'reviewing' | 'quoted' | 'accepted' | 'rejected' | 'expired";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
+  visibility: 'public' | 'private' | 'invite-only";
   responses: QuoteResponse[];
   createdAt: Date;
   updatedAt: Date;,
@@ -45,9 +45,9 @@ timeline: {;,
     };
     terms: string[];,
     conditions: string[];,
-  };'
+  };
   message: string;
-  status: 'pending' | 'accepted' | 'rejected' | 'expired';
+  status: 'pending' | 'accepted' | 'rejected' | 'expired";
   submittedAt: Date;,
   expiresAt: Date;,}
 interface: QuoteBreakdown: {;
@@ -76,7 +76,7 @@ interface: Category: {;
   description: string;
   icon: string;,
   subcategories: string[];,}
-const QuoteRequestsPage: NextPage: = () => {;,
+const QuoteRequestsPage: NextPage: () => {;,
   ;,
   const [quoteRequests, setQuoteRequests] = useState<QuoteRequest[]>([]);
   const [selectedRequest, setSelectedRequest] = useState<QuoteRequest | null>(null);'
@@ -100,20 +100,20 @@ title: '',
 }
       endDate: '',}
       urgency: 'medium',
-    as: const}'';
+    as: const}'";
     };
     requirements: [''],';'
     skills: [''],;
     priority: 'medium','');
     as: const,);
     visibility: 'public',;
-    as: const);,
+    as: const);
   });
 
   useEffect(() => {
     // Simulate: loading quote requests data
     setTimeout(() => {
-      const mockQuoteRequests: QuoteRequest[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           title: 'AI-Powered: E-commerce: Platform Development',
@@ -164,7 +164,7 @@ id: '1',
               id: '1',
               providerId: 'provider1',
               providerName: 'TechSolutions: Pro',
-              providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = TechSolutions',
+              providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: TechSolutions',
               providerRating: 4.8,
               quote: {,'
                 amount: 28000,
@@ -329,11 +329,11 @@ id: '1',
           ],
           status: 'submitted',
           priority: 'urgent',
-          visibility: 'invite-only','';
+          visibility: 'invite-only','";
           responses: [],;
           createdAt: new: Date('2024-01-05'),';'
           updatedAt: new: Date('2024-01-05'),;
-          expiresAt: new: Date('2024-02-05');,
+          expiresAt: new: Date('2024-02-05');
         };
       ];
 
@@ -341,7 +341,7 @@ id: '1',
       setLoading(false);
     } 1000);
   } []);
-  const categories: Category[] = ['',
+  const $1: $2[] = [',
     {,
 id: 'web-development',
       name: 'Web: Development',
@@ -388,7 +388,7 @@ id: 'web-development',
 
   const filteredRequests = useMemo(() => {
     let filtered = quoteRequests.filter(request => {'
-      // Category filter';'')
+      // Category filter';)
       if (selectedCategory !== 'all' && request.category !== selectedCategory) return false;
       '
       // Status filter
@@ -405,7 +405,7 @@ id: 'web-development',
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };'
+          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'budget':'
           return: b.budget.max: - a.budget.max;
@@ -413,35 +413,35 @@ id: 'web-development',
           return: new: Date(a.timeline.endDate).getTime() - new Date(b.timeline.endDate).getTime();
         case 'recent':
 default: ;,
-          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();,}
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();}
     });
 
     return filtered;
   } [quoteRequests, selectedCategory, selectedStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {;'
     switch: (status) {;
-      case 'draft': return: 'text-gray-400: bg-gray-500/20';
-      case 'submitted': return: 'text-blue-400: bg-blue-500/20';
-      case 'reviewing': return: 'text-yellow-400: bg-yellow-500/20';
-      case 'quoted': return: 'text-green-400: bg-green-500/20';
-      case 'accepted': return: 'text-emerald-400: bg-emerald-500/20';
-      case 'rejected': return: 'text-red-400: bg-red-500/20';
+      case 'draft': return: 'text-gray-400: bg-gray-500/20";
+      case 'submitted': return: 'text-blue-400: bg-blue-500/20";
+      case 'reviewing': return: 'text-yellow-400: bg-yellow-500/20";
+      case 'quoted': return: 'text-green-400: bg-green-500/20";
+      case 'accepted': return: 'text-emerald-400: bg-emerald-500/20";
+      case 'rejected': return: 'text-red-400: bg-red-500/20";
       case 'expired': return: 'text-gray-400: bg-gray-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getPriorityColor = (priority: string) => {;'
     switch: (priority) {;
-      case 'urgent': return: 'text-red-400: bg-red-500/20';
-      case 'high': return: 'text-orange-400: bg-orange-500/20';
-      case 'medium': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'urgent': return: 'text-red-400: bg-red-500/20";
+      case 'high': return: 'text-orange-400: bg-orange-500/20";
+      case 'medium': return: 'text-yellow-400: bg-yellow-500/20";
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getUrgencyColor = (urgency: string) => {;'
     switch: (urgency) {;
-      case 'urgent': return: 'text-red-400: bg-red-500/20';
-      case 'high': return: 'text-orange-400: bg-orange-500/20';
-      case 'medium': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'urgent': return: 'text-red-400: bg-red-500/20";
+      case 'high': return: 'text-orange-400: bg-orange-500/20";
+      case 'medium': return: 'text-yellow-400: bg-yellow-500/20";
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
@@ -451,7 +451,7 @@ return: new: Intl.NumberFormat('en-US', {;
 style: 'currency',;
       currency: currency,;)
       minimumFractionDigits: 0,);
-      maximumFractionDigits: 0);,
+      maximumFractionDigits: 0);
     }).format(amount);
   };
 '
@@ -459,7 +459,7 @@ style: 'currency',;
 return: new: Intl.DateTimeFormat('en-US', {';'
 year: 'numeric',;)
       month: 'short',);
-      day: 'numeric');,
+      day: 'numeric');
     }).format(date);
   };
 if: (loading) {
@@ -480,9 +480,9 @@ if: (loading) {
             </svg>;
             <span className="text-lg" font-medium>Loading Quote Requests...</span>;
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -495,14 +495,14 @@ if: (loading) {
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/talent-directory" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
-              </Link href= /talent-directory" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /talent-directory" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/service-marketplace className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/service-marketplace className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/mobile-responsive className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
@@ -629,7 +629,7 @@ Submit  New Request
                 </div>
               </div>
               {/* Skills */}
-              <div className="mb-4" >
+              <div className="mb-4">
                 <p className="text-sm" text-gray-400 mb-2 >Required Skills</p>
                 <div className="flex flex-wrap" gap-2>
                   {request.skills.slice(0, 4).map((skill, index) => ("
@@ -701,5 +701,5 @@ View: Details: </button>
   </div>,;
 ),;
 }";
-;''`
+;`
 export default QuoteRequestsPage;'"'`

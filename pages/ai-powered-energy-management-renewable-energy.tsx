@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface EnergyMonitoring {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockEnergyMonitoring: EnergyMonitoring[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Solar Panel Array A',
@@ -132,7 +132,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         maintenanceNeeds: ['Check battery health monthly', 'Calibrate sensors quarterly', 'Update firmware'],
         recommendations: ['Optimize charging cycles', 'Expand storage capacity', 'Implement smart scheduling']}
 }]
-  const mockRenewableEnergy: RenewableEnergy[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Solar Farm Alpha',
@@ -176,7 +176,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         maintenanceSchedule: ['Turbine inspection annually', 'Dam safety check quarterly', 'Water flow monitoring daily'],
         optimizationRecommendations: ['Optimize water flow', 'Enhance turbine efficiency', 'Improve monitoring systems']}
 }]
-  const mockSmartGrid: SmartGrid[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Main Distribution Hub',
@@ -220,7 +220,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         outageRisk: 0.06,
         optimizationRecommendations: ['Expand storage capacity', 'Optimize charging cycles', 'Enhance grid integration']}
 }]
-  const mockEnergyAnalytics: EnergyAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Energy Consumption Analysis',
@@ -375,7 +375,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -449,7 +449,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Energy Monitoring Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Energy Systems</h3>
               <div className="space-y-4>"
                 {energyMonitoring.slice(0, 3).map((system) => (
@@ -475,7 +475,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Renewable Energy Systems</h3>
               <div className="space-y-4>" 
                 {renewableEnergy.slice(0, 2).map((system) => (
-                  </div><div key={system.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={system.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{system.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
@@ -523,10 +523,10 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{system.location} • {system.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Current" Output</span>
-                      <span className="text-white>{system.currentOutput}%</span" >
+                      <span className="text-white>{system.currentOutput}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Capacity</span>"
@@ -572,7 +572,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Weather" Impact</span>
                       <span className="text-white>{Math.round(system.aiAnalysis.weatherImpact" * 100)}%</span>
                     </div>
@@ -592,7 +592,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {smartGrid.map((grid) => (
                 <div key={grid.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{grid.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(grid.status)} text-white`}>
                       {grid.status}
@@ -600,7 +600,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{grid.location} • {grid.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{formatNumber(grid.currentLoad)}</div>
                       <div className="text-gray-400" text-sm>kW Load</div>
                     </div>
@@ -614,7 +614,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                       <span className=" text-gray-400>Load Balance</span>
                       <span className=" text-white>{Math.round(grid.aiAnalysis.loadBalance * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Stability" Score</span>
                       <span className="text-white>{grid.aiAnalysis.stabilityScore}/10</span>"
                     </div>
@@ -627,10 +627,10 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 "'
         {selectedView === 'analytics' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {energyAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{analytics.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
@@ -726,7 +726,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -749,7 +749,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

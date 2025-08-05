@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface DAOProposal {
   id: string
@@ -89,7 +89,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
   const [daoMetrics, setDaoMetrics] = useState<any>(null
   const chartRef = useRef<HTMLDivElement>(null
   // Mock data for demonstration
-  const mockProposals: DAOProposal[] = ['
+  const $1: $2[] = [
     {
       id: 'prop-001',
       title: 'Implement AI-Powered Marketplace Matching Algorithm',
@@ -147,7 +147,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
     marketCap: 18375000,
     treasuryBalance: 2500000,
     votingPower: 7500000}
-  const mockMembers: DAOMember[] = ['
+  const $1: $2[] = [
     {
       address: '0x1234...5678',
       username: 'AI_Architect',
@@ -367,7 +367,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 {/* Token Info */}"
                 <div className="bg-gray-800/50" rounded-xl p-6 border border-gray-700> 
                   </div><div className="flex"" items-center space-x-3 mb-4>
-                    <div className=" w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center ">
+                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center ">
                       <span className="text-white" text-lg>🪙</span>
                     </div> 
                     <div>
@@ -378,12 +378,12 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                   
                   <div className="space-y-3>" 
                     </div><div className="flex" justify-between>
-                      <span className="text-gray-300>Price</span" >
+                      <span className="text-gray-300>Price</span">
                       <span className="text-white>${mockToken.price}</span"">
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Market" Cap</span>
-                      <span className="text-white>${mockToken.marketCap.toLocaleString()}</span" >
+                      <span className="text-white>${mockToken.marketCap.toLocaleString()}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Holders</span>"
@@ -422,7 +422,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 </div>
 
                 {/* Quick Actions */}"
-                <div className=" lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                <div className="lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
                   <div className="grid" grid-cols-1 md grid-cols-4" gap-4>
                     <button className="p-4" bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>
@@ -437,7 +437,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                       <div className="text-2xl" mb-2>💰</div>
                       <div className="font-semibold>Treasury</div"">
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>👥</div>
                       <div className="font-semibold>Members</div>"
                     </button>
@@ -456,7 +456,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                 </div>
                 <div className="space-y-4>" 
                   {mockProposals.map((proposal) => (
-                    </div><div key={proposal.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={proposal.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4> `
                         </div><div className="flex items-center" space-x-3>``
                           <div className="{`w-10" h-10 rounded-lg:flex items-center justify-center ${getCategoryColor(proposal.category)}`}>
@@ -476,7 +476,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                           </div>
                         </div>
                       </div> 
-                      <p className="text-gray-300" mb-4>{proposal.description}</p>
+                      <p className="text-gray-300 mb-4">{proposal.description}</p>
                       <div className="grid" grid-cols-1 md:grid-cols-4 gap-4 mb-4>
                         </div><div>
                           <span className="text-gray-300" text-sm >Votes For</span>
@@ -495,7 +495,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                           <p className="text-white" font-semibold>{new Date(proposal.endDate).toLocaleDateString()}</p>
                         </div>
                       </div>
-                      <div className=" flex space-x-2" >"
+                      <div className="flex space-x-2">"
                         '
                           onClick={() => voteOnProposal(proposal.id, 'for')}
                           disabled={isLoading || proposal.status !== 'active'}
@@ -526,7 +526,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
             )}"'
             {/* Treasury */},''
 {activeTab === 'treasury' && ("
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DAO Treasury</h2>
                 <div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                   {/* Treasury Overview */}
@@ -537,7 +537,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                         <span className="text-gray-300>Total" Balance</span>
                         <span className="text-2xl" font-bold text-white >${mockTreasury.totalBalance.toLocaleString()}</span>
                       </div>
-                      <div className=" space-y-3">
+                      <div className="space-y-3">
                         {mockTreasury.tokens.map((token) => (
                           </div><div key={token.symbol} className=" flex justify-between items-center p-3 bg-gray-700/50" rounded-lg>'
                             <div className="flex" items-center space-x-3>
@@ -596,12 +596,12 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Tokens</span" >
+                          <span className="text-gray-300>Tokens</span">
                           <span className="text-white>{member.tokens.toLocaleString()} ZION</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Voting" Power</span>
-                          <span className="text-purple-400>{member.votingPower.toLocaleString()}</span" >
+                          <span className="text-purple-400>{member.votingPower.toLocaleString()}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Reputation</span>"
@@ -629,7 +629,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
             )}"'
             {/* Governance */},''
 {activeTab === 'governance' && ("
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Governance Parameters</h2>
                 <div className="grid grid-cols-1 md grid-cols-2 gap-6>
                   </div><div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
@@ -643,7 +643,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                         <span className=" text-gray-300>Execution Delay</span>
                         <span className=" text-white>{mockGovernance.executionDelay / 86400} days</span>
                       </div>
-                      <div className=" flex justify-between" >
+                      <div className="flex justify-between">
                         <span className="text-gray-300>Quorum</span>"
                         <span className="text-white>{mockGovernance.quorum.toLocaleString()}" ZION</span>
                       </div>
@@ -660,7 +660,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                         <span className=" text-gray-300>Proposal Threshold</span>
                         <span className=" text-white>{mockGovernance.proposalThreshold.toLocaleString()} ZION</span>
                       </div>
-                      <div className=" flex justify-between" >
+                      <div className="flex justify-between">
                         <span className="text-gray-300>Min" Voting Power</span>
                         <span className="text-white>{mockGovernance.minVotingPower.toLocaleString()}" ZION</span>
                       </div>
@@ -679,10 +679,10 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
             )}"'
             {/* Analytics */},''
 {activeTab === 'analytics' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DAO Analytics</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6> 
-                  </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                  </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <div className="flex" items-center space-x-3> 
                       </div><div className="w-10 h-10 bg-green-500 rounded-lg flex items-center" justify-center>
                         <span className="text-white" text-lg>📈</span>
@@ -735,10 +735,10 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
       </main>
 
       {/* Footer */}"
-      <footer className=" relative z-10 mt-16" >
+      <footer className="relative z-10 mt-16">
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8> 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered DAO Governance System | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -755,6 +755,6 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredDAOGovernanceSystem )))))))))))))))))))))))))))))))))))))"'"'`

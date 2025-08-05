@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Nanotechnology {
   id: string;
   name: string;'
   description: string;
-  type: 'nanomaterials' | 'nanodevices' | 'nanosensors' | 'nanomedicine' | 'nanoelectronics' | 'nanophotonics';
-  status: 'active' | 'inactive' | 'research' | 'error' | 'offline';
+  type: 'nanomaterials' | 'nanodevices' | 'nanosensors' | 'nanomedicine' | 'nanoelectronics' | 'nanophotonics";
+  status: 'active' | 'inactive' | 'research' | 'error' | 'offline";
   scale: number;
   precision: number;
   efficiency: number;
@@ -23,8 +23,8 @@ interface MolecularEngineering {
   id: string;
   title: string;'
   description: string;
-  type: 'molecular_design' | 'molecular_synthesis' | 'molecular_assembly' | 'molecular_computing' | 'molecular_sensors' | 'molecular_machines';
-  status: 'active' | 'inactive' | 'designing' | 'error' | 'offline';
+  type: 'molecular_design' | 'molecular_synthesis' | 'molecular_assembly' | 'molecular_computing' | 'molecular_sensors' | 'molecular_machines";
+  status: 'active' | 'inactive' | 'designing' | 'error' | 'offline";
   molecules: number;
   complexity: number;
   aiOptimization: MolecularOptimization;}
@@ -38,8 +38,8 @@ interface NanoscaleDevices {
   id: string;
   name: string;'
   description: string;
-  type: 'quantum_dots' | 'nanowires' | 'nanotubes' | 'nanoparticles' | 'nanofilms' | 'nanostructures';
-  status: 'active' | 'inactive' | 'fabricating' | 'error' | 'offline';
+  type: 'quantum_dots' | 'nanowires' | 'nanotubes' | 'nanoparticles' | 'nanofilms' | 'nanostructures";
+  status: 'active' | 'inactive' | 'fabricating' | 'error' | 'offline";
   size: number;
   conductivity: number;
   aiAnalysis: DeviceAnalysis;}
@@ -54,8 +54,8 @@ interface MolecularComputing {
   computingId: string;
   title: string;'
   description: string;
-  type: 'dna_computing' | 'molecular_logic' | 'quantum_molecular' | 'biomolecular' | 'synthetic_biology' | 'molecular_memory';
-  status: 'active' | 'inactive' | 'computing' | 'error' | 'offline';
+  type: 'dna_computing' | 'molecular_logic' | 'quantum_molecular' | 'biomolecular' | 'synthetic_biology' | 'molecular_memory";
+  status: 'active' | 'inactive' | 'computing' | 'error' | 'offline";
   operations: number;
   accuracy: number;
   aiAnalysis: ComputingAnalysis;}
@@ -70,8 +70,8 @@ interface Nanorobotics {
   robotId: string;
   title: string;'
   description: string;
-  type: 'nanorobots' | 'nanomachines' | 'nanomotors' | 'nanoswimmers' | 'nanogrippers' | 'nanopropellers';
-  status: 'active' | 'inactive' | 'operating' | 'error' | 'offline';
+  type: 'nanorobots' | 'nanomachines' | 'nanomotors' | 'nanoswimmers' | 'nanogrippers' | 'nanopropellers";
+  status: 'active' | 'inactive' | 'operating' | 'error' | 'offline";
   mobility: number;
   precision: number;
   aiAnalysis: RoboticsAnalysis;}
@@ -86,8 +86,8 @@ interface NanotechnologyManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'research' | 'development' | 'production' | 'quality' | 'safety' | 'optimization';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'research' | 'development' | 'production' | 'quality' | 'safety' | 'optimization";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   devices: number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;}
@@ -111,7 +111,7 @@ interface NanotechnologyInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredNanotechnologyPage: NextPage = () => {
@@ -126,7 +126,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockNanotechnology: Nanotechnology[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Advanced Nanomaterials System',
@@ -143,7 +143,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         innovationScore: 96,
         recommendations: ['Optimize nanoscale fabrication', 'Enhance material properties']}}
     }]
-  const mockMolecularEngineering: MolecularEngineering[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Molecular Design Platform',
@@ -159,7 +159,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         efficiencyScore: 94,
         recommendations: ['Improve molecular modeling', 'Enhance synthesis protocols']}
 }]
-  const mockNanoscaleDevices: NanoscaleDevices[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Quantum Dot Array',
@@ -175,7 +175,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         reliabilityScore: 94,
         recommendations: ['Optimize quantum dot synthesis', 'Enhance device stability']}
 }]
-  const mockMolecularComputing: MolecularComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       computingId: 'MC-001',
@@ -192,7 +192,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         speedScore: 94,
         recommendations: ['Optimize DNA sequences', 'Enhance computational efficiency']}
 }]
-  const mockNanorobotics: Nanorobotics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       robotId: 'NR-001',
@@ -209,7 +209,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         controlScore: 96,
         recommendations: ['Improve swarm coordination', 'Enhance precision control']}
 }]
-  const mockNanotechnologyManagement: NanotechnologyManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'NTM-001',
@@ -436,7 +436,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-indigo-500"
@@ -493,7 +493,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -552,7 +552,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -593,7 +593,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105 >Start Exploring
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -608,6 +608,6 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredNanotechnologyPage )))))))))))))))))))))))))))))"'"'`

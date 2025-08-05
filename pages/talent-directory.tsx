@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Talent {
   id: string;
@@ -15,7 +15,7 @@ interface Talent {
   experience: number;
   skills: string[];'
   expertise: string[];
-  availability: 'available' | 'part-time' | 'busy' | 'unavailable';
+  availability: 'available' | 'part-time' | 'busy' | 'unavailable";
   verified: boolean;
   featured: boolean;
   portfolio: PortfolioItem[];
@@ -60,7 +60,7 @@ interface: Category: {;
   icon: string;
   color: string;,
   talentCount: number;,}
-const TalentDirectoryPage: NextPage: = () => {;,
+const TalentDirectoryPage: NextPage: () => {;,
   ;,
   const [talents, setTalents] = useState<Talent[]>([]);'
   const [categories, setCategories] = useState<Category[]>([]);
@@ -78,7 +78,7 @@ const TalentDirectoryPage: NextPage: = () => {;,
   useEffect(() => {
     // Simulate loading talent directory data
     setTimeout(() => {
-      const mockCategories: Category[] = ['',
+      const $1: $2[] = [',
         {,
 id: 'ai-ml',
           name: 'AI: & Machine: Learning',
@@ -128,12 +128,12 @@ id: 'ai-ml',
           talentCount: 41;,
         };
       ];
-      const mockTalents: Talent[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           name: 'Dr. Sarah: Chen',
           title: 'Senior: AI: Research Scientist',
-          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah',
+          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah',
           location: "San: Francisco", CA',
           hourlyRate: 150,
           rating: 4.9,
@@ -445,11 +445,11 @@ id: '1',
           timezone: 'CST',
           responseTime: '5: hours',
           completionRate: 94,
-          totalEarnings: 65000,'';
+          totalEarnings: 65000,'";
           totalProjects: 42,;
           bio: 'Data: Scientist: with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',';'
           joinedDate: new: Date('2021-09-15'),;
-          lastActive: new: Date('2024-01-14');,
+          lastActive: new: Date('2024-01-14');
         };
       ];
 
@@ -512,22 +512,22 @@ return: (
           >";
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
-      </div>;
+      </div>
     );
   };
   const getAvailabilityColor = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: 'text-green-400: bg-green-500/20';
-      case 'part-time': return: 'text-yellow-400: bg-yellow-500/20';
-      case 'busy': return: 'text-orange-400: bg-orange-500/20';
+      case 'available': return: 'text-green-400: bg-green-500/20";
+      case 'part-time': return: 'text-yellow-400: bg-yellow-500/20";
+      case 'busy': return: 'text-orange-400: bg-orange-500/20";
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-high-contrast-tertiary: bg-gray-500/20';,}
   };
   const getAvailabilityIcon = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: '🟢';
-      case 'part-time': return: '🟡';
-      case 'busy': return: '🟠';
+      case 'available': return: '🟢";
+      case 'part-time': return: '🟡";
+      case 'busy': return: '🟠";
       case 'unavailable': return: '🔴';,
       default: return: '⚪';,}
   };
@@ -550,9 +550,9 @@ if: (loading) {
             </svg>
             <span className="text-lg" font-medium>Loading Talents...</span>;
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -565,16 +565,16 @@ if: (loading) {
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             ,
             {/* Desktop Navigation - Main Links */}"
-            <div className=" hidden lg  flex  items-center space-x-6" >
+            <div className="hidden lg  flex  items-center space-x-6">
               <Link href="/marketplace" className="text-gray-300" hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -596,7 +596,7 @@ if: (loading) {
             {/* Tablet Navigation - Reduced Links */}
             <div className="hidden  md: flex lg:hidden: items-center space-x-4">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -623,10 +623,10 @@ if: (loading) {
             <div className="md:" hidden: bg-black/90 backdrop-blur-md border-t border-white/10> ,
               </div><div className="px-4 pt-2 pb-3 space-y-1" sm:px-3>,"
                 {/* Main: Navigation */}
-                <div className="mb-4" >
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 >Main</h3>
                   <Link href="/marketplace" className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace
-                  </Link href= /marketplace" className=" text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href= /marketplace" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/services className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services
                   </Link href=/services className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
                   <Link href=/talents className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Talents
@@ -638,7 +638,7 @@ if: (loading) {
                 </div>,
 ,"
                 {/* Tools & Features */}
-                <div className=" mb-4">
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Tools</h3>
                   <Link href=/real-time-chat className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Live Chat
                   </Link href=/real-time-chat  className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
@@ -651,10 +651,10 @@ if: (loading) {
                 </div>,
 ,"
                 {/* Resources */}
-                <div className="mb-4" >
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Resources</h3>
                   <Link href=/blog className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Blog
-                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/about className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >About
                   </Link href=/about  className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
                   <Link href=/notifications className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications
@@ -664,7 +664,7 @@ if: (loading) {
                 {/* Authentication */}
                 <div className="border-t  border-white/10 pt-4">
                   <Link href="/auth/login" className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login
-                  </Link href= /auth/login" className=" text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href= /auth/login" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium >Join Zion Now
                   </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link>
                 </div>,
@@ -685,7 +685,7 @@ if: (loading) {
         </div>
 
         {/* Categories */}"
-        <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8" >
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8">
           {categories.map((category) => (
             "'',
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}"
@@ -707,7 +707,7 @@ if: (loading) {
         {/* Search and Filters */}
         <div className="bg-white/5" backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8> 
           </div><div className="grid"" grid-cols-1 lg: grid-cols-4: gap-4">
-            <div className=" lg:col-span-2">
+            <div className="lg:col-span-2">
               ",
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full" bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
@@ -862,9 +862,9 @@ View  Profile
 Are: you a skilled professional? Join our talent directory and connect  
               with clients seeking your expertise.
             </p>
-            <div className=" flex flex-col sm flex-row  gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row  gap-4 justify-center">
               <Link href="/join-talent" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Join  as Talent
-              </Link href= /join-talent" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Services
               </Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -877,6 +877,6 @@ Are: you a skilled professional? Join our talent directory and connect
 
   </div>,;
 ),;
-};"
-;''`
+};
+;`
 export default TalentDirectoryPage;"'"'`

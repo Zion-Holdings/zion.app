@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion";
 
 interface AutomatedWorkflowsProps {
   className?: string;}'
@@ -18,7 +18,7 @@ const AutomatedWorkflows: React.FC<AutomatedWorkflowsProps> = ({ className="'' }
         </div>
         <h3 className=" text-xl font-semibold text-gray-900>Automated Workflows</h3>
       </div>
-      <p className=" text-gray-600" mb-4>
+      <p className="text-gray-600 mb-4">
         Advanced automated workflows capabilities that enhance your business operations and drive growth.
       </p>
       <div className=" flex" space-x-2">
@@ -30,6 +30,6 @@ const AutomatedWorkflows: React.FC<AutomatedWorkflowsProps> = ({ className="'' }
         </button>
       </div>
     </motion.div >;  );"
-};"
+};
 ''`
 export default AutomatedWorkflows;"'"'`

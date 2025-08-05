@@ -1,8 +1,8 @@
 
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
-const Talents: NextPage: = () => {
+const Talents: NextPage: () => {
   return (
     <div>
       </div><div className=" relative z-10 container-responsive" py-8>
@@ -46,8 +46,8 @@ const Talents: NextPage: = () => {
   
   </div>
 
-  </div>;,
+  </div>,
 ),;
-};"
+};
 '
 export default Talents;"'"

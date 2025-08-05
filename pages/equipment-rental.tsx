@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Equipment {
   id: string;
@@ -14,7 +14,7 @@ interface Equipment {
   monthlyRate: number;
   availability: 'available' | 'rented' | 'maintenance' | 'reserved';'
   location: string;
-  condition: 'excellent' | 'good' | 'fair' | 'poor';
+  condition: 'excellent' | 'good' | 'fair' | 'poor";
   images: string[];
   specifications: EquipmentSpecs;
   owner: string;
@@ -40,8 +40,8 @@ interface Rental {
   endDate: Date;
   totalDays: number;'
   totalCost: number;
-  status: 'pending' | 'active' | 'completed' | 'cancelled';
-  paymentStatus: 'pending' | 'paid' | 'refunded';
+  status: 'pending' | 'active' | 'completed' | 'cancelled";
+  paymentStatus: 'pending' | 'paid' | 'refunded";
   insurance: boolean;
   deposit: number;
   notes?: string;
@@ -49,13 +49,13 @@ interface Rental {
 interface MaintenanceRecord {
   id: string;'
   equipmentId: string;
-  type: 'routine' | 'repair' | 'inspection' | 'emergency';
+  type: 'routine' | 'repair' | 'inspection' | 'emergency";
   description: string;
   cost: number;
   technician: string;
   startDate: Date;'
   endDate: Date;
-  status: 'scheduled' | 'in_progress' | 'completed';
+  status: 'scheduled' | 'in_progress' | 'completed";
   parts: string[];
   notes?: string;}
 interface RentalAnalytics {
@@ -295,7 +295,7 @@ const EquipmentRentalPage: NextPage = () => {'
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/project-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects
               </Link href=/project-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -317,7 +317,7 @@ const EquipmentRentalPage: NextPage = () => {'
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#equipment" className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Equipment
-            </Link href=#equipment  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#equipment  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >List Equipment
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -369,7 +369,7 @@ const EquipmentRentalPage: NextPage = () => {'
 "'
         {/* Filters */},''
 {activeTab === 'equipment' && ("
-          <div className=" flex flex-wrap gap-4 mb-8 >
+          <div className="flex flex-wrap gap-4 mb-8 >
             
               onChange={(e) ="> setSelectedCategory(e.target.value)}"
               className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-orange-500
@@ -399,7 +399,7 @@ const EquipmentRentalPage: NextPage = () => {'
             </div><div className="flex justify-between" items-center>
               <h2 className="text-2xl" font-bold text-white>Available Equipment</h2>
               <Link href=/marketplace" className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >List Equipment
-              </Link href=/marketplace  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
             </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredEquipment.map((item) => (
@@ -412,7 +412,7 @@ const EquipmentRentalPage: NextPage = () => {'
                         <h3 className="text-lg" font-semibold text-white>{item.name}</h3>
                         <p className="text-gray-300" text-sm >{item.category}</p>
                       </div>`
-                      <div className=" text-right">``"
+                      <div className="text-right">``"
                         <span className="{`px-3" py-3 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}`}>
                           {item.availability.toUpperCase()} 
                         </span>`
@@ -424,7 +424,7 @@ const EquipmentRentalPage: NextPage = () => {'
                       </div>
                     </div>
                   </div>
-                  <div className=" space-y-3" mb-4>
+                  <div className="space-y-3 mb-4">
                     <p className="text-gray-300" text-sm line-clamp-2>{item.description}</p>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Daily" Rate:</span>
@@ -435,12 +435,12 @@ const EquipmentRentalPage: NextPage = () => {'
                       <span className="text-white>{formatCurrency(item.weeklyRate)}</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Location:</span" >
+                      <span className="text-gray-300>Location:</span">
                       <span className="text-white>{item.location}</span"">
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Owner" </span>
-                      <span className="text-white>{item.owner}</span" >
+                      <span className="text-white>{item.owner}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Rating:</span>"
@@ -474,12 +474,12 @@ const EquipmentRentalPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'rentals' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Rental History</h2>
             <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:overflow-hidden> 
               </div><div className="overflow-x-auto"">
-                <table className=" w-full">
-                  <thead className=" bg-white/10">
+                <table className="w-full">
+                  <thead className="bg-white/10">
                     <tr>
                       <th className="text-left" text-gray-300 py-3 px-6>Rental ID</th>
                       <th className="text-left" text-gray-300 py-3 px-6>Equipment</th>
@@ -522,7 +522,7 @@ const EquipmentRentalPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'maintenance' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Maintenance Records</h2>
             <div className="space-y-6>" 
               {maintenanceRecords.map((record) => (
@@ -553,7 +553,7 @@ const EquipmentRentalPage: NextPage = () => {'
                     </div>
                     <div>
                       <span className="text-gray-300" text-sm>Start Date </span>
-                      <div className="text-white>{record.startDate.toLocaleDateString()}</div" >
+                      <div className="text-white>{record.startDate.toLocaleDateString()}</div">
                     </div>
                     <div>
                       <span className="text-gray-300" text-sm>End Date </span>
@@ -613,7 +613,7 @@ const EquipmentRentalPage: NextPage = () => {'
               </div>
             </div>
             <div className="grid" grid-cols-1 md:grid-cols-2 gap-6> 
-              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg" font-semibold text-white mb-4>Monthly Revenue</h3>
                 <div className="space-y-3>"
                   {analytics.monthlyRevenue.map((month, index) => (
@@ -627,7 +627,7 @@ const EquipmentRentalPage: NextPage = () => {'
                   ))}
                 </div>
               </div>
-              <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg" font-semibold text-white mb-4>Category Performance</h3>
                 <div className="space-y-3>"
                   {analytics.categoryPerformance.map((category, index) => (
@@ -648,7 +648,7 @@ const EquipmentRentalPage: NextPage = () => {'
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-orange-900/50 to-red-900/50 border-t border-white/10 > 
         </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-32>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Rent Professional Equipment Today 
             </h2>
@@ -676,8 +676,8 @@ const EquipmentRentalPage: NextPage = () => {'
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Equipment Rental</h4>
-              <ul className="space-y-2 text-sm" >
-                <li><Link href="/equipment-rental className="text-gray-400" hover text-white transition-colors >Browse Equipment</Link href= /equipment-rental" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/equipment-rental className="text-gray-400" hover text-white transition-colors >Browse Equipment</Link href= /equipment-rental" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/project-management className="text-gray-400" hover text-white transition-colors >Project Management</Link href=/project-management className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/marketplace-pricing" className="text-gray-400" hover text-white transition-colors >Pricing & Commissions</Link href=/marketplace-pricing  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/referral-affiliate className="text-gray-400" hover text-white transition-colors >Referral System</Link href=/referral-affiliate className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -694,7 +694,7 @@ const EquipmentRentalPage: NextPage = () => {'
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -714,6 +714,6 @@ const EquipmentRentalPage: NextPage = () => {'
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default EquipmentRentalPage )))))))))))))"'"'`

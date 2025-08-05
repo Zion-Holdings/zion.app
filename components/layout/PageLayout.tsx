@@ -1,6 +1,6 @@
 import React from 'react
 import Sidebar from '../ui/Sidebar
-import { useRouter } from 'next/router
+import { useRouter } from "next/router"
 interface PageLayoutProps {
   children: React.ReactNode}
 const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
@@ -13,6 +13,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
         </div>
       </main>
     </div > );"
-};"
+};
 '
 export default PageLayout "'"

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface CropMonitoring {
   id: string'
@@ -87,7 +87,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockCropMonitoring: CropMonitoring[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Wheat Field A',
@@ -131,7 +131,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         nutrientDeficiency: [],
         recommendations: ['Begin harvest operations', 'Monitor weather conditions', 'Prepare storage facilities']}
 }]
-  const mockSoilAnalysis: SoilAnalysis[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       location: 'Field A-1',
@@ -184,7 +184,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         amendmentRecommendations: ['Increase organic matter', 'Add nitrogen fertilizer', 'Improve water retention'],
         cropSuitability: ['vegetables', 'fruits', 'cotton']}
 }]
-  const mockIrrigationSystems: IrrigationSystem[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Smart Drip System A',
@@ -225,7 +225,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         scheduleRecommendations: ['Update weather integration', 'Optimize zone programming', 'Enhance sensor network'],
         maintenanceNeeds: ['Replace sensors', 'Update software', 'Calibrate weather station']}
 }]
-  const mockSmartFarming: SmartFarming[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Automated Planting Robot',
@@ -379,7 +379,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -449,7 +449,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Crop Monitoring Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Crop Monitoring</h3>
               <div className="space-y-4>"
                 {cropMonitoring.slice(0, 3).map((crop) => (
@@ -475,7 +475,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Smart Farming Systems</h3>
               <div className="space-y-4>" 
                 {smartFarming.slice(0, 2).map((system) => (
-                  </div><div key={system.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={system.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{system.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
@@ -523,8 +523,8 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{crop.location} • {crop.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Area</span>"
                       <span className="text-white>{formatNumber(crop.area)}" acres</span>
                     </div>
@@ -570,7 +570,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>Moisture</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Fertility" Score</span>
                       <span className="text-white>{soil.aiAnalysis.fertilityScore}/10</span>" 
@@ -609,7 +609,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Water" Usage</span>
                       <span className="text-white>{formatNumber(system.waterUsage)}" gal</span>
                     </div>
@@ -629,7 +629,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {smartFarming.map((system) => (
                 <div key={system.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{system.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
@@ -637,7 +637,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{system.location}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{system.efficiency}%</div>
                       <div className="text-gray-400" text-sm>Efficiency</div>
                     </div>
@@ -648,10 +648,10 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>ROI</span" >
+                      <span className="text-gray-400>ROI</span">
                       <span className="text-white>{Math.round(system.aiAnalysis.roi * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Productivity" Gain</span>
                       <span className="text-white>{Math.round(system.aiAnalysis.productivityGain" * 100)}%</span>
                     </div>
@@ -665,7 +665,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && ("
           <div className=" space-y-6>
             {/* Analytics Overview */}
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center> 
                 </div><div className="text-3xl" font-bold text-white>{analytics.totalCrops}</div>
                 <div className="text-gray-400>Total" Crops</div>
@@ -689,9 +689,9 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>AI Agricultural Insights</h3>
               <div className="space-y-4>" 
                 {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center space-x-3" mb-2>`
-                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span" >``"
+                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">``"
                       <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title} 
                       </h4>
@@ -747,7 +747,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SmartContract {
   id: string;'
   name: string;
-  type: 'defi' | 'nft' | 'dao' | 'gaming' | 'supply-chain' | 'identity';
+  type: 'defi' | 'nft' | 'dao' | 'gaming' | 'supply-chain' | 'identity";
   status: 'deployed' | 'testing' | 'failed' | 'archived' | 'updating';'
   address: string;
-  network: 'ethereum' | 'polygon' | 'binance' | 'arbitrum' | 'optimism';
+  network: 'ethereum' | 'polygon' | 'binance' | 'arbitrum' | 'optimism";
   gasUsed: number;
   gasPrice: number;
   transactions: number;
@@ -26,8 +26,8 @@ interface SmartContract {
 interface BlockchainTransaction {
   id: string;'
   hash: string;
-  type: 'transfer' | 'contract-interaction' | 'mint' | 'burn' | 'swap';
-  status: 'pending' | 'confirmed' | 'failed' | 'reverted';
+  type: 'transfer' | 'contract-interaction' | 'mint' | 'burn' | 'swap";
+  status: 'pending' | 'confirmed' | 'failed' | 'reverted";
   from: string;
   to: string;
   value: number;
@@ -43,7 +43,7 @@ interface DApp {
   name: string;
   category: 'defi' | 'nft' | 'gaming' | 'social' | 'utility' | 'governance';'
   description: string;
-  status: 'active' | 'development' | 'maintenance' | 'archived';
+  status: 'active' | 'development' | 'maintenance' | 'archived";
   users: number;
   tvl: number;
   transactions: number;
@@ -53,7 +53,7 @@ interface DApp {
   networks: string[];
   features: {'
     name: string;
-    status: 'implemented' | 'planned' | 'testing';
+    status: 'implemented' | 'planned' | 'testing";
     aiOptimized: boolean;
   }[];}
 interface BlockchainAnalytics {
@@ -62,7 +62,7 @@ interface BlockchainAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredBlockchainPage: NextPage = () => {
   
@@ -82,7 +82,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered blockchain data
     setTimeout(() => {
-      const mockContracts: SmartContract[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Zion DeFi Protocol',
@@ -181,7 +181,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
             securityScore: 0,
             complexity: 0}}
       ];
-      const mockTransactions: BlockchainTransaction[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           hash: '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef',
@@ -262,7 +262,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
           network: 'binance',
           fee: 0}
       ];
-      const mockDapps: DApp[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Zion DeFi Platform',
@@ -351,7 +351,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
               aiOptimized: false
             }]}
       ];
-      const mockAnalytics: BlockchainAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Gas Efficiency',
@@ -439,54 +439,54 @@ const AIPoweredBlockchainPage: NextPage = () => {
   } [contracts, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'deployed': return 'text-green-400 bg-green-500/20';
-      case 'testing': return 'text-blue-400 bg-blue-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'archived': return 'text-gray-400 bg-gray-500/20';
-      case 'updating': return 'text-yellow-400 bg-yellow-500/20';
+      case 'deployed': return 'text-green-400 bg-green-500/20";
+      case 'testing': return 'text-blue-400 bg-blue-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'archived': return 'text-gray-400 bg-gray-500/20";
+      case 'updating': return 'text-yellow-400 bg-yellow-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'defi': return '💰';
-      case 'nft': return '🎨';
-      case 'dao': return '🏛️';
-      case 'gaming': return '🎮';
-      case 'supply-chain': return '📦';
-      case 'identity': return '🆔';
+      case 'defi': return '💰";
+      case 'nft': return '🎨";
+      case 'dao': return '🏛️";
+      case 'gaming': return '🎮";
+      case 'supply-chain': return '📦";
+      case 'identity': return '🆔";
       default: return '🔗';}
   };
   const getNetworkIcon = (network: string) => {'
     switch (network) {';'
-      case 'ethereum': return '🔷';
-      case 'polygon': return '🟣';
-      case 'binance': return '🟡';
-      case 'arbitrum': return '🔵';
-      case 'optimism': return '🔴';
+      case 'ethereum': return '🔷";
+      case 'polygon': return '🟣";
+      case 'binance': return '🟡";
+      case 'arbitrum': return '🔵";
+      case 'optimism': return '🔴";
       default: return '⚫';}
   };
   const getTransactionStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'confirmed': return 'text-green-400 bg-green-500/20';
-      case 'pending': return 'text-yellow-400 bg-yellow-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'reverted': return 'text-red-400 bg-red-500/20';
+      case 'confirmed': return 'text-green-400 bg-green-500/20";
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'reverted': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTransactionTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'transfer': return '💸';
-      case 'contract-interaction': return '🤝';
-      case 'mint': return '🪙';
-      case 'burn': return '🔥';
-      case 'swap': return '🔄';
+      case 'transfer': return '💸";
+      case 'contract-interaction': return '🤝";
+      case 'mint': return '🪙";
+      case 'burn': return '🔥";
+      case 'swap': return '🔄";
       default: return '📝';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 
@@ -508,16 +508,16 @@ const AIPoweredBlockchainPage: NextPage = () => {
           <div className=" absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center" >
+        <div className="text-center">
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>
             <svg className=" animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none viewBox=0 0 24" 24">
               <circle className="opacity-25" cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className=" text-lg font-medium>Loading AI-Powered Blockchain...</span>
+            <span className="text-lg font-medium>Loading AI-Powered Blockchain...</span>
           </div">
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -531,7 +531,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex items-center>
-              <Link href=/ className=" flex-shrink-0 > </Link href=/ className=" flex-shrink-0" ><h1 className=" text-2xl" font-bold text-white>
+              <Link href=/ className=" flex-shrink-0 > </Link href=/ className="flex-shrink-0"><h1 className=" text-2xl" font-bold text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
@@ -590,7 +590,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
               </div><div key={metric.id} className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
                 <div className=" flex" items-center justify-between mb-4>
                   <h3 className=" text-lg font-semibold text-white >{metric.metric}</h3>
-                  <span className="text-2xl" >{getTrendIcon(metric.trend)}</span>
+                  <span className="text-2xl">{getTrendIcon(metric.trend)}</span>
                 </div>
                 <div className="mb-4>"
                   </div><div className=" text-3xl font-bold text-white mb-2>{metric.current}</div>
@@ -624,14 +624,14 @@ const AIPoweredBlockchainPage: NextPage = () => {
                     <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(contract.status)}`}>
                       {contract.status.toUpperCase()}
                     </span>'`
-                    <div className=" mt-2">''``
-                      <span className=" {`px-4 py-3 rounded text-xs font-medium ${contract.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                    <div className="mt-2">''``
+                      <span className="{`px-4 py-3 rounded text-xs font-medium ${contract.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {contract.aiOptimized ? 'AI OPTIMIZED'   'AI DISABLED'}
                       </span>
                     </div>
                   </div>
                 </div>
-                <div className=" mb-4>
+                <div className= mb-4">
                   </div><div className=" flex items-center space-x-2 mb-2 >
                     <span className="text-sm:text-gray-400>Network </span>
                     <span className=" text-lg>{getNetworkIcon(contract.network)}</span>
@@ -702,13 +702,13 @@ const AIPoweredBlockchainPage: NextPage = () => {
               </div><div key={tx.id} className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
                 <div className=" flex items-start justify-between mb-4>
                   </div><div className=" flex" items-center space-x-3>
-                    <div className=" text-3xl>{getTransactionTypeIcon(tx.type)}</div">
+                    <div className="text-3xl>{getTransactionTypeIcon(tx.type)}</div">
                     <div>
                       <h3 className="text-lg" font-semibold text-white mb-1>{tx.type.toUpperCase()}</h3>
                       <p className="text-gray-300 text-sm>{shortenHash(tx.hash)}</p>
                     </div>
                   </div>`
-                  <div className=" text-right">``
+                  <div className="text-right">``
                     <span className="{`px-3  py-3 rounded-full text-xs font-medium ${getTransactionStatusColor(tx.status)}`}>
                       {tx.status.toUpperCase()}
                     </span>''`
@@ -788,7 +788,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
                 </div>
                 <div className=" grid grid-cols-2 gap-4 mb-4>
                   </div><div>
-                    <p className="text-sm:text-gray-400" >Users</p>
+                    <p className="text-sm:text-gray-400">Users</p>
                     <p className="text-lg" font-semibold text-white >{dapp.users.toLocaleString()}</p>
                   </div>
                   <div>
@@ -808,15 +808,15 @@ const AIPoweredBlockchainPage: NextPage = () => {
                   <p className="text-sm" text-gray-400 mb-2 >Networks:</p>
                   <div className="flex" flex-wrap gap-2>
                     {dapp.networks.map((network, index) => (
-                      <span key={index} className=" px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30 capitalize>
+                      <span key={index} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30 capitalize>
                         {network}
                       </span>
                     ))}
                   </div>
                 </div>
-                <div className=" mb-4>
+                <div className= mb-4">
                   <p className="text-sm text-gray-400 mb-2 >Features:</p>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     {dapp.features.map((feature, index) => (
                       </div><div key={index} className=" flex items-center justify-between p-2 bg-white/5 rounded>
                         <span className="text-sm:text-white>{feature.name}</span>`

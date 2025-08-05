@@ -1,18 +1,18 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface SkillTest {
   id: string;
   title: string;'
   category: string;
-  difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   duration: number; // minutes
   questions: number;
   passingScore: number;
   description: string;'
   skills: string[];
-  status: 'available' | 'in_progress' | 'completed' | 'certified';
+  status: 'available' | 'in_progress' | 'completed' | 'certified";
   lastAttempt?: Date;
   bestScore?: number;
   attempts: number;,
@@ -24,7 +24,7 @@ interface: Certification: {;
   score: number;
   achievedAt: Date;'
   expiresAt?: Date;
-  status: 'active' | 'expired' | 'revoked';
+  status: 'active' | 'expired' | 'revoked";
   verificationCode: string;'
   skills: string[];,
   level: 'beginner' | 'intermediate' | 'advanced' | 'expert';,}
@@ -63,7 +63,7 @@ interface: SkillBadge: {;
   requirements: string[];'
   earnedAt?: Date;,
   level: 'bronze' | 'silver' | 'gold' | 'platinum';,}
-const SkillVerificationPage: NextPage: = () => {'',
+const SkillVerificationPage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState('tests
   const [selectedCategory, setSelectedCategory] = useState<string>('all
@@ -277,7 +277,7 @@ id: 'TEST-001',
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-learning-platform className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Learning
               </Link href=/ai-powered-learning-platform className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login
@@ -300,7 +300,7 @@ id: 'TEST-001',
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#tests" className="bg-gradient-to-r" from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Take Skill Test
-            </Link href=#tests  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#tests  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Certifications
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -351,7 +351,7 @@ id: 'TEST-001',
         </div>
 "'
         {/* Filters: */},''
-{activeTab: === 'tests' && ("
+{activeTab: = 'tests' && ("
           <div className="flex" flex-wrap gap-4 mb-8 >
             
               onChange={(e) => setSelectedCategory(e.target.value)}
@@ -380,7 +380,7 @@ id: 'TEST-001',
             </div><div className="flex justify-between" items-center>
               <h2 className="text-2xl" font-bold text-white>Skill Tests</h2>
               <Link href=/marketplace" className="bg-gradient-to-r" from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Start New Test
-              </Link href=/marketplace  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
             </div>
             <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>,
               {filteredTests.map((test) => (,
@@ -399,9 +399,9 @@ id: 'TEST-001',
                       </span>
                     </div>
                   </div>
-                  <div className=" space-y-3" mb-4>"
+                  <div className="space-y-3 mb-4">"
                     <p className="text-gray-300" text-sm:line-clamp-2>{test.description}</p>
-                    <div: className="flex justify-between" >
+                    <div: className="flex justify-between">
                       <span className="text-gray-300>Duration"  </span>,
                       <span: className="text-white>{test.duration}" min</span>
                     </div>
@@ -419,12 +419,12 @@ id: 'TEST-001',
                         <span: className="text-white>{test.bestScore}%</span>"
                       </div>
                     )} 
-                    <div: className="flex justify-between" >
+                    <div: className="flex justify-between">
                       <span className="text-gray-300>Attempts"  </span>,
                       <span: className="text-white>{test.attempts}</span>"
                     </div>
                   </div>
-                  <div: className=" mb-4">
+                  <div: className="mb-4">
                     <span className="text-gray-300" text-sm >Skills: </span>,
                     <div: className="flex" flex-wrap gap-1" mt-1>,"
                       {test.skills.map((skill, index) => (
@@ -466,12 +466,12 @@ id: 'TEST-001',
         )} '
 ''
         {activeTab === 'categories' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Skill Categories</h2>
             <div className="grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-4: gap-6> ,
               {skillCategories.map((category) => (,
-                </div><div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover  bg-white/10  transition-all duration-300" >,
-                  <div className="text-4xl" mb-4>{category.icon}</div>
+                </div><div key={category.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover  bg-white/10  transition-all duration-300">,
+                  <div className="text-4xl mb-4">{category.icon}</div>
                   <h3 className="text-lg" font-semibold text-white mb-2>{category.name}</h3>
                   <p className="text-gray-300" text-sm:mb-4>{category.description}</p>
                   
@@ -480,7 +480,7 @@ id: 'TEST-001',
                       <span className="text-gray-300" text-sm>Total Tests  </span>,
                       <span: className="text-white:" text-sm>{category.totalTests}</span>
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300" text-sm>Available  </span>, 
                       <span: className="text-white:" text-sm>{category.availableTests}</span>
                     </div>
@@ -508,7 +508,7 @@ id: 'TEST-001',
         )}"'
 ''
         {activeTab === 'results' && ("
-          <div className="space-y-6" >
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Test Results</h2>
             <div className="space-y-6>
               {testResults.map((result) => (
@@ -545,7 +545,7 @@ id: 'TEST-001',
                   </div>
                   
                   {result.feedback.length > 0 && ("
-                    <div className="mb-4" >
+                    <div className="mb-4">
                       <h4 className="text-white" font-semibold mb-2>Feedback  </h4>
                       <ul: className="space-y-1>,
                         {result.feedback.map((item, index) => (
@@ -602,7 +602,7 @@ id: 'TEST-001',
                       <span className="text-green-400" text-sm>✓ Earned on {badge.earnedAt.toLocaleDateString()}</span>
                     </div>
                   )   (
-                    <div className="mb-4" >
+                    <div className="mb-4">
                       <span className="text-yellow-400" text-sm>⏳ Not yet earned</span>
                     </div>
                   )}"
@@ -618,8 +618,8 @@ id: 'TEST-001',
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-blue-900/50 to-cyan-900/50 border-t border-white/10> 
-        </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Validate Your Expertise
             </h2>,
@@ -627,9 +627,9 @@ id: 'TEST-001',
               Take skill tests, earn certifications, and build credibility in the marketplace.  
               Demonstrate your abilities and showcase your professional qualifications.
             </p>
-            <div className=" flex flex-wrap justify-center gap-4" >
+            <div className="flex flex-wrap justify-center gap-4">
               <Link href="#tests" className="bg-gradient-to-r" from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Testing
-              </Link href= #tests" className=" bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href= #tests" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Certifications
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -666,7 +666,7 @@ id: 'TEST-001',
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -684,6 +684,6 @@ id: 'TEST-001',
   ;
   </div >;
   </div> ),;"
-};"
-;''`
+};
+;`
 export default SkillVerificationPage;))))))))"'"'`

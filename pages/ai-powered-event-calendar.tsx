@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Event {
   id: string;
   title: string;'
   description: string;
-  type: 'meeting' | 'webinar' | 'workshop' | 'conference' | 'deadline' | 'milestone' | 'custom';
-  status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'meeting' | 'webinar' | 'workshop' | 'conference' | 'deadline' | 'milestone' | 'custom";
+  status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   startDate: Date;
   endDate: Date;
   location: string;
@@ -21,7 +21,7 @@ interface EventAttendee {
   id: string;
   name: string;'
   role: string;
-  status: 'confirmed' | 'pending' | 'declined' | 'maybe';
+  status: 'confirmed' | 'pending' | 'declined' | 'maybe";
   responseTime: Date;}
 interface EventAgenda {
   id: string;
@@ -45,7 +45,7 @@ interface AIEventAnalysis {
 interface Calendar {
   id: string;'
   name: string;
-  type: 'personal' | 'team' | 'project' | 'organization';
+  type: 'personal' | 'team' | 'project' | 'organization";
   events: string[];
   settings: CalendarSettings;
   performance: CalendarPerformance;
@@ -61,7 +61,7 @@ interface WorkingHours {
   days: string[];}
 interface AvailabilityRule {'
   id: string;
-  type: 'available' | 'busy' | 'tentative' | 'out-of-office';
+  type: 'available' | 'busy' | 'tentative' | 'out-of-office";
   startTime: string;
   endTime: string;
   days: string[];}
@@ -94,7 +94,7 @@ interface TimelineMilestone {
   title: string;
   description: string;'
   targetDate: Date;
-  status: 'upcoming' | 'in-progress' | 'completed' | 'delayed';
+  status: 'upcoming' | 'in-progress' | 'completed' | 'delayed";
   progress: number;
   dependencies: string[];}
 interface TimelineDeadline {
@@ -102,8 +102,8 @@ interface TimelineDeadline {
   title: string;
   description: string;'
   dueDate: Date;
-  priority: 'low' | 'medium' | 'high' | 'critical';
-  status: 'pending' | 'in-progress' | 'completed' | 'overdue';
+  priority: 'low' | 'medium' | 'high' | 'critical";
+  status: 'pending' | 'in-progress' | 'completed' | 'overdue";
   assignedTo: string;}
 interface TimelinePerformance {
   totalMilestones: number;
@@ -129,7 +129,7 @@ interface EventCalendarInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredEventCalendarPage: NextPage = () => {
@@ -141,7 +141,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockEvents: Event[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'AI-Powered Marketplace Launch',
@@ -249,7 +249,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         recommendations: ['Prepare detailed metrics', 'Include interactive sessions'],
         riskFactors: ['Time constraints', 'Complex agenda']}
 }]
-  const mockCalendars: Calendar[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Product Development Calendar',
@@ -321,7 +321,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
         timeEfficiency: 85,
         recommendations: ['Enhance campaign scheduling', 'Improve audience targeting']}
 }]
-  const mockTimelines: Timeline[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Marketplace Launch Timeline',
@@ -595,7 +595,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                           <h3 className="text-xl" font-semibold text-white mb-2 >{event.title}</h3>
                           <p className="text-gray-300" text-sm capitalize>{event.type} • {event.priority} priority</p>
                         </div>`
-                        <div className=" text-right">``
+                        <div className="text-right">``
                           <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(event.status)}`}>
                             {event.status} 
                           </span>`
@@ -782,7 +782,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
             {/* Analytics Tab */}, ''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"
-                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalEvents.toLocaleString()}</div>
                     <div className="text-gray-400" text-sm>Total Events</div>
@@ -804,7 +804,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>" 
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4" >
+                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4">
                         <div className="flex" items-start justify-between mb-2>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
@@ -830,8 +830,8 @@ const AIPoweredEventCalendarPage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-emerald-600/20 to-teal-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Optimize Your Events?
             </h2>
@@ -839,9 +839,9 @@ const AIPoweredEventCalendarPage: NextPage = () => {
               Start your event management journey with our AI-powered calendar system  
               and streamline your scheduling and timeline tracking.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/ai-service-matcher" className="bg-gradient-to-r" from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105 >Start Planning
-              </Link href= /ai-service-matcher" className=" bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105" ></Link>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -856,6 +856,6 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredEventCalendarPage ))))))))))))))))))))))))))))"'"'`

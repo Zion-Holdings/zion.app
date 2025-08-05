@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react";
 
 const ContrastDemo: React.FC = () => {;
   const [highContrastMode, setHighContrastMode] = useState(false);
@@ -23,7 +23,7 @@ const ContrastDemo: React.FC = () => {;
         <div className=" grid grid-cols-1 md grid-cols-2" gap-6">
           <div className=" bg-high-contrast-card border-high-contrast-primary rounded-lg" p-6">
             <h3 className=" text-high-contrast text-lg font-semibold mb-4>Primary Text</h3>
-            <p className=" text-high-contrast">
+            <p className="text-high-contrast">
               This is primary text with enhanced contrast and text shadow for better visibility.
             </p>
           </div>
@@ -63,7 +63,7 @@ const ContrastDemo: React.FC = () => {;
               <span className="status-indicator" active></span>
               <span className="text-high-contrast-success" font-semibold>Active</span>
             </div>
-            <p className=" text-high-contrast-secondary text-sm">
+            <p className="text-high-contrast-secondary text-sm">
               System is running normally
             </p>
           </div>
@@ -72,7 +72,7 @@ const ContrastDemo: React.FC = () => {;
               <span className="status-indicator" warning></span>
               <span className="text-high-contrast-warning" font-semibold>Warning</span>
             </div>
-            <p className=" text-high-contrast-secondary text-sm">
+            <p className="text-high-contrast-secondary text-sm">
               Attention required
             </p>
           </div>
@@ -81,7 +81,7 @@ const ContrastDemo: React.FC = () => {;
               <span className="status-indicator" error></span>
               <span className="text-high-contrast-error" font-semibold>Error</span>
             </div>
-            <p className=" text-high-contrast-secondary text-sm">
+            <p className="text-high-contrast-secondary text-sm">
               System error detected
             </p>
           </div>
@@ -100,16 +100,16 @@ const ContrastDemo: React.FC = () => {;
       {/* Alert Messages Demo */}"
       <section className=" alert-messages-demo" mb-8">
         <h2 className=" text-high-contrast text-2xl font-bold mb-6>Enhanced Alert Messages</h2>
-        <div className=" space-y-4">
+        <div className="space-y-4">
           <div className=" alert alert-success border-high-contrast-success rounded-lg" p-4">
             <h4 className=" text-high-contrast-success font-semibold mb-2>Success Alert</h4>
-            <p className=" text-high-contrast-secondary">
+            <p className="text-high-contrast-secondary">
               This is a success message with enhanced contrast and proper styling.
             </p>
           </div>
           <div className=" alert alert-warning border-high-contrast-warning rounded-lg" p-4">
             <h4 className=" text-high-contrast-warning font-semibold mb-2>Warning Alert</h4>
-            <p className=" text-high-contrast-secondary">
+            <p className="text-high-contrast-secondary">
               This is a warning message with improved visibility and contrast.
             </p>
           </div>
@@ -122,6 +122,6 @@ const ContrastDemo: React.FC = () => {;
         </div>
       </section>
     </div >;  );"
-};"
+};
 ''`
 export default ContrastDemo;"'"'`

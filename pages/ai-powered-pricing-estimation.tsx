@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface PricingEstimate {
   id: string;
   projectType: string;'
   category: string;
-  complexity: 'simple' | 'medium' | 'complex' | 'enterprise';
+  complexity: 'simple' | 'medium' | 'complex' | 'enterprise";
   estimatedCost: number;
   currency: string;
   breakdown: CostBreakdown[];
@@ -29,9 +29,9 @@ interface MarketComparison {
   priceRange: {
     min: number;
     max: number;
-  };'
+  };
   competitors: CompetitorPrice[];
-  marketTrend: 'increasing' | 'decreasing' | 'stable';
+  marketTrend: 'increasing' | 'decreasing' | 'stable";
   trendPercentage: number;}
 interface CompetitorPrice {
   name: string;
@@ -39,12 +39,12 @@ interface CompetitorPrice {
   rating: number;
   features: string[];}'
 interface PricingRecommendation {
-  type: 'cost-optimization' | 'feature-addition' | 'timeline-adjustment' | 'quality-improvement';
+  type: 'cost-optimization' | 'feature-addition' | 'timeline-adjustment' | 'quality-improvement";
   title: string;
   description: string;
   potentialSavings?: number;'
   additionalCost?: number;
-  impact: 'high' | 'medium' | 'low';
+  impact: 'high' | 'medium' | 'low";
   priority: number;}
 interface TimelineEstimate {
   totalWeeks: number;
@@ -61,12 +61,12 @@ interface RiskFactor {
   category: string;
   description: string;'
   probability: number;
-  impact: 'high' | 'medium' | 'low';
+  impact: 'high' | 'medium' | 'low";
   mitigation: string;}
 interface PricingModel {
   id: string;'
   name: string;
-  type: 'fixed' | 'hourly' | 'value-based' | 'subscription' | 'performance-based';
+  type: 'fixed' | 'hourly' | 'value-based' | 'subscription' | 'performance-based";
   description: string;
   advantages: string[];
   disadvantages: string[];
@@ -100,7 +100,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true
   const [activeTab, setActiveTab] = useState<'estimates' | 'models' | 'optimization'>('estimates
   // Mock data for pricing estimates
-  const mockEstimates: PricingEstimate[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       projectType: 'AI-Powered Web Application',
@@ -301,7 +301,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       createdAt: new Date('2024-01-10
     }]
   // Mock pricing models
-  const mockPricingModels: PricingModel[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Fixed Price',
@@ -700,7 +700,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 {activeTab === 'optimization' && (
               <div className="space-y-8>" 
                 {budgetOptimizations.map((optimization, index) => (
-                  </div><div key={index} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={index} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="grid" grid-cols-1 md grid-cols-3 gap-6 mb-6> 
                       </div><div className="text-center>
                         <div className="text-2xl" font-bold text-red-400>${optimization.originalBudget.toLocaleString()}</div>
@@ -716,7 +716,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       </div>
                     </div>
 "
-                    <div className=" mb-6">
+                    <div className="mb-6">
                       <h4 className="text-lg" font-semibold text-white mb-3 >Optimization Recommendations:</h4>
                       <div className="space-y-3>"
                         {optimization.recommendations.map((rec, recIndex) => (
@@ -768,8 +768,8 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Get Accurate Pricing Estimates?
             </h2>
@@ -777,9 +777,9 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               Our AI-powered pricing system analyzes market data, project complexity, and your specific requirements  
               to provide accurate cost estimates and optimization recommendations.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Free Estimate
-              </Link href= /auth/signup" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Try AI Matcher
               </Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -794,6 +794,6 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredPricingEstimationPage )))))))))))))))))))))))))"'"'`

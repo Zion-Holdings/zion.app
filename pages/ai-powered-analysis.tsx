@@ -1,6 +1,6 @@
 import React from "react;
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import type { NextPage } from 'next";
+import Head from 'next/head";
 
 const AiPoweredAnalysis: NextPage = () => {
   return (
@@ -35,7 +35,7 @@ const AiPoweredAnalysis: NextPage = () => {
           
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 >
             </div><div className=" glass border border-neon-blue/20 rounded-xl" p-6>
-              <div className="text-3xl" mb-4>📊</div>
+              <div className="text-3xl mb-4">📊</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>Data Analytics</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Advanced data analytics with AI-powered insights and visualization
@@ -43,7 +43,7 @@ const AiPoweredAnalysis: NextPage = () => {
             </div>
             
             <div className="glass" border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🔍</div>
+              </div><div className="text-3xl mb-4">🔍</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>Pattern Recognition</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Identify patterns and trends in your data with machine learning
@@ -51,7 +51,7 @@ const AiPoweredAnalysis: NextPage = () => {
             </div>
             
             <div className="glass" border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>📈</div>
+              </div><div className="text-3xl mb-4">📈</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>Predictive Analytics</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Forecast future trends and outcomes using AI models
@@ -59,7 +59,7 @@ const AiPoweredAnalysis: NextPage = () => {
             </div>
             
             <div className="glass" border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🎯</div>
+              </div><div className="text-3xl mb-4">🎯</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>Performance Metrics</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Track and analyze key performance indicators
@@ -67,7 +67,7 @@ const AiPoweredAnalysis: NextPage = () => {
             </div>
             
             <div className="glass" border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>⚡</div>
+              </div><div className="text-3xl mb-4">⚡</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>Real-time Monitoring</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Monitor your systems and data in real-time
@@ -75,7 +75,7 @@ const AiPoweredAnalysis: NextPage = () => {
             </div>
             
             <div className="glass" border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🤖</div>
+              </div><div className="text-3xl mb-4">🤖</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2>AI Insights</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Get intelligent insights and recommendations
@@ -84,8 +84,8 @@ const AiPoweredAnalysis: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
   );
-};"
+};
 '
 export default AiPoweredAnalysis;"'"

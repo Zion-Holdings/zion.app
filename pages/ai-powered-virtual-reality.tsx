@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface VRExperience {
   id: string;'
   name: string;
-  type: 'immersive-gaming' | 'virtual-tours' | 'training-simulation' | 'social-vr' | 'virtual-events' | 'virtual-commerce';
-  status: 'active' | 'inactive' | 'testing' | 'error' | 'updating';
+  type: 'immersive-gaming' | 'virtual-tours' | 'training-simulation' | 'social-vr' | 'virtual-events' | 'virtual-commerce";
+  status: 'active' | 'inactive' | 'testing' | 'error' | 'updating";
   location: string;
   lastUpdated: Date;
   userCount: number;
@@ -22,15 +22,15 @@ interface VRExperience {
   };
   features: {'
     type: string;
-    status: 'active' | 'inactive' | 'error';
+    status: 'active' | 'inactive' | 'error";
     data: any;
   }[];}
 interface VRSession {
   id: string;'
   experienceId: string;
-  sessionType: 'gaming' | 'exploration' | 'training' | 'social' | 'event' | 'shopping';
-  status: 'active' | 'completed' | 'failed' | 'paused' | 'queued';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  sessionType: 'gaming' | 'exploration' | 'training' | 'social' | 'event' | 'shopping";
+  status: 'active' | 'completed' | 'failed' | 'paused' | 'queued";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   startTime: Date;
   endTime?: Date;
   duration: number;
@@ -51,7 +51,7 @@ interface VRAutomation {
   id: string;
   name: string;'
   description: string;
-  status: 'active' | 'inactive' | 'testing' | 'error';
+  status: 'active' | 'inactive' | 'testing' | 'error";
   experienceId: string;
   triggers: {
     condition: string;
@@ -73,7 +73,7 @@ interface VRAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredVirtualRealityPage: NextPage = () => {
   ;
@@ -91,7 +91,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered VR data
     setTimeout(() => {
-      const mockExperiences: VRExperience[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Zion Immersive Gaming',
@@ -235,7 +235,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
               data: { features: 5, responsiveness: 'poor'}
 }]}
       ];
-      const mockSessions: VRSession[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           experienceId: '1',
@@ -295,7 +295,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             engagement: 0,
             satisfactionScore: 0}}
       ];
-      const mockAutomations: VRAutomation[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Smart Gaming Optimization',
@@ -390,7 +390,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
           successRate: 89.1,
           aiOptimized: true}
       ];
-      const mockAnalytics: VRAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'VR Immersion',
@@ -478,63 +478,63 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
   } [experiences, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-green-400 bg-green-500/20';
-      case 'inactive': return 'text-gray-400 bg-gray-500/20';
-      case 'testing': return 'text-blue-400 bg-blue-500/20';
-      case 'error': return 'text-red-400 bg-red-500/20';
-      case 'updating': return 'text-yellow-400 bg-yellow-500/20';
+      case 'active': return 'text-green-400 bg-green-500/20";
+      case 'inactive': return 'text-gray-400 bg-gray-500/20";
+      case 'testing': return 'text-blue-400 bg-blue-500/20";
+      case 'error': return 'text-red-400 bg-red-500/20";
+      case 'updating': return 'text-yellow-400 bg-yellow-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'immersive-gaming': return '🎮';
-      case 'virtual-tours': return '🗺️';
-      case 'training-simulation': return '🎓';
-      case 'social-vr': return '👥';
-      case 'virtual-events': return '🎪';
-      case 'virtual-commerce': return '🛒';
+      case 'immersive-gaming': return '🎮";
+      case 'virtual-tours': return '🗺️";
+      case 'training-simulation': return '🎓";
+      case 'social-vr': return '👥";
+      case 'virtual-events': return '🎪";
+      case 'virtual-commerce': return '🛒";
       default: return '🥽';}
   };
   const getSessionStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-blue-400 bg-blue-500/20';
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'queued': return 'text-yellow-400 bg-yellow-500/20';
-      case 'paused': return 'text-orange-400 bg-orange-500/20';
+      case 'active': return 'text-blue-400 bg-blue-500/20";
+      case 'completed': return 'text-green-400 bg-green-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'queued': return 'text-yellow-400 bg-yellow-500/20";
+      case 'paused': return 'text-orange-400 bg-orange-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getSessionTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'gaming': return '🎮';
-      case 'exploration': return '🔍';
-      case 'training': return '📚';
-      case 'social': return '👥';
-      case 'event': return '🎪';
-      case 'shopping': return '🛒';
+      case 'gaming': return '🎮";
+      case 'exploration': return '🔍";
+      case 'training': return '📚";
+      case 'social': return '👥";
+      case 'event': return '🎪";
+      case 'shopping': return '🛒";
       default: return '🥽';}
   };
   const getAutomationStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-green-400 bg-green-500/20';
-      case 'inactive': return 'text-gray-400 bg-gray-500/20';
-      case 'testing': return 'text-blue-400 bg-blue-500/20';
-      case 'error': return 'text-red-400 bg-red-500/20';
+      case 'active': return 'text-green-400 bg-green-500/20";
+      case 'inactive': return 'text-gray-400 bg-gray-500/20";
+      case 'testing': return 'text-blue-400 bg-blue-500/20";
+      case 'error': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
   const getPerformanceColor = (value: number) => {';'
-    if (value > 90) return 'text-green-400';
-    if (value > 75) return 'text-yellow-400';
-    if (value > 60) return 'text-orange-400';
-    return 'text-red-400';
+    if (value > 90) return 'text-green-400";
+    if (value > 75) return 'text-yellow-400";
+    if (value > 60) return 'text-orange-400";
+    return 'text-red-400";
   };
 
   if (loading) {
@@ -556,7 +556,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Virtual Reality...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -570,14 +570,14 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-augmented-reality" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AR
-              </Link href= /ai-powered-augmented-reality" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-augmented-reality" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-robotics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Robotics
               </Link href=/ai-powered-robotics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -671,7 +671,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="mb-4>" 
-                  </div><div className="flex items-center justify-between mb-2" >
+                  </div><div className="flex items-center justify-between mb-2">
                     <span className="text-sm:text-gray-400>Location" </span>
                     <span className="text-sm" text-white>{experience.location}</span>
                   </div>
@@ -708,7 +708,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
                     </p>
                   </div>
                 </div>
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm" text-gray-400 mb-2 >Features:</p>
                   <div className="space-y-1>
                     {experience.features.map((feature, index) => ('
@@ -856,7 +856,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
                 </div>
                 <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Triggers </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {automation.triggers.map((trigger, index) => (
                       </div><div key={index} className=" bg-white/5 rounded" p-2>
                         <div className=" flex items-center" justify-between>
@@ -870,7 +870,7 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
                 </div>
                 <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Actions </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {automation.actions.map((action, index) => (
                       </div><div key={index} className=" bg-white/5 rounded" p-2>
                         <div className=" flex items-center" justify-between>
@@ -926,6 +926,6 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredVirtualRealityPage ")"'"'`

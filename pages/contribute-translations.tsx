@@ -1,6 +1,6 @@
 import React from "react;
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 '
 const languages = [
   { code: 'en', name: 'English' },
@@ -78,6 +78,6 @@ export default function ContributeTranslations() {
   
   </div> 
   </div>
-  </div>;
+  </div>
 );'
 }'"

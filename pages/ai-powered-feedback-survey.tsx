@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Feedback {
   id: string;
   title: string;'
   description: string;
-  type: 'general' | 'product' | 'service' | 'support' | 'feature' | 'bug';
-  status: 'active' | 'closed' | 'analyzing' | 'completed';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'general' | 'product' | 'service' | 'support' | 'feature' | 'bug";
+  status: 'active' | 'closed' | 'analyzing' | 'completed";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   responses: number;
   averageRating: number;
   satisfactionScore: number;
@@ -23,8 +23,8 @@ interface Survey {
   id: string;
   title: string;'
   description: string;
-  type: 'market-research' | 'user-satisfaction' | 'product-feedback' | 'service-evaluation' | 'custom';
-  status: 'draft' | 'active' | 'closed' | 'analyzing';
+  type: 'market-research' | 'user-satisfaction' | 'product-feedback' | 'service-evaluation' | 'custom";
+  status: 'draft' | 'active' | 'closed' | 'analyzing";
   totalResponses: number;
   completionRate: number;
   questionEffectiveness: number;
@@ -38,8 +38,8 @@ interface Poll {
   id: string;
   title: string;'
   description: string;
-  type: 'single-choice' | 'multiple-choice' | 'ranking' | 'rating';
-  status: 'active' | 'closed' | 'scheduled';
+  type: 'single-choice' | 'multiple-choice' | 'ranking' | 'rating";
+  status: 'active' | 'closed' | 'scheduled";
   totalVotes: number;
   participationRate: number;
   averageRating: number;
@@ -56,7 +56,7 @@ interface Testimonial {
   company: string;
   content: string;'
   rating: number;
-  status: 'pending' | 'approved' | 'featured' | 'rejected';
+  status: 'pending' | 'approved' | 'featured' | 'rejected";
   aiAnalysis: AITestimonialAnalysis;}
 interface AITestimonialAnalysis {
   id: string;
@@ -76,7 +76,7 @@ interface FeedbackSurveyInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredFeedbackSurveyPage: NextPage = () => {
@@ -89,7 +89,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockFeedback: Feedback[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Platform User Experience Feedback',
@@ -121,7 +121,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         trendAnalysis: 25,
         recommendations: ['Expand AI capabilities', 'Enhance personalization']}
 }]
-  const mockSurveys: Survey[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Marketplace Satisfaction Survey',
@@ -137,7 +137,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         questionQuality: 88,
         recommendations: ['Add more specific questions', 'Optimize question flow']}
 }]
-  const mockPolls: Poll[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Preferred AI Feature',
@@ -153,7 +153,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
         trendPrediction: 18,
         recommendations: ['Promote underutilized features', 'Enhance feature descriptions']}
 }]
-  const mockTestimonials: Testimonial[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       author: 'Sarah Johnson',
@@ -348,7 +348,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
 {activeTab === 'feedback' && (
               <div className="space-y-8>"
                 {/* Controls */}
-                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6" >"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6">"
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md space-y-0> 
                     </div><div className="flex items-center" space-x-4>
                       "
@@ -373,7 +373,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                 {/* Feedback Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredFeedback.map((item) => (
-                    </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={item.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{item.title}</h3>
@@ -405,7 +405,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-amber-600/20 to-orange-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm >
@@ -443,7 +443,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
 {activeTab === 'surveys' && (
               <div className="space-y-8>" 
                 {surveys.map((survey) => (
-                  </div><div key={survey.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={survey.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{survey.title}</h3>
@@ -577,7 +577,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                         <h3 className="text-xl" font-semibold text-white mb-2 >{testimonial.author}</h3>
                         <p className="text-gray-300" text-sm>{testimonial.role} at {testimonial.company}</p>
                       </div>`
-                      <div className=" text-right">``
+                      <div className="text-right">``
                         <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(testimonial.status)}`}>
                           {testimonial.status} 
                         </span>
@@ -697,6 +697,6 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredFeedbackSurveyPage )))))))))))))))))))))))"'"'`

@@ -1,7 +1,7 @@
 import React from "react;
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import Head from 'next/head";
+import { motion } from 'framer-motion";
 
 export default function ServiceDetails() {
   return (
@@ -19,7 +19,7 @@ export default function ServiceDetails() {
         </div>
         <div className=" container mx-auto px-4 py-8" container-responsive>"
           "
-            className=" max-w-4xl mx-auto" >
+            className="max-w-4xl mx-auto">
             <h1 className="text-4xl:" font-bold: text-gray-900 mb-8 text-responsive-lg>
               Service-details
             </h1>
@@ -31,8 +31,8 @@ export default function ServiceDetails() {
       </div>
     </div>
   
-  </div>;
+  </div>
 ;
-  </div>;"
-);'',
+  </div>"
+);
 }"'"

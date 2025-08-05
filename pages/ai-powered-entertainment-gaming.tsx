@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface GamingPlatform {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockGamingPlatforms: GamingPlatform[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Mobile Gaming',
@@ -132,7 +132,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         gamingInsights: ['Immersive experiences highly rated', 'VR hardware adoption growing', 'Social VR popular'],
         recommendations: ['Expand immersive content', 'Optimize VR performance', 'Enhance social features']}
 }]
-  const mockEntertainmentAnalytics: EntertainmentAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Content Analytics Platform',
@@ -176,7 +176,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         optimizationOpportunities: ['Optimize engagement tracking', 'Improve retention metrics', 'Enhance user experience'],
         improvementStrategies: ['Implement engagement optimization', 'Enhance retention tracking', 'Expand experience metrics']}
 }]
-  const mockContentCreation: ContentCreation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Content Generation',
@@ -220,7 +220,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
         improvementAreas: ['Enhance audio quality', 'Improve creation speed', 'Expand audio formats'],
         recommendations: ['Optimize audio processing', 'Enhance quality filters', 'Expand format support']}
 }]
-  const mockEntertainmentOptimization: EntertainmentOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Content Optimization Engine',
@@ -373,7 +373,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -459,7 +459,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Gaming Platforms Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Gaming Platforms</h3>
               <div className="space-y-4>"
                 {gamingPlatforms.slice(0, 3).map((platform) => (
@@ -485,7 +485,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Entertainment Analytics</h3>
               <div className="space-y-4>" 
                 {entertainmentAnalytics.slice(0, 2).map((analytics) => (
-                  </div><div key={analytics.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={analytics.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{analytics.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(analytics.status)} text-white`}>
@@ -533,10 +533,10 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{platform.location} • {platform.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Active" Players</span>
-                      <span className="text-white>{formatNumber(platform.activePlayers)}</span" >
+                      <span className="text-white>{formatNumber(platform.activePlayers)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Revenue</span>"
@@ -582,9 +582,9 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Insights" Generated</span>
-                      <span className="text-white>{formatNumber(analytics.insightsGenerated)}</span" >
+                      <span className="text-white>{formatNumber(analytics.insightsGenerated)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Data" Accuracy</span>
@@ -602,7 +602,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {contentCreation.map((content) => (
                 <div key={content.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{content.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(content.status)} text-white`}>
                       {content.status}
@@ -610,7 +610,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{content.location} • {content.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{content.creationSpeed}%</div>
                       <div className="text-gray-400" text-sm>Creation Speed</div>
                     </div>
@@ -622,9 +622,9 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Output Volume</span>
-                      <span className="text-white>{formatNumber(content.outputVolume)}</span" >
+                      <span className="text-white>{formatNumber(content.outputVolume)}</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Creation" Efficiency</span>
                       <span className="text-white>{content.aiAnalysis.creationEfficiency}/10</span>"
                     </div>
@@ -637,10 +637,10 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
 "'
         {selectedView === 'optimization' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {entertainmentOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{optimization.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
@@ -736,7 +736,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -765,7 +765,7 @@ const AIPoweredEntertainmentGamingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface VRProduct {
   id: string
@@ -38,7 +38,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null
   const vrContainerRef = useRef<HTMLDivElement>(null
   // Sample VR experiences
-  const vrExperiences: VRExperience[] = ['
+  const $1: $2[] = [
     {
       id: 'tech-showroom',
       name: 'AI Tech Showroom',
@@ -221,12 +221,12 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" flex items-center space-x-4 ">
+            <div className="flex items-center space-x-4 ">
              " "
                 onClick={() => setIsVRMode(!isVRMode)}"
                 className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25
@@ -331,7 +331,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
             {/* VR UI Overlay */}
             <div className="absolute" top-0 left-0 w-full h-full pointer-events-none> 
               {/* VR Controls */}
-              </div><div className="absolute bottom-4 left-4 pointer-events-auto" >
+              </div><div className="absolute bottom-4 left-4 pointer-events-auto">
                 <div className="bg-black/50" backdrop-blur-md:rounded-lg p-4 border border-white/20> 
                   </div><div className="grid grid-cols-3" gap-2>'
                     "''
@@ -365,7 +365,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                 <div className="absolute" top-4 right-4 pointer-events-auto>
                   </div><div className="bg-black/80" backdrop-blur-md:rounded-lg p-6 border border-white/20 max-w-sm >
                     <h3 className="text-xl" font-bold text-white mb-2>{selectedProduct.name}</h3>
-                    <p className="text-gray-300" mb-4>{selectedProduct.description}</p>
+                    <p className="text-gray-300 mb-4">{selectedProduct.description}</p>
                     <div className="mb-4>"
                       <span className="text-2xl" font-bold text-green-400 >${selectedProduct.price}</span>
                     </div>
@@ -386,11 +386,11 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                         </div><div key={index} className="text-sm:text-gray-300>•" {feature}</div>
                       ))}
                     </div>
-                    <div className=" flex space-x-2 >
+                    <div className="flex space-x-2 >
                       
                         onClick={() ="> purchaseProduct(selectedProduct)}
                         className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300 
-                     " >
+                     ">
                         Purchase
                       </button>
                       "
@@ -406,7 +406,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
  
               {/* Experience Selector */}
               <div className="absolute" top-4 left-4 pointer-events-auto>
-                </div><div className=" bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20" >
+                </div><div className="bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20">
                   <h4 className="text-white" font-semibold mb-2>VR Experiences</h4>
                   <div className="space-y-2>"
                     {vrExperiences.map((experience) => (`

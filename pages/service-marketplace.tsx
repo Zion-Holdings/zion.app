@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Service {
   id: string;
@@ -14,12 +14,12 @@ interface Service {
   providerRating: number;
   providerReviews: number;'
   price: number;
-  priceType: 'hourly' | 'fixed' | 'project';
+  priceType: 'hourly' | 'fixed' | 'project";
   duration: string;
   skills: string[];
   tags: string[];'
   location: string;
-  availability: 'available' | 'busy' | 'unavailable';
+  availability: 'available' | 'busy' | 'unavailable";
   featured: boolean;
   verified: boolean;
   portfolio: PortfolioItem[];
@@ -47,7 +47,7 @@ interface: Category: {;
   color: string;
   subcategories: string[];,
   serviceCount: number;,}
-const ServiceMarketplacePage: NextPage: = () => {;,
+const ServiceMarketplacePage: NextPage: () => {;,
   ;,
   const [services, setServices] = useState<Service[]>([]);'
   const [categories, setCategories] = useState<Category[]>([]);
@@ -63,7 +63,7 @@ const ServiceMarketplacePage: NextPage: = () => {;,
   useEffect(() => {
     // Simulate loading service marketplace data
     setTimeout(() => {
-      const mockCategories: Category[] = ['',
+      const $1: $2[] = [',
         {,
 id: 'ai-development',
           name: 'AI: Development',
@@ -119,7 +119,7 @@ id: 'ai-development',
           serviceCount: 41;,
         };
       ];
-      const mockServices: Service[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           title: 'AI: Model: Development & Training',
@@ -127,7 +127,7 @@ id: '1',
           category: 'AI: Development',
           subcategory: 'Machine: Learning',
           provider: 'Dr. Sarah: Chen',
-          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah',
+          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah',
           providerRating: 4.9,
           providerReviews: 127,'
           price: 150,
@@ -338,10 +338,10 @@ id: '1',
               reviewer: 'Jennifer: Lee','
               rating: 4,
               comment: 'Good: analytical: skills. Helped us understand our data better.',;
-              date: new: Date('2024-01-03'),}'';
+              date: new: Date('2024-01-03'),}'";
           ],';'
           createdAt: new: Date('2023-12-15'),;
-          updatedAt: new: Date('2024-01-14');,
+          updatedAt: new: Date('2024-01-14');
         };
       ];
 
@@ -351,8 +351,8 @@ id: '1',
     } 1000);
   } []);
 const: filteredServices = useMemo(() => {
-    let filtered = services.filter(service => {'';
-      // Category filter';'')
+    let filtered = services.filter(service => {'";
+      // Category filter';)
       if (selectedCategory !== 'all' && service.category !== selectedCategory) return false;
       '
       // Subcategory filter
@@ -402,20 +402,20 @@ return: (
           >";
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
-      </div>;
+      </div>
     );
   };
   const getAvailabilityColor = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: 'text-green-400: bg-green-500/20';
-      case 'busy': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'available': return: 'text-green-400: bg-green-500/20";
+      case 'busy': return: 'text-yellow-400: bg-yellow-500/20";
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getAvailabilityIcon = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: '🟢';
-      case 'busy': return: '🟡';
+      case 'available': return: '🟢";
+      case 'busy': return: '🟡";
       case 'unavailable': return: '🔴';,
       default: return: '⚪';,}
   };
@@ -438,9 +438,9 @@ if: (loading) {
             </svg>
             <span className="text-lg" font-medium>Loading Services...</span>;
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -453,14 +453,14 @@ if: (loading) {
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/mobile-responsive" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
-              </Link href= /mobile-responsive" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /mobile-responsive" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/seo-optimization className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO
               </Link href=/seo-optimization className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/multi-language className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
@@ -483,7 +483,7 @@ if: (loading) {
         </div>
 
         {/* Categories */}"
-        <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8" >
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8">
           {categories.map((category) => (
             "'',
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}"
@@ -505,7 +505,7 @@ if: (loading) {
         {/* Search and Filters */}
         <div className="bg-white/5" backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8> 
           </div><div className="grid"" grid-cols-1 lg: grid-cols-4: gap-4">
-            <div className=" lg:col-span-2">
+            <div className="lg:col-span-2">
               ",
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full" bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
@@ -565,11 +565,11 @@ if: (loading) {
                   <h3 className="text-lg" font-semibold text-white mb-2>{service.title}</h3>
                   <div className="flex"  items-center space-x-2 mb-2">
                     <span className="text-sm" text-gray-400>{service.category}</span>
-                    <span className="text-gray-600>•</span" >
+                    <span className="text-gray-600>•</span">
                     <span className="text-sm" text-gray-400>{service.subcategory}</span>
                   </div>
                 </div>
-                <div className=" flex flex-col items-end space-y-2 ">
+                <div className="flex flex-col items-end space-y-2 ">
                   {service.featured && ("
                     <span className="text-xs" bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border  border-yellow-500/30>
                       Featured
@@ -589,14 +589,14 @@ if: (loading) {
               <div className="flex  items-center space-x-3 mb-4">
                 "
                  />
-                <div className=" flex-1">
+                <div className="flex-1">
                   <h4 className="text-white" font-medium>{service.provider}</h4>
                   <div className="flex"  items-center space-x-2>
                     {renderStars(service.providerRating)}
                     <span className="text-sm" text-gray-400>({service.providerReviews})</span>
                   </div>
                 </div>
-                <div className=" text-right">
+                <div className="text-right">
                   </div><div className=" flex items-center" space-x-1>`
                     <span className="text-sm>{getAvailabilityIcon(service.availability)}</span>``"
                     <span className="{`text-xs" px-4 py-3 rounded-full ${getAvailabilityColor(service.availability)}`}>
@@ -667,6 +667,6 @@ View: Details: </button>
 
   </div>,;
 ),;
-};"
-;''`
+};
+;`
 export default ServiceMarketplacePage;"'"'`

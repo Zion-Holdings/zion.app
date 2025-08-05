@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface FinancialServices {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockFinancialServices: FinancialServices[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Lending Platform',
@@ -132,7 +132,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         marketTrends: ['Claims frequency decreasing', 'Customer satisfaction improving', 'Premium optimization'],
         recommendations: ['Expand coverage options', 'Implement predictive pricing', 'Enhance customer service']}
 }]
-  const mockBankingOperations: BankingOperations[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Account Management System',
@@ -176,7 +176,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         optimizationOpportunities: ['Improve detection accuracy', 'Reduce false positives', 'Enhance real-time monitoring'],
         maintenanceSchedule: ['Continuous monitoring', 'Daily threat analysis', 'Weekly model updates']}
 }]
-  const mockRiskManagement: RiskManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Credit Risk Assessment',
@@ -220,7 +220,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         mitigationStrategies: ['Enhance process controls', 'Improve staff training', 'Strengthen oversight'],
         recommendations: ['Implement automation', 'Enhance monitoring', 'Improve procedures']}
 }]
-  const mockFinancialAnalytics: FinancialAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Market Analysis Engine',
@@ -383,7 +383,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -461,7 +461,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Financial Services Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Financial Services</h3>
               <div className="space-y-4>"
                 {financialServices.slice(0, 3).map((service) => (
@@ -487,7 +487,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Banking Operations</h3>
               <div className="space-y-4>" 
                 {bankingOperations.slice(0, 2).map((operation) => (
-                  </div><div key={operation.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={operation.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{operation.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(operation.status)} text-white`}>
@@ -535,10 +535,10 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{service.location} • {service.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance</span>"
-                      <span className="text-white>{service.performance}%</span" >
+                      <span className="text-white>{service.performance}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Risk" Score</span>
@@ -584,9 +584,9 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Efficiency</span>"
-                      <span className="text-white>{operation.efficiency}%</span" >
+                      <span className="text-white>{operation.efficiency}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Reliability</span>"
@@ -604,7 +604,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {riskManagement.map((risk) => (
                 <div key={risk.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{risk.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(risk.status)} text-white`}>
                       {risk.status}
@@ -612,7 +612,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{risk.location} • {risk.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{risk.riskLevel}%</div>
                       <div className="text-gray-400" text-sm>Risk Level</div>
                     </div>
@@ -623,10 +623,10 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Exposure</span" >
+                      <span className="text-gray-400>Exposure</span">
                       <span className="text-white>{formatCurrency(risk.exposure)}</span"">
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Risk" Assessment</span>
                       <span className="text-white>{Math.round(risk.aiAnalysis.riskAssessment" * 100)}%</span>
                     </div>
@@ -639,10 +639,10 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
 "'
         {selectedView === 'analytics' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {financialAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{analytics.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
@@ -738,7 +738,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -763,7 +763,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

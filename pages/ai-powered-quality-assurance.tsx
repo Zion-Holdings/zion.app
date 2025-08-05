@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface QualityTest {
   id: string;'
   name: string;
-  type: 'automated' | 'manual' | 'ai-powered' | 'performance' | 'security' | 'compliance';
-  status: 'pending' | 'running' | 'passed' | 'failed' | 'blocked';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'automated' | 'manual' | 'ai-powered' | 'performance' | 'security' | 'compliance";
+  status: 'pending' | 'running' | 'passed' | 'failed' | 'blocked";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   description: string;
   coverage: number;
   executionTime: number;
@@ -17,8 +17,8 @@ interface QualityTest {
 interface ComplianceCheck {
   id: string;'
   standard: string;
-  category: 'security' | 'privacy' | 'accessibility' | 'performance' | 'legal';
-  status: 'compliant' | 'non-compliant' | 'pending' | 'exempt';
+  category: 'security' | 'privacy' | 'accessibility' | 'performance' | 'legal";
+  status: 'compliant' | 'non-compliant' | 'pending' | 'exempt";
   complianceRate: number;
   lastAudit: Date;
   nextAudit: Date;}
@@ -36,7 +36,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
   const [activeTab, setActiveTab] = useState<'tests' | 'compliance' | 'dashboard'>('tests
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockQualityTests: QualityTest[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Performance Testing',
@@ -61,7 +61,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
       lastRun: new Date('2024-01-20T11:00:00'),
       aiScore: 87
     }]
-  const mockComplianceChecks: ComplianceCheck[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       standard: 'GDPR Compliance',
@@ -291,7 +291,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                     <div className="text-gray-400" text-sm>Compliance Rate</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-4>Quality Metrics</h3>
                   <div className="space-y-4>"
                     </div><div>
@@ -305,7 +305,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                       </div>
                     </div>
                     <div> 
-                      </div><div className="flex justify-between text-sm mb-1" >
+                      </div><div className="flex justify-between text-sm mb-1">
                         <span className="text-gray-400>AI" Accuracy</span>
                         <span className="text-white>{dashboard.aiAccuracy}%</span>"
                       </div>
@@ -349,6 +349,6 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQualityAssurancePage ))))))))))))))))"'"'`

@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, MapPin, Clock, DollarSign, User } from 'lucide-react';
-import { Service } from '../../utils/types/service';
+import React from "react";
+import { motion } from 'framer-motion";
+import { Star, MapPin, Clock, DollarSign, User } from "lucide-react"";
+import { Service } from '../../utils/types/service";
 
 interface ServiceCardProps {
   service: Service;
@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       stars.push(
         <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300 >);}
     return stars;
-  };'
+  };
   const formatPrice = (price: Service['price']) => {
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
     });
     const formattedPrice = formatter.format(price.from);'
     `
-    if (price.type = == 'hourly') {;''``
+    if (price.type = == 'hourly') {;``
       return `From ${formattedPrice}/hr`;`
     } else if (price.type = == 'monthly') {;``
       return `From ${formattedPrice}/mo`;`
@@ -51,7 +51,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       animate={{ opacity: 1, y: 0}}"
       transition={{ duration: 0.3}}
       whileHover={{ y: -5 }}"
-      className=" bg-white rounded-xl shadow-lg hover shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group" >
+      className="bg-white rounded-xl shadow-lg hover shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group">
       {/* Card Header with Gradient */}
       <div className="relative h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600 >
         <div className="absolute" inset-0 bg-black bg-opacity-10></div>
@@ -85,7 +85,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       {/* Card Content */}
       <div className="p-6 >"
         {/* Title and Provider */}"
-        <div className=" mb-4">
+        <div className="mb-4">
           <h3 className=" text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover text-blue-600" transition-colors>
             {service.title}
           </h3>
@@ -104,7 +104,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
           <div className=" flex items-center" mr-2>
             {renderStars(service.rating)}
           </div>
-          <span className=" text-sm text-gray-600">
+          <span className="text-sm text-gray-600">
             {service.rating} ({service.reviewCount} reviews)
           </span>
         </div>
@@ -113,7 +113,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
         <div className=" grid grid-cols-2 gap-3" mb-4">
           <div className=" flex items-center text-sm" text-gray-600">
             <MapPin className="w-4" h-4 mr-2 flex-shrink-0 > 
-            </MapPin className="w-4 h-4 mr-2 flex-shrink-0 ><span className="truncate>{service.location}</span" >
+            </MapPin className="w-4 h-4 mr-2 flex-shrink-0 ><span className="truncate>{service.location}</span">
           </div>
           <div className="flex items-center text-sm" text-gray-600">
             <Clock className="w-4" h-4 mr-2 flex-shrink-0 > </Clock className="w-4" h-4 mr-2 flex-shrink-0" ><span>{service.deliveryTime}</span>
@@ -148,6 +148,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       </div>
     </motion.div>;"
   );
-};"
+};
 ''`
 export default ServiceCard;'"'`

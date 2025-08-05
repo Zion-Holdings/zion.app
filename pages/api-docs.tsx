@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState } from 'react";
 const ApiDocs: NextPage = () => {'
   const [activeSection, setActiveSection] = useState('authentication
   return (
@@ -28,7 +28,7 @@ const ApiDocs: NextPage = () => {'
             </div>
             <div className="flex  items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover text-white transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover text-white transition-colors >About
               </Link href=/about className="text-gray-300" hover text-white transition-colors" ></Link>
               <Link href=/contact className="text-gray-300" hover text-white transition-colors >Contact
@@ -54,7 +54,7 @@ const ApiDocs: NextPage = () => {'
         </div>
 
         {/* Tab Navigation */}"
-        <div className=" flex flex-wrap justify-center gap-4 mb-8" >
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {["'
             { id: 'authentication', name: 'Authentication', icon: '🔐' },
 { id: 'endpoints', name: 'API Endpoints', icon: '🔗' },
@@ -76,7 +76,7 @@ const ApiDocs: NextPage = () => {'
         {/* Content */}"
         <div className=" max-w-4xl mx-auto>'
           {activeSection === 'authentication' && (
-            </div><div className="space-y-8" >
+            </div><div className="space-y-8">
               <h2 className="text-3xl" font-bold text-white mb-6>Authentication</h2>
               <div className="bg-white/5 border border-white/10 rounded-lg p-6" backdrop-blur-sm>
                 <h3 className="text-xl" font-semibold text-white mb-4>API Key Authentication</h3>
@@ -94,11 +94,11 @@ const ApiDocs: NextPage = () => {'
               <h2 className="text-3xl" font-bold text-white mb-6 >API Endpoints</h2>
               
               <div className="bg-white/5" border border-white/10 rounded-lg p-6 backdrop-blur-sm> 
-                </div><div className="flex items-center gap-3" mb-4>
+                </div><div className="flex items-center gap-3 mb-4">
                   <span className="bg-green-500/20" text-green-300 px-3 py-3 rounded-full text-sm font-medium>GET</span>
                   <code className="text-purple-300" font-mono >/api/marketplace</code>
                 </div>
-                <p className="text-gray-300" mb-4>Retrieve marketplace listings and services</p>
+                <p className="text-gray-300 mb-4">Retrieve marketplace listings and services</p>
                 <div className="bg-gray-900/50" border border-gray-700 rounded-lg" p-4>`
                   <pre className="text-gray-300  text-sm>"``
                     <code>{`{"
@@ -117,11 +117,11 @@ const ApiDocs: NextPage = () => {'
               </div>
 
               <div className="bg-white/5" border border-white/10 rounded-lg p-6 backdrop-blur-sm> 
-                </div><div className="flex items-center gap-3" mb-4>
+                </div><div className="flex items-center gap-3 mb-4">
                   <span className="bg-blue-500/20" text-blue-300 px-3 py-3 rounded-full text-sm font-medium>POST</span>
                   <code className="text-purple-300" font-mono >/api/quote-request</code>
                 </div>
-                <p className="text-gray-300" mb-4>Submit a quote request for services</p>
+                <p className="text-gray-300 mb-4">Submit a quote request for services</p>
                 <div className="bg-gray-900/50" border border-gray-700 rounded-lg" p-4>`
                   <pre className="text-gray-300  text-sm>"``
                     <code>{`{"
@@ -137,7 +137,7 @@ const ApiDocs: NextPage = () => {'
           )}"'
 ''
           {activeSection === 'examples' && ("
-            <div className=" space-y-8">
+            <div className="space-y-8">
               <h2 className="text-3xl" font-bold text-white mb-6>Code Examples</h2>
               <div className="bg-white/5"  border border-white/10 rounded-lg:p-6 backdrop-blur-sm>
                 <h3 className="text-xl" font-semibold text-white mb-4 >JavaScript</h3>
@@ -181,7 +181,7 @@ print(data)`}</code>
               <div className=" bg-white/5 border border-white/10 rounded-lg p-6" backdrop-blur-sm>
                 <h3 className="text-xl" font-semibold text-white mb-4>Error Response Format</h3>
                 <div className="bg-gray-900/50"  border border-gray-700 rounded-lg:p-4>`
-                  <pre className="text-gray-300 text-sm" >``
+                  <pre className="text-gray-300 text-sm">``
                     <code>{`{"
   "error": {"
     "code": "INVALID_API_KEY","
@@ -206,7 +206,7 @@ print(data)`}</code>
                     <code className="text-red-400" font-mono>429</code>
                     <span className="text-gray-300>Too" Many Requests - Rate limit exceeded</span>
                   </div>
-                  <div className="flex items-center gap-4" >
+                  <div className="flex items-center gap-4">
                     <code className="text-red-400" font-mono>500</code>
                     <span className="text-gray-300>Internal" Server Error - Server error</span>
                   </div>
@@ -252,6 +252,6 @@ print(data)`}</code>
 
   </div>
 
-};"
+};
 ''`
 export default ApiDocs ))))"'"'`

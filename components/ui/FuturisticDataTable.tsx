@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect , useCallback } from 'react";
 
 interface TableColumn {
   key: string;
@@ -121,7 +121,7 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
       </div>
 
       {/* Table */}"
-      <div className=" overflow-x-auto">
+      <div className="overflow-x-auto">
         <table className=" w-full" min-w-full">
           <thead>
             <tr className=" border-b" border-neon-blue/20">
@@ -146,8 +146,7 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
                 className="{`border-b border-neon-blue/10 hover:bg-glass-dark transition-all duration-300 ${ ''`
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'``
                 }`}``
-                style={{ animationDelay: `${rowIndex * 50}ms`}}"
-              >
+                style={{ animationDelay: `${rowIndex * 50}ms`}}">
                 {columns.map((column) => ("
                   <td key={column.key} className=" px-3 sm:px-6 py-3 sm py-4 text-xs sm text-sm" text-gray-300">
                     {column.render '
@@ -207,6 +206,6 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
       <div className="absolute" bottom-0 left-0 w-full h-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue opacity-30></div>
     </div">;"
  " );"
-};"
+};
 ''`
 export default FuturisticDataTable;"'"'`

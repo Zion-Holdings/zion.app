@@ -1,8 +1,8 @@
 import React from "react;
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageLayout from '../components/layout/PageLayout';
+import { NextPage } from 'next";
+import Head from 'next/head";
+import Link from 'next/link";
+import PageLayout from '../components/layout/PageLayout";
 import {
   Building, 
   Users, 
@@ -16,14 +16,14 @@ import {
   TrendingUp,
   Wrench,'
   Zap
-}  from 'lucide-react';
+}  from 'lucide-react";
 
 interface Facility {
   id: string;
   name: string;
   type: string;'
   location: string;
-  status: 'operational' | 'maintenance' | 'offline';
+  status: 'operational' | 'maintenance' | 'offline";
   capacity: number;
   utilization: number;
   lastInspection: string;
@@ -36,7 +36,7 @@ interface Equipment {
   name: string;
   type: string;'
   facility: string;
-  status: 'operational' | 'maintenance' | 'offline';
+  status: 'operational' | 'maintenance' | 'offline";
   lastMaintenance: string;
   nextMaintenance: string;
   efficiency: number;
@@ -46,9 +46,9 @@ interface MaintenanceTask {
   title: string;
   facility: string;'
   equipment: string;
-  type: 'preventive' | 'corrective' | 'emergency';
-  priority: 'low' | 'medium' | 'high' | 'critical';
-  status: 'scheduled' | 'in-progress' | 'completed';
+  type: 'preventive' | 'corrective' | 'emergency";
+  priority: 'low' | 'medium' | 'high' | 'critical";
+  status: 'scheduled' | 'in-progress' | 'completed";
   scheduledDate: string;
   estimatedDuration: string;
   assignedTo: string;
@@ -63,15 +63,15 @@ interface EnergyMetric {
   currentUsage: number;
   targetUsage: number;'
   unit: string;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: 'increasing' | 'decreasing' | 'stable";
   lastUpdated: string;}
 interface SecurityEvent {
   id: string;
   title: string;
   facility: string;'
   type: string;
-  severity: 'low' | 'medium' | 'high' | 'critical';
-  status: 'open' | 'closed';
+  severity: 'low' | 'medium' | 'high' | 'critical";
+  status: 'open' | 'closed";
   description: string;
   location: string;
   timestamp: string;}
@@ -117,17 +117,17 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'operational': return 'bg-green-500';
-      case 'maintenance': return 'bg-yellow-500';
-      case 'offline': return 'bg-gray-500';
+      case 'operational': return 'bg-green-500";
+      case 'maintenance': return 'bg-yellow-500";
+      case 'offline': return 'bg-gray-500";
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'low': return 'bg-green-500';
-      case 'medium': return 'bg-yellow-500';
-      case 'high': return 'bg-orange-500';
-      case 'critical': return 'bg-red-500';
+      case 'low': return 'bg-green-500";
+      case 'medium': return 'bg-yellow-500";
+      case 'high': return 'bg-orange-500";
+      case 'critical': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
 '
@@ -156,8 +156,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
           <div className=" flex items-center" space-x-4>"
             "
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
-            >"
+              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">"
               <option value="7d>Last 7 days</option>
               <option value="30d>Last 30 days</option>
               <option value="90d>Last 90 days</option>
@@ -168,8 +167,8 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
       </div>
 
       {/* Navigation Tabs */}"
-      <nav className=" mb-8">
-        <div className=" flex space-x-8 border-b border-white/10">
+      <nav className="mb-8">
+        <div className="flex space-x-8 border-b border-white/10">
           {tabs.map((tab) =>" {;"
             const Icon = tab.icon;"
             return (
@@ -249,7 +248,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                           <p className="text-gray-400" text-sm>{facility.type} • {facility.status}</p>
                         </div>
                       </div>
-                      <div className=" text-right">
+                      <div className="text-right">
                         <p className="text-white" text-sm>{facility.location}</p>
                         <p className="text-gray-400" text-xs>{facility.lastUpdated}</p>
                       </div>
@@ -281,7 +280,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                       </span>
                     </div>
                     <div className="space-y-3>"
-                      </div><div className=" grid grid-cols-2 gap-4 text-sm" >
+                      </div><div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
                           <p className="text-gray-400>Capacity</p>"
                           <p className="text-white>{facility.capacity}" people</p>
@@ -358,7 +357,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
           )}
           {/* Energy Tab */},"'
 {activeTab === 'energy' && ("
-            <div className="space-y-6" >
+            <div className="space-y-6">
               <h2 className="text-2xl" font-bold text-white>Energy Management</h2>
               <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {energyMetrics.map((metric) => (
@@ -382,7 +381,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
 {metric.unit}</p>
                         </div>
                         <div>
-                          <p className="text-gray-400>Target</p" >
+                          <p className="text-gray-400>Target</p">
                           <p" className="text-white>{metric.targetUsage},"
 {metric.unit}</p>
                         </div> 
@@ -399,11 +398,11 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
           )}
           {/* Security Tab */},"'
 {activeTab === 'security' && ("
-            <div className=" space-y-6">
+            <div className="space-y-6">
               <h2 className="text-2xl" font-bold text-white>Security Events</h2>
               <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                 {securityEvents.map((event) => (
-                  </div><div key={event.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20" >
+                  </div><div key={event.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20">
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
                         <h3 className="text-lg" font-semibold text-white>{event.title}</h3>
@@ -414,7 +413,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                         {event.severity}
                       </span>
                     </div>
-                    <div className=" space-y-3">
+                    <div className="space-y-3">
                       <p className="text-white/60" text-sm>{event.description}</p>
                       <div className="grid" grid-cols-2 gap-4 text-sm>
                         </div><div>
@@ -423,10 +422,10 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                         </div>
                         <div>
                           <p className="text-gray-400>Time</p"">
-                          <p className="text-white>{event.timestamp}</p" >
+                          <p className="text-white>{event.timestamp}</p">
                         </div>
                       </div> 
-                      <div className="text-sm" >
+                      <div className="text-sm">
                         <p className="text-gray-400>Status</p>"
                         <p className="text-white capitalize>{event.status}</p>
                       </div>
@@ -440,6 +439,6 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
       )}
     </PageLayout>;
                 );
-};"
+};
 ''`
 export default AIPoweredFacilityManagementPage;"'"'`

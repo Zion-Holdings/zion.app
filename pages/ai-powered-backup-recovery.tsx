@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface BackupJob {
   id: string;
   name: string;'
   description: string;
-  type: 'full' | 'incremental' | 'differential' | 'snapshot' | 'archive' | 'replication';
-  status: 'running' | 'completed' | 'failed' | 'scheduled' | 'paused';
+  type: 'full' | 'incremental' | 'differential' | 'snapshot' | 'archive' | 'replication";
+  status: 'running' | 'completed' | 'failed' | 'scheduled' | 'paused";
   size: number;
   duration: number;
   lastRun: Date;
@@ -25,11 +25,11 @@ interface RecoveryPlan {
   id: string;
   name: string;'
   description: string;
-  category: 'disaster' | 'system' | 'data' | 'application' | 'infrastructure' | 'business';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  category: 'disaster' | 'system' | 'data' | 'application' | 'infrastructure' | 'business";
+  status: 'active' | 'draft' | 'archived' | 'testing";
   rto: number; // Recovery Time Objective in minutes'
   rpo: number; // Recovery Point Objective in minutes
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  priority: 'critical' | 'high' | 'medium' | 'low";
   aiOptimization: AIRecoveryOptimization;}
 interface AIRecoveryOptimization {
   id: string;
@@ -41,10 +41,10 @@ interface DisasterRecovery {
   id: string;
   title: string;'
   description: string;
-  scenario: 'natural_disaster' | 'cyber_attack' | 'hardware_failure' | 'human_error' | 'power_outage' | 'network_failure';
-  status: 'active' | 'draft' | 'archived' | 'testing';
-  severity: 'critical' | 'high' | 'medium' | 'low';
-  impact: 'business_critical' | 'high_impact' | 'medium_impact' | 'low_impact';
+  scenario: 'natural_disaster' | 'cyber_attack' | 'hardware_failure' | 'human_error' | 'power_outage' | 'network_failure";
+  status: 'active' | 'draft' | 'archived' | 'testing";
+  severity: 'critical' | 'high' | 'medium' | 'low";
+  impact: 'business_critical' | 'high_impact' | 'medium_impact' | 'low_impact";
   recoverySteps: string[];
   aiAnalysis: AIDisasterAnalysis;}
 interface AIDisasterAnalysis {
@@ -57,8 +57,8 @@ interface BackupStorage {
   id: string;
   name: string;'
   description: string;
-  type: 'local' | 'cloud' | 'hybrid' | 'offsite' | 'tape' | 'disk';
-  status: 'active' | 'inactive' | 'maintenance' | 'error';
+  type: 'local' | 'cloud' | 'hybrid' | 'offsite' | 'tape' | 'disk";
+  status: 'active' | 'inactive' | 'maintenance' | 'error";
   capacity: number;
   usedSpace: number;
   retentionDays: number;
@@ -73,8 +73,8 @@ interface SystemRestoration {
   id: string;
   title: string;'
   description: string;
-  system: 'database' | 'application' | 'server' | 'network' | 'storage' | 'service';
-  status: 'in_progress' | 'completed' | 'failed' | 'scheduled' | 'cancelled';
+  system: 'database' | 'application' | 'server' | 'network' | 'storage' | 'service";
+  status: 'in_progress' | 'completed' | 'failed' | 'scheduled' | 'cancelled";
   progress: number;
   estimatedTime: number;
   startTime: Date;
@@ -98,7 +98,7 @@ interface BackupRecoveryInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredBackupRecoveryPage: NextPage = () => {
@@ -275,7 +275,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
       <div className="relative" overflow-hidden>
         </div><div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div>
         <div className=" relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44>
-          </div><div className=" text-center">
+          </div><div className="text-center">
             <h1 className="text-5xl" md text-6xl font-bold text-white mb-6>
               AI-Powered Backup & Recovery System
             </h1>
@@ -397,7 +397,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                           <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(backup.status)}`}>
                             {backup.status}
                           </span>
-                          <div className=" mt-2">
+                          <div className="mt-2">
                             <span className=" px-4 py-3 rounded-full text-xs font-medium bg-violet-500/20 text-violet-300>
                               {formatBytes(backup.size)}
                             </span>
@@ -456,7 +456,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                         <button className=" flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           View Details
                         </button>
-                        <button className=" flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Configure
                         </button>
                       </div>
@@ -539,6 +539,6 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         </div>
       </div>
     </> ;"
-};"
+};
 ''`
 export default AIPoweredBackupRecoveryPage ))))))))))))))))))))))))))))"'"'`

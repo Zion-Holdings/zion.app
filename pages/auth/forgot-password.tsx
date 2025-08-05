@@ -1,9 +1,9 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-import { useAuth } from '../../src/contexts/AuthContext';
-import AuthLayout from '../../components/layout/AuthLayout';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState } from 'react";
+import { useAuth } from '../../src/contexts/AuthContext";
+import AuthLayout from '../../components/layout/AuthLayout";
 const ForgotPassword: NextPage = () => {'
   const [email, setEmail] = useState(
   const [loading, setLoading] = useState(false
@@ -73,6 +73,6 @@ const ForgotPassword: NextPage = () => {'
   </div> 
   </div>
 ;
-};"
+};
 '
 export default ForgotPassword ")))))))))))"'"

@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface ContentItem {
   id: string;'
   title: string;
-  type: 'blog' | 'service' | 'product' | 'landing' | 'social' | 'email';
-  status: 'draft' | 'published' | 'scheduled' | 'archived';
+  type: 'blog' | 'service' | 'product' | 'landing' | 'social' | 'email";
+  status: 'draft' | 'published' | 'scheduled' | 'archived";
   author: string;
   createdAt: Date;
   updatedAt: Date;
@@ -48,11 +48,11 @@ interface ContentWorkflow {
   steps: {
     id: string;'
     name: string;
-    type: 'ai-generation' | 'human-review' | 'seo-optimization' | 'publishing' | 'promotion';
-    status: 'pending' | 'in-progress' | 'completed' | 'failed';
+    type: 'ai-generation' | 'human-review' | 'seo-optimization' | 'publishing' | 'promotion";
+    status: 'pending' | 'in-progress' | 'completed' | 'failed";
     aiAssisted: boolean;'
   }[];
-  status: 'active' | 'inactive' | 'draft';
+  status: 'active' | 'inactive' | 'draft";
   createdAt: Date;}
 interface ContentAnalytics {
   id: string;
@@ -60,7 +60,7 @@ interface ContentAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredContentManagementPage: NextPage = () => {
   ;
@@ -78,7 +78,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered content management data
     setTimeout(() => {
-      const mockContentItems: ContentItem[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           title: 'The Future of AI in Business: 2024 Trends',
@@ -215,7 +215,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             comments: 0,
             conversionRate: 2.8}}
       ];
-      const mockTemplates: ContentTemplate[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Blog Post Template',
@@ -266,7 +266,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           lastUsed: new Date('2024-01-17'),
           tags: ['Email', 'Newsletter', 'Personalization']}
       ];
-      const mockWorkflows: ContentWorkflow[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Blog Post Creation',
@@ -373,7 +373,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
           status: 'active',
           createdAt: new Date('2024-01-20'}
       ];
-      const mockAnalytics: ContentAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Content Creation Speed',
@@ -470,42 +470,42 @@ const AIPoweredContentManagementPage: NextPage = () => {
   } [contentItems, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'published': return 'text-green-400 bg-green-500/20';
-      case 'draft': return 'text-yellow-400 bg-yellow-500/20';
-      case 'scheduled': return 'text-blue-400 bg-blue-500/20';
-      case 'archived': return 'text-gray-400 bg-gray-500/20';
+      case 'published': return 'text-green-400 bg-green-500/20";
+      case 'draft': return 'text-yellow-400 bg-yellow-500/20";
+      case 'scheduled': return 'text-blue-400 bg-blue-500/20";
+      case 'archived': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'blog': return '📝';
-      case 'service': return '🛠️';
-      case 'product': return '📦';
-      case 'landing': return '🏠';
-      case 'social': return '📱';
-      case 'email': return '📧';
+      case 'blog': return '📝";
+      case 'service': return '🛠️";
+      case 'product': return '📦";
+      case 'landing': return '🏠";
+      case 'social': return '📱";
+      case 'email': return '📧";
       default: return '📄';}
   };
 '
   const getScoreColor = (score: number) => {';'
-    if (score >= 90) return 'text-green-400';
-    if (score >= 80) return 'text-yellow-400';
-    if (score >= 70) return 'text-orange-400';
-    return 'text-red-400';
+    if (score >= 90) return 'text-green-400";
+    if (score >= 80) return 'text-yellow-400";
+    if (score >= 70) return 'text-orange-400";
+    return 'text-red-400";
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
   const getWorkflowStepColor = (status: string) => {'
     switch (status) {';'
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'in-progress': return 'text-blue-400 bg-blue-500/20';
-      case 'pending': return 'text-yellow-400 bg-yellow-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
+      case 'completed': return 'text-green-400 bg-green-500/20";
+      case 'in-progress': return 'text-blue-400 bg-blue-500/20";
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
 
@@ -528,7 +528,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Content Management...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -542,14 +542,14 @@ const AIPoweredContentManagementPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-mobile-responsive" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
-              </Link href= /ai-powered-mobile-responsive" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-multi-language className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
               </Link href=/ai-powered-multi-language className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -692,7 +692,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
                     <p className="text-lg" font-semibold text-white>{item.analytics.views.toLocaleString()}</p>
                   </div>
                 </div>
-                <div className=" mb-4">
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Tags </p>
                   <div className="flex"  flex-wrap gap-2>
                     {item.tags.map((tag, index) => (
@@ -794,7 +794,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 </div>
                 <div className="mb-4"">
                   <p className="text-sm:text-gray-400" mb-3>Workflow Steps </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {workflow.steps.map((step) => (
                       </div><div key={step.id} className=" flex items-center justify-between p-3 bg-white/5" rounded-lg>`
                         <div className=" flex items-center" space-x-3>``
@@ -849,6 +849,6 @@ const AIPoweredContentManagementPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredContentManagementPage "))))"'"'`

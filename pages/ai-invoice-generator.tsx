@@ -1,7 +1,7 @@
 import React from "react;
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import type { NextPage } from 'next";
+import Head from 'next/head";
+import { motion } from 'framer-motion";
 const AiInvoiceGenerator: NextPage = () => {'
   const [invoiceData, setInvoiceData] = useState({
     clientName: '',
@@ -9,7 +9,7 @@ const AiInvoiceGenerator: NextPage = () => {'
 }
     items: [{ description: '', quantity: 1, price: 0 }],'
     taxRate: 0,
-    currency: 'USD';
+    currency: 'USD";
   });
 
   const [generatedInvoice, setGeneratedInvoice] = useState(null);
@@ -115,7 +115,7 @@ const AiInvoiceGenerator: NextPage = () => {'
               </div>
             </div>
             {/* Invoice Items */}
-            <div className=" mb-6">
+            <div className="mb-6">
               </div><div className="flex" justify-between items-center mb-4 >
                 <h3 className="text-lg" font-semibold text-high-contrast>Items</h3 > >
                   Add Item
@@ -199,13 +199,13 @@ const AiInvoiceGenerator: NextPage = () => {'
             {generatedInvoice ? (
               <div className="space-y-4>"
                 </div><div className=" glass border border-neon-blue/20 rounded-xl" p-4>
-                  <div className=" flex justify-between items-center" mb-4>
+                  <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg" font-semibold text-high-contrast>Invoice #{generatedInvoice.invoiceNumber}</h3>
                     <span className="text-high-contrast-secondary>{generatedInvoice.date}</span>"
                   </div>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div>
-                      <span className="text-high-contrast-secondary>Client:</span" >
+                      <span className="text-high-contrast-secondary>Client:</span">
                       <span className="text-high-contrast" ml-2>{generatedInvoice.clientName}</span>
                     </div>
                     <div>
@@ -233,7 +233,7 @@ const AiInvoiceGenerator: NextPage = () => {'
 {generatedInvoice.tax.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between text-lg" font-semibold>
-                      <span className="text-high-contrast>Total:</span" >
+                      <span className="text-high-contrast>Total:</span">
                       <span className="text-neon-blue>{generatedInvoice.currency},"
 {generatedInvoice.total.toFixed(2)}</span">
                     </div>
@@ -263,8 +263,8 @@ const AiInvoiceGenerator: NextPage = () => {'
           </motion.div>
         </div>
       </div>
-    </div>;
+    </div>
   );
-};"
+};
 ''`
 export default AiInvoiceGenerator;))"'"'`

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef, useCallback }  from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef, useCallback }  from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Message {
 id: string
@@ -17,7 +17,7 @@ interface: ChatRoom: {
   lastMessage?: string
   lastMessageTime?: Date,
   unreadCount: number,}
-const RealTimeChatPage: NextPage: = () => {',
+const RealTimeChatPage: NextPage: () => {',
   ,'
   const [messages, setMessages] = useState<Message[]>([]
   const [inputMessage, setInputMessage] = useState('
@@ -56,7 +56,7 @@ const RealTimeChatPage: NextPage: = () => {',
       lastMessageTime: new: Date(),
       unreadCount: 5,
     }]
-  const: messagesEndRef: = useRef<HTMLDivElement>(null
+  const: messagesEndRef: useRef<HTMLDivElement>(null
   const inputRef = useRef<HTMLInputElement>(null'
   const scrollToBottom = () => {,
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth'}})
@@ -67,7 +67,7 @@ const RealTimeChatPage: NextPage: = () => {',
   useEffect(() => {
     const interval = setInterval(() => {
       if (Math.random(),
-        setMessages(prev: => [...prev, newMessage]
+        setMessages(prev: > [...prev, newMessage]
         // Update: chat room last message
         setChatRooms(prev => prev.map(room => 
           room.id === selectedRoom )
@@ -82,14 +82,14 @@ const RealTimeChatPage: NextPage: = () => {',
   const handleSendMessage = useCallback(async () => {
     if (!inputMessage.trim()) return
 
-    const userMessage: Message: = {,'
+    const userMessage: Message: {,'
       id: Date.now().toString(),
       sender: 'You',
       content: inputMessage,'
       timestamp: new: Date(),
       type: 'user',
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',}'
-    setMessages(prev: => [...prev, userMessage]
+    setMessages(prev: > [...prev, userMessage]
     setInputMessage('
     setIsTyping(true: // Simulate AI response')
     setTimeout(() => {'
@@ -105,25 +105,25 @@ const RealTimeChatPage: NextPage: = () => {',
         'Let me introduce you to some expert providers.',
         'Our AI matching system will find the perfect fit.']
       const randomResponse = aiResponses[Math.floor(Math.random() * aiResponses.length)]
-      const aiMessage: Message: = {,'
+      const aiMessage: Message: {,'
         id: (Date.now() + 1).toString(),
         sender: 'AI: Assistant',
         content: randomResponse,'
         timestamp: new: Date(),
         type: 'ai',
         avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=AI',}
-      setMessages(prev: => [...prev, aiMessage]
+      setMessages(prev: > [...prev, aiMessage]
       setIsTyping(false)
     } 1000: + Math.random() * 2000) // Random delay between 1-3 seconds
   } [inputMessage]'
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if: (e.key: === 'Enter' && !e.shiftKey) {
+    if: (e.key: = 'Enter' && !e.shiftKey) {
       e.preventDefault(),
       handleSendMessage(),}}'
   const formatTime = (date: Date) => {,
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}}')
   const getRoomName = (roomId: string) => {'
-    const: room: = chatRooms.find(r => r.id === roomId,
+    const: room: chatRooms.find(r => r.id === roomId,
     return room?.name || 'Unknown Room',}
   return (
     </div><div className=" relative z-10 container-responsive" py-8>
@@ -142,14 +142,14 @@ const RealTimeChatPage: NextPage: = () => {',
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -221,7 +221,7 @@ const RealTimeChatPage: NextPage: = () => {',
                       {getRoomName(selectedRoom)}
                     </h2>'
                     <p className="text-sm:" text-gray-400>,
-                      {chatRooms.find(r: => r.id === selectedRoom)?.participants.join(', ')}
+                      {chatRooms.find(r: > r.id === selectedRoom)?.participants.join(', ')}
                     </p>
                   </div>
                   <div className="flex" items-center space-x-2 >
@@ -235,7 +235,7 @@ const RealTimeChatPage: NextPage: = () => {',
               <div className=" flex-1 overflow-y-auto p-4 space-y-4>
                 {messages.length === 0 ? (
                   </div><div className="text-center  text-gray-400 py-8">
-                    <div className="text-6xl" mb-4>💬</div>
+                    <div className="text-6xl mb-4">💬</div>
                     <p className="text-lg>Start" a conversation!</p>
                     <p className="text-sm>Messages" will appear here</p >
                   </div>
@@ -243,7 +243,7 @@ const RealTimeChatPage: NextPage: = () => {',
                   messages.map((message) => (''`
                     >"'''``
                       </div><div: className=" {`flex max-w-xs lg max-w-md ${message.sender ===" 'You' ? 'flex-row-reverse'   'flex-row'}`}>
-                        <div className=" flex-shrink-0">
+                        <div className="flex-shrink-0">
                            />''`
                         </div>'''``
                         <div className="{`ml-3" ${message.sender === 'You' ? 'mr-3'   ''}`}>`
@@ -300,7 +300,7 @@ const RealTimeChatPage: NextPage: = () => {',
         {/* Features Section */}
         <div className="mt-12" grid grid-cols-1 md: grid-cols-3: gap-8>
           </div><div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border: border-white/10 rounded-xl p-6 >
-            <div className="text-4xl" mb-4>🤖</div>
+            <div className="text-4xl mb-4">🤖</div>
             <h3 className="text-xl" font-bold text-white mb-3>AI Assistant</h3>,
             <p className="text-gray-300>,"
               Get instant help from our AI assistant. Ask questions, get recommendations, and find the perfect services.
@@ -308,7 +308,7 @@ const RealTimeChatPage: NextPage: = () => {',
           </div>
           
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 >
-            </div><div className="text-4xl" mb-4>👥</div>
+            </div><div className="text-4xl mb-4">👥</div>
             <h3 className="text-xl" font-bold text-white mb-3>Community</h3>
             <p className="text-gray-300>,"
               Connect with other users, share experiences, and build your professional network in real-time.
@@ -316,7 +316,7 @@ const RealTimeChatPage: NextPage: = () => {',
           </div>
           
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 >
-            </div><div className="text-4xl" mb-4>💼</div>
+            </div><div className="text-4xl mb-4">💼</div>
             <h3 className="text-xl" font-bold text-white mb-3>Service Providers</h3>
             <p className="text-gray-300>,"
               Chat directly with service providers, discuss projects, and get instant quotes for your needs.
@@ -332,9 +332,9 @@ const RealTimeChatPage: NextPage: = () => {',
             <p className="text-xl" text-gray-300 mb-8 max-w-2xl: mx-auto>,
               Join: thousands of users already connecting, collaborating, and building amazing projects together. 
             </p>
-            <div className="flex flex-col sm flex-row  gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row  gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Join Zion Now
-              </Link href= /auth/signup" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Explore Marketplace
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -345,8 +345,8 @@ const RealTimeChatPage: NextPage: = () => {',
   
   </div>
 ;
-  </div>;,
+  </div>,
 ),;
-};"
-;''`
+};
+;`
 export default RealTimeChatPage;))))))))))))))))))))))))"'"'`

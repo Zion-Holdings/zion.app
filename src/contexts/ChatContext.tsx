@@ -1,5 +1,5 @@
 'use client';'
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react";
 
 interface ChatContextType {
   isChatOpen: boolean;
@@ -47,3 +47,5 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
     </ChatContext.Provider>;
   );'
 }; '
+
+export default ChatContext;

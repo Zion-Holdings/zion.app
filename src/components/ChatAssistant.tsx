@@ -1,13 +1,13 @@
 'use client';'
-import React, { useState, useRef, useEffect , useCallback } from 'react';
-import Link from 'next/link';
+import React, { useState, useRef, useEffect , useCallback } from 'react";
+import Link from 'next/link";
 
 interface Message {
   id: string;'
   content: string;
   role: 'user' | 'assistant';'
   timestamp: Date;
-  type?: 'text' | 'quick-actions' | 'recommendation';
+  type?: 'text' | 'quick-actions' | 'recommendation";
   actions?: Array<{
     label: string;
     action: string;
@@ -35,7 +35,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 '
-  const scrollToBottom = () => {';'
+  const $1 = () => {'
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -54,7 +54,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
       content: action,
       role: 'user','
       timestamp: new Date(),
-      type: 'text';
+      type: 'text";
     };
 '
     setMessages(prev => [...prev, userMessage]);
@@ -85,7 +85,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         content: data.response,
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev, assistantMessage]);'
     } catch (error) {
@@ -95,7 +95,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -110,7 +110,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
       content: inputValue.trim(),
       role: 'user','
       timestamp: new Date(),
-      type: 'text';
+      type: 'text";
     };
 '
     setMessages(prev => [...prev, userMessage]);
@@ -141,7 +141,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         content: data.response,
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev, assistantMessage]);'
     } catch (error) {
@@ -151,7 +151,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -199,7 +199,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
             {formatTime(message.timestamp)}
           </p>
         </div>
-      </div>;
+      </div>
     );
   };
 
@@ -284,8 +284,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
           </div>
         </div>
       )}
-    </>;
+    </>
   );
-};"
+};
 ''`
 export default ChatAssistant;"'"'`

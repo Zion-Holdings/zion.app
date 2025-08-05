@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SmartManufacturing {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockSmartManufacturing: SmartManufacturing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Assembly Line Alpha',
@@ -132,7 +132,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         maintenanceNeeds: ['Wire feed check weekly', 'Gas flow monitoring', 'Torch cleaning'],
         recommendations: ['Optimize welding parameters', 'Implement quality monitoring', 'Enhance safety systems']}
 }]
-  const mockIndustrialAutomation: IndustrialAutomation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Robotic Assembly Cell',
@@ -176,7 +176,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         optimizationOpportunities: ['Enhance data visualization', 'Improve alarm management', 'Optimize reporting'],
         maintenanceSchedule: ['Daily system check', 'Weekly data backup', 'Monthly performance review']}
 }]
-  const mockQualityControl: QualityControl[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Vision Inspection System',
@@ -220,7 +220,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         improvementAreas: ['Standardize test procedures', 'Enhance data analysis', 'Improve sample handling'],
         recommendations: ['Implement automated testing', 'Enhance data management', 'Optimize test procedures']}
 }]
-  const mockProductionOptimization: ProductionOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Process Optimization Engine',
@@ -373,7 +373,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -511,30 +511,30 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             {/* Manufacturing Systems Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredSmartManufacturing.map((system) => (
-                </div><div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10" >
-                  <div className=" flex items-center justify-between" mb-4>`
+                </div><div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{system.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{system.location} • {system.type}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className=" flex justify-between" text-sm>"
                       <span className="text-gray-400>Efficiency</span>"
                       <span className="text-white>{system.efficiency}%</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
-                      <span className="text-gray-400>Throughput</span" >
+                      <span className="text-gray-400>Throughput</span">
                       <span className="text-white>{formatNumber(system.throughput)} units/hr</span>
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Quality Score</span>
-                      <span className="text-white>{system.qualityScore}%</span" >
+                      <span className="text-white>{system.qualityScore}%</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance</span>"
                       <span className="text-white>{system.aiAnalysis.performanceScore}/10</span>"
                     </div>
@@ -547,10 +547,10 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 "'
         {selectedView === 'automation' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {industrialAutomation.map((system) => (
                 <div key={system.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{system.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
@@ -573,7 +573,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                       <span className="text-white>{system.speed}%</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
-                      <span className="text-gray-400>Reliability</span" >
+                      <span className="text-gray-400>Reliability</span">
                       <span className="text-white>{system.aiAnalysis.reliabilityScore}/10</span>"
                     </div>
                   </div>
@@ -605,7 +605,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>Detection Rate</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>False" Positive</span>
                       <span className="text-white>{system.falsePositiveRate}%</span>" 
@@ -644,9 +644,9 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Cost" Savings</span>
-                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span" >
+                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Impact" Score</span>
@@ -682,7 +682,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Manufacturing Insights</h3>
               <div className="space-y-4>"
                 {data.aiInsights.map((insight) => (
@@ -712,7 +712,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -747,7 +747,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumSensing {
   id: string'
@@ -69,7 +69,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
   const [interferometry, setInterferometry] = useState<QuantumInterferometry[]>([]
   const [spectroscopy, setSpectroscopy] = useState<QuantumSpectroscopy[]>([]
   // Mock data
-  const mockSensing: QuantumSensing[] = ['
+  const $1: $2[] = [
     {
       id: 'qs-001',
       name: 'Gravitational Wave Detector',
@@ -81,7 +81,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       status: 'active',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockImaging: QuantumImaging[] = ['
+  const $1: $2[] = [
     {
       id: 'qi-001',
       name: 'Quantum Illumination System',
@@ -92,7 +92,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       fieldOfView: 60,
       status: 'imaging
     }]
-  const mockMetrology: QuantumMetrology[] = ['
+  const $1: $2[] = [
     {
       id: 'qm-001',
       name: 'Atomic Clock',
@@ -103,7 +103,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       uncertainty: 1e-17,
       status: 'measuring
     }]
-  const mockDetection: QuantumDetection[] = ['
+  const $1: $2[] = [
     {
       id: 'qd-001',
       name: 'Single Photon Detector',
@@ -114,7 +114,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       jitter: 10,
       status: 'detecting
     }]
-  const mockInterferometry: QuantumInterferometry[] = ['
+  const $1: $2[] = [
     {
       id: 'qi-001',
       name: 'Mach-Zehnder Interferometer',
@@ -125,7 +125,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       wavelength: 1550,
       status: 'interfering
     }]
-  const mockSpectroscopy: QuantumSpectroscopy[] = ['
+  const $1: $2[] = [
     {
       id: 'qs-001',
       name: 'Quantum Absorption Spectroscopy',
@@ -211,11 +211,11 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Sensing Dashboard', icon: '🔬' },
@@ -249,7 +249,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>🔬</span>
                     </div>
@@ -265,12 +265,12 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                       <span className="text-green-400>Active</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Sensors</span" >
+                      <span className="text-gray-300>Sensors</span">
                       <span className="text-white>{sensing.length}</span"">
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Imaging" Systems</span>
-                      <span className="text-white>{imaging.length}</span" >
+                      <span className="text-white>{imaging.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Detectors</span>"
@@ -282,12 +282,12 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>📡</div>
                       <div className="font-semibold>Start Sensing</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>📷</div>
                       <div className="font-semibold>Quantum" Imaging</div>
                     </button>
@@ -305,11 +305,11 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
             )}"'
             {/* Quantum Sensing */},''
 {activeTab === 'sensing' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Sensing</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {sensing.map((sensor) => (
-                    </div><div key={sensor.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={sensor.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{sensor.name}</h3>
@@ -321,9 +321,9 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Resolution</span>"
-                          <span className="text-white>{sensor.resolution}</span" >
+                          <span className="text-white>{sensor.resolution}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Bandwidth</span>"
@@ -373,7 +373,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                         </div>
                         <div className=" flex" justify-between>
                           <span className=" text-gray-300>Field of View</span>
-                          <span className="text-white>{image.fieldOfView}°</span" >
+                          <span className="text-white>{image.fieldOfView}°</span">
                         </div>
                         <div className="flex" justify-between >`
                           <span className="text-gray-300>Status</span>``"
@@ -412,12 +412,12 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                           <span className="text-white>{meter.accuracy}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Stability</span" >
+                          <span className="text-gray-300>Stability</span">
                           <span className="text-white>{meter.stability}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Uncertainty</span>"
-                          <span className="text-white>{meter.uncertainty}</span" >
+                          <span className="text-white>{meter.uncertainty}</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -454,7 +454,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                           <span className=" text-gray-300>Dark Count</span>
                           <span className=" text-white>{detector.darkCount} cps</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Dead" Time</span>
                           <span className="text-white>{detector.deadTime}" ns</span>
                         </div>
@@ -476,11 +476,11 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
             )}"'
             {/* Quantum Interferometry */},''
 {activeTab === 'interferometry' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Interferometry</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {interferometry.map((interferometer) => (
-                    </div><div key={interferometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={interferometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{interferometer.name}</h3>
@@ -492,7 +492,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Phase" Sensitivity</span>
                           <span className="text-white>{interferometer.phaseSensitivity}" rad</span>
                         </div>
@@ -566,7 +566,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
       <footer className="relative  z-10 mt-16>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 > 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered Quantum Sensing & Metrology | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -583,6 +583,6 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumSensingMetrology ))))))))))))))))))))))"'"'`

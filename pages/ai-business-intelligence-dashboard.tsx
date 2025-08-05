@@ -1,12 +1,12 @@
-import { useState, useEffect }  from 'react';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
+import { useState, useEffect }  from 'react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
 
 interface KPI {
   id: string;
   name: string;
   value: number;'
   change: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   target: number;
   unit: string;}
 interface ChartData {
@@ -19,7 +19,7 @@ interface ChartData {
   }[];}
 interface Insight {'
   id: string;
-  type: 'positive' | 'negative' | 'neutral' | 'warning';
+  type: 'positive' | 'negative' | 'neutral' | 'warning";
   title: string;
   description: string;
   impact: string;
@@ -28,11 +28,11 @@ interface Insight {'
 interface Report {
   id: string;'
   name: string;
-  type: 'daily' | 'weekly' | 'monthly' | 'quarterly';
-  status: 'generated' | 'pending' | 'failed';
+  type: 'daily' | 'weekly' | 'monthly' | 'quarterly";
+  status: 'generated' | 'pending' | 'failed";
   lastGenerated: string;
   nextScheduled: string;}'
-const BusinessIntelligenceDashboard = () => {';'
+const $1 = () => {'
   const [activeTab, setActiveTab] = useState('overview');
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
   const [loading, setLoading] = useState(false);
@@ -40,7 +40,7 @@ const BusinessIntelligenceDashboard = () => {';'
   const [reports, setReports] = useState<Report[]>([]);
 
   // Mock KPI data
-  const kpis: KPI[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Revenue',
@@ -125,7 +125,7 @@ const BusinessIntelligenceDashboard = () => {';'
   };
 
   // Mock insights
-  const mockInsights: Insight[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'positive',
@@ -164,7 +164,7 @@ const BusinessIntelligenceDashboard = () => {';'
   ];
 
   // Mock reports
-  const mockReports: Report[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Daily Sales Report',
@@ -208,7 +208,7 @@ const BusinessIntelligenceDashboard = () => {';'
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     setLoading(false);
-  };'
+  };
   const exportData = (format: 'pdf' | 'csv' | 'excel') => {
     // Simulate export functionality;
     console.log(`Exporting data in ${format} format`);
@@ -304,7 +304,7 @@ const BusinessIntelligenceDashboard = () => {';'
                       "''``
                       }`}>''
                         <span>{kpi.trend === 'up' ? '↗'   kpi.trend === 'down' ? '↘'   '→'}</span>
-                        <span className="text-sm>{Math.abs(kpi.change)}%</span" >
+                        <span className="text-sm>{Math.abs(kpi.change)}%</span">
                       </div>
                     </div>
                     <div className="mb-4>"
@@ -339,7 +339,7 @@ const BusinessIntelligenceDashboard = () => {';'
                 <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
                   <h3 className="text-white" font-semibold mb-4>Customer Growth</h3> 
                   <div className="h-124" flex items-center justify-center text-gray-400>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-4xl" mb-2>👥</div>
                       <p>Interactive Customer Chart</p>
                       <p className="text-sm>New" vs Returning customers</p>
@@ -362,9 +362,9 @@ const BusinessIntelligenceDashboard = () => {';'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Growth Rate</span>
-                      <span className="text-green-400>+12.5%</span" >
+                      <span className="text-green-400>+12.5%</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Top" Product</span>
                       <span className="text-white>Premium" Package</span >
                     </div>
@@ -379,11 +379,11 @@ const BusinessIntelligenceDashboard = () => {';'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>New This Month</span>
-                      <span className="text-green-400>+1,250</span" >
+                      <span className="text-green-400>+1,250</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Churn" Rate</span>
-                      <span className="text-red-400>2.1%</span" >
+                      <span className="text-red-400>2.1%</span">
                     </div>
                   </div>
                 </div> 
@@ -396,9 +396,9 @@ const BusinessIntelligenceDashboard = () => {';'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Avg Order Value</span>
-                      <span className="text-white>$85.50</span" >
+                      <span className="text-white>$85.50</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Customer" Lifetime Value</span>
                       <span className="text-white>$1,250</span>"
                     </div >
@@ -446,10 +446,10 @@ const BusinessIntelligenceDashboard = () => {';'
                         {new Date(insight.timestamp).toLocaleDateString()}
                       </div>
                     </div>
-                    <p className="text-gray-300" mb-4>{insight.description}</p>
+                    <p className="text-gray-300 mb-4">{insight.description}</p>
                     <div className="flex"  justify-between items-center>
                       </div><div className=" flex items-center" space-x-4>
-                        <span className=" text-sm" text-gray-400">Impact: <span className="text-white>{insight.impact}</span></span" >
+                        <span className=" text-sm" text-gray-400">Impact: <span className="text-white>{insight.impact}</span></span">
                         <span className="text-sm:text-gray-400>Recommendation:" <span className="text-white>{insight.recommendation}</span></span>"
                       </div>
                       <button className="text-purple-400" hover text-purple-300 transition-colors>
@@ -472,7 +472,7 @@ const BusinessIntelligenceDashboard = () => {';'
               </div>
               <div className="grid" grid-cols-1 md:grid-cols-2 gap-6> 
                 {reports.map((report) => (
-                  </div><div key={report.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+                  </div><div key={report.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
                         <h3 className="text-white" font-semibold>{report.name}</h3>
@@ -483,7 +483,7 @@ const BusinessIntelligenceDashboard = () => {';'
                         {report.status}
                       </div>
                     </div>
-                    <div className="space-y-2" mb-4>
+                    <div className="space-y-2 mb-4">
                       </div><div className=" flex justify-between" text-sm>"
                         <span className="text-gray-400>Last" Generated:</span>
                         <span className="text-white>{new" Date(report.lastGenerated).toLocaleDateString()}</span>
@@ -493,7 +493,7 @@ const BusinessIntelligenceDashboard = () => {';'
                         <span className=" text-white>{new Date(report.nextScheduled).toLocaleDateString()}</span>
                       </div>
                     </div>
-                    <div className=" flex space-x-2 ">
+                    <div className="flex space-x-2 ">
                         onClick={() =>" generateReport(report.id)}"
                         disabled={loading}"
                         className="flex-1" bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors disabled opacity-50
@@ -519,7 +519,7 @@ const BusinessIntelligenceDashboard = () => {';'
                 </button>
               </div>
               <div className="space-y-4>" 
-                </div><div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6" >
+                </div><div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
                   <div className="flex" items-center space-x-3 mb-2> 
                     </div><div className="w-3" h-3 bg-red-400 rounded-full></div>
                     <h3 className="text-white" font-semibold>High Priority Alert</h3>
@@ -550,6 +550,6 @@ const BusinessIntelligenceDashboard = () => {';'
         </div>
       </div>
     </div >;  );"
-};"
+};
 ''`
 export default BusinessIntelligenceDashboard;"'"'`

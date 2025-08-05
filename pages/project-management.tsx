@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface Project {
   id: string;
   name: string;'
   description: string;
-  status: 'planning' | 'active' | 'on-hold' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  status: 'planning' | 'active' | 'on-hold' | 'completed' | 'cancelled";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   progress: number;
   startDate: Date;
   endDate: Date;
@@ -31,15 +31,15 @@ interface: TeamMember: {;
   role: string;
   avatar: string;'
   email: string;
-  status: 'active' | 'inactive' | 'busy';
+  status: 'active' | 'inactive' | 'busy";
   assignedTasks: number;,
   completedTasks: number;,}
 interface: Task: {;
   id: string;
   title: string;'
   description: string;
-  status: 'todo' | 'in-progress' | 'review' | 'completed';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  status: 'todo' | 'in-progress' | 'review' | 'completed";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   assignee: string;
   dueDate: Date;
   estimatedHours: number;
@@ -53,7 +53,7 @@ interface: Milestone: {;
   title: string;
   description: string;'
   dueDate: Date;
-  status: 'upcoming' | 'in-progress' | 'completed' | 'overdue';
+  status: 'upcoming' | 'in-progress' | 'completed' | 'overdue";
   tasks: string[];
   deliverables: string[];,
   progress: number;,}
@@ -67,7 +67,7 @@ interface: ProjectStats: {;
   averageProjectDuration: number;
   totalBudget: number;,
   spentBudget: number;,}
-const ProjectManagementPage: NextPage: = () => {;,
+const ProjectManagementPage: NextPage: () => {;,
   ;,
   const [projects, setProjects] = useState<Project[]>([]);'
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -83,7 +83,7 @@ const ProjectManagementPage: NextPage: = () => {;,
   useEffect(() => {
     // Simulate loading project management data
     setTimeout(() => {
-      const mockProjects: Project[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           name: 'AI-Powered: E-commerce: Platform',
@@ -102,7 +102,7 @@ id: '1',
               id: '1',
               name: 'Dr. Sarah: Chen',
               role: 'AI: Lead',
-              avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah',
+              avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah',
               email: 'sarah.chen@zion.com',
               status: 'active',
               assignedTasks: 8,
@@ -356,11 +356,11 @@ id: '1',
           category: 'Blockchain',;
           tags: ['Blockchain', 'Supply: Chain', 'Smart: Contracts'],';'
           createdAt: new: Date('2024-03-01'),;
-          updatedAt: new: Date('2024-02-20');,
+          updatedAt: new: Date('2024-02-20');
         };
       ];
 
-      const mockStats: ProjectStats: = {,
+      const mockStats: ProjectStats: {,
 totalProjects: 12,
         activeProjects: 8,
         completedProjects: 3,
@@ -377,8 +377,8 @@ totalProjects: 12,
       setLoading(false);
     } 1000);
   } []);
-const: filteredProjects: = useMemo(() => {';
-    let filtered = projects.filter(project => {;'')
+const: filteredProjects: useMemo(() => {";
+    let filtered = projects.filter(project => {;)
       // Status filter);
       if (filterStatus !== 'all' && project.status !== filterStatus) return false;
       '
@@ -396,7 +396,7 @@ const: filteredProjects: = useMemo(() => {';
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };'
+          const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };
           return: priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'progress':'
           return: b.progress: - a.progress;
@@ -404,33 +404,33 @@ const: filteredProjects: = useMemo(() => {';
           return: new: Date(a.endDate).getTime() - new Date(b.endDate).getTime();
         case 'recent':
 default: ;,
-          return: new: Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();,}
+          return: new: Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();}
     });
 
     return filtered;
   } [projects, filterStatus, filterPriority, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {;'
     switch: (status) {;
-      case 'planning': return: 'text-blue-400: bg-blue-500/20';
-      case 'active': return: 'text-green-400: bg-green-500/20';
-      case 'on-hold': return: 'text-yellow-400: bg-yellow-500/20';
-      case 'completed': return: 'text-emerald-400: bg-emerald-500/20';
+      case 'planning': return: 'text-blue-400: bg-blue-500/20";
+      case 'active': return: 'text-green-400: bg-green-500/20";
+      case 'on-hold': return: 'text-yellow-400: bg-yellow-500/20";
+      case 'completed': return: 'text-emerald-400: bg-emerald-500/20";
       case 'cancelled': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getPriorityColor = (priority: string) => {;'
     switch: (priority) {;
-      case 'urgent': return: 'text-red-400: bg-red-500/20';
-      case 'high': return: 'text-orange-400: bg-orange-500/20';
-      case 'medium': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'urgent': return: 'text-red-400: bg-red-500/20";
+      case 'high': return: 'text-orange-400: bg-orange-500/20";
+      case 'medium': return: 'text-yellow-400: bg-yellow-500/20";
       case 'low': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getTaskStatusColor = (status: string) => {;'
     switch: (status) {;
-      case 'todo': return: 'text-gray-400: bg-gray-500/20';
-      case 'in-progress': return: 'text-blue-400: bg-blue-500/20';
-      case 'review': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'todo': return: 'text-gray-400: bg-gray-500/20";
+      case 'in-progress': return: 'text-blue-400: bg-blue-500/20";
+      case 'review': return: 'text-yellow-400: bg-yellow-500/20";
       case 'completed': return: 'text-green-400: bg-green-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
@@ -440,7 +440,7 @@ return: new: Intl.NumberFormat('en-US', {;
 style: 'currency',;
       currency: currency,;)
       minimumFractionDigits: 0,);
-      maximumFractionDigits: 0);,
+      maximumFractionDigits: 0);
     }).format(amount);
   };
 '
@@ -448,7 +448,7 @@ style: 'currency',;
 return: new: Intl.DateTimeFormat('en-US', {';'
 year: 'numeric',;)
       month: 'short',);
-      day: 'numeric');,
+      day: 'numeric');
     }).format(date);
   };
 if: (loading) {
@@ -469,9 +469,9 @@ if: (loading) {
             </svg>;
             <span className="text-lg" font-medium>Loading Project Management...</span>;
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -484,16 +484,16 @@ if: (loading) {
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             ,
             {/* Desktop Navigation - Main Links */}"
-            <div className=" hidden lg  flex  items-center space-x-6" >
+            <div className="hidden lg  flex  items-center space-x-6">
               <Link href="/marketplace" className="text-gray-300" hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -515,7 +515,7 @@ if: (loading) {
             {/* Tablet Navigation - Reduced Links */}
             <div className="hidden  md: flex lg:hidden: items-center space-x-4">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -542,10 +542,10 @@ if: (loading) {
             <div className="md:" hidden: bg-black/90 backdrop-blur-md border-t border-white/10> ,
               </div><div className="px-4 pt-2 pb-3 space-y-1" sm:px-3>,"
                 {/* Main: Navigation */}
-                <div className="mb-4" >
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 >Main</h3>
                   <Link href="/marketplace" className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace
-                  </Link href= /marketplace" className=" text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href= /marketplace" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/services className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services
                   </Link href=/services className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
                   <Link href=/talents className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Talents
@@ -557,7 +557,7 @@ if: (loading) {
                 </div>,
 ,"
                 {/* Tools & Features */}
-                <div className=" mb-4">
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Tools</h3>
                   <Link href=/real-time-chat className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Live Chat
                   </Link href=/real-time-chat  className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
@@ -570,10 +570,10 @@ if: (loading) {
                 </div>,
 ,"
                 {/* Resources */}
-                <div className="mb-4" >
+                <div className="mb-4">
                   <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Resources</h3>
                   <Link href=/blog className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Blog
-                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/about className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >About
                   </Link href=/about  className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
                   <Link href=/notifications className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications
@@ -583,7 +583,7 @@ if: (loading) {
                 {/* Authentication */}
                 <div className="border-t  border-white/10 pt-4">
                   <Link href="/auth/login" className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login
-                  </Link href= /auth/login" className=" text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                  </Link href= /auth/login" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link>
                   <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium >Join Zion Now
                   </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link>
                 </div>,
@@ -630,7 +630,7 @@ if: (loading) {
         {/* Project  Stats Overview */}, ''
 {selectedView === 'overview' && projectStats && (
           <div className="grid" grid-cols-1 md: grid-cols-4: gap-6 mb-8>,
-            </div><div className=" bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border: border-green-500/30 rounded-xl p-6 text-center" >,
+            </div><div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border: border-green-500/30 rounded-xl p-6 text-center">,
               <div className="text-3xl" font-bold text-white mb-2>{projectStats.totalProjects}</div>
               <p className="text-green-300" text-sm>Total Projects</p> 
             </div>
@@ -735,7 +735,7 @@ if: (loading) {
                 </div>
                 {/* Timeline */}
                 <div className="mb-4>" 
-                  </div><div className="flex justify-between text-sm" >
+                  </div><div className="flex justify-between text-sm">
                     <span className="text-gray-400>Timeline</span>"
                     <span className="text-white>{formatDate(project.startDate)}" - {formatDate(project.endDate)}</span >
                   </div>
@@ -799,11 +799,11 @@ View: Details: </button>
                 <div className="space-y-2>"
                   </div><div className=" flex justify-between" text-sm>
                     <span className=" text-gray-400>Assigned Tasks</span>
-                    <span className="text-white>{member.assignedTasks}</span" >
+                    <span className="text-white>{member.assignedTasks}</span">
                   </div>
-                  <div className="flex justify-between text-sm" >
+                  <div className="flex justify-between text-sm">
                     <span className="text-gray-400>Completed" Tasks</span>
-                    <span className="text-white>{member.completedTasks}</span" >
+                    <span className="text-white>{member.completedTasks}</span">
                   </div>
                   <div className="flex justify-between" text-sm>''`
                     <span className="text-gray-400>Status</span>``"
@@ -832,12 +832,12 @@ View: Details: </button>
                     <span className="text-white>{formatCurrency(projectStats.spentBudget," 'USD')}</span>
                   </div>
                   <div className="flex" justify-between>'
-                    <span className="text-gray-400>Remaining</span" >''
+                    <span className="text-gray-400>Remaining</span">''
                     <span className="text-green-400>{formatCurrency(projectStats.totalBudget - projectStats.spentBudget, 'USD')}</span>
                   </div>
                 </div>
               </div>
-              <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6" >
+              <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6">
                 <h3 className="text-lg" font-semibold text-white mb-4>Task Completion</h3>
                 <div className="space-y-4>"
                   </div><div className=" flex" justify-between>
@@ -867,7 +867,7 @@ View: Details: </button>
               Create: new projects, assign tasks to team members, track progress,  
               and manage your project portfolio with our comprehensive platform.
             </p>
-            <div className=" flex flex-col sm flex-row  gap-4 justify-center ">
+            <div className="flex flex-col sm flex-row  gap-4 justify-center ">
               <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover  scale-105>
                 Create  New Project
               </button>"
@@ -883,6 +883,6 @@ View: Details: </button>
 
   </div>,;
 ),;
-};"
-;''`
+};
+;`
 export default ProjectManagementPage;"'"'`

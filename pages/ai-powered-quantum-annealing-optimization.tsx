@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumAnnealingProblem {
   id: string'
@@ -77,7 +77,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
   const [simulations, setSimulations] = useState<QuantumSimulation[]>([]
   const [errorCorrection, setErrorCorrection] = useState<QuantumErrorCorrection[]>([]
   // Mock data
-  const mockAnnealingProblems: QuantumAnnealingProblem[] = ['
+  const $1: $2[] = [
     {
       id: 'qp-001',
       name: 'Traveling Salesman Problem',
@@ -91,7 +91,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       energy: -2450.5,
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockOptimizations: QuantumOptimization[] = ['
+  const $1: $2[] = [
     {
       id: 'qo-001',
       name: 'Max-Cut Optimization',
@@ -104,7 +104,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       runtime: 45,
       status: 'completed
     }]
-  const mockMachineLearning: QuantumMachineLearning[] = ['
+  const $1: $2[] = [
     {
       id: 'qml-001',
       name: 'Quantum Neural Network',
@@ -117,7 +117,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       layers: 3,
       status: 'completed
     }]
-  const mockAlgorithms: QuantumAlgorithm[] = ['
+  const $1: $2[] = [
     {
       id: 'qa-001',
       name: 'Grover\'s Algorithm',
@@ -129,7 +129,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       applications: ['Database Search', 'Cryptography'],
       status: 'production
     }]
-  const mockSimulations: QuantumSimulation[] = ['
+  const $1: $2[] = [
     {
       id: 'qs-001',
       name: 'Molecular Energy Calculation',
@@ -140,7 +140,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       results: 'Ground state energy: -76.432 Hartree',
       status: 'completed
     }]
-  const mockErrorCorrection: QuantumErrorCorrection[] = ['
+  const $1: $2[] = [
     {
       id: 'qec-001',
       name: 'Surface Code',
@@ -222,11 +222,11 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Quantum Dashboard', icon: '⚛️' },
@@ -260,7 +260,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>⚛️</span>
                     </div>
@@ -277,11 +277,11 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Annealing Problems</span>
-                      <span className="text-white>{annealingProblems.length}</span" >
+                      <span className="text-white>{annealingProblems.length}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Optimizations</span>"
-                      <span className="text-white>{optimizations.length}</span" >
+                      <span className="text-white>{optimizations.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>ML" Models</span>
@@ -293,12 +293,12 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🔥</div>
                       <div className="font-semibold>Start Annealing</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>📈</div>
                       <div className="font-semibold>Optimize" Problem</div>
                     </button>
@@ -316,11 +316,11 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
             )}"'
             {/* Annealing Problems */},''
 {activeTab === 'annealing' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Annealing Problems</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {annealingProblems.map((problem) => (
-                    </div><div key={problem.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={problem.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{problem.name}</h3>
@@ -332,9 +332,9 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Size</span>"
-                          <span className="text-white>{problem.size}</span" >
+                          <span className="text-white>{problem.size}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Variables</span>"
@@ -360,7 +360,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
             )}"'
             {/* Optimization */},''
 {activeTab === 'optimization' && ("
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Optimization</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {optimizations.map((opt) => (
@@ -385,7 +385,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                           <span className="text-white>{opt.convergence}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Runtime</span" >
+                          <span className="text-gray-300>Runtime</span">
                           <span className="text-white>{opt.runtime} ms</span>
                         </div>
                         <div className="flex" justify-between >`
@@ -425,12 +425,12 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                           <span className="text-white" text-sm >{ml.dataset}</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Loss</span" >
+                          <span className="text-gray-300>Loss</span">
                           <span className="text-white>{ml.loss}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Qubits</span>"
-                          <span className="text-white>{ml.qubits}</span" >
+                          <span className="text-white>{ml.qubits}</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -464,12 +464,12 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Complexity</span" >
+                          <span className="text-gray-300>Complexity</span">
                           <span className="text-white" text-sm>{algo.complexity}</span>
                         </div>
                         <div className="flex  justify-between">
                           <span className="text-gray-300>Qubits</span>"
-                          <span className="text-white>{algo.qubits}</span" >
+                          <span className="text-white>{algo.qubits}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Depth</span>"
@@ -499,11 +499,11 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
             )} '
             {/* Simulation */},''
 {activeTab === 'simulation' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Simulation</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {simulations.map((sim) => (
-                    </div><div key={sim.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={sim.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{sim.name}</h3>
@@ -515,9 +515,9 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Time" Steps</span>
-                          <span className="text-white>{sim.timeSteps}</span" >
+                          <span className="text-white>{sim.timeSteps}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Precision</span>"
@@ -543,7 +543,7 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
             )}"'
             {/* Error Correction */},''
 {activeTab === 'error-correction' && ("
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Error Correction</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {errorCorrection.map((ec) => (
@@ -569,11 +569,11 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
                         </div>
                         <div className=" flex" justify-between>
                           <span className=" text-gray-300>Physical Qubits</span>
-                          <span className="text-white>{ec.physicalQubits}</span" >
+                          <span className="text-white>{ec.physicalQubits}</span">
                         </div>
-                        <div className="flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Threshold</span>"
-                          <span className="text-white>{ec.threshold}%</span" >
+                          <span className="text-white>{ec.threshold}%</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -612,6 +612,6 @@ const AIPoweredQuantumAnnealingOptimization: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumAnnealingOptimization ))))))))))))))))))))))"'"'`

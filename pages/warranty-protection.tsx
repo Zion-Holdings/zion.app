@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface WarrantyPlan {
   id: string;'
   name: string;
-  type: 'basic' | 'extended' | 'premium' | 'lifetime';
+  type: 'basic' | 'extended' | 'premium' | 'lifetime";
   duration: string;
   coverage: string[];
   price: number;
@@ -16,7 +16,7 @@ interface: ProtectionClaim: {;
   id: string;
   product: string;'
   issue: string;
-  status: 'pending' | 'approved' | 'rejected' | 'completed';
+  status: 'pending' | 'approved' | 'rejected' | 'completed";
   submittedDate: Date;
   estimatedResolution: Date;
   claimAmount: number;
@@ -29,7 +29,7 @@ interface: ProtectionAccount: {;
   claimsSubmitted: number;
   claimsApproved: number;,
   totalSavings: number;,}
-const WarrantyProtectionPage: NextPage: = () => {'',
+const WarrantyProtectionPage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState('plans
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null
@@ -143,7 +143,7 @@ id: 'basic',
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/escrow-services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Escrow
               </Link href=/escrow-services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login
@@ -166,7 +166,7 @@ id: 'basic',
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#plans" className="bg-gradient-to-r" from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans
-            </Link href=#plans  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#plans  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover  from-blue-700 hover to-cyan-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Shop Securely
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -244,7 +244,7 @@ id: 'basic',
                     <div className="text-3xl" font-bold text-white mb-1>${plan.price}</div>
                     <div className="text-gray-400" text-sm>{plan.duration}</div>
                   </div>
-                  <div className="mb-6" >
+                  <div className="mb-6">
                     <h4 className="text-white" font-semibold mb-3>Coverage Includes  </h4>
                     <ul: className="space-y-2">,
                       {plan.coverage.map((item, index) => ("
@@ -258,7 +258,7 @@ id: 'basic',
  
                   <div className="mb-6">
                     <h4 className="text-white" font-semibold mb-3>Features  </h4>
-                    <ul: className="space-y-2" >,
+                    <ul: className="space-y-2">,
                       {plan.features.map((feature, index) => ("
                         <li: key={index} className="flex" items-center text-gray-300 text-sm >
                           <span className="text-blue-400" mr-2>•</span>
@@ -288,7 +288,7 @@ id: 'basic',
             {/* Plan Comparison */}"
             <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-8>
               <h3 className="text-2xl" font-bold text-white mb-6 text-center>Plan Comparison</h3>
-              <div className="overflow-x-auto" >
+              <div className="overflow-x-auto">
                 <table className="w-full"">
                   <thead>
                     <tr className=" border-b" border-white/10>
@@ -388,7 +388,7 @@ id: 'basic',
         )}'
 "''
         {activeTab === 'account' && (
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Protection Account</h2>
             <div className="grid"  grid-cols-1 md: grid-cols-2 lg:grid-cols-4: gap-6>
               </div><div className=" bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg" p-6>",
@@ -443,7 +443,7 @@ id: 'basic',
           </div>
         )}'
  ''
-        {activeTab: === 'coverage' && (
+        {activeTab: = 'coverage' && (
           <div className="space-y-8>
             </div><div className=" text-center" mb-8>
               <h2 className="text-3xl" font-bold text-white mb-4>Coverage Guide</h2>'
@@ -550,7 +550,7 @@ id: 'basic',
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-blue-900/50 to-cyan-900/50 border-t border-white/10 > 
         </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8 " py-32>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Protect Your Investments 
             </h2>'
@@ -578,8 +578,8 @@ id: 'basic',
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Protection</h4>
-              <ul className="space-y-2 text-sm" >
-                <li><Link href="/warranty-protection className="text-gray-400" hover  text-white  transition-colors >Warranty Plans</Link href= /warranty-protection" className=" text-gray-400 hover  text-white  transition-colors" ></Link></li>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/warranty-protection className="text-gray-400" hover  text-white  transition-colors >Warranty Plans</Link href= /warranty-protection" className="text-gray-400 hover  text-white  transition-colors"></Link></li>
                 <li><Link href=/escrow-services className="text-gray-400" hover text-white transition-colors >Escrow Services</Link href=/escrow-services className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/marketplace" className="text-gray-400" hover text-white transition-colors >Marketplace</Link href=/marketplace  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/ai-virtual-assistant className="text-gray-400" hover text-white transition-colors >AI Assistant</Link href=/ai-virtual-assistant className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -596,7 +596,7 @@ id: 'basic',
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -614,6 +614,6 @@ id: 'basic',
   ;
   </div >;
   </div> ),;"
-};"
-;''`
+};
+;`
 export default WarrantyProtectionPage;)))))"'"'`

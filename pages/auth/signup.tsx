@@ -69,9 +69,9 @@ const Signup: NextPage = () => {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></Head>
 
-      <div className=" max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-40">
-        <div className=" text-center mb-8">
-          <h1 className=" text-3xl font-bold text-white mb-4">
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-40">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-white mb-4">
             Join{" "}
             <span className=" text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               Zion
@@ -82,7 +82,7 @@ const Signup: NextPage = () => {
           </p>
         </div>
 
-        <div className=" bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
+        <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
           <form className=" space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
@@ -148,29 +148,27 @@ const Signup: NextPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className=" w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 rounded-md hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
               {loading ? "Creating Account..." : "Create Account}
             </button>
           </form>
 
-          <div className=" mt-6">
-            <div className=" relative">
-              <div className=" absolute inset-0 flex items-center">
-                <div className=" w-full border-t border-white/20 > </div className=" w-full border-t border-white/20" ></div>
-              <div className=" relative flex justify-center text-sm">
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className=" w-full border-t border-white/20 > </div className="w-full border-t border-white/20"></div>
+              <div className="relative flex justify-center text-sm">
                 <span className=" px-2 bg-black text-gray-300>
                   Or continue with
                 </span>
               </div>
             </div>
 
-            <div className=" mt-6 grid grid-cols-2 gap-3">
+            <div className="mt-6 grid grid-cols-2 gap-3">
               <button
                 onClick={() => handleSocialSignIn("google")}
                 disabled={loading}
-                className=" w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+                className="w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
                 <svg className=" w-5 h-5" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
@@ -203,8 +201,7 @@ const Signup: NextPage = () => {
               <button
                 onClick={() => handleSocialSignIn("github")}
                 disabled={loading}
-                className=" w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+                className="w-full inline-flex justify-center py-2 px-4 border border-white/20 rounded-md shadow-sm bg-black/30 text-sm font-medium text-white hover:bg-black/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
                 <svg
                   className=" w-5 h-5"
                   fill="currentColor"
@@ -216,8 +213,8 @@ const Signup: NextPage = () => {
             </div>
           </div>
 
-          <div className=" mt-6 text-center">
-            <p className=" text-gray-300">
+          <div className="mt-6 text-center">
+            <p className="text-gray-300">
               Already have an account?{" "}
               <Link
                 href="/auth/login"

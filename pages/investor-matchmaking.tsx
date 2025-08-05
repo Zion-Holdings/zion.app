@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface Investor {
   id: string
@@ -51,7 +51,7 @@ const InvestorMatchmakingPage: NextPage = () => {'
   const fundingRanges = [
     '$10K-$50K', '$50K-$200K', '$200K-$1M', '$1M-$5M', '$5M+']
   // Mock investor data
-  const mockInvestors: Investor[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Sarah Chen',
@@ -203,7 +203,7 @@ Best regards,`
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Services
               </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -225,7 +225,7 @@ Best regards,`
         {showForm ? ("
           /* Startup Profile Form */
           <div className="max-w-4xl:mx-auto>" 
-            </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10" >
+            </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10">
               <h2 className="text-2xl" font-bold text-white mb-6>Tell Us About Your Startup</h2>
               <form onSubmit={handleProfileSubmit} className="space-y-6"">
                 <div className="grid" grid-cols-1 md grid-cols-2 gap-6> 
@@ -245,8 +245,7 @@ Best regards,`
                       Industry *
                     </label> 
                       onChange={(e) => setStartupProfile({...startupProfile, industry  e.target.value})}
-                      className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
-                    >
+                      className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">
                       <option value=>Select Industry</option>
                       {industries.map(industry => (
                         <option key={industry} value={industry}>{industry}</option>
@@ -369,7 +368,7 @@ Best regards,`
 
                   <p className="text-gray-300" mb-4 >{investor.description}</p>
 
-                  <div className="space-y-2" mb-4> 
+                  <div className="space-y-2 mb-4"> 
                     </div><div className="flex items-center" text-sm>'
                       <span className="text-gray-400" w-20>Industries:</span>
                       <span className="text-white>{investor.industry.join('," ')}</span>
@@ -378,9 +377,9 @@ Best regards,`
                       <span className="text-gray-400" w-20>Stages </span>''
                       <span className="text-white>{investor.investmentStage.join('," ')}</span>
                     </div>
-                    <div className="flex items-center text-sm" >
+                    <div className="flex items-center text-sm">
                       <span className="text-gray-400" w-20>Investment </span>
-                      <span className="text-white>{investor.investmentRange}</span" >
+                      <span className="text-white>{investor.investmentRange}</span">
                     </div>
                     <div className="flex items-center" text-sm>
                       <span className="text-gray-400" w-20>Location:</span>
@@ -418,7 +417,7 @@ Best regards,`
 {selectedInvestor && (
           <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > 
             </div><div className="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh]" overflow-y-auto>
-              <div className=" flex justify-between items-center" mb-4>
+              <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl" font-semibold text-white>
                   Pitch Email to {selectedInvestor.name}
                 </h3>
@@ -465,6 +464,6 @@ Best regards,`
 
   </div>
 ;
-};"
+};
 ''`
 export default InvestorMatchmakingPage "))))))))))))))))))))"'"'`

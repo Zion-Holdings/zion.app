@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Workflow {
   id: string;
   name: string;'
   description: string;
-  status: 'active' | 'inactive' | 'draft' | 'archived';
-  category: 'business' | 'technical' | 'marketing' | 'sales' | 'support' | 'custom';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  status: 'active' | 'inactive' | 'draft' | 'archived";
+  category: 'business' | 'technical' | 'marketing' | 'sales' | 'support' | 'custom";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   steps: WorkflowStep[];
   triggers: WorkflowTrigger[];
   lastExecuted: Date;
@@ -21,7 +21,7 @@ interface WorkflowStep {
   name: string;
   type: 'action' | 'condition' | 'integration' | 'notification' | 'approval';'
   description: string;
-  status: 'pending' | 'running' | 'completed' | 'failed' | 'skipped';
+  status: 'pending' | 'running' | 'completed' | 'failed' | 'skipped";
   order: number;
   dependencies: string[];
   estimatedTime: number;
@@ -30,7 +30,7 @@ interface WorkflowStep {
 interface WorkflowTrigger {
   id: string;'
   name: string;
-  type: 'event' | 'schedule' | 'manual' | 'api' | 'webhook';
+  type: 'event' | 'schedule' | 'manual' | 'api' | 'webhook";
   condition: string;
   isActive: boolean;
   lastTriggered?: Date;
@@ -44,7 +44,7 @@ interface AIWorkflowOptimization {
   predictedImprovements: WorkflowImprovement[];}
 interface WorkflowImprovement {'
   id: string;
-  type: 'performance' | 'cost' | 'reliability' | 'scalability';
+  type: 'performance' | 'cost' | 'reliability' | 'scalability";
   description: string;
   impact: number;
   implementationTime: number;
@@ -60,7 +60,7 @@ interface ProcessOrchestration {
   name: string;
   description: string;'
   workflows: string[];
-  status: 'active' | 'inactive' | 'maintenance';
+  status: 'active' | 'inactive' | 'maintenance";
   performance: ProcessPerformance;
   aiOptimization: AIProcessOptimization;}
 interface ProcessPerformance {
@@ -80,7 +80,7 @@ interface Integration {
   name: string;
   type: 'api' | 'webhook' | 'database' | 'service' | 'custom';'
   provider: string;
-  status: 'active' | 'inactive' | 'error' | 'maintenance';
+  status: 'active' | 'inactive' | 'error' | 'maintenance";
   endpoints: IntegrationEndpoint[];
   performance: IntegrationPerformance;
   aiAnalysis: AIIntegrationAnalysis;}
@@ -88,8 +88,8 @@ interface IntegrationEndpoint {
   id: string;
   name: string;'
   url: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-  status: 'healthy' | 'degraded' | 'down' | 'maintenance';
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
+  status: 'healthy' | 'degraded' | 'down' | 'maintenance";
   responseTime: number;
   successRate: number;
   lastChecked: Date;}
@@ -119,7 +119,7 @@ interface WorkflowOrchestrationInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
@@ -131,7 +131,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockWorkflows: Workflow[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Customer Onboarding Workflow',
@@ -269,7 +269,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
             confidence: 0.92
           }]}
 }]
-  const mockProcessOrchestrations: ProcessOrchestration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Customer Lifecycle Management',
@@ -307,7 +307,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         costSavings: 22000,
         recommendations: ['Optimize inventory allocation', 'Implement smart shipping']}
 }]
-  const mockIntegrations: Integration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Payment Gateway API',
@@ -561,7 +561,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                 {/* Workflows Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredWorkflows.map((workflow) => (
-                    </div><div key={workflow.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={workflow.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{workflow.name}</h3>
@@ -585,7 +585,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                       {/* Workflow Steps */}
                       <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>Workflow Steps</h4>
-                        <div className="space-y-2" >
+                        <div className="space-y-2">
                           {workflow.steps.slice(0, 2).map((step) => (
                             </div><div key={step.id} className=" bg-white/5 rounded-lg" p-3>
                               <div className=" flex items-center justify-between mb-2>`
@@ -605,7 +605,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                       </div>
 
                       {/* AI Optimization */}"
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Optimization</h4>
                         <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm >
@@ -651,7 +651,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
 {activeTab === 'orchestration' && (
               <div className="space-y-8>" 
                 {processOrchestrations.map((process) => (
-                  </div><div key={process.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={process.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{process.name}</h3>
@@ -746,11 +746,11 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                     </div>
 
                     {/* Endpoints */}"
-                    <div className=" mb-6">
+                    <div className="mb-6">
                       <h4 className="text-lg" font-semibold text-white mb-3>API Endpoints</h4>
                       <div className="space-y-2>" 
                         {integration.endpoints.map((endpoint) => (
-                          </div><div key={endpoint.id} className="bg-white/5 rounded-lg p-3" >
+                          </div><div key={endpoint.id} className="bg-white/5 rounded-lg p-3">
                             <div className="flex" items-center justify-between mb-2>
                               </div><div>
                                 <div className="text-white" font-semibold text-sm>{endpoint.name}</div>
@@ -868,7 +868,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>" 
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4" >
+                      </div><div key={insight.id} className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">
                         <div className="flex" items-start justify-between mb-2>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
@@ -894,8 +894,8 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Automate Your Workflows?
             </h2>
@@ -903,9 +903,9 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
               Start your workflow automation journey with our AI-powered orchestration system  
               and streamline your business processes for maximum efficiency.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/ai-service-matcher" className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105 >Start Automation
-              </Link href= /ai-service-matcher" className=" bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105" ></Link>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -920,6 +920,6 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredWorkflowOrchestrationPage )))))))))))))))))))))))))"'"'`

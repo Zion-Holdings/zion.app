@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface PredictiveModel {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockPredictiveModels: PredictiveModel[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Advanced Regression Model',
@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         modelInsights: ['Strong temporal pattern recognition', 'Effective seasonality modeling', 'Good trend prediction'],
         recommendations: ['Enhance seasonal decomposition', 'Implement LSTM layers', 'Optimize window size']}
 }]
-  const mockMachineLearningAlgorithms: MachineLearningAlgorithm[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Supervised Learning Engine',
@@ -176,7 +176,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         improvementOpportunities: ['Enhance reward function', 'Optimize exploration strategy', 'Improve policy learning'],
         enhancementStrategies: ['Implement advanced reward functions', 'Optimize exploration algorithms', 'Enhance policy networks']}
 }]
-  const mockDeepLearning: DeepLearning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Convolutional Neural Network',
@@ -220,7 +220,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         improvementAreas: ['Enhance attention mechanisms', 'Optimize positional encoding', 'Improve multi-head attention'],
         recommendations: ['Implement advanced attention', 'Optimize positional encoding', 'Enhance multi-head mechanisms']}
 }]
-  const mockAnalyticsOptimization: AnalyticsOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Performance Optimization Engine',
@@ -383,7 +383,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -477,7 +477,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Predictive Models Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Predictive Models</h3>
               <div className="space-y-4>"
                 {predictiveModels.slice(0, 3).map((model) => (
@@ -503,7 +503,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Machine Learning Algorithms</h3>
               <div className="space-y-4>" 
                 {machineLearningAlgorithms.slice(0, 2).map((algorithm) => (
-                  </div><div key={algorithm.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={algorithm.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{algorithm.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(algorithm.status)} text-white`}>
@@ -551,10 +551,10 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{model.location} • {model.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Accuracy</span>"
-                      <span className="text-white>{model.accuracy}%</span" >
+                      <span className="text-white>{model.accuracy}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Precision</span>"
@@ -600,9 +600,9 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Scalability</span>"
-                      <span className="text-white>{algorithm.scalability}%</span" >
+                      <span className="text-white>{algorithm.scalability}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Learning" Accuracy</span>
@@ -620,7 +620,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {deepLearning.map((model) => (
                 <div key={model.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{model.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(model.status)} text-white`}>
                       {model.status}
@@ -628,7 +628,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{model.location} • {model.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{model.layers}</div>
                       <div className="text-gray-400" text-sm>Layers</div>
                     </div>
@@ -642,7 +642,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
                       <span className=" text-gray-400>Training Time</span>
                       <span className=" text-white>{model.trainingTime} min</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Model" Accuracy</span>
                       <span className="text-white>{model.aiAnalysis.modelAccuracy}/10</span>"
                     </div>
@@ -655,10 +655,10 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 "'
         {selectedView === 'optimization' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {analyticsOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{optimization.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
@@ -754,7 +754,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -787,7 +787,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

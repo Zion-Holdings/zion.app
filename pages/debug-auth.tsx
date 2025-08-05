@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useAuth } from '../src/contexts/AuthContext';
-import { useEffect, useState }  from 'react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useAuth } from '../src/contexts/AuthContext";
+import { useEffect, useState }  from 'react";
 
 const DebugAuth: NextPage = () => {}
   const { user, session, loading, error } = useAuth(
@@ -41,7 +41,7 @@ const DebugAuth: NextPage = () => {}
       <div className=" max-w-4xl" mx-auto>
         <h1 className="text-3xl" font-bold text-white mb-8>Authentication Debug</h1>
         <div className="grid" grid-cols-1 md:grid-cols-2 gap-6> 
-          </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+          </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
             <h2 className="text-xl" font-semibold text-white mb-4>Current State</h2>
             <div className="space-y-2" text-sm>
               </div><div className="flex" justify-between>'
@@ -57,7 +57,7 @@ const DebugAuth: NextPage = () => {}
                 </span>
               </div>
               <div className="flex" justify-between>'`
-                <span className="text-gray-300>Session:</span" >''``
+                <span className="text-gray-300>Session:</span">''``
                 <span className="{`font-mono" ${session ? 'text-green-400' : 'text-red-400'}`}>
                   {session ? 'exists'   'null'}
                 </span>

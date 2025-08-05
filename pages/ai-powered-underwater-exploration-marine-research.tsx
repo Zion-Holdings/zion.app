@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface UnderwaterRobot {
   id: string'
@@ -85,7 +85,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockRobots: UnderwaterRobot[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'DeepSea Explorer ROV',
@@ -135,7 +135,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         riskLevel: 'medium',
         recommendations: ['Monitor coral health', 'Check camera systems', 'Update mapping data']}
 }]
-  const mockResearch: MarineResearch[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Coral Reef Biodiversity Study',
@@ -179,7 +179,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         environmentalImpact: 0.02,
         recommendations: ['Establish baseline data', 'Deploy monitoring network', 'Develop analysis protocols']}
 }]
-  const mockMonitoring: OceanMonitoring[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Temperature Buoy Network',
@@ -217,7 +217,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         accuracyScore: 8.9,
         recommendations: ['Schedule maintenance', 'Update sensors', 'Expand coverage area']}
 }]
-  const mockExplorations: UnderwaterExploration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Titanic Wreck Exploration',
@@ -368,7 +368,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -434,7 +434,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Robots Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Underwater Robots</h3>
               <div className="space-y-4>"
                 {robots.slice(0, 3).map((robot) => (
@@ -510,18 +510,18 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                   <p className="text-gray-400" text-sm:mb-4>{robot.mission}</p>
                   <div className="space-y-2" mb-4 > 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Depth</span" >
+                      <span className="text-gray-400>Depth</span">
                       <span className="text-white>{formatNumber(robot.depth)}m</span"">
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Type</span>"
-                      <span className="text-white>{robot.type}</span" >
+                      <span className="text-white>{robot.type}</span">
                     </div>
                   </div>
-                  <div className=" space-y-2">
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Efficiency</span>"
-                      <span className="text-white>{robot.aiAnalysis.operationalEfficiency}/10</span" >
+                      <span className="text-white>{robot.aiAnalysis.operationalEfficiency}/10</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Battery</span>"
@@ -539,7 +539,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {research.map((project) => (
                 <div key={project.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{project.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(project.status)} text-white`}>
                       {project.status}
@@ -547,7 +547,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{project.location}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{project.duration}</div>
                       <div className="text-gray-400" text-sm>Days</div>
                     </div>
@@ -561,7 +561,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                       <span className=" text-gray-400>Success Rate</span>
                       <span className=" text-white>{Math.round(project.aiAnalysis.successProbability * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Scientific" Value</span>
                       <span className="text-white>{project.aiAnalysis.scientificValue}/10</span>"
                     </div>
@@ -574,10 +574,10 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 "'
         {selectedView === 'monitoring' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {monitoring.map((station) => (
                 <div key={station.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{station.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(station.status)} text-white`}>
                       {station.status}
@@ -600,7 +600,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                       <span className="text-white>{station.aiAnalysis.dataQuality}/10</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
-                      <span className="text-gray-400>Coverage</span" >
+                      <span className="text-gray-400>Coverage</span">
                       <span className="text-white>{station.aiAnalysis.coverageArea}%</span>"
                     </div>
                   </div>
@@ -628,7 +628,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                       <span className=" text-gray-400>Discovery Prob.</span>
                       <span className=" text-white>{Math.round(exploration.aiAnalysis.discoveryProbability * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Scientific" Value</span>
                       <span className="text-white>{exploration.aiAnalysis.scientificValue}/10</span>"
                     </div>
@@ -642,7 +642,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && ("
           <div className=" space-y-6>
             {/* Analytics Overview */}
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center> 
                 </div><div className="text-3xl" font-bold text-white>{analytics.totalRobots}</div>
                 <div className="text-gray-400>Total" Robots</div>
@@ -666,9 +666,9 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>AI Marine Insights</h3>
               <div className="space-y-4>" 
                 {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center space-x-3" mb-2>`
-                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span" >``"
+                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">``"
                       <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title} 
                       </h4>
@@ -722,7 +722,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

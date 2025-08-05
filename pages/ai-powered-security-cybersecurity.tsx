@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface ThreatDetection {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockThreatDetection: ThreatDetection[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Malware Detection',
@@ -132,7 +132,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         detectionInsights: ['User behavior anomalies detected', 'Pattern recognition effective', 'Predictive analysis working'],
         recommendations: ['Refine anomaly algorithms', 'Enhance pattern recognition', 'Improve predictive models']}
 }]
-  const mockSecurityAnalytics: SecurityAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Security Monitoring Platform',
@@ -176,7 +176,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         optimizationOpportunities: ['Optimize risk analysis', 'Improve risk scoring', 'Enhance risk reporting'],
         improvementStrategies: ['Implement advanced risk analysis', 'Enhance risk scoring', 'Improve risk reporting']}
 }]
-  const mockIncidentResponse: IncidentResponse[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Automated Response System',
@@ -220,7 +220,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
         improvementAreas: ['Enhance forensic analysis', 'Improve evidence collection', 'Expand analysis scope'],
         recommendations: ['Optimize forensic algorithms', 'Enhance evidence collection', 'Expand analysis coverage']}
 }]
-  const mockSecurityOptimization: SecurityOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Security Automation Platform',
@@ -373,7 +373,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -519,30 +519,30 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
             {/* Threat Detection Systems Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredThreatDetection.map((system) => (
-                </div><div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10" >
-                  <div className=" flex items-center justify-between" mb-4>`
+                </div><div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{system.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{system.location} • {system.type}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className=" flex justify-between" text-sm>"
                       <span className="text-gray-400>Detection" Rate</span>
                       <span className="text-white>{system.detectionRate}%</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
                       <span className=" text-gray-400>False Positive Rate</span>
-                      <span className="text-white>{system.falsePositiveRate}%</span" >
+                      <span className="text-white>{system.falsePositiveRate}%</span">
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Response Time</span>
-                      <span className="text-white>{system.responseTime}s</span" >
+                      <span className="text-white>{system.responseTime}s</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Accuracy" Score</span>
                       <span className="text-white>{system.aiAnalysis.accuracyScore}/10</span>"
                     </div>
@@ -555,10 +555,10 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
 "'
         {selectedView === 'analytics' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {securityAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{analytics.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
@@ -613,7 +613,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>Resolution Rate</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Effectiveness</span>"
                       <span className="text-white>{response.effectivenessScore}%</span>" 
@@ -652,9 +652,9 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Cost" Savings</span>
-                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span" >
+                      <span className="text-white>{formatCurrency(optimization.metrics.costSavings)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Impact" Score</span>
@@ -690,7 +690,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Security Insights</h3>
               <div className="space-y-4>"
                 {data.aiInsights.map((insight) => (
@@ -720,7 +720,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -759,7 +759,7 @@ const AIPoweredSecurityCybersecurityPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

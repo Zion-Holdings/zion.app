@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
 const Blog: NextPage = () => {
   const blogPosts = ['
@@ -151,7 +151,7 @@ const Blog: NextPage = () => {
             </div>
             <div className="flex  items-center space-x-4 lg:space-x-8>
               <Link href=/marketplace" className="text-gray-300" hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target"></Link>
               <Link href=/blog className="text-white" px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target >Blog
               </Link href=/blog className="text-white" px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target" ></Link>
               <Link href=/auth/login className="text-gray-300" hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target >Login
@@ -174,7 +174,7 @@ const Blog: NextPage = () => {
 "
       {/* Blog Posts */}
       <div className="container-responsive" section-padding> 
-        </div><div className="grid-responsive-3 gap-6 lg gap-8" >
+        </div><div className="grid-responsive-3 gap-6 lg gap-8">
           {blogPosts.map((post) => ("
             <article key={post.id} className=" bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover border-purple-500/50 transition-all duration-300" hover-responsive>
               <div className=" mb-4>
@@ -214,6 +214,6 @@ const Blog: NextPage = () => {
 
   </div">
   </div> "
-};"
+};
 ''`
 export default Blog )"'"'`

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface AutonomousVehicle {
   id: string'
@@ -93,7 +93,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockVehicles: AutonomousVehicle[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AV-001',
@@ -151,7 +151,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         efficiencyScore: 9.4,
         recommendations: ['Maintain high priority routing', 'Ensure clear communication', 'Monitor emergency protocols']}
 }]
-  const mockTrafficOptimizations: TrafficOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       location: 'Manhattan Downtown',
@@ -179,7 +179,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         optimizationEfficiency: 0.85,
         recommendations: ['Reroute through alternative highways', 'Implement carpool lanes', 'Add real-time updates']}
 }]
-  const mockRoutes: RoutePlanning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       origin: "Times Square", NY',
@@ -209,7 +209,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         safetyScore: 0.89,
         recommendations: ['Use eco-friendly driving mode', 'Consider public transit options', 'Plan for parking availability']}
 }]
-  const mockLogistics: LogisticsOrder[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       customer: 'TechCorp Inc.',
@@ -497,7 +497,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                   <div className=" space-y-2 mb-4>
                     </div><div className=" flex" justify-between text-sm >
                       <span className=" text-gray-400>Battery</span>
-                      <span className=" text-white>{vehicle.battery}%</span">
+                      <span className="text-white>{vehicle.battery}%</span">
                     </div>
                     <div className=" flex justify-between text-sm>
                       <span className="text-gray-400>Speed</span>
@@ -535,9 +535,9 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                       {optimization.congestionLevel}
                     </span>
                   </div>
-                  <p className="text-gray-400" mb-4>{optimization.optimizationType} optimization</p>
+                  <p className="text-gray-400 mb-4">{optimization.optimizationType} optimization</p>
                   <div className=" grid grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{optimization.impact}%</div>
                       <div className="text-gray-400" text-sm>Improvement</div>
                     </div>
@@ -572,9 +572,9 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                       {route.routeType}
                     </span>
                   </div>
-                  <p className="text-gray-400" mb-4>{route.trafficConditions} traffic</p>
+                  <p className="text-gray-400 mb-4">{route.trafficConditions} traffic</p>
                   <div className=" grid grid-cols-2 gap-4 mb-4 >
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{route.distance} mi</div>
                       <div className="text-gray-400" text-sm>Distance</div>
                     </div>
@@ -590,7 +590,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                     </div>
                     <div className="flex" justify-between text-sm>
                       <span className=" text-gray-400>Safety</span>
-                      <span className="text-white" >{Math.round(route.aiAnalysis.safetyScore * 100)}%</span>
+                      <span className="text-white">{Math.round(route.aiAnalysis.safetyScore * 100)}%</span>
                     </div>
                   </div>
                 </div>

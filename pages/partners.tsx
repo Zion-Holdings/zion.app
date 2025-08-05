@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
+import { useState } from 'react";
 const Partners: NextPage = () => {'
   const [activeCategory, setActiveCategory] = useState('all'
   const categories = ['
@@ -143,7 +143,7 @@ const Partners: NextPage = () => {'
             </div>
             <div className="flex  items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover text-white transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover text-white transition-colors >About
               </Link href=/about className="text-gray-300" hover text-white transition-colors" ></Link>
               <Link href=/contact className="text-gray-300" hover text-white transition-colors >Contact
@@ -170,14 +170,14 @@ const Partners: NextPage = () => {'
         </div>
 
         {/* Partnership Types */}"
-        <div className="mb-16" >
+        <div className="mb-16">
           <h2 className="text-3xl" font-bold text-white mb-8 text-center>Partnership Opportunities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>
             {partnershipTypes.map((type) => (
               </div><div key={type.type} className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm>
                 <div className="text-3xl:mb-4>{type.icon}</div>"
                 <h3 className="text-xl" font-semibold text-white mb-3>{type.type}</h3> 
-                <p className="text-gray-300" mb-4>{type.description}</p>
+                <p className="text-gray-300 mb-4">{type.description}</p>
                 <ul className="space-y-2"">
                   {type.benefits.map((benefit, index) => ("
                     <li key={index} className="text-gray-300" text-sm flex items-start >
@@ -226,9 +226,7 @@ const Partners: NextPage = () => {'
                     </div>
                   ))}
                 </div>
-                <div className="text-center>"
-                  
-                  >
+                <div className="text-center>">
                     Visit Website →
                   </Link>
                 </div>
@@ -237,7 +235,7 @@ const Partners: NextPage = () => {'
           </div>
         </div>
         {/* Become a Partner */}
-        <div className=" mb-16">
+        <div className="mb-16">
           </div><div className=" bg-white/5 border border-white/10 rounded-lg p-8" backdrop-blur-sm>
             <h2 className="text-3xl" font-bold text-white mb-6 text-center>Become a Partner</h2>'
             <p className="text-gray-300" text-center mb-8 max-w-2xl mx-auto>
@@ -276,13 +274,13 @@ const Partners: NextPage = () => {'
           </div>
         </div>
         {/* Partnership Benefits */}
-        <div className=" mb-16">
+        <div className="mb-16">
           <h2 className="text-3xl" font-bold text-white mb-8 text-center>Partnership Benefits</h2>
           <div className="grid"  grid-cols-1 md:grid-cols-2 gap-8>
             </div><div className=" bg-white/5 border border-white/10 rounded-lg p-6" backdrop-blur-sm>
               <h3 className="text-xl" font-semibold text-white mb-4>For Technology Companies</h3>
-              <ul className="space-y-3" >
-                <li className="text-gray-300 flex items-start" >
+              <ul className="space-y-3">
+                <li className="text-gray-300 flex items-start">
                   <span className="text-purple-400" mr-2>•</span> '
                   Access to Zion's global marketplace and customer base
                 </li>
@@ -300,7 +298,7 @@ const Partners: NextPage = () => {'
                 </li>
               </ul>
             </div>
-            <div className=" bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm" >
+            <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
               <h3 className="text-xl" font-semibold text-white mb-4>For Research Institutions</h3>
               <ul className="space-y-3"">
                 <li className=" text-gray-300 flex" items-start>
@@ -360,6 +358,6 @@ const Partners: NextPage = () => {'
 
   </div>
 
-};"
+};
 ''`
 export default Partners )))"'"'`

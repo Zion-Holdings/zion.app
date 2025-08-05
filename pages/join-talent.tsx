@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
 const Https___ziontechgroup_netlify_app_join_talentPage: NextPage = () => {
   return (
@@ -30,7 +30,7 @@ const Https___ziontechgroup_netlify_app_join_talentPage: NextPage = () => {
             </div>
             <div className="hidden  md:flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >About
               </Link href=/about className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -77,22 +77,22 @@ const Https___ziontechgroup_netlify_app_join_talentPage: NextPage = () => {
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Marketplace</h4>
-              <ul className="space-y-2 text-sm" >
-                <li><Link href="/marketplace className="text-high-contrast-tertiary" hover text-white transition-colors >Browse Services</Link href= /marketplace" className=" text-high-contrast-tertiary hover text-white transition-colors" ></Link></li>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/marketplace className="text-high-contrast-tertiary" hover text-white transition-colors >Browse Services</Link href= /marketplace" className="text-high-contrast-tertiary hover text-white transition-colors"></Link></li>
                 <li><Link href=/talents className="text-high-contrast-tertiary" hover text-white transition-colors >AI Talents</Link href=/talents className="text-high-contrast-tertiary" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/equipment" className="text-high-contrast-tertiary" hover text-white transition-colors >Equipment</Link href=/equipment  className="text-high-contrast-tertiary" hover text-white transition-colors ></Link></li> </ul>
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Company</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-high-contrast-tertiary" hover text-white transition-colors >About</Link href=/about" className=" text-high-contrast-tertiary hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-high-contrast-tertiary" hover text-white transition-colors >About</Link href=/about" className="text-high-contrast-tertiary hover text-white transition-colors"></Link></li>
                 <li><Link href=/contact className="text-high-contrast-tertiary" hover text-white transition-colors >Contact</Link href=/contact className="text-high-contrast-tertiary" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/blog" className="text-high-contrast-tertiary" hover text-white transition-colors >Blog</Link href=/blog  className="text-high-contrast-tertiary" hover text-white transition-colors ></Link></li> </ul>
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/help className="text-high-contrast-tertiary" hover text-white transition-colors >Help Center</Link href=/help" className=" text-high-contrast-tertiary hover text-white transition-colors" ></Link></li>
+                <li><Link href=/help className="text-high-contrast-tertiary" hover text-white transition-colors >Help Center</Link href=/help" className="text-high-contrast-tertiary hover text-white transition-colors"></Link></li>
                 <li><Link href=/privacy className="text-high-contrast-tertiary" hover text-white transition-colors >Privacy</Link href=/privacy className="text-high-contrast-tertiary" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/terms" className="text-high-contrast-tertiary" hover text-white transition-colors >Terms</Link href=/terms  className="text-high-contrast-tertiary" hover text-white transition-colors" ></Link></li>
               </ul>

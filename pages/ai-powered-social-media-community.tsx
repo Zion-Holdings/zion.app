@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SocialNetworking {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockSocialNetworking: SocialNetworking[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Social Platform',
@@ -132,7 +132,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         socialInsights: ['Niche communities highly engaged', 'Expert content driving discussions', 'Peer learning effective'],
         recommendations: ['Expand niche communities', 'Enhance expert features', 'Improve peer learning tools']}
 }]
-  const mockCommunityManagement: CommunityManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Community Moderation System',
@@ -176,7 +176,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         optimizationOpportunities: ['Improve content discovery', 'Enhance curation quality', 'Expand content types'],
         improvementStrategies: ['Implement advanced curation', 'Enhance discovery algorithms', 'Expand content features']}
 }]
-  const mockContentModeration: ContentModeration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Automated Moderation AI',
@@ -220,7 +220,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
         improvementAreas: ['Enhance spam detection', 'Reduce false positives', 'Improve response time'],
         recommendations: ['Optimize detection algorithms', 'Enhance pattern recognition', 'Improve automation']}
 }]
-  const mockSocialAnalytics: SocialAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Engagement Analytics Platform',
@@ -373,7 +373,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -523,30 +523,30 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
             {/* Social Platforms Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredSocialNetworking.map((platform) => (
-                </div><div key={platform.id} className="bg-black/20 rounded-lg p-6 border border-white/10" >
-                  <div className=" flex items-center justify-between" mb-4>`
+                </div><div key={platform.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{platform.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(platform.status)} text-white`}>
                       {platform.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{platform.location} • {platform.type}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className=" flex justify-between" text-sm>"
                       <span className="text-gray-400>Active" Users</span>
                       <span className="text-white>{formatNumber(platform.activeUsers)}</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
-                      <span className="text-gray-400>Posts/Day</span" >
+                      <span className="text-gray-400>Posts/Day</span">
                       <span className="text-white>{formatNumber(platform.postsPerDay)}</span"">
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Engagement Rate</span>
-                      <span className="text-white>{platform.engagementRate}%</span" >
+                      <span className="text-white>{platform.engagementRate}%</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance" Score</span>
                       <span className="text-white>{platform.aiAnalysis.performanceScore}/10</span>"
                     </div>
@@ -559,10 +559,10 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
 "'
         {selectedView === 'community' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {communityManagement.map((management) => (
                 <div key={management.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{management.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(management.status)} text-white`}>
                       {management.status}
@@ -617,7 +617,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>False Positive</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Response" Time</span>
                       <span className="text-white>{moderation.responseTime}s</span>" 
@@ -656,9 +656,9 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Content" Growth</span>
-                      <span className="text-white>{analytics.metrics.contentGrowth}%</span" >
+                      <span className="text-white>{analytics.metrics.contentGrowth}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Impact" Score</span>
@@ -694,7 +694,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Social Insights</h3>
               <div className="space-y-4>"
                 {data.aiInsights.map((insight) => (
@@ -724,7 +724,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -765,7 +765,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

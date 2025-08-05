@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
-const SupportPage: NextPage: = () => {
+const SupportPage: NextPage: () => {
   return (
     <div>
       </div><div>
@@ -23,15 +23,15 @@ const SupportPage: NextPage: = () => {
           <div className="grid" grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-8>
             </div><div className="bg-cyber-card" p-8 rounded-lg:border: border-cyber-border>
               <h3 className="text-xl" font-semibold text-high-contrast mb-4 >Help Desk</h3>
-              <p className="text-high-contrast-secondary" mb-4>
+              <p className="text-high-contrast-secondary mb-4">
                 Get immediate assistance from our support team
               </p> 
               <Link href=/help-desk-support className="text-neon-blue" hover:text-neon-purple: >Contact  Support →
-              </Link href=/help-desk-support className="text-neon-blue hover:text-neon-purple" ></Link>
+              </Link href=/help-desk-support className="text-neon-blue hover:text-neon-purple"></Link>
             </div>
             <div className="bg-cyber-card"  p-8 rounded-lg:border: border-cyber-border>
               <h3 className="text-xl" font-semibold text-high-contrast mb-4>Documentation</h3>
-              <p className="text-high-contrast-secondary" mb-4>
+              <p className="text-high-contrast-secondary mb-4">
                 Browse our comprehensive documentation and guides
               </p>
               <Link href=/docs className="text-neon-blue" hover:text-neon-purple: >View  Docs →

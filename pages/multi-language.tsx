@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Language {
   code: string;
   name: string;
   nativeName: string;'
   flag: string;
-  status: 'available' | 'beta' | 'coming-soon';
+  status: 'available' | 'beta' | 'coming-soon";
   completion: number;
   lastUpdated: Date;}
 interface Translation {
@@ -28,7 +28,7 @@ const MultiLanguagePage: NextPage = () => {'
   const [selectedLanguage, setSelectedLanguage] = useState<string>('en');
   const [showTranslations, setShowTranslations] = useState(false);
   const [loading, setLoading] = useState(true);
-  const languages: Language[] = ['
+  const $1: $2[] = [
     {
       code: 'en',
       name: 'English',
@@ -119,7 +119,7 @@ const MultiLanguagePage: NextPage = () => {'
       completion: 30,
       lastUpdated: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000}
   ];
-  const translations: Translation[] = ['
+  const $1: $2[] = [
     {
       key: 'welcome',
       english: 'Welcome to Zion Marketplace',
@@ -259,16 +259,16 @@ const MultiLanguagePage: NextPage = () => {'
   } []);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'available': return 'text-green-400 bg-green-500/20';
-      case 'beta': return 'text-yellow-400 bg-yellow-500/20';
-      case 'coming-soon': return 'text-gray-400 bg-gray-500/20';
+      case 'available': return 'text-green-400 bg-green-500/20";
+      case 'beta': return 'text-yellow-400 bg-yellow-500/20";
+      case 'coming-soon': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getStatusIcon = (status: string) => {'
     switch (status) {';'
-      case 'available': return '✅';
-      case 'beta': return '🟡';
-      case 'coming-soon': return '⏳';
+      case 'available': return '✅";
+      case 'beta': return '🟡";
+      case 'coming-soon': return '⏳";
       default: return '❓';}
   };
   const getLanguageCode = (code: string) => {'
@@ -282,7 +282,7 @@ const MultiLanguagePage: NextPage = () => {'
       'ar': 'Arabic',
       'hi': 'Hindi',
       'pt': 'Portuguese',
-      'ru': 'Russian';
+      'ru': 'Russian";
     };
     return languageMap[code] || code;
   };
@@ -327,7 +327,7 @@ const MultiLanguagePage: NextPage = () => {'
             <span className="text-lg" font-medium>Loading Languages...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -341,14 +341,14 @@ const MultiLanguagePage: NextPage = () => {'
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/user-profiles className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Profiles
               </Link href=/user-profiles className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/analytics-dashboard className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics
@@ -375,7 +375,7 @@ const MultiLanguagePage: NextPage = () => {'
             <h2 className="text-2xl" font-bold text-white mb-2>Select Your Language</h2>
             <p className="text-gray-300>Choose" your preferred language for the marketplace experience</p>
           </div>
-          <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4" >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
             {languages.map((language) => (
                 onClick={() => setSelectedLanguage(language.code)}"
                 className=" {`p-4 rounded-lg:border transition-all duration-300" ${'
@@ -488,7 +488,7 @@ const MultiLanguagePage: NextPage = () => {'
                 <span>Multi-language interface support</span> 
               </li>
               <li className="flex items-center" space-x-2>
-                <span className="text-green-400>✓</span" >
+                <span className="text-green-400>✓</span">
                 <span>Automatic language detection</span>
               </li>
               <li className=" flex items-center" space-x-2>
@@ -555,7 +555,7 @@ const MultiLanguagePage: NextPage = () => {'
           </div>
         </div>
         {/* Call to Action */}
-        <div className=" text-center">
+        <div className="text-center">
           </div><div className=" bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8>
             <h2 className="text-3xl" font-bold text-white mb-4>
               Experience Zion in Your Language
@@ -581,6 +581,6 @@ const MultiLanguagePage: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default MultiLanguagePage )))))))))))"'"'`

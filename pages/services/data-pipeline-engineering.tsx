@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
-const DataPipelineEngineeringPage: NextPage: = () => {
+const DataPipelineEngineeringPage: NextPage: () => {
   return (
     <div>
       </div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
@@ -24,7 +24,7 @@ const DataPipelineEngineeringPage: NextPage: = () => {
             </div>
             <div className="hidden  md:flex: items-center space-x-8">
               <Link href="/services" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
-              </Link href= /services" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /services" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/marketplace className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
               </Link href=/marketplace className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/about className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >About
@@ -38,13 +38,13 @@ const DataPipelineEngineeringPage: NextPage: = () => {
       </nav>,
 ,"
       {/* Hero Section */}
-      <main className=" flex-1">
+      <main className="flex-1">
         <div className="relative" overflow-hidden> 
           </div><div className="absolute" inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20></div>
           
           <div className="relative" max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32>
-            </div><div className=" text-center">
-              <div className=" mb-8">
+            </div><div className="text-center">
+              <div className="mb-8">
                 <h1 className="text-4xl" md text-6xl font-bold text-white mb-6 >
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     Data Pipeline Engineering
@@ -56,7 +56,7 @@ const DataPipelineEngineeringPage: NextPage: = () => {
               </div>
               <div className="mt-12  flex flex-col sm: flex-row: gap-4 justify-center>
                 <Link href=/contact" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Started
-                </Link href=/contact  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+                </Link href=/contact  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
                 <Link href=/marketplace className="border" border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 >Explore Marketplace
                 </Link href=/marketplace className="border" border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 ></Link>
               </div> </div>
@@ -95,21 +95,21 @@ const DataPipelineEngineeringPage: NextPage: = () => {
             <div> 
               <h4 className="text-white" font-semibold mb-4>Marketplace</h4>
               <ul className="space-y-2"" text-sm>
-                <li><Link href=/marketplace className="text-gray-400" hover text-white transition-colors >Browse Services</Link href=/marketplace  className="text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/marketplace className="text-gray-400" hover text-white transition-colors >Browse Services</Link href=/marketplace  className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/talents className="text-gray-400" hover text-white transition-colors >AI Talents</Link href=/talents className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/equipment" className="text-gray-400" hover text-white transition-colors >Equipment</Link href=/equipment  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Company</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/contact className="text-gray-400" hover text-white transition-colors >Contact</Link href=/contact className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/blog" className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/privacy className="text-gray-400" hover text-white transition-colors >Privacy</Link href=/privacy className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/terms" className="text-gray-400" hover text-white transition-colors >Terms</Link href=/terms  className="text-gray-400" hover text-white transition-colors" ></Link></li>
               </ul>

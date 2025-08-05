@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface EdgeComputing {
   id: string;
   name: string;'
   description: string;
-  type: 'iot_gateway' | 'edge_server' | 'micro_data_center' | 'edge_device' | 'edge_router' | 'edge_storage';
-  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline';
+  type: 'iot_gateway' | 'edge_server' | 'micro_data_center' | 'edge_device' | 'edge_router' | 'edge_storage";
+  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
   location: string;
   capacity: number;
   latency: number;
@@ -23,8 +23,8 @@ interface FogComputing {
   id: string;
   title: string;'
   description: string;
-  type: 'fog_node' | 'fog_cluster' | 'fog_gateway' | 'fog_router' | 'fog_storage' | 'fog_processor';
-  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline';
+  type: 'fog_node' | 'fog_cluster' | 'fog_gateway' | 'fog_router' | 'fog_storage' | 'fog_processor";
+  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
   location: string;
   nodes: number;
   bandwidth: number;
@@ -39,8 +39,8 @@ interface DistributedComputing {
   id: string;
   name: string;'
   description: string;
-  type: 'distributed_cluster' | 'grid_computing' | 'peer_to_peer' | 'distributed_storage' | 'distributed_processing' | 'distributed_analytics';
-  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline';
+  type: 'distributed_cluster' | 'grid_computing' | 'peer_to_peer' | 'distributed_storage' | 'distributed_processing' | 'distributed_analytics";
+  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
   nodes: number;
   tasks: number;
   aiAnalysis: DistributedAnalysis;}
@@ -55,8 +55,8 @@ interface EdgeAnalytics {
   analyticsId: string;
   title: string;'
   description: string;
-  type: 'real_time' | 'batch_processing' | 'stream_processing' | 'predictive' | 'descriptive' | 'prescriptive';
-  status: 'running' | 'completed' | 'failed' | 'scheduled';
+  type: 'real_time' | 'batch_processing' | 'stream_processing' | 'predictive' | 'descriptive' | 'prescriptive";
+  status: 'running' | 'completed' | 'failed' | 'scheduled";
   dataPoints: number;
   processingTime: number;
   aiAnalysis: AnalyticsAnalysis;}
@@ -71,8 +71,8 @@ interface FogOrchestration {
   orchestrationId: string;
   title: string;'
   description: string;
-  type: 'resource_orchestration' | 'service_orchestration' | 'workflow_orchestration' | 'network_orchestration' | 'security_orchestration' | 'data_orchestration';
-  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline';
+  type: 'resource_orchestration' | 'service_orchestration' | 'workflow_orchestration' | 'network_orchestration' | 'security_orchestration' | 'data_orchestration";
+  status: 'active' | 'inactive' | 'maintenance' | 'error' | 'offline";
   services: number;
   policies: number;
   aiAnalysis: OrchestrationAnalysis;}
@@ -87,8 +87,8 @@ interface EdgeComputingManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   devices: number;
   uptime: number;
   aiAnalysis: ManagementAnalysis;}
@@ -112,7 +112,7 @@ interface EdgeComputingInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredEdgeComputingPage: NextPage = () => {
@@ -127,7 +127,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockEdgeComputing: EdgeComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'IoT Gateway Edge Server',
@@ -144,7 +144,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
         efficiencyScore: 92,
         recommendations: ['Optimize data processing', 'Enhance connectivity']}}
     }]
-  const mockFogComputing: FogComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Fog Computing Cluster',
@@ -161,7 +161,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
         resourceScore: 89,
         recommendations: ['Improve node coordination', 'Optimize bandwidth usage']}
 }]
-  const mockDistributedComputing: DistributedComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Distributed Processing Cluster',
@@ -177,7 +177,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
         scalabilityScore: 95,
         recommendations: ['Optimize task distribution', 'Improve load balancing']}
 }]
-  const mockEdgeAnalytics: EdgeAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       analyticsId: 'EA-001',
@@ -194,7 +194,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
         insightScore: 92,
         recommendations: ['Optimize processing algorithms', 'Enhance data quality']}
 }]
-  const mockFogOrchestration: FogOrchestration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       orchestrationId: 'FO-001',
@@ -211,7 +211,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
         coordinationScore: 94,
         recommendations: ['Enhance automation policies', 'Improve service coordination']}
 }]
-  const mockEdgeComputingManagement: EdgeComputingManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'EC-001',
@@ -425,7 +425,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-blue-500"
@@ -482,7 +482,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-blue-600/20 to-cyan-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -541,7 +541,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -582,7 +582,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 >Start Deploying
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -597,6 +597,6 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredEdgeComputingPage )))))))))))))))))))))))))))))"'"'`

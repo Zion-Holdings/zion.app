@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface TestSuite {
   id: string;'
   name: string;
-  type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'accessibility';
-  status: 'running' | 'passed' | 'failed' | 'pending' | 'skipped';
+  type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'accessibility";
+  status: 'running' | 'passed' | 'failed' | 'pending' | 'skipped";
   totalTests: number;
   passedTests: number;
   failedTests: number;
@@ -16,19 +16,19 @@ interface TestSuite {
   lastRun: Date;
   aiGenerated: boolean;'
   coverage: number;
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  priority: 'low' | 'medium' | 'high' | 'critical";
   tags: string[];}
 interface TestCase {
   id: string;
   name: string;
   description: string;'
   suite: string;
-  status: 'passed' | 'failed' | 'skipped' | 'pending';
+  status: 'passed' | 'failed' | 'skipped' | 'pending";
   duration: number;
   lastRun: Date;
   aiGenerated: boolean;'
   automated: boolean;
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  priority: 'low' | 'medium' | 'high' | 'critical";
   flaky: boolean;
   errorMessage?: string;
   steps: {
@@ -36,16 +36,16 @@ interface TestCase {
     action: string;
     expected: string;'
     actual?: string;
-    status: 'passed' | 'failed' | 'skipped';
+    status: 'passed' | 'failed' | 'skipped";
   }[];}
 interface TestExecution {
   id: string;'
   suiteId: string;
-  environment: 'development' | 'staging' | 'production' | 'testing';
+  environment: 'development' | 'staging' | 'production' | 'testing";
   startTime: Date;
   endTime?: Date;'
   duration: number;
-  status: 'running' | 'completed' | 'failed' | 'cancelled';
+  status: 'running' | 'completed' | 'failed' | 'cancelled";
   totalTests: number;
   passedTests: number;
   failedTests: number;
@@ -63,7 +63,7 @@ interface TestAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredTestingPage: NextPage = () => {
   ;
@@ -81,7 +81,7 @@ const AIPoweredTestingPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered testing data
     setTimeout(() => {
-      const mockTestSuites: TestSuite[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'User Authentication Tests',
@@ -162,7 +162,7 @@ const AIPoweredTestingPage: NextPage = () => {
           priority: 'critical',
           tags: ['security', 'vulnerability', 'penetration']}
       ];
-      const mockTestCases: TestCase[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'User Login with Valid Credentials',
@@ -289,7 +289,7 @@ const AIPoweredTestingPage: NextPage = () => {
     filtered.sort((a, b) => {'
       switch (sortBy) {
         case 'priority':
-          const priorityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };'
+          const priorityOrder = { 'critical': 4, 'high': 3, 'medium': 2, 'low': 1 };
           return priorityOrder[b.priority] - priorityOrder[a.priority];
         case 'coverage':'
           return b.coverage - a.coverage;
@@ -304,36 +304,36 @@ const AIPoweredTestingPage: NextPage = () => {
   } [testSuites, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'passed': return 'text-green-400 bg-green-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'running': return 'text-blue-400 bg-blue-500/20';
-      case 'pending': return 'text-yellow-400 bg-yellow-500/20';
-      case 'skipped': return 'text-gray-400 bg-gray-500/20';
+      case 'passed': return 'text-green-400 bg-green-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'running': return 'text-blue-400 bg-blue-500/20";
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20";
+      case 'skipped': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'unit': return '🧪';
-      case 'integration': return '🔗';
-      case 'e2e': return '🌐';
-      case 'performance': return '⚡';
-      case 'security': return '🔒';
-      case 'accessibility': return '♿';
+      case 'unit': return '🧪";
+      case 'integration': return '🔗";
+      case 'e2e': return '🌐";
+      case 'performance': return '⚡";
+      case 'security': return '🔒";
+      case 'accessibility': return '♿";
       default: return '📋';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'critical': return 'text-red-400';
-      case 'high': return 'text-orange-400';
-      case 'medium': return 'text-yellow-400';
-      case 'low': return 'text-green-400';
+      case 'critical': return 'text-red-400";
+      case 'high': return 'text-orange-400";
+      case 'medium': return 'text-yellow-400";
+      case 'low': return 'text-green-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 
@@ -360,7 +360,7 @@ const AIPoweredTestingPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Testing...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -374,14 +374,14 @@ const AIPoweredTestingPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-security" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Security
-              </Link href= /ai-powered-security" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-security" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-content-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content
               </Link href=/ai-powered-content-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -543,7 +543,7 @@ const AIPoweredTestingPage: NextPage = () => {
                     ></div>
                   </div>
                 </div>
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Tags </p>
                   <div className="flex flex-wrap" gap-2>
                     {suite.tags.map((tag, index) => (
@@ -619,7 +619,7 @@ const AIPoweredTestingPage: NextPage = () => {
 
                 <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Test Steps </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {testCase.steps.map((step) => (
                       </div><div key={step.id} className=" bg-white/5 rounded" p-3>
                         <div className=" flex items-center justify-between" text-sm>`
@@ -688,7 +688,7 @@ const AIPoweredTestingPage: NextPage = () => {
                     <p className="text-lg" font-semibold text-blue-400>{execution.coverage}%</p>
                   </div>
                 </div>
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Performance Metrics </p>
                   <div className="grid" grid-cols-2 md grid-cols-4 gap-4>
                     </div><div>
@@ -749,6 +749,6 @@ const AIPoweredTestingPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredTestingPage ")"'"'`

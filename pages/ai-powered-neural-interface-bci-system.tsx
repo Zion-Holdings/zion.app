@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 interface NeuralSignal {'
   id: string
   type: 'alpha' | 'beta' | 'theta' | 'delta' | 'gamma
@@ -69,7 +69,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
   const [sessionData, setSessionData] = useState<any>(null
   const chartRef = useRef<HTMLDivElement>(null
   // Mock data for demonstration
-  const mockNeuralSignals: NeuralSignal[] = ['
+  const $1: $2[] = [
     {
       id: 'sig-001',
       type: 'alpha',
@@ -97,7 +97,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       quality: 85,
       location: 'temporal
     }]
-  const mockBrainActivity: BrainActivity[] = ['
+  const $1: $2[] = [
     {
       region: 'Prefrontal Cortex','
       activity: 78,
@@ -133,7 +133,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       function: 'Movement Control',
       connectivity: 52
     }]
-  const mockCognitiveTasks: CognitiveTask[] = ['
+  const $1: $2[] = [
     {
       id: 'task-001',
       name: 'Memory Pattern Recognition',
@@ -164,7 +164,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       brainRegions: ['Right Hemisphere', 'Default Network'],
       performance: 76
     }]
-  const mockNeuralDevices: NeuralDevice[] = ['
+  const $1: $2[] = [
     {
       id: 'device-001',
       name: 'NeuroLink Pro EEG',
@@ -195,7 +195,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       lastCalibration: '2025-08-03T18:15:00Z',
       firmware: 'v3.0.1
     }]
-  const mockBCIApplications: BCIApplication[] = ['
+  const $1: $2[] = [
     {
       id: 'app-001',
       name: 'Thought-to-Text Converter',
@@ -229,7 +229,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       latency: 300,
       userRating: 4.4
     }]
-  const mockNeuralTraining: NeuralTraining[] = ['
+  const $1: $2[] = [
     {
       id: 'training-001',
       name: 'Focus Enhancement Program',
@@ -439,7 +439,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                 {/* Connection Status */}"
                 <div className="bg-gray-800/50" rounded-xl p-6 border border-gray-700> 
                   </div><div className="flex"" items-center space-x-3 mb-4>
-                    <div className=" w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center ">
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center ">
                       <span className="text-white" text-lg>🔗</span>
                     </div> 
                     <div>
@@ -450,14 +450,14 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   
                   <div className="space-y-3>" 
                     </div><div className="flex" justify-between>'`
-                      <span className="text-gray-300>Status</span" >''``
+                      <span className="text-gray-300>Status</span">''``
                       <span className="{`${isConnected" ? 'text-green-400' : 'text-red-400'}`}>
                         {isConnected ? 'Connected'   'Disconnected'}
                       </span>
                     </div>
                     <div className="flex"" justify-between">
                       <span className="text-gray-300>Signal" Quality</span>
-                      <span className="text-white>94%</span" >
+                      <span className="text-white>94%</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Latency</span>"
@@ -471,7 +471,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                 </div>
                 {/* Real-time Signals */}
                 <div className="lg:col-span-2" bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                  </div><div className=" flex items-center justify-between" mb-4>"
+                  </div><div className="flex items-center justify-between mb-4">"
                     <h3 className="text-lg" font-semibold text-white>Real-time Neural Signals</h3>
                     <div className="flex" space-x-2 >
                       '
@@ -480,7 +480,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                       </button>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     {neuralSignals.slice(-5).map((signal) => (
                       </div><div key={signal.id} className=" flex items-center justify-between p-2 bg-gray-700/50" rounded>`
                         <div className="flex"  items-center space-x-3>``
@@ -500,14 +500,14 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className=" lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🎯</div>
                       <div className="font-semibold>Start Task</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>🔌</div>
-                      <div className="font-semibold>Calibrate</div" >
+                      <div className="font-semibold>Calibrate</div">
                     </button>
                     <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all" duration-200>
                       <div className="text-2xl:mb-2>📊</div>"
@@ -554,7 +554,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                       </div>
                       
                       <div className="space-y-3>"
-                        </div><div className=" flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Frequency</span>"
                           <span className="text-white>{signal.frequency.toFixed(1)}" Hz</span>
                         </div>
@@ -590,9 +590,9 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>"
-                        </div><div className=" flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Activity" Level</span>
-                          <span className="text-white>{activity.activity}%</span" >
+                          <span className="text-white>{activity.activity}%</span">
                         </div>
                         <div className="w-full" bg-gray-700 rounded-full h-2>
                           </div>'
@@ -603,7 +603,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                           ></div>
                         </div>
                         <div className="flex"" justify-between>
-                          <span className="text-gray-300>Function</span" >
+                          <span className="text-gray-300>Function</span">
                           <span className="text-white" text-sm>{activity.function}</span>
                         </div>
                         <div className="flex  justify-between">
@@ -627,7 +627,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                 </div>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {mockCognitiveTasks.map((task) => (
-                    </div><div key={task.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={task.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{task.name}</h3>
@@ -639,9 +639,9 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Difficulty</span>"
-                          <span className="text-white>{task.difficulty}/10</span" >
+                          <span className="text-white>{task.difficulty}/10</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Duration</span>"
@@ -685,7 +685,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                   {mockNeuralDevices.map((device) => (
                     </div><div key={device.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                       <div className="flex" items-center justify-between mb-4> 
-                        </div><div className="flex items-center space-x-3" >
+                        </div><div className="flex items-center space-x-3">
                           <div className="w-10" h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center>
                             <span className="text-white" text-lg>🔌</span>
                           </div>
@@ -708,7 +708,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                           <span className="text-white>{device.signalQuality}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Firmware</span" >
+                          <span className="text-gray-300>Firmware</span">
                           <span className="text-white" text-sm>{device.firmware}</span>
                         </div>
                         <div className="flex"  justify-between>
@@ -752,9 +752,9 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                       </div> 
                       <p className="text-gray-300" text-sm mb-4>{app.description}</p>
                       <div className="space-y-3>"
-                        </div><div className=" flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Accuracy</span>"
-                          <span className="text-white>{app.accuracy}%</span" >
+                          <span className="text-white>{app.accuracy}%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Latency</span>"
@@ -786,11 +786,11 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
             )}"'
             {/* Neural Training */},''
 {activeTab === 'training' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Neural Training Programs</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 gap-6> 
                   {mockNeuralTraining.map((training) => (
-                    </div><div key={training.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={training.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{training.name}</h3>
@@ -802,7 +802,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Duration</span>"
                           <span className="text-white>{training.duration}s</span>"
                         </div>
@@ -815,7 +815,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
                         <h4 className="text-white" font-semibold mb-3>Exercises</h4>
                         <div className="space-y-2>" 
                           {training.exercises.map((exercise, index) => (
-                            </div><div key={index} className="p-3 bg-gray-700/50 rounded-lg" >
+                            </div><div key={index} className="p-3 bg-gray-700/50 rounded-lg">
                               <div className=" flex items-center justify-between" mb-2>
                                 <h5 className="text-white" font-medium>{exercise.name}</h5>
                                 <span className="text-gray-400" text-sm>{exercise.duration}s</span>
@@ -854,7 +854,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
       <footer className="relative"" z-10 mt-16>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 > 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered Neural Interface & BCI System | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -871,6 +871,6 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredNeuralInterfaceBCISystem ))))))))))))))))))))))))))))))))))))))"'"'`

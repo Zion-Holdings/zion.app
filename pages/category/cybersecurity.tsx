@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
 const CybersecurityPage: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const CybersecurityPage: NextPage = () => {
             </div>
             <div className="hidden  md:flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/about className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >About
               </Link href=/about className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -62,7 +62,7 @@ const CybersecurityPage: NextPage = () => {
         {/* Content Section */}"
         <div className="max-w-4xl" mx-auto px-4 sm px-6 lg px-8 py-36> 
           </div><div className="prose"" prose-invert prose-lg:max-w-none>
-            <div className=" text-gray-300 leading-relaxed" >'
+            <div className="text-gray-300 leading-relaxed">'
               <p className="mb-6>Discover" top professionals and services in the cybersecurity space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p>''
 <p className="mb-6>Our" cybersecurity category features a diverse range of services including consulting, development, implementation, and ongoing support. Whether you're a startup looking to scale or an enterprise seeking optimization, we have the right professionals for your needs.</p>
 "
@@ -126,6 +126,6 @@ const CybersecurityPage: NextPage = () => {
   
   </div >
   </div> ;"
-};"
+};
 '
 export default CybersecurityPage)"'"

@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface MonitoringSystem {
   id: string;
   name: string;'
   description: string;
-  type: 'performance' | 'security' | 'network' | 'application' | 'infrastructure' | 'user';
-  status: 'active' | 'inactive' | 'maintenance' | 'error';
+  type: 'performance' | 'security' | 'network' | 'application' | 'infrastructure' | 'user";
+  status: 'active' | 'inactive' | 'maintenance' | 'error";
   uptime: number;
   responseTime: number;
   alerts: number;
@@ -25,7 +25,7 @@ interface SurveillanceCamera {
   name: string;
   description: string;'
   location: string;
-  status: 'active' | 'inactive' | 'maintenance' | 'error';
+  status: 'active' | 'inactive' | 'maintenance' | 'error";
   resolution: string;
   frameRate: number;
   recordingHours: number;
@@ -40,9 +40,9 @@ interface SystemAlert {
   id: string;
   title: string;'
   description: string;
-  severity: 'critical' | 'high' | 'medium' | 'low';
-  category: 'performance' | 'security' | 'network' | 'application' | 'infrastructure';
-  status: 'active' | 'resolved' | 'acknowledged';
+  severity: 'critical' | 'high' | 'medium' | 'low";
+  category: 'performance' | 'security' | 'network' | 'application' | 'infrastructure";
+  status: 'active' | 'resolved' | 'acknowledged";
   timestamp: Date;
   aiAnalysis: AIAlertAnalysis;}
 interface AIAlertAnalysis {
@@ -55,8 +55,8 @@ interface PerformanceMetric {
   id: string;
   name: string;'
   description: string;
-  category: 'cpu' | 'memory' | 'disk' | 'network' | 'database' | 'application';
-  status: 'normal' | 'warning' | 'critical' | 'error';
+  category: 'cpu' | 'memory' | 'disk' | 'network' | 'database' | 'application";
+  status: 'normal' | 'warning' | 'critical' | 'error";
   currentValue: number;
   threshold: number;
   unit: string;
@@ -71,9 +71,9 @@ interface SecurityIncident {
   id: string;
   title: string;'
   description: string;
-  type: 'intrusion' | 'malware' | 'data_breach' | 'ddos' | 'phishing' | 'unauthorized_access';
-  severity: 'critical' | 'high' | 'medium' | 'low';
-  status: 'detected' | 'investigating' | 'contained' | 'resolved';
+  type: 'intrusion' | 'malware' | 'data_breach' | 'ddos' | 'phishing' | 'unauthorized_access";
+  severity: 'critical' | 'high' | 'medium' | 'low";
+  status: 'detected' | 'investigating' | 'contained' | 'resolved";
   timestamp: Date;
   aiAnalysis: AISecurityAnalysis;}
 interface AISecurityAnalysis {
@@ -94,7 +94,7 @@ interface MonitoringSurveillanceInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredMonitoringSurveillancePage: NextPage = () => {
@@ -108,7 +108,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockMonitoringSystems: MonitoringSystem[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Main Server Monitoring',
@@ -126,7 +126,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         reliabilityScore: 95,
         recommendations: ['Optimize CPU usage', 'Update security protocols']}}
     }]
-  const mockSurveillanceCameras: SurveillanceCamera[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Main Entrance Camera',
@@ -143,7 +143,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         recognitionRate: 89,
         recommendations: ['Adjust lighting', 'Update detection algorithms']}
 }]
-  const mockSystemAlerts: SystemAlert[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'High CPU Usage Detected',
@@ -159,7 +159,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         resolutionScore: 82,
         recommendations: ['Scale resources', 'Optimize processes']}
 }]
-  const mockPerformanceMetrics: PerformanceMetric[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'CPU Utilization',
@@ -176,7 +176,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         improvementScore: 82,
         recommendations: ['Load balancing', 'Process optimization']}
 }]
-  const mockSecurityIncidents: SecurityIncident[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Suspicious Login Attempt',
@@ -359,8 +359,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                     </div><div className="flex  items-center space-x-4>
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500 ">"
                         <option value="all className="bg-slate-800>All" Types</option>
                         <option value=performance className="bg-slate-800>Performance</option>"
                         <option value=security className="bg-slate-800>Security</option>"
@@ -379,7 +378,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                 {/* Systems Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredSystems.map((system) => (
-                    </div><div key={system.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={system.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{system.name}</h3>
@@ -415,7 +414,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className="mb-4" >
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -506,7 +505,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-cyan-600/20 to-blue-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Monitor Everything? 
             </h2>
@@ -530,6 +529,6 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredMonitoringSurveillancePage "))))))))))))))))))))))))))"'"'`

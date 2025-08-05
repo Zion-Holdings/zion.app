@@ -1,7 +1,7 @@
 import React from "react;
-import ModernLayout from '../components/layout/ModernLayout';import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
+import ModernLayout from '../components/layout/ModernLayout';import { NextPage } from 'next";
+import Head from 'next/head";
+import Link from 'next/link";
 import {
   TrendingUp, 
   BarChart3, 
@@ -15,14 +15,14 @@ import {
   Clock,
   PieChart,'
   TrendingDown
-}  from 'lucide-react';
+}  from 'lucide-react";
 
 interface CapacityPlan {
   id: string;'
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
-  status: 'draft' | 'active' | 'completed' | 'archived';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial";
+  status: 'draft' | 'active' | 'completed' | 'archived";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   startDate: string;
   endDate: string;
   currentCapacity: number;
@@ -37,13 +37,13 @@ interface DemandForecast {
   currentDemand: number;
   predictedDemand: number;'
   confidence: number;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: 'increasing' | 'decreasing' | 'stable";
   factors: string[];
   lastUpdated: string;}
 interface Resource {
   id: string;'
   name: string;
-  type: 'human' | 'infrastructure' | 'technology' | 'financial';
+  type: 'human' | 'infrastructure' | 'technology' | 'financial";
   category: string;
   currentCapacity: number;
   maxCapacity: number;
@@ -55,8 +55,8 @@ interface Resource {
   nextMaintenance: string;}
 interface OptimizationRecommendation {'
   id: string;
-  type: 'scaling' | 'efficiency' | 'cost' | 'timing';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'scaling' | 'efficiency' | 'cost' | 'timing";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   title: string;
   description: string;
   impact: string;
@@ -104,25 +104,25 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-green-500';
-      case 'draft': return 'text-yellow-500';
-      case 'completed': return 'text-blue-500';
-      case 'archived': return 'text-gray-500';
+      case 'active': return 'text-green-500";
+      case 'draft': return 'text-yellow-500";
+      case 'completed': return 'text-blue-500";
+      case 'archived': return 'text-gray-500";
       default: return 'text-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'low': return 'bg-blue-100 text-blue-800';
-      case 'medium': return 'bg-yellow-100 text-yellow-1200';
-      case 'high': return 'bg-orange-100 text-orange-800';
-      case 'critical': return 'bg-red-100 text-red-800';
+      case 'low': return 'bg-blue-100 text-blue-800";
+      case 'medium': return 'bg-yellow-100 text-yellow-1200";
+      case 'high': return 'bg-orange-100 text-orange-800";
+      case 'critical': return 'bg-red-100 text-red-800";
       default: return 'bg-gray-100 text-gray-800';}
   };
   const getTrendColor = (trend: string) => {'
     switch (trend) {';'
-      case 'increasing': return 'text-green-500';
-      case 'decreasing': return 'text-red-500';
-      case 'stable': return 'text-blue-500';
+      case 'increasing': return 'text-green-500";
+      case 'decreasing': return 'text-red-500";
+      case 'stable': return 'text-blue-500";
       default: return 'text-gray-500';}
   };
 '
@@ -224,7 +224,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                           {Math.round(resources.reduce((acc, r) => acc + r.utilization, 0) / Math.max(resources.length, 1))}%
                         </p>
                       </div> 
-                      <Activity className="h-12" w-12 text-green-400  > </Activity className="h-12 w-12 text-green-400 " ></div>
+                      <Activity className="h-12" w-12 text-green-400  > </Activity className="h-12 w-12 text-green-400 "></div>
                   </div>
                   
                   <div className="bg-white/10" backdrop-blur-md:rounded-lg p-6 border border-white/20> 
@@ -245,13 +245,13 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                           {optimizationRecommendations.filter(o => o.status === 'pending').length}
                         </p>
                       </div> 
-                      <Zap className="h-12" w-12 text-purple-400 > </Zap className="h-12 w-12 text-purple-400" ></div>
+                      <Zap className="h-12" w-12 text-purple-400 > </Zap className="h-12 w-12 text-purple-400"></div>
                   </div>
                 </div>
 "
                 {/* Recent Activity */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
-                  </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20" >
+                  </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20">
                     <h3 className="text-lg" font-semibold text-white mb-4>Recent Capacity Plans</h3>
                     <div className="space-y-3>"
                       {capacityPlans.slice(0, 5).map((plan) => (
@@ -301,9 +301,9 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                 </div>
                 
                 <div className="bg-white/10" backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden>
-                  </div><div className=" overflow-x-auto">
+                  </div><div className="overflow-x-auto">
                     <table className=" min-w-full divide-y" divide-white/10>
-                      <thead className="bg-white/5" >
+                      <thead className="bg-white/5">
                         <tr>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Plan</th>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th>
@@ -364,8 +364,8 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                 </div>
                 <div className="bg-white/10" backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden>
                   </div><div className="overflow-x-auto >
-                    <table className="min-w-full divide-y divide-white/10" >
-                      <thead className=" bg-white/5">
+                    <table className="min-w-full divide-y divide-white/10">
+                      <thead className="bg-white/5">
                         <tr>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Resource</th>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Period</th>
@@ -421,7 +421,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                 </div>
                 
                 <div className="bg-white/10" backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden >
-                  </div><div className=" overflow-x-auto">
+                  </div><div className="overflow-x-auto">
                     <table className=" min-w-full divide-y" divide-white/10>
                       <thead className="bg-white/5>"
                         <tr>
@@ -435,7 +435,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Availability</th>
                         </tr>
                       </thead>
-                      <tbody className=" divide-y divide-white/10" >"
+                      <tbody className="divide-y divide-white/10">"
                         {resources.map((resource) => ("
                           <tr key={resource.id} className=" hover" bg-white/5>
                             <td className="px-6" py-4 whitespace-nowrap>
@@ -486,7 +486,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                 <div className="bg-white/10" backdrop-blur-md:rounded-lg:border border-white/20 overflow-hidden> 
                   </div><div className="overflow-x-auto"">
                     <table className=" min-w-full divide-y" divide-white/10>
-                      <thead className=" bg-white/5">
+                      <thead className="bg-white/5">
                         <tr>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Recommendation</th>
                           <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th>
@@ -499,7 +499,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                       </thead>
                       <tbody className="divide-y" divide-white/10>
                         {optimizationRecommendations.map((recommendation) => (
-                          <tr key={recommendation.id} className="hover:bg-white/5" >
+                          <tr key={recommendation.id} className="hover:bg-white/5">
                             <td className="px-6" py-4 whitespace-nowrap >
                               <div>
                                 </div><div className="text-sm" font-medium text-white>{recommendation.title}</div>
@@ -582,7 +582,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       {/* Footer */}
       <footer className=" bg-black/40 backdrop-blur-md border-t border-white/10" mt-16>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8> 
-          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8" >
+          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white" font-semibold mb-4>AI-Powered Solutions</h3>
               <ul className="space-y-2"" text-gray-300>
@@ -595,14 +595,14 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
             <div>
               <h3 className="text-white" font-semibold mb-4>Resources</h3>
               <ul className="space-y-2"  text-gray-300>
-                <li><Link href=/docs className="hover" text-white >Documentation</Link href=/docs" className=" hover text-white" ></Link></li>
+                <li><Link href=/docs className="hover" text-white >Documentation</Link href=/docs" className="hover text-white"></Link></li>
                 <li><Link href=/api-docs className="hover" text-white >API Reference</Link href=/api-docs className="hover" text-white" ></Link></li>
                 <li><Link href=/help-desk-support" className="hover" text-white >Support</Link href=/help-desk-support  className="hover" text-white ></Link></li> </ul>
             </div>
             <div>
               <h3 className="text-white" font-semibold mb-4>Company</h3>
               <ul className="space-y-2"  text-gray-300>
-                <li><Link href=/about className="hover" text-white >About</Link href=/about" className=" hover text-white" ></Link></li>
+                <li><Link href=/about className="hover" text-white >About</Link href=/about" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/privacy" className="hover" text-white >Privacy</Link href=/privacy  className="hover" text-white ></Link></li> </ul>
             </div>
@@ -630,6 +630,6 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                             </div>
         </div>
     );
-};"
+};
 ''`
 export default AIPoweredCapacityPlanningPage;"'"'`

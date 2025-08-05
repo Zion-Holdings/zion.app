@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface KnowledgeArticle {
   id: string;
   title: string;'
   description: string;
-  category: 'guide' | 'tutorial' | 'manual' | 'faq' | 'wiki' | 'documentation';
-  status: 'draft' | 'published' | 'archived' | 'review';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  category: 'guide' | 'tutorial' | 'manual' | 'faq' | 'wiki' | 'documentation";
+  status: 'draft' | 'published' | 'archived' | 'review";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   views: number;
   helpfulVotes: number;
   lastUpdated: Date;
@@ -25,8 +25,8 @@ interface Documentation {
   id: string;
   title: string;'
   description: string;
-  type: 'api' | 'user-guide' | 'developer-guide' | 'admin-guide' | 'integration';
-  status: 'draft' | 'published' | 'archived' | 'review';
+  type: 'api' | 'user-guide' | 'developer-guide' | 'admin-guide' | 'integration";
+  status: 'draft' | 'published' | 'archived' | 'review";
   sections: DocumentationSection[];
   analytics: DocumentationAnalytics;
   aiOptimization: AIDocumentationOptimization;}
@@ -51,9 +51,9 @@ interface Tutorial {
   id: string;
   title: string;'
   description: string;
-  difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert';
-  category: 'getting-started' | 'features' | 'advanced-topics' | 'troubleshooting';
-  status: 'draft' | 'published' | 'archived' | 'review';
+  difficulty: 'beginner' | 'intermediate' | 'advanced' | 'expert";
+  category: 'getting-started' | 'features' | 'advanced-topics' | 'troubleshooting";
+  status: 'draft' | 'published' | 'archived' | 'review";
   steps: TutorialStep[];
   analytics: TutorialAnalytics;
   aiAnalysis: AITutorialAnalysis;}
@@ -79,8 +79,8 @@ interface FAQ {
   id: string;
   question: string;'
   answer: string;
-  category: 'general' | 'technical' | 'billing' | 'account' | 'features';
-  status: 'draft' | 'published' | 'archived' | 'review';
+  category: 'general' | 'technical' | 'billing' | 'account' | 'features";
+  status: 'draft' | 'published' | 'archived' | 'review";
   helpfulVotes: number;
   views: number;
   aiAnalysis: AIFAQAnalysis;}
@@ -94,8 +94,8 @@ interface Wiki {
   id: string;
   title: string;'
   description: string;
-  category: 'platform' | 'features' | 'best-practices' | 'troubleshooting';
-  status: 'draft' | 'published' | 'archived' | 'review';
+  category: 'platform' | 'features' | 'best-practices' | 'troubleshooting";
+  status: 'draft' | 'published' | 'archived' | 'review";
   content: string;
   contributors: string[];
   analytics: WikiAnalytics;
@@ -123,7 +123,7 @@ interface KnowledgeBaseInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredKnowledgeBasePage: NextPage = () => {
@@ -137,7 +137,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockArticles: KnowledgeArticle[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Getting Started with AI-Powered Marketplace',
@@ -171,7 +171,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         searchOptimization: 87,
         recommendations: ['Add interactive examples', 'Include troubleshooting section']}
 }]
-  const mockDocumentation: Documentation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'API Documentation',
@@ -205,7 +205,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         readabilityScore: 88,
         recommendations: ['Add code examples', 'Improve navigation']}
 }]
-  const mockTutorials: Tutorial[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Setting Up Your First Project',
@@ -242,7 +242,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         engagementScore: 92,
         recommendations: ['Add progress indicators', 'Include success checkpoints']}
 }]
-  const mockFaqs: FAQ[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       question: 'How do I reset my password?',
@@ -272,7 +272,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
         searchOptimization: 85,
         recommendations: ['Add payment icons', 'Include security information']}
 }]
-  const mockWikis: Wiki[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Marketplace Best Practices',
@@ -478,8 +478,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                     </div><div className="flex  items-center space-x-4>
                       
                         onChange={(e) => setSelectedCategory(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500 ">"
                         <option value="all className="bg-slate-800>All" Categories</option>
                         <option value=guide className="bg-slate-800>Guide</option>"
                         <option value=tutorial className="bg-slate-800>Tutorial</option>"
@@ -498,7 +497,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                 {/* Articles Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredArticles.map((article) => (
-                    </div><div key={article.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={article.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{article.title}</h3>
@@ -530,7 +529,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm >
@@ -568,7 +567,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 {activeTab === 'documentation' && (
               <div className="space-y-8>" 
                 {documentation.map((doc) => (
-                  </div><div key={doc.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={doc.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{doc.title}</h3>
@@ -852,7 +851,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -893,7 +892,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 >Start Building
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -909,7 +908,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               <Search className=" w-5 h-5 >
               </Search className=" w-5 h-5 ><span className="text-xs>Search</span>"
             </button>
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white" >
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5" h-5 > 
               </User className="w-5 h-5 ><span className="text-xs>Profile</span>"
             </button>
@@ -922,6 +921,6 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
   </div>
 
   </div> ; 
-};"
+};
 ''`
 export default AIPoweredKnowledgeBasePage )))))))))))))))))))))))))))))"'"'`

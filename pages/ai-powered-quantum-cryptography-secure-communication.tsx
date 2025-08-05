@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumKeyDistribution {
   id: string'
@@ -69,7 +69,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
   const [digitalSignatures, setDigitalSignatures] = useState<QuantumDigitalSignatures[]>([]
   const [cryptographicProtocols, setCryptographicProtocols] = useState<QuantumCryptographicProtocols[]>([]
   // Mock data
-  const mockKeyDistribution: QuantumKeyDistribution[] = ['
+  const $1: $2[] = [
     {
       id: 'qkd-001',
       name: 'BB84 Protocol',
@@ -81,7 +81,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       status: 'completed',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockResistantCryptography: QuantumResistantCryptography[] = ['
+  const $1: $2[] = [
     {
       id: 'qrc-001',
       name: 'Lattice-Based Encryption',
@@ -92,7 +92,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       resistance: 99.8,
       status: 'production
     }]
-  const mockSecureCommunication: QuantumSecureCommunication[] = ['
+  const $1: $2[] = [
     {
       id: 'qsc-001',
       name: 'Quantum Encrypted Channel',
@@ -103,7 +103,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       latency: 5,
       status: 'completed
     }]
-  const mockRandomGeneration: QuantumRandomNumberGeneration[] = ['
+  const $1: $2[] = [
     {
       id: 'qrg-001',
       name: 'Quantum Entropy Source',
@@ -114,7 +114,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       quality: 99.8,
       status: 'completed
     }]
-  const mockDigitalSignatures: QuantumDigitalSignatures[] = ['
+  const $1: $2[] = [
     {
       id: 'qds-001',
       name: 'Quantum Digital Signature',
@@ -125,7 +125,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       securityLevel: 256,
       status: 'completed
     }]
-  const mockCryptographicProtocols: QuantumCryptographicProtocols[] = ['
+  const $1: $2[] = [
     {
       id: 'qcp-001',
       name: 'Quantum Commitment',
@@ -207,11 +207,11 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Security Dashboard', icon: '🔐' },
@@ -245,7 +245,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>🔐</span>
                     </div>
@@ -262,11 +262,11 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Key Distribution</span>
-                      <span className="text-white>{keyDistribution.length}</span" >
+                      <span className="text-white>{keyDistribution.length}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Secure" Channels</span>
-                      <span className="text-white>{secureCommunication.length}</span" >
+                      <span className="text-white>{secureCommunication.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Digital" Signatures</span>
@@ -278,12 +278,12 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🔑</div>
                       <div className="font-semibold>Key Exchange</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>🛡️</div>
                       <div className="font-semibold>Encrypt" Message</div>
                     </button>
@@ -301,11 +301,11 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
             )}"'
             {/* Key Distribution */},''
 {activeTab === 'key-distribution' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Key Distribution</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {keyDistribution.map((qkd) => (
-                    </div><div key={qkd.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={qkd.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{qkd.name}</h3>
@@ -317,7 +317,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Distance</span>"
                           <span className="text-white>{qkd.distance}" km</span>
                         </div>
@@ -368,7 +368,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                           <span className="text-white>{crypto.performance}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Resistance</span" >
+                          <span className="text-gray-300>Resistance</span">
                           <span className="text-white>{crypto.resistance}%</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -411,7 +411,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                           <span className=" text-gray-300>Message Size</span>
                           <span className=" text-white>{comm.messageSize} bytes</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Latency</span>"
                           <span className="text-white>{comm.latency}" ms</span>
                         </div>
@@ -447,10 +447,10 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Randomness</span" >
+                          <span className="text-gray-300>Randomness</span">
                           <span className="text-white>{rng.randomness}%</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Speed</span>"
                           <span className="text-white>{rng.speed}" Mbps</span>
                         </div>
@@ -472,11 +472,11 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
             )}"'
             {/* Digital Signatures */},''
 {activeTab === 'digital-signatures' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Digital Signatures</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {digitalSignatures.map((sig) => (
-                    </div><div key={sig.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={sig.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{sig.name}</h3>
@@ -488,7 +488,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Key" Size</span>
                           <span className="text-white>{sig.keySize}" bits</span>
                         </div>
@@ -564,10 +564,10 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
       </main>
 
       {/* Footer */}"
-      <footer className=" relative z-10 mt-16" >
+      <footer className="relative z-10 mt-16">
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8> 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered Quantum Cryptography & Secure Communication | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -584,6 +584,6 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumCryptographySecureCommunication ))))))))))))))))))))))"'"'`

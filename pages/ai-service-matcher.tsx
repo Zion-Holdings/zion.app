@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface ServiceMatch {
   id: string
@@ -53,7 +53,7 @@ const AIServiceMatcher: NextPage = () => {'
     setAnalysisComplete(false
     // Simulate AI analysis
     setTimeout(() => {
-      const mockMatches: ServiceMatch[] = ['
+      const $1: $2[] = [
         {
           id: 'ai-dev-001',
           title: 'AI Development Services',
@@ -201,7 +201,7 @@ const AIServiceMatcher: NextPage = () => {'
                         {match.matchScore}% Match
                       </div>
                     </div>
-                    <p className="text-gray-300" mb-4>{match.description}</p>
+                    <p className="text-gray-300 mb-4">{match.description}</p>
                     <div className="flex"  items-center justify-between mb-4>
                       <span className="text-purple-400" font-semibold >{match.price}</span>
                       <div className="flex" items-center>
@@ -237,7 +237,7 @@ const AIServiceMatcher: NextPage = () => {'
                 ))}
               </div>
               <div className=" text-center" mt-8>'
-                <p className="text-gray-400" mb-4>
+                <p className="text-gray-400 mb-4">
                   Not finding what you're looking for?
                 </p>
                 
@@ -261,8 +261,8 @@ const AIServiceMatcher: NextPage = () => {'
             </div>
 
             <div className="text-center>" 
-              </div><div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto" mb-4>
-                <span className="text-2xl>⚡</span" >
+              </div><div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl>⚡</span">
               </div>
               <h3 className="text-xl" font-bold text-white mb-2>Instant Results</h3>
               <p className="text-gray-300>"
@@ -271,7 +271,7 @@ const AIServiceMatcher: NextPage = () => {'
             </div>
 
             <div className="text-center>" 
-              </div><div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto" mb-4>
+              </div><div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl>🎯</span>"
               </div>
               <h3 className="text-xl" font-bold text-white mb-2 >Precision Matching</h3>
@@ -288,6 +288,6 @@ const AIServiceMatcher: NextPage = () => {'
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default AIServiceMatcher ))))))))))))))"'"'`

@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Language {
   code: string;
   name: string;
   nativeName: string;'
   flag: string;
-  status: 'active' | 'inactive' | 'beta' | 'coming-soon';
+  status: 'active' | 'inactive' | 'beta' | 'coming-soon";
   translationProgress: number;
   culturalAdaptation: number;
   userCount: number;
@@ -19,7 +19,7 @@ interface TranslationJob {
   targetLanguage: string;
   content: string;'
   translatedContent: string;
-  status: 'pending' | 'processing' | 'completed' | 'failed';
+  status: 'pending' | 'processing' | 'completed' | 'failed";
   accuracy: number;
   culturalScore: number;
   createdAt: Date;
@@ -33,7 +33,7 @@ interface TranslationJob {
 interface CulturalAdaptation {
   id: string;'
   language: string;
-  category: 'date-format' | 'currency' | 'measurement' | 'color' | 'symbol' | 'custom';
+  category: 'date-format' | 'currency' | 'measurement' | 'color' | 'symbol' | 'custom";
   originalValue: string;
   adaptedValue: string;
   context: string;
@@ -45,7 +45,7 @@ interface LanguageAnalytics {
   value: number;
   previousValue: number;'
   change: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   language: string;
   period: string;}
 interface AILanguageModel {
@@ -79,7 +79,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered multi-language data
     setTimeout(() => {
-      const mockLanguages: Language[] = ['
+      const $1: $2[] = [
         {
           code: 'en',
           name: 'English',
@@ -168,7 +168,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           userCount: 0,
           marketShare: 0}
       ];
-      const mockTranslationJobs: TranslationJob[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           sourceLanguage: 'en',
@@ -232,7 +232,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             tonePreservation: true,
             industrySpecific: true}}
       ];
-      const mockCulturalAdaptations: CulturalAdaptation[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           language: 'es',
@@ -283,7 +283,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           confidence: 96.3,
           lastUpdated: new Date(Date.now() - 12 * 60 * 60 * 1000}
       ];
-      const mockLanguageAnalytics: LanguageAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Translation Accuracy',
@@ -324,7 +324,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
           language: 'Chinese',
           period: 'last 30 days'}
       ];
-      const mockAiModels: AILanguageModel[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           language: 'Spanish',
@@ -418,35 +418,35 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
   } [languages, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-green-400 bg-green-500/20';
-      case 'inactive': return 'text-gray-400 bg-gray-500/20';
-      case 'beta': return 'text-yellow-400 bg-yellow-500/20';
-      case 'coming-soon': return 'text-blue-400 bg-blue-500/20';
+      case 'active': return 'text-green-400 bg-green-500/20";
+      case 'inactive': return 'text-gray-400 bg-gray-500/20";
+      case 'beta': return 'text-yellow-400 bg-yellow-500/20";
+      case 'coming-soon': return 'text-blue-400 bg-blue-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getJobStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'processing': return 'text-blue-400 bg-blue-500/20';
-      case 'pending': return 'text-yellow-400 bg-yellow-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
+      case 'completed': return 'text-green-400 bg-green-500/20";
+      case 'processing': return 'text-blue-400 bg-blue-500/20";
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getCategoryIcon = (category: string) => {'
     switch (category) {';'
-      case 'date-format': return '📅';
-      case 'currency': return '💰';
-      case 'measurement': return '📏';
-      case 'color': return '🎨';
-      case 'symbol': return '💫';
-      case 'custom': return '⚙️';
+      case 'date-format': return '📅";
+      case 'currency': return '💰";
+      case 'measurement': return '📏";
+      case 'color': return '🎨";
+      case 'symbol': return '💫";
+      case 'custom': return '⚙️";
       default: return '🌐';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 
@@ -469,7 +469,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered Multi-Language...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -483,14 +483,14 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-seo" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO
-              </Link href= /ai-powered-seo" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-seo" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-automation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation
               </Link href=/ai-powered-automation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/ai-powered-analytics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics
@@ -540,8 +540,8 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 md:grid-cols-4 gap-6 mb-8>
             {languageAnalytics.map((metric) => (
-              </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
-                <div className=" flex items-center justify-between" mb-4>
+              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
+                <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg" font-semibold text-white>{metric.metric}</h3>
                   <span className="text-2xl>{getTrendIcon(metric.trend)}</span>"
                 </div>
@@ -551,7 +551,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                 </div>
                 "''`
                 <div className=" flex items-center justify-between" text-sm>'''``
-                  <span className="{`${metric.change" > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                  <span className="{`${metric.change"> 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.change > 0 ? '+' : ''},
 {metric.change.toFixed(1)}%
                   </span>
@@ -624,7 +624,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                     <p className="text-lg" font-semibold text-green-400>{language.culturalAdaptation}%</p>
                   </div>
                 </div>
-                <div className=" space-y-2 text-sm" mb-4>
+                <div className="space-y-2 text-sm mb-4">
                   </div><div className="flex" justify-between>
                     <span className="text-gray-400>Users</span>"
                     <span className="text-white>{language.userCount.toLocaleString()}</span>" 
@@ -653,9 +653,9 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               </div><div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
                 <div className=" flex items-start justify-between mb-4>
                   </div><div className="flex-1 >
-                    <div className="flex items-center space-x-2 mb-2" >
+                    <div className="flex items-center space-x-2 mb-2">
                       <span className="text-sm" text-gray-400>{job.sourceLanguage.toUpperCase()}</span>
-                      <span className="text-purple-400>→</span" >
+                      <span className="text-purple-400>→</span">
                       <span className="text-sm" text-gray-400>{job.targetLanguage.toUpperCase()}</span>
                     </div>
                     <p className="text-gray-300" text-sm mb-2 >{job.content}</p>
@@ -760,8 +760,8 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 {selectedView === 'analytics' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
             {aiModels.map((model) => (
-              </div><div key={model.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
-                <div className=" flex items-start justify-between" mb-4>
+              </div><div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
+                <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg" font-semibold text-white>{model.language}</h3>
                   <span className="text-sm:text-gray-400>v{model.version}</span>"
                 </div>
@@ -788,9 +788,9 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                   </div>
                   <div className=" flex" justify-between>
                     <span className=" text-gray-400>Context Understanding</span>
-                    <span className="text-white>{model.performance.contextUnderstanding}%</span" >
+                    <span className="text-white>{model.performance.contextUnderstanding}%</span">
                   </div>
-                  <div className="flex justify-between" >
+                  <div className="flex justify-between">
                     <span className="text-gray-400>Tone" Preservation</span>
                     <span className="text-white>{model.performance.tonePreservation}%</span>"
                   </div>
@@ -813,7 +813,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               Leverage intelligent translation and cultural adaptation to reach  
               global audiences with AI-powered multi-language support.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center ">
+            <div className="flex flex-col sm flex-row gap-4 justify-center ">
               <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover  scale-105>
                 Start Translation
               </button>"
@@ -831,6 +831,6 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredMultiLanguagePage ))))))"'"'`

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion";
 
 interface PredictiveAnalyticsProps {
   className?: string;}'
@@ -18,7 +18,7 @@ const PredictiveAnalytics: React.FC<PredictiveAnalyticsProps> = ({ className="''
         </div>
         <h3 className=" text-xl font-semibold text-gray-900>Predictive Analytics</h3>
       </div>
-      <p className=" text-gray-600" mb-4>
+      <p className="text-gray-600 mb-4">
         Advanced predictive analytics capabilities that enhance your business operations and drive growth.
       </p>
       <div className=" flex" space-x-2">
@@ -30,6 +30,6 @@ const PredictiveAnalytics: React.FC<PredictiveAnalyticsProps> = ({ className="''
         </button>
       </div>
     </motion.div >;  );"
-};"
+};
 ''`
 export default PredictiveAnalytics;"'"'`

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SEOAnalysis {
   id: string;
@@ -10,27 +10,27 @@ interface SEOAnalysis {
   description: string;
   keywords: string[];'
   score: number;
-  grade: 'A' | 'B' | 'C' | 'D' | 'F';
+  grade: 'A' | 'B' | 'C' | 'D' | 'F";
   issues: SEOIssue[];
   recommendations: SEORecommendation[];
   lastAnalyzed: Date;
   nextAnalysis: Date;}
 interface SEOIssue {'
   id: string;
-  type: 'critical' | 'warning' | 'info';
+  type: 'critical' | 'warning' | 'info";
   title: string;'
   description: string;
-  impact: 'high' | 'medium' | 'low';
+  impact: 'high' | 'medium' | 'low";
   fixable: boolean;
   fixDescription: string;
   priority: number;}
 interface SEORecommendation {'
   id: string;
-  category: 'content' | 'technical' | 'on-page' | 'off-page' | 'performance';
+  category: 'content' | 'technical' | 'on-page' | 'off-page' | 'performance";
   title: string;'
   description: string;
-  impact: 'high' | 'medium' | 'low';
-  effort: 'easy' | 'medium' | 'hard';
+  impact: 'high' | 'medium' | 'low";
+  effort: 'easy' | 'medium' | 'hard";
   estimatedImprovement: number;
   aiGenerated: boolean;}
 interface KeywordAnalysis {
@@ -45,7 +45,7 @@ interface KeywordAnalysis {
   aiInsights: string;
   opportunities: string[];'
   trends: {
-    trend: 'up' | 'down' | 'stable';
+    trend: 'up' | 'down' | 'stable";
     change: number;
     period: string;
   };}
@@ -70,7 +70,7 @@ interface PerformanceMetrics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   lastUpdated: Date;}
 const AIPoweredSEOPage: NextPage = () => {
   ;
@@ -88,7 +88,7 @@ const AIPoweredSEOPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered SEO data
     setTimeout(() => {
-      const mockSeoAnalyses: SEOAnalysis[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           url: 'https://ziontechgroup.netlify.app',
@@ -196,7 +196,7 @@ const AIPoweredSEOPage: NextPage = () => {
           lastAnalyzed: new Date(Date.now() - 6 * 60 * 60 * 1000),
           nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000}
       ];
-      const mockKeywordAnalyses: KeywordAnalysis[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           keyword: 'AI marketplace',
@@ -255,7 +255,7 @@ const AIPoweredSEOPage: NextPage = () => {
             change: 8.7,
             period: 'last 30 days'}}
       ];
-      const mockContentOptimizations: ContentOptimization[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           pageTitle: 'Zion - AI-Powered Marketplace for Professional Services',
@@ -285,7 +285,7 @@ const AIPoweredSEOPage: NextPage = () => {
             keywords: ['service marketplace', 'AI development', 'web development', 'professional services', 'verified experts']}
           aiOptimized: true}
       ];
-      const mockPerformanceMetrics: PerformanceMetrics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Organic Traffic',
@@ -381,32 +381,32 @@ const AIPoweredSEOPage: NextPage = () => {
   } [seoAnalyses, filterGrade, searchTerm, sortBy]);
   const getGradeColor = (grade: string) => {'
     switch (grade) {';'
-      case 'A': return 'text-green-400 bg-green-500/20';
-      case 'B': return 'text-blue-400 bg-blue-500/20';
-      case 'C': return 'text-yellow-400 bg-yellow-500/20';
-      case 'D': return 'text-orange-400 bg-orange-500/20';
-      case 'F': return 'text-red-400 bg-red-500/20';
+      case 'A': return 'text-green-400 bg-green-500/20";
+      case 'B': return 'text-blue-400 bg-blue-500/20";
+      case 'C': return 'text-yellow-400 bg-yellow-500/20";
+      case 'D': return 'text-orange-400 bg-orange-500/20";
+      case 'F': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getIssueColor = (type: string) => {'
     switch (type) {';'
-      case 'critical': return 'text-red-400 bg-red-500/20';
-      case 'warning': return 'text-yellow-400 bg-yellow-500/20';
-      case 'info': return 'text-blue-400 bg-blue-500/20';
+      case 'critical': return 'text-red-400 bg-red-500/20";
+      case 'warning': return 'text-yellow-400 bg-yellow-500/20";
+      case 'info': return 'text-blue-400 bg-blue-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getImpactColor = (impact: string) => {'
     switch (impact) {';'
-      case 'high': return 'text-red-400';
-      case 'medium': return 'text-yellow-400';
-      case 'low': return 'text-green-400';
+      case 'high': return 'text-red-400";
+      case 'medium': return 'text-yellow-400";
+      case 'low': return 'text-green-400";
       default: return 'text-gray-400';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 
@@ -429,7 +429,7 @@ const AIPoweredSEOPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered SEO...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -443,14 +443,14 @@ const AIPoweredSEOPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-automation" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation
-              </Link href= /ai-powered-automation" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-analytics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics
               </Link href=/ai-powered-analytics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/smart-notifications className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Notifications
@@ -501,7 +501,7 @@ const AIPoweredSEOPage: NextPage = () => {
           <div className="grid" grid-cols-1 md:grid-cols-3 gap-6 mb-8>
             {performanceMetrics.map((metric) => (
               </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6">
-                <div className=" flex items-center justify-between" mb-4>
+                <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg" font-semibold text-white>{metric.metric}</h3>
                   <span className="text-2xl>{getTrendIcon(metric.trend)}</span>"
                 </div>
@@ -511,7 +511,7 @@ const AIPoweredSEOPage: NextPage = () => {
                 </div>
                 "''`
                 <div className=" flex items-center justify-between" text-sm>'''``
-                  <span className="{`${getImpactColor(metric.improvement" > 0 ? 'high' : 'low')}`}>
+                  <span className="{`${getImpactColor(metric.improvement"> 0 ? 'high' : 'low')}`}>
                     {metric.improvement > 0 ? '+' : ''},
 {metric.improvement.toFixed(1)}%
                   </span>
@@ -580,7 +580,7 @@ const AIPoweredSEOPage: NextPage = () => {
                 </div>
 
                 {/* Keywords */}"
-                <div className="mb-4" >
+                <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Keywords </p>
                   <div className="flex flex-wrap" gap-2>
                     {analysis.keywords.map((keyword, index) => (
@@ -592,7 +592,7 @@ const AIPoweredSEOPage: NextPage = () => {
                 </div>
                 {/* Issues */},
 {analysis.issues.length > 0 && ("
-                  <div className="mb-4" >
+                  <div className="mb-4">
                     <p className="text-sm:text-gray-400" mb-2>Issues Found </p>
                     <div className="space-y-2>
                       {analysis.issues.map((issue) => (`
@@ -600,7 +600,7 @@ const AIPoweredSEOPage: NextPage = () => {
                           <span className="{`px-4  py-3 rounded-full text-xs font-medium ${getIssueColor(issue.type)}`}>
                             {issue.type.toUpperCase()}
                           </span>
-                          <div className=" flex-1">
+                          <div className="flex-1">
                             <p className="text-sm" text-white font-medium>{issue.title}</p>
                             <p className="text-xs" text-gray-400>{issue.description}</p>
                             {issue.fixable && (
@@ -614,11 +614,11 @@ const AIPoweredSEOPage: NextPage = () => {
                 )}"
                 {/* Recommendations */},
 {analysis.recommendations.length > 0 && ("
-                  <div className=" mb-4">
+                  <div className="mb-4">
                     <p className="text-sm:text-gray-400" mb-2>AI Recommendations </p>
                     <div className="space-y-2>" 
                       {analysis.recommendations.map((rec) => (`
-                        </div><div key={rec.id} className="flex items-start space-x-3" >``"
+                        </div><div key={rec.id} className="flex items-start space-x-3">``"
                           <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getImpactColor(rec.impact)}`}>
                             {rec.impact.toUpperCase()} 
                           </span>
@@ -710,7 +710,7 @@ const AIPoweredSEOPage: NextPage = () => {
 {selectedView === 'content' && (
           <div className="space-y-6>" 
             {contentOptimizations.map((content) => (
-              </div><div key={content.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
+              </div><div key={content.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
                 <div className="flex" items-start justify-between mb-4> 
                   </div><div className="flex-1">
                     <h3 className="text-lg" font-semibold text-white mb-2>Current Content</h3>
@@ -720,7 +720,7 @@ const AIPoweredSEOPage: NextPage = () => {
                         <p className="text-white>{content.pageTitle}</p"">
                       </div>
                       <div>
-                        <p className="text-gray-400>Description:</p" >
+                        <p className="text-gray-400>Description:</p">
                         <p className="text-white>{content.metaDescription}</p>"
                       </div>
                     </div>
@@ -792,7 +792,7 @@ const AIPoweredSEOPage: NextPage = () => {
               Leverage intelligent SEO optimization to improve search rankings,  
               increase organic traffic, and maximize your online visibility.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center ">
+            <div className="flex flex-col sm flex-row gap-4 justify-center ">
               <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover  scale-105>
                 Start Analysis
               </button>"
@@ -810,6 +810,6 @@ const AIPoweredSEOPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredSEOPage ))))))))))"'"'`

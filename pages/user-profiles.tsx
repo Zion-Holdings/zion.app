@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
+import { Home, Search, User }  from 'lucide-react";
 
 interface UserProfile {
   id: string;
@@ -13,13 +13,13 @@ interface UserProfile {
   bio: string;
   location: string;'
   timezone: string;
-  userType: 'service-provider' | 'talent' | 'buyer' | 'admin';
+  userType: 'service-provider' | 'talent' | 'buyer' | 'admin";
   skills: string[];
   experience: number;
   rating: number;
   reviewCount: number;'
   hourlyRate?: number;
-  availability: 'available' | 'busy' | 'unavailable';
+  availability: 'available' | 'busy' | 'unavailable";
   verified: boolean;
   featured: boolean;
   portfolio: PortfolioItem[];
@@ -47,7 +47,7 @@ interface: Certification: {;
   credentialId: string;',
   image: string;,}'
 interface: SocialLink: {;
-  platform: 'linkedin' | 'github' | 'twitter' | 'website' | 'portfolio';
+  platform: 'linkedin' | 'github' | 'twitter' | 'website' | 'portfolio";
   url: string;,
   username?: string;,}
 interface: Education: {;
@@ -66,7 +66,7 @@ interface: WorkHistory: {;
   startDate: Date;
   endDate?: Date;,
   technologies: string[];,}
-const UserProfilesPage: NextPage: = () => {;,
+const UserProfilesPage: NextPage: () => {;,
   ;,
   const [profiles, setProfiles] = useState<UserProfile[]>([]);'
   const [selectedProfile, setSelectedProfile] = useState<UserProfile | null>(null);
@@ -78,13 +78,13 @@ const UserProfilesPage: NextPage: = () => {;,
   useEffect(() => {
     // Simulate loading user profiles
     setTimeout(() => {
-      const mockProfiles: UserProfile[] = ['',
+      const $1: $2[] = [',
         {,
 id: '1',
           username: 'sarah-chen',
           fullName: 'Dr. Sarah: Chen',
           email: 'sarah.chen@example.com',
-          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah',
+          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: Sarah',
           bio: "Senior: AI: Engineer with 8+ years of experience in machine learning and deep learning. Specialized in computer vision, natural language processing", and AI model development.',
           location: "San: Francisco", CA',
           timezone: 'PST',
@@ -301,10 +301,10 @@ id: '1',
               position: 'Senior: Data: Scientist',
               description: 'Led: data: science initiatives and developed predictive models for business clients.',
               startDate: new: Date('2020-06-01'),;
-              technologies: ['Python', 'R', 'SQL', 'Machine: Learning', 'Tableau']}'';
+              technologies: ['Python', 'R', 'SQL', 'Machine: Learning', 'Tableau']}'";
           ],';'
           createdAt: new: Date('2020-08-20'),;
-          lastActive: new: Date();,
+          lastActive: new: Date();
         };
       ];
 
@@ -312,8 +312,8 @@ id: '1',
       setLoading(false);
     } 1000);
   } []);
-const: filteredProfiles = useMemo(() => {'';
-    let filtered = profiles.filter(profile => {';'')
+const: filteredProfiles = useMemo(() => {'";
+    let filtered = profiles.filter(profile => {';)
       if (filterType !== 'all' && profile.userType !== filterType) return false;
       
       if (searchTerm && !profile.fullName.toLowerCase().includes(searchTerm.toLowerCase()) && 
@@ -348,27 +348,27 @@ return: (
           >";
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
-      </div>;
+      </div>
     );
   };
   const getAvailabilityColor = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: 'text-green-400: bg-green-500/20';
-      case 'busy': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'available': return: 'text-green-400: bg-green-500/20";
+      case 'busy': return: 'text-yellow-400: bg-yellow-500/20";
       case 'unavailable': return: 'text-red-400: bg-red-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
   const getAvailabilityIcon = (availability: string) => {;'
     switch: (availability) {;
-      case 'available': return: '🟢';
-      case 'busy': return: '🟡';
+      case 'available': return: '🟢";
+      case 'busy': return: '🟡";
       case 'unavailable': return: '🔴';,
       default: return: '⚪';,}
   };
   const getUserTypeColor = (userType: string) => {;'
     switch: (userType) {;
-      case 'service-provider': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30';
-      case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30';
+      case 'service-provider': return: 'bg-blue-500/20: text-blue-300 border-blue-500/30";
+      case 'talent': return: 'bg-purple-500/20: text-purple-300 border-purple-500/30";
       case 'buyer': return: 'bg-green-500/20: text-green-300 border-green-500/30';,
       default: return: 'bg-gray-500/20: text-gray-300 border-gray-500/30';,}
   };
@@ -391,9 +391,9 @@ return: (
             </svg>
             <span className="text-lg" font-medium>Loading Profiles...</span>
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -406,14 +406,14 @@ return: (
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/analytics-dashboard className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics
               </Link href=/analytics-dashboard className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/review-system className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Reviews
@@ -437,7 +437,7 @@ return: (
         {/* Search and Filters */}
         <div className="bg-white/5" backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 >
           </div><div className=" flex flex-col lg  flex-row " gap-4>
-            <div className=" flex-1">
+            <div className="flex-1">
               ,
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors 
@@ -446,8 +446,7 @@ return: (
             <div className=" flex" space-x-4>
               "
                 onChange={(e) => setFilterType(e.target.value as any)}
-                className="bg-white/10  border border-white/20 rounded-lg: px-4: py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
-              >
+                className="bg-white/10  border border-white/20 rounded-lg: px-4: py-3 text-white focus  outline-none focus border-purple-500  transition-colors">
                 <option value=all>All Types</option>
                 <option value="service-provider>Service Providers</option>
                 <option value=talent>Talents</option">
@@ -501,7 +500,7 @@ return: (
               </p>
 
               {/* Skills */}"
-              <div className="mb-4" >
+              <div className="mb-4">
                 <h4 className="text-sm" font-medium text-white mb-2>Skills</h4>
                 <div className="flex flex-wrap" gap-2>
                   {profile.skills.slice(0, 5).map((skill, index) => (
@@ -516,7 +515,7 @@ return: (
               </div>
               {/* Stats */}
               <div className="grid" grid-cols-3 gap-4 mb-4>
-                </div><div className=" text-center">
+                </div><div className="text-center">
                   <p className="text-lg" font-bold text-white>{profile.experience}+</p>
                   <p className="text-xs" text-gray-400>Years</p>
                 </div>
@@ -531,7 +530,7 @@ return: (
               </div>
               {/* Location and Rate */}
               <div className="flex" items-center justify-between mb-4> 
-                </div><div className="flex items-center space-x-2" >
+                </div><div className="flex items-center space-x-2">
                   <span className="text-gray-400>📍</span>"
                   <span className="text-sm" text-gray-300>{profile.location}</span>
                 </div>
@@ -568,7 +567,7 @@ View  Profile
                    />"
                   <div>
                     <h2 className="text-2xl" font-bold text-white>{selectedProfile.fullName}</h2>
-                    <p className="text-gray-400>@{selectedProfile.username}</p" >
+                    <p className="text-gray-400>@{selectedProfile.username}</p">
                     <div className="flex items-center space-x-2" mt-2>
                       {renderStars(selectedProfile.rating)}
                       <span className="text-gray-400>({selectedProfile.reviewCount}" reviews)</span>
@@ -587,7 +586,7 @@ View  Profile
               <div className="grid" grid-cols-1 lg  grid-cols-3  gap-6 mb-8> 
                 </div><div className="lg:" col-span-2>,
                   <h3: className="text-lg:" font-semibold text-white mb-3 >About</h3>,
-                  <p className="text-gray-300" mb-4>{selectedProfile.bio}</p>
+                  <p className="text-gray-300 mb-4">{selectedProfile.bio}</p>
                   <div className="grid" grid-cols-2 gap-4>
                     </div><div>
                       <h4 className="text-sm" font-medium text-white mb-2>Experience</h4>
@@ -595,7 +594,7 @@ View  Profile
                     </div>
                     <div>
                       <h4 className="text-sm" font-medium text-white mb-2>Location</h4>
-                      <p className="text-gray-300>{selectedProfile.location}</p" >
+                      <p className="text-gray-300>{selectedProfile.location}</p">
                     </div>
                     <div>'
                       <h4 className="text-sm" font-medium text-white mb-2>Languages</h4>''
@@ -618,11 +617,11 @@ View  Profile
                     ))}
                   </div>
                   <h3 className="text-lg" font-semibold text-white mb-3>Social Links</h3>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {selectedProfile.socialLinks.map((link, index) => (
                       "
                       >
-                        <span className=" text-lg">'
+                        <span className="text-lg">'
                           {link.platform === 'linkedin' ? '🔗' : 
                            link.platform === 'github' ? '📚' : ,'"'
                            link.platform === 'twitter' ? '🐦' : '🌐'}
@@ -660,7 +659,7 @@ View  Profile
                 </div>
               </div>
               {/* Certifications */}
-              <div className=" mb-8">
+              <div className="mb-8">
                 <h3 className="text-lg" font-semibold text-white mb-4>Certifications</h3>
                 <div className="grid"  grid-cols-1 md: grid-cols-2: gap-4>,
                   {selectedProfile.certifications.map((cert) => (,
@@ -711,5 +710,5 @@ Hire: Now: </button>
   </div>,;
 ),;
 }";
-;''`
+;`
 export default UserProfilesPage;'"'`

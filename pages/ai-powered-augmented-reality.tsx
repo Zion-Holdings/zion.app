@@ -1,7 +1,7 @@
 import React from "react;
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+import type { NextPage } from 'next";
+import Head from 'next/head";
+import { motion } from 'framer-motion";
 
 const AiPoweredAugmentedReality: NextPage = () => {
   ;
@@ -34,7 +34,7 @@ const AiPoweredAugmentedReality: NextPage = () => {
  
           {/* Loading State */}"
           <div className="text-center" py-12> 
-            </div><div className="text-6xl" mb-4>🥽</div>
+            </div><div className="text-6xl mb-4">🥽</div>
             <h3 className="text-xl" font-semibold text-high-contrast mb-2 >
               Loading AR Experience
             </h3>
@@ -43,7 +43,7 @@ const AiPoweredAugmentedReality: NextPage = () => {
             </p>
           </div>
         </div>
-      </div>;
+      </div>
     );}
   return (
     <div>
@@ -126,42 +126,42 @@ const AiPoweredAugmentedReality: NextPage = () => {
           
           <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6> 
             </div><div className="glass border border-neon-blue/20 rounded-xl" p-6>
-              <div className="text-3xl" mb-4>🥽</div>
+              <div className="text-3xl mb-4">🥽</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >AR Visualization</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Immersive AR visualizations with real-time data overlay
               </p>
             </div>
             <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🤖</div>
+              </div><div className="text-3xl mb-4">🤖</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >AI Recognition</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Advanced AI-powered object and scene recognition
               </p>
             </div>
             <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>📱</div>
+              </div><div className="text-3xl mb-4">📱</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Mobile AR</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Cross-platform mobile AR experiences
               </p>
             </div>
             <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🎮</div>
+              </div><div className="text-3xl mb-4">🎮</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Interactive AR</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Interactive AR experiences with gesture controls
               </p>
             </div>
             <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>🌍</div>
+              </div><div className="text-3xl mb-4">🌍</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Spatial Mapping</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Advanced spatial mapping and environment understanding
               </p>
             </div>
             <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl" mb-4>⚡</div>
+              </div><div className="text-3xl mb-4">⚡</div>
               <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Real-time Processing</h3>
               <p className="text-high-contrast-secondary" text-sm>
                 Real-time AR processing and rendering
@@ -172,6 +172,6 @@ const AiPoweredAugmentedReality: NextPage = () => {
       </div>
     </div">;"
  " );"
-};"
+};
 '
 export default AiPoweredAugmentedReality;"'"

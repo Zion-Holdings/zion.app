@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface UserVerification {
   id: string;'
   userId: string;
-  status: 'pending' | 'verified' | 'rejected' | 'expired';
-  verificationType: 'identity' | 'background' | 'business' | 'skill' | 'comprehensive';
+  status: 'pending' | 'verified' | 'rejected' | 'expired";
+  verificationType: 'identity' | 'background' | 'business' | 'skill' | 'comprehensive";
   documents: VerificationDocument[];
   aiAnalysis: AIVerificationAnalysis;
   trustScore: number;
@@ -20,7 +20,7 @@ interface VerificationDocument {'
   id: string;
   type: 'passport' | 'drivers_license' | 'national_id' | 'business_license' | 'certificate' | 'reference';'
   name: string;
-  status: 'pending' | 'approved' | 'rejected';
+  status: 'pending' | 'approved' | 'rejected";
   uploadedAt: Date;
   verifiedAt?: Date;
   aiAnalyzed: boolean;
@@ -29,7 +29,7 @@ interface VerificationDocument {'
 interface AIVerificationAnalysis {
   id: string;'
   overallScore: number;
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: 'low' | 'medium' | 'high";
   fraudProbability: number;
   authenticityScore: number;
   consistencyScore: number;
@@ -38,8 +38,8 @@ interface AIVerificationAnalysis {
   aiConfidence: number;}
 interface VerificationFlag {'
   id: string;
-  type: 'warning' | 'error' | 'info';
-  severity: 'low' | 'medium' | 'high';
+  type: 'warning' | 'error' | 'info";
+  severity: 'low' | 'medium' | 'high";
   description: string;
   recommendation: string;
   resolved: boolean;}
@@ -60,7 +60,7 @@ interface ReputationCategory {
 interface TrustBadge {
   id: string;'
   name: string;
-  type: 'verification' | 'reputation' | 'skill' | 'security';
+  type: 'verification' | 'reputation' | 'skill' | 'security";
   icon: string;
   description: string;
   earnedAt: Date;
@@ -74,8 +74,8 @@ interface ReputationHistory {
 interface BackgroundCheck {
   id: string;'
   userId: string;
-  type: 'criminal' | 'employment' | 'education' | 'credit' | 'comprehensive';
-  status: 'pending' | 'completed' | 'failed';
+  type: 'criminal' | 'employment' | 'education' | 'credit' | 'comprehensive";
+  status: 'pending' | 'completed' | 'failed";
   results: BackgroundCheckResult[];
   aiAnalysis: AIBackgroundAnalysis;
   completedAt?: Date;
@@ -85,7 +85,7 @@ interface BackgroundCheckResult {
   category: string;
   status: 'clear' | 'issue' | 'pending';'
   description: string;
-  severity: 'low' | 'medium' | 'high';
+  severity: 'low' | 'medium' | 'high";
   details: string;
   aiAnalyzed: boolean;}
 interface AIBackgroundAnalysis {
@@ -105,14 +105,14 @@ interface TrustNetwork {
 interface TrustConnection {
   id: string;'
   connectedUserId: string;
-  connectionType: 'verified' | 'referred' | 'colleague' | 'client';
+  connectionType: 'verified' | 'referred' | 'colleague' | 'client";
   trustLevel: number;
   connectionDate: Date;
   mutualConnections: number;}
 interface TrustRecommendation {
   id: string;'
   fromUserId: string;
-  type: 'skill' | 'reliability' | 'professionalism' | 'communication';
+  type: 'skill' | 'reliability' | 'professionalism' | 'communication";
   rating: number;
   comment: string;
   date: Date;
@@ -129,7 +129,7 @@ interface VerificationInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredIdentityVerificationPage: NextPage = () => {
@@ -140,7 +140,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
   const [activeTab, setActiveTab] = useState<'verifications' | 'background' | 'trust' | 'analytics'>('verifications
   const [isLoading, setIsLoading] = useState(true
   // Mock user verifications
-  const mockUserVerifications: UserVerification[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       userId: 'user123',
@@ -341,7 +341,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       verifiedBy: 'AI Verification System
     }]
   // Mock background checks
-  const mockBackgroundChecks: BackgroundCheck[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       userId: 'user123',
@@ -387,7 +387,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       validUntil: new Date('2025-01-15
     }]
   // Mock trust networks
-  const mockTrustNetworks: TrustNetwork[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       userId: 'user123',
@@ -703,7 +703,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
 {activeTab === 'background' && (
               <div className="space-y-8>" 
                 {backgroundChecks.map((check) => (
-                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       <h3 className="text-xl" font-semibold text-white>Background Check #{check.id}</h3>`
                       ``
@@ -726,7 +726,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                             <span className="text-white>{(check.aiAnalysis.riskAssessment" * 100).toFixed(1)}%</span>
                           </div>
                           <div className=" flex" justify-between>
-                            <span className="text-gray-400>Confidence:</span" >
+                            <span className="text-gray-400>Confidence:</span">
                             <span className="text-white>{Math.round(check.aiAnalysis.confidence" * 100)}%</span>
                           </div>
                         </div>
@@ -789,11 +789,11 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                     </div>
 
                     {/* Connections */}"
-                    <div className=" mb-6">
+                    <div className="mb-6">
                       <h4 className="text-lg" font-semibold text-white mb-4>Connections ({network.connections.length})</h4>
                       <div className="space-y-3>" 
                         {network.connections.map((connection) => (
-                          </div><div key={connection.id} className="bg-white/5 rounded-lg p-4" >
+                          </div><div key={connection.id} className="bg-white/5 rounded-lg p-4">
                             <div className="flex" items-center justify-between>
                               </div><div>
                                 <div className="text-white" font-semibold>User #{connection.connectedUserId}</div>
@@ -847,7 +847,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
             {/* Analytics Tab */}, ''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>"
-                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalVerifications.toLocaleString()}</div>
                     <div className="text-gray-400" text-sm>Total Verifications</div>
@@ -869,7 +869,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>" 
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4" >
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
                         <div className="flex" items-start justify-between mb-2>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
@@ -895,8 +895,8 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Build Trust?
             </h2>
@@ -904,9 +904,9 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
               Start your verification process and build a trusted reputation  
               in the marketplace with our AI-powered identity verification system.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/ai-service-matcher" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Verification
-              </Link href= /ai-service-matcher" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -921,6 +921,6 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredIdentityVerificationPage ))))))))))))))))))))"'"'`

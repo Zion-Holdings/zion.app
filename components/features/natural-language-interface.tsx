@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion";
 
 interface NaturalLanguageInterfaceProps {
   className?: string;}'
@@ -18,7 +18,7 @@ const NaturalLanguageInterface: React.FC<NaturalLanguageInterfaceProps> = ({ cla
         </div>
         <h3 className=" text-xl font-semibold text-gray-900>Natural Language Interface</h3>
       </div>
-      <p className=" text-gray-600" mb-4>
+      <p className="text-gray-600 mb-4">
         Advanced natural language interface capabilities that enhance your business operations and drive growth.
       </p>
       <div className=" flex" space-x-2">
@@ -30,6 +30,6 @@ const NaturalLanguageInterface: React.FC<NaturalLanguageInterfaceProps> = ({ cla
         </button>
       </div>
     </motion.div >;  );"
-};"
+};
 ''`
 export default NaturalLanguageInterface;"'"'`

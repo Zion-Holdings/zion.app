@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface QuantumAlgorithm {
   id: string;
   name: string;'
   description: string;
-  type: 'shor' | 'grover' | 'quantum_fourier' | 'quantum_phase' | 'quantum_walk' | 'variational';
-  status: 'running' | 'completed' | 'failed' | 'queued' | 'cancelled';
+  type: 'shor' | 'grover' | 'quantum_fourier' | 'quantum_phase' | 'quantum_walk' | 'variational";
+  status: 'running' | 'completed' | 'failed' | 'queued' | 'cancelled";
   qubits: number;
   depth: number;
   executionTime: number;
@@ -23,8 +23,8 @@ interface QuantumOptimization {
   id: string;
   title: string;'
   description: string;
-  problemType: 'combinatorial' | 'continuous' | 'discrete' | 'mixed' | 'constrained' | 'multi_objective';
-  status: 'active' | 'completed' | 'failed' | 'paused';
+  problemType: 'combinatorial' | 'continuous' | 'discrete' | 'mixed' | 'constrained' | 'multi_objective";
+  status: 'active' | 'completed' | 'failed' | 'paused";
   variables: number;
   constraints: number;
   aiOptimization: OptimizationAnalysis;}
@@ -38,8 +38,8 @@ interface QuantumSimulation {
   id: string;
   name: string;'
   description: string;
-  type: 'quantum_circuit' | 'quantum_dynamics' | 'quantum_chemistry' | 'quantum_materials' | 'quantum_optics' | 'quantum_biology';
-  status: 'running' | 'completed' | 'failed' | 'scheduled';
+  type: 'quantum_circuit' | 'quantum_dynamics' | 'quantum_chemistry' | 'quantum_materials' | 'quantum_optics' | 'quantum_biology";
+  status: 'running' | 'completed' | 'failed' | 'scheduled";
   qubits: number;
   iterations: number;
   aiAnalysis: SimulationAnalysis;}
@@ -53,8 +53,8 @@ interface QuantumCryptography {
   id: string;
   protocol: string;'
   description: string;
-  type: 'qkd' | 'quantum_key' | 'quantum_signature' | 'quantum_commitment' | 'quantum_zero_knowledge' | 'post_quantum';
-  status: 'active' | 'inactive' | 'testing' | 'deployed';
+  type: 'qkd' | 'quantum_key' | 'quantum_signature' | 'quantum_commitment' | 'quantum_zero_knowledge' | 'post_quantum";
+  status: 'active' | 'inactive' | 'testing' | 'deployed";
   keyLength: number;
   securityLevel: number;
   aiAnalysis: CryptographyAnalysis;}
@@ -68,8 +68,8 @@ interface QuantumMachineLearning {
   id: string;
   model: string;'
   description: string;
-  type: 'quantum_neural_network' | 'quantum_kernel' | 'quantum_feature_map' | 'quantum_boltzmann' | 'quantum_gan' | 'quantum_autoencoder';
-  status: 'training' | 'trained' | 'failed' | 'evaluating';
+  type: 'quantum_neural_network' | 'quantum_kernel' | 'quantum_feature_map' | 'quantum_boltzmann' | 'quantum_gan' | 'quantum_autoencoder";
+  status: 'training' | 'trained' | 'failed' | 'evaluating";
   parameters: number;
   accuracy: number;
   aiAnalysis: MLAnalysis;}
@@ -84,8 +84,8 @@ interface QuantumComputingManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   qubits: number;
   coherenceTime: number;
   aiAnalysis: ManagementAnalysis;}
@@ -109,7 +109,7 @@ interface QuantumComputingInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredQuantumComputingPage: NextPage = () => {
@@ -124,7 +124,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockQuantumAlgorithms: QuantumAlgorithm[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Shor\'s Algorithm Implementation',
@@ -141,7 +141,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         scalabilityScore: 88,
         recommendations: ['Optimize qubit allocation', 'Reduce circuit depth']}}
     }]
-  const mockQuantumOptimizations: QuantumOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Portfolio Optimization',
@@ -157,7 +157,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         solutionQuality: 94,
         recommendations: ['Increase iteration count', 'Adjust annealing schedule']}
 }]
-  const mockQuantumSimulations: QuantumSimulation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Molecular Energy Simulation',
@@ -173,7 +173,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         computationalScore: 87,
         recommendations: ['Improve error correction', 'Optimize measurement strategy']}
 }]
-  const mockQuantumCryptography: QuantumCryptography[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       protocol: 'BB84 Quantum Key Distribution',
@@ -189,7 +189,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         reliabilityScore: 95,
         recommendations: ['Enhance error correction', 'Optimize key generation rate']}
 }]
-  const mockQuantumMachineLearning: QuantumMachineLearning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       model: 'Quantum Neural Network',
@@ -205,7 +205,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         quantumAdvantage: 92,
         recommendations: ['Increase training epochs', 'Optimize parameter initialization']}
 }]
-  const mockQuantumComputingManagement: QuantumComputingManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'QC-001',
@@ -420,7 +420,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-purple-500"
@@ -477,7 +477,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-purple-600/20 to-blue-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -536,7 +536,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -577,7 +577,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Computing
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -592,6 +592,6 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumComputingPage )))))))))))))))))))))))))))))"'"'`

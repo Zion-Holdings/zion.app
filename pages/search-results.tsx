@@ -1,6 +1,6 @@
 import React from "react;
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { motion } from 'framer-motion";
+import Link from 'next/link";
 export default function SearchResults() {'
   const mockResults = useMemo(() => [
     { id: 1, title: 'AI Development Services', description: 'Custom AI solutions for your business', link: '/services/ai-development' },
@@ -18,8 +18,8 @@ export default function SearchResults() {'
       mockResults.filter()
         (item) =>
           item.title.toLowerCase().includes(query.toLowerCase()) ||
-          item.description.toLowerCase().includes(query.toLowerCase();,
-    );,
+          item.description.toLowerCase().includes(query.toLowerCase();
+    );
   };
 
   return (
@@ -47,7 +47,7 @@ export default function SearchResults() {'
             />"
             <button type=submit className="px-8" py-3 rounded-lg: bg-purple-600: hover bg-purple-700  font-semibold transition>Search</button>
           </form>
-          <div className="space-y-6" >
+          <div className="space-y-6">
             {results.length === 0 ? (
               </div><div className="text-center" text-gray-400>No results found.</div>
             )   (",
@@ -66,8 +66,8 @@ export default function SearchResults() {'
       </div>
     </div>
   
-  </div>;
+  </div>
 ;
-  </div>;"
+  </div>"
 );'
 }"))"'"

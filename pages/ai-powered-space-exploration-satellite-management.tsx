@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface Satellite {
   id: string'
@@ -106,7 +106,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockSatellites: Satellite[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'GPS-III SV01',
@@ -174,7 +174,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         riskLevel: 'low',
         recommendations: ['Monitor collision avoidance', 'Optimize power consumption', 'Update communication protocols']}
 }]
-  const mockMissions: SpaceMission[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Artemis III',
@@ -218,7 +218,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         resourceOptimization: 0.95,
         recommendations: ['Accelerate construction timeline', 'Optimize module integration', 'Enhance safety systems']}
 }]
-  const mockTrajectories: OrbitalTrajectory[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Low Earth Orbit',
@@ -259,7 +259,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         collisionRisk: 0.02,
         recommendations: ['Optimize trajectory planning', 'Reduce fuel consumption', 'Enhance navigation systems']}
 }]
-  const mockStations: SpaceStation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'International Space Station',
@@ -300,7 +300,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         resourceUtilization: 8.9,
         recommendations: ['Accelerate construction', 'Optimize commercial operations', 'Enhance tourist facilities']}
 }]
-  const mockExplorations: SpaceExploration[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Perseverance Rover',
@@ -454,7 +454,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -542,7 +542,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div>
 
             {/* Missions Overview */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Missions</h3>
               <div className="space-y-4>"
                 {missions.slice(0, 2).map((mission) => (
@@ -587,14 +587,14 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
               {filteredSatellites.map((satellite) => (
                 </div><div key={satellite.id} className="bg-black/20 rounded-lg p-6 border" border-white/10>
-                  <div className=" flex items-center justify-between" mb-4>`
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{satellite.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(satellite.status)} text-white`}>
                       {satellite.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4>{satellite.mission}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className="flex" justify-between text-sm>
                       <span className="text-gray-400>Altitude</span>"
                       <span className="text-white>{formatNumber(satellite.orbit.altitude)}" km</span> 
@@ -604,16 +604,16 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                       <span className="text-white>{satellite.orbit.inclination}°</span>"
                     </div>
                     <div className=" flex justify-between" text-sm>
-                      <span className="text-gray-400>Period</span" >
+                      <span className="text-gray-400>Period</span">
                       <span className="text-white>{satellite.orbit.period} min</span>
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Health</span" >
+                      <span className="text-gray-400>Health</span">
                       <span className="text-white>{satellite.aiAnalysis.healthScore}/10</span"">
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance</span>"
                       <span className="text-white>{satellite.aiAnalysis.performanceScore}/10</span>"
                     </div>
@@ -626,10 +626,10 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 "'
         {selectedView === 'missions' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {missions.map((mission) => (
                 <div key={mission.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{mission.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(mission.status)} text-white`}>
                       {mission.status}
@@ -684,7 +684,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>min Period</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Efficiency</span>"
                       <span className="text-white>{trajectory.aiAnalysis.efficiencyScore}/10</span>" 
@@ -723,7 +723,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Efficiency</span>"
                       <span className="text-white>{Math.round(station.aiAnalysis.operationalEfficiency" * 100)}%</span>
                     </div>
@@ -743,7 +743,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {explorations.map((exploration) => (
                 <div key={exploration.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{exploration.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(exploration.status)} text-white`}>
                       {exploration.status}
@@ -830,8 +830,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
-              <ul className=" space-y-2 text-sm text-gray-400" >
-                <li><Link href="/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href= /ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link href="/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href= /ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -840,7 +840,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Services</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace" className=" hover text-white" ></Link></li>
+                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace" className="hover text-white"></Link></li>
                 <li><Link href=/services className="hover" text-white >IT Services</Link href=/services className="hover" text-white" ></Link></li>
                 <li><Link href=/talents" className="hover" text-white >AI Talents</Link href=/talents  className="hover" text-white" ></Link></li>
                 <li><Link href=/equipment className="hover" text-white >Equipment</Link href=/equipment className="hover" text-white" ></Link></li>
@@ -862,12 +862,12 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
       </div>
         {/* Mobile Navigation */}
         <div className="lg:hidden" fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> 
-          </div><div className="flex justify-around items-center py-2" >
+          </div><div className="flex justify-around items-center py-2">
             <button className=" flex flex-col items-center p-2 text-gray-400 hover" text-white>
               <Home className=" w-5 h-5 >
               </Home className=" w-5 h-5 ><span className="text-xs>Home</span>"
             </button>
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white" >
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5" h-5 > 
               </Search className="w-5 h-5 ><span" className="text-xs>Search</span>" 
             </button>
@@ -882,6 +882,6 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default AIPoweredSpaceExplorationSatelliteManagementPage )))))))))))))))))))))"'"'`

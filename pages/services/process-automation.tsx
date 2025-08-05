@@ -1,7 +1,7 @@
 import React from "react;
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import Layout from '../../components/Layout';
+import Head from 'next/head";
+import Layout from '../../components/Layout";
 
 const ProcessAutomation = () => {
   return (
@@ -31,8 +31,8 @@ const ProcessAutomation = () => {
       </div>
     </Layout>;
   ;
-  </div>;,
-  );,
+  </div>,
+  );
 };
 '
 export default ProcessAutomation;"'"

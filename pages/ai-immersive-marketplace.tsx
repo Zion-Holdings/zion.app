@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface ImmersiveProduct {
   id: string
@@ -68,7 +68,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
   const [vrMode, setVrMode] = useState(false
   const [arMode, setArMode] = useState(false
   // Mock data
-  const mockProducts: ImmersiveProduct[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Gaming Rig Pro',
@@ -138,7 +138,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         interactiveDemo: true,
         virtualShowroom: true}
 }]
-  const mockShowrooms: VirtualShowroom[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Innovation Hub',
@@ -175,7 +175,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
       features: ['Quantum Simulations', 'Research Tools', 'Expert Guidance'],
       aiOptimized: true
     }]
-  const mockExperiences: ImmersiveExperience[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'vr-tour',
@@ -212,7 +212,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
       aiPowered: true,
       features: ['Quantum Simulations', 'Educational Content', 'Expert Guidance']
     }]
-  const mockInsights: AIInsight[] = ['
+  const $1: $2[] = [
     {
       type: 'recommendation',
       title: 'VR Gaming Setup Trending',
@@ -295,7 +295,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
               </Link>
               <div className="flex"" items-center space-x-4>
                 <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-                </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+                </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
                 <Link href=/ai-project-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Projects
                 </Link href=/ai-project-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
                 <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -395,11 +395,11 @@ const AIImmersiveMarketplacePage: NextPage = () => {
               )}"'
               {/* Products */},''
 {selectedView === 'products' && ("
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white mb-6>AI-Recommended Immersive Products</h2>
                   <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                     {products.map((product) => (
-                      </div><div key={product.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10" >
+                      </div><div key={product.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
                         <div className="flex" justify-between items-start mb-4> 
                           </div><div className="flex-1">
                             <h3 className="text-xl" font-semibold text-white>{product.name}</h3>
@@ -440,7 +440,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                             <span className="text-white" ml-2 >{product.aiRecommendation.score}/10</span>
                           </div>
                         </div>
-                        <div className=" flex flex-wrap gap-2" mb-4>
+                        <div className="flex flex-wrap gap-2 mb-4">
                           {product.features.slice(0, 3).map((feature) => (
                             <span key={feature} className="px-4" py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full>
                               {feature}
@@ -462,7 +462,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
               )}'
               {/* Showrooms */},"''
 {selectedView === 'showrooms' && (
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white mb-6>Virtual Showrooms</h2>
                   <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6>
                     {showrooms.map((showroom) => (
@@ -477,7 +477,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                             <div className="text-white" font-medium>{showroom.theme}</div>
                           </div>
                         </div>
-                        <div className="space-y-3"  mb-4>
+                        <div className="space-y-3 mb-4">
                           </div><div className=" flex items-center" space-x-2>
                             <div className="flex" text-yellow-400>
                               {[...Array(5)].map((_, i) => ('
@@ -498,7 +498,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-2" mb-4>
+                        <div className="space-y-2 mb-4">
                           </div><div className="text-sm" font-medium text-gray-400>Features </div>
                           {showroom.features.map((feature, index) => (
                             <div key={index} className="flex" items-center space-x-2 text-sm>
@@ -551,7 +551,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="space-y-2" mb-4>
+                        <div className="space-y-2 mb-4">
                           </div><div className="text-sm" font-medium text-gray-400>Features </div>
                           {experience.features.map((feature, index) => (
                             <div key={index} className="flex" items-center space-x-2 text-sm>
@@ -610,6 +610,6 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         </div>
       </div>
     </"> ;"
-};"
+};
 ''`
 export default AIImmersiveMarketplacePage ))))))))))))))))))"'"'`

@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 interface PaymentMethod {'
   id: string;
-  type: 'card' | 'paypal' | 'crypto' | 'bank';
+  type: 'card' | 'paypal' | 'crypto' | 'bank";
   name: string;
   icon: string;
   last4?: string;
@@ -13,10 +13,10 @@ interface PaymentMethod {'
   isVerified: boolean;}
 interface Transaction {'
   id: string;
-  type: 'payment' | 'refund' | 'withdrawal' | 'fee';
+  type: 'payment' | 'refund' | 'withdrawal' | 'fee";
   amount: number;'
   currency: string;
-  status: 'pending' | 'completed' | 'failed' | 'cancelled';
+  status: 'pending' | 'completed' | 'failed' | 'cancelled";
   description: string;
   date: Date;
   paymentMethod: string;
@@ -46,7 +46,7 @@ const PaymentProcessingPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading payment data
     setTimeout(() => {
-      const mockPaymentMethods: PaymentMethod[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'card',
@@ -91,7 +91,7 @@ const PaymentProcessingPage: NextPage = () => {
           isDefault: false,
           isVerified: false}
       ];
-      const mockTransactions: Transaction[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'payment','
@@ -189,18 +189,18 @@ const PaymentProcessingPage: NextPage = () => {
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'pending': return 'text-yellow-400 bg-yellow-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'cancelled': return 'text-gray-400 bg-gray-500/20';
+      case 'completed': return 'text-green-400 bg-green-500/20";
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20";
+      case 'failed': return 'text-red-400 bg-red-500/20";
+      case 'cancelled': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'payment': return '💸';
-      case 'refund': return '↩️';
-      case 'withdrawal': return '📤';
-      case 'fee': return '💰';
+      case 'payment': return '💸";
+      case 'refund': return '↩️";
+      case 'withdrawal': return '📤";
+      case 'fee': return '💰";
       default: return '💳';}
   };
 '
@@ -211,7 +211,7 @@ const PaymentProcessingPage: NextPage = () => {
   } 0);
 '
   const pendingAmount = transactions
-    .filter(tx => tx.status === 'pending';
+    .filter(tx => tx.status === 'pending";
     .reduce((sum, tx) => sum + tx.amount, 0);
 
   return (
@@ -231,14 +231,14 @@ const PaymentProcessingPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/equipment-rental className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Rent Equipment
@@ -332,7 +332,7 @@ const PaymentProcessingPage: NextPage = () => {
               {/* Quick Payment Options */}
               <div className="grid" grid-cols-1 md:grid-cols-3 gap-6>
                 </div><div className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" text-center>
-                  <div className="text-4xl" mb-4>👨‍💻</div> 
+                  <div className="text-4xl mb-4">👨‍💻</div> 
                   <h4 className="text-lg" font-semibold text-white mb-2>Service Providers</h4>
                   <p className="text-gray-300" text-sm:mb-4>Pay for IT services, AI development, and consulting</p>
                   <button className="bg-purple-600" hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors >
@@ -341,7 +341,7 @@ const PaymentProcessingPage: NextPage = () => {
                 </div>
                 
                 <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center> 
-                  </div><div className="text-4xl" mb-4>⚙️</div>
+                  </div><div className="text-4xl mb-4">⚙️</div>
                   <h4 className="text-lg" font-semibold text-white mb-2>Equipment Rental</h4>
                   <p className="text-gray-300" text-sm:mb-4>Pay for hardware rentals and computing equipment</p>
                   <button className="bg-purple-600" hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors>
@@ -409,7 +409,7 @@ const PaymentProcessingPage: NextPage = () => {
                   </div><div key={method.id} className="bg-white/5  backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
                     <div className="flex" items-center justify-between mb-4 > 
                       </div><div className="flex items-center" space-x-3>
-                        <div className="text-2xl>{method.icon}</div" >
+                        <div className="text-2xl>{method.icon}</div">
                         <div>
                           <h4 className="text-lg" font-semibold text-white>{method.name}</h4>
                           {method.last4 && (
@@ -490,7 +490,7 @@ const PaymentProcessingPage: NextPage = () => {
         {/* Security Features */}
         <div className="grid" grid-cols-1 md:grid-cols-3 gap-8 mb-8> 
           </div><div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
-            <div className="text-4xl" mb-4>🔒</div> 
+            <div className="text-4xl mb-4">🔒</div> 
             <h3 className="text-xl" font-bold text-white mb-3>Bank-Level Security</h3>
             <p className="text-gray-300>"
               End-to-end encryption, fraud protection, and secure payment processing with industry-leading security standards.
@@ -498,7 +498,7 @@ const PaymentProcessingPage: NextPage = () => {
           </div>
           
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
-            </div><div className="text-4xl" mb-4>⚡</div> 
+            </div><div className="text-4xl mb-4">⚡</div> 
             <h3 className="text-xl" font-bold text-white mb-3>Instant Processing</h3>
             <p className="text-gray-300>"
               Real-time payment processing with instant confirmations and immediate fund availability for verified accounts.
@@ -506,7 +506,7 @@ const PaymentProcessingPage: NextPage = () => {
           </div>
           
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
-            </div><div className="text-4xl" mb-4>🌍</div> 
+            </div><div className="text-4xl mb-4">🌍</div> 
             <h3 className="text-xl" font-bold text-white mb-3>Global Payments</h3>
             <p className="text-gray-300>"
               Support for multiple currencies, international payments, and cross-border transactions with competitive rates.
@@ -522,9 +522,9 @@ const PaymentProcessingPage: NextPage = () => {
             <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
               Join thousands of users already using our secure payment processing system for marketplace transactions. 
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Started
-              </Link href= /auth/signup" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Explore Marketplace
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
@@ -609,6 +609,6 @@ const PaymentProcessingPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default PaymentProcessingPage ))"'"'`

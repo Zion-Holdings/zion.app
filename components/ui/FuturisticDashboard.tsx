@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect , useCallback } from 'react";
 
 interface DashboardMetric {
   id: string;
@@ -12,7 +12,7 @@ interface DashboardChart {
   title: string;
   data: number[];'
   labels: string[];
-  type: 'line' | 'bar' | 'area';
+  type: 'line' | 'bar' | 'area";
   color: 'blue' | 'purple' | 'pink' | 'green';}
 interface FuturisticDashboardProps {
   title: string;
@@ -79,7 +79,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
               </defs>
               <path
                 d={chart.data.map((value, index) => {;
-                  const x = (index / (chart.data.length - 1)) * 100;''`
+                  const x = (index / (chart.data.length - 1)) * 100;`
                   const y = 40 - (value / maxValue) * 40;``
                   return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;'"'
                 }).join(' ')}''
@@ -90,7 +90,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
               <path``
                 d={`M 0 40 ${chart.data.map((value, index) => {;
                   const x = (index / (chart.data.length - 1)) * 100;'`
-                  const y = 40 - (value / maxValue) * 40;''``
+                  const y = 40 - (value / maxValue) * 40;``
                   return `L ${x} ${y}`;``
                 }).join(' ')} L 100 40 Z`}``
                 fill = {`url(#gradient-${chart.id})`}
@@ -118,7 +118,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         </div>
       </div >;
     );"
-  };" `"
+  }; `"
   return ("``
     <div className="{`min-h-screen cyber-bg ${className}`}> 
       {/* Background Effects */}"
@@ -126,7 +126,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
         <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
       </div>
-      <div className=" relative z-10 container-responsive" py-8">"
+      <div className="relative z-10 container-responsive py-8">"
         {/* Header */}"
         <div className=" text-center" mb-12">
           <h1 className=" text-responsive-4xl lg text-responsive-5xl font-bold text-white" mb-4">
@@ -134,7 +134,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
               {title}
             </span>
           </h1>
-          <p className=" text-responsive-lg text-gray-400 max-w-3xl mx-auto">
+          <p className="text-responsive-lg text-gray-400 max-w-3xl mx-auto">
             {description}
           </p>
         </div>
@@ -194,8 +194,8 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         <div className="fixed" bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-3xl animate-pulse style={{ animationDelay: '1s' }}></div>''
         <div className="fixed" top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/5 rounded-full blur-3xl animate-pulse style={{ animationDelay: '2s' }}></div>
       </div>
-    </div>;
+    </div>
   );
-};"
+};
 ''`
 export default FuturisticDashboard;"'"'`

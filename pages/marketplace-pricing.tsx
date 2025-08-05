@@ -1,12 +1,12 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface PricingTier {
   id: string;'
   name: string;
-  type: 'basic' | 'premium' | 'enterprise' | 'custom';
+  type: 'basic' | 'premium' | 'enterprise' | 'custom";
   monthlyFee: number;
   yearlyFee: number;
   transactionFee: number; // percentage
@@ -276,7 +276,7 @@ const MarketplacePricingPage: NextPage = () => {'
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/invoice-billing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Billing
               </Link href=/invoice-billing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -298,7 +298,7 @@ const MarketplacePricingPage: NextPage = () => {'
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#pricing" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Pricing
-            </Link href=#pricing  className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#pricing  className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Calculate Fees
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -377,7 +377,7 @@ const MarketplacePricingPage: NextPage = () => {'
         )}"'
         {/* Tab Content */},''
 {activeTab === 'pricing' && ("
-          <div className="space-y-6" >
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white text-center mb-8>Choose Your Plan</h2>
             <div className="grid grid-cols-1 md grid-cols-3 gap-8">
               {pricingTiers.map((tier) => (`
@@ -424,11 +424,11 @@ const MarketplacePricingPage: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>API Calls:</span>
-                      <span className="text-white>{tier.limits.apiCalls.toLocaleString()}</span" >
+                      <span className="text-white>{tier.limits.apiCalls.toLocaleString()}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Support" </span>
-                      <span className="text-white>{tier.limits.supportLevel}</span" >
+                      <span className="text-white>{tier.limits.supportLevel}</span">
                     </div>
                   </div> 
                   <div className=" space-y-3" mb-6>
@@ -454,11 +454,11 @@ const MarketplacePricingPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'commissions' && ("
-          <div className=" space-y-6">
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Commission Structure</h2>
             <div className="space-y-8>" 
               {commissionStructures.map((structure) => (
-                </div><div key={structure.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" >
+                </div><div key={structure.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6">
                   <div className="flex" justify-between items-start mb-6>
                     </div><div>
                       <h3 className="text-xl" font-semibold text-white mb-2>{structure.category}</h3>
@@ -492,7 +492,7 @@ const MarketplacePricingPage: NextPage = () => {'
                       {structure.specialRates.length > 0 ? (
                         <div className="space-y-3>" 
                           {structure.specialRates.map((rate) => (
-                            </div><div key={rate.id} className="p-3 bg-white/5 rounded" >
+                            </div><div key={rate.id} className="p-3 bg-white/5 rounded">
                               <div className="flex" justify-between items-start mb-2> 
                                 </div><div className="text-white" font-medium>{rate.category}</div>
                                 <div className="text-green-400" font-semibold>{formatPercentage(rate.rate)}</div>
@@ -533,7 +533,7 @@ const MarketplacePricingPage: NextPage = () => {'
             
             <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg overflow-hidden> 
               </div><div className="overflow-x-auto">
-                <table className=" w-full">
+                <table className="w-full">
                   <thead className="bg-white/10>"
                     <tr>
                       <th className="text-left" text-gray-300 py-3 px-6>Transaction ID</th> 
@@ -571,7 +571,7 @@ const MarketplacePricingPage: NextPage = () => {'
         )}"'
 ''
         {activeTab === 'reports' && ("
-          <div className="space-y-6" >
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Revenue Reports</h2>
             <div className="space-y-6>
               {revenueReports.map((report) => (
@@ -630,8 +630,8 @@ const MarketplacePricingPage: NextPage = () => {'
       </div> 
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-900/50 to-pink-900/50 border-t border-white/10> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Start Earning Today
             </h2>
@@ -639,9 +639,9 @@ const MarketplacePricingPage: NextPage = () => {'
               Choose the perfect pricing tier for your business needs and start maximizing your revenue  
               with our transparent commission structure and competitive rates.
             </p>
-            <div className=" flex flex-wrap justify-center gap-4" >
+            <div className="flex flex-wrap justify-center gap-4">
               <Link href="#pricing" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans
-              </Link href= #pricing" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href= #pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Selling
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -677,7 +677,7 @@ const MarketplacePricingPage: NextPage = () => {'
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -697,6 +697,6 @@ const MarketplacePricingPage: NextPage = () => {'
 
   </div >
   </div> ;"
-};"
+};
 ''`
 export default MarketplacePricingPage )))))))))"'"'`

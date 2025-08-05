@@ -1,8 +1,8 @@
 import React from "react;
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageLayout from '../components/layout/PageLayout';
+import { NextPage } from 'next";
+import Head from 'next/head";
+import Link from 'next/link";
+import PageLayout from '../components/layout/PageLayout";
 import {
   Code, 
   Database, 
@@ -16,14 +16,14 @@ import {
   TrendingUp,
   Zap,'
   Shield
-}  from 'lucide-react';
+}  from 'lucide-react";
 
 interface APIManagement {
   id: string;
   name: string;'
   description: string;
-  type: 'rest' | 'graphql' | 'soap' | 'grpc' | 'websocket' | 'webhook';
-  status: 'active' | 'inactive' | 'maintenance' | 'deprecated' | 'beta';
+  type: 'rest' | 'graphql' | 'soap' | 'grpc' | 'websocket' | 'webhook";
+  status: 'active' | 'inactive' | 'maintenance' | 'deprecated' | 'beta";
   version: string;
   baseUrl: string;
   rateLimit: number;
@@ -38,7 +38,7 @@ interface APIEndpoint {
   endpoint: string;
   method: string;'
   path: string;
-  status: 'active' | 'inactive' | 'deprecated';
+  status: 'active' | 'inactive' | 'deprecated";
   responseTime: number;
   successRate: number;
   rateLimit: number;
@@ -51,7 +51,7 @@ interface APIMonitoring {
   endpoint: string;
   type: string;'
   priority: string;
-  status: 'healthy' | 'warning' | 'error' | 'down';
+  status: 'healthy' | 'warning' | 'error' | 'down";
   responseTime: number;
   uptime: number;
   lastCheck: string;
@@ -62,10 +62,10 @@ interface APISecurity {
   description: string;
   type: string;'
   endpoint: string;
-  severity: 'low' | 'medium' | 'high' | 'critical';
+  severity: 'low' | 'medium' | 'high' | 'critical";
   detected: string;'
   recommendation: string;
-  status: 'active' | 'resolved' | 'pending';
+  status: 'active' | 'resolved' | 'pending";
   lastUpdated: string;}
 interface SecurityAnalysis {
   id: string;
@@ -83,10 +83,10 @@ interface WebhookOrchestration {
   id: string;
   name: string;'
   description: string;
-  trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api';
+  trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api";
   status: 'active' | 'inactive' | 'error' | 'paused' | 'testing';'
   endpoint: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
   aiOptimization: WebhookOptimization;}
 interface WebhookOptimization {
   id: string;
@@ -98,8 +98,8 @@ interface IntegrationConnector {
   id: string;
   name: string;'
   description: string;
-  type: 'third_party' | 'internal' | 'custom' | 'plugin' | 'extension' | 'middleware';
-  status: 'connected' | 'disconnected' | 'error' | 'syncing' | 'maintenance';
+  type: 'third_party' | 'internal' | 'custom' | 'plugin' | 'extension' | 'middleware";
+  status: 'connected' | 'disconnected' | 'error' | 'syncing' | 'maintenance";
   provider: string;
   lastSync: Date;
   aiAnalysis: ConnectorAnalysis;}
@@ -130,7 +130,7 @@ interface EndpointMonitoring {
   name: string;
   description: string;'
   endpoint: string;
-  status: 'healthy' | 'warning' | 'error' | 'down' | 'maintenance';
+  status: 'healthy' | 'warning' | 'error' | 'down' | 'maintenance";
   responseTime: number;
   uptime: number;
   lastCheck: Date;
@@ -145,8 +145,8 @@ interface APITesting {
   id: string;
   name: string;'
   description: string;
-  type: 'unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression';
-  status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending';
+  type: 'unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression";
+  status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending";
   coverage: number;
   duration: number;
   aiAnalysis: TestingAnalysis;}
@@ -170,7 +170,7 @@ interface APIIntegrationInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredAPIIntegrationPage: NextPage = () => {'
@@ -213,18 +213,18 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
   } [loadAPIData]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'bg-green-500';
-      case 'pending': return 'bg-yellow-500';
-      case 'error': return 'bg-red-500';
-      case 'inactive': return 'bg-gray-500';
+      case 'active': return 'bg-green-500";
+      case 'pending': return 'bg-yellow-500";
+      case 'error': return 'bg-red-500";
+      case 'inactive': return 'bg-gray-500";
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'low': return 'bg-green-500';
-      case 'medium': return 'bg-yellow-500';
-      case 'high': return 'bg-orange-500';
-      case 'critical': return 'bg-red-500';
+      case 'low': return 'bg-green-500";
+      case 'medium': return 'bg-yellow-500";
+      case 'high': return 'bg-orange-500";
+      case 'critical': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
 '
@@ -253,8 +253,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
           <div className=" flex items-center" space-x-4>"
             "
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
-            >"
+              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">"
               <option value="7d>Last 7 days</option>
               <option value="30d>Last 30 days</option>
               <option value="90d>Last 90 days</option>
@@ -265,8 +264,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
       </div>
 
       {/* Navigation Tabs */}"
-      <nav className=" mb-8">
-        <div className=" flex space-x-8 border-b border-white/10">
+      <nav className="mb-8">
+        <div className="flex space-x-8 border-b border-white/10">
           {tabs.map((tab) =>" {;"
             const Icon = tab.icon;"
             return (
@@ -346,7 +345,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                           <p className="text-gray-400" text-sm>{integration.type} • {integration.status}</p>
                         </div>
                       </div>
-                      <div className=" text-right">
+                      <div className="text-right">
                         <p className="text-white" text-sm>{integration.provider}</p>
                         <p className="text-gray-400" text-xs>{integration.lastUpdated}</p>
                       </div>
@@ -378,10 +377,10 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                       </span>
                     </div>
                     <div className="space-y-3>"
-                      </div><div className=" grid grid-cols-2 gap-4 text-sm" >
+                      </div><div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
                           <p className="text-gray-400>Base" URL</p>
-                          <p className="text-white>{integration.baseUrl}</p" >
+                          <p className="text-white>{integration.baseUrl}</p">
                         </div>
                         <div>
                           <p className="text-gray-400>Version</p>"
@@ -390,7 +389,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                       </div>
                       <div className="grid" grid-cols-2 gap-4 text-sm>
                         </div><div>
-                          <p className="text-gray-400>Authentication</p" >
+                          <p className="text-gray-400>Authentication</p">
                           <p className="text-white>{integration.authentication}</p>"
                         </div>
                         <div>
@@ -455,7 +454,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
           )}
           {/* Monitoring Tab */},"'
 {activeTab === 'monitoring' && ("
-            <div className="space-y-6" >
+            <div className="space-y-6">
               <h2 className="text-2xl" font-bold text-white>API Monitoring</h2>
               <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {monitoring.map((monitor) => (
@@ -487,7 +486,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                           <p className="text-white>{monitor.responseTime}ms</p>"
                         </div>
                         <div>
-                          <p className="text-gray-400>Uptime</p" >
+                          <p className="text-gray-400>Uptime</p">
                           <p className="text-white>{monitor.uptime}%</p>"
                         </div>
                       </div>
@@ -499,7 +498,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
           )}
           {/* Security Tab */},"'
 {activeTab === 'security' && ("
-            <div className="space-y-6" >
+            <div className="space-y-6">
               <h2 className="text-2xl" font-bold text-white>API Security</h2>
               <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {security.map((securityItem) => (
@@ -524,10 +523,10 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
                         </div>
                         <div>
                           <p className="text-gray-400>Detected</p>"
-                          <p className="text-white>{securityItem.detected}</p" >
+                          <p className="text-white>{securityItem.detected}</p">
                         </div>
                       </div> 
-                      <div className=" text-sm">
+                      <div className="text-sm">
                         <p className="text-gray-400>Recommendation</p>"
                         <p className="text-white>{securityItem.recommendation}</p>"
                       </div>
@@ -540,6 +539,6 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {'
         </div>
       )}
     </PageLayout >;  );"
-};"
+};
 ''`
 export default AIPoweredAPIIntegrationPage;"'"'`

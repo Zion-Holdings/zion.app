@@ -1,9 +1,9 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next";
 import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import Link from 'next/link';
+import Head from 'next/head";
+import Link from 'next/link";
 
-const ProductsPage: NextPage: = () => {
+const ProductsPage: NextPage: () => {
   return (
     <ModernLayout>
       <div className=" relative z-10 container-responsive py-8>,
@@ -78,27 +78,27 @@ const ProductsPage: NextPage: = () => {
               </div>
               <div>
                 <h4 className="text-white" font-semibold mb-4>Marketplace</h4>
-                <ul className="space-y-2 text-sm" >
-                  <li><Link href="/marketplace className="text-gray-400" hover text-white transition-colors >Browse Services</Link href= /marketplace" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/marketplace className="text-gray-400" hover text-white transition-colors >Browse Services</Link href= /marketplace" className="text-gray-400 hover text-white transition-colors"></Link></li>
                   <li><Link href=/talents className="text-gray-400" hover text-white transition-colors >AI Talents</Link href=/talents className="text-gray-400" hover text-white transition-colors" ></Link></li>
                   <li><Link href=/equipment" className="text-gray-400" hover text-white transition-colors >Equipment</Link href=/equipment  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
               </div>
               <div>
                 <h4 className="text-white" font-semibold mb-4>Company</h4>
                 <ul className="space-y-2"  text-sm>
-                  <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                  <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                   <li><Link href=/contact className="text-gray-400" hover text-white transition-colors >Contact</Link href=/contact className="text-gray-400" hover text-white transition-colors" ></Link></li>
                   <li><Link href=/blog" className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
               </div>
               <div>
                 <h4 className="text-white" font-semibold mb-4>Support</h4>
                 <ul className="space-y-2"  text-sm>
-                  <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                  <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className="text-gray-400 hover text-white transition-colors"></Link></li>
                   <li><Link href=/privacy className="text-gray-400" hover text-white transition-colors >Privacy</Link href=/privacy className="text-gray-400" hover text-white transition-colors" ></Link></li>
                   <li><Link href=/terms" className="text-gray-400" hover text-white transition-colors >Terms</Link href=/terms  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 </ul>
               </div>
-            </div>;
+            </div>
             <div className=" border-t border-white/10 mt-8 pt-8" text-center>;
               <p className="text-gray-400" text-sm>&copy; 2024 Zion Tech Group. All rights reserved.</p>
             </div>
@@ -106,7 +106,7 @@ const ProductsPage: NextPage: = () => {
         </footer>
       </div>
     </ModernLayout>
-          );,
+          );
 };
 '
 export default ProductsPage;"'"

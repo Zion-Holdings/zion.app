@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface MobileFeature {
   id: string;
   name: string;
   description: string;'
   icon: string;
-  status: 'implemented' | 'in-progress' | 'planned';
-  priority: 'high' | 'medium' | 'low';
+  status: 'implemented' | 'in-progress' | 'planned";
+  priority: 'high' | 'medium' | 'low";
   impact: number;
   effort: number;}
 interface ResponsiveBreakpoint {
@@ -26,7 +26,7 @@ interface MobileOptimization {
     accessibility: number;
     usability: number;
     seo: number;
-  };'
+  };
   improvements: string[];
   status: 'completed' | 'in-progress' | 'planned';}
 const MobileResponsivePage: NextPage = () => {'
@@ -34,7 +34,7 @@ const MobileResponsivePage: NextPage = () => {'
   const [selectedDevice, setSelectedDevice] = useState<'mobile' | 'tablet' | 'desktop'>('mobile');
   const [selectedFeature, setSelectedFeature] = useState<string>('');
   const [loading, setLoading] = useState(true);
-  const mobileFeatures: MobileFeature[] = ['
+  const $1: $2[] = [
     {
       id: 'touch-optimization',
       name: 'Touch Optimization',
@@ -135,7 +135,7 @@ const MobileResponsivePage: NextPage = () => {'
       impact: 65,
       effort: 6}
   ];
-  const responsiveBreakpoints: ResponsiveBreakpoint[] = ['
+  const $1: $2[] = [
     {
       name: 'Mobile',
       width: '320px - 768px',
@@ -157,7 +157,7 @@ const MobileResponsivePage: NextPage = () => {'
       features: ['Full feature set', 'Advanced navigation', 'Multi-column layouts', 'Enhanced interactions'],
       status: 'optimized'}
   ];
-  const mobileOptimizations: MobileOptimization[] = ['
+  const $1: $2[] = [
     {
       category: 'Performance',
       metrics: {
@@ -227,9 +227,9 @@ const MobileResponsivePage: NextPage = () => {'
       case 'implemented':
       case 'optimized':
       case 'completed':';'
-        return 'text-green-400 bg-green-500/20';
+        return 'text-green-400 bg-green-500/20";
       case 'in-progress':
-        return 'text-yellow-400 bg-yellow-500/20';
+        return 'text-yellow-400 bg-yellow-500/20";
       case 'planned':
       case 'needs-work':
       case 'not-started':
@@ -242,13 +242,13 @@ const MobileResponsivePage: NextPage = () => {'
       case 'implemented':
       case 'optimized':
       case 'completed':';'
-        return '✅';
+        return '✅";
       case 'in-progress':
-        return '🔄';
+        return '🔄";
       case 'planned':
-        return '⏳';
+        return '⏳";
       case 'needs-work':
-        return '⚠️';
+        return '⚠️";
       case 'not-started':
         return '❌';'
       default:
@@ -257,9 +257,9 @@ const MobileResponsivePage: NextPage = () => {'
   const getPriorityColor = (priority: string) => {'
     switch (priority) {
       case 'high':';'
-        return 'text-red-400 bg-red-500/20';
+        return 'text-red-400 bg-red-500/20";
       case 'medium':
-        return 'text-yellow-400 bg-yellow-500/20';
+        return 'text-yellow-400 bg-yellow-500/20";
       case 'low':
         return 'text-blue-400 bg-blue-500/20';'
       default:
@@ -285,7 +285,7 @@ const MobileResponsivePage: NextPage = () => {'
             <span className="text-lg" font-medium>Loading Mobile Features...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -299,14 +299,14 @@ const MobileResponsivePage: NextPage = () => {'
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/seo-optimization className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO
               </Link href=/seo-optimization className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/multi-language className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
@@ -356,7 +356,7 @@ const MobileResponsivePage: NextPage = () => {'
             </div><div key={feature.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover:bg-gradient-to-br hover from-white/10 hover to-white/20 transition-all duration-300 transform hover" scale-105>
               <div className=" flex items-start justify-between mb-4>
                 </div><div className="text-3xl>{feature.icon}</div>`"
-                <div className="flex flex-col items-end space-y-2" >``
+                <div className="flex flex-col items-end space-y-2">``
                   <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(feature.status)}`}>
                     {getStatusIcon(feature.status)},'
 {feature.status.replace('-', ' ')}`
@@ -392,7 +392,7 @@ const MobileResponsivePage: NextPage = () => {'
         </div>
 
         {/* Responsive Breakpoints */} 
-        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8" >
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8">
           <h2 className="text-2xl" font-bold text-white mb-6>Responsive Breakpoints</h2>
           <div className="grid" grid-cols-1 md grid-cols-3 gap-6>
             {responsiveBreakpoints.map((breakpoint, index) => (
@@ -455,7 +455,7 @@ const MobileResponsivePage: NextPage = () => {'
                 <div className="space-y-2>"
                   {optimization.improvements.map((improvement, idx) => (
                     </div><div key={idx} className="flex" items-center" space-x-2>
-                      <span className="text-green-400>✓</span" >
+                      <span className="text-green-400>✓</span">
                       <span className="text-sm" text-gray-300>{improvement}</span>
                     </div>
                   ))}
@@ -487,7 +487,7 @@ const MobileResponsivePage: NextPage = () => {'
               </li>
             </ul>
           </div>
-          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
             <h3 className="text-xl" font-bold text-white mb-4>🎯 Touch Optimization</h3>
             <ul className="space-y-3"" text-gray-300>
               <li className="flex" items-center space-x-2>
@@ -495,7 +495,7 @@ const MobileResponsivePage: NextPage = () => {'
                 <span>Minimum 44px touch targets</span> 
               </li>
               <li className="flex items-center" space-x-2>
-                <span className="text-green-400>✓</span" >
+                <span className="text-green-400>✓</span">
                 <span>Gesture-based interactions</span>
               </li>
               <li className=" flex items-center" space-x-2>
@@ -522,7 +522,7 @@ const MobileResponsivePage: NextPage = () => {'
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace
-              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/analytics-dashboard className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Analytics
               </Link href=/analytics-dashboard className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -538,7 +538,7 @@ const MobileResponsivePage: NextPage = () => {'
               <Search className=" w-5 h-5 >
               </Search className=" w-5 h-5 ><span className="text-xs>Search</span>"
             </button>
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white" >
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5" h-5 > 
               </User className="w-5 h-5 ><span className="text-xs>Profile</span>"
             </button>
@@ -551,6 +551,6 @@ const MobileResponsivePage: NextPage = () => {'
   </div>
 
   </div> ; 
-};"
+};
 ''`
 export default MobileResponsivePage )"'"'`

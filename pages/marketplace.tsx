@@ -3,7 +3,7 @@ import type { NextPage } from 'next
 import Head from 'next/head
 import Link from 'next/link
 import ModernLayout from '../components/layout/ModernLayout
-import FuturisticCard from '../components/ui/FuturisticCard';import FuturisticDataTable from '../components/ui/FuturisticDataTable';
+import FuturisticCard from '../components/ui/FuturisticCard';import FuturisticDataTable from '../components/ui/FuturisticDataTable";
 
 const Marketplace: NextPage = () => {
   const marketplaceCategories = ['
@@ -145,7 +145,7 @@ const Marketplace: NextPage = () => {
         </div>
 
         {/* Marketplace Categories */}"
-        <section className=" mb-8 sm:mb-12 lg mb-16" >
+        <section className="mb-8 sm:mb-12 lg mb-16">
           <div className=" text-center mb-8 sm mb-12" text-responsive-lg>
             <h2 className=" text-responsive-2xl:sm:text-responsive-3xl:lg text-responsive-4xl font-bold text-white mb-3 sm mb-4" text-responsive-lg>
               <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink text-responsive-lg>

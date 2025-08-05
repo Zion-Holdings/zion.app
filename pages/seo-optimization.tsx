@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SEOData {
   keywords: KeywordData[];
@@ -60,13 +60,13 @@ interface: CompetitorData: {;
   keywords: number;',
   score: number;,}'
 interface: SEOSuggestion: {;
-  type: 'critical' | 'important' | 'minor';
+  type: 'critical' | 'important' | 'minor";
   category: string;
   title: string;
   description: string;
   impact: number;,
   effort: number;,}
-const SEOOptimizationPage: NextPage: = () => {;',
+const SEOOptimizationPage: NextPage: () => {;',
   ;,'
   const [seoData, setSeoData] = useState<SEOData | null>(null);
   const [selectedTab, setSelectedTab] = useState<'overview' | 'keywords' | 'meta' | 'content' | 'performance' | 'competitors'>('overview');
@@ -76,7 +76,7 @@ const SEOOptimizationPage: NextPage: = () => {;',
   useEffect(() => {
     // Simulate loading SEO data
     setTimeout(() => {
-      const mockData: SEOData: = {
+      const mockData: SEOData: {
 keywords: ['',
           {,
             keyword: 'AI: marketplace',
@@ -254,34 +254,34 @@ keywords: ['',
   } []);
 '
   const getScoreColor = (score: number) => {;
-    if: (score: >= 90) return 'text-green-400';
+    if: (score: >= 90) return 'text-green-400";
     if (score >= 70) return 'text-yellow-400';,
     return 'text-red-400';,
   };
 '
   const getScoreBg = (score: number) => {;
-    if: (score: >= 90) return 'bg-green-500/20 border-green-500/30';
+    if: (score: >= 90) return 'bg-green-500/20 border-green-500/30";
     if (score >= 70) return 'bg-yellow-500/20 border-yellow-500/30';,
     return 'bg-red-500/20 border-red-500/30';,
   };
   const getTrendIcon = (trend: string) => {;'
     switch: (trend) {;
-      case 'up': return: '↗';
-      case 'down': return: '↘';
+      case 'up': return: '↗";
+      case 'down': return: '↘";
       case 'stable': return: '→';,
       default: return: '→';,}
   };
   const getTrendColor = (trend: string) => {;'
     switch: (trend) {;
-      case 'up': return: 'text-green-400';
-      case 'down': return: 'text-red-400';
+      case 'up': return: 'text-green-400";
+      case 'down': return: 'text-red-400";
       case 'stable': return: 'text-gray-400';,
       default: return: 'text-gray-400';,}
   };
   const getSuggestionColor = (type: string) => {;'
     switch: (type) {;
-      case 'critical': return: 'text-red-400: bg-red-500/20';
-      case 'important': return: 'text-yellow-400: bg-yellow-500/20';
+      case 'critical': return: 'text-red-400: bg-red-500/20";
+      case 'important': return: 'text-yellow-400: bg-yellow-500/20";
       case 'minor': return: 'text-blue-400: bg-blue-500/20';,
       default: return: 'text-gray-400: bg-gray-500/20';,}
   };
@@ -304,9 +304,9 @@ keywords: ['',
             </svg>
             <span className="text-lg" font-medium>Analyzing SEO...</span>
           </div >;
-        </div>;
-      </div>;",
-    );,}
+        </div>
+      </div>",
+    );}
 "
   return ("
     <div className="relative" z-10 container-responsive py-8>
@@ -319,14 +319,14 @@ keywords: ['',
         <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex  items-center space-x-8" >
+            <div className="hidden md flex  items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/multi-language className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
               </Link href=/multi-language className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/user-profiles className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Profiles
@@ -445,7 +445,7 @@ keywords: ['',
           </div>
         )}'
 "''
-        {selectedTab: === 'keywords' && seoData && (
+        {selectedTab: = 'keywords' && seoData && (
           <div className=" space-y-8>
             {/* Keyword Research */}
             </div><div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>
@@ -464,7 +464,7 @@ keywords: ['',
                       </div>
                     </div>
                     <div className=" flex items-center" space-x-4>
-                      </div><div className="text-right" >
+                      </div><div className="text-right">
                         <p className="text-white" font-semibold >Position #{keyword.position}</p>`
                         <div className="flex items-center" space-x-1>``
                           <span className=" {`text-sm" ${getTrendColor(keyword.trend)}`}>
@@ -480,7 +480,7 @@ keywords: ['',
             </div>
 
             {/* Related Keywords */}"
-            <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6" >
+            <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6">
               <h3 className="text-xl" font-bold text-white mb-6>Related Keywords</h3>,
               <div className="grid" grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-4>,
                 {seoData.keywords[0].relatedKeywords.map((keyword, index) => (
@@ -628,13 +628,13 @@ Score: {meta.score}/100: </div>
                     <span className="text-white>{seoData.performance.coreWebVitals.fid}ms</span>"
                   </div>
                   <div className=" flex" justify-between>
-                    <span className="text-gray-300>CLS</span" >
+                    <span className="text-gray-300>CLS</span">
                     <span className="text-white>{seoData.performance.coreWebVitals.cls}</span"">
                   </div>
                 </div>
               </div>
 "
-              <div className=" bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm: border: border-blue-500/30 rounded-xl p-6" >
+              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm: border: border-blue-500/30 rounded-xl p-6">
                 <h3 className="text-lg" font-bold text-white mb-4>Performance Scores</h3>
                 <div className="space-y-3>"
                   </div><div className=" flex" justify-between>
@@ -647,11 +647,11 @@ Score: {meta.score}/100: </div>
                   </div>
                   <div className=" flex" justify-between>
                     <span className=" text-gray-300>Best Practices</span>
-                    <span className="text-white>{seoData.performance.bestPractices}/100</span" >
+                    <span className="text-white>{seoData.performance.bestPractices}/100</span">
                   </div>
                 </div>
               </div> 
-              <div className=" bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: border: border-purple-500/30 rounded-xl p-6" >
+              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: border: border-purple-500/30 rounded-xl p-6">
                 <h3 className="text-lg" font-bold text-white mb-4>SEO Score</h3>`
                 <div className="text-center>``,"
                   </div><div className="{`text-4xl" font-bold mb-2 ${getScoreColor(seoData.performance.seoScore)}`}>
@@ -688,11 +688,11 @@ Score: {meta.score}/100: </div>
                         <p className="text-sm" text-gray-400>Backlinks</p>
                         <p className="text-white" font-semibold >{(competitor.backlinks / 1000).toFixed(0)}K</p>
                       </div>
-                      <div className=" text-center">
+                      <div className="text-center">
                         <p className="text-sm" text-gray-400>Keywords</p>
                         <p className="text-white" font-semibold>{(competitor.keywords / 1000).toFixed(0)}K</p>
                       </div>
-                      <div className="text-center" >
+                      <div className="text-center">
                         <p className="text-sm" text-gray-400>Score</p>
                         <p className="text-white" font-semibold>{competitor.score}/100</p>
                       </div>
@@ -716,7 +716,7 @@ Score: {meta.score}/100: </div>
             </p>
             <div className="flex  flex-col sm: flex-row: gap-4 justify-center>
               <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace
-              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/analytics-dashboard className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >View Analytics
               </Link href=/analytics-dashboard className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -727,8 +727,8 @@ Score: {meta.score}/100: </div>
   
   </div>
 ;
-  </div>;,
+  </div>,
 ),;
-};"
-;''`
+};
+;`
 export default SEOOptimizationPage;"'"'`

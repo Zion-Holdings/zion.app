@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
 const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
             </div>
             <div className="hidden  md:flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/blog className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Blog
               </Link href=/blog className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/about className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >About
@@ -38,11 +38,11 @@ const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
         </div>
       </nav>
       {/* Blog Content */}
-      <main className=" flex-1">
+      <main className="flex-1">
         <article className=" max-w-4xl mx-auto px-4 sm px-6 lg px-8" py-32>
           <div className="mb-8>
             <Link href= /blog" className="text-purple-400" hover text-purple-300 transition-colors mb-4 inline-block >← Back to Blog
-            </Link href= /blog" className=" text-purple-400 hover text-purple-300 transition-colors mb-4 inline-block" ></Link>
+            </Link href= /blog" className="text-purple-400 hover text-purple-300 transition-colors mb-4 inline-block"></Link>
             <h1 className=" text-4xl md text-5xl font-bold text-white" mb-6>
               <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                 The Rise of Edge Computing in IoT Applications
@@ -72,7 +72,7 @@ const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
           <div className="mt-12 pt-8 border-t border-white/10>
             </div><div className="flex  flex-col sm:flex-row gap-4>
               <Link href=/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Explore Our Services
-              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25"></Link>
               <Link href=/blog className="border" border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Read More Articles
               </Link href=/blog className="border" border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 ></Link>
             </div> </div>
@@ -98,14 +98,14 @@ const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Company</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/contact className="text-gray-400" hover text-white transition-colors >Contact</Link href=/contact className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/blog" className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
             </div>
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/help className="text-gray-400" hover text-white transition-colors >Help Center</Link href=/help" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/privacy className="text-gray-400" hover text-white transition-colors >Privacy</Link href=/privacy className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/terms" className="text-gray-400" hover text-white transition-colors >Terms</Link href=/terms  className="text-gray-400" hover text-white transition-colors" ></Link></li>
               </ul>

@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface GovernancePolicy {
   id: string;'
   name: string;
-  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory' | 'custom';
-  status: 'active' | 'draft' | 'review' | 'archived';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  category: 'data-privacy' | 'security' | 'financial' | 'operational' | 'regulatory' | 'custom";
+  status: 'active' | 'draft' | 'review' | 'archived";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   description: string;
   complianceRate: number;
   lastUpdated: Date;
@@ -17,13 +17,13 @@ interface GovernancePolicy {
 interface AIPolicyAnalysis {
   id: string;'
   complianceScore: number;
-  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  riskLevel: 'low' | 'medium' | 'high' | 'critical";
   recommendations: string[];}
 interface ComplianceFramework {
   id: string;'
   name: string;
-  type: 'GDPR' | 'CCPA' | 'SOX' | 'HIPAA' | 'PCI-DSS' | 'ISO' | 'custom';
-  status: 'active' | 'inactive' | 'maintenance';
+  type: 'GDPR' | 'CCPA' | 'SOX' | 'HIPAA' | 'PCI-DSS' | 'ISO' | 'custom";
+  status: 'active' | 'inactive' | 'maintenance";
   complianceRate: number;
   lastAudit: Date;
   nextAudit: Date;
@@ -44,7 +44,7 @@ interface GovernanceComplianceInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredGovernanceCompliancePage: NextPage = () => {
@@ -55,7 +55,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockPolicies: GovernancePolicy[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Data Privacy Policy',
@@ -87,7 +87,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
         riskLevel: 'medium',
         recommendations: ['Complete RBAC implementation', 'Enhance audit logging']}
 }]
-  const mockFrameworks: ComplianceFramework[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'GDPR Compliance Framework',
@@ -260,7 +260,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedCategory(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-blue-500"
@@ -288,7 +288,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                           <h3 className="text-xl" font-semibold text-white mb-2 >{policy.name}</h3>
                           <p className="text-gray-300" text-sm capitalize>{policy.category} • {policy.priority} priority</p>
                         </div>`
-                        <div className=" text-right">``
+                        <div className="text-right">``
                           <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(policy.status)}`}>
                             {policy.status} 
                           </span>`
@@ -386,7 +386,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                     <div>
                       <h4 className="text-lg" font-semibold text-white mb-3 >AI Optimization</h4>
                       <div className="bg-gradient-to-r" from-blue-600/20 to-indigo-600/20 rounded-lg p-4>
-                        </div><div className=" mt-3">
+                        </div><div className="mt-3">
                           <div className="text-sm" font-medium text-gray-400 mb-1>Recommendations </div>'
                           <div className="text-xs" text-gray-300>
                             {framework.aiOptimization.recommendations.join(', ')}
@@ -475,6 +475,6 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredGovernanceCompliancePage )))))))))))))))))"'"'`

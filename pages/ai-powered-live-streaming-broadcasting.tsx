@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import Image from 'next/image";
 
 interface LiveStream {
   id: string
@@ -86,7 +86,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
   const [streamMode, setStreamMode] = useState(false
   const [broadcastMode, setBroadcastMode] = useState(false
   // Mock data
-  const mockStreams: LiveStream[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'AI Development Live Coding Session',
@@ -142,7 +142,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         sentimentScore: 0,
         recommendations: ['Prepare interactive demos', 'Include code walkthroughs', 'Add Q&A time']}
 }]
-  const mockChannels: BroadcastingChannel[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Innovation Hub',
@@ -174,7 +174,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         monetizationScore: 7.8,
         recommendations: ['Improve video quality', 'Add more interactive elements', 'Expand content variety']}
 }]
-  const mockContentAnalysis: AIContentAnalysis[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'sentiment',
@@ -202,7 +202,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
       insights: ['Visual aids increase retention by 35%', 'Interactive elements boost engagement', 'Clear explanations improve ratings'],
       actions: ['Add more visual content', 'Include interactive polls', 'Simplify complex topics']
     }]
-  const mockLiveChat: LiveChat[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       userId: 'user123',
@@ -310,7 +310,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-virtual-reality" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >VR
-              </Link href=/ai-powered-virtual-reality  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-virtual-reality  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-augmented-reality className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >AR
               </Link href=/ai-powered-augmented-reality className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-holographic-display className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Holographic
@@ -377,7 +377,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Live Streams Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Live Streams</h3>
               <div className="space-y-4>"
                 {streams.slice(0, 3).map((stream) => (
@@ -400,7 +400,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
             </div>
 
             {/* AI Analytics Overview */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Analytics</h3>
               <div className="space-y-4>"
                 {contentAnalysis.slice(0, 3).map((analysis) => (
@@ -436,8 +436,8 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
             {/* Streams Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredStreams.map((stream) => (
-                </div><div key={stream.id} className="bg-black/20 rounded-lg overflow-hidden border border-white/10" >
-                  <div className=" relative">
+                </div><div key={stream.id} className="bg-black/20 rounded-lg overflow-hidden border border-white/10">
+                  <div className="relative">
                     <Image src={stream.thumbnail} alt={stream.title} width={400} height={192} className=" w-full h-48 object-cover >`
                     </Image src={stream.thumbnail} alt={stream.title} width={400} height={192} className=" w-full h-48 object-cover ><div className=" absolute" top-2 left-2>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(stream.status)} text-white`}>
@@ -472,17 +472,17 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
  ''
         {selectedView === 'channels' && (
           <div className="space-y-6>"
-            </div><div className=" grid grid-cols-1 md grid-cols-2 gap-6" >
+            </div><div className="grid grid-cols-1 md grid-cols-2 gap-6">
               {channels.map((channel) => (
                 <div key={channel.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>
+                  </div><div className="flex items-center justify-between mb-4">
                     <h3 className="text-white" font-semibold text-lg>{channel.name}</h3>`
                     ``
                     }`}>
                       {channel.status}
                     </span>
                   </div>
-                  <p className="text-gray-400" mb-4>{channel.description}</p>
+                  <p className="text-gray-400 mb-4">{channel.description}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
                     </div><div className="text-center>"
                       <div className="text-2xl" font-bold text-white >{channel.followers.toLocaleString()}</div>
@@ -540,9 +540,9 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>AI Insights</h3>
               <div className="space-y-4>" 
                 {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center space-x-3" mb-2>`
-                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span" >``"
+                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">``"
                       <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title} 
                       </h4>
@@ -565,13 +565,13 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         )}'
 "''
         {selectedView === 'chat' && (
-          <div className="space-y-6" >
+          <div className="space-y-6">
             {/* Live Chat Interface */}
             </div><div className=" bg-black/20 rounded-lg p-6 border" border-white/10>
               <h3 className="text-xl" font-semibold text-white mb-4>Live Chat</h3>
               <div className="h-96" overflow-y-auto space-y-3 mb-4> 
                 {liveChat.map((message) => (
-                  </div><div key={message.id} className="flex items-start space-x-3 p-3 bg-white/5 rounded-lg" >
+                  </div><div key={message.id} className="flex items-start space-x-3 p-3 bg-white/5 rounded-lg">
                     <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-medium> 
                       {message.username.charAt(0).toUpperCase()}
                     </div>
@@ -610,7 +610,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -629,7 +629,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Services</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace" className=" hover text-white" ></Link></li>
+                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace" className="hover text-white"></Link></li>
                 <li><Link href=/services className="hover" text-white >IT Services</Link href=/services className="hover" text-white" ></Link></li>
                 <li><Link href=/talents" className="hover" text-white >AI Talents</Link href=/talents  className="hover" text-white" ></Link></li>
                 <li><Link href=/equipment className="hover" text-white >Equipment</Link href=/equipment className="hover" text-white" ></Link></li>
@@ -658,6 +658,6 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
 
   </div>
 
-};"
+};
 ''`
 export default AIPoweredLiveStreamingBroadcastingPage ))))))))))))))))))))"'"'`

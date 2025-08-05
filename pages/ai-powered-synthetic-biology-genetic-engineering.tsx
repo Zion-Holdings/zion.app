@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface DNASequence {
   id: string
@@ -57,7 +57,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
   const [crisprTargets, setCrisprTargets] = useState<CRISPRTarget[]>([]
   const [syntheticOrganisms, setSyntheticOrganisms] = useState<SyntheticOrganism[]>([]
   // Mock data
-  const mockDNASequences: DNASequence[] = ['
+  const $1: $2[] = [
     {
       id: 'dna-001',
       name: 'GFP Gene',
@@ -69,7 +69,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
       gcContent: 58.2,
       meltingTemp: 72.5}
 }]
-  const mockProteinStructures: ProteinStructure[] = ['
+  const $1: $2[] = [
     {
       id: 'prot-001',
       name: 'GFP Protein',
@@ -81,7 +81,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
       expression: 92,
       mutations: ['S65T', 'F64L']
     }]
-  const mockGeneticCircuits: GeneticCircuit[] = ['
+  const $1: $2[] = [
     {
       id: 'circuit-001',
       name: 'Lac Operon Circuit',
@@ -91,7 +91,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
       efficiency: 78,
       status: 'optimized
     }]
-  const mockCRISPRTargets: CRISPRTarget[] = ['
+  const $1: $2[] = [
     {
       id: 'crispr-001',
       name: 'GFP Knockout',
@@ -101,7 +101,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
       offTargets: ['ATGGTGAGCAAGGGCGAGGAG'],
       status: 'active
     }]
-  const mockSyntheticOrganisms: SyntheticOrganism[] = ['
+  const $1: $2[] = [
     {
       id: 'org-001',
       name: 'E. coli GFP Producer',
@@ -173,11 +173,11 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Bio Dashboard', icon: '🧬' },
@@ -210,7 +210,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>🧬</span>
                     </div>
@@ -227,11 +227,11 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>DNA Sequences</span>
-                      <span className="text-white>{dnaSequences.length}</span" >
+                      <span className="text-white>{dnaSequences.length}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Proteins</span>"
-                      <span className="text-white>{proteinStructures.length}</span" >
+                      <span className="text-white>{proteinStructures.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Circuits</span>"
@@ -243,12 +243,12 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🧪</div>
                       <div className="font-semibold>Design DNA</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>🔬</div>
                       <div className="font-semibold>Design" Protein</div>
                     </button>
@@ -266,11 +266,11 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
             )}"'
             {/* DNA Sequences */},''
 {activeTab === 'dna' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>DNA Sequence Design</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {dnaSequences.map((sequence) => (
-                    </div><div key={sequence.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={sequence.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{sequence.name}</h3>
@@ -288,11 +288,11 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                         </div>
                         <div className=" flex" justify-between>
                           <span className=" text-gray-300>GC Content</span>
-                          <span className="text-white>{sequence.gcContent}%</span" >
+                          <span className="text-white>{sequence.gcContent}%</span">
                         </div>
-                        <div className="flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Melting" Temp</span>
-                          <span className="text-white>{sequence.meltingTemp}°C</span" >
+                          <span className="text-white>{sequence.meltingTemp}°C</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Function</span>"
@@ -311,7 +311,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
             )}"'
             {/* Protein Design */},''
 {activeTab === 'proteins' && ("
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Protein Structure Design</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {proteinStructures.map((protein) => (
@@ -336,7 +336,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                           <span className="text-white>{protein.expression}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Function</span" >
+                          <span className="text-gray-300>Function</span">
                           <span className="text-white" text-sm>{protein.function}</span>
                         </div>
                       </div>
@@ -378,7 +378,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                           <span className="text-white" text-sm >{circuit.output}</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Status</span" >
+                          <span className="text-gray-300>Status</span">
                           <span className="text-white" capitalize>{circuit.status}</span>
                         </div>
                       </div>
@@ -420,7 +420,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                           <span className="text-white" capitalize >{target.status}</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Off-targets</span" >
+                          <span className="text-gray-300>Off-targets</span">
                           <span className="text-white>{target.offTargets.length}</span>"
                         </div>
                       </div>
@@ -437,7 +437,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
             )}'
             {/* Synthetic Organisms */},"''
 {activeTab === 'organisms' && (
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Synthetic Organisms</h2>
                 <div className="grid"  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {syntheticOrganisms.map((organism) => (
@@ -455,12 +455,12 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Phenotype</span" >
+                          <span className="text-gray-300>Phenotype</span">
                           <span className="text-white" text-sm>{organism.phenotype}</span>
                         </div>
                         <div className="flex  justify-between">
                           <span className="text-gray-300>Stability</span>"
-                          <span className="text-white>{organism.stability}%</span" >
+                          <span className="text-white>{organism.stability}%</span">
                         </div>
                       </div>
                       
@@ -503,6 +503,6 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredSyntheticBiologyGeneticEngineering ))))))))))))))))))))"'"'`

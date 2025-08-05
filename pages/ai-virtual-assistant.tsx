@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useRef, useEffect }  from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useRef, useEffect }  from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface Message {
   id: string;'
   content: string;
   role: 'user' | 'assistant';'
   timestamp: Date;
-  type?: 'text' | 'quick-actions' | 'recommendation';
+  type?: 'text' | 'quick-actions' | 'recommendation";
   actions?: Array
   }>;}
 const AiVirtualAssistant: NextPage = () => {
@@ -26,14 +26,14 @@ const AiVirtualAssistant: NextPage = () => {
 { label: 'Browse AI Talent', action: 'Show me AI experts', link: '/talents' },
     { label: 'Get a Quote', action: 'I need a quote for a project', link: '/quote-request' },
 { label: 'Explore Equipment', action: 'Show me computing equipment', link: '/equipment' }]
-    };'
+    };
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 '
-  const scrollToBottom = () => {';'
+  const $1 = () => {'
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -52,7 +52,7 @@ const AiVirtualAssistant: NextPage = () => {
       content: action,
       role: 'user','
       timestamp: new Date(),
-      type: 'text';
+      type: 'text";
     };
 '
     setMessages(prev => [...prev]);
@@ -82,7 +82,7 @@ const AiVirtualAssistant: NextPage = () => {
         content: data.response,
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev]);'
     } catch (error) {
@@ -92,7 +92,7 @@ const AiVirtualAssistant: NextPage = () => {
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev]);
     } finally {
@@ -107,7 +107,7 @@ const AiVirtualAssistant: NextPage = () => {
       content: inputValue.trim(),
       role: 'user','
       timestamp: new Date(),
-      type: 'text';
+      type: 'text";
     };
 '
     setMessages(prev => [...prev]);
@@ -137,7 +137,7 @@ const AiVirtualAssistant: NextPage = () => {
         content: data.response,
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev]);'
     } catch (error) {
@@ -147,7 +147,7 @@ const AiVirtualAssistant: NextPage = () => {
         content: I'm sorry, I'm having trouble connecting right now. Please try again in a moment.,
         role: 'assistant','
         timestamp: new Date(),
-        type: 'text';
+        type: 'text";
       };
       setMessages(prev => [...prev]);
     } finally {
@@ -188,7 +188,7 @@ const AiVirtualAssistant: NextPage = () => {
             {formatTime(message.timestamp)}
           </p>
         </div >
-      </div>;"
+      </div>"
     );"
   };
 "
@@ -212,7 +212,7 @@ const AiVirtualAssistant: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
               </Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
             </div> </div>
@@ -234,7 +234,7 @@ const AiVirtualAssistant: NextPage = () => {
         {/* Features Grid */}
         <div className="grid" grid-cols-1 md grid-cols-3 gap-8 mb-12>
           </div><div className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20>"
-            <div className="text-3xl:mb-4>🤖</div" >
+            <div className="text-3xl:mb-4>🤖</div">
             <h3 className="text-xl" font-semibold text-white mb-2 >Intelligent Recommendations</h3>
             <p className="text-gray-300>Get" personalized suggestions for services, talents, and equipment based on your specific needs.</p>
           </div>
@@ -303,7 +303,7 @@ const AiVirtualAssistant: NextPage = () => {
         <div className="mt-16" grid grid-cols-1 md grid-cols-2 gap-8> 
           </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-8 border" border-white/10>
             <h3 className="text-2xl" font-bold text-white mb-4>Why Choose Our AI Assistant?</h3>
-            <ul className="space-y-3 text-gray-300" >
+            <ul className="space-y-3 text-gray-300">
               <li className="flex" items-center space-x-3>
                 <div className="w-2" h-2 bg-purple-400 rounded-full></div>
                 <span>24/7 availability for instant support</span>
@@ -324,9 +324,9 @@ const AiVirtualAssistant: NextPage = () => {
           </div>
           <div className=" bg-white/5 backdrop-blur-md:rounded-lg p-8 border" border-white/10>
             <h3 className="text-2xl" font-bold text-white mb-4>Get Started</h3>
-            <div className="space-y-4" >
+            <div className="space-y-4">
               <Link href=/marketplace" className="block" w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors >Explore Marketplace
-              </Link href=/marketplace  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors" ></Link>
+              </Link href=/marketplace  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors"></Link>
               <Link href=/quote-request className="block" w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 >Request a Quote
               </Link href=/quote-request className="block" w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20" ></Link>
               <Link href=/auth/signup className="block" w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Join Zion
@@ -337,7 +337,7 @@ const AiVirtualAssistant: NextPage = () => {
         {/* Mobile Navigation */}"
         <div className="lg" hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> 
           </div><div className="flex"" justify-around items-center py-2>
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white" >
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5" h-5 > 
               </Home className="w-5 h-5 ><span" className="text-xs>Home</span>" 
             </button>

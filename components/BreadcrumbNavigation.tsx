@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React from "react";
+import Link from 'next/link";
+import { useRouter } from "next/router"";
 
 interface BreadcrumbItem {
   label: string;
@@ -24,7 +24,7 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
         href: '/',
         current: pathSegments.length = == 0;
       });}'
-    let currentPath = '';
+    let currentPath = '";
     pathSegments.forEach((segment, index) => {
       currentPath += `/${segment}`;
       const isLast = index === pathSegments.length - 1;
@@ -49,7 +49,7 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
   if (breadcrumbItems.length <= 1) {
     return null;}
   return (
-    <nav className=" bg-white shadow-sm border-b border-gray-200 aria-label= Breadcrumb">
+    <nav className="bg-white shadow-sm border-b border-gray-200 aria-label= Breadcrumb">
       <div className=" max-w-7xl mx-auto px-4 sm px-6 lg" px-8">
         <div className=" flex items-center space-x-4" py-3">
           <ol className=" flex items-center" space-x-4">
@@ -88,6 +88,6 @@ const BreadcrumbNavigation: React.FC<BreadcrumbNavigationProps> = ({
       </div>
     </nav>;"
   );
-};"
+};
 ''`
 export default BreadcrumbNavigation;'"'`

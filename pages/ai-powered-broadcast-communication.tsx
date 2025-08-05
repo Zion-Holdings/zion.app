@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Broadcast {
   id: string;
   title: string;'
   message: string;
-  type: 'announcement' | 'promotion' | 'update' | 'alert' | 'marketing' | 'news';
-  status: 'draft' | 'scheduled' | 'active' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'announcement' | 'promotion' | 'update' | 'alert' | 'marketing' | 'news";
+  status: 'draft' | 'scheduled' | 'active' | 'completed' | 'cancelled";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   targetAudience: string[];
   deliveryMethod: string[];
   sentCount: number;
@@ -27,9 +27,9 @@ interface Announcement {
   id: string;
   title: string;'
   content: string;
-  category: 'platform' | 'feature' | 'maintenance' | 'security' | 'general';
-  status: 'draft' | 'published' | 'archived' | 'scheduled';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  category: 'platform' | 'feature' | 'maintenance' | 'security' | 'general";
+  status: 'draft' | 'published' | 'archived' | 'scheduled";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   targetUsers: string[];
   views: number;
   acknowledgments: number;
@@ -43,8 +43,8 @@ interface CommunicationCampaign {
   id: string;
   name: string;'
   description: string;
-  type: 'email' | 'push' | 'sms' | 'in-app' | 'multi-channel';
-  status: 'draft' | 'active' | 'paused' | 'completed' | 'cancelled';
+  type: 'email' | 'push' | 'sms' | 'in-app' | 'multi-channel";
+  status: 'draft' | 'active' | 'paused' | 'completed' | 'cancelled";
   targetSegments: string[];
   analytics: CampaignAnalytics;
   aiOptimization: AICampaignOptimization;}
@@ -65,8 +65,8 @@ interface MarketingAutomation {
   id: string;
   name: string;'
   description: string;
-  trigger: 'user-action' | 'time-based' | 'event-based' | 'segment-based';
-  status: 'active' | 'inactive' | 'draft' | 'testing';
+  trigger: 'user-action' | 'time-based' | 'event-based' | 'segment-based";
+  status: 'active' | 'inactive' | 'draft' | 'testing";
   performance: AutomationPerformance;
   aiAnalysis: AIMarketingAnalysis;}
 interface AutomationPerformance {
@@ -84,8 +84,8 @@ interface PromotionalMessage {
   id: string;
   title: string;'
   content: string;
-  type: 'discount' | 'offer' | 'event' | 'product' | 'service';
-  status: 'draft' | 'active' | 'expired' | 'cancelled';
+  type: 'discount' | 'offer' | 'event' | 'product' | 'service";
+  status: 'draft' | 'active' | 'expired' | 'cancelled";
   targetAudience: string[];
   deliveryChannels: string[];
   impressions: number;
@@ -110,7 +110,7 @@ interface BroadcastCommunicationInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredBroadcastCommunicationPage: NextPage = () => {
@@ -391,8 +391,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     </div><div className="flex  items-center space-x-4>
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 ">"
                         <option value="all className="bg-slate-800>All" Types</option>
                         <option value=announcement className="bg-slate-800>Announcement</option>"
                         <option value=promotion className="bg-slate-800>Promotion</option>"
@@ -411,7 +410,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                 {/* Broadcasts Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredBroadcasts.map((broadcast) => (
-                    </div><div key={broadcast.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={broadcast.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{broadcast.title}</h3>
@@ -443,7 +442,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm >
@@ -481,7 +480,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
 {activeTab === 'announcements' && (
               <div className="space-y-8>" 
                 {announcements.map((announcement) => (
-                  </div><div key={announcement.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={announcement.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{announcement.title}</h3>
@@ -553,7 +552,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
 {activeTab === 'campaigns' && (
               <div className="space-y-8>"
                 {campaigns.map((campaign) => (
-                  </div><div key={campaign.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={campaign.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-6>
                       </div><div>
                         <h3 className="text-xl" font-semibold text-white mb-2>{campaign.name}</h3>
@@ -765,7 +764,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -806,7 +805,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Broadcasting
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -821,6 +820,6 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredBroadcastCommunicationPage ))))))))))))))))))))))))))))))))))"'"'`

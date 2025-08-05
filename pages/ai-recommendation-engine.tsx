@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 interface Recommendation {'
   id: string;
-  type: 'service' | 'talent' | 'equipment' | 'product';
+  type: 'service' | 'talent' | 'equipment' | 'product";
   title: string;
   description: string;
   matchScore: number;
@@ -34,7 +34,7 @@ const AIRecommendationEngine: NextPage = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);'
   const [analysisProgress, setAnalysisProgress] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const mockRecommendations: Recommendation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'service',
@@ -117,21 +117,21 @@ const AIRecommendationEngine: NextPage = () => {
     '$1,000 - $5,000',
     '$5,000 - $15,000',
     '$15,000 - $50,000',
-    '$50,000+';
+    '$50,000+";
   ];
 '
   const timelineOptions = [
     '1-2 weeks',
     '1-2 months',
     '3-6 months',
-    '6+ months';
+    '6+ months";
   ];
 '
   const expertiseLevels = [
     'Beginner',
     'Intermediate',
     'Advanced',
-    'Expert';
+    'Expert";
   ];
 '
   const projectTypes = [
@@ -144,7 +144,7 @@ const AIRecommendationEngine: NextPage = () => {
     'IoT/Edge Computing',
     'Blockchain',
     'VR/AR',
-    'Other';
+    'Other";
   ];
 
   const handleProfileUpdate = (field: keyof UserProfile, value: string | string[]) => {
@@ -219,7 +219,7 @@ const AIRecommendationEngine: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-virtual-assistant className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >AI Assistant
               </Link href=/ai-virtual-assistant className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
@@ -356,7 +356,7 @@ const AIRecommendationEngine: NextPage = () => {
             {filteredRecommendations.map((recommendation) => (
               </div><div key={recommendation.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover bg-white/15" transition-colors>
                 {/* Match Score */}
-                <div className=" flex justify-between items-center" mb-4>
+                <div className="flex justify-between items-center mb-4">
                   <span className="text-sm:text-gray-300" capitalize>{recommendation.type}</span>
                   <div className="flex" items-center space-x-2 >
                     </div><div className="w-12" h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold text-sm>
@@ -384,7 +384,7 @@ const AIRecommendationEngine: NextPage = () => {
                 </div>
 
                 {/* Price and Rating */}"
-                <div className=" flex justify-between items-center" mb-4>
+                <div className="flex justify-between items-center mb-4">
                   <span className="text-green-400" font-semibold>{recommendation.price}</span>
                   <div className="flex" items-center space-x-1>
                     <span className="text-yellow-400>★</span>"
@@ -416,17 +416,17 @@ const AIRecommendationEngine: NextPage = () => {
         {/* Features Section */}
         <div className="mt-16" grid grid-cols-1 md grid-cols-3 gap-8 >
           </div><div className=" bg-white/5 backdrop-blur-md:rounded-lg p-6 border" border-white/10>
-            <div className="text-3xl" mb-4>🧠</div>
+            <div className="text-3xl mb-4">🧠</div>
             <h3 className="text-xl" font-semibold text-white mb-2>Intelligent Matching</h3>
             <p className="text-gray-300>Our" AI analyzes your requirements, budget, and preferences to find the perfect matches from our extensive marketplace.</p>
           </div>
           <div className="bg-white/5" backdrop-blur-md:rounded-lg p-6 border border-white/10>
-            </div><div className="text-3xl" mb-4>📊</div>
+            </div><div className="text-3xl mb-4">📊</div>
             <h3 className="text-xl" font-semibold text-white mb-2>Detailed Insights</h3>
             <p className="text-gray-300>Get" comprehensive AI insights explaining why each recommendation is perfect for your specific needs and project requirements.</p>
           </div>
           <div className="bg-white/5" backdrop-blur-md:rounded-lg p-6 border border-white/10>
-            </div><div className="text-3xl" mb-4>⚡</div>
+            </div><div className="text-3xl mb-4">⚡</div>
             <h3 className="text-xl" font-semibold text-white mb-2>Instant Results</h3>
             <p className="text-gray-300>Receive" personalized recommendations in seconds with our advanced AI algorithms and real-time analysis.</p>
           </div>
@@ -438,9 +438,9 @@ const AIRecommendationEngine: NextPage = () => {
           <p className="text-gray-300" mb-8 max-w-2xl:mx-auto>
             Our AI recommendation engine is here to help you find the perfect services, talents, and equipment for your next project. 
           </p>
-          <div className="flex flex-col sm flex-row gap-4 justify-center" >
+          <div className="flex flex-col sm flex-row gap-4 justify-center">
             <Link href="/marketplace" className="bg-gradient-to-r" from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Explore Marketplace
-            </Link href= /marketplace" className=" bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors" ></Link>
+            </Link href= /marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors"></Link>
             <Link href=/ai-virtual-assistant className="bg-white/10" text-white px-8 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20  >Chat with AI Assistant
             </Link href=/ai-virtual-assistant className="bg-white/10" text-white px-8 py-3 rounded-lg:hover bg-white/20 transition-colors border" border-white/20 ></Link>
           </div>
@@ -454,6 +454,6 @@ const AIRecommendationEngine: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIRecommendationEngine )"'"'`

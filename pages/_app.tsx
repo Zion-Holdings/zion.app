@@ -1,14 +1,14 @@
-import type { AppProps } from 'next/app';
-import '../styles/globals.css';
-import { ChatProvider } from '../src/contexts/ChatContext';
-import { AuthProvider } from '../src/contexts/AuthContext';
-import { NavigationProvider } from '../src/contexts/NavigationContext';
-import ChatAssistant from '../src/components/ChatAssistant';
-import { useChat } from '../src/contexts/ChatContext';
-import MessageChannelDebugger from '../components/MessageChannelDebugger';
-import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary';
-import Sidebar from '../components/ui/Sidebar';
-import ParticleEffect from '../components/ParticleEffect';
+import type { AppProps } from 'next/app";
+import '../styles/globals.css";
+import { ChatProvider } from '../src/contexts/ChatContext";
+import { AuthProvider } from '../src/contexts/AuthContext";
+import { NavigationProvider } from '../src/contexts/NavigationContext";
+import ChatAssistant from '../src/components/ChatAssistant";
+import { useChat } from '../src/contexts/ChatContext";
+import MessageChannelDebugger from '../components/MessageChannelDebugger";
+import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary";
+import Sidebar from '../components/ui/Sidebar";
+import ParticleEffect from '../components/ParticleEffect";
 import '../utils/messageChannelHandler'; // Initialize the handler
 
 function ChatWrapper() {

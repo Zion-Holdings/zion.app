@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface HolographicDisplay {
   id: string;
   name: string;'
   description: string;
-  type: 'volumetric' | 'light_field' | 'holographic_projection' | 'spatial_computing' | 'mixed_reality' | 'augmented_reality';
-  status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline';
+  type: 'volumetric' | 'light_field' | 'holographic_projection' | 'spatial_computing' | 'mixed_reality' | 'augmented_reality";
+  status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline";
   resolution: number;
   refreshRate: number;
   fieldOfView: number;
@@ -23,8 +23,8 @@ interface ThreeDVisualization {
   id: string;
   title: string;'
   description: string;
-  type: '3d_modeling' | '3d_rendering' | '3d_animation' | '3d_simulation' | '3d_interaction' | '3d_visualization';
-  status: 'active' | 'inactive' | 'processing' | 'error' | 'offline';
+  type: '3d_modeling' | '3d_rendering' | '3d_animation' | '3d_simulation' | '3d_interaction' | '3d_visualization";
+  status: 'active' | 'inactive' | 'processing' | 'error' | 'offline";
   polygons: number;
   textures: number;
   aiOptimization: VisualizationOptimization;}
@@ -38,8 +38,8 @@ interface SpatialComputing {
   id: string;
   name: string;'
   description: string;
-  type: 'spatial_mapping' | 'spatial_tracking' | 'spatial_interaction' | 'spatial_audio' | 'spatial_gestures' | 'spatial_environment';
-  status: 'active' | 'inactive' | 'mapping' | 'error' | 'offline';
+  type: 'spatial_mapping' | 'spatial_tracking' | 'spatial_interaction' | 'spatial_audio' | 'spatial_gestures' | 'spatial_environment";
+  status: 'active' | 'inactive' | 'mapping' | 'error' | 'offline";
   sensors: number;
   accuracy: number;
   aiAnalysis: SpatialAnalysis;}
@@ -54,8 +54,8 @@ interface HolographicProjection {
   projectionId: string;
   title: string;'
   description: string;
-  type: 'laser_projection' | 'led_projection' | 'lcd_projection' | 'dlp_projection' | 'lcos_projection' | 'microled_projection';
-  status: 'active' | 'inactive' | 'projecting' | 'error' | 'offline';
+  type: 'laser_projection' | 'led_projection' | 'lcd_projection' | 'dlp_projection' | 'lcos_projection' | 'microled_projection";
+  status: 'active' | 'inactive' | 'projecting' | 'error' | 'offline";
   brightness: number;
   contrast: number;
   aiAnalysis: ProjectionAnalysis;}
@@ -70,8 +70,8 @@ interface VolumetricDisplay {
   displayId: string;
   title: string;'
   description: string;
-  type: 'volumetric_rendering' | 'volumetric_capture' | 'volumetric_interaction' | 'volumetric_audio' | 'volumetric_haptics' | 'volumetric_environment';
-  status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline';
+  type: 'volumetric_rendering' | 'volumetric_capture' | 'volumetric_interaction' | 'volumetric_audio' | 'volumetric_haptics' | 'volumetric_environment";
+  status: 'active' | 'inactive' | 'rendering' | 'error' | 'offline";
   voxels: number;
   depth: number;
   aiAnalysis: VolumetricAnalysis;}
@@ -86,8 +86,8 @@ interface HolographicSystemManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'hardware' | 'software' | 'network' | 'performance' | 'maintenance' | 'optimization';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'hardware' | 'software' | 'network' | 'performance' | 'maintenance' | 'optimization";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   displays: number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;}
@@ -111,7 +111,7 @@ interface HolographicDisplayInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredHolographicDisplayPage: NextPage = () => {
@@ -126,7 +126,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockHolographicDisplays: HolographicDisplay[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Advanced Volumetric Display',
@@ -143,7 +143,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         immersionScore: 96,
         recommendations: ['Optimize rendering pipeline', 'Enhance spatial tracking']}}
     }]
-  const mockThreeDVisualizations: ThreeDVisualization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: '3D Product Visualization',
@@ -159,7 +159,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         performanceScore: 93,
         recommendations: ['Optimize polygon count', 'Enhance texture quality']}
 }]
-  const mockSpatialComputing: SpatialComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Spatial Mapping System',
@@ -175,7 +175,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         interactionScore: 94,
         recommendations: ['Increase sensor density', 'Optimize mapping algorithms']}
 }]
-  const mockHolographicProjections: HolographicProjection[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       projectionId: 'HP-001',
@@ -192,7 +192,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         clarityScore: 97,
         recommendations: ['Optimize laser alignment', 'Enhance contrast ratio']}
 }]
-  const mockVolumetricDisplays: VolumetricDisplay[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       displayId: 'VD-001',
@@ -209,7 +209,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         interactionScore: 94,
         recommendations: ['Increase voxel density', 'Optimize depth resolution']}
 }]
-  const mockHolographicSystemManagement: HolographicSystemManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'HSM-001',
@@ -435,7 +435,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-cyan-500"
@@ -492,7 +492,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-cyan-600/20 to-blue-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -551,7 +551,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -592,7 +592,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105 >Start Experiencing
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -607,6 +607,6 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredHolographicDisplayPage )))))))))))))))))))))))))))))"'"'`

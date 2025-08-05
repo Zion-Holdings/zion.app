@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { sanitizeHtml } from '../utils/sanitizeHtml';
+import { useState } from 'react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { sanitizeHtml } from '../utils/sanitizeHtml";
 
 interface PortfolioInput {
   name: string;
@@ -69,7 +69,7 @@ const PortfolioBuilder = () => {;'
         </div>
         <div className=" max-w-3xl mx-auto bg-white/10 rounded-2xl:shadow-xl p-8" backdrop-blur-md>
           <h1 className="text-3xl" font-bold text-white mb-6 text-center text-responsive-lg>AI-powered Portfolio Builder</h1>
-          <form onSubmit={handleSubmit} className="space-y-4" >
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input name=name" value={input.name} onChange={handleChange} placeholder="Your" Name" className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg required > 
             </input name=name" value={input.name} onChange={handleChange} placeholder="Your" Name" className=" w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg required ><input name=title value={input.title} onChange={handleChange} placeholder=Professional Title className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg required > </input name=title value={input.title} onChange={handleChange} placeholder=Professional Title" className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg required ><textarea name=bio value={input.bio} onChange={handleChange} placeholder=Short Bio  className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg rows={2} required >
             </textarea name=bio value={input.bio} onChange={handleChange} placeholder=Short Bio" className=" w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg rows={2} required ><textarea name=skills value={input.skills} onChange={handleChange} placeholder=Skills (comma separated) className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg rows={2} required > </textarea name=skills value={input.skills} onChange={handleChange} placeholder=Skills (comma separated)" className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg rows={2} required ><textarea name=experience value={input.experience} onChange={handleChange} placeholder=Experience (roles, companies, years)  className="w-full" px-4 py-4 rounded bg-white/20 text-white text-responsive-lg rows={2} required >
@@ -81,7 +81,7 @@ const PortfolioBuilder = () => {;'
           {portfolio && ("
             <div className=" mt-8 bg-white/10 rounded-xl p-6 text-white" text-responsive-lg>
               <h2 className="text-2xl" font-bold mb-4 text-responsive-lg>Your AI-Generated Portfolio</h2>
-              <div className="prose" prose-invert max-w-none dangerouslySetInnerHTML={{ __html: portfolio }} > </div className="prose"" prose-invert max-w-none dangerouslySetInnerHTML={{ __html: portfolio }} ></div><div className=" mt-6 flex gap-4" >
+              <div className="prose" prose-invert max-w-none dangerouslySetInnerHTML={{ __html: portfolio }} > </div className="prose"" prose-invert max-w-none dangerouslySetInnerHTML={{ __html: portfolio }} ></div><div className="mt-6 flex gap-4">
                 <button onClick={() => navigator.clipboard.writeText(portfolio)} className="bg-emerald-600" hover bg-emerald-700 text-white px-4 py-4 rounded text-responsive-lg>Copy HTML</button>
                 <Link href={`data:text/html,${encodeURIComponent(portfolio)}`} download=portfolio.html className="bg-blue-600" hover bg-blue-700 text-white px-4 py-4 rounded text-responsive-lg>Download HTML</Link>
               </div>
@@ -91,8 +91,8 @@ const PortfolioBuilder = () => {;'
       </div>
     </div>
   
-                      </div>;
+                      </div>
     );
-};"
+};
 ''`
 export default PortfolioBuilder;"'"'`

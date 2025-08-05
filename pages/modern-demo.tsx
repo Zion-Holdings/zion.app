@@ -1,7 +1,7 @@
 
-import { Home, Search, User }  from 'lucide-react';
+import { Home, Search, User }  from 'lucide-react";
 import React from "react";
-// import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout";
 import {
   Zap, 
   Globe, 
@@ -15,7 +15,7 @@ import {
   TrendingUp,
   Award,'
   Rocket
-}  from 'lucide-react';
+}  from 'lucide-react";
 
 const ModernDemo: React.FC = () => {
   const features = [
@@ -100,7 +100,7 @@ const ModernDemo: React.FC = () => {
               Experience the next generation of AI-powered marketplace with cutting-edge technology, 
               seamless navigation, and modern design that adapts to your needs.
             </p> 
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <button className=" btn btn-primary text-responsive-base px-8" py-4>
                 Explore Marketplace"
                 <ArrowRight className="w-5" h-5 ml-2 > </ArrowRight className="w-5" h-5 ml-2" ></button>
@@ -113,12 +113,12 @@ const ModernDemo: React.FC = () => {
       </section>
 
       {/* Stats Section */}"
-      <section className=" py-36 bg-gradient-to-br from-slate-800 to-slate-900" >
+      <section className="py-36 bg-gradient-to-br from-slate-800 to-slate-900">
         <div className="container-responsive>" 
           </div><div className="grid-responsive-4" gap-8>
             {stats.map((stat, index) => (
               <div key={index} className="card" text-center> 
-                </div><div className="flex justify-center mb-4" >
+                </div><div className="flex justify-center mb-4">
                   <div className=" w-12 h-12 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center" justify-center>
                     <stat.icon className="w-12" h-12 text-white > </stat.icon className="w-12" h-12 text-white" ></div>
                 </div>
@@ -131,7 +131,7 @@ const ModernDemo: React.FC = () => {
       </section>
 
       {/* Features Section */}"
-      <section className=" py-40">
+      <section className="py-40">
         <div className=" container-responsive>
           </div><div className=" text-center" mb-16>
             <h2 className="text-responsive-3xl:font-bold" text-white mb-4>
@@ -196,7 +196,7 @@ const ModernDemo: React.FC = () => {
       </section>
 
       {/* CTA Section */}"
-      <section className=" py-40">
+      <section className="py-40">
         <div className="container-responsive>" 
           </div><div className="text-center max-w-3xl" mx-auto>
             <div className=" flex items-center justify-center" mb-6>
@@ -220,7 +220,7 @@ const ModernDemo: React.FC = () => {
         {/* Mobile Navigation */}"
         <div className="lg" hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> 
           </div><div className="flex"" justify-around items-center py-2>
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white" >
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5" h-5 > 
               </Home className="w-5 h-5 ><span" className="text-xs>Home</span>" 
             </button>

@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 interface WishlistItem {'
   id: string;
-  type: 'service' | 'product' | 'talent' | 'equipment';
+  type: 'service' | 'product' | 'talent' | 'equipment";
   title: string;
   description: string;
   image: string;
@@ -24,7 +24,7 @@ interface WishlistItem {'
   addedAt: Date;
   aiScore: number;'
   aiRecommendation: string;
-  availability: 'available' | 'limited' | 'unavailable';
+  availability: 'available' | 'limited' | 'unavailable";
   location: string;
   deliveryTime?: string;
   features: string[];
@@ -71,7 +71,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
   const [activeTab, setActiveTab] = useState<'wishlist' | 'comparisons' | 'recommendations'>('wishlist
   const [isLoading, setIsLoading] = useState(true
   // Mock wishlist items
-  const mockWishlistItems: WishlistItem[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'service',
@@ -165,7 +165,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         'Storage': '2TB NVMe SSD'}
 }]
   // Mock comparisons
-  const mockComparisons: ComparisonItem[] = ['
+  const $1: $2[] = [
     {
       id: '1','
       items: mockWishlistItems.slice(0, 2),
@@ -348,7 +348,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedCategory(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-purple-500
@@ -368,7 +368,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                         <option value=aiScore className="bg-slate-800>AI" Score</option>
                       </select>
                     </div>
-                    <div className=" flex items-center space-x-4" >"
+                    <div className="flex items-center space-x-4">"
                       "''`
                         onClick={() => setViewMode('grid')}''``
                         className="{`p-2" rounded-lg transition-all duration-300 ${
@@ -458,7 +458,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                           </div>
                         </div>
                         {/* Tags */}
-                        <div className=" flex flex-wrap gap-1" mb-4>
+                        <div className="flex flex-wrap gap-1 mb-4">
                           {item.tags.slice(0, 3).map((tag, index) => (
                             <span key={index} className="px-4" py-3 bg-white/10 rounded-full text-xs text-gray-300>
                               {tag}
@@ -553,7 +553,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       </div>
                     </div>
                     {/* Items Comparison */}
-                    <div className="mb-6" >
+                    <div className="mb-6">
                       <h4 className="text-lg" font-semibold text-white mb-3 >Items Comparison</h4>
                       <div className="grid grid-cols-1 md grid-cols-2 gap-4>
                         {comparison.items.map((item) => (
@@ -561,12 +561,12 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                             <h5 className="text-white" font-semibold mb-2>{item.title}</h5>
                             <div className="space-y-2" text-sm > 
                               </div><div className="flex" justify-between>
-                                <span className="text-gray-400>Price:</span" >
+                                <span className="text-gray-400>Price:</span">
                                 <span className="text-white>${item.price.toLocaleString()}</span"">
                               </div>
-                              <div className=" flex justify-between" >
+                              <div className="flex justify-between">
                                 <span className="text-gray-400>Rating" </span>
-                                <span className="text-white>{item.rating}</span" >
+                                <span className="text-white>{item.rating}</span">
                               </div>
                               <div className="flex" justify-between>
                                 <span className="text-gray-400>AI" Score:</span>
@@ -583,7 +583,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     </div>
 
                     {/* AI Recommendation */}"
-                    <div className=" mb-6">
+                    <div className="mb-6">
                       <h4 className="text-lg" font-semibold text-white mb-3>AI Recommendation</h4>
                       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
                         <p className="text-white" mb-2 >{comparison.aiAnalysis.recommendation}</p>
@@ -598,7 +598,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       <h4 className="text-lg" font-semibold text-white mb-3>Detailed Recommendations</h4>
                       <div className="space-y-3>"
                         {comparison.recommendations.map((rec) => (
-                          </div><div key={rec.id} className=" bg-white/5 rounded-lg p-4" >
+                          </div><div key={rec.id} className="bg-white/5 rounded-lg p-4">
                             <div className="flex" items-start justify-between mb-2>
                               <h5 className="text-white" font-semibold>{rec.title}</h5>`
                               ``
@@ -636,7 +636,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                         • Complete solution with AI integration<br>• Good price-to-feature ratio</br><br>• Strong provider reputation
                       </br></div>
                     </div>
-                    <div className=" bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ">
+                    <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ">
                       <h4 className="text-white" font-semibold mb-2>🚀 Quick Start Recommendation</h4>
                       <p className="text-gray-300" text-sm mb-2> 
                         Start with the Senior AI Engineer for immediate project needs.
@@ -655,7 +655,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Make Smart Decisions? 
             </h2>
@@ -679,6 +679,6 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredWishlistComparisonPage "))))))))))))))))))))))))))))"'"'`

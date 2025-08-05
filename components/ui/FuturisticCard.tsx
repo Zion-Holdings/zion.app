@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from 'next/link";
 
 interface FuturisticCardProps {
   title: string;
@@ -9,7 +9,7 @@ interface FuturisticCardProps {
   rating?: number;
   link: string;'
   category?: string;
-  color?: 'blue' | 'purple' | 'pink' | 'green';
+  color?: 'blue' | 'purple' | 'pink' | 'green";
   featured?: boolean;}
 const FuturisticCard: React.FC<FuturisticCardProps> = ({
   title,
@@ -91,7 +91,7 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
           )}
           {rating && ("
             <div className=" flex items-center" space-x-1">
-              <div className=" flex">
+              <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <svg"''`
                     key={i}'''``
@@ -113,6 +113,6 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
         <div className="{`absolute" top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 ${currentColor.border} rounded-bl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
       </div>
     </Link >;  );"
-};"
+};
 ''`
 export default FuturisticCard;"'"'`

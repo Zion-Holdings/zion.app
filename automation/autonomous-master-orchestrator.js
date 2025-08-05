@@ -537,65 +537,77 @@ class AutonomousMasterOrchestrator {
         // Use utility function for consistent component naming
         const componentName = createValidComponentName(solution.name);
         
-        const pageContent = `
-import React from 'react';
-import { NextPage } from 'next';
-
-const ${componentName}: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            ${createDisplayTitle(solution.name)}
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            ${solution.description}
-          </p>
-        </div>
+        // Create a safe, readable filename instead of timestamped ID
+        const safeFileName = solution.name
+            .toLowerCase()
+            .replace(/[^a-z0-9]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          ${solution.features.map(feature => `
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              ${feature}
-            </h3>
-            <p className="text-gray-600">
-              Advanced ${feature.toLowerCase()} capabilities for your business.
+        const pageContent = `import React from 'react';
+import Head from 'next/head';
+
+const ${componentName}: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>${createDisplayTitle(solution.name)} - Zion App</title>
+        <meta name="description" content="${solution.description}" />
+      </Head>
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              ${createDisplayTitle(solution.name)}
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              ${solution.description}
             </p>
           </div>
-          `).join('')}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Pricing Plans
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            ${Object.entries(solution.pricing).map(([tier, price]) => `
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                ${tier.charAt(0).toUpperCase() + tier.slice(1)}
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            ${solution.features.map(feature => `
+            <div key="${feature}" className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                ${feature}
               </h3>
-              <p className="text-3xl font-bold text-blue-600 mb-4">
-                ${price}
+              <p className="text-gray-600">
+                Advanced ${feature.toLowerCase()} capabilities for your business.
               </p>
-              <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
-                Get Started
-              </button>
             </div>
             `).join('')}
           </div>
+          
+          <div className="mt-12 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Pricing Plans
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              ${Object.entries(solution.pricing).map(([tier, price]) => `
+              <div key="${tier}" className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  ${tier.charAt(0).toUpperCase() + tier.slice(1)}
+                </h3>
+                <p className="text-3xl font-bold text-blue-600 mb-4">
+                  ${price}
+                </p>
+                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+                  Get Started
+                </button>
+              </div>
+              `).join('')}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 export default ${componentName};
         `;
         
-        const pagePath = path.join(__dirname, '..', 'pages', 'products', `${solution.id}.tsx`);
+        const pagePath = path.join(__dirname, '..', 'pages', 'products', `${safeFileName}.tsx`);
         await fs.ensureDir(path.dirname(pagePath));
         await fs.writeFile(pagePath, pageContent);
     }

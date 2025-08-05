@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface DroneFleet {
   id: string'
@@ -78,7 +78,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
   const [realTimeTracking, setRealTimeTracking] = useState(false
   const mapRef = useRef<HTMLDivElement>(null
   // Mock data for demonstration
-  const mockDroneFleet: DroneFleet[] = ['
+  const $1: $2[] = [
     {
       id: 'drone-001',
       name: 'Swift Delivery Alpha',
@@ -119,7 +119,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       totalDeliveries: 0,
       successRate: 100
     }]
-  const mockDeliveryRoutes: DeliveryRoute[] = ['
+  const $1: $2[] = [
     {
       id: 'route-001',
       origin: { lat: 40.7128, lng: -74.0060, address: "Zion Tech Hub", Manhattan' }
@@ -165,7 +165,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       createdAt: '2025-08-03T15:00:00Z',
       updatedAt: '2025-08-03T15:00:00Z
     }]
-  const mockLogisticsHubs: LogisticsHub[] = ['
+  const $1: $2[] = [
     {
       id: 'hub-001',
       name: 'Manhattan Central Hub',
@@ -325,7 +325,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
             
             {/* Tab Navigation */}
             </div><div className="mb-8 >
-              <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1" >
+              <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
                 {['
                   { id: 'overview', label: 'System Overview', icon: '📊' },
 { id: 'fleet', label: 'Drone Fleet', icon: '🚁' },
@@ -356,7 +356,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                 </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                   {/* System Status */}
                   <div className="bg-gray-800/50"  rounded-xl:p-6 border border-gray-700>
-                    </div><div className=" flex items-center space-x-3" mb-4>
+                    </div><div className="flex items-center space-x-3 mb-4">
                       <div className=" w-10 h-10 bg-green-500 rounded-lg flex items-center" justify-center>
                         <span className="text-white" text-lg>✅</span>
                       </div>
@@ -365,7 +365,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                         <p className="text-green-400" text-sm>All Systems Operational</p>
                       </div>
                     </div>
-                    <div className=" space-y-3">
+                    <div className="space-y-3">
                       </div><div className=" flex" justify-between>'
                         <span className="text-gray-300>Active" Drones</span>
                         <span className="text-white" font-semibold>{mockDroneFleet.filter(d => d.status === 'available').length}</span>
@@ -386,7 +386,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                   </div>
                   {/* Real-time Map */}
                   <div className="lg:col-span-2" bg-gray-800/50 rounded-xl:p-6 border border-gray-700> 
-                    </div><div className="flex items-center justify-between mb-4" >
+                    </div><div className="flex items-center justify-between mb-4">
                       <h3 className="text-lg" font-semibold text-white>Live Fleet Tracking</h3>
                       <div className="flex" items-center space-x-2>
                         </div><div className="w-3" h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse></div>
@@ -405,12 +405,12 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                   {/* Quick Actions */}
                   <div className=" lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                     <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                       <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all" duration-200>
                         <div className="text-2xl" mb-2>📦</div>
                         <div className="font-semibold>Schedule Delivery</div>
                       </button>
-                      <button className=" p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200" >
+                      <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
                         <div className="text-2xl" mb-2>🚁</div>
                         <div className="font-semibold>Deploy" Drone</div>
                       </button>
@@ -439,7 +439,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                     {mockDroneFleet.map((drone) => (
                       </div><div key={drone.id} className=" bg-gray-800/50 rounded-xl:p-6 border border-gray-700 hover border-gray-600 transition-all" duration-200>
                         <div className="flex" items-center justify-between mb-4> 
-                          </div><div className="flex items-center space-x-3" >
+                          </div><div className="flex items-center space-x-3">
                             <div className="w-12" h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center>
                               <span className="text-white" text-xl>🚁</span>
                             </div>
@@ -465,10 +465,10 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                           </div>
                            
                           <div className="flex" justify-between>
-                            <span className="text-gray-300>Payload</span" >
+                            <span className="text-gray-300>Payload</span">
                             <span className="text-white>{drone.payload} kg</span>
                           </div>
-                          <div className=" flex justify-between" >
+                          <div className="flex justify-between">
                             <span className="text-gray-300>Range</span>"
                             <span className="text-white>{drone.maxRange}" km</span>
                           </div>
@@ -482,7 +482,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                           </div>
                           <div className=" flex" justify-between>
                             <span className=" text-gray-300>Total Deliveries</span>
-                            <span className="text-white>{drone.totalDeliveries}</span" >
+                            <span className="text-white>{drone.totalDeliveries}</span">
                           </div>
                         </div>
                         
@@ -513,11 +513,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                       Create Route
                     </button>
                   </div>
-                  <div className=" space-y-4">
+                  <div className="space-y-4">
                     {mockDeliveryRoutes.map((route) => (
                       </div><div key={route.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                         <div className="flex" items-center justify-between mb-4> 
-                          </div><div className="flex items-center space-x-3" >
+                          </div><div className="flex items-center space-x-3">
                             <div className="w-10" h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>
                               <span className="text-white" text-lg>📦</span>
                             </div>
@@ -615,7 +615,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                             <span className=" text-gray-300>Drone Fleet</span>
                             <span className=" text-white>{hub.droneFleet.length} drones</span>
                           </div>
-                          <div className=" flex justify-between" >
+                          <div className="flex justify-between">
                             <span className="text-gray-300>Facilities</span>"
                             <span className="text-white>{hub.facilities.length}" active</span>
                           </div>
@@ -646,7 +646,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
 {activeTab === 'weather' && (
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {/* Weather Conditions */}
-                  </div><div className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                  </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <h3 className="text-lg" font-semibold text-white mb-4>Weather Conditions</h3>
                     {weatherData && (
                       <div className="space-y-3>"
@@ -662,7 +662,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                           <span className=" text-gray-300>Wind Speed</span>
                           <span className=" text-white>{weatherData.windSpeed} mph</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Visibility</span>"
                           <span className="text-white>{weatherData.visibility}" miles</span>
                         </div>
@@ -695,7 +695,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
               )}'
               {/* Analytics */},"''
 {activeTab === 'analytics' && (
-                <div className=" space-y-6">
+                <div className="space-y-6">
                   <h2 className="text-2xl" font-bold text-white>Analytics Dashboard</h2>
                   <div className="grid"  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
                     </div><div className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
@@ -710,7 +710,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                       </div> 
                     </div>
                     <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      </div><div className=" flex items-center space-x-3" >
+                      </div><div className="flex items-center space-x-3">
                         <div className="w-10" h-10 bg-blue-500 rounded-lg flex items-center justify-center>
                           <span className="text-white" text-lg>⏱️</span>
                         </div>
@@ -733,7 +733,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                       </div> 
                     </div>
                     <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      </div><div className=" flex items-center space-x-3" >
+                      </div><div className="flex items-center space-x-3">
                         <div className="w-10" h-10 bg-orange-500 rounded-lg flex items-center justify-center>
                           <span className="text-white" text-lg>💰</span>
                         </div>
@@ -751,11 +751,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
                           <span className=" text-gray-300>On-time Deliveries</span>
-                          <span className="text-green-400>96.8%</span" >
+                          <span className="text-green-400>96.8%</span">
                         </div>
-                        <div className="flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Failed" Deliveries</span>
-                          <span className="text-red-400>1.6%</span" >
+                          <span className="text-red-400>1.6%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Returned" Packages</span>
@@ -768,11 +768,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
                           <span className=" text-gray-300>Active Drones</span>
-                          <span className="text-blue-400>85%</span" >
+                          <span className="text-blue-400>85%</span">
                         </div>
-                        <div className="flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Maintenance</span>"
-                          <span className="text-yellow-400>10%</span" >
+                          <span className="text-yellow-400>10%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Charging</span>"
@@ -803,6 +803,6 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {'
       </div>
     </div>
   ;
-};"
+};
 ''`
 export default AIPoweredAutonomousDroneDeliveryLogistics )))))))))))))))))))))))))))))"'"'`

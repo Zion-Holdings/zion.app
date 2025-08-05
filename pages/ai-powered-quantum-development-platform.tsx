@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumIDE {
   id: string'
@@ -69,7 +69,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
   const [debugging, setDebugging] = useState<QuantumDebugging[]>([]
   const [optimizations, setOptimizations] = useState<QuantumOptimization[]>([]
   // Mock data
-  const mockIdes: QuantumIDE[] = ['
+  const $1: $2[] = [
     {
       id: 'qi-001',
       name: 'Quantum Editor Pro',
@@ -81,7 +81,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       status: 'active',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockTools: QuantumDevelopmentTools[] = ['
+  const $1: $2[] = [
     {
       id: 'qt-001',
       name: 'Quantum SDK',
@@ -92,7 +92,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       examples: 200,
       status: 'available
     }]
-  const mockTesting: QuantumTesting[] = ['
+  const $1: $2[] = [
     {
       id: 'qt-001',
       name: 'Quantum Unit Testing',
@@ -103,7 +103,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       automation: 95.0,
       status: 'passed
     }]
-  const mockDeployments: QuantumDeployment[] = ['
+  const $1: $2[] = [
     {
       id: 'qd-001',
       name: 'Quantum Cloud Deployment',
@@ -114,7 +114,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       monitoring: 98.8,
       status: 'running
     }]
-  const mockDebugging: QuantumDebugging[] = ['
+  const $1: $2[] = [
     {
       id: 'qd-001',
       name: 'Quantum Breakpoint Debugger',
@@ -125,7 +125,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       visualization: 92.8,
       status: 'debugging
     }]
-  const mockOptimizations: QuantumOptimization[] = ['
+  const $1: $2[] = [
     {
       id: 'qo-001',
       name: 'Quantum Algorithm Optimizer',
@@ -213,11 +213,11 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Development Dashboard', icon: '⚡' },
@@ -251,7 +251,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-violet-500 to-purple-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>⚡</span>
                     </div>
@@ -267,12 +267,12 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                       <span className="text-green-400>Active</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>IDEs</span" >
+                      <span className="text-gray-300>IDEs</span">
                       <span className="text-white>{ides.length}</span"">
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Tools</span>"
-                      <span className="text-white>{tools.length}</span" >
+                      <span className="text-white>{tools.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Projects</span>"
@@ -284,14 +284,14 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-violet-600 to-violet-700 rounded-lg text-white hover from-violet-700 hover to-violet-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>💻</div>
                       <div className="font-semibold>Open IDE</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>🛠️</div>
-                      <div className="font-semibold>Tools</div" >
+                      <div className="font-semibold>Tools</div">
                     </button>
                     <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all" duration-200>
                       <div className="text-2xl:mb-2>🧪</div>"
@@ -307,11 +307,11 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
             )}"'
             {/* Quantum IDEs */},''
 {activeTab === 'ides' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum IDEs</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {ides.map((ide) => (
-                    </div><div key={ide.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={ide.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{ide.name}</h3>
@@ -323,9 +323,9 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Features</span>"
-                          <span className="text-white>{ide.features}</span" >
+                          <span className="text-white>{ide.features}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Compatibility</span>"
@@ -374,7 +374,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                           <span className="text-white>{tool.documentation}" pages</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Examples</span" >
+                          <span className="text-gray-300>Examples</span">
                           <span className="text-white>{tool.examples}</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -414,12 +414,12 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                           <span className="text-white>{test.duration}" s</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Reliability</span" >
+                          <span className="text-gray-300>Reliability</span">
                           <span className="text-white>{test.reliability}%</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Automation</span>"
-                          <span className="text-white>{test.automation}%</span" >
+                          <span className="text-white>{test.automation}%</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -453,10 +453,10 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Environment</span" >
+                          <span className="text-gray-300>Environment</span">
                           <span className="text-white>{deployment.environment}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Resources</span>"
                           <span className="text-white>{deployment.resources}" cores</span>
                         </div>
@@ -478,11 +478,11 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
             )}"'
             {/* Quantum Debugging */},''
 {activeTab === 'debugging' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Debugging</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {debugging.map((debug) => (
-                    </div><div key={debug.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={debug.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{debug.name}</h3>
@@ -494,9 +494,9 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Speed</span>"
-                          <span className="text-white>{debug.speed}%</span" >
+                          <span className="text-white>{debug.speed}%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Memory</span>"
@@ -545,7 +545,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
                           <span className="text-white>{optimization.accuracy}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Speedup</span" >
+                          <span className="text-gray-300>Speedup</span">
                           <span className="text-white>{optimization.speedup}x</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -568,7 +568,7 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
       <footer className="relative  z-10 mt-16>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 > 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered Quantum Development Platform | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -585,6 +585,6 @@ const AIPoweredQuantumDevelopmentPlatform: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumDevelopmentPlatform ))))))))))))))))))))))"'"'`

@@ -1,16 +1,16 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 
 interface SupportTicket {
   id: string;
   title: string;'
   description: string;
-  status: 'open' | 'in-progress' | 'resolved' | 'closed' | 'pending';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  category: 'technical' | 'billing' | 'account' | 'feature-request' | 'bug-report' | 'general';
+  status: 'open' | 'in-progress' | 'resolved' | 'closed' | 'pending";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
+  category: 'technical' | 'billing' | 'account' | 'feature-request' | 'bug-report' | 'general";
   customer: {
     id: string;
     name: string;
@@ -29,7 +29,7 @@ interface TicketResponse {
   author: {
     id: string;'
     name: string;
-    type: 'customer' | 'support-agent' | 'admin';
+    type: 'customer' | 'support-agent' | 'admin";
   };
   content: string;
   createdAt: Date;
@@ -38,8 +38,8 @@ interface SupportAgent {
   id: string;
   name: string;'
   email: string;
-  role: 'agent' | 'senior-agent' | 'supervisor' | 'manager';
-  status: 'online' | 'offline' | 'busy' | 'away';
+  role: 'agent' | 'senior-agent' | 'supervisor' | 'manager";
+  status: 'online' | 'offline' | 'busy' | 'away";
   activeTickets: number;
   avgResponseTime: number;
   satisfactionScore: number;
@@ -62,7 +62,7 @@ const HelpDeskSupport: NextPage = () => {'
   const [agents, setAgents] = useState<SupportAgent[]>([]
   const [categories, setCategories] = useState<SupportCategory[]>([]
   useEffect(() => {
-    const mockTickets: SupportTicket[] = ['
+    const $1: $2[] = [
       {
         id: '1',
         title: 'Payment Processing Issue',
@@ -132,7 +132,7 @@ const HelpDeskSupport: NextPage = () => {'
             isInternal: false
           }]
       }]
-    const mockAgents: SupportAgent[] = ['
+    const $1: $2[] = [
       {
         id: 'agent-1',
         name: 'Sarah Johnson',
@@ -155,7 +155,7 @@ const HelpDeskSupport: NextPage = () => {'
         satisfactionScore: 4.5,
         specialties: ['technical', 'bug-report']
       }]
-    const mockCategories: SupportCategory[] = ['
+    const $1: $2[] = [
       {
         id: '1',
         name: 'Technical Support',
@@ -247,7 +247,7 @@ const HelpDeskSupport: NextPage = () => {'
         </div>
       </header>
       <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className=" mb-8">
+        <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4> 
             Help Desk & Support Ticket System
           </h1>
@@ -256,7 +256,7 @@ const HelpDeskSupport: NextPage = () => {'
             and support team coordination. Manage customer inquiries efficiently and provide excellent service.
           </p>
         </div>
-        <div className=" grid grid-cols-1 md grid-cols-4 gap-6 mb-8" >"
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">"
           "
           >
             <div className="flex" items-center justify-between>
@@ -363,7 +363,7 @@ const HelpDeskSupport: NextPage = () => {'
                 </select>
               </div>
 "
-              <div className=" space-y-4">
+              <div className="space-y-4">
                 {filteredTickets.map((ticket) => (
                   "
                   >
@@ -388,7 +388,7 @@ const HelpDeskSupport: NextPage = () => {'
                       </div>
                     </div>
                     <div className="flex" items-center justify-between> 
-                      </div><div className="flex items-center gap-4" >
+                      </div><div className="flex items-center gap-4">
                         <div className=" flex" gap-2>
                           {ticket.tags.map((tag) => (
                             <span key={tag} className="px-4" py-3 bg-white/10 rounded text-xs text-white>
@@ -432,12 +432,12 @@ const HelpDeskSupport: NextPage = () => {'
 
                     <div className="space-y-3" text-sm > 
                       </div><div className="flex" justify-between>
-                        <span className="text-gray-400>Role:</span" >
+                        <span className="text-gray-400>Role:</span">
                         <span className="text-white" capitalize>{agent.role}</span>
                       </div>
                       <div className="flex  justify-between">
                         <span className="text-gray-400>Active" Tickets </span>
-                        <span className="text-white>{agent.activeTickets}</span" >
+                        <span className="text-white>{agent.activeTickets}</span">
                       </div>
                       <div className="flex" justify-between>
                         <span className="text-gray-400>Avg" Response:</span>
@@ -525,9 +525,9 @@ const HelpDeskSupport: NextPage = () => {'
                       <p className="text-gray-400" text-sm>{category.description}</p> 
                     </div>
                     <div className="space-y-3" text-sm>
-                      </div><div className=" flex justify-between" >
+                      </div><div className="flex justify-between">
                         <span className="text-gray-400>Ticket" Count </span>
-                        <span className="text-white>{category.ticketCount}</span" >
+                        <span className="text-white>{category.ticketCount}</span">
                       </div>
                       <div className="flex" justify-between>
                         <span className="text-gray-400>Avg" Resolution:</span>
@@ -553,6 +553,6 @@ const HelpDeskSupport: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default HelpDeskSupport ))))))))))))))))))"'"'`

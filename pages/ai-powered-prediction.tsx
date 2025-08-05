@@ -1,7 +1,7 @@
 import React from "react";
-import Head from 'next/head';
-import Layout from '../components/Layout';
-import { motion } from 'framer-motion';
+import Head from 'next/head";
+import Layout from '../components/Layout";
+import { motion } from 'framer-motion";
 
 const AiPoweredPrediction = () => {
   return (
@@ -67,8 +67,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -82,8 +81,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -97,8 +95,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -112,8 +109,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -127,8 +123,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -142,8 +137,7 @@ const AiPoweredPrediction = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200"
-              >
+                className="p-6 bg-white rounded-lg shadow-lg border border-gray-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

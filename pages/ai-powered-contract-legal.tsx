@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers";
 
 interface Contract {
   id: string;'
   title: string;
-  type: 'service' | 'employment' | 'partnership' | 'nda' | 'licensing' | 'custom';
-  status: 'draft' | 'pending' | 'active' | 'completed' | 'disputed' | 'terminated';
+  type: 'service' | 'employment' | 'partnership' | 'nda' | 'licensing' | 'custom";
+  status: 'draft' | 'pending' | 'active' | 'completed' | 'disputed' | 'terminated";
   parties: ContractParty[];
   terms: ContractTerm[];
   value: number;
@@ -17,14 +17,14 @@ interface Contract {
   endDate?: Date;
   aiGenerated: boolean;'
   complianceScore: number;
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: 'low' | 'medium' | 'high";
   legalReview: LegalReview;
   signatures: Signature[];
   attachments: Attachment[];}
 interface ContractParty {
   id: string;'
   name: string;
-  type: 'client' | 'provider' | 'both';
+  type: 'client' | 'provider' | 'both";
   email: string;
   phone?: string;
   address: string;
@@ -37,12 +37,12 @@ interface ContractTerm {
   content: string;
   aiGenerated: boolean;'
   compliance: boolean;
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: 'low' | 'medium' | 'high";
   recommendations: string[];}
 interface LegalReview {
   id: string;'
   reviewer: string;
-  status: 'pending' | 'approved' | 'rejected' | 'needs-revision';
+  status: 'pending' | 'approved' | 'rejected' | 'needs-revision";
   comments: string[];
   complianceIssues: string[];
   recommendations: string[];
@@ -65,8 +65,8 @@ interface Attachment {
 interface Dispute {
   id: string;'
   contractId: string;
-  type: 'payment' | 'delivery' | 'quality' | 'timeline' | 'other';
-  status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed';
+  type: 'payment' | 'delivery' | 'quality' | 'timeline' | 'other";
+  status: 'open' | 'mediation' | 'arbitration' | 'resolved' | 'closed";
   description: string;
   evidence: Evidence[];
   aiAnalysis: DisputeAnalysis;
@@ -75,7 +75,7 @@ interface Dispute {
   updatedAt: Date;}
 interface Evidence {'
   id: string;
-  type: 'document' | 'image' | 'video' | 'audio' | 'testimony';
+  type: 'document' | 'image' | 'video' | 'audio' | 'testimony";
   title: string;
   description: string;
   uploadedAt: Date;
@@ -90,7 +90,7 @@ interface DisputeAnalysis {
   legalBasis: string[];}
 interface DisputeResolution {'
   id: string;
-  type: 'mediation' | 'arbitration' | 'settlement' | 'court';
+  type: 'mediation' | 'arbitration' | 'settlement' | 'court";
   outcome: string;
   amount?: number;
   currency?: string;
@@ -110,7 +110,7 @@ interface ComplianceCheck {
   id: string;
   contractId: string;'
   checkType: string;
-  status: 'pass' | 'fail' | 'warning';
+  status: 'pass' | 'fail' | 'warning";
   description: string;
   recommendation: string;
   aiGenerated: boolean;
@@ -126,7 +126,7 @@ interface ContractLegalAnalytics {
     id: string;
     title: string;'
     description: string;
-    impact: 'positive' | 'negative' | 'neutral';
+    impact: 'positive' | 'negative' | 'neutral";
     confidence: number;
     recommendations: string[];
   }[];}
@@ -402,7 +402,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
 {activeTab === 'contracts' && (
               <div className="space-y-8>"
                 {/* Controls */}
-                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6" >"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6">"
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md space-y-0> 
                     </div><div className="flex items-center" space-x-4>
                       "
@@ -418,8 +418,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </select> 
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500 ">"
                         <option value="all className="bg-slate-800>All" Types</option>
                         <option value=service className="bg-slate-800>Service</option>"
                         <option value=employment className="bg-slate-800>Employment</option>"
@@ -459,13 +458,13 @@ const AIPoweredContractLegalPage: NextPage = () => {
 
                       <div className="space-y-3" mb-4 > 
                         </div><div className="flex justify-between" text-sm>
-                          <span className="text-gray-400>Value:</span" >
+                          <span className="text-gray-400>Value:</span">
                           <span className="text-white>{contract.currency},
 {contract.value.toLocaleString()}</span>
                         </div>
-                        <div className=" flex justify-between text-sm" >
+                        <div className="flex justify-between text-sm">
                           <span className="text-gray-400>Parties" </span>
-                          <span className="text-white>{contract.parties.length}</span" >
+                          <span className="text-white>{contract.parties.length}</span">
                         </div>
                         <div className="flex justify-between" text-sm>`
                           <span className="text-gray-400>Compliance" Score:</span>``
@@ -505,7 +504,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                             </span>
                           </div>
                           <div className="flex" justify-between>
-                            <span className="text-gray-400>Reviewer:</span" >
+                            <span className="text-gray-400>Reviewer:</span">
                             <span className="text-white>{contract.legalReview.reviewer}</span>"
                           </div">
                         </div>
@@ -529,7 +528,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
 {activeTab === 'disputes' && (
               <div className="space-y-6>" 
                 {disputes.map((dispute) => (
-                  </div><div key={dispute.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={dispute.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-4>
                       <h3 className="text-lg" font-semibold text-white>Dispute #{dispute.id}</h3>`
                       ``
@@ -553,7 +552,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg p-4>
                         </div><div className="text-sm" font-medium text-gray-400 mb-2>AI Analysis </div>
                         <div className="space-y-2" text-sm> 
-                          </div><div className="flex justify-between" >
+                          </div><div className="flex justify-between">
                             <span className="text-gray-400>Strength" </span>
                             <span className="text-white>{Math.round(dispute.aiAnalysis.strength" * 100)}%</span>
                           </div>
@@ -608,8 +607,8 @@ const AIPoweredContractLegalPage: NextPage = () => {
 {activeTab === 'templates' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                 {templates.map((template) => (
-                  </div><div key={template.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
-                    <div className=" flex items-start justify-between" mb-4>
+                  </div><div key={template.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
+                    <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg" font-semibold text-white>{template.name}</h3>
                       {template.aiOptimized && (
                         <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
@@ -620,7 +619,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                     
                     <p className="text-gray-300" text-sm mb-4 >{template.description}</p>
                     
-                    <div className="space-y-3" mb-4>
+                    <div className="space-y-3 mb-4">
                       </div><div className=" flex justify-between" text-sm>"
                         <span className="text-gray-400>Category:</span>"
                         <span className="text-white>{template.category}</span>"
@@ -633,7 +632,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </div>
                       <div className="flex"" justify-between text-sm">
                         <span className="text-gray-400>Usage" Count </span>
-                        <span className="text-white>{template.usageCount}</span" >
+                        <span className="text-white>{template.usageCount}</span">
                       </div>
                     </div> 
                     <div className="mb-4>"
@@ -652,7 +651,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
 {activeTab === 'compliance' && (
               <div className="space-y-6>" 
                 {complianceChecks.map((check) => (
-                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                     <div className="flex" items-start justify-between mb-4>
                       <h3 className="text-lg" font-semibold text-white>{check.checkType}</h3>`
                       ``
@@ -674,7 +673,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                         <span className=" text-gray-400>AI Generated:</span>''
                         <span className=" text-white>{check.aiGenerated ? 'Yes' : 'No'}</span>
                       </div>
-                      <div className=" flex justify-between text-sm" >
+                      <div className="flex justify-between text-sm">
                         <span className="text-gray-400>Checked" </span>
                         <span className="text-white>{check.checkedAt.toLocaleDateString()}</span>"
                       </div>
@@ -688,10 +687,10 @@ const AIPoweredContractLegalPage: NextPage = () => {
             )}'
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && (
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 {analytics?.aiInsights.map((insight) => (
                   </div><div key={insight.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                    <div className=" flex items-start justify-between" mb-4>
+                    <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg" font-semibold text-white>{insight.title}</h3>`
                       ``
                       }`}>
@@ -699,7 +698,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </span>
                     </div>
                     <p className="text-gray-300" text-sm mb-4>{insight.description}</p>
-                    <div className="space-y-3" mb-4>
+                    <div className="space-y-3 mb-4">
                       </div><div className="flex" justify-between text-sm>
                         <span className="text-gray-400>Confidence:</span>"
                         <span className="text-white>{Math.round(insight.confidence" * 100)}%</span> 
@@ -748,6 +747,6 @@ const AIPoweredContractLegalPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredContractLegalPage )))))))))))))))))))))))))))))))))))"'"'`

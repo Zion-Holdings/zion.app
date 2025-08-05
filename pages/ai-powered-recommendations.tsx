@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 interface Recommendation {'
   id: string;
-  type: 'product' | 'service' | 'talent' | 'equipment';
+  type: 'product' | 'service' | 'talent' | 'equipment";
   title: string;
   description: string;
   image: string;
@@ -29,8 +29,8 @@ interface UserPreference {
 interface RecommendationEngine {
   id: string;'
   name: string;
-  type: 'collaborative' | 'content-based' | 'hybrid' | 'deep-learning';
-  status: 'active' | 'training' | 'inactive';
+  type: 'collaborative' | 'content-based' | 'hybrid' | 'deep-learning";
+  status: 'active' | 'training' | 'inactive";
   accuracy: number;
   coverage: number;
   lastTrained: Date;
@@ -56,7 +56,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true
   const [showFilters, setShowFilters] = useState(false
   // Mock data for recommendations
-  const mockRecommendations: Recommendation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       type: 'product',
@@ -150,7 +150,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       featured: false
     }]
   // Mock recommendation engines
-  const mockEngines: RecommendationEngine[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Collaborative Filtering Engine',
@@ -437,7 +437,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
               </div> 
               {filteredRecommendations.length === 0 && (
                 <div className="text-center" py-32>
-                  </div><div className="text-6xl" mb-4>🔍</div> 
+                  </div><div className="text-6xl mb-4">🔍</div> 
                   <h3 className="text-xl" font-semibold text-white mb-2>No recommendations found</h3>
                   <p className="text-gray-400>Try" adjusting your filters to see more recommendations.</p>
                 </div>
@@ -447,7 +447,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         )}"
         {/* Recommendation Engines Section */},
 {!isLoading && ("
-          <div className="mt-16" >
+          <div className="mt-16">
             <h2 className="text-3xl" font-bold text-white mb-8 text-center>AI Recommendation Engines</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>
               {recommendationEngines.map((engine) => (
@@ -473,7 +473,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                     
                     <div>
                       </div><div className=" flex justify-between" text-sm>
-                        <span className="text-gray-400>Coverage</span" >
+                        <span className="text-gray-400>Coverage</span">
                         <span className="text-white>{Math.round(engine.coverage" * 100)}%</span>
                       </div>`
                       <div className="w-full" bg-gray-700 rounded-full h-2 mt-1 >``
@@ -527,7 +527,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
             </p>
             <div className="flex"" flex-col sm:flex-row gap-4 justify-center>
               <Link href=/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Get Started
-              </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Try AI Matcher
               </Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -542,6 +542,6 @@ const AIPoweredRecommendationsPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredRecommendationsPage )))))))))))))))))))))))))"'"'`

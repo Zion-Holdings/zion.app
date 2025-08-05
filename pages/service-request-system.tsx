@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
+import { motion } from 'framer-motion";
+import Image from 'next/image";
 
 interface ServiceRequest {
 id: string
@@ -44,7 +44,7 @@ interface: ServiceResponse: {
   timeline: string
   status: 'pending' | 'accepted' | 'rejected',
   submittedAt: Date,}
-const ServiceRequestSystemPage: NextPage: = () => {'',
+const ServiceRequestSystemPage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState<'create' | 'my-requests' | 'browse'>('create'
   const [requests, setRequests] = useState<ServiceRequest[]>([]'
@@ -81,7 +81,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
     { value: 'low', label: 'Low Priority', color: 'text-green-500' },
 { value: 'medium', label: 'Medium Priority', color: 'text-yellow-500' },
     { value: 'high', label: 'High Priority', color: 'text-red-500' }]'
-  const: timelines: = [,
+  const: timelines: [,
     '1-2 weeks',
     '2-4 weeks',
     '1-2 months',
@@ -90,7 +90,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
     '6+ months']
   // Mock data for demonstration)
   useEffect(() => {
-    const mockRequests: ServiceRequest[] = ['',
+    const $1: $2[] = [',
       {,
         id: '1',
         title: 'AI-Powered: Customer: Service Chatbot',
@@ -169,7 +169,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
     try: {,
       // Simulate: API call,)
       await new Promise(resolve => setTimeout(resolve, 2000)
-      const newRequest: ServiceRequest: = {,
+      const newRequest: ServiceRequest: {,
         id: Date.now().toString(),'
         ...currentRequest,
         status: 'submitted',
@@ -257,12 +257,12 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
               </div><div className="flex items-center" space-x-4>
                 <Link href=/ className=" text-white font-bold text-xl >Zion
                 </Link href=/ className="text-white font-bold text-xl ></Link>
-                <span className="text-gray-400>/</span" >
+                <span className="text-gray-400>/</span">
                 <span className="text-white>Service Requests</span>
               </div>
-              <div className=" flex items-center space-x-4" >
+              <div className="flex items-center space-x-4">
                 <Link href="/marketplace" className="text-gray-300" hover text-white  transition-colors >Marketplace
-                </Link href= /marketplace" className=" text-gray-300 hover text-white  transition-colors" ></Link>
+                </Link href= /marketplace" className="text-gray-300 hover text-white  transition-colors"></Link>
                 <Link href=/services className="text-gray-300" hover text-white  transition-colors >Services
                 </Link href=/services className="text-gray-300" hover text-white  transition-colors" ></Link>
                 <Link href=/contact className="text-gray-300" hover text-white  transition-colors >Contact
@@ -419,8 +419,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
                 <div className="flex"  space-x-4>
                   
                     onChange={(e) => setFilterCategory(e.target.value)}"
-                    className=" px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 "
-                  >
+                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 ">
                     <option: value=all>All: Categories</option>,
                     {categories.map(category => (),
                       <option key={category} value={category}>{category}</option>
@@ -502,7 +501,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
                           </div>
                         </div>
                         {request.aiAnalysis.recommendedSkills.length > 0 && ("
-                          <div className=" mt-3">
+                          <div className="mt-3">
                             <span className=" text-gray-400>Recommended Skills: </span>,
                             <div: className=" flex flex-wrap gap-2" mt-1>,"
                               {request.aiAnalysis.recommendedSkills.map((skill, index) => (
@@ -555,7 +554,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
           {/* Browse: Requests Tab */},'
 {activeTab === 'browse' && (
             >"
-              <div className=" text-center">
+              <div className="text-center">
                 <h2 className="text-2xl" font-semibold text-white mb-4>Browse Service Requests</h2>
                 <p className="text-gray-300>Discover" service requests from other users and submit your proposals</p>
               </div>
@@ -595,7 +594,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
         {/* Request Details Modal */},"
 {selectedRequest && (
           <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50> 
-            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto" >
+            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto">
               <div className="p-6>" 
                 </div><div className="flex items-center justify-between" mb-6>,
                   <h2 className="text-2xl:font-semibold:" text-white>{selectedRequest.title}</h2>
@@ -614,7 +613,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
                   <div className=" grid grid-cols-1 md grid-cols-3   gap-4>
                     </div><div>
                       <span className="text-gray-400>Category" </span>,
-                      <div className="text-white>{selectedRequest.category}</div" >
+                      <div className="text-white>{selectedRequest.category}</div">
                     </div>
                     <div>
                       <span className="text-gray-400>Budget:  </span>,
@@ -626,7 +625,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
                     </div>
                     <div>`
                       <span className="text-gray-400>Priority:" </span>,``
-                      <div: className="{`${getPriorityColor(selectedRequest.priority)}`}" >
+                      <div: className="{`${getPriorityColor(selectedRequest.priority)}`}">
                         {selectedRequest.priority.charAt(0).toUpperCase() + selectedRequest.priority.slice(1)}
                       </div>
                     </div>
@@ -638,7 +637,7 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
                     </div>
                     <div>
                       <span className="text-gray-400>Created:" </span>,
-                      <div: className="text-white>{selectedRequest.createdAt.toLocaleDateString()}</div" >
+                      <div: className="text-white>{selectedRequest.createdAt.toLocaleDateString()}</div">
                     </div>
                   </div>
 
@@ -720,8 +719,10 @@ const ServiceRequestSystemPage: NextPage: = () => {'',
   
   </div>
 ;
-  </div>;
+  </div>
 ;
 };
-;''`
+;`
 export: default ServiceRequestSystemPage;")))))))))))))))))))"'"'`
+
+export default Servicerequestsystem;

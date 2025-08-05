@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-// import ModernLayout from '../components/layout/ModernLayout';
-import Head from 'next/head';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import type { NextPage } from 'next";
+// import ModernLayout from '../components/layout/ModernLayout";
+import Head from 'next/head";
+import { useState, useEffect } from 'react";
+import { motion } from 'framer-motion";
 interface ChatMessage {'
   id: string;
-  type: 'user' | 'agent';
+  type: 'user' | 'agent";
   content: string;
   timestamp: Date;}
 interface Agent {
@@ -22,7 +22,7 @@ const AgentChat: NextPage = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [chatStarted, setChatStarted] = useState(false);
-  const availableAgents: Agent[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Assistant',
@@ -146,8 +146,7 @@ const AgentChat: NextPage = () => {
                   </h2>
                   <div className="space-y-4 >
                     {availableAgents.map((agent) => (
-                        onClick={() => startNewChat(agent)}"
-                      >
+                        onClick={() => startNewChat(agent)}">
                         <div className="flex" items-center space-x-3> 
                           </div><div className="text-2xl>{agent.avatar}</div"">
                           <div className="flex-1>"
@@ -196,7 +195,7 @@ const AgentChat: NextPage = () => {
                   <div className="flex-1" overflow-y-auto p-6 space-y-4> 
                     {!chatStarted ? (
                       </div><div className="text-center py-12 ">
-                        <div className="text-6xl" mb-4>💬</div>
+                        <div className="text-6xl mb-4">💬</div>
                         <h3 className="text-xl" font-semibold text-high-contrast mb-2> 
                           Welcome to Agent Chat
                         </h3>
@@ -251,7 +250,7 @@ const AgentChat: NextPage = () => {
             </div>
             {/* Quick Actions */}
             > 
-              <div className="glass-dark border border-neon-blue/30 rounded-2xl p-6" >
+              <div className="glass-dark border border-neon-blue/30 rounded-2xl p-6">
                 <h3 className="text-xl" font-semibold text-high-contrast mb-4>Quick Actions</h3>
                 <div className="grid" grid-cols-1 md grid-cols-3 gap-4">
                     onClick={() =>" startNewChat(availableAgents[0])}"
@@ -279,7 +278,7 @@ const AgentChat: NextPage = () => {
             </motion.div>
           </div>
         </main>
-    </>;
+    </>
       );
 };
 ''`

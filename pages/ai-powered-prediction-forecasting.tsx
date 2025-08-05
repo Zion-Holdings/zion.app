@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Prediction {
   id: string;
   title: string;'
   description: string;
-  type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  type: 'market' | 'demand' | 'trend' | 'risk' | 'performance' | 'behavior";
+  status: 'active' | 'draft' | 'archived' | 'testing";
   confidence: number;
   accuracy: number;
   timeframe: string;
@@ -25,8 +25,8 @@ interface Forecast {
   id: string;
   title: string;'
   description: string;
-  category: 'sales' | 'inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  category: 'sales' | 'inventory' | 'revenue' | 'growth' | 'seasonal' | 'trend";
+  status: 'active' | 'draft' | 'archived' | 'testing";
   period: string;
   confidence: number;
   accuracy: number;
@@ -48,10 +48,10 @@ interface TrendAnalysis {
   id: string;
   title: string;'
   description: string;
-  category: 'market' | 'technology' | 'consumer' | 'industry' | 'global' | 'local';
+  category: 'market' | 'technology' | 'consumer' | 'industry' | 'global' | 'local";
   status: 'active' | 'draft' | 'archived' | 'testing';'
   confidence: number;
-  impact: 'high' | 'medium' | 'low';
+  impact: 'high' | 'medium' | 'low";
   timeframe: string;
   dataPoints: number;
   aiAnalysis: AITrendAnalysis;}
@@ -65,11 +65,11 @@ interface RiskAssessment {
   id: string;
   title: string;'
   description: string;
-  category: 'market' | 'operational' | 'financial' | 'regulatory' | 'technology' | 'competitive';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  category: 'market' | 'operational' | 'financial' | 'regulatory' | 'technology' | 'competitive";
+  status: 'active' | 'draft' | 'archived' | 'testing";
   riskLevel: 'low' | 'medium' | 'high' | 'critical';'
   probability: number;
-  impact: 'low' | 'medium' | 'high' | 'critical';
+  impact: 'low' | 'medium' | 'high' | 'critical";
   mitigationStrategies: string[];
   aiAnalysis: AIRiskAnalysis;}
 interface AIRiskAnalysis {
@@ -82,8 +82,8 @@ interface MarketPrediction {
   id: string;
   title: string;'
   description: string;
-  sector: 'technology' | 'healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services';
-  status: 'active' | 'draft' | 'archived' | 'testing';
+  sector: 'technology' | 'healthcare' | 'finance' | 'retail' | 'manufacturing' | 'services";
+  status: 'active' | 'draft' | 'archived' | 'testing";
   timeframe: string;
   confidence: number;
   accuracy: number;
@@ -115,7 +115,7 @@ interface PredictionForecastingInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredPredictionForecastingPage: NextPage = () => {
@@ -129,7 +129,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockPredictions: Prediction[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Market Demand Prediction',
@@ -148,7 +148,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
         reliabilityScore: 89,
         recommendations: ['Increase data points', 'Add seasonal factors']}}
     }]
-  const mockForecasts: Forecast[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Sales Revenue Forecast',
@@ -180,7 +180,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
         accuracyScore: 88,
         recommendations: ['Add market indicators', 'Include seasonal patterns']}
 }]
-  const mockTrendAnalyses: TrendAnalysis[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'AI Technology Adoption Trends',
@@ -198,7 +198,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
         impactScore: 87,
         recommendations: ['Monitor adoption rates', 'Track competitor moves']}
 }]
-  const mockRiskAssessments: RiskAssessment[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Market Competition Risk Assessment',
@@ -216,7 +216,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
         impactScore: 78,
         recommendations: ['Monitor competitors', 'Strengthen positioning']}
 }]
-  const mockMarketPredictions: MarketPrediction[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Technology Sector Market Prediction',
@@ -425,8 +425,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                     </div><div className="flex  items-center space-x-4>
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500 ">"
                         <option value="all className="bg-slate-800>All" Types</option>
                         <option value=market className="bg-slate-800>Market</option>"
                         <option value=demand className="bg-slate-800>Demand</option>"
@@ -445,7 +444,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                 {/* Predictions Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredPredictions.map((prediction) => (
-                    </div><div key={prediction.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={prediction.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{prediction.title}</h3>
@@ -477,7 +476,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-emerald-600/20 to-teal-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-2 gap-4 text-sm >
@@ -514,7 +513,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalPredictions.toLocaleString()}</div>
                     <div className="text-gray-400" text-sm>Total Predictions</div>
@@ -536,7 +535,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>" 
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4" >
+                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4">
                         <div className="flex" items-start justify-between mb-2>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
@@ -562,8 +561,8 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-emerald-600/20 to-teal-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Predict the Future?
             </h2>
@@ -571,9 +570,9 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               Start your prediction journey with our AI-powered forecasting system  
               and gain insights into future trends and opportunities.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/ai-service-matcher" className="bg-gradient-to-r" from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105 >Start Predicting
-              </Link href= /ai-service-matcher" className=" bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105" ></Link>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -588,6 +587,6 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredPredictionForecastingPage ))))))))))))))))))))))))))"'"'`

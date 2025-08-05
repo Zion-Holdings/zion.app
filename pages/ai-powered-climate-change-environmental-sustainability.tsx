@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface ClimateMonitoring {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockClimateMonitoring: ClimateMonitoring[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Global Temperature Monitor',
@@ -132,7 +132,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         predictionAccuracy: 0.89,
         recommendations: ['Reduce greenhouse gas emissions', 'Protect polar ecosystems', 'Monitor sea level rise']}
 }]
-  const mockSustainabilityProjects: SustainabilityProject[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Solar Farm Expansion',
@@ -176,7 +176,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         costEffectiveness: 9.2,
         recommendations: ['Select native species', 'Implement smart irrigation', 'Monitor growth patterns']}
 }]
-  const mockCarbonFootprints: CarbonFootprint[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       entity: 'TechCorp Inc.',
@@ -229,7 +229,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
         reductionPotential: 0.60,
         recommendations: ['Use public transport', 'Switch to renewable energy', 'Reduce meat consumption']}
 }]
-  const mockEnvironmentalImpacts: EnvironmentalImpact[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Ocean Plastic Pollution',
@@ -387,7 +387,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -478,7 +478,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             </div>
 
             {/* Sustainability Projects Overview */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Sustainability Projects</h3>
               <div className="space-y-4>"
                 {sustainabilityProjects.slice(0, 2).map((project) => (
@@ -523,14 +523,14 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
               {filteredClimateMonitoring.map((monitor) => (
                 </div><div key={monitor.id} className="bg-black/20 rounded-lg p-6 border" border-white/10>
-                  <div className=" flex items-center justify-between" mb-4>`
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{monitor.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(monitor.status)} text-white`}>
                       {monitor.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4>{monitor.location}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className="flex" justify-between text-sm>
                       <span className="text-gray-400>Current" Value</span>
                       <span className="text-white>{monitor.currentValue},"
@@ -581,7 +581,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>CO2 Reduction</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Success" Rate</span>
                       <span className="text-white>{Math.round(project.aiAnalysis.successProbability" * 100)}%</span> 
@@ -606,8 +606,8 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
                     <h3 className="text-white" font-semibold>{footprint.entity}</h3>
                     <span className="text-gray-400" text-sm>{footprint.type}</span>
                   </div>
-                  <div className="space-y-2" mb-4> 
-                    </div><div className="flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4"> 
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Total" Emissions</span>
                       <span className="text-white>{formatNumber(footprint.totalEmissions)}" tons CO2</span>
                     </div>
@@ -639,14 +639,14 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {environmentalImpacts.map((impact) => (
                 <div key={impact.id} className="bg-black/20" rounded-lg:p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between mb-4" >
+                  </div><div className="flex items-center justify-between mb-4">
                     <h3 className="text-white" font-semibold>{impact.name}</h3>
                     <span className="{getSeverityColor(impact.severity)}>" {impact.severity}
                     </span>
                   </div>"
                   <p className="text-gray-400" text-sm mb-4>{impact.location}</p>
                   <div className="grid"  grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{formatNumber(impact.affectedArea)}</div>
                       <div className="text-gray-400" text-sm>km² Affected</div>
                     </div>
@@ -656,7 +656,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Risk" Level</span>
                       <span className="{getSeverityColor(impact.aiAnalysis.riskLevel)}>"
                         {impact.aiAnalysis.riskLevel}
@@ -696,7 +696,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Environmental Insights</h3>
               <div className="space-y-4>"
                 {analytics.aiInsights.map((insight) => (
@@ -726,7 +726,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -757,7 +757,7 @@ const AIPoweredClimateChangeEnvironmentalSustainabilityPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface AnalyticsData {
   overview: {
@@ -154,11 +154,11 @@ const AnalyticsDashboardPage: NextPage = () => {
   };
 '
   const getGrowthColor = (value: number) => {';'
-    return value >= 0 ? 'text-green-400' : 'text-red-400';
+    return value >= 0 ? 'text-green-400' : 'text-red-400";
   };
 '
   const getGrowthIcon = (value: number) => {';'
-    return value >= 0 ? '↗' : '↘';
+    return value >= 0 ? '↗' : '↘";
   };
 
   if (loading) {
@@ -180,7 +180,7 @@ const AnalyticsDashboardPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading Analytics...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -194,14 +194,14 @@ const AnalyticsDashboardPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/review-system className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Reviews
               </Link href=/review-system className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/payment-processing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
@@ -246,7 +246,7 @@ const AnalyticsDashboardPage: NextPage = () => {
  
         {/* View Selector */}
         <div className="flex" justify-center mb-8>
-          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-1" >"
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-1">"
             {['
               { id: 'overview', name: 'Overview', icon: '📊' },
 { id: 'revenue', name: 'Revenue', icon: '💰' },
@@ -293,7 +293,7 @@ const AnalyticsDashboardPage: NextPage = () => {
                     <p className="text-3xl" font-bold text-white>{analyticsData.overview.totalOrders.toLocaleString()}</p>
                     <p className="text-sm text-blue-400>+12.5% from last period</p>
                   </div>
-                  <div className="text-4xl>📦</div" >
+                  <div className="text-4xl>📦</div">
                 </div>
               </div>
               
@@ -314,7 +314,7 @@ const AnalyticsDashboardPage: NextPage = () => {
                     <p className="text-3xl" font-bold text-white>{formatCurrency(analyticsData.overview.averageOrderValue)}</p>
                     <p className="text-sm text-yellow-400>+5.2% from last period</p>
                   </div>
-                  <div className="text-4xl>📊</div" >
+                  <div className="text-4xl>📊</div">
                 </div>
               </div>
               
@@ -341,7 +341,7 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Revenue Chart */}"
-            <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
               <h3 className="text-xl" font-bold text-white mb-4>Revenue Trend</h3>
               <div className="h-124" flex items-end justify-between space-x-2>
                 {analyticsData.revenue.daily.map((day, index) => (
@@ -450,13 +450,13 @@ const AnalyticsDashboardPage: NextPage = () => {
         )}'
 "''
         {selectedView === 'behavior' && analyticsData && (
-          <div className="space-y-8" >
+          <div className="space-y-8">
             {/* Page Views */}
             </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
               <h3 className="text-xl" font-bold text-white mb-6>Page Performance</h3>
               <div className="space-y-4>" 
                 {analyticsData.userBehavior.pageViews.map((page, index) => (
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg" >
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
                     <div>
                       <h4 className="text-white" font-semibold>{page.page}</h4>
                       <p className="text-sm" text-gray-400>{page.views.toLocaleString()} views</p>
@@ -493,7 +493,7 @@ const AnalyticsDashboardPage: NextPage = () => {
         {selectedView === 'insights' && analyticsData && ("
           <div className=" space-y-8>
             {/* Trending Services */}
-            </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
               <h3 className="text-xl" font-bold text-white mb-6>Trending Services</h3>
               <div className="space-y-4>"
                 {analyticsData.marketInsights.trendingServices.map((service, index) => (
@@ -516,7 +516,7 @@ const AnalyticsDashboardPage: NextPage = () => {
               <h3 className="text-xl" font-bold text-white mb-6>Market Opportunities</h3>
               <div className="space-y-4>" 
                 {analyticsData.marketInsights.marketGaps.map((gap, index) => (
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg" >
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
                     <div>
                       <h4 className="text-white" font-semibold>{gap.category}</h4>
                       <p className="text-sm" text-gray-400>Low competition</p>
@@ -558,6 +558,6 @@ const AnalyticsDashboardPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AnalyticsDashboardPage )"'"'`

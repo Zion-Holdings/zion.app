@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Course {
   id: string;
   title: string;
   description: string;'
   category: string;
-  level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  level: 'beginner' | 'intermediate' | 'advanced' | 'expert";
   duration: number; // hours
   modules: Module[];
   instructor: Instructor;
@@ -30,7 +30,7 @@ interface Module {
   title: string;
   description: string;'
   duration: number; // minutes
-  type: 'video' | 'interactive' | 'quiz' | 'project' | 'ai-simulation';
+  type: 'video' | 'interactive' | 'quiz' | 'project' | 'ai-simulation";
   content: string[];
   aiFeatures: string[];
   progress: number;
@@ -52,20 +52,20 @@ interface SkillAssessment {
   questions: AssessmentQuestion[];
   timeLimit: number; // minutes'
   passingScore: number;
-  difficulty: 'easy' | 'medium' | 'intermediate' | 'hard' | 'expert';
+  difficulty: 'easy' | 'medium' | 'intermediate' | 'hard' | 'expert";
   aiAnalysis: AIAnalysis;
   certificate: boolean;}
 interface AssessmentQuestion {
   id: string;'
   question: string;
-  type: 'multiple-choice' | 'coding' | 'scenario' | 'ai-interactive';
+  type: 'multiple-choice' | 'coding' | 'scenario' | 'ai-interactive";
   options?: string[];
   correctAnswer: string | string[];
   explanation: string;
   difficulty: number;
   aiGenerated: boolean;}'
 interface AIAnalysis {
-  skillLevel: 'novice' | 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  skillLevel: 'novice' | 'beginner' | 'intermediate' | 'advanced' | 'expert";
   confidence: number;
   strengths: string[];
   weaknesses: string[];
@@ -80,7 +80,7 @@ interface LearningPath {
   courses: string[];
   skills: string[];'
   careerOutcome: string;
-  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  difficulty: 'beginner' | 'intermediate' | 'advanced";
   aiRecommended: boolean;
   completionRate: number;}
 interface Certification {
@@ -106,7 +106,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
   const [isLoading, setIsLoading] = useState(true
   const [activeTab, setActiveTab] = useState<'courses' | 'assessments' | 'paths' | 'certifications'>('courses
   // Mock data for courses
-  const mockCourses: Course[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'AI-Powered Web Development Masterclass',
@@ -203,7 +203,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       lastUpdated: new Date('2024-01-10
     }]
   // Mock skill assessments
-  const mockAssessments: SkillAssessment[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       skillName: 'JavaScript AI Integration',
@@ -231,7 +231,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       certificate: true
     }]
   // Mock learning paths
-  const mockLearningPaths: LearningPath[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Full-Stack AI Developer',
@@ -246,7 +246,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       completionRate: 0.72
     }]
   // Mock certifications
-  const mockCertifications: Certification[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Web Development Professional',
@@ -504,7 +504,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </div>
 
                       {/* Tags */} 
-                      <div className="flex flex-wrap gap-1" mb-4>
+                      <div className="flex flex-wrap gap-1 mb-4">
                         {course.tags.slice(0, 3).map((tag, index) => (
                           <span key={index} className="px-4" py-3 bg-white/10 rounded-full text-xs text-gray-300>
                             {tag}
@@ -574,7 +574,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               <div className=" grid grid-cols-1 md grid-cols-2 gap-6>
                 {learningPaths.map((path) => (
                   </div><div key={path.id} className="bg-white/10  backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex items-start justify-between mb-4" >
+                    <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl" font-semibold text-white>{path.title}</h3>
                       {path.aiRecommended && (
                         <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
@@ -586,7 +586,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
                     <div className="space-y-3" mb-4 > 
                       </div><div className="flex justify-between" text-sm>
-                        <span className="text-gray-400>Duration:</span" >
+                        <span className="text-gray-400>Duration:</span">
                         <span className="text-white>{path.duration} weeks</span>
                       </div>
                       <div className="flex" justify-between text-sm >`
@@ -600,7 +600,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                         <span className="text-white>{Math.round(path.completionRate" * 100)}%</span>
                       </div>
                     </div>
-                    <div className=" mb-4">'
+                    <div className="mb-4">'
                       </div><div className="text-sm" font-medium text-gray-400 mb-2>Skills You'll Learn </div>
                       <div className="flex"  flex-wrap gap-1>
                         {path.skills.slice(0, 4).map((skill, index) => (
@@ -627,7 +627,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                 {certifications.map((cert) => (
                   </div><div key={cert.id} className="bg-white/10  backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex items-start justify-between mb-4" >
+                    <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg" font-semibold text-white>{cert.name}</h3>
                       {cert.aiVerified && (
                         <span className="px-4" py-3 rounded-full text-xs font-medium bg-green-500/20 text-green-300>
@@ -639,10 +639,10 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
                     <div className="space-y-3" mb-4 > 
                       </div><div className="flex justify-between" text-sm>
-                        <span className="text-gray-400>Level:</span" >
+                        <span className="text-gray-400>Level:</span">
                         <span className="text-white>{cert.level}</span"">
                       </div>
-                      <div className=" flex justify-between text-sm" >
+                      <div className="flex justify-between text-sm">
                         <span className="text-gray-400>Validity" </span>
                         <span className="text-white>{cert.validity}" months</span>
                       </div>
@@ -653,7 +653,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     </div>
                     <div className="mb-4>
                       </div><div className="text-sm" font-medium text-gray-400 mb-2>Requirements </div>
-                      <ul className="space-y-1" >
+                      <ul className="space-y-1">
                         {cert.requirements.slice(0, 2).map((req, index) => (
                           <li key={index} className="text-xs" text-gray-300>• {req}</li>
                         ))}
@@ -671,8 +671,8 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       </div> 
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Accelerate Your Career?
             </h2>
@@ -680,9 +680,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
               Join thousands of learners who are advancing their careers with AI-powered  
               personalized learning experiences and industry-recognized certifications.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/auth/signup" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Learning
-              </Link href= /auth/signup" className=" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href= /auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Take Skill Assessment
               </Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -697,6 +697,6 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredLearningPlatformPage ))))))))))))))))))))))))))"'"'`

@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from 'framer-motion";
 
 interface AutoOptimizationProps {
   className?: string;}'
@@ -18,7 +18,7 @@ const AutoOptimization: React.FC<AutoOptimizationProps> = ({ className="'' }) =>
         </div>
         <h3 className=" text-xl font-semibold text-gray-900>Auto Optimization</h3>
       </div>
-      <p className=" text-gray-600" mb-4>
+      <p className="text-gray-600 mb-4">
         Advanced auto optimization capabilities that enhance your business operations and drive growth.
       </p>
       <div className=" flex" space-x-2">
@@ -30,6 +30,6 @@ const AutoOptimization: React.FC<AutoOptimizationProps> = ({ className="'' }) =>
         </button>
       </div>
     </motion.div >;  );"
-};"
+};
 ''`
 export default AutoOptimization;"'"'`

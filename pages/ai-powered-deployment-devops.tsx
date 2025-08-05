@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface DeploymentPipeline {
   id: string;
   name: string;'
   description: string;
-  type: 'ci' | 'cd' | 'ci-cd' | 'release' | 'rollback' | 'hotfix';
-  status: 'running' | 'completed' | 'failed' | 'pending' | 'cancelled';
-  environment: 'development' | 'staging' | 'production' | 'testing' | 'qa';
+  type: 'ci' | 'cd' | 'ci-cd' | 'release' | 'rollback' | 'hotfix";
+  status: 'running' | 'completed' | 'failed' | 'pending' | 'cancelled";
+  environment: 'development' | 'staging' | 'production' | 'testing' | 'qa";
   duration: number;
   startTime: Date;
   endTime?: Date;
@@ -25,8 +25,8 @@ interface ReleaseManagement {
   title: string;
   description: string;'
   version: string;
-  status: 'draft' | 'in_progress' | 'testing' | 'approved' | 'deployed' | 'rolled_back';
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  status: 'draft' | 'in_progress' | 'testing' | 'approved' | 'deployed' | 'rolled_back";
+  priority: 'critical' | 'high' | 'medium' | 'low";
   releaseDate: Date;
   rollbackDate?: Date;
   aiOptimization: AIReleaseOptimization;}
@@ -40,9 +40,9 @@ interface InfrastructureAutomation {
   id: string;
   name: string;'
   description: string;
-  type: 'provisioning' | 'configuration' | 'scaling' | 'monitoring' | 'backup' | 'security';
-  status: 'active' | 'inactive' | 'maintenance' | 'error';
-  targetEnvironment: 'cloud' | 'on-premise' | 'hybrid' | 'container' | 'serverless';
+  type: 'provisioning' | 'configuration' | 'scaling' | 'monitoring' | 'backup' | 'security";
+  status: 'active' | 'inactive' | 'maintenance' | 'error";
+  targetEnvironment: 'cloud' | 'on-premise' | 'hybrid' | 'container' | 'serverless";
   aiAnalysis: AIInfrastructureAnalysis;}
 interface AIInfrastructureAnalysis {
   id: string;
@@ -54,8 +54,8 @@ interface AutomatedTesting {
   id: string;
   name: string;'
   description: string;
-  type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'regression';
-  status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending';
+  type: 'unit' | 'integration' | 'e2e' | 'performance' | 'security' | 'regression";
+  status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending";
   coverage: number;
   duration: number;
   aiAnalysis: AITestingAnalysis;}
@@ -70,7 +70,7 @@ interface DevOpsMetrics {
   name: string;
   value: number;'
   unit: string;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   target: number;
   aiAnalysis: AIMetricsAnalysis;}
 interface AIMetricsAnalysis {
@@ -92,7 +92,7 @@ interface DeploymentDevOpsInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredDeploymentDevOpsPage: NextPage = () => {
@@ -106,7 +106,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockDeploymentPipelines: DeploymentPipeline[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Production CI/CD Pipeline',
@@ -124,7 +124,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
         reliabilityScore: 92,
         recommendations: ['Optimize build time', 'Improve test coverage']}}
     }]
-  const mockReleaseManagement: ReleaseManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Feature Release v2.1.0',
@@ -140,7 +140,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
         reliabilityScore: 94,
         recommendations: ['Improve rollback procedures', 'Enhance monitoring']}
 }]
-  const mockInfrastructureAutomations: InfrastructureAutomation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Auto Scaling Configuration',
@@ -155,7 +155,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
         reliabilityScore: 91,
         recommendations: ['Optimize scaling thresholds', 'Improve monitoring']}
 }]
-  const mockAutomatedTesting: AutomatedTesting[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'End-to-End Test Suite',
@@ -171,7 +171,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
         reliabilityScore: 93,
         recommendations: ['Increase test coverage', 'Optimize test execution']}
 }]
-  const mockDevOpsMetrics: DevOpsMetrics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Deployment Frequency','
@@ -362,8 +362,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                     </div><div className="flex  items-center space-x-4>
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-indigo-500 "
-                      >"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-indigo-500 ">"
                         <option value="all className="bg-slate-800>All" Types</option>
                         <option value=ci className="bg-slate-800>CI</option>"
                         <option value=cd className="bg-slate-800>CD</option>"
@@ -382,7 +381,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                 {/* Pipelines Grid */}
                 <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredPipelines.map((pipeline) => (
-                    </div><div key={pipeline.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    </div><div key={pipeline.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                       <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{pipeline.name}</h3>
@@ -422,7 +421,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
                       </div>
 
                       {/* AI Analysis */}"
-                      <div className="mb-4" >
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r from-indigo-600/20 to-blue-600/20 rounded-lg p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -513,7 +512,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-indigo-600/20 to-blue-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Automate Your Deployments? 
             </h2>
@@ -537,6 +536,6 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredDeploymentDevOpsPage "))))))))))))))))))))))))))"'"'`

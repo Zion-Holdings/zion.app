@@ -1,15 +1,15 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface IncidentDetection {
   id: string;
   title: string;'
   description: string;
-  type: 'malware' | 'phishing' | 'ddos' | 'data_breach' | 'insider_threat' | 'zero_day';
-  severity: 'critical' | 'high' | 'medium' | 'low';
-  status: 'detected' | 'investigating' | 'contained' | 'resolved' | 'false_positive';
+  type: 'malware' | 'phishing' | 'ddos' | 'data_breach' | 'insider_threat' | 'zero_day";
+  severity: 'critical' | 'high' | 'medium' | 'low";
+  status: 'detected' | 'investigating' | 'contained' | 'resolved' | 'false_positive";
   timestamp: Date;
   affectedSystems: string[];
   aiAnalysis: IncidentAnalysis;}
@@ -24,10 +24,10 @@ interface ResponseCoordination {
   incidentId: string;
   title: string;'
   description: string;
-  phase: 'detection' | 'analysis' | 'containment' | 'eradication' | 'recovery' | 'lessons_learned';
+  phase: 'detection' | 'analysis' | 'containment' | 'eradication' | 'recovery' | 'lessons_learned";
   status: 'active' | 'completed' | 'paused' | 'escalated';'
   assignedTeam: string;
-  priority: 'critical' | 'high' | 'medium' | 'low';
+  priority: 'critical' | 'high' | 'medium' | 'low";
   aiOptimization: ResponseOptimization;}
 interface ResponseOptimization {
   id: string;
@@ -40,8 +40,8 @@ interface DigitalForensics {
   caseNumber: string;
   title: string;'
   description: string;
-  type: 'network' | 'memory' | 'disk' | 'mobile' | 'cloud' | 'malware';
-  status: 'active' | 'completed' | 'pending' | 'cancelled';
+  type: 'network' | 'memory' | 'disk' | 'mobile' | 'cloud' | 'malware";
+  status: 'active' | 'completed' | 'pending' | 'cancelled";
   investigator: string;
   evidenceCount: number;
   aiAnalysis: ForensicsAnalysis;}
@@ -56,8 +56,8 @@ interface BreachInvestigation {
   breachId: string;
   title: string;'
   description: string;
-  breachType: 'data_exfiltration' | 'system_compromise' | 'credential_theft' | 'ransomware' | 'insider_breach' | 'supply_chain';
-  status: 'investigating' | 'contained' | 'resolved' | 'closed';
+  breachType: 'data_exfiltration' | 'system_compromise' | 'credential_theft' | 'ransomware' | 'insider_breach' | 'supply_chain";
+  status: 'investigating' | 'contained' | 'resolved' | 'closed";
   affectedData: string[];
   impactAssessment: string;
   aiAnalysis: BreachAnalysis;}
@@ -72,8 +72,8 @@ interface ThreatHunting {
   huntId: string;
   title: string;'
   description: string;
-  huntType: 'proactive' | 'reactive' | 'intel_driven' | 'hypothesis_driven' | 'threat_led' | 'anomaly_based';
-  status: 'active' | 'completed' | 'paused' | 'scheduled';
+  huntType: 'proactive' | 'reactive' | 'intel_driven' | 'hypothesis_driven' | 'threat_led' | 'anomaly_based";
+  status: 'active' | 'completed' | 'paused' | 'scheduled";
   hunter: string;
   findings: string[];
   aiAnalysis: HuntingAnalysis;}
@@ -88,8 +88,8 @@ interface IncidentManagement {
   incidentId: string;
   title: string;'
   description: string;
-  category: 'security' | 'privacy' | 'compliance' | 'availability' | 'integrity' | 'confidentiality';
-  status: 'open' | 'in_progress' | 'resolved' | 'closed';
+  category: 'security' | 'privacy' | 'compliance' | 'availability' | 'integrity' | 'confidentiality";
+  status: 'open' | 'in_progress' | 'resolved' | 'closed";
   sla: number; // Service Level Agreement in hours
   escalationLevel: number;
   aiAnalysis: ManagementAnalysis;}
@@ -113,7 +113,7 @@ interface IncidentResponseInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredIncidentResponsePage: NextPage = () => {
@@ -128,7 +128,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockIncidentDetections: IncidentDetection[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Suspicious Network Activity Detected',
@@ -145,7 +145,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
         urgencyScore: 92,
         recommendations: ['Isolate affected systems', 'Begin forensics analysis', 'Notify stakeholders']}}
     }]
-  const mockResponseCoordination: ResponseCoordination[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       incidentId: 'INC-001',
@@ -162,7 +162,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
         effectivenessScore: 90,
         recommendations: ['Improve communication protocols', 'Enhance team coordination']}
 }]
-  const mockDigitalForensics: DigitalForensics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       caseNumber: 'FOR-2024-001',
@@ -179,7 +179,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
         reliabilityScore: 94,
         recommendations: ['Collect additional network logs', 'Analyze memory dumps']}
 }]
-  const mockBreachInvestigations: BreachInvestigation[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       breachId: 'BR-2024-001',
@@ -196,7 +196,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
         recoveryScore: 85,
         recommendations: ['Implement additional access controls', 'Enhance monitoring']}
 }]
-  const mockThreatHunting: ThreatHunting[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       huntId: 'HUNT-2024-001',
@@ -213,7 +213,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
         coverageScore: 85,
         recommendations: ['Expand hunting scope', 'Deploy additional sensors']}
 }]
-  const mockIncidentManagement: IncidentManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       incidentId: 'IM-2024-001',
@@ -418,7 +418,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-red-500"
@@ -514,7 +514,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
             {/* Analytics Tab */},"''
 {activeTab === 'analytics' && analytics && (
               <div className="space-y-8>" 
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalIncidents.toLocaleString()}</div>
                     <div className="text-gray-400" text-sm>Total Incidents</div>
@@ -536,7 +536,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>" 
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-lg p-4" >
+                      </div><div key={insight.id} className="bg-gradient-to-r from-red-600/20 to-orange-600/20 rounded-lg p-4">
                         <div className="flex" items-start justify-between mb-2>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
@@ -562,8 +562,8 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
       </div>
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-red-600/20 to-orange-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36" >
-          <div className=" text-center">
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4> 
               Ready to Respond to Incidents?
             </h2>
@@ -571,9 +571,9 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
               Start your incident response journey with our AI-powered system  
               and ensure comprehensive cybersecurity incident management.
             </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center" >
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link href="/ai-service-matcher" className="bg-gradient-to-r" from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-red-500/25 transform hover scale-105 >Start Responding
-              </Link href= /ai-service-matcher" className=" bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-red-500/25 transform hover scale-105" ></Link>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-red-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -588,6 +588,6 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredIncidentResponsePage )))))))))))))))))))))))))))))"'"'`

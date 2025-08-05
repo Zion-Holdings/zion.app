@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface MixedRealityExperience {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockMixedRealityExperiences: MixedRealityExperience[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered AR Overlay',
@@ -132,7 +132,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         experienceInsights: ['Seamless AR/VR blending successful', 'Spatial computing integration effective', 'User adaptation high'],
         recommendations: ['Optimize AR/VR blending', 'Enhance spatial computing', 'Improve user adaptation']}
 }]
-  const mockSpatialComputing: SpatialComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Spatial Mapping Engine',
@@ -176,7 +176,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         optimizationOpportunities: ['Improve object recognition', 'Enhance classification accuracy', 'Expand object database'],
         improvementStrategies: ['Implement advanced recognition', 'Enhance classification models', 'Expand object coverage']}
 }]
-  const mockDigitalTwins: DigitalTwin[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Physical Twin Simulation',
@@ -220,7 +220,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
         improvementAreas: ['Enhance prediction accuracy', 'Improve analytics fidelity', 'Expand predictive capabilities'],
         recommendations: ['Optimize prediction algorithms', 'Enhance analytics models', 'Expand predictive features']}
 }]
-  const mockImmersiveTechnology: ImmersiveTechnology[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Experience Optimization Engine',
@@ -387,7 +387,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -541,15 +541,15 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
             {/* Mixed Reality Experiences Grid */}
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
               {filteredMixedRealityExperiences.map((experience) => (
-                </div><div key={experience.id} className="bg-black/20 rounded-lg p-6 border border-white/10" >
-                  <div className=" flex items-center justify-between" mb-4>`
+                </div><div key={experience.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{experience.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(experience.status)} text-white`}>
                       {experience.status}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{experience.location} • {experience.type}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className=" flex justify-between" text-sm>"
                       <span className="text-gray-400>Active" Users</span>
                       <span className="text-white>{formatNumber(experience.activeUsers)}</span>"
@@ -562,9 +562,9 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-gray-400>Engagement Rate</span>
-                      <span className="text-white>{experience.engagementRate}%</span" >
+                      <span className="text-white>{experience.engagementRate}%</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance" Score</span>
                       <span className="text-white>{experience.aiAnalysis.performanceScore}/10</span>"
                     </div>
@@ -577,10 +577,10 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
 "'
         {selectedView === 'spatial' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {spatialComputing.map((spatial) => (
                 <div key={spatial.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{spatial.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(spatial.status)} text-white`}>
                       {spatial.status}
@@ -635,7 +635,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
                       <div className="text-gray-400" text-sm>Fidelity</div>
                     </div>
                   </div>
-                  <div className=" space-y-2">
+                  <div className="space-y-2">
                     </div><div className=" flex justify-between" text-sm>
                       <span className="text-gray-400>Update" Frequency</span>
                       <span className="text-white>{formatNumber(twin.updateFrequency)}/min</span>" 
@@ -674,9 +674,9 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Performance" Score</span>
-                      <span className="text-white>{technology.metrics.performanceScore}%</span" >
+                      <span className="text-white>{technology.metrics.performanceScore}%</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Impact" Score</span>
@@ -712,7 +712,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
             </div>
 
             {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>AI Mixed Reality Insights</h3>
               <div className="space-y-4>"
                 {data.aiInsights.map((insight) => (
@@ -742,7 +742,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
       </div> 
       {/* Footer */}
       <div className="bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8" >
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="grid" grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
               <h3 className="text-white" font-semibold mb-4>Zion</h3>
@@ -785,7 +785,7 @@ const AIPoweredMixedRealitySpatialComputingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

@@ -1,8 +1,8 @@
 import React from "react;
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Head from 'next/head";
+import { motion } from 'framer-motion";
+import Link from 'next/link";
 
 export default function Home() {
   return (
@@ -27,8 +27,8 @@ export default function Home() {
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="text-xl:mb-8" text-gray-200>
             Discover, connect, and grow with AI-powered services, products, and talent for the future of business. 
           </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1 }} className="flex flex-col sm flex-row justify-center gap-6 mb-12" >
-            <Link href="/marketplace className="px-8" py-3 rounded-lg:bg-purple-600 hover bg-purple-700 font-semibold transition >Browse Marketplace</Link href= /marketplace" className=" px-8 py-3 rounded-lg:bg-purple-600 hover bg-purple-700 font-semibold transition" ></Link>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1 }} className="flex flex-col sm flex-row justify-center gap-6 mb-12">
+            <Link href="/marketplace className="px-8" py-3 rounded-lg:bg-purple-600 hover bg-purple-700 font-semibold transition >Browse Marketplace</Link href= /marketplace" className="px-8 py-3 rounded-lg:bg-purple-600 hover bg-purple-700 font-semibold transition"></Link>
             <Link href=/services className="px-8" py-3 rounded-lg:bg-pink-600 hover bg-pink-700 font-semibold transition >Our Services</Link href=/services className="px-8" py-3 rounded-lg:bg-pink-600 hover bg-pink-700 font-semibold transition" ></Link>
             <Link href=/talent-directory" className="px-8" py-3 rounded-lg:bg-blue-600 hover bg-blue-700 font-semibold transition >Find Talent</Link href=/talent-directory  className="px-8" py-3 rounded-lg:bg-blue-600 hover bg-blue-700 font-semibold transition" ></Link>
             <Link href=/contact className="px-8" py-3 rounded-lg:bg-gray-800 hover bg-gray-900 font-semibold transition >Contact Us</Link href=/contact className="px-8" py-3 rounded-lg:bg-gray-800 hover bg-gray-900 font-semibold transition" ></Link>
@@ -38,18 +38,18 @@ export default function Home() {
         <section className="max-w-12xl:mx-auto  px-4 py-32 grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className=" bg-black/30 rounded-xl:p-8 shadow-lg border" border-white/10>
             <h2 className="text-2xl" font-bold mb-4 text-purple-400>AI Services</h2>
-            <p className="text-gray-200" mb-4>Access a wide range of AI-powered business solutions, from automation to analytics, tailored for your needs.</p>
-            <Link href=/services className="text-purple-300" hover underline >Explore Services →</Link href=/services" className=" text-purple-300 hover underline" ></Link>
+            <p className="text-gray-200 mb-4">Access a wide range of AI-powered business solutions, from automation to analytics, tailored for your needs.</p>
+            <Link href=/services className="text-purple-300" hover underline >Explore Services →</Link href=/services" className="text-purple-300 hover underline"></Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.3 }} className=" bg-black/30 rounded-xl:p-8 shadow-lg border" border-white/10>
             <h2 className="text-2xl" font-bold mb-4 text-pink-400>Marketplace</h2>
             <p className="text-gray-200" mb-4 >Discover innovative products and solutions from top providers in the Zion ecosystem.</p>
-            <Link href="/marketplace className="text-pink-300" hover underline >Browse Marketplace →</Link href= /marketplace" className=" text-pink-300 hover underline" ></Link>
+            <Link href="/marketplace className="text-pink-300" hover underline >Browse Marketplace →</Link href= /marketplace" className="text-pink-300 hover underline"></Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.4 }} className=" bg-black/30 rounded-xl:p-8 shadow-lg border" border-white/10>
             <h2 className="text-2xl" font-bold mb-4 text-blue-400>Talent Directory</h2>
             <p className="text-gray-200" mb-4 >Connect with skilled professionals, AI experts, and teams to power your next project.</p>
-            <Link href="/talent-directory className="text-blue-300" hover underline >Find Talent →</Link href= /talent-directory" className=" text-blue-300 hover underline" ></Link>
+            <Link href="/talent-directory className="text-blue-300" hover underline >Find Talent →</Link href= /talent-directory" className="text-blue-300 hover underline"></Link>
           </motion.div>
         </section>
         {/* Call to Action */}
@@ -63,6 +63,6 @@ export default function Home() {
   
   </div> 
   </div>
-  </div>;
+  </div>
 );'
 }'"

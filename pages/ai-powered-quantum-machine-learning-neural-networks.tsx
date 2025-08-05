@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumNeuralNetwork {
   id: string'
@@ -75,7 +75,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
   const [optimizations, setOptimizations] = useState<QuantumOptimization[]>([]
   const [unsupervisedLearning, setUnsupervisedLearning] = useState<QuantumUnsupervisedLearning[]>([]
   // Mock data
-  const mockNeuralNetworks: QuantumNeuralNetwork[] = ['
+  const $1: $2[] = [
     {
       id: 'qnn-001',
       name: 'Quantum Neural Network Alpha',
@@ -88,7 +88,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       status: 'deployed',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockClassifications: QuantumClassification[] = ['
+  const $1: $2[] = [
     {
       id: 'qc-001',
       name: 'Quantum SVM Classifier',
@@ -101,7 +101,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       f1Score: 95.0,
       status: 'deployed
     }]
-  const mockRegressions: QuantumRegression[] = ['
+  const $1: $2[] = [
     {
       id: 'qr-001',
       name: 'Quantum Linear Regression',
@@ -113,7 +113,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       mae: 0.018,
       status: 'deployed
     }]
-  const mockFeatureMaps: QuantumFeatureMap[] = ['
+  const $1: $2[] = [
     {
       id: 'qfm-001',
       name: 'Quantum Feature Map',
@@ -125,7 +125,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       applications: ['Classification', 'Regression', 'Clustering'],
       status: 'production
     }]
-  const mockOptimizations: QuantumOptimization[] = ['
+  const $1: $2[] = [
     {
       id: 'qo-001',
       name: 'QAOA Optimization',
@@ -137,7 +137,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       runtime: 45,
       status: 'completed
     }]
-  const mockUnsupervisedLearning: QuantumUnsupervisedLearning[] = ['
+  const $1: $2[] = [
     {
       id: 'qul-001',
       name: 'Quantum K-Means Clustering',
@@ -219,11 +219,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'ML Dashboard', icon: '🧠' },
@@ -257,7 +257,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>🧠</span>
                     </div>
@@ -274,9 +274,9 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Neural Networks</span>
-                      <span className="text-white>{neuralNetworks.length}</span" >
+                      <span className="text-white>{neuralNetworks.length}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Models</span>"
                       <span className="text-white>{classifications.length" + regressions.length}</span>
                     </div>
@@ -290,12 +290,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-lg text-white hover from-emerald-700 hover to-emerald-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>⚛️</div>
                       <div className="font-semibold>Train Network</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>📊</div>
                       <div className="font-semibold>Classify" Data</div>
                     </button>
@@ -313,11 +313,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
             )}"'
             {/* Neural Networks */},''
 {activeTab === 'neural-networks' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Neural Networks</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {neuralNetworks.map((network) => (
-                    </div><div key={network.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={network.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{network.name}</h3>
@@ -329,9 +329,9 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Qubits</span>"
-                          <span className="text-white>{network.qubits}</span" >
+                          <span className="text-white>{network.qubits}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Layers</span>"
@@ -342,7 +342,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                           <span className="text-white>{network.parameters}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Loss</span" >
+                          <span className="text-gray-300>Loss</span">
                           <span className="text-white>{network.loss}</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -382,12 +382,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                           <span className="text-white" text-sm >{classification.dataset}</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Classes</span" >
+                          <span className="text-gray-300>Classes</span">
                           <span className="text-white>{classification.classes}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Precision</span>"
-                          <span className="text-white>{classification.precision}%</span" >
+                          <span className="text-white>{classification.precision}%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Recall</span>"
@@ -436,12 +436,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                           <span className="text-white>{regression.features}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>MSE</span" >
+                          <span className="text-gray-300>MSE</span">
                           <span className="text-white>{regression.mse}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>MAE</span>"
-                          <span className="text-white>{regression.mae}</span" >
+                          <span className="text-white>{regression.mae}</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -475,12 +475,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Dimensions</span" >
+                          <span className="text-gray-300>Dimensions</span">
                           <span className="text-white>{featureMap.dimensions}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Qubits</span>"
-                          <span className="text-white>{featureMap.qubits}</span" >
+                          <span className="text-white>{featureMap.qubits}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Efficiency</span>"
@@ -510,11 +510,11 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
             )} '
             {/* Optimization */},''
 {activeTab === 'optimization' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Optimization</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {optimizations.map((optimization) => (
-                    </div><div key={optimization.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={optimization.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{optimization.name}</h3>
@@ -539,7 +539,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                           <span className="text-white>{optimization.convergence}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Runtime</span" >
+                          <span className="text-gray-300>Runtime</span">
                           <span className="text-white>{optimization.runtime} ms</span>
                         </div>
                         <div className="flex" justify-between >`
@@ -579,12 +579,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
                           <span className="text-white" text-sm >{learning.dataset}</span>
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Clusters</span" >
+                          <span className="text-gray-300>Clusters</span">
                           <span className="text-white>{learning.clusters}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Inertia</span>"
-                          <span className="text-white>{learning.inertia}</span" >
+                          <span className="text-white>{learning.inertia}</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -623,6 +623,6 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumMachineLearningNeuralNetworks ))))))))))))))))))))))"'"'`

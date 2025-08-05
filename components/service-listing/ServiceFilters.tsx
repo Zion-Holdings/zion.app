@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Filter, Star, DollarSign, Clock, X } from 'lucide-react';
-import type { ServiceFilters } from '../../utils/types/service';
-import { DELIVERY_TIMES } from '../../utils/types/service';
-import { serviceCategories } from '../../utils/data/services';
+import React from "react";
+import { motion } from 'framer-motion";
+import { Filter, Star, DollarSign, Clock, X } from "lucide-react"";
+import type { ServiceFilters } from '../../utils/types/service";
+import { DELIVERY_TIMES } from '../../utils/types/service";
+import { serviceCategories } from '../../utils/data/services";
 
 interface ServiceFiltersProps {
   filters: ServiceFilters;
@@ -31,22 +31,22 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
       filters.priceRange[1] !== 100000 ||'
       filters.rating > 0 ||
       filters.deliveryTime !== 'Any time' ||
-      filters.searchTerm !== '';
+      filters.searchTerm !== '";
     );
   };
 
   const FilterSection = ({ title, children }: { title: string; children: React.ReactNode }) => (
-    <div className=" mb-6">
+    <div className="mb-6">
       <h3 className="text-lg" font-semibold text-gray-900 mb-3>{title}</h3 >
       {children}
-    </div>;"
+    </div>"
   );"
 
   const filterContent = ("
-    <div className=" space-y-6">
+    <div className="space-y-6">
       {/* Categories */}"
       <FilterSection title="Categories">
-        <div className=" space-y-2">
+        <div className="space-y-2">
           <label className=" flex" items-center">
             <input"
               type="radio 
@@ -77,7 +77,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
 
       {/* Price Range */}"
       <FilterSection title="Price" Range">
-        <div className=" space-y-4">
+        <div className="space-y-4">
           <div className="flex" justify-between text-sm text-gray-600>
             <span>${filters.priceRange[0].toLocaleString()}</span>
             <span>${filters.priceRange[1].toLocaleString()}</span>
@@ -105,7 +105,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
  
       {/* Rating */}
       <FilterSection title=Minimum Rating">
-        <div className=" space-y-2">
+        <div className="space-y-2">
           {[4.5, 4.0, 3.5, 3.0, 2.5, 2.0].map((rating) => ("
             <label key={rating} className=" flex" items-center">
               <input"
@@ -138,7 +138,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
 
       {/* Delivery Time */}"
       <FilterSection title="Delivery" Time">
-        <div className=" space-y-2">
+        <div className="space-y-2">
           {DELIVERY_TIMES.map((time) => ("
             <label key={time} className=" flex" items-center">
               <input"
@@ -158,11 +158,11 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
     {hasActiveFilters() && ("
         <button
           onClick={onClearFilters}"
-          className=" w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors flex items-center justify-center" >
+          className="w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors flex items-center justify-center">
           <X className="w-4" h-4 mr-2 >Clear All Filters
         </X className="w-4" h-4 mr-2 ></button>
       )}
-    </div>;
+    </div>
   );
 
   return (
@@ -172,7 +172,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
         <div className = "lg hidden mb-4">
           <button
             onClick={onToggleMobile}"
-            className=" w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-between hover bg-gray-50" >
+            className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-between hover bg-gray-50">
             <span className="flex items-center text-gray-700 >"
               <Filter className="w-4" h-4 mr-2 >Filters
             </Filter className="w-4" h-4 mr-2" ></span>'
@@ -205,21 +205,21 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
           initial={{ opacity: 0, x: -300}}"
           animate={{ opacity: 1, x: 0}}
           exit={{ opacity: 0, x: -300 }}"
-          className=" fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl border-r border-gray-200 overflow-y-auto" >
+          className="fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-xl border-r border-gray-200 overflow-y-auto">
           <div className="p-6 >
             <div className="flex items-center justify-between" mb-6">
               <h2 className="text-xl" font-bold text-gray-900>Filters</h2>
               <button
                 onClick={onToggleMobile}"
-                className=" text-gray-400 hover text-gray-600" >
+                className="text-gray-400 hover text-gray-600">
                 <X className="w-6" h-6 > </X className="w-6" h-6" ></button>
             </div>
             {filterContent}
           </div>
         </motion.div>
       )}
-    </>;
+    </>
   );
-};"
+};
 ''`
 export default ServiceFilters;"'"'`

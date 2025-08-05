@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface IoTDevice {
   id: string;'
   name: string;
-  type: 'sensor' | 'actuator' | 'gateway' | 'camera' | 'controller' | 'smart-appliance';
-  status: 'online' | 'offline' | 'maintenance' | 'error' | 'updating';
+  type: 'sensor' | 'actuator' | 'gateway' | 'camera' | 'controller' | 'smart-appliance";
+  status: 'online' | 'offline' | 'maintenance' | 'error' | 'updating";
   location: string;
   lastSeen: Date;
   dataPoints: number;
@@ -24,14 +24,14 @@ interface IoTDevice {
 interface SensorData {
   id: string;'
   deviceId: string;
-  sensorType: 'temperature' | 'humidity' | 'pressure' | 'motion' | 'light' | 'air-quality';
+  sensorType: 'temperature' | 'humidity' | 'pressure' | 'motion' | 'light' | 'air-quality";
   value: number;
   unit: string;
   timestamp: Date;
   location: string;
   aiProcessed: boolean;'
   anomaly: boolean;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: 'increasing' | 'decreasing' | 'stable";
   threshold: {
     min: number;
     max: number;
@@ -41,7 +41,7 @@ interface IoTAutomation {
   id: string;
   name: string;'
   description: string;
-  status: 'active' | 'inactive' | 'testing' | 'error';
+  status: 'active' | 'inactive' | 'testing' | 'error";
   triggers: {
     device: string;
     condition: string;
@@ -62,7 +62,7 @@ interface IoTAnalytics {
   current: number;
   target: number;'
   improvement: number;
-  trend: 'up' | 'down' | 'stable';
+  trend: 'up' | 'down' | 'stable";
   period: string;}
 const AIPoweredIoTPage: NextPage = () => {
   ;
@@ -80,7 +80,7 @@ const AIPoweredIoTPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading AI-powered IoT data
     setTimeout(() => {
-      const mockDevices: IoTDevice[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Smart Temperature Sensor',
@@ -167,7 +167,7 @@ const AIPoweredIoTPage: NextPage = () => {
             reliability: 0,
             energyEfficiency: 0}}
       ];
-      const mockSensorData: SensorData[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           deviceId: '1',
@@ -244,7 +244,7 @@ const AIPoweredIoTPage: NextPage = () => {
             max: 1000,
             critical: false}}
       ];
-      const mockAutomations: IoTAutomation[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           name: 'Smart Climate Control',
@@ -329,7 +329,7 @@ const AIPoweredIoTPage: NextPage = () => {
           successRate: 89.1,
           aiOptimized: true}
       ];
-      const mockAnalytics: IoTAnalytics[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           metric: 'Device Reliability',
@@ -417,54 +417,54 @@ const AIPoweredIoTPage: NextPage = () => {
   } [devices, filterType, filterStatus, searchTerm, sortBy]);
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'online': return 'text-green-400 bg-green-500/20';
-      case 'offline': return 'text-gray-400 bg-gray-500/20';
-      case 'maintenance': return 'text-yellow-400 bg-yellow-500/20';
-      case 'error': return 'text-red-400 bg-red-500/20';
-      case 'updating': return 'text-blue-400 bg-blue-500/20';
+      case 'online': return 'text-green-400 bg-green-500/20";
+      case 'offline': return 'text-gray-400 bg-gray-500/20";
+      case 'maintenance': return 'text-yellow-400 bg-yellow-500/20";
+      case 'error': return 'text-red-400 bg-red-500/20";
+      case 'updating': return 'text-blue-400 bg-blue-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'sensor': return '📡';
-      case 'actuator': return '⚙️';
-      case 'gateway': return '🌐';
-      case 'camera': return '📷';
-      case 'controller': return '🎛️';
-      case 'smart-appliance': return '🏠';
+      case 'sensor': return '📡";
+      case 'actuator': return '⚙️";
+      case 'gateway': return '🌐";
+      case 'camera': return '📷";
+      case 'controller': return '🎛️";
+      case 'smart-appliance': return '🏠";
       default: return '📱';}
   };
   const getSensorTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'temperature': return '🌡️';
-      case 'humidity': return '💧';
-      case 'pressure': return '📊';
-      case 'motion': return '👤';
-      case 'light': return '💡';
-      case 'air-quality': return '🌬️';
+      case 'temperature': return '🌡️";
+      case 'humidity': return '💧";
+      case 'pressure': return '📊";
+      case 'motion': return '👤";
+      case 'light': return '💡";
+      case 'air-quality': return '🌬️";
       default: return '📡';}
   };
   const getAutomationStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'active': return 'text-green-400 bg-green-500/20';
-      case 'inactive': return 'text-gray-400 bg-gray-500/20';
-      case 'testing': return 'text-blue-400 bg-blue-500/20';
-      case 'error': return 'text-red-400 bg-red-500/20';
+      case 'active': return 'text-green-400 bg-green-500/20";
+      case 'inactive': return 'text-gray-400 bg-gray-500/20";
+      case 'testing': return 'text-blue-400 bg-blue-500/20";
+      case 'error': return 'text-red-400 bg-red-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
   const getTrendIcon = (trend: string) => {'
     switch (trend) {';'
-      case 'up': return '📈';
-      case 'down': return '📉';
-      case 'stable': return '➡️';
+      case 'up': return '📈";
+      case 'down': return '📉";
+      case 'stable': return '➡️";
       default: return '➡️';}
   };
 '
   const getBatteryColor = (level: number) => {';'
-    if (level > 80) return 'text-green-400';
-    if (level > 50) return 'text-yellow-400';
-    if (level > 20) return 'text-orange-400';
-    return 'text-red-400';
+    if (level > 80) return 'text-green-400";
+    if (level > 50) return 'text-yellow-400";
+    if (level > 20) return 'text-orange-400";
+    return 'text-red-400";
   };
 
   if (loading) {
@@ -486,7 +486,7 @@ const AIPoweredIoTPage: NextPage = () => {
             <span className="text-lg" font-medium>Loading AI-Powered IoT...</span>
           </div >
         </div>
-      </div>;"
+      </div>"
     );}
 "
   return ("
@@ -500,14 +500,14 @@ const AIPoweredIoTPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/ai-powered-blockchain" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Blockchain
-              </Link href= /ai-powered-blockchain" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /ai-powered-blockchain" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-machine-learning className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >ML
               </Link href=/ai-powered-machine-learning className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
@@ -601,7 +601,7 @@ const AIPoweredIoTPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="mb-4>" 
-                  </div><div className="flex items-center justify-between mb-2" >
+                  </div><div className="flex items-center justify-between mb-2">
                     <span className="text-sm:text-gray-400>Location" </span>
                     <span className="text-sm" text-white>{device.location}</span>
                   </div>
@@ -649,7 +649,7 @@ const AIPoweredIoTPage: NextPage = () => {
 {selectedView === 'sensors' && (
           <div className="space-y-6>" 
             {sensorData.map((data) => (
-              </div><div key={data.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" >
+              </div><div key={data.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
                 <div className="flex" items-start justify-between mb-4> 
                   </div><div className="flex items-center" space-x-3>
                     <div className="text-3xl>{getSensorTypeIcon(data.sensorType)}</div>"
@@ -743,7 +743,7 @@ const AIPoweredIoTPage: NextPage = () => {
                 </div>
                 <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Triggers </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {automation.triggers.map((trigger, index) => (
                       </div><div key={index} className=" bg-white/5 rounded" p-2>
                         <div className=" flex items-center" justify-between>
@@ -757,7 +757,7 @@ const AIPoweredIoTPage: NextPage = () => {
                 </div>
                 <div className="mb-4">
                   <p className="text-sm:text-gray-400" mb-2>Actions </p>
-                  <div className="space-y-2" >
+                  <div className="space-y-2">
                     {automation.actions.map((action, index) => (
                       </div><div key={index} className=" bg-white/5 rounded" p-2>
                         <div className=" flex items-center" justify-between>
@@ -813,6 +813,6 @@ const AIPoweredIoTPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredIoTPage ")"'"'`

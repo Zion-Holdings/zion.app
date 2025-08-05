@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumSimulation {
   id: string'
@@ -69,7 +69,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
   const [circuits, setCircuits] = useState<QuantumCircuit[]>([]
   const [measurements, setMeasurements] = useState<QuantumMeasurement[]>([]
   // Mock data
-  const mockSimulations: QuantumSimulation[] = ['
+  const $1: $2[] = [
     {
       id: 'qs-001',
       name: 'Grover Search Simulation',
@@ -81,7 +81,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       status: 'completed',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockAlgorithms: QuantumAlgorithm[] = ['
+  const $1: $2[] = [
     {
       id: 'qa-001',
       name: 'Grover Search Algorithm',
@@ -92,7 +92,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       successRate: 95.2,
       status: 'deployed
     }]
-  const mockGates: QuantumGate[] = ['
+  const $1: $2[] = [
     {
       id: 'qg-001',
       name: 'Hadamard Gate',
@@ -103,7 +103,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       duration: 50,
       status: 'active
     }]
-  const mockStates: QuantumState[] = ['
+  const $1: $2[] = [
     {
       id: 'qs-001',
       name: 'Bell State',
@@ -114,7 +114,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       entanglement: 1.0,
       status: 'prepared
     }]
-  const mockCircuits: QuantumCircuit[] = ['
+  const $1: $2[] = [
     {
       id: 'qc-001',
       name: 'Quantum Fourier Transform',
@@ -125,7 +125,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       optimization: 85.5,
       status: 'completed
     }]
-  const mockMeasurements: QuantumMeasurement[] = ['
+  const $1: $2[] = [
     {
       id: 'qm-001',
       name: 'State Tomography',
@@ -207,11 +207,11 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Simulation Dashboard', icon: '⚛️' },
@@ -245,7 +245,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>⚛️</span>
                     </div>
@@ -261,12 +261,12 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                       <span className="text-green-400>Active</span>"
                     </div>
                     <div className=" flex" justify-between>
-                      <span className="text-gray-300>Simulations</span" >
+                      <span className="text-gray-300>Simulations</span">
                       <span className="text-white>{simulations.length}</span"">
                     </div>
-                    <div className=" flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Algorithms</span>"
-                      <span className="text-white>{algorithms.length}</span" >
+                      <span className="text-white>{algorithms.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Circuits</span>"
@@ -278,12 +278,12 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🔄</div>
                       <div className="font-semibold>Run Simulation</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>🧮</div>
                       <div className="font-semibold>Develop" Algorithm</div>
                     </button>
@@ -301,11 +301,11 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
             )}"'
             {/* Simulations */},''
 {activeTab === 'simulations' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Simulations</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {simulations.map((simulation) => (
-                    </div><div key={simulation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={simulation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{simulation.name}</h3>
@@ -317,9 +317,9 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Qubits</span>"
-                          <span className="text-white>{simulation.qubits}</span" >
+                          <span className="text-white>{simulation.qubits}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Depth</span>"
@@ -368,7 +368,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                           <span className="text-white>{algorithm.qubits}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Gates</span" >
+                          <span className="text-gray-300>Gates</span">
                           <span className="text-white>{algorithm.gates}</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -408,7 +408,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                           <span className="text-white>{gate.operation}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Duration</span" >
+                          <span className="text-gray-300>Duration</span">
                           <span className="text-white>{gate.duration} ns</span>
                         </div>
                         <div className="flex" justify-between >`
@@ -448,12 +448,12 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                           <span className="text-white>{state.qubits}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Amplitude</span" >
+                          <span className="text-gray-300>Amplitude</span">
                           <span className="text-white>{state.amplitude}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Phase</span>"
-                          <span className="text-white>{state.phase}π</span" >
+                          <span className="text-white>{state.phase}π</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -487,12 +487,12 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                       
                       <div className="space-y-3>" 
                         </div><div className="flex" justify-between>
-                          <span className="text-gray-300>Qubits</span" >
+                          <span className="text-gray-300>Qubits</span">
                           <span className="text-white>{circuit.qubits}</span"">
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Gates</span>"
-                          <span className="text-white>{circuit.gates}</span" >
+                          <span className="text-white>{circuit.gates}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Depth</span>"
@@ -541,7 +541,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
                           <span className="text-white>{measurement.shots}</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Resolution</span" >
+                          <span className="text-gray-300>Resolution</span">
                           <span className="text-white>{measurement.resolution}</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -564,7 +564,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
       <footer className="relative  z-10 mt-16>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 > 
           </div><div className="text-center">
-            <p className=" text-gray-400">
+            <p className="text-gray-400">
               AI-Powered Quantum Simulation & Algorithm Development | Zion Tech Group
             </p>
             <p className=" text-gray-500 text-sm mt-2>
@@ -581,6 +581,6 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumSimulationAlgorithmDevelopment ))))))))))))))))))))))"'"'`

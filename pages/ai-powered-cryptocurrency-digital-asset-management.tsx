@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface Cryptocurrency {
   id: string
@@ -85,7 +85,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockCryptocurrencies: Cryptocurrency[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       symbol: 'BTC',
@@ -135,7 +135,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         trendPrediction: 'bullish',
         recommendations: ['Strong fundamentals', 'Consider long-term position', 'Monitor development progress']}
 }]
-  const mockDigitalAssets: DigitalAsset[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Bitcoin',
@@ -179,7 +179,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         riskAssessment: 0.8,
         recommendations: ["High-risk", high-reward', 'Consider taking profits', 'Monitor NFT market trends']}
 }]
-  const mockPortfolios: Portfolio[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Conservative Portfolio',
@@ -207,7 +207,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         riskAdjustment: 0.4,
         recommendations: ['Consider rebalancing', 'Add more stable assets', 'Monitor risk exposure']}
 }]
-  const mockTradingStrategies: TradingStrategy[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Momentum Strategy',
@@ -338,7 +338,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -400,7 +400,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Cryptocurrencies Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Top Cryptocurrencies</h3>
               <div className="space-y-4>"
                 {cryptocurrencies.slice(0, 3).map((crypto) => (
@@ -449,17 +449,17 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 "''
         {selectedView === 'crypto' && (
           <div className="space-y-6>" 
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {cryptocurrencies.map((crypto) => (
                 <div key={crypto.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{crypto.symbol}</h3>``
                     <span className="{`px-4" py-3 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white`}>
                       {formatPercentage(crypto.change24h)}
                     </span>
                   </div>
                   <p className="text-gray-400" text-sm mb-4>{crypto.name}</p>
-                  <div className="space-y-2" mb-4>
+                  <div className="space-y-2 mb-4">
                     </div><div className="flex" justify-between text-sm>
                       <span className="text-gray-400>Price</span>"
                       <span className="text-white>{formatCurrency(crypto.price)}</span>" 
@@ -470,12 +470,12 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                     </div>
                     <div className=" flex justify-between" text-sm>
                       <span className=" text-gray-400>Volume (24h)</span>
-                      <span className="text-white>{formatCurrency(crypto.volume24h)}</span" >
+                      <span className="text-white>{formatCurrency(crypto.volume24h)}</span">
                     </div>
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Sentiment</span" >
+                      <span className="text-gray-400>Sentiment</span">
                       <span className="text-white>{Math.round(crypto.aiAnalysis.sentimentScore * 100)}%</span>
                     </div>
                     <div className="flex" justify-between text-sm >
@@ -521,12 +521,12 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                   <p className="text-gray-400" text-sm:mb-4>{asset.name} • {asset.type}</p>
                   <div className="space-y-2" mb-4 > 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Quantity</span" >
+                      <span className="text-gray-400>Quantity</span">
                       <span className="text-white>{asset.quantity}</span"">
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Avg" Price</span>
-                      <span className="text-white>{formatCurrency(asset.averagePrice)}</span" >
+                      <span className="text-white>{formatCurrency(asset.averagePrice)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Current" Value</span>
@@ -560,7 +560,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                       {formatPercentage(portfolio.totalReturn)}
                     </span>
                   </div>
-                  <p className="text-gray-400" mb-4>{formatCurrency(portfolio.totalValue)} total value</p>
+                  <p className="text-gray-400 mb-4">{formatCurrency(portfolio.totalValue)} total value</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4 > 
                     </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{Math.round(portfolio.riskScore * 100)}%</div>
@@ -572,7 +572,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Optimization</span>"
                       <span className="text-white>{Math.round(portfolio.aiAnalysis.optimizationScore" * 100)}%</span>
                     </div>
@@ -592,7 +592,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {tradingStrategies.map((strategy) => (
                 <div key={strategy.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>
+                  </div><div className="flex items-center justify-between mb-4">
                     <h3 className="text-white" font-semibold>{strategy.name}</h3>
                     <span className="px-3" py-3 rounded-full text-sm:bg-blue-500/20 text-blue-400>
                       {strategy.type}
@@ -600,7 +600,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" mb-4 >{strategy.description}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{formatPercentage(strategy.performance)}</div>
                       <div className="text-gray-400" text-sm>Performance</div>
                     </div>
@@ -611,10 +611,10 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Accuracy</span" >
+                      <span className="text-gray-400>Accuracy</span">
                       <span className="text-white>{Math.round(strategy.aiAnalysis.accuracy * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Profit" Factor</span>
                       <span className="text-white>{strategy.aiAnalysis.profitFactor}</span>"
                     </div>
@@ -628,7 +628,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && ("
           <div className=" space-y-6>
             {/* Analytics Overview */}
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center> 
                 </div><div className="text-3xl" font-bold text-white>{analytics.totalAssets}</div>
                 <div className="text-gray-400>Total" Assets</div>
@@ -652,9 +652,9 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>AI Investment Insights</h3>
               <div className="space-y-4>" 
                 {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center space-x-3" mb-2>`
-                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span" >``"
+                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">``"
                       <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title} 
                       </h4>
@@ -706,7 +706,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

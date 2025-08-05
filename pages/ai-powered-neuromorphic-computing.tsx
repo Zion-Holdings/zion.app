@@ -1,14 +1,14 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface NeuromorphicComputing {
   id: string;
   name: string;'
   description: string;
-  type: 'neuromorphic_chip' | 'brain_inspired' | 'cognitive_computing' | 'neural_processor' | 'synaptic_network' | 'neuromorphic_memory';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'neuromorphic_chip' | 'brain_inspired' | 'cognitive_computing' | 'neural_processor' | 'synaptic_network' | 'neuromorphic_memory";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   neurons: number;
   synapses: number;
   powerConsumption: number;
@@ -23,8 +23,8 @@ interface SpikingNeuralNetwork {
   id: string;
   title: string;'
   description: string;
-  type: 'temporal_encoding' | 'rate_encoding' | 'population_encoding' | 'spike_timing' | 'adaptive_threshold' | 'plasticity';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'temporal_encoding' | 'rate_encoding' | 'population_encoding' | 'spike_timing' | 'adaptive_threshold' | 'plasticity";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   layers: number;
   neurons: number;
   aiOptimization: SpikingOptimization;}
@@ -38,8 +38,8 @@ interface BrainInspiredAlgorithm {
   id: string;
   name: string;'
   description: string;
-  type: 'hebbian_learning' | 'competitive_learning' | 'self_organizing' | 'attractor_network' | 'oscillatory' | 'reservoir_computing';
-  status: 'active' | 'inactive' | 'training' | 'error' | 'offline';
+  type: 'hebbian_learning' | 'competitive_learning' | 'self_organizing' | 'attractor_network' | 'oscillatory' | 'reservoir_computing";
+  status: 'active' | 'inactive' | 'training' | 'error' | 'offline";
   complexity: number;
   convergence: number;
   aiAnalysis: BrainAnalysis;}
@@ -54,8 +54,8 @@ interface NeuromorphicChip {
   chipId: string;
   title: string;'
   description: string;
-  type: 'digital_neuromorphic' | 'analog_neuromorphic' | 'mixed_signal' | 'memristor_based' | 'photonic_neuromorphic' | 'quantum_neuromorphic';
-  status: 'active' | 'inactive' | 'testing' | 'error' | 'offline';
+  type: 'digital_neuromorphic' | 'analog_neuromorphic' | 'mixed_signal' | 'memristor_based' | 'photonic_neuromorphic' | 'quantum_neuromorphic";
+  status: 'active' | 'inactive' | 'testing' | 'error' | 'offline";
   cores: number;
   memory: number;
   aiAnalysis: ChipAnalysis;}
@@ -70,8 +70,8 @@ interface CognitiveComputing {
   cognitiveId: string;
   title: string;'
   description: string;
-  type: 'pattern_recognition' | 'decision_making' | 'learning_adaptation' | 'reasoning_inference' | 'attention_mechanism' | 'memory_consolidation';
-  status: 'active' | 'inactive' | 'processing' | 'error' | 'offline';
+  type: 'pattern_recognition' | 'decision_making' | 'learning_adaptation' | 'reasoning_inference' | 'attention_mechanism' | 'memory_consolidation";
+  status: 'active' | 'inactive' | 'processing' | 'error' | 'offline";
   tasks: number;
   accuracy: number;
   aiAnalysis: CognitiveAnalysis;}
@@ -86,8 +86,8 @@ interface NeuromorphicComputingManagement {
   systemId: string;
   title: string;'
   description: string;
-  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance';
-  status: 'operational' | 'maintenance' | 'error' | 'offline';
+  category: 'hardware' | 'software' | 'network' | 'security' | 'performance' | 'maintenance";
+  status: 'operational' | 'maintenance' | 'error' | 'offline";
   devices: number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;}
@@ -111,7 +111,7 @@ interface NeuromorphicComputingInsight {
   id: string;
   title: string;'
   description: string;
-  impact: 'positive' | 'negative' | 'neutral';
+  impact: 'positive' | 'negative' | 'neutral";
   confidence: number;
   recommendations: string[];}
 const AIPoweredNeuromorphicComputingPage: NextPage = () => {
@@ -126,7 +126,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
-  const mockNeuromorphicComputing: NeuromorphicComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Neuromorphic Processing Unit',
@@ -143,7 +143,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
         adaptationScore: 94,
         recommendations: ['Optimize synaptic connections', 'Enhance learning algorithms']}}
     }]
-  const mockSpikingNeuralNetworks: SpikingNeuralNetwork[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Temporal Spiking Network',
@@ -159,7 +159,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
         plasticityScore: 91,
         recommendations: ['Improve spike timing', 'Enhance plasticity mechanisms']}
 }]
-  const mockBrainInspiredAlgorithms: BrainInspiredAlgorithm[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Hebbian Learning Algorithm',
@@ -175,7 +175,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
         adaptabilityScore: 93,
         recommendations: ['Optimize learning rate', 'Enhance convergence speed']}
 }]
-  const mockNeuromorphicChips: NeuromorphicChip[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       chipId: 'NC-001',
@@ -192,7 +192,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
         scalabilityScore: 91,
         recommendations: ['Optimize core utilization', 'Enhance memory efficiency']}
 }]
-  const mockCognitiveComputing: CognitiveComputing[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       cognitiveId: 'CC-001',
@@ -209,7 +209,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
         learningScore: 95,
         recommendations: ['Improve pattern detection', 'Enhance learning capabilities']}
 }]
-  const mockNeuromorphicComputingManagement: NeuromorphicComputingManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       systemId: 'NCM-001',
@@ -434,7 +434,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                 {/* Controls */}
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
                   <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className="flex items-center space-x-4" >
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-purple-500"
@@ -491,7 +491,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                         </div>
                       </div>
                       {/* AI Analysis */}
-                      <div className=" mb-4">
+                      <div className="mb-4">
                         <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
                         <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>
@@ -550,7 +550,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
                     <div className="text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
                   <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>"
                     {analytics.aiInsights.map((insight) => (
@@ -591,7 +591,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
             </p>
             <div className="flex  flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Computing
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link>
               <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
               </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
             </div>
@@ -606,6 +606,6 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredNeuromorphicComputingPage )))))))))))))))))))))))))))))"'"'`

@@ -1,17 +1,17 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 interface Message {'
   id: string;
-  type: 'marketplace' | 'service' | 'talent' | 'payment' | 'support' | 'system' | 'quote' | 'project';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
+  type: 'marketplace' | 'service' | 'talent' | 'payment' | 'support' | 'system' | 'quote' | 'project";
+  priority: 'low' | 'medium' | 'high' | 'urgent";
   sender: {
     id: string;
     name: string;'
     avatar?: string;
-    type: 'user' | 'service-provider' | 'talent' | 'system' | 'admin';
+    type: 'user' | 'service-provider' | 'talent' | 'system' | 'admin";
   };
   recipient: string;
   subject: string;
@@ -42,7 +42,7 @@ interface Message {'
   actions?: {
     label: string;'
     url: string;
-    type: 'primary' | 'secondary';
+    type: 'primary' | 'secondary";
   }[];}
 interface InboxStats {
   totalMessages: number;
@@ -58,7 +58,7 @@ interface InboxFilters {
   priority: string;
   sender: string;'
   dateRange: string;
-  readStatus: 'all' | 'read' | 'unread';
+  readStatus: 'all' | 'read' | 'unread";
   starred: boolean;}
 const InboxPage: NextPage = () => {
   ;
@@ -80,7 +80,7 @@ const InboxPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading messages
     setTimeout(() => {
-      const mockMessages: Message[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'service',
@@ -294,22 +294,22 @@ const InboxPage: NextPage = () => {
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'urgent': return 'text-red-400';
-      case 'high': return 'text-orange-400';
-      case 'medium': return 'text-yellow-400';
-      case 'low': return 'text-green-400';
+      case 'urgent': return 'text-red-400";
+      case 'high': return 'text-orange-400";
+      case 'medium': return 'text-yellow-400";
+      case 'low': return 'text-green-400";
       default: return 'text-gray-400';}
   };
   const getTypeIcon = (type: string) => {'
     switch (type) {';'
-      case 'marketplace': return '🏪';
-      case 'service': return '🛠️';
-      case 'talent': return '👨‍💻';
-      case 'payment': return '💰';
-      case 'support': return '🛠️';
-      case 'system': return '⚙️';
-      case 'quote': return '📋';
-      case 'project': return '📁';
+      case 'marketplace': return '🏪";
+      case 'service': return '🛠️";
+      case 'talent': return '👨‍💻";
+      case 'payment': return '💰";
+      case 'support': return '🛠️";
+      case 'system': return '⚙️";
+      case 'quote': return '📋";
+      case 'project': return '📁";
       default: return '📧';}
   };
 
@@ -329,7 +329,7 @@ const InboxPage: NextPage = () => {
         <div className="flex" items-center justify-center min-h-screen>
           </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
-      </div>; 
+      </div> 
     );}
 "
   return (
@@ -410,8 +410,7 @@ const InboxPage: NextPage = () => {
               <div className="mb-4>"
                 <label className="block" text-gray-300 text-sm font-medium mb-2>Type</label>
                   onChange={(e) => setFilters(prev => ({ ...prev, type  e.target.value }))}
-                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
-                >"
+                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">"
                   <option value="all>All Types</option>
                   <option value=marketplace>Marketplace</option">
                   <option value=service>Service</option>
@@ -428,8 +427,7 @@ const InboxPage: NextPage = () => {
               <div className="mb-4>"
                 <label className="block" text-gray-300 text-sm font-medium mb-2>Priority</label>
                   onChange={(e) => setFilters(prev => ({ ...prev, priority  e.target.value }))}
-                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
-                >
+                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">
                   <option value=all>All Priorities</option>
                   <option value=urgent>Urgent</option">
                   <option value=high>High</option>
@@ -442,8 +440,7 @@ const InboxPage: NextPage = () => {
               <div className="mb-4>"
                 <label className="block" text-gray-300 text-sm font-medium mb-2>Status</label>
                   onChange={(e) => setFilters(prev => ({ ...prev, readStatus  e.target.value as any }))}
-                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
-                >
+                  className="w-full  px-3 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">
                   <option value=all>All Messages</option>
                   <option value=unread>Unread</option">
                   <option value=read>Read</option>
@@ -451,7 +448,7 @@ const InboxPage: NextPage = () => {
               </div>
 
               {/* Starred Filter */}"
-              <div className=" mb-4">
+              <div className="mb-4">
                 <label className="flex" items-center text-gray-300 text-sm font-medium>
                   
                     onChange={(e) => setFilters(prev => ({ ...prev, starred: e.target.checked }))}
@@ -571,7 +568,7 @@ const InboxPage: NextPage = () => {
           <div className="fixed"" inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center z-50>
             >
               <div className="p-6>" 
-                </div><div className="flex justify-between items-start" mb-4>
+                </div><div className="flex justify-between items-start mb-4">
                   <div className="flex" items-center space-x-3>
                     </div><div className="w-12" h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl >
                       {selectedMessage.sender.avatar || getTypeIcon(selectedMessage.type)}
@@ -617,7 +614,7 @@ const InboxPage: NextPage = () => {
         )}
                                       </div>
       </div>
-    </div>;
+    </div>
   );
 };
 ''`

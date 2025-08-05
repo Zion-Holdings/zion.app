@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useRef }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useRef }  from 'react";
+import Link from 'next/link";
 
 interface QuantumErrorCorrectionCode {
   id: string'
@@ -70,7 +70,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
   const [faultDiagnosis, setFaultDiagnosis] = useState<QuantumFaultDiagnosis[]>([]
   const [recoveryProtocols, setRecoveryProtocols] = useState<QuantumRecoveryProtocol[]>([]
   // Mock data
-  const mockErrorCorrectionCodes: QuantumErrorCorrectionCode[] = ['
+  const $1: $2[] = [
     {
       id: 'qec-001',
       name: 'Surface Code 7x7',
@@ -83,7 +83,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       status: 'active',
       timestamp: '2024-01-15T10:30:00Z'}
 }]
-  const mockFaultTolerantOperations: FaultTolerantOperation[] = ['
+  const $1: $2[] = [
     {
       id: 'fto-001',
       name: 'Logical Hadamard Gate',
@@ -94,7 +94,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       overhead: 1.2,
       status: 'completed
     }]
-  const mockDecoherenceMitigation: DecoherenceMitigation[] = ['
+  const $1: $2[] = [
     {
       id: 'dm-001',
       name: 'Dynamical Decoupling',
@@ -105,7 +105,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       energyCost: 0.5,
       status: 'active
     }]
-  const mockNoiseReduction: QuantumNoiseReduction[] = ['
+  const $1: $2[] = [
     {
       id: 'nr-001',
       name: 'Quantum Noise Filter',
@@ -116,7 +116,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       latency: 5,
       status: 'active
     }]
-  const mockFaultDiagnosis: QuantumFaultDiagnosis[] = ['
+  const $1: $2[] = [
     {
       id: 'fd-001',
       name: 'Error Syndrome Detection',
@@ -127,7 +127,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       coverage: 99.9,
       status: 'monitoring
     }]
-  const mockRecoveryProtocols: QuantumRecoveryProtocol[] = ['
+  const $1: $2[] = [
     {
       id: 'rp-001',
       name: 'Error Recovery Protocol',
@@ -210,11 +210,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
       </header>
 
       {/* Main Content */}"
-      <main className=" relative z-10" >
+      <main className="relative z-10">
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
           {/* Tab Navigation */}
-          </div><div className=" mb-8">
+          </div><div className="mb-8">
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {["'
                 { id: 'dashboard', label: 'Error Dashboard', icon: '🛡️' },
@@ -248,7 +248,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
               </div><div className=" grid grid-cols-1 lg grid-cols-3" gap-6>
                 {/* System Status */}
                 <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> 
-                  </div><div className="flex items-center space-x-3 mb-4" >
+                  </div><div className="flex items-center space-x-3 mb-4">
                     <div className="w-10" h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center>
                       <span className="text-white" text-lg>🛡️</span>
                     </div>
@@ -265,11 +265,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                     </div>
                     <div className=" flex" justify-between>
                       <span className=" text-gray-300>Error Codes</span>
-                      <span className="text-white>{errorCorrectionCodes.length}</span" >
+                      <span className="text-white>{errorCorrectionCodes.length}</span">
                     </div>
-                    <div className="flex justify-between" >
+                    <div className="flex justify-between">
                       <span className="text-gray-300>Fault" Operations</span>
-                      <span className="text-white>{faultTolerantOperations.length}</span" >
+                      <span className="text-white>{faultTolerantOperations.length}</span">
                     </div>
                     <div className="flex" justify-between>
                       <span className="text-gray-300>Recovery" Protocols</span>
@@ -281,12 +281,12 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                 {/* Quick Actions */}
                 <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
                   <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4" >
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <button className=" p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white hover from-red-700 hover to-red-800 transition-all" duration-200>
                       <div className="text-2xl" mb-2>🔧</div>
                       <div className="font-semibold>Correct Errors</div>
                     </button>
-                    <button className=" p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200" >
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200">
                       <div className="text-2xl" mb-2>⚡</div>
                       <div className="font-semibold>Fault" Tolerance</div>
                     </button>
@@ -304,11 +304,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
             )}"'
             {/* Error Correction Codes */},''
 {activeTab === 'error-correction' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Error Correction Codes</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {errorCorrectionCodes.map((code) => (
-                    </div><div key={code.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={code.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{code.name}</h3>
@@ -320,9 +320,9 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Distance</span>"
-                          <span className="text-white>{code.distance}</span" >
+                          <span className="text-white>{code.distance}</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Logical" Qubits</span>
@@ -334,7 +334,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                         </div>
                         <div className=" flex" justify-between>
                           <span className=" text-gray-300>Error Threshold</span>
-                          <span className="text-white>{code.errorThreshold}%</span" >
+                          <span className="text-white>{code.errorThreshold}%</span">
                         </div>
                         <div className="flex" justify-between >`
                           <span className="text-gray-300>Status</span>``"
@@ -373,12 +373,12 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                           <span className="text-white>{operation.errorRate}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Runtime</span" >
+                          <span className="text-gray-300>Runtime</span">
                           <span className="text-white>{operation.runtime} ms</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Overhead</span>"
-                          <span className="text-white>{operation.overhead}x</span" >
+                          <span className="text-white>{operation.overhead}x</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -415,9 +415,9 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                           <span className=" text-gray-300>Coherence Time</span>
                           <span className=" text-white>{mitigation.coherenceTime} μs</span>
                         </div>
-                        <div className=" flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Decoherence" Rate</span>
-                          <span className="text-white>{mitigation.decoherenceRate}%</span" >
+                          <span className="text-white>{mitigation.decoherenceRate}%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Energy" Cost</span>
@@ -437,11 +437,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
             )}"'
             {/* Noise Reduction */},''
 {activeTab === 'noise-reduction' && ("
-              <div className=" space-y-6">
+              <div className="space-y-6">
                 <h2 className="text-2xl" font-bold text-white>Quantum Noise Reduction</h2>
                 <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {noiseReduction.map((reduction) => (
-                    </div><div key={reduction.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700" >
+                    </div><div key={reduction.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex" items-center justify-between mb-4>
                         </div><div>
                           <h3 className="text-lg" font-semibold text-white>{reduction.name}</h3>
@@ -453,9 +453,9 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                         </div>
                       </div>
                       <div className="space-y-3>" 
-                        </div><div className="flex justify-between" >
+                        </div><div className="flex justify-between">
                           <span className="text-gray-300>Noise" Level</span>
-                          <span className="text-white>{reduction.noiseLevel}%</span" >
+                          <span className="text-white>{reduction.noiseLevel}%</span">
                         </div>
                         <div className="flex" justify-between>
                           <span className="text-gray-300>Bandwidth</span>"
@@ -504,7 +504,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                           <span className="text-white>{diagnosis.falsePositiveRate}%</span>"
                         </div>
                         <div className=" flex" justify-between>
-                          <span className="text-gray-300>Coverage</span" >
+                          <span className="text-gray-300>Coverage</span">
                           <span className="text-white>{diagnosis.coverage}%</span"">
                         </div>
                         <div className="flex" justify-between >`
@@ -545,11 +545,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
                         </div>
                         <div className=" flex" justify-between>
                           <span className=" text-gray-300>Resource Overhead</span>
-                          <span className="text-white>{protocol.resourceOverhead}x</span" >
+                          <span className="text-white>{protocol.resourceOverhead}x</span">
                         </div>
-                        <div className="flex justify-between" >
+                        <div className="flex justify-between">
                           <span className="text-gray-300>Reliability</span>"
-                          <span className="text-white>{protocol.reliability}%</span" >
+                          <span className="text-white>{protocol.reliability}%</span">
                         </div>
                         <div className="flex" justify-between>`
                           <span className="text-gray-300>Status</span>``"
@@ -588,6 +588,6 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {'
 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredQuantumErrorCorrectionFaultTolerance ))))))))))))))))))))))"'"'`

@@ -1,5 +1,5 @@
-import React, { useState, useEffect , useCallback } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect , useCallback } from 'react";
+import Link from 'next/link";
 
 const FuturisticHero: React.FC = () => {;
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -10,7 +10,7 @@ const FuturisticHero: React.FC = () => {;
     'High-Tech Products',
     'IT Services',
     'AI Talents',
-    'Innovation Hub';
+    'Innovation Hub";
   ];
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const FuturisticHero: React.FC = () => {;
   }, [animatedTexts.length]);
 
   return (
-    <section className=" relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}"
       <div className=" absolute inset-0" cyber-bg">
         <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
@@ -47,13 +47,13 @@ const FuturisticHero: React.FC = () => {;
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink" neon-text>
               The First Free
             </span>
-            <span className=" block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple">
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-neon-green via-neon-blue to-neon-purple">
               {animatedTexts[currentTextIndex]}
             </span>
           </h1>
 
           {/* Subtitle */}"
-          <p className=" text-responsive-lg lg text-responsive-xl text-high-contrast-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-responsive-lg lg text-responsive-xl text-high-contrast-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
             Experience the future of commerce with our cutting-edge AI-powered marketplace. 
             Connect with top-tier IT services, AI talents, and innovative products in a seamless, "
             secure environment.
@@ -63,14 +63,14 @@ const FuturisticHero: React.FC = () => {;
           <div className=" flex flex-col sm flex-row gap-4 justify-center items-center" mb-12">
             <Link"
               href="/auth/signup 
-              className=" group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105" >
+              className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105">
               <span className="relative" z-10>Start Trading Now</span>
               <div className="absolute" inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg blur-sm opacity-50 animate-pulse-neon></div>
             </Link>
             
             <Link"
               href="/marketplace 
-              className=" group relative px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105" >
+              className="group relative px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105">
               <span className="relative" z-10>Explore Marketplace</span>
               <div className="absolute" inset-0 bg-gradient-to-r from-neon-blue to-transparent rounded-lg opacity-0 group-hover opacity-20 transition-opacity duration-300></div">
             </Link>
@@ -78,7 +78,7 @@ const FuturisticHero: React.FC = () => {;
 
           {/* Stats */}"
           <div className=" grid grid-cols-1 md grid-cols-3 gap-8 max-w-3xl" mx-auto">
-            <div className=" text-center">
+            <div className="text-center">
               <div className=" text-3xl lg text-4xl font-bold text-neon-blue neon-text" mb-2>
                 10K+
               </div>
@@ -86,7 +86,7 @@ const FuturisticHero: React.FC = () => {;
                 Active Users
               </div>
             </div>
-            <div className=" text-center">
+            <div className="text-center">
               <div className=" text-3xl lg text-4xl font-bold text-neon-purple neon-text" mb-2>
                 500+
               </div>
@@ -94,7 +94,7 @@ const FuturisticHero: React.FC = () => {;
                 AI Services
               </div>
             </div>
-            <div className=" text-center">
+            <div className="text-center">
               <div className=" text-3xl lg text-4xl font-bold text-neon-green neon-text" mb-2>
                 99.9%
               </div>
@@ -127,6 +127,6 @@ const FuturisticHero: React.FC = () => {;
       </div>
     </section>; 
   );
-};"
+};
 ''`
 export default FuturisticHero;'"'`

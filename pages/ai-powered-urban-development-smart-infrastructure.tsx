@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface UrbanPlanning {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockUrbanPlanning: UrbanPlanning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered City Planning',
@@ -132,7 +132,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         planningInsights: ['Renewable energy integration successful', 'Carbon footprint reduction achieved', 'Green building standards effective'],
         recommendations: ['Expand renewable energy', 'Enhance green building codes', 'Implement circular economy']}
 }]
-  const mockInfrastructureManagement: InfrastructureManagement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Smart Grid System',
@@ -176,7 +176,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         optimizationOpportunities: ['Improve traffic flow', 'Enhance public transit', 'Expand smart mobility'],
         improvementStrategies: ['Implement smart traffic systems', 'Enhance public transit', 'Expand mobility options']}
 }]
-  const mockSmartCityAnalytics: SmartCityAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Urban Analytics Platform',
@@ -220,7 +220,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         improvementAreas: ['Enhance air quality monitoring', 'Improve pollution detection', 'Expand sensor network'],
         recommendations: ['Implement advanced sensors', 'Enhance pollution detection', 'Expand monitoring network']}
 }]
-  const mockUrbanDevelopment: UrbanDevelopment[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Development Projects Management',
@@ -369,7 +369,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -459,7 +459,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Urban Planning Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Urban Planning</h3>
               <div className="space-y-4>"
                 {urbanPlanning.slice(0, 3).map((planning) => (
@@ -485,7 +485,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Infrastructure Management</h3>
               <div className="space-y-4>" 
                 {infrastructureManagement.slice(0, 2).map((infrastructure) => (
-                  </div><div key={infrastructure.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={infrastructure.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{infrastructure.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(infrastructure.status)} text-white`}>
@@ -533,10 +533,10 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-high-contrast-tertiary" text-sm mb-4>{planning.location} • {planning.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-high-contrast-tertiary>Population</span>"
-                      <span className="text-white>{formatNumber(planning.population)}</span" >
+                      <span className="text-white>{formatNumber(planning.population)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-high-contrast-tertiary>Area" Covered</span>
@@ -582,7 +582,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-high-contrast-tertiary>Capacity</span>"
                       <span className="text-white>{formatNumber(infrastructure.capacity)}" MW</span>
                     </div>
@@ -602,7 +602,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {smartCityAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{analytics.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
@@ -610,7 +610,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                   </div>
                   <p className="text-high-contrast-tertiary" text-sm mb-4 >{analytics.location} • {analytics.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{formatNumber(analytics.dataPoints)}</div>
                       <div className="text-high-contrast-tertiary" text-sm>Data Points</div>
                     </div>
@@ -622,9 +622,9 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
                       <span className=" text-high-contrast-tertiary>Response Time</span>
-                      <span className="text-white>{analytics.responseTime}s</span" >
+                      <span className="text-white>{analytics.responseTime}s</span">
                     </div>
-                    <div className="flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-high-contrast-tertiary>Data" Accuracy</span>
                       <span className="text-white>{analytics.aiAnalysis.dataAccuracy}/10</span>"
                     </div>
@@ -637,10 +637,10 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 "'
         {selectedView === 'development' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {urbanDevelopment.map((development) => (
                 <div key={development.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{development.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(development.status)} text-white`}>
                       {development.status}
@@ -736,7 +736,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -767,7 +767,7 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

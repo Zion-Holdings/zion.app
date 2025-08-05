@@ -1,5 +1,5 @@
 import React, { useState, useEffect , useCallback } from 'react
-import Link from 'next/link';
+import Link from 'next/link";
 import {
   ChevronUp, 
   Mail, 
@@ -21,7 +21,7 @@ import {
   MessageSquare,
   HelpCircle,'
   Settings
-} from 'lucide-react'
+} from "lucide-react"'
 '
 interface ModernFooterProps {
   variant?: 'default' | 'minimal' | 'none'}'
@@ -105,7 +105,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
   if (variant === 'minimal') {
     return (
       <footer className=" relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t" border-neon-blue/20">
-        <div className=" container-responsive" py-8">
+        <div className="container-responsive py-8">
           <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg" space-y-0">
             {/* Logo */}"
             <div className=" flex items-center" space-x-3">
@@ -239,6 +239,6 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         </div> </div>
     </footer>
   );
-};"
+};
 '
 export default ModernFooter '"

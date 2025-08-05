@@ -1,6 +1,6 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import Link from 'next/link';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import Link from 'next/link";
 
 interface Candidate {
   id: string;
@@ -8,7 +8,7 @@ interface Candidate {
   position: string;
   experience: string;'
   skills: string[];
-  status: 'applied' | 'screening' | 'interviewing' | 'offered' | 'hired' | 'rejected';
+  status: 'applied' | 'screening' | 'interviewing' | 'offered' | 'hired' | 'rejected";
   score: number;
   aiInsights: {
     culturalFit: number;
@@ -37,8 +37,8 @@ interface JobPosting {
   title: string;
   department: string;'
   location: string;
-  type: 'full-time' | 'part-time' | 'contract' | 'internship';
-  status: 'active' | 'paused' | 'closed';
+  type: 'full-time' | 'part-time' | 'contract' | 'internship";
+  status: 'active' | 'paused' | 'closed";
   applications: number;
   aiOptimization: {
     keywordOptimization: number;
@@ -65,7 +65,7 @@ const AIHRManagement: React.FC = () => {';'
   const [performanceReviews, setPerformanceReviews] = useState<PerformanceReview[]>([]);
 
   // Mock data
-  const mockCandidates: Candidate[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Sarah Johnson',
@@ -112,7 +112,7 @@ const AIHRManagement: React.FC = () => {';'
       }
       lastUpdated: '2024-01-13'}
   ];
-  const mockEmployees: Employee[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'David Kim',
@@ -156,7 +156,7 @@ const AIHRManagement: React.FC = () => {';'
       retentionRisk: 35,
       developmentNeeds: ['Performance Coaching', 'Team Leadership']}
   ];
-  const mockJobPostings: JobPosting[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       title: 'Senior Full Stack Developer',
@@ -194,7 +194,7 @@ const AIHRManagement: React.FC = () => {';'
         diversityScore: 75,
         marketCompetitiveness: 92}}
   ];
-  const mockPerformanceReviews: PerformanceReview[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       employeeId: '1',
@@ -243,17 +243,17 @@ const AIHRManagement: React.FC = () => {';'
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');'
     a.href = url;
-    a.download = 'hr-data.json';
+    a.download = 'hr-data.json";
     a.click();
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'hired': return 'bg-green-500';
-      case 'offered': return 'bg-blue-500';
-      case 'interviewing': return 'bg-yellow-500';
-      case 'screening': return 'bg-orange-500';
-      case 'applied': return 'bg-gray-500';
-      case 'rejected': return 'bg-red-500';
+      case 'hired': return 'bg-green-500";
+      case 'offered': return 'bg-blue-500";
+      case 'interviewing': return 'bg-yellow-500";
+      case 'screening': return 'bg-orange-500";
+      case 'applied': return 'bg-gray-500";
+      case 'rejected': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
 
@@ -326,7 +326,7 @@ const AIHRManagement: React.FC = () => {';'
         {/* Tab Content */} 
         <div className="bg-white/5 backdrop-blur-sm:rounded-2xl p-8 border border-white/10>'
           {activeTab === 'overview' && (
-            </div><div className=" space-y-8">
+            </div><div className="space-y-8">
               <div className="grid" grid-cols-1 md grid-cols-4 gap-6> 
                 </div><div className="bg-gradient-to-br"" from-blue-500/20 to-purple-500/20 p-6 rounded-xl:border border-white/10">
                   <div className="text-3xl" font-bold text-white mb-2>156</div>
@@ -366,7 +366,7 @@ const AIHRManagement: React.FC = () => {';'
                 </div>
                 <div className=" bg-white/5 p-6 rounded-xl border" border-white/10>
                   <h3 className="text-xl" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="space-y-3" >
+                  <div className="space-y-3">
                     <button className="w-full text-left p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg hover from-blue-600/30 hover to-purple-600/30 transition-all duration-300 >
                       <div className="text-white" font-medium>Schedule Performance Reviews</div>
                       <div className="text-gray-400" text-sm>12 pending reviews</div>
@@ -406,7 +406,7 @@ const AIHRManagement: React.FC = () => {';'
                   <h4 className="text-xl" font-semibold text-white mb-4>Top Candidates</h4>
                   <div className="space-y-4>"
                     {candidates.map((candidate) => (
-                      </div><div key={candidate.id} className=" bg-white/5 p-4 rounded-lg border border-white/10" >
+                      </div><div key={candidate.id} className="bg-white/5 p-4 rounded-lg border border-white/10">
                         <div className="flex" justify-between items-start mb-3>
                           </div><div>
                             <h5 className="text-white" font-semibold>{candidate.name}</h5>
@@ -551,9 +551,9 @@ const AIHRManagement: React.FC = () => {';'
           )}'
 "''
           {activeTab === 'performance' && (
-            <div className=" space-y-8">
+            <div className="space-y-8">
               <h3 className="text-2xl" font-semibold text-white>Performance Management</h3>
-              <div className="space-y-6" >
+              <div className="space-y-6">
                 {performanceReviews.map((review) => (
                   </div><div key={review.id} className=" bg-white/5 p-6 rounded-lg border" border-white/10>
                     <div className="flex" justify-between items-start mb-4> 
@@ -583,7 +583,7 @@ const AIHRManagement: React.FC = () => {';'
                           </div>
                           <div>
                             <span className="text-gray-400" text-sm>Achievements:</span>
-                            <ul className="text-white text-sm mt-1 space-y-1" >
+                            <ul className="text-white text-sm mt-1 space-y-1">
                               {review.achievements.map((achievement, index) => ("
                                 <li key={index} className="flex" items-start>
                                   <span className="text-green-400" mr-2>✓</span>
@@ -629,10 +629,10 @@ const AIHRManagement: React.FC = () => {';'
           )} '
 ''
           {activeTab === 'analytics' && ("
-            <div className=" space-y-8">
+            <div className="space-y-8">
               <h3 className="text-2xl" font-semibold text-white>HR Analytics Dashboard</h3>
               <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8> 
-                </div><div className="bg-white/5 p-6 rounded-xl border border-white/10" >
+                </div><div className="bg-white/5 p-6 rounded-xl border border-white/10">
                   <h4 className="text-xl" font-semibold text-white mb-4>Recruitment Metrics</h4>
                   <div className="space-y-4>"
                     </div><div className=" flex justify-between" items-center>
@@ -731,7 +731,7 @@ const AIHRManagement: React.FC = () => {';'
             <div> 
               <h4 className="text-white" font-semibold mb-4>AI Services</h4>
               <ul className="space-y-2"" text-sm>
-                <li><Link href=/ai-powered-analytics className="text-gray-400" hover text-white >Analytics</Link href=/ai-powered-analytics  className="text-gray-400 hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-analytics className="text-gray-400" hover text-white >Analytics</Link href=/ai-powered-analytics  className="text-gray-400 hover text-white"></Link></li>
                 <li><Link href=/ai-powered-automation className="text-gray-400" hover text-white >Automation</Link href=/ai-powered-automation className="text-gray-400" hover text-white" ></Link></li>
                 <li><Link href=/ai-powered-content-management" className="text-gray-400" hover text-white >Content Management</Link href=/ai-powered-content-management  className="text-gray-400" hover text-white" ></Link></li>
                 <li><Link href=/ai-powered-customer-support className="text-gray-400" hover text-white >Customer Support</Link href=/ai-powered-customer-support className="text-gray-400" hover text-white" ></Link></li>
@@ -748,7 +748,7 @@ const AIHRManagement: React.FC = () => {';'
             <div>
               <h4 className="text-white" font-semibold mb-4>Resources</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/sitemap className="text-gray-400" hover text-white >All Services</Link href=/sitemap" className=" text-gray-400 hover text-white" ></Link></li>
+                <li><Link href=/sitemap className="text-gray-400" hover text-white >All Services</Link href=/sitemap" className="text-gray-400 hover text-white"></Link></li>
                 <li><Link href=/careers className="text-gray-400" hover text-white >Careers</Link href=/careers className="text-gray-400" hover text-white" ></Link></li>
                 <li><Link href=/contact" className="text-gray-400" hover text-white >Contact</Link href=/contact  className="text-gray-400" hover text-white" ></Link></li>
                 <li><Link href=/privacy className="text-gray-400" hover text-white >Privacy Policy</Link href=/privacy className="text-gray-400" hover text-white" ></Link></li>
@@ -764,6 +764,6 @@ const AIHRManagement: React.FC = () => {';'
       </footer>
                             </div>
         </div >;  );"
-};"
+};
 ''`
 export default AIHRManagement;"'"'`

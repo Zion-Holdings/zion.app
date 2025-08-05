@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
 
 interface SmartLearning {
   id: string'
@@ -88,7 +88,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
-  const mockSmartLearning: SmartLearning[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI-Powered Online Courses',
@@ -132,7 +132,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         learningInsights: ['Personalized pacing improves outcomes', 'Difficulty adjustment effective', 'Progress tracking motivates students'],
         recommendations: ['Refine difficulty algorithms', 'Enhance progress visualization', 'Expand personalization features']}
 }]
-  const mockEducationalAnalytics: EducationalAnalytics[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Student Performance Analytics',
@@ -176,7 +176,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         optimizationOpportunities: ['Optimize content delivery', 'Improve engagement metrics', 'Enhance effectiveness tracking'],
         improvementStrategies: ['Implement content optimization', 'Enhance engagement tracking', 'Expand effectiveness metrics']}
 }]
-  const mockPersonalizedTraining: PersonalizedTraining[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Adaptive Curriculum Engine',
@@ -220,7 +220,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         improvementAreas: ['Enhance gap detection', 'Improve skill assessment', 'Expand analysis coverage'],
         recommendations: ['Optimize gap detection algorithms', 'Enhance skill assessment tools', 'Expand analysis scope']}
 }]
-  const mockEducationalOptimization: EducationalOptimization[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Content Optimization Engine',
@@ -373,7 +373,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             </Link>
             <div className="flex"" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
               <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
@@ -455,7 +455,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 {selectedView === 'overview' && (
           <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Smart Learning Overview */}
-            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10" >
+            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl" font-semibold text-white mb-4>Active Learning Platforms</h3>
               <div className="space-y-4>"
                 {smartLearning.slice(0, 3).map((platform) => (
@@ -481,7 +481,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
               <h3 className="text-xl" font-semibold text-white mb-4>Educational Analytics</h3>
               <div className="space-y-4>" 
                 {educationalAnalytics.slice(0, 2).map((analytics) => (
-                  </div><div key={analytics.id} className="p-4 bg-white/5 rounded-lg" >
+                  </div><div key={analytics.id} className="p-4 bg-white/5 rounded-lg">
                     <div className=" flex items-center justify-between" mb-2>`
                       <h4 className="text-white" font-medium>{analytics.name}</h4>``
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(analytics.status)} text-white`}>
@@ -529,10 +529,10 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
                     </span>
                   </div> 
                   <p className="text-gray-400" text-sm mb-4>{platform.location} • {platform.type}</p>
-                  <div className="space-y-2" mb-4>
-                    </div><div className=" flex justify-between text-sm" >
+                  <div className="space-y-2 mb-4">
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Enrollment</span>"
-                      <span className="text-white>{formatNumber(platform.enrollment)}</span" >
+                      <span className="text-white>{formatNumber(platform.enrollment)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Completion" Rate</span>
@@ -578,9 +578,9 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="space-y-2>" 
-                    </div><div className="flex justify-between text-sm" >
+                    </div><div className="flex justify-between text-sm">
                       <span className="text-gray-400>Insights" Generated</span>
-                      <span className="text-white>{formatNumber(analytics.insightsGenerated)}</span" >
+                      <span className="text-white>{formatNumber(analytics.insightsGenerated)}</span">
                     </div>
                     <div className="flex justify-between" text-sm>
                       <span className="text-gray-400>Data" Accuracy</span>
@@ -598,7 +598,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
               {personalizedTraining.map((training) => (
                 <div key={training.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10>
-                  </div><div className=" flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{training.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(training.status)} text-white`}>
                       {training.status}
@@ -606,7 +606,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
                   </div>
                   <p className="text-gray-400" text-sm mb-4 >{training.location} • {training.type}</p>
                   <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center">
+                    </div><div className="text-center">
                       <div className="text-2xl" font-bold text-white>{training.personalizationAccuracy}%</div>
                       <div className="text-gray-400" text-sm>Personalization</div>
                     </div>
@@ -617,10 +617,10 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
                   </div>
                   <div className="space-y-2>" 
                     </div><div className="flex justify-between" text-sm>
-                      <span className="text-gray-400>Effectiveness</span" >
+                      <span className="text-gray-400>Effectiveness</span">
                       <span className="text-white>{training.effectivenessScore}%</span"">
                     </div>
-                    <div className=" flex justify-between text-sm" >
+                    <div className="flex justify-between text-sm">
                       <span className="text-gray-400>Personalization" Score</span>
                       <span className="text-white>{training.aiAnalysis.personalizationScore}/10</span>"
                     </div>
@@ -633,10 +633,10 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 "'
         {selectedView === 'optimization' && ("
           <div className=" space-y-6>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6" >
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {educationalOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between" mb-4>`
+                  </div><div className="flex items-center justify-between mb-4">`
                     <h3 className="text-white" font-semibold>{optimization.name}</h3>``
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
@@ -732,7 +732,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Features</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className=" hover text-white" ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white"></Link></li>
                 <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" ></Link></li>
                 <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white" ></Link></li>
@@ -759,7 +759,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             <div>
               <h4 className="text-white" font-semibold mb-4>Support</h4>
               <ul className="space-y-2"  text-sm:text-gray-400>
-                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className=" hover text-white" ></Link></li>
+                <li><Link href=/help-desk-support className="hover" text-white >Help Desk</Link href=/help-desk-support" className="hover text-white"></Link></li>
                 <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover" text-white" ></Link></li>
                 <li><Link href=/docs" className="hover" text-white >Documentation</Link href=/docs  className="hover" text-white" ></Link></li>
                 <li><Link href=/status className="hover" text-white >Status</Link href=/status className="hover" text-white" ></Link></li>

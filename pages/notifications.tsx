@@ -1,11 +1,11 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence }  from 'framer-motion';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
+import { motion, AnimatePresence }  from 'framer-motion";
 interface Notification {'
   id: string;
-  type: 'success' | 'error' | 'warning' | 'info' | 'marketplace' | 'service' | 'talent' | 'payment';
+  type: 'success' | 'error' | 'warning' | 'info' | 'marketplace' | 'service' | 'talent' | 'payment";
   title: string;
   message: string;
   timestamp: Date;
@@ -26,7 +26,7 @@ const NotificationsPage: NextPage = () => {
   useEffect(() => {
     // Simulate loading notifications
     setTimeout(() => {
-      const mockNotifications: Notification[] = ['
+      const $1: $2[] = [
         {
           id: '1',
           type: 'marketplace',
@@ -186,26 +186,26 @@ const NotificationsPage: NextPage = () => {
     if (customIcon) return customIcon;
     '
     switch (type) {
-      case 'success': return '✅';
-      case 'error': return '❌';
-      case 'warning': return '⚠️';
-      case 'info': return 'ℹ️';
-      case 'marketplace': return '🏪';
-      case 'service': return '🔧';
-      case 'talent': return '👨‍💻';
-      case 'payment': return '💰';
+      case 'success': return '✅";
+      case 'error': return '❌";
+      case 'warning': return '⚠️";
+      case 'info': return 'ℹ️";
+      case 'marketplace': return '🏪";
+      case 'service': return '🔧";
+      case 'talent': return '👨‍💻";
+      case 'payment': return '💰";
       default: return '🔔';}
   };
   const getNotificationColor = (type: string) => {'
     switch (type) {';'
-      case 'success': return 'border-green-500 bg-green-500/10';
-      case 'error': return 'border-red-500 bg-red-500/10';
-      case 'warning': return 'border-yellow-500 bg-yellow-500/10';
-      case 'info': return 'border-blue-500 bg-blue-500/10';
-      case 'marketplace': return 'border-purple-500 bg-purple-500/10';
-      case 'service': return 'border-orange-500 bg-orange-500/10';
-      case 'talent': return 'border-indigo-500 bg-indigo-500/10';
-      case 'payment': return 'border-green-500 bg-green-500/10';
+      case 'success': return 'border-green-500 bg-green-500/10";
+      case 'error': return 'border-red-500 bg-red-500/10";
+      case 'warning': return 'border-yellow-500 bg-yellow-500/10";
+      case 'info': return 'border-blue-500 bg-blue-500/10";
+      case 'marketplace': return 'border-purple-500 bg-purple-500/10";
+      case 'service': return 'border-orange-500 bg-orange-500/10";
+      case 'talent': return 'border-indigo-500 bg-indigo-500/10";
+      case 'payment': return 'border-green-500 bg-green-500/10";
       default: return 'border-gray-500 bg-gray-500/10';}
   };
 
@@ -236,14 +236,14 @@ const NotificationsPage: NextPage = () => {
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between h-16>
             <div className="flex" items-center>
-              <Link href=/ className="flex-shrink-0" > </Link href=/  className="flex-shrink-0" ><h1 className="text-2xl font-bold" text-white>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white>
                   <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
-            <div className=" hidden md flex items-center space-x-8" >
+            <div className="hidden md flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace" className=" text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services
               </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/talents className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents
@@ -275,7 +275,7 @@ const NotificationsPage: NextPage = () => {
           </div>
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center >
             </div><div className="text-3xl" font-bold text-blue-400 mb-2>{unreadCount}</div>
-            <div className="text-gray-300>Unread</div" >
+            <div className="text-gray-300>Unread</div">
           </div>
           <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center>
             </div><div className="text-3xl" font-bold text-green-400 mb-2>{notifications.filter(n => n.read).length}</div>
@@ -439,6 +439,6 @@ const NotificationsPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default NotificationsPage "))"'"'`

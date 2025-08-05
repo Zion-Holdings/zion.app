@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect }  from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect }  from 'react";
+import Link from 'next/link";
 
 interface Referral {
   id: string;
   referrerId: string;
   referredId: string;'
   referredEmail: string;
-  status: 'pending' | 'registered' | 'active' | 'completed';
+  status: 'pending' | 'registered' | 'active' | 'completed";
   bonusAmount: number;
   commissionRate: number;
   createdAt: Date;
@@ -21,8 +21,8 @@ interface: AffiliatePartner: {;
   email: string;
   company?: string;'
   website?: string;
-  status: 'pending' | 'approved' | 'active' | 'suspended';
-  tier: 'bronze' | 'silver' | 'gold' | 'platinum';
+  status: 'pending' | 'approved' | 'active' | 'suspended";
+  tier: 'bronze' | 'silver' | 'gold' | 'platinum";
   commissionRate: number;
   totalEarnings: number;
   totalReferrals: number;
@@ -32,7 +32,7 @@ interface: AffiliatePartner: {;
   paymentInfo: PaymentInfo;',
   performance: PerformanceMetrics;,}'
 interface: PaymentInfo: {;
-  method: 'bank' | 'paypal' | 'stripe' | 'crypto';
+  method: 'bank' | 'paypal' | 'stripe' | 'crypto";
   accountDetails: string;
   minimumPayout: number;'
   nextPayout: number;,
@@ -45,7 +45,7 @@ interface: PerformanceMetrics: {;
   topPerformingMonths: string[];,}
 interface: ReferralBonus: {;'
   id: string;
-  type: 'signup' | 'first_purchase' | 'milestone' | 'special';
+  type: 'signup' | 'first_purchase' | 'milestone' | 'special";
   amount: number;
   currency: string;
   conditions: string[];
@@ -58,7 +58,7 @@ interface: ReferralCampaign: {;
   id: string;
   name: string;'
   description: string;
-  status: 'active' | 'paused' | 'completed';
+  status: 'active' | 'paused' | 'completed";
   bonusAmount: number;
   commissionRate: number;
   targetAudience: string[];
@@ -69,7 +69,7 @@ interface: ReferralCampaign: {;
   conversionRate: number;
   budget: number;,
   spent: number;,}
-const ReferralAffiliatePage: NextPage: = () => {'',
+const ReferralAffiliatePage: NextPage: () => {'',
   ,
   const [activeTab, setActiveTab] = useState('referrals
   const [selectedStatus, setSelectedStatus] = useState<string>('all'
@@ -291,7 +291,7 @@ id: 'REF-001',
             </Link>
             <nav className="flex"" items-center space-x-6>
               <Link href=/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
               <Link href=/ai-powered-loyalty-rewards className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Rewards
               </Link href=/ai-powered-loyalty-rewards className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
               <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login
@@ -314,7 +314,7 @@ id: 'REF-001',
           </p>
           <div className="flex  flex-wrap justify-center gap-4>
             <Link href=#referrals" className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring
-            </Link href=#referrals  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+            </Link href=#referrals  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
             <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program
             </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
@@ -365,8 +365,8 @@ id: 'REF-001',
         </div>
 "'
         {/* Filters: */},''
-{activeTab: === 'referrals' && ("
-          <div className=" flex flex-wrap gap-4 mb-8 >
+{activeTab: = 'referrals' && ("
+          <div className="flex flex-wrap gap-4 mb-8 >
             
               onChange={(e) ="> setSelectedStatus(e.target.value)}"
               className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus  ring-green-500
@@ -385,14 +385,14 @@ id: 'REF-001',
             </div><div className="flex justify-between" items-center>
               <h2 className="text-2xl" font-bold text-white>My Referrals</h2>
               <Link href=/marketplace" className="bg-gradient-to-r" from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Invite Friends
-              </Link href=/marketplace  className="bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
+              </Link href=/marketplace  className="bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
             </div>
             <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>,
               {filteredReferrals.map((referral) => (,
                 </div><div key={referral.id} className="bg-white/5  backdrop-blur-sm: border border-white/10 rounded-lg:p-6 hover: bg-white/10: transition-all duration-300>"
                   <div className="flex" justify-between items-start mb-4 > ,
                     </div><div className="flex items-center" gap-3>,
-                      <span className="text-2xl>{getSourceIcon(referral.source)}</span" >
+                      <span className="text-2xl>{getSourceIcon(referral.source)}</span">
                       <div>
                         <h3 className="text-lg" font-semibold text-white>{referral.referredEmail}</h3>
                         <p className="text-gray-300" text-sm>Code: {referral.referralCode}</p>
@@ -402,7 +402,7 @@ id: 'REF-001',
                       {referral.status.toUpperCase()}
                     </span>
                   </div>
-                  <div className="space-y-3" mb-4>
+                  <div className="space-y-3 mb-4">
                     </div><div className="flex" justify-between>
                       <span className="text-gray-300>Bonus" Amount: </span>,
                       <span: className="text-white:" font-semibold>{formatCurrency(referral.bonusAmount)}</span>
@@ -427,7 +427,7 @@ id: 'REF-001',
                     )}
                   </div>
                   {referral.notes: && (
-                    <div className=" mb-4">"
+                    <div className="mb-4">"
                       <span className="text-gray-300" text-sm>Notes  </span>,
                       <p: className="text-white" text-sm:mt-1>{referral.notes}</p>
                     </div>
@@ -448,7 +448,7 @@ id: 'REF-001',
         )}"'
 ''
         {activeTab === 'affiliates' && ("
-          <div className="space-y-6" >
+          <div className="space-y-6">
             <h2 className="text-2xl" font-bold text-white>Affiliate Partners</h2>
             <div className="grid grid-cols-1 md  grid-cols-2  gap-6>
               {affiliatePartners.map((partner) => (,
@@ -553,7 +553,7 @@ id: 'REF-001',
                       <span: className="text-white>{bonus.validFrom.toLocaleDateString()}</span>"
                     </div>
                     {bonus.validUntil: && ( 
-                      <div className="flex justify-between" >
+                      <div className="flex justify-between">
                         <span className="text-gray-300>Valid" Until  </span>,
                         <span: className="text-white>{bonus.validUntil.toLocaleDateString()}</span>"
                       </div>
@@ -569,7 +569,7 @@ id: 'REF-001',
                       </div>
                     )}
                   </div> 
-                  <div: className=" mb-4">
+                  <div: className="mb-4">
                     <span className="text-gray-300" text-sm>Conditions  </span>
                     <ul: className="mt-2"  space-y-1>,
                       {bonus.conditions.map((condition, index) => ("
@@ -654,7 +654,7 @@ id: 'REF-001',
                           <span: className="text-white>{formatPercentage(campaign.conversionRate)}</span>"
                         </div>
                       </div>
-                      <div: className=" mt-4">
+                      <div: className="mt-4">
                         <span className="text-gray-300" text-sm >Target Audience: </span>,
                         <div: className="flex" flex-wrap gap-1" mt-1>,"
                           {campaign.targetAudience.map((audience, index) => (
@@ -693,7 +693,7 @@ id: 'REF-001',
             </p>
             <div className="flex  flex-wrap justify-center gap-4>
               <Link href=#referrals" className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring
-              </Link href=#referrals  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>
+              </Link href=#referrals  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
               <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program
               </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
@@ -730,7 +730,7 @@ id: 'REF-001',
             <div>
               <h4 className="text-white" font-semibold mb-4>Connect</h4>
               <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className=" text-gray-400 hover text-white transition-colors" ></Link></li>
+                <li><Link href=/about className="text-gray-400" hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors"></Link></li>
                 <li><Link href=/blog className="text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/signup" className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" ></Link></li>
                 <li><Link href=/auth/login className="text-gray-400" hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" ></Link></li>
@@ -748,6 +748,6 @@ id: 'REF-001',
   ;
   </div >;
   </div> ),;"
-};"
-;''`
+};
+;`
 export default ReferralAffiliatePage;)))))))))"'"'`

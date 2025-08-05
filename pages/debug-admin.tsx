@@ -1,7 +1,7 @@
 import React from "react;
-import ModernLayout from '../components/layout/ModernLayout';import { useAuth } from '../src/contexts/AuthContext';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';import { useAuth } from '../src/contexts/AuthContext";
+import { useRouter } from "next/router"";
+import Head from 'next/head";
 
 export default function DebugAdmin() {
   const { user, loading, session } = useAuth();
@@ -29,7 +29,7 @@ export default function DebugAdmin() {
   const checkAdminAccess = () => {'
     const authorizedEmails = [
       'kleber@ziontechgroup.com',
-      'admin@ziontechgroup.com';
+      'admin@ziontechgroup.com";
     ];
     '
     if (!user?.email) {
@@ -124,6 +124,6 @@ export default function DebugAdmin() {
   
   </div>
 
-  </div>;"
-);''`
+  </div>"
+);`
 } )"'"'`

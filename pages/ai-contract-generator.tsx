@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { sanitizeHtml } from '../utils/sanitizeHtml';
+import { useState } from 'react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { sanitizeHtml } from '../utils/sanitizeHtml";
 
 interface ContractInput {
   contractType: string;
@@ -49,7 +49,7 @@ const ContractGenerator = () => {;'
     'License Agreement',
     'Purchase Agreement',
     'Rental Agreement',
-    'Custom Contract';
+    'Custom Contract";
   ];
 
   const generateContract = async () => {;
@@ -74,7 +74,7 @@ const ContractGenerator = () => {;'
       setLoading(false);}
   };
 '
-  const downloadContract = () => {';'
+  const $1 = () => {'
     const element = document.createElement('a');
     const file = new Blob([contract], { type: 'text/html' });'
     element.href = URL.createObjectURL(file);
@@ -301,7 +301,7 @@ const ContractGenerator = () => {;'
               </div>
             </div>
             {/* Preview */}
-            <div className=" space-y-8">
+            <div className="space-y-8">
               </div><div className=" bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>
                 <div className="flex  justify-between items-center mb-6">
                   <h2 className="text-2xl" font-bold text-white>Contract Preview</h2>
@@ -337,7 +337,7 @@ const ContractGenerator = () => {;'
               <div className=" bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>
                 <h3 className="text-xl" font-bold text-white mb-4>AI Contract Generator Features</h3>
                 <div className="space-y-3>" 
-                  </div><div className="flex items-center space-x-3" >
+                  </div><div className="flex items-center space-x-3">
                     <div className="w-2" h-2 bg-green-400 rounded-full></div>
                     <span className="text-gray-300>Professional" legal document templates</span>
                   </div>
@@ -363,8 +363,8 @@ const ContractGenerator = () => {;'
           </div>
         </div>
       </div>
-    </div>;
+    </div>
     );
-};"
+};
 ''`
 export default ContractGenerator;"'"'`

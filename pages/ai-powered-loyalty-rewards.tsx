@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { Home, Search, User }  from 'lucide-react';
+import type { NextPage } from 'next";
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
+import { useState, useEffect, useMemo } from 'react";
+import Link from 'next/link";
+import { Home, Search, User }  from 'lucide-react";
 
 interface UserProfile {
   id: string;
@@ -24,8 +24,8 @@ interface Badge {
   name: string;
   description: string;'
   icon: string;
-  category: 'transaction' | 'social' | 'skill' | 'milestone' | 'special';
-  rarity: 'common' | 'rare' | 'epic' | 'legendary';
+  category: 'transaction' | 'social' | 'skill' | 'milestone' | 'special";
+  rarity: 'common' | 'rare' | 'epic' | 'legendary";
   unlockedAt?: Date;
   progress?: number;
   maxProgress?: number;}
@@ -44,7 +44,7 @@ interface Reward {
   id: string;
   name: string;'
   description: string;
-  type: 'discount' | 'bonus' | 'feature' | 'exclusive' | 'cashback';
+  type: 'discount' | 'bonus' | 'feature' | 'exclusive' | 'cashback";
   value: number;
   currency?: string;
   pointsCost: number;
@@ -56,8 +56,8 @@ interface Reward {
 interface Leaderboard {
   id: string;'
   name: string;
-  category: 'points' | 'transactions' | 'streak' | 'reviews' | 'referrals';
-  period: 'daily' | 'weekly' | 'monthly' | 'all-time';
+  category: 'points' | 'transactions' | 'streak' | 'reviews' | 'referrals";
+  period: 'daily' | 'weekly' | 'monthly' | 'all-time";
   entries: LeaderboardEntry[];
   userRank: number;
   totalParticipants: number;}
@@ -74,7 +74,7 @@ interface GamificationEvent {
   id: string;
   name: string;'
   description: string;
-  type: 'challenge' | 'competition' | 'quest' | 'seasonal';
+  type: 'challenge' | 'competition' | 'quest' | 'seasonal";
   startDate: Date;
   endDate: Date;
   rewards: Reward[];
@@ -165,7 +165,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
     memberSince: new Date('2024-01-01'),
     lastActive: new Date(}
   // Mock badges
-  const mockBadges: Badge[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'First Transaction',
@@ -214,7 +214,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       maxProgress: 1000
     }]
   // Mock achievements
-  const mockAchievements: Achievement[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Marketplace Pioneer',
@@ -260,7 +260,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       aiRecommended: false
     }]
   // Mock rewards
-  const mockRewards: Reward[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Premium Service Discount',
@@ -300,7 +300,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       maxUsage: 1
     }]
   // Mock leaderboards
-  const mockLeaderboards: Leaderboard[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'Points Leaderboard',
@@ -327,7 +327,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         }]
     }]
   // Mock events
-  const mockEvents: GamificationEvent[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       name: 'AI Innovation Challenge',
@@ -352,7 +352,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       aiOptimized: false
     }]
   // Mock points history
-  const mockPointsHistory: PointsHistory[] = ['
+  const $1: $2[] = [
     {
       id: '1',
       action: 'Transaction Completed','
@@ -551,7 +551,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     </div>
                     <div className="text-center>"
                       </div><div className="text-3xl" font-bold text-white>{userProfile.points.toLocaleString()}</div>
-                      <div className="text-gray-400>Points</div" >
+                      <div className="text-gray-400>Points</div">
                     </div>
                     <div className="text-center>"
                       </div><div className="text-3xl" font-bold text-white >{userProfile.streak}</div>
@@ -578,7 +578,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     <div className="flex" space-x-4 >
                       {userProfile.badges.slice(0, 3).map((badge) => (
                         </div><div key={badge.id} className="flex" items-center space-x-2 bg-white/5 rounded-lg" p-3>
-                          <span className="text-2xl>{badge.icon}</span" >
+                          <span className="text-2xl>{badge.icon}</span">
                           <div>
                             </div><div className="text-white" font-semibold>{badge.name}</div>
                             <div className="text-gray-400" text-sm>{badge.description}</div>
@@ -594,7 +594,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   <h3 className="text-lg" font-semibold text-white mb-4>Recent Activity</h3>
                   <div className="space-y-3>" 
                     {pointsHistory.map((entry) => (
-                      </div><div key={entry.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg" >
+                      </div><div key={entry.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                         <div className="flex" items-center space-x-3> 
                           </div><div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center" justify-center>
                             <span className="text-white" font-semibold>+</span>
@@ -661,7 +661,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
               <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                 {achievements.map((achievement) => (
                   </div><div key={achievement.id} className="bg-white/10  backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex items-start justify-between mb-4" >
+                    <div className="flex items-start justify-between mb-4">
                       <span className="text-4xl>{achievement.icon}</span>"
                       {achievement.aiRecommended && (
                         <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
@@ -680,7 +680,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                       
                       <div>
                         </div><div className=" flex justify-between text-sm" mb-1>
-                          <span className="text-gray-400>Progress:</span" >
+                          <span className="text-gray-400>Progress:</span">
                           <span className="text-white>{achievement.progress}" / {achievement.maxProgress}</span>
                         </div>`
                         <div className="w-full" bg-gray-700 rounded-full h-2 >``
@@ -722,7 +722,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                       
                       {reward.maxUsage && ("
                         <div className=" flex justify-between" text-sm>
-                          <span className="text-gray-400>Usage:</span" >
+                          <span className="text-gray-400>Usage:</span">
                           <span className="text-white>{reward.usageCount}" / {reward.maxUsage}</span>
                         </div>
                       )}
@@ -751,9 +751,9 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                         Your Rank: #{leaderboard.userRank} of {leaderboard.totalParticipants}
                       </div>
                     </div>
-                    <div className=" space-y-3">
+                    <div className="space-y-3">
                       {leaderboard.entries.map((entry) => (
-                        </div><div key={entry.user.id} className=" flex items-center justify-between p-3 bg-white/5 rounded-lg" >
+                        </div><div key={entry.user.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                           <div className="flex" items-center space-x-3> 
                             </div><div className="text-lg" font-bold text-white>#{entry.rank}</div>
                             <div className="w-10" h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>'
@@ -782,8 +782,8 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
 {activeTab === 'events' && (
               <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>
                 {events.map((event) => (
-                  </div><div key={event.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
-                    <div className=" flex items-start justify-between" mb-4>
+                  </div><div key={event.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
+                    <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl" font-semibold text-white>{event.name}</h3>
                       {event.aiOptimized && (
                         <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
@@ -794,18 +794,18 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     
                     <p className="text-gray-300" text-sm mb-4 >{event.description}</p>
                     
-                    <div className="space-y-3" mb-4>
+                    <div className="space-y-3 mb-4">
                       </div><div className=" flex justify-between" text-sm>"
                         <span className="text-gray-400>Type:</span>"
                         <span className="text-white" capitalize >{event.type}</span>
                       </div>
                       <div className=" flex justify-between" text-sm>
-                        <span className="text-gray-400>Duration:</span" >
+                        <span className="text-gray-400>Duration:</span">
                         <span className="text-white">
                           {event.startDate.toLocaleDateString()} - {event.endDate.toLocaleDateString()}
                         </span>
                       </div>
-                      <div className=" flex justify-between text-sm" >
+                      <div className="flex justify-between text-sm">
                         <span className="text-gray-400>Participants" </span>
                         <span className="text-white"">`
                           {event.participants.toLocaleString()},``
@@ -837,7 +837,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=" text-center">
+          <div className="text-center">
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Start Earning Rewards? 
             </h2>
@@ -861,6 +861,6 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
   </div> 
   </div>
 ;
-};"
+};
 ''`
 export default AIPoweredLoyaltyRewardsPage ")))))))))))))))))))))))))))"'"'`

@@ -1,8 +1,8 @@
 import React from "react;
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageLayout from '../components/layout/PageLayout';
+import { NextPage } from 'next";
+import Head from 'next/head";
+import Link from 'next/link";
+import PageLayout from '../components/layout/PageLayout";
 import {
   Activity, 
   Heart, 
@@ -16,8 +16,8 @@ import {
   TrendingUp,
   User,'
   Shield
-}  from 'lucide-react';
-import { Home, Search, User }  from 'lucide-react';
+}  from 'lucide-react";
+import { Home, Search, User }  from 'lucide-react";
 
 interface Patient {
   id: string;
@@ -28,7 +28,7 @@ interface Patient {
   currentConditions: string[];
   lastVisit: Date;'
   nextAppointment?: Date;
-  status: 'active' | 'inactive' | 'discharged' | 'pending';
+  status: 'active' | 'inactive' | 'discharged' | 'pending";
   patientId: string;
   patientName: string;
   bloodType: string;}
@@ -135,18 +135,18 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'normal': return 'bg-green-500';
-      case 'warning': return 'bg-yellow-500';
-      case 'critical': return 'bg-red-500';
-      case 'stable': return 'bg-blue-500';
+      case 'normal': return 'bg-green-500";
+      case 'warning': return 'bg-yellow-500";
+      case 'critical': return 'bg-red-500";
+      case 'stable': return 'bg-blue-500";
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'low': return 'bg-green-500';
-      case 'medium': return 'bg-yellow-500';
-      case 'high': return 'bg-orange-500';
-      case 'critical': return 'bg-red-500';
+      case 'low': return 'bg-green-500";
+      case 'medium': return 'bg-yellow-500";
+      case 'high': return 'bg-orange-500";
+      case 'critical': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
 '
@@ -175,8 +175,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
           <div className=" flex items-center" space-x-4>"
             "
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
-            >"
+              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">"
               <option value="7d>Last 7 days</option>
               <option value="30d>Last 30 days</option>
               <option value="90d>Last 90 days</option>
@@ -187,8 +186,8 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
       </div>
 
       {/* Navigation Tabs */}"
-      <nav className=" mb-8">
-        <div className=" flex space-x-8 border-b border-white/10">
+      <nav className="mb-8">
+        <div className="flex space-x-8 border-b border-white/10">
           {tabs.map((tab) =>" {;"
             const Icon = tab.icon;"
             return (
@@ -268,7 +267,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
                           <p className="text-gray-400" text-sm>{diagnostic.type} • {diagnostic.status}</p>
                         </div>
                       </div>
-                      <div className=" text-right">
+                      <div className="text-right">
                         <p className="text-white" text-sm>{diagnostic.patientName}</p>
                         <p className="text-gray-400" text-xs>{diagnostic.aiAnalysis.recommendations[0]}</p>
                       </div>
@@ -303,7 +302,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
                       <p className="text-white/60" text-sm >{diagnostic.result}</p>
                       <div className="grid" grid-cols-2 gap-4 text-sm>
                         </div><div>
-                          <p className="text-gray-400>Confidence</p" >
+                          <p className="text-gray-400>Confidence</p">
                           <p className="text-white>{Math.round(diagnostic.confidence" * 100)}%</p>
                         </div>
                         <div>
@@ -338,7 +337,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
               </div>
               <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                 {patients.map((patient) => (
-                  </div><div key={patient.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20" >
+                  </div><div key={patient.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20">
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
                         <h3 className="text-lg" font-semibold text-white>{patient.name}</h3>
@@ -366,12 +365,12 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
                           <p className="text-white>N/A</p>"
                         </div>
                         <div>
-                          <p className="text-gray-400>Room</p" >
+                          <p className="text-gray-400>Room</p">
                           <p className="text-white>N/A</p"">
                         </div>
                       </div>
                       "
-                      <div className="text-sm" >
+                      <div className="text-sm">
                         <p className="text-gray-400>Diagnosis</p>"
                         <p className="text-white>N/A</p>"
                       </div>
@@ -406,7 +405,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
                         </div>
                         <div>
                           <p className="text-gray-400>Trend</p>"
-                          <p className="text-white>{monitor.aiAnalysis.trend}</p" >
+                          <p className="text-white>{monitor.aiAnalysis.trend}</p">
                         </div>
                       </div>
                       <div className="grid" grid-cols-2 gap-4 text-sm>
@@ -466,6 +465,6 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
         </div>
       )}
     </PageLayout >;  );"
-};"
+};
 ''`
 export default AIPoweredHealthcareMedicalDiagnosticsPage;"'"'`

@@ -1,8 +1,8 @@
 import React from "react;
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageLayout from '../components/layout/PageLayout';
+import { NextPage } from 'next";
+import Head from 'next/head";
+import Link from 'next/link";
+import PageLayout from '../components/layout/PageLayout";
 import {
   Users, 
   TrendingUp, 
@@ -16,19 +16,19 @@ import {
   Clock,
   Target,'
   Activity
-}  from 'lucide-react';
-import { Home, Search, User }  from 'lucide-react';
+}  from 'lucide-react";
+import { Home, Search, User }  from 'lucide-react";
 
 interface ChangeInitiative {
   id: string;'
   name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural';
-  status: 'planning' | 'implementation' | 'monitoring' | 'completed';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'technology' | 'process' | 'organizational' | 'cultural";
+  status: 'planning' | 'implementation' | 'monitoring' | 'completed";
+  priority: 'low' | 'medium' | 'high' | 'critical";
   startDate: string;
   endDate: string;'
   progress: number;
-  impact: 'low' | 'medium' | 'high';
+  impact: 'low' | 'medium' | 'high";
   budget: number;
   actualCost: number;}
 interface Stakeholder {
@@ -36,18 +36,18 @@ interface Stakeholder {
   name: string;
   role: string;'
   department: string;
-  influence: 'high' | 'medium' | 'low';
-  support: 'champion' | 'supporter' | 'neutral' | 'resistant' | 'blocker';
+  influence: 'high' | 'medium' | 'low";
+  support: 'champion' | 'supporter' | 'neutral' | 'resistant' | 'blocker";
   communicationPreference: string;
   lastContact: string;
   nextContact: string;}
 interface TrainingProgram {
   id: string;'
   title: string;
-  type: 'workshop' | 'online' | 'mentoring' | 'certification';
+  type: 'workshop' | 'online' | 'mentoring' | 'certification";
   targetAudience: string;'
   duration: string;
-  status: 'planned' | 'in-progress' | 'completed';
+  status: 'planned' | 'in-progress' | 'completed";
   completionRate: number;
   satisfactionScore: number;
   startDate: string;
@@ -55,11 +55,11 @@ interface TrainingProgram {
 interface ChangeMetric {
   id: string;'
   name: string;
-  category: 'adoption' | 'productivity' | 'satisfaction' | 'cost';
+  category: 'adoption' | 'productivity' | 'satisfaction' | 'cost";
   currentValue: number;
   targetValue: number;'
   unit: string;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: 'increasing' | 'decreasing' | 'stable";
   lastUpdated: string;}
 const AIPoweredChangeManagementPage: NextPage = () => {'
   ';'
@@ -101,27 +101,27 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
   };
   const getStatusColor = (status: string) => {'
     switch (status) {';'
-      case 'planning': return 'bg-blue-500';
-      case 'implementation': return 'bg-yellow-500';
-      case 'monitoring': return 'bg-purple-500';
-      case 'completed': return 'bg-green-500';
+      case 'planning': return 'bg-blue-500";
+      case 'implementation': return 'bg-yellow-500";
+      case 'monitoring': return 'bg-purple-500";
+      case 'completed': return 'bg-green-500";
       default: return 'bg-gray-500';}
   };
   const getPriorityColor = (priority: string) => {'
     switch (priority) {';'
-      case 'low': return 'bg-green-500';
-      case 'medium': return 'bg-yellow-500';
-      case 'high': return 'bg-orange-500';
-      case 'critical': return 'bg-red-500';
+      case 'low': return 'bg-green-500";
+      case 'medium': return 'bg-yellow-500";
+      case 'high': return 'bg-orange-500";
+      case 'critical': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
   const getSupportColor = (support: string) => {'
     switch (support) {';'
-      case 'champion': return 'bg-green-500';
-      case 'supporter': return 'bg-blue-500';
-      case 'neutral': return 'bg-yellow-500';
-      case 'resistant': return 'bg-orange-500';
-      case 'blocker': return 'bg-red-500';
+      case 'champion': return 'bg-green-500";
+      case 'supporter': return 'bg-blue-500";
+      case 'neutral': return 'bg-yellow-500";
+      case 'resistant': return 'bg-orange-500";
+      case 'blocker': return 'bg-red-500";
       default: return 'bg-gray-500';}
   };
 '
@@ -150,8 +150,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
           <div className=" flex items-center" space-x-4>"
             "
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
-            >"
+              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">"
               <option value="7d>Last 7 days</option>
               <option value="30d>Last 30 days</option>
               <option value="90d>Last 90 days</option>
@@ -162,8 +161,8 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
       </div>
 
       {/* Navigation Tabs */}"
-      <nav className=" mb-8">
-        <div className=" flex space-x-8 border-b border-white/10">
+      <nav className="mb-8">
+        <div className="flex space-x-8 border-b border-white/10">
           {tabs.map((tab) =>" {;"
             const Icon = tab.icon;"
             return (
@@ -243,7 +242,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
                           <p className="text-gray-400" text-sm>{initiative.type} • {initiative.progress}% complete</p>
                         </div>
                       </div>
-                      <div className=" text-right">
+                      <div className="text-right">
                         <p className="text-white" text-sm>{initiative.status}</p>
                         <p className="text-gray-400" text-xs>{initiative.startDate}</p>
                       </div>
@@ -342,7 +341,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
                     <div className="space-y-3>"
                       </div><div className=" grid grid-cols-2 gap-4" text-sm>"
                         <div>
-                          <p className="text-gray-400>Influence</p" >
+                          <p className="text-gray-400>Influence</p">
                           <p className="text-white" capitalize>{stakeholder.influence}</p>
                         </div>
                         <div>
@@ -377,7 +376,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
               </div>
               <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                 {trainingPrograms.map((program) => (
-                  </div><div key={program.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20" >
+                  </div><div key={program.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20">
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
                         <h3 className="text-lg" font-semibold text-white>{program.title}</h3>
@@ -418,7 +417,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
           )}
           {/* Metrics Tab */},"'
 {activeTab === 'metrics' && ("
-            <div className="space-y-6" >
+            <div className="space-y-6">
               <h2 className="text-2xl" font-bold text-white>Change Metrics</h2>
               <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                 {changeMetrics.map((metric) => (
@@ -460,6 +459,6 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
         </div>
       )}
     </PageLayout >;  );"
-};"
+};
 ''`
 export default AIPoweredChangeManagementPage;"'"'`
