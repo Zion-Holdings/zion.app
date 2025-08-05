@@ -36,28 +36,22 @@ echo ""
 # Check if processes are running
 print_status "Checking running processes..."
 
-# Check for specific automation processes
-check_process() {
-    local process_name=$1
-    local script_name=$2
-    
-    if pgrep -f "$script_name" > /dev/null; then
-        local pid=$(pgrep -f "$script_name" | head -1)
-        print_success "$process_name is running (PID: $pid)"
-        return 0
-    else
-        print_error "$process_name is not running"
-        return 1
-    fi
-}
-
-# Check each automation process
-check_process "agent-orchestrator" "agent-orchestrator.js"
-check_process "enhanced-autonomous-system" "enhanced-autonomous-system.js"
-check_process "enhanced-cron-system" "enhanced-cron-system.js"
-check_process "marketing-automation" "marketing-automation.js"
-check_process "master-orchestrator" "autonomous-master-orchestrator.js"
-check_process "monitor" "monitor-automation.js"
+if [ -d "pids" ]; then
+    for pid_file in pids/*.pid; do
+        if [ -f "$pid_file" ]; then
+            pid=$(cat "$pid_file")
+            process_name=$(basename "$pid_file" .pid)
+            
+            if kill -0 "$pid" 2>/dev/null; then
+                print_success "$process_name is running (PID: $pid)"
+            else
+                print_error "$process_name is not running"
+            fi
+        fi
+    done
+else
+    print_warning "No PID files found"
+fi
 
 echo ""
 
