@@ -1,0 +1,147 @@
+{
+  "agentId": "analyzer-1754395973145",
+  "timestamp": "2025-08-05T12:13:23.422Z",
+  "analytics": {
+    "pagesAnalyzed": 11,
+    "linksFound": 133,
+    "missingPages": 15,
+    "contentGaps": 11,
+    "errors": 0,
+    "startTime": 1754395973145
+  },
+  "summary": {
+    "visitedUrls": [
+      "https://ziontechgroup.netlify.app",
+      "https://ziontechgroup.netlify.app/auth/signup/",
+      "https://ziontechgroup.netlify.app/marketplace/",
+      "https://ziontechgroup.netlify.app/services/",
+      "https://ziontechgroup.netlify.app/talents/",
+      "https://ziontechgroup.netlify.app/equipment/",
+      "https://ziontechgroup.netlify.app/products/",
+      "https://ziontechgroup.netlify.app/services/ai-model-development/",
+      "https://ziontechgroup.netlify.app/services/cloud-migration-services/",
+      "https://ziontechgroup.netlify.app/services/security-auditing/",
+      "https://ziontechgroup.netlify.app/services/performance-optimization/"
+    ],
+    "foundUrls": [
+      "https://ziontechgroup.netlify.app/auth/signup/",
+      "https://ziontechgroup.netlify.app/marketplace/",
+      "https://ziontechgroup.netlify.app/services/",
+      "https://ziontechgroup.netlify.app/talents/",
+      "https://ziontechgroup.netlify.app/equipment/",
+      "https://ziontechgroup.netlify.app/products/",
+      "https://ziontechgroup.netlify.app/services/ai-model-development/",
+      "https://ziontechgroup.netlify.app/services/cloud-migration-services/",
+      "https://ziontechgroup.netlify.app/services/security-auditing/",
+      "https://ziontechgroup.netlify.app/services/performance-optimization/",
+      "https://ziontechgroup.netlify.app/auth/login/",
+      "https://ziontechgroup.netlify.app/about/",
+      "https://ziontechgroup.netlify.app/",
+      "https://ziontechgroup.netlify.app/contact/",
+      "https://ziontechgroup.netlify.app/blog/",
+      "https://ziontechgroup.netlify.app/help/",
+      "https://ziontechgroup.netlify.app/privacy/",
+      "https://ziontechgroup.netlify.app/terms/",
+      "https://ziontechgroup.netlify.app/talent-directory/",
+      "https://ziontechgroup.netlify.app/skill-verification/",
+      "https://ziontechgroup.netlify.app/ai-service-matcher/",
+      "https://ziontechgroup.netlify.app/ai-powered-autonomous-vehicle-transportation/",
+      "https://ziontechgroup.netlify.app/ai-powered-autonomous-drone-delivery-logistics/",
+      "https://ziontechgroup.netlify.app/ai-powered-inventory-supply-chain/"
+    ],
+    "missingPages": [
+      {
+        "url": "https://ziontechgroup.netlify.app/about",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /about"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/contact",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /contact"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /services"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/products",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /products"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/blog",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /blog"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/privacy-policy",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /privacy-policy"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/terms-of-service",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /terms-of-service"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/sitemap",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /sitemap"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/robots.txt",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /robots.txt"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/404",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/login",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /login"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/signup",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /signup"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/dashboard",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /dashboard"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/profile",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /profile"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/admin",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /admin"
+      }
+    ],
+    "contentGaps": 11,
+    "totalErrors": 0
+  }
+}
