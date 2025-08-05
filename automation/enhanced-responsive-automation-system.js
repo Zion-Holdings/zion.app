@@ -68,22 +68,6 @@ class EnhancedResponsiveAutomationSystem {
         agents: ['performance-monitor', 'optimizer', 'speed-tester'],
         frequency: '2m',
         priority: 'critical'
-      },
-      'seo-responsive-factory': {
-        name: 'SEO Responsive Factory',
-        description: 'Automated SEO optimization for responsive content',
-        capabilities: ['seo-optimization', 'meta-tag-management', 'keyword-analysis'],
-        agents: ['seo-optimizer', 'meta-manager', 'keyword-analyzer'],
-        frequency: '15m',
-        priority: 'medium'
-      },
-      'accessibility-responsive-factory': {
-        name: 'Accessibility Responsive Factory',
-        description: 'Automated accessibility compliance and testing',
-        capabilities: ['accessibility-testing', 'wcag-compliance', 'screen-reader-support'],
-        agents: ['accessibility-tester', 'wcag-checker', 'screen-reader-tester'],
-        frequency: '20m',
-        priority: 'high'
       }
     };
   }
@@ -99,18 +83,6 @@ class EnhancedResponsiveAutomationSystem {
       name: 'Agent Creator Automation',
       script: this.createAgentCreatorScript(),
       triggers: ['new-agent-needed', 'agent-failure', 'capability-gap']
-    });
-
-    this.automationScripts.set('content-optimizer', {
-      name: 'Content Optimizer Automation',
-      script: this.createContentOptimizerScript(),
-      triggers: ['content-issues', 'performance-problems', 'accessibility-issues']
-    });
-
-    this.automationScripts.set('system-improver', {
-      name: 'System Improver Automation',
-      script: this.createSystemImproverScript(),
-      triggers: ['system-optimization', 'new-capabilities', 'performance-improvement']
     });
   }
 
@@ -141,20 +113,6 @@ class EnhancedResponsiveAutomationSystem {
       schedule: '0 */1 * * *', // Every hour
       job: () => this.improveSystem(),
       description: 'Continuous system improvement'
-    });
-
-    // Performance optimization
-    this.cronJobs.set('performance-optimization', {
-      schedule: '*/3 * * * *', // Every 3 minutes
-      job: () => this.optimizePerformance(),
-      description: 'Continuous performance optimization'
-    });
-
-    // Factory health monitoring
-    this.cronJobs.set('factory-health', {
-      schedule: '*/10 * * * *', // Every 10 minutes
-      job: () => this.monitorFactoryHealth(),
-      description: 'Factory health monitoring'
     });
   }
 
@@ -334,38 +292,6 @@ class EnhancedResponsiveAutomationSystem {
     console.log('✅ System improvement completed');
   }
 
-  async optimizePerformance() {
-    console.log('⚡ Optimizing performance...');
-    
-    const metrics = await this.collectPerformanceMetrics();
-    const optimizations = await this.applyPerformanceOptimizations(metrics);
-    
-    this.performanceMetrics.improvementsMade += optimizations.length;
-    console.log(`✅ Performance optimization completed: ${optimizations.length} optimizations applied`);
-  }
-
-  async monitorFactoryHealth() {
-    console.log('🏥 Monitoring factory health...');
-    
-    let unhealthyFactories = 0;
-    
-    this.factories.forEach((factory, factoryId) => {
-      const health = this.checkFactoryHealth(factory);
-      
-      if (health.status === 'unhealthy') {
-        unhealthyFactories++;
-        console.log(`⚠️  Unhealthy factory detected: ${factoryId}`);
-        
-        // Restart unhealthy factory
-        this.restartFactory(factoryId);
-      }
-    });
-    
-    if (unhealthyFactories === 0) {
-      console.log('✅ All factories are healthy');
-    }
-  }
-
   runAgent(agentId) {
     const agent = this.agents.get(agentId);
     if (!agent) return;
@@ -386,9 +312,6 @@ class EnhancedResponsiveAutomationSystem {
         case 'accessibility-checker':
           this.checkAccessibility(agent);
           break;
-        case 'seo-optimizer':
-          this.optimizeSEO(agent);
-          break;
         case 'component-generator':
           this.generateComponents(agent);
           break;
@@ -397,27 +320,6 @@ class EnhancedResponsiveAutomationSystem {
           break;
         case 'mobile-tester':
           this.testMobile(agent);
-          break;
-        case 'optimizer':
-          this.optimizeCode(agent);
-          break;
-        case 'speed-tester':
-          this.testSpeed(agent);
-          break;
-        case 'meta-manager':
-          this.manageMetaTags(agent);
-          break;
-        case 'keyword-analyzer':
-          this.analyzeKeywords(agent);
-          break;
-        case 'accessibility-tester':
-          this.testAccessibility(agent);
-          break;
-        case 'wcag-checker':
-          this.checkWCAG(agent);
-          break;
-        case 'screen-reader-tester':
-          this.testScreenReader(agent);
           break;
       }
       
@@ -429,72 +331,26 @@ class EnhancedResponsiveAutomationSystem {
 
   validateContent(agent) {
     console.log(`🔍 Agent ${agent.id} validating content...`);
-    // Content validation logic
   }
 
   monitorPerformance(agent) {
     console.log(`⚡ Agent ${agent.id} monitoring performance...`);
-    // Performance monitoring logic
   }
 
   checkAccessibility(agent) {
     console.log(`♿ Agent ${agent.id} checking accessibility...`);
-    // Accessibility checking logic
-  }
-
-  optimizeSEO(agent) {
-    console.log(`🔍 Agent ${agent.id} optimizing SEO...`);
-    // SEO optimization logic
   }
 
   generateComponents(agent) {
     console.log(`🧩 Agent ${agent.id} generating components...`);
-    // Component generation logic
   }
 
   optimizeLayouts(agent) {
     console.log(`📐 Agent ${agent.id} optimizing layouts...`);
-    // Layout optimization logic
   }
 
   testMobile(agent) {
     console.log(`📱 Agent ${agent.id} testing mobile...`);
-    // Mobile testing logic
-  }
-
-  optimizeCode(agent) {
-    console.log(`⚡ Agent ${agent.id} optimizing code...`);
-    // Code optimization logic
-  }
-
-  testSpeed(agent) {
-    console.log(`🏃 Agent ${agent.id} testing speed...`);
-    // Speed testing logic
-  }
-
-  manageMetaTags(agent) {
-    console.log(`🏷️  Agent ${agent.id} managing meta tags...`);
-    // Meta tag management logic
-  }
-
-  analyzeKeywords(agent) {
-    console.log(`🔑 Agent ${agent.id} analyzing keywords...`);
-    // Keyword analysis logic
-  }
-
-  testAccessibility(agent) {
-    console.log(`♿ Agent ${agent.id} testing accessibility...`);
-    // Accessibility testing logic
-  }
-
-  checkWCAG(agent) {
-    console.log(`♿ Agent ${agent.id} checking WCAG compliance...`);
-    // WCAG compliance checking logic
-  }
-
-  testScreenReader(agent) {
-    console.log(`🔊 Agent ${agent.id} testing screen reader...`);
-    // Screen reader testing logic
   }
 
   analyzeSystemNeeds() {
@@ -559,15 +415,6 @@ class EnhancedResponsiveAutomationSystem {
         issues.push({ type: 'missing-viewport-meta', severity: 'high' });
       }
       
-      // Check for accessibility issues
-      if (!content.includes('alt=') && content.includes('img')) {
-        issues.push({ type: 'missing-alt-text', severity: 'medium' });
-      }
-      
-      if (!content.includes('aria-') && content.includes('button')) {
-        issues.push({ type: 'missing-aria-labels', severity: 'medium' });
-      }
-      
     } catch (error) {
       issues.push({ type: 'file-read-error', severity: 'critical', error: error.message });
     }
@@ -600,18 +447,6 @@ class EnhancedResponsiveAutomationSystem {
             content = this.addViewportMeta(content);
             modified = true;
             fixes.push('added-viewport-meta');
-            break;
-            
-          case 'missing-alt-text':
-            content = this.addAltText(content);
-            modified = true;
-            fixes.push('added-alt-text');
-            break;
-            
-          case 'missing-aria-labels':
-            content = this.addAriaLabels(content);
-            modified = true;
-            fixes.push('added-aria-labels');
             break;
         }
       });
@@ -656,20 +491,6 @@ class EnhancedResponsiveAutomationSystem {
       );
     }
     return content;
-  }
-
-  addAltText(content) {
-    return content.replace(
-      /<img([^>]*)>/g,
-      '<img$1 alt="Responsive content image" />'
-    );
-  }
-
-  addAriaLabels(content) {
-    return content.replace(
-      /<button([^>]*)>/g,
-      '<button$1 aria-label="Interactive button" />'
-    );
   }
 
   analyzeSystemPerformance() {
@@ -731,72 +552,6 @@ class EnhancedResponsiveAutomationSystem {
     return frequencies[Math.max(0, currentIndex - 1)];
   }
 
-  checkFactoryHealth(factory) {
-    const now = new Date();
-    const lastRun = factory.lastRun ? new Date(factory.lastRun) : null;
-    
-    if (!lastRun) {
-      return { status: 'unknown', reason: 'No last run recorded' };
-    }
-    
-    const timeSinceLastRun = now - lastRun;
-    const maxAllowedTime = 30 * 60 * 1000; // 30 minutes
-    
-    if (timeSinceLastRun > maxAllowedTime) {
-      return { status: 'unhealthy', reason: 'Factory not running recently' };
-    }
-    
-    if (factory.errorCount > factory.successCount) {
-      return { status: 'unhealthy', reason: 'High error rate' };
-    }
-    
-    return { status: 'healthy' };
-  }
-
-  restartFactory(factoryId) {
-    const factory = this.factories.get(factoryId);
-    if (factory) {
-      factory.status = 'restarting';
-      factory.lastRun = new Date().toISOString();
-      factory.errorCount = 0;
-      
-      console.log(`🔄 Restarting factory: ${factoryId}`);
-      
-      // Simulate restart
-      setTimeout(() => {
-        factory.status = 'active';
-        console.log(`✅ Factory restarted: ${factoryId}`);
-      }, 1000);
-    }
-  }
-
-  async collectPerformanceMetrics() {
-    return {
-      loadTime: Math.random() * 2000 + 500,
-      memoryUsage: Math.random() * 100 + 50,
-      cpuUsage: Math.random() * 50 + 10,
-      responseTime: Math.random() * 100 + 20
-    };
-  }
-
-  async applyPerformanceOptimizations(metrics) {
-    const optimizations = [];
-    
-    if (metrics.loadTime > 1500) {
-      optimizations.push('optimized-load-time');
-    }
-    
-    if (metrics.memoryUsage > 80) {
-      optimizations.push('optimized-memory-usage');
-    }
-    
-    if (metrics.cpuUsage > 40) {
-      optimizations.push('optimized-cpu-usage');
-    }
-    
-    return optimizations;
-  }
-
   createFactoryGeneratorScript() {
     return `
 async function generateFactory(factoryType, template) {
@@ -810,11 +565,6 @@ async function generateFactory(factoryType, template) {
     createdAt: new Date().toISOString(),
     agents: new Map()
   };
-  
-  // Create agents for this factory
-  template.agents.forEach(agentType => {
-    createAgentForFactory(factoryId, agentType);
-  });
   
   return factory;
 }
@@ -835,40 +585,6 @@ async function createAgent(agentType, factoryId) {
   };
   
   return agent;
-}
-    `;
-  }
-
-  createContentOptimizerScript() {
-    return `
-async function optimizeContent() {
-  const pages = getAllPages();
-  
-  for (const page of pages) {
-    const issues = await validatePageResponsiveness(page);
-    
-    if (issues.length > 0) {
-      await applyResponsiveFixes(page, issues);
-    }
-  }
-}
-    `;
-  }
-
-  createSystemImproverScript() {
-    return `
-async function improveSystem() {
-  const analysis = analyzeSystemPerformance();
-  
-  if (analysis.needsNewScripts) {
-    createNewAutomationScripts(analysis.recommendations);
-  }
-  
-  if (analysis.needsNewTemplates) {
-    createNewFactoryTemplates(analysis.templateRecommendations);
-  }
-  
-  optimizeFactories();
 }
     `;
   }
