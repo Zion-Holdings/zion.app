@@ -289,7 +289,7 @@ const AugmentedReality = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

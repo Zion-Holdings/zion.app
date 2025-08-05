@@ -277,7 +277,7 @@ const: availableSkills = [
     </>
   
   </div>;
-          );
+            );
 };
 
 export default CreateTalentPage;

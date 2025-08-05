@@ -166,7 +166,7 @@ Get Started
               </div>
               
             </div>
-                    </div>
+                              </div>
         </div>
       </div>
     </div>

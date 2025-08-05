@@ -289,7 +289,7 @@ const DigitalTwins = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

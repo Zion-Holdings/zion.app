@@ -195,7 +195,7 @@ const AI_prediction_SolutionPage: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

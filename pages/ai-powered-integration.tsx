@@ -289,7 +289,7 @@ const AiPoweredIntegration = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

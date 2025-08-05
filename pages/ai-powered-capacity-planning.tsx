@@ -697,7 +697,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
           </div>
         </div>
       </footer>
-                </div>
+                      </div>
         </div>
     );
 };

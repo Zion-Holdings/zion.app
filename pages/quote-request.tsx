@@ -527,7 +527,7 @@ const QuoteRequestForm = () => {
             </div>
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

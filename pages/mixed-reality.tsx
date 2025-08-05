@@ -289,7 +289,7 @@ const MixedReality = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

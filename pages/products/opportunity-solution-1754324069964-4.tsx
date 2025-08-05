@@ -195,7 +195,7 @@ const AI_Powered_startup_opportunity_SolutionPage: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

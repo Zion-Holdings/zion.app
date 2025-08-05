@@ -98,25 +98,24 @@ const ContractGenerator = () => {
   };
 
   return (
-    <div>
-      <>
+    <>
       <Head>
         <title>AI Contract Generator - Zion Marketplace</title>
         <meta name="description" content="Generate professional contracts and legal documents with AI assistance" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
 
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="text-center">
               <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Contract Generator
@@ -129,7 +128,7 @@ const ContractGenerator = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
@@ -414,9 +413,7 @@ const ContractGenerator = () => {
         </div>
       </div>
     </>
-  
-              </div>
-    );
+  );
 };
 
 export default ContractGenerator;

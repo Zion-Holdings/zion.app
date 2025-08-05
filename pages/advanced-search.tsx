@@ -687,7 +687,7 @@ const AdvancedSearchPage: NextPage = () => {
         </div>
       </div>
     </ModernLayout>
-      );
+        );
 };
 
 export default AdvancedSearchPage;

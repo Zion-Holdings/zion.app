@@ -247,25 +247,24 @@ const BusinessIntelligenceDashboard = () => {
   ];
 
   return (
-    <div>
-      <>
+    <>
       <Head>
         <title>AI Business Intelligence Dashboard - Zion Marketplace</title>
         <meta name="description" content="Real-time business intelligence, predictive analytics, and AI-powered insights" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
 
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex justify-between items-center">
               <div>
                 <h1 className="text-4xl md text-5xl font-bold text-white mb-2">
@@ -298,7 +297,7 @@ const BusinessIntelligenceDashboard = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
@@ -601,8 +600,6 @@ const BusinessIntelligenceDashboard = () => {
         </div>
       </div>
     </>
-  
-              </div>
     );
 };
 

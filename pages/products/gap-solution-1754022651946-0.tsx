@@ -195,7 +195,7 @@ const gap_solution_1754022651946_0Page: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

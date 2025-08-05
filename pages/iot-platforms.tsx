@@ -289,7 +289,7 @@ const IotPlatforms = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

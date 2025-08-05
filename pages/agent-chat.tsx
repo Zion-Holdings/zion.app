@@ -127,16 +127,15 @@ const AgentChat: NextPage = () => {
   };
 
   return (
-    <div>
-      <>
-        <Head>
-          <title>Agent Chat - Zion AI Marketplace</title>
-          <meta name="description" content="Start a conversation with AI agents for various tasks and assistance" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+    <>
+      <Head>
+        <title>Agent Chat - Zion AI Marketplace</title>
+        <meta name="description" content="Start a conversation with AI agents for various tasks and assistance" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <main className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue">
+      <main className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue">
           <div className="container-responsive py-8">
             {/* Header */}
             <motion.div
@@ -354,8 +353,7 @@ const AgentChat: NextPage = () => {
             </motion.div>
           </div>
         </main>
-      </>
-            </div>
+    </>
     );
 };
 

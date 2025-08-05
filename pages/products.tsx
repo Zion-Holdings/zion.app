@@ -128,7 +128,7 @@ const ProductsPage: NextPage = () => {
         </footer>
       </div>
     </ModernLayout>
-      );
+        );
 };
 
 export default ProductsPage;

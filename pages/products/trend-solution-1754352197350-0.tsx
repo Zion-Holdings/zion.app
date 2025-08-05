@@ -165,7 +165,7 @@ Get Started
               </button>
             </div>
             
-                    </div>
+                              </div>
         </div>
       </div>
     </div>

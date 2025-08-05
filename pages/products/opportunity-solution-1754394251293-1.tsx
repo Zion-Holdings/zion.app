@@ -195,7 +195,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

@@ -289,7 +289,7 @@ const AiPoweredPrediction = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

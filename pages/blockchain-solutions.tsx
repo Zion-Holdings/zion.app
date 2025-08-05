@@ -289,7 +289,7 @@ const BlockchainSolutions = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

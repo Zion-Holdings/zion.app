@@ -283,7 +283,7 @@ const AiPoweredAnalysis = () => {
             </motion.div>
           </div>
         </section>
-                  </div>
+                        </div>
         </div>
     );
 };

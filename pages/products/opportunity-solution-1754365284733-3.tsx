@@ -195,7 +195,7 @@ const Intelligent_market_gap_PlatformPage: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>

@@ -704,7 +704,7 @@ const InboxPage: NextPage = () => {
             </motion.div>
           </div>
         )}
-                      </div>
+                              </div>
       </div>
     </div>
   );

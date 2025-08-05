@@ -289,7 +289,7 @@ const AiPoweredOptimization = () => {
       </div>
     </Layout>
   
-              </div>
+                  </div>
     );
 };
 

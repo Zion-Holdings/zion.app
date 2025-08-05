@@ -195,7 +195,7 @@ const opportunity_solution_1754022683880_0Page: NextPage = () => {
             
           </div>
         </div>
-                </div>
+                          </div>
         </div>
       </div>
     </div>
