@@ -334,7 +334,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Capacity Planning</h2>
-                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Create Plan
                   </button>
                 </div>
@@ -401,7 +401,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Demand Forecasting</h2>
-                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Generate Forecast
                   </button>
                 </div>
@@ -462,7 +462,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Resource Management</h2>
-                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Add Resource
                   </button>
                 </div>
@@ -531,7 +531,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Optimization Recommendations</h2>
-                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Generate Recommendations
                   </button>
                 </div>

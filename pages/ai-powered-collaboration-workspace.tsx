@@ -306,7 +306,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                     </div>
                     <button
                       onClick={() => handleAISuggestion(suggestion)}
-                      className="mt-2 w-full bg-blue-600 hover bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
+                      className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
                     >
                       {suggestion.action}
                     </button>
@@ -422,7 +422,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Tasks</h3>
-                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Add Task
                       </button>
                     </div>
@@ -467,7 +467,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Documents</h3>
-                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Upload Document
                       </button>
                     </div>

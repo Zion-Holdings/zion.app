@@ -359,7 +359,7 @@ const ContractGenerator = () => {
                       </button>
                       <button
                         onClick={downloadContract}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Download
                       </button>

@@ -566,7 +566,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Deploy
                           </button>
                           <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover bg-gray-700 transition-colors">
@@ -648,7 +648,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                           >
                             {isLoading ? 'Scheduling...' : 'Schedule Delivery'}
                           </button>
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Track Route
                           </button>
                           <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover bg-gray-700 transition-colors">
@@ -715,7 +715,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Manage
                           </button>
                           <button className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors">

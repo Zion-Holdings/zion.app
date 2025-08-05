@@ -310,7 +310,7 @@ const InvoiceGenerator = () => {
                       <h3 className="text-lg font-semibold text-white">Invoice Items</h3>
                       <button
                         onClick={addItem}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Add Item
                       </button>
@@ -474,7 +474,7 @@ const InvoiceGenerator = () => {
                       </button>
                       <button
                         onClick={downloadInvoice}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Download
                       </button>

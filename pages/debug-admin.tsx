@@ -98,7 +98,7 @@ export default function DebugAdmin() {
             <div className="space-y-4">
               <button
                 onClick={() => router.push('/admin-dashboard')}
-                className="px-4 py-4 bg-blue-600 hover bg-blue-700 text-white rounded-lg transition-colors"
+                className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
               >
                 Try Admin Dashboard
               </button>

@@ -36,7 +36,7 @@ const AiPoweredAnalysis = () => {
                 Comprehensive AI-driven analysis tools that provide deep insights into your data and operations.
               </p>
               <div className="flex flex-col sm flex-row gap-4 justify-center">
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Get Started
                 </button>
                 <button className="border border-blue-600 text-blue-600 hover bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -276,7 +276,7 @@ const AiPoweredAnalysis = () => {
                 <button className="bg-white text-blue-600 hover bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Start Free Trial
                 </button>
-                <button className="border border-white text-white hover bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="border border-white text-white hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Schedule Demo
                 </button>
               </div>

@@ -295,7 +295,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Facilities</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Facility
                 </button>
               </div>
@@ -347,7 +347,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Maintenance Tasks</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Schedule Task
                 </button>
               </div>

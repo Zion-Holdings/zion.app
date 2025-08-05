@@ -817,7 +817,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                         >
                           Calibrate
                         </button>
-                        <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
+                        <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                           Settings
                         </button>
                       </div>
@@ -928,7 +928,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                               <p className="text-gray-300 text-sm mb-2">{exercise.description}</p>
                               <div className="flex justify-between">
                                 <span className="text-gray-400 text-sm">Difficulty: {exercise.difficulty}/10</span>
-                                <button className="px-3 py-3 bg-blue-600 text-white text-xs rounded hover bg-blue-700">
+                                <button className="px-3 py-3 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">
                                   Start
                                 </button>
                               </div>

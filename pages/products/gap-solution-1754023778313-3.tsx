@@ -151,7 +151,7 @@ const gap_solution_1754023778313_3Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $299/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -163,7 +163,7 @@ const gap_solution_1754023778313_3Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $598/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -175,7 +175,7 @@ const gap_solution_1754023778313_3Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $1196/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -187,7 +187,7 @@ const gap_solution_1754023778313_3Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 Contact sales
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>

@@ -32,7 +32,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1 }} className="flex flex-col sm flex-row justify-center gap-6 mb-12">
             <Link href="/marketplace" className="px-8 py-3 rounded-lg bg-purple-600 hover bg-purple-700 font-semibold transition">Browse Marketplace</Link>
             <Link href="/services" className="px-8 py-3 rounded-lg bg-pink-600 hover bg-pink-700 font-semibold transition">Our Services</Link>
-            <Link href="/talent-directory" className="px-8 py-3 rounded-lg bg-blue-600 hover bg-blue-700 font-semibold transition">Find Talent</Link>
+            <Link href="/talent-directory" className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold transition">Find Talent</Link>
             <Link href="/contact" className="px-8 py-3 rounded-lg bg-gray-800 hover bg-gray-900 font-semibold transition">Contact Us</Link>
           </motion.div>
         </section>

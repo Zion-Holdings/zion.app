@@ -289,7 +289,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Change Initiatives</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Initiative
                 </button>
               </div>
@@ -357,7 +357,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Stakeholders</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Stakeholder
                 </button>
               </div>
@@ -411,7 +411,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Training Programs</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Program
                 </button>
               </div>

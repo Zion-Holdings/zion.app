@@ -418,7 +418,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Integrations</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Integration
                 </button>
               </div>
@@ -470,7 +470,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Endpoints</h2>
-                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Endpoint
                 </button>
               </div>
