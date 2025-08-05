@@ -3232,5 +3232,103 @@
     "category": "Gap-Based",
     "targetMarket": "Enterprise",
     "createdAt": "2025-08-05T02:54:28.818Z"
+  },
+  {
+    "id": "trend-solution-1754362911821-0",
+    "name": "AI-Powered AI Solution",
+    "category": "Trend-Based",
+    "targetMarket": "Mixed",
+    "createdAt": "2025-08-05T03:01:51.822Z"
+  },
+  {
+    "id": "trend-solution-1754362911822-1",
+    "name": "AI-Powered AI Solution",
+    "category": "Trend-Based",
+    "targetMarket": "Mixed",
+    "createdAt": "2025-08-05T03:01:51.822Z"
+  },
+  {
+    "id": "trend-solution-1754362911822-2",
+    "name": "AI-Powered sustainability Solution",
+    "category": "Trend-Based",
+    "targetMarket": "Mixed",
+    "createdAt": "2025-08-05T03:01:51.822Z"
+  },
+  {
+    "id": "trend-solution-1754362911822-3",
+    "name": "AI-Powered AI Solution",
+    "category": "Trend-Based",
+    "targetMarket": "Mixed",
+    "createdAt": "2025-08-05T03:01:51.822Z"
+  },
+  {
+    "id": "trend-solution-1754362911822-4",
+    "name": "AI-Powered AI Solution",
+    "category": "Trend-Based",
+    "targetMarket": "Mixed",
+    "createdAt": "2025-08-05T03:01:51.822Z"
+  },
+  {
+    "id": "opportunity-solution-1754362911822-0",
+    "name": "AI-Powered business opportunity Solution",
+    "category": "Opportunity-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.823Z"
+  },
+  {
+    "id": "opportunity-solution-1754362911823-1",
+    "name": "Intelligent business opportunity Platform",
+    "category": "Opportunity-Based",
+    "targetMarket": "SMB",
+    "createdAt": "2025-08-05T03:01:51.823Z"
+  },
+  {
+    "id": "opportunity-solution-1754362911823-2",
+    "name": "AI-Powered market gap Solution",
+    "category": "Opportunity-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.823Z"
+  },
+  {
+    "id": "opportunity-solution-1754362911823-3",
+    "name": "Intelligent market gap Platform",
+    "category": "Opportunity-Based",
+    "targetMarket": "SMB",
+    "createdAt": "2025-08-05T03:01:51.823Z"
+  },
+  {
+    "id": "opportunity-solution-1754362911823-4",
+    "name": "AI-Powered startup opportunity Solution",
+    "category": "Opportunity-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.823Z"
+  },
+  {
+    "id": "gap-solution-1754362911824-0",
+    "name": "AI analytics Solution",
+    "category": "Gap-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.824Z"
+  },
+  {
+    "id": "gap-solution-1754362911824-1",
+    "name": "AI automation Solution",
+    "category": "Gap-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.824Z"
+  },
+  {
+    "id": "gap-solution-1754362911824-2",
+    "name": "AI prediction Solution",
+    "category": "Gap-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.824Z"
+  },
+  {
+    "id": "gap-solution-1754362911824-3",
+    "name": "AI optimization Solution",
+    "category": "Gap-Based",
+    "targetMarket": "Enterprise",
+    "createdAt": "2025-08-05T03:01:51.824Z"
   }
 ]

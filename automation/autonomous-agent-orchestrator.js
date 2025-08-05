@@ -722,6 +722,10 @@ class AutonomousAgentOrchestrator {
 
   async updateTaskInDatabase(task) {
     try {
+      if (!this.supabase) {
+        console.log('⚠️  Supabase not available, skipping database operation');
+        return { error: null };
+      }
       const { error } = await this.supabase
         .from('orchestrator_tasks')
         .upsert([{
@@ -746,6 +750,10 @@ class AutonomousAgentOrchestrator {
 
   async saveReportToDatabase(report) {
     try {
+      if (!this.supabase) {
+        console.log('⚠️  Supabase not available, skipping database operation');
+        return { error: null };
+      }
       const { error } = await this.supabase
         .from('orchestrator_reports')
         .insert([{
