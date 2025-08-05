@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   runtime: number;
   status: running | completed | faile'd | queued;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   algorithm: grover-search | shor-factoring | quantum-fourier-transf'orm | quantum-wal'k' | variational-quantum-eigensolver;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   gates: number;
   successRate: number;
   status: development | testing | optimized'' | deployed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: single-qubit | two-qubit | multi-qubit | controlle'd' | measurement;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   fidelity: number;
   duration: number;
   status: active | calibrating | optimizing'' | deprecated};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   state: pure | mixed | entang'led' | superposition;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   phase: number;
   entanglement: number;
   status: prepared | measured | evol'ved' | destroyed'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   qubits: number;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   width: number;
   optimization: number;
   status: designing | compiling | executing' | completed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   measurement: computational-basis | bell-state | 'tomograph'y | weak-measurement;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [circuits, setCircuits] = useState<QuantumCircuit[]>([]</div>;
   const [measurements, setMeasurements] = useState<QuantumMeasurement[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       'name: 'Grover Search Simulation,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'completed',;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qa-0o1,;
       name: Grover Search Algorithm,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       successRate: 95.2,;
       status: deployed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qg-0o1,;
       name: Hadamard Gate,;
@@ -103,7 +103,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       duration: 50,;
       status: active;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-'0o1',;
       name: 'Bell State,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       entanglement: 1.0,;
       status: prepared;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qc-0o1',;
       'name: 'Quantum Fourier Transform,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       optimization: 85.5,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qm-0o1,;
       name: State Tomography,;

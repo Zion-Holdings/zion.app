@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   synapses: number;
   powerConsumption: number;
   aiAnalysis: NeuromorphicAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiencyScore: number;
   learningScore: number;
   adaptationScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -28,13 +28,13 @@ interface FacilityPlan {;
   layers: 'number;
   neurons: number;
   aiOptimization: SpikingOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   spikingScore: number;
   temporalScore: number;
   plasticityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -43,13 +43,13 @@ interface FacilityPlan {;
   complexity: 'number;
   convergence: number;
   aiAnalysis: BrainAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   inspirationScore: number;
   efficiencyScore: number;
   adaptabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   chipId: string;
   title: string;
@@ -59,7 +59,7 @@ interface FacilityPlan {;
   cores: 'number;
   memory: number;
   aiAnalysis: ChipAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   energyScore: number;
@@ -75,13 +75,13 @@ interface FacilityPlan {";";
   tasks: 'number;
   accuracy: number;
   aiAnalysis: CognitiveAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   cognitiveScore: number;
   reasoningScore: number;
   learningScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -91,13 +91,13 @@ interface FacilityPlan {;
   devices: 'number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalNeuromorphicDevices: number;
   activeSpikingNetworks: number;
   brainInspiredAlgorithms: number;
@@ -107,7 +107,7 @@ interface FacilityPlan {;
   averageEfficiency: number;
   aiOptimizationScore: number;
   aiInsights: NeuromorphicComputingInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -143,7 +143,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         adaptationScore: 94,;
         recommendations: [Optimize synaptic connections, Enhance learning algorithms]}};
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       title: 'Temporal Spiking Network,;
@@ -159,7 +159,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         plasticityScore: 91,;
         recommendations: [Improve spike timing, Enhance plasticity mechanisms]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'Hebbian Learning Algorithm,;
@@ -192,7 +192,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         scalabilityScore: 91,;
         recommendations: [Optimize core utilization, Enhance memory efficiency]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       cognitiveId: 'CC-0o1',;
@@ -209,7 +209,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         learningScore: '95,;
         recommendations: [Improve pattern detection, Enhance learning capabilities]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       systemId: 'NCM-0o1,;

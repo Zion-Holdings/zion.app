@@ -14,13 +14,13 @@ interface FacilityPlan {";";";"";";
   startTime: Date;
   endTime?: Date;
   aiAnalysis: AIDeploymentAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successRate: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -30,13 +30,13 @@ interface FacilityPlan {;
   releaseDate: 'Date;
   rollbackDate?: Date;
   aiOptimization: AIReleaseOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -44,7 +44,7 @@ interface FacilityPlan {;
   status: 'active | inactive | maintenan'ce' | error;
   targetEnvironment: 'cloud | on-premise' | hybr'id | contain'er | 'serverless;
   aiAnalysis: 'AIInfrastructureAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   automationScore: number;
   efficiencyScore: number;
@@ -59,13 +59,13 @@ interface FacilityPlan {";";";
   coverage: 'number;
   duration: number;
   aiAnalysis: AITestingAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successRate: number;
   coverageScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   value: number;
@@ -73,13 +73,13 @@ interface FacilityPlan {;
   trend: up | down | stable;
   target: number;
   aiAnalysis: AIMetricsAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   efficiencyScore: number;
   optimizationScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalDeployments: number;
   activePipelines: number;
   releaseCount: number;
@@ -88,7 +88,7 @@ interface FacilityPlan {;
   averageSuccessRate: number;
   aiOptimizationScore: number;
   aiInsights: DeploymentDevOpsInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -140,7 +140,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         reliabilityScore: 94,;
         recommendations: [Improve rollback procedures, Enhance monitoring]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Auto Scaling Configuration,;
@@ -155,7 +155,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         reliabilityScore: 91,;
         recommendations: [Optimize scaling thresholds, Improve monitoring]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       'name: 'End-to-End Test Suite,;

@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
 import { motion } from framer-motion;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   type: user | agent;
   content: string;
   timestamp: Date;
   status?: sending | se'n't | error;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   avatar: string;
@@ -23,7 +23,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isTyping, setIsTyping] = useState(false);</div>;
   const $1 = useRef<HTMLDivElement>(null);
-  const agents: Agent[] = [;
+  const agents: Agent[] = [
     {;
       id: 1,;
       name: AI Assistant,;

@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   securityLevel: number;
   status: initializing | key-exchange | verificat'ion | completed;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   algorithm: lattice-based | code-based | multivari'ate | 'hash-based;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   performance: number;
   resistance: number;
   status: development | testing | product'ion | 'deprecated'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   channel: quantum-channel | classical-channel | hybrid-channel;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   throughput: number;
   latency: number;
   status: connecting | encrypting | transmitti'n'g | completed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   source: quantum-entropy | photon-detection' | quantum-noi'se;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   speed: number;
   quality: number;
   status: generating | testing | distributin'g | 'completed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   scheme: quantum-digital-signature | post-quantum-signature | quantum-resistant-signatu'r'e;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   verificationTime: number;
   securityLevel: number;
   status: signing | verifying | completed | 'fail'ed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: commitment | oblivious-transfer | zero-knowledge | secure-multiparty;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [digitalSignatures, setDigitalSignatures] = useState<QuantumDigitalSignatures[]>([]</div>;
   const [cryptographicProtocols, setCryptographicProtocols] = useState<QuantumCryptographicProtocols[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qkd-0o1,;
       'name: 'BB84 Protocol,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'completed',;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qrc'-0o1,;
       name: 'Lattice-Based Encryption,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       resistance: 99.8,;
       status: production;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qsc-0o1,;
       'name: 'Quantum Encrypted Channel,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       quality: 99.8,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qds-0o1,;
       'name: 'Quantum Digital Signature,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       securityLevel: 256,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qcp-0o1,;
       'name: 'Quantum Commitment,;

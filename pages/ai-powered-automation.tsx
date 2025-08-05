@@ -1,5 +1,5 @@
 import React from "react";";";";";";
-import { NextPage } from 'next";";";";";
+import { NextPage } from 'next";";";";
 import Head from "next/head";
 import PageLayout from '../components/layout/PageLayout;
 import {;
@@ -12,7 +12,7 @@ import {;
   Zap,;";";";";";
   TrendingUp";";";";";";
 } from "lucide-react";
-interface AutomationWorkflow {;
+interface AutomationWorkflow {
   id: number;
   name: string;
   status: 'active' | 'paused' | 'error' | 'completed;

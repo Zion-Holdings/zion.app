@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   errorRate: number;
   status: active | writing | reading' | standb'y;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   storage: quantum-disk | quantum-tape | quantum-ssd'' | quantum-hdd | quantum-optical;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   latency: number;
   reliability: number;
   status: operational | writing | read'ing | maintenanc'e'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   database: quantum-sql | quantum-nosql | quantum-graph' | quantum-time-serie's | quantum-document;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   queries: number;
   performance: number;
   status: online | backup | recov'ery' | maintenance'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   cloud: quantum-public | quantum-private | quantum-hyb'rid | quantum-edg'e' | quantum-distributed;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   bandwidth: number;
   uptime: number;
   status: running | scaling | updating'' | maintenance};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   backup: quantum-incremental | quantum-full | quantum-different'ial' | quantum-snapshot' | quantum-replication;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   compression: number;
   encryption: number;
   status: backing-up | completed | failed' | schedule'd};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   recovery: quantum-restore | quantum-clone | quantum-migration'' | quantum-sync | quantum-archive;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [backups, setBackups] = useState<QuantumBackup[]>([]</div>;
   const [recoveries, setRecoveries] = useState<QuantumRecovery[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qm-0o1,;
       name: Quantum RAM Module,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active,;
       timestamp: '2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       name: Quantum SSD Array,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       reliability: 99.99,;
       status: operational;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qd-0o1,;
       name: Quantum SQL Database,;
@@ -103,7 +103,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       performance: 95.5,;
       status: online;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qc-0o1,;
       'name: 'Quantum Public Cloud,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       uptime: 99.9,;
       status: running;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qb-0o1,;
       'name: 'Quantum Incremental Backup,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       encryption: 99.9,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'qr-0o1,;
       name: 'Quantum Restore Operation,;

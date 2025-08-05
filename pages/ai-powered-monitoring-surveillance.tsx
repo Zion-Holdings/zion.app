@@ -14,13 +14,13 @@ interface FacilityPlan {";";";"";";
   alerts: number;
   lastUpdated: Date;
   aiAnalysis: AIMonitoringAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   securityScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -30,13 +30,13 @@ interface FacilityPlan {;
   frameRate: number;
   recordingHours: number;
   aiDetection: AISurveillanceDetection;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   detectionAccuracy: number;
   falsePositiveRate: number;
   recognitionRate: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -45,13 +45,13 @@ interface FacilityPlan {;
   status: 'active | resolved | acknowledged;
   timestamp: Date;
   aiAnalysis: AIAlertAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   severityScore: number;
   priorityScore: number;
   resolutionScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -61,7 +61,7 @@ interface FacilityPlan {;
   threshold: number;
   unit: string;
   aiOptimization: AIPerformanceOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
@@ -76,13 +76,13 @@ interface FacilityPlan {";";";
   status: 'detected | investigating | containe'd' | resolved;
   timestamp: 'Date;
   aiAnalysis: AISecurityAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   threatScore: number;
   riskScore: number;
   mitigationScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalSystems: number;
   activeCameras: number;
   activeAlerts: number;
@@ -90,7 +90,7 @@ interface FacilityPlan {;
   averageUptime: number;
   aiOptimizationScore: number;
   aiInsights: MonitoringSurveillanceInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -159,7 +159,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         resolutionScore: '82,;
         recommendations: [Scale resources, Optimize processes]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       name: 'CPU Utilization,;
@@ -176,7 +176,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         improvementScore: '82,;
         recommendations: [Load balancing, Process optimization]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: Suspicious Login Attempt,;

@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   entanglement: number;
   location: string;
   timestamp: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   qubitA: string;
   qubitB: string;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   distance: number;
   creationTime: string;
   status: active | decohered | measured' | teleporte'd};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   source: string;
@@ -33,7 +33,7 @@ interface FacilityPlan {;
   fidelity: 'number;
   duration: number;
   successRate: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   nodes: string[];
@@ -42,7 +42,7 @@ interface FacilityPlan {;
   totalQubits: 'number;
   activeEntanglements: number;
   averageFidelity: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: atomic | solid-state | optical | hybri'd;
@@ -60,7 +60,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [quantumNetworks, setQuantumNetworks] = useState<QuantumNetwork[]>([]</div>;
   const [quantumMemories, setQuantumMemories] = useState<QuantumMemory[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       name: Bell State |Φ+⟩,;
@@ -72,7 +72,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       location: Node A,;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: ep'-0o1,;
       qubitA: 'Qubit A-1,;
@@ -83,7 +83,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       creationTime: 2024-0o1-15T10:30:00Z,;
       status: active;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: tp-0o1',;
       name: 'Standard Teleportation,;
@@ -96,7 +96,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       duration: 150,;
       successRate: 94.2;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qn-0o1,;
       'name: 'Quantum Network Alpha,;
@@ -110,7 +110,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       activeEntanglements: 8,;
       averageFidelity: 97.8;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qm-0o1',;
       'name: 'Atomic Memory Bank,;

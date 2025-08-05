@@ -1,7 +1,7 @@
 import React, { useState } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   name: "'string;
   title: string;
   email: string;
@@ -68,7 +68,6 @@ ${input.testimonials};
 ${input.contact};
 ---;
 *This portfolio was generated using AI-powered portfolio builder tools.*;
-;
       setGeneratedPortfolio(portfolio);
       setLoading(false);
     }, 2000);";

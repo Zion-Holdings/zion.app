@@ -14,7 +14,7 @@ interface FacilityPlan {";";";"";";
   projects: TeamProject[];
   performance: TeamPerformance;
   aiAnalysis: AITeamAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   role: string;
@@ -23,27 +23,27 @@ interface FacilityPlan {;
   performance: number;
   collaboration: number;
   lastActive: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   status: planning | active | completed' | on-hold;
   progress: 'number;
   deadline: Date;
   priority: low | medium | high' | 'critical;};
-interface FacilityPlan {;
+interface FacilityPlan {
   overallScore: 'number;
   collaboration: number;
   productivity: number;
   communication: number;
   innovation: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiency: number;
   synergy: number;
   recommendations: string[];
   predictedOutcomes: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -52,25 +52,25 @@ interface FacilityPlan {;
   tools: WorkspaceTool[];
   performance: WorkspacePerformance;
   aiOptimization: AIWorkspaceOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   'name: 'string;
   category: communication | project-management | file-shari'ng | collaborati'on | 'analytics;
   status: 'active | inactive | maintenance;
   usage: 'number;
   effectiveness: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalTeams: number;
   activeProjects: number;
   collaborationScore: number;
   productivityScore: number;
   lastOptimized: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyGains: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: strategic | operational | research | marketin'g | technical;
@@ -79,32 +79,32 @@ interface FacilityPlan {;
   objectives: PartnershipObjective[];
   performance: PartnershipPerformance;
   aiAnalysis: AIPartnershipAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   organization: string;
   role: string;
   contribution: number;
   lastEngagement: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   description: string;
   status: pending | in-progress | completed | 'delaye'd;
   progress: 'number;
   deadline: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   overallScore: number;
   collaboration: number;
   valueCreation: number;
   riskManagement: number;
   lastEvaluated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successProbability: number;
   valuePotential: number;
   recommendations: string[];
   riskFactors: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalTeams: number;
   activeWorkspaces: number;
   partnershipsCount: number;
@@ -112,7 +112,7 @@ interface FacilityPlan {;
   collaborationScore: number;
   aiOptimizationScore: number;
   aiInsights: CollaborationTeamInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

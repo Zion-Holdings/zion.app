@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   precision: number;
   recall: number;
   aiAnalysis: ModelAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   predictionReliability: number;
   modelInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: supervised | unsupervised | reinforcement | deep-learning | 'ensemble | neural-network;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   speed: number;
   scalability: number;
   aiAnalysis: AlgorithmAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   learningAccuracy: number;
   optimizationLevel: number;
   improvementOpportunities: string[];
   enhancementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: cnn | rnn | lstm | transformer | gan' | 'autoencoder;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   parameters: number;
   trainingTime: number;
   aiAnalysis: DeepLearningAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   modelAccuracy: number;
   trainingEfficiency: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: performance-optimization | feature-engineering | hyperparameter-tuning | model-selection;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     performanceGain: number;
     efficiencyScore: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | 'neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalModels: number;
   activeAlgorithms: number;
   averageAccuracy: number;

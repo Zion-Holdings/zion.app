@@ -1,7 +1,7 @@
 import React, { useState } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   contractType: "'string;
   clientName: string;
   clientEmail: string;
@@ -63,7 +63,6 @@ ${input.terms};
 ${input.specialConditions};
 ---;
 *This contract was generated using AI-powered contract generation tools.*;
-;
       setGeneratedContract(contract);
       setLoading(false);
     }, 2000);";

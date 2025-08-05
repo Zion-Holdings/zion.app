@@ -21,7 +21,7 @@ interface FacilityPlan {";";";"";";
     reliability: number;
     energyEfficiency: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   deviceId: string;
   sensorType: temperature | humidit'y | press'ure | 'moti'on | ligh't | air-qual'ity;
@@ -37,7 +37,7 @@ interface FacilityPlan {;
     max: number;
     critical: boolean;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -56,7 +56,7 @@ interface FacilityPlan {;
   executionCount: number;
   successRate: number;
   aiOptimized: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -165,7 +165,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             reliability: 0,;
             energyEfficiency: 0}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           deviceId: 1,;
@@ -242,7 +242,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             max: 1000,;
             critical: false}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           name: Smart Climate Control,;
@@ -327,7 +327,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           successRate: 89.1,;
           aiOptimized: true};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: 'Device Reliability',;

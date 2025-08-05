@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   revenue: "number;
   growth: number;
   engagement: number;

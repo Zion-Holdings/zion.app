@@ -30,7 +30,7 @@ interface FacilityPlan {";";";"";";
   energyUsage: number;
   occupancy: number;
   lastUpdated: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   'type: 'string;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   nextMaintenance: string;
   efficiency: number;
   health: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   facility: string;
@@ -54,7 +54,7 @@ interface FacilityPlan {;
   dueDate: string;
   estimatedCost: number;
   description: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   facility: string;
@@ -64,7 +64,7 @@ interface FacilityPlan {;
   unit: string;
   trend: increasing | decreasing | sta'ble;
   lastUpdated: 'string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   facility: string;

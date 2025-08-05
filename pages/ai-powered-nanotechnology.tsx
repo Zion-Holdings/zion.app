@@ -2,7 +2,7 @@ import type { NextPage } from "next";";";
 import Head from "next/head";";";
 import { useState, useEffect } from "react";";";
 import Link from "next/link";
-interface Nanotechnology {;
+interface Nanotechnology {
   id: string;
   name: string;
   description: string;
@@ -18,7 +18,7 @@ interface Nanotechnology {;
     recommendations: string[];
   };
 };
-interface NanotechnologyAnalytics {;
+interface NanotechnologyAnalytics {
   totalNanodevices: number;
   activeMolecularSystems: number;
   averageScale: number;
@@ -40,7 +40,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {;
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {;
     // Mock data loading;
-    const mockData: Nanotechnology[] = [;
+    const mockData: Nanotechnology[] = [
       {;
         id: '1',;
         name: 'Quantum Nanomaterials System',;

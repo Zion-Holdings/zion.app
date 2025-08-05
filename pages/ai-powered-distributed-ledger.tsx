@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   transactions: number;
   blockTime: number;
   aiAnalysis: LedgerAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   securityScore: number;
@@ -28,13 +28,13 @@ interface ConsensusMechanism:{;
   validators: 'number;
   consensusTime: number;
   aiOptimization: ConsensusOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   consensusScore: number;
   securityScore: number;
   efficiencyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -43,13 +43,13 @@ interface FacilityPlan {;
   gasUsed: 'number;
   complexity: number;
   aiAnalysis: ContractAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   securityScore: number;
   efficiencyScore: number;
   auditScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   governanceId: string;
   title: string;
@@ -59,7 +59,7 @@ interface FacilityPlan {;
   proposals: 'number;
   participants: number;
   aiAnalysis: GovernanceAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   governanceScore: number;
   participationScore: number;
@@ -75,13 +75,13 @@ interface FacilityPlan {";";
   users: 'number;
   transactions: number;
   aiAnalysis: DAppAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   adoptionScore: number;
   performanceScore: number;
   userExperienceScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -91,13 +91,13 @@ interface FacilityPlan {;
   networks: 'number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalLedgers: number;
   activeConsensusMechanisms: number;
   smartContracts: number;
@@ -107,7 +107,7 @@ interface FacilityPlan {;
   averageBlockTime: number;
   aiOptimizationScore: number;
   aiInsights: DistributedLedgerInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -143,7 +143,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         scalabilityScore: '92,;
         recommendations: [Optimize consensus mechanism, Enhance network security]}};
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: Proof of Stake Consensus,;
@@ -209,7 +209,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         userExperienceScore: 91,;
         recommendations: [Improve user onboarding, Optimize transaction speed]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       systemId: DLM'-0o1,;

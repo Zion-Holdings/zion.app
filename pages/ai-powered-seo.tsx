@@ -15,7 +15,7 @@ interface FacilityPlan {";";";"";";
   recommendations: SEORecommendation[];
   lastAnalyzed: Date;
   nextAnalysis: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: critical | warning | inf'o;
   title: string;
@@ -24,7 +24,7 @@ interface FacilityPlan {;
   fixable: 'boolean;
   fixDescription: string;
   priority: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   category: content | technic'al | on-page'' | off-page | performance;
   title: string;
@@ -33,7 +33,7 @@ interface FacilityPlan {;
   effort: 'easy | medium' | 'hard;
   estimatedImprovement: 'number;
   aiGenerated: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   keyword: string;
   searchVolume: number;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
     change: 'number;
     period: string;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   pageTitle: string;
   metaDescription: string;
@@ -64,7 +64,7 @@ interface FacilityPlan {;
     keywords: string[];
   };
   aiOptimized: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -194,7 +194,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           lastAnalyzed: new Date(Date.now() - 6 * 60 * 60 * 1000),;
           nextAnalysis: new Date(Date.now() + 24 * 60 * 60 * 1000};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: '1,;
           keyword: 'AI marketplace,;
@@ -253,7 +253,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             change: 8.7,;
             period: last 30 days}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           pageTitle: Zio'n' - AI-Powered Marketplace for Professional Services,;
@@ -283,7 +283,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             keywords: ['service marketplace, A'I development, 'web development, professiona'l services, 'verified experts]};
           aiOptimized: 'true};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Organic Traffic,;

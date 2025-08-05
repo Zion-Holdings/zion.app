@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   learningRate: number;
   status: active | learning | processing' | standb'y;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   intelligence: quantum-reasoning | quantum-learning | quantum-adaptation'' | quantum-innovation | quantum-evolution;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   creativity: number;
   problemSolving: number;
   status: reasoning | learning | adapt'ing | innovatin'g'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   consciousness: quantum-awareness | quantum-self-awareness | quantum-emotional' | quantum-creativ'e | quantum-intuitive;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   emotionalDepth: number;
   creativity: number;
   status: aware | reflecting | feel'ing' | creating'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   brain: quantum-neural-network | quantum-memory | quantum-cognit'ion | quantum-emotio'n' | quantum-intuition;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   processing: number;
   memory: number;
   status: processing | learning | remembering'' | thinking};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   knowledge: quantum-facts | quantum-concepts | quantum-patte'rns' | quantum-insights' | quantum-wisdom;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   patterns: number;
   insights: number;
   status: storing | organizing | analyzing' | synthesizin'g};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   communication: quantum-language | quantum-expression | quantum-understanding'' | quantum-empathy | quantum-persuasion;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [knowledge, setKnowledge] = useState<QuantumKnowledge[]>([]</div>;
   const [communication, setCommunication] = useState<QuantumCommunication[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qa-0o1,;
       name: Quantum AI Assistant,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active,;
       timestamp: '2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qi-0o1,;
       name: Quantum Reasoning Engine,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       problemSolving: 97.5,;
       status: reasoning;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qc-0o1,;
       name: Quantum Awareness System,;
@@ -103,7 +103,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       creativity: 94.5,;
       status: aware;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qb-0o1,;
       'name: 'Quantum Neural Network,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       memory: 95.2,;
       status: processing;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qk-0o1,;
       'name: 'Quantum Knowledge Base,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       insights: 100000,;
       status: storing;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'qc-0o1,;
       name: 'Quantum Language Processor,;

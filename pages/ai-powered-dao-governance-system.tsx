@@ -25,7 +25,7 @@ interface FacilityPlan {";";";"";";
     data: string;
     description: string;
   }[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   symbol: string;
   name: string;
   totalSupply: number;
@@ -35,7 +35,7 @@ interface FacilityPlan {;
   marketCap: number;
   treasuryBalance: number;
   votingPower: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   address: string;
   username: string;
   avatar: string;
@@ -47,7 +47,7 @@ interface FacilityPlan {;
   proposalsPassed: number;
   lastActive: string;
   badges: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalBalance: number;
   tokens: {;
     symbol: string;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
     percentage: number;
     description: string;
   }[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   votingPeriod: number;
   executionDelay: number;
   quorum: number;
@@ -147,7 +147,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     marketCap: 18375000,;
     treasuryBalance: 2500000,;
     votingPower: 7500000};
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       address: 0x1234...5678,;
       username: 'A'I_Architect,;

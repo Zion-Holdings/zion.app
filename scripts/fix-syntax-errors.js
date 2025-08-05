@@ -279,6 +279,12 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/interface \w+ \{;/g, (match) => match.replace('{;', '{'));
     content = content.replace(/;\s*;/g, ';');
     content = content.replace(/^\s*;\s*$/gm, '');
+    
+    // Fix additional patterns for remaining errors
+    content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next$/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
+    content = content.replace(/memoryUsage\?: \{;/g, "memoryUsage?: {");
+    content = content.replace(/const \w+: \w+\[\] = \[;/g, (match) => match.replace('= [;', '= ['));
+    content = content.replace(/const \w+ = \{;/g, (match) => match.replace('= {;', '= {'));
 
     if (content !== fs.readFileSync(filePath, 'utf8')) {
       fs.writeFileSync(filePath, content, 'utf8');

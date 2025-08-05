@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react;
+import React, { useState, useEffect, useCallback } from 'react
 import { NextPage } from 'next;
-import Head from 'next/head;
+import Head from 'next/head
 import { useRouter } from 'next/router;
-import { useAuth } from '../src/contexts/AuthContext;
+import { useAuth } from '../src/contexts/AuthContext
 import RealTimeMonitor from '../components/admin/RealTimeMonitor;
 import SystemHealthMonitor from '../components/admin/SystemHealthMonitor;
-interface AgentStatus {;
+interface AgentStatus {
   agentId: string;
   type: string;
   status: 'active' | 'idle' | 'error' | 'stopped';
@@ -15,7 +15,7 @@ interface AgentStatus {;
     avgResponseTime?: number;
   };
 };
-interface SystemHealth {;
+interface SystemHealth {
   timestamp: string;
   activeAgents: number;
   totalAgents: number;
@@ -42,14 +42,14 @@ interface SystemHealth {;
   arrayBuffers: number;
   uptime?: number;
 };
-interface AutomationReport {;
+interface AutomationReport {
   id: string;
   type: string;
   timestamp: string;
   status: string;
   data?: any;
 };
-interface AdminDashboardData {;
+interface AdminDashboardData {
   agents: AgentStatus[];
   orchestrators: SystemHealth[];
   reports: AutomationReport[];

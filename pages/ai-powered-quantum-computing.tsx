@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   depth: number;
   executionTime: number;
   aiAnalysis: AlgorithmAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiencyScore: number;
   accuracyScore: number;
   scalabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -28,13 +28,13 @@ interface FacilityPlan {;
   variables: 'number;
   constraints: number;
   aiOptimization: OptimizationAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   convergenceScore: number;
   solutionQuality: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -43,13 +43,13 @@ interface FacilityPlan {;
   qubits: 'number;
   iterations: number;
   aiAnalysis: SimulationAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   accuracyScore: number;
   fidelityScore: number;
   computationalScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   protocol: string;
   description: string;
@@ -58,7 +58,7 @@ interface FacilityPlan {;
   keyLength: 'number;
   securityLevel: number;
   aiAnalysis: CryptographyAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   securityScore: number;
   efficiencyScore: number;
@@ -73,13 +73,13 @@ interface FacilityPlan {";";";
   parameters: 'number;
   accuracy: number;
   aiAnalysis: MLAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   learningScore: number;
   generalizationScore: number;
   quantumAdvantage: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -89,13 +89,13 @@ interface FacilityPlan {;
   qubits: 'number;
   coherenceTime: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalAlgorithms: number;
   activeOptimizations: number;
   runningSimulations: number;
@@ -105,7 +105,7 @@ interface FacilityPlan {;
   averageQubits: number;
   aiOptimizationScore: number;
   aiInsights: QuantumComputingInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -189,7 +189,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         reliabilityScore: 95,;
         recommendations: [Enhance error correction, Optimize key generation rate]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       model: 'Quantum Neural Network,;

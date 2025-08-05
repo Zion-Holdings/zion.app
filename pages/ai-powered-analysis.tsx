@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   type: performance | trend | prediction | optimization;
   title: string;
@@ -18,7 +18,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   useEffect(() => {;
     // Simulate loading analysis data;
     setTimeout(() => {;
-      const mockData: AnalysisData[] = [;
+      const mockData: AnalysisData[] = [
         {;
           id: 1,;
           'type: 'performance,;

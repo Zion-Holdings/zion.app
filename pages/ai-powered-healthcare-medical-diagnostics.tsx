@@ -31,7 +31,7 @@ interface FacilityPlan {";";";"";";
   patientId: 'string;
   patientName: string;
   bloodType: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: imaging | lab-test | vital-signs | genet'i'c | pathology | cardiol'o'gy;
@@ -41,12 +41,12 @@ interface FacilityPlan {;
   result: string;
   confidence: number;
   aiAnalysis: DiagnosticAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   accuracy: number;
   riskLevel: low | medium | hi'g'h | critical;
   recommendations: 'string[];
   followUpRequired: boolean};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   patientId: string;
   patientName: string;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     oxygenSaturation: number;
     respiratoryRate: number};
   aiAnalysis: MonitoringAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   trend: improving | stabl'e | declin'ing | 'critical;
   riskScore: 'number;
   alerts: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: patient-outcomes | treatment-effectiveness | resource-utilization | 'quality-metrics;
@@ -75,12 +75,12 @@ interface FacilityPlan {;
     averageRecoveryTime: number;
     costSavings: number};
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -88,7 +88,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutr'al;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalPatients: number;
   activeDiagnostics: number;
   monitoringSystems: number;

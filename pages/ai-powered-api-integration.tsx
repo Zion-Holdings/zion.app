@@ -31,7 +31,7 @@ interface FacilityPlan {";";";"";";
   authentication: string;
   aiAnalysis: APIAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
   lastUpdated: string;
   aiAnalysis: APIAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -58,7 +58,7 @@ interface FacilityPlan {;
   lastCheck: string;
   aiAnalysis: MonitoringAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -70,21 +70,21 @@ interface FacilityPlan {;
   status: active | resolved | pending;
   lastUpdated: string;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   securityScore: number;
   threatScore: number;
   complianceScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   reliabilityScore: number;
   securityScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -94,14 +94,14 @@ interface FacilityPlan {;
   method: GET | POST | 'PUT | DELETE' | 'PATCH;
   aiOptimization: 'WebhookOptimization;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -111,14 +111,14 @@ interface FacilityPlan {;
   lastSync: Date;
   aiAnalysis: ConnectorAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   connectionScore: number;
   syncScore: number;
   reliabilityScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -129,14 +129,14 @@ interface FacilityPlan {;
   examples: string[];
   aiAnalysis: DocumentationAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   completenessScore: number;
   clarityScore: number;
   accuracyScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -147,14 +147,14 @@ interface FacilityPlan {;
   lastCheck: Date;
   aiAnalysis: MonitoringAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   healthScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -164,14 +164,14 @@ interface FacilityPlan {;
   duration: number;
   aiAnalysis: TestingAnalysis;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successRate: number;
   coverageScore: number;
   reliabilityScore: number;
   recommendations: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   totalAPIs: number;
   activeWebhooks: number;
   connectedIntegrations: number;
@@ -182,7 +182,7 @@ interface FacilityPlan {;
   aiOptimizationScore: number;
   aiInsights: APIIntegrationInsight[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

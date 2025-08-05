@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   falsePositiveRate: number;
   responseTime: number;
   aiAnalysis: ThreatAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   accuracyScore: number;
   threatLevel: number;
   detectionInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: security-monitoring | vulnerability-assessment | risk-analysis | compliance-tracking;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   alertsGenerated: number;
   aiAnalysis: SecurityAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   monitoringAccuracy: number;
   riskAssessmentScore: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: automated-response | incident-coordination | forensic-analysis | recovery-automation;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   resolutionRate: number;
   effectivenessScore: number;
   aiAnalysis: ResponseAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   responseEfficiency: number;
   automationLevel: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: security-automation | threat-intelligence | security-policy | 'compliance-management;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     securityScore: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalThreats: number;
   activeProtections: number;
   averageResponseTime: number;

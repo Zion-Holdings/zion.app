@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   latency: number;
   status: active | establishing | transmitting' | standb'y;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   topology: star | mesh | ring'' | tree | hybrid;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   capacity: number;
   throughput: number;
   status: operational | expanding | optimiz'ing | maintenanc'e'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   routing: quantum-path | entanglement-based | superposition-routing' | quantum-switc'h | quantum-gateway;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   coherenceTime: number;
   routingEfficiency: number;
   status: routing | learning | optimiz'ing' | standby'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   switching: quantum-circuit | packet-switching | optical-switch'ing | quantum-gat'e' | entanglement-switching;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   quantumCapacity: number;
   errorRate: number;
   status: switching | configuring | optimizing'' | standby};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   channel: optical-fiber | free-space | satell'ite' | quantum-memory' | entangled-pair;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   noise: number;
   coherence: number;
   status: transmitting | establishing | maintaining' | standb'y};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   protocol: bb84 | ekert91 | b92 | six-state' | 'continuous-variable;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [channels, setChannels] = useState<QuantumChannel[]>([]</div>;
   const [protocols, setProtocols] = useState<QuantumProtocol[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qc-0o1,;
       name: Quantum Teleportation Link,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active',;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qn-0o1,;
       name: Quantum Mesh Network,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       throughput: 8500,;
       status: operational;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qr-0o1,;
       name: Quantum Path Router,;
@@ -103,7 +103,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       routingEfficiency: '95.5,;
       status: routing;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       name: Quantum Circuit Switch,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       errorRate: '0.0o1,;
       status: switching;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qc-0o1,;
       name: Optical Fiber Channel,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       coherence: 99.9,;
       status: transmitting;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qp-0o1,;
       'name: 'BB84 Protocol,;

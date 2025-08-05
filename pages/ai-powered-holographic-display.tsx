@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   refreshRate: number;
   fieldOfView: number;
   aiAnalysis: DisplayAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   qualityScore: number;
   immersionScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -28,13 +28,13 @@ interface FacilityPlan {;
   polygons: 'number;
   textures: number;
   aiOptimization: VisualizationOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   renderingScore: number;
   qualityScore: number;
   performanceScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -43,13 +43,13 @@ interface FacilityPlan {;
   sensors: 'number;
   accuracy: number;
   aiAnalysis: SpatialAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   mappingScore: number;
   trackingScore: number;
   interactionScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   projectionId: string;
   title: string;
@@ -59,7 +59,7 @@ interface FacilityPlan {;
   brightness: 'number;
   contrast: number;
   aiAnalysis: ProjectionAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   brightnessScore: number;
   contrastScore: number;
@@ -75,13 +75,13 @@ interface FacilityPlan {";";
   voxels: 'number;
   depth: number;
   aiAnalysis: VolumetricAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   volumetricScore: number;
   depthScore: number;
   interactionScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -91,13 +91,13 @@ interface FacilityPlan {;
   displays: 'number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalDisplays: number;
   activeVisualizations: number;
   spatialSystems: number;
@@ -107,7 +107,7 @@ interface FacilityPlan {;
   averageResolution: number;
   aiOptimizationScore: number;
   aiInsights: HolographicDisplayInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -159,7 +159,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         performanceScore: '93,;
         recommendations: [Optimize polygon count, Enhance texture quality]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       name: 'Spatial Mapping System,;

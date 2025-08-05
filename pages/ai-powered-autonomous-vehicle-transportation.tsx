@@ -19,7 +19,7 @@ interface AutonomousVehicle {";";";"";";
   eta: number;
   lastUpdated: string;
 };
-interface TransportationRoute {;
+interface TransportationRoute {
   id: string;
   origin: string;
   destination: string;
@@ -31,7 +31,7 @@ interface TransportationRoute {;
   passengers?: number;
   cargo?: string;
 };
-interface TransportationAnalytics {;
+interface TransportationAnalytics {
   totalVehicles: 'number;
   activeRoutes: number;
   completedToday: number;

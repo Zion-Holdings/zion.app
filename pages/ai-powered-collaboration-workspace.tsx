@@ -15,7 +15,7 @@ interface FacilityPlan {";";";"";";
   documents: WorkspaceDocument[];
   createdAt: Date;
   updatedAt: Date};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   email: string;
@@ -23,7 +23,7 @@ interface FacilityPlan {;
   avatar: 'string;
   status: online | offline | aw'ay;
   lastActive: 'Date};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -33,7 +33,7 @@ interface FacilityPlan {;
   dueDate: Date;
   createdAt: Date;
   updatedAt: Date};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: document | spreadsheet | presentation | design;
@@ -41,7 +41,7 @@ interface FacilityPlan {;
   lastModified: Date;
   createdBy: string;
   collaborators: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   'type: 'task | document | meeting | deadlin'e;
   title: string;
@@ -59,7 +59,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [newMessage, setNewMessage] = useState(</div>;
   const $1 = useRef<HTMLDivElement>(null;
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: AI-Powered Marketplace Development,;
@@ -85,7 +85,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       createdAt: 'new Date(Date.now() - 86400000 * 7),;
       updatedAt: new Date(;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       type: task,;

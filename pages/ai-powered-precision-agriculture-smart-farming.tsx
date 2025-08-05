@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   healthScore: number;
   yieldPrediction: number;
   aiAnalysis: CropAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   growthStage: seedling | vegetativ'e | flower'ing | 'fruiting' | harvest;
   diseaseRisk: 'low | medium' | hi'gh | critica'l;
   nutrientDeficiency: 'string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   location: string;
   type: sandy | clay | loamy' | silty;
@@ -31,12 +31,12 @@ interface FacilityPlan {;
     potassium: number;
     organicMatter: number};
   aiAnalysis: SoilAnalysisData};
-interface FacilityPlan {;
+interface FacilityPlan {
   fertilityScore: number;
   irrigationNeeds: number;
   amendmentRecommendations: string[];
   cropSuitability: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: drip | sprinkler | flood | smart;
@@ -45,12 +45,12 @@ interface FacilityPlan {;
   efficiency: number;
   waterUsage: number;
   aiAnalysis: IrrigationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   optimizationScore: number;
   waterConservation: number;
   scheduleRecommendations: string[];
   maintenanceNeeds: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: automated-planting | harvesting-robot | drone-monitoring | weather-station;
@@ -59,18 +59,18 @@ interface FacilityPlan {;
   efficiency: number;
   costSavings: number;
   aiAnalysis: FarmingAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   roi: number;
   productivityGain: number;
   sustainabilityScore: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalCrops: number;
   activeSystems: number;
   waterSavings: number;
   yieldIncrease: number;
   aiInsights: AgriculturalInsight[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -131,7 +131,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         nutrientDeficiency: '[],;
         recommendations: [Begin harvest operations, Monitor weather conditions, Prepare storage facilities]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       location: 'Fiel'd A-1,;
@@ -225,7 +225,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         scheduleRecommendations: ['Updat'e weather integration, Optimize zone programming, 'Enhanc'e sensor network],;
         maintenanceNeeds: '[Replace sensors, Update software, Calibrate weather station]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'Automated Planting Robot,;

@@ -15,13 +15,13 @@ interface FacilityPlan {";";";"";";
   dataPoints: number;
   lastUpdated: Date;
   aiAnalysis: AIPredictionAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   confidenceScore: number;
   accuracyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -33,18 +33,18 @@ interface FacilityPlan {;
   dataPoints: number;
   predictions: ForecastPrediction[];
   aiOptimization: AIForecastOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   date: Date;
   value: number;
   confidence: number;
   status: predicted | actual | pending;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   accuracyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -55,13 +55,13 @@ interface FacilityPlan {;
   timeframe: 'string;
   dataPoints: number;
   aiAnalysis: AITrendAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   trendStrength: number;
   confidenceScore: number;
   impactScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;";
   description: string;";";
@@ -72,13 +72,13 @@ interface FacilityPlan {;
   impact: low | medium | 'h'igh | critical'";";";";"";";
   mitigationStrategies: "'string[];
   aiAnalysis: AIRiskAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   riskScore: number;
   probabilityScore: number;
   impactScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -89,20 +89,20 @@ interface FacilityPlan {;
   accuracy: number;
   predictions: MarketPredictionData[];
   aiAnalysis: AIMarketAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   currentValue: number;
   predictedValue: number;
   confidence: number;
   timeframe: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   marketScore: number;
   confidenceScore: number;
   accuracyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalPredictions: number;
   activeForecasts: number;
   trendAnalyses: number;
@@ -111,7 +111,7 @@ interface FacilityPlan {;
   averageAccuracy: number;
   aiOptimizationScore: number;
   aiInsights: PredictionForecastingInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -148,7 +148,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         reliabilityScore: '89,;
         recommendations: [Increase data points, Add seasonal factors]}};
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: Sales' Revenue Forecast,;
@@ -216,7 +216,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         impactScore: 78,;
         recommendations: [Monitor competitors, Strengthen positioning]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       title: 'Technology Sector Market Prediction,;

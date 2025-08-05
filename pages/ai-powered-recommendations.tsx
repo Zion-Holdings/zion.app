@@ -23,11 +23,11 @@ interface FacilityPlan {";";";"";";
   userMatch: number;
   trending: boolean;
   featured: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   weight: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: collaborative | content-based | hybrid | deep-learning;
@@ -37,7 +37,7 @@ interface FacilityPlan {;
   lastTrained: Date;
   modelVersion: string;
   features: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalRecommendations: number;
   clickThroughRate: number;
   conversionRate: number;
@@ -151,7 +151,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       featured: false;
     }];
   // Mock recommendation engines;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: Collaborative Filtering Engine,;

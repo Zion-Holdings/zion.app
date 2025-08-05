@@ -21,12 +21,12 @@ interface FacilityPlan {";";";"";";
   launchDate: string;
   mission: string;
   aiAnalysis: SatelliteAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   healthScore: number;
   performanceScore: number;
   riskLevel: low | medium | h'igh' | critical;
   recommendations: 'string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: exploration | research | commercial | 'scientific;
@@ -36,12 +36,12 @@ interface FacilityPlan {;
   crew: number;
   budget: number;
   aiAnalysis: MissionAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   successProbability: number;
   riskAssessment: number;
   resourceOptimization: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: low-earth | geostationary | polar | interplanetary;
@@ -50,12 +50,12 @@ interface FacilityPlan {;
   period: number;
   fuelEfficiency: number;
   aiAnalysis: TrajectoryAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   efficiencyScore: number;
   fuelConsumption: number;
   collisionRisk: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: research | commercial | military | tourism;
@@ -64,12 +64,12 @@ interface FacilityPlan {;
   currentOccupants: number;
   modules: string[];
   aiAnalysis: StationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   operationalEfficiency: number;
   safetyScore: number;
   resourceUtilization: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   target: string;
@@ -77,18 +77,18 @@ interface FacilityPlan {;
   status: 'planning | active | completed;
   discovery: 'string;
   aiAnalysis: ExplorationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   discoveryProbability: number;
   scientificValue: number;
   resourcePotential: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalSatellites: number;
   activeMissions: number;
   orbitalObjects: number;
   spaceDebris: number;
   aiInsights: SpaceInsight[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

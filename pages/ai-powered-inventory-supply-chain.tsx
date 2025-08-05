@@ -19,7 +19,7 @@ interface FacilityPlan {";";";"";";
   supplier: string;
   lastUpdated: Date;
   aiAnalysis: AIInventoryAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   demandForecast: number;
   reorderPoint: number;
@@ -28,7 +28,7 @@ interface FacilityPlan {;
   confidence: number;
   recommendations: string[];
   riskLevel: low | mediu'm | hig'h | 'critical;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: supplier | manufacturer | distributor | warehou'se | 'retailer;
@@ -39,14 +39,14 @@ interface FacilityPlan {;
   leadTime: number;
   cost: number;
   aiOptimization: AISupplyChainOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiency: number;
   costSavings: number;
   riskReduction: number;
   recommendations: string[];
   alternativeRoutes: SupplyChainRoute[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   fromNode: string;
   toNode: string;
@@ -55,7 +55,7 @@ interface FacilityPlan {;
   time: number;
   reliability: number;
   aiScore: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   orderNumber: string;
   customer: string;
@@ -68,21 +68,21 @@ interface FacilityPlan {;
   totalValue: number;
   shippingCost: number;
   aiOptimization: AILogisticsOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   itemId: string;
   quantity: number;
   unitPrice: number;
   totalPrice: number;
   status: available | backordered | substitut'ed;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimalRoute: string;
   estimatedTime: number;
   costSavings: number;
   carbonFootprint: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalItems: number;
   totalValue: number;
   lowStockItems: number;
@@ -92,7 +92,7 @@ interface FacilityPlan {;
   aiAccuracy: number;
   topCategories: string[];
   aiInsights: InventoryInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -158,7 +158,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         recommendations: [Purchase additional 500 credits, Monitor usage patterns],;
         riskLevel: medium};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'TechCorp Solutions,;
@@ -214,7 +214,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             aiScore: 88;
           }]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       orderNumber: ORD-2024-0o1,;

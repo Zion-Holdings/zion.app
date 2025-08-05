@@ -24,7 +24,7 @@ interface FacilityPlan {";";";"";";
     cpuUsage: number;
     memoryUsage: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   modelName: string;
   type: string;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
     validationAccuracy: number;
   };
   aiAssisted: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -127,7 +127,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             cpuUsage: 31,;
             memoryUsage: 78}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           modelName: Sentiment Analysis Model,;
@@ -166,7 +166,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             validationAccuracy: 87.8};
           aiAssisted: true};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Model Accuracy,;

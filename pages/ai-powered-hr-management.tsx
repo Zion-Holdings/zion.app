@@ -17,7 +17,7 @@ interface FacilityPlan {";";";"";";
     riskAssessment: number;
   };
   lastUpdated: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   position: string;
@@ -32,7 +32,7 @@ interface FacilityPlan {;
   engagement: number;
   retentionRisk: number;
   developmentNeeds: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   department: string;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
     diversityScore: number;
     marketCompetitiveness: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   employeeId: string;
   employeeName: string;
@@ -64,7 +64,7 @@ const AIHRManagement: React.FC = () => {;
   const [jobPostings, setJobPostings] = useState<JobPosting[]>([]);</div>;
   const [performanceReviews, setPerformanceReviews] = useState<PerformanceReview[]>([]);
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Sarah Johnson,;
@@ -111,7 +111,7 @@ const AIHRManagement: React.FC = () => {;
       };
       lastUpdated: 2024-0o1-13};
   ];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: David Kim,;
@@ -193,7 +193,7 @@ const AIHRManagement: React.FC = () => {;
         diversityScore: 75,;
         marketCompetitiveness: 92}};
   ];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       employeeId: '1,;

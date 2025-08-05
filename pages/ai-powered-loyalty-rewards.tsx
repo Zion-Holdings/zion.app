@@ -19,7 +19,7 @@ interface FacilityPlan {";";";"";";
   totalValue: number;
   memberSince: Date;
   lastActive: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -29,7 +29,7 @@ interface FacilityPlan {;
   unlockedAt?: Date;
   progress?: number;
   maxProgress?: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   progress: number;
   maxProgress: number;
   aiRecommended: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -53,7 +53,7 @@ interface FacilityPlan {;
   aiRecommended: boolean;
   usageCount: number;
   maxUsage?: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   category: points | transactions | strea'k | 'reviews | referral's;
@@ -61,7 +61,7 @@ interface FacilityPlan {;
   entries: 'LeaderboardEntry[];
   userRank: number;
   totalParticipants: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   rank: number;
   user: {;
     id: string;
@@ -70,7 +70,7 @@ interface FacilityPlan {;
   };
   score: number;
   change: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -81,7 +81,7 @@ interface FacilityPlan {;
   participants: number;
   maxParticipants?: number;
   aiOptimized: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   action: string;
   points: number;
@@ -165,7 +165,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
     memberSince: new Date(2024-0o1-0o1),;
     lastActive: new Date(};
   // Mock badges;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'First Transaction,;
@@ -214,7 +214,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       maxProgress: 1000;
     }];
   // Mock achievements;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1',;
       'name: 'Marketplace Pioneer,;
@@ -260,7 +260,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       aiRecommended: false;
     }];
   // Mock rewards;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1',;
       'name: 'Premium Service Discount,;
@@ -300,7 +300,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       maxUsage: 1;
     }];
   // Mock leaderboards;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Points Leaderboard,;
@@ -327,7 +327,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         }];
     }];
   // Mock events;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: AI Innovation Challenge,;
@@ -352,7 +352,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       aiOptimized: false;
     }];
   // Mock points history;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       action: Transaction Completed,;

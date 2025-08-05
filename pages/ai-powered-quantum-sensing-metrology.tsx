@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   dynamicRange: number;
   status: active | calibrating | measuring' | standb'y;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   technique: quantum-illumination | ghost-imaging | quantum-tomography'' | quantum-microscopy | quantum-spectroscopy;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   depth: number;
   fieldOfView: number;
   status: imaging | processing | analyz'ing | complete'd'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   measurement: frequency | time | length' | mas's | current;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   stability: number;
   uncertainty: number;
   status: measuring | calibrating | optimiz'ing' | standby'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   detector: single-photon | superconducting | quantum-'dot | ion-tra'p' | atomic-clock;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   deadTime: number;
   jitter: number;
   status: detecting | calibrating | optimizing'' | standby};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   interferometer: mach-zehnder | michelson | sag'nac' | fabry-perot' | young;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   pathLength: number;
   wavelength: number;
   status: interfering | aligning | measuring' | standb'y};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   spectroscopy: absorption | emission | raman'' | fluorescence | coherent;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [interferometry, setInterferometry] = useState<QuantumInterferometry[]>([]</div>;
   const [spectroscopy, setSpectroscopy] = useState<QuantumSpectroscopy[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       name: Gravitational Wave Detector,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active,;
       timestamp: '2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qi-0o1,;
       name: Quantum Illumination System,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       fieldOfView: 60,;
       status: imaging;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qm-0o1,;
       name: Atomic Clock,;
@@ -103,7 +103,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       uncertainty: 1e-17,;
       status: measuring;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qd-0o1,;
       'name: 'Single Photon Detector,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       jitter: 10,;
       status: detecting;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qi-0o1,;
       'name: 'Mach-Zehnder Interferometer,;
@@ -125,7 +125,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       wavelength: 1550,;
       status: interfering;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'qs-0o1,;
       name: 'Quantum Absorption Spectroscopy,;

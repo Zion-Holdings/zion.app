@@ -18,7 +18,7 @@ interface FacilityPlan {";";";"";";
   coverage: number;
   priority: low | medium | high | 'critical;
   tags: 'string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -38,7 +38,7 @@ interface FacilityPlan {;
     actual?: string;
     status: passed | failed | skipped;
   }[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   suiteId: string;
   environment: development | stagin'g | production' | 'testing;
@@ -160,7 +160,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           priority: critica'l',;
           tags: '[security, vulnerability, penetration]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'name: 'User Login with Valid Credentials,;

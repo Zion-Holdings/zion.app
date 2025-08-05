@@ -17,32 +17,32 @@ interface FacilityPlan {";";";"";";
   agenda: EventAgenda[];
   performance: EventPerformance;
   aiAnalysis: AIEventAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   role: string;
   status: confirmed | pending | decline'd | 'maybe;
   responseTime: 'Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   duration: number;
   speaker?: string;
   description: string;
   status: pending | in-progress | completed;
-interface FacilityPlan {;
+interface FacilityPlan {
   attendanceRate: 'number;
   engagementScore: number;
   satisfactionRate: number;
   completionRate: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successProbability: number;
   engagementPrediction: number;
   recommendations: string[];
   riskFactors: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: personal | team | project | organizatio'n;
@@ -50,38 +50,38 @@ interface FacilityPlan {;
   settings: CalendarSettings;
   performance: CalendarPerformance;
   aiOptimization: AICalendarOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   timezone: string;
   workingHours: WorkingHours;
   availability: AvailabilityRule[];
   notifications: NotificationSettings;};
-interface FacilityPlan {;
+interface FacilityPlan {
   start: string;
   end: string;
   days: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: available | busy | tentative | out-of-offic'e;
   startTime: 'string;
   endTime: string;
   days: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   email: boolean;
   push: boolean;
   sms: boolean;
   reminderTime: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalEvents: number;
   completedEvents: number;
   averageAttendance: number;
   efficiencyScore: number;
   lastOptimized: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   timeEfficiency: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -89,7 +89,7 @@ interface FacilityPlan {;
   deadlines: TimelineDeadline[];
   performance: TimelinePerformance;
   aiAnalysis: AITimelineAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -105,19 +105,19 @@ interface FacilityPlan {";
   priority: 'low | medi'um | hi'gh' | critical;";";";"";";
   status: 'pending | in-progress | complete'd | 'overdue";";";";"";";
   assignedTo: "'string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalMilestones: number;
   completedMilestones: number;
   onTimeDeadlines: number;
   totalDeadlines: number;
   efficiencyScore: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   completionProbability: number;
   riskAssessment: number;
   recommendations: string[];
   predictedDelays: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalEvents: number;
   activeCalendars: number;
   timelinesCount: number;
@@ -125,7 +125,7 @@ interface FacilityPlan {;
   efficiencyScore: number;
   aiOptimizationScore: number;
   aiInsights: EventCalendarInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -249,7 +249,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         recommendations: [Prepare' detailed metrics', Include interactive sessions],;
         riskFactors: '[Time constraints, Complex agenda]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Product Development Calendar,;
@@ -321,7 +321,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         timeEfficiency: '85,;
         recommendations: [Enhance campaign scheduling, Improve audience targeting]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Marketplace Launch Timeline,;

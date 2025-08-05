@@ -23,7 +23,7 @@ interface FacilityPlan {";";";"";";
     securityScore: number;
     complexity: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   hash: string;
   type: transfer | contract-interaction | mint | 'bu'rn | swap;
@@ -38,7 +38,7 @@ interface FacilityPlan {;
   aiAssisted: boolean;
   network: string;
   fee: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   category: defi | nft | gam'ing' | soci'al | 'utility | governa'nce;
@@ -56,7 +56,7 @@ interface FacilityPlan {;
     status: implemented | planned | testing;
     aiOptimized: boolean;
   }[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -177,7 +177,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             securityScore: 0,;
             complexity: 0}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           hash: '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef,;
@@ -258,7 +258,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           network: binanc'e,;
           fee: '0};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           name: Zion DeFi Platform,;
@@ -347,7 +347,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               aiOptimized: 'false;
             }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Gas Efficiency,;

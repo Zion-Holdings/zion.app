@@ -1,8 +1,8 @@
-import React from 'react;
+import React from 'react
 import { NextPage } from 'next;
-import Head from 'next/head;
+import Head from 'next/head
 import Link from 'next/link;
-import ModernLayout from '../components/layout/ModernLayout;
+import ModernLayout from '../components/layout/ModernLayout
 import ResponsiveNavigation from ../components/ResponsiveNavigation;
 const AIPoweredPredictiveAnalytics: "'NextPage = () => {;
   const $1 = [;

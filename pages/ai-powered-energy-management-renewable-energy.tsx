@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   capacity: number;
   efficiency: number;
   aiAnalysis: EnergyAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   optimizationPotential: number;
   maintenanceNeeds: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: solar-farm | wind-turbine | hydroelectric | geothermal' | biomass;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   currentOutput: number;
   efficiency: number;
   aiAnalysis: RenewableAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   weatherImpact: number;
   productionForecast: number;
   maintenanceSchedule: string[];
   optimizationRecommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: distribution | transmission | microgrid | 'storage;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   currentLoad: number;
   stability: number;
   aiAnalysis: GridAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   loadBalance: number;
   stabilityScore: number;
   outageRisk: number;
   optimizationRecommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: consumption | production | efficiency | cost;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     carbonReduction: number};
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | 'neutra'l;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalCapacity: number;
   activeSystems: number;
   renewablePercentage: number;

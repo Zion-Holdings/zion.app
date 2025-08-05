@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   timestamp: 'Date;
   affectedSystems: string[];
   aiAnalysis: IncidentAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   threatScore: number;
   impactScore: number;
   urgencyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   incidentId: string;
   title: string;
@@ -29,13 +29,13 @@ interface FacilityPlan {;
   assignedTeam: 'string;
   priority: critical | high | mediu'm' | low;
   aiOptimization: 'ResponseOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   coordinationScore: number;
   efficiencyScore: number;
   effectivenessScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   caseNumber: string;
   title: string;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
   investigator: 'string;
   evidenceCount: number;
   aiAnalysis: ForensicsAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   evidenceScore: number;
   analysisScore: number;
@@ -61,13 +61,13 @@ interface FacilityPlan {";
   affectedData: "'string[];
   impactAssessment: string;
   aiAnalysis: BreachAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   investigationScore: number;
   containmentScore: number;
   recoveryScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   huntId: string;
   title: string;
@@ -77,13 +77,13 @@ interface FacilityPlan {;
   hunter: 'string;
   findings: string[];
   aiAnalysis: HuntingAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   detectionScore: number;
   accuracyScore: number;
   coverageScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   incidentId: string;
   title: string;
@@ -93,13 +93,13 @@ interface FacilityPlan {;
   sla: 'number; // Service Level Agreement in hours;
   escalationLevel: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   complianceScore: number;
   efficiencyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalIncidents: number;
   activeInvestigations: number;
   forensicsCases: number;
@@ -109,7 +109,7 @@ interface FacilityPlan {;
   averageResponseTime: number;
   aiOptimizationScore: number;
   aiInsights: IncidentResponseInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -213,7 +213,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         coverageScore: 85,;
         recommendations: [Expand hunting scope, Deploy additional sensors]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       incidentId: IM'-'2024-0o1,;

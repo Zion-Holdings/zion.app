@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   completionRate: number;
   studentSatisfaction: number;
   aiAnalysis: LearningAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   engagementLevel: number;
   learningInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: student-performance | learning-patterns | content-effectiveness | engagement-metrics;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   insightsGenerated: number;
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   dataAccuracy: number;
   predictionReliability: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: adaptive-curriculum | personalized-pathways | skill-gap-analysis | competency-mapping;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   adaptationSpeed: number;
   effectivenessScore: number;
   aiAnalysis: TrainingAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   personalizationScore: number;
   adaptationEfficiency: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: content-optimization | curriculum-design | assessment-improvement | 'learning-outcomes;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     learningOutcomes: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalStudents: number;
   activeCourses: number;
   averageCompletionRate: number;

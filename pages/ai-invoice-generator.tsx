@@ -1,12 +1,12 @@
 import React, { useState } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   description: "'string;
   quantity: number;
   price: number;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   clientName: string;
   clientEmail: string;
   invoiceNumber: string;
@@ -90,7 +90,6 @@ Tax (${invoiceData.taxRate}%): ${invoiceData.currency}${calculateTax().toFixed(2
 ${invoiceData.notes};
 ---;
 *This invoice was generated using AI-powered invoice generation tools.*;
-;
       setGeneratedInvoice(invoice);
       setLoading(false);
     }, 2000);";

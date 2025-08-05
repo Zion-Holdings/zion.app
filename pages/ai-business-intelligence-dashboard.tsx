@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   name: string;
   value: number;
@@ -10,7 +10,7 @@ interface FacilityPlan {;
   target: number;
   unit: string;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   labels: string[];
   datasets: {;
     label: string;
@@ -19,7 +19,7 @@ interface FacilityPlan {;
     borderColor: string;
   }[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   'type: 'positive | negative | neutral | 'warning;
   title: string;
@@ -27,7 +27,7 @@ interface FacilityPlan {;
   impact: string;
   confidence: number;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: daily | weekly | monthly | quarter'ly;
@@ -45,7 +45,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   useEffect(() => {;
     // Simulate loading data;
     setTimeout(() => {;
-      const mockMetrics: Metric[] = [;
+      const mockMetrics: Metric[] = [
         {;
           id: 1,;
           name: Revenue,;
@@ -109,7 +109,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           confidence: 92;
         };
       ];
-      const mockReports: Report[] = [;
+      const mockReports: Report[] = [
         {;
           id: 1,;
           name: Daily Sales Report,;

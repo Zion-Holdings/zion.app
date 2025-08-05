@@ -17,13 +17,13 @@ interface FacilityPlan {";";";"";";
   openedCount: number;
   clickedCount: number;
   aiAnalysis: AIBroadcastAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   engagementScore: number;
   openRate: number;
   clickRate: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   content: string;
@@ -34,12 +34,12 @@ interface FacilityPlan {;
   views: number;
   acknowledgments: number;
   aiOptimization: AIAnnouncementOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   visibilityScore: number;
   engagementScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   targetSegments: 'string[];
   analytics: CampaignAnalytics;
   aiOptimization: AICampaignOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalSent: number;
   totalOpened: number;
   totalClicked: number;
@@ -56,12 +56,12 @@ interface FacilityPlan {;
   clickRate: number;
   conversionRate: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   engagementPrediction: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -69,18 +69,18 @@ interface FacilityPlan {;
   status: 'active | inactive | draft' | testing;
   performance: 'AutomationPerformance;
   aiAnalysis: AIMarketingAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalExecutions: number;
   successRate: number;
   conversionRate: number;
   averageResponseTime: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiencyScore: number;
   conversionPrediction: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   content: string;
@@ -92,12 +92,12 @@ interface FacilityPlan {;
   clicks: number;
   conversions: number;
   aiAnalysis: AIPromotionalAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   effectivenessScore: number;
   conversionRate: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalBroadcasts: number;
   activeAnnouncements: number;
   campaignsCount: number;
@@ -106,7 +106,7 @@ interface FacilityPlan {;
   averageEngagement: number;
   aiOptimizationScore: number;
   aiInsights: BroadcastCommunicationInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

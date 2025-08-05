@@ -25,7 +25,7 @@ interface FacilityPlan {";";";"";";
     codeSplitting: boolean;
     cachingEnabled: boolean;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   minWidth: number;
@@ -38,7 +38,7 @@ interface FacilityPlan {;
     errorRate: number;
   };
   optimizations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -47,7 +47,7 @@ interface FacilityPlan {;
   trend: up | down | stab'le;
   deviceType: 'string;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   page: string;
   deviceType: string;
@@ -177,7 +177,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             codeSplitting: true,;
             cachingEnabled: true}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'name: 'Mobile Small,;
@@ -304,7 +304,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           deviceType: smartphone,;
           lastUpdated: new Date(};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           page: Homepage,;

@@ -20,7 +20,7 @@ interface FacilityPlan {";";";"";";
     systemDowntime: number;
     financialLoss: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: login-attempt | data-access | system-change' | network-traff'ic | 'file-access | api-c'all;
   user: 'string;
@@ -35,7 +35,7 @@ interface FacilityPlan {;
     recommendations: string[];
   };
   action: allowed | blocke'd | flag'ged | 'investigated;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: authentication | authorization | data-protection | network-security | 'compliance;
@@ -50,7 +50,7 @@ interface FacilityPlan {;
   }[];
   lastUpdated: Date;
   compliance: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -154,7 +154,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             systemDowntime: 30,;
             financialLoss: 15000}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'type: 'login-attempt,;
@@ -231,7 +231,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           };
           action: allowed};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'name: 'Multi-Factor Authentication,;
@@ -321,7 +321,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           lastUpdated: new Date(2024-0o1-08'),;
           compliance: '[SOC2, ISO27001]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: 'Threat Detection Rate,;

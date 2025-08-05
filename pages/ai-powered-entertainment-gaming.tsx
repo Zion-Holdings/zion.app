@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   revenue: number;
   userSatisfaction: number;
   aiAnalysis: GamingAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   engagementLevel: number;
   gamingInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: content-analytics | user-behavior | engagement-metrics | trend-analysis;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   insightsGenerated: number;
   aiAnalysis: EntertainmentAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   dataAccuracy: number;
   predictionReliability: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: ai-content-generation | video-production | audio-creation | graphic-design;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   qualityScore: number;
   outputVolume: number;
   aiAnalysis: ContentAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   creationEfficiency: number;
   qualityAccuracy: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: content-optimization | user-experience | engagement-improvement | 'revenue-optimization;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     revenueGrowth: number;
     contentViews: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalUsers: number;
   activeGames: number;
   averageEngagement: number;

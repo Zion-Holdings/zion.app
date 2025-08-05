@@ -3,7 +3,7 @@ import type { NextPage } from nex't;};
 import Head from next/head;
 import Link from next/link;
 import { Home, Search, User } from lucide-rea'c't;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   type: service | talent | equipment | produc't;
   title: string;
@@ -19,7 +19,7 @@ interface FacilityPlan {;
   featured: boolean;
   tags: string[];
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string[];
   priceRange: [number, number];
   rating: number;

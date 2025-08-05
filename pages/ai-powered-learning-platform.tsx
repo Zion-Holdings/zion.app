@@ -25,7 +25,7 @@ interface FacilityPlan {";";";"";";
   learningPath: string[];
   completionRate: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -35,7 +35,7 @@ interface FacilityPlan {;
   aiFeatures: string[];
   progress: number;
   completed: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   title: string;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
   expertise: string[];
   verified: boolean;
   featured: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   skillName: string;
   category: string;
@@ -55,7 +55,7 @@ interface FacilityPlan {;
   difficulty: easy | medium | 'intermediate' | har'd | expert;
   aiAnalysis: 'AIAnalysis;
   certificate: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   question: string;
   type: multiple-choice | coding | scenario' | 'ai-interactive;
@@ -64,14 +64,14 @@ interface FacilityPlan {;
   explanation: string;
   difficulty: number;
   aiGenerated: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   skillLevel: novice | beginner | intermedia't'e | advanced | 'exper't;
   confidence: 'number;
   strengths: string[];
   weaknesses: string[];
   recommendations: string[];
   nextSteps: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -83,7 +83,7 @@ interface FacilityPlan {;
   difficulty: beginner | intermediate | advance'd;
   aiRecommended: 'boolean;
   completionRate: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   issuer: string;
@@ -203,7 +203,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       lastUpdated: new Date(2024-0o1-10;
     }];
   // Mock skill assessments;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       skillName: JavaScript AI Integration,;
@@ -231,7 +231,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       certificate: true;
     }];
   // Mock learning paths;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: Full-Stack' AI Developer',;
@@ -246,7 +246,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       completionRate: 0.72;
     }];
   // Mock certifications;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'AI-Powered Web Development Professional,;

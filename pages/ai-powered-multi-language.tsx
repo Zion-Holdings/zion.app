@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   culturalAdaptation: number;
   userCount: number;
   marketShare: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   sourceLanguage: string;
   targetLanguage: string;
@@ -30,7 +30,7 @@ interface FacilityPlan {;
     tonePreservation: boolean;
     industrySpecific: boolean;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   language: string;
   category: date-format | currenc'y | measurement' | 'color | symb'o'l | custom;
@@ -39,7 +39,7 @@ interface FacilityPlan {;
   context: string;
   confidence: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   value: number;
@@ -48,7 +48,7 @@ interface FacilityPlan {;
   trend: up | down' | 'stable;
   language: 'string;
   period: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   language: string;
   model: string;
@@ -166,7 +166,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           userCount: 0,;
           marketShare: 0};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1',;
           sourceLanguage: 'en,;
@@ -230,7 +230,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             tonePreservation: true,;
             industrySpecific: true}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           language: es,;
@@ -281,7 +281,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           confidence: '96.3,;
           lastUpdated: new Date(Date.now() - 12 * 60 * 60 * 1000};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Translation Accuracy,;
@@ -322,7 +322,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           language: Chinese,;
           period: last 30 days};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: '1',;
           language: 'Spanish,;

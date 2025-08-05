@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   name: string;
   description: string;
   features: string[];
   aiOptimized: boolean;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: vr-tour | ar-try-on | interactive-demo | virtual-showroom;
   title: string;
@@ -27,7 +27,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   useEffect(() => {;
     // Simulate loading data;
     setTimeout(() => {;
-      const mockProducts: Product[] = [;
+      const mockProducts: Product[] = [
         {;
           id: 1,;
           name: Smart Home Hub,;
@@ -50,7 +50,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           aiOptimized: 'true;
         };
       ];
-      const mockExperiences: ImmersiveExperience[] = [;
+      const mockExperiences: ImmersiveExperience[] = [
         {;
           id: 1,;
           type: vr-tour,;

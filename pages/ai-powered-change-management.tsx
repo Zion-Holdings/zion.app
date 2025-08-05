@@ -30,7 +30,7 @@ interface FacilityPlan {";";";"";";
   impact: low | medium | 'high;
   budget: 'number;
   actualCost: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   role: string;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   communicationPreference: 'string;
   lastContact: string;
   nextContact: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   type: workshop | online | mentoring' | certificatio'n;
@@ -51,7 +51,7 @@ interface FacilityPlan {;
   satisfactionScore: number;
   startDate: string;
   endDate: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;";
   'name: 'string;";";
   category: adoption | productivity | satisfacti'on | cost;"";";

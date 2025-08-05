@@ -14,7 +14,7 @@ interface FacilityPlan {";";";"";";
   executionTime: number;
   lastRun: Date;
   aiScore: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   standard: string;
   category: security | privacy' | accessibili'ty | performan'ce | 'legal;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   complianceRate: 'number;
   lastAudit: Date;
   nextAudit: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalTests: number;
   passedTests: number;
   failedTests: number;
@@ -61,7 +61,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       lastRun: new Date('2024-0o1-20T11:0o0:0o0),;
       aiScore: '87;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       standard: GDPR Compliance,;

@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   sessionDuration: number;
   engagementRate: number;
   aiAnalysis: MRExperienceAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   userImmersion: number;
   experienceInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: spatial-mapping | environment-understanding | object-recognition | spatial-anchoring;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   latency: number;
   spatialCoverage: number;
   aiAnalysis: SpatialAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   mappingAccuracy: number;
   understandingDepth: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: physical-twin | virtual-twin | hybrid-twin | predictive-twin;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   fidelity: number;
   updateFrequency: number;
   aiAnalysis: TwinAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   syncAccuracy: number;
   predictionReliability: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: experience-optimization | content-creation | interaction-design | 'performance-monitoring;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     performanceScore: number;
     innovationIndex: number};
   aiAnalysis: TechnologyAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalUsers: number;
   activeExperiences: number;
   averageEngagement: number;

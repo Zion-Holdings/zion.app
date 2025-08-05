@@ -1,6 +1,6 @@
 import React from "react";";";";";
 import ModernLayout from '../components/layout/ModernLayout";";"";";
-import { NextPage } from 'next";";";";
+import { NextPage } from 'next";";";
 import Head from next/head";";";";";";";
 import Link from "next/link;
 import {;
@@ -30,7 +30,7 @@ interface FacilityPlan {";";";"";";
   utilization: number;
   cost: number;
   roi: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   resource: string;
   period: string;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   trend: increasing | decreasing | stabl'e;
   factors: string[];
   lastUpdated: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: human | infrastructure | technology | financial;
@@ -53,7 +53,7 @@ interface FacilityPlan {;
   availability: number;
   lastMaintenance: string;
   nextMaintenance: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: 'scaling' | 'efficiency' | 'cost' | 'timing';
   priority: 'low' | 'medium' | 'high' | 'critical';

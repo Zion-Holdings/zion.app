@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   throughput: number;
   qualityScore: number;
   aiAnalysis: ManufacturingAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   optimizationPotential: number;
   maintenanceNeeds: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: robotics | plc | scada | motion-contro'l | vision-syst'em | sensor-netwo'rk;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   speed: number;
   aiAnalysis: AutomationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   reliabilityScore: number;
   precisionLevel: number;
   optimizationOpportunities: string[];
   maintenanceSchedule: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: visual-inspection | dimensional-measurement | material-testing | defect-detectio'n;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   detectionRate: number;
   falsePositiveRate: number;
   aiAnalysis: QualityAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   defectDetectionRate: number;
   qualityScore: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: process-optimization | resource-allocation | scheduling | predictive-maintenance;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     qualityImprovement: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | 'neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalProduction: number;
   activeSystems: number;
   averageEfficiency: number;

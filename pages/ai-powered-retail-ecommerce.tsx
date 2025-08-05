@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   salesVolume: number;
   customerSatisfaction: number;
   aiAnalysis: RetailAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   optimizationPotential: number;
   customerInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: online-store | marketplace | mobile-commerce | social-commerc'e | omnichann'el | digital-paymen'ts;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   conversionRate: number;
   revenue: number;
   aiAnalysis: EcommerceAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   conversionOptimization: number;
   userExperienceScore: number;
   optimizationOpportunities: string[];
   growthStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: customer-segmentation | behavior-analysis | preference-tracking | loyalty-progra'm;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   coverage: number;
   insightsGenerated: number;
   aiAnalysis: CustomerAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   segmentationAccuracy: number;
   behaviorPrediction: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: pricing-optimization | inventory-optimization | marketing-automation | demand-forecasting;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     customerGrowth: number};
   aiAnalysis: OptimizationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | 'neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalRevenue: number;
   activeStores: number;
   averageEfficiency: number;

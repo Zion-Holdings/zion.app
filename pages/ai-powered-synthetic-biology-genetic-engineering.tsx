@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   status: active | inactive | mutated;
   gcContent: 'number;
   meltingTemp: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   sequence: string;
@@ -23,7 +23,7 @@ interface FacilityPlan {;
   stability: number;
   expression: number;
   mutations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   components: string[];
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   output: string;
   efficiency: number;
   status: designing | testing | optimized};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   targetSequence: string;
@@ -57,7 +57,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [crisprTargets, setCrisprTargets] = useState<CRISPRTarget[]>([]</div>;
   const [syntheticOrganisms, setSyntheticOrganisms] = useState<SyntheticOrganism[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: dna-0o1,;
       name: GFP Gene,;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       gcContent: 58.2,;
       meltingTemp: 72.5};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: prot-0o1,;
       name: GFP Protein,;
@@ -101,7 +101,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       offTargets: ['ATGGTGAGCAAGGGCGAGG'AG],;
       status: 'active;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: org-0o1,;
       name: E. coli GFP Producer,;

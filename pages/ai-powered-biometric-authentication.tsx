@@ -14,13 +14,13 @@ interface FacilityPlan {";";";"";";
   falsePositiveRate: number;
   processingTime: number;
   aiAnalysis: BiometricAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   securityScore: number;
   accuracyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -29,13 +29,13 @@ interface FacilityPlan {;
   confidence: 'number;
   livenessScore: number;
   aiOptimization: FacialOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   recognitionScore: number;
   livenessScore: number;
   antiSpoofingScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -44,13 +44,13 @@ interface FacilityPlan {;
   minutiaePoints: 'number;
   qualityScore: number;
   aiAnalysis: FingerprintAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   qualityScore: number;
   matchingScore: number;
   uniquenessScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   voiceId: string;
   title: string;
@@ -60,13 +60,13 @@ interface FacilityPlan {;
   samples: 'number;
   confidence: number;
   aiAnalysis: VoiceAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   voiceScore: number;
   clarityScore: number;
   uniquenessScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   irisId: string;
   title: string;
@@ -76,13 +76,13 @@ interface FacilityPlan {;
   resolution: 'number;
   accuracy: number;
   aiAnalysis: IrisAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   irisScore: number;
   clarityScore: number;
   uniquenessScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -92,13 +92,13 @@ interface FacilityPlan {;
   devices: 'number;
   securityLevel: number;
   aiAnalysis: SecurityAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   securityScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalBiometricDevices: number;
   activeFacialRecognition: number;
   fingerprintScanners: number;
@@ -108,7 +108,7 @@ interface FacilityPlan {;
   averageAccuracy: number;
   aiOptimizationScore: number;
   aiInsights: BiometricAuthenticationInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

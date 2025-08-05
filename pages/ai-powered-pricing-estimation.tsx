@@ -18,13 +18,13 @@ interface FacilityPlan {";";";"";";
   timeline: TimelineEstimate;
   riskFactors: RiskFactor[];
   createdAt: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   description: string;
   cost: number;
   percentage: number;
   details: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   averageMarketPrice: number;
   priceRange: {;
     min: number;
@@ -33,12 +33,12 @@ interface FacilityPlan {;
   competitors: CompetitorPrice[];
   marketTrend: increasing | decreasing | 'stable;
   trendPercentage: 'number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   name: string;
   price: number;
   rating: number;
   features: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   type: cost-optimization | feature-addition | timeline-adjustment | 'quality-improvement;
   title: string;
   description: string;
@@ -46,24 +46,24 @@ interface FacilityPlan {;
   additionalCost?: number;
   impact: high | mediu'm | low;
   priority: 'number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalWeeks: number;
   phases: PhaseEstimate[];
   criticalPath: string[];
   dependencies: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   name: string;
   duration: number;
   cost: number;
   resources: string[];
   deliverables: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   description: string;
   probability: number;
   impact: high | medium | l'ow;
   mitigation: 'string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: fixed | hourly | value-based | subscription | 'performance-base'd;
@@ -72,19 +72,19 @@ interface FacilityPlan {;
   disadvantages: string[];
   bestFor: string[];
   examples: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   originalBudget: number;
   optimizedBudget: number;
   savings: number;
   recommendations: OptimizationRecommendation[];
   tradeoffs: Tradeoff[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   action: string;
   savings: number;
   impact: string;
   implementation: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   option: string;
   pros: string[];
   cons: string[];
@@ -301,7 +301,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       createdAt: 'new Date(2024-0o1-10;
     }];
   // Mock pricing models;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: Fixed Price,;

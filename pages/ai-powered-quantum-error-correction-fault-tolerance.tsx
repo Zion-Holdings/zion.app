@@ -14,7 +14,7 @@ interface FacilityPlan {";";";"";";
   correctionRate: number;
   status: active | testing | optimizing' | deprecate'd;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   operation: logical-gate | error-syndrome | measurement'' | state-preparation;
@@ -23,7 +23,7 @@ interface FacilityPlan {;
   runtime: number;
   overhead: number;
   status: running | completed | failed'' | scheduled};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   technique: dynamical-decoupling | quantum-error-correction | quantum-mem'ory' | quantum-refrigeration;
@@ -32,7 +32,7 @@ interface FacilityPlan {;
   improvement: number;
   energyCost: number;
   status: active | testing | optimiz'ing' | inactive'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   method: noise-filtering | quantum-filtering | adaptive-cont'rol | quantum-feedback;
@@ -41,7 +41,7 @@ interface FacilityPlan {;
   bandwidth: number;
   latency: number;
   status: active | calibrating | optimiz'ing | standb'y'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   diagnosis: error-syndrome | fault-localization | error-classification' | recovery-strategy;
@@ -50,7 +50,7 @@ interface FacilityPlan {;
   falsePositiveRate: number;
   coverage: number;
   status: monitoring | analyzing | reporting' | idl'e};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   protocol: error-recovery | state-recovery | gate-recovery'' | system-recovery;
@@ -70,7 +70,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [faultDiagnosis, setFaultDiagnosis] = useState<QuantumFaultDiagnosis[]>([]</div>;
   const [recoveryProtocols, setRecoveryProtocols] = useState<QuantumRecoveryProtocol[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qec-0o1,;
       'name: 'Surface Code 7x7,;
@@ -83,7 +83,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active',;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: fto-0o1,;
       'name: 'Logical Hadamard Gate,;
@@ -94,7 +94,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       overhead: 1.2,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: dm-0o1,;
       'name: 'Dynamical Decoupling,;
@@ -105,7 +105,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       energyCost: 0.5,;
       status: active;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'nr-0o1,;
       name: 'Quantum Noise Filter,;
@@ -116,7 +116,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       latency: 5,;
       status: active;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'fd-0o1',;
       name: 'Error Syndrome Detection,;
@@ -127,7 +127,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       coverage: 99.9,;
       status: monitoring;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: rp-0o1',;
       'name: 'Error Recovery Protocol,;

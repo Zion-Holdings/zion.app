@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   riskScore: number;
   roi: number;
   aiAnalysis: FinancialAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   riskAssessment: number;
   marketTrends: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: account-management | transaction-processing | compliance | fraud-detectio'n | customer-servi'ce | atm-netwo'rk;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   efficiency: number;
   aiAnalysis: BankingAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   reliabilityScore: number;
   securityLevel: number;
   optimizationOpportunities: string[];
   maintenanceSchedule: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: credit-risk | market-risk | operational-risk | 'liquidity-risk | 'compliance-risk' | cybersecurity-risk;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   exposure: number;
   mitigationScore: number;
   aiAnalysis: RiskAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   riskAssessment: number;
   exposureLevel: number;
   mitigationStrategies: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: market-analysis | portfolio-optimization | risk-modeling | 'performance-tracking;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     riskReduction: number;
     costSavings: number};
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalAssets: number;
   activeServices: number;
   averagePerformance: number;

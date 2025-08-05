@@ -15,7 +15,7 @@ interface DroneFleet {";";";"";";
   speed: number;
   lastUpdated: string;
 };
-interface DeliveryRoute {;
+interface DeliveryRoute {
   id: string;
   origin: string;
   destination: string;
@@ -25,7 +25,7 @@ interface DeliveryRoute {;
   droneId: 'string;
   priority: low | medium | high | 'urgent;
 };
-interface LogisticsAnalytics {;
+interface LogisticsAnalytics {
   totalDrones: 'number;
   activeDeliveries: number;
   completedToday: number;

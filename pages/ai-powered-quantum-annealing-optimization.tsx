@@ -15,7 +15,7 @@ interface FacilityPlan {";";";"";";
   solution: string;
   energy: number;
   timestamp: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   algorithm: quantum-annealing | adiabatic | quantum-approxim'ate | variational;
@@ -26,7 +26,7 @@ interface FacilityPlan {;
   bestEnergy: number;
   runtime: number;
   status: preparing | annealing | measuring' | 'completed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   model: quantum-neural-network | quantum-kernel | quantum-feature-m'ap' | quantum-classifier;
@@ -37,7 +37,7 @@ interface FacilityPlan {;
   qubits: number;
   layers: number;
   status: training | evaluating | complet'ed' | deployed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: grover | shor | quantum-fourier | 'quantum-walk;
@@ -47,7 +47,7 @@ interface FacilityPlan {;
   successRate: number;
   applications: string[];
   status: development | testing | product'ion | 'deprecated'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   system: quantum-chemistry | material-science | quantum-dynamics' | 'quantum-optics;
@@ -56,7 +56,7 @@ interface FacilityPlan {;
   precision: number;
   results: string;
   status: running | completed | analyzing' | 'failed};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   code: surface-code | stabilizer-code | css-co'de' | topological-code;
@@ -77,7 +77,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [simulations, setSimulations] = useState<QuantumSimulation[]>([]</div>;
   const [errorCorrection, setErrorCorrection] = useState<QuantumErrorCorrection[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qp-0o1,;
       'name: 'Traveling Salesman Problem,;
@@ -91,7 +91,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       energy: '-2450.5,;
       timestamp: 2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qo-0o1,;
       name: Max-Cut Optimization,;
@@ -104,7 +104,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       runtime: 45,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 'qml-0o1,;
       name: 'Quantum Neural Network,;
@@ -117,7 +117,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       layers: '3,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qa-0o1,;
       name: Grover\s' Algorithm,;
@@ -129,7 +129,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       applications: [Database Search, Cryptography'],;
       status: 'production;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qs-0o1,;
       name: Molecular Energy Calculation,;
@@ -140,7 +140,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       results: Ground state energy: -76.432 Hartree,;
       status: completed;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qec-0o1',;
       'name: 'Surface Code,;

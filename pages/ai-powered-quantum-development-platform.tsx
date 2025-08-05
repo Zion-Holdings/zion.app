@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   plugins: number;
   status: active | running | debugging' | standb'y;
   timestamp: 'string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   tool: quantum-sdk | quantum-framework | quantum-library'' | quantum-api | quantum-cli;
@@ -22,7 +22,7 @@ interface FacilityPlan {;
   documentation: number;
   examples: number;
   status: available | updating | maintena'nce | deprecate'd'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   testing: quantum-unit | quantum-integration | quantum-performance' | quantum-securit'y | quantum-regression;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   reliability: number;
   automation: number;
   status: running | passed | fai'led' | scheduled'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   deployment: quantum-cloud | quantum-on-premise | quantum-hyb'rid | quantum-edg'e' | quantum-distributed;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   scalability: number;
   monitoring: number;
   status: deploying | running | scaling'' | maintenance};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   debugging: quantum-breakpoints | quantum-stepping | quantum-inspect'ion' | quantum-profiling' | quantum-tracing;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   memory: number;
   visualization: number;
   status: debugging | analyzing | profiling' | complete'd};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   optimization: quantum-algorithm | quantum-circuit | quantum-gate'' | quantum-error | quantum-performance;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
   const [debugging, setDebugging] = useState<QuantumDebugging[]>([]</div>;
   const [optimizations, setOptimizations] = useState<QuantumOptimization[]>([];
   // Mock data;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qi-0o1,;
       name: Quantum Editor Pro,;
@@ -81,7 +81,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       status: 'active,;
       timestamp: '2024-0o1-15T10:30:00Z};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qt-0o1,;
       name: Quantum SDK,;
@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       examples: 200,;
       status: available;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qt-0o1,;
       name: Quantum Unit Testing,;
@@ -114,7 +114,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       monitoring: 98.8,;
       status: running;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: qd-0o1,;
       name: Quantum Breakpoint Debugger,;

@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   postsPerDay: number;
   engagementRate: number;
   aiAnalysis: SocialAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   userEngagement: number;
   socialInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: community-moderation | user-management | content-curation | event-coordination;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   accuracy: number;
   actionsPerDay: number;
   aiAnalysis: CommunityAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   moderationAccuracy: number;
   userSatisfaction: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: automated-moderation | content-filtering | spam-detection | hate-speech-detection;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   falsePositiveRate: number;
   responseTime: number;
   aiAnalysis: ModerationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   detectionAccuracy: number;
   automationLevel: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: engagement-analytics | trend-analysis | sentiment-analysis | 'influence-tracking;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     contentGrowth: number;
     communityHealth: number};
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalUsers: number;
   activeCommunities: number;
   averageEngagement: number;

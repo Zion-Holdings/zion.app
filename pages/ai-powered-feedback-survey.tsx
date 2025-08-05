@@ -14,12 +14,12 @@ interface FacilityPlan {";";";"";";
   averageRating: number;
   satisfactionScore: number;
   aiAnalysis: AIFeedbackAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   sentimentScore: number;
   trendAnalysis: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -29,12 +29,12 @@ interface FacilityPlan {;
   completionRate: number;
   questionEffectiveness: number;
   aiOptimization: AISurveyOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   questionQuality: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -44,12 +44,12 @@ interface FacilityPlan {;
   participationRate: number;
   averageRating: number;
   aiAnalysis: AIPollAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   engagementScore: number;
   trendPrediction: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   author: string;
   role: string;
@@ -58,13 +58,13 @@ interface FacilityPlan {;
   rating: number;
   status: pending | approved | featured | rejecte'd;
   aiAnalysis: 'AITestimonialAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   sentimentScore: number;
   credibilityScore: number;
   impactScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalFeedback: number;
   activeSurveys: number;
   pollsCount: number;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   averageSatisfaction: number;
   aiOptimizationScore: number;
   aiInsights: FeedbackSurveyInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -137,7 +137,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         questionQuality: '88,;
         recommendations: [Add more specific questions, Optimize question flow]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: Preferred AI Feature,;

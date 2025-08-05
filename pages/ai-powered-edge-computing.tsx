@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   capacity: number;
   latency: number;
   aiAnalysis: EdgeAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performanceScore: number;
   reliabilityScore: number;
   efficiencyScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -29,13 +29,13 @@ interface FacilityPlan {;
   nodes: number;
   bandwidth: number;
   aiOptimization: FogOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   connectivityScore: number;
   resourceScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -44,13 +44,13 @@ interface FacilityPlan {;
   nodes: 'number;
   tasks: number;
   aiAnalysis: DistributedAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   distributionScore: number;
   loadBalanceScore: number;
   scalabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   analyticsId: string;
   title: string;
@@ -60,7 +60,7 @@ interface FacilityPlan {;
   dataPoints: 'number;
   processingTime: number;
   aiAnalysis: AnalyticsAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   accuracyScore: number;
   speedScore: number;
@@ -76,13 +76,13 @@ interface FacilityPlan {";";
   services: 'number;
   policies: number;
   aiAnalysis: OrchestrationAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   orchestrationScore: number;
   automationScore: number;
   coordinationScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   systemId: string;
   title: string;
@@ -92,13 +92,13 @@ interface FacilityPlan {;
   devices: 'number;
   uptime: number;
   aiAnalysis: ManagementAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalEdgeDevices: number;
   activeFogNodes: number;
   distributedClusters: number;
@@ -108,7 +108,7 @@ interface FacilityPlan {;
   averageLatency: number;
   aiOptimizationScore: number;
   aiInsights: EdgeComputingInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -177,7 +177,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         scalabilityScore: 95,;
         recommendations: [Optimize task distribution, Improve load balancing]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       analyticsId: 'EA-0o1,;
@@ -194,7 +194,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         insightScore: 92,;
         recommendations: [Optimize processing algorithms, Enhance data quality]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       orchestrationId: 'FO-0o1,;

@@ -14,12 +14,12 @@ interface FacilityPlan {";";";"";";
   lastUpdated: Date;
   nextReview: Date;
   aiAnalysis: AIPolicyAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   complianceScore: number;
   riskLevel: low | mediu'm' | high | 'critica'l;
   recommendations: 'string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: GDPR | CCPA | SOX | HIPAA | 'PCI-D'SS | ISO' | 'custom;
@@ -28,19 +28,19 @@ interface FacilityPlan {;
   lastAudit: Date;
   nextAudit: Date;
   aiOptimization: AIComplianceOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   riskReduction: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalPolicies: number;
   activeFrameworks: number;
   complianceRate: number;
   riskScore: number;
   aiOptimizationScore: number;
   aiInsights: GovernanceComplianceInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -87,7 +87,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         riskLevel: medium,;
         recommendations: [Complete RBAC implementation, Enhance audit logging]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'GDPR Compliance Framework,;

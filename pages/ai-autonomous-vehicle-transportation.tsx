@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;};
 import Head from next/head;
 import Link from next/link;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: "'string;
   name: string;
   type: passenger | delivery | logistics | emergenc'y | agricultur'al;
@@ -13,7 +13,7 @@ interface FacilityPlan {;
   destination?: string;
   eta?: string;
 };
-interface FacilityPlan {;
+interface FacilityPlan {
   totalVehicles: number;
   activeVehicles: number;
   averageSpeed: number;
@@ -34,7 +34,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   useEffect(() => {;
     // Simulate loading fleet data;
     setTimeout(() => {;
-      const mockVehicles: AutonomousVehicle[] = [;
+      const mockVehicles: AutonomousVehicle[] = [
         {;
           id: 1,;
           name: Tesla Model S AV-0o1,;

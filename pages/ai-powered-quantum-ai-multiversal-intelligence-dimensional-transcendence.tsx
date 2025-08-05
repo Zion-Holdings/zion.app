@@ -22,7 +22,7 @@ interface FacilityPlan {";";";"";";
   inhabitants: string[];
   resources: string[];
   status: active | exploring | mapped' | unknow'n};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: quantum-transcendence | cosmic-transcendence | temporal-transcendence | spatial-transcendence' | consciousness-transcendence;
@@ -31,7 +31,7 @@ interface FacilityPlan {;
   requirements: string[];
   benefits: string[];
   status: available | in-progress | completed | 'locked'};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: quantum-intelligence | cosmic-intelligence | temporal-intelligence | spatial-intelligence | 'consciousness-intelligence;
@@ -62,7 +62,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
     try {;
       console.log(Initializing AI-Powered Quantum AI Multiversal Intelligence & Dimensional Transcendence System...;
       // Initialize mock data;
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: quantum-realm-1,;
           'name: 'Quantum Realm Alpha,;
@@ -139,7 +139,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
           resources: '[Consciousness Energy, Universal Wisdom, Divine Knowledge'],;
           status: 'unknown;
         }];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: quantum-transcendence-1,;
           name: Quantum Dimensional Transcendence,;
@@ -190,7 +190,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
           benefits: '[Consciousness Dimensional Travel, Universal Mind Access, Divine' Intelligence],;
           status: 'locked;
         }];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: quantum-intelligence-1,;
           name: Quantum Multiversal Intelligence,;

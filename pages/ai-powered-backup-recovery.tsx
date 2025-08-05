@@ -15,13 +15,13 @@ interface FacilityPlan {";";";"";";
   lastRun: Date;
   nextRun: Date;
   aiAnalysis: AIBackupAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successRate: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -31,13 +31,13 @@ interface FacilityPlan {;
   rpo: number; // Recovery Point Objective in minutes;
   priority: critical | high | medium' | 'low;
   aiOptimization: 'AIRecoveryOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -47,13 +47,13 @@ interface FacilityPlan {;
   impact: 'business_critical | high_impact | medium_impact' | 'low_impact;
   recoverySteps: 'string[];
   aiAnalysis: AIDisasterAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   riskScore: number;
   impactScore: number;
   recoveryScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -63,13 +63,13 @@ interface FacilityPlan {;
   usedSpace: number;
   retentionDays: number;
   aiOptimization: AIStorageOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   utilizationScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -79,13 +79,13 @@ interface FacilityPlan {;
   estimatedTime: number;
   startTime: Date;
   aiAnalysis: AIRestorationAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   successRate: number;
   efficiencyScore: number;
   reliabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalBackups: number;
   activeRecoveryPlans: number;
   disasterScenarios: number;
@@ -94,7 +94,7 @@ interface FacilityPlan {;
   averageSuccessRate: number;
   aiOptimizationScore: number;
   aiInsights: BackupRecoveryInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

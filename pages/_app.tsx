@@ -1,8 +1,8 @@
-import type { AppProps } from 'next/app;
+import type { AppProps } from 'next/app
 import '../styles/globals.css;
-import { ChatProvider } from '../src/contexts/ChatContext;
+import { ChatProvider } from '../src/contexts/ChatContext
 import { AuthProvider } from '../src/contexts/AuthContext;
-import { NavigationProvider } from '../src/contexts/NavigationContext;
+import { NavigationProvider } from '../src/contexts/NavigationContext
 import ChatAssistant from '../src/components/ChatAssistant;
 import { useChat } from '../src/contexts/ChatContext;
 import MessageChannelDebugger from '../components/MessageChannelDebugger;

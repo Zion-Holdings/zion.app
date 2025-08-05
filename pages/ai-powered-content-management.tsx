@@ -32,7 +32,7 @@ interface FacilityPlan {";";";"";";
     comments: number;
     conversionRate: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: string;
@@ -41,7 +41,7 @@ interface FacilityPlan {;
   usageCount: number;
   lastUsed: Date;
   tags: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -54,7 +54,7 @@ interface FacilityPlan {;
   }[];
   status: active | inactive | draft;
   createdAt: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -213,7 +213,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             comments: 0,;
             conversionRate: 2.8}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'name: 'Blog Post Template,;
@@ -371,7 +371,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           status: 'active,;
           createdAt: 'new Date(2024-0o1-20};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Content Creation Speed,;

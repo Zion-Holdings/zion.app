@@ -11,13 +11,13 @@ interface FacilityPlan {";";";"";";
   timestamp: string;
   quality: number;
   location: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   region: string;
   activity: number;
   status: active | inactive | overloade'd;
   function: 'string;
   connectivity: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: memory | attention | creativity | problem-solving | learning;
@@ -26,7 +26,7 @@ interface FacilityPlan {;
   completion: number;
   brainRegions: string[];
   performance: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: EEG | ECoG | fNIRS | 'MEG | invasive;
@@ -35,7 +35,7 @@ interface FacilityPlan {;
   signalQuality: number;
   lastCalibration: string;
   firmware: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   category: communication | control | 'entertainmen't | therap'y | researc'h;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
   accuracy: number;
   latency: number;
   userRating: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   'name: 'string;
   type: focus | relaxation | creativity | memory' | motor-skills;
@@ -70,7 +70,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const [sessionData, setSessionData] = useState<any>(null</div>;
   const $1 = useRef<HTMLDivElement>(null;
   // Mock data for demonstration;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: sig-0o1,;
       type: alpha,;
@@ -98,7 +98,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       quality: 85,;
       location: temporal;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       region: Prefrontal' Cortex,;
       activity: '78,;
@@ -134,7 +134,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       function: Movement Control,;
       connectivity: 52;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: task'-0o1,;
       'name: 'Memory Pattern Recognition,;
@@ -165,7 +165,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       brainRegions: [Right Hemisphere, Default' Network],;
       performance: '76;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: device-0o1,;
       name: NeuroLink Pro EEG,;
@@ -196,7 +196,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       lastCalibration: 2025-08-03T18:15:00Z',;
       firmware: 'v3.0.1;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: app-0o1,;
       name: Thought-to-Text Converter,;
@@ -230,7 +230,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       latency: 300,;
       userRating: 4.4;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: training'-0o1,;
       name: 'Focus Enhancement Program,;

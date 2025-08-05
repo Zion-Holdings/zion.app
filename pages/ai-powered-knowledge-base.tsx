@@ -15,13 +15,13 @@ interface FacilityPlan {";";";"";";
   helpfulVotes: number;
   lastUpdated: Date;
   aiAnalysis: AIKnowledgeAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   readabilityScore: number;
   helpfulnessScore: number;
   searchOptimization: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -30,24 +30,24 @@ interface FacilityPlan {;
   sections: 'DocumentationSection[];
   analytics: DocumentationAnalytics;
   aiOptimization: AIDocumentationOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   content: string;
   order: number;
   status: draft | published | archived;
-interface FacilityPlan {;
+interface FacilityPlan {
   totalViews: number;
   averageTimeSpent: number;
   completionRate: number;
   searchQueries: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   readabilityScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -57,25 +57,25 @@ interface FacilityPlan {;
   steps: 'TutorialStep[];
   analytics: TutorialAnalytics;
   aiAnalysis: AITutorialAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
   order: number;
   estimatedTime: number;
   status: draft | published | archive'd;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalCompletions: 'number;
   averageCompletionTime: number;
   successRate: number;
   dropoffRate: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   difficultyAssessment: number;
   engagementScore: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   question: string;
   answer: string;
@@ -84,13 +84,13 @@ interface FacilityPlan {;
   helpfulVotes: 'number;
   views: number;
   aiAnalysis: AIFAQAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   clarityScore: number;
   helpfulnessScore: number;
   searchOptimization: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -100,17 +100,17 @@ interface FacilityPlan {;
   contributors: string[];
   analytics: WikiAnalytics;
   aiAnalysis: AIWikiAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalViews: number;
   editCount: number;
   contributorCount: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   contentQuality: number;
   comprehensiveness: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalArticles: number;
   activeDocumentation: number;
   tutorialsCount: number;
@@ -119,7 +119,7 @@ interface FacilityPlan {;
   averageHelpfulness: number;
   aiOptimizationScore: number;
   aiInsights: KnowledgeBaseInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -171,7 +171,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         searchOptimization: 87,;
         recommendations: [Add interactive examples, Include troubleshooting section]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: 'API Documentation',;
@@ -272,7 +272,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         searchOptimization: '85,;
         recommendations: [Add payment icons, Include security information]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       title: 'Marketplace Best Practices,;

@@ -25,7 +25,7 @@ interface FacilityPlan {";";";"";";
     status: active | inactive | error;
     data: 'any;
   }[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   robotId: string;
   taskType: assembly | inspectio'n | transport' | 'cleaning | weldi'n'g | painting;
@@ -47,7 +47,7 @@ interface FacilityPlan {;
     efficiency: number;
     safetyScore: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -67,7 +67,7 @@ interface FacilityPlan {;
   executionCount: number;
   successRate: number;
   aiOptimized: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -233,7 +233,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               data: '{ precision: 0.1°, joints: 25};
 }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           robotId: 1,;
@@ -293,7 +293,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             efficiency: 0,;
             safetyScore: 0}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: '1',;
           name: 'Smart Assembly Line,;
@@ -388,7 +388,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           successRate: 89.1,;
           aiOptimized: true};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: Robot Accuracy,;
