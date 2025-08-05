@@ -16,7 +16,7 @@ interface FacilityPlan {";";";"";";
   executionCount: number;
   successRate: number;
   aiOptimization: AIWorkflowOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: action | condition | integration | 'notificati'on | approval;
@@ -27,7 +27,7 @@ interface FacilityPlan {;
   estimatedTime: number;
   actualTime?: number;
   aiAnalysis: AIWorkflowStepAnalysis;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: event | schedule | manual | api | webhoo'k;
@@ -35,27 +35,27 @@ interface FacilityPlan {;
   isActive: boolean;
   lastTriggered?: Date;
   triggerCount: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   efficiency: number;
   optimizationScore: number;
   bottlenecks: string[];
   recommendations: string[];
   predictedImprovements: WorkflowImprovement[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: performance | cost | reliability | scalability;
   description: 'string;
   impact: number;
   implementationTime: number;
   confidence: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   performance: number;
   reliability: number;
   complexity: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -63,19 +63,19 @@ interface FacilityPlan {;
   status: active | inactive | maintenance;
   performance: ProcessPerformance;
   aiOptimization: AIProcessOptimization;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalExecutions: number;
   successRate: number;
   averageExecutionTime: number;
   errorRate: number;
   lastOptimized: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   optimizationScore: number;
   efficiencyGains: number;
   costSavings: number;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   'name: 'string;
   type: api | webhook | database | service | custom;
@@ -93,20 +93,20 @@ interface FacilityPlan {";";
   responseTime: "'number;
   successRate: number;
   lastChecked: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalRequests: number;
   averageResponseTime: number;
   successRate: number;
   errorRate: number;
   uptime: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   healthScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];
   predictedIssues: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalWorkflows: number;
   activeProcesses: number;
   integrationsCount: number;
@@ -115,7 +115,7 @@ interface FacilityPlan {;
   aiOptimizationScore: number;
   topCategories: string[];
   aiInsights: WorkflowOrchestrationInsight[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -269,7 +269,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             confidence: 0.92;
           }]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       name: Customer Lifecycle Management,;
@@ -307,7 +307,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         costSavings: 22000,;
         recommendations: [Optimize inventory allocation, Implement smart shipping]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1',;
       'name: 'Payment Gateway API,;

@@ -12,7 +12,7 @@ interface FacilityPlan {";";";"";";
   expiry?: string;
   isDefault: boolean;
   isVerified: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: payment | refund | withdrawal | fee;
   amount: number;
@@ -23,7 +23,7 @@ interface FacilityPlan {;
   paymentMethod: string;
   recipient?: string;
   reference?: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   amount: string;
   currency: string;
   description: string;
@@ -90,7 +90,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           isDefault: false,;
           isVerified: false};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'type: 'payment,;

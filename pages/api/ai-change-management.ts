@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-;
-interface ChangeInitiative {;
+interface ChangeInitiative {
   id: string;
   name: string;
   type: 'technology' | 'process' | 'organizational' | 'cultural';
@@ -19,8 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   };
   try {;
     const { action, initiativeId } = req.body;
-;
-    const changeData = {;
+    const changeData = {
       initiatives: [;
         {;
           id: 'change-1',;
@@ -57,7 +55,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         successRate: 87.5;
       };
     };
-;
     return res.status(200).json({;
       success: true,;
       data: changeData;

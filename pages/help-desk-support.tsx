@@ -24,7 +24,7 @@ interface FacilityPlan {";";";"";";
   tags: string[];
   attachments: number;
   responses: TicketResponse[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   author: {;
     id: string;
@@ -34,7 +34,7 @@ interface FacilityPlan {;
   content: string;
   createdAt: Date;
   isInternal: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   email: string;
@@ -44,7 +44,7 @@ interface FacilityPlan {;
   avgResponseTime: number;
   satisfactionScore: number;
   specialties: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             isInternal: false;
           }];
       }];
-    const mockPredictiveModels: PredictiveModel[] = [;
+    const mockPredictiveModels: PredictiveModel[] = [
       {;
         id: agent-1,;
         name: Sarah Johnson,;

@@ -21,7 +21,7 @@ interface FacilityPlan {";";";"";";
     status: active | inactive | error;
     data: 'any;
   }[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: zoning | development | renewal | 'expansion | conservation;
@@ -36,7 +36,7 @@ interface FacilityPlan {;
     economicScore: number;
     recommendations: string[]};
   stakeholders: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: emergency | utilities | transportation | healthcare' | 'education | recreatio'n;
@@ -51,7 +51,7 @@ interface FacilityPlan {;
     area: number;
     population: number;
     accessibility: number}};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   location: string;
   timestamp: string;
@@ -66,7 +66,7 @@ interface FacilityPlan {;
     trafficPrediction: string;
     energyDemand: string;
     recommendations: string[]}};
-interface FacilityPlan {;
+interface FacilityPlan {
   type: optimization | sustainability | efficiency' | prediction;
   title: string;
   description: string;
@@ -118,7 +118,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         { type: Vehicle Counter, status: 'active', data: { count: 1200};
 }];
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1',;
       'name: 'Green Energy District,;
@@ -184,7 +184,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         population: 100,;
         accessibility: 92};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       location: City Center,;

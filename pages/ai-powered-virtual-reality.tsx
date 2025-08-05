@@ -25,7 +25,7 @@ interface FacilityPlan {";";";"";";
     status: active | inactive | error;
     data: 'any;
   }[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   experienceId: string;
   sessionType: gaming | exploratio'n | training' | 'social | eve'n't | shopping;
@@ -47,7 +47,7 @@ interface FacilityPlan {;
     engagement: number;
     satisfactionScore: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -67,7 +67,7 @@ interface FacilityPlan {;
   executionCount: number;
   successRate: number;
   aiOptimized: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   metric: string;
   current: number;
@@ -233,7 +233,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
               data: { features: 5, responsiveness: poor};
 }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1',;
           experienceId: '1,;
@@ -293,7 +293,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
             engagement: 0,;
             satisfactionScore: 0}};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           name: Smart Gaming Optimization,;
@@ -388,7 +388,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           successRate: 89.1,;
           aiOptimized: true};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           metric: V'R' Immersion,;

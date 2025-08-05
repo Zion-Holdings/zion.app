@@ -14,10 +14,10 @@ interface FacilityPlan {";";";"";";
   bio: string;,;
   image_url: string;,};
 // Only: create: Supabase client if environment variables are available;
-const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(,;
       process.env.NEXT_PUBLIC_SUPABASE_URL,;
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   : null;
 );
 const TalentPage: React.FC: () => {;,;

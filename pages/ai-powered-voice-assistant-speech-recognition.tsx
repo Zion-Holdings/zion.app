@@ -14,12 +14,12 @@ interface FacilityPlan {";";";"";";
   responseTime: number;
   usageCount: number;
   aiAnalysis: CommandAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   confidence: number;
   intentRecognition: number;
   contextUnderstanding: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -30,12 +30,12 @@ interface FacilityPlan {;
   duration: number;
   status: processing | completed | error;
   aiAnalysis: TranscriptionAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   accuracy: number;
   languageDetection: number;
   noiseReduction: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   text: string;
@@ -46,12 +46,12 @@ interface FacilityPlan {;
   pitch: 'number;
   status: generating | completed | error;
   aiAnalysis: 'SpeechAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   naturalness: number;
   clarity: number;
   emotionDetection: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   personality: string;
@@ -60,18 +60,18 @@ interface FacilityPlan {;
   responseTime: number;
   accuracy: number;
   aiAnalysis: AssistantAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   performanceScore: number;
   userSatisfaction: number;
   responseQuality: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalCommands: number;
   activeAssistants: number;
   averageResponseTime: number;
   accuracyRate: number;
   aiInsights: VoiceInsight[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;

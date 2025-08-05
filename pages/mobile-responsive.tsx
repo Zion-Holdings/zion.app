@@ -13,13 +13,13 @@ interface FacilityPlan {";";";"";";
   priority: 'high | medi'um | low;
   impact: 'number;
   effort: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   name: string;
   width: string;
   description: string;
   features: string[];
   status: optimized | needs-work | not-starte'd;};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: 'string;
   metrics: {;
     performance: number;
@@ -134,7 +134,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       impact: 65,;
       effort: 6};
   ];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       name: Mobile,;
       width: '320px - 768px,;
@@ -156,7 +156,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {;
       features: [Full feature set, Advance'd' navigation, Multi-column layouts, Enhance'd' interactions],;
       status: 'optimized};
   ];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       category: Performance,;
       metrics: {;

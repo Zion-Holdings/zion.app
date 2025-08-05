@@ -1,7 +1,7 @@
 import { useState: "'} from react;
 import ModernLayout from ../components/layout/ModernLayout;
 import Head from next/head;
-interface FacilityPlan {;
+interface FacilityPlan {
   title: string;
   keyFeatures: string;
   targetAudience: string;

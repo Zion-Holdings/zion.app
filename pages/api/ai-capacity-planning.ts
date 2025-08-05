@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next;
-interface CapacityForecast {;
+import type { NextApiRequest, NextApiResponse } from 'next';
+interface CapacityForecast {
   id: string;
   resource: string;
   currentCapacity: number;
@@ -10,7 +10,7 @@ interface CapacityForecast {;
   factors: string[];
   lastUpdated: string;
 };
-interface ResourceAllocation {;
+interface ResourceAllocation {
   id: string;
   resource: string;
   allocated: number;
@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   };
   try {;
     const { timeframe, action } = req.body;
-    const capacityData = {;
+    const capacityData = {
       forecasts: [;
         {;
           id: 'forecast-1',;

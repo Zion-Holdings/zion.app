@@ -13,12 +13,12 @@ interface FacilityPlan {";";";"";";
   areaCovered: number;
   efficiencyScore: number;
   aiAnalysis: PlanningAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   planningAccuracy: number;
   sustainabilityScore: number;
   planningInsights: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: smart-grid | water-management | waste-management | transportation-infrastructur'e | digital-infrastructu're | energy-infrastructu're;
@@ -28,12 +28,12 @@ interface FacilityPlan {;
   efficiency: number;
   capacity: number;
   aiAnalysis: InfrastructureAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   operationalEfficiency: number;
   maintenanceScore: number;
   optimizationOpportunities: string[];
   improvementStrategies: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: urban-analytics | traffic-monitoring | environmental-monitoring | resource-optimizatio'n;
@@ -43,12 +43,12 @@ interface FacilityPlan {;
   accuracy: number;
   responseTime: number;
   aiAnalysis: AnalyticsAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   dataAccuracy: number;
   predictionReliability: number;
   improvementAreas: string[];
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: development-projects | construction-management | sustainability-initiatives | community-development;
@@ -59,12 +59,12 @@ interface FacilityPlan {;
     costSavings: number;
     sustainabilityScore: number};
   aiAnalysis: DevelopmentAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   insights: string[];
   trends: string[];
   recommendations: string[];
   impactScore: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -72,7 +72,7 @@ interface FacilityPlan {;
   impact: 'positive | negative | 'neutral;
   confidence: 'number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalPopulation: number;
   activeProjects: number;
   infrastructureEfficiency: number;

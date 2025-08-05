@@ -31,7 +31,7 @@ interface SystemStatus {
 interface AutomationReport {
   id: string;
   type: string;
-  status: 'completed' | 'running' | 'failed' | 'pending';
+  status: 'completed' | 'running' | 'failed' | 'pending
   startTime: string;
   endTime?: string;
   duration?: number;
@@ -42,7 +42,7 @@ interface AutomationReport {
 interface OrchestratorStatus {
   id: string;
   name: string;
-  status: 'active' | 'inactive' | 'error';
+  status: 'active' | 'inactive' | 'error
   lastRun: string;
   nextRun: string;
   totalTasks: number;

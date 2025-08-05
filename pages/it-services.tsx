@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   experience: string;
   specialties: string[];
   imageUrl: string;};
-const mockPredictiveModels: PredictiveModel[] = [;
+const mockPredictiveModels: PredictiveModel[] = [
   {;
     id: 1,;
     title: TechFlow Solutions,;

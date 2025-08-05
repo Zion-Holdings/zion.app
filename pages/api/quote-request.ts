@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-interface FacilityPlan {;
+interface FacilityPlan {
   services: "'string[];
   talent: string[];
   equipment: string[];

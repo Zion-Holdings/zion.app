@@ -11,7 +11,7 @@ interface FacilityPlan {";";";"";";
   current: boolean;
   description: string;
   achievements: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   institution: string;
   degree: string;
@@ -21,12 +21,12 @@ interface FacilityPlan {;
   current: boolean;
   gpa?: string;
   description: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   level: beginner | intermediate | advanc'e'd | expert;
   category: 'string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   personalInfo: {;
     firstName: string;
     lastName: string;

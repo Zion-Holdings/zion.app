@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-interface FacilityPlan {;
+interface FacilityPlan {
   preferences: "'string[];
   budget: string;
   timeline: string;
   expertise: string;
   projectType: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   type: service | talent | equipment' | produc't;
   title: string;
@@ -18,7 +18,7 @@ interface FacilityPlan {;
   link: string;
   aiInsights: string[];};
 // Mock database of available services, talents, and equipment;
-const availableItems: Recommendation[] = [;
+const availableItems: Recommendation[] = [
   // AI/ML Services;
   {;
     id: ai-model-dev,;

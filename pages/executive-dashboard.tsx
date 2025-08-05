@@ -16,7 +16,7 @@ interface FacilityPlan {";";";"";";
   priority: 'high | medium | lo'w;
   target?: number;
   status: 'on-track | at-risk | behind | 'exceedi'ng;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -30,7 +30,7 @@ interface FacilityPlan {;
   owner: string;
   priority: critical | high | medium' | low;
   kpis: 'string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -40,7 +40,7 @@ interface FacilityPlan {;
   source: string;
   date: Date;
   recommendations: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   revenue: {;
     current: number;
     previous: number;
@@ -65,7 +65,7 @@ interface FacilityPlan {;
     currentRatio: number;
     quickRatio: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalCustomers: number;
   newCustomers: number;
   churnRate: number;
@@ -74,7 +74,7 @@ interface FacilityPlan {;
   customerLifetimeValue: number;
   topSegments: Array;
   }>;};
-interface FacilityPlan {;
+interface FacilityPlan {
   efficiency: {;
     productivity: number;
     utilization: number;

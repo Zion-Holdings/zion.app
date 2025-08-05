@@ -18,7 +18,7 @@ interface FacilityPlan {";";";"";";
   features: string[];
   rating: number;
   reviews: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -38,7 +38,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
   const $1 = useRef<HTMLCanvasElement>(null</div>;
   const $1 = useRef<HTMLDivElement>(null;
   // Sample VR experiences;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: tech-showroom,;
       name: AI Tech Showroom,;

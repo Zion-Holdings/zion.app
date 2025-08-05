@@ -16,7 +16,7 @@ interface FacilityPlan {";";";"";";
   budget: number;
   aiScore: number;
   automationLevel: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   projectId: string;
   title: string;
@@ -29,7 +29,7 @@ interface FacilityPlan {;
   actualHours: number;
   dependencies: string[];
   aiOptimized: boolean};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   description: string;
@@ -37,7 +37,7 @@ interface FacilityPlan {;
   automationLevel: number;
   successRate: number;
   avgCompletionTime: number};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: manual | automated | ai-powered;
@@ -45,7 +45,7 @@ interface FacilityPlan {;
   estimatedTime: number;
   dependencies: string[];
   aiOptimization: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   'type: 'optimization | risk | opportunity | predictio'n;
   title: string;
   description: string;
@@ -104,7 +104,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       aiScore: 95,;
       automationLevel: 90;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1,;
       projectId: '1,;
@@ -147,7 +147,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       dependencies: [],;
       aiOptimized: true;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: 1,;
       'name: 'Feature Development Pipeline,;
@@ -210,7 +210,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       successRate: 95,;
       avgCompletionTime: 5;
     }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       'type: 'optimization,;
       title: Project Timeline Optimization,;

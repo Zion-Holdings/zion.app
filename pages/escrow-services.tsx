@@ -13,7 +13,7 @@ interface FacilityPlan {";";";"";";
   createdAt: Date;
   deadline: Date;
   description: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   balance: number;
   pendingAmount: number;

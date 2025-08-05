@@ -12,7 +12,7 @@ interface FacilityPlan {";";";"";";
   recordCount: 'number;
   size: number;
   lastSync?: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   status: active | inactive | running | error;
@@ -23,7 +23,7 @@ interface FacilityPlan {;
     processingTime: number;
     successRate: number;
   };};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: snowflake | redshift | bigquery;
@@ -57,7 +57,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         size: 450000000,;
         lastSync: new Date(Date.now() - 7200000;
       }];
-    const mockPredictiveModels: PredictiveModel[] = [;
+    const mockPredictiveModels: PredictiveModel[] = [
       {;
         id: 1,;
         name: User Data Pipeline,;
@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
           processingTime: 45,;
           successRate: 99.8};
 }];
-    const mockPredictiveModels: PredictiveModel[] = [;
+    const mockPredictiveModels: PredictiveModel[] = [
       {;
         id: 1,;
         name: Zion Analytics Warehouse,;

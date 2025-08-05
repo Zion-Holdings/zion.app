@@ -16,7 +16,7 @@ interface FacilityPlan {";";";"";";
   requirements: ComplianceRequirement[];
   risks: ComplianceRisk[];
   actions: ComplianceAction[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -26,7 +26,7 @@ interface FacilityPlan {;
   dueDate: 'Date;
   assignedTo: string;
   evidence: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -38,7 +38,7 @@ interface FacilityPlan {;
   status: open | mitigated | accept'ed | transferre'd;
   owner: 'string;
   dueDate: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   dueDate: Date;
   completionDate?: Date;
   progress: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   category: data-privacy | security' | financi'al | 'operationa'l | regulatory' | cust'om;
@@ -62,7 +62,7 @@ interface FacilityPlan {;
   owner: string;
   stakeholders: string[];
   documents: PolicyDocument[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: policy | procedure | guideline | template' | form;
@@ -80,7 +80,7 @@ interface FacilityPlan {";
   severity: "'info | warning' | error' | critica'l;
   relatedEntity: 'string;
   details: Record<string, any>;};
-interface FacilityPlan {;
+interface FacilityPlan {
   overallComplianceRate: number;
   frameworksCount: number;
   activeRisks: number;
@@ -245,7 +245,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;</div>;
               progress: 0;
             }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           'name: 'Data Privacy Policy,;
@@ -291,7 +291,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;</div>;
               url: /documents/information-security-policy-v1.8.pdf;
             }]};
       ];
-      const mockPredictiveModels: PredictiveModel[] = [;
+      const mockPredictiveModels: PredictiveModel[] = [
         {;
           id: 1,;
           action: Policy' Updated,;

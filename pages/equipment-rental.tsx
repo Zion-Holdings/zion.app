@@ -24,7 +24,7 @@ interface FacilityPlan {";";";"";";
   nextMaintenance: Date;
   insurance: boolean;
   warranty: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   brand: string;
   model: string;
   year: number;
@@ -32,7 +32,7 @@ interface FacilityPlan {;
   dimensions: string;
   power: string;
   features: string[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   equipmentId: string;
   renterId: string;
@@ -46,7 +46,7 @@ interface FacilityPlan {;
   deposit: number;
   notes?: string;
   createdAt: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   equipmentId: string;
   type: routine | repair | inspection | emergency;
@@ -58,18 +58,18 @@ interface FacilityPlan {;
   status: scheduled | in_progress | completed;
   parts: 'string[];
   notes?: string;};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalRevenue: number;
   totalRentals: number;
   averageRentalDuration: number;
   topPerformingEquipment: Equipment[];
   monthlyRevenue: MonthlyRevenue[];
   categoryPerformance: CategoryPerformance[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   month: string;
   revenue: number;
   rentals: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   revenue: number;
   rentals: number;

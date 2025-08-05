@@ -45,7 +45,7 @@ interface FacilityPlan {";";";"";";
     url: string;
     type: primary | secondary;
   }[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalMessages: number;
   unreadCount: number;
   urgentCount: number;
@@ -54,7 +54,7 @@ interface FacilityPlan {;
   monthlyCount: number;
   responseRate: number;
   averageResponseTime: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   type: string;
   priority: string;
   sender: string;

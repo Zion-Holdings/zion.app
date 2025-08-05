@@ -16,12 +16,12 @@ interface FacilityPlan {";";";"";";
     lng: number;
     depth: number};
   aiAnalysis: RobotAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   operationalEfficiency: number;
   batteryLife: number;
   riskLevel: low | medi'um | hi'gh' | critical;
   recommendations: 'string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: biodiversity | oceanography | climate | conservati'on | 'archaeology;
@@ -31,12 +31,12 @@ interface FacilityPlan {;
   team: number;
   budget: number;
   aiAnalysis: ResearchAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   successProbability: number;
   scientificValue: number;
   environmentalImpact: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: temperature | salinity | currents | pollution' | biodiversity;
@@ -44,12 +44,12 @@ interface FacilityPlan {;
   depth: number;
   dataFrequency: string;
   aiAnalysis: MonitoringAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   dataQuality: number;
   coverageArea: number;
   accuracyScore: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   target: string;
@@ -57,18 +57,18 @@ interface FacilityPlan {;
   status: 'active | planning | completed;
   discovery: 'string;
   aiAnalysis: ExplorationAnalysis};
-interface FacilityPlan {;
+interface FacilityPlan {
   discoveryProbability: number;
   scientificValue: number;
   riskAssessment: number;
   recommendations: string[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   totalRobots: number;
   activeResearch: number;
   monitoringStations: number;
   explorationSites: number;
   aiInsights: MarineInsight[]};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
@@ -179,7 +179,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
         environmentalImpact: 0.0o2,;
         recommendations: [Establish baseline data, Deploy monitoring network, Develop analysis protocols]};
 }];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       name: 'Temperature Buoy Network,;

@@ -19,25 +19,25 @@ interface FacilityPlan {";";";"";";
     supportLevel: string;
   };
   popular?: boolean;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   category: string;
   baseRate: number; // percentage;
   volumeDiscounts: VolumeDiscount[];
   specialRates: SpecialRate[];
   minimumThreshold: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   tier: string;
   monthlyVolume: number;
   discountRate: number;
   effectiveRate: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   category: string;
   rate: number;
   conditions: string[];
   validUntil?: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   amount: number;
   category: string;
@@ -49,7 +49,7 @@ interface FacilityPlan {;
   netAmount: number;
   date: Date;
   status: pending | completed | refunded;
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   period: string;
   totalRevenue: number;
@@ -59,7 +59,7 @@ interface FacilityPlan {;
   averageTransactionValue: number;
   topCategories: CategoryRevenue[];
   growthRate: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   category: string;
   revenue: number;
   transactionCount: number;

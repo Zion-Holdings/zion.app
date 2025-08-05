@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-interface Facility {;
+interface Facility {
   id: string;
   name: string;
   type: string;
@@ -13,14 +13,14 @@ interface Facility {;
   securityScore: number;
   aiOptimization: FacilityOptimization;
 };
-interface FacilityOptimization {;
+interface FacilityOptimization {
   id: string;
   energyScore: number;
   securityScore: number;
   efficiencyScore: number;
   recommendations: string[];
 };
-interface FacilityAnalytics {;
+interface FacilityAnalytics {
   totalFacilities: number;
   operationalFacilities: number;
   averageUtilization: number;
@@ -28,7 +28,7 @@ interface FacilityAnalytics {;
   securityScore: number;
   aiOptimizationScore: number;
 };
-const mockFacilities: Facility[] = [;
+const mockFacilities: Facility[] = [
   {;
     id: 'facility-1',;
     name: 'Main Office Building',;
@@ -169,7 +169,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           return res.status(404).json({ error: Facility not found });
         };
         // Simulate AI optimization;
-        const optimization = {;
+        const optimization = {
           type: optimizationType,;
           currentScore: optFacility.aiOptimization.efficiencyScore,;
           optimizedScore: Math.min(100, optFacility.aiOptimization.efficiencyScore + 10),;

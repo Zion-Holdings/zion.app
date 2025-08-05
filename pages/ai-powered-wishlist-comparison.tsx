@@ -30,13 +30,13 @@ interface FacilityPlan {";";";"";";
   deliveryTime?: string;
   features: string[];
   specifications: Record<string, string>;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   items: WishlistItem[];
   comparisonDate: Date;
   aiAnalysis: AIComparisonAnalysis;
   recommendations: ComparisonRecommendation[];};
-interface FacilityPlan {;
+interface FacilityPlan {
   bestValue: string;
   bestQuality: string;
   bestFeatures: string;
@@ -49,14 +49,14 @@ interface FacilityPlan {;
   prosCons: Record<string, { pros: string[]; cons: string[] }>;
   recommendation: string;
   confidence: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   title: string;
   description: string;
   reasoning: string;
   confidence: number;
   category: price | quality | 'features' | overal'l;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   icon: string;
@@ -166,7 +166,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {</div>;
         Storage: 2TB NVMe SSD};
 }];
   // Mock comparisons;
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       id: '1',;
       items: 'mockWishlistItems.slice(0, 2),;

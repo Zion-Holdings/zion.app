@@ -17,7 +17,7 @@ interface FacilityPlan {";";";"";";
   contactEmail: string;
   matchScore: number;
   reason: string};
-interface FacilityPlan {;
+interface FacilityPlan {
   name: string;
   industry: string;
   stage: string;

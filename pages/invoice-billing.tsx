@@ -17,13 +17,13 @@ interface FacilityPlan {";";";"";";
   currency: string;
   paymentMethod?: string;
   paidDate?: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   description: string;
   quantity: number;
   unitPrice: number;
   total: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   name: string;
   type: monthly | quarterly | yearly | custom;
@@ -33,7 +33,7 @@ interface FacilityPlan {;
   totalAmount: number;
   paidAmount: number;
   outstandingAmount: number;};
-interface FacilityPlan {;
+interface FacilityPlan {
   id: string;
   invoiceId: string;
   amount: number;

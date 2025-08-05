@@ -11,7 +11,7 @@ interface FacilityPlan {";";";"";";
   status: available | beta | coming-soon;
   completion: number;
   lastUpdated: Date;};
-interface FacilityPlan {;
+interface FacilityPlan {
   key: string;
   english: string;
   spanish: string;
@@ -118,7 +118,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {;
       completion: 30,;
       lastUpdated: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000};
   ];
-  const mockPredictiveModels: PredictiveModel[] = [;
+  const mockPredictiveModels: PredictiveModel[] = [
     {;
       key: welcome,;
       english: Welcom'e' to Zion Marketplace,;
