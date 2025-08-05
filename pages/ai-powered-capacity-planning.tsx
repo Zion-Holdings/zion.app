@@ -1,8 +1,8 @@
-import React, { useState, useEffect , useCallback }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect , useCallback }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
-import { NextPage }  from 'next';;
-import Head  from 'next/head';;
-import Link  from 'next/link';;
+import { NextPage }  from 'next';
+import Head  from 'next/head';
+import Link  from 'next/link';
 import { 
   TrendingUp, 
   BarChart3, 
@@ -16,7 +16,7 @@ import {
   Clock,
   PieChart,
   TrendingDown
-}  from 'lucide-react';;
+}  from 'lucide-react';
 
 interface CapacityPlan {
   id: string;

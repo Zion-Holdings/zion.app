@@ -1,8 +1,8 @@
 
-import React  from 'react';;
-import ModernLayout  from '../components/layout/ModernLayout';;
+import React  from 'react';
+import ModernLayout  from '../components/layout/ModernLayout';
 
-import { NextPage }  from 'next';;
+import { NextPage }  from 'next';
 
 const trend_solution_1754022651944_2Page: NextPage = () => {
   return (

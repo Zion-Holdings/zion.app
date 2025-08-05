@@ -1,7 +1,7 @@
-import React  from 'react';;
-import Head  from 'next/head';;
-import ModernLayout  from '../components/layout/ModernLayout';;
-import { motion }  from 'framer-motion';;
+import React  from 'react';
+import Head  from 'next/head';
+import ModernLayout  from '../components/layout/ModernLayout';
+import { motion }  from 'framer-motion';
 
 const AiPoweredAnalysis = () => {
   return (

@@ -1,6 +1,6 @@
-import React, { useState }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
-import { useRouter }  from 'next/router';;
+import { useRouter }  from 'next/router';
 
 interface QuoteFormData {
   services: string[];

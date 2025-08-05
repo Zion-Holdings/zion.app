@@ -7,7 +7,7 @@ function fixFinalRemainingErrors(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     
     // Check if the file has parsing errors
-    if (content.includes('Parsing error') || content.includes('Declaration or statement expected') || content.includes('Identifier expected') || content.includes('\')\' expected')) {
+    if (content.includes('Declaration or statement expected') || content.includes('Identifier expected') || content.includes('\')\' expected')) {
       // Completely reconstruct the file from scratch
       const fileName = path.basename(filePath, '.tsx');
       const componentName = fileName

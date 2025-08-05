@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';;
-import ModernLayout  from '../components/layout/ModernLayout';;
-import Head  from 'next/head';;
-import { useState, useEffect }  from 'react';;
-import { motion }  from 'framer-motion';;
+import type { NextPage }  from 'next';
+import ModernLayout  from '../components/layout/ModernLayout';
+import Head  from 'next/head';
+import { useState, useEffect }  from 'react';
+import { motion }  from 'framer-motion';
 
 interface ChatMessage {
   id: string;

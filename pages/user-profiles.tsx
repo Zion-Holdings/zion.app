@@ -1,10 +1,10 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import { useState, useEffect, useMemo }  from 'react';;
-import Link  from 'next/link';;
-import Image  from 'next/image';;
-import { Home, Search, User }  from 'lucide-react';;
+import Head  from 'next/head';
+import { useState, useEffect, useMemo }  from 'react';
+import Link  from 'next/link';
+import Image  from 'next/image';
+import { Home, Search, User }  from 'lucide-react';
 
 interface UserProfile {
   id: string;

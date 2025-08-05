@@ -1,10 +1,10 @@
-import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import { useState, useEffect }  from 'react';;
-import Link  from 'next/link';;
-import FuturisticHero  from '../components/ui/FuturisticHero';;
-import FuturisticCard  from '../components/ui/FuturisticCard';;
+import Head  from 'next/head';
+import { useState, useEffect }  from 'react';
+import Link  from 'next/link';
+import FuturisticHero  from '../components/ui/FuturisticHero';
+import FuturisticCard  from '../components/ui/FuturisticCard';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false)

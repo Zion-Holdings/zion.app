@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback }  from 'react';;
-import { NextPage }  from 'next';;
-import Head  from 'next/head';;
-import Link  from 'next/link';;
-import PageLayout  from '../components/layout/PageLayout';;
+import React, { useState, useEffect, useCallback }  from 'react';
+import { NextPage }  from 'next';
+import Head  from 'next/head';
+import Link  from 'next/link';
+import PageLayout  from '../components/layout/PageLayout';
 import { 
   Code, 
   Database, 
@@ -16,7 +16,7 @@ import {
   TrendingUp,
   Zap,
   Shield
-}  from 'lucide-react';;
+}  from 'lucide-react';
 
 interface APIManagement {
   id: string;

@@ -1,7 +1,7 @@
 import: React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import { createClient }  from '@supabase/supabase-js';;
+import Head  from 'next/head';
+import { createClient }  from '@supabase/supabase-js';
 
 interface Talent {
   id: string;

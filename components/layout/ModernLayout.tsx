@@ -21,4 +21,4 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({ children }) => {
   )
 }
 
-export default ModernLayout 
+export default ModernLayout; 

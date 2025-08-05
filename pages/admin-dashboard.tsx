@@ -1,36 +1,67 @@
-import React, { useState, useEffect, useCallback }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect, useCallback } from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
+import { useRouter } from 'next/router';
+import { useAuth } from '../src/contexts/AuthContext';
+import Head from 'next/head';
 
-import { useRouter }  from 'next/router';;
-import { useAuth }  from '../src/contexts/AuthContext';;
-import Head  from 'next/head';;
-
-interface Agent {
-  id: string;
-  name: string;
+interface AgentStatus {
+  agentId: string;
   type: string;
   status: 'active' | 'idle' | 'error' | 'stopped';
-  workload: number;
-  currentTask: string;
-  nextSteps: string[];
-  services: string[];
-  createdAt: string;
-  lastActive: string;
-  performance: {
-    tasksCompleted: number;
-    successRate: number;
-    avgResponseTime: number;
+  lastActivity: string;
+  pid?: number;
+  workload?: number;
+  currentTask?: string;
+  performance?: {
+    tasksCompleted?: number;
+    successRate?: number;
+    avgResponseTime?: number;
   };
-  capabilities: string[];
-  dependencies: string[];
+}
+
+interface SystemHealth {
+  timestamp: string;
+  activeAgents: number;
+  totalAgents: number;
+  systemHealth: 'healthy' | 'warning' | 'error';
+  memoryUsage?: {
+    rss: number;
+    heapTotal: number;
+    heapUsed: number;
+    external: number;
+    arrayBuffers: number;
+  };
+  uptime?: number;
+}
+
+interface AutomationReport {
+  id: string;
+  type: string;
+  timestamp: string;
+  status: string;
+  data?: any;
+}
+
+interface AdminDashboardData {
+  agents: AgentStatus[];
+  systemHealth: SystemHealth;
+  reports: AutomationReport[];
+  orchestrators: any[];
+  monetization: any;
+  contentGeneration: any;
+  analytics: any;
+  lastUpdate: string;
 }
 
 export default function AdminDashboard() {
   const router = useRouter();
   const { user, loading, session } = useAuth();
-  const [agents, setAgents] = useState<Agent[]>([]);
+  const [dashboardData, setDashboardData] = useState<AdminDashboardData | null>(null);
   const [activeTab, setActiveTab] = useState('overview');
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [autoRefresh, setAutoRefresh] = useState(true);
 
   const checkAuth = useCallback(async () => {
     if (loading) return;
@@ -60,80 +91,67 @@ export default function AdminDashboard() {
     checkAuth();
   }, [checkAuth]);
 
-  useEffect(() => {
-    if (isAuthorized) {
-      loadAgents();
+  const fetchDashboardData = useCallback(async () => {
+    if (!isAuthorized) return;
+    
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/admin/automation-status');
+      if (response.ok) {
+        const data = await response.json();
+        setDashboardData(data);
+      } else {
+        console.error('Failed to fetch dashboard data');
+      }
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error);
+    } finally {
+      setIsLoading(false);
     }
   }, [isAuthorized]);
 
-  const loadAgents = async () => {
-    try {
-      // For now, we'll use mock data since the autonomous_agents table might not exist
-      const mockAgents: Agent[] = [
-        {
-          id: '1',
-          name: 'Content Generation Agent',
-          type: 'content',
-          status: 'active',
-          workload: 75,
-          currentTask: 'Generating blog posts',
-          nextSteps: ['SEO optimization', 'Publish content'],
-          services: ['Blog writing', 'SEO'],
-          createdAt: '2024-01-15T10:00:00Z',
-          lastActive: '2024-01-15T15:30:00Z',
-          performance: {
-            tasksCompleted: 45,
-            successRate: 92,
-            avgResponseTime: 2.3
-          },
-          capabilities: ['Text generation', 'SEO analysis'],
-          dependencies: ['OpenAI API', 'Content DB']
-        },
-        {
-          id: '2',
-          name: 'Market Research Agent',
-          type: 'research',
-          status: 'idle',
-          workload: 0,
-          currentTask: 'Waiting for tasks',
-          nextSteps: ['Monitor market trends'],
-          services: ['Market analysis', 'Trend detection'],
-          createdAt: '2024-01-10T09:00:00Z',
-          lastActive: '2024-01-15T14:20:00Z',
-          performance: {
-            tasksCompleted: 23,
-            successRate: 88,
-            avgResponseTime: 5.1
-          },
-          capabilities: ['Data analysis', 'Report generation'],
-          dependencies: ['Market APIs', 'Analytics DB']
-        },
-        {
-          id: '3',
-          name: 'SEO Optimization Agent',
-          type: 'seo',
-          status: 'active',
-          workload: 60,
-          currentTask: 'Optimizing meta descriptions',
-          nextSteps: ['Update sitemap', 'Monitor rankings'],
-          services: ['SEO audit', 'Keyword research'],
-          createdAt: '2024-01-12T11:00:00Z',
-          lastActive: '2024-01-15T15:45:00Z',
-          performance: {
-            tasksCompleted: 67,
-            successRate: 95,
-            avgResponseTime: 1.8
-          },
-          capabilities: ['SEO analysis', 'Keyword optimization'],
-          dependencies: ['Google Analytics', 'Search Console']
-        }
-      ];
+  useEffect(() => {
+    if (isAuthorized) {
+      fetchDashboardData();
       
-      setAgents(mockAgents);
-    } catch (error) {
-      console.error('Error loading agents:', error);
-      // Set empty array on error
-      setAgents([]);
+      // Set up auto-refresh
+      if (autoRefresh) {
+        const interval = setInterval(fetchDashboardData, 10000); // Refresh every 10 seconds
+        return () => clearInterval(interval);
+      }
+    }
+  }, [isAuthorized, fetchDashboardData, autoRefresh]);
+
+  const formatBytes = (bytes: number) => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+  };
+
+  const formatUptime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    return `${hours}h ${minutes}m`;
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'active': return 'bg-green-100 text-green-800';
+      case 'idle': return 'bg-yellow-100 text-yellow-800';
+      case 'error': return 'bg-red-100 text-red-800';
+      case 'stopped': return 'bg-gray-100 text-gray-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
+  const getSystemHealthColor = (health: string) => {
+    switch (health) {
+      case 'healthy': return 'bg-green-100 text-green-800';
+      case 'warning': return 'bg-yellow-100 text-yellow-800';
+      case 'error': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
     }
   };
 
@@ -166,23 +184,46 @@ export default function AdminDashboard() {
     <>
       <Head>
         <title>Admin Dashboard - Zion</title>
-        <meta name="description" content="Admin dashboard for managing autonomous agents" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="description" content="Real-time admin dashboard for managing autonomous agents and automation systems" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </Head>
       
       <div className="min-h-screen bg-gray-100">
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-6">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Autonomous Agent Dashboard</h1>
-                <p className="mt-1 text-sm text-gray-500">Manage and monitor AI agents and automation systems</p>
+                <h1 className="text-3xl font-bold text-gray-900">Real-Time Automation Dashboard</h1>
+                <p className="mt-1 text-sm text-gray-500">
+                  Live monitoring of autonomous agents and automation systems
+                  {dashboardData && (
+                    <span className="ml-2 text-xs text-gray-400">
+                      Last updated: {new Date(dashboardData.lastUpdate).toLocaleTimeString()}
+                    </span>
+                  )}
+                </p>
               </div>
               <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <label className="text-sm text-gray-600">Auto-refresh</label>
+                  <input
+                    type="checkbox"
+                    checked={autoRefresh}
+                    onChange={(e) => setAutoRefresh(e.target.checked)}
+                    className="rounded border-gray-300"
+                  />
+                </div>
+                <button
+                  onClick={fetchDashboardData}
+                  disabled={isLoading}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg transition-colors"
+                >
+                  {isLoading ? 'Refreshing...' : 'Refresh'}
+                </button>
                 <span className="text-sm text-gray-500">Logged in as: {user?.email}</span>
                 <button
                   onClick={() => router.push('/dashboard')}
-                  className="px-4 py-4 bg-gray-600 hover bg-gray-700 text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
                 >
                   Back to Dashboard
                 </button>
@@ -191,92 +232,326 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">System Overview</h2>
-            <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6">
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600">{agents.length}</div>
-                <div className="text-sm text-blue-600">Total Agents</div>
-              </div>
-              <div className="bg-green-50 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-green-600">
-                  {agents.filter(a => a.status === 'active').length}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* System Health Overview */}
+          {dashboardData?.systemHealth && (
+            <div className="bg-white rounded-lg shadow p-6 mb-8">
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">System Health</h2>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-blue-600">{dashboardData.systemHealth.totalAgents}</div>
+                  <div className="text-sm text-blue-600">Total Agents</div>
                 </div>
-                <div className="text-sm text-green-600">Active Agents</div>
-              </div>
-              <div className="bg-yellow-50 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-yellow-1200">
-                  {agents.filter(a => a.status === 'idle').length}
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-green-600">{dashboardData.systemHealth.activeAgents}</div>
+                  <div className="text-sm text-green-600">Active Agents</div>
                 </div>
-                <div className="text-sm text-yellow-1200">Idle Agents</div>
-              </div>
-              <div className="bg-red-50 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-red-600">
-                  {agents.filter(a => a.status === 'error').length}
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-purple-600">
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getSystemHealthColor(dashboardData.systemHealth.systemHealth)}`}>
+                      {dashboardData.systemHealth.systemHealth}
+                    </span>
+                  </div>
+                  <div className="text-sm text-purple-600">System Status</div>
                 </div>
-                <div className="text-sm text-red-600">Error Agents</div>
+                <div className="bg-orange-50 p-4 rounded-lg">
+                  <div className="text-2xl font-bold text-orange-600">
+                    {dashboardData.systemHealth.uptime ? formatUptime(dashboardData.systemHealth.uptime) : 'N/A'}
+                  </div>
+                  <div className="text-sm text-orange-600">Uptime</div>
+                </div>
               </div>
+              
+              {dashboardData.systemHealth.memoryUsage && (
+                <div className="mt-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-3">Memory Usage</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="bg-gray-50 p-3 rounded">
+                      <div className="text-sm font-medium text-gray-600">RSS</div>
+                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.rss)}</div>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded">
+                      <div className="text-sm font-medium text-gray-600">Heap Total</div>
+                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.heapTotal)}</div>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded">
+                      <div className="text-sm font-medium text-gray-600">Heap Used</div>
+                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.heapUsed)}</div>
+                    </div>
+                    <div className="bg-gray-50 p-3 rounded">
+                      <div className="text-sm font-medium text-gray-600">External</div>
+                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.external)}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Tab Navigation */}
+          <div className="bg-white rounded-lg shadow mb-8">
+            <div className="border-b border-gray-200">
+              <nav className="-mb-px flex space-x-8 px-6">
+                {[
+                  { id: 'overview', name: 'Overview' },
+                  { id: 'agents', name: 'Agents' },
+                  { id: 'orchestrators', name: 'Orchestrators' },
+                  { id: 'reports', name: 'Reports' },
+                  { id: 'monetization', name: 'Monetization' },
+                  { id: 'content', name: 'Content Generation' },
+                  { id: 'analytics', name: 'Analytics' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                      activeTab === tab.id
+                        ? 'border-blue-500 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    {tab.name}
+                  </button>
+                ))}
+              </nav>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Agent</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Workload</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Task</th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Performance</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {agents.map((agent) => (
-                    <tr key={agent.id} className="hover bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{agent.name}</div>
-                        <div className="text-sm text-gray-500">ID: {agent.id}</div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.type}</td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex px-4 py-3 text-xs font-semibold rounded-full ${
-                          agent.status === 'active' ? 'bg-green-100 text-green-800' :
-                          agent.status === 'idle' ? 'bg-yellow-100 text-yellow-1200' :
-                          agent.status === 'error' ? 'bg-red-100 text-red-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {agent.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div 
-                              className="bg-blue-600 h-2 rounded-full" 
-                              style={{ width: `${agent.workload}%` }}
-                            ></div>
-                          </div>
-                          <span className="text-sm text-gray-900">{agent.workload}%</span>
+            <div className="p-6">
+              {/* Overview Tab */}
+              {activeTab === 'overview' && (
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <h3 className="text-lg font-semibold text-blue-900 mb-2">Active Agents</h3>
+                      <div className="text-3xl font-bold text-blue-600">{dashboardData?.agents.filter(a => a.status === 'active').length || 0}</div>
+                      <p className="text-sm text-blue-700 mt-1">Currently running</p>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <h3 className="text-lg font-semibold text-green-900 mb-2">Recent Reports</h3>
+                      <div className="text-3xl font-bold text-green-600">{dashboardData?.reports.length || 0}</div>
+                      <p className="text-sm text-green-700 mt-1">Generated today</p>
+                    </div>
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h3 className="text-lg font-semibold text-purple-900 mb-2">Content Files</h3>
+                      <div className="text-3xl font-bold text-purple-600">{dashboardData?.contentGeneration?.totalFiles || 0}</div>
+                      <p className="text-sm text-purple-700 mt-1">Generated content</p>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">System Status</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="font-medium text-gray-700 mb-2">Orchestrators</h4>
+                        <div className="space-y-2">
+                          {dashboardData?.orchestrators.map((orch, index) => (
+                            <div key={index} className="flex justify-between items-center">
+                              <span className="text-sm text-gray-600">Main Orchestrator</span>
+                              <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getSystemHealthColor(orch.systemHealth)}`}>
+                                {orch.systemHealth}
+                              </span>
+                            </div>
+                          ))}
                         </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{agent.currentTask}</td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        <div>Tasks: {agent.performance.tasksCompleted}</div>
-                        <div>Success: {agent.performance.successRate}%</div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-700 mb-2">Recent Activity</h4>
+                        <div className="space-y-2">
+                          {dashboardData?.agents.slice(0, 3).map((agent) => (
+                            <div key={agent.agentId} className="flex justify-between items-center">
+                              <span className="text-sm text-gray-600">{agent.type}</span>
+                              <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(agent.status)}`}>
+                                {agent.status}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
 
-            {agents.length === 0 && (
-              <div className="text-center py-8">
-                <div className="text-gray-500">No agents found</div>
-                <p className="text-sm text-gray-400 mt-2">Agents will appear here when they are created and running</p>
-              </div>
-            )}
+              {/* Agents Tab */}
+              {activeTab === 'agents' && (
+                <div>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Agent</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PID</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Activity</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Performance</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {dashboardData?.agents.map((agent) => (
+                          <tr key={agent.agentId} className="hover:bg-gray-50">
+                            <td className="px-6 py-4 whitespace-nowrap">
+                              <div className="text-sm font-medium text-gray-900">{agent.agentId}</div>
+                              <div className="text-sm text-gray-500">{agent.type}</div>
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.type}</td>
+                            <td className="px-6 py-4 whitespace-nowrap">
+                              <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(agent.status)}`}>
+                                {agent.status}
+                              </span>
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.pid || 'N/A'}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                              {new Date(agent.lastActivity).toLocaleString()}
+                            </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                              {agent.performance ? (
+                                <div>
+                                  <div>Tasks: {agent.performance.tasksCompleted || 0}</div>
+                                  <div>Success: {agent.performance.successRate || 0}%</div>
+                                </div>
+                              ) : (
+                                'N/A'
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  {(!dashboardData?.agents || dashboardData.agents.length === 0) && (
+                    <div className="text-center py-8">
+                      <div className="text-gray-500">No agents found</div>
+                      <p className="text-sm text-gray-400 mt-2">Agents will appear here when they are created and running</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Orchestrators Tab */}
+              {activeTab === 'orchestrators' && (
+                <div>
+                  {dashboardData?.orchestrators.map((orch, index) => (
+                    <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                      <div className="flex justify-between items-center mb-4">
+                        <h3 className="text-lg font-semibold text-gray-900">Main Orchestrator</h3>
+                        <span className={`inline-flex px-3 py-1 text-sm font-semibold rounded-full ${getSystemHealthColor(orch.systemHealth)}`}>
+                          {orch.systemHealth}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <div className="text-sm font-medium text-gray-600">Active Agents</div>
+                          <div className="text-2xl font-bold text-gray-900">{orch.activeAgents}</div>
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-600">Total Agents</div>
+                          <div className="text-2xl font-bold text-gray-900">{orch.totalAgents}</div>
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-600">Last Update</div>
+                          <div className="text-sm text-gray-900">{new Date(orch.lastUpdate).toLocaleString()}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Reports Tab */}
+              {activeTab === 'reports' && (
+                <div>
+                  <div className="space-y-4">
+                    {dashboardData?.reports.map((report) => (
+                      <div key={report.id} className="bg-gray-50 p-4 rounded-lg">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <h3 className="text-lg font-semibold text-gray-900">{report.type}</h3>
+                            <p className="text-sm text-gray-600">ID: {report.id}</p>
+                            <p className="text-sm text-gray-500">{new Date(report.timestamp).toLocaleString()}</p>
+                          </div>
+                          <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                            report.status === 'completed' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                          }`}>
+                            {report.status}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {(!dashboardData?.reports || dashboardData.reports.length === 0) && (
+                    <div className="text-center py-8">
+                      <div className="text-gray-500">No reports found</div>
+                      <p className="text-sm text-gray-400 mt-2">Reports will appear here when they are generated</p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Monetization Tab */}
+              {activeTab === 'monetization' && (
+                <div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Monetization Status</h3>
+                    <pre className="text-sm text-gray-700 overflow-auto">
+                      {JSON.stringify(dashboardData?.monetization, null, 2)}
+                    </pre>
+                  </div>
+                </div>
+              )}
+
+              {/* Content Generation Tab */}
+              {activeTab === 'content' && (
+                <div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Content Generation</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <div className="text-sm font-medium text-gray-600">Total Files</div>
+                        <div className="text-2xl font-bold text-gray-900">{dashboardData?.contentGeneration?.totalFiles || 0}</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-gray-600">Recent Files</div>
+                        <div className="text-sm text-gray-900">
+                          {dashboardData?.contentGeneration?.recentFiles?.slice(0, 3).map((file: any, index: number) => (
+                            <div key={index} className="text-xs text-gray-600">
+                              {file.name} - {new Date(file.timestamp).toLocaleString()}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Analytics Tab */}
+              {activeTab === 'analytics' && (
+                <div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Analytics</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <div className="text-sm font-medium text-gray-600">Total Reports</div>
+                        <div className="text-2xl font-bold text-gray-900">{dashboardData?.analytics?.totalReports || 0}</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-gray-600">Recent Reports</div>
+                        <div className="text-sm text-gray-900">
+                          {dashboardData?.analytics?.reports?.slice(0, 3).map((report: any, index: number) => (
+                            <div key={index} className="text-xs text-gray-600">
+                              {report.name}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

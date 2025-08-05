@@ -1,8 +1,8 @@
-import React, { useState, useEffect , useCallback }  from 'react';;
-import { NextPage }  from 'next';;
-import Head  from 'next/head';;
-import Link  from 'next/link';;
-import PageLayout  from '../components/layout/PageLayout';;
+import React, { useState, useEffect , useCallback }  from 'react';
+import { NextPage }  from 'next';
+import Head  from 'next/head';
+import Link  from 'next/link';
+import PageLayout  from '../components/layout/PageLayout';
 import { 
   Activity, 
   Heart, 
@@ -16,8 +16,8 @@ import {
   TrendingUp,
   User,
   Shield
-}  from 'lucide-react';;
-import { Home, Search, User }  from 'lucide-react';;
+}  from 'lucide-react';
+import { Home, Search, User }  from 'lucide-react';
 
 interface Patient {
   id: string;

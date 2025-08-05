@@ -1,6 +1,6 @@
-import React, { useState, useMemo }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useMemo }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
+import Head  from 'next/head';
 
 interface ServiceProvider {
   id: string;

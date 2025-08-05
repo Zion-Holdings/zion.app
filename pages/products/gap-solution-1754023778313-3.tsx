@@ -1,8 +1,8 @@
 
-import React  from 'react';;
-import ModernLayout  from '../components/layout/ModernLayout';;
+import React  from 'react';
+import ModernLayout  from '../components/layout/ModernLayout';
 
-import { NextPage }  from 'next';;
+import { NextPage }  from 'next';
 
 const gap_solution_1754023778313_3Page: NextPage = () => {
   return (

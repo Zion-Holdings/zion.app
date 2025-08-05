@@ -1,7 +1,7 @@
-import { useState }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
+import { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import { sanitizeHtml }  from '../utils/sanitizeHtml';;
+import Head  from 'next/head';
+import { sanitizeHtml }  from '../utils/sanitizeHtml';
 
 interface Experience {
   id: string;

@@ -1,8 +1,8 @@
 
-import React  from 'react';;
-import ModernLayout  from '../components/layout/ModernLayout';;
+import React  from 'react';
+import ModernLayout  from '../components/layout/ModernLayout';
 
-import { NextPage }  from 'next';;
+import { NextPage }  from 'next';
 
 const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
   return (

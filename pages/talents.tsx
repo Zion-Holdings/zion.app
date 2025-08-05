@@ -1,8 +1,8 @@
 
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import Link  from 'next/link';;
+import Head  from 'next/head';
+import Link  from 'next/link';
 
 const Talents: NextPage = () => {
   return (

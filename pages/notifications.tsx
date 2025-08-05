@@ -1,9 +1,9 @@
-import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';;
-import { useState, useEffect }  from 'react';;
-import Link  from 'next/link';;
-import { motion, AnimatePresence }  from 'framer-motion';;
+import Head  from 'next/head';
+import { useState, useEffect }  from 'react';
+import Link  from 'next/link';
+import { motion, AnimatePresence }  from 'framer-motion';
 
 interface Notification {
   id: string;
