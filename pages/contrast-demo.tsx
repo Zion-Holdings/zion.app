@@ -7,7 +7,7 @@ import ContrastDemo from '../components/ui/ContrastDemo';
 
 const ContrastDemoPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -173,11 +173,11 @@ const ContrastDemoPage: NextPage = () => {
       </section>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

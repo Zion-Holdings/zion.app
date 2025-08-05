@@ -1,11 +1,11 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 
 export default function Docs() {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Documentation - Zion</title>
@@ -49,10 +49,10 @@ export default function Docs() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 );
 } 

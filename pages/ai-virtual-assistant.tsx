@@ -185,7 +185,7 @@ const AiVirtualAssistant: NextPage = () => {
 
   const renderMessage = (message: Message) => {
     return (
-    <ModernLayout>
+    <div>
       <div
         key={message.id}
         className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
@@ -415,11 +415,11 @@ const AiVirtualAssistant: NextPage = () => {
         </div>
       </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

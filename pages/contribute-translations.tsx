@@ -32,7 +32,7 @@ export default function ContributeTranslations() {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Contribute Translations - Zion Marketplace</title>
@@ -106,10 +106,10 @@ export default function ContributeTranslations() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 );
 }

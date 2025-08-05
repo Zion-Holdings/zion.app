@@ -1,11 +1,11 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const Https___ziontechgroup_netlify_app_services_blockchPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Our Services - Zion Tech Group</title>
@@ -121,7 +121,7 @@ Join: Zion
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 ),
 }
 ;

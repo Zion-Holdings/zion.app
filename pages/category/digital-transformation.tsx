@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const DigitalTransformationPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Digital Transformation - Zion AI Marketplace</title>
@@ -68,9 +68,9 @@ const DigitalTransformationPage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -28,7 +28,7 @@ export default function SearchResults() {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Search Results - Zion Marketplace</title>
@@ -40,7 +40,7 @@ export default function SearchResults() {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <section className="py-40 px-4 max-w-3xl mx-auto">,
@@ -76,8 +76,8 @@ export default function SearchResults() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>;
+  </div>;
 );
 }

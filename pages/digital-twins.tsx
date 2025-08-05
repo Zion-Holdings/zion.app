@@ -1,5 +1,5 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const DigitalTwins = () => {
   return (
-    <ModernLayout>
+    <div>
       <Layout>
       <Head>
         <title>Digital Twins - Zion App</title>
@@ -289,7 +289,7 @@ const DigitalTwins = () => {
       </div>
     </Layout>
   
-      </ModernLayout>
+      </div>
   );
 };
 

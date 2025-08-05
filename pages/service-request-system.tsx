@@ -1,4 +1,4 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
@@ -284,7 +284,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
   }
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Service Request System - Zion Marketplace</title>
@@ -298,7 +298,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       ,
         {/* Header */}
@@ -834,9 +834,9 @@ const ServiceRequestSystemPage: NextPage = () => {,
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 ;

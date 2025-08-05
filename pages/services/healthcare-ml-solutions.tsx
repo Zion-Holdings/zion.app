@@ -1,11 +1,11 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const HealthcareMLSolutionsPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Healthcare ML Solutions - Zion Tech Group</title>
@@ -64,7 +64,7 @@ const HealthcareMLSolutionsPage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 )
 };
 

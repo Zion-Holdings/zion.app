@@ -1,5 +1,5 @@
 import type { NextPage }  from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
@@ -297,7 +297,7 @@ const AdvancedSearchPage: NextPage = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -685,7 +685,7 @@ const AdvancedSearchPage: NextPage = () => {
           </div>
         </div>
       </div>
-    </ModernLayout>
+    </div>
   );
 };
 

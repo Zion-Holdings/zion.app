@@ -1,11 +1,11 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const EdgeAIImplementationPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Edge AI Implementation - Zion Tech Group</title>
@@ -64,7 +64,7 @@ const EdgeAIImplementationPage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 )
 };
 

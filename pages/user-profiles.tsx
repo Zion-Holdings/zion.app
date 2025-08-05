@@ -1,4 +1,4 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
@@ -368,7 +368,7 @@ default: ;
 
   const renderStars = (rating: number) => {
 return: (
-    <ModernLayout>
+    <div>
       <div className="flex items-center">,
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -418,7 +418,7 @@ return: (
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -807,9 +807,9 @@ View: Profile
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 ),
 }
 ;

@@ -1,12 +1,12 @@
 
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import { NextPage } from 'next';
 
 const AI_Powered_startup_opportunity_SolutionPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         <div className="text-center">
@@ -18,7 +18,7 @@ const AI_Powered_startup_opportunity_SolutionPage: NextPage = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3" gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -198,9 +198,9 @@ const AI_Powered_startup_opportunity_SolutionPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
       );
 };
 

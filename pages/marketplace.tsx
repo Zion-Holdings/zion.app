@@ -112,7 +112,7 @@ const Marketplace: NextPage = () => {
   ];
 
   return (
-    <ModernLayout>
+    <div>
       <Head>
         <title>Marketplace - Zion</title>
         <meta name="description" content="Explore Zion's AI-powered marketplace for services, talents, equipment, and products." />
@@ -247,9 +247,9 @@ const Marketplace: NextPage = () => {
         <div className="fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-xl md blur-3xl animate-pulse md animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-124 h-124 bg-neon-pink/5 rounded-full blur-xl md blur-3xl animate-pulse md animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
-    </ModernLayout>
+    </div>
   
-  </ModernLayout>
+  </div>
 )
 };
 

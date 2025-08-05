@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const aiMatchingEnginePage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Zion AI Matching Engine - Zion AI Products</title>
@@ -240,9 +240,9 @@ const aiMatchingEnginePage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

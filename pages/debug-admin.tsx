@@ -50,7 +50,7 @@ export default function DebugAdmin() {
   const adminCheck = checkAdminAccess();
 
   return (
-    <ModernLayout>
+    <div>
     return (
     <>
       <Head>
@@ -139,8 +139,8 @@ export default function DebugAdmin() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 );
 } 

@@ -80,7 +80,7 @@ const ChatContentIndex: NextPage = () => {
   ];
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Chat Content - Zion</title>
@@ -161,11 +161,11 @@ const ChatContentIndex: NextPage = () => {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

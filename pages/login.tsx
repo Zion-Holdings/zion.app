@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Https___ziontechgroup_netlify_app_loginPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -129,11 +129,11 @@ const Https___ziontechgroup_netlify_app_loginPage: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -227,9 +227,7 @@ const BusinessIntelligenceDashboard = () => {
   };
 
   const exportData = (format: 'pdf' | 'csv' | 'excel') => {
-    // Simulate;
-
-export functionality
+    // Simulate export functionality
     console.log(`Exporting data in ${format} format`);
   };
 
@@ -249,7 +247,7 @@ export functionality
   ];
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>AI Business Intelligence Dashboard - Zion Marketplace</title>
@@ -604,7 +602,7 @@ export functionality
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

@@ -295,7 +295,7 @@ const AIHRManagement: React.FC = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -829,7 +829,7 @@ const AIHRManagement: React.FC = () => {
       </footer>
     </div>
   
-      </ModernLayout>
+      </div>
   );
 };
 

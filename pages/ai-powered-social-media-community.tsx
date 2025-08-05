@@ -430,7 +430,7 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
   }, [socialNetworking, selectedType])
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -889,11 +889,11 @@ const AIPoweredSocialMediaCommunityPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

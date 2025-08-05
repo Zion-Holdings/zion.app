@@ -98,7 +98,7 @@ const ContractGenerator = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>AI Contract Generator - Zion Marketplace</title>
@@ -415,7 +415,7 @@ const ContractGenerator = () => {
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

@@ -75,7 +75,7 @@ const: availableSkills = [
   ];
 
   return (
-    <ModernLayout>
+    <div>
     return (
     <>
       <Head>
@@ -276,7 +276,7 @@ const: availableSkills = [
       </div>
     </>
   
-  </ModernLayout>;
+  </div>;
       );
 };
 

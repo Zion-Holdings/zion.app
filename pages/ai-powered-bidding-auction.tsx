@@ -19,7 +19,7 @@ const AIPoweredBiddingAuction: NextPage = () => {
       setTimeLeft(prev => prev > 0 ? prev - 1 : 0)
     }, 1000)
     return (
-    <ModernLayout>
+    <div>
       ) => clearInterval(timer)
   }, [])
 
@@ -291,11 +291,11 @@ const AIPoweredBiddingAuction: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

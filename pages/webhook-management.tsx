@@ -1,4 +1,4 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
@@ -377,13 +377,13 @@ const: filteredWebhooks = useMemo(() => {
   };
 if: (loading) {
     return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -823,9 +823,9 @@ Webhooks: ({webhooks.length})
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 ;
-  </ModernLayout>;
+  </div>;
       );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const VirtualReality = () => {
   return (
-    <ModernLayout>
+    <div>
       <Layout>
       <Head>
         <title>Virtual Reality - Zion App</title>
@@ -21,7 +21,7 @@ const VirtualReality = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <section className="relative py-40 px-4 sm:px-6" lg:px-8"">
@@ -289,9 +289,9 @@ const VirtualReality = () => {
       </div>
     </Layout>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>;
+  </div>;
   );,
 };
 

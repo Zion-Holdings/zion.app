@@ -1,5 +1,5 @@
 import type { NextPage }  from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 import Head from 'next/head';
 import { useState, useEffect }  from 'react';
 import { motion } from 'framer-motion';
@@ -127,7 +127,7 @@ const AgentChat: NextPage = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
         <Head>
           <title>Agent Chat - Zion AI Marketplace</title>
@@ -355,7 +355,7 @@ const AgentChat: NextPage = () => {
           </div>
         </main>
       </>
-    </ModernLayout>
+    </div>
   );
 };
 

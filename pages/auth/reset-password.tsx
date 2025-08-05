@@ -65,7 +65,7 @@ const ResetPassword: NextPage = () => {
   }
 
   return (
-    <ModernLayout>
+    <div>
     return (
     <AuthLayout>
       <Head>
@@ -146,9 +146,9 @@ const ResetPassword: NextPage = () => {
       </div>
     </AuthLayout>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -143,7 +143,7 @@ const FAQ: NextPage = () => {
   const filteredFAQs = faqs[activeCategory as keyof typeof faqs] || []
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -320,11 +320,11 @@ const FAQ: NextPage = () => {
         </div>
       </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

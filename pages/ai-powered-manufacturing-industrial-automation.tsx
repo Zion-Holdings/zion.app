@@ -430,7 +430,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
   }, [smartManufacturing, selectedType])
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -865,11 +865,11 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

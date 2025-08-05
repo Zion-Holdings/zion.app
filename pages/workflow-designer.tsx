@@ -1,4 +1,4 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
@@ -605,13 +605,13 @@ id: '1',
 
   if (loading) {
     return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -775,7 +775,7 @@ Designer: </button>
                       </button>
                     </div>
                   </div>
-                  ,
+                  
                   {/* Canvas Area */}
                   <div className="bg-gray-900/50 rounded-lg p-4 min-h-[600px] relative overflow-auto">
                     <div className="relative" style={{ width: '1400px', height: '400px' }}>
@@ -1074,9 +1074,9 @@ Designer: </button>
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>;
+  </div>;
       );
 };
 

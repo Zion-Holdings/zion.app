@@ -8,7 +8,7 @@ import AuthLayout from '../../components/layout/AuthLayout';
 
 const Login: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
     return (
     <AuthLayout>
       <Head>
@@ -81,9 +81,9 @@ const Login: NextPage = () => {
       </div>
     </AuthLayout>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const EdgeAiTheFutureOfDistributedComputingPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Edge AI: The Future of Distributed Computing - Zion Tech Blog</title>
@@ -57,9 +57,9 @@ const EdgeAiTheFutureOfDistributedComputingPage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

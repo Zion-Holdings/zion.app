@@ -158,7 +158,7 @@ const Home: NextPage = () => {
   ]
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Zion - The First Free AI-Powered Marketplace</title>
@@ -311,11 +311,11 @@ const Home: NextPage = () => {
       </main>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -266,7 +266,7 @@ const ResumeBuilder = () => {
   ];
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>AI Resume Builder - Zion Marketplace</title>
@@ -1032,7 +1032,7 @@ const ResumeBuilder = () => {
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

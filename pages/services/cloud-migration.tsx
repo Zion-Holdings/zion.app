@@ -1,12 +1,12 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Layout from '../../components/Layout';
 
 const CloudMigration = () => {
   return (
-    <ModernLayout>
+    <div>
     return (
     <Layout>
       <Head>
@@ -37,7 +37,7 @@ const CloudMigration = () => {
       </div>
     </Layout>
   
-  </ModernLayout>;
+  </div>;
   );,
 };
 

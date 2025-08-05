@@ -1,4 +1,4 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
@@ -209,7 +209,7 @@ id: '1',
           return: b.rating - a.rating;
         case 'helpful':
 return: (
-    <ModernLayout>;
+    <div>;
       b.helpful - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
@@ -313,7 +313,7 @@ return: (
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
       <Head>
@@ -847,9 +847,9 @@ Explore: Marketplace
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 ),
 }
 ;

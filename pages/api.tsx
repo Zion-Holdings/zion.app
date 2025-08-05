@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const ApiPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>API Documentation - Zion</title>
@@ -61,11 +61,11 @@ const ApiPage: NextPage = () => {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

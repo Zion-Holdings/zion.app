@@ -1,11 +1,11 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const DataPipelineEngineeringPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Data Pipeline Engineering - Zion Tech Group</title>
@@ -78,7 +78,7 @@ Join: Zion
             </div>
           </div>
         </div>
-        ,
+        
         {/* Content Section */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8"  py-36">
           <div className="prose prose-invert prose-lg max-w-none">
@@ -144,7 +144,7 @@ Join: Zion
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 ),
 }
 ;

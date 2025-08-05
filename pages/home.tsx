@@ -1,5 +1,5 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import { motion } from 'framer-motion';
@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Zion Marketplace - Home</title>
@@ -64,10 +64,10 @@ export default function Home() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 );
 }

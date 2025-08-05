@@ -266,7 +266,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
     }, 5000)
 
     return (
-    <ModernLayout>
+    <div>
       ) => clearInterval(trackingInterval)
   }, [realTimeTracking])
 
@@ -902,11 +902,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

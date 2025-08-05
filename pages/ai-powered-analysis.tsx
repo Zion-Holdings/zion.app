@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 import { motion } from 'framer-motion';
 
 const AiPoweredAnalysis = () => {
   return (
-    <ModernLayout>
+    <div>
       <Head>
         <title>Ai Powered Analysis - Zion App</title>
         <meta name="description" content="Comprehensive AI-driven analysis tools that provide deep insights into your data and operations." />
@@ -284,7 +284,7 @@ const AiPoweredAnalysis = () => {
           </div>
         </section>
       </div>
-    </ModernLayout>
+    </div>
         );
 };
 

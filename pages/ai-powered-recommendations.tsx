@@ -250,7 +250,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
           return b.confidence - a.confidence
         case 'rating':
           return (
-    <ModernLayout>
+    <div>
       b.rating || 0) - (a.rating || 0)
         case 'price':
           return (a.price || 0) - (b.price || 0)
@@ -594,11 +594,11 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

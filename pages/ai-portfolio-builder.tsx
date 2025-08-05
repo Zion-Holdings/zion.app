@@ -61,7 +61,7 @@ const PortfolioBuilder = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>AI Portfolio Builder | Zion</title>
@@ -105,7 +105,7 @@ const PortfolioBuilder = () => {
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

@@ -135,7 +135,7 @@ const Blog: NextPage = () => {
   ];
 
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Blog - Zion</title>
@@ -221,11 +221,11 @@ const Blog: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

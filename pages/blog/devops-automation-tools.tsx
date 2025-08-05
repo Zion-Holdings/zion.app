@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const DevopsAutomationToolsPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>DevOps Automation Tools - Zion Tech Blog</title>
@@ -57,9 +57,9 @@ const DevopsAutomationToolsPage: NextPage = () => {
       </main>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

@@ -342,7 +342,7 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
       }, 1000)
 
       return (
-    <ModernLayout>
+    <div>
       ) => clearInterval(interval)
     } catch (error) {
       console.error('Error starting recording:', error)
@@ -971,11 +971,11 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

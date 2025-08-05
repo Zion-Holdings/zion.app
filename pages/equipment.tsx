@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const Equipment: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -51,11 +51,11 @@ const Equipment: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

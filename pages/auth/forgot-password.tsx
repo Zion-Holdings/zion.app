@@ -7,7 +7,7 @@ import AuthLayout from '../../components/layout/AuthLayout';
 
 const ForgotPassword: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
     return (
     <AuthLayout>
       <Head>
@@ -58,9 +58,9 @@ const ForgotPassword: NextPage = () => {
       </div>
     </AuthLayout>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

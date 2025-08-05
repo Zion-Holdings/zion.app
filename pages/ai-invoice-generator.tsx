@@ -142,7 +142,7 @@ const InvoiceGenerator = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>AI Invoice Generator - Zion Marketplace</title>
@@ -530,7 +530,7 @@ const InvoiceGenerator = () => {
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

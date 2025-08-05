@@ -1,12 +1,12 @@
 import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const Https___ziontechgroup_netlify_app_adminPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -127,7 +127,7 @@ const Https___ziontechgroup_netlify_app_adminPage: NextPage = () => {
           </div>
         </footer>
       </div>
-    </ModernLayout>
+    </div>
   );
 };
 

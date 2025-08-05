@@ -356,7 +356,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
   }
 
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -665,11 +665,11 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

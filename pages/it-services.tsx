@@ -215,7 +215,7 @@ const ITServicesPage: React.FC = () => {
   };
 
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>IT Service Providers - Find the Best IT Solutions</title>
@@ -419,7 +419,7 @@ const ITServicesPage: React.FC = () => {
       </div>
     </>
   
-      </ModernLayout>
+      </div>
   );
 };
 

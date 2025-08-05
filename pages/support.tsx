@@ -1,11 +1,11 @@
-import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import Link from 'next/link';
 
 const SupportPage: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Support Center - Zion</title>
@@ -60,9 +60,9 @@ Contact: Support →
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 ),
 }
 ;

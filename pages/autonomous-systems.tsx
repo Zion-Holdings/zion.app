@@ -1,5 +1,5 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const AutonomousSystems = () => {
   return (
-    <ModernLayout>
+    <div>
       <Layout>
       <Head>
         <title>Autonomous Systems - Zion App</title>
@@ -289,7 +289,7 @@ const AutonomousSystems = () => {
       </div>
     </Layout>
   
-      </ModernLayout>
+      </div>
   );
 };
 

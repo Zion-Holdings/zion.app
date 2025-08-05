@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 import { useRouter } from 'next/router';
 import { useAuth } from '../src/contexts/AuthContext';
 import Head from 'next/head';
@@ -161,14 +161,14 @@ export default function AdminDashboard() {
   // Show loading state while checking authentication
   if (loading || isCheckingAuth) {
     return (
-      <ModernLayout>
+      <div>
         <div className="min-h-screen bg-gray-100 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading admin dashboard...</p>
           </div>
         </div>
-      </ModernLayout>
+      </div>
     );
   }
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
 export default function ServiceDetails() {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Service-details</title>
@@ -19,7 +19,7 @@ export default function ServiceDetails() {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="container mx-auto px-4 py-8 container-responsive">
@@ -41,8 +41,8 @@ export default function ServiceDetails() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>;
+  </div>;
 );
 }

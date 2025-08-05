@@ -1,7 +1,7 @@
 
 import { Home, Search, User }  from 'lucide-react';
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 import { 
   Zap, 
   Globe, 
@@ -86,7 +86,7 @@ const ModernDemo: React.FC = () => {
   ]
 
   return (
-    <ModernLayout>
+    <div>
       {/* Hero Section */}
       <section className="relative py-40 lg py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
@@ -254,7 +254,7 @@ const ModernDemo: React.FC = () => {
         </div>
       </div>
       </section>
-    </ModernLayout>
+    </div>
   )
 };
 

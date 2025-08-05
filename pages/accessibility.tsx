@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe, Home, Search, U
 
 const Accessibility: NextPage = () => {
   return (
-    <ModernLayout>
+    <div>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -169,7 +169,7 @@ const Accessibility: NextPage = () => {
           </div>
         </div>
       </div>
-    </ModernLayout>
+    </div>
   );
 };
 

@@ -28,7 +28,7 @@ const Verify: NextPage = () => {
   }, [router.query])
 
   return (
-    <ModernLayout>
+    <div>
     return (
     <AuthLayout>
       <Head>
@@ -92,9 +92,9 @@ const Verify: NextPage = () => {
       </div>
     </AuthLayout>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 )
 };
 

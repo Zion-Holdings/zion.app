@@ -1,12 +1,12 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
 export default function EquipmentDetails() {
   return (
-    <ModernLayout>
+    <div>
       <>
       <Head>
         <title>Equipment-details</title>
@@ -41,10 +41,10 @@ export default function EquipmentDetails() {
       </div>
     </>
   
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 
-  </ModernLayout>
+  </div>
 );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout';
 
 import Head from 'next/head';
 import Layout from '../components/Layout';
@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const AiPoweredReporting = () => {
   return (
-    <ModernLayout>
+    <div>
       <Layout>
       <Head>
         <title>Ai Powered Reporting - Zion App</title>
@@ -289,7 +289,7 @@ const AiPoweredReporting = () => {
       </div>
     </Layout>
   
-      </ModernLayout>
+      </div>
   );
 };
 
