@@ -37,7 +37,7 @@ const CloudArchitectureChatPage: NextPage = () => {
                 Expert discussion about cloud architecture services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>expert-consultation • trend-analysis • business-strategy</span>
+                <span>solution-oriented • how-to-guide • real-world-examples</span>
               </div>
             </div>
           </div>
