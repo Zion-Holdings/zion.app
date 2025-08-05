@@ -36,7 +36,7 @@ const CloudNativeArchitectureBestPracticesChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • solution-oriented • comparison-review</span>
+              <span>Expert Discussion • customer-focused • technology-deep-dive</span>
             </div>
           </div>
           
