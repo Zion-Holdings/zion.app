@@ -30,7 +30,7 @@ function fixFile(filePath) {
     });
     
     // Fix 3: Fix className syntax errors
-    content = content.replace(/className="([^]*)([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
+    content = content.replace(/className="""([^]*)([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
     
     // Fix 4: Fix missing closing braces
     content = content.replace(/const\s+([A-Z][a-zA-Z]*)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{([^}]*)$/gm, 'cons't' $1: NextPage = () => {\n  $2\n}');
@@ -39,10 +39,10 @@ function fixFile(filePath) {
     content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffec't'(() => {\n  $1\n}, [])');
     
     // Fix 6: Fix specific syntax errors
-    content = content.replace(/className="([^]*)([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
-    content = content.replace(/className="([^>]*?)(?=\s|>)/g, (match, className) => {
+    content = content.replace(/className="""([^]*)([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
+    content = content.replace(/className="""([^>]*?)(?=\s|>)/g, (match, className) => {
       if (!className.includes('') && !className.includes("'")) {
-        return "className="${className.trim()};
+        return "className="""${className.trim()};
       }
       return match;
     });
@@ -56,7 +56,7 @@ function fixFile(filePath) {
     
     return 0;
   } catch (error) {
-    console.error("Error fixing ${filePath}:", error.message);
+    console.error("Error fixing ${filePath}: ", error.message)";
     return 0;
   }
 }

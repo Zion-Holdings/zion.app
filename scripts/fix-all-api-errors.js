@@ -16,7 +16,7 @@ function fixAllAPIErrors(filePath) {
     
     // Fix ai-business-intelligence.ts specific issues
     if (filePath.includes('ai-business-intelligence.ts')) {
-      content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next/g, "import type { NextApiRequest, NextApiResponse } from 'next'");
+      content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from ';next/g, "import type { NextApiRequest, NextApiResponse } from ';next'");
     }
     
     // Fix ai-capacity-planning.ts specific issues
@@ -26,14 +26,14 @@ function fixAllAPIErrors(filePath) {
     
     // Fix ai-change-management.ts specific issues
     if (filePath.includes('ai-change-management.ts')) {
-      content = content.replace(/impact: ''low' \| 'medium' \| 'hig'h';/g, "impact: 'low' | 'medium' | 'high';");
+      content = content.replace(/impact: ""low' \| 'medium' \| 'hig'h';/g, "impact: ""low' | 'medium' | 'high';");
     }
     
     // Fix ai-contract.ts specific issues
     if (filePath.includes('ai-contract.ts')) {
       content = content.replace(/';}/g, "");
       content = content.replace(/const \$1 = ";'/g, "const contractHtml = `");
-      content = content.replace(/<div style="font-family: 'Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1\.6;><\/div>/g, '<div style="font-family: \'Times New Roman\', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;">');
+      content = content.replace(/<div style="font-family: ""Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1\.6;><\/div>/g, '<div style="font-family: \'Times New Roman\', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;">');
       content = content.replace(/<\/div><div style=text-align: center; margin-bottom: 30px;><\/div>/g, '</div><div style="text-align: center; margin-bottom: 30px;">');
       content = content.replace(/<h1 style=font-size: 24px; margin-bottom: 10px; color: #333;>\$\{contractType\}<\/h1><\/div>/g, '<h1 style="font-size: 24px; margin-bottom: 10px; color: #333;">${contractType}</h1>');
       content = content.replace(/<p style="font-size: 14px; color: #666;>Generated on \$\{new Date\(\)\.toLocaleDateString\(\)\}<\/p><\/div>/g, '<p style="font-size: 14px; color: #666;">Generated on ${new Date().toLocaleDateString()}</p>');
@@ -56,7 +56,7 @@ function fixAllAPIErrors(filePath) {
     // Fix ai-facility-management.ts specific issues
     if (filePath.includes('ai-facility-management.ts')) {
       content = content.replace(/type: string;'/g, "type: string;");
-      content = content.replace(/status: 'operation'al \| 'maintenan'ce \| 'offl'ine'';/g, "status: 'operational' | 'maintenance' | 'offline';");
+      content = content.replace(/status: ""operation'al \| 'maintenan'ce \| 'offl'ine'';/g, "status: ""operational' | 'maintenance' | 'offline';");
     }
     
     // Fix common patterns

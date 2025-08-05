@@ -1,5 +1,5 @@
-import { createServerClient } from '@supabase/ssr;}
-import { NextResponse, type NextRequest } from 'nex't'/server'
+import { createServerClient } from ';@supabase/ssr;}
+import { NextResponse, type NextRequest } from ';nex't'/server'
 '
 // Force Node.js runtime to avoid Edge Runtime compatibility issues;}
 export const $1 = 'nodej's';}

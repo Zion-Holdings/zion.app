@@ -84,11 +84,11 @@ fs.writeFileSync('publi'c'/robots.txt', robotsTxt);
 // Generate navigation structure JSON for internal use;
 const $1 = {
   main: {
-    home: '/',
-    services: '/services',
-    marketplace: '/marketplace',
-    resources: '/blog',
-    company: '/about'
+    home: ""/',
+    services: ""/services',
+    marketplace: ""/marketplace',
+    resources: ""/blog',
+    company: ""/about'
   },
   services: {
     ai: [
@@ -117,38 +117,38 @@ const $1 = {
     ]
   },
   marketplace: {
-    browse: '/marketplace',
-    talent: '/talent-directory',
-    join: '/join-talent',
-    categories: '/service-categories',
-    post: '/post-request',
-    quotes: '/quote-requests'
+    browse: ""/marketplace',
+    talent: ""/talent-directory',
+    join: ""/join-talent',
+    categories: ""/service-categories',
+    post: ""/post-request',
+    quotes: ""/quote-requests'
   },
   resources: {
-    blog: '/blog',
-    docs: '/docs',
-    api: '/api-docs',
-    help: '/help-desk-support',
-    faq: '/faq'
+    blog: ""/blog',
+    docs: ""/docs',
+    api: ""/api-docs',
+    help: ""/help-desk-support',
+    faq: ""/faq'
   },
   company: {
-    about: '/about',
-    careers: '/careers',
-    press: '/press',
-    partners: '/partners',
-    contact: '/contact',
-    privacy: '/privacy-policy',
-    terms: '/terms-of-service',
-    security: '/security',
-    compliance: '/compliance-governance',
-    status: '/status'
+    about: ""/about',
+    careers: ""/careers',
+    press: ""/press',
+    partners: ""/partners',
+    contact: ""/contact',
+    privacy: ""/privacy-policy',
+    terms: ""/terms-of-service',
+    security: ""/security',
+    compliance: ""/compliance-governance',
+    status: ""/status'
   }
 };
 
 fs.writeFileSync('publi'c'/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
 
 console.log("Generated sitemap with ${allUrls.length} URLs");
-console.log('File's' created:');
+console.log('File's' created: "")";
 console.log('-' public/sitemap.xml');
 console.log('-' public/robots.txt');
 console.log('-' public/navigation-structure.json'); </div>

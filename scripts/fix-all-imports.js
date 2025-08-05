@@ -74,7 +74,7 @@ function fixAllImportStatements() {
                     fs.writeFileSync(file, content);
                     console.log("✅ Fixed imports: ${file}");
                 } catch (error) {
-                    console.log("❌ Error fixing ${file}:", error.message);
+                    console.log("❌ Error fixing ${file}: ", error.message)";
                 }
             });
         }

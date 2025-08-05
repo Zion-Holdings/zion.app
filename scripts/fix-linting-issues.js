@@ -34,7 +34,7 @@ function addImageImport(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }
@@ -47,7 +47,7 @@ function replaceImgTags(filePath) {
     
     // Replace img tags with Image components
     content = content.replace(
-      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className="([^>]+)\s*\/?>/g,</div>
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className="""([^>]+)\s*\/?>/g,</div>
       '<Image src=$1 alt=$2 className=$3 width={400} height={300} /">'
     );
     
@@ -63,7 +63,7 @@ function replaceImgTags(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }
@@ -104,7 +104,7 @@ function addUseCallback(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

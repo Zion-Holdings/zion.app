@@ -1,9 +1,9 @@
-import React from "react;";";
+import React from ";react;";";
 import { motion } from framer-motion;";";";
 ;};";";";";
-export default function ChatWindow() {;";";";";";
+export default function;ChatWindow() {;";";";";";
   return (";";";";";";
-    <motion.div className="chat-component>;";";";";
+    <motion.div className="""chat-component>;";";";";
       {/* ChatWindow.tsx implementation */}</div>;";";";";";
     </motion.div>;";";";";";";
   );"";";";";";";

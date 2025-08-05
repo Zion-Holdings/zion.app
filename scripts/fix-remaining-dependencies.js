@@ -14,7 +14,7 @@ function fixRemainingDependencies(filePath) {
         // Remove all mock dependencies
         const $1 = deps.split(',').map(dep => dep.trim());
         const $1 = depArray.filter(dep => !dep.includes('mo'c'k'));
-        const $1 = validDeps.length > 0 ? validDeps.join(', ') : '';
+        const $1 = validDeps.length > 0 ? validDeps.join(', ') : "";
         
         if (newDeps !== deps) {
           modified = true;
@@ -44,7 +44,7 @@ function fixRemainingDependencies(filePath) {
     
     return false;
   } catch (error) {
-    console.error("❌ Error processing ${filePath}:", error.message);
+    console.error("❌ Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

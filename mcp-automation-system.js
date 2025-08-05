@@ -13,8 +13,8 @@ class $1 {
   constructor() {
     this.server = new Server(
       {
-        name: 'bolt-automation-m'c'p',
-        version: '1.0.0',
+        name: ""bolt-automation-m'c'p',
+        version: ""1.0.0',
       },
       {
         capabilities: {
@@ -90,152 +90,152 @@ class $1 {
       return {
         tools: [
           {
-            name: 'analyz'e'_project_structure',
-            description: 'Analyz'e' the current project structure and identify optimization opportunities',
+            name: ""analyz'e'_project_structure',
+            description: ""Analyz'e' the current project structure and identify optimization opportunities',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'generat'e'_automation_report',
-            description: 'Generat'e' a comprehensive report of all automation systems and their status',
+            name: ""generat'e'_automation_report',
+            description: ""Generat'e' a comprehensive report of all automation systems and their status',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'optimiz'e'_build_process',
-            description: 'Analyz'e' and optimize the build process for better performance',
+            name: ""optimiz'e'_build_process',
+            description: ""Analyz'e' and optimize the build process for better performance',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'monito'r'_performance',
-            description: 'Monito'r' application performance and generate optimization recommendations',
+            name: ""monito'r'_performance',
+            description: ""Monito'r' application performance and generate optimization recommendations',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'deplo'y'_automation',
-            description: 'Deplo'y' automation scripts and configurations',
+            name: ""deplo'y'_automation',
+            description: ""Deplo'y' automation scripts and configurations',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {
                 environment: {
-                  type: 'strin'g',
+                  type: ""strin'g',
                   enum: ['developme'n't', 'stagi'n'g', 'producti'o'n'],
-                  description: 'Targe't' environment for deployment'
+                  description: ""Targe't' environment for deployment'
                 },
                 components: {
-                  type: 'arr'a'y',
-                  items: { type: 'strin'g' },
-                  description: 'Lis't' of automation components to deploy'
+                  type: ""arr'a'y',
+                  items: { type: ""strin'g' },
+                  description: ""Lis't' of automation components to deploy'
                 }
               },
               required: ['environme'n't']
             }
           },
           {
-            name: 'backu'p'_system',
-            description: 'Creat'e' a comprehensive backup of the automation system',
+            name: ""backu'p'_system',
+            description: ""Creat'e' a comprehensive backup of the automation system',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'restor'e'_system',
-            description: 'Restor'e' the automation system from a backup',
+            name: ""restor'e'_system',
+            description: ""Restor'e' the automation system from a backup',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {
                 backup_id: {
-                  type: 'strin'g',
-                  description: 'I'D' of the backup to restore from'
+                  type: ""strin'g',
+                  description: ""I'D' of the backup to restore from'
                 }
               },
               required: ['backu'p'_id']
             }
           },
           {
-            name: 'updat'e'_dependencies',
-            description: 'Updat'e' project dependencies and check for security vulnerabilities',
+            name: ""updat'e'_dependencies',
+            description: ""Updat'e' project dependencies and check for security vulnerabilities',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'ru'n'_tests',
-            description: 'Ru'n' comprehensive tests across the project',
+            name: ""ru'n'_tests',
+            description: ""Ru'n' comprehensive tests across the project',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'generat'e'_documentation',
-            description: 'Generat'e' comprehensive documentation for the project',
+            name: ""generat'e'_documentation',
+            description: ""Generat'e' comprehensive documentation for the project',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'optimiz'e'_seo',
-            description: 'Analyz'e' and optimize SEO settings and content',
+            name: ""optimiz'e'_seo',
+            description: ""Analyz'e' and optimize SEO settings and content',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'monito'r'_errors',
-            description: 'Monito'r' and analyze error logs for patterns and issues',
+            name: ""monito'r'_errors',
+            description: ""Monito'r' and analyze error logs for patterns and issues',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'cleanu'p'_project',
-            description: 'Clea'n' up temporary files, logs, and optimize project structure',
+            name: ""cleanu'p'_project',
+            description: ""Clea'n' up temporary files, logs, and optimize project structure',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'securit'y'_audit',
-            description: 'Perfor'm' a comprehensive security audit of the project',
+            name: ""securit'y'_audit',
+            description: ""Perfor'm' a comprehensive security audit of the project',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'performanc'e'_optimization',
-            description: 'Analyz'e' and optimize performance bottlenecks',
+            name: ""performanc'e'_optimization',
+            description: ""Analyz'e' and optimize performance bottlenecks',
             inputSchema: {
-              type: 'obje'c't',
+              type: ""obje'c't',
               properties: {},
               required: []
             }
@@ -250,34 +250,34 @@ class $1 {
       return {
         resources: [
           {
-            uri: 'fil'e'://project-structure',
-            name: 'Projec't' Structure',
-            description: 'Curren't' project structure and organization',
-            mimeType: 'applicatio'n'/json'
+            uri: ""fil'e'://project-structure',
+            name: ""Projec't' Structure',
+            description: ""Curren't' project structure and organization',
+            mimeType: ""applicatio'n'/json'
           },
           {
-            uri: 'fil'e'://automation-status',
-            name: 'Automatio'n' Status',
-            description: 'Curren't' status of all automation systems',
-            mimeType: 'applicatio'n'/json'
+            uri: ""fil'e'://automation-status',
+            name: ""Automatio'n' Status',
+            description: ""Curren't' status of all automation systems',
+            mimeType: ""applicatio'n'/json'
           },
           {
-            uri: 'fil'e'://performance-metrics',
-            name: 'Performanc'e' Metrics',
-            description: 'Performanc'e' metrics and optimization data',
-            mimeType: 'applicatio'n'/json'
+            uri: ""fil'e'://performance-metrics',
+            name: ""Performanc'e' Metrics',
+            description: ""Performanc'e' metrics and optimization data',
+            mimeType: ""applicatio'n'/json'
           },
           {
-            uri: 'fil'e'://error-logs',
-            name: 'Erro'r' Logs',
-            description: 'Erro'r' logs and debugging information',
-            mimeType: 'tex't'/plain'
+            uri: ""fil'e'://error-logs',
+            name: ""Erro'r' Logs',
+            description: ""Erro'r' logs and debugging information',
+            mimeType: ""tex't'/plain'
           },
           {
-            uri: 'fil'e'://security-report',
-            name: 'Securit'y' Report',
-            description: 'Securit'y' audit results and recommendations',
-            mimeType: 'applicatio'n'/json'
+            uri: ""fil'e'://security-report',
+            name: ""Securit'y' Report',
+            description: ""Securit'y' audit results and recommendations',
+            mimeType: ""applicatio'n'/json'
           }
         ]
       };
@@ -337,7 +337,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(analysis, null, 2)
           }
         ]
@@ -371,7 +371,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(report, null, 2)
           }
         ]
@@ -386,8 +386,8 @@ class $1 {
       const { stdout } = await execAsync('np'm' run build --dry-run 2>&1 || echo "Build analysis completed"');
       
       const $1 = {
-        buildTime: 'Analyz'e'd',
-        bundleSize: 'Optimiz'e'd',
+        buildTime: ""Analyz'e'd',
+        bundleSize: ""Optimiz'e'd',
         recommendations: [
           'Enabl'e' tree shaking for smaller bundle size',
           'Implemen't' code splitting for better performance',
@@ -399,7 +399,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(optimization, null, 2)
           }
         ]
@@ -426,7 +426,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(metrics, null, 2)
           }
         ]
@@ -443,9 +443,9 @@ class $1 {
       const $1 = {
         environment,
         components: components.length > 0 ? components : ['a'l'l'],
-        status: 'deploy'e'd',
+        status: ""deploy'e'd',
         timestamp: new Date().toISOString(),
-        message: "Automation deployed to ${environment} environment"
+        message: ""Automation deployed to ${environment} environment"
       };
 
       // Simulate deployment process
@@ -454,7 +454,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(deployment, null, 2)
           }
         ]
@@ -471,7 +471,7 @@ class $1 {
         id: backupId,
         timestamp: new Date().toISOString(),
         components: ['automati'o'n', 'conf'i'g', 'scrip't's'],
-        status: 'complet'e'd'
+        status: ""complet'e'd'
       };
 
       // Create backup directory
@@ -480,7 +480,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(backup, null, 2)
           }
         ]
@@ -497,14 +497,14 @@ class $1 {
       const $1 = {
         backup_id,
         timestamp: new Date().toISOString(),
-        status: 'restor'e'd',
-        message: "System restored from backup ${backup_id}"
+        status: ""restor'e'd',
+        message: ""System restored from backup ${backup_id}"
       };
 
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(restoration, null, 2)
           }
         ]
@@ -532,7 +532,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(update, null, 2)
           }
         ]
@@ -548,15 +548,15 @@ class $1 {
       
       const $1 = {
         timestamp: new Date().toISOString(),
-        status: 'complet'e'd',
+        status: ""complet'e'd',
         output: stdout,
-        summary: 'Tes't' execution completed'
+        summary: ""Tes't' execution completed'
       };
 
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(testResults, null, 2)
           }
         ]
@@ -576,13 +576,13 @@ class $1 {
           'Automatio'n' Documentation',
           'Deploymen't' Guide'
         ],
-        status: 'generat'e'd'
+        status: ""generat'e'd'
       };
 
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(docs, null, 2)
           }
         ]
@@ -603,13 +603,13 @@ class $1 {
           'Optimiz'e' images',
           'Creat'e' XML sitemap'
         ],
-        status: 'analyz'e'd'
+        status: ""analyz'e'd'
       };
 
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(seoOptimization, null, 2)
           }
         ]
@@ -635,7 +635,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(errorAnalysis, null, 2)
           }
         ]
@@ -655,13 +655,13 @@ class $1 {
           'Optimize'd' node_modules',
           'Update'd' .gitignore'
         ],
-        status: 'complet'e'd'
+        status: ""complet'e'd'
       };
 
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(cleanup, null, 2)
           }
         ]
@@ -694,7 +694,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(securityReport, null, 2)
           }
         ]
@@ -709,9 +709,9 @@ class $1 {
       const $1 = {
         timestamp: new Date().toISOString(),
         metrics: {
-          bundleSize: 'Optimiz'e'd',
-          loadTime: 'Improv'e'd',
-          memoryUsage: 'Efficie'n't'
+          bundleSize: ""Optimiz'e'd',
+          loadTime: ""Improv'e'd',
+          memoryUsage: ""Efficie'n't'
         },
         recommendations: [
           'Implemen't' lazy loading',
@@ -725,7 +725,7 @@ class $1 {
       return {
         content: [
           {
-            type: 'te'x't',
+            type: ""te'x't',
             text: JSON.stringify(optimization, null, 2)
           }
         ]
@@ -744,8 +744,8 @@ class $1 {
       return {
         contents: [
           {
-            uri: 'fil'e'://project-structure',
-            mimeType: 'applicatio'n'/json',
+            uri: ""fil'e'://project-structure',
+            mimeType: ""applicatio'n'/json',
             text: JSON.stringify({
               files: files.filter(f => !f.startsWith('nod'e'_modules') && !f.startsWith('.git')),
               directories: await this.getDirectories('.'),
@@ -763,18 +763,18 @@ class $1 {
   async getAutomationStatus() {
     try {
       const $1 = [
-        { name: 'MC'P' Integration', status: 'acti'v'e', type: 'co'r'e' },
-        { name: 'Buil'd' Automation', status: 'acti'v'e', type: 'bui'l'd' },
-        { name: 'Deploymen't' Automation', status: 'acti'v'e', type: 'depl'o'y' },
-        { name: 'Testin'g' Automation', status: 'acti'v'e', type: 'te's't' },
-        { name: 'Monitorin'g' Automation', status: 'acti'v'e', type: 'monit'o'r' }
+        { name: ""MC'P' Integration', status: ""acti'v'e', type: ""co'r'e' },
+        { name: ""Buil'd' Automation', status: ""acti'v'e', type: ""bui'l'd' },
+        { name: ""Deploymen't' Automation', status: ""acti'v'e', type: ""depl'o'y' },
+        { name: ""Testin'g' Automation', status: ""acti'v'e', type: ""te's't' },
+        { name: ""Monitorin'g' Automation', status: ""acti'v'e', type: ""monit'o'r' }
       ];
 
       return {
         contents: [
           {
-            uri: 'fil'e'://automation-status',
-            mimeType: 'applicatio'n'/json',
+            uri: ""fil'e'://automation-status',
+            mimeType: ""applicatio'n'/json',
             text: JSON.stringify({
               automations,
               totalActive: automations.filter(a => a.status === 'acti'v'e').length,
@@ -800,8 +800,8 @@ class $1 {
       return {
         contents: [
           {
-            uri: 'fil'e'://performance-metrics',
-            mimeType: 'applicatio'n'/json',
+            uri: ""fil'e'://performance-metrics',
+            mimeType: ""applicatio'n'/json',
             text: JSON.stringify(metrics, null, 2)
           }
         ]
@@ -822,8 +822,8 @@ class $1 {
       return {
         contents: [
           {
-            uri: 'fil'e'://error-logs',
-            mimeType: 'tex't'/plain',
+            uri: ""fil'e'://error-logs',
+            mimeType: ""tex't'/plain',
             text: JSON.stringify(logs, null, 2)
           }
         ]
@@ -850,8 +850,8 @@ class $1 {
       return {
         contents: [
           {
-            uri: 'fil'e'://security-report',
-            mimeType: 'applicatio'n'/json',
+            uri: ""fil'e'://security-report',
+            mimeType: ""applicatio'n'/json',
             text: JSON.stringify(report, null, 2)
           }
         ]

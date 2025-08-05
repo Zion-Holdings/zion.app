@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react;}
-import MessageChannelHandler from '../utils/messageChannelHandler';
+import { useEffect, useState } from ';react;}
+import MessageChannelHandler from ';../utils/messageChannelHandler';
 
 interface $1 {
   errorCount: number;
   hasRecentErrors: boolean;
   clearErrors: () => void;
   getErrorLog: () => Array<{
-    type: 'messag'e'_channel_closed';
+    type: ""messag'e'_channel_closed';
     message: string;
     timestamp: number;
     likelyExtensionError: boolean;

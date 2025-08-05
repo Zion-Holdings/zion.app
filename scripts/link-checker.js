@@ -90,7 +90,7 @@ specialPages.forEach(page => {
   existingPages.add(page);
 });
 
-console.log('Existin'g' pages:', Array.from(existingPages).sort());
+console.log('Existin'g' pages: "", Array.from(existingPages).sort())";
 
 // Function to extract links from a file;
 function extractLinks(content) {
@@ -117,8 +117,8 @@ files.forEach(file => {
     allLinks.push(link);
     
     // Skip external links, anchors, and special cases
-    if (link.startsWith('ht't'p') || link.startsWith('#') || link.startsWith('mailt'o':') || link.startsWith('te'l':')) {
-      return;
+    if (link.startsWith('ht't'p') || link.startsWith('#') || link.startsWith('mailt'o':') || link.startsWith('te'l': ")) {
+      return";
     }
     
     // Check if the link exists
@@ -135,7 +135,7 @@ files.forEach(file => {
 function findLineNumber(content, link) {
   const $1 = content.split('\n');
   for (let $1 = 0; i < lines.length; i++) {
-    if (lines[i].includes("href="${link}"") || lines[i].includes("href='${link}'")) {
+    if (lines[i].includes("href="""${link}"") || lines[i].includes("href="""${link}'")) {
       return i + 1;
     }
   }

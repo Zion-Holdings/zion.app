@@ -21,22 +21,22 @@ function fixSpecificFiles() {
                     .replace(/';$/gm, '";')
                     
                     // Fix broken import statements
-                    .replace(/import React from "react";;'/g, 'impor't' React from "react";')
-                    .replace(/import Link from 'nex't'\/link';;;/g, 'impor't' Link from "next/link";')
-                    .replace(/import \{ useRouter \} from 'nex't'\/router';;;/g, 'impor't' { useRouter } from "next/router";')
+                    .replace(/import React from ";react";;'/g, 'impor't' React from "react";')
+                    .replace(/import Link from ';nex't'\/link';;;/g, 'impor't' Link from "next/link";')
+                    .replace(/import \{ useRouter \} from ';nex't'\/router';;;/g, 'impor't' { useRouter } from "next/router";')
                     
                     // Fix broken className attributes
-                    .replace(/className="\s*([^]*)\s*>/g, 'classNam'e'="$1">')
-                    .replace(/className="\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
-                    .replace(/className="\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
+                    .replace(/className="""\s*([^]*)\s*>/g, 'classNam'e'="$1">')
+                    .replace(/className="""\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                    .replace(/className="""\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                     
                     // Fix broken JSX structure
-                    .replace(/<div className="\s*([^]*)\s*>/g, '<div className="$1">')</div>
-                    .replace(/<div className="\s*([^]*)\s*py-8"/g, '<div className="$1 py-8>')</div>
-                    .replace(/<div className=\s*([^"]*)"\s*mb-4>/g, '<div className="$1 mb-4>')
+                    .replace(/<div className="""\s*([^]*)\s*>/g, '<div className="""$1">')</div>
+                    .replace(/<div className="""\s*([^]*)\s*py-8"/g, '<div className="""$1 py-8>')</div>
+                    .replace(/<div className=\s*([^"]*)"\s*mb-4>/g, '<div className="""$1 mb-4>')
                     
                     // Fix broken function parameters
-                    .replace(/className = '','/g, 'classNam'e' = ""')
+                    .replace(/className=""",'/g, 'classNam'e' = ""')
                     .replace(/variant = 'lig'h't'/g, 'varian't' = "light"')
                     
                     // Fix broken useState declarations</div>
@@ -54,11 +54,11 @@ function fixSpecificFiles() {
                     .replace(/return 'bg-red'-'100 text-red-800 border-red-200';'/g, 'retur'n' "bg-red-100 text-red-800 border-red-200";')
                     
                     // Fix broken JSX elements</div>
-                    .replace(/<div className="\s*flex items-center>"/g, '<div className="flex items-center>')</div>
-                    .replace(/<div className=\s*([^"]*)"\s*>/g, '<div className="$1>')
+                    .replace(/<div className="""\s*flex items-center>"/g, '<div className="""flex items-center>')</div>
+                    .replace(/<div className=\s*([^"]*)"\s*>/g, '<div className="""$1>')
                     
                     // Fix broken imports in Sidebar
-                    .replace(/import \{ useRouter \} from 'nex't'\/router/g, 'impor't' { useRouter } from next/router"')
+                    .replace(/import \{ useRouter \} from ';nex't'\/router/g, 'impor't' { useRouter } from next/router"')
                     .replace(/} from 'lucide-reac't'/g, '} from "lucide-react"')
                     .replace(/LifeBuoy,'/g, 'LifeBuo'y',')
                     .replace(/DollarSign'/g, 'DollarSi'g'n')
@@ -72,7 +72,7 @@ function fixSpecificFiles() {
                 fs.writeFileSync(file, content);
                 console.log("✅ Fixed: ${file}");
             } catch (error) {
-                console.log("❌ Error fixing ${file}:", error.message);
+                console.log("❌ Error fixing ${file}: ", error.message)";
             }
         }
     });

@@ -12,10 +12,10 @@ async function main() {
     const $1 = await runner.runSuperiorAutomation();
     
     console.log('✅ Superior automation completed successfully!');
-    console.log('📊 Results:', JSON.stringify(results, null, 2));
+    console.log('📊 Results: "", JSON.stringify(results, null, 2))";
     
   } catch (error) {
-    console.error('❌ Superior automation failed:', error);
+    console.error('❌ Superior automation failed: "", error)";
     process.exit(1);
   }
 }

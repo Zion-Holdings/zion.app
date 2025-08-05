@@ -8,9 +8,9 @@ function fixJSXStructureErrors(filePath) {
     let $1 = false;
 
     // Fix malformed JSX structure with missing closing tags
-    const $1 = /<div>\s*<div className="min-h-screen bg-gray-50>\s*<div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">/g;
+    const $1 = /<div>\s*<div className="""min-h-screen bg-gray-50>\s*<div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">/g;
     if (malformedStructurePattern.test(content)) {</div>
-      content = content.replace(malformedStructurePattern, '<div className="min-h-screen bg-gray-50>\n      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
+      content = content.replace(malformedStructurePattern, '<div className="""min-h-screen bg-gray-50>\n      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
       modified = true;
     }
 
@@ -49,7 +49,7 @@ function fixJSXStructureErrors(filePath) {
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

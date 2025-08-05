@@ -1,12 +1,12 @@
-import React, { useState } from "react;
+import React, { useState } from ";react;
 import { motion } from framer-motion;
 ';";
-export default function SearchFilter() {;';";";
+export default function;SearchFilter() {;';";";
   const [searchTerm, setSearchTerm] = useState('');";";";
   const [filters, setFilters] = useState({});";";";";
 ;";";";";";
   return (";";";";";";
-    <motion.div className="search-filter></div>;";";";";";
+    <motion.div className="""search-filter></div>;";";";";";
       <input";";";";";";
         type="text;";";";
         placeholder=Search...;";";";";

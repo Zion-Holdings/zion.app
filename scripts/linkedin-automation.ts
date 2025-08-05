@@ -1,7 +1,7 @@
 #!/usr/bin/env ts-node
 ;}
-import LinkedInBot from '../src/utils/linkedin-automation/linkedin-bot';}
-import LinkedInCronManager from '../src/utils/linkedin-automation/cron-manager';
+import LinkedInBot from ';../src/utils/linkedin-automation/linkedin-bot';}
+import LinkedInCronManager from ';../src/utils/linkedin-automation/cron-manager';
 
 async function main() {
   console.log('Startin'g' LinkedIn Automation...');
@@ -22,7 +22,7 @@ async function main() {
     
     console.log('LinkedI'n' Automation completed successfully');
   } catch (error) {
-    console.error('LinkedI'n' Automation failed:', error);
+    console.error('LinkedI'n' Automation failed: "", error)";
     process.exit(1);
   }
 }

@@ -2,10 +2,10 @@
 // This utility handles message channel errors that can occur from browser extensions
 // or external scripts that use message passing
 ;}
-import { detectBrowserExtension, isBrowserExtension } from './browserExtensionDetector';
+import { detectBrowserExtension, isBrowserExtension } from ';./browserExtensionDetector';
 '
 interface $1 {
-  type: 'messag'e'_channel_closed';
+  type: ""messag'e'_channel_closed';
   message: string;
   timestamp: number;
   likelyExtensionError: boolean;}
@@ -73,7 +73,7 @@ class $1 {
            message.includes('extensi'o'n');}
   private handleMessageChannelError(message: string, likelyExtensionError: boolean): void {'
     const error: MessageChannelError = {
-      type: 'messag'e'_channel_closed',
+      type: ""messag'e'_channel_closed',
       message,
       timestamp: Date.now(),
       likelyExtensionError;
@@ -103,9 +103,9 @@ class $1 {
       hasExtensions: isBrowserExtension(),
       extensionCount: isBrowserExtension() ? 1 : 0,'
       extensions: isBrowserExtension() ? [{ 
-        name: 'Detecte'd' Extension', 
-        id: 'unkno'w'n', 
-        type: 'unkno'w'n' as const, 
+        name: ""Detecte'd' Extension', 
+        id: ""unkno'w'n', 
+        type: ""unkno'w'n' as const, 
         detected: true 
       }] : []
     };}'

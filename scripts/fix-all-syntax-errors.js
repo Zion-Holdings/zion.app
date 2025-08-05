@@ -17,24 +17,24 @@ function fixAllSyntaxErrors(directory) {
         let modified = false;
         
         // Fix unterminated string literals in imports
-        content = content.replace(/import React from 'react/g, "import React from 'react'");
-        content = content.replace(/import \{ ([^}]+) \} from 'react/g, "import { $1 } from 'react'");
-        content = content.replace(/import ([^']+) from '([^']+)/g, "import $1 from '$2'");
-        content = content.replace(/import \{ ([^}]+) \} from '([^']+)/g, "import { $1 } from '$2'");
-        content = content.replace(/import type \{ ([^}]+) \} from '([^']+)/g, "import type { $1 } from '$2'");
+        content = content.replace(/import React from ';react/g, "import React from ';react'");
+        content = content.replace(/import \{ ([^}]+) \} from ';react/g, "import { $1 } from ';react'");
+        content = content.replace(/import ([^']+) from ';([^']+)/g, "import $1 from ';$2'");
+        content = content.replace(/import \{ ([^}]+) \} from ';([^']+)/g, "import { $1 } from ';$2'");
+        content = content.replace(/import type \{ ([^}]+) \} from ';([^']+)/g, "import type { $1 } from ';$2'");
         
         // Fix missing quotes in JSX attributes
-        content = content.replace(/className=([^"']+)/g, 'className="$1"');
+        content = content.replace(/className=([^"']+)/g, 'className="""$1"');
         content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
         content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
         content = content.replace(/content=([^"']+)/g, 'content="$1"');
         content = content.replace(/title=([^"']+)/g, 'title="$1"');
         content = content.replace(/alt=([^"']+)/g, 'alt="$1"');
         content = content.replace(/src=([^"']+)/g, 'src="$1"');
-        content = content.replace(/href=([^"']+)/g, 'href="$1"');
+        content = content.replace(/href=([^"']+)/g, 'href="""$1"');
         
         // Fix specific JSX issues
-        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1">');
+        content = content.replace(/<div className=([^"']+)>/g, '<div className="""$1">');
         content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
         content = content.replace(/<meta name="viewport" content=([^"]+)"/g, '<meta name="viewport" content="$1" />');
         content = content.replace(/<meta name="description" content=([^"]+)"/g, '<meta name="description" content="$1" />');
@@ -67,9 +67,9 @@ function fixAllSyntaxErrors(directory) {
         content = content.replace(/"([^"]*)$/gm, '"$1"');
         
         // Fix specific common patterns
-        content = content.replace(/export default function/g, 'export default function');
-        content = content.replace(/export default const/g, 'export default const');
-        content = content.replace(/export default class/g, 'export default class');
+        content = content.replace(/export default function;/g, 'export default function;');
+        content = content.replace(/export default const;/g, 'export default const;');
+        content = content.replace(/export default class;/g, 'export default class;');
         
         // Fix React component declarations
         content = content.replace(/const ([^=]+) = \(\) => \{/g, 'const $1 = () => {');

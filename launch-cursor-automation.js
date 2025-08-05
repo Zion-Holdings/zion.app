@@ -43,7 +43,7 @@ class $1 {
       this.setupGracefulShutdown();
 
     } catch (error) {
-      console.error('❌ Failed to start Cursor Automation System:', error.message);
+      console.error('❌ Failed to start Cursor Automation System: "", error.message)";
       process.exit(1);
     }
   }
@@ -69,7 +69,7 @@ class $1 {
       console.log('✅ Cursor Automation System stopped successfully');
 
     } catch (error) {
-      console.error('❌ Error stopping Cursor Automation System:', error.message);
+      console.error('❌ Error stopping Cursor Automation System: "", error.message)";
     }
   }
 
@@ -82,7 +82,7 @@ class $1 {
         console.log('✅ Shutdown completed');
         process.exit(0);
       } catch (error) {
-        console.error('❌ Error during shutdown:', error.message);
+        console.error('❌ Error during shutdown: "", error.message)";
         process.exit(1);
       }
     };
@@ -111,7 +111,7 @@ class $1 {
       console.log('✅ Cursor Automation System restarted successfully');
       
     } catch (error) {
-      console.error('❌ Failed to restart Cursor Automation System:', error.message);
+      console.error('❌ Failed to restart Cursor Automation System: "", error.message)";
     }
   }
 }
@@ -137,7 +137,7 @@ async function main() {
       
     case 'stat'u's':
       const $1 = await launcher.getStatus();
-      console.log('📊 Cursor Automation System Status:');
+      console.log('📊 Cursor Automation System Status: "")";
       console.log(JSON.stringify(status, null, 2));
       break;
       
@@ -146,7 +146,7 @@ async function main() {
       console.log('');
       console.log('Usag'e': node launch-cursor-automation.js [command]');
       console.log('');
-      console.log('Command's':');
+      console.log('Command's': ")";
       console.log('  start     Start the automation system');
       console.log('  stop      Stop the automation system');
       console.log('  restart   Restart the automation system');

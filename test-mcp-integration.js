@@ -28,8 +28,8 @@ async function testMCPIntegration() {
 
     // Create and connect the client
     client = new Client({
-      name: 'test-clie'n't',
-      version: '1.0.0',
+      name: ""test-clie'n't',
+      version: ""1.0.0',
     });
 
     console.log('🔌 Connecting to MCP server...');
@@ -39,7 +39,7 @@ async function testMCPIntegration() {
     // Test listing tools
     console.log('📋 Testing tool listing...');
     const $1 = await client.listTools();
-    console.log("✅ Found ${toolsResponse.tools.length} tools:");
+    console.log("✅ Found ${toolsResponse.tools.length} tools: "")";
     toolsResponse.tools.forEach(tool => {
       console.log("  - ${tool.name}: ${tool.description}");
     });
@@ -47,7 +47,7 @@ async function testMCPIntegration() {
     // Test listing resources
     console.log('📁 Testing resource listing...');
     const $1 = await client.listResources();
-    console.log("✅ Found ${resourcesResponse.resources.length} resources:");
+    console.log("✅ Found ${resourcesResponse.resources.length} resources: "")";
     resourcesResponse.resources.forEach(resource => {
       console.log("  - ${resource.name}: ${resource.description}");
     });
@@ -55,7 +55,7 @@ async function testMCPIntegration() {
     // Test calling a simple tool
     console.log('🔧 Testing tool execution...');
     const $1 = await client.callTool({
-      name: 'analyz'e'_project_structure',
+      name: ""analyz'e'_project_structure',
       arguments: {}
     });
     console.log('✅ Tool execution successful');
@@ -64,7 +64,7 @@ async function testMCPIntegration() {
     return true;
 
   } catch (error) {
-    console.error('❌ MCP Integration test failed:', error.message);
+    console.error('❌ MCP Integration test failed: "", error.message)";
     return false;
   } finally {
     // Cleanup
@@ -88,7 +88,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Tes't' failed:', error);
+      console.error('Tes't' failed: "", error)";
       process.exit(1);
     });
 }

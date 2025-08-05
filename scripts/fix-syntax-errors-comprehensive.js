@@ -9,19 +9,19 @@ function fixSyntaxErrors(content, filePath) {
   // Fix unterminated string literals at the beginning of files
   if (fixed.startsWith('"') && !fixed.includes('\n')) {
     // This is likely a malformed file, try to fix it
-    fixed = `import React from 'react';
-import Head from 'next/head';
-import Layout from '../components/layout/Layout';
+    fixed = `import React from ';react';
+import Head from ';next/head';
+import Layout from ';../components/layout/Layout';
 
-export default function Page() {
+export default function;Page() {
   return (
     <Layout>
       <Head>
         <title>Page Title</title>
         <meta name="description" content="Page description" />
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Page Content</h1>
+      <div className="""container mx-auto px-4 py-8">
+        <h1 className="""text-3xl font-bold mb-6">Page Content</h1>
         <p>This page is under construction.</p>
       </div>
     </Layout>

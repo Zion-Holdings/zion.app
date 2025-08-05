@@ -10,8 +10,8 @@ function fixStringLiterals(content) {
   fixed = fixed.replace(/content="([^"]*):([^"]*):([^"]*)"/g, 'conten't'="$1 $2 $3"');
   
   // Fix missing quotes
-  fixed = fixed.replace(/className="([^]*):([^]*)"/g, 'classNam'e'="$1 $2"');
-  fixed = fixed.replace(/className="([^]*):([^]*):([^"]*)"/g, 'classNam'e'="$1 $2 $3"');
+  fixed = fixed.replace(/className="""([^]*):([^]*)"/g, 'classNam'e'="$1 $2"');
+  fixed = fixed.replace(/className="""([^]*):([^]*):([^"]*)"/g, 'classNam'e'="$1 $2 $3"');
   
   return fixed;
 }
@@ -37,7 +37,7 @@ function processFile(filePath) {
     fs.writeFileSync(filePath, fixed, 'ut'f'8');
     console.log("Fixed: ${filePath}");
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
   }
 }
 ;

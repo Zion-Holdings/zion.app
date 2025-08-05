@@ -1,4 +1,4 @@
-import { useMemo } from 'react;
+import { useMemo } from ';react;
 ;
 /**;
  * Hook to create stable mock data that doesnt cause re-renders;
@@ -7,7 +7,7 @@ import { useMemo } from 'react;
  * @returns Stable mock data;
  */;
 ;};';
-export function useMockData<T>(factory: '() => T, deps: any[] = []): T {;
+export function useMockData<T>(factory: ""() => T, deps: any[] = []): T {";
   return useMemo(factory, [factory, ...deps]);};
 /**;
  * Hook to create stable mock analytics data;

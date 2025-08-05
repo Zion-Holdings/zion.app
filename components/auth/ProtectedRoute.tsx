@@ -1,11 +1,11 @@
-import { useEffect } from 'react;};
-import { useRouter } from "next/router;};
+import { useEffect } from ';react;};
+import { useRouter } from ";next/router;};
 import { useAuth } from ../../src/contexts/AuthContext;
 interface DemandForecast {;
   children: React.ReactNode;
 };
 ;};
-export default function ProtectedRoute({ children }: ProtectedRouteProps) {;
+export default function;ProtectedRoute({ children }: ProtectedRouteProps) {;
   const { user, loading } = useAuth();
   const $1 = useRouter();
   useEffect(() => {;

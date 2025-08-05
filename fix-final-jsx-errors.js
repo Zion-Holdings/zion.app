@@ -10,27 +10,27 @@ function fixJSXErrors(filePath) {
     // Fix common JSX syntax errors
     const $1 = [
       // Fix missing commas in arrays
-      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
+      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: ""$1,\n    $2' },
       // Fix malformed JSX attributes
-      { pattern: /className="([^]*)\s*"([^"]*)"/g, replacement: 'classNam'e'="$1 $2"' },
+      { pattern: /className="""([^]*)\s*"([^"]*)"/g, replacement: ""classNam'e'="$1 $2"' },
       // Fix malformed JSX closing tags
-      { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: '<$1>$2</$1>' },
+      { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: ""<$1>$2</$1>' },
       // Fix malformed quotes in attributes
-      { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: '$1="$2 $3"' },
+      { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: ""$1="$2 $3"' },
       // Fix malformed className with missing spaces
-      { pattern: /className="([^]*):([^]*)"/g, replacement: 'classNam'e'="$1:$2"' },
+      { pattern: /className="""([^]*):([^]*)"/g, replacement: ""classNam'e'="$1:$2"' },
       // Fix malformed JSX structure</div>
-      { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: '<$1>$2' },
+      { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: ""<$1>$2' },
       // Fix malformed closing tags</div>
-      { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: '$1</$2>' },
+      { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: ""$1</$2>' },
       // Fix malformed array syntax
-      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
+      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: ""$1,\n    $2' },
       // Fix malformed useEffect dependencies
-      { pattern: /(\}\s*\[[^\]]*\]\))/g, replacement: '$1' },
+      { pattern: /(\}\s*\[[^\]]*\]\))/g, replacement: ""$1' },
       // Fix malformed JSX fragments</div>
-      { pattern: /<div>\s*"([^"]*)/g, replacement: '<>$1' },
+      { pattern: /<div>\s*"([^"]*)/g, replacement: ""<>$1' },
       // Fix malformed closing fragments</div>
-      { pattern: /"([^"]*)\s*<>/g, replacement: '$1</div>' },
+      { pattern: /"([^"]*)\s*<>/g, replacement: ""$1</div>' },
     ];
 
     fixes.forEach(fix => {
@@ -46,7 +46,7 @@ function fixJSXErrors(filePath) {
       console.log("Fixed JSX errors: ${filePath}");
     }
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
   }
 }
 

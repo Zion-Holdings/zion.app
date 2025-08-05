@@ -101,7 +101,7 @@ async function testMCPIntegration() {
 
     console.log('🎉 MCP Integration test completed successfully!');
     console.log('');
-    console.log('📋 MCP Integration Summary:');
+    console.log('📋 MCP Integration Summary: "")";
     console.log('✅ All MCP files created');
     console.log('✅ All MCP dependencies installed');
     console.log('✅ All MCP scripts added to package.json');
@@ -116,7 +116,7 @@ async function testMCPIntegration() {
     return true;
 
   } catch (error) {
-    console.error('❌ MCP Integration test failed:', error.message);
+    console.error('❌ MCP Integration test failed: "", error.message)";
     return false;
   }
 }
@@ -128,7 +128,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Tes't' failed:', error);
+      console.error('Tes't' failed: "", error)";
       process.exit(1);
     });
 }

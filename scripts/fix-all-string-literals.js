@@ -9,34 +9,34 @@ function fixStringLiterals(content) {
   // Fix patterns like: string -> string
   fixed = fixed.replace(/string/g, 'strin'g');
   
-  // Fix patterns like: '''ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd'' -> '''ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd''
+  // Fix patterns like: ""'ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd'' -> '''ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd''
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)/g, "'$1' | '$2' | '$3'");
   
-  // Fix patterns like: '''acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploye'd' -> '''acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploy'e'd'
+  // Fix patterns like: ""'acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploye'd' -> '''acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploy'e'd'
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
   
-  // Fix patterns like: '''spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchorin'g' -> '''spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchori'n'g'
+  // Fix patterns like: ""'spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchorin'g' -> '''spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchori'n'g'
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
   
-  // Fix patterns like: '''physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-twi'n' -> '''physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-tw'i'n'
+  // Fix patterns like: ""'physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-twi'n' -> '''physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-tw'i'n'
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
   
-  // Fix patterns like: '''experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitorin'g' -> '''experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitori'n'g'
+  // Fix patterns like: ""'experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitorin'g' -> '''experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitori'n'g'
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
   
-  // Fix patterns like: '''experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolog'y' -> '''experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolo'g'y'
+  // Fix patterns like: ""'experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolog'y' -> '''experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolo'g'y'
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
   
-  // Fix patterns like: '''positi'v'e' | 'negati'v'e' | 'neut'r'a'l' -> '''positi'v'e' | 'negati'v'e' | 'neut'r'a'l''
+  // Fix patterns like: ""'positi'v'e' | 'negati'v'e' | 'neut'r'a'l' -> '''positi'v'e' | 'negati'v'e' | 'neut'r'a'l''
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3'");
   
-  // Fix patterns like: '''overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's'' -> '''overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's''
+  // Fix patterns like: ""'overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's'' -> '''overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's''
   fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4' | '$5' | '$6'");
   
-  // Fix patterns like: 'al'l' -> 'a'l'l'
+  // Fix patterns like: ""al'l' -> 'a'l'l'
   fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g, "'$1'");
   
-  // Fix patterns like: 'overvie'w' -> 'overvi'e'w'
+  // Fix patterns like: ""overvie'w' -> 'overvi'e'w'
   fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g, "'$1'");
   
   // Fix patterns like: [] -> []
@@ -61,7 +61,7 @@ function processFile(filePath) {
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

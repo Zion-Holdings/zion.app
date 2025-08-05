@@ -5,11 +5,11 @@ function fixCriticalSyntax(content) {
   let fixed = content;
   
   // Fix unterminated string literals in import statements
-  fixed = fixed.replace(/import type \{ NextPage \} from "next";/g, 'import type { NextPage } from "next";');
-  fixed = fixed.replace(/import type \{ AppProps \} from "next\/app";/g, 'import type { AppProps } from "next/app";');
-  fixed = fixed.replace(/import Head from "next\/head";/g, 'import Head from "next/head";');
-  fixed = fixed.replace(/import Link from "next\/link";/g, 'import Link from "next/link";');
-  fixed = fixed.replace(/import \{ useState, useEffect, useMemo \} from "react";/g, 'import { useState, useEffect, useMemo } from "react";');
+  fixed = fixed.replace(/import type \{ NextPage \} from ";next";/g, 'import type { NextPage } from ";next";');
+  fixed = fixed.replace(/import type \{ AppProps \} from ";next\/app";/g, 'import type { AppProps } from ";next/app";');
+  fixed = fixed.replace(/import Head from ";next\/head";/g, 'import Head from ";next/head";');
+  fixed = fixed.replace(/import Link from ";next\/link";/g, 'import Link from ";next/link";');
+  fixed = fixed.replace(/import \{ useState, useEffect, useMemo \} from ";react";/g, 'import { useState, useEffect, useMemo } from ";react";');
   
   // Fix unterminated string literals in component declarations
   fixed = fixed.replace(/const \w+: NextPage = \(\) => {/g, 'const $1: NextPage = () => {');
@@ -18,8 +18,8 @@ function fixCriticalSyntax(content) {
   fixed = fixed.replace(/interface \w+ \{/g, 'interface $1 {');
   
   // Fix unterminated string literals in object properties
-  fixed = fixed.replace(/key: '([^']+)'/g, 'key: "$1"');
-  fixed = fixed.replace(/value: '([^']+)'/g, 'value: "$1"');
+  fixed = fixed.replace(/key: ""([^']+)'/g, 'key: ""$1"');
+  fixed = fixed.replace(/value: ""([^']+)'/g, 'value: ""$1"');
   
   // Fix unterminated string literals in array and object declarations
   fixed = fixed.replace(/const \w+ = \[/g, 'const $1 = [');
@@ -69,7 +69,7 @@ function fixCriticalSyntax(content) {
   // Fix unterminated string literals in switch statements
   fixed = fixed.replace(/switch \(/g, 'switch (');
   fixed = fixed.replace(/case /g, 'case ');
-  fixed = fixed.replace(/default:/g, 'default:');
+  fixed = fixed.replace(/default:/g, 'default: "")";
   
   // Fix unterminated string literals in class declarations
   fixed = fixed.replace(/class \w+ extends /g, 'class $1 extends ');

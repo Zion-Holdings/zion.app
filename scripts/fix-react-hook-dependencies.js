@@ -50,13 +50,13 @@ function fixReactHookDependencies(filePath) {
     
     // Add useMemo import if not present
     if (content.includes('useMe'm'o') && !content.includes('impor't' { useMemo }')) {
-      const $1 = /import \{([^}]*)\} from 'rea'c't';/;
+      const $1 = /import \{([^}]*)\} from ';rea'c't';/;
       const $1 = content.match(importRegex);
       if (importMatch) {
         const $1 = importMatch[1].split(',').map(imp => imp.trim());
         if (!imports.includes('useMe'm'o')) {
           imports.push('useMe'm'o');
-          content = content.replace(importRegex, "import { ${imports.join(', ')} } from 'rea'c't';");
+          content = content.replace(importRegex, "import { ${imports.join(', ')} } from ';rea'c't';");
         }
       }
     }
@@ -68,7 +68,7 @@ function fixReactHookDependencies(filePath) {
     
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

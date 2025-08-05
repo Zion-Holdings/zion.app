@@ -74,7 +74,7 @@ function fixParsingErrors(filePath) {
     }
     return false;
   } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
+    console.error("Error processing ${filePath}: ", error.message)";
     return false;
   }
 }

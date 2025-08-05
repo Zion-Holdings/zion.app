@@ -28,8 +28,8 @@ class $1 {
 
       // Create and connect the client
       this.client = new Client({
-        name: 'bolt-automation-clie'n't',
-        version: '1.0.0',
+        name: ""bolt-automation-clie'n't',
+        version: ""1.0.0',
       });
 
       await this.client.connect(transport);
@@ -38,7 +38,7 @@ class $1 {
       console.log('✅ MCP Client connected successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to connect MCP client:', error.message);
+      console.error('❌ Failed to connect MCP client: "", error.message)";
       return false;
     }
   }
@@ -235,7 +235,7 @@ class $1 {
       console.log('✅ Full automation workflow completed');
       return results;
     } catch (error) {
-      console.error('❌ Full automation workflow failed:', error.message);
+      console.error('❌ Full automation workflow failed: "", error.message)";
       throw error;
     }
   }
@@ -254,7 +254,7 @@ class $1 {
       console.log('✅ Deployment workflow completed');
       return results;
     } catch (error) {
-      console.error('❌ Deployment workflow failed:', error.message);
+      console.error('❌ Deployment workflow failed: "", error.message)";
       throw error;
     }
   }
@@ -283,7 +283,7 @@ class $1 {
   // Interactive mode
   async startInteractiveMode() {
     console.log('🎮 Starting MCP Interactive Mode');
-    console.log('Availabl'e' commands:');
+    console.log('Availabl'e' commands: "")";
     console.log('  analyze - Analyze project structure');
     console.log('  report - Generate automation report');
     console.log('  optimize - Optimize build process');
@@ -387,11 +387,11 @@ async function main() {
         break;
       case 'too'l's':
         const $1 = await client.listTools();
-        console.log('Availabl'e' tools:', tools.map(t => t.name));
+        console.log('Availabl'e' tools: "", tools.map(t => t.name))";
         break;
       case 'resourc'e's':
         const $1 = await client.listResources();
-        console.log('Availabl'e' resources:', resources.map(r => r.name));
+        console.log('Availabl'e' resources: "", resources.map(r => r.name))";
         break;
       default:</div>
         console.log('Usag'e': node mcp-client-integration.js <command> [args...]');
@@ -399,7 +399,7 @@ async function main() {
         break;
     }
   } catch (error) {
-    console.error('Erro'r':', error.message);
+    console.error('Erro'r': ", error.message)";
     process.exit(1);
   } finally {
     await client.disconnect();

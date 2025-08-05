@@ -1,5 +1,5 @@
-import { createServerClient } from '@supabase/ssr;}
-import { cookies } from 'nex't'/headers;}
+import { createServerClient } from ';@supabase/ssr;}
+import { cookies } from ';nex't'/headers;}
 export function createClient() {
   const $1 = cookies()'
   return createServerClient(

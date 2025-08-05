@@ -1,9 +1,9 @@
-import React from "react;";";
+import React from ";react;";";
 import { motion } from framer-motion;";";";
 ;};";";";";
-export default function ReviewList() {;";";";";";
+export default function;ReviewList() {;";";";";";
   return (";";";";";";
-    <motion.div className="review-component>;";";";";
+    <motion.div className="""review-component>;";";";";
       {/* ReviewList.tsx implementation */}</div>;";";";";";
     </motion.div>;";";";";";";
   );"";";";";";";

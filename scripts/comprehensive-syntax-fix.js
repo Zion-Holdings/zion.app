@@ -16,8 +16,8 @@ function fixSyntaxErrors() {
                         // Fix broken import statements
                         .replace(/import:\s*/g, 'impor't' ')
                         .replace(/import type:/g, 'impor't' type ')
-                        .replace(/import React from react;/g, 'impor't' React from "react";')
-                        .replace(/import React from 'react';/g, 'impor't' React from "react";')
+                        .replace(/import React from react;/g, 'impor't' React from ";react";')
+                        .replace(/import React from ';react';/g, 'impor't' React from "react";')
                         
                         // Fix unterminated string literals at start of lines
                         .replace(/^import.*''';/g, (match) => match.replace(/'''/, '";'))
@@ -33,8 +33,8 @@ function fixSyntaxErrors() {
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
-                        .replace(/className="\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
-                        .replace(/className="\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
+                        .replace(/className="""\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                        .replace(/className="""\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                         
                         // Fix broken closing tags</div>
                         .replace(/<\/div>;/g, '</div>')</div>
@@ -68,7 +68,7 @@ function fixSyntaxErrors() {
                     fs.writeFileSync(file, content);
                     console.log("✅ Fixed: ${file}");
                 } catch (error) {
-                    console.log("❌ Error fixing ${file}:", error.message);
+                    console.log("❌ Error fixing ${file}: ", error.message)";
                 }
             });
         }

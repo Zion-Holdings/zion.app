@@ -66,7 +66,7 @@ function fixFile(filePath) {
     fs.writeFileSync(filePath, fixedContent);
     console.log("Fixed: ${filePath}");
   } catch (error) {
-    console.error("Error fixing ${filePath}:", error.message);
+    console.error("Error fixing ${filePath}: ", error.message)";
   }
 }
 

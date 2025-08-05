@@ -1,13 +1,13 @@
-const $1 = require('fs-ext'r'a');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const $1 = require('ut'i'l');
-const $1 = require('node-cr'o'n');
+const fs = require('fs-extra');
+const path = require('path');
+const { exec } = require('child_process');
+const util = require('util');
+const cron = require('node-cron');
 const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
-;
-const $1 = util.promisify(exec);
 
-class $1 {
+const execAsync = util.promisify(exec);
+
+class AutonomousMasterOrchestrator {
     constructor() {
         this.agents = {
             marketResearch: require('./autonomous-market-research-agent.js'),
@@ -18,16 +18,16 @@ class $1 {
         };
         
         this.workflow = {
-            research: 'market-resear'c'h',
-            creation: 'solution-creati'o'n',
-            sales: 'sales-campai'g'n',
-            agentCreation: 'agent-creati'o'n',
-            contentGeneration: 'content-generati'o'n',
-            deployment: 'deployme'n't',
-            monitoring: 'monitori'n'g'
+            research: 'market-research',
+            creation: 'solution-creation',
+            sales: 'sales-campaign',
+            agentCreation: 'agent-creation',
+            contentGeneration: 'content-generation',
+            deployment: 'deployment',
+            monitoring: 'monitoring'
         };
         
-        this.outputDir = path.join(__dirname, 'master-orchestrat'o'r');
+        this.outputDir = path.join(__dirname, 'master-orchestrator');
         this.ensureOutputDirectory();
         
         this.systemStatus = {

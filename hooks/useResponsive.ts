@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'reac't'
+import { useState, useEffect } from ';reac't'
 interface $1 {
   isMobile: boolean
   isTablet: boolean
@@ -6,7 +6,7 @@ interface $1 {
   isLargeDesktop: boolean
   screenWidth: number
   screenHeight: number
-  orientation: 'portra'i't' | 'landscap'e'
+  orientation: ""portra'i't' | 'landscap'e'
 }
 ;}
 export const $1 = (): ResponsiveState => {
@@ -17,7 +17,7 @@ export const $1 = (): ResponsiveState => {
     isLargeDesktop: false,
     screenWidth: 0,
     screenHeight: 0,
-    orientation: 'portrai't'
+    orientation: ""portrai't'
   })
 
   useEffect(() => {

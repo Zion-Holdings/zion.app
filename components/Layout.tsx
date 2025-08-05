@@ -1,8 +1,8 @@
-import React from "react;";";";";";";
+import React from ";react;";";";";";";
 import Head from next/head";";";";";";";
-import Link from "next/link;";";";";";
+import Link from ";next/link;";";";";";
 import { motion } from framer-motion;";";";";";";
-import ImprovedNavigation from './ImprovedNavigation";
+import ImprovedNavigation from ';./ImprovedNavigation";
 ;
 interface DemandForecast {;
   children: React.ReactNode;
