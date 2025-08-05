@@ -1,21 +1,21 @@
-const $1 = require('fs');
-const $1 = require('path');
-;
+const fs = require('fs');
+const path = require('path');
+
 function fixFinalImports(directory) {
-  const $1 = fs.readdirSync(directory, { withFileTypes: true });
+  const files = fs.readdirSync(directory, { withFileTypes: true });
   
   files.forEach(file => {
-    const $1 = path.join(directory, file.name);
+    const filePath = path.join(directory, file.name);
     
     if (file.isDirectory()) {
       fixFinalImports(filePath);
     } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
       try {
-        let $1 = fs.readFileSync(filePath, 'utf8');
-        let $1 = false;
+        let content = fs.readFileSync(filePath, 'utf8');
+        let modified = false;
         
         // Fix unterminated import statements
-        const $1 = [
+        const importFixes = [
           // Fix missing closing quotes in imports
           [/import type \{ AppProps \} from 'next\/app;/g, "import type { AppProps } from 'next/app';"],
           [/import React from 'react;/g, "import React from 'react';"],
@@ -40,7 +40,7 @@ function fixFinalImports(directory) {
         // Fix context imports with function callback
         content = content.replace(/import \{ ([^}]+) \} from ([^']+);/g, (match, imports, path) => {
           if (!path.startsWith("'") && !path.startsWith('"')) {
-            return "import { ${imports} } from '${path}';";
+            return `import { ${imports} } from '${path}';`;
           }
           return match;
         });
@@ -48,38 +48,38 @@ function fixFinalImports(directory) {
         // Fix default imports with function callback
         content = content.replace(/import ([^']+) from ([^']+);/g, (match, importName, path) => {
           if (!path.startsWith("'") && !path.startsWith('"')) {
-            return "import ${importName} from '${path}';";
+            return `import ${importName} from '${path}';`;
           }
           return match;
         });
         
         // Fix JSX attributes with missing quotes
-        content = content.replace(/className=([^"']+)/g, 'className="$1');
-        content = content.replace(/name=description content=([^"]+)"/g, 'name="description" content="$1"');
+        content = content.replace(/className=([^"']+)/g, 'className="$1"');
+        content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
         content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
         
         // Fix specific JSX issues
-        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1>');</div>
-        content = content.replace(/<meta name=description content=([^"]+)"/g, '<meta name="description" content="$1" />');
+        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1">');
+        content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
         
         if (modified) {
           fs.writeFileSync(filePath, content);
-          console.log("Fixed final imports: ${filePath}");
+          console.log(`Fixed final imports: ${filePath}`);
         }
       } catch (error) {
-        console.error("Error processing ${filePath}:", error.message);
+        console.error(`Error processing ${filePath}:`, error.message);
       }
     }
   });
 }
 
-// Fix imports in all relevant directories;
-const $1 = ['pages', 'components', 'src'];
+// Fix imports in all relevant directories
+const directories = ['pages', 'components', 'src'];
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {
-    console.log("Processing directory: ${dir}");
+    console.log(`Processing directory: ${dir}`);
     fixFinalImports(dir);
   }
 });
 
-console.log('Final import fixes completed!'); </div>
+console.log('Final import fixes completed!');

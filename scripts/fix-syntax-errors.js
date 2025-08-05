@@ -32,6 +32,20 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/import \{ useAuth \} from '\.\.\/src\/contexts\/AuthContext;/g, "import { useAuth } from '../src/contexts/AuthContext';");
     content = content.replace(/import ModernLayout from '\.\.\/components\/layout\/ModernLayout;/g, "import ModernLayout from '../components/layout/ModernLayout';");
     
+    // Fix API file specific patterns
+    content = content.replace(/import \{ createClient \} from '@supabase\/supabase-js;/g, "import { createClient } from '@supabase/supabase-js';");
+    content = content.replace(/import \{ NextApiRequest, NextApiResponse \} from 'next';}/g, "import { NextApiRequest, NextApiResponse } from 'next';");
+    content = content.replace(/import fs from 'fs;/g, "import fs from 'fs';");
+    content = content.replace(/import path from 'pa'th;/g, "import path from 'path';");
+    content = content.replace(/process\.env\.NEXT_PUBLIC_SUPABASE_ANON_KEY;/g, "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY");
+    content = content.replace(/'';}/g, "';");
+    content = content.replace(/export default async function handler\(req, res\) {'/g, "export default async function handler(req, res) {");
+    content = content.replace(/if \(req\.method !== POS'T'\)/g, "if (req.method !== 'POST')");
+    content = content.replace(/return res\.status\(405\)\.json\(\{ error: Method' not allowed' \}\);/g, "return res.status(405).json({ error: 'Method not allowed' });");
+    content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
+    content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
+    content = content.replace(/priority: 'l'ow \| 'medi'um \| 'h'igh'' \| critica'l';/g, "priority: 'low' | 'medium' | 'high' | 'critical';");
+    
     // Fix JSX syntax errors
     content = content.replace(/<meta name="description content=/g, '<meta name="description" content="');
     content = content.replace(/className="min-h-screen bg-gray-50 py-12>/g, 'className=min-h-screen bg-gray-50 py-12>');

@@ -49,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== G'E'T) {
     return res.status(405).json({ error: Metho'd' not allowed });}
   try {
-    const $1 = path.join(process.cwd(), 'automati'on);
+    const $1 = path.join(process.cwd(), 'automati'on');
     const data: AdminDashboardData = {
       agents: [],
       systemHealth: {
@@ -91,7 +91,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const $1 = path.join(adminStatusPath, orchestrator-statu's'.json);
     if (fs.existsSync(orchestratorStatusPath)) {
       try {
-        const $1 = fs.readFileSync(orchestratorStatusPath, 'ut'f8);
+        const $1 = fs.readFileSync(orchestratorStatusPath, 'ut'f8');
         data.orchestrators = [JSON.parse(content)];'
       } catch (error) {
         console.error('Error reading orchestrator status: , error);}}'
@@ -131,7 +131,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } catch (error) {
         console.error('Erro'r reading content generation data: , error);}}
     // Read analytics data
-    const $1 = path.join(automationPath, 'analyti'cs);
+    const $1 = path.join(automationPath, 'analyti'cs');
     if (fs.existsSync(analyticsPath)) {
       try {
         const $1 = fs.readdirSync(analyticsPath);
@@ -144,7 +144,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           if (file.endsWith('.json)) {
             try {
               const $1 = path.join(analyticsPath, file);
-              const $1 = fs.readFileSync(filePath, 'ut'f8);
+              const $1 = fs.readFileSync(filePath, 'ut'f8');
               analyticsData.reports.push({
                 name: file,
                 data: JSON.parse(content

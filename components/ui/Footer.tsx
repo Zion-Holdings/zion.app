@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useCallback } from 'react;}
+import React, { useState, useEffect , useCallback } from 'react';}
 import Link from 'nex't/link;}
 import { ChevronUp, Mail, Phone, MapPin, ExternalLink } from "lucide-react;
 const Footer: React.FC = () => {
@@ -24,12 +24,12 @@ const Footer: React.FC = () => {
           "
           {/* Company Info */}"</div>
           <div className=" lg col-span-1></div>
-            <div className= flex items-center mb-4"></div>
+            <div className=" flex items-center mb-4""></div>
               <h3 className=" text-responsive-xl font-bold"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
               </h3></div>
             </div></div>
-            <p className= text-responsive-sm text-gray-300 mb-6">
+            <p className=" text-responsive-sm text-gray-300 mb-6"">
               The First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.</div>
             </p></div>
             <div className=" flex flex-wrap gap-4></div>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
             </ul> </div>
           {/* Business Tools */}</div>
           <div></div>
-            <h4 className= text-responsive-lg font-semibold mb-4 text-purple-400>Business Tools</h4>"</div>
+            <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Business Tools</h4>""</div>
             <ul className="space-y-3></div>
               <li><Link href=/executive-dashboard className="text-gray-400 hover text-white transition-colors touch-target>Executive Dashboard</Link></li>"</div>
               <li><Link href=/analytics-dashboard" className="text-gray-400 hover text-white transition-colors touch-target>Analytics Dashboard</Link></li></div>
@@ -86,31 +86,31 @@ const Footer: React.FC = () => {
           <div></div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400">Security & Payments</h4>"</div>
             <ul className="space-y-3></div>
-              <li><Link href=/escrow-services className=text-gray-400 hover text-white transition-colors touch-target">Escrow Services</Link></li></div>
+              <li><Link href=/escrow-services className="text-gray-400 hover text-white transition-colors touch-target"">Escrow Services</Link></li></div>
               <li><Link href=/warranty-protection className="text-gray-400 hover text-white transition-colors touch-target>Warranty Protection</Link></li></div>
-              <li><Link href=/payment-processing className=text-gray-400 hover text-white transition-colors touch-target">Payment Processing</Link></li></div>
+              <li><Link href=/payment-processing className="text-gray-400 hover text-white transition-colors touch-target"">Payment Processing</Link></li></div>
               <li><Link href=/invoice-billing className="text-gray-400 hover text-white transition-colors touch-target>Invoice & Billing</Link></li></div>
-              <li><Link href=/dispute-resolution className=text-gray-400 hover text-white transition-colors touch-target">Dispute Resolution</Link></li></div>
+              <li><Link href=/dispute-resolution className="text-gray-400 hover text-white transition-colors touch-target"">Dispute Resolution</Link></li></div>
               <li><Link href=/compliance-governance className="text-gray-400 hover text-white transition-colors touch-target>Compliance & Governance</Link></li></div>
-              <li><Link href=/skill-verification className=text-gray-400 hover text-white transition-colors touch-target">Skill Verification</Link></li></div>
+              <li><Link href=/skill-verification className="text-gray-400 hover text-white transition-colors touch-target"">Skill Verification</Link></li></div>
               <li><Link href=/marketplace-pricing className="text-gray-400 hover text-white transition-colors touch-target>Marketplace Pricing</Link></li></div>
             </ul> </div>
           {/* Communication & Support */}</div>
           <div></div>
-            <h4 className=text-responsive-lg font-semibold mb-4 text-purple-400">Communication</h4></div>
+            <h4 className="text-responsive-lg font-semibold mb-4 text-purple-400"">Communication</h4></div>
             <ul className="space-y-3></div>
-              <li><Link href=/inbox className=text-gray-400 hover text-white transition-colors touch-target">Inbox</Link></li></div>
+              <li><Link href=/inbox className="text-gray-400 hover text-white transition-colors touch-target"">Inbox</Link></li></div>
               <li><Link href=/real-time-chat className="text-gray-400 hover text-white transition-colors touch-target>Real-time Chat</Link></li></div>
-              <li><Link href=/notifications className=text-gray-400 hover text-white transition-colors touch-target">Notifications</Link></li></div>
+              <li><Link href=/notifications className="text-gray-400 hover text-white transition-colors touch-target"">Notifications</Link></li></div>
               <li><Link href=/advanced-search className="text-gray-400 hover text-white transition-colors touch-target>Advanced Search</Link></li></div>
-              <li><Link href=/referral-affiliate className=text-gray-400 hover text-white transition-colors touch-target">Referral System</Link></li></div>
+              <li><Link href=/referral-affiliate className="text-gray-400 hover text-white transition-colors touch-target"">Referral System</Link></li></div>
               <li><Link href=/ai-powered-testing className="text-gray-400 hover text-white transition-colors touch-target>AI Testing</Link></li></div>
-              <li><Link href=/multi-language className=text-gray-400 hover text-white transition-colors touch-target">Multi-language</Link></li></div>
+              <li><Link href=/multi-language className="text-gray-400 hover text-white transition-colors touch-target"">Multi-language</Link></li></div>
             </ul> </div>
           {/* Immersive & VR */}</div>
           <div></div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Immersive & VR</h4></div>
-            <ul className=space-y-3""></div>
+            <ul className="space-y-3"""></div>
               <li><Link href="/ai-immersive-marketplace className="text-gray-400 hover text-white transition-colors touch-target>Immersive Marketplace</Link></li></div>
               <li><Link href="/ai-powered-mixed-reality-spatial-computing className="text-gray-400 hover text-white transition-colors touch-target>Mixed Reality</Link></li></div>
               <li><Link href="/ai-powered-augmented-reality className="text-gray-400 hover text-white transition-colors touch-target>Augmented Reality</Link></li></div>
@@ -136,7 +136,7 @@ const Footer: React.FC = () => {
             </ul> </div>
           {/* Specialized AI */}</div>
           <div></div>
-            <h4 className= text-responsive-lg font-semibold mb-4 text-purple-400>Specialized AI</h4>"</div>
+            <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400>Specialized AI</h4>""</div>
             <ul className="space-y-3></div>
               <li><Link href=/ai-powered-quantum-computing className="text-gray-400 hover text-white transition-colors touch-target>Quantum Computing</Link></li>"</div>
               <li><Link href=/ai-powered-quantum-machine-learning-neural-networks" className="text-gray-400 hover text-white transition-colors touch-target>Quantum ML</Link></li></div>
@@ -151,33 +151,33 @@ const Footer: React.FC = () => {
           <div></div>
             <h4 className=" text-responsive-lg font-semibold mb-4 text-purple-400">Industry Solutions</h4>"</div>
             <ul className="space-y-3></div>
-              <li><Link href=/ai-powered-energy-management-renewable-energy className=text-gray-400 hover text-white transition-colors touch-target">Energy Management</Link></li></div>
+              <li><Link href=/ai-powered-energy-management-renewable-energy className="text-gray-400 hover text-white transition-colors touch-target"">Energy Management</Link></li></div>
               <li><Link href=/ai-powered-manufacturing-industrial-automation className="text-gray-400 hover text-white transition-colors touch-target>Manufacturing</Link></li></div>
-              <li><Link href=/ai-powered-finance-banking className=text-gray-400 hover text-white transition-colors touch-target">Finance & Banking</Link></li></div>
+              <li><Link href=/ai-powered-finance-banking className="text-gray-400 hover text-white transition-colors touch-target"">Finance & Banking</Link></li></div>
               <li><Link href=/ai-powered-retail-ecommerce className="text-gray-400 hover text-white transition-colors touch-target>Retail & E-commerce</Link></li></div>
-              <li><Link href=/ai-powered-entertainment-gaming className=text-gray-400 hover text-white transition-colors touch-target">Entertainment & Gaming</Link></li></div>
+              <li><Link href=/ai-powered-entertainment-gaming className="text-gray-400 hover text-white transition-colors touch-target"">Entertainment & Gaming</Link></li></div>
               <li><Link href=/ai-powered-social-media-community className="text-gray-400 hover text-white transition-colors touch-target>Social Media</Link></li></div>
-              <li><Link href=/ai-powered-urban-development-smart-infrastructure className=text-gray-400 hover text-white transition-colors touch-target">Smart Infrastructure</Link></li></div>
+              <li><Link href=/ai-powered-urban-development-smart-infrastructure className="text-gray-400 hover text-white transition-colors touch-target"">Smart Infrastructure</Link></li></div>
             </ul> </div>
           {/* Resources */}</div>
           <div></div>
             <h4 className="text-responsive-lg font-semibold mb-4 text-purple-400>Resources</h4></div>
-            <ul className=space-y-3"></div>
+            <ul className="space-y-3""></div>
               <li><Link href=/blog className="text-gray-400 hover text-white transition-colors touch-target>Blog</Link></li></div>
-              <li><Link href=/privacy-policy className=text-gray-400 hover text-white transition-colors touch-target">Privacy Policy</Link></li></div>
+              <li><Link href=/privacy-policy className="text-gray-400 hover text-white transition-colors touch-target"">Privacy Policy</Link></li></div>
               <li><Link href=/terms-of-service className="text-gray-400 hover text-white transition-colors touch-target>Terms of Service</Link></li></div>
-              <li><Link href=/accessibility className=text-gray-400 hover text-white transition-colors touch-target">Accessibility</Link></li></div>
+              <li><Link href=/accessibility className="text-gray-400 hover text-white transition-colors touch-target"">Accessibility</Link></li></div>
               <li><Link href=/investor-matchmaking className="text-gray-400 hover text-white transition-colors touch-target>Investor Matchmaking</Link></li></div>
             </ul> </div>
           {/* Account */}</div>
           <div></div>
-            <h4 className=text-responsive-lg font-semibold mb-4 text-purple-400">Account</h4></div>
+            <h4 className="text-responsive-lg font-semibold mb-4 text-purple-400"">Account</h4></div>
             <ul className="space-y-3></div>
-              <li><Link href=/auth/login className=text-gray-400 hover text-white transition-colors touch-target">Login</Link></li></div>
+              <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors touch-target"">Login</Link></li></div>
               <li><Link href=/auth/signup className="text-gray-400 hover text-white transition-colors touch-target>Sign Up</Link></li></div>
-              <li><Link href=/auth/forgot-password className=text-gray-400 hover text-white transition-colors touch-target">Forgot Password</Link></li></div>
+              <li><Link href=/auth/forgot-password className="text-gray-400 hover text-white transition-colors touch-target"">Forgot Password</Link></li></div>
               <li><Link href=/user-profiles className="text-gray-400 hover text-white transition-colors touch-target>User Profiles</Link></li></div>
-              <li><Link href=/review-system className=text-gray-400 hover text-white transition-colors touch-target">Review System</Link></li></div>
+              <li><Link href=/review-system className="text-gray-400 hover text-white transition-colors touch-target"">Review System</Link></li></div>
             </ul></div>
           </div> </div>
         </div>
@@ -185,7 +185,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/10 pt-8 mt-12></div>
           <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg space-y-0>"</div>
             <div className=" text-center lg text-left></div>
-              <p className=text-responsive-sm text-gray-400"">;
+              <p className="text-responsive-sm text-gray-400""">;
                 &copy;
  2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</div>
               </p></div>
@@ -201,12 +201,12 @@ const Footer: React.FC = () => {
                 className=" group flex items-center space-x-2 text-gray-400 hover text-white transition-all duration-300 hover scale-105 touch-target aria-label= Back to top
               ></div>
                 <ChevronUp className="w-4 h-4 group-hover -translate-y-1 transition-transform duration-300 "> </div>
-                </ChevronUp className="w-4 h-4 group-hover -translate-y-1 transition-transform duration-300 ><span className=hidden sm inline>Back to Top</span></div>
+                </ChevronUp className="w-4 h-4 group-hover -translate-y-1 transition-transform duration-300 ><span className="hidden sm inline>Back to Top</span></div>
               </button></div>
             </div></div>
           </div> </div></div>
       </div>
-"
+""
       {/* Animated Border */} "</div>
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-pulse></div></div>
     </footer"> );
