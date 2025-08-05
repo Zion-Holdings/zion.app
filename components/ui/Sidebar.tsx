@@ -137,10 +137,12 @@ const Sidebar: React.FC = () => {
       title: 'Main',
       icon: Home,
       items: [
-        { label: 'Dashboard', href: '/', icon: BarChart3 },
+        { label: 'Dashboard', href: '/', icon: BarChart3, badge: 'New' },
         { label: 'Services', href: '/service-marketplace', icon: ShoppingCart },
         { label: 'Talent', href: '/talent-directory', icon: Users },
         { label: 'Analytics', href: '/analytics-dashboard', icon: TrendingUp },
+        { label: 'Marketplace', href: '/marketplace', icon: Store },
+        { label: 'Portfolio', href: '/portfolio', icon: Briefcase },
       ]
     },
     {
@@ -158,6 +160,10 @@ const Sidebar: React.FC = () => {
         { label: 'AI IoT', href: '/ai-powered-iot', icon: Wifi },
         { label: 'AI VR/AR', href: '/ai-powered-virtual-reality', icon: Eye },
         { label: 'AI Healthcare', href: '/ai-powered-healthcare-medical-diagnostics', icon: Heart },
+        { label: 'AI Content Creation', href: '/ai-content-creation', icon: PenTool },
+        { label: 'AI Code Assistant', href: '/ai-code-assistant', icon: Code },
+        { label: 'AI Data Science', href: '/ai-data-science', icon: Database },
+        { label: 'AI Automation', href: '/ai-automation', icon: Zap },
       ]
     },
     {
@@ -171,6 +177,10 @@ const Sidebar: React.FC = () => {
         { label: 'Compliance', href: '/compliance-governance', icon: Shield },
         { label: 'Help Center', href: '/help-center', icon: HelpCircle },
         { label: 'FAQ', href: '/faq', icon: FileText },
+        { label: 'Enterprise Solutions', href: '/enterprise', icon: Building },
+        { label: 'Partnerships', href: '/partnerships', icon: Handshake },
+        { label: 'Investor Relations', href: '/investors', icon: TrendingUp },
+        { label: 'Legal & Contracts', href: '/legal', icon: FileText },
       ]
     },
     {
@@ -182,6 +192,10 @@ const Sidebar: React.FC = () => {
         { label: 'Notifications', href: '/notifications', icon: Bell },
         { label: 'Inbox', href: '/inbox', icon: Mail },
         { label: 'API Docs', href: '/api-docs', icon: Code },
+        { label: 'Video Conferencing', href: '/video-conference', icon: Video },
+        { label: 'Voice Calls', href: '/voice-calls', icon: Phone },
+        { label: 'Screen Sharing', href: '/screen-sharing', icon: Monitor },
+        { label: 'Team Collaboration', href: '/team-collaboration', icon: Users },
       ]
     },
     {
@@ -194,6 +208,41 @@ const Sidebar: React.FC = () => {
         { label: 'AI Invoice Generator', href: '/ai-invoice-generator', icon: CreditCard },
         { label: 'Workflow Designer', href: '/workflow-designer', icon: Workflow },
         { label: 'Advanced Search', href: '/advanced-search', icon: Search },
+        { label: 'Code Editor', href: '/code-editor', icon: Code },
+        { label: 'Design Studio', href: '/design-studio', icon: Palette },
+        { label: 'Data Visualization', href: '/data-viz', icon: BarChart3 },
+        { label: 'File Manager', href: '/file-manager', icon: Folder },
+        { label: 'Task Manager', href: '/task-manager', icon: CheckSquare },
+      ]
+    },
+    {
+      id: 'development',
+      title: 'Development',
+      icon: Code,
+      items: [
+        { label: 'API Explorer', href: '/api-explorer', icon: Code },
+        { label: 'SDK Documentation', href: '/sdk-docs', icon: BookOpen },
+        { label: 'Developer Console', href: '/dev-console', icon: Terminal },
+        { label: 'Testing Suite', href: '/testing', icon: TestTube },
+        { label: 'Deployment', href: '/deployment', icon: Rocket },
+        { label: 'Monitoring', href: '/monitoring', icon: Activity },
+        { label: 'Logs', href: '/logs', icon: FileText },
+        { label: 'Performance', href: '/performance', icon: Gauge },
+      ]
+    },
+    {
+      id: 'resources',
+      title: 'Resources',
+      icon: BookOpen,
+      items: [
+        { label: 'Documentation', href: '/docs', icon: FileText },
+        { label: 'Tutorials', href: '/tutorials', icon: Play },
+        { label: 'Blog', href: '/blog', icon: PenTool },
+        { label: 'Community', href: '/community', icon: Users },
+        { label: 'Support', href: '/support', icon: LifeBuoy },
+        { label: 'Status Page', href: '/status', icon: Signal },
+        { label: 'Pricing', href: '/pricing', icon: DollarSign },
+        { label: 'About Us', href: '/about', icon: Info },
       ]
     }
   ]
@@ -238,16 +287,19 @@ const Sidebar: React.FC = () => {
         w-80 shadow-2xl
       `}>
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-700">
+        <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <Zap className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg animate-pulse">
+              <Zap className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-white">Bolt.new</h1>
+            <div>
+              <h1 className="text-xl font-bold text-white bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Zion App</h1>
+              <p className="text-xs text-gray-400">Next Generation Platform</p>
+            </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-700 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-700 transition-all duration-300 hover:scale-110"
           >
             <X className="w-5 h-5 text-gray-300" />
           </button>
