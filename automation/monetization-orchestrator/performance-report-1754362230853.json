@@ -1,0 +1,765 @@
+{
+  "timestamp": "2025-08-05T02:50:30.852Z",
+  "totalAgents": 108,
+  "totalRevenue": 0,
+  "totalConversions": 0,
+  "averageEfficiency": 0,
+  "agentPerformance": [
+    {
+      "id": "ad-revenue-1754359737518",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754359737519",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754359742550",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754359742553",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362180273",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362180274",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185310",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185312",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185316",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185318",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185321",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362185323",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362225813",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ad-revenue-1754362225814",
+      "type": "ad-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359737524",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359737526",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359742555",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754359742559",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362180282",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362180286",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185325",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185328",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185332",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185335",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185338",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362185341",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362225824",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "affiliate-1754362225826",
+      "type": "affiliate",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "data-monetization-1754359742609",
+      "type": "data-monetization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "data-monetization-1754362185344",
+      "type": "data-monetization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "data-monetization-1754362185437",
+      "type": "data-monetization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359737528",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359737533",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359742563",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754359742580",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362180287",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362180304",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185346",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185349",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185352",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185355",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185358",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362185362",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362225828",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "ecommerce-1754362225831",
+      "type": "ecommerce",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-sales-1754359742607",
+      "type": "enterprise-sales",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-sales-1754362185365",
+      "type": "enterprise-sales",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-sales-1754362185435",
+      "type": "enterprise-sales",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-upselling-1754359742623",
+      "type": "enterprise-upselling",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-upselling-1754362185367",
+      "type": "enterprise-upselling",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "enterprise-upselling-1754362185449",
+      "type": "enterprise-upselling",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359737530",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359737537",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359742587",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754359742590",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362180290",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362180301",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185369",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185371",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185374",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185377",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185380",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362185383",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362225830",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "freemium-1754362225835",
+      "type": "freemium",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "high-value-customer-targeting-1754359742619",
+      "type": "high-value-customer-targeting",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "high-value-customer-targeting-1754362185386",
+      "type": "high-value-customer-targeting",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "high-value-customer-targeting-1754362185446",
+      "type": "high-value-customer-targeting",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "international-expansion-1754359742624",
+      "type": "international-expansion",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "international-expansion-1754362185388",
+      "type": "international-expansion",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "international-expansion-1754362185451",
+      "type": "international-expansion",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "marketplace-optimization-1754359742611",
+      "type": "marketplace-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "marketplace-optimization-1754362185390",
+      "type": "marketplace-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "marketplace-optimization-1754362185439",
+      "type": "marketplace-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "partnership-revenue-1754359742613",
+      "type": "partnership-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "partnership-revenue-1754362185392",
+      "type": "partnership-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "partnership-revenue-1754362185441",
+      "type": "partnership-revenue",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "premium-service-optimization-1754359742621",
+      "type": "premium-service-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "premium-service-optimization-1754362185393",
+      "type": "premium-service-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "premium-service-optimization-1754362185447",
+      "type": "premium-service-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359737509",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359737512",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359742594",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754359742597",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362180268",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362180274",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185395",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185397",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185399",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185401",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185403",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362185405",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362225809",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "revenue-optimization-1754362225813",
+      "type": "revenue-optimization",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359737516",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359737522",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359742599",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754359742603",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362180276",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362180282",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185407",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185411",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185414",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185417",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185428",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362185431",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362225814",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    },
+    {
+      "id": "subscription-1754362225818",
+      "type": "subscription",
+      "revenue": 0,
+      "conversions": 0,
+      "efficiency": 0
+    }
+  ]
+}
