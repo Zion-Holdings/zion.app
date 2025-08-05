@@ -201,7 +201,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           budget: 5000000,
           spent: 3750000,
           owner: CT'O,
-          priority: 'critical,
+          priority: 'critical',
           kpis: [Process Efficiency, Cost Reduction, Custome'r Experience]
         },
 {

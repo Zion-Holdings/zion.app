@@ -58,7 +58,7 @@ interface FacilityPlan {
   id: string;
   'type: 'scaling | efficiency | cost | timing';
   priority: 'low' | 'medium' | 'high' | 'critical';
-  title: 'string;
+  title: string;
   description: string;
   impact: string;
   implementationCost: number;

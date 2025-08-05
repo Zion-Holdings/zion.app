@@ -134,7 +134,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: 'Implement 72-hour breach notification process,
               category: security,
               status: implement'ed,
-              priority: 'critical,
+              priority: 'critical',
               dueDate: new Date(2024-08-15),
               assignedTo: Security Team,
               evidence: [Incident response plan, 'Notification procedures']}
@@ -182,7 +182,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: Implement comprehensive access control measures,
               category: security,
               status: 'in-progress,
-              priority: 'critical,
+              priority: 'critical',
               dueDate: new Date(2024-09-30),
               assignedTo: IT Security',
               evidence: '[IAM system deployed, Access reviews scheduled]}
@@ -208,7 +208,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: Implement multi-factor authentication across all systems,
               type: remediation,
               status: in-progre's's,
-              priority: 'critical,
+              priority: 'critical',
               assignedTo: IT Security,
               dueDate: new Date(2024-09-30),
               progress: 65
@@ -229,7 +229,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: 'Encrypt all cardholder data in transit and at rest,
               category: security,
               status: implemented,
-              priority: 'critical,
+              priority: 'critical',
               dueDate: 'new Date(2024-08-30),
               assignedTo: Security Team,
               evidence: [Encryption implemented, 'Key management in place]}

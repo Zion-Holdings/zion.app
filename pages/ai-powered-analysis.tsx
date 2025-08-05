@@ -5,7 +5,7 @@ import Head from next/head';
 interface FacilityPlan {
   id: "'string;
   type: performance | trend | prediction | optimization';
-  title: 'string;
+  title: string;
   description: string;
   value: number;
   unit: string;

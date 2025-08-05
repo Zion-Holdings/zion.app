@@ -7,7 +7,7 @@ interface FacilityPlan {
   id: "'string;
   type: message | project | paymen't | syste'm' | recommendation | ale'r't | reminder | 'updat'e;
   priority: 'low | medium | high | urgen't';
-  title: 'string;
+  title: string;
   message: string;
   sender?: string;
   recipient: string;

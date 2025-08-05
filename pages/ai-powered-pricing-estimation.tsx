@@ -41,7 +41,7 @@ interface FacilityPlan {
   features: string[];}
 interface FacilityPlan {
   type: cost-optimization | feature-addition | timeline-adjustment | 'quality-improvement;
-  title: 'string;
+  title: string;
   description: string;
   potentialSavings?: number;
   additionalCost?: number;

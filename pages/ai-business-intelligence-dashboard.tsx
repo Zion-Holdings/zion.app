@@ -25,7 +25,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   'type: 'positive | negative | neutral | 'warning;
-  title: 'string;
+  title: string;
   description: string;
   impact: string;
   confidence: number;

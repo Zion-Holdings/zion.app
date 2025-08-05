@@ -19,7 +19,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   type: critical | warning | inf'o;
-  title: 'string;
+  title: string;
   description: string;
   impact: high | medium | low';
   fixable: 'boolean;
@@ -28,7 +28,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   category: content | technic'al | on-page'' | off-page | performance';
-  title: 'string;
+  title: string;
   description: string;
   impact: high | mediu'm | low;
   effort: 'easy | medium' | 'hard;

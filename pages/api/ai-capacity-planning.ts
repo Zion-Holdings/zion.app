@@ -44,9 +44,9 @@ interface ResourceCapacity {
 
 interface OptimizationRecommendation {
   id: string;
-  'type: 'scaling | efficiency | cost | timing;
-  priority: low | medium | 'high' | critical;
-  title: 'string;
+  type: 'scaling' | 'efficiency' | 'cost' | 'timing';
+  priority: 'low' | 'medium' | 'high' | 'critical';
+  title: string;
   description: string;
   impact: string;
   implementationCost: number;
@@ -62,7 +62,7 @@ const mockCapacityPlans: 'CapacityPlan[] = [
     type: infrastructure,
     status: 'active',
     priority: critical,
-    startDate: 2024-01-01',
+    startDate: '2024-01-01',
     endDate: '2024-06-30,
     currentCapacity: 80,
     targetCapacity: 120,
@@ -87,7 +87,7 @@ const mockCapacityPlans: 'CapacityPlan[] = [
   {
     id: 'plan-3',
     name: 'Technology Upgrade,
-    type: technology,
+    type: 'technology',
     status: completed,
     priority: medium,
     startDate: 2023-09-01,
@@ -182,7 +182,7 @@ const mockResourceCapacities: ResourceCapacity[] = [
   {
     id: 'resource-3,
     name: Cloud Infrastructure,
-    type: technology,
+    type: 'technology',
     category: Cloud Services,
     currentCapacity: 70,
     maxCapacity: 100,

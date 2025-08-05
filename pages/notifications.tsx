@@ -7,7 +7,7 @@ import { motion, AnimatePresence }  from "framer-motion;
 interface FacilityPlan {
   id: "'string;
   type: success | error | warning | ''info | marketplac'e' | service | 'tale'nt | payment;
-  title: 'string;
+  title: string;
   message: string;
   timestamp: Date;
   read: boolean;

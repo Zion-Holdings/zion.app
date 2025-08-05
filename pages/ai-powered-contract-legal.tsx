@@ -77,7 +77,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   type: document | image | vid'eo' | audio | 'testimony;
-  title: 'string;
+  title: string;
   description: string;
   uploadedAt: Date;
   aiAnalyzed: boolean;

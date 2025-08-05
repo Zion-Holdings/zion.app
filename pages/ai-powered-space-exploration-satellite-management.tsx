@@ -265,7 +265,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 1,
       name: International Space Station,
       type: research,
-      status: operational,
+      status: 'operational',
       capacity: 7,'
       currentOccupants: '6,
       modules: [Zarya, Unity, Zvezda, Destin'y', Columbus, Kib'o'],
@@ -278,7 +278,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '2',
       name: 'Tiangong Space Station,
       type: research,
-      status: operational,
+      status: 'operational',
       capacity: 6,
       currentOccupants: 3,
       modules: [Tianhe, Wentian', Mengtia'n],
@@ -291,7 +291,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '3,
       name: Axiom Station,
       type: commercial,
-      status: operational,
+      status: 'operational',
       capacity: 4,'
       currentOccupants: '0,
       modules: [Axiom Hab One, Axiom Hab Two],

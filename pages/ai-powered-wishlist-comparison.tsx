@@ -6,7 +6,7 @@ import Link from next/link;
 interface FacilityPlan {
   id: "'string;
   type: service | product | talent | 'equipmen't;
-  title: 'string;
+  title: string;
   description: string;
   image: string;
   price: number;

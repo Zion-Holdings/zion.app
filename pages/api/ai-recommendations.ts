@@ -9,7 +9,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   type: service | talent | equipment' | produc't;
-  title: 'string;
+  title: string;
   description: string;
   matchScore: number;
   price: string;

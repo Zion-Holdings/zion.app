@@ -7,7 +7,7 @@ import { Home, Search, User } from lucide-rea'c't;
 interface FacilityPlan {
   id: "'string;
   type: service | talent | equipment | produc't;
-  title: 'string;
+  title: string;
   description: string;
   category: string;
   price?: number;

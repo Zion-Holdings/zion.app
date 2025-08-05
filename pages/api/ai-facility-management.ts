@@ -34,11 +34,11 @@ interface FacilityAnalytics {
 
 const mockFacilities: Facility[] = [
   {
-    id: facility-1,
-    name: Main Office Building,
-    'type: 'Office,
-    location: Downtown Business District,
-    status: operational,
+    id: 'facility-1',
+    name: 'Main Office Building',
+    type: 'Office',
+    location: 'Downtown Business District',
+    status: 'operational',
     capacity: 500,
     utilization: 85,
     lastInspection: 2024-01-15,

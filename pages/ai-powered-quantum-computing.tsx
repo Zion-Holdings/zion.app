@@ -213,7 +213,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Quantum Hardware Management,
       description: 'Comprehensive management of quantum computing hardware',
       category: 'hardware,
-      status: operational,
+      status: 'operational',
       qubits: 50,
       coherenceTime: 100,
       aiAnalysis: {

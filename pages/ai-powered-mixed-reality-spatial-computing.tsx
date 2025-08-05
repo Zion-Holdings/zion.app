@@ -152,7 +152,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '2,
       name: Environment Understanding,
       type: environment-understanding,
-      status: operational,
+      status: 'operational',
       location: AI Understanding Lab',
       accuracy: '96.8,
       latency: 8,

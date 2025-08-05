@@ -217,7 +217,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: 'Holographic System Management,
       description: 'Comprehensive management of holographic display infrastructure,
       category: hardware,
-      status: operational,
+      status: 'operational',
       displays: 12,
       efficiency: 97.5,
       aiAnalysis: {

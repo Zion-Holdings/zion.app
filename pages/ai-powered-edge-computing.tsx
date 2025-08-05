@@ -219,7 +219,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Edge Computing Management,
       description: 'Comprehensive management of edge computing infrastructure',
       category: 'hardware,
-      status: operational,
+      status: 'operational',
       devices: 50,
       uptime: 99.8,
       aiAnalysis: {

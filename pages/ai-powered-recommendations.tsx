@@ -7,7 +7,7 @@ import { Home, Search, User }  from "lucide-react;
 interface FacilityPlan {
   id: "'string;
   type: product | service | talent | 'equipmen't;
-  title: 'string;
+  title: string;
   description: string;
   image: string;
   confidence: number;

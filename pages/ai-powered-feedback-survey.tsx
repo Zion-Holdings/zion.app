@@ -112,7 +112,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Gathering feedback on AI-powered marketplace features and functionality,
       type: feature,
       status: analyzing,
-      priority: 'critical,
+      priority: 'critical',
       responses: '89,
       averageRating: 4.6,
       satisfactionScore: 92,

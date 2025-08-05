@@ -26,7 +26,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   type: document | image | vid'eo' | audio | 'testimony;
-  title: 'string;
+  title: string;
   description: string;
   uploadedBy: string;
   uploadedAt: Date;
@@ -34,7 +34,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   type: created | assigned | mediati'on_started | evidence_submitted' | 'arbitration_requested | resolution_''proposed | resolved' | 'closed;
-  title: 'string;
+  title: string;
   description: string;
   timestamp: Date;
   actor: string;}

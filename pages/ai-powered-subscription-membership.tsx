@@ -63,7 +63,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   'type: 'upgrade | downgrade | feature | optimizatio'n;
-  title: 'string;
+  title: string;
   description: string;
   reasoning: string;
   potentialSavings?: number;

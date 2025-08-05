@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface Contract {
   id: string;
@@ -45,72 +45,72 @@ const mockContracts: Contract[] = [
     terms: ['Monthly payment terms', '99.9% uptime guarantee', '24/7 support'],
     risks: ['Service disruption', 'Data security', 'Cost overruns'],
     compliance: ['GDPR', 'SOC 2', 'ISO 27001'],
-    aiAnalysis: '{
-      id: analysis-1,
+    aiAnalysis: {
+      id: 'analysis-1',
       riskScore: 25,
       complianceScore: 95,
       valueScore: 85,
-      recommendations: [Implement additional security measures, 'Negotiate better payment terms]
+      recommendations: ['Implement additional security measures', 'Negotiate better payment terms']
     }
   },
   {
-    id: 'contract-2,
-    name: Software License Agreement,
-    type: product,
-    status: negotiation,
+    id: 'contract-2',
+    name: 'Software License Agreement',
+    type: 'product',
+    status: 'negotiation',
     value: 250000,
-    startDate: 2024-03-01',
-    endDate: '2025-02-28,
-    parties: [Company A, 'Software Vendor C],
-    terms: '[Annual licensing, Unlimited users, Technical support'],
-    risks: '[Vendor lock-in, Version compatibility, 'Support quality],
-    compliance: '[Software licensing laws, Data protection],
+    startDate: '2024-03-01',
+    endDate: '2025-02-28',
+    parties: ['Company A', 'Software Vendor C'],
+    terms: ['Annual licensing', 'Unlimited users', 'Technical support'],
+    risks: ['Vendor lock-in', 'Version compatibility', 'Support quality'],
+    compliance: ['Software licensing laws', 'Data protection'],
     aiAnalysis: {
-      id: analysis-2',
-      riskScore: '40,
+      id: 'analysis-2',
+      riskScore: 40,
       complianceScore: 88,
       valueScore: 78,
-      recommendations: [Add exit clause, Define support SLAs, 'Include upgrade protection]
+      recommendations: ['Add exit clause', 'Define support SLAs', 'Include upgrade protection']
     }
   },
   {
-    id: 'contract-3,
-    name: Strategic Partnership Agreement,
-    type: partnership,
-    status: draft,
+    id: 'contract-3',
+    name: 'Strategic Partnership Agreement',
+    type: 'partnership',
+    status: 'draft',
     value: 1000000,
-    startDate: 2024-06-01',
-    endDate: '2026-05-31,
-    parties: [Company A, 'Partner D],
-    terms: '[Revenue sharing, Joint marketing, Technology exchange'],
-    risks: '[Intellectual property disputes, Market competition, 'Resource allocation],
-    compliance: '[Antitrust laws, IP protection, Export controls'],
-    aiAnalysis: '{
-      id: analysis-3,
+    startDate: '2024-06-01',
+    endDate: '2026-05-31',
+    parties: ['Company A', 'Partner D'],
+    terms: ['Revenue sharing', 'Joint marketing', 'Technology exchange'],
+    risks: ['Intellectual property disputes', 'Market competition', 'Resource allocation'],
+    compliance: ['Antitrust laws', 'IP protection', 'Export controls'],
+    aiAnalysis: {
+      id: 'analysis-3',
       riskScore: 60,
       complianceScore: 92,
       valueScore: 90,
-      recommendations: [Strengthen IP protection clauses, 'Define dispute resolution process, Add performance metrics']
+      recommendations: ['Strengthen IP protection clauses', 'Define dispute resolution process', 'Add performance metrics']
     }
   },
   {
-    id: 'contract-4,
-    name: Employment Contract - Senior Developer,
-    type: employment,
+    id: 'contract-4',
+    name: 'Employment Contract - Senior Developer',
+    type: 'employment',
     status: 'active',
     value: 120000,
-    startDate: '2023-09-01,
-    endDate: '2024-08-31,
-    parties: [Company A, Employee E'],
-    terms: '[Annual salary, Benefits package, 'Non-compete clause],
-    risks: '[Employee turnover, Skill mismatch, Legal disputes'],
-    compliance: '[Labor laws, Equal opportunity, 'Workplace safety],
-    aiAnalysis: '{
-      id: analysis-4,
+    startDate: '2023-09-01',
+    endDate: '2024-08-31',
+    parties: ['Company A', 'Employee E'],
+    terms: ['Annual salary', 'Benefits package', 'Non-compete clause'],
+    risks: ['Employee turnover', 'Skill mismatch', 'Legal disputes'],
+    compliance: ['Labor laws', 'Equal opportunity', 'Workplace safety'],
+    aiAnalysis: {
+      id: 'analysis-4',
       riskScore: 15,
       complianceScore: 98,
       valueScore: 82,
-      recommendations: [Add retention incentives, Define career progression', 'Include training provisions]
+      recommendations: ['Add retention incentives', 'Define career progression', 'Include training provisions']
     }
   }
 ];
@@ -124,19 +124,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { action, filters } = req.body;
 
     switch (action) {
-      case getContracts':
+      case 'getContracts':
         return res.status(200).json({
-          success: 'true,
+          success: true,
           data: mockContracts,
           analytics: {
             totalContracts: mockContracts.length,
-            activeContracts: mockContracts.filter(c => c.status === active).length,
+            activeContracts: mockContracts.filter(c => c.status === 'active').length,
             totalValue: mockContracts.reduce((sum, c) => sum + c.value, 0),
             averageRiskScore: mockContracts.reduce((sum, c) => sum + c.aiAnalysis.riskScore, 0) / mockContracts.length
           }
         });
 
-      case getContractAnalytics:
+      case 'getContractAnalytics':
         return res.status(200).json({
           success: true,
           analytics: {
@@ -147,34 +147,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             complianceRate: 93.25,
             aiOptimizationScore: 89.5,
             recommendations: [
-              'Implement AI-powered contract risk assessment,
-              Automate compliance monitoring',
-              'Optimize contract terms using AI analysis,
-              Establish contract performance tracking'
+              'Implement AI-powered contract risk assessment',
+              'Automate compliance monitoring',
+              'Optimize contract terms using AI analysis',
+              'Establish contract performance tracking'
             ]
           }
         });
 
-      case 'getContractDetails: 'const { contractId } = req.body;
+      case 'getContractDetails':
+        const { contractId } = req.body;
         const contract = mockContracts.find(c => c.id === contractId);
         
         if (!contract) {
-          return res.status(404).json({ error: Contract not found });
+          return res.status(404).json({ error: 'Contract not found' });
         }
 
         return res.status(200).json({
           success: true,
           data: contract,
           analytics: {
-            riskTrend: decreasing,
-            complianceStatus: compliant',
-            valueOptimization: '85,
+            riskTrend: 'decreasing',
+            complianceStatus: 'compliant',
+            valueOptimization: 85,
             termEfficiency: 78,
             stakeholderSatisfaction: 82
           }
         });
 
-      case analyzeContract:
+      case 'analyzeContract':
         const { contractText } = req.body;
         
         // Simulate AI contract analysis
@@ -183,27 +184,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           complianceScore: Math.floor(Math.random() * 20) + 80,
           valueScore: Math.floor(Math.random() * 30) + 70,
           recommendations: [
-            Review payment terms for optimization,
-            'Add force majeure clause,
-            Define clear dispute resolution process',
-            'Include performance metrics
+            'Review payment terms for optimization',
+            'Add force majeure clause',
+            'Define clear dispute resolution process',
+            'Include performance metrics'
           ]
         };
 
         return res.status(200).json({
-          success: 'true,
+          success: true,
           analysis,
           insights: {
-            keyRisks: [Payment terms, Service level agreements, Termination clauses'],
-            optimizationOpportunities: '[Pricing structure, Delivery timelines, 'Quality standards],
-            complianceGaps: '[Data protection, Export controls, Intellectual property']
+            keyRisks: ['Payment terms', 'Service level agreements', 'Termination clauses'],
+            optimizationOpportunities: ['Pricing structure', 'Delivery timelines', 'Quality standards'],
+            complianceGaps: ['Data protection', 'Export controls', 'Intellectual property']
           }
         });
 
-      default: 'return res.status(400).json({ error: Invalid action });
+      default:
+        return res.status(400).json({ error: 'Invalid action' });
     }
   } catch (error) {
-    console.error(AI Contract API Error:, error);
+    console.error('AI Contract API Error:', error);
     return res.status(500).json({ error: 'Internal server error' });
   }
 }
