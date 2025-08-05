@@ -36,7 +36,7 @@ const BlockchainTechnologyInModernBusinessSolutionsChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • practical-implementation • problem-solution</span>
+              <span>Expert Discussion • business-strategic • best-practices</span>
             </div>
           </div>
           
