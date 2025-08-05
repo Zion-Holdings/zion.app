@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -215,12 +215,8 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
   const [endpoints, setEndpoints] = useState<APIEndpoint[]>([]);
   const [monitoring, setMonitoring] = useState<APIMonitoring[]>([]);
   const [security, setSecurity] = useState<APISecurity[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
-
-  useEffect(() => {
-    loadAPIData();
-  }, [selectedTimeframe, loadAPIData]);
+  const [loading, setLoading] = useState(true);
+  const [selectedTimeframe, setSelectedTimeframe] = useState('7d');
 
   const loadAPIData = async () => {
     setLoading(true);
@@ -249,6 +245,10 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    loadAPIData();
+  }, [selectedTimeframe, loadAPIData]);
 
   const getStatusColor = (status: string) => {
     switch (status) {

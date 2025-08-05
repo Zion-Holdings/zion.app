@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-05T12:13:23.420Z",
+  "timestamp": "2025-08-05T15:15:43.665Z",
   "summary": {
     "totalPages": 11,
     "missingPages": 15,
@@ -222,6 +222,11 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
             }
           ]
         },

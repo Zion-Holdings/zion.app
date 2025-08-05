@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app",
-  "timestamp": "2025-08-05T12:12:56.813Z",
+  "timestamp": "2025-08-05T15:15:15.105Z",
   "pageInfo": {
     "title": "Zion - The First Free AI-Powered Marketplace",
     "description": "Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products.",
@@ -99,7 +99,7 @@
         "text": "Ready to Start Trading?"
       }
     ],
-    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZionThe First FreeAI-Powered MarketplaceExperience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products in a seamless, secure environment.Start Trading NowExplore Marketplace10K+Active Users500+AI Services99.9%UptimeMarketplace CategoriesExplore our comprehensive marketplace featuring cutting-edge technology solutionsServices💻IT ServicesProfessional IT consulting and development servicesTalent🤖AI TalentsExpert AI developers and consultantsHardware⚙️EquipmentHigh-performance computing hardwareProducts🚀InnovationCutting-edge technology solutionsFeatured IT ServicesProfessional IT services delivered by certified expertsFEATUREDAI DevelopmentCustom AI solutions and machine learning models for your business needs$150-500/hr4.9Cloud MigrationSeamless cloud infrastructure setup and migration services$2000-150004.8Security AuditingComprehensive security assessments and penetration testing$1000-80004.9Performance OptimizationSystem and application optimization for maximum efficiency$800-30004.7Top AI TalentsConnect with world-class AI experts and developersFEATUREDDr. Sarah ChenMachine Learning Expert with 8+ years of experience in AI research$200/hr4.9Alex RodriguezDeep Learning Specialist specializing in neural networks and computer vision$180/hr4.8Dr. Michael KimAI Research Scientist with 10+ years in quantum computing and AI$250/hr4.9Emma ThompsonComputer Vision Engineer with expertise in autonomous systems$160/hr4.7Premium EquipmentHigh-performance computing hardware and advanced technology solutionsFEATUREDGPU ClustersHigh-performance computing clusters for AI and machine learning workloads$5000-500004.9Quantum ComputersNext-generation quantum processing units for advanced computations$100000+4.8Edge Computing DevicesIoT and edge processing solutions for real-time applications$1000-100004.7Data Storage SystemsEnterprise-grade storage solutions with high availability$2000-250004.8Ready to Start Trading?Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.Get Started NowExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"PAh7cF5RmDwCIVgwM0l8h\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZionThe First FreeAI-Powered MarketplaceExperience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products in a seamless, secure environment.Start Trading NowExplore Marketplace10K+Active Users500+AI Services99.9%UptimeMarketplace CategoriesExplore our comprehensive marketplace featuring cutting-edge technology solutionsServices💻IT ServicesProfessional IT consulting and development servicesTalent🤖AI TalentsExpert AI developers and consultantsHardware⚙️EquipmentHigh-performance computing hardwareProducts🚀InnovationCutting-edge technology solutionsFeatured IT ServicesProfessional IT services delivered by certified expertsFEATUREDAI DevelopmentCustom AI solutions and machine learning models for your business needs$150-500/hr4.9Cloud MigrationSeamless cloud infrastructure setup and migration services$2000-150004.8Security AuditingComprehensive security assessments and penetration testing$1000-80004.9Performance OptimizationSystem and application optimization for maximum efficiency$800-30004.7Top AI TalentsConnect with world-class AI experts and developersFEATUREDDr. Sarah ChenMachine Learning Expert with 8+ years of experience in AI research$200/hr4.9Alex RodriguezDeep Learning Specialist specializing in neural networks and computer vision$180/hr4.8Dr. Michael KimAI Research Scientist with 10+ years in quantum computing and AI$250/hr4.9Emma ThompsonComputer Vision Engineer with expertise in autonomous systems$160/hr4.7Premium EquipmentHigh-performance computing hardware and advanced technology solutionsFEATUREDGPU ClustersHigh-performance computing clusters for AI and machine learning workloads$5000-500004.9Quantum ComputersNext-generation quantum processing units for advanced computations$100000+4.8Edge Computing DevicesIoT and edge processing solutions for real-time applications$1000-100004.7Data Storage SystemsEnterprise-grade storage solutions with high availability$2000-250004.8Ready to Start Trading?Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.Get Started NowExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/\",\"query\":{},\"buildId\":\"FYTyUcvjvytp29vZoznYq\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -120,19 +120,19 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-fb816b7dfdf31a8b.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-279802257cfef0d9.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-25485d3a311367ed.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-777a07891d3866c7.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/FYTyUcvjvytp29vZoznYq/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/FYTyUcvjvytp29vZoznYq/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -140,17 +140,17 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-c8d8c11522502c3f.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-b984b49231b602aa.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-591ceaf4cde98d72.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/0374927e7d760269.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5093061d5ab20cca.css",
         "media": "all"
       }
     ]
