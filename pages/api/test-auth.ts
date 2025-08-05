@@ -4,7 +4,7 @@ const $1 = createClient(;
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,;
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-key;
 );};
-export default async;function handler(req: NextApiRequest, res: NextApiResponse) {;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
   try {;
     // Test environment variables;
     const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -20,7 +20,7 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
         hasSupabaseKey: !!supabaseKey,;
         supabaseUrl: supabaseUrl ? Set : Not set,;
         supabaseKey: supabaseKey ? 'S'et : Not set};
-      session: ""{";
+      session: '{";
         exists: !!session,;
         error: sessionError?.message || null};
       user: {;

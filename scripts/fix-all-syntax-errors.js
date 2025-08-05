@@ -3,102 +3,130 @@
 const fs = require('fs');
 const path = require('path');
 
-function fixAllSyntaxErrors(directory) {
-  const files = fs.readdirSync(directory, { withFileTypes: true });
-  
-  files.forEach(file => {
-    const filePath = path.join(directory, file.name);
-    
-    if (file.isDirectory()) {
-      fixAllSyntaxErrors(filePath);
-    } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
-      try {
-        let content = fs.readFileSync(filePath, 'utf8');
-        let modified = false;
-        
-        // Fix unterminated string literals in imports
-        content = content.replace(/import React from ';react/g, "import React from ';react'");
-        content = content.replace(/import \{ ([^}]+) \} from ';react/g, "import { $1 } from ';react'");
-        content = content.replace(/import ([^']+) from ';([^']+)/g, "import $1 from ';$2'");
-        content = content.replace(/import \{ ([^}]+) \} from ';([^']+)/g, "import { $1 } from ';$2'");
-        content = content.replace(/import type \{ ([^}]+) \} from ';([^']+)/g, "import type { $1 } from ';$2'");
-        
-        // Fix missing quotes in JSX attributes
-        content = content.replace(/className=([^"']+)/g, 'className="""$1"');
-        content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
-        content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
-        content = content.replace(/content=([^"']+)/g, 'content="$1"');
-        content = content.replace(/title=([^"']+)/g, 'title="$1"');
-        content = content.replace(/alt=([^"']+)/g, 'alt="$1"');
-        content = content.replace(/src=([^"']+)/g, 'src="$1"');
-        content = content.replace(/href=([^"']+)/g, 'href="""$1"');
-        
-        // Fix specific JSX issues
-        content = content.replace(/<div className=([^"']+)>/g, '<div className="""$1">');
-        content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
-        content = content.replace(/<meta name="viewport" content=([^"]+)"/g, '<meta name="viewport" content="$1" />');
-        content = content.replace(/<meta name="description" content=([^"]+)"/g, '<meta name="description" content="$1" />');
-        
-        // Fix unterminated string literals in JSX
-        content = content.replace(/<title>([^<]*)<\/title>/g, (match, title) => {
-          if (!title.includes('"') && !title.includes("'")) {
-            return `<title>${title}</title>`;
-          }
-          return match;
-        });
-        
-        // Fix missing semicolons
-        content = content.replace(/([^;])\nimport/g, '$1;\nimport');
-        content = content.replace(/([^;])\nconst/g, '$1;\nconst');
-        content = content.replace(/([^;])\nlet/g, '$1;\nlet');
-        content = content.replace(/([^;])\nvar/g, '$1;\nvar');
-        
-        // Fix missing closing braces
-        content = content.replace(/\{([^}]*)$/gm, '{$1}');
-        
-        // Fix missing closing parentheses
-        content = content.replace(/\(([^)]*)$/gm, '($1)');
-        
-        // Fix missing closing brackets
-        content = content.replace(/\[([^\]]*)$/gm, '[$1]');
-        
-        // Fix missing closing quotes
-        content = content.replace(/'([^']*)$/gm, "'$1'");
-        content = content.replace(/"([^"]*)$/gm, '"$1"');
-        
-        // Fix specific common patterns
-        content = content.replace(/export default function;/g, 'export default function;');
-        content = content.replace(/export default const;/g, 'export default const;');
-        content = content.replace(/export default class;/g, 'export default class;');
-        
-        // Fix React component declarations
-        content = content.replace(/const ([^=]+) = \(\) => \{/g, 'const $1 = () => {');
-        content = content.replace(/const ([^=]+) = \(([^)]*)\) => \{/g, 'const $1 = ($2) => {');
-        
-        // Fix TypeScript interface declarations
-        content = content.replace(/interface ([^{]+) \{/g, 'interface $1 {');
-        
-        // Fix function declarations
-        content = content.replace(/function ([^(]+)\(([^)]*)\) \{/g, 'function $1($2) {');
-        
-        if (modified) {
-          fs.writeFileSync(filePath, content);
-          console.log(`Fixed syntax errors: ${filePath}`);
-        }
-      } catch (error) {
-        console.error(`Error processing ${filePath}:`, error.message);
+// Common syntax error patterns and their fixes
+const syntaxFixes = [
+  // Fix unterminated string literals in import statements
+  {
+    pattern: /import.*from\s+['"][^'"]*['"];?['"]/g,
+    replacement: (match) => {
+      // Remove extra quotes and semicolons
+      return match.replace(/['"];?['"]$/, "'");
+    }
+  },
+  // Fix unterminated string literals in general
+  {
+    pattern: /['"][^'"]*['"];?['"]/g,
+    replacement: (match) => {
+      return match.replace(/['"];?['"]$/, "'");
+    }
+  },
+  // Fix extra semicolons after interface definitions
+  {
+    pattern: /interface\s+\w+\s*\{[^}]*\};/g,
+    replacement: (match) => {
+      return match.replace(/;$/, '');
+    }
+  },
+  // Fix malformed async function declarations
+  {
+    pattern: /export\s+default\s+async;function/g,
+    replacement: 'export default async function'
+  },
+  // Fix malformed await statements
+  {
+    pattern: /const\s+\{[^}]*\}\s*=\s*await\s+[^;]*;?['"]/g,
+    replacement: (match) => {
+      return match.replace(/;?['"]$/, ';');
+    }
+  },
+  // Fix malformed console.error statements
+  {
+    pattern: /console\.error\([^)]*['"];?['"]/g,
+    replacement: (match) => {
+      return match.replace(/['"];?['"]$/, "'");
+    }
+  },
+  // Fix malformed res.status statements
+  {
+    pattern: /res\.status\([^)]*\)\.json\([^)]*['"];?['"]/g,
+    replacement: (match) => {
+      return match.replace(/['"];?['"]$/, "'");
+    }
+  }
+];
+
+function fixFile(filePath) {
+  try {
+    let content = fs.readFileSync(filePath, 'utf8');
+    let originalContent = content;
+    let fixed = false;
+
+    // Apply all syntax fixes
+    for (const fix of syntaxFixes) {
+      const newContent = content.replace(fix.pattern, fix.replacement);
+      if (newContent !== content) {
+        content = newContent;
+        fixed = true;
       }
     }
-  });
+
+    // Additional specific fixes for common patterns
+    content = content.replace(/['"];?['"]/g, "'");
+    content = content.replace(/;{2,}/g, ';');
+    content = content.replace(/['"]{2,}/g, "'");
+    content = content.replace(/import\s+.*from\s+['"][^'"]*['"];?['"]/g, (match) => {
+      return match.replace(/['"];?['"]$/, "'");
+    });
+
+    if (fixed || content !== originalContent) {
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Fixed: ${filePath}`);
+      return true;
+    }
+  } catch (error) {
+    console.error(`Error processing ${filePath}:`, error.message);
+  }
+  return false;
 }
 
-// Fix syntax errors in all relevant directories
-const directories = ['pages', 'components', 'src'];
-directories.forEach(dir => {
+function processDirectory(dir) {
+  const files = fs.readdirSync(dir);
+  let fixedCount = 0;
+
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+
+    if (stat.isDirectory()) {
+      fixedCount += processDirectory(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
+      if (fixFile(filePath)) {
+        fixedCount++;
+      }
+    }
+  }
+
+  return fixedCount;
+}
+
+// Main execution
+console.log('Starting syntax error fixes...');
+
+const directories = [
+  'pages',
+  'components',
+  'src',
+  'utils'
+];
+
+let totalFixed = 0;
+
+for (const dir of directories) {
   if (fs.existsSync(dir)) {
     console.log(`Processing directory: ${dir}`);
-    fixAllSyntaxErrors(dir);
+    totalFixed += processDirectory(dir);
   }
-});
+}
 
-console.log('All syntax error fixes completed!');
+console.log(`\nTotal files fixed: ${totalFixed}`);
+console.log('Syntax error fixes completed!');

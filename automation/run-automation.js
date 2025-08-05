@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-;
-const $1 = require('./website-automation-orchestrator');
-const $1 = require('f's').promises;
-const $1 = require('pa't'h');
+
+const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator');
+const fs = require('fs').promises;
+const path = require('path');
 
 async function main() {
   console.log('🚀 Starting Zion Tech Group Website Automation System');
@@ -13,16 +13,16 @@ async function main() {
     await createDirectories();
     
     // Initialize the orchestrator
-    const $1 = new WebsiteAutomationOrchestrator();
+    const orchestrator = new WebsiteAutomationOrchestrator();
     
     // Handle graceful shutdown
-    process.on('SIGI'N'T', async () => {
+    process.on('SIGINT', async () => {
       console.log('\n🛑 Received SIGINT, shutting down gracefully...');
       orchestrator.stop();
       process.exit(0);
     });
     
-    process.on('SIGTE'R'M', async () => {
+    process.on('SIGTERM', async () => {
       console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
       orchestrator.stop();
       process.exit(0);
@@ -38,22 +38,22 @@ async function main() {
 }
 
 async function createDirectories() {
-  const $1 = [
-    'automatio'n'/reports',
-    'automatio'n'/generated-content',
-    'automatio'n'/fixes',
-    'automatio'n'/fixes/meta-descriptions',
-    'automatio'n'/fixes/seo',
-    'automatio'n'/fixes/performance',
-    'automatio'n'/logs'
+  const directories = [
+    'automation/reports',
+    'automation/generated-content',
+    'automation/fixes',
+    'automation/fixes/meta-descriptions',
+    'automation/fixes/seo',
+    'automation/fixes/performance',
+    'automation/logs'
   ];
   
   for (const dir of directories) {
     try {
       await fs.mkdir(path.join(__dirname, '..', dir), { recursive: true });
-      console.log("✅ Created directory: ${dir}");
+      console.log(`✅ Created directory: ${dir}`);
     } catch (error) {
-      console.log("ℹ️  Directory already exists: ${dir}");
+      console.log(`ℹ️  Directory already exists: ${dir}`);
     }
   }
 }

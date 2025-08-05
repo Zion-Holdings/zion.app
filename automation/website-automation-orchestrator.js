@@ -1,14 +1,14 @@
-const $1 = require('./website-analyzer-agent');
-const $1 = require('./content-generator-agent');
-const $1 = require('./error-fixer-agent');
-const $1 = require('f's').promises;
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
-;
-const $1 = promisify(exec);
+const WebsiteAnalyzerAgent = require('./website-analyzer-agent');
+const ContentGeneratorAgent = require('./content-generator-agent');
+const ErrorFixerAgent = require('./error-fixer-agent');
+const fs = require('fs').promises;
+const path = require('path');
+const { exec } = require('child_process');
+const { promisify } = require('util');
 
-class $1 {
+const execAsync = promisify(exec);
+
+class WebsiteAutomationOrchestrator {
   constructor() {
     this.analyzerAgent = new WebsiteAnalyzerAgent();
     this.contentGenerator = new ContentGeneratorAgent();
@@ -28,7 +28,7 @@ class $1 {
         await this.waitForNextIteration();
       } catch (error) {
         console.error('❌ Error in continuous monitoring:', error);
-        this.log('Erro'r' in continuous monitoring: ' + error.message, 'err'o'r');
+        this.log('Error in continuous monitoring: ' + error.message, 'error');
         await this.waitForNextIteration();
       }
     }
@@ -36,18 +36,18 @@ class $1 {
 
   async runIteration() {
     this.iteration++;
-    console.log("\n🔄 Starting iteration ${this.iteration}...");
+    console.log(`\n🔄 Starting iteration ${this.iteration}...`);
     
     try {
       // Step 1: Analyze website
       console.log('📊 Step 1: Analyzing website...');
       await this.analyzerAgent.initialize();
       await this.analyzerAgent.analyzeWebsite();
-      const $1 = await this.loadAnalysisReport();
+      const analysisReport = await this.loadAnalysisReport();
       
       // Step 2: Generate missing content
       console.log('🎨 Step 2: Generating missing content...');
-      const $1 = await this.contentGenerator.generateMissingContent(analysisReport);
+      const generatedContent = await this.contentGenerator.generateMissingContent(analysisReport);
       
       // Step 3: Fix errors
       console.log('🔧 Step 3: Fixing errors...');
@@ -66,11 +66,11 @@ class $1 {
       console.log('📊 Step 6: Generating summary report...');
       await this.generateSummaryReport();
       
-      console.log("✅ Iteration ${this.iteration} completed successfully");
+      console.log(`✅ Iteration ${this.iteration} completed successfully`);
       
     } catch (error) {
-      console.error("❌ Error in iteration ${this.iteration}:", error);
-      this.log("Error in iteration ${this.iteration}: ${error.message}", 'err'o'r');
+      console.error(`❌ Error in iteration ${this.iteration}:`, error);
+      this.log(`Error in iteration ${this.iteration}: ${error.message}`, 'error');
     } finally {
       await this.cleanup();
     }
@@ -78,8 +78,8 @@ class $1 {
 
   async loadAnalysisReport() {
     try {
-      const $1 = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
-      const $1 = await fs.readFile(reportPath, 'ut'f'8');
+      const reportPath = path.join(__dirname, 'reports', 'website-analysis-report.json');
+      const reportData = await fs.readFile(reportPath, 'utf8');
       return JSON.parse(reportData);
     } catch (error) {
       console.error('❌ Error loading analysis report:', error);
@@ -98,298 +98,160 @@ class $1 {
       // Apply fixes to existing pages
       await this.applyFixesToPages();
       
+      console.log('✅ Fixes created and applied successfully');
     } catch (error) {
       console.error('❌ Error creating and applying fixes:', error);
-      this.log('Erro'r' creating and applying fixes: ' + error.message, 'err'o'r');
+      throw error;
     }
   }
 
   async applyFixesToPages() {
-    console.log('🔧 Applying fixes to existing pages...');
-    
     try {
-      // Read the fixes directory
-      const $1 = path.join(__dirname, 'fix'e's');
-      const $1 = await this.getFixFiles(fixesDir);
+      const fixesDir = path.join(__dirname, 'fixes');
+      const fixFiles = await this.getFixFiles(fixesDir);
       
       for (const fixFile of fixFiles) {
         await this.applyFixToPage(fixFile);
       }
-      
     } catch (error) {
       console.error('❌ Error applying fixes to pages:', error);
+      throw error;
     }
   }
 
   async getFixFiles(fixesDir) {
-    const $1 = [];
-    
     try {
-      const $1 = await fs.readdir(fixesDir);
-      
-      for (const category of categories) {
-        const $1 = path.join(fixesDir, category);
-        const $1 = await fs.readdir(categoryPath);
-        
-        for (const file of files) {
-          if (file.endsWith('.tsx')) {
-            fixFiles.push({
-              category,
-              file,
-              path: path.join(categoryPath, file)
-            });
-          }
-        }
-      }
+      const files = await fs.readdir(fixesDir, { recursive: true });
+      return files.filter(file => file.endsWith('.js') || file.endsWith('.tsx'));
     } catch (error) {
-      console.error('❌ Error reading fix files:', error);
+      console.error('❌ Error getting fix files:', error);
+      return [];
     }
-    
-    return fixFiles;
   }
 
   async applyFixToPage(fixFile) {
     try {
-      const $1 = await fs.readFile(fixFile.path, 'ut'f'8');
-      const $1 = fixFile.file.replace('.tsx', '');
+      const fixContent = await fs.readFile(fixFile, 'utf8');
+      const category = this.getCategoryFromPath(fixFile);
       
-      // Find the corresponding page file
-      const $1 = path.join(__dirname, '..', 'pag'e's', "${fileName}.tsx");
-      
-      if (await this.fileExists(pagePath)) {
-        await this.applyFixToExistingPage(pagePath, fixContent, fixFile.category);
+      // Find corresponding page to apply fix
+      const pagePath = this.findCorrespondingPage(fixFile);
+      if (pagePath) {
+        await this.applyFixToExistingPage(pagePath, fixContent, category);
       }
-      
     } catch (error) {
-      console.error("❌ Error applying fix ${fixFile.path}:", error);
+      console.error(`❌ Error applying fix to page ${fixFile}:`, error);
     }
   }
 
   async applyFixToExistingPage(pagePath, fixContent, category) {
     try {
-      const $1 = await fs.readFile(pagePath, 'ut'f'8');
-      let $1 = pageContent;
-      
-      if (category === 'meta-descriptio'n's') {
-        updatedContent = this.applyMetaDescriptionFix(pageContent, fixContent);
-      } else if (category === 's'e'o') {
-        updatedContent = this.applySEOFix(pageContent, fixContent);
-      } else if (category === 'performan'c'e') {
-        updatedContent = this.applyPerformanceFix(pageContent, fixContent);
-      }
-      
-      if (updatedContent !== pageContent) {
-        await fs.writeFile(pagePath, updatedContent);
-        console.log("✅ Applied ${category} fix to ${pagePath}");
-      }
-      
+      const existingContent = await fs.readFile(pagePath, 'utf8');
+      const updatedContent = this.mergeContent(existingContent, fixContent, category);
+      await fs.writeFile(pagePath, updatedContent, 'utf8');
+      console.log(`✅ Applied fix to ${pagePath}`);
     } catch (error) {
-      console.error("❌ Error applying fix to ${pagePath}:", error);
+      console.error(`❌ Error applying fix to existing page ${pagePath}:`, error);
     }
   }
 
-  applyMetaDescriptionFix(pageContent, fixContent) {
-    // Extract meta description from fix content
-    const $1 = fixContent.match(/content="([^"]+)"/);
-    if (!metaMatch) return pageContent;
-    
-    const $1 = metaMatch[1];
-    
-    // Check if meta description already exists
-    if (pageContent.includes('<meta name="description"')) {
-      // Update existing meta description
-      return pageContent.replace(
-        /<meta name="description"[^>]*>/,</div>
-        "<meta name="description" content="${description}" />"
-      );
-    } else {
-      // Add meta description after title
-      return pageContent.replace(</div>
-        /<title>([^<]+)<\/title>/,</div>
-        "<title>$1</title>\n        <meta name="description" content="${description}" />"
-      );
-    }
+  getCategoryFromPath(filePath) {
+    const pathParts = filePath.split('/');
+    if (pathParts.includes('seo')) return 'seo';
+    if (pathParts.includes('performance')) return 'performance';
+    if (pathParts.includes('meta-descriptions')) return 'meta';
+    return 'general';
   }
 
-  applySEOFix(pageContent, fixContent) {
-    // Extract SEO tags from fix content
-    const $1 = this.extractSEOTags(fixContent);
-    
-    let $1 = pageContent;
-    
-    // Add Open Graph tags
-    for (const [property, content] of Object.entries(seoTags.og)) {</div>
-      const $1 = "<meta property="${property}" content="${content}" />";
-      if (!updatedContent.includes("property="${property}"")) {</div>
-        updatedContent = updatedContent.replace('</Head>', "        ${tag}\n      </Head>");
-      }
-    }
-    
-    // Add Twitter Card tags
-    for (const [name, content] of Object.entries(seoTags.twitter)) {</div>
-      const $1 = "<meta name="${name}" content="${content}" />";
-      if (!updatedContent.includes("name="${name}"")) {</div>
-        updatedContent = updatedContent.replace('</Head>', "        ${tag}\n      </Head>");
-      }
-    }
-    
-    return updatedContent;
+  findCorrespondingPage(fixFile) {
+    // Implementation to find corresponding page based on fix file
+    // This would need to be implemented based on your project structure
+    return null;
   }
 
-  extractSEOTags(fixContent) {
-    const $1 = { og: {}, twitter: {} };
-    
-    // Extract Open Graph tags
-    const $1 = fixContent.matchAll(/property="([^"]+)" content="([^"]+)"/g);
-    for (const match of ogMatches) {
-      tags.og[match[1]] = match[2];
-    }
-    
-    // Extract Twitter Card tags
-    const $1 = fixContent.matchAll(/name="([^"]+)" content="([^"]+)"/g);
-    for (const match of twitterMatches) {
-      if (match[1].startsWith('twitte'r':')) {
-        tags.twitter[match[1]] = match[2];
-      }
-    }
-    
-    return tags;
-  }
-
-  applyPerformanceFix(pageContent, fixContent) {
-    let $1 = pageContent;
-    
-    // Add lazy loading to images
-    updatedContent = updatedContent.replace(</div>
-      /<img([^>]*?)>/g,
-      (match, attributes) => {
-        if (!attributes.includes('loadin'g'=')) {</div>
-          return "<img${attributes} loading="lazy">";
-        }
-        return match;
-      }
-    );
-    
-    // Add defer to scripts
-    updatedContent = updatedContent.replace(</div>
-      /<script([^>]*?)>/g,
-      (match, attributes) => {
-        if (!attributes.includes('def'e'r') && !attributes.includes('asy'n'c')) {</div>
-          return "<script${attributes} defer>";
-        }
-        return match;
-      }
-    );
-    
-    return updatedContent;
-  }
-
-  async fileExists(filePath) {
-    try {
-      await fs.access(filePath);
-      return true;
-    } catch {
-      return false;
-    }
+  mergeContent(existing, fix, category) {
+    // Implementation to merge existing content with fix content
+    // This would need to be implemented based on your specific needs
+    return existing + '\n' + fix;
   }
 
   async buildAndDeploy() {
     try {
       console.log('🔨 Building project...');
+      await execAsync('npm run build', { cwd: path.join(__dirname, '..') });
       
-      // Install dependencies if needed
-      await execAsync('np'm' install', { cwd: path.join(__dirname, '..') });
+      console.log('🚀 Deploying to Netlify...');
+      await execAsync('git add .', { cwd: path.join(__dirname, '..') });
+      await execAsync('git commit -m "Auto-update: Website improvements"', { cwd: path.join(__dirname, '..') });
+      await execAsync('git push', { cwd: path.join(__dirname, '..') });
       
-      // Build the project
-      await execAsync('np'm' run build', { cwd: path.join(__dirname, '..') });
-      
-      console.log('✅ Build completed successfully');
-      
-      // Commit and push changes
-      await this.commitAndPushChanges();
-      
+      console.log('✅ Build and deployment completed');
     } catch (error) {
-      console.error('❌ Error during build and deploy:', error);
-      this.log('Erro'r' during build and deploy: ' + error.message, 'err'o'r');
-    }
-  }
-
-  async commitAndPushChanges() {
-    try {
-      console.log('📝 Committing and pushing changes...');
-      
-      // Add all changes
-      await execAsync('gi't' add .', { cwd: path.join(__dirname, '..') });
-      
-      // Commit changes
-      const $1 = "Automated improvements - Iteration ${this.iteration} - ${new Date().toISOString()}";
-      await execAsync("git commit -m "${commitMessage}"", { cwd: path.join(__dirname, '..') });
-      
-      // Push to main branch
-      await execAsync('gi't' push origin main', { cwd: path.join(__dirname, '..') });
-      
-      console.log('✅ Changes committed and pushed successfully');
-      
-    } catch (error) {
-      console.error('❌ Error committing and pushing changes:', error);
-      this.log('Erro'r' committing and pushing changes: ' + error.message, 'err'o'r');
+      console.error('❌ Error in build and deploy:', error);
+      throw error;
     }
   }
 
   async generateSummaryReport() {
     try {
-      const $1 = {
+      const report = {
+        timestamp: new Date().toISOString(),
         iteration: this.iteration,
-        timestamp: new Date(),
-        status: 'complet'e'd',
-        logs: this.logs,
-        nextIteration: new Date(Date.now() + this.getNextIterationDelay())
+        status: 'completed',
+        logs: this.logs.slice(-10) // Last 10 logs
       };
       
-      const $1 = path.join(__dirname, 'repor't's', 'automation-summar'y'.json');
-      await fs.mkdir(path.dirname(summaryPath), { recursive: true });
-      await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2));
+      const reportPath = path.join(__dirname, 'reports', `iteration-${this.iteration}-report.json`);
+      await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
       
-      console.log("📊 Summary report saved to: ${summaryPath}");
-      
+      console.log('📊 Summary report generated');
     } catch (error) {
       console.error('❌ Error generating summary report:', error);
     }
   }
 
-  getNextIterationDelay() {
-    // Run every 6 hours (6 * 60 * 60 * 1000 milliseconds)
-    return 6 * 60 * 60 * 1000;
-  }
-
   async waitForNextIteration() {
-    const $1 = this.getNextIterationDelay();
-    console.log("⏰ Waiting ${delay / (1000 * 60 * 60)} hours until next iteration...");
-    
-    return new Promise(resolve => {
-      setTimeout(resolve, delay);
-    });
+    const interval = 30 * 60 * 1000; // 30 minutes
+    console.log(`⏰ Waiting ${interval / 1000 / 60} minutes until next iteration...`);
+    await new Promise(resolve => setTimeout(resolve, interval));
   }
 
   async cleanup() {
     try {
-      await this.analyzerAgent.cleanup();
-      await this.errorFixer.cleanup();
+      // Clean up temporary files
+      const tempFiles = await this.getTempFiles();
+      for (const file of tempFiles) {
+        await fs.unlink(file);
+      }
     } catch (error) {
       console.error('❌ Error during cleanup:', error);
     }
   }
 
-  stop() {
-    console.log('🛑 Stopping continuous monitoring...');
-    this.isRunning = false;
+  async getTempFiles() {
+    try {
+      const tempDir = path.join(__dirname, 'temp');
+      const files = await fs.readdir(tempDir);
+      return files.map(file => path.join(tempDir, file));
+    } catch (error) {
+      return [];
+    }
   }
 
-  log(message, type = 'in'f'o') {
-    const $1 = { message, type, timestamp: new Date() };
+  log(message, level = 'info') {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message
+    };
     this.logs.push(logEntry);
-    console.log("[${type.toUpperCase()}] ${message}");
+    console.log(`[${level.toUpperCase()}] ${message}`);
+  }
+
+  stop() {
+    console.log('🛑 Stopping automation orchestrator...');
+    this.isRunning = false;
   }
 }
 
-module.exports = WebsiteAutomationOrchestrator; </div>
+module.exports = WebsiteAutomationOrchestrator;

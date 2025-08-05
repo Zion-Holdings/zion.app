@@ -12,7 +12,7 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({
   children,
   title = 'Bolt - Modern Web Platform',
   description = 'A modern web platform built with Next.js and TypeScript',
-  className = ''
+  className = '
 }) => {
   return (
     <>

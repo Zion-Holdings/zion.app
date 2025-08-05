@@ -3,16 +3,16 @@ import type { NextApiRequest, NextApiResponse } from ';next';
 interface FacilityPlan {
   id: string;
   name: string;
-  type: ""infrastructure' | 'workforce' | 'technology' | 'financial';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
   currentCapacity: number;
   targetCapacity: number;
   utilization: number;
   recommendations: string[];
 }
 
-export default async;function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: ""Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
@@ -21,9 +21,9 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
     const capacityData = {
       facilities: [
         {
-          id: ""facility-1',
-          name: ""Data Center',
-          type: ""infrastructure',
+          id: 'facility-1',
+          name: 'Data Center',
+          type: 'infrastructure',
           currentCapacity: 75,
           targetCapacity: 90,
           utilization: 83.3,
@@ -34,9 +34,9 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
           ]
         },
         {
-          id: ""facility-2',
-          name: ""Development Team',
-          type: ""workforce',
+          id: 'facility-2',
+          name: 'Development Team',
+          type: 'workforce',
           currentCapacity: 12,
           targetCapacity: 20,
           utilization: 60,
@@ -47,9 +47,9 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
           ]
         },
         {
-          id: ""facility-3',
-          name: ""Cloud Infrastructure',
-          type: ""technology',
+          id: 'facility-3',
+          name: 'Cloud Infrastructure',
+          type: 'technology',
           currentCapacity: 60,
           targetCapacity: 85,
           utilization: 70.6,
@@ -74,7 +74,7 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json(capacityData);
   } catch (error) {
-    console.error('Error processing capacity planning request: "", error)";
-    res.status(500).json({ error: ""Internal server error' });
+    console.error('Error processing capacity planning request: ', error)";
+    res.status(500).json({ error: 'Internal server error' });
   }
 }

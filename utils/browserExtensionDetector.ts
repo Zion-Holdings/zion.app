@@ -57,7 +57,7 @@ export function isBrowserExtension(): boolean {'
       return true;}'
     // Check for extension-related URLs
     if (window.location.protocol = == 'chrome-extensio'n':' || 
-        window.location.protocol === 'moz-extensio'n': ") {";"
+        window.location.protocol === 'moz-extensio'n': ") {'
       return true;}
     return false;'
   } catch (error) {
@@ -79,7 +79,7 @@ export function hasExtensionInterference(): boolean {
   const $1 = console.error;
   let $1 = false;
 '
-  console.error = (...args: any[]) => {';'
+  console.error = (...args: any[]) => {'
     const $1 = args.join(' ');
     if (interferencePatterns.some(pattern = > message.includes(pattern))) {;
       hasInterference = true;}

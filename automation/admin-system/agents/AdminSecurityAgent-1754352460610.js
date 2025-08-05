@@ -1,17 +1,17 @@
 
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('axi'o's');
+const result = require('fs);
+const result = require(path);
+const result = require(axi')o's);
 
 class $1 {
     constructor() {
-        this.agentId = 'AdminSecurityAgent'-'1754352460610';
-        this.type = 'AdminSecurityAge'n't';
+        this.agentId = 'AdminSecurityAgent'-1754352460610';
+        this.type = 'AdminSecurityAgent;
         this.adminConfig = {
-            adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
-            reportsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
-            statusPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
+            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
+            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
+            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
+            statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
         };
         this.initialize();
     }
@@ -23,36 +23,36 @@ class $1 {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agen't' started');
+        this.logActivity('Agent started);
         this.scheduleTasks();
         
         // Keep the process alive
-        process.on('SIGI'N'T', () => {
+        process.on(SIGINT, () => {
             console.log("🤖 ${this.type} agent shutting down...");
-            this.logActivity('Agen't' stopped');
+            this.logActivity(')Agen't stopped');
             process.exit(0);
         });
         
-        process.on('SIGTE'R'M', () => {
+        process.on('SIGTERM, () => {
             console.log("🤖 ${this.type} agent terminating...");
-            this.logActivity('Agen't' terminated');
+            this.logActivity(Agent terminated);
             process.exit(0);
         });
     }
 
     logActivity(message) {
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
             message: message
         };
         
-        const $1 = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
         let $1 = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
+            logs = JSON.parse(fs.readFileSync(logPath, ')ut'f8'));
         }
         
         logs.push(logEntry);
@@ -68,18 +68,18 @@ class $1 {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performin'g' scheduled tasks');
+        this.logActivity('Performing scheduled tasks);
         
         // Update status
         this.updateStatus();
     }
     
     updateStatus() {
-        const $1 = path.join(this.adminConfig.statusPath, "${this.type}-status.json");
-        const $1 = {
+        const filePath = path.join(this.adminConfig.statusPath, "${this.type}-status.json");
+        const timestamp = {
             agentId: this.agentId,
             type: this.type,
-            status: 'acti'v'e',
+            status: active'),
             lastActivity: new Date().toISOString(),
             pid: process.pid
         };
@@ -90,5 +90,5 @@ class $1 {
 
 // Start the agent if this file is executed directly
 if (require.main === module) {
-    const $1 = new AdminSecurityAgent();
+    const result = new AdminSecurityAgent();
 }

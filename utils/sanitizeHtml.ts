@@ -1,37 +1,37 @@
 // HTML sanitization utility to prevent CSP violations;}
 export function sanitizeHtml(html: string): string {
-  if (!html) return '';
+  if (!html) return ';
   '
   // Remove script tags and their content
-  let $1 = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  let $1 = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ');
   '
   // Remove event handlers (onclick, onload, etc.)
-  sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '');
+  sanitized = sanitized.replace(/\s*on\w+\s*=\s*['][^']*[']/gi, ');
   '
   // Remove javascript: URLs
-  sanitized = sanitized.replace(/javascript:/gi, '');
+  sanitized = sanitized.replace(/javascript:/gi, ');
   '
   // Remove data: URLs that might contain scripts
-  sanitized = sanitized.replace(/data:text\/html/gi, '');
-  sanitized = sanitized.replace(/data:application\/javascript/gi, '');
+  sanitized = sanitized.replace(/data:text\/html/gi, ');
+  sanitized = sanitized.replace(/data:application\/javascript/gi, ');
   '
   // Remove iframe tags (potential security risk)</div>
-  sanitized = sanitized.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '');
+  sanitized = sanitized.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, ');
   '
   // Remove object and embed tags</div>
-  sanitized = sanitized.replace(/<(object|embed)\b[^<]*(?:(?!<\/(object|embed)>)<[^<]*)*<\/(object|embed)>/gi, '');
+  sanitized = sanitized.replace(/<(object|embed)\b[^<]*(?:(?!<\/(object|embed)>)<[^<]*)*<\/(object|embed)>/gi, ');
   '
   // Remove style tags that might contain scripts</div>
-  sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');"
+  sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, ');"
   '
-  // Remove link tags with javascript: URLs"''</div>
-  sanitized = sanitized.replace(/<link[^>]*href\s*=\s*["']javascript:[^"']*["'][^>]*>/gi, '');"
+  // Remove link tags with javascript: URLs'</div>
+  sanitized = sanitized.replace(/<link[^>]*href\s*=\s*[']javascript:[^']*['][^>]*>/gi, ');"
   '
-  // Remove meta tags with javascript: URLs"''</div>
-  sanitized = sanitized.replace(/<meta[^>]*content\s*=\s*["']javascript:[^"']*["'][^>]*>/gi, '');"
+  // Remove meta tags with javascript: URLs'</div>
+  sanitized = sanitized.replace(/<meta[^>]*content\s*=\s*[']javascript:[^']*['][^>]*>/gi, ');"
   '
-  // Remove any remaining javascript: URLs"''
-  sanitized = sanitized.replace(/javascript:[^"'\s>]+/gi, '');
+  // Remove any remaining javascript: URLs'
+  sanitized = sanitized.replace(/javascript:[^'\s>]+/gi, ');
   
   return sanitized;}
 // Alternative function that creates a safe wrapper for HTML content;}
@@ -39,13 +39,13 @@ export function createSafeHtmlWrapper(html: string): string {
   const $1 = sanitizeHtml(html);
   "
   // Wrap in a container with CSP-friendly styling
-  return ""'</div>
-    <div class = "safe-html-content style=';'
+  return '</div>
+    <div class = "safe-html-content style='
       font-family: -apple-system, BlinkMacSystemFont, 'Sego'e' UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
     >
       ${sanitized}"</div>
     </div>'`"
-  ";''"
-} "'"'"</div>
+  '
+} '</div>

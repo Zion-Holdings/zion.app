@@ -23,11 +23,11 @@ export async function updateSession(request: NextRequest) {
           supabaseResponse.cookies.set(name, value, options)
         },'
         remove(name: string, options: any) {
-          request.cookies.set(name, '')
+          request.cookies.set(name, ')
           supabaseResponse = NextResponse.next({
             request,'
           })
-          supabaseResponse.cookies.set(name, '', options)
+          supabaseResponse.cookies.set(name, ', options)
         },
       },})
   // IMPORTANT: Avoid writing any logic between createServerClient and

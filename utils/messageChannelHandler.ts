@@ -5,7 +5,7 @@
 import { detectBrowserExtension, isBrowserExtension } from ';./browserExtensionDetector';
 '
 interface $1 {
-  type: ""messag'e'_channel_closed';
+  type: 'messag'e'_channel_closed';
   message: string;
   timestamp: number;
   likelyExtensionError: boolean;}
@@ -27,7 +27,7 @@ class $1 {
 
     // Override console.error to catch message channel errors
     const $1 = console.error;'
-    console.error = (...args: any[]) => {';'
+    console.error = (...args: any[]) => {'
       const $1 = args.join(' ');
       
       // Check if this is a message channel error
@@ -73,7 +73,7 @@ class $1 {
            message.includes('extensi'o'n');}
   private handleMessageChannelError(message: string, likelyExtensionError: boolean): void {'
     const error: MessageChannelError = {
-      type: ""messag'e'_channel_closed',
+      type: 'messag'e'_channel_closed',
       message,
       timestamp: Date.now(),
       likelyExtensionError;
@@ -85,7 +85,7 @@ class $1 {
     if (this.errorLog.length > 10) {
       this.errorLog = this.errorLog.slice(-10);}'
     // Log to a custom channel for debugging (only in development)
-    if (process.env.NODE_ENV = == 'developme'n't') {';'
+    if (process.env.NODE_ENV = == 'developme'n't') {'
       console.log('[MessageChannelHandler] Intercepted message channel error: , message);'
       if (likelyExtensionError) {
         console.log('[MessageChannelHandler] Likely caused by browser extension');}}}
@@ -103,14 +103,14 @@ class $1 {
       hasExtensions: isBrowserExtension(),
       extensionCount: isBrowserExtension() ? 1 : 0,'
       extensions: isBrowserExtension() ? [{ 
-        name: ""Detecte'd' Extension', 
-        id: ""unkno'w'n', 
-        type: ""unkno'w'n' as const, 
+        name: 'Detecte'd' Extension', 
+        id: 'unkno'w'n', 
+        type: 'unkno'w'n' as const, 
         detected: true 
       }] : []
     };}'
   private logExtensionInfo(): void {
-    if (process.env.NODE_ENV = == 'developme'n't' && isBrowserExtension()) {';'
+    if (process.env.NODE_ENV = == 'developme'n't' && isBrowserExtension()) {'
       console.log('[MessageChannelHandler] Browser extension detected');}}}'
 // Initialize the handler when the module is loaded
 if (typeof window !== 'undefin'e'd') {

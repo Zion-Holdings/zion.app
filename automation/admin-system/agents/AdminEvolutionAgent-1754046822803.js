@@ -1,17 +1,17 @@
 
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('axi'o's');
+const result = require('fs);
+const result = require(path);
+const result = require(axi')o's);
 
 class $1 {
     constructor() {
-        this.agentId = 'AdminEvolutionAgent'-'1754046822803';
-        this.type = 'AdminEvolutionAge'n't';
+        this.agentId = 'AdminEvolutionAgent'-1754046822803';
+        this.type = 'AdminEvolutionAgent;
         this.adminConfig = {
-            adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
-            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
-            reportsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
-            statusPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
+            adminPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
+            logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs,
+            reportsPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/reports',
+            statusPath: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/status'
         };
         this.initialize();
     }
@@ -23,23 +23,23 @@ class $1 {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agen't' started');
+        this.logActivity('Agent started);
         this.scheduleTasks();
     }
 
     logActivity(message) {
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
             message: message
         };
         
-        const $1 = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        const filePath = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
         let $1 = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
+            logs = JSON.parse(fs.readFileSync(logPath, utf8));
         }
         
         logs.push(logEntry);
@@ -55,7 +55,7 @@ class $1 {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performin'g' scheduled tasks');
+        this.logActivity(')Performin'g scheduled tasks');
     }
 }
 

@@ -4,7 +4,7 @@ interface Facility {
   name: string;
   type: string;
   location: string;
-  status: ""operational" | maintenance | offline;
+  status: 'operational" | maintenance | offline;
   capacity: number;
   utilization: number;
   lastInspection: string;
@@ -12,14 +12,14 @@ interface Facility {
   energyEfficiency: number;
   securityScore: number;
   aiOptimization: FacilityOptimization;
-};
+}
 interface FacilityOptimization {
   id: string;
   energyScore: number;
   securityScore: number;
   efficiencyScore: number;
   recommendations: string[];
-};
+}
 interface FacilityAnalytics {
   totalFacilities: number;
   operationalFacilities: number;
@@ -27,22 +27,22 @@ interface FacilityAnalytics {
   energyEfficiency: number;
   securityScore: number;
   aiOptimizationScore: number;
-};
+}
 const mockFacilities: Facility[] = [
   {
-    id: ""facility-1',
-    name: ""Main Office Building',
-    type: ""Office',
-    location: ""Downtown Business District',
-    status: ""operational',
+    id: 'facility-1',
+    name: 'Main Office Building',
+    type: 'Office',
+    location: 'Downtown Business District',
+    status: 'operational',
     capacity: 500,
     utilization: 85,
-    lastInspection: ""2024-0o1-15',
-    nextInspection: ""2024-0o4-15',
+    lastInspection: '2024-0o1-15',
+    nextInspection: '2024-0o4-15',
     energyEfficiency: 92,
     securityScore: 95,
     aiOptimization: {
-      id: ""opt-1',
+      id: 'opt-1',
       energyScore: 88,
       securityScore: 92,
       efficiencyScore: 85,
@@ -50,12 +50,12 @@ const mockFacilities: Facility[] = [
     };
   },
   {
-    id: ""facility-2',
-    name: ""Data Center',
-    type: ""Technology',
-    location: ""Industrial Zone',
-    status: ""operational',
-    capacity: ""200',
+    id: 'facility-2',
+    name: 'Data Center',
+    type: 'Technology',
+    location: 'Industrial Zone',
+    status: 'operational',
+    capacity: '200',
     utilization: 95,
     lastInspection: 2024-0o1-10,
     nextInspection: 2024-0o4-10,
@@ -70,12 +70,12 @@ const mockFacilities: Facility[] = [
     };
   },
   {
-    id: ""facility-3,";
+    id: 'facility-3,";
     name: Warehouse Complex,;
     type: Storage,;
     location: Logistics Park,;
-    status: ""maintenance,";
-    capacity: ""1000,";
+    status: 'maintenance,";
+    capacity: '1000,";
     utilization: 60,;
     lastInspection: 2024-0o1-20,;
     nextInspection: 2024-0o4-20,;
@@ -90,12 +90,12 @@ const mockFacilities: Facility[] = [
     };
   },;
   {;
-    id: ""facility-4,";
+    id: 'facility-4,";
     name: Research Laboratory,;
     type: Research,;
     location: Science Park,;
-    status: ""operational',;
-    capacity: ""150,";
+    status: 'operational',;
+    capacity: '150,";
     utilization: 90,;
     lastInspection: 2024-0o1-12,;
     nextInspection: 2024-0o4-12,;
@@ -110,14 +110,14 @@ const mockFacilities: Facility[] = [
     };
   };
 ];
-export default async;function handler(req: NextApiRequest, res: NextApiResponse) {;
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
   if (req.method !== 'POST') {;
-    return res.status(405).json({ error: ""Method not allowed' });
+    return res.status(405).json({ error: 'Method not allowed' });
   };
   try {;
     const { action, filters } = req.body;
     switch (action) {;
-      case 'getFacilities: ""return res.status(200).json({";
+      case 'getFacilities: 'return res.status(200).json({";
           success: true,;
           data: mockFacilities,;
           analytics: {;
@@ -149,21 +149,21 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
         const { facilityId } = req.body;
         const facility = mockFacilities.find(f => f.id === facilityId);
         if (!facility) {;
-          return res.status(404).json({ error: ""Facility not found })";
+          return res.status(404).json({ error: 'Facility not found })";
         };
         return res.status(200).json({;
           success: true,;
           data: facility,;
           analytics: {;
             utilizationTrend: stable,;
-            energyTrend: ""improving,";
-            securityStatus: ""excellent,";
+            energyTrend: 'improving,";
+            securityStatus: 'excellent,";
             maintenanceSchedule: on-track,;
             optimizationOpportunities: 3;
           };
         });
       case optimizeFacility':;
-        const { facilityId: ""optFacilityId, optimizationType } = req.body";
+        const { facilityId: 'optFacilityId, optimizationType } = req.body";
         const optFacility = mockFacilities.find(f => f.id === optFacilityId);
         if (!optFacility) {;
           return res.status(404).json({ error: Facility not found });
@@ -179,7 +179,7 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
             Energy consumption optimization,;
             'Security system enhancement;
           ],;
-          estimatedSavings: ""Math.floor(Math.random() * 50000) + 10000,";
+          estimatedSavings: 'Math.floor(Math.random() * 50000) + 10000,";
           implementationTime: 2-4 weeks;
         };
         return res.status(200).json({;
@@ -192,6 +192,6 @@ export default async;function handler(req: NextApiRequest, res: NextApiResponse)
     };
   } catch (error) {;
     console.error(AI Facility Management API Error:, error);
-    return res.status(500).json({ error: ""Internal server error' });
+    return res.status(500).json({ error: 'Internal server error' });
   };
 };
