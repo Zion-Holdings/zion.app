@@ -57,7 +57,7 @@ export default async function handler(
 
     // For now, we'll just return success
     // In a real implementation, you would:
-    // - Save to your database (e.g., Supabase, PostgreSQL)
+    // - Save to your database (e.g., Supabase, PostgreSQL
     // - Send email notifications to your team
     // - Create a CRM entry
     // - Send confirmation email to client

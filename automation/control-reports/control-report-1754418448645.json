@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-05T18:27:28.645Z",
+  "controllerId": "master-controller-1754414308781",
+  "metrics": {
+    "totalControlEvents": 46,
+    "successfulManagementEvents": 46,
+    "systemRecoveries": 0,
+    "performanceOptimizations": 46,
+    "intelligenceScore": 46,
+    "overallHealth": 83.83333333333333
+  },
+  "intelligenceScore": 46,
+  "overallHealth": 83.83333333333333,
+  "uptime": 4139864,
+  "managedSystems": {
+    "advanced-automation-intelligence": {
+      "status": "running",
+      "priority": "critical",
+      "health": 97,
+      "lastCheck": "2025-08-05T18:27:28.641Z",
+      "pid": null
+    },
+    "enhanced-diversification-engine": {
+      "status": "running",
+      "priority": "high",
+      "health": 80,
+      "lastCheck": "2025-08-05T18:27:28.641Z",
+      "pid": null
+    },
+    "comprehensive-automation-orchestrator": {
+      "status": "running",
+      "priority": "critical",
+      "health": 86,
+      "lastCheck": "2025-08-05T18:27:28.642Z",
+      "pid": null
+    },
+    "enhanced-intelligent-automation": {
+      "status": "running",
+      "priority": "high",
+      "health": 75,
+      "lastCheck": "2025-08-05T18:27:28.642Z",
+      "pid": null
+    },
+    "ai-powered-diversification-engine": {
+      "status": "running",
+      "priority": "medium",
+      "health": 75,
+      "lastCheck": "2025-08-05T18:27:28.642Z",
+      "pid": null
+    },
+    "intelligent-automation-system": {
+      "status": "running",
+      "priority": "medium",
+      "health": 90,
+      "lastCheck": "2025-08-05T18:27:28.643Z",
+      "pid": null
+    }
+  },
+  "activeModules": 4,
+  "controlEvents": 46
+}

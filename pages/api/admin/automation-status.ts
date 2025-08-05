@@ -65,13 +65,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         activeAgents: 0,
         totalAgents: 0,
         systemHealth: 'healthy'
-      },
+      }
       reports: [],
       orchestrators: [],
-      monetization: {},
-      contentGeneration: {},
-      analytics: {},
-      lastUpdate: new Date().toISOString()
+      monetization: {}
+      contentGeneration: {}
+      analytics: {}
+      lastUpdate: new Date().toISOString(
     };
 
     // Read admin system status
@@ -151,8 +151,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           totalFiles: contentFiles.length,
           recentFiles: contentFiles.slice(-5).map(file => ({
             name: file,
-            timestamp: fs.statSync(path.join(contentGenerationPath, file)).mtime.toISOString()
-          }))
+            timestamp: fs.statSync(path.join(contentGenerationPath, file)).mtime.toISOString(
+          })
         };
         data.contentGeneration = contentData;
       } catch (error) {
@@ -177,7 +177,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               const content = fs.readFileSync(filePath, 'utf8');
               analyticsData.reports.push({
                 name: file,
-                data: JSON.parse(content)
+                data: JSON.parse(content
               });
             } catch (error) {
               console.error(`Error reading analytics file ${file}:`, error);
@@ -195,7 +195,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       path.join(automationPath, 'monetization-reports'),
       path.join(automationPath, 'orchestration-reports'),
       path.join(automationPath, 'intelligence-reports'),
-      path.join(automationPath, 'diversification-reports')
+      path.join(automationPath, 'diversification-reports'
     ];
 
     for (const reportsPath of reportsPaths) {

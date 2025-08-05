@@ -63,7 +63,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     impact: 'high',
     budget: 500000,
     actualCost: 325000
-  },
+  }
   {
     id: 'initiative-2',
     name: 'Process Optimization',
@@ -76,7 +76,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     impact: 'medium',
     budget: 200000,
     actualCost: 180000
-  },
+  }
   {
     id: 'initiative-3',
     name: 'Cultural Change',
@@ -89,7 +89,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     impact: 'high',
     budget: 150000,
     actualCost: 145000
-  },
+  }
   {
     id: 'initiative-4',
     name: 'Organizational Restructuring',
@@ -102,7 +102,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     impact: 'high',
     budget: 300000,
     actualCost: 75000
-  },
+  }
   {
     id: 'initiative-5',
     name: 'New System Implementation',
@@ -129,7 +129,7 @@ const mockStakeholders: Stakeholder[] = [
     communicationPreference: 'Weekly meetings',
     lastContact: '2024-01-15',
     nextContact: '2024-01-22'
-  },
+  }
   {
     id: 'stakeholder-2',
     name: 'Sarah Johnson',
@@ -140,7 +140,7 @@ const mockStakeholders: Stakeholder[] = [
     communicationPreference: 'Email updates',
     lastContact: '2024-01-14',
     nextContact: '2024-01-21'
-  },
+  }
   {
     id: 'stakeholder-3',
     name: 'Mike Davis',
@@ -151,7 +151,7 @@ const mockStakeholders: Stakeholder[] = [
     communicationPreference: 'Monthly reports',
     lastContact: '2024-01-10',
     nextContact: '2024-02-10'
-  },
+  }
   {
     id: 'stakeholder-4',
     name: 'Lisa Brown',
@@ -162,7 +162,7 @@ const mockStakeholders: Stakeholder[] = [
     communicationPreference: 'Bi-weekly calls',
     lastContact: '2024-01-12',
     nextContact: '2024-01-26'
-  },
+  }
   {
     id: 'stakeholder-5',
     name: 'David Wilson',
@@ -173,7 +173,7 @@ const mockStakeholders: Stakeholder[] = [
     communicationPreference: 'Detailed reports',
     lastContact: '2024-01-08',
     nextContact: '2024-01-15'
-  },
+  }
   {
     id: 'stakeholder-6',
     name: 'Emily Chen',
@@ -199,7 +199,7 @@ const mockTrainingPrograms: TrainingProgram[] = [
     satisfactionScore: 8.2,
     startDate: '2024-01-15',
     endDate: '2024-03-15'
-  },
+  }
   {
     id: 'training-2',
     title: 'Leadership Development',
@@ -211,7 +211,7 @@ const mockTrainingPrograms: TrainingProgram[] = [
     satisfactionScore: 9.1,
     startDate: '2023-07-01',
     endDate: '2023-12-31'
-  },
+  }
   {
     id: 'training-3',
     title: 'Digital Skills Certification',
@@ -223,7 +223,7 @@ const mockTrainingPrograms: TrainingProgram[] = [
     satisfactionScore: 8.8,
     startDate: '2024-01-01',
     endDate: '2024-03-31'
-  },
+  }
   {
     id: 'training-4',
     title: 'Change Management Workshop',
@@ -248,7 +248,7 @@ const mockChangeMetrics: ChangeMetric[] = [
     unit: '%',
     trend: 'increasing',
     lastUpdated: '2024-01-15'
-  },
+  }
   {
     id: 'metric-2',
     name: 'Employee Satisfaction',
@@ -258,7 +258,7 @@ const mockChangeMetrics: ChangeMetric[] = [
     unit: '/10',
     trend: 'stable',
     lastUpdated: '2024-01-14'
-  },
+  }
   {
     id: 'metric-3',
     name: 'Process Efficiency',
@@ -268,7 +268,7 @@ const mockChangeMetrics: ChangeMetric[] = [
     unit: '%',
     trend: 'increasing',
     lastUpdated: '2024-01-13'
-  },
+  }
   {
     id: 'metric-4',
     name: 'Cost Savings',
@@ -318,7 +318,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Simulate processing time
     setTimeout(() => {
       res.status(200).json(response);
-    }, processingDelay);
+    } processingDelay);
 
   } catch (error) {
     console.error('AI Change Management API Error:', error);
@@ -335,7 +335,7 @@ function generateAIInsights(timeframe: string): any {
         stakeholders: ['David Wilson'],
         timeframe: '30 days',
         recommendation: 'Increase one-on-one communication and address specific concerns'
-      },
+      }
       {
         type: 'training_completion',
         probability: 0.85,
@@ -350,13 +350,13 @@ function generateAIInsights(timeframe: string): any {
         priority: 'high',
         description: 'Increase communication frequency with neutral stakeholders to convert them to supporters',
         impact: 'Improved stakeholder buy-in and reduced resistance'
-      },
+      }
       {
         type: 'training_optimization',
         priority: 'medium',
         description: 'Implement additional online training modules to improve completion rates',
         impact: 'Higher training completion and better skill adoption'
-      },
+      }
       {
         type: 'change_readiness',
         priority: 'low',
@@ -370,7 +370,7 @@ function generateAIInsights(timeframe: string): any {
         message: '3 high-influence stakeholders showing resistance to Digital Transformation initiative',
         stakeholders: ['David Wilson', 'Mike Davis'],
         initiative: 'Digital Transformation'
-      },
+      }
       {
         type: 'warning',
         message: 'New System Training completion rate below 60%',

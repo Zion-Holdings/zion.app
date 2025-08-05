@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout'
-
-import Head from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
 import { useState, useEffect }  from 'react';
 import Link from 'next/link';
 
@@ -33,6 +31,7 @@ interface StartupProfile {
 }
 
 const InvestorMatchmakingPage: NextPage = () => {
+  
   const [startupProfile, setStartupProfile] = useState<StartupProfile>({
     name: '',
     industry: '',
@@ -42,13 +41,13 @@ const InvestorMatchmakingPage: NextPage = () => {
     fundingNeeded: '',
     pitchSummary: '',
     website: ''
-  })
-  const [investors, setInvestors] = useState<Investor[]>([])
-  const [isLoading, setIsLoading] = useState(false)
-  const [showForm, setShowForm] = useState(true)
-  const [selectedInvestor, setSelectedInvestor] = useState<Investor | null>(null)
-  const [pitchEmail, setPitchEmail] = useState('')
-
+}
+  }
+  const [investors, setInvestors] = useState<Investor[]>([]
+  const [isLoading, setIsLoading] = useState(false
+  const [showForm, setShowForm] = useState(true
+  const [selectedInvestor, setSelectedInvestor] = useState<Investor | null>(null
+  const [pitchEmail, setPitchEmail] = useState(''
   const industries = [
     'AI/ML', 'Fintech', 'Healthcare', 'E-commerce', 'SaaS', 'EdTech', 
     'CleanTech', 'Biotech', 'Cybersecurity', 'IoT', 'Blockchain', 'Other'
@@ -83,7 +82,7 @@ const InvestorMatchmakingPage: NextPage = () => {
       matchScore: 95,
       reason: 'Perfect match for AI/ML startup with MVP stage'
     },
-    {
+{
       id: '2',
       name: 'Michael Rodriguez',
       company: 'Innovation Fund',
@@ -97,7 +96,7 @@ const InvestorMatchmakingPage: NextPage = () => {
       contactEmail: 'michael@innovationfund.com',
       matchScore: 88,
       reason: 'Strong healthcare focus with growth-stage investment'
-    },
+    }
     {
       id: '3',
       name: 'Emma Thompson',
@@ -113,7 +112,7 @@ const InvestorMatchmakingPage: NextPage = () => {
       matchScore: 82,
       reason: 'CleanTech focus with early-stage investment range'
     },
-    {
+{
       id: '4',
       name: 'David Kim',
       company: 'CyberSec Capital',
@@ -131,12 +130,10 @@ const InvestorMatchmakingPage: NextPage = () => {
   ]
 
   const handleProfileSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    
+    e.preventDefault(
+    setIsLoading(true
     // Simulate AI matching process
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
+    await new Promise(resolve => setTimeout(resolve, 2000)
     // Filter and score investors based on startup profile
     const matchedInvestors = mockInvestors.map(investor => {
       let score = 0
@@ -154,7 +151,7 @@ const InvestorMatchmakingPage: NextPage = () => {
         reason += 'Investment stage match. '
       }
       
-      // Location match (simplified)
+      // Location match (simplified
       if (investor.location.includes(startupProfile.location) || startupProfile.location === '') {
         score += 15
         reason += 'Location consideration. '
@@ -177,18 +174,17 @@ const InvestorMatchmakingPage: NextPage = () => {
         matchScore: score,
         reason: reason || 'General fit based on profile'
       }
-    }).filter(investor => investor.matchScore > 50)
-    .sort((a, b) => b.matchScore - a.matchScore)
-    
-    setInvestors(matchedInvestors)
-    setShowForm(false)
-    setIsLoading(false)
+    }).filter(investor => investor.matchScore > 50
+    .sort((a, b) => b.matchScore - a.matchScore
+    setInvestors(matchedInvestors
+    setShowForm(false
+    setIsLoading(false
   }
 
   const generatePitchEmail = (investor: Investor) => {
     const email = `Subject: Investment Opportunity - ${startupProfile.name}
 
-Dear ${investor.name},
+Dear ${investor.name}
 
 I hope this email finds you well. I'm reaching out regarding an investment opportunity that I believe aligns with ${investor.company}'s investment thesis.
 
@@ -209,8 +205,8 @@ Best regards,
 [Your Name]
 [Your Contact Information]`
 
-    setPitchEmail(email)
-    setSelectedInvestor(investor)
+    setPitchEmail(email
+    setSelectedInvestor(investor
   }
 
   const getMatchScoreColor = (score: number) => {
@@ -229,12 +225,12 @@ Best regards,
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8">
+      <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        <div className="fixed" inset-0 z-0>
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -244,20 +240,20 @@ Best regards,
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
-        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl:font-bold text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10>
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-6>
+          <div className="flex" justify-between items-center>
+            <Link href=/" className="text-2xl font-bold text-white />
+              <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>
-            <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
+            <div className="flex" items-center space-x-4>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
+              <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Services
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Login
               </Link>
             </div>
@@ -265,13 +261,13 @@ Best regards,
         </div>
       </div>
 
-      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
         {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl:md:text-6xl:font-bold text-white mb-6">
-            AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Investor Matchmaking</span>
+        <div className="text-center" mb-12>
+          <h1 className="text-4xl" md:text-6xlfont-bold text-white mb-6">
+            AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span>
           </h1>
-          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">
+          <p className="text-xl" text-gray-300 max-w-3xl mx-auto>
             Connect with the perfect investors for your startup using our intelligent matching algorithm
           </p>
         </div>
@@ -279,13 +275,13 @@ Best regards,
         {showForm ? (
           /* Startup Profile Form */
           <div className="max-w-4xl:mx-auto">
-            <div className="bg-white/5 backdrop-blur-md:rounded-2xl:p-8 border border-white/10">
-              <h2 className="text-2xl:font-bold text-white mb-6">Tell Us About Your Startup</h2>
+            <div className="bg-white/5" backdrop-blur-md:rounded-2xl:p-8 border border-white/10">
+              <h2 className="text-2xl font-bold text-white mb-6>Tell Us About Your Startup</h2>
               
               <form onSubmit={handleProfileSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block" text-sm font-medium text-gray-300 mb-2">
                       Startup Name *
                     </label>
                     <input
@@ -293,20 +289,20 @@ Best regards,
                       required
                       value={startupProfile.name}
                       onChange={(e) => setStartupProfile({...startupProfile, name: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
-                      placeholder="Enter your startup name"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                      placeholder=Enter your startup name
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block" text-sm font-medium text-gray-300 mb-2>
                       Industry *
                     </label>
                     <select
                       required
                       value={startupProfile.industry}
                       onChange={(e) => setStartupProfile({...startupProfile, industry: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
+                      className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Industry</option>
                       {industries.map(industry => (
@@ -316,16 +312,16 @@ Best regards,
                   </div>
 
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2>
                       Development Stage *
                     </label>
                     <select
                       required
                       value={startupProfile.stage}
                       onChange={(e) => setStartupProfile({...startupProfile, stage: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
+                      className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
                     >
-                      <option value="">Select Stage</option>
+                      <option value=">Select Stage</option>
                       {stages.map(stage => (
                         <option key={stage} value={stage}>{stage}</option>
                       ))}
@@ -333,28 +329,28 @@ Best regards,
                   </div>
 
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2>
                       Location
                     </label>
                     <input
-                      type="text"
+                      type=text
                       value={startupProfile.location}
                       onChange={(e) => setStartupProfile({...startupProfile, location: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
-                      placeholder="City, State/Country"
+                      className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                      placeholder=City, State/Country"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2>
                       Team Size
                     </label>
                     <select
                       value={startupProfile.teamSize}
                       onChange={(e) => setStartupProfile({...startupProfile, teamSize: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
+                      className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
                     >
-                      <option value="">Select Team Size</option>
+                      <option value=">Select Team Size</option>
                       {teamSizes.map(size => (
                         <option key={size} value={size}>{size} people</option>
                       ))}
@@ -362,16 +358,16 @@ Best regards,
                   </div>
 
                   <div>
-                    <label className="block text-sm:font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-300 mb-2>
                       Funding Needed *
                     </label>
                     <select
                       required
                       value={startupProfile.fundingNeeded}
                       onChange={(e) => setStartupProfile({...startupProfile, fundingNeeded: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
+                      className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
                     >
-                      <option value="">Select Funding Range</option>
+                      <option value=">Select Funding Range</option>
                       {fundingRanges.map(range => (
                         <option key={range} value={range}>{range}</option>
                       ))}
@@ -380,20 +376,20 @@ Best regards,
                 </div>
 
                 <div>
-                  <label className="block text-sm:font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2>
                     Website
                   </label>
                   <input
-                    type="url"
+                    type=url
                     value={startupProfile.website}
                     onChange={(e) => setStartupProfile({...startupProfile, website: e.target.value})}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
-                    placeholder="https://yourstartup.com"
+                    className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                    placeholder=https://yourstartup.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm:font-medium text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-gray-300 mb-2>
                     Pitch Summary *
                   </label>
                   <textarea
@@ -401,16 +397,16 @@ Best regards,
                     rows={4}
                     value={startupProfile.pitchSummary}
                     onChange={(e) => setStartupProfile({...startupProfile, pitchSummary: e.target.value})}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
-                    placeholder="Briefly describe your startup, problem you're solving, and your unique value proposition..."
+                    className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
+                    placeholder=Briefly describe your startup, problem you're solving, and your unique value proposition..."
                   />
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center>
                   <button
-                    type="submit"
+                    type=submit
                     disabled={isLoading}
-                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg:hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus ring-purple-500 disabled opacity-50 disabled cursor-not-allowed"
+                    className="px-8" py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg:hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus ring-purple-500 disabled opacity-50 disabled cursor-not-allowed
                   >
                     {isLoading ? 'Finding Investors...' : 'Find Investors'}
                   </button>
@@ -420,98 +416,97 @@ Best regards,
           </div>
         ) : (
           /* Investor Results */
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <h2 className="text-2xl:font-bold text-white">Matched Investors</h2>
+          <div className=space-y-8">
+            <div className="flex justify-between items-center>
+              <h2 className="text-2xl" font-bold text-white>Matched Investors</h2>
               <button
                 onClick={() => setShowForm(true)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover:bg-white/20"
+                className="px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover:bg-white/20
               >
                 Update Profile
               </button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6">
               {investors.map((investor) => (
-                <div key={investor.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
-                  <div className="flex justify-between items-start mb-4">
+                <div key={investor.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10>
+                  <div className="flex" justify-between items-start mb-4>
                     <div>
-                      <h3 className="text-xl:font-semibold text-white">{investor.name}</h3>
-                      <p className="text-purple-400">{investor.company}</p>
+                      <h3 className="text-xl" font-semibold text-white>{investor.name}</h3>
+                      <p className=text-purple-400">{investor.company}</p>
                     </div>
-                    <div className="text-right">
-                      <div className={`text-lg:font-bold ${getMatchScoreColor(investor.matchScore)}`}>
+                    <div className="text-right>
+                      <div className="{`text-lg:font-bold" ${getMatchScoreColor(investor.matchScore)}`}>
                         {investor.matchScore}%
                       </div>
                       <div className="text-sm:text-gray-400">{getMatchScoreText(investor.matchScore)}</div>
                     </div>
                   </div>
 
-                  <p className="text-gray-300 mb-4">{investor.description}</p>
+                  <p className="text-gray-300" mb-4">{investor.description}</p>
 
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm">
-                      <span className="text-gray-400 w-20">Industries:</span>
-                      <span className="text-white">{investor.industry.join(', ')}</span>
+                  <div className="space-y-2 mb-4>
+                    <div className="flex" items-center text-sm>
+                      <span className="text-gray-400" w-20>Industries:</span>
+                      <span className=text-white">{investor.industry.join(', ')}</span>
                     </div>
-                    <div className="flex items-center text-sm">
-                      <span className="text-gray-400 w-20">Stages:</span>
+                    <div className="flex items-center text-sm>
+                      <span className="text-gray-400" w-20>Stages:</span>
                       <span className="text-white">{investor.investmentStage.join(', ')}</span>
                     </div>
-                    <div className="flex items-center text-sm">
-                      <span className="text-gray-400 w-20">Investment:</span>
+                    <div className="flex" items-center text-sm">
+                      <span className="text-gray-400 w-20>Investment:</span>
                       <span className="text-white">{investor.investmentRange}</span>
                     </div>
-                    <div className="flex items-center text-sm">
-                      <span className="text-gray-400 w-20">Location:</span>
-                      <span className="text-white">{investor.location}</span>
+                    <div className="flex" items-center text-sm>
+                      <span className="text-gray-400" w-20">Location:</span>
+                      <span className="text-white>{investor.location}</span>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <p className="text-sm:text-gray-400 mb-2">Why this match:</p>
-                    <p className="text-sm:text-white">{investor.reason}</p>
+                    <p className="text-sm:text-gray-400" mb-2>Why this match:</p>
+                    <p className=text-sm:text-white">{investor.reason}</p>
                   </div>
 
-                  <div className="flex space-x-3">
+                  <div className="flex space-x-3>
                     <button
                       onClick={() => generatePitchEmail(investor)}
-                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700"
+                      className="flex-1" px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700
                     >
                       Generate Pitch Email
                     </button>
-                    <a
-                      href={investor.website}
-                      target="_blank"
+                    <Link href={investor.website}
+                      target=_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20"
+                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20
                     >
                       Visit Website
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
 
             {investors.length === 0 && (
-              <div className="text-center py-32">
-                <p className="text-gray-400 text-lg">No investors matched your criteria. Try updating your profile.</p>
+              <div className="text-center" py-32>
+                <p className="text-gray-400" text-lg>No investors matched your criteria. Try updating your profile.</p>
               </div>
             )}
           </div>
         )}
 
-        {/* Pitch Email Modal */}
-        {selectedInvestor && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center p-4 z-50">
-            <div className="bg-white/10 backdrop-blur-md:rounded-xl:p-6 max-w-2xl:w-full max-h-[80vh] overflow-y-auto">
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl:font-semibold text-white">
+        {/* Pitch Email Modal */},
+{selectedInvestor && (
+          <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm:flex items-center justify-center p-4 z-50">
+            <div className="bg-white/10 backdrop-blur-md:rounded-xl:p-6 max-w-2xl:w-full max-h-[80vh] overflow-y-auto>
+              <div className="flex" justify-between items-center mb-4>
+                <h3 className="text-xl" font-semibold text-white>
                   Pitch Email to {selectedInvestor.name}
                 </h3>
                 <button
                   onClick={() => setSelectedInvestor(null)}
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400" hover:text-white"
                 >
                   ✕
                 </button>
@@ -521,25 +516,24 @@ Best regards,
                 value={pitchEmail}
                 onChange={(e) => setPitchEmail(e.target.value)}
                 rows={15}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 mb-4
               />
               
-              <div className="flex space-x-3">
+              <div className="flex" space-x-3>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(pitchEmail)
-                    alert('Email copied to clipboard!')
+                    navigator.clipboard.writeText(pitchEmail
+                    alert('Email copied to clipboard!'
                   }}
-                  className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700"
+                  className="px-4" py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700
                 >
                   Copy to Clipboard
                 </button>
-                <a
-                  href={`mailto:${selectedInvestor.contactEmail}?subject=Investment Opportunity - ${startupProfile.name}&body=${encodeURIComponent(pitchEmail)}`}
-                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20"
+                <Link href={`mailto:${selectedInvestor.contactEmail}?subject=Investment Opportunity - ${startupProfile.name}&body=${encodeURIComponent(pitchEmail)}`}
+                  className="px-4" py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20"
                 >
                   Open in Email Client
-                </a>
+                </Link>
                 <button
                   onClick={() => setSelectedInvestor(null)}
                   className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover:bg-white/20"
@@ -558,7 +552,7 @@ Best regards,
   </div>
 
   </div>
-)
+
 };
 
 export default InvestorMatchmakingPage 

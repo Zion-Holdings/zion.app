@@ -13,12 +13,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Validate required fields
       if (!title || !description || !category || !budget || !timeline || !priority) {
-        return res.status(400).json({ error: 'Missing required fields' })
+        return res.status(400).json({ error: 'Missing required fields' }
       }
 
       // Create service request
       const { data, error } = await supabase
-        .from('service_requests')
+        .from('service_requests'
         .insert([
           {
             title,
@@ -32,24 +32,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             status: 'submitted',
             user_id: userId,
             created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString()
+            updated_at: new Date().toISOString(
           }
-        ])
-        .select()
-
+        ]
+        .select(
       if (error) {
-        console.error('Error creating service request:', error)
-        return res.status(500).json({ error: 'Failed to create service request' })
+        console.error('Error creating service request:', error
+        return res.status(500).json({ error: 'Failed to create service request' }
       }
 
       return res.status(201).json({ 
         success: true, 
         data: data[0],
         message: 'Service request created successfully' 
-      })
+      }
     } catch (error) {
-      console.error('Error in service request creation:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error in service request creation:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
@@ -58,37 +57,36 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { userId, status, category } = req.query
 
       let query = supabase
-        .from('service_requests')
-        .select('*')
-        .order('created_at', { ascending: false })
-
+        .from('service_requests'
+        .select('*'
+        .order('created_at', { ascending: false }
       if (userId) {
-        query = query.eq('user_id', userId)
+        query = query.eq('user_id', userId
       }
 
       if (status && status !== 'all') {
-        query = query.eq('status', status)
+        query = query.eq('status', status
       }
 
       if (category && category !== 'all') {
-        query = query.eq('category', category)
+        query = query.eq('category', category
       }
 
       const { data, error } = await query
 
       if (error) {
-        console.error('Error fetching service requests:', error)
-        return res.status(500).json({ error: 'Failed to fetch service requests' })
+        console.error('Error fetching service requests:', error
+        return res.status(500).json({ error: 'Failed to fetch service requests' }
       }
 
       return res.status(200).json({ 
         success: true, 
         data: data || [],
         count: data?.length || 0
-      })
+      }
     } catch (error) {
-      console.error('Error in service request fetch:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error in service request fetch:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
@@ -97,11 +95,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { id, status, aiAnalysis } = req.body
 
       if (!id) {
-        return res.status(400).json({ error: 'Request ID is required' })
+        return res.status(400).json({ error: 'Request ID is required' }
       }
 
       const updateData: any = {
-        updated_at: new Date().toISOString()
+        updated_at: new Date().toISOString(
       }
 
       if (status) {
@@ -113,26 +111,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       const { data, error } = await supabase
-        .from('service_requests')
-        .update(updateData)
-        .eq('id', id)
-        .select()
-
+        .from('service_requests'
+        .update(updateData
+        .eq('id', id
+        .select(
       if (error) {
-        console.error('Error updating service request:', error)
-        return res.status(500).json({ error: 'Failed to update service request' })
+        console.error('Error updating service request:', error
+        return res.status(500).json({ error: 'Failed to update service request' }
       }
 
       return res.status(200).json({ 
         success: true, 
         data: data[0],
         message: 'Service request updated successfully' 
-      })
+      }
     } catch (error) {
-      console.error('Error in service request update:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error in service request update:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
-  return res.status(405).json({ error: 'Method not allowed' })
+  return res.status(405).json({ error: 'Method not allowed' }
 } 

@@ -27,19 +27,18 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
+    return res.status(405).json({ error: 'Method not allowed' }
   }
 
   try {
     const { userNeeds, industry, budget, timeline }: AnalysisRequest = req.body
 
     if (!userNeeds) {
-      return res.status(400).json({ error: 'User needs are required' })
+      return res.status(400).json({ error: 'User needs are required' }
     }
 
     // Simulate AI analysis delay
-    await new Promise(resolve => setTimeout(resolve, 2000))
-
+    await new Promise(resolve => setTimeout(resolve, 2000)
     // Mock AI analysis based on user needs
     const matches: ServiceMatch[] = []
 
@@ -58,7 +57,7 @@ export default async function handler(
         technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI API'],
         responseTime: '< 2 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Cloud Infrastructure
@@ -76,7 +75,7 @@ export default async function handler(
         technologies: ['AWS', 'Azure', 'Google Cloud', 'Terraform', 'Docker'],
         responseTime: '< 4 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Blockchain Services
@@ -94,7 +93,7 @@ export default async function handler(
         technologies: ['Solidity', 'Ethereum', 'Web3.js', 'MetaMask'],
         responseTime: '< 6 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Data Analytics
@@ -112,7 +111,7 @@ export default async function handler(
         technologies: ['Tableau', 'Power BI', 'Python', 'R', 'SQL'],
         responseTime: '< 8 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Web Development
@@ -130,7 +129,7 @@ export default async function handler(
         technologies: ['React', 'Node.js', 'TypeScript', 'Next.js', 'PostgreSQL'],
         responseTime: '< 4 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Mobile Development
@@ -148,7 +147,7 @@ export default async function handler(
         technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'],
         responseTime: '< 6 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Cybersecurity
@@ -166,7 +165,7 @@ export default async function handler(
         technologies: ['Nmap', 'Metasploit', 'Wireshark', 'SIEM', 'EDR'],
         responseTime: '< 24 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // If no specific matches, provide general IT services
@@ -184,15 +183,13 @@ export default async function handler(
         technologies: ['Various', 'Custom Solutions', 'Best Practices', 'Industry Standards'],
         responseTime: '< 8 hours',
         availability: 'Available'
-      })
+      }
     }
 
     // Sort by match score
-    matches.sort((a, b) => b.matchScore - a.matchScore)
-
+    matches.sort((a, b) => b.matchScore - a.matchScore
     // Limit to top 4 matches
-    const topMatches = matches.slice(0, 4)
-
+    const topMatches = matches.slice(0, 4
     return res.status(200).json({
       success: true,
       matches: topMatches,
@@ -202,15 +199,14 @@ export default async function handler(
         budget,
         timeline,
         totalMatches: matches.length,
-        analysisTime: new Date().toISOString()
+        analysisTime: new Date().toISOString(
       }
-    })
-
+    }
   } catch (error) {
-    console.error('AI Service Matcher API Error:', error)
+    console.error('AI Service Matcher API Error:', error
     return res.status(500).json({ 
       error: 'Internal server error',
       message: 'Failed to analyze service requirements'
-    })
+    }
   }
 } 

@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { name, title, bio, skills, experience, projects, testimonials, contact, image } = req.body;
 
-  // Mock AI generation (replace with real AI integration as needed)
+  // Mock AI generation (replace with real AI integration as needed
   const html = `
     <div style="font-family: sans-serif; max-width: 700px; margin: auto;">
       ${image ? `<Image src="${image}" alt="${name}" style="width:120px;height:120px;border-radius:50%;margin-bottom:16px;" / width={400} height={300} />` : ''}

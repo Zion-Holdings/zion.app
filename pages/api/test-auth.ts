@@ -13,11 +13,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
     // Test session retrieval
-    const { data: { session }, error: sessionError } = await supabase.auth.getSession()
-    
+    const { data: { session } error: sessionError } = await supabase.auth.getSession(
     // Test user retrieval
-    const { data: { user }, error: userError } = await supabase.auth.getUser()
-
+    const { data: { user } error: userError } = await supabase.auth.getUser(
     return res.status(200).json({
       success: true,
       environment: {
@@ -25,22 +23,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         hasSupabaseKey: !!supabaseKey,
         supabaseUrl: supabaseUrl ? 'Set' : 'Not set',
         supabaseKey: supabaseKey ? 'Set' : 'Not set'
-      },
+      }
       session: {
         exists: !!session,
         error: sessionError?.message || null
-      },
+      }
       user: {
         exists: !!user,
         id: user?.id || null,
         email: user?.email || null,
         error: userError?.message || null
       }
-    })
+    }
   } catch (error) {
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error'
-    })
+    }
   }
 } 

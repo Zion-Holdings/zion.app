@@ -8,14 +8,14 @@ const supabase = createClient(
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
+    return res.status(405).json({ error: 'Method not allowed' }
   }
 
   try {
     const { email, password } = req.body
 
     if (!email || !password) {
-      return res.status(400).json({ error: 'Email and password are required' })
+      return res.status(400).json({ error: 'Email and password are required' }
     }
 
     // Test signup with email confirmation
@@ -28,10 +28,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           test: true
         }
       }
-    })
-
+    }
     if (error) {
-      return res.status(400).json({ error: error.message })
+      return res.status(400).json({ error: error.message }
     }
 
     if (data.user && !data.session) {
@@ -43,7 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           email: data.user.email,
           email_confirmed_at: data.user.email_confirmed_at
         }
-      })
+      }
     }
 
     return res.status(200).json({ 
@@ -51,10 +50,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       message: 'User created and session established.',
       user: data.user,
       session: data.session
-    })
-
+    }
   } catch (error) {
-    console.error('Test email confirmation error:', error)
-    return res.status(500).json({ error: 'Internal server error' })
+    console.error('Test email confirmation error:', error
+    return res.status(500).json({ error: 'Internal server error' }
   }
 } 

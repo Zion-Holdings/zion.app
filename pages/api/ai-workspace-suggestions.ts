@@ -7,14 +7,14 @@ const openai = new OpenAI({
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
+    return res.status(405).json({ error: 'Method not allowed' }
   }
 
   try {
     const { projectData, userContext, suggestionType } = req.body
 
     if (!projectData) {
-      return res.status(400).json({ error: 'Project data is required' })
+      return res.status(400).json({ error: 'Project data is required' }
     }
 
     let prompt = ''
@@ -34,14 +34,14 @@ Analyze the following project data and provide task optimization suggestions:
 
 **Current Tasks:**
 ${projectData.tasks?.map((task: any) => `
-- ${task.title} (${task.status}, ${task.priority} priority, due: ${task.dueDate})
+- ${task.title} (${task.status} ${task.priority} priority, due: ${task.dueDate}
   - Assigned to: ${task.assignee}
   - Description: ${task.description}
 `).join('\n') || 'No tasks available'}
 
 **Team Members:**
 ${projectData.team?.map((member: any) => `
-- ${member.name} (${member.role}, ${member.status})
+- ${member.name} (${member.role} ${member.status}
 `).join('\n') || 'No team members available'}
 
 Provide 3-5 specific, actionable suggestions for:
@@ -72,7 +72,7 @@ Analyze the following collaboration data and provide improvement suggestions:
 
 **Team Structure:**
 ${projectData.team?.map((member: any) => `
-- ${member.name}: ${member.role} (${member.status})
+- ${member.name}: ${member.role} (${member.status}
 `).join('\n') || 'No team data available'}
 
 **Recent Activity:**
@@ -109,14 +109,14 @@ Analyze the following deadline and timeline data:
 
 **Task Deadlines:**
 ${projectData.tasks?.map((task: any) => `
-- ${task.title}: Due ${task.dueDate} (${task.status})
+- ${task.title}: Due ${task.dueDate} (${task.status}
   - Priority: ${task.priority}
   - Assignee: ${task.assignee}
 `).join('\n') || 'No task data available'}
 
 **Team Capacity:**
 ${projectData.team?.map((member: any) => `
-- ${member.name}: ${member.role} (${member.status})
+- ${member.name}: ${member.role} (${member.status}
 `).join('\n') || 'No team data available'}
 
 Provide 3-5 specific suggestions for:
@@ -168,29 +168,28 @@ Format each suggestion as a JSON object with:
 `
 
       default:
-        return res.status(400).json({ error: 'Invalid suggestion type' })
+        return res.status(400).json({ error: 'Invalid suggestion type' }
     }
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
-        { role: 'system', content: systemPrompt },
+        { role: 'system', content: systemPrompt }
         { role: 'user', content: prompt }
       ],
       temperature: 0.7,
       max_tokens: 1000
-    })
-
+    }
     const response = completion.choices[0]?.message?.content
 
     if (!response) {
-      return res.status(500).json({ error: 'Failed to generate AI suggestions' })
+      return res.status(500).json({ error: 'Failed to generate AI suggestions' }
     }
 
     // Try to parse JSON from response
     try {
       // Extract JSON array from response
-      const jsonMatchRaw = response?.match(/\[[\s\S]*\]/)
+      const jsonMatchRaw = response?.match(/\[[\s\S]*\]/
       if (!jsonMatchRaw) {
         // If no JSON found, create a structured response
         const suggestions = [
@@ -203,7 +202,7 @@ Format each suggestion as a JSON object with:
             impact: 'Improved project management'
           }
         ]
-        return res.status(200).json({ suggestions })
+        return res.status(200).json({ suggestions }
       }
       const arr = jsonMatchRaw as string[];
       if (!Array.isArray(arr) || arr.length === 0 || typeof (arr[0] as string) !== 'string') {
@@ -217,11 +216,11 @@ Format each suggestion as a JSON object with:
             impact: 'Improved project management'
           }
         ]
-        return res.status(200).json({ suggestions })
+        return res.status(200).json({ suggestions }
       }
       const jsonString = arr[0] as string;
-      const suggestions = JSON.parse(jsonString)
-      return res.status(200).json({ suggestions })
+      const suggestions = JSON.parse(jsonString
+      return res.status(200).json({ suggestions }
     } catch (parseError) {
       // If JSON parsing fails, return the raw response
       const suggestions = [
@@ -234,11 +233,11 @@ Format each suggestion as a JSON object with:
           impact: 'Project optimization'
         }
       ]
-      return res.status(200).json({ suggestions })
+      return res.status(200).json({ suggestions }
     }
 
   } catch (error) {
-    console.error('Error generating AI suggestions:', error)
-    return res.status(500).json({ error: 'Failed to generate suggestions' })
+    console.error('Error generating AI suggestions:', error
+    return res.status(500).json({ error: 'Failed to generate suggestions' }
   }
 }

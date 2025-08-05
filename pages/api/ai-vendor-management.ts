@@ -22,7 +22,7 @@ export default async function handler(
           riskScore: 12,
           status: 'active',
           contractValue: 150000
-        },
+        }
         {
           id: '2',
           name: 'Global Logistics Ltd',

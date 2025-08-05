@@ -48,7 +48,7 @@ const mockFacilities: Facility[] = [
     utilization: 85,
     lastInspection: '2024-01-15',
     nextMaintenance: '2024-02-20'
-  },
+  }
   {
     id: 'facility-2',
     name: 'Research & Development Lab',
@@ -59,7 +59,7 @@ const mockFacilities: Facility[] = [
     utilization: 92,
     lastInspection: '2024-01-10',
     nextMaintenance: '2024-02-15'
-  },
+  }
   {
     id: 'facility-3',
     name: 'Warehouse & Storage',
@@ -70,7 +70,7 @@ const mockFacilities: Facility[] = [
     utilization: 45,
     lastInspection: '2024-01-20',
     nextMaintenance: '2024-01-25'
-  },
+  }
   {
     id: 'facility-4',
     name: 'Data Center',
@@ -81,7 +81,7 @@ const mockFacilities: Facility[] = [
     utilization: 78,
     lastInspection: '2024-01-12',
     nextMaintenance: '2024-02-28'
-  },
+  }
   {
     id: 'facility-5',
     name: 'Office Complex',
@@ -106,7 +106,7 @@ const mockEquipment: Equipment[] = [
     nextMaintenance: '2024-02-15',
     efficiency: 92,
     health: 85
-  },
+  }
   {
     id: 'equipment-2',
     name: 'Production Line 1',
@@ -117,7 +117,7 @@ const mockEquipment: Equipment[] = [
     nextMaintenance: '2024-02-10',
     efficiency: 88,
     health: 92
-  },
+  }
   {
     id: 'equipment-3',
     name: 'Generator B',
@@ -128,7 +128,7 @@ const mockEquipment: Equipment[] = [
     nextMaintenance: '2024-01-25',
     efficiency: 45,
     health: 30
-  },
+  }
   {
     id: 'equipment-4',
     name: 'Server Rack Alpha',
@@ -139,7 +139,7 @@ const mockEquipment: Equipment[] = [
     nextMaintenance: '2024-02-20',
     efficiency: 95,
     health: 88
-  },
+  }
   {
     id: 'equipment-5',
     name: 'Security System',
@@ -150,7 +150,7 @@ const mockEquipment: Equipment[] = [
     nextMaintenance: '2024-03-01',
     efficiency: 90,
     health: 95
-  },
+  }
   {
     id: 'equipment-6',
     name: 'Lab Equipment Set',
@@ -176,7 +176,7 @@ const mockMaintenanceTasks: MaintenanceTask[] = [
     scheduledDate: '2024-02-15',
     estimatedDuration: '4 hours',
     assignedTo: 'John Smith'
-  },
+  }
   {
     id: 'task-2',
     title: 'Generator Emergency Repair',
@@ -188,7 +188,7 @@ const mockMaintenanceTasks: MaintenanceTask[] = [
     scheduledDate: '2024-01-25',
     estimatedDuration: '8 hours',
     assignedTo: 'Mike Johnson'
-  },
+  }
   {
     id: 'task-3',
     title: 'Production Line Inspection',
@@ -200,7 +200,7 @@ const mockMaintenanceTasks: MaintenanceTask[] = [
     scheduledDate: '2024-02-10',
     estimatedDuration: '6 hours',
     assignedTo: 'Sarah Wilson'
-  },
+  }
   {
     id: 'task-4',
     title: 'Server Maintenance',
@@ -212,7 +212,7 @@ const mockMaintenanceTasks: MaintenanceTask[] = [
     scheduledDate: '2024-02-20',
     estimatedDuration: '3 hours',
     assignedTo: 'David Chen'
-  },
+  }
   {
     id: 'task-5',
     title: 'Security System Update',
@@ -254,14 +254,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         operationalEquipment: mockEquipment.filter(e => e.status === 'operational').length,
         pendingTasks: mockMaintenanceTasks.filter(t => t.status === 'scheduled').length,
         averageEfficiency: Math.round(mockEquipment.reduce((acc, e) => acc + e.efficiency, 0) / mockEquipment.length),
-        averageHealth: Math.round(mockEquipment.reduce((acc, e) => acc + e.health, 0) / mockEquipment.length)
+        averageHealth: Math.round(mockEquipment.reduce((acc, e) => acc + e.health, 0) / mockEquipment.length
       }
     };
 
     // Simulate processing time
     setTimeout(() => {
       res.status(200).json(response);
-    }, processingDelay);
+    } processingDelay);
 
   } catch (error) {
     console.error('AI Facility Management API Error:', error);
@@ -278,7 +278,7 @@ function generateAIInsights(timeframe: string): any {
         equipment: 'Generator B',
         timeframe: '7 days',
         recommendation: 'Schedule preventive maintenance immediately'
-      },
+      }
       {
         type: 'efficiency_optimization',
         probability: 0.85,
@@ -293,13 +293,13 @@ function generateAIInsights(timeframe: string): any {
         priority: 'high',
         description: 'Consolidate maintenance tasks to reduce operational costs by 12%',
         impact: 'Cost savings and improved efficiency'
-      },
+      }
       {
         type: 'resource_allocation',
         priority: 'medium',
         description: 'Redistribute maintenance staff to prioritize high-priority equipment',
         impact: 'Better resource utilization and reduced downtime'
-      },
+      }
       {
         type: 'equipment_upgrade',
         priority: 'low',
@@ -313,7 +313,7 @@ function generateAIInsights(timeframe: string): any {
         message: 'Generator B showing signs of failure. Immediate attention required.',
         equipment: 'Generator B',
         facility: 'Warehouse & Storage'
-      },
+      }
       {
         type: 'warning',
         message: 'HVAC System A efficiency dropping below optimal levels.',

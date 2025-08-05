@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout'
-
-import Head from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
@@ -125,13 +123,13 @@ interface AIInsight {
 }
 
 const AIPoweredSubscriptionMembershipPage: NextPage = () => {
-  const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([])
-  const [userMembership, setUserMembership] = useState<UserMembership | null>(null)
-  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([])
-  const [analytics, setAnalytics] = useState<MembershipAnalytics | null>(null)
-  const [activeTab, setActiveTab] = useState<'overview' | 'tiers' | 'billing' | 'analytics'>('overview')
-  const [isLoading, setIsLoading] = useState(true)
-
+  
+  const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]
+  const [userMembership, setUserMembership] = useState<UserMembership | null>(null
+  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([]
+  const [analytics, setAnalytics] = useState<MembershipAnalytics | null>(null
+  const [activeTab, setActiveTab] = useState<'overview' | 'tiers' | 'billing' | 'analytics'>('overview'
+  const [isLoading, setIsLoading] = useState(true
   // Mock subscription tiers
   const mockSubscriptionTiers: SubscriptionTier[] = [
     {
@@ -147,8 +145,9 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           description: 'Limited AI-powered service recommendations',
           category: 'ai',
           included: true,
+}
           usage: { current: 5, limit: 10, unit: 'recommendations/month' }
-        },
+        }
         {
           id: '2',
           name: 'Standard Support',
@@ -171,7 +170,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       popular: false,
       recommended: false,
       aiScore: 60
-    },
+    }
     {
       id: '2',
       name: 'Basic',
@@ -186,7 +185,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'ai',
           included: true,
           usage: { current: 25, limit: 100, unit: 'recommendations/month' }
-        },
+        }
         {
           id: '4',
           name: 'Priority Support',
@@ -194,7 +193,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'core',
           included: true
         },
-        {
+{
           id: '5',
           name: 'AI-Powered Pricing Analysis',
           description: 'Access to AI-powered pricing estimation tools',
@@ -211,7 +210,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'analytics',
           aiPowered: true
         },
-        {
+{
           id: '3',
           name: 'AI Contract Assistant',
           description: 'Basic AI-powered contract generation',
@@ -224,7 +223,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       popular: true,
       recommended: false,
       aiScore: 75
-    },
+    }
     {
       id: '3',
       name: 'Premium',
@@ -239,7 +238,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'ai',
           included: true,
           usage: { current: 150, limit: -1, unit: 'recommendations/month' }
-        },
+        }
         {
           id: '7',
           name: 'VIP Support',
@@ -247,13 +246,13 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'premium',
           included: true
         },
-        {
+{
           id: '8',
           name: 'Advanced AI Tools',
           description: 'Full access to all AI-powered marketplace tools',
           category: 'ai',
           included: true
-        },
+        }
         {
           id: '9',
           name: 'Learning Platform Access',
@@ -271,14 +270,14 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'analytics',
           aiPowered: true
         },
-        {
+{
           id: '5',
           name: 'AI Legal Assistant',
           description: 'Full AI-powered contract and legal management',
           value: 500,
           category: 'productivity',
           aiPowered: true
-        },
+        }
         {
           id: '6',
           name: 'Exclusive AI Features',
@@ -292,7 +291,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       popular: false,
       recommended: true,
       aiScore: 90
-    },
+    }
     {
       id: '4',
       name: 'Enterprise',
@@ -307,13 +306,13 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'enterprise',
           included: true
         },
-        {
+{
           id: '11',
           name: 'Dedicated Support Team',
           description: '24/7 dedicated support team with custom solutions',
           category: 'enterprise',
           included: true
-        },
+        }
         {
           id: '12',
           name: 'Custom AI Integration',
@@ -331,7 +330,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
           category: 'analytics',
           aiPowered: true
         },
-        {
+{
           id: '8',
           name: 'Custom AI Solutions',
           description: 'Tailored AI solutions for your business needs',
@@ -363,7 +362,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       brand: 'Visa',
       expiryDate: '12/25',
       default: true
-    },
+    }
     usage: {
       totalUsage: 85,
       monthlyUsage: 25,
@@ -371,10 +370,10 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         'AI Recommendations': 25,
         'Pricing Analysis': 15,
         'Contract Tools': 10
-      },
+      }
       costSavings: 1250,
       roi: 3.2
-    },
+    }
     aiRecommendations: [
       {
         id: '1',
@@ -386,7 +385,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         confidence: 0.85,
         priority: 'medium'
       },
-      {
+{
         id: '2',
         type: 'feature',
         title: 'Try Learning Platform',
@@ -404,9 +403,9 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         used: true,
         value: 150,
         category: 'analytics',
-        lastUsed: new Date('2024-01-15')
+        lastUsed: new Date('2024-01-15'
       },
-      {
+{
         id: '2',
         name: 'AI Contract Assistant',
         description: 'Basic AI-powered contract generation',
@@ -428,7 +427,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       date: new Date('2024-01-01'),
       description: 'Basic Plan - Monthly Subscription'
     },
-    {
+{
       id: '2',
       userId: 'user123',
       amount: 29,
@@ -436,7 +435,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       status: 'paid',
       date: new Date('2023-12-01'),
       description: 'Basic Plan - Monthly Subscription'
-    },
+    }
     {
       id: '3',
       userId: 'user123',
@@ -465,7 +464,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         confidence: 0.92,
         recommendations: ['Consider expanding AI features', 'Add more AI-powered tools']
       },
-      {
+{
         id: '2',
         title: 'Premium Tier Conversion Opportunity',
         description: 'Basic tier users show high potential for premium upgrade based on usage patterns',
@@ -478,14 +477,13 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setSubscriptionTiers(mockSubscriptionTiers)
-      setUserMembership(mockUserMembership)
-      setBillingHistory(mockBillingHistory)
-      setAnalytics(mockAnalytics)
-      setIsLoading(false)
-    }, 1000)
-  }, [])
-
+      setSubscriptionTiers(mockSubscriptionTiers
+      setUserMembership(mockUserMembership
+      setBillingHistory(mockBillingHistory
+      setAnalytics(mockAnalytics
+      setIsLoading(false
+    } 1000
+  } []
   const getTierColor = (type: string) => {
     switch (type) {
       case 'free': return 'bg-gray-500/20 text-gray-300'
@@ -518,12 +516,12 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
   return (
     <div>
-      <div className="relative z-10 container-responsive py-8">
+      <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        <div className="fixed" inset-0 z-0>
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -534,26 +532,26 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-44">
-          <div className="text-center">
-            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6">
+      <div className="relative overflow-hidden>
+        <div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
+        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+          <div className=text-center">
+            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
               AI-Powered Subscription & Membership
             </h1>
-            <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
+            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
               Choose from tiered memberships with AI-powered benefits, automated billing, 
               and intelligent upgrade recommendations designed to maximize your marketplace success.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
-                <span className="text-white font-semibold">🎯 Tiered Plans</span>
+            <div className="flex" flex-wrap justify-center gap-4>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+                <span className="text-white font-semibold>🎯 Tiered Plans</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
-                <span className="text-white font-semibold">🤖 AI Benefits</span>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3>
+                <span className="text-white" font-semibold>🤖 AI Benefits</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
-                <span className="text-white font-semibold">💰 Smart Billing</span>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+                <span className="text-white font-semibold>💰 Smart Billing</span>
               </div>
             </div>
           </div>
@@ -561,18 +559,18 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
         {isLoading ? (
-          <div className="flex justify-center items-center py-40">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+          <div className="flex" justify-center items-center py-40>
+            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
-            <div className="flex flex-wrap justify-center mb-8">
+            <div className="flex flex-wrap justify-center mb-8>
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'overview'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -582,7 +580,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('tiers')}
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'tiers'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -592,7 +590,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('billing')}
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'billing'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -602,7 +600,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('analytics')}
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -612,59 +610,59 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </button>
             </div>
 
-            {/* Overview Tab */}
-            {activeTab === 'overview' && userMembership && (
+            {/* Overview Tab */},
+{activeTab === 'overview' && userMembership && (
               <div className="space-y-8">
                 {/* Current Membership */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                  <div className="flex items-start justify-between mb-6">
+                <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  <div className="flex" items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl:font-bold text-white mb-2">Current Membership</h3>
+                      <h3 className="text-2xl font-bold text-white mb-2>Current Membership</h3>
                       <p className="text-gray-300">Manage your subscription and view benefits</p>
                     </div>
-                    <span className={`px-3 py-3 rounded-full text-sm:font-medium ${getStatusColor(userMembership.status)}`}>
+                    <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(userMembership.status)}`}>
                       {userMembership.status}
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3" gap-6 mb-6">
-                    <div className="bg-white/5 rounded-lg:p-4">
-                      <div className="text-sm:text-gray-400 mb-1">Current Plan</div>
-                      <div className="text-white font-semibold">Basic Plan</div>
-                      <div className="text-gray-300 text-sm">$29/month</div>
+                  <div className="grid" grid-cols-1 md:grid-cols-3" gap-6 mb-6">
+                    <div className="bg-white/5 rounded-lg:p-4>
+                      <div className="text-sm:text-gray-400" mb-1>Current Plan</div>
+                      <div className="text-white" font-semibold>Basic Plan</div>
+                      <div className="text-gray-300" text-sm">$29/month</div>
                     </div>
-                    <div className="bg-white/5 rounded-lg:p-4">
-                      <div className="text-sm:text-gray-400 mb-1">Next Billing</div>
-                      <div className="text-white font-semibold">Feb 1, 2024</div>
-                      <div className="text-gray-300 text-sm">Auto-renewal enabled</div>
+                    <div className="bg-white/5 rounded-lg:p-4>
+                      <div className="text-sm:text-gray-400" mb-1>Next Billing</div>
+                      <div className="text-white" font-semibold>Feb 1, 2024</div>
+                      <div className="text-gray-300" text-sm">Auto-renewal enabled</div>
                     </div>
-                    <div className="bg-white/5 rounded-lg:p-4">
-                      <div className="text-sm:text-gray-400 mb-1">Total Savings</div>
-                      <div className="text-white font-semibold">${userMembership.usage.costSavings}</div>
-                      <div className="text-gray-300 text-sm">ROI: {userMembership.usage.roi}x</div>
+                    <div className="bg-white/5 rounded-lg:p-4>
+                      <div className="text-sm:text-gray-400" mb-1>Total Savings</div>
+                      <div className="text-white" font-semibold>${userMembership.usage.costSavings}</div>
+                      <div className="text-gray-300" text-sm">ROI: {userMembership.usage.roi}x</div>
                     </div>
                   </div>
 
                   {/* AI Recommendations */}
-                  <div className="mb-6">
-                    <h4 className="text-lg:font-semibold text-white mb-4">AI Recommendations</h4>
+                  <div className="mb-6>
+                    <h4 className="text-lg" font-semibold text-white mb-4>AI Recommendations</h4>
                     <div className="space-y-3">
                       {userMembership.aiRecommendations.map((rec) => (
-                        <div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4">
-                          <div className="flex items-start justify-between mb-2">
-                            <h5 className="text-white font-semibold">{rec.title}</h5>
-                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(rec.priority)}`}>
+                        <div key={rec.id} className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4">
+                          <div className="flex items-start justify-between mb-2>
+                            <h5 className="text-white" font-semibold>{rec.title}</h5>
+                            <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(rec.priority)}`}>
                               {rec.priority} priority
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm:mb-2">{rec.description}</p>
-                          <p className="text-gray-400 text-xs mb-2">{rec.reasoning}</p>
+                          <p className="text-gray-300" text-sm:mb-2">{rec.description}</p>
+                          <p className="text-gray-400 text-xs mb-2>{rec.reasoning}</p>
                           {rec.potentialSavings && (
                             <div className="text-sm:text-green-300">
                               Potential savings: ${rec.potentialSavings}
                             </div>
                           )}
-                          <div className="text-xs text-gray-400 mt-2">
+                          <div className="text-xs" text-gray-400 mt-2>
                             Confidence: {Math.round(rec.confidence * 100)}%
                           </div>
                         </div>
@@ -674,25 +672,25 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
                   {/* Benefits */}
                   <div>
-                    <h4 className="text-lg:font-semibold text-white mb-4">Your Benefits</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <h4 className="text-lg" font-semibold text-white mb-4">Your Benefits</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4>
                       {userMembership.benefits.map((benefit) => (
-                        <div key={benefit.id} className="bg-white/5 rounded-lg:p-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <h5 className="text-white font-semibold">{benefit.name}</h5>
-                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${
+                        <div key={benefit.id} className="bg-white/5" rounded-lg:p-4>
+                          <div className="flex" items-center justify-between mb-2>
+                            <h5 className="text-white" font-semibold">{benefit.name}</h5>
+                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
                               benefit.used ? 'bg-green-500/20 text-green-300' : 'bg-gray-500/20 text-gray-300'
                             }`}>
                               {benefit.used ? 'Used' : 'Available'}
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm:mb-2">{benefit.description}</p>
-                          <div className="flex justify-between text-sm">
-                            <span className="text-gray-400">Value:</span>
-                            <span className="text-white">${benefit.value}</span>
+                          <p className="text-gray-300" text-sm:mb-2>{benefit.description}</p>
+                          <div className="flex" justify-between text-sm>
+                            <span className=text-gray-400">Value:</span>
+                            <span className="text-white>${benefit.value}</span>
                           </div>
                           {benefit.lastUsed && (
-                            <div className="text-xs text-gray-400 mt-1">
+                            <div className="text-xs" text-gray-400 mt-1>
                               Last used: {benefit.lastUsed.toLocaleDateString()}
                             </div>
                           )}
@@ -704,62 +702,62 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </div>
             )}
 
-            {/* Tiers Tab */}
-            {activeTab === 'tiers' && (
+            {/* Tiers Tab */},
+{activeTab === 'tiers' && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {subscriptionTiers.map((tier) => (
-                    <div key={tier.id} className={`bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10 ${
+                    <div key={tier.id} className="{`bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10 ${
                       tier.recommended ? 'ring-2 ring-purple-500' : ''
                     }`}>
                       {tier.recommended && (
-                        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block">
+                        <div className="bg-gradient-to-r" from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block>
                           AI Recommended
                         </div>
-                      )}
-                      {tier.popular && (
-                        <div className="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block">
+                      )},
+{tier.popular && (
+                        <div className="bg-blue-500/20" text-blue-300 text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block>
                           Most Popular
                         </div>
                       )}
                       
-                      <h3 className="text-xl:font-bold text-white mb-2">{tier.name}</h3>
-                      <div className="mb-4">
-                        <span className="text-3xl:font-bold text-white">${tier.price}</span>
+                      <h3 className="text-xl:font-bold" text-white mb-2">{tier.name}</h3>
+                      <div className="mb-4>
+                        <span className="text-3xl" font-bold text-white>${tier.price}</span>
                         <span className="text-gray-400">/{tier.billingCycle}</span>
                       </div>
                       
-                      <div className="mb-4">
-                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}>
+                      <div className=mb-4">
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}>
                           AI Score: {tier.aiScore}%
                         </span>
                       </div>
 
-                      <div className="space-y-3 mb-6">
+                      <div className="space-y-3" mb-6>
                         {tier.features.slice(0, 3).map((feature) => (
-                          <div key={feature.id} className="flex items-center text-sm">
-                            <span className="text-green-400 mr-2">✓</span>
-                            <span className="text-white">{feature.name}</span>
+                          <div key={feature.id} className="flex" items-center text-sm>
+                            <span className="text-green-400" mr-2">✓</span>
+                            <span className="text-white>{feature.name}</span>
                           </div>
                         ))}
                         {tier.features.length > 3 && (
-                          <div className="text-gray-400 text-sm">+{tier.features.length - 3} more features</div>
+                          <div className="text-gray-400" text-sm>+{tier.features.length - 3} more features</div>
                         )}
                       </div>
 
                       <div className="mb-6">
-                        <h4 className="text-sm:font-semibold text-gray-400 mb-2">AI Benefits</h4>
-                        <div className="space-y-2">
+                        <h4 className="text-sm:font-semibold" text-gray-400 mb-2">AI Benefits</h4>
+                        <div className="space-y-2>
                           {tier.aiBenefits.slice(0, 2).map((benefit) => (
                             <div key={benefit.id} className="text-xs">
-                              <div className="text-white font-medium">{benefit.name}</div>
-                              <div className="text-gray-400">Value: ${benefit.value}</div>
+                              <div className="text-white" font-medium>{benefit.name}</div>
+                              <div className=text-gray-400">Value: ${benefit.value}</div>
                             </div>
                           ))}
                         </div>
                       </div>
 
-                      <button className={`w-full py-4 px-4 rounded-lg:font-medium transition-all duration-300 ${
+                      <button className="{`w-full py-4 px-4 rounded-lg:font-medium transition-all duration-300 ${
                         tier.type === 'free' 
                           ? 'border border-white/20 text-white hover:bg-white/10'
                           : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
@@ -772,21 +770,21 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </div>
             )}
 
-            {/* Billing Tab */}
-            {activeTab === 'billing' && (
+            {/* Billing Tab */},
+{activeTab === 'billing' && (
               <div className="space-y-8">
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                  <h3 className="text-xl:font-semibold text-white mb-6">Billing History</h3>
-                  <div className="space-y-4">
+                <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  <h3 className="text-xl" font-semibold text-white mb-6">Billing History</h3>
+                  <div className="space-y-4>
                     {billingHistory.map((bill) => (
-                      <div key={bill.id} className="flex items-center justify-between bg-white/5 rounded-lg:p-4">
+                      <div key={bill.id} className="flex" items-center justify-between bg-white/5 rounded-lg:p-4>
                         <div>
-                          <div className="text-white font-semibold">{bill.description}</div>
-                          <div className="text-gray-400 text-sm">{bill.date.toLocaleDateString()}</div>
+                          <div className="text-white" font-semibold>{bill.description}</div>
+                          <div className="text-gray-400" text-sm">{bill.date.toLocaleDateString()}</div>
                         </div>
-                        <div className="text-right">
-                          <div className="text-white font-semibold">${bill.amount}</div>
-                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
+                        <div className="text-right>
+                          <div className="text-white" font-semibold>${bill.amount}</div>
+                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${
                             bill.status === 'paid' ? 'bg-green-500/20 text-green-300' :
                             bill.status === 'pending' ? 'bg-yellow-500/20 text-yellow-300' :
                             'bg-red-500/20 text-red-300'
@@ -801,36 +799,36 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               </div>
             )}
 
-            {/* Analytics Tab */}
-            {activeTab === 'analytics' && analytics && (
-              <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="text-3xl:font-bold text-white mb-2">{analytics.totalMembers.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm">Total Members</div>
+            {/* Analytics Tab */},
+{activeTab === 'analytics' && analytics && (
+              <div className=space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <div className="text-3xl" font-bold text-white mb-2>{analytics.totalMembers.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm">Total Members</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="text-3xl:font-bold text-white mb-2">{analytics.activeSubscriptions.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm">Active Subscriptions</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <div className="text-3xl" font-bold text-white mb-2>{analytics.activeSubscriptions.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm>Active Subscriptions</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="text-3xl:font-bold text-white mb-2">${analytics.monthlyRevenue.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm">Monthly Revenue</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl font-bold text-white mb-2>${analytics.monthlyRevenue.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm>Monthly Revenue</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="text-3xl:font-bold text-white mb-2">{(analytics.churnRate * 100).toFixed(1)}%</div>
-                    <div className="text-gray-400 text-sm">Churn Rate</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <div className="text-3xl" font-bold text-white mb-2">{(analytics.churnRate * 100).toFixed(1)}%</div>
+                    <div className="text-gray-400 text-sm>Churn Rate</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                  <h3 className="text-xl:font-semibold text-white mb-6">AI Insights</h3>
-                  <div className="space-y-4">
+                <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
+                  <div className=space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
+                      <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
+                        <div className="flex" items-start justify-between mb-2>
+                          <h4 className="text-white" font-semibold>{insight.title}</h4>
+                          <span className={`px-4" py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
@@ -838,11 +836,11 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm:mb-3">{insight.description}</p>
-                        <div className="text-xs text-gray-400 mb-2">
+                        <p className="text-gray-300 text-sm:mb-3>{insight.description}</p>
+                        <div className="text-xs" text-gray-400 mb-2>
                           Confidence: {Math.round(insight.confidence * 100)}%
                         </div>
-                        <div className="text-xs text-gray-400">
+                        <div className="text-xs" text-gray-400>
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
                         </div>
                       </div>
@@ -856,21 +854,21 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-36">
+      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>
           <div className="text-center">
-            <h2 className="text-3xl:font-bold text-white mb-4">
+            <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Unlock Premium Benefits?
             </h2>
-            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
+            <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto">
               Upgrade your membership to access advanced AI features, 
               priority support, and exclusive marketplace benefits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
                 View Plans
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href=/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
                 Contact Sales
               </Link>
             </div>
@@ -884,7 +882,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
   </div>
 
   </div>
-)
+
 };
 
 export default AIPoweredSubscriptionMembershipPage 

@@ -116,9 +116,9 @@ export default function handler(
           skillMatch: 95,
           growthPotential: 90,
           riskAssessment: 12
-        },
+        }
         lastUpdated: '2024-01-15'
-      },
+      }
       {
         id: '2',
         name: 'Michael Chen',
@@ -132,9 +132,9 @@ export default function handler(
           skillMatch: 88,
           growthPotential: 92,
           riskAssessment: 18
-        },
+        }
         lastUpdated: '2024-01-14'
-      },
+      }
       {
         id: '3',
         name: 'Emily Rodriguez',
@@ -148,9 +148,9 @@ export default function handler(
           skillMatch: 86,
           growthPotential: 88,
           riskAssessment: 15
-        },
+        }
         lastUpdated: '2024-01-13'
-      },
+      }
       {
         id: '4',
         name: 'Alex Thompson',
@@ -164,7 +164,7 @@ export default function handler(
           skillMatch: 96,
           growthPotential: 93,
           riskAssessment: 8
-        },
+        }
         lastUpdated: '2024-01-12'
       }
     ],
@@ -180,11 +180,11 @@ export default function handler(
           productivity: 94,
           collaboration: 89,
           innovation: 91
-        },
+        }
         engagement: 88,
         retentionRisk: 15,
         developmentNeeds: ['Leadership Skills', 'System Architecture']
-      },
+      }
       {
         id: '2',
         name: 'Lisa Wang',
@@ -196,11 +196,11 @@ export default function handler(
           productivity: 87,
           collaboration: 93,
           innovation: 88
-        },
+        }
         engagement: 92,
         retentionRisk: 8,
         developmentNeeds: ['Data Analytics', 'Strategic Planning']
-      },
+      }
       {
         id: '3',
         name: 'James Wilson',
@@ -212,11 +212,11 @@ export default function handler(
           productivity: 82,
           collaboration: 88,
           innovation: 79
-        },
+        }
         engagement: 75,
         retentionRisk: 35,
         developmentNeeds: ['Performance Coaching', 'Team Leadership']
-      },
+      }
       {
         id: '4',
         name: 'Maria Garcia',
@@ -228,7 +228,7 @@ export default function handler(
           productivity: 89,
           collaboration: 94,
           innovation: 87
-        },
+        }
         engagement: 95,
         retentionRisk: 5,
         developmentNeeds: ['HR Analytics', 'Employee Relations']
@@ -248,7 +248,7 @@ export default function handler(
           diversityScore: 78,
           marketCompetitiveness: 85
         }
-      },
+      }
       {
         id: '2',
         title: 'Product Marketing Specialist',
@@ -262,7 +262,7 @@ export default function handler(
           diversityScore: 82,
           marketCompetitiveness: 79
         }
-      },
+      }
       {
         id: '3',
         title: 'Data Scientist',
@@ -276,7 +276,7 @@ export default function handler(
           diversityScore: 75,
           marketCompetitiveness: 92
         }
-      },
+      }
       {
         id: '4',
         title: 'UX/UI Designer',
@@ -303,7 +303,7 @@ export default function handler(
         achievements: ['Successfully launched new product feature', 'Improved team productivity by 25%'],
         areasForImprovement: ['Communication with non-technical stakeholders'],
         aiRecommendations: ['Consider leadership training program', 'Schedule regular stakeholder updates']
-      },
+      }
       {
         id: '2',
         employeeId: '2',
@@ -314,7 +314,7 @@ export default function handler(
         achievements: ['Launched successful social media campaign', 'Increased conversion rates by 30%'],
         areasForImprovement: ['Data-driven decision making'],
         aiRecommendations: ['Enroll in advanced analytics course', 'Implement A/B testing framework']
-      },
+      }
       {
         id: '3',
         employeeId: '3',
@@ -333,24 +333,24 @@ export default function handler(
         costPerHire: 8500,
         qualityOfHire: 87,
         diversityScore: 78
-      },
+      }
       employee: {
         satisfaction: 92,
         retentionRate: 94,
         averagePerformance: 88,
         engagementScore: 89
-      },
+      }
       predictions: {
         highPerformers: 15,
         retentionRisk: 3,
         skillGaps: 8
-      },
+      }
       trends: {
         employeeGrowth: 12,
         diversityImprovement: 8,
         trainingCompletion: 87
       }
-    },
+    }
     insights: [
       {
         type: 'retention_risk',
@@ -363,7 +363,7 @@ export default function handler(
           'Review compensation and benefits packages',
           'Implement employee engagement initiatives'
         ]
-      },
+      }
       {
         type: 'skill_gap',
         title: 'Skill Gap Identified',
@@ -375,7 +375,7 @@ export default function handler(
           'Provide access to online learning platforms',
           'Schedule regular skill assessment reviews'
         ]
-      },
+      }
       {
         type: 'diversity',
         title: 'Diversity Improvement',
@@ -387,7 +387,7 @@ export default function handler(
           'Implement mentorship programs for underrepresented groups',
           'Review promotion processes for bias'
         ]
-      },
+      }
       {
         type: 'performance',
         title: 'Performance Distribution',
@@ -399,7 +399,7 @@ export default function handler(
           'Provide career development opportunities',
           'Share best practices across teams'
         ]
-      },
+      }
       {
         type: 'recruitment',
         title: 'Recruitment Pipeline Optimization',
@@ -418,5 +418,5 @@ export default function handler(
   // Simulate processing delay
   setTimeout(() => {
     res.status(200).json(hrData);
-  }, 1000);
+  } 1000);
 } 

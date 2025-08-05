@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     paymentTerms
   } = req.body;
 
-  // Mock AI generation (replace with real AI integration as needed)
+  // Mock AI generation (replace with real AI integration as needed
   const invoice = `
     <div style="font-family: 'Arial', sans-serif; max-width: 800px; margin: auto; padding: 20px; background: white; color: #333;">
       <!-- Header -->

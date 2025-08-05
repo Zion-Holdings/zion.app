@@ -37,7 +37,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/ai-model-development',
     aiInsights: []
-  },
+  }
   {
     id: 'data-analytics',
     type: 'service',
@@ -50,7 +50,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/data-analytics',
     aiInsights: []
-  },
+  }
   {
     id: 'cloud-migration',
     type: 'service',
@@ -63,7 +63,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/cloud-migration',
     aiInsights: []
-  },
+  }
   {
     id: 'web-development',
     type: 'service',
@@ -76,7 +76,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/web-development',
     aiInsights: []
-  },
+  }
   // AI Talents
   {
     id: 'dr-sarah-chen',
@@ -90,7 +90,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/talents/dr-sarah-chen',
     aiInsights: []
-  },
+  }
   {
     id: 'alex-rodriguez',
     type: 'talent',
@@ -103,7 +103,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/talents/alex-rodriguez',
     aiInsights: []
-  },
+  }
   {
     id: 'emma-thompson',
     type: 'talent',
@@ -116,7 +116,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/talents/emma-thompson',
     aiInsights: []
-  },
+  }
   // Equipment
   {
     id: 'gpu-cluster-rtx4090',
@@ -130,7 +130,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/equipment/gpu-cluster-rtx4090',
     aiInsights: []
-  },
+  }
   {
     id: 'quantum-computer',
     type: 'equipment',
@@ -143,7 +143,7 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/equipment/quantum-computer',
     aiInsights: []
-  },
+  }
   {
     id: 'edge-computing',
     type: 'equipment',
@@ -332,7 +332,7 @@ export default async function handler(
 
     // Sort by match score (highest first) and take top 8
     const topRecommendations = recommendationsWithScores
-      .sort((a, b) => b.matchScore - a.matchScore)
+      .sort((a, b) => b.matchScore - a.matchScore
       .slice(0, 8);
 
     // Simulate processing time
@@ -342,7 +342,7 @@ export default async function handler(
       success: true,
       recommendations: topRecommendations,
       totalAnalyzed: availableItems.length,
-      analysisTimestamp: new Date().toISOString()
+      analysisTimestamp: new Date().toISOString(
     });
   } catch (error) {
     console.error('AI Recommendations API Error:', error);

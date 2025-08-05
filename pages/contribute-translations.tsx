@@ -1,20 +1,18 @@
 import React, { useState }  from 'react';
-import ModernLayout from '../components/layout/ModernLayout'
-
-import Head from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
 import Link from 'next/link';
 
 const languages = [
   { code: 'en', name: 'English' },
-  { code: 'es', name: 'Spanish' },
+{ code: 'es', name: 'Spanish' }
   { code: 'fr', name: 'French' },
-  { code: 'de', name: 'German' },
+{ code: 'de', name: 'German' }
   { code: 'zh', name: 'Chinese' },
-  { code: 'ja', name: 'Japanese' },
+{ code: 'ja', name: 'Japanese' }
   { code: 'ar', name: 'Arabic' },
-  { code: 'hi', name: 'Hindi' },
+{ code: 'hi', name: 'Hindi' }
   { code: 'pt', name: 'Portuguese' },
-  { code: 'ru', name: 'Russian' },
+{ code: 'ru', name: 'Russian' }
 ];
 
 export default function ContributeTranslations() {
@@ -33,78 +31,78 @@ export default function ContributeTranslations() {
 
   return (
     <div>
-      <>
+      <div>
       <Head>
         <title>Contribute Translations - Zion Marketplace</title>
         <meta name="description" content="Help translate Zion Marketplace and make it accessible to everyone." />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
-      <div className="relative z-10 container-responsive py-8">
+      <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        <div className="fixed" inset-0 z-0>
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <div className="max-w-xl:w-full bg-black/30 rounded-xl:shadow-lg:p-8 border border-white/10">
-          <h1 className="text-3xl:font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">Contribute Translations</h1>
-          <p className="text-gray-300 mb-8 text-center">Join our global community and help make Zion Marketplace accessible in more languages. Submit your translation for any key below!</p>
+        <div className="max-w-xl:w-full bg-black/30 rounded-xl:shadow-lg:p-8 border border-white/10>
+          <h1 className="text-3xl" font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text>Contribute Translations</h1>
+          <p className="text-gray-300" mb-8 text-center>Join our global community and help make Zion Marketplace accessible in more languages. Submit your translation for any key below!</p>
           {submitted ? (
-            <div className="bg-green-600/20 text-green-300 rounded-lg:p-4 text-center font-semibold mb-4">Thank you for your contribution! Our team will review your translation.</div>
+            <div className="bg-green-600/20" text-green-300 rounded-lg:p-4 text-center font-semibold mb-4">Thank you for your contribution! Our team will review your translation.</div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6>
               <div>
-                <label htmlFor="language" className="block text-sm:font-medium mb-1">Language</label>
+                <label htmlFor=language className="block" text-sm font-medium mb-1>Language</label>
                 <select
-                  id="language"
+                  id=language"
                   name="language"
                   value={form.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500
                   required
                 >
-                  <option value="">Select a language</option>
+                  <option value=>Select a language</option>
                   {languages.map((lang) => (
                     <option key={lang.code} value={lang.code}>{lang.name}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label htmlFor="key" className="block text-sm:font-medium mb-1">Translation Key</label>
+                <label htmlFor=key" className="block text-sm font-medium mb-1>Translation Key</label>
                 <input
-                  id="key"
-                  name="key"
+                  id=key
+                  name=key"
                   type="text"
                   value={form.key}
                   onChange={handleChange}
                   placeholder="e.g. welcome, marketplace, services"
-                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500
                   required
                 />
               </div>
               <div>
-                <label htmlFor="translation" className="block text-sm:font-medium mb-1">Translation</label>
+                <label htmlFor=translation className="block" text-sm font-medium mb-1>Translation</label>
                 <input
-                  id="translation"
+                  id=translation"
                   name="translation"
                   type="text"
                   value={form.translation}
                   onChange={handleChange}
                   placeholder="Enter your translation here"
-                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500
                   required
                 />
               </div>
-              <button type="submit" className="w-full py-3 rounded-lg:bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg:shadow-lg:hover:from-pink-500 hover:to-purple-500 transition">Submit Translation</button>
+              <button type=submit className="w-full" py-3 rounded-lg:bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg:shadow-lg:hover:from-pink-500 hover:to-purple-500 transition>Submit Translation</button>
             </form>
           )}
-          <div className="mt-8 text-center">
-            <Link href="/multi-language" className="text-purple-300 hover:underline">Back to Multi-Language Page</Link>
+          <div className="mt-8" text-center">
+            <Link href="/multi-language" className="text-purple-300 hover:underline" />Back to Multi-Language Page</Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   
   </div>
 

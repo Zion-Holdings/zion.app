@@ -6,7 +6,7 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    )
+    
   : null;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Insert quote request into database
       const { data, error } = await supabase
-        .from('quote_requests')
+        .from('quote_requests'
         .insert([
           {
             service_id: quoteRequest.serviceId,
@@ -38,10 +38,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             additional_requirements: quoteRequest.additionalRequirements,
             ai_summary: quoteRequest.aiSummary,
             status: 'pending',
-            created_at: new Date().toISOString()
+            created_at: new Date().toISOString(
           }
-        ])
-        .select()
+        ]
+        .select(
         .single();
 
       if (error) {
@@ -68,8 +68,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       let query = supabase
-        .from('quote_requests')
-        .select('*')
+        .from('quote_requests'
+        .select('*'
         .order('created_at', { ascending: false });
 
       if (email) {

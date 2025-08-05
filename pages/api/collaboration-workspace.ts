@@ -12,43 +12,41 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { projectId, userId } = req.query
 
       if (!userId) {
-        return res.status(400).json({ error: 'User ID is required' })
+        return res.status(400).json({ error: 'User ID is required' }
       }
 
       if (projectId) {
         // Get specific project
         const { data: project, error } = await supabase
-          .from('workspace_projects')
+          .from('workspace_projects'
           .select(`
             *,
             team:workspace_members(*),
             tasks:workspace_tasks(*),
-            documents:workspace_documents(*)
-          `)
-          .eq('id', projectId)
-          .single()
-
+            documents:workspace_documents(*
+          `
+          .eq('id', projectId
+          .single(
         if (error) {
-          return res.status(500).json({ error: 'Failed to fetch project' })
+          return res.status(500).json({ error: 'Failed to fetch project' }
         }
 
-        return res.status(200).json({ project })
+        return res.status(200).json({ project }
       } else {
         // Get all projects for user
         const { data: projects, error } = await supabase
-          .from('workspace_projects')
-          .select('*')
-          .or(`owner_id.eq.${userId},team_members.cs.{${userId}}`)
-
+          .from('workspace_projects'
+          .select('*'
+          .or(`owner_id.eq.${userId}team_members.cs.{${userId}}`
         if (error) {
-          return res.status(500).json({ error: 'Failed to fetch projects' })
+          return res.status(500).json({ error: 'Failed to fetch projects' }
         }
 
-        return res.status(200).json({ projects })
+        return res.status(200).json({ projects }
       }
     } catch (error) {
-      console.error('Error fetching workspace data:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error fetching workspace data:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
@@ -57,7 +55,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { action, data, userId } = req.body
 
       if (!userId) {
-        return res.status(400).json({ error: 'User ID is required' })
+        return res.status(400).json({ error: 'User ID is required' }
       }
 
       switch (action) {
@@ -65,11 +63,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           const { name: projectName, description: projectDescription } = data
           
           if (!projectName || !projectDescription) {
-            return res.status(400).json({ error: 'Project name and description are required' })
+            return res.status(400).json({ error: 'Project name and description are required' }
           }
 
           const { data: project, error: projectError } = await supabase
-            .from('workspace_projects')
+            .from('workspace_projects'
             .insert([{
               name: projectName,
               description: projectDescription,
@@ -77,25 +75,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               status: 'planning',
               progress: 0,
               team_members: [userId]
-            }])
-            .select()
-            .single()
-
+            }]
+            .select(
+            .single(
           if (projectError) {
-            return res.status(500).json({ error: 'Failed to create project' })
+            return res.status(500).json({ error: 'Failed to create project' }
           }
 
-          return res.status(201).json({ project })
-
+          return res.status(201).json({ project }
         case 'create_task':
           const { projectId: taskProjectId, title, description: taskDescription, assignee, priority, dueDate } = data
           
           if (!taskProjectId || !title || !taskDescription) {
-            return res.status(400).json({ error: 'Project ID, title, and description are required' })
+            return res.status(400).json({ error: 'Project ID, title, and description are required' }
           }
 
           const { data: task, error: taskError } = await supabase
-            .from('workspace_tasks')
+            .from('workspace_tasks'
             .insert([{
               project_id: taskProjectId,
               title,
@@ -104,95 +100,87 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               priority: priority || 'medium',
               due_date: dueDate,
               status: 'todo'
-            }])
-            .select()
-            .single()
-
+            }]
+            .select(
+            .single(
           if (taskError) {
-            return res.status(500).json({ error: 'Failed to create task' })
+            return res.status(500).json({ error: 'Failed to create task' }
           }
 
-          return res.status(201).json({ task })
-
+          return res.status(201).json({ task }
         case 'update_task':
           const { taskId, updates } = data
           
           if (!taskId) {
-            return res.status(400).json({ error: 'Task ID is required' })
+            return res.status(400).json({ error: 'Task ID is required' }
           }
 
           const { data: updatedTask, error: updateError } = await supabase
-            .from('workspace_tasks')
-            .update(updates)
-            .eq('id', taskId)
-            .select()
-            .single()
-
+            .from('workspace_tasks'
+            .update(updates
+            .eq('id', taskId
+            .select(
+            .single(
           if (updateError) {
-            return res.status(500).json({ error: 'Failed to update task' })
+            return res.status(500).json({ error: 'Failed to update task' }
           }
 
-          return res.status(200).json({ task: updatedTask })
-
+          return res.status(200).json({ task: updatedTask }
         case 'invite_member':
           const { projectId: inviteProjectId, email, role } = data
           
           if (!inviteProjectId || !email) {
-            return res.status(400).json({ error: 'Project ID and email are required' })
+            return res.status(400).json({ error: 'Project ID and email are required' }
           }
 
           // First, find or create user by email
           const { data: user, error: userError } = await supabase
-            .from('profiles')
-            .select('id')
-            .eq('email', email)
-            .single()
-
+            .from('profiles'
+            .select('id'
+            .eq('email', email
+            .single(
           if (userError && userError.code !== 'PGRST116') {
-            return res.status(500).json({ error: 'Failed to find user' })
+            return res.status(500).json({ error: 'Failed to find user' }
           }
 
           let memberId = user?.id
           if (!memberId) {
-            // Create placeholder user (in real app, send invitation email)
+            // Create placeholder user (in real app, send invitation email
             const { data: newUser, error: newUserError } = await supabase
-              .from('profiles')
-              .insert([{ email, full_name: email.split('@')[0] }])
-              .select('id')
-              .single()
-
+              .from('profiles'
+              .insert([{ email, full_name: email.split('@')[0] }]
+              .select('id'
+              .single(
             if (newUserError) {
-              return res.status(500).json({ error: 'Failed to create user' })
+              return res.status(500).json({ error: 'Failed to create user' }
             }
             memberId = newUser.id
           }
 
           // Add member to project
           const { data: member, error: memberError } = await supabase
-            .from('workspace_members')
+            .from('workspace_members'
             .insert([{
               project_id: inviteProjectId,
               user_id: memberId,
               role: role || 'member'
-            }])
-            .select()
-            .single()
-
+            }]
+            .select(
+            .single(
           if (memberError) {
-            return res.status(500).json({ error: 'Failed to add member' })
+            return res.status(500).json({ error: 'Failed to add member' }
           }
 
-          return res.status(201).json({ member })
-
+          return res.status(201).json({ member }
         case 'upload_document':
           const { projectId: docProjectId, name: docName, type, size, createdBy } = data
           
           if (!docProjectId || !docName || !type) {
-            return res.status(400).json({ error: 'Project ID, name, and type are required' })
+            return res.status(400).json({ error: 'Project ID, name, and type are required' }
           }
 
           const { data: document, error: docError } = await supabase
-            .from('workspace_documents')
+            .from('workspace_documents'
             .insert([{
               project_id: docProjectId,
               name: docName,
@@ -200,22 +188,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               size: size || 0,
               created_by: createdBy || userId,
               collaborators: [userId]
-            }])
-            .select()
-            .single()
-
+            }]
+            .select(
+            .single(
           if (docError) {
-            return res.status(500).json({ error: 'Failed to create document' })
+            return res.status(500).json({ error: 'Failed to create document' }
           }
 
-          return res.status(201).json({ document })
-
+          return res.status(201).json({ document }
         default:
-          return res.status(400).json({ error: 'Invalid action' })
+          return res.status(400).json({ error: 'Invalid action' }
       }
     } catch (error) {
-      console.error('Error in workspace operation:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error in workspace operation:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
@@ -224,39 +210,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { projectId, updates, userId } = req.body
 
       if (!projectId || !userId) {
-        return res.status(400).json({ error: 'Project ID and user ID are required' })
+        return res.status(400).json({ error: 'Project ID and user ID are required' }
       }
 
       // Verify user has permission to update project
       const { data: project, error: projectError } = await supabase
-        .from('workspace_projects')
-        .select('owner_id, team_members')
-        .eq('id', projectId)
-        .single()
-
+        .from('workspace_projects'
+        .select('owner_id, team_members'
+        .eq('id', projectId
+        .single(
       if (projectError) {
-        return res.status(404).json({ error: 'Project not found' })
+        return res.status(404).json({ error: 'Project not found' }
       }
 
       if (project.owner_id !== userId && !project.team_members.includes(userId)) {
-        return res.status(403).json({ error: 'Unauthorized to update project' })
+        return res.status(403).json({ error: 'Unauthorized to update project' }
       }
 
       const { data: updatedProject, error: updateError } = await supabase
-        .from('workspace_projects')
-        .update(updates)
-        .eq('id', projectId)
-        .select()
-        .single()
-
+        .from('workspace_projects'
+        .update(updates
+        .eq('id', projectId
+        .select(
+        .single(
       if (updateError) {
-        return res.status(500).json({ error: 'Failed to update project' })
+        return res.status(500).json({ error: 'Failed to update project' }
       }
 
-      return res.status(200).json({ project: updatedProject })
+      return res.status(200).json({ project: updatedProject }
     } catch (error) {
-      console.error('Error updating project:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error updating project:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
@@ -265,40 +249,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { projectId, userId } = req.body
 
       if (!projectId || !userId) {
-        return res.status(400).json({ error: 'Project ID and user ID are required' })
+        return res.status(400).json({ error: 'Project ID and user ID are required' }
       }
 
       // Verify user is project owner
       const { data: project, error: projectError } = await supabase
-        .from('workspace_projects')
-        .select('owner_id')
-        .eq('id', projectId)
-        .single()
-
+        .from('workspace_projects'
+        .select('owner_id'
+        .eq('id', projectId
+        .single(
       if (projectError) {
-        return res.status(404).json({ error: 'Project not found' })
+        return res.status(404).json({ error: 'Project not found' }
       }
 
       if (project.owner_id !== userId) {
-        return res.status(403).json({ error: 'Only project owner can delete project' })
+        return res.status(403).json({ error: 'Only project owner can delete project' }
       }
 
       // Delete project and related data
       const { error: deleteError } = await supabase
-        .from('workspace_projects')
-        .delete()
-        .eq('id', projectId)
-
+        .from('workspace_projects'
+        .delete(
+        .eq('id', projectId
       if (deleteError) {
-        return res.status(500).json({ error: 'Failed to delete project' })
+        return res.status(500).json({ error: 'Failed to delete project' }
       }
 
-      return res.status(200).json({ message: 'Project deleted successfully' })
+      return res.status(200).json({ message: 'Project deleted successfully' }
     } catch (error) {
-      console.error('Error deleting project:', error)
-      return res.status(500).json({ error: 'Internal server error' })
+      console.error('Error deleting project:', error
+      return res.status(500).json({ error: 'Internal server error' }
     }
   }
 
-  return res.status(405).json({ error: 'Method not allowed' })
+  return res.status(405).json({ error: 'Method not allowed' }
 } 

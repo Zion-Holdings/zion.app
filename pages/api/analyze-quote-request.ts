@@ -5,7 +5,7 @@ import OpenAI from 'openai';
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
-    })
+    }
   : null;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -36,10 +36,9 @@ Additional Requirements: ${additionalRequirements || 'None'}
 
 Please provide:
 1. A concise summary of the project requirements
-2. Relevant tags for categorization (e.g., "web-development", "cloud-migration", "ai-integration")
+2. Relevant tags for categorization (e.g., "web-development", "cloud-migration", "ai-integration"
 3. Priority level (low, medium, high) based on complexity and budget
-4. Estimated complexity (simple, moderate, complex)
-
+4. Estimated complexity (simple, moderate, complex
 Respond in JSON format with the following structure:
 {
   "summary": "Brief project summary",
@@ -55,7 +54,7 @@ Respond in JSON format with the following structure:
         {
           role: "system",
           content: "You are an expert IT project analyst. Provide accurate, professional analysis of IT service requests."
-        },
+        }
         {
           role: "user",
           content: prompt
@@ -91,7 +90,7 @@ Respond in JSON format with the following structure:
       summary: analysis.summary || 'Project analysis pending',
       tags: Array.isArray(analysis.tags) ? analysis.tags.slice(0, 5) : ['it-services'],
       priority: ['low', 'medium', 'high'].includes(analysis.priority) ? analysis.priority : 'medium',
-      estimatedComplexity: ['simple', 'moderate', 'complex'].includes(analysis.estimatedComplexity) 
+      estimatedComplexity: ['simple', 'moderate', 'complex'].includes(analysis.estimatedComplexity
         ? analysis.estimatedComplexity : 'moderate'
     };
 

@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     specialConditions
   } = req.body;
 
-  // Mock AI generation (replace with real AI integration as needed)
+  // Mock AI generation (replace with real AI integration as needed
   const contract = `
     <div style="font-family: 'Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;">
       <div style="text-align: center; margin-bottom: 30px;">

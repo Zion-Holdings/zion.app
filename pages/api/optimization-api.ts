@@ -15,7 +15,7 @@ export default async function handler(
     return res.status(405).json({ 
       success: false, 
       message: 'Method not allowed',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(
     });
   }
 
@@ -25,20 +25,20 @@ export default async function handler(
       id: Date.now(),
       type: 'optimization-api',
       status: 'active',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(
     };
 
     res.status(200).json({
       success: true,
       data,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(
     });
   } catch (error) {
     console.error('Optimization Api API Error:', error);
     res.status(500).json({
       success: false,
       message: 'Internal server error',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(
     });
   }
 }
