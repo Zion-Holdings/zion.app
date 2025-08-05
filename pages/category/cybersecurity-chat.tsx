@@ -37,7 +37,7 @@ const CybersecurityChatPage: NextPage = () => {
                 Expert discussion about cybersecurity services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>analytical-research • expert-interview • solution-showcase</span>
+                <span>solution-oriented • case-study • business-strategy</span>
               </div>
             </div>
           </div>
