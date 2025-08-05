@@ -66,6 +66,19 @@ talentFiles.forEach(file => {
   existingPages.add(`/${talentName}`);
 });
 
+// Add public assets that are valid
+const publicAssets = [
+  '/favicon.ico',
+  '/favicon.svg',
+  '/site.webmanifest',
+  '/robots.txt',
+  '/sitemap.xml'
+];
+
+publicAssets.forEach(asset => {
+  existingPages.add(asset);
+});
+
 console.log('Existing pages:', Array.from(existingPages).sort());
 
 // Function to extract links from a file
