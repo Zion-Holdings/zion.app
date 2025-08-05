@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
-const ContentOrchestrator = require('./content-orchestrator');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./content-orchestrator');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ContentGenerationRunner {
+class $1 {
   constructor() {
     this.orchestrator = new ContentOrchestrator();
     this.logFile = path.join(__dirname, 'lo'g's', 'content-generatio'n'.log');
@@ -16,32 +16,32 @@ class ContentGenerationRunner {
     
     try {
       // Create logs directory if it doesn't' exist
-      const logsDir = path.dirname(this.logFile);
+      const $1 = path.dirname(this.logFile);
       if (!fs.existsSync(logsDir)) {
         fs.mkdirSync(logsDir, { recursive: true });
       }
 
       // Log start time
-      const startTime = new Date();
-      this.log(`Content generation started at: ${startTime.toISOString()}`);
+      const $1 = new Date();
+      this.log("Content generation started at: ${startTime.toISOString()}");
 
       // Get initial statistics
-      const initialStats = this.orchestrator.getContentStatistics();
-      this.log(`Initial content statistics: ${JSON.stringify(initialStats)}`);
+      const $1 = this.orchestrator.getContentStatistics();
+      this.log("Initial content statistics: ${JSON.stringify(initialStats)}");
 
       // Generate all content
-      const results = await this.orchestrator.generateAllContent();
+      const $1 = await this.orchestrator.generateAllContent();
 
       // Get final statistics
-      const finalStats = this.orchestrator.getContentStatistics();
-      this.log(`Final content statistics: ${JSON.stringify(finalStats)}`);
+      const $1 = this.orchestrator.getContentStatistics();
+      this.log("Final content statistics: ${JSON.stringify(finalStats)}");
 
       // Log results
-      this.log(`Content generation completed successfully!`);
-      this.log(`Total generated: ${results.summary.totalGenerated}`);
-      this.log(`Marketplace content: ${results.summary.marketplaceCount}`);
-      this.log(`Blog content: ${results.summary.blogCount}`);
-      this.log(`Product content: ${results.summary.productCount}`);
+      this.log("Content generation completed successfully!");
+      this.log("Total generated: ${results.summary.totalGenerated}");
+      this.log("Marketplace content: ${results.summary.marketplaceCount}");
+      this.log("Blog content: ${results.summary.blogCount}");
+      this.log("Product content: ${results.summary.productCount}");
 
       // Display summary
       this.displaySummary(results);
@@ -49,47 +49,47 @@ class ContentGenerationRunner {
       // Clean up old content (older than 30 days)
       await this.orchestrator.cleanupOldContent(30);
 
-      const endTime = new Date();
-      const duration = endTime - startTime;
-      this.log(`Content generation completed at: ${endTime.toISOString()}`);
-      this.log(`Total duration: ${duration}ms`);
+      const $1 = new Date();
+      const $1 = endTime - startTime;
+      this.log("Content generation completed at: ${endTime.toISOString()}");
+      this.log("Total duration: ${duration}ms");
 
       console.log('\n✅ Content generation completed successfully!');
-      console.log(`📊 Generated ${results.summary.totalGenerated} content pieces`);
-      console.log(`📁 Check the generated-content directory for output files`);
-      console.log(`📋 Generation report saved to: automation/generated-content/generation-report.json`);
+      console.log("📊 Generated ${results.summary.totalGenerated} content pieces");
+      console.log("📁 Check the generated-content directory for output files");
+      console.log("📋 Generation report saved to: automation/generated-content/generation-report.json");
 
       return results;
 
     } catch (error) {
-      this.log(`❌ Error during content generation: ${error.message}`);
+      this.log("❌ Error during content generation: ${error.message}");
       console.error('❌ Content generation failed:', error);
       throw error;
     }
   }
 
   async runSpecificCategory(category, customData = {}) {
-    console.log(`🎯 Running content generation for category: ${category}`);
+    console.log("🎯 Running content generation for category: ${category}");
     
     try {
-      const results = await this.orchestrator.generateContentForCategory(category, customData);
-      this.log(`Category ${category} generation completed successfully`);
+      const $1 = await this.orchestrator.generateContentForCategory(category, customData);
+      this.log("Category ${category} generation completed successfully");
       return results;
     } catch (error) {
-      this.log(`❌ Error generating content for category ${category}: ${error.message}`);
+      this.log("❌ Error generating content for category ${category}: ${error.message}");
       throw error;
     }
   }
 
   async runSpecificTopic(topic, audience, customData = {}) {
-    console.log(`🎯 Running content generation for topic: ${topic} - ${audience}`);
+    console.log("🎯 Running content generation for topic: ${topic} - ${audience}");
     
     try {
-      const results = await this.orchestrator.generateContentForSpecificTopic(topic, audience, customData);
-      this.log(`Topic ${topic} generation completed successfully`);
+      const $1 = await this.orchestrator.generateContentForSpecificTopic(topic, audience, customData);
+      this.log("Topic ${topic} generation completed successfully");
       return results;
     } catch (error) {
-      this.log(`❌ Error generating content for topic ${topic}: ${error.message}`);
+      this.log("❌ Error generating content for topic ${topic}: ${error.message}");
       throw error;
     }
   }
@@ -98,24 +98,24 @@ class ContentGenerationRunner {
     console.log('\n📊 Content Generation Summary');
     console.log('=' .repeat(40));
     
-    console.log(`Total Generated: ${results.summary.totalGenerated}`);
-    console.log(`Marketplace Content: ${results.summary.marketplaceCount}`);
-    console.log(`Blog Content: ${results.summary.blogCount}`);
-    console.log(`Product Content: ${results.summary.productCount}`);
+    console.log("Total Generated: ${results.summary.totalGenerated}");
+    console.log("Marketplace Content: ${results.summary.marketplaceCount}");
+    console.log("Blog Content: ${results.summary.blogCount}");
+    console.log("Product Content: ${results.summary.productCount}");
     
     if (results.summary.errors.length > 0) {
-      console.log(`\n⚠️  Errors: ${results.summary.errors.length}`);
+      console.log("\n⚠️  Errors: ${results.summary.errors.length}");
       results.summary.errors.forEach(error => {
-        console.log(`  - ${error}`);
+        console.log("  - ${error}");
       });
     }
     
-    console.log(`\n⏱️  Timestamp: ${results.summary.timestamp}`);
+    console.log("\n⏱️  Timestamp: ${results.summary.timestamp}");
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] ${message}\n`;
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] ${message}\n";
     
     // Write to log file
     fs.appendFileSync(this.logFile, logMessage);
@@ -130,7 +130,7 @@ class ContentGenerationRunner {
     console.log('🔄 Updating content memory...');
     
     try {
-      const success = await this.orchestrator.updateContentMemory(newMemory);
+      const $1 = await this.orchestrator.updateContentMemory(newMemory);
       if (success) {
         console.log('✅ Content memory updated successfully');
       } else {
@@ -147,7 +147,7 @@ class ContentGenerationRunner {
     console.log('📅 Updating content generation schedule...');
     
     try {
-      const success = await this.orchestrator.scheduleContentGeneration(newSchedule);
+      const $1 = await this.orchestrator.scheduleContentGeneration(newSchedule);
       if (success) {
         console.log('✅ Content generation schedule updated successfully');
       } else {
@@ -161,25 +161,25 @@ class ContentGenerationRunner {
   }
 
   getStatistics() {
-    const stats = this.orchestrator.getContentStatistics();
+    const $1 = this.orchestrator.getContentStatistics();
     console.log('📊 Content Generation Statistics');
     console.log('=' .repeat(35));
-    console.log(`Total Files: ${stats.totalFiles}`);
-    console.log(`Marketplace Files: ${stats.marketplaceFiles}`);
-    console.log(`Blog Files: ${stats.blogFiles}`);
-    console.log(`Product Files: ${stats.productFiles}`);
-    console.log(`Last Generated: ${stats.lastGenerated || 'Nev'e'r'}`);
+    console.log("Total Files: ${stats.totalFiles}");
+    console.log("Marketplace Files: ${stats.marketplaceFiles}");
+    console.log("Blog Files: ${stats.blogFiles}");
+    console.log("Product Files: ${stats.productFiles}");
+    console.log("Last Generated: ${stats.lastGenerated || 'Nev'e'r'}");
     return stats;
   }
 }
 
 // Main execution
 async function main() {
-  const runner = new ContentGenerationRunner();
+  const $1 = new ContentGenerationRunner();
   
   // Parse command line arguments
-  const args = process.argv.slice(2);
-  const command = args[0];
+  const $1 = process.argv.slice(2);
+  const $1 = args[0];
   
   try {
     switch (command) {
@@ -200,8 +200,8 @@ async function main() {
         break;
         
       case 'top'i'c':
-        const topic = args[1];
-        const audience = args[2] || 'Busines's' Leaders';
+        const $1 = args[1];
+        const $1 = args[2] || 'Busines's' Leaders';
         if (!topic) {
           console.error('❌ Please specify a topic');
           process.exit(1);
@@ -214,7 +214,7 @@ async function main() {
         break;
         
       case 'he'l'p':
-        console.log(`
+        console.log("
 🤖 Automated Content Generation System
 
 Usage:
@@ -237,7 +237,7 @@ Examples:
 
 Environment Variables:
   VERBOSE=1              Enable verbose logging
-        `);
+        ");
         break;
         
       default:
@@ -245,7 +245,7 @@ Environment Variables:
           // Default to generating all content
           await runner.run();
         } else {
-          console.error(`❌ Unknown command: ${command}`);
+          console.error("❌ Unknown command: ${command}");
           console.log('Us'e' "help" to see available commands');
           process.exit(1);
         }

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
-const cron = require('node-cr'o'n');
+const $1 = require('node-cr'o'n');
 
-class IoTSmartHomeFactory {
+class $1 {
   constructor() {
-    this.factoryId = `iot-smart-home-factory-${Date.now()}`;
+    this.factoryId = "iot-smart-home-factory-${Date.now()}";
     this.agents = new Map();
     this.deviceTypes = new Map();
     this.automationServices = new Map();
@@ -194,8 +194,8 @@ class IoTSmartHomeFactory {
   }
 
   createAgent(type, config) {
-    const agentId = `${type}-${Date.now()}`;
-    const agent = {
+    const $1 = "${type}-${Date.now()}";
+    const $1 = {
       id: agentId,
       type: type,
       config: config,
@@ -212,16 +212,16 @@ class IoTSmartHomeFactory {
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
 
-    const agentFile = path.join(this.agentsPath, `${agentId}.js`);
-    const agentCode = this.generateAgentCode(type, config);
+    const $1 = path.join(this.agentsPath, "${agentId}.js");
+    const $1 = this.generateAgentCode(type, config);
     fs.writeFileSync(agentFile, agentCode);
 
-    console.log(`✅ Created ${type} agent: ${agentId}`);
+    console.log("✅ Created ${type} agent: ${agentId}");
     return agent;
   }
 
   generateAgentCode(type, config) {
-    const agentTemplates = {
+    const $1 = {
       'device-manageme'n't': this.generateDeviceManagementAgent(),
       'device-monitori'n'g': this.generateDeviceMonitoringAgent(),
       'device-automati'o'n': this.generateDeviceAutomationAgent(),
@@ -237,18 +237,18 @@ class IoTSmartHomeFactory {
   }
 
   generateDeviceManagementAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class DeviceManagementAgent {
+class $1 {
   constructor() {
     this.agentId = 'device-management-age'n't';
     this.capabilities = ['device-discove'r'y', 'pairi'n'g', 'configurati'o'n'];
   }
 
   async discoverDevices(discoverySpec) {
-    const discovery = {
+    const $1 = {
       spec: discoverySpec,
       devices: this.scanDevices(discoverySpec),
       compatibility: this.checkCompatibility(discoverySpec),
@@ -259,7 +259,7 @@ class DeviceManagementAgent {
   }
 
   async pairDevice(pairingSpec) {
-    const pairing = {
+    const $1 = {
       spec: pairingSpec,
       authentication: this.authenticateDevice(pairingSpec),
       configuration: this.configureDevice(pairingSpec),
@@ -270,7 +270,7 @@ class DeviceManagementAgent {
   }
 
   async configureDevice(configSpec) {
-    const configuration = {
+    const $1 = {
       spec: configSpec,
       settings: this.applySettings(configSpec),
       automation: this.setupAutomation(configSpec),
@@ -318,22 +318,22 @@ class DeviceManagementAgent {
 }
 
 module.exports = DeviceManagementAgent;
-    `;
+    ";
   }
 
   generateDeviceMonitoringAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class DeviceMonitoringAgent {
+class $1 {
   constructor() {
     this.agentId = 'device-monitoring-age'n't';
     this.capabilities = ['health-monitori'n'g', 'performance-tracki'n'g', 'alert-generati'o'n'];
   }
 
   async monitorHealth(healthSpec) {
-    const monitoring = {
+    const $1 = {
       spec: healthSpec,
       status: this.checkStatus(healthSpec),
       performance: this.monitorPerformance(healthSpec),
@@ -344,7 +344,7 @@ class DeviceMonitoringAgent {
   }
 
   async trackPerformance(performanceSpec) {
-    const tracking = {
+    const $1 = {
       spec: performanceSpec,
       metrics: this.collectMetrics(performanceSpec),
       analysis: this.analyzePerformance(performanceSpec),
@@ -355,7 +355,7 @@ class DeviceMonitoringAgent {
   }
 
   async generateAlerts(alertSpec) {
-    const alerts = {
+    const $1 = {
       spec: alertSpec,
       conditions: this.checkConditions(alertSpec),
       notifications: this.sendNotifications(alertSpec),
@@ -403,22 +403,22 @@ class DeviceMonitoringAgent {
 }
 
 module.exports = DeviceMonitoringAgent;
-    `;
+    ";
   }
 
   generateDeviceAutomationAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class DeviceAutomationAgent {
+class $1 {
   constructor() {
     this.agentId = 'device-automation-age'n't';
     this.capabilities = ['automation-creati'o'n', 'rule-manageme'n't', 'trigger-handli'n'g'];
   }
 
   async createAutomation(automationSpec) {
-    const automation = {
+    const $1 = {
       spec: automationSpec,
       rules: this.createRules(automationSpec),
       triggers: this.setupTriggers(automationSpec),
@@ -429,7 +429,7 @@ class DeviceAutomationAgent {
   }
 
   async manageRules(ruleSpec) {
-    const rules = {
+    const $1 = {
       spec: ruleSpec,
       creation: this.createRule(ruleSpec),
       modification: this.modifyRule(ruleSpec),
@@ -440,7 +440,7 @@ class DeviceAutomationAgent {
   }
 
   async handleTriggers(triggerSpec) {
-    const triggers = {
+    const $1 = {
       spec: triggerSpec,
       detection: this.detectTrigger(triggerSpec),
       processing: this.processTrigger(triggerSpec),
@@ -488,22 +488,22 @@ class DeviceAutomationAgent {
 }
 
 module.exports = DeviceAutomationAgent;
-    `;
+    ";
   }
 
   generateEnergyOptimizationAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class EnergyOptimizationAgent {
+class $1 {
   constructor() {
     this.agentId = 'energy-optimization-age'n't';
     this.capabilities = ['usage-analys'i's', 'optimization-suggestio'n's', 'cost-reducti'o'n'];
   }
 
   async analyzeUsage(usageSpec) {
-    const analysis = {
+    const $1 = {
       spec: usageSpec,
       patterns: this.analyzePatterns(usageSpec),
       consumption: this.analyzeConsumption(usageSpec),
@@ -514,7 +514,7 @@ class EnergyOptimizationAgent {
   }
 
   async optimizeEnergy(optimizationSpec) {
-    const optimization = {
+    const $1 = {
       spec: optimizationSpec,
       suggestions: this.generateSuggestions(optimizationSpec),
       implementation: this.implementOptimization(optimizationSpec),
@@ -525,7 +525,7 @@ class EnergyOptimizationAgent {
   }
 
   async reduceCosts(costSpec) {
-    const costReduction = {
+    const $1 = {
       spec: costSpec,
       analysis: this.analyzeCosts(costSpec),
       strategies: this.developStrategies(costSpec),
@@ -573,22 +573,22 @@ class EnergyOptimizationAgent {
 }
 
 module.exports = EnergyOptimizationAgent;
-    `;
+    ";
   }
 
   generatePredictiveMaintenanceAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class PredictiveMaintenanceAgent {
+class $1 {
   constructor() {
     this.agentId = 'predictive-maintenance-age'n't';
     this.capabilities = ['health-predicti'o'n', 'maintenance-scheduli'n'g', 'alert-generati'o'n'];
   }
 
   async predictHealth(predictionSpec) {
-    const prediction = {
+    const $1 = {
       spec: predictionSpec,
       analysis: this.analyzeHealth(predictionSpec),
       forecasting: this.forecastHealth(predictionSpec),
@@ -599,7 +599,7 @@ class PredictiveMaintenanceAgent {
   }
 
   async scheduleMaintenance(scheduleSpec) {
-    const scheduling = {
+    const $1 = {
       spec: scheduleSpec,
       planning: this.planMaintenance(scheduleSpec),
       coordination: this.coordinateMaintenance(scheduleSpec),
@@ -610,7 +610,7 @@ class PredictiveMaintenanceAgent {
   }
 
   async generateAlerts(alertSpec) {
-    const alerts = {
+    const $1 = {
       spec: alertSpec,
       detection: this.detectIssues(alertSpec),
       prioritization: this.prioritizeAlerts(alertSpec),
@@ -658,22 +658,22 @@ class PredictiveMaintenanceAgent {
 }
 
 module.exports = PredictiveMaintenanceAgent;
-    `;
+    ";
   }
 
   generateSecurityMonitoringAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class SecurityMonitoringAgent {
+class $1 {
   constructor() {
     this.agentId = 'security-monitoring-age'n't';
     this.capabilities = ['threat-detecti'o'n', 'privacy-protecti'o'n', 'compliance-monitori'n'g'];
   }
 
   async detectThreats(threatSpec) {
-    const detection = {
+    const $1 = {
       spec: threatSpec,
       scanning: this.scanThreats(threatSpec),
       analysis: this.analyzeThreats(threatSpec),
@@ -684,7 +684,7 @@ class SecurityMonitoringAgent {
   }
 
   async protectPrivacy(privacySpec) {
-    const protection = {
+    const $1 = {
       spec: privacySpec,
       encryption: this.encryptData(privacySpec),
       access: this.controlAccess(privacySpec),
@@ -695,7 +695,7 @@ class SecurityMonitoringAgent {
   }
 
   async monitorCompliance(complianceSpec) {
-    const compliance = {
+    const $1 = {
       spec: complianceSpec,
       checking: this.checkCompliance(complianceSpec),
       reporting: this.reportCompliance(complianceSpec),
@@ -743,22 +743,22 @@ class SecurityMonitoringAgent {
 }
 
 module.exports = SecurityMonitoringAgent;
-    `;
+    ";
   }
 
   generateDataPrivacyAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class DataPrivacyAgent {
+class $1 {
   constructor() {
     this.agentId = 'data-privacy-age'n't';
     this.capabilities = ['data-encrypti'o'n', 'privacy-complian'c'e', 'user-conse'n't'];
   }
 
   async encryptData(encryptionSpec) {
-    const encryption = {
+    const $1 = {
       spec: encryptionSpec,
       implementation: this.implementEncryption(encryptionSpec),
       keyManagement: this.manageKeys(encryptionSpec),
@@ -769,7 +769,7 @@ class DataPrivacyAgent {
   }
 
   async ensureCompliance(complianceSpec) {
-    const compliance = {
+    const $1 = {
       spec: complianceSpec,
       regulations: this.checkRegulations(complianceSpec),
       requirements: this.verifyRequirements(complianceSpec),
@@ -780,7 +780,7 @@ class DataPrivacyAgent {
   }
 
   async manageConsent(consentSpec) {
-    const consent = {
+    const $1 = {
       spec: consentSpec,
       collection: this.collectConsent(consentSpec),
       management: this.manageConsent(consentSpec),
@@ -828,22 +828,22 @@ class DataPrivacyAgent {
 }
 
 module.exports = DataPrivacyAgent;
-    `;
+    ";
   }
 
   generateIoTAnalyticsAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class IoTAnalyticsAgent {
+class $1 {
   constructor() {
     this.agentId = 'iot-analytics-age'n't';
     this.capabilities = ['usage-analyti'c's', 'performance-insigh't's', 'optimization-recommendatio'n's'];
   }
 
   async analyzeUsage(usageSpec) {
-    const analysis = {
+    const $1 = {
       spec: usageSpec,
       patterns: this.analyzePatterns(usageSpec),
       trends: this.analyzeTrends(usageSpec),
@@ -854,7 +854,7 @@ class IoTAnalyticsAgent {
   }
 
   async analyzePerformance(performanceSpec) {
-    const performance = {
+    const $1 = {
       spec: performanceSpec,
       metrics: this.analyzeMetrics(performanceSpec),
       comparison: this.comparePerformance(performanceSpec),
@@ -865,7 +865,7 @@ class IoTAnalyticsAgent {
   }
 
   async generateRecommendations(recommendationSpec) {
-    const recommendations = {
+    const $1 = {
       spec: recommendationSpec,
       analysis: this.analyzeData(recommendationSpec),
       suggestions: this.generateSuggestions(recommendationSpec),
@@ -913,22 +913,22 @@ class IoTAnalyticsAgent {
 }
 
 module.exports = IoTAnalyticsAgent;
-    `;
+    ";
   }
 
   generateUserBehaviorAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class UserBehaviorAgent {
+class $1 {
   constructor() {
     this.agentId = 'user-behavior-age'n't';
     this.capabilities = ['behavior-analys'i's', 'preference-learni'n'g', 'personalizati'o'n'];
   }
 
   async analyzeBehavior(behaviorSpec) {
-    const analysis = {
+    const $1 = {
       spec: behaviorSpec,
       patterns: this.analyzePatterns(behaviorSpec),
       preferences: this.analyzePreferences(behaviorSpec),
@@ -939,7 +939,7 @@ class UserBehaviorAgent {
   }
 
   async learnPreferences(preferenceSpec) {
-    const learning = {
+    const $1 = {
       spec: preferenceSpec,
       collection: this.collectPreferences(preferenceSpec),
       analysis: this.analyzePreferences(preferenceSpec),
@@ -950,7 +950,7 @@ class UserBehaviorAgent {
   }
 
   async personalizeExperience(personalizationSpec) {
-    const personalization = {
+    const $1 = {
       spec: personalizationSpec,
       customization: this.customizeExperience(personalizationSpec),
       optimization: this.optimizeExperience(personalizationSpec),
@@ -998,13 +998,13 @@ class UserBehaviorAgent {
 }
 
 module.exports = UserBehaviorAgent;
-    `;
+    ";
   }
 
   generateGenericAgent(type, config) {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -1015,7 +1015,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   }
 
   async executeTask(taskData) {
-    const result = {
+    const $1 = {
       task: taskData,
       execution: this.performTask(taskData),
       optimization: this.optimizeTask(taskData),
@@ -1039,7 +1039,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
 }
 
 module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
-    `;
+    ";
   }
 
   startIoTAutomation() {
@@ -1079,12 +1079,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeDeviceManagement() {
     console.log('🏠 Executing Device Management...');
     
-    const deviceManagementAgent = this.getOrCreateAgent('device-manageme'n't');
-    const deviceMonitoringAgent = this.getOrCreateAgent('device-monitori'n'g');
+    const $1 = this.getOrCreateAgent('device-manageme'n't');
+    const $1 = this.getOrCreateAgent('device-monitori'n'g');
     
-    const deviceDiscovery = await deviceManagementAgent.discoverDevices({});
-    const devicePairing = await deviceManagementAgent.pairDevice({});
-    const healthMonitoring = await deviceMonitoringAgent.monitorHealth({});
+    const $1 = await deviceManagementAgent.discoverDevices({});
+    const $1 = await deviceManagementAgent.pairDevice({});
+    const $1 = await deviceMonitoringAgent.monitorHealth({});
     
     this.performanceMetrics.devicesConnected++;
     this.saveResults('device-manageme'n't', { deviceDiscovery, devicePairing, healthMonitoring });
@@ -1093,11 +1093,11 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeAutomation() {
     console.log('🤖 Executing Smart Automation...');
     
-    const deviceAutomationAgent = this.getOrCreateAgent('device-automati'o'n');
-    const userBehaviorAgent = this.getOrCreateAgent('user-behavi'o'r');
+    const $1 = this.getOrCreateAgent('device-automati'o'n');
+    const $1 = this.getOrCreateAgent('user-behavi'o'r');
     
-    const automationCreation = await deviceAutomationAgent.createAutomation({});
-    const behaviorAnalysis = await userBehaviorAgent.analyzeBehavior({});
+    const $1 = await deviceAutomationAgent.createAutomation({});
+    const $1 = await userBehaviorAgent.analyzeBehavior({});
     
     this.performanceMetrics.automationsCreated++;
     this.saveResults('smart-automati'o'n', { automationCreation, behaviorAnalysis });
@@ -1106,12 +1106,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeEnergyOptimization() {
     console.log('⚡ Executing Energy Optimization...');
     
-    const energyOptimizationAgent = this.getOrCreateAgent('energy-optimizati'o'n');
-    const predictiveMaintenanceAgent = this.getOrCreateAgent('predictive-maintenan'c'e');
+    const $1 = this.getOrCreateAgent('energy-optimizati'o'n');
+    const $1 = this.getOrCreateAgent('predictive-maintenan'c'e');
     
-    const usageAnalysis = await energyOptimizationAgent.analyzeUsage({});
-    const energyOptimization = await energyOptimizationAgent.optimizeEnergy({});
-    const maintenancePrediction = await predictiveMaintenanceAgent.predictHealth({});
+    const $1 = await energyOptimizationAgent.analyzeUsage({});
+    const $1 = await energyOptimizationAgent.optimizeEnergy({});
+    const $1 = await predictiveMaintenanceAgent.predictHealth({});
     
     this.performanceMetrics.energySaved++;
     this.saveResults('energy-optimizati'o'n', { usageAnalysis, energyOptimization, maintenancePrediction });
@@ -1120,11 +1120,11 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeSecurity() {
     console.log('🔒 Executing IoT Security...');
     
-    const securityMonitoringAgent = this.getOrCreateAgent('security-monitori'n'g');
-    const dataPrivacyAgent = this.getOrCreateAgent('data-priva'c'y');
+    const $1 = this.getOrCreateAgent('security-monitori'n'g');
+    const $1 = this.getOrCreateAgent('data-priva'c'y');
     
-    const threatDetection = await securityMonitoringAgent.detectThreats({});
-    const privacyProtection = await dataPrivacyAgent.encryptData({});
+    const $1 = await securityMonitoringAgent.detectThreats({});
+    const $1 = await dataPrivacyAgent.encryptData({});
     
     this.saveResults('iot-securi't'y', { threatDetection, privacyProtection });
   }
@@ -1132,11 +1132,11 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
       if (agent.type === type) {
-        return require(path.join(this.agentsPath, `${agentId}.js`));
+        return require(path.join(this.agentsPath, "${agentId}.js"));
       }
     }
     
-    const config = {
+    const $1 = {
       type: type,
       capabilities: ['generic-capabili't'y'],
       frequency: '1h',
@@ -1147,8 +1147,8 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   saveResults(type, results) {
-    const reportPath = path.join(this.reportsPath, `${type}-${Date.now()}.json`);
-    const report = {
+    const $1 = path.join(this.reportsPath, "${type}-${Date.now()}.json");
+    const $1 = {
       type: type,
       timestamp: new Date(),
       results: results,
@@ -1176,26 +1176,26 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   checkAgentHealth(agent) {
-    const now = new Date();
-    const timeSinceLastActivity = now - agent.lastActivity;
+    const $1 = new Date();
+    const $1 = now - agent.lastActivity;
     
     if (timeSinceLastActivity > 3600000) {
-      console.log(`⚠️  Agent ${agent.id} may be inactive`);
+      console.log("⚠️  Agent ${agent.id} may be inactive");
       this.restartAgent(agent.id);
     }
   }
 
   restartAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'restarti'n'g';
       agent.lastActivity = new Date();
-      console.log(`🔄 Restarting agent: ${agentId}`);
+      console.log("🔄 Restarting agent: ${agentId}");
     }
   }
 
   analyzePerformance() {
-    const analysis = {
+    const $1 = {
       totalAgents: this.agents.size,
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
       devicesConnected: this.performanceMetrics.devicesConnected,
@@ -1207,7 +1207,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   generateRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     if (this.performanceMetrics.devicesConnected < 10) {
       recommendations.push('Increas'e' device connectivity');
@@ -1239,7 +1239,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 module.exports = IoTSmartHomeFactory;
 
 if (require.main === module) {
-  const factory = new IoTSmartHomeFactory();
+  const $1 = new IoTSmartHomeFactory();
   console.log('🏭 IoT Smart Home Factory started successfully');
   console.log('📊 Factory Status:', factory.getFactoryStatus());
 } 

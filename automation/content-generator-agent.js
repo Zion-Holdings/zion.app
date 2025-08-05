@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ContentGeneratorAgent {
+class $1 {
   constructor() {
     this.generatedContent = [];
     this.contentTemplates = this.loadContentTemplates();
@@ -91,7 +91,7 @@ class ContentGeneratorAgent {
   async generateServiceDescriptions() {
     console.log('📝 Generating service descriptions...');
     
-    const services = [
+    const $1 = [
       {
         name: "Web Development",
         category: "Development",
@@ -130,7 +130,7 @@ class ContentGeneratorAgent {
     ];
 
     for (const service of services) {
-      const content = this.generateServiceContent(service);
+      const $1 = this.generateServiceContent(service);
       await this.saveContent('service-descriptio'n's', service.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
@@ -138,7 +138,7 @@ class ContentGeneratorAgent {
   }
 
   generateServiceContent(service) {
-    const template = this.contentTemplates.serviceDescription;
+    const $1 = this.contentTemplates.serviceDescription;
     
     return {
       title: template.title
@@ -167,7 +167,7 @@ class ContentGeneratorAgent {
   async generateTalentProfiles() {
     console.log('👥 Generating talent profiles...');
     
-    const talents = [
+    const $1 = [
       {
         name: "Sarah Johnson",
         title: "Senior Full-Stack Developer",
@@ -219,7 +219,7 @@ class ContentGeneratorAgent {
     ];
 
     for (const talent of talents) {
-      const content = this.generateTalentContent(talent);
+      const $1 = this.generateTalentContent(talent);
       await this.saveContent('talent-profil'e's', talent.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
@@ -227,7 +227,7 @@ class ContentGeneratorAgent {
   }
 
   generateTalentContent(talent) {
-    const template = this.contentTemplates.talentProfile;
+    const $1 = this.contentTemplates.talentProfile;
     
     return {
       name: template.name.replace('{{FULL_NAME}}', talent.name),
@@ -255,7 +255,7 @@ class ContentGeneratorAgent {
   async generateBlogPosts() {
     console.log('📰 Generating blog posts...');
     
-    const blogPosts = [
+    const $1 = [
       {
         title: "The Future of AI in Business: 2024 Trends",
         excerpt: "Discover how artificial intelligence is transforming business operations and what trends to watch in 2024.",
@@ -286,7 +286,7 @@ class ContentGeneratorAgent {
     ];
 
     for (const post of blogPosts) {
-      const content = this.generateBlogContent(post);
+      const $1 = this.generateBlogContent(post);
       await this.saveContent('blog-pos't's', post.title.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
@@ -294,7 +294,7 @@ class ContentGeneratorAgent {
   }
 
   generateBlogContent(post) {
-    const template = this.contentTemplates.blogPost;
+    const $1 = this.contentTemplates.blogPost;
     
     return {
       title: template.title.replace('{{BLOG_TITLE}}', post.title),
@@ -315,7 +315,7 @@ class ContentGeneratorAgent {
   async generateTestimonials() {
     console.log('💬 Generating testimonials...');
     
-    const testimonials = [
+    const $1 = [
       {
         name: "Jennifer Smith",
         company: "TechStart Inc.",
@@ -343,7 +343,7 @@ class ContentGeneratorAgent {
     ];
 
     for (const testimonial of testimonials) {
-      const content = this.generateTestimonialContent(testimonial);
+      const $1 = this.generateTestimonialContent(testimonial);
       await this.saveContent('testimonia'l's', testimonial.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
@@ -351,7 +351,7 @@ class ContentGeneratorAgent {
   }
 
   generateTestimonialContent(testimonial) {
-    const template = this.contentTemplates.testimonial;
+    const $1 = this.contentTemplates.testimonial;
     
     return {
       name: template.name.replace('{{CLIENT_NAME}}', testimonial.name),
@@ -371,7 +371,7 @@ class ContentGeneratorAgent {
   async generateFAQs() {
     console.log('❓ Generating FAQs...');
     
-    const faqTemplates = [
+    const $1 = [
       {
         question: "What services does Zion Tech Group offer?",
         answer: "We offer comprehensive AI-powered solutions including web development, mobile apps, cloud services, data analytics, and blockchain development."
@@ -395,8 +395,8 @@ class ContentGeneratorAgent {
     ];
 
     for (const faq of faqTemplates) {
-      const content = `## ${faq.question}\n\n${faq.answer}`;
-      await this.saveContent('f'a'q', `faq-${Date.now()}`, content);
+      const $1 = "## ${faq.question}\n\n${faq.answer}";
+      await this.saveContent('f'a'q', "faq-${Date.now()}", content);
     }
   }
 
@@ -404,11 +404,11 @@ class ContentGeneratorAgent {
     console.log('🎨 Generating missing content based on analysis...');
     
     try {
-      const missingContent = [];
+      const $1 = [];
       
       if (analysisReport && analysisReport.missingPages) {
         for (const page of analysisReport.missingPages) {
-          const content = await this.generatePageContent(page);
+          const $1 = await this.generatePageContent(page);
           missingContent.push({
             url: page.url,
             title: page.title,
@@ -420,7 +420,7 @@ class ContentGeneratorAgent {
       
       if (analysisReport && analysisReport.missingContent) {
         for (const contentItem of analysisReport.missingContent) {
-          const content = await this.generateContentItem(contentItem);
+          const $1 = await this.generateContentItem(contentItem);
           missingContent.push({
             type: contentItem.type,
             title: contentItem.title,
@@ -429,7 +429,7 @@ class ContentGeneratorAgent {
         }
       }
       
-      console.log(`✅ Generated ${missingContent.length} missing content pieces`);
+      console.log("✅ Generated ${missingContent.length} missing content pieces");
       return missingContent;
       
     } catch (error) {
@@ -439,7 +439,7 @@ class ContentGeneratorAgent {
   }
 
   async generatePageContent(page) {
-    const template = `
+    const $1 = "
 # ${page.title}
 
 ## Overview
@@ -459,19 +459,19 @@ ${page.description || 'Comprehensiv'e' information about this service or feature
 
 ## Contact Us
 Get in touch to learn more about our ${page.title} services.
-    `;
+    ";
     
     return template;
   }
 
   async generateContentItem(contentItem) {
-    const templates = {
-      'servi'c'e': `## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.`,
-      'produ'c't': `## ${contentItem.title}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.`,
-      'bl'o'g': `## ${contentItem.title}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.`
+    const $1 = {
+      'servi'c'e': "## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.",
+      'produ'c't': "## ${contentItem.title}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.",
+      'bl'o'g': "## ${contentItem.title}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices."
     };
     
-    return templates[contentItem.type] || `## ${contentItem.title}\n\n${contentItem.description || 'Comprehensiv'e' content about this topic.'}`;
+    return templates[contentItem.type] || "## ${contentItem.title}\n\n${contentItem.description || 'Comprehensiv'e' content about this topic.'}";
   }
 
   async createPageFiles(generatedContent) {
@@ -490,30 +490,30 @@ Get in touch to learn more about our ${page.title} services.
 
   async createPageFile(pageItem) {
     try {
-      const fileName = this.generateFileName(pageItem.url);
-      const filePath = path.join(__dirname, '..', 'pag'e's', fileName);
+      const $1 = this.generateFileName(pageItem.url);
+      const $1 = path.join(__dirname, '..', 'pag'e's', fileName);
       
-      const fileContent = this.generatePageFileContent(pageItem);
+      const $1 = this.generatePageFileContent(pageItem);
       
       await fs.writeFile(filePath, fileContent, 'ut'f'8');
-      console.log(`✅ Created page file: ${fileName}`);
+      console.log("✅ Created page file: ${fileName}");
       
     } catch (error) {
-      console.error(`❌ Error creating page file for ${pageItem.url}:`, error);
+      console.error("❌ Error creating page file for ${pageItem.url}:", error);
     }
   }
 
   generateFileName(url) {
-    const path = url.replace(/^https?:\/\/[^\/]+/, '').replace(/\/$/, '');
+    const $1 = url.replace(/^https?:\/\/[^\/]+/, '').replace(/\/$/, '');
     if (path === '') return 'inde'x'.tsx';
     
-    const segments = path.split('/').filter(segment => segment);
-    const fileName = segments[segments.length - 1] || 'ind'e'x';
-    return `${fileName}.tsx`;
+    const $1 = path.split('/').filter(segment => segment);
+    const $1 = segments[segments.length - 1] || 'ind'e'x';
+    return "${fileName}.tsx";
   }
 
   generatePageFileContent(pageItem) {
-    return `import React from 'rea'c't';}
+    return "import React from 'react';}
 import Head from 'nex't'/head';}
 import Layout from '../components/Layout';
 ;}
@@ -525,15 +525,15 @@ export default function ${this.generateComponentName(pageItem.title)}() {
         <meta name="description" content="${pageItem.title} services and solutions" /></div>
       </Head>
       </div>
-      <div className="container mx-auto px-4 py-8"></div>
-        <div className="prose max-w-none">
+      <div className="container mx-auto px-4 py-8></div>
+        <div className=prose max-w-none">
           ${pageItem.content.replace(/\n/g, '\n          ')}</div>
         </div></div>
       </div></div>
     </Layout>
   );
 }
-    `;
+    ";
   }
 
   generateComponentName(title) {
@@ -545,14 +545,14 @@ export default function ${this.generateComponentName(pageItem.title)}() {
   }
 
   async saveContent(type, name, content) {
-    const contentDir = path.join(process.cwd(), 's'r'c', 'conte'n't', 'generat'e'd');
+    const $1 = path.join(process.cwd(), 's'r'c', 'conte'n't', 'generat'e'd');
     if (!fs.existsSync(contentDir)) {
       fs.mkdirSync(contentDir, { recursive: true });
     }
     
     // Sanitize the filename to avoid path issues
-    const sanitizedName = name.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
-    const filePath = path.join(contentDir, `${sanitizedName}.json`);
+    const $1 = name.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
+    const $1 = path.join(contentDir, "${sanitizedName}.json");
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
     
     this.generatedContent.push({
@@ -564,7 +564,7 @@ export default function ${this.generateComponentName(pageItem.title)}() {
   }
 
   async saveGenerationReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       generatedContent: this.generatedContent,
       summary: {
@@ -576,7 +576,7 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       }
     };
     
-    const reportPath = path.join(process.cwd(), 'automati'o'n', 'content-generation-repor't'.json');
+    const $1 = path.join(process.cwd(), 'automati'o'n', 'content-generation-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log('💾 Content generation report saved');
@@ -593,10 +593,10 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       await this.generateTestimonials();
       await this.generateFAQs();
       
-      const report = await this.saveGenerationReport();
+      const $1 = await this.saveGenerationReport();
       
       console.log('✅ Content Generator Agent completed successfully');
-      console.log(`📊 Generated ${this.generatedContent.length} content pieces`);
+      console.log("📊 Generated ${this.generatedContent.length} content pieces");
       
       return report;
     } catch (error) {

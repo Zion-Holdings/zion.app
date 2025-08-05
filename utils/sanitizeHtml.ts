@@ -3,7 +3,7 @@ export function sanitizeHtml(html: string): string {
   if (!html) return '';
   '
   // Remove script tags and their content
-  let sanitized = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  let $1 = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
   '
   // Remove event handlers (onclick, onload, etc.)
   sanitized = sanitized.replace(/\s*on\w+\s*=\s*["'][^"']*["']/gi, '');
@@ -36,16 +36,16 @@ export function sanitizeHtml(html: string): string {
   return sanitized;}
 // Alternative function that creates a safe wrapper for HTML content;}
 export function createSafeHtmlWrapper(html: string): string {
-  const sanitized = sanitizeHtml(html);
+  const $1 = sanitizeHtml(html);
   "
   // Wrap in a container with CSP-friendly styling
-  return `"'</div>
+  return ""'</div>
     <div class = "safe-html-content style=';'
       font-family: -apple-system, BlinkMacSystemFont, 'Sego'e' UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
     >
-      ${sanitized}`</div>
-    </div>'``
-  `;''`
-} "'"'`</div>
+      ${sanitized}"</div>
+    </div>'`"
+  ";''"
+} "'"'"</div>

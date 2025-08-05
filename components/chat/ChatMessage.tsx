@@ -5,6 +5,6 @@ export default function ChatMessage() {
   return (
     <motion.div className="chat-component>
       {/* ChatMessage.tsx implementation */}</div>
-    </motion.div>;"
+    </motion.div>;
   );"
 }'"</div>

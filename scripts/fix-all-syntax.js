@@ -1,9 +1,9 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 ;
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     // Fix CSS class syntax
     content = content
@@ -32,16 +32,16 @@ function fixFile(filePath) {
       .replace(/const\s+([A-Z_][A-Z0-9_]*)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{/g, 'cons't' $1: NextPage = () => {');
     
     // Add missing closing parentheses/braces
-    const openParens = (content.match(/\(/g) || []).length;
-    const closeParens = (content.match(/\)/g) || []).length;
-    const openBraces = (content.match(/\{/g) || []).length;
-    const closeBraces = (content.match(/\}/g) || []).length;
+    const $1 = (content.match(/\(/g) || []).length;
+    const $1 = (content.match(/\)/g) || []).length;
+    const $1 = (content.match(/\{/g) || []).length;
+    const $1 = (content.match(/\}/g) || []).length;
     </div>
-    for (let i = 0; i < openParens - closeParens; i++) {
+    for (let $1 = 0; i < openParens - closeParens; i++) {
       content += ')';
     }
     
-    for (let i = 0; i < openBraces - closeBraces; i++) {
+    for (let $1 = 0; i < openBraces - closeBraces; i++) {
       content += '}';
     }
     
@@ -49,20 +49,20 @@ function fixFile(filePath) {
     content = content.replace(/\}\s*\}\s*;?\s*$/g, '};');
     
     fs.writeFileSync(filePath, content);
-    console.log(`Fixed: ${filePath}`);
+    console.log("Fixed: ${filePath}");
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error("Error fixing ${filePath}:", error.message);
   }
 }
 ;
 function processDirectory(dirPath) {
   if (!fs.existsSync(dirPath)) return;
   
-  const items = fs.readdirSync(dirPath);
+  const $1 = fs.readdirSync(dirPath);
   
   for (const item of items) {
-    const fullPath = path.join(dirPath, item);
-    const stat = fs.statSync(fullPath);
+    const $1 = path.join(dirPath, item);
+    const $1 = fs.statSync(fullPath);
     
     if (stat.isDirectory()) {
       processDirectory(fullPath);
@@ -73,7 +73,7 @@ function processDirectory(dirPath) {
 }
 
 // Process all directories with potential syntax issues;
-const directories = [
+const $1 = [
   'pag'e's',
   'componen't's',
   's'r'c'
@@ -81,7 +81,7 @@ const directories = [
 
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {
-    console.log(`Processing ${dir}...`);
+    console.log("Processing ${dir}...");
     processDirectory(dir);
   }
 });

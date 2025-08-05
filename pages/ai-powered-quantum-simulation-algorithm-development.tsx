@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";
 
-interface QuantumSimulation {
+interface $1 {
   id: string;
   name: string
   type: ''circuit-simulation' | 'state-simulation' | 'gate-simulatio'n' | algorithm-simulatio'n'
@@ -13,7 +13,7 @@ interface QuantumSimulation {
   runtime: number
   status: ''running' | 'completed' | 'faile'd' | queue'd'
   timestamp: string}
-interface QuantumAlgorithm {
+interface $1 {
   id: string;
   name: string
   algorithm: 'grover-sear'ch | 'shor-factori'ng | 'quantum-fourier-transf'orm'' | quantum-wal'k' | variational-quantum-eigensolver'
@@ -22,7 +22,7 @@ interface QuantumAlgorithm {
   gates: number'
   successRate: number
   status: 'developme'nt | 'testi'ng | 'optimi'zed'' | deploye'd'}
-interface QuantumGate {
+interface $1 {
   id: string;
   name: string
   type: 'single-qub'it | 'two-qub'it | 'multi-qu'bit'' | controlle'd' | measurement'
@@ -31,7 +31,7 @@ interface QuantumGate {
   fidelity: number'
   duration: number
   status: 'acti've | 'calibrati'ng | 'optimiz'ing'' | deprecate'd'}
-interface QuantumState {
+interface $1 {
   id: string;
   name: string
   state: 'pu're | 'mix'ed | 'entang'led'' | superposition'
@@ -40,7 +40,7 @@ interface QuantumState {
   phase: number'
   entanglement: number
   status: 'prepar'ed | 'measur'ed | 'evol'ved'' | destroye'd'}
-interface QuantumCircuit {
+interface $1 {
   id: string
   name: string
   qubits: number
@@ -49,7 +49,7 @@ interface QuantumCircuit {
   width: number
   optimization: number
   status: ''designing' | 'compiling' | 'executin'g' | complet'e'd}
-interface QuantumMeasurement {
+interface $1 {
   id: string;
   name: string
   measurement: ''computational-basis' | 'bell-state' | 'tomograph'y' | weak-measuremen't'
@@ -58,7 +58,7 @@ interface QuantumMeasurement {
   accuracy: number
   resolution: number
   status: ''preparing' | 'measuring' | 'analyzin'g' | complet'e'd};
-const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
+const $1: NextPage = () => {
   const [activeTab, setActiveTab] = useState('dashboar'd
   const [isSimulating, setIsSimulating] = useState(false
   const [currentSimulation, setCurrentSimulation] = useState<any>(null</div>
@@ -144,7 +144,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
     setCircuits(mockCircuits
     setMeasurements(mockMeasurements
   } []
-  const startSimulation = async () => {
+  const $1 = async () => {
     setIsSimulating(true
     try {
       await new Promise(resolve => setTimeout(resolve, 3000)
@@ -153,14 +153,14 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
       console.error(Simulation' error: , error
     } finally {
       setIsSimulating(false}}
-  const getSimulationTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case circuit-simulatio'n': return text-blue-'500
       case 'state-simulation': return 'text-green-500
       case 'gate-simulati'on: return 'text-purple'-500
       case algorithm-simulati'o'n: return text-yellow'-'500
       default: return text-gray-'500'}}
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case complet'e'd: return text-green'-'500
       case runnin'g': return text-blue-'500
@@ -170,29 +170,29 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
       default: return text-gray-'500'}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Quantum Simulation & Algorithm Development | Zion Tech</title>"</div>
         <meta name=description content=Advanced quantum simulation and algorithm development with AI-powered circuit simulation, gate operations, and quantum state analysis. > </meta" name="description content=Advanced quantum simulation and algorithm development with AI-powered circuit simulation, gate operations, and quantum state" analysis." ><meta name=keywords content=quantum simulation, algorithm development, quantum gates, quantum circuits, quantum measurement > </meta name="keywords" content=quantum simulation, algorithm development, quantum gates, quantum circuits, quantum measurement" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}</div>
-      <header className=" relative" z-10></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
-          </div><div className="flex  items-center justify-between">"</div>
+      <header className=" relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          </div><div className="flex  items-center justify-between></div>
             <div className="flex items-center space-x-4 > "</div>
-              </div><div className="flex items-center" space-x-3"></div>
+              </div><div className="flex items-center space-x-3></div>
                 <div className=" w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>"</div>
-                  <span className="text-white" text-xl">⚛️</span></div>
+                  <span className="text-white text-xl>⚛️</span></div>
                 </div></div>
                 <div></div>
                   <h1 className="text-2xl font-bold text-white >Quantum Simulation & Algorithm Development</h1>"</div>
-                  <p className="text-gray-300">AI-Powered" Quantum Computing</p></div>
+                  <p className="text-gray-300>AI-Powered Quantum Computing</p></div>
                 </div></div>
               </div></div>
             </div></div>
@@ -204,31 +204,31 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             </div></div>
           </div></div>
         </div></div>
-      </header>
+      </header>"
 "
       {/* Main Content */}"</div>
-      <main className="relative z-10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}</div>
-          </div><div className="mb-8""></div>
+          </div><div className="mb-8></div>
             <nav className=" flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboa'rd, label: 'Simulatio'n Dashboard, icon: '⚛️' },
 { id: simulation's', label: Simulation's', icon: 🔄 },
     { id: 'algorith'ms, label: 'Algorith'ms, icon: '🧮' },
-{ id: gate's', label: Quantum' Gates', icon: 🔧 },
+{ id: gate's', label: Quantum' Gates', icon: 🔧 },"
     { id: 'stat'es, label: 'Quantu'm States, icon: '🌊' },"
 { id: circuit's', label: Circuit's', icon: ⚡ },"
     { id  'measuremen'ts, label  'Measuremen'ts, icon  '📊'}"
               ].map((tab) => (
                 "
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
+                  className={"flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? bg-gradient-to-'r' from-indigo-600 to-purple-600 text-white`
-                      : text-gray'-'300 hover:text-white hover:bg-gray-700/50``
-                  }`}
+                      ? bg-gradient-to-'r' from-indigo-600 to-purple-600 text-white"
+                      : text-gray'-'300 hover:text-white hover:bg-gray-700/50`"
+                  }"}
                 ></div>
                   <span>{tab.icon}</span></div>
                   <span>{tab.label}</span></div>
@@ -238,62 +238,62 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
           </div>
 
           {/* Tab Content */} </div>
-          <div className="space-y-8">
+          <div className="space-y-8>
             
             {/* Simulation Dashboard */},
 {activeTab === dashboa'r'd && (</div>
-              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6">
+              </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}</div>
-                <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> </div>
-                  </div><div className="flex items-center space-x-3 mb-4"></div>
-                    <div className="w-10" h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center></div>
-                      <span className="text-white text-lg">⚛️</span></div>
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700> </div>
+                  </div><div className=flex items-center space-x-3 mb-4"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center></div>
+                      <span className=text-white text-lg">⚛️</span></div>
                     </div></div>
                     <div></div>
-                      <h3 className="text-lg" font-semibold text-white>Simulation Status</h3></div>
-                      <p className="text-gray-400 text-sm ">Quantum Computing Lab</p></div>
+                      <h3 className="text-lg font-semibold text-white>Simulation Status</h3></div>
+                      <p className=text-gray-400 text-sm ">Quantum Computing Lab</p></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className="space-y-3>"</div>
-                    </div><div className=" flex justify-between">"</div>
-                      <span className="text-gray-300>Status</span>"</div>
-                      <span className="text-green-400">Active</span>"</div>
+                  <div className="space-y-3></div>
+                    </div><div className= flex justify-between">"</div>
+                      <span className="text-gray-300>Status</span></div>
+                      <span className=text-green-400">Active</span>"</div>
                     </div></div>
-                    <div className=" flex justify-between>"</div>
-                      <span className="text-gray-300">Simulations</span"></div>
-                      <span className="text-white>{simulations.length}</span>"</div>
-                    </div>"</div>
-                    <div className="flex justify-between"></div>
-                      <span className="text-gray-300">Algorithms</span></div>
-                      <span className="text-white>{algorithms.length}</span"></div>
+                    <div className=" flex justify-between></div>
+                      <span className=text-gray-300">Simulations</span"></div>
+                      <span className="text-white>{simulations.length}</span></div>
                     </div></div>
                     <div className="flex justify-between"></div>
-                      <span className="text-gray-300>Circuits</span>"</div>
-                      <span className="text-white">{circuits.length}</span></div>
+                      <span className="text-gray-300>Algorithms</span></div>
+                      <span className=text-white>{algorithms.length}</span"></div>
+                    </div></div>
+                    <div className="flex justify-between></div>
+                      <span className=text-gray-300>Circuits</span>"</div>
+                      <span className="text-white>{circuits.length}</span></div>
                     </div></div>
                   </div></div>
                 </div>
  
                 {/* Quick Actions */}</div>
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3></div>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"></div>
-                    <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200"></div>
-                      <div className="text-2xl" mb-2>🔄</div></div>
-                      <div className="font-semibold">Run Simulation</div></div>
+                <div className=lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3></div>
+                  <div className=grid grid-cols-1 md grid-cols-4 gap-4"></div>
+                    <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200></div>
+                      <div className=text-2xl" mb-2>🔄</div></div>
+                      <div className="font-semibold>Run Simulation</div></div>
                     </button></div>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200""></div>
-                      <div className="text-2xl mb-2>🧮</div>"</div>
-                      <div className="font-semibold">Develop" Algorithm</div></div>
+                    <button className=p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200""></div>
+                      <div className="text-2xl mb-2>🧮</div></div>
+                      <div className=font-semibold">Develop" Algorithm</div></div>
                     </button></div>
-                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200>"</div>
-                      <div className="text-2xl:mb-2">🔧</div>"</div>
-                      <div className="font-semibold>Design Circuit</div> "</div>
-                    </button>"</div>
+                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200></div>
+                      <div className=text-2xl:mb-2">🔧</div>"</div>
+                      <div className="font-semibold>Design Circuit</div> </div>
+                    </button></div>
                     <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all" duration-200"></div>
-                      <div className="text-2xl:mb-2>📊</div>"</div>
-                      <div className="font-semibold">Measure" State</div></div>
+                      <div className="text-2xl:mb-2>📊</div></div>
+                      <div className=font-semibold">Measure" State</div></div>
                     </button></div>
                   </div></div>
                 </div></div>
@@ -301,37 +301,37 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}"
             {/* Simulations */},
 {activeTab === 'simulatio'ns && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Simulations</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {simulations.map((simulation) => (</div>
                     </div><div key={simulation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{simulation.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{simulation.type}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{simulation.type}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{simulation.fidelity}%</div></div>
-                          <div className="text-gray-400 text-sm>Fidelity</div></div>
+                          </div><div className="text-2xl font-bold text-white>{simulation.fidelity}%</div></div>
+                          <div className="text-gray-400 text-sm>Fidelity</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Qubits</span>"</div>
+                          <span className="text-gray-300>Qubits</span></div>
                           <span className="text-white>{simulation.qubits}</span>"</div>
                         </div>"</div>
-                        <div className="flex" justify-between"></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Depth</span>"</div>
-                          <span className="text-white">{simulation.depth}</span>" </div>
+                          <span className="text-white>{simulation.depth}</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Runtime</span>"</div>
+                          <span className="text-gray-300>Runtime</span></div>
                           <span className="text-white>{simulation.runtime} ms</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(simulation.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>"</div>
+                          <span className="{text-white capitalize ${getStatusColor(simulation.status)}"}">
                             {simulation.status}</div>
                           </span></div>
                         </div></div>
@@ -343,37 +343,37 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}
             {/* Algorithms */},"''
 {activeTab === algorithm's' && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Algorithms</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Algorithms</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {algorithms.map((algorithm) => (</div>
-                    </div><div key={algorithm.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={algorithm.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{algorithm.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{algorithm.algorithm}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{algorithm.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{algorithm.algorithm}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{algorithm.successRate}%</div></div>
-                          <div className="text-gray-400" text-sm>Success Rate</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{algorithm.successRate}%</div></div>
+                          <div className=text-gray-400" text-sm>Success Rate</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Complexity</span>"</div>
-                          <span className="text-white">{algorithm.complexity}</span>" </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Complexity</span></div>
+                          <span className=text-white">{algorithm.complexity}</span>" </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Qubits</span>"</div>
-                          <span className="text-white>{algorithm.qubits}</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Qubits</span>"</div>
+                          <span className="text-white>{algorithm.qubits}</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Gates</span>"</div>
-                          <span className="text-white">{algorithm.gates}</span""></div>
+                          <span className="text-gray-300>Gates</span></div>
+                          <span className=text-white">{algorithm.gates}</span""></div>
                         </div></div>
-                        <div className="flex justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(algorithm.status)}`}">
+                        <div className="flex justify-between ></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(algorithm.status)}}">
                             {algorithm.status}</div>
                           </span></div>
                         </div></div>
@@ -385,35 +385,35 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}
             {/* Quantum Gates */},"
 {activeTab === 'gat'es && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white ">Quantum Gates</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white ">Quantum Gates</h2>
                  </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {gates.map((gate) => ("</div>
+                  {gates.map((gate) => (</div>
                     </div><div key={gate.id} className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700">"</div>
-                      <div className="flex" items-center justify-between mb-4></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
-                          <h3 className="text-lg font-semibold text-white ">{gate.name}</h3></div>
-                          <p className="text-gray-400" text-sm capitalize>{gate.type}</p></div>
+                          <h3 className=text-lg font-semibold text-white ">{gate.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{gate.type}</p></div>
                         </div></div>
-                        <div className=" text-right"></div>
-                          </div><div className="text-2xl" font-bold text-white">{gate.fidelity}%</div></div>
+                        <div className= text-right"></div>
+                          </div><div className="text-2xl font-bold text-white>{gate.fidelity}%</div></div>
                           <div className="text-gray-400 text-sm>Fidelity</div></div>
-                        </div></div>
+                        </div></div>"
                       </div>"
                       "</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Operation</span>"</div>
+                          <span className="text-gray-300>Operation</span></div>
                           <span className="text-white>{gate.operation}</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className="text-gray-300>Duration</span>"</div>
-                          <span className="text-white">{gate.duration} ns</span></div>
-                        </div>"</div>
-                        <div className="flex" justify-between >`</div>
-                          <span className="text-gray-300">Status</span>``</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(gate.status)}`}>
+                          <span className="text-white>{gate.duration} ns</span></div>
+                        </div></div>
+                        <div className="flex" justify-between >"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(gate.status)}"}>
                             {gate.status}</div>
                           </span></div>
                         </div></div>
@@ -425,39 +425,39 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}
             {/* Quantum States */},''
 {activeTab === state's' && (</div>
-              <div className="space-y-6">"</div>
-                <h2 className="text-2xl font-bold text-white >Quantum States</h2>
+              <div className="space-y-6></div>
+                <h2 className="text-2xl font-bold text-white >Quantum States</h2>"
                  "</div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
-                  {states.map((state) => ("</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+                  {states.map((state) => (</div>
                     </div><div key={state.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white >{state.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{state.state}</p></div>
+                          <h3 className=text-lg" font-semibold text-white >{state.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{state.state}</p></div>
                         </div></div>
-                        <div className=" text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white>{state.entanglement}</div>"</div>
-                          <div className="text-gray-400" text-sm">Entanglement</div></div>
+                        <div className= text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white>{state.entanglement}</div></div>
+                          <div className=text-gray-400" text-sm">Entanglement</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3> "</div>
-                        </div><div className="flex" justify-between"></div>
-                          <span className="text-gray-300>Qubits</span>"</div>
-                          <span className="text-white">{state.qubits}</span>"</div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex" justify-between"></div>
+                          <span className="text-gray-300>Qubits</span></div>
+                          <span className=text-white">{state.qubits}</span>"</div>
                         </div></div>
-                        <div className=" flex justify-between>"</div>
-                          <span className="text-gray-300">Amplitude</span"></div>
-                          <span className="text-white>{state.amplitude}</span>"</div>
-                        </div>"</div>
+                        <div className=" flex justify-between></div>
+                          <span className=text-gray-300">Amplitude</span"></div>
+                          <span className="text-white>{state.amplitude}</span></div>
+                        </div></div>
                         <div className="flex justify-between"></div>
-                          <span className="text-gray-300">Phase</span></div>
-                          <span className="text-white>{state.phase}π</span"></div>
+                          <span className="text-gray-300>Phase</span></div>
+                          <span className=text-white>{state.phase}π</span"></div>
                         </div></div>
-                        <div className="flex justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(state.status)}`}">
+                        <div className="flex justify-between></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(state.status)}}">
                             {state.status}</div>
                           </span></div>
                         </div></div>
@@ -469,42 +469,42 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}
             {/* Quantum Circuits */}, 
 {activeTab === 'circui'ts && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl font-bold text-white">Quantum Circuits</h2></div>
-                <div className="grid"  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl font-bold text-white">Quantum Circuits</h2></div>
+                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {circuits.map((circuit) => (</div>
-                    </div><div key={circuit.id} className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
-                      <div className="flex" items-center justify-between mb-4> </div>
+                    </div><div key={circuit.id} className= bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                      <div className="flex items-center justify-between mb-4> </div>
                         </div><div></div>
-                          <h3 className="text-lg font-semibold text-white">{circuit.name}</h3></div>
-                          <p className="text-gray-400" text-sm >Quantum Circuit</p></div>
+                          <h3 className=text-lg font-semibold text-white">{circuit.name}</h3></div>
+                          <p className="text-gray-400 text-sm >Quantum Circuit</p></div>
                         </div></div>
-                        <div className="text-right"> </div>
-                          </div><div className="text-2xl" font-bold text-white>{circuit.optimization}%</div></div>
-                          <div className="text-gray-400 text-sm">Optimization</div></div>
+                        <div className=text-right"> </div>
+                          </div><div className="text-2xl font-bold text-white>{circuit.optimization}%</div></div>
+                          <div className=text-gray-400 text-sm">Optimization</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3>" </div>
-                        </div><div className="flex justify-between"></div>
-                          <span className="text-gray-300>Qubits</span"></div>
-                          <span className="text-white">{circuit.qubits}</span"></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex justify-between"></div>
+                          <span className="text-gray-300>Qubits</span></div>
+                          <span className=text-white">{circuit.qubits}</span"></div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Gates</span>"</div>
-                          <span className="text-white>{circuit.gates}</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Gates</span>"</div>
+                          <span className="text-white>{circuit.gates}</span></div>
+                        </div></div>
                         <div className="flex" justify-between"></div>
-                          <span className="text-gray-300>Depth</span>"</div>
-                          <span className="text-white">{circuit.depth}</span>" </div>
+                          <span className="text-gray-300>Depth</span></div>
+                          <span className=text-white">{circuit.depth}</span>" </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Width</span>"</div>
-                          <span className="text-white>{circuit.width}</span>"</div>
-                        </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(circuit.status)}`}">
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Width</span>"</div>
+                          <span className="text-white>{circuit.width}</span></div>
+                        </div></div>
+                        <div className=" flex" justify-between">"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(circuit.status)}"}">
                             {circuit.status}</div>
                           </span></div>
                         </div></div>
@@ -516,37 +516,37 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             )}
             {/* Quantum Measurements */},"''
 {activeTab === measurement's' && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Measurements</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Measurements</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {measurements.map((measurement) => (</div>
-                    </div><div key={measurement.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={measurement.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{measurement.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{measurement.measurement}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{measurement.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{measurement.measurement}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{measurement.accuracy}%</div></div>
-                          <div className="text-gray-400" text-sm>Accuracy</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{measurement.accuracy}%</div></div>
+                          <div className=text-gray-400" text-sm>Accuracy</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Qubits</span>"</div>
-                          <span className="text-white">{measurement.qubits}</span>" </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Qubits</span></div>
+                          <span className=text-white">{measurement.qubits}</span>" </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Shots</span>"</div>
-                          <span className="text-white>{measurement.shots}</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Shots</span>"</div>
+                          <span className="text-white>{measurement.shots}</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Resolution</span>"</div>
-                          <span className="text-white">{measurement.resolution}</span""></div>
+                          <span className="text-gray-300>Resolution</span></div>
+                          <span className=text-white">{measurement.resolution}</span""></div>
                         </div></div>
-                        <div className="flex justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(measurement.status)}`}">
+                        <div className="flex justify-between ></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(measurement.status)}}">
                             {measurement.status}</div>
                           </span></div>
                         </div></div>
@@ -561,10 +561,10 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
       </main>
 "
       {/* Footer */}</div>
-      <footer className="relative  z-10 mt-16>"</div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8 "> "</div>
-          </div><div className="text-center"></div>
-            <p className="text-gray-400">
+      <footer className="relative  z-10 mt-16></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8 "> "</div>
+          </div><div className="text-center></div>
+            <p className=text-gray-400">
               AI-Powered Quantum Simulation & Algorithm Development | Zion Tech Group</div>
             </p></div>
             <p className=" text-gray-500 text-sm mt-2>
@@ -581,6 +581,6 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
 </div>
   </div>
 ;
-};"
-`";}
+};
+"";}
 export default AIPoweredQuantumSimulationAlgorithmDevelopment ))))))))))))))))))))))"'"'`</div>

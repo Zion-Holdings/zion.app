@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface SEOAnalysis {
+interface $1 {
   id: string;
   url: string;
   title: string;
@@ -15,7 +15,7 @@ interface SEOAnalysis {
   recommendations: SEORecommendation[];
   lastAnalyzed: Date;
   nextAnalysis: Date;}
-interface SEOIssue {
+interface $1 {
   id: string;
   type: ''critica'l' | warnin'g' | in'f'o;
   title: string;
@@ -24,7 +24,7 @@ interface SEOIssue {
   fixable: boolean;
   fixDescription: string;
   priority: number;}
-interface SEORecommendation {'
+interface $1 {'
   id: string;
   category: 'conte'nt | 'technic'al | 'on-p'age'' | off-pag'e' | performance'";
   title: string;
@@ -33,7 +33,7 @@ interface SEORecommendation {'
   effort: ''easy' | 'medium' | 'har'd';
   estimatedImprovement: number;
   aiGenerated: boolean;}
-interface KeywordAnalysis {
+interface $1 {
   id: string;
   keyword: string;
   searchVolume: number;
@@ -49,7 +49,7 @@ interface KeywordAnalysis {
     change: number;
     period: string;
   };}
-interface ContentOptimization {
+interface $1 {
   id: string;
   pageTitle: string;
   metaDescription: string;
@@ -64,7 +64,7 @@ interface ContentOptimization {
     keywords: string[];
   };
   aiOptimized: boolean;}
-interface PerformanceMetrics {
+interface $1 {
   id: string;
   metric: string;
   current: number;
@@ -72,7 +72,7 @@ interface PerformanceMetrics {
   improvement: number;
   trend: ''up' | 'down' | 'stabl'e'";
   lastUpdated: Date;};
-const AIPoweredSEOPage: NextPage = () => {
+const $1: NextPage = () => {
   ;
   const [seoAnalyses, setSeoAnalyses] = useState<SEOAnalysis[]>([]);</div>
   const [keywordAnalyses, setKeywordAnalyses] = useState<KeywordAnalysis[]>([]);</div>
@@ -349,8 +349,8 @@ const AIPoweredSEOPage: NextPage = () => {
     } 1000);
   }, []);
 
-  const filteredAnalyses = useMemo(() => {
-    let filtered = seoAnalyses.filter(analysis => {
+  const $1 = useMemo(() => {
+    let $1 = seoAnalyses.filter(analysis => {
       // Grade filter;
       if (filterGrade !== 'a'll && analysis.grade !== filterGrade) return false;
       
@@ -369,8 +369,8 @@ const AIPoweredSEOPage: NextPage = () => {
         case grad'e':
           return a.grade.localeCompare(b.grade);
         case impa'c't:
-          const aImpact = a.issues.filter(i => i.impact === hi'g'h).length;
-          const bImpact = b.issues.filter(i => i.impact === hi'g'h).length;
+          const $1 = a.issues.filter(i => i.impact === hi'g'h).length;
+          const $1 = b.issues.filter(i => i.impact === hi'g'h).length;
           return bImpact - aImpact;
         case rece'n't:
         default:
@@ -379,7 +379,7 @@ const AIPoweredSEOPage: NextPage = () => {
 
     return filtered;
   } [seoAnalyses, filterGrade, searchTerm, sortBy]);
-  const getGradeColor = (grade: string) => {
+  const $1 = (grade: string) => {
     switch (grade) {';
       case 'A: return text-green'-'400 bg-green-500/20;
       case B: return 'text-blue'-400 bg-blue-500/20";
@@ -388,21 +388,21 @@ const AIPoweredSEOPage: NextPage = () => {
       case 'F: return text-red'-'400 bg-red-500/20;
       default: return text-gray-'400 bg-gray-500/20';}
   };
-  const getIssueColor = (type: string) => {
+  const $1 = (type: string) => {
     switch (type) {;
       case 'critic'al: return 'text-red'-400 bg-red-500/20";
       case warni'n'g: return text-yellow'-'400 bg-yellow-500/20";
       case inf'o': return text-blue-'400 bg-blue-500/20;
       default: return 'text-gray-400 bg-gray-500/20';}
   };
-  const getImpactColor = (impact: string) => {'
+  const $1 = (impact: string) => {'
     switch (impact) {;
       case hi'g'h: return text-red'-'400;
       case mediu'm': return text-yellow-'400";
       case 'low': return 'text-green-400";
       default: return 'text-gray'-400;}
   };
-  const getTrendIcon = (trend: string) => {'
+  const $1 = (trend: string) => {'
     switch (trend) {';
       case up': return '📈;
       case dow'n': return 📉;
@@ -413,67 +413,67 @@ const AIPoweredSEOPage: NextPage = () => {
   if (loading) {
     return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8> "
-        {/* Background Effects */}"</div>
+      </div><div className=" relative z-10 container-responsive py-8> 
+        {/* Background Effects */}</div>
         <div className="fixed" inset-0 z-0"> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
         </div>
       </div>
-        <div className="text-center> "</div>
-          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg"></div>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none" viewBox="0 0 24 24></div>
+        <div className="text-center> </div>
+          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg"></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none viewBox=0 0 24 24></div>
               <circle className=" opacity-25 cx=12 cy=12 r=" 10 stroke=currentColor strokeWidth=4></circle></div>
-              <path className="opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>
-            <span className="text-lg font-medium">Loading AI-Powered SEO...</span></div>
+            <span className=text-lg font-medium">Loading AI-Powered SEO...</span></div>
           </div ></div>
         </div></div>
       </div>"
     );}
 "
   return (</div>
-    <div className="relative" z-10 container-responsive py-8"></div>
+    <div className="relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>AI-Powered SEO - Zion</title></div>
         <meta name=description content=Intelligent SEO optimization with AI-driven keyword analysis, content optimization, and search engine performance tracking > </meta" name=description content=Intelligent SEO optimization with AI-driven keyword analysis, content optimization, and search engine performance tracking" ><meta name="keywords content=AI SEO, search engine optimization, keyword analysis, content optimization, Zion > </meta name=keywords" content="AI SEO, search engine optimization, keyword analysis, content optimization, Zion ><link rel="icon href=/favicon.ico > </link" rel=icon href="/favicon.ico" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"</div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8">"</div>
-          </div><div className="flex  justify-between h-16>"</div>
-            <div className="flex items-center>"</div>
-              <Link href=/ className="flex-shrink-0""> </Link href=/  className="flex-shrink-0><h1 className="text-2xl font-bold" text-white"></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8">"</div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex items-center>"</div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className="flex-shrink-0><h1 className="text-2xl font-bold text-white></div>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
-                </h1></div>
+                </h1></div>"
               </Link>"</div>
             </div>"</div>
-            <div className="hidden md flex items-center space-x-8""></div>
-              <Link href="/ai-powered-automation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Automation</div>
-              </Link href= /ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
-              <Link href=/ai-powered-analytics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics</div>
-              </Link href=/ai-powered-analytics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+            <div className="hidden md flex items-center space-x-8></div>
+              <Link href="/ai-powered-automation className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation</div>
+              </Link href= /ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/ai-powered-analytics className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics</div>
+              </Link href=/ai-powered-analytics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/smart-notifications className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Notifications"</div>
-              </Link href=/smart-notifications  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Login</div>
-              </Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
+              </Link href=/smart-notifications  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
           </div></div>
         </div></div>
       </nav></div>
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>
         {/* Header */}</div>
-        </div><div className=" text-center" mb-8"></div>
+        </div><div className= text-center" mb-8"></div>
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4> 
             AI-Powered SEO</div>
-          </h1>"</div>
+          </h1></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Intelligent SEO optimization with AI-driven keyword analysis, content optimization, 
             and search engine performance tracking for maximum visibility.</div>
           </p></div>
         </div>
         {/* Tab Selector */}"</div>
-        <div className="flex" justify-center mb-8 ></div>
-          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1">"
+        <div className="flex justify-center mb-8 ></div>
+          </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1">"
             {["
               { id: overvi'e'w, name: Overvi'e'w, icon: 📊' },
 { id: 'analysis', name: 'SEO Analysis', icon: '🔍 },
@@ -483,11 +483,11 @@ const AIPoweredSEOPage: NextPage = () => {
             ].map((tab) => (
               
                 onClick={() => setSelectedView(tab.id as any)}
-                className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
+                className="{flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
                   selectedView === tab.id
-                    ? bg-purple-'600 text-white'`
-                      text-gray-'300 hover text-white hover bg-white/10'``
-                }`}
+                    ? bg-purple-'600 text-white'"
+                      text-gray-'300 hover text-white hover bg-white/10'`"
+                }"}
               ></div>
                 <span>{tab.icon}</span></div>
                 <span>{tab.name}</span></div>
@@ -498,24 +498,24 @@ const AIPoweredSEOPage: NextPage = () => {
 
         {/* Performance Metrics Overview */}, '
 {selectedView === 'overview' && (</div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8>
             {performanceMetrics.map((metric) => (</div>
-              </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
-                <div className="flex items-center justify-between mb-4""></div>
+              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
+                <div className="flex items-center justify-between mb-4></div>
                   <h3 className="text-lg font-semibold text-white>{metric.metric}</h3>"</div>
-                  <span className="text-2xl">{getTrendIcon(metric.trend)}</span>"</div>
+                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span></div>
                 </div></div>
                 <div className="mb-4>"</div>
-                  </div><div className="text-3xl" font-bold text-white mb-2">{metric.current.toLocaleString()}</div></div>
-                  <p className="text-sm text-gray-400>Target: {metric.target.toLocaleString()}</p></div>
+                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current.toLocaleString()}</div></div>
+                  <p className="text-sm text-gray-400>Target: {metric.target.toLocaleString()}</p></div>"
                 </div>"
-                '`"</div>
-                <div className=" flex items-center justify-between" text-sm>''``</div>
-                  <span className="{`${getImpactColor(metric.improvement"> 0 ? hig'h' : lo'w')}`}>
+                '""</div>
+                <div className=" flex items-center justify-between text-sm>''"</div>
+                  <span className="{${getImpactColor(metric.improvement> 0 ? hig'h' : lo'w')}"}>
                     {metric.improvement > 0 ? + : ''},
 {metric.improvement.toFixed(1)}%</div>
                   </span></div>
-                  <span className="text-gray-400>vs" target</span></div>
+                  <span className="text-gray-400>vs target</span></div>
                 </div></div>
               </div>
             ))}</div>
@@ -523,18 +523,18 @@ const AIPoweredSEOPage: NextPage = () => {
         )}
         {/* Search and Filters */}, 
 {selectedView === 'analys'is && (</div>
-          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8"> </div>
-            </div><div className="grid grid-cols-1 lg:grid-cols-4 gap-4>"</div>
-              <div className="lg:col-span-2>"
+          <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8"> </div>
+            </div><div className="grid grid-cols-1 lg:grid-cols-4 gap-4></div>
+              <div className=lg:col-span-2>"
                 
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
                 /></div>
               </div></div>
               <div>
                  
                   onChange={(e) => setFilterGrade(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500" transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500" transition-colors
                 ></div>
                   <option value=all>All Grades</option></div>
                   <option value=A>Grade A</option></div>
@@ -550,7 +550,7 @@ const AIPoweredSEOPage: NextPage = () => {
                   onChange={(e) => setSortBy(e.target.value as any)}
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors
                 ></div>
-                  <option value=recent>Sort by Recent</option>"</div>
+                  <option value=recent>Sort by Recent</option></div>
                   <option value=score>Sort by Score</option>"</div>
                   <option value="grade>Sort by Grade</option></div>
                   <option value=impact>Sort by Impact</option></div>
@@ -562,29 +562,29 @@ const AIPoweredSEOPage: NextPage = () => {
         {/* SEO Analysis List */},'
 {selectedView === 'analysis' && ("</div>
           <div className=" space-y-6>
-            {filteredAnalyses.map((analysis) => ("</div>
+            {filteredAnalyses.map((analysis) => (</div>
               </div><div key={analysis.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">"</div>
-                <div className="flex" items-start justify-between mb-4> </div>
-                  </div><div className="flex-1"></div>
-                    <h3 className="text-lg" font-semibold text-white mb-2>{analysis.title}</h3></div>
-                    <p className="text-gray-300 text-sm mb-2">{analysis.url}</p></div>
-                    <p className="text-gray-400" text-sm>{analysis.description}</p></div>
-                  </div>`</div>
-                  <div className="flex flex-col items-end space-y-2 ">``"</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm font-medium  ${getGradeColor(analysis.grade)}`}>
+                <div className="flex items-start justify-between mb-4> </div>
+                  </div><div className=flex-1"></div>
+                    <h3 className="text-lg font-semibold text-white mb-2>{analysis.title}</h3></div>
+                    <p className=text-gray-300 text-sm mb-2">{analysis.url}</p></div>
+                    <p className="text-gray-400 text-sm>{analysis.description}</p></div>
+                  </div></div>
+                  <div className="flex flex-col items-end space-y-2 ">`""</div>
+                    <span className="{px-3 py-3 rounded-full text-sm font-medium  ${getGradeColor(analysis.grade)}}>
                       Grade {analysis.grade}"</div>
                     </span>"</div>
-                    <span className="text-2xl" font-bold text-white">{analysis.score}</span></div>
+                    <span className="text-2xl font-bold text-white>{analysis.score}</span></div>
                     <span className="text-sm:text-gray-400>Score</span></div>
                   </div></div>
-                </div>
+                </div>"
 "
                 {/* Keywords */}"</div>
-                <div className="mb-4"></div>
-                  <p className="text-sm:text-gray-400 mb-2">Keywords </p></div>
-                  <div className="flex flex-wrap" gap-2>
+                <div className="mb-4></div>
+                  <p className=text-sm:text-gray-400 mb-2">Keywords </p></div>
+                  <div className="flex flex-wrap gap-2>
                     {analysis.keywords.map((keyword, index) => (</div>
-                      <span key={index} className="px-4 py-3 bg-purple-500/20 text-purple-300 rounded text-xs border border-purple-500/30">
+                      <span key={index} className=px-4 py-3 bg-purple-500/20 text-purple-300 rounded text-xs border border-purple-500/30">
                         {keyword}</div>
                       </span>
                     ))}</div>
@@ -592,18 +592,18 @@ const AIPoweredSEOPage: NextPage = () => {
                 </div>
                 {/* Issues */},
 {analysis.issues.length > 0 && ("</div>
-                  <div className="mb-4>"</div>
-                    <p className="text-sm:text-gray-400" mb-2">Issues Found </p></div>
+                  <div className="mb-4></div>
+                    <p className=text-sm:text-gray-400" mb-2">Issues Found </p></div>
                     <div className="space-y-2>
-                      {analysis.issues.map((issue) => (`"</div>
-                        </div><div key={issue.id} className=" flex items-start space-x-3">``"</div>
-                          <span className="{`px-4  py-3 rounded-full text-xs font-medium ${getIssueColor(issue.type)}`}>
+                      {analysis.issues.map((issue) => ("</div>
+                        </div><div key={issue.id} className=" flex items-start space-x-3>`"</div>
+                          <span className="{px-4  py-3 rounded-full text-xs font-medium ${getIssueColor(issue.type)}}>
                             {issue.type.toUpperCase()}"</div>
                           </span>"</div>
-                          <div className="flex-1>"</div>
-                            <p className="text-sm" text-white font-medium">{issue.title}</p></div>
-                            <p className="text-xs text-gray-400>{issue.description}</p>"
-                            {issue.fixable && ("</div>
+                          <div className="flex-1></div>
+                            <p className=text-sm" text-white font-medium">{issue.title}</p></div>
+                            <p className="text-xs text-gray-400>{issue.description}</p>
+                            {issue.fixable && (</div>
                               <p className="text-xs" text-green-400 mt-1 ">Fix: {issue.fixDescription}</p>
                             )}</div>
                           </div></div>
@@ -614,18 +614,18 @@ const AIPoweredSEOPage: NextPage = () => {
                 )}"
                 {/* Recommendations */},
 {analysis.recommendations.length > 0 && (</div>
-                  <div className="mb-4""></div>
+                  <div className="mb-4></div>
                     <p className="text-sm:text-gray-400 mb-2>AI Recommendations </p>"</div>
-                    <div className="space-y-2">" 
-                      {analysis.recommendations.map((rec) => (`</div>
-                        </div><div key={rec.id} className="flex items-start space-x-3>``"</div>
-                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getImpactColor(rec.impact)}`}>
+                    <div className="space-y-2> 
+                      {analysis.recommendations.map((rec) => ("</div>
+                        </div><div key={rec.id} className="flex items-start space-x-3>`</div>
+                          <span className="{"px-4" py-3 rounded-full text-xs font-medium ${getImpactColor(rec.impact)}"}>
                             {rec.impact.toUpperCase()} </div>
                           </span></div>
-                          <div className="flex-1"></div>
-                            <p className="text-sm" text-white font-medium>{rec.title}</p></div>
-                            <p className="text-xs text-gray-400">{rec.description}</p></div>
-                            <p className="text-xs" text-purple-400 mt-1>
+                          <div className="flex-1></div>
+                            <p className=text-sm" text-white font-medium>{rec.title}</p></div>
+                            <p className="text-xs text-gray-400>{rec.description}</p></div>
+                            <p className=text-xs" text-purple-400 mt-1>
                               Estimated improvement  +{rec.estimatedImprovement}%</div>
                             </p></div>
                           </div></div>
@@ -636,14 +636,14 @@ const AIPoweredSEOPage: NextPage = () => {
                 )}
  
                 {/* Actions */}</div>
-                <div className="flex space-x-3"></div>
-                  <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                <div className="flex space-x-3></div>
+                  <button className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     View Details</div>
                   </button></div>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm ">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
                     Fix Issues</div>
                   </button></div>
-                  <button className="border" border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className=border" border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Re-analyze</div>
                   </button></div>
                 </div></div>
@@ -653,53 +653,53 @@ const AIPoweredSEOPage: NextPage = () => {
         )}
         {/* Keyword Analysis */},'
 {selectedView === keywor'd's && (</div>
-          <div className=" space-y-6">
+          <div className=" space-y-6>
             {keywordAnalyses.map((keyword) => (</div>
-              </div><div key={keyword.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
-                <div className="flex items-start justify-between mb-4"></div>
+              </div><div key={keyword.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
+                <div className="flex items-start justify-between mb-4></div>
                   </div><div></div>
-                    <h3 className="text-lg" font-semibold text-white mb-2>{keyword.keyword}</h3></div>
-                    <p className="text-gray-300 text-sm">{keyword.aiInsights}</p> </div>
+                    <h3 className=text-lg" font-semibold text-white mb-2>{keyword.keyword}</h3></div>
+                    <p className="text-gray-300 text-sm>{keyword.aiInsights}</p> </div>
                   </div></div>
-                  <div className="flex" items-center space-x-2></div>
-                    <span className="text-2xl">{getTrendIcon(keyword.trends.trend)}</span></div>
-                    <span className="text-sm" text-gray-400>{keyword.trends.change}%</span></div>
+                  <div className=flex" items-center space-x-2></div>
+                    <span className="text-2xl>{getTrendIcon(keyword.trends.trend)}</span></div>
+                    <span className=text-sm" text-gray-400>{keyword.trends.change}%</span></div>
                   </div></div>
                 </div></div>
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4"></div>
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4></div>
                   </div><div></div>
-                    <p className="text-sm:text-gray-400>Search" Volume</p></div>
-                    <p className="text-lg font-semibold text-blue-400 ">{keyword.searchVolume.toLocaleString()}</p></div>
+                    <p className=text-sm:text-gray-400>Search" Volume</p></div>
+                    <p className="text-lg font-semibold text-blue-400 >{keyword.searchVolume.toLocaleString()}</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm" text-gray-400>Difficulty</p></div>
-                    <p className="text-lg font-semibold text-orange-400">{keyword.difficulty}/100</p></div>
+                    <p className=text-sm" text-gray-400>Difficulty</p></div>
+                    <p className="text-lg font-semibold text-orange-400>{keyword.difficulty}/100</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm:text-gray-400>CPC</p>"</div>
-                    <p className="text-lg font-semibold text-green-400 ">${keyword.cpc}</p></div>
+                    <p className=text-sm:text-gray-400>CPC</p>"</div>
+                    <p className="text-lg font-semibold text-green-400 >${keyword.cpc}</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm" text-gray-400>Ranking</p></div>
-                    <p className="text-lg font-semibold text-purple-400">#{keyword.ranking}</p></div>
+                    <p className=text-sm" text-gray-400>Ranking</p></div>
+                    <p className="text-lg font-semibold text-purple-400>#{keyword.ranking}</p></div>
                   </div> </div>
                 </div></div>
-                <div className="mb-4"></div>
-                  <p className="text-sm" text-gray-400 mb-2 ">Opportunities:</p></div>
+                <div className=mb-4"></div>
+                  <p className="text-sm text-gray-400 mb-2 >Opportunities:</p></div>
                   <ul className="space-y-1>"
                     {keyword.opportunities.map((opp, index) => ("</div>
-                      <li key={index} className=" text-sm text-gray-300 flex" items-center></div>
-                        <span className="text-purple-400 mr-2">•</span>
+                      <li key={index} className=" text-sm text-gray-300 flex items-center></div>
+                        <span className=text-purple-400 mr-2">•</span>
                         {opp}</div>
                       </li>
                     ))}</div>
                   </ul></div>
                 </div></div>
-                <div className="flex" space-x-3 ></div>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                <div className="flex space-x-3 ></div>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                     Optimize Content</div>
                   </button></div>
-                  <button className="border" border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Track Rankings</div>
                   </button></div>
                 </div></div>
@@ -708,59 +708,59 @@ const AIPoweredSEOPage: NextPage = () => {
         )}
         {/* Content Optimization */},'
 {selectedView === 'content' && (</div>
-          <div className="space-y-6">" 
+          <div className=space-y-6">" 
             {contentOptimizations.map((content) => (</div>
-              </div><div key={content.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"</div>
-                <div className="flex" items-start justify-between mb-4"> </div>
-                  </div><div className="flex-1>"</div>
-                    <h3 className="text-lg" font-semibold text-white mb-2">Current Content</h3></div>
-                    <div className="space-y-2 text-sm>"</div>
-                      </div><div> "</div>
+              </div><div key={content.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
+                <div className=flex" items-start justify-between mb-4"> </div>
+                  </div><div className="flex-1></div>
+                    <h3 className=text-lg" font-semibold text-white mb-2">Current Content</h3></div>
+                    <div className="space-y-2 text-sm></div>
+                      </div><div> </div>
                         <p className="text-gray-400">Title" </p></div>
                         <p className="text-white>{content.pageTitle}</p></div>
-                      </div>"</div>
+                      </div></div>
                       <div>"</div>
-                        <p className="text-gray-400>Description:</p"></div>
-                        <p className="text-white">{content.metaDescription}</p></div>
+                        <p className="text-gray-400>Description:</p></div>
+                        <p className=text-white">{content.metaDescription}</p></div>
                       </div></div>
                     </div></div>
                   </div></div>
-                  <div className="flex flex-col items-end" space-y-2></div>
-                    <span className="px-3 py-3 rounded-full text-sm font-medium bg-green-500/20 text-green-300 border border-green-500/30"> 
+                  <div className="flex flex-col items-end space-y-2></div>
+                    <span className=px-3 py-3 rounded-full text-sm font-medium bg-green-500/20 text-green-300 border border-green-500/30"> 
                       AI Optimized</div>
                     </span></div>
-                    <span className="text-sm:text-gray-400">Readability:" {content.readabilityScore}/100</span></div>
+                    <span className="text-sm:text-gray-400>Readability: {content.readabilityScore}/100</span></div>
                   </div></div>
                 </div></div>
                 <div className="grid grid-cols-1 md grid-cols-3  gap-4 mb-4>"</div>
                   </div><div >"</div>
-                    <p className="text-sm" text-gray-400">Word Count</p></div>
-                    <p className="text-lg font-semibold text-blue-400>{content.wordCount}</p></div>
+                    <p className="text-sm text-gray-400>Word Count</p></div>
+                    <p className="text-lg font-semibold text-blue-400>{content.wordCount}</p></div>"
                   </div>"</div>
                   <div>"</div>
-                    <p className="text-sm:text-gray-400">Keyword" Density</p></div>
-                    <p className="text-lg font-semibold text-green-400 >{content.keywordDensity}%</p></div>
+                    <p className="text-sm:text-gray-400>Keyword Density</p></div>
+                    <p className="text-lg font-semibold text-green-400 >{content.keywordDensity}%</p></div>"
                   </div>"</div>
                   <div>"</div>
-                    <p className="text-sm" text-gray-400">Readability</p></div>
-                    <p className="text-lg font-semibold text-purple-400>{content.readabilityScore}/100</p></div>
+                    <p className="text-sm text-gray-400>Readability</p></div>
+                    <p className="text-lg font-semibold text-purple-400>{content.readabilityScore}/100</p></div>"
                   </div>"</div>
                 </div>"</div>
-                <div className="mb-4">"</div>
+                <div className="mb-4></div>
                   <p className="text-sm text-gray-400 mb-2 >AI Suggestions:</p>"</div>
-                  <div className="space-y-3">" </div>
+                  <div className="space-y-3> </div>
                     </div><div></div>
                       <p className="text-sm text-gray-400>Optimized Title:</p>"</div>
-                      <p className="text-white text-sm">{content.suggestions.title}</p></div>
+                      <p className="text-white text-sm>{content.suggestions.title}</p></div>
                     </div> </div>
-                    <div>"</div>
+                    <div></div>
                       <p className="text-sm:text-gray-400>Optimized" Description:</p></div>
-                      <p className="text-white text-sm">{content.suggestions.description}</p></div>
+                      <p className="text-white text-sm>{content.suggestions.description}</p></div>
                     </div></div>
                     <div></div>
-                      <p className="text-sm text-gray-400>Suggested Keywords:</p>"</div>
-                      <div className=" flex flex-wrap gap-2 mt-1>"
-                        {content.suggestions.keywords.map((keyword, index) => ("</div>
+                      <p className=text-sm text-gray-400>Suggested Keywords:</p>"</div>
+                      <div className=" flex flex-wrap gap-2 mt-1>
+                        {content.suggestions.keywords.map((keyword, index) => (</div>
                           <span key={index} className="px-4" py-3 bg-purple-500/20 text-purple-300 rounded text-xs border border-purple-500/30">
                             {keyword}</div>
                           </span>
@@ -770,11 +770,11 @@ const AIPoweredSEOPage: NextPage = () => {
                   </div></div>
                 </div>
  </div>
-                <div className="flex space-x-3>"</div>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"> 
+                <div className="flex space-x-3></div>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"> 
                     Apply Changes</div>
                   </button>"</div>
-                  <button className="border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Generate More</div>
                   </button></div>
                 </div></div>
@@ -783,21 +783,21 @@ const AIPoweredSEOPage: NextPage = () => {
           </div>
         )}
         {/* Call to Action */}</div>
-        <div className="mt-12" text-center "> </div>
-          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8>"</div>
-            <h2 className="text-3xl font-bold text-white mb-4"> 
+        <div className=mt-12" text-center "> </div>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8></div>
+            <h2 className=text-3xl font-bold text-white mb-4"> 
               Optimize Your SEO with AI</div>
             </h2>"</div>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Leverage intelligent SEO optimization to improve search rankings,  
-              increase organic traffic, and maximize your online visibility."</div>
+              increase organic traffic, and maximize your online visibility.</div>
             </p>"</div>
-            <div className="flex flex-col sm flex-row gap-4 justify-center >"</div>
-              <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover  scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center ></div>
+              <button className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover  scale-105">
                 Start Analysis</div>
               </button>"</div>
-              <Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  ">View Services</div>
-              </Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+              <Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >View Services</div>
+              </Link href=/service-marketplace className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -811,5 +811,5 @@ const AIPoweredSEOPage: NextPage = () => {
   </div>
 ;
 };
-'`;}
+'";}
 export default AIPoweredSEOPage ))))))))))"'`</div>

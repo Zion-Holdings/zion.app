@@ -1,13 +1,13 @@
 
-            const MonetizationOrchestrator = require('./monetization-orchestrator');
-            const orchestrator = new MonetizationOrchestrator();
+            const $1 = require('./monetization-orchestrator');
+            const $1 = new MonetizationOrchestrator();
             
             orchestrator.initialize().then(() => {
                 console.log('Monetizatio'n' Orchestrator running continuously...');
                 
                 // Keep the process alive
                 setInterval(() => {
-                    const status = orchestrator.getStatus();
+                    const $1 = orchestrator.getStatus();
                     console.log('Orchestrato'r' Status:', status);
                 }, 300000); // Every 5 minutes
                 

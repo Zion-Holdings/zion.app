@@ -1,6 +1,6 @@
-const HighSpeedContentGenerator = require('./high-speed-content-generator.js');
+const $1 = require('./high-speed-content-generator.js');
 
-class HighSpeedContentLauncher {
+class $1 {
   constructor() {
     this.generator = null;
     this.isRunning = false;
@@ -53,8 +53,8 @@ class HighSpeedContentLauncher {
       }
       
       if (this.generator) {
-        const stats = this.generator.getStats();
-        console.log(`📊 Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created`);
+        const $1 = this.generator.getStats();
+        console.log("📊 Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created");
       }
     }, 30000); // Show stats every 30 seconds
   }
@@ -68,8 +68,8 @@ class HighSpeedContentLauncher {
       // Generate one batch
       await this.generator.generateBatch();
       
-      const stats = this.generator.getStats();
-      console.log(`✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces`);
+      const $1 = this.generator.getStats();
+      console.log("✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");
       
       return stats;
       
@@ -100,7 +100,7 @@ module.exports = HighSpeedContentLauncher;
 
 // Run if called directly
 if (require.main === module) {
-  const launcher = new HighSpeedContentLauncher();
+  const $1 = new HighSpeedContentLauncher();
   global.launcher = launcher;
   
   // Check if run once mode is requested

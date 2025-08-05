@@ -1,5 +1,5 @@
 import React from "react";
-interface ResponsiveCardProps {
+interface $1 {
   children: React.ReactNode'
   className?: string
   variant?: 'defau'lt | 'elevat'ed | 'outli'ned'' | glass'
@@ -27,22 +27,22 @@ const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     base: 'p'-4 sm:p-6,
     lg: 'p'-6 sm:p-8,
     xl: 'p'-8 sm:p-12}
-  const hoverClasses = hover ? 'hover-responsi've : '
-  const interactiveClasses = interactive ? 'cursor-pointer' : '
+  const $1 = hover ? 'hover-responsi've : '
+  const $1 = interactive ? 'cursor-pointer' : '
   return (</div>
-    <div className="{`"
+    <div className="{
         rounded-xl transition-all duration-300
         ${variantClasses[variant]}
         ${paddingClasses[padding]}
         ${hoverClasses}
-        ${interactiveClasses}`
-        ${className}``
-      `}
+        ${interactiveClasses}"
+        ${className}`"
+      "}
       onClick={onClick}
     >
       {children}</div>
     </div>
   );
 };
-`;}
-export default ResponsiveCard ''`</div>
+";}
+export default ResponsiveCard ''"</div>

@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class FeatureAnalysisAgent {
+class $1 {
   constructor() {
     this.projectStructure = {};
     this.missingFeatures = [];
@@ -14,19 +14,19 @@ class FeatureAnalysisAgent {
     console.log('🔍 Analyzing project structure...');
     
     // Analyze pages directory
-    const pagesDir = path.join(process.cwd(), 'pag'e's');
+    const $1 = path.join(process.cwd(), 'pag'e's');
     this.projectStructure.pages = this.scanDirectory(pagesDir);
     
     // Analyze components
-    const componentsDir = path.join(process.cwd(), 'componen't's');
+    const $1 = path.join(process.cwd(), 'componen't's');
     this.projectStructure.components = this.scanDirectory(componentsDir);
     
     // Analyze src directory
-    const srcDir = path.join(process.cwd(), 's'r'c');
+    const $1 = path.join(process.cwd(), 's'r'c');
     this.projectStructure.src = this.scanDirectory(srcDir);
     
     // Analyze API routes
-    const apiDir = path.join(process.cwd(), 'page's'/api');
+    const $1 = path.join(process.cwd(), 'page's'/api');
     this.projectStructure.api = this.scanDirectory(apiDir);
     
     console.log('✅ Project structure analysis complete');
@@ -34,17 +34,17 @@ class FeatureAnalysisAgent {
   }
 
   scanDirectory(dirPath) {
-    const structure = {};
+    const $1 = {};
     
     if (!fs.existsSync(dirPath)) {
       return structure;
     }
     
-    const items = fs.readdirSync(dirPath);
+    const $1 = fs.readdirSync(dirPath);
     
     items.forEach(item => {
-      const fullPath = path.join(dirPath, item);
-      const stat = fs.statSync(fullPath);
+      const $1 = path.join(dirPath, item);
+      const $1 = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         structure[item] = this.scanDirectory(fullPath);
@@ -66,7 +66,7 @@ class FeatureAnalysisAgent {
     // This would normally fetch and analyze the ChatGPT link
     // For now, we'l'l' create a mock analysis based on common marketplace features
     
-    const chatGPTSpec = {
+    const $1 = {
       features: [
         'user-authenticati'o'n',
         'service-marketpla'c'e',
@@ -132,11 +132,11 @@ class FeatureAnalysisAgent {
   async compareFeatures() {
     console.log('🔍 Comparing features...');
     
-    const chatGPTSpec = await this.analyzeChatGPTSpecification();
-    const projectStructure = await this.analyzeProjectStructure();
+    const $1 = await this.analyzeChatGPTSpecification();
+    const $1 = await this.analyzeProjectStructure();
     
     // Analyze current features
-    const currentFeatures = this.extractCurrentFeatures(projectStructure);
+    const $1 = this.extractCurrentFeatures(projectStructure);
     
     // Find missing features
     this.missingFeatures = chatGPTSpec.features.filter(feature => 
@@ -162,7 +162,7 @@ class FeatureAnalysisAgent {
   }
 
   extractCurrentFeatures(projectStructure) {
-    const features = [];
+    const $1 = [];
     
     // Extract features from existing files
     if (projectStructure.pages) {
@@ -185,26 +185,26 @@ class FeatureAnalysisAgent {
   pageExists(pageName, projectStructure) {
     if (!projectStructure.pages) return false;
     
-    const pageFiles = Object.keys(projectStructure.pages);
+    const $1 = Object.keys(projectStructure.pages);
     return pageFiles.some(file => 
-      file.includes(pageName) || file === `${pageName}.tsx` || file === `${pageName}.js`
+      file.includes(pageName) || file === "${pageName}.tsx" || file === "${pageName}.js"
     );
   }
 
   contentExists(contentName, projectStructure) {
     if (!projectStructure.src) return false;
     
-    const contentFiles = this.flattenObject(projectStructure.src);
+    const $1 = this.flattenObject(projectStructure.src);
     return contentFiles.some(file => 
       file.includes(contentName) || file.includes(contentName.replace('-', ''))
     );
   }
 
   flattenObject(obj, prefix = '') {
-    const result = [];
+    const $1 = [];
     
     for (const key in obj) {
-      const newPrefix = prefix ? `${prefix}.${key}` : key;
+      const $1 = prefix ? "${prefix}.${key}" : key;
       
       if (typeof obj[key] === 'obje'c't' && obj[key] !== null) {
         result.push(...this.flattenObject(obj[key], newPrefix));
@@ -219,9 +219,9 @@ class FeatureAnalysisAgent {
   async generateImprovementPlan() {
     console.log('📋 Generating improvement plan...');
     
-    const comparison = await this.compareFeatures();
+    const $1 = await this.compareFeatures();
     
-    const plan = {
+    const $1 = {
       priority: 'hi'g'h',
       estimatedTime: '2-3 weeks',
       tasks: []
@@ -265,7 +265,7 @@ class FeatureAnalysisAgent {
   }
 
   getFeaturePriority(feature) {
-    const priorities = {
+    const $1 = {
       'user-authenticati'o'n': 10,
       'service-marketpla'c'e': 10,
       'payment-processi'n'g': 9,
@@ -284,7 +284,7 @@ class FeatureAnalysisAgent {
   }
 
   getPagePriority(page) {
-    const priorities = {
+    const $1 = {
       'ho'm'e': 10,
       'marketpla'c'e': 10,
       'log'i'n': 10,
@@ -301,7 +301,7 @@ class FeatureAnalysisAgent {
   }
 
   getContentPriority(content) {
-    const priorities = {
+    const $1 = {
       'hero-secti'o'n': 10,
       'service-descriptio'n's': 9,
       'testimonia'l's': 7,
@@ -315,7 +315,7 @@ class FeatureAnalysisAgent {
   }
 
   getFeatureDescription(feature) {
-    const descriptions = {
+    const $1 = {
       'user-authenticati'o'n': 'Implemen't' secure user authentication with Supabase',
       'service-marketpla'c'e': 'Creat'e' a comprehensive service marketplace',
       'payment-processi'n'g': 'Integrat'e' payment processing for transactions',
@@ -330,11 +330,11 @@ class FeatureAnalysisAgent {
       'multi-langua'g'e': 'Ad'd' multi-language support'
     };
     
-    return descriptions[feature] || `Implement ${feature} functionality`;
+    return descriptions[feature] || "Implement ${feature} functionality";
   }
 
   getPageDescription(page) {
-    const descriptions = {
+    const $1 = {
       'ho'm'e': 'Creat'e' an engaging homepage with hero section',
       'marketpla'c'e': 'Buil'd' comprehensive marketplace page',
       'log'i'n': 'Implemen't' user login page',
@@ -347,11 +347,11 @@ class FeatureAnalysisAgent {
       'analyti'c's': 'Creat'e' analytics dashboard'
     };
     
-    return descriptions[page] || `Create ${page} page`;
+    return descriptions[page] || "Create ${page} page";
   }
 
   getContentDescription(content) {
-    const descriptions = {
+    const $1 = {
       'hero-secti'o'n': 'Creat'e' compelling hero section for homepage',
       'service-descriptio'n's': 'Generat'e' detailed service descriptions',
       'testimonia'l's': 'Ad'd' customer testimonials section',
@@ -361,11 +361,11 @@ class FeatureAnalysisAgent {
       'contact-in'f'o': 'Ad'd' contact information and form'
     };
     
-    return descriptions[content] || `Create ${content} content`;
+    return descriptions[content] || "Create ${content} content";
   }
 
   async saveAnalysis() {
-    const analysis = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       projectStructure: this.projectStructure,
       missingFeatures: this.missingFeatures,
@@ -374,7 +374,7 @@ class FeatureAnalysisAgent {
       improvementPlan: await this.generateImprovementPlan()
     };
     
-    const analysisPath = path.join(process.cwd(), 'automati'o'n', 'feature-analysi's'.json');
+    const $1 = path.join(process.cwd(), 'automati'o'n', 'feature-analysi's'.json');
     fs.writeFileSync(analysisPath, JSON.stringify(analysis, null, 2));
     
     console.log('💾 Analysis saved to automation/feature-analysis.json');
@@ -387,7 +387,7 @@ class FeatureAnalysisAgent {
     try {
       await this.analyzeProjectStructure();
       await this.compareFeatures();
-      const analysis = await this.saveAnalysis();
+      const $1 = await this.saveAnalysis();
       
       console.log('✅ Feature Analysis Agent completed successfully');
       return analysis;

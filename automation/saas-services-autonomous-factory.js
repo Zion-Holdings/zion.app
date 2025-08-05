@@ -1,9 +1,9 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
 const { v4: uuidv4 } = require('uu'i'd');
 
-class SaaSServicesAutonomousFactory {
+class $1 {
   constructor() {
     this.services = new Map();
     this.agents = new Map();
@@ -60,14 +60,14 @@ class SaaSServicesAutonomousFactory {
   }
 
   async createSaaSService(serviceType, config = {}) {
-    const serviceId = uuidv4();
-    const serviceConfig = this.saasServiceTypes[serviceType];
+    const $1 = uuidv4();
+    const $1 = this.saasServiceTypes[serviceType];
     
     if (!serviceConfig) {
-      throw new Error(`Unknown SaaS service type: ${serviceType}`);
+      throw new Error("Unknown SaaS service type: ${serviceType}");
     }
 
-    const service = {
+    const $1 = {
       id: serviceId,
       type: serviceType,
       name: this.generateServiceName(serviceType),
@@ -96,10 +96,10 @@ class SaaSServicesAutonomousFactory {
   }
 
   async createAgentsForService(serviceId) {
-    const service = this.services.get(serviceId);
+    const $1 = this.services.get(serviceId);
     if (!service) return;
 
-    const agentTypes = ['saas-ideation-age'n't', 'saas-development-age'n't', 'saas-marketing-age'n't'];
+    const $1 = ['saas-ideation-age'n't', 'saas-development-age'n't', 'saas-marketing-age'n't'];
     
     for (const agentType of agentTypes) {
       await this.createAgent(agentType, {
@@ -112,14 +112,14 @@ class SaaSServicesAutonomousFactory {
   }
 
   async createAgent(type, config = {}) {
-    const agentId = uuidv4();
-    const agentConfig = this.agentTypes[type];
+    const $1 = uuidv4();
+    const $1 = this.agentTypes[type];
     
     if (!agentConfig) {
-      throw new Error(`Unknown agent type: ${type}`);
+      throw new Error("Unknown agent type: ${type}");
     }
 
-    const agent = {
+    const $1 = {
       id: agentId,
       type,
       serviceId: config.serviceId,
@@ -144,7 +144,7 @@ class SaaSServicesAutonomousFactory {
   }
 
   getAgentFocus(agentType) {
-    const focusMap = {
+    const $1 = {
       'saas-ideation-age'n't': 'market-resear'c'h',
       'saas-development-age'n't': 'mvp-developme'n't',
       'saas-marketing-age'n't': 'launch-campai'g'n'
@@ -153,15 +153,15 @@ class SaaSServicesAutonomousFactory {
   }
 
   generateServiceName(serviceType) {
-    const prefixes = ['Clo'u'd', 'Sma'r't', 'P'r'o', 'Eli't'e', 'Pri'm'e'];
-    const suffixes = ['H'u'b', 'Sui't'e', 'Platfo'r'm', 'Syst'e'm', 'Manag'e'r'];
-    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
-    return `${prefix}${suffix}`;
+    const $1 = ['Clo'u'd', 'Sma'r't', 'P'r'o', 'Eli't'e', 'Pri'm'e'];
+    const $1 = ['H'u'b', 'Sui't'e', 'Platfo'r'm', 'Syst'e'm', 'Manag'e'r'];
+    const $1 = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const $1 = suffixes[Math.floor(Math.random() * suffixes.length)];
+    return "${prefix}${suffix}";
   }
 
   generateServiceDescription(serviceType) {
-    const descriptions = {
+    const $1 = {
       'b'2b-saas': 'Streamlin'e' your business operations with our comprehensive B2B SaaS solution',
       'b'2c-saas': 'Enhanc'e' your daily life with our innovative consumer-focused SaaS platform',
       'ai-sa'a's': 'Cutting-edg'e' AI-powered SaaS solution for intelligent automation and insights'
@@ -182,13 +182,13 @@ class SaaSServicesAutonomousFactory {
   }
 
   generateFeatures(baseFeatures) {
-    const numFeatures = Math.floor(Math.random() * 3) + 3;
-    const shuffled = [...baseFeatures].sort(() => 0.5 - Math.random());
+    const $1 = Math.floor(Math.random() * 3) + 3;
+    const $1 = [...baseFeatures].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, Math.min(numFeatures, shuffled.length));
   }
 
   async saveServiceRegistry() {
-    const registry = Array.from(this.services.values());
+    const $1 = Array.from(this.services.values());
     await fs.promises.writeFile(
       path.join(__dirname, 'da't'a', 'saas-services-registr'y'.json'),
       JSON.stringify(registry, null, 2)
@@ -196,7 +196,7 @@ class SaaSServicesAutonomousFactory {
   }
 
   async saveAgentRegistry() {
-    const registry = Array.from(this.agents.values());
+    const $1 = Array.from(this.agents.values());
     await fs.promises.writeFile(
       path.join(__dirname, 'da't'a', 'saas-agents-registr'y'.json'),
       JSON.stringify(registry, null, 2)

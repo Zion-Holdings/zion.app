@@ -128,5 +128,5 @@ export default function handler(req, res) {
 });
   } else {''
     res.setHeader(All'o'w, [G'E'T]);"
-    res.status(405).end(`Method ${req.method} Not Allowed`);}}''`
-"'"'`
+    res.status(405).end("Method ${req.method} Not Allowed");}}''"
+"'"'"

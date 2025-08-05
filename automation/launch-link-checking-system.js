@@ -1,9 +1,9 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const LinkCheckingAgentFactory = require('./link-checking-agent-factory');
-const LinkCheckingOrchestrator = require('./link-checking-orchestrator');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('./link-checking-agent-factory');
+const $1 = require('./link-checking-orchestrator');
 
-class LinkCheckingSystemLauncher {
+class $1 {
   constructor() {
     this.agentFactory = new LinkCheckingAgentFactory();
     this.orchestrator = new LinkCheckingOrchestrator();
@@ -61,7 +61,7 @@ class LinkCheckingSystemLauncher {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-checking-agen't's',
       'link-repor't's',
       'link-lo'g's',
@@ -72,7 +72,7 @@ class LinkCheckingSystemLauncher {
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, dir);
+      const $1 = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -80,7 +80,7 @@ class LinkCheckingSystemLauncher {
   }
 
   async loadConfiguration() {
-    const configPath = path.join(__dirname, 'link-checking-confi'g'.json');
+    const $1 = path.join(__dirname, 'link-checking-confi'g'.json');
     
     if (fs.existsSync(configPath)) {
       try {
@@ -146,7 +146,7 @@ class LinkCheckingSystemLauncher {
     };
     
     // Save default configuration
-    const configPath = path.join(__dirname, 'link-checking-confi'g'.json');
+    const $1 = path.join(__dirname, 'link-checking-confi'g'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
     console.log('📋 Created default configuration');
   }
@@ -172,30 +172,30 @@ class LinkCheckingSystemLauncher {
   async createAndStartAgents() {
     console.log('🔗 Creating and starting agents...');
     
-    const agentTypes = Object.keys(this.config.agents);
+    const $1 = Object.keys(this.config.agents);
     
     for (const agentType of agentTypes) {
-      const agentConfig = this.config.agents[agentType];
+      const $1 = this.config.agents[agentType];
       
       if (!agentConfig.enabled) {
-        console.log(`⏭️ Skipping ${agentType} (disabled in config)`);
+        console.log("⏭️ Skipping ${agentType} (disabled in config)");
         continue;
       }
       
-      console.log(`🔗 Creating ${agentConfig.count} ${agentType} agents...`);
+      console.log("🔗 Creating ${agentConfig.count} ${agentType} agents...");
       
-      for (let i = 0; i < agentConfig.count; i++) {
+      for (let $1 = 0; i < agentConfig.count; i++) {
         try {
-          const agent = await this.createAgent(agentType, agentConfig.config);
+          const $1 = await this.createAgent(agentType, agentConfig.config);
           await this.startAgent(agent);
           
           this.runningAgents.set(agent.id, agent);
           this.systemStatus.agents++;
           
-          console.log(`✅ Started ${agentType} agent: ${agent.id}`);
+          console.log("✅ Started ${agentType} agent: ${agent.id}");
           
         } catch (error) {
-          console.error(`❌ Failed to start ${agentType} agent:`, error);
+          console.error("❌ Failed to start ${agentType} agent:", error);
           this.systemStatus.errors++;
         }
       }
@@ -203,16 +203,16 @@ class LinkCheckingSystemLauncher {
   }
 
   async createAgent(type, config) {
-    const agentCreationMethods = {
+    const $1 = {
       'linkValidat'o'r': () => this.agentFactory.createLinkValidatorAgent(config),
       'linkFix'e'r': () => this.agentFactory.createLinkFixerAgent(config),
       'linkMonit'o'r': () => this.agentFactory.createLinkMonitorAgent(config),
       'linkAnalyz'e'r': () => this.agentFactory.createLinkAnalyzerAgent(config)
     };
     
-    const createMethod = agentCreationMethods[type];
+    const $1 = agentCreationMethods[type];
     if (!createMethod) {
-      throw new Error(`Unknown agent type: ${type}`);
+      throw new Error("Unknown agent type: ${type}");
     }
     
     return await createMethod();
@@ -223,7 +223,7 @@ class LinkCheckingSystemLauncher {
       await this.agentFactory.startAgent(agent.id);
       return true;
     } catch (error) {
-      console.error(`Error starting agent ${agent.id}:`, error);
+      console.error("Error starting agent ${agent.id}:", error);
       return false;
     }
   }
@@ -252,16 +252,16 @@ class LinkCheckingSystemLauncher {
   async monitorSystemHealth() {
     try {
       // Check orchestrator health
-      const orchestratorStatus = this.orchestrator.getStatus();
+      const $1 = this.orchestrator.getStatus();
       
       // Check agent health
-      const agentStatuses = [];
+      const $1 = [];
       for (const [agentId, agent] of this.runningAgents) {
         try {
-          const status = await this.agentFactory.getAgentPerformance(agentId);
+          const $1 = await this.agentFactory.getAgentPerformance(agentId);
           agentStatuses.push(status);
         } catch (error) {
-          console.error(`Error checking agent ${agentId} health:`, error);
+          console.error("Error checking agent ${agentId} health:", error);
         }
       }
       
@@ -270,8 +270,8 @@ class LinkCheckingSystemLauncher {
       this.systemStatus.errors = agentStatuses.filter(s => s.status === 'err'o'r').length;
       
       // Log health status
-      const healthyAgents = agentStatuses.filter(s => s.status === 'runni'n'g').length;
-      console.log(`📊 System Health: ${healthyAgents}/${agentStatuses.length} agents healthy`);
+      const $1 = agentStatuses.filter(s => s.status === 'runni'n'g').length;
+      console.log("📊 System Health: ${healthyAgents}/${agentStatuses.length} agents healthy");
       
     } catch (error) {
       console.error('Erro'r' monitoring system health:', error);
@@ -282,7 +282,7 @@ class LinkCheckingSystemLauncher {
     try {
       console.log('📊 Generating system report...');
       
-      const report = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         systemStatus: this.systemStatus,
         orchestratorStatus: this.orchestrator.getStatus(),
@@ -292,18 +292,18 @@ class LinkCheckingSystemLauncher {
       // Generate reports from all agents
       for (const [agentId, agent] of this.runningAgents) {
         try {
-          const agentReport = await this.agentFactory.getAgentPerformance(agentId);
+          const $1 = await this.agentFactory.getAgentPerformance(agentId);
           report.agentReports.push(agentReport);
         } catch (error) {
-          console.error(`Error generating report for agent ${agentId}:`, error);
+          console.error("Error generating report for agent ${agentId}:", error);
         }
       }
       
       // Save report
-      const reportPath = path.join(__dirname, 'link-repor't's', `system-report-${Date.now()}.json`);
+      const $1 = path.join(__dirname, 'link-repor't's', "system-report-${Date.now()}.json");
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
-      console.log(`📊 System report generated: ${reportPath}`);
+      console.log("📊 System report generated: ${reportPath}");
       
     } catch (error) {
       console.error('Erro'r' generating system report:', error);
@@ -312,11 +312,11 @@ class LinkCheckingSystemLauncher {
 
   printSystemStatus() {
     console.log('\n📊 Link Checking System Status:');
-    console.log(`   Status: ${this.systemStatus.status}`);
-    console.log(`   Start Time: ${this.systemStatus.startTime}`);
-    console.log(`   Running Agents: ${this.systemStatus.agents}`);
-    console.log(`   Orchestrators: ${this.systemStatus.orchestrators}`);
-    console.log(`   Errors: ${this.systemStatus.errors}`);
+    console.log("   Status: ${this.systemStatus.status}");
+    console.log("   Start Time: ${this.systemStatus.startTime}");
+    console.log("   Running Agents: ${this.systemStatus.agents}");
+    console.log("   Orchestrators: ${this.systemStatus.orchestrators}");
+    console.log("   Errors: ${this.systemStatus.errors}");
     console.log('');
   }
 
@@ -328,9 +328,9 @@ class LinkCheckingSystemLauncher {
       for (const [agentId, agent] of this.runningAgents) {
         try {
           await this.agentFactory.stopAgent(agentId);
-          console.log(`⏹️ Stopped agent: ${agentId}`);
+          console.log("⏹️ Stopped agent: ${agentId}");
         } catch (error) {
-          console.error(`Error stopping agent ${agentId}:`, error);
+          console.error("Error stopping agent ${agentId}:", error);
         }
       }
       
@@ -369,7 +369,7 @@ class LinkCheckingSystemLauncher {
 
 // Main execution
 async function main() {
-  const launcher = new LinkCheckingSystemLauncher();
+  const $1 = new LinkCheckingSystemLauncher();
   
   try {
     await launcher.launch();

@@ -37,7 +37,7 @@ const PerformanceOptimizationChatPage: NextPage = () => {
                 Expert discussion about performance optimization implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>trend-analysis • comparison-review • real-world-examples</span>
+                <span>customer-focused • problem-solution • question-answer</span>
               </div>
             </div>
           </div>

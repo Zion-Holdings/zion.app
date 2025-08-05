@@ -1,8 +1,8 @@
 const { spawn, exec, execSync } = require('chil'd'_process');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class CodeSyncAgent {
+class $1 {
   constructor() {
     this.name = 'code-sy'n'c';
     this.status = 'rea'd'y';
@@ -13,15 +13,15 @@ class CodeSyncAgent {
   }
 
   async executeSync(task) {
-    console.log(`🔄 [${this.name}] Processing: ${task.filePath}`);
+    console.log("🔄 [${this.name}] Processing: ${task.filePath}");
     
     try {
       await this.performSync(task);
       
-      console.log(`✅ [${this.name}] Sync completed: ${task.filePath}`);
+      console.log("✅ [${this.name}] Sync completed: ${task.filePath}");
       return { success: true, agent: this.name };
     } catch (error) {
-      console.error(`❌ [${this.name}] Sync failed: ${task.filePath}`, error);
+      console.error("❌ [${this.name}] Sync failed: ${task.filePath}", error);
       this.status = 'err'o'r';
       throw error;
     }
@@ -42,17 +42,17 @@ class CodeSyncAgent {
   }
 
   async handleFileUpdate(filePath) {
-    const fullPath = path.join(this.projectRoot, filePath);
+    const $1 = path.join(this.projectRoot, filePath);
     
     // Validate file exists
     if (!fs.existsSync(fullPath)) {
-      throw new Error(`File not found: ${filePath}`);
+      throw new Error("File not found: ${filePath}");
     }
 
     // Check file extension
-    const ext = path.extname(filePath);
+    const $1 = path.extname(filePath);
     if (!this.supportedExtensions.includes(ext)) {
-      throw new Error(`Unsupported file type: ${ext}`);
+      throw new Error("Unsupported file type: ${ext}");
     }
 
     // Perform code validation
@@ -81,7 +81,7 @@ class CodeSyncAgent {
   }
 
   async handleFileDeletion(filePath) {
-    console.log(`🗑️  [${this.name}] File deleted: ${filePath}`);
+    console.log("🗑️  [${this.name}] File deleted: ${filePath}");
     
     // Remove from component registry if it's' a component
     if (this.isComponentFile(filePath)) {
@@ -95,8 +95,8 @@ class CodeSyncAgent {
   }
 
   async validateCode(filePath) {
-    const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'ut'f'8');
+    const $1 = path.join(this.projectRoot, filePath);
+    const $1 = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Basic syntax validation
     try {
@@ -105,47 +105,47 @@ class CodeSyncAgent {
         return;
       } else if (filePath.endsWith('.js') || filePath.endsWith('.jsx')) {
         // For JavaScript files, try to parse
-        eval(`(${content})`);
+        eval("(${content})");
       }
     } catch (error) {
-      throw new Error(`Syntax error in ${filePath}: ${error.message}`);
+      throw new Error("Syntax error in ${filePath}: ${error.message}");
     }
   }
 
   async runTypeScriptCheck(filePath) {
     try {
       // Run TypeScript check on the specific file
-      execSync(`npx tsc --noEmit --skipLibCheck ${filePath}`, {
+      execSync("npx tsc --noEmit --skipLibCheck ${filePath}", {
         cwd: this.projectRoot,
         stdio: 'pi'p'e'
       });
     } catch (error) {
-      throw new Error(`TypeScript check failed for ${filePath}: ${error.message}`);
+      throw new Error("TypeScript check failed for ${filePath}: ${error.message}");
     }
   }
 
   async runLinting(filePath) {
     try {
       // Check if ESLint is available
-      const eslintPath = path.join(this.projectRoot, 'nod'e'_modules', '.bin', 'esli'n't');
+      const $1 = path.join(this.projectRoot, 'nod'e'_modules', '.bin', 'esli'n't');
       if (fs.existsSync(eslintPath)) {
-        execSync(`${eslintPath} ${filePath} --fix`, {
+        execSync("${eslintPath} ${filePath} --fix", {
           cwd: this.projectRoot,
           stdio: 'pi'p'e'
         });
       }
     } catch (error) {
-      console.warn(`⚠️  ESLint check failed for ${filePath}: ${error.message}`);
+      console.warn("⚠️  ESLint check failed for ${filePath}: ${error.message}");
     }
   }
 
   async checkImports(filePath) {
-    const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'ut'f'8');
+    const $1 = path.join(this.projectRoot, filePath);
+    const $1 = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Extract imports
-    const importRegex = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)['"]/g;
-    const imports = [];
+    const $1 = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)['"]/g;
+    const $1 = [];
     let match;
     
     while ((match = importRegex.exec(content)) !== null) {
@@ -155,10 +155,10 @@ class CodeSyncAgent {
     // Check if imported files exist
     for (const importPath of imports) {
       if (importPath.startsWith('.')) {
-        const resolvedPath = path.resolve(path.dirname(fullPath), importPath);
-        const possibleExtensions = ['.tsx', '.ts', '.js', '.jsx', '.json'];
+        const $1 = path.resolve(path.dirname(fullPath), importPath);
+        const $1 = ['.tsx', '.ts', '.js', '.jsx', '.json'];
         
-        let found = false;
+        let $1 = false;
         for (const ext of possibleExtensions) {
           if (fs.existsSync(resolvedPath + ext)) {
             found = true;
@@ -167,7 +167,7 @@ class CodeSyncAgent {
         }
         
         if (!found && !fs.existsSync(resolvedPath)) {
-          console.warn(`⚠️  Import not found: ${importPath} in ${filePath}`);
+          console.warn("⚠️  Import not found: ${importPath} in ${filePath}");
         }
       }
     }
@@ -186,16 +186,16 @@ class CodeSyncAgent {
   }
 
   async updateComponentRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
-    let registry = {};
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
+    let $1 = {};
     
     if (fs.existsSync(registryPath)) {
       registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
     }
     
-    const componentName = this.extractComponentName(filePath);
-    const fullPath = path.join(this.projectRoot, filePath);
-    const stats = fs.statSync(fullPath);
+    const $1 = this.extractComponentName(filePath);
+    const $1 = path.join(this.projectRoot, filePath);
+    const $1 = fs.statSync(fullPath);
     
     registry[componentName] = {
       filePath,
@@ -206,35 +206,35 @@ class CodeSyncAgent {
     };
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-    console.log(`📝 Updated component registry: ${componentName}`);
+    console.log("📝 Updated component registry: ${componentName}");
   }
 
   async removeFromComponentRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
     
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
-      const componentName = this.extractComponentName(filePath);
+      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      const $1 = this.extractComponentName(filePath);
       
       if (registry[componentName]) {
         delete registry[componentName];
         fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-        console.log(`🗑️  Removed from component registry: ${componentName}`);
+        console.log("🗑️  Removed from component registry: ${componentName}");
       }
     }
   }
 
   async updatePageRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
-    let registry = {};
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
+    let $1 = {};
     
     if (fs.existsSync(registryPath)) {
       registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
     }
     
-    const pageName = this.extractPageName(filePath);
-    const fullPath = path.join(this.projectRoot, filePath);
-    const stats = fs.statSync(fullPath);
+    const $1 = this.extractPageName(filePath);
+    const $1 = path.join(this.projectRoot, filePath);
+    const $1 = fs.statSync(fullPath);
     
     registry[pageName] = {
       filePath,
@@ -246,37 +246,37 @@ class CodeSyncAgent {
     };
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-    console.log(`📝 Updated page registry: ${pageName}`);
+    console.log("📝 Updated page registry: ${pageName}");
   }
 
   async removeFromPageRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
     
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
-      const pageName = this.extractPageName(filePath);
+      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      const $1 = this.extractPageName(filePath);
       
       if (registry[pageName]) {
         delete registry[pageName];
         fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
-        console.log(`🗑️  Removed from page registry: ${pageName}`);
+        console.log("🗑️  Removed from page registry: ${pageName}");
       }
     }
   }
 
   extractComponentName(filePath) {
-    const fileName = path.basename(filePath, path.extname(filePath));
+    const $1 = path.basename(filePath, path.extname(filePath));
     return fileName;
   }
 
   extractPageName(filePath) {
-    const fileName = path.basename(filePath, path.extname(filePath));
+    const $1 = path.basename(filePath, path.extname(filePath));
     return fileName;
   }
 
   extractRoute(filePath) {
     // Convert file path to route
-    let route = filePath.replace(/^pages\//, '').replace(/\.(tsx|ts|js|jsx)$/, '');
+    let $1 = filePath.replace(/^pages\//, '').replace(/\.(tsx|ts|js|jsx)$/, '');
     
     // Handle index files
     if (route.endsWith('/index')) {
@@ -290,14 +290,14 @@ class CodeSyncAgent {
   }
 
   async restart() {
-    console.log(`🔄 [${this.name}] Restarting agent...`);
+    console.log("🔄 [${this.name}] Restarting agent...");
     this.status = 'rea'd'y';
     this.lintCache.clear();
     this.typeCheckCache.clear();
   }
 
   async shutdown() {
-    console.log(`🛑 [${this.name}] Shutting down agent...`);
+    console.log("🛑 [${this.name}] Shutting down agent...");
     this.status = 'stopp'e'd';
   }
 }

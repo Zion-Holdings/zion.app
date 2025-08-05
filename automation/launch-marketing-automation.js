@@ -1,13 +1,13 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
-const util = require('ut'i'l');
-const cron = require('node-cr'o'n');
-const moment = require('mome'n't');
+const $1 = require('ut'i'l');
+const $1 = require('node-cr'o'n');
+const $1 = require('mome'n't');
 ;
-const execAsync = util.promisify(exec);
+const $1 = util.promisify(exec);
 
-class MarketingAutomationLauncher {
+class $1 {
     constructor() {
         this.baseDir = path.join(__dirname);
         this.configPath = path.join(this.baseDir, 'marketing-confi'g'.json');
@@ -96,7 +96,7 @@ class MarketingAutomationLauncher {
         
         try {
             // Ensure all directories exist
-            const dirs = [
+            const $1 = [
                 'marketing-agen't's',
                 'marketing-resear'c'h',
                 'marketing-campaig'n's',
@@ -139,7 +139,7 @@ class MarketingAutomationLauncher {
         console.log('📋 Loading configuration...');
         
         try {
-            const config = await fs.readJson(this.configPath);
+            const $1 = await fs.readJson(this.configPath);
             this.config = config;
             
             console.log('✅ Configuration loaded successfully');
@@ -157,13 +157,13 @@ class MarketingAutomationLauncher {
             // Start marketing orchestrator
             console.log('Startin'g' marketing orchestrator...');
             this.components.orchestrator = require('./autonomous-marketing-orchestrator.js');
-            const orchestrator = new this.components.orchestrator();
+            const $1 = new this.components.orchestrator();
             await orchestrator.startMarketingOrchestration();
             
             // Start agent factory
             console.log('Startin'g' agent factory...');
             this.components.agentFactory = require('./marketing-agent-factory.js');
-            const agentFactory = new this.components.agentFactory();
+            const $1 = new this.components.agentFactory();
             await agentFactory.execute();
             
             this.systemStatus.components.orchestrator = 'runni'n'g';
@@ -184,43 +184,43 @@ class MarketingAutomationLauncher {
             // Start social media agent
             console.log('Startin'g' social media agent...');
             this.components.socialMediaAgent = require('./marketing-agents/social-media-agent.js');
-            const socialMediaAgent = new this.components.socialMediaAgent();
+            const $1 = new this.components.socialMediaAgent();
             await socialMediaAgent.execute();
             
             // Start content creation agent
             console.log('Startin'g' content creation agent...');
             this.components.contentCreationAgent = require('./marketing-agents/content-creation-agent.js');
-            const contentCreationAgent = new this.components.contentCreationAgent();
+            const $1 = new this.components.contentCreationAgent();
             await contentCreationAgent.execute();
             
             // Start email campaign agent
             console.log('Startin'g' email campaign agent...');
             this.components.emailCampaignAgent = require('./marketing-agents/email-campaign-agent.js');
-            const emailCampaignAgent = new this.components.emailCampaignAgent();
+            const $1 = new this.components.emailCampaignAgent();
             await emailCampaignAgent.execute();
             
             // Start SEO optimization agent
             console.log('Startin'g' SEO optimization agent...');
             this.components.seoOptimizationAgent = require('./marketing-agents/seo-optimization-agent.js');
-            const seoOptimizationAgent = new this.components.seoOptimizationAgent();
+            const $1 = new this.components.seoOptimizationAgent();
             await seoOptimizationAgent.execute();
             
             // Start influencer outreach agent
             console.log('Startin'g' influencer outreach agent...');
             this.components.influencerOutreachAgent = require('./marketing-agents/influencer-outreach-agent.js');
-            const influencerOutreachAgent = new this.components.influencerOutreachAgent();
+            const $1 = new this.components.influencerOutreachAgent();
             await influencerOutreachAgent.execute();
             
             // Start ad campaign agent
             console.log('Startin'g' ad campaign agent...');
             this.components.adCampaignAgent = require('./marketing-agents/ad-campaign-agent.js');
-            const adCampaignAgent = new this.components.adCampaignAgent();
+            const $1 = new this.components.adCampaignAgent();
             await adCampaignAgent.execute();
             
             // Start analytics tracking agent
             console.log('Startin'g' analytics tracking agent...');
             this.components.analyticsTrackingAgent = require('./marketing-agents/analytics-tracking-agent.js');
-            const analyticsTrackingAgent = new this.components.analyticsTrackingAgent();
+            const $1 = new this.components.analyticsTrackingAgent();
             await analyticsTrackingAgent.execute();
             
             this.systemStatus.components.socialMediaAgent = 'runni'n'g';
@@ -335,7 +335,7 @@ class MarketingAutomationLauncher {
         console.log('🏥 Performing health check...');
         
         try {
-            const healthStatus = {
+            const $1 = {
                 timestamp: new Date().toISOString(),
                 system: 'healt'h'y',
                 components: {},
@@ -348,12 +348,12 @@ class MarketingAutomationLauncher {
                     healthStatus.components[name] = 'healt'h'y';
                 } else {
                     healthStatus.components[name] = 'unhealt'h'y';
-                    healthStatus.issues.push(`${name} component not running`);
+                    healthStatus.issues.push("${name} component not running");
                 }
             }
             
             // Check system resources
-            const systemResources = await this.checkSystemResources();
+            const $1 = await this.checkSystemResources();
             healthStatus.systemResources = systemResources;
             
             // Save health status
@@ -370,7 +370,7 @@ class MarketingAutomationLauncher {
         console.log('📊 Generating performance report...');
         
         try {
-            const report = {
+            const $1 = {
                 timestamp: new Date().toISOString(),
                 systemStatus: this.systemStatus,
                 performance: this.systemStatus.performance,
@@ -392,7 +392,7 @@ class MarketingAutomationLauncher {
         console.log('💾 Performing backup...');
         
         try {
-            const backupDir = path.join(this.baseDir, 'backu'p's', moment().format('YYYY-MM-DD-HH-'m'm'));
+            const $1 = path.join(this.baseDir, 'backu'p's', moment().format('YYYY-MM-DD-HH-'m'm'));
             await fs.ensureDir(backupDir);
             
             // Backup configuration
@@ -422,32 +422,32 @@ class MarketingAutomationLauncher {
         
         try {
             // Clean up old log files (older than 7 days)
-            const logsDir = path.join(this.baseDir, 'lo'g's');
-            const logFiles = await fs.readdir(logsDir);
+            const $1 = path.join(this.baseDir, 'lo'g's');
+            const $1 = await fs.readdir(logsDir);
             
             for (const file of logFiles) {
-                const filePath = path.join(logsDir, file);
-                const stats = await fs.stat(filePath);
-                const daysOld = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
+                const $1 = path.join(logsDir, file);
+                const $1 = await fs.stat(filePath);
+                const $1 = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
                 
                 if (daysOld > 7) {
                     await fs.remove(filePath);
-                    console.log(`Removed old log file: ${file}`);
+                    console.log("Removed old log file: ${file}");
                 }
             }
             
             // Clean up old analytics files (older than 30 days)
-            const analyticsDir = path.join(this.baseDir, 'marketing-analyti'c's', 'metri'c's');
-            const analyticsFiles = await fs.readdir(analyticsDir);
+            const $1 = path.join(this.baseDir, 'marketing-analyti'c's', 'metri'c's');
+            const $1 = await fs.readdir(analyticsDir);
             
             for (const file of analyticsFiles) {
-                const filePath = path.join(analyticsDir, file);
-                const stats = await fs.stat(filePath);
-                const daysOld = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
+                const $1 = path.join(analyticsDir, file);
+                const $1 = await fs.stat(filePath);
+                const $1 = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
                 
                 if (daysOld > 30) {
                     await fs.remove(filePath);
-                    console.log(`Removed old analytics file: ${file}`);
+                    console.log("Removed old analytics file: ${file}");
                 }
             }
             
@@ -462,7 +462,7 @@ class MarketingAutomationLauncher {
         // Check if all components are running
         for (const [name, component] of Object.entries(this.components)) {
             if (!component) {
-                console.warn(`⚠️  Component ${name} is not running`);
+                console.warn("⚠️  Component ${name} is not running");
                 this.systemStatus.components[name] = 'unhealt'h'y';
             }
         }
@@ -506,7 +506,7 @@ class MarketingAutomationLauncher {
     }
 
     async generateRecommendations() {
-        const recommendations = [];
+        const $1 = [];
         
         // Generate recommendations based on system status
         if (this.systemStatus.performance.activeAgents < this.systemStatus.performance.totalAgents) {
@@ -521,7 +521,7 @@ class MarketingAutomationLauncher {
     }
 
     async createDefaultConfiguration() {
-        const config = {
+        const $1 = {
             marketing: {
                 enabled: true,
                 agents: {
@@ -559,7 +559,7 @@ class MarketingAutomationLauncher {
     }
 
     async createDefaultStatus() {
-        const status = {
+        const $1 = {
             status: 'inacti'v'e',
             lastRun: null,
             totalRuns: 0,
@@ -583,13 +583,13 @@ class MarketingAutomationLauncher {
     }
 
     async saveHealthStatus(healthStatus) {
-        const healthPath = path.join(this.baseDir, 'marketing-analyti'c's', 'heal't'h', `health-${Date.now()}.json`);
+        const $1 = path.join(this.baseDir, 'marketing-analyti'c's', 'heal't'h', "health-${Date.now()}.json");
         await fs.ensureDir(path.dirname(healthPath));
         await fs.writeJson(healthPath, healthStatus, { spaces: 2 });
     }
 
     async savePerformanceReport(report) {
-        const reportPath = path.join(this.baseDir, 'marketing-analyti'c's', 'repor't's', `performance-report-${Date.now()}.json`);
+        const $1 = path.join(this.baseDir, 'marketing-analyti'c's', 'repor't's', "performance-report-${Date.now()}.json");
         await fs.ensureDir(path.dirname(reportPath));
         await fs.writeJson(reportPath, report, { spaces: 2 });
     }
@@ -616,7 +616,7 @@ class MarketingAutomationLauncher {
 
 // Main execution
 async function main() {
-    const launcher = new MarketingAutomationLauncher();
+    const $1 = new MarketingAutomationLauncher();
     
     try {
         await launcher.launch();

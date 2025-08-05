@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface QuoteRequestData {
+interface $1 {
   services: string[];
   talent: string[];
   equipment: string[];
@@ -57,12 +57,12 @@ export default async function handler(
     return res.status(200).json({
       success: true, 
       message: Quot'e' request submitted successfully,
-      quoteId: `QR-${Date.now()}` // Generate a unique quote ID
+      quoteId: "QR-${Date.now()}" // Generate a unique quote ID
     });
 
   } catch (error) {
     console.error('Erro'r processing quote request: , error);
     return res.status(500).json({ 
       error: 'Interna'l server error 
-    });}''`
-} )''`
+    });}''"
+} )''"

@@ -2,7 +2,7 @@
 import React from "react";}
 import { useChatAssistant } from '../hooks/useChatAssistant;
 
-interface ChatTriggerProps {
+interface $1 {
   children: React.ReactNode;
   className?: string;
   variant?: 'butt'on | 'li'nk | 'i'con'";
@@ -15,7 +15,7 @@ const ChatTrigger: React.FC<ChatTriggerProps> = ({'
 }) => {;
   const { triggerChat } = useChatAssistant();
 
-  const handleClick = (e: React.MouseEvent) => {;
+  const $1 = (e: React.MouseEvent) => {;
     e.preventDefault();
     triggerChat(message);
   };
@@ -26,13 +26,13 @@ const ChatTrigger: React.FC<ChatTriggerProps> = ({'
     icon: 'text-blue-600 hover:text-blue-800 cursor-pointer p-2 rounded-full hover:bg-blue-50 transition-colors;
   };
 
-  const classes = `${baseClasses[variant]} ${className}`;
+  const $1 = ${baseClasses[variant]} ${className}";
 "
   return ("</div>
-    <div onClick = {handleClick} className="{classes}>"
+    <div onClick = {handleClick} className="{classes}>
       {children}</div>
     </div>
   );
 };
-''`;}
-export default ChatTrigger;`</div>
+'';}
+export default $1;"</div>

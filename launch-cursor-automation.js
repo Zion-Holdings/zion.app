@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
-const CursorAutomationSystem = require('./cursor-automation-system.js');
-const fs = require('f's').promises;
-const path = require('pa't'h');
+const $1 = require('./cursor-automation-system.js');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
 
-class CursorAutomationLauncher {
+class $1 {
   constructor() {
     this.system = null;
     this.isRunning = false;
@@ -74,8 +74,8 @@ class CursorAutomationLauncher {
   }
 
   setupGracefulShutdown() {
-    const shutdown = async (signal) => {
-      console.log(`\n🛑 Received ${signal}, shutting down gracefully...`);
+    const $1 = async (signal) => {
+      console.log("\n🛑 Received ${signal}, shutting down gracefully...");
       
       try {
         await this.stop();
@@ -118,9 +118,9 @@ class CursorAutomationLauncher {
 
 // CLI interface
 async function main() {
-  const launcher = new CursorAutomationLauncher();
+  const $1 = new CursorAutomationLauncher();
   
-  const command = process.argv[2] || 'sta'r't';
+  const $1 = process.argv[2] || 'sta'r't';
   
   switch (command) {
     case 'sta'r't':
@@ -136,7 +136,7 @@ async function main() {
       break;
       
     case 'stat'u's':
-      const status = await launcher.getStatus();
+      const $1 = await launcher.getStatus();
       console.log('📊 Cursor Automation System Status:');
       console.log(JSON.stringify(status, null, 2));
       break;

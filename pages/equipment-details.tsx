@@ -11,19 +11,19 @@ export default function EquipmentDetails() {
         <title>Equipment-details</title></div>
         <meta name = description content=Page for equipment-details functionality > </meta" name="description content=Page for equipment-details" functionality" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
       <div className=" relative z-10 container-responsive py-8 container-responsive>
-        "
+        
         {/* Background Effects */}"</div>
-        </div><div className=" fixed inset-0 z-0>"</div>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>"</div>
-        </div>"</div>
+        </div><div className=" fixed inset-0 z-0></div>
+          <div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
         <div className=" container mx-auto px-4 py-8" container-responsive">"
           
-            className=max-w-4xl mx-auto"></div>
+            className="max-w-4xl mx-auto></div>
             <h1 className="text-4xl:font-bold text-gray-900 mb-8 text-responsive-lg>
-              Equipment-details</div>
+              Equipment-details</div>"
             </h1>"</div>
-            <div className=" bg-white rounded-lg:shadow-lg p-8"></div>
+            <div className=" bg-white rounded-lg:shadow-lg p-8></div>
               <p>Content for equipment-details page will be implemented here.</p></div>
             </div></div>
           </motion.div></div>
@@ -34,7 +34,7 @@ export default function EquipmentDetails() {
   </div>
 </div>
   </div>
-"</div>
+</div>
   </div>"
 );
 }"'"</div>

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 async function testMCPIntegration() {
   console.log('🧪 Testing MCP Integration...');
   
   try {
     // Check if MCP files exist
-    const mcpFiles = [
+    const $1 = [
       'mcp-automation-syste'm'.js',
       'mcp-client-integratio'n'.js',
       'automatio'n'/mcp-integration-orchestrator.js',
@@ -19,17 +19,17 @@ async function testMCPIntegration() {
     console.log('📁 Checking MCP files...');
     for (const file of mcpFiles) {
       if (fs.existsSync(file)) {
-        console.log(`✅ ${file} exists`);
+        console.log("✅ ${file} exists");
       } else {
-        console.log(`❌ ${file} missing`);
+        console.log("❌ ${file} missing");
         return false;
       }
     }
 
     // Check if MCP dependencies are installed
     console.log('📦 Checking MCP dependencies...');
-    const packageJson = JSON.parse(fs.readFileSync('packag'e'.json', 'ut'f'8'));
-    const mcpDependencies = [
+    const $1 = JSON.parse(fs.readFileSync('packag'e'.json', 'ut'f'8'));
+    const $1 = [
       '@modelcontextprotocol/sdk',
       '@modelcontextprotocol/server-filesystem',
       '@modelcontextprotocol/server-memory',
@@ -39,16 +39,16 @@ async function testMCPIntegration() {
 
     for (const dep of mcpDependencies) {
       if (packageJson.dependencies[dep] || packageJson.devDependencies[dep]) {
-        console.log(`✅ ${dep} installed`);
+        console.log("✅ ${dep} installed");
       } else {
-        console.log(`❌ ${dep} not installed`);
+        console.log("❌ ${dep} not installed");
         return false;
       }
     }
 
     // Check if MCP scripts are added
     console.log('📝 Checking MCP scripts...');
-    const mcpScripts = [
+    const $1 = [
       'mc'p':start',
       'mc'p':client',
       'mc'p':orchestrator',
@@ -65,16 +65,16 @@ async function testMCPIntegration() {
 
     for (const script of mcpScripts) {
       if (packageJson.scripts[script]) {
-        console.log(`✅ ${script} script added`);
+        console.log("✅ ${script} script added");
       } else {
-        console.log(`❌ ${script} script missing`);
+        console.log("❌ ${script} script missing");
         return false;
       }
     }
 
     // Check MCP configuration
     console.log('⚙️ Checking MCP configuration...');
-    const mcpConfig = JSON.parse(fs.readFileSync('mcp-confi'g'.json', 'ut'f'8'));
+    const $1 = JSON.parse(fs.readFileSync('mcp-confi'g'.json', 'ut'f'8'));
     
     if (mcpConfig.mcp && mcpConfig.mcp.name === 'bolt-automation-m'c'p') {
       console.log('✅ MCP configuration valid');
@@ -85,7 +85,7 @@ async function testMCPIntegration() {
 
     // Check if tools are defined
     if (mcpConfig.tools && Object.keys(mcpConfig.tools).length > 0) {
-      console.log(`✅ ${Object.keys(mcpConfig.tools).length} tool categories defined`);
+      console.log("✅ ${Object.keys(mcpConfig.tools).length} tool categories defined");
     } else {
       console.log('❌ No tools defined');
       return false;
@@ -93,7 +93,7 @@ async function testMCPIntegration() {
 
     // Check if resources are defined
     if (mcpConfig.resources && Object.keys(mcpConfig.resources).length > 0) {
-      console.log(`✅ ${Object.keys(mcpConfig.resources).length} resources defined`);
+      console.log("✅ ${Object.keys(mcpConfig.resources).length} resources defined");
     } else {
       console.log('❌ No resources defined');
       return false;

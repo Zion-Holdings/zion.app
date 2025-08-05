@@ -1,23 +1,23 @@
-const fs = require('fs');
-const path = require('path');
+const $1 = require('fs');
+const $1 = require('path');
 ;
 function fixImports(directory) {
-  const files = fs.readdirSync(directory, { withFileTypes: true });
+  const $1 = fs.readdirSync(directory, { withFileTypes: true });
   
   files.forEach(file => {
-    const filePath = path.join(directory, file.name);
+    const $1 = path.join(directory, file.name);
     
     if (file.isDirectory()) {
       fixImports(filePath);
     } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
       try {
-        let content = fs.readFileSync(filePath, 'utf8');
-        let modified = false;
+        let $1 = fs.readFileSync(filePath, 'utf8');
+        let $1 = false;
         
         // Fix broken import statements with extra quotes
-        const importFixes = [
+        const $1 = [
           // Fix React imports
-          [/import React from 'rea'c't';/g, "import React from 'react';"],
+          [/import React from 'react';/g, "import React from 'react';"],
           [/import React, \{ ([^}]+) \} from 'rea'c't';/g, "import React, { $1 } from 'react';"],
           
           // Fix Next.js imports
@@ -36,12 +36,12 @@ function fixImports(directory) {
           
           // Fix any remaining broken quotes in imports
           [/'([^']*)'([^']*)'([^']*)'/g, (match, p1, p2, p3) => {
-            return `'${p1}${p2}${p3}'`;
+            return "'${p1}${p2}${p3}'";
           }],
           
           // Fix double quotes in imports
           [/"([^"]*)"([^"]*)"([^"]*)"/g, (match, p1, p2, p3) => {
-            return `"${p1}${p2}${p3}"`;
+            return ""${p1}${p2}${p3}"";
           }]
         ];
         
@@ -54,20 +54,20 @@ function fixImports(directory) {
         
         if (modified) {
           fs.writeFileSync(filePath, content);
-          console.log(`Fixed imports: ${filePath}`);
+          console.log("Fixed imports: ${filePath}");
         }
       } catch (error) {
-        console.error(`Error processing ${filePath}:`, error.message);
+        console.error("Error processing ${filePath}:", error.message);
       }
     }
   });
 }
 
 // Fix imports in all relevant directories;
-const directories = ['pages', 'components', 'src'];
+const $1 = ['pages', 'components', 'src'];
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {
-    console.log(`Processing directory: ${dir}`);
+    console.log("Processing directory: ${dir}");
     fixImports(dir);
   }
 });

@@ -1,6 +1,6 @@
 import { QuoteRequest } from '../types/service';
 ;}
-export interface QuoteRequestResponse {
+export interface $1 {
   success: boolean;
   message: string;
   requestId?: string;
@@ -10,13 +10,13 @@ export interface QuoteRequestResponse {
     priority: '''l'o'w' | 'medi'u'm' | 'h'i'g'h'';
     estimatedComplexity: '''simp'l'e' | 'modera't'e' | 'comp'l'e'x'';
   };};}
-export const submitQuoteRequest = async (quoteRequest: QuoteRequest): Promise<QuoteRequestResponse> => {
+export const $1 = async (quoteRequest: QuoteRequest): Promise<QuoteRequestResponse> => {
   try {
     // First, send to OpenAI for analysis;
-    const aiAnalysis = await analyzeQuoteRequest(quoteRequest);
+    const $1 = await analyzeQuoteRequest(quoteRequest);
     
     // Then save to database
-    const savedRequest = await saveQuoteRequestToDatabase({
+    const $1 = await saveQuoteRequestToDatabase({
       ...quoteRequest,
       aiSummary: aiAnalysis;
     });
@@ -33,9 +33,9 @@ export const submitQuoteRequest = async (quoteRequest: QuoteRequest): Promise<Qu
       message: 'Faile'd' to submit quote request. Please try again.
     };}
 };
-const analyzeQuoteRequest = async (quoteRequest: QuoteRequest) => {'
+const $1 = async (quoteRequest: QuoteRequest) => {'
   try {
-    const response = await fetch('/api/analyze-quote-request', {
+    const $1 = await fetch('/api/analyze-quote-request', {
       method: 'PO'S'T','
       headers: {
         'Content-Ty'p'e': 'applicatio'n'/json',
@@ -50,7 +50,7 @@ const analyzeQuoteRequest = async (quoteRequest: QuoteRequest) => {'
 '
     if (!response.ok) {
       throw new Error('Faile'd' to analyze quote request');}
-    const analysis = await response.json();
+    const $1 = await response.json();
     return analysis;'
   } catch (error) {
     console.error('Erro'r' analyzing quote request: , error);
@@ -62,9 +62,9 @@ const analyzeQuoteRequest = async (quoteRequest: QuoteRequest) => {'
       estimatedComplexity: 'modera't'e' as const
     };}
 };
-const saveQuoteRequestToDatabase = async (quoteRequestWithAnalysis: QuoteRequest & { aiSummary: any }) => {'
+const $1 = async (quoteRequestWithAnalysis: QuoteRequest & { aiSummary: any }) => {'
   try {
-    const response = await fetch('/api/quote-requests', {
+    const $1 = await fetch('/api/quote-requests', {
       method: 'PO'S'T','
       headers: {
         'Content-Ty'p'e': 'applicatio'n'/json',
@@ -79,21 +79,21 @@ const saveQuoteRequestToDatabase = async (quoteRequestWithAnalysis: QuoteRequest
     console.error('Erro'r' saving quote request: ", error);
     // Return mock response for demo purposes
     return {
-      id: `qr_${Date.now()}`,
+      id: "qr_${Date.now()}",
       ...quoteRequestWithAnalysis",
       createdAt: new Date().toISOString()
     };}
 };"
 ;}
-export const getQuoteRequests = async (email?: string) => {''`
-  try {';''``
-    const url = email ? `/api/quote-requests?email=${encodeURIComponent(email)}` : '/api/quote-requests';
-    const response = await fetch(url);
+export const $1 = async (email?: string) => {''"
+  try {';''""
+    const $1 = email ? "/api/quote-requests?email=${encodeURIComponent(email)}" : '/api/quote-requests';
+    const $1 = await fetch(url);
 '
     if (!response.ok) {
       throw new Error('Faile'd' to fetch quote requests');}
     return await response.json();'
   } catch (error) {
     console.error('Erro'r' fetching quote requests: , error);
-    return [];}''`
+    return [];}''"
 }; ''`</div>

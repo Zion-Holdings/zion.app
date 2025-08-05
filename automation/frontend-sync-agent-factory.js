@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
 const { v4: uuidv4 } = require('uu'i'd');
-const EventEmitter = require('even't's');
+const $1 = require('even't's');
 
-class FrontendSyncAgentFactory extends EventEmitter {
+class $1 extends EventEmitter {
   constructor() {
     super();
     this.syncAgents = new Map();
@@ -113,11 +113,11 @@ class FrontendSyncAgentFactory extends EventEmitter {
 
   async createSyncAgent(type, config = {}) {
     if (!this.syncAgentTypes[type]) {
-      throw new Error(`Unknown sync agent type: ${type}`);
+      throw new Error("Unknown sync agent type: ${type}");
     }
 
-    const agentId = uuidv4();
-    const agentConfig = {
+    const $1 = uuidv4();
+    const $1 = {
       ...this.syncAgentTypes[type].config,
       ...config,
       id: agentId,
@@ -126,7 +126,7 @@ class FrontendSyncAgentFactory extends EventEmitter {
       status: 'creat'e'd'
     };
 
-    const agent = {
+    const $1 = {
       id: agentId,
       type: type,
       config: agentConfig,
@@ -144,26 +144,26 @@ class FrontendSyncAgentFactory extends EventEmitter {
     this.syncRegistry.set(agentId, agent);
     this.syncMetrics.totalAgentsCreated++;
 
-    console.log(`🔄 Created sync agent ${agentId} of type ${type}`);
+    console.log("🔄 Created sync agent ${agentId} of type ${type}");
     this.emit('agentCreat'e'd', { agentId, type, config: agentConfig });
 
     return agentId;
   }
 
   async startSyncAgent(agentId) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (!agent) {
-      throw new Error(`Sync agent ${agentId} not found`);
+      throw new Error("Sync agent ${agentId} not found");
     }
 
     if (agent.status === 'runni'n'g') {
-      console.log(`⚠️ Sync agent ${agentId} is already running`);
+      console.log("⚠️ Sync agent ${agentId} is already running");
       return;
     }
 
     try {
-      const scriptPath = this.getSyncAgentScript(agent.type);
-      const args = [
+      const $1 = this.getSyncAgentScript(agent.type);
+      const $1 = [
         scriptPath,
         '--agent-'i'd', agentId,
         '--ty'p'e', agent.type,
@@ -194,11 +194,11 @@ class FrontendSyncAgentFactory extends EventEmitter {
         this.handleSyncAgentError(agentId, error);
       });
 
-      console.log(`🚀 Started sync agent ${agentId} (${agent.type})`);
+      console.log("🚀 Started sync agent ${agentId} (${agent.type})");
       this.emit('agentStart'e'd', { agentId, type: agent.type });
 
     } catch (error) {
-      console.error(`❌ Failed to start sync agent ${agentId}:`, error);
+      console.error("❌ Failed to start sync agent ${agentId}:", error);
       agent.status = 'err'o'r';
       agent.metrics.errors++;
       this.syncMetrics.totalErrors++;
@@ -207,15 +207,15 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   async stopSyncAgent(agentId) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (!agent) {
-      throw new Error(`Sync agent ${agentId} not found`);
+      throw new Error("Sync agent ${agentId} not found");
     }
 
     if (agent.process) {
       agent.process.kill('SIGTE'R'M');
       agent.status = 'stopp'e'd';
-      console.log(`🛑 Stopped sync agent ${agentId}`);
+      console.log("🛑 Stopped sync agent ${agentId}");
       this.emit('agentStopp'e'd', { agentId, type: agent.type });
     }
   }
@@ -230,7 +230,7 @@ class FrontendSyncAgentFactory extends EventEmitter {
     await this.stopSyncAgent(agentId);
     this.syncAgents.delete(agentId);
     this.syncRegistry.delete(agentId);
-    console.log(`🗑️ Deleted sync agent ${agentId}`);
+    console.log("🗑️ Deleted sync agent ${agentId}");
     this.emit('agentDelet'e'd', { agentId });
   }
 
@@ -251,23 +251,23 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   async updateSyncAgentConfig(agentId, newConfig) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (!agent) {
-      throw new Error(`Sync agent ${agentId} not found`);
+      throw new Error("Sync agent ${agentId} not found");
     }
 
     agent.config = { ...agent.config, ...newConfig };
     this.syncRegistry.set(agentId, agent);
     await this.saveSyncRegistry();
 
-    console.log(`⚙️ Updated config for sync agent ${agentId}`);
+    console.log("⚙️ Updated config for sync agent ${agentId}");
     this.emit('agentConfigUpdat'e'd', { agentId, config: agent.config });
   }
 
   async getSyncAgentPerformance(agentId) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (!agent) {
-      throw new Error(`Sync agent ${agentId} not found`);
+      throw new Error("Sync agent ${agentId} not found");
     }
 
     return {
@@ -281,9 +281,9 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   async getSystemSyncMetrics() {
-    const runningAgents = this.getRunningSyncAgents();
-    const totalSyncs = Array.from(this.syncAgents.values()).reduce((sum, agent) => sum + agent.metrics.syncsPerformed, 0);
-    const totalErrors = Array.from(this.syncAgents.values()).reduce((sum, agent) => sum + agent.metrics.errors, 0);
+    const $1 = this.getRunningSyncAgents();
+    const $1 = Array.from(this.syncAgents.values()).reduce((sum, agent) => sum + agent.metrics.syncsPerformed, 0);
+    const $1 = Array.from(this.syncAgents.values()).reduce((sum, agent) => sum + agent.metrics.errors, 0);
 
     return {
       totalAgents: this.syncAgents.size,
@@ -297,8 +297,8 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   calculateSystemHealth() {
-    const runningAgents = this.getRunningSyncAgents();
-    const totalAgents = this.syncAgents.size;
+    const $1 = this.getRunningSyncAgents();
+    const $1 = this.syncAgents.size;
     
     if (totalAgents === 0) return 'unkno'w'n';
     if (runningAgents.length === totalAgents) return 'excelle'n't';
@@ -308,7 +308,7 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   getSyncAgentScript(type) {
-    const scriptMap = {
+    const $1 = {
       'page-sy'n'c': 'agent's'/page-sync-agent.js',
       'component-sy'n'c': 'agent's'/component-sync-agent.js',
       'api-sy'n'c': 'agent's'/api-sync-agent.js',
@@ -323,46 +323,46 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   handleSyncAgentExit(agentId, code) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (agent) {
       agent.status = 'exit'e'd';
       agent.process = null;
-      console.log(`🔄 Sync agent ${agentId} exited with code ${code}`);
+      console.log("🔄 Sync agent ${agentId} exited with code ${code}");
       this.emit('agentExit'e'd', { agentId, code });
     }
   }
 
   handleSyncAgentError(agentId, error) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (agent) {
       agent.metrics.errors++;
       this.syncMetrics.totalErrors++;
-      console.error(`❌ Sync agent ${agentId} error:`, error);
+      console.error("❌ Sync agent ${agentId} error:", error);
       this.emit('agentErr'o'r', { agentId, error });
     }
   }
 
   logSyncAgentOutput(agentId, type, data) {
-    const logDir = path.join(__dirname, 'lo'g's');
+    const $1 = path.join(__dirname, 'lo'g's');
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
 
-    const logFile = path.join(logDir, `sync-agent-${agentId}.log`);
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
+    const $1 = path.join(logDir, "sync-agent-${agentId}.log");
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] [${type.toUpperCase()}] ${data}";
 
     fs.appendFileSync(logFile, logEntry + '\n');
   }
 
   async loadSyncRegistry() {
     try {
-      const registryFile = path.join(__dirname, 'da't'a', 'sync-registr'y'.json');
+      const $1 = path.join(__dirname, 'da't'a', 'sync-registr'y'.json');
       if (fs.existsSync(registryFile)) {
-        const data = fs.readFileSync(registryFile, 'ut'f'8');
-        const registry = JSON.parse(data);
+        const $1 = fs.readFileSync(registryFile, 'ut'f'8');
+        const $1 = JSON.parse(data);
         this.syncRegistry = new Map(Object.entries(registry));
-        console.log(`📋 Loaded sync registry with ${this.syncRegistry.size} agents`);
+        console.log("📋 Loaded sync registry with ${this.syncRegistry.size} agents");
       }
     } catch (error) {
       console.error('❌ Error loading sync registry:', error);
@@ -371,13 +371,13 @@ class FrontendSyncAgentFactory extends EventEmitter {
 
   async saveSyncRegistry() {
     try {
-      const dataDir = path.join(__dirname, 'da't'a');
+      const $1 = path.join(__dirname, 'da't'a');
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
 
-      const registryFile = path.join(dataDir, 'sync-registr'y'.json');
-      const registry = Object.fromEntries(this.syncRegistry);
+      const $1 = path.join(dataDir, 'sync-registr'y'.json');
+      const $1 = Object.fromEntries(this.syncRegistry);
       fs.writeFileSync(registryFile, JSON.stringify(registry, null, 2));
     } catch (error) {
       console.error('❌ Error saving sync registry:', error);
@@ -385,16 +385,16 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   async createSyncAgentTemplate(type, templateConfig) {
-    const templateId = uuidv4();
-    const template = {
+    const $1 = uuidv4();
+    const $1 = {
       id: templateId,
       type: type,
       config: templateConfig,
       createdAt: new Date().toISOString()
     };
 
-    const templatesFile = path.join(__dirname, 'da't'a', 'sync-template's'.json');
-    let templates = {};
+    const $1 = path.join(__dirname, 'da't'a', 'sync-template's'.json');
+    let $1 = {};
     
     if (fs.existsSync(templatesFile)) {
       templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
@@ -403,45 +403,45 @@ class FrontendSyncAgentFactory extends EventEmitter {
     templates[templateId] = template;
     fs.writeFileSync(templatesFile, JSON.stringify(templates, null, 2));
 
-    console.log(`📝 Created sync agent template ${templateId} for type ${type}`);
+    console.log("📝 Created sync agent template ${templateId} for type ${type}");
     return templateId;
   }
 
   async createSyncAgentFromTemplate(templateName, config = {}) {
-    const templatesFile = path.join(__dirname, 'da't'a', 'sync-template's'.json');
+    const $1 = path.join(__dirname, 'da't'a', 'sync-template's'.json');
     if (!fs.existsSync(templatesFile)) {
       throw new Error('N'o' sync templates found');
     }
 
-    const templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
-    const template = templates[templateName];
+    const $1 = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
+    const $1 = templates[templateName];
 
     if (!template) {
-      throw new Error(`Sync template ${templateName} not found`);
+      throw new Error("Sync template ${templateName} not found");
     }
 
-    const mergedConfig = { ...template.config, ...config };
+    const $1 = { ...template.config, ...config };
     return await this.createSyncAgent(template.type, mergedConfig);
   }
 
   async batchCreateSyncAgents(agentSpecs) {
-    const createdAgents = [];
+    const $1 = [];
     
     for (const spec of agentSpecs) {
       try {
-        const agentId = await this.createSyncAgent(spec.type, spec.config);
+        const $1 = await this.createSyncAgent(spec.type, spec.config);
         createdAgents.push({ id: agentId, type: spec.type, status: 'creat'e'd' });
       } catch (error) {
-        console.error(`❌ Failed to create sync agent ${spec.type}:`, error);
+        console.error("❌ Failed to create sync agent ${spec.type}:", error);
       }
     }
 
-    console.log(`🔄 Batch created ${createdAgents.length} sync agents`);
+    console.log("🔄 Batch created ${createdAgents.length} sync agents");
     return createdAgents;
   }
 
   async healthCheck() {
-    const health = {
+    const $1 = {
       status: 'healt'h'y',
       agents: this.syncAgents.size,
       running: this.getRunningSyncAgents().length,
@@ -461,12 +461,12 @@ class FrontendSyncAgentFactory extends EventEmitter {
   }
 
   async checkSyncAgentHealth(agentId) {
-    const agent = this.syncAgents.get(agentId);
+    const $1 = this.syncAgents.get(agentId);
     if (!agent) {
       return { status: 'no't'_found' };
     }
 
-    const health = {
+    const $1 = {
       id: agentId,
       type: agent.type,
       status: agent.status,

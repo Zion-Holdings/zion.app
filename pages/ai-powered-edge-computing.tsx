@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface EdgeComputing {
+interface $1 {
   id: string;
   name: string;
   description: string;
@@ -13,13 +13,13 @@ interface EdgeComputing {
   capacity: number;
   latency: number;
   aiAnalysis: EdgeAnalysis;}
-interface EdgeAnalysis {
+interface $1 {
   id: string;
   performanceScore: number;
   reliabilityScore: number;
   efficiencyScore: number;
   recommendations: string[];}
-interface FogComputing {
+interface $1 {
   id: string;
   title: string;
   description: string;
@@ -29,13 +29,13 @@ interface FogComputing {
   nodes: number;
   bandwidth: number;
   aiOptimization: FogOptimization;}
-interface FogOptimization {
+interface $1 {
   id: string;
   optimizationScore: number;
   connectivityScore: number;
   resourceScore: number;
   recommendations: string[];}
-interface DistributedComputing {
+interface $1 {
   id: string;
   name: string;
   description: string;
@@ -44,13 +44,13 @@ interface DistributedComputing {
   nodes: number;
   tasks: number;
   aiAnalysis: DistributedAnalysis;}
-interface DistributedAnalysis {
+interface $1 {
   id: string;
   distributionScore: number;
   loadBalanceScore: number;
   scalabilityScore: number;
   recommendations: string[];}
-interface EdgeAnalytics {
+interface $1 {
   id: string;
   analyticsId: string;
   title: string;
@@ -60,13 +60,13 @@ interface EdgeAnalytics {
   dataPoints: number;
   processingTime: number;
   aiAnalysis: AnalyticsAnalysis;}
-interface AnalyticsAnalysis {
+interface $1 {
   id: string;
   accuracyScore: number;
   speedScore: number;
   insightScore: number;
   recommendations: string[];}
-interface FogOrchestration {
+interface $1 {
   id: string;
   orchestrationId: string;
   title: string;
@@ -76,13 +76,13 @@ interface FogOrchestration {
   services: number;
   policies: number;
   aiAnalysis: OrchestrationAnalysis;}
-interface OrchestrationAnalysis {
+interface $1 {
   id: string;
   orchestrationScore: number;
   automationScore: number;
   coordinationScore: number;
   recommendations: string[];}
-interface EdgeComputingManagement {
+interface $1 {
   id: string;
   systemId: string;
   title: string;
@@ -92,13 +92,13 @@ interface EdgeComputingManagement {
   devices: number;
   uptime: number;
   aiAnalysis: ManagementAnalysis;}
-interface ManagementAnalysis {
+interface $1 {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];}
-interface EdgeComputingAnalytics {
+interface $1 {
   totalEdgeDevices: number;
   activeFogNodes: number;
   distributedClusters: number;
@@ -108,14 +108,14 @@ interface EdgeComputingAnalytics {
   averageLatency: number;
   aiOptimizationScore: number;
   aiInsights: EdgeComputingInsight[];}
-interface EdgeComputingInsight {
+interface $1 {
   id: string;
   title: string;
   description: string;
   impact: 'positi'v'e | negati'v'e | neut'r'al';
   confidence: number;
   recommendations: string[];};
-const AIPoweredEdgeComputingPage: NextPage = () => {
+const $1: NextPage = () => {
   const [edgeComputing, setEdgeComputing] = useState<EdgeComputing[]>([]</div>
   const [fogComputing, setFogComputing] = useState<FogComputing[]>([]</div>
   const [distributedComputing, setDistributedComputing] = useState<DistributedComputing[]>([]</div>
@@ -258,13 +258,13 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
       setIsLoading(false
     } 1000
   } []
-  const filteredEdgeDevices = useMemo(() => {'
-    let filtered = edgeComputing
+  const $1 = useMemo(() => {'
+    let $1 = edgeComputing
     if (selectedType !== al'l') {
       filtered = filtered.filter(device => device.type === selectedType}
     return filtered;
   } [edgeComputing, selectedType]
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case acti'v'e: return bg-green'-'500/20 text-green-300
       case inactiv'e': return bg-gray-'500/20 text-gray-300
@@ -277,7 +277,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
       case schedul'e'd: return bg-purple'-'500/20 text-purple-300
       case operationa'l': return bg-green-'500/20 text-green-300
       default: return 'bg-gray-500/20 text-gray-300'}}
-  const getTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case iot'_gateway': return bg-blue-'500/20 text-blue-300
       case 'edge_server': return 'bg-green-500/20 text-green-300
@@ -300,120 +300,120 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
       default: return 'bg-gray'-500/20 text-gray-300}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive" py-8">
+      </div><div className=" relative z-10 container-responsive py-8>
         "
         {/* Background Effects */}</div>
-        <div className="fixed" inset-0 z-0"> </div>
+        <div className="fixed inset-0 z-0> </div>
           </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
       <Head> </div>
         <title>AI-Powered Edge & Fog Computing System | Zion Tech Group</title></div>
         <meta name="description" content="Edge computing, fog computing, distributed computing, edge analytics, fog orchestration, and automated edge computing management powered by AI. > </meta name=description" content="Edge computing, fog computing, distributed computing, edge analytics, fog orchestration, and automated edge computing management powered by AI. ><meta name="keywords content=edge computing, fog computing, distributed computing, edge analytics, AI edge > </meta" name=keywords content="edge computing, fog computing, distributed computing, edge analytics, AI" edge ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
       {/* Header */}"</div>
-      <div className="relative overflow-hidden>"</div>
-        </div><div className="absolute" inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> "</div>
-          </div><div className="text-center">"</div>
+      <div className="relative overflow-hidden></div>
+        </div><div className=absolute" inset-0 bg-gradient-to-r from-blue-600/20 to-cyan-600/20"></div></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> </div>
+          </div><div className=text-center">"</div>
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
-              AI-Powered Edge & Fog Computing System"</div>
+              AI-Powered Edge & Fog Computing System</div>
             </h1>"</div>
-            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Edge computing, fog computing, distributed computing, "
               edge analytics, fog orchestration, and automated edge computing management powered by AI.</div>
             </p></div>
-            <div className="flex flex-wrap justify-center gap-4"> </div>
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
-                <span className="text-white font-semibold>🌐 Edge Computing</span> "</div>
-              </div>"</div>
+            <div className="flex flex-wrap justify-center gap-4> </div>
+              </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
+                <span className="text-white font-semibold>🌐 Edge Computing</span> </div>
+              </div></div>
               <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3"></div>
-                <span className="text-white font-semibold>☁️ Fog Computing</span>"</div>
-              </div>"</div>
+                <span className="text-white font-semibold>☁️ Fog Computing</span></div>
+              </div></div>
               <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
                 <span className="text-white font-semibold>🔗 Distributed Computing</span></div>
               </div></div>
             </div></div>
           </div></div>
-        </div>"</div>
+        </div></div>
       </div>"
 "
       {/* Main Content */}</div>
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? ("</div>
+        {isLoading ? (</div>
           </div><div className="flex justify-center items-center py-40">"</div>
-            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-blue-500 ></div></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 ></div></div>
           </div>
         ) : (</div>
           </>
             {/* Tabs */}</div>
-            <div className=" flex flex-wrap justify-center" mb-8>'
+            <div className= flex flex-wrap justify-center" mb-8>'
               '
                 onClick={() => setActiveTab(ed'g'e)}
-                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className="{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'edg'e
-                    ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white`
-                      bg-whit'e'/10 text-gray-300 hover bg-white/20``
-                }`}
+                    ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white"
+                      bg-whit'e'/10 text-gray-300 hover bg-white/20`"
+                }"}
               >
                 Edge Computing ({edgeComputing.length}</div>
               </button> 
-              ''`
-                onClick={() => setActiveTab(f'o'g)}``
-                className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              ''"
+                onClick={() => setActiveTab(f'o'g)}""
+                className={"px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === fo'g'
-                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Fog Computing ({fogComputing.length}</div>
               </button>
-              `
-                onClick={() => setActiveTab(distribut'e'd)}``
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              "
+                onClick={() => setActiveTab(distribut'e'd)}""
+                className="{px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === distribute'd'
-                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Distributed Computing ({distributedComputing.length}</div>
               </button>
-              `"
-                onClick={() => setActiveTab(analyti'c's)}``"
-                className={`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
+              ""
+                onClick={() => setActiveTab(analyti'c's)}"""
+                className={"px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === analytic's'
-                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'`
-                      bg-white'/10 text-gray-300 hover bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'"
+                      bg-white'/10 text-gray-300 hover bg-white/20'""
+                }"}
               >
                 Edge Analytics ({edgeAnalytics.length}</div>
               </button>
-              "''`
-                onClick={() => setActiveTab(orchestratio'n')}``
-                className={`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
+              "''"
+                onClick={() => setActiveTab(orchestratio'n')}""
+                className={"px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'orchestratio'n
-                    ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white`
-                      bg-whit'e'/10 text-gray-300 hover bg-white/20``
-                }`}
+                    ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white"
+                      bg-whit'e'/10 text-gray-300 hover bg-white/20""
+                }"}
               >
                 Fog Orchestration ({fogOrchestration.length}</div>
               </button> 
-              "''`
-                onClick={() => setActiveTab(manageme'n't)}``
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              "''"
+                onClick={() => setActiveTab(manageme'n't)}""
+                className={"px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === managemen't'
-                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Management ({edgeComputingManagement.length}</div>
               </button>
-              `
-                onClick={() => setActiveTab(overvi'e'w)}``
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              "
+                onClick={() => setActiveTab(overvi'e'w)}""
+                className="{px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === overvie'w'
-                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-blue-600 to-cyan-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Overview</div>
               </button></div>
@@ -421,97 +421,97 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
 
             {/* Edge Computing Tab */},
 {activeTab === ed'g'e && (</div>
-              <div className=" space-y-8>"
-                {/* Controls */}"</div>
+              <div className=" space-y-8>
+                {/* Controls */}</div>
                 </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6>"</div>
-                  <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"> </div>
-                    </div><div className="flex items-center space-x-4>
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> </div>
+                    </div><div className="flex items-center space-x-4>"
                       "
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-blue-500
+                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500
                       ></div>
-                        <option value=all className="bg-slate-800">All" Types</option></div>
-                        <option value=iot_gateway className="bg-slate-800>IoT Gateway</option>"</div>
-                        <option value=edge_server className="bg-slate-800">Edge" Server</option></div>
-                        <option value=micro_data_center className="bg-slate-800>Micro Data Center</option>"</div>
-                        <option value=edge_device className="bg-slate-800">Edge" Device</option></div>
-                        <option value=edge_router className="bg-slate-800>Edge Router</option>"</div>
-                        <option value=edge_storage className="bg-slate-800">Edge" Storage</option></div>
+                        <option value=all className=bg-slate-800">All" Types</option></div>
+                        <option value=iot_gateway className="bg-slate-800>IoT Gateway</option></div>
+                        <option value=edge_server className=bg-slate-800">Edge" Server</option></div>
+                        <option value=micro_data_center className="bg-slate-800>Micro Data Center</option></div>
+                        <option value=edge_device className=bg-slate-800">Edge" Device</option></div>
+                        <option value=edge_router className="bg-slate-800>Edge Router</option></div>
+                        <option value=edge_storage className=bg-slate-800">Edge" Storage</option></div>
                       </select></div>
                     </div></div>
                     <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
                       Create Edge Device</div>
                     </button> </div></div>
                 </div>
-"
+
                 {/* Edge Devices Grid */}"</div>
-                <div className=" grid grid-cols-1 lg grid-cols-2 gap-6>"
-                  {filteredEdgeDevices.map((device) => ("</div>
+                <div className=" grid grid-cols-1 lg grid-cols-2 gap-6>
+                  {filteredEdgeDevices.map((device) => (</div>
                     </div><div key={device.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
-                      <div className="flex" items-start justify-between mb-4"></div>
+                      <div className="flex items-start justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-xl font-semibold text-white mb-2 >{device.name}</h3>"</div>
-                          <p className="text-gray-300" text-sm capitalize">{device.type.replace('_',  )} Device</p></div>
-                        </div>`</div>
-                        <div className="text-right>``"</div>
-                          <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(device.status)}`}">
+                          <p className="text-gray-300 text-sm capitalize>{device.type.replace('_',  )} Device</p></div>
+                        </div>"</div>
+                        <div className="text-right>"</div>
+                          <span className="{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(device.status)}"}">
                             {device.status} </div>
-                          </span>`</div>
-                          <div className="mt-2>``"</div>
-                            <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getTypeColor(device.type)}`}>
+                          </span>"</div>
+                          <div className="mt-2>`</div>
+                            <span className="{"px-4" py-3 rounded-full text-xs font-medium ${getTypeColor(device.type)}"}>
                               {device.location}</div>
                             </span></div>
                           </div></div>
                         </div> </div>
                       </div></div>
-                      <div className="mb-4"></div>
-                        <p className="text-gray-300" text-sm">{device.description}</p> </div>
+                      <div className="mb-4></div>
+                        <p className=text-gray-300" text-sm">{device.description}</p> </div>
                       </div></div>
-                      <div className="grid grid-cols-3 gap-4 mb-4>"</div>
-                        </div><div className=" bg-white/5 rounded-lg" p-4"></div>
-                          <div className="text-sm text-gray-400 mb-1>Capacity</div>"</div>
-                          <div className="text-2xl" font-bold text-white">{device.capacity}GB</div></div>
+                      <div className="grid grid-cols-3 gap-4 mb-4></div>
+                        </div><div className= bg-white/5 rounded-lg" p-4"></div>
+                          <div className="text-sm text-gray-400 mb-1>Capacity</div></div>
+                          <div className=text-2xl" font-bold text-white">{device.capacity}GB</div></div>
                         </div></div>
-                        <div className="bg-white/5 rounded-lg p-4 >"</div>
-                          </div><div className="text-sm" text-gray-400 mb-1">Latency</div></div>
-                          <div className="text-2xl font-bold text-white>{device.latency}ms</div>"</div>
-                        </div>"</div>
+                        <div className="bg-white/5 rounded-lg p-4 ></div>
+                          </div><div className=text-sm" text-gray-400 mb-1">Latency</div></div>
+                          <div className="text-2xl font-bold text-white>{device.latency}ms</div></div>
+                        </div></div>
                         <div className="bg-white/5" rounded-lg:p-4"></div>
-                          </div><div className="text-sm text-gray-400 mb-1 >Location</div>"</div>
-                          <div className="text-sm" font-bold text-white truncate">{device.location}</div></div>
+                          </div><div className="text-sm text-gray-400 mb-1 >Location</div></div>
+                          <div className=text-sm" font-bold text-white truncate">{device.location}</div></div>
                         </div></div>
                       </div>
                       {/* AI Analysis */}</div>
-                      <div className="mb-4>"</div>
-                        <h4 className="text-lg" font-semibold text-white mb-3">AI Analysis</h4></div>
-                        <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg:p-4>"</div>
-                          </div><div className="grid" grid-cols-3 gap-4 text-sm"></div>
+                      <div className="mb-4></div>
+                        <h4 className=text-lg" font-semibold text-white mb-3">AI Analysis</h4></div>
+                        <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg:p-4></div>
+                          </div><div className=grid" grid-cols-3 gap-4 text-sm"></div>
                             <div> </div>
-                              </div><div className="text-gray-400 mb-1>Performance</div>"</div>
-                              <div className="text-white" font-semibold">{device.aiAnalysis.performanceScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1>Performance</div></div>
+                              <div className=text-white" font-semibold">{device.aiAnalysis.performanceScore}%</div></div>
                             </div></div>
                             <div></div>
-                              </div><div className="text-gray-400 mb-1 >Reliability</div>"</div>
-                              <div className="text-white" font-semibold">{device.aiAnalysis.reliabilityScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1 >Reliability</div></div>
+                              <div className=text-white" font-semibold">{device.aiAnalysis.reliabilityScore}%</div></div>
                             </div></div>
                             <div> </div>
-                              </div><div className="text-gray-400 mb-1>Efficiency</div>"</div>
-                              <div className="text-white" font-semibold">{device.aiAnalysis.efficiencyScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1>Efficiency</div></div>
+                              <div className=text-white" font-semibold">{device.aiAnalysis.efficiencyScore}%</div></div>
                             </div></div>
                           </div></div>
-                          <div className="mt-3>"</div>
-                            </div><div className="text-sm" font-medium text-gray-400 mb-1">Recommendations </div>'</div>
+                          <div className="mt-3></div>
+                            </div><div className=text-sm" font-medium text-gray-400 mb-1">Recommendations </div>'</div>
                             <div className="text-xs text-gray-300>
                               {device.aiAnalysis.recommendations.join(', )}</div>
                             </div></div>
                           </div></div>
-                        </div> "</div>
+                        </div> </div>
                       </div>"</div>
-                      <div className="flex" space-x-2"></div>
-                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >
+                      <div className="flex space-x-2></div>
+                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover from-blue-700 hover to-cyan-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >"
                           View Details"</div>
                         </button>"</div>
-                        <button className="flex-1" border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Configure</div>
                         </button></div>
                       </div></div>
@@ -522,42 +522,42 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
             )}
             {/* Overview Tab */},"'
 {activeTab === 'overview' && analytics && (</div>
-              <div className=" space-y-8"></div>
-                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6"></div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"</div>
-                    </div><div className="text-3xl" font-bold text-white mb-2">{analytics.totalEdgeDevices.toLocaleString()}</div></div>
-                    <div className="text-gray-400 text-sm>Total Edge Devices</div> "</div>
-                  </div>"</div>
+              <div className=" space-y-8></div>
+                </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6"></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10></div>
+                    </div><div className=text-3xl" font-bold text-white mb-2">{analytics.totalEdgeDevices.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm>Total Edge Devices</div> </div>
+                  </div></div>
                   <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
-                    </div><div className="text-3xl font-bold text-white mb-2 >{analytics.averageLatency.toLocaleString()}ms</div>"</div>
-                    <div className="text-gray-400" text-sm">Avg Latency</div> </div>
+                    </div><div className="text-3xl font-bold text-white mb-2 >{analytics.averageLatency.toLocaleString()}ms</div></div>
+                    <div className=text-gray-400" text-sm">Avg Latency</div> </div>
                   </div></div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
-                    </div><div className="text-3xl font-bold text-white mb-2">{analytics.activeFogNodes.toLocaleString()}</div>"</div>
-                    <div className="text-gray-400" text-sm >Active Fog Nodes</div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                    </div><div className=text-3xl font-bold text-white mb-2">{analytics.activeFogNodes.toLocaleString()}</div>"</div>
+                    <div className="text-gray-400 text-sm >Active Fog Nodes</div></div>
                   </div></div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
-                    <div className="text-gray-400 text-sm">AI Optimization Score</div></div>
+                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
+                    <div className=text-gray-400 text-sm">AI Optimization Score</div></div>
                   </div></div>
                 </div></div>
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                  <h3 className="text-xl font-semibold text-white mb-6">AI Insights</h3></div>
-                  <div className="space-y-4>"
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                  <h3 className=text-xl font-semibold text-white mb-6">AI Insights</h3></div>
+                  <div className="space-y-4>
                     {analytics.aiInsights.map((insight) => (</div>
-                      </div><div key={insight.id} className=" bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg p-4"></div>
-                        <div className="flex"  items-start justify-between mb-2></div>
-                          <h4 className="text-white font-semibold">{insight.title}</h4>`
-                          ``
-                          }`}>"
+                      </div><div key={insight.id} className= bg-gradient-to-r from-blue-600/20 to-cyan-600/20 rounded-lg p-4"></div>
+                        <div className="flex  items-start justify-between mb-2></div>
+                          <h4 className=text-white font-semibold">{insight.title}</h4>"
+                          `"
+                          }"}>"
                             {insight.impact}</div>
                           </span></div>
                         </div>"</div>
-                        <p className="text-gray-300 text-sm:mb-3">{insight.description}</p></div>
-                        <div className="text-xs" text-gray-400 mb-2 >
+                        <p className="text-gray-300 text-sm:mb-3>{insight.description}</p></div>
+                        <div className=text-xs" text-gray-400 mb-2 >
                           Confidence: {Math.round(insight.confidence * 100)}%</div>
                         </div>'</div>
-                        <div className="text-xs text-gray-400"></div>
+                        <div className="text-xs text-gray-400></div>
                           <strong>Recommendations </strong> {insight.recommendations.join(, )}</div>
                         </div></div>
                       </div>
@@ -569,22 +569,22 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
           </>
         )}</div>
       </div> 
-      {/* CTA Section */}"</div>
+      {/* CTA Section */}</div>
       <div className="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 mt-16> "</div>
-        </div><div className="max-w-7xl"" mx-auto px-4 sm:px-6 lg:px-8 py-36"></div>
-          <div className="text-center"></div>
-            <h2 className="text-3xl" font-bold text-white mb-4>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36"></div>
+          <div className="text-center></div>
+            <h2 className=text-3xl" font-bold text-white mb-4>
               Ready to Deploy Edge Computing?</div>
             </h2></div>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your edge computing journey with our AI-powered system  
               and ensure comprehensive edge and fog computing management.</div>
             </p></div>
-            <div className="flex  flex-col sm:flex-row gap-4 justify-center>"</div>
-              <Link href=/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 ">Start Deploying</div>
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105"></Link></div>
-              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  ">Learn More</div>
-              </Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            <div className=flex  flex-col sm:flex-row gap-4 justify-center>"</div>
+              <Link href=/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 >Start Deploying</div>
+              </Link href=/ai-service-matcher  className=bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105"></Link></div>
+              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>
+              </Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -598,5 +598,5 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
   </div>
 ;
 };
-''`;}
-export default AIPoweredEdgeComputingPage )))))))))))))))))))))))))))))'"'`</div>
+''";}
+export default AIPoweredEdgeComputingPage )))))))))))))))))))))))))))))'"'"</div>

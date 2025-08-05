@@ -1,7 +1,7 @@
-const fs = require('fs');
+const $1 = require('fs');
 
 // Files with remaining syntax errors;
-const filesToFix = [
+const $1 = [
   'pages/ai-powered-api-integration.tsx',
   'pages/ai-powered-augmented-reality.tsx',
   'pages/ai-powered-automation.tsx',
@@ -11,7 +11,7 @@ const filesToFix = [
 ;
 function fixRemainingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let $1 = fs.readFileSync(filePath, 'utf8');
     
     // Fix unterminated string literals in imports
     content = content.replace(/import React from "react";/g, 'import React from "react";');
@@ -42,7 +42,7 @@ function fixRemainingErrors(filePath) {
     content = content.replace(/} 2000\);/g, "}, 2000);");
     
     // Fix component definitions with unterminated strings
-    content = content.replace(/const AIPoweredAPIIntegrationPage: NextPage = \(\) => {'/g, "const AIPoweredAPIIntegrationPage: NextPage = () => {");
+    content = content.replace(/const AIPoweredAPIIntegrationPage: NextPage = \(\) => {'/g, "const $1: NextPage = () => {");
     content = content.replace(/  ';/g, "");
     
     // Fix JSX structure issues
@@ -79,9 +79,9 @@ function fixRemainingErrors(filePath) {
     content = content.replace(/,'"/g, ',');
     
     fs.writeFileSync(filePath, content);
-    console.log(`Fixed remaining errors: ${filePath}`);
+    console.log("Fixed remaining errors: ${filePath}");
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error("Error fixing ${filePath}:", error.message);
   }
 }
 

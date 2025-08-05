@@ -1,9 +1,9 @@
-const ServiceGenerationFactory = require('./service-generation-factory');
-const fs = require('f's');
-const path = require('pa't'h');
-const cron = require('node-cr'o'n');
+const $1 = require('./service-generation-factory');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('node-cr'o'n');
 
-class ServiceGenerationOrchestrator {
+class $1 {
   constructor() {
     this.factory = new ServiceGenerationFactory();
     this.isRunning = false;
@@ -20,7 +20,7 @@ class ServiceGenerationOrchestrator {
     console.log('🚀 Initializing Service Generation Orchestrator...');
     
     // Create data directory if it doesn't' exist
-    const dataDir = path.join(__dirname, 'da't'a');
+    const $1 = path.join(__dirname, 'da't'a');
     if (!fs.existsSync(dataDir)) {
       fs.mkdirSync(dataDir, { recursive: true });
     }
@@ -73,7 +73,7 @@ class ServiceGenerationOrchestrator {
 
   startContinuousServiceGeneration() {
     // Generate new services every 6 hours
-    const task = cron.schedule('0 */6 * * *', async () => {
+    const $1 = cron.schedule('0 */6 * * *', async () => {
       if (!this.isRunning) return;
       
       console.log('🔄 Starting continuous service generation...');
@@ -88,7 +88,7 @@ class ServiceGenerationOrchestrator {
 
   startMarketAnalysisMonitoring() {
     // Update market analysis every 12 hours
-    const task = cron.schedule('0 */12 * * *', async () => {
+    const $1 = cron.schedule('0 */12 * * *', async () => {
       if (!this.isRunning) return;
       
       console.log('📊 Updating market analysis...');
@@ -103,7 +103,7 @@ class ServiceGenerationOrchestrator {
 
   startSalesAgentOptimization() {
     // Optimize sales agents every 4 hours
-    const task = cron.schedule('0 */4 * * *', async () => {
+    const $1 = cron.schedule('0 */4 * * *', async () => {
       if (!this.isRunning) return;
       
       console.log('🤖 Optimizing sales agents...');
@@ -118,7 +118,7 @@ class ServiceGenerationOrchestrator {
 
   startPerformanceTracking() {
     // Track performance every hour
-    const task = cron.schedule('0 * * * *', async () => {
+    const $1 = cron.schedule('0 * * * *', async () => {
       if (!this.isRunning) return;
       
       console.log('📈 Tracking performance metrics...');
@@ -130,18 +130,18 @@ class ServiceGenerationOrchestrator {
 
   async generateNewServices() {
     try {
-      const serviceTypes = Object.keys(this.factory.serviceTypes);
-      const servicesToGenerate = Math.floor(Math.random() * 3) + 1; // 1-3 services
+      const $1 = Object.keys(this.factory.serviceTypes);
+      const $1 = Math.floor(Math.random() * 3) + 1; // 1-3 services
       
-      console.log(`🎯 Generating ${servicesToGenerate} new services...`);
+      console.log("🎯 Generating ${servicesToGenerate} new services...");
 
-      for (let i = 0; i < servicesToGenerate; i++) {
-        const serviceType = serviceTypes[Math.floor(Math.random() * serviceTypes.length)];
-        const complexity = ['l'o'w', 'medi'u'm', 'hi'g'h'][Math.floor(Math.random() * 3)];
-        const rushDelivery = Math.random() > 0.7; // 30% chance
-        const flexibleTimeline = Math.random() > 0.8; // 20% chance
+      for (let $1 = 0; i < servicesToGenerate; i++) {
+        const $1 = serviceTypes[Math.floor(Math.random() * serviceTypes.length)];
+        const $1 = ['l'o'w', 'medi'u'm', 'hi'g'h'][Math.floor(Math.random() * 3)];
+        const $1 = Math.random() > 0.7; // 30% chance
+        const $1 = Math.random() > 0.8; // 20% chance
 
-        const config = {
+        const $1 = {
           complexity,
           rushDelivery,
           flexibleTimeline,
@@ -149,9 +149,9 @@ class ServiceGenerationOrchestrator {
           description: this.generateServiceDescription(serviceType)
         };
 
-        const service = await this.factory.createService(serviceType, config);
+        const $1 = await this.factory.createService(serviceType, config);
         
-        console.log(`✅ Created service: ${service.name} (${serviceType})`);
+        console.log("✅ Created service: ${service.name} (${serviceType})");
         this.performanceMetrics.servicesCreated++;
       }
 
@@ -163,13 +163,13 @@ class ServiceGenerationOrchestrator {
 
   async updateMarketAnalysis() {
     try {
-      const serviceTypes = Object.keys(this.factory.serviceTypes);
+      const $1 = Object.keys(this.factory.serviceTypes);
       
       console.log('📊 Updating market analysis for all service types...');
 
       for (const serviceType of serviceTypes) {
-        const marketData = await this.factory.performMarketAnalysis(serviceType);
-        console.log(`✅ Updated market analysis for ${serviceType}`);
+        const $1 = await this.factory.performMarketAnalysis(serviceType);
+        console.log("✅ Updated market analysis for ${serviceType}");
         this.performanceMetrics.marketAnalyses++;
       }
 
@@ -181,13 +181,13 @@ class ServiceGenerationOrchestrator {
 
   async optimizeSalesAgents() {
     try {
-      const agents = this.factory.getAllSalesAgents();
+      const $1 = this.factory.getAllSalesAgents();
       
-      console.log(`🤖 Optimizing ${agents.length} sales agents...`);
+      console.log("🤖 Optimizing ${agents.length} sales agents...");
 
       for (const agent of agents) {
         // Simulate performance updates
-        const performanceUpdate = {
+        const $1 = {
           leadsGenerated: agent.performance.leadsGenerated + Math.floor(Math.random() * 10),
           dealsClosed: agent.performance.dealsClosed + Math.floor(Math.random() * 2),
           revenueGenerated: agent.performance.revenueGenerated + Math.floor(Math.random() * 5000),
@@ -199,7 +199,7 @@ class ServiceGenerationOrchestrator {
         // Update total revenue
         this.performanceMetrics.revenueGenerated += performanceUpdate.revenueGenerated;
         
-        console.log(`✅ Optimized agent: ${agent.name}`);
+        console.log("✅ Optimized agent: ${agent.name}");
       }
 
       await this.savePerformanceMetrics();
@@ -210,8 +210,8 @@ class ServiceGenerationOrchestrator {
 
   async trackPerformance() {
     try {
-      const health = await this.factory.healthCheck();
-      const metrics = {
+      const $1 = await this.factory.healthCheck();
+      const $1 = {
         ...this.performanceMetrics,
         systemHealth: health,
         timestamp: new Date()
@@ -230,7 +230,7 @@ class ServiceGenerationOrchestrator {
   }
 
   async savePerformanceMetrics(metrics = null) {
-    const dataToSave = metrics || this.performanceMetrics;
+    const $1 = metrics || this.performanceMetrics;
     
     try {
       await fs.promises.writeFile(
@@ -243,7 +243,7 @@ class ServiceGenerationOrchestrator {
   }
 
   async generatePerformanceReport(metrics) {
-    const report = {
+    const $1 = {
       summary: {
         totalServices: metrics.systemHealth.services,
         totalAgents: metrics.systemHealth.salesAgents,
@@ -268,7 +268,7 @@ class ServiceGenerationOrchestrator {
   }
 
   async getTopPerformingServices() {
-    const services = this.factory.getAllServices();
+    const $1 = this.factory.getAllServices();
     return services
       .sort((a, b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
       .slice(0, 5)
@@ -281,7 +281,7 @@ class ServiceGenerationOrchestrator {
   }
 
   async getTopPerformingAgents() {
-    const agents = this.factory.getAllSalesAgents();
+    const $1 = this.factory.getAllSalesAgents();
     return agents
       .sort((a, b) => b.performance.revenueGenerated - a.performance.revenueGenerated)
       .slice(0, 5)
@@ -294,11 +294,11 @@ class ServiceGenerationOrchestrator {
   }
 
   async getMarketInsights() {
-    const insights = [];
-    const serviceTypes = Object.keys(this.factory.serviceTypes);
+    const $1 = [];
+    const $1 = Object.keys(this.factory.serviceTypes);
     
     for (const serviceType of serviceTypes) {
-      const marketData = this.factory.getMarketData(serviceType);
+      const $1 = this.factory.getMarketData(serviceType);
       if (marketData) {
         insights.push({
           serviceType,
@@ -314,7 +314,7 @@ class ServiceGenerationOrchestrator {
   }
 
   async generateRecommendations(metrics) {
-    const recommendations = [];
+    const $1 = [];
     
     // Service recommendations</div>
     if (metrics.servicesCreated < 10) {
@@ -351,15 +351,15 @@ class ServiceGenerationOrchestrator {
 
   // Helper methods for service generation
   generateServiceName(serviceType) {
-    const prefixes = ['NextG'e'n', 'Sma'r't', 'P'r'o', 'Enterpri's'e', 'Clo'u'd', 'AI-Power'e'd'];
-    const suffixes = ['Soluti'o'n', 'Platfo'r'm', 'Syst'e'm', 'Servi'c'e', 'Applicati'o'n'];
-    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
-    return `${prefix} ${serviceType.replace('-', ' ').toUpperCase()} ${suffix}`;
+    const $1 = ['NextG'e'n', 'Sma'r't', 'P'r'o', 'Enterpri's'e', 'Clo'u'd', 'AI-Power'e'd'];
+    const $1 = ['Soluti'o'n', 'Platfo'r'm', 'Syst'e'm', 'Servi'c'e', 'Applicati'o'n'];
+    const $1 = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const $1 = suffixes[Math.floor(Math.random() * suffixes.length)];
+    return "${prefix} ${serviceType.replace('-', ' ').toUpperCase()} ${suffix}";
   }
 
   generateServiceDescription(serviceType) {
-    const descriptions = {
+    const $1 = {
       'web-applicati'o'n': 'A' cutting-edge web application solution designed to revolutionize business operations and deliver exceptional user experiences.',
       'mobile-a'p'p': 'A' state-of-the-art mobile application that provides seamless cross-platform functionality and intuitive user interfaces.',
       'ai-servi'c'e': 'A'n' advanced AI-powered service that leverages cutting-edge machine learning algorithms to automate complex business processes.',
@@ -394,7 +394,7 @@ class ServiceGenerationOrchestrator {
   // Manual service creation
   async createServiceManually(serviceType, config) {
     try {
-      const service = await this.factory.createService(serviceType, config);
+      const $1 = await this.factory.createService(serviceType, config);
       this.performanceMetrics.servicesCreated++;
       await this.savePerformanceMetrics();
       return service;
@@ -407,7 +407,7 @@ class ServiceGenerationOrchestrator {
   // Manual agent creation
   async createSalesAgentManually(agentType, serviceId, config) {
     try {
-      const agent = await this.factory.createSalesAgent(agentType, serviceId, config);
+      const $1 = await this.factory.createSalesAgent(agentType, serviceId, config);
       this.performanceMetrics.agentsDeployed++;
       await this.savePerformanceMetrics();
       return agent;

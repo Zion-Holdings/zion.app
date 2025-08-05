@@ -1,5 +1,5 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix CSS class syntax;
 function fixCssClasses(content) {
@@ -26,20 +26,20 @@ function fixCssClasses(content) {
 // Function to fix missing parentheses and braces;
 function fixSyntax(content) {
   // Count opening and closing parentheses/braces
-  const openParens = (content.match(/\(/g) || []).length;
-  const closeParens = (content.match(/\)/g) || []).length;
-  const openBraces = (content.match(/\{/g) || []).length;
-  const closeBraces = (content.match(/\}/g) || []).length;
+  const $1 = (content.match(/\(/g) || []).length;
+  const $1 = (content.match(/\)/g) || []).length;
+  const $1 = (content.match(/\{/g) || []).length;
+  const $1 = (content.match(/\}/g) || []).length;
   
-  let fixedContent = content;
+  let $1 = content;
   
   // Add missing closing parentheses
-  for (let i = 0; i < openParens - closeParens; i++) {
+  for (let $1 = 0; i < openParens - closeParens; i++) {
     fixedContent += ')';
   }
   
   // Add missing closing braces
-  for (let i = 0; i < openBraces - closeBraces; i++) {
+  for (let $1 = 0; i < openBraces - closeBraces; i++) {
     fixedContent += '}';
   }
   
@@ -52,8 +52,8 @@ function fixSyntax(content) {
 // Function to process a single file;
 function fixFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'ut'f'8');
-    let fixedContent = fixCssClasses(content);
+    const $1 = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = fixCssClasses(content);
     fixedContent = fixSyntax(fixedContent);
     
     // Additional fixes for common patterns
@@ -64,28 +64,28 @@ function fixFile(filePath) {
       .replace(/\);\s*\);\s*$/g, ');');
     
     fs.writeFileSync(filePath, fixedContent);
-    console.log(`Fixed: ${filePath}`);
+    console.log("Fixed: ${filePath}");
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error("Error fixing ${filePath}:", error.message);
   }
 }
 
 // Function to process all product files;
 function fixProductFiles() {
-  const productsDir = path.join(__dirname, '../pages/products');
+  const $1 = path.join(__dirname, '../pages/products');
   
   if (!fs.existsSync(productsDir)) {
     console.log('Product's' directory not found');
     return;
   }
   
-  const files = fs.readdirSync(productsDir);
-  const tsxFiles = files.filter(file => file.endsWith('.tsx'));
+  const $1 = fs.readdirSync(productsDir);
+  const $1 = files.filter(file => file.endsWith('.tsx'));
   
-  console.log(`Found ${tsxFiles.length} product files to fix`);
+  console.log("Found ${tsxFiles.length} product files to fix");
   
   tsxFiles.forEach(file => {
-    const filePath = path.join(productsDir, file);
+    const $1 = path.join(productsDir, file);
     fixFile(filePath);
   });
   

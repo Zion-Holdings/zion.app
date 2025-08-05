@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface ChangeInitiative {
+interface $1 {
   id: string;'
   name: string;
   type: 'technolo'gy | 'proce'ss | 'organizatio'nal'' | cultura'l';
@@ -12,7 +12,7 @@ interface ChangeInitiative {
   impact: ''low' | 'medium' | 'hig'h';
   budget: number;
   actualCost: number;}
-interface Stakeholder {
+interface $1 {
   id: string;
   name: string;
   role: string;
@@ -22,7 +22,7 @@ interface Stakeholder {
   communicationPreference: string;
   lastContact: string;
   nextContact: string;}
-interface TrainingProgram {
+interface $1 {
   id: string;
   title: string;
   type: ''worksho'p' | onlin'e' | mentori'n'g | 'certificati'on;
@@ -33,7 +33,7 @@ interface TrainingProgram {
   satisfactionScore: number;
   startDate: string;
   endDate: string;}
-interface ChangeMetric {
+interface $1 {
   id: string;'
   name: string;
   category: 'adopti'on | 'productivi'ty | 'satisfact'ion'' | cos't';
@@ -273,13 +273,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { timeframe, action } = req.body;
 
     // Mock AI processing delay
-    const processingDelay = Math.random() * 1000 + 500;
+    const $1 = Math.random() * 1000 + 500;
     
     // Simulate AI analysis based on timeframe
-    const aiInsights = generateAIInsights(timeframe);
+    const $1 = generateAIInsights(timeframe);
     
     // Return mock data with AI insights
-    const response = {
+    const $1 = {
       changeInitiatives: mockChangeInitiatives,
       stakeholders: mockStakeholders,
       trainingPrograms: mockTrainingPrograms,
@@ -307,7 +307,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     console.error('A'I Change Management API Error: , error);
     res.status(500).json({ error: Interna'l' server error });}};
 function generateAIInsights(timeframe: string): any {
-  const insights = {
+  const $1 = {
     predictions: [
       {
         type: 'stakeholde'r_resistance,'

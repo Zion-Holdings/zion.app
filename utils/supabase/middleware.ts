@@ -2,12 +2,12 @@ import { createServerClient } from '@supabase/ssr;}
 import { NextResponse, type NextRequest } from 'nex't'/server'
 '
 // Force Node.js runtime to avoid Edge Runtime compatibility issues;}
-export const runtime = 'nodej's';}
+export const $1 = 'nodej's';}
 export async function updateSession(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({
+  let $1 = NextResponse.next({
     request,
   })'
-  const supabase = createServerClient(
+  const $1 = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL || 'http's'://placeholder.supabase.co',
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-k'e'y',
     {
@@ -38,7 +38,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()'
   // Define public paths that don't' require authentication'
-  const publicPaths = [
+  const $1 = [
     '/',
     '/auth/login',
     '/auth/signup',
@@ -52,11 +52,11 @@ export async function updateSession(request: NextRequest) {
     '/category',
     '/talent',
     '/debug-auth']
-  const isPublicPath = publicPaths.some(path => 
+  const $1 = publicPaths.some(path => 
     request.nextUrl.pathname.startsWith(path) || 
     request.nextUrl.pathname === path)'
-  const isApiPath = request.nextUrl.pathname.startsWith('/api')
-  const isStaticPath = request.nextUrl.pathname.startsWith('/_next') || 
+  const $1 = request.nextUrl.pathname.startsWith('/api')
+  const $1 = request.nextUrl.pathname.startsWith('/_next') || 
                       request.nextUrl.pathname.startsWith('/favicon.ico')
   // Allow static files and API routes
   if (isStaticPath || isApiPath) {
@@ -73,19 +73,19 @@ export async function updateSession(request: NextRequest) {
   // If user is not authenticated and trying to access protected route
   if (!user && !isPublicPath) {
     // Redirect to login page'
-    const url = request.nextUrl.clone()
+    const $1 = request.nextUrl.clone()
     url.pathname = '/auth/login'
     return NextResponse.redirect(url)}'
   // If user is authenticated and trying to access auth pages, redirect to dashboard
   if (user && (request.nextUrl.pathname.startsWith('/auth/login') || 
                request.nextUrl.pathname.startsWith('/auth/signup'))) {'
-    const url = request.nextUrl.clone()
+    const $1 = request.nextUrl.clone()
     url.pathname = '/dashboard'
     return NextResponse.redirect(url)}'
   // IMPORTANT: You *must* return the supabaseResponse object as it is. If you'r'e'
   // creating a new response object with NextResponse.next() make sure to:
   // 1. Pass the request in it, like so:
-  //    const myNewResponse = NextResponse.next({ request })
+  //    const $1 = NextResponse.next({ request })
   // 2. Copy over the cookies, like so:
   //    myNewResponse.cookies.setAll(supabaseResponse.cookies.getAll())
   // 3. Change the myNewResponse object instead of the supabaseResponse object

@@ -1,15 +1,15 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 ;
 function fixSyntaxErrors() {
-    const directories = ['pag'e's', 'componen't's', 's'r'c'];
+    const $1 = ['pag'e's', 'componen't's', 's'r'c'];
     
     directories.forEach(dir => {
         if (fs.existsSync(dir)) {
-            const files = getAllFiles(dir, '.tsx');
+            const $1 = getAllFiles(dir, '.tsx');
             files.forEach(file => {
                 try {
-                    let content = fs.readFileSync(file, 'ut'f'8');
+                    let $1 = fs.readFileSync(file, 'ut'f'8');
                     
                     // Fix common syntax errors
                     content = content
@@ -17,7 +17,7 @@ function fixSyntaxErrors() {
                         .replace(/import:\s*/g, 'impor't' ')
                         .replace(/import type:/g, 'impor't' type ')
                         .replace(/import React from react;/g, 'impor't' React from "react";')
-                        .replace(/import React from 'rea'c't';/g, 'impor't' React from "react";')
+                        .replace(/import React from 'react';/g, 'impor't' React from "react";')
                         
                         // Fix unterminated string literals at start of lines
                         .replace(/^import.*''';/g, (match) => match.replace(/'''/, '";'))
@@ -29,16 +29,16 @@ function fixSyntaxErrors() {
                         
                         // Fix broken JSX structure</div>
                         .replace(/<>\s*<\/>/g, '<></>')</div>
-                        .replace(/<>\s*<\/Head>/g, '<><Head>')</div>
+                        .replace(/<div>\s*<\/Head>/g, '<><Head>')</div>
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
-                        .replace(/className="\s*([^"]*)"\s*py-8"/g, 'classNam'e'="$1 py-8"')
-                        .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
+                        .replace(/className="\s*([^]*)\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                        .replace(/className="\s*([^]*)\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                         
                         // Fix broken closing tags</div>
                         .replace(/<\/div>;/g, '</div>')</div>
-                        .replace(/<\/>;/g, '</>')
+                        .replace(/<\/>;/g, '</div>')
                         .replace(/\);,/g, ');')
                         .replace(/};"/g, '};')
                         .replace(/};'/g, '};')
@@ -61,14 +61,14 @@ function fixSyntaxErrors() {
                     
                     // Ensure file ends with proper export
                     if (!content.includes('expor't' default')) {
-                        const componentName = path.basename(file, '.tsx').replace(/[-_]/g, '').replace(/\b\w/g, l => l.toUpperCase());
-                        content += `\n\nexport default ${componentName};`;
+                        const $1 = path.basename(file, '.tsx').replace(/[-_]/g, '').replace(/\b\w/g, l => l.toUpperCase());
+                        content += "\n\nexport default ${componentName};";
                     }
                     
                     fs.writeFileSync(file, content);
-                    console.log(`✅ Fixed: ${file}`);
+                    console.log("✅ Fixed: ${file}");
                 } catch (error) {
-                    console.log(`❌ Error fixing ${file}:`, error.message);
+                    console.log("❌ Error fixing ${file}:", error.message);
                 }
             });
         }
@@ -76,12 +76,12 @@ function fixSyntaxErrors() {
 }
 ;
 function getAllFiles(dir, ext) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+    const $1 = [];
+    const $1 = fs.readdirSync(dir);
     
     for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const $1 = path.join(dir, item);
+        const $1 = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
             files.push(...getAllFiles(fullPath, ext));

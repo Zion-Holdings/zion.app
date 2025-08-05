@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";
 
-interface QuantumSensing {
+interface $1 {
   id: string;
   name: string
   type: ''gravitational-wave' | 'magnetic-field' | 'electric-fiel'd' | temperatu'r'e | pressur'e'
@@ -13,7 +13,7 @@ interface QuantumSensing {
   dynamicRange: number
   status: ''active' | 'calibrating' | 'measurin'g' | standb'y'
   timestamp: string}
-interface QuantumImaging {
+interface $1 {
   id: string;
   name: string
   technique: 'quantum-illuminati'on | 'ghost-imagi'ng | 'quantum-tomogra'phy'' | quantum-microscop'y' | quantum-spectroscopy'
@@ -22,7 +22,7 @@ interface QuantumImaging {
   depth: number'
   fieldOfView: number
   status: 'imagi'ng | 'processi'ng | 'analyz'ing'' | complete'd'}
-interface QuantumMetrology {
+interface $1 {
   id: string;
   name: string
   measurement: 'frequen'cy | 'ti'me | 'len'gth'' | mas's' | current'
@@ -31,7 +31,7 @@ interface QuantumMetrology {
   stability: number'
   uncertainty: number
   status: 'measuri'ng | 'calibrati'ng | 'optimiz'ing'' | standb'y'}
-interface QuantumDetection {
+interface $1 {
   id: string;
   name: string
   detector: 'single-phot'on | 'superconducti'ng | 'quantum-'dot'' | ion-tra'p' | atomic-clock'
@@ -40,7 +40,7 @@ interface QuantumDetection {
   deadTime: number'
   jitter: number
   status: 'detecti'ng | 'calibrati'ng | 'optimiz'ing'' | standb'y'}
-interface QuantumInterferometry {
+interface $1 {
   id: string;
   name: string
   interferometer: 'mach-zehnd'er | 'michels'on | 'sag'nac'' | fabry-pero't' | young'
@@ -49,7 +49,7 @@ interface QuantumInterferometry {
   pathLength: number'
   wavelength: number
   status: 'interferi'ng | 'aligni'ng | 'measur'ing'' | standb'y'}
-interface QuantumSpectroscopy {
+interface $1 {
   id: string;
   name: string
   spectroscopy: 'absorpti'on | 'emissi'on | 'ra'man'' | fluorescenc'e' | coherent'
@@ -58,7 +58,7 @@ interface QuantumSpectroscopy {
   signalToNoise: number'
   integrationTime: number
   status: 'spectrosco'py | 'scanni'ng | 'analyz'ing'' | complete'd'};
-const AIPoweredQuantumSensingMetrology: NextPage = () => {
+const $1: NextPage = () => {
   const [activeTab, setActiveTab] = useState(dashboar'd'
   const [isSensing, setIsSensing] = useState(false
   const [currentSensing, setCurrentSensing] = useState<any>(null</div>
@@ -144,7 +144,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
     setInterferometry(mockInterferometry
     setSpectroscopy(mockSpectroscopy
   } []
-  const startSensing = async () => {
+  const $1 = async () => {
     setIsSensing(true
     try {'
       await new Promise(resolve => setTimeout(resolve, 3000)
@@ -153,7 +153,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
       console.error('Sensing error: , error
     } finally {
       setIsSensing(false}}
-  const getSensingTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case 'gravitational-wave': return 'text-purple-500
       case 'magnetic-fie'ld: return 'text-blue'-500
@@ -161,7 +161,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
       case temperatur'e': return text-red-'500
       case 'pressure': return 'text-yellow-500
       default: return 'text-gray'-500}}
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case 'active': return 'text-green-500
       case 'measuri'ng: return 'text-blue'-500
@@ -174,29 +174,29 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
       default: return 'text-gray-500'}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Quantum Sensing & Metrology | Zion Tech</title>"</div>
         <meta name=description content=Advanced quantum sensing and metrology with AI-powered quantum imaging, quantum detection, and quantum interferometry. > </meta" name="description content=Advanced quantum sensing and metrology with AI-powered quantum imaging, quantum detection, and quantum" interferometry." ><meta name=keywords content=quantum sensing, quantum imaging, quantum metrology, quantum detection, quantum interferometry > </meta name="keywords" content=quantum sensing, quantum imaging, quantum metrology, quantum detection, quantum interferometry" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}</div>
-      <header className=" relative" z-10></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
-          </div><div className="flex  items-center justify-between">"</div>
+      <header className=" relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          </div><div className="flex  items-center justify-between></div>
             <div className="flex items-center space-x-4 > "</div>
-              </div><div className="flex items-center" space-x-3"></div>
+              </div><div className="flex items-center space-x-3></div>
                 <div className=" w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center>"</div>
-                  <span className="text-white" text-xl">🔬</span></div>
+                  <span className="text-white text-xl>🔬</span></div>
                 </div></div>
                 <div></div>
                   <h1 className="text-2xl font-bold text-white >Quantum Sensing & Metrology</h1>"</div>
-                  <p className="text-gray-300">AI-Powered" Quantum Measurement</p></div>
+                  <p className="text-gray-300>AI-Powered Quantum Measurement</p></div>
                 </div></div>
               </div></div>
             </div></div>
@@ -208,31 +208,31 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             </div></div>
           </div></div>
         </div></div>
-      </header>
+      </header>"
 "
       {/* Main Content */}"</div>
-      <main className="relative z-10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}</div>
-          </div><div className="mb-8""></div>
+          </div><div className="mb-8></div>
             <nav className=" flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: dashboa'r'd, label: Sensin'g' Dashboard, icon: 🔬' },
 { id: 'sensing', label: 'Quantum Sensing', icon: '📡 },
     { id: imagi'n'g, label: Quantu'm' Imaging, icon: 📷' },
-{ id: 'metrology', label: 'Quantum Metrology', icon: '⚖️ },
+{ id: 'metrology', label: 'Quantum Metrology', icon: '⚖️ },"
     { id: detecti'o'n, label: Quantu'm' Detection, icon: 🎯' },"
 { id: 'interferometry', label: 'Interferometry', icon: '🌊 },"
     { id  spectrosco'p'y, label  Spectrosco'p'y, icon  🌈'}"
               ].map((tab) => (
                 "
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
+                  className={"flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
                     activeTab === tab.id
-                      ? bg-gradient-to-r' from-teal-600 to-cyan-600 text-white'`
-                      : text-gray-'300 hover:text-white hover:bg-gray-700/50'``
-                  }`}
+                      ? bg-gradient-to-r' from-teal-600 to-cyan-600 text-white'"
+                      : text-gray-'300 hover:text-white hover:bg-gray-700/50'`"
+                  }"}
                 ></div>
                   <span>{tab.icon}</span></div>
                   <span>{tab.label}</span></div>
@@ -242,62 +242,62 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
           </div>
 
           {/* Tab Content */} </div>
-          <div className="space-y-8">
+          <div className="space-y-8>
             
             {/* Sensing Dashboard */},
 {activeTab === dashboar'd' && (</div>
-              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6">
+              </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}</div>
-                <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> </div>
-                  </div><div className="flex items-center space-x-3 mb-4"></div>
-                    <div className="w-10" h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center></div>
-                      <span className="text-white text-lg">🔬</span></div>
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700> </div>
+                  </div><div className=flex items-center space-x-3 mb-4"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center></div>
+                      <span className=text-white text-lg">🔬</span></div>
                     </div></div>
                     <div></div>
-                      <h3 className="text-lg" font-semibold text-white>Sensing Status</h3></div>
-                      <p className="text-gray-400 text-sm ">Quantum Measurement Lab</p></div>
+                      <h3 className="text-lg font-semibold text-white>Sensing Status</h3></div>
+                      <p className=text-gray-400 text-sm ">Quantum Measurement Lab</p></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className="space-y-3>"</div>
-                    </div><div className=" flex justify-between">"</div>
-                      <span className="text-gray-300>Status</span>"</div>
-                      <span className="text-green-400">Active</span>"</div>
+                  <div className="space-y-3></div>
+                    </div><div className= flex justify-between">"</div>
+                      <span className="text-gray-300>Status</span></div>
+                      <span className=text-green-400">Active</span>"</div>
                     </div></div>
-                    <div className=" flex justify-between>"</div>
-                      <span className="text-gray-300">Sensors</span"></div>
-                      <span className="text-white>{sensing.length}</span>"</div>
-                    </div>"</div>
-                    <div className="flex justify-between"></div>
-                      <span className="text-gray-300">Imaging Systems</span></div>
-                      <span className="text-white>{imaging.length}</span"></div>
+                    <div className=" flex justify-between></div>
+                      <span className=text-gray-300">Sensors</span"></div>
+                      <span className="text-white>{sensing.length}</span></div>
                     </div></div>
                     <div className="flex justify-between"></div>
-                      <span className="text-gray-300>Detectors</span>"</div>
-                      <span className="text-white">{detection.length}</span></div>
+                      <span className="text-gray-300>Imaging Systems</span></div>
+                      <span className=text-white>{imaging.length}</span"></div>
+                    </div></div>
+                    <div className="flex justify-between></div>
+                      <span className=text-gray-300>Detectors</span>"</div>
+                      <span className="text-white>{detection.length}</span></div>
                     </div></div>
                   </div></div>
                 </div>
  
                 {/* Quick Actions */}</div>
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3></div>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"></div>
-                    <button className=" p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200"></div>
-                      <div className="text-2xl" mb-2>📡</div></div>
-                      <div className="font-semibold">Start Sensing</div></div>
+                <div className=lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3></div>
+                  <div className=grid grid-cols-1 md grid-cols-4 gap-4"></div>
+                    <button className=" p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200></div>
+                      <div className=text-2xl" mb-2>📡</div></div>
+                      <div className="font-semibold>Start Sensing</div></div>
                     </button></div>
-                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200""></div>
-                      <div className="text-2xl mb-2>📷</div>"</div>
-                      <div className="font-semibold">Quantum" Imaging</div></div>
+                    <button className=p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200""></div>
+                      <div className="text-2xl mb-2>📷</div></div>
+                      <div className=font-semibold">Quantum" Imaging</div></div>
                     </button></div>
-                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200>"</div>
-                      <div className="text-2xl:mb-2">⚖️</div>"</div>
-                      <div className="font-semibold>Metrology</div> "</div>
-                    </button>"</div>
+                    <button className=" p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200></div>
+                      <div className=text-2xl:mb-2">⚖️</div>"</div>
+                      <div className="font-semibold>Metrology</div> </div>
+                    </button></div>
                     <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all" duration-200"></div>
-                      <div className="text-2xl:mb-2>🎯</div>"</div>
-                      <div className="font-semibold">Detection</div>"</div>
+                      <div className="text-2xl:mb-2>🎯</div></div>
+                      <div className=font-semibold">Detection</div>"</div>
                     </button></div>
                   </div></div>
                 </div></div>
@@ -305,37 +305,37 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}"
             {/* Quantum Sensing */},
 {activeTab === sensi'n'g && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Sensing</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {sensing.map((sensor) => (</div>
                     </div><div key={sensor.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{sensor.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{sensor.type}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{sensor.type}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{sensor.sensitivity}</div></div>
-                          <div className="text-gray-400 text-sm>Sensitivity</div></div>
+                          </div><div className="text-2xl font-bold text-white>{sensor.sensitivity}</div></div>
+                          <div className="text-gray-400 text-sm>Sensitivity</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Resolution</span>"</div>
+                          <span className="text-gray-300>Resolution</span></div>
                           <span className="text-white>{sensor.resolution}</span>"</div>
                         </div>"</div>
-                        <div className="flex" justify-between"></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Bandwidth</span>"</div>
-                          <span className="text-white">{sensor.bandwidth}" Hz</span> </div>
+                          <span className="text-white>{sensor.bandwidth} Hz</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Dynamic" Range</span></div>
+                          <span className="text-gray-300>Dynamic Range</span></div>
                           <span className="text-white>{sensor.dynamicRange} dB</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(sensor.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>"</div>
+                          <span className="{text-white capitalize ${getStatusColor(sensor.status)}"}">
                             {sensor.status}</div>
                           </span></div>
                         </div></div>
@@ -347,37 +347,37 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}
             {/* Quantum Imaging */},"'
 {activeTab === 'imaging' && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Imaging</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Imaging</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {imaging.map((image) => (</div>
-                    </div><div key={image.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={image.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{image.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{image.technique}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{image.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{image.technique}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{image.resolution} μm</div></div>
-                          <div className="text-gray-400" text-sm>Resolution</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{image.resolution} μm</div></div>
+                          <div className=text-gray-400" text-sm>Resolution</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Contrast</span>"</div>
-                          <span className="text-white">{image.contrast}%</span>" </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Contrast</span></div>
+                          <span className=text-white">{image.contrast}%</span>" </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Depth</span>"</div>
-                          <span className="text-white>{image.depth} μm</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Depth</span>"</div>
+                          <span className="text-white>{image.depth} μm</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className=" text-gray-300>Field of View</span>"</div>
-                          <span className="text-white">{image.fieldOfView}°</span></div>
+                          <span className=" text-gray-300>Field of View</span></div>
+                          <span className=text-white">{image.fieldOfView}°</span></div>
                         </div>"</div>
-                        <div className="flex" justify-between >`</div>
-                          <span className="text-gray-300">Status</span>``</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(image.status)}`}>
+                        <div className="flex justify-between ></div>
+                          <span className="text-gray-300">Status</span>`"</div>
+                          <span className="{text-white capitalize ${getStatusColor(image.status)}"}>
                             {image.status}</div>
                           </span></div>
                         </div></div>
@@ -389,39 +389,39 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}
             {/* Quantum Metrology */},'
 {activeTab === metrolo'g'y && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl font-bold text-white ">Quantum Metrology</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl font-bold text-white ">Quantum Metrology</h2>
                  </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>"
-                  {metrology.map((meter) => ("</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+                  {metrology.map((meter) => (</div>
                     </div><div key={meter.id} className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white >{meter.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm capitalize">{meter.measurement}</p></div>
+                          <p className="text-gray-400 text-sm capitalize>{meter.measurement}</p></div>
                         </div></div>
                         <div className=" text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white">{meter.precision}</div>"</div>
+                          </div><div className="text-2xl font-bold text-white>{meter.precision}</div></div>
                           <div className="text-gray-400" text-sm>Precision</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3"> </div>
-                        </div><div className="flex" justify-between></div>
-                          <span className="text-gray-300">Accuracy</span></div>
-                          <span className="text-white>{meter.accuracy}</span>"</div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex" justify-between></div>
+                          <span className="text-gray-300>Accuracy</span></div>
+                          <span className=text-white>{meter.accuracy}</span>"</div>
                         </div></div>
-                        <div className=" flex justify-between"></div>
-                          <span className="text-gray-300>Stability</span"></div>
-                          <span className="text-white">{meter.stability}</span"></div>
+                        <div className=" flex justify-between></div>
+                          <span className=text-gray-300>Stability</span"></div>
+                          <span className="text-white>{meter.stability}</span></div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Uncertainty</span>"</div>
+                          <span className="text-gray-300>Uncertainty</span></div>
                           <span className="text-white>{meter.uncertainty}</span>"</div>
                         </div>"</div>
-                        <div className="flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(meter.status)}`}">
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(meter.status)}"}">
                             {meter.status}</div>
                           </span></div>
                         </div></div>
@@ -433,38 +433,38 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}
             {/* Quantum Detection */}, '
 {activeTab === 'detection' && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white">Quantum Detection</h2></div>
-                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>"
-                  {detection.map((detector) => ("</div>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white">Quantum Detection</h2></div>
+                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                  {detection.map((detector) => (</div>
                     </div><div key={detector.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700"></div>
-                      <div className="flex items-center justify-between mb-4> "</div>
-                        </div><div>"</div>
+                      <div className="flex items-center justify-between mb-4> </div>
+                        </div><div></div>
                           <h3 className="text-lg" font-semibold text-white">{detector.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize >{detector.detector}</p>"</div>
-                        </div>"</div>
+                          <p className="text-gray-400 text-sm capitalize >{detector.detector}</p></div>
+                        </div></div>
                         <div className="text-right">" </div>
-                          </div><div className="text-2xl font-bold text-white>{detector.efficiency}%</div>"</div>
-                          <div className="text-gray-400" text-sm">Efficiency</div></div>
+                          </div><div className="text-2xl font-bold text-white>{detector.efficiency}%</div></div>
+                          <div className=text-gray-400" text-sm">Efficiency</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3> "</div>
-                        </div><div className="flex" justify-between"></div>
-                          <span className=" text-gray-300>Dark Count</span>"</div>
-                          <span className=" text-white">{detector.darkCount} cps</span></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex" justify-between"></div>
+                          <span className=" text-gray-300>Dark Count</span></div>
+                          <span className= text-white">{detector.darkCount} cps</span></div>
                         </div>"</div>
-                        <div className="flex justify-between""></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Dead Time</span>"</div>
-                          <span className="text-white">{detector.deadTime}" ns</span></div>
+                          <span className="text-white>{detector.deadTime} ns</span></div>
                         </div></div>
                         <div className=" flex justify-between>"</div>
-                          <span className="text-gray-300">Jitter</span>"</div>
+                          <span className="text-gray-300>Jitter</span></div>
                           <span className="text-white>{detector.jitter} ps</span> "</div>
                         </div>"</div>
-                        <div className="flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(detector.status)}`}">
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(detector.status)}"}">
                             {detector.status}</div>
                           </span></div>
                         </div></div>
@@ -476,37 +476,37 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}"'
             {/* Quantum Interferometry */},
 {activeTab === interferometr'y' && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Interferometry</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {interferometry.map((interferometer) => (</div>
                     </div><div key={interferometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{interferometer.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{interferometer.interferometer}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{interferometer.interferometer}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{interferometer.visibility}%</div></div>
-                          <div className="text-gray-400 text-sm>Visibility</div></div>
+                          </div><div className="text-2xl font-bold text-white>{interferometer.visibility}%</div></div>
+                          <div className="text-gray-400 text-sm>Visibility</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Phase" Sensitivity</span></div>
+                          <span className="text-gray-300>Phase Sensitivity</span></div>
                           <span className="text-white>{interferometer.phaseSensitivity} rad</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className="text-gray-300>Path Length</span>"</div>
-                          <span className="text-white">{interferometer.pathLength}" m</span> </div>
+                          <span className="text-white>{interferometer.pathLength} m</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Wavelength</span>"</div>
+                          <span className="text-gray-300>Wavelength</span></div>
                           <span className="text-white>{interferometer.wavelength} nm</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(interferometer.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(interferometer.status)}"}">
                             {interferometer.status}</div>
                           </span></div>
                         </div></div>
@@ -518,37 +518,37 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             )}
             {/* Quantum Spectroscopy */},"
 {activeTab === 'spectrosco'py && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Spectroscopy</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Spectroscopy</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {spectroscopy.map((spectrometer) => (</div>
-                    </div><div key={spectrometer.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={spectrometer.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{spectrometer.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{spectrometer.spectroscopy}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{spectrometer.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{spectrometer.spectroscopy}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{spectrometer.spectralRange} nm</div></div>
-                          <div className="text-gray-400" text-sm>Spectral Range</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{spectrometer.spectralRange} nm</div></div>
+                          <div className=text-gray-400" text-sm>Spectral Range</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Resolution</span>"</div>
-                          <span className="text-white">{spectrometer.resolution}" nm</span> </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Resolution</span></div>
+                          <span className=text-white">{spectrometer.resolution}" nm</span> </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Signal" to Noise</span></div>
-                          <span className="text-white>{spectrometer.signalToNoise}</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Signal" to Noise</span></div>
+                          <span className="text-white>{spectrometer.signalToNoise}</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className=" text-gray-300>Integration Time</span>"</div>
-                          <span className=" text-white">{spectrometer.integrationTime} s</span></div>
+                          <span className=" text-gray-300>Integration Time</span></div>
+                          <span className= text-white">{spectrometer.integrationTime} s</span></div>
                         </div>"</div>
-                        <div className="flex" justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(spectrometer.status)}`}">
+                        <div className="flex justify-between >"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(spectrometer.status)}"}">
                             {spectrometer.status}</div>
                           </span></div>
                         </div></div>
@@ -563,10 +563,10 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
       </main>
 "
       {/* Footer */}</div>
-      <footer className="relative  z-10 mt-16"></div>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 "> </div>
-          </div><div className="text-center>"</div>
-            <p className="text-gray-400"">
+      <footer className="relative  z-10 mt-16></div>
+        <div className=max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 "> </div>
+          </div><div className="text-center></div>
+            <p className=text-gray-400"">
               AI-Powered Quantum Sensing & Metrology | Zion Tech Group</div>
             </p></div>
             <p className=" text-gray-500 text-sm mt-2>
@@ -583,6 +583,6 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 </div>
   </div>
 ;
-};"
-''`";}
+};
+''"";}
 export default AIPoweredQuantumSensingMetrology ))))))))))))))))))))))"'"'`</div>

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
-const cheerio = require('cheer'i'o');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
+const $1 = require('cheer'i'o');
 
-class LinkAnalyzerAgent {
+class $1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || `link-analyzer-${Date.now()}`;
+    this.agentId = process.env.AGENT_ID || "link-analyzer-${Date.now()}";
     this.agentType = process.env.AGENT_TYPE || 'link-analyz'e'r';
     this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
@@ -42,14 +42,14 @@ computed: false,
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-analys'i's',
       'link-repor't's',
       'link-lo'g's'
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, '..', dir);
+      const $1 = path.join(__dirname, '..', dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -57,7 +57,7 @@ computed: false,
   }
 
   async initialize() {
-    console.log(`📊 Initializing Link Analyzer Agent: ${this.agentId}`);
+    console.log("📊 Initializing Link Analyzer Agent: ${this.agentId}");
     
     try {
       console.log('✅ Link Analyzer Agent initialized successfully');
@@ -69,7 +69,7 @@ computed: false,
   }
 
   async start() {
-    console.log(`🚀 Starting Link Analyzer Agent: ${this.agentId}`);
+    console.log("🚀 Starting Link Analyzer Agent: ${this.agentId}");
     
     if (!await this.initialize()) {
       return false;
@@ -85,10 +85,10 @@ computed: false,
     console.log('📊 Performing comprehensive link analysis...');
     
     try {
-      const startTime = Date.now();
+      const $1 = Date.now();
       
       // Collect all links from the website
-      const allLinks = await this.collectAllLinks();
+      const $1 = await this.collectAllLinks();
       
       // Analyze internal links
       if (this.config.analyzeInternalLinks) {
@@ -116,14 +116,14 @@ computed: false,
       // Generate comprehensive report
       await this.generateAnalysisReport();
       
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       this.performance.avgResponseTime = responseTime;
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
       
       this.analysisResults.computed = true;
       
-      console.log(`✅ Link analysis completed in ${responseTime}ms`);
+      console.log("✅ Link analysis completed in ${responseTime}ms");
       
     } catch (error) {
       console.error('Erro'r' performing link analysis:', error);
@@ -133,27 +133,27 @@ computed: false,
   }
 
   async collectAllLinks() {
-    const allLinks = new Set();
-    const pagesToVisit = [this.baseUrl];
-    const visitedPages = new Set();
+    const $1 = new Set();
+    const $1 = [this.baseUrl];
+    const $1 = new Set();
     
     console.log('🔍 Collecting all links from website...');
     
     while (pagesToVisit.length > 0 && visitedPages.size < 50) { // Limit to 50 pages
-      const currentUrl = pagesToVisit.shift();
+      const $1 = pagesToVisit.shift();
       
       if (visitedPages.has(currentUrl)) continue;
       visitedPages.add(currentUrl);
       
       try {
-        const response = await axios.get(currentUrl, { timeout: 10000 });
+        const $1 = await axios.get(currentUrl, { timeout: 10000 });
         const $ = cheerio.load(response.data);
         
         // Extract all links
         $('a'[href]').each((i, element) => {
-          const href = $(element).attr('hr'e'f');
+          const $1 = $(element).attr('hr'e'f');
           if (href && this.isValidLink(href)) {
-            const absoluteUrl = this.resolveUrl(href, currentUrl);
+            const $1 = this.resolveUrl(href, currentUrl);
             allLinks.add(absoluteUrl);
             
             // Add internal pages to visit queue
@@ -164,7 +164,7 @@ computed: false,
         });
         
       } catch (error) {
-        console.error(`Error collecting links from ${currentUrl}:`, error.message);
+        console.error("Error collecting links from ${currentUrl}:", error.message);
       }
     }
     
@@ -175,7 +175,7 @@ computed: false,
     if (!url) return false;
     
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.protocol === 'htt'p':' || parsed.protocol === 'http's':';
     } catch {
       return false;
@@ -184,8 +184,8 @@ computed: false,
 
   isInternalLink(url) {
     try {
-      const parsed = new URL(url);
-      const baseParsed = new URL(this.baseUrl);
+      const $1 = new URL(url);
+      const $1 = new URL(this.baseUrl);
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -201,11 +201,11 @@ computed: false,
   }
 
   async analyzeInternalLinks(allLinks) {
-    const internalLinks = allLinks.filter(link => this.isInternalLink(link));
+    const $1 = allLinks.filter(link => this.isInternalLink(link));
     
-    console.log(`📊 Analyzing ${internalLinks.length} internal links...`);
+    console.log("📊 Analyzing ${internalLinks.length} internal links...");
     
-    const analysis = {
+    const $1 = {
       total: internalLinks.length,
       byPath: {},
       byStatus: {},
@@ -216,7 +216,7 @@ computed: false,
     
     // Group by path
     for (const link of internalLinks) {
-      const path = this.extractPath(link);
+      const $1 = this.extractPath(link);
       if (!analysis.byPath[path]) {
         analysis.byPath[path] = [];
       }
@@ -226,9 +226,9 @@ computed: false,
     // Check health of internal links
     for (const link of internalLinks) {
       try {
-        const startTime = Date.now();
-        const response = await axios.head(link, { timeout: 10000 });
-        const responseTime = Date.now() - startTime;
+        const $1 = Date.now();
+        const $1 = await axios.head(link, { timeout: 10000 });
+        const $1 = Date.now() - startTime;
         
         if (response.status >= 400) {
           analysis.broken.push({
@@ -245,7 +245,7 @@ computed: false,
         }
         
         // Update status distribution
-        const status = response.status;
+        const $1 = response.status;
         analysis.byStatus[status] = (analysis.byStatus[status] || 0) + 1;
         
       } catch (error) {
@@ -261,7 +261,7 @@ computed: false,
     if (analysis.broken.length > 0) {
       analysis.recommendations.push({
         type: 'critic'a'l',
-        message: `${analysis.broken.length} broken internal links need immediate fixing`,
+        message: "${analysis.broken.length} broken internal links need immediate fixing",
         action: 'fi'x'_broken_internal_links'
       });
     }
@@ -269,7 +269,7 @@ computed: false,
     if (analysis.slow.length > 0) {
       analysis.recommendations.push({
         type: 'performan'c'e',
-        message: `${analysis.slow.length} slow internal links affecting user experience`,
+        message: "${analysis.slow.length} slow internal links affecting user experience",
         action: 'optimiz'e'_slow_internal_links'
       });
     }
@@ -278,11 +278,11 @@ computed: false,
   }
 
   async analyzeExternalLinks(allLinks) {
-    const externalLinks = allLinks.filter(link => !this.isInternalLink(link));
+    const $1 = allLinks.filter(link => !this.isInternalLink(link));
     
-    console.log(`📊 Analyzing ${externalLinks.length} external links...`);
+    console.log("📊 Analyzing ${externalLinks.length} external links...");
     
-    const analysis = {
+    const $1 = {
       total: externalLinks.length,
       byDomain: {},
       byStatus: {},
@@ -293,7 +293,7 @@ computed: false,
     
     // Group by domain
     for (const link of externalLinks) {
-      const domain = this.extractDomain(link);
+      const $1 = this.extractDomain(link);
       if (!analysis.byDomain[domain]) {
         analysis.byDomain[domain] = [];
       }
@@ -303,9 +303,9 @@ computed: false,
     // Check health of external links
     for (const link of externalLinks) {
       try {
-        const startTime = Date.now();
-        const response = await axios.head(link, { timeout: 15000 });
-        const responseTime = Date.now() - startTime;
+        const $1 = Date.now();
+        const $1 = await axios.head(link, { timeout: 15000 });
+        const $1 = Date.now() - startTime;
         
         if (response.status >= 400) {
           analysis.broken.push({
@@ -322,7 +322,7 @@ computed: false,
         }
         
         // Update status distribution
-        const status = response.status;
+        const $1 = response.status;
         analysis.byStatus[status] = (analysis.byStatus[status] || 0) + 1;
         
       } catch (error) {
@@ -338,16 +338,16 @@ computed: false,
     if (analysis.broken.length > 0) {
       analysis.recommendations.push({
         type: 'importa'n't',
-        message: `${analysis.broken.length} broken external links may affect SEO`,
+        message: "${analysis.broken.length} broken external links may affect SEO",
         action: 'revie'w'_broken_external_links'
       });
     }
     
-    const highDomainCount = Object.keys(analysis.byDomain).length;
+    const $1 = Object.keys(analysis.byDomain).length;
     if (highDomainCount > 20) {
       analysis.recommendations.push({
         type: 's'e'o',
-        message: `High number of external domains (${highDomainCount}), consider consolidating`,
+        message: "High number of external domains (${highDomainCount}), consider consolidating",
         action: 'consolidat'e'_external_links'
       });
     }
@@ -358,7 +358,7 @@ computed: false,
   async performSeoAnalysis(allLinks) {
     console.log('🔍 Performing SEO impact analysis...');
     
-    const seoMetrics = {
+    const $1 = {
       internalLinkRatio: 0,
       externalLinkRatio: 0,
       brokenLinkRatio: 0,
@@ -366,18 +366,18 @@ computed: false,
       recommendations: []
     };
     
-    const internalLinks = allLinks.filter(link => this.isInternalLink(link));
-    const externalLinks = allLinks.filter(link => !this.isInternalLink(link));
+    const $1 = allLinks.filter(link => this.isInternalLink(link));
+    const $1 = allLinks.filter(link => !this.isInternalLink(link));
     
     seoMetrics.internalLinkRatio = (internalLinks.length / allLinks.length) * 100;
     seoMetrics.externalLinkRatio = (externalLinks.length / allLinks.length) * 100;
     
     // Calculate broken link ratio
-    const brokenLinks = this.analysisResults.internalLinks.broken || [];
+    const $1 = this.analysisResults.internalLinks.broken || [];
     seoMetrics.brokenLinkRatio = (brokenLinks.length / allLinks.length) * 100;
     
     // Calculate SEO score
-    let seoScore = 100;
+    let $1 = 100;
     seoScore -= seoMetrics.brokenLinkRatio * 2; // Broken links heavily penalize SEO
     seoScore -= Math.max(0, (seoMetrics.externalLinkRatio - 30)); // Too many external links
     seoScore += Math.min(20, seoMetrics.internalLinkRatio - 60); // Internal links boost SEO
@@ -388,7 +388,7 @@ computed: false,
     if (seoMetrics.brokenLinkRatio > 5) {
       seoMetrics.recommendations.push({
         type: 'critic'a'l',
-        message: `High broken link ratio (${seoMetrics.brokenLinkRatio.toFixed(2)}%) severely impacts SEO`,
+        message: "High broken link ratio (${seoMetrics.brokenLinkRatio.toFixed(2)}%) severely impacts SEO",
         action: 'fi'x'_broken_links_immediately'
       });
     }
@@ -396,7 +396,7 @@ computed: false,
     if (seoMetrics.externalLinkRatio > 40) {
       seoMetrics.recommendations.push({
         type: 'warni'n'g',
-        message: `High external link ratio (${seoMetrics.externalLinkRatio.toFixed(2)}%) may dilute SEO value`,
+        message: "High external link ratio (${seoMetrics.externalLinkRatio.toFixed(2)}%) may dilute SEO value",
         action: 'reduc'e'_external_links'
       });
     }
@@ -404,7 +404,7 @@ computed: false,
     if (seoMetrics.internalLinkRatio < 50) {
       seoMetrics.recommendations.push({
         type: 'improveme'n't',
-        message: `Low internal link ratio (${seoMetrics.internalLinkRatio.toFixed(2)}%), increase internal linking`,
+        message: "Low internal link ratio (${seoMetrics.internalLinkRatio.toFixed(2)}%), increase internal linking",
         action: 'increas'e'_internal_links'
       });
     }
@@ -415,7 +415,7 @@ computed: false,
   async performUxAnalysis(allLinks) {
     console.log('👥 Performing user experience analysis...');
     
-    const uxMetrics = {
+    const $1 = {
       averageResponseTime: 0,
       slowLinksRatio: 0,
       brokenLinksRatio: 0,
@@ -424,15 +424,15 @@ computed: false,
     };
     
     // Calculate average response time
-    const responseTimes = [];
-    const slowLinks = [];
-    const brokenLinks = [];
+    const $1 = [];
+    const $1 = [];
+    const $1 = [];
     
     for (const link of allLinks.slice(0, 20)) { // Sample first 20 links
       try {
-        const startTime = Date.now();
-        const response = await axios.head(link, { timeout: 10000 });
-        const responseTime = Date.now() - startTime;
+        const $1 = Date.now();
+        const $1 = await axios.head(link, { timeout: 10000 });
+        const $1 = Date.now() - startTime;
         
         responseTimes.push(responseTime);
         
@@ -457,7 +457,7 @@ computed: false,
     uxMetrics.brokenLinksRatio = (brokenLinks.length / allLinks.length) * 100;
     
     // Calculate UX score
-    let uxScore = 100;
+    let $1 = 100;
     uxScore -= uxMetrics.brokenLinksRatio * 3; // Broken links heavily impact UX
     uxScore -= Math.max(0, (uxMetrics.averageResponseTime - 1000) / 100); // Slow response times
     uxScore -= uxMetrics.slowLinksRatio * 0.5; // Slow links impact UX
@@ -468,7 +468,7 @@ computed: false,
     if (uxMetrics.brokenLinksRatio > 3) {
       uxMetrics.recommendations.push({
         type: 'critic'a'l',
-        message: `High broken link ratio (${uxMetrics.brokenLinksRatio.toFixed(2)}%) severely impacts user experience`,
+        message: "High broken link ratio (${uxMetrics.brokenLinksRatio.toFixed(2)}%) severely impacts user experience",
         action: 'fi'x'_broken_links_urgently'
       });
     }
@@ -476,7 +476,7 @@ computed: false,
     if (uxMetrics.averageResponseTime > 2000) {
       uxMetrics.recommendations.push({
         type: 'performan'c'e',
-        message: `Slow average response time (${uxMetrics.averageResponseTime.toFixed(0)}ms) affects user experience`,
+        message: "Slow average response time (${uxMetrics.averageResponseTime.toFixed(0)}ms) affects user experience",
         action: 'optimiz'e'_page_speed'
       });
     }
@@ -484,7 +484,7 @@ computed: false,
     if (uxMetrics.slowLinksRatio > 10) {
       uxMetrics.recommendations.push({
         type: 'performan'c'e',
-        message: `High ratio of slow links (${uxMetrics.slowLinksRatio.toFixed(2)}%) impacts user experience`,
+        message: "High ratio of slow links (${uxMetrics.slowLinksRatio.toFixed(2)}%) impacts user experience",
         action: 'optimiz'e'_slow_links'
       });
     }
@@ -493,14 +493,14 @@ computed: false,
   }
 
   generateAnalysisRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     // Overall recommendations based on all analyses</div>
     if (this.analysisResults.seoMetrics.seoScore < 70) {
       recommendations.push({
         type: 's'e'o',
         priority: 'hi'g'h',
-        message: `Low SEO score (${this.analysisResults.seoMetrics.seoScore.toFixed(1)}/100), immediate action required`,
+        message: "Low SEO score (${this.analysisResults.seoMetrics.seoScore.toFixed(1)}/100), immediate action required",
         action: 'improv'e'_seo_score'
       });
     }
@@ -509,19 +509,19 @@ computed: false,
       recommendations.push({
         type: 'u'x',
         priority: 'hi'g'h',
-        message: `Low UX score (${this.analysisResults.uxMetrics.uxScore.toFixed(1)}/100), user experience needs improvement`,
+        message: "Low UX score (${this.analysisResults.uxMetrics.uxScore.toFixed(1)}/100), user experience needs improvement",
         action: 'improv'e'_user_experience'
       });
     }
     
-    const totalBrokenLinks = (this.analysisResults.internalLinks.broken?.length || 0) + 
+    const $1 = (this.analysisResults.internalLinks.broken?.length || 0) + 
                             (this.analysisResults.externalLinks.broken?.length || 0);
     
     if (totalBrokenLinks > 0) {
       recommendations.push({
         type: 'maintenan'c'e',
         priority: 'critic'a'l',
-        message: `${totalBrokenLinks} broken links need immediate attention`,
+        message: "${totalBrokenLinks} broken links need immediate attention",
         action: 'fi'x'_all_broken_links'
       });
     }
@@ -530,9 +530,9 @@ computed: false,
   }
 
   async generateAnalysisReport() {
-    const reportPath = path.join(__dirname, '..', 'link-repor't's', `analysis-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-repor't's', "analysis-report-${Date.now()}.json");
     
-    const report = {
+    const $1 = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       analysisResults: this.analysisResults,
@@ -546,12 +546,12 @@ computed: false,
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📊 Generated analysis report: ${reportPath}`);
+    console.log("📊 Generated analysis report: ${reportPath}");
   }
 
   extractPath(url) {
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.pathname;
     } catch {
       return url;
@@ -560,7 +560,7 @@ computed: false,
 
   extractDomain(url) {
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.hostname;
     } catch {
       return '';
@@ -568,7 +568,7 @@ computed: false,
   }
 
   updatePerformanceMetrics() {
-    const totalTasks = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -587,7 +587,7 @@ computed: false,
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agent = new LinkAnalyzerAgent();
+  const $1 = new LinkAnalyzerAgent();
   
   agent.start().then(() => {
     console.log('Lin'k' Analyzer Agent completed successfully');

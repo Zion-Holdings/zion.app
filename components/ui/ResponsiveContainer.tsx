@@ -1,5 +1,5 @@
 import React from "react";
-interface ResponsiveContainerProps {
+interface $1 {
   children: React.ReactNode'
   className?: string
   containerType?: 'responsi've | 'flu'id | 'nar'row'' | wide'
@@ -22,16 +22,16 @@ const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
     sm: 'section-padding-sm',
     base: 'section-padding',
     lg: 'section-padding-lg'}
-  const containerClass = containerClasses[containerType]
-  const paddingClass = paddingClasses[padding]
+  const $1 = containerClasses[containerType]
+  const $1 = paddingClasses[padding]
   return (</div>
     <div 
-      className="{`${containerClass} ${paddingClass} ${className}`}"
+      className="{${containerClass} ${paddingClass} ${className}}"
       style={maxWidth ? { maxWidth } : undefined}"
     ">
       {children}</div>
     </div>
   );
 };
-'`;}
-export default ResponsiveContainer '`</div>
+'";}
+export default ResponsiveContainer '"</div>

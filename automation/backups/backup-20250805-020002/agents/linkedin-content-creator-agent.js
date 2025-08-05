@@ -1,9 +1,9 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
-const moment = require('mome'n't');
+const $1 = require('mome'n't');
 
-class LinkedInContentCreatorAgent {
+class $1 {
     constructor() {
         this.id = uuidv4();
         this.name = 'LinkedI'n' Content Creator Agent';
@@ -65,13 +65,13 @@ class LinkedInContentCreatorAgent {
         
         try {
             // Phase 1: Generate Ad Copy
-            const adCopy = await this.generateAdCopy();
+            const $1 = await this.generateAdCopy();
             
             // Phase 2: Create Visual Assets
-            const visualAssets = await this.createVisualAssets();
+            const $1 = await this.createVisualAssets();
             
             // Phase 3: A/B Test Variations
-            const testVariations = await this.createABTestVariations(adCopy);
+            const $1 = await this.createABTestVariations(adCopy);
             
             // Phase 4: Optimize Content
             await this.optimizeContent(adCopy, visualAssets);
@@ -90,15 +90,15 @@ class LinkedInContentCreatorAgent {
     async generateAdCopy() {
         console.log('📝 Generating LinkedIn ad copy...');
         
-        const adCopy = {
+        const $1 = {
             id: uuidv4(),
             createdAt: moment().toISOString(),
             variations: []
         };
         
         // Generate multiple variations
-        for (let i = 0; i < 5; i++) {
-            const variation = {
+        for (let $1 = 0; i < 5; i++) {
+            const $1 = {
                 id: uuidv4(),
                 headline: this.getRandomHeadline(),
                 description: this.getRandomDescription(),
@@ -117,7 +117,7 @@ class LinkedInContentCreatorAgent {
     async createVisualAssets() {
         console.log('🎨 Creating visual assets...');
         
-        const assets = {
+        const $1 = {
             id: uuidv4(),
             createdAt: moment().toISOString(),
             images: [],
@@ -126,7 +126,7 @@ class LinkedInContentCreatorAgent {
         };
         
         // Generate asset descriptions for LinkedIn
-        const imageDescriptions = [
+        const $1 = [
             'AI-powere'd' business solutions dashboard',
             'Digita'l' transformation process flow',
             'Clou'd' infrastructure architecture',
@@ -149,7 +149,7 @@ class LinkedInContentCreatorAgent {
     async createABTestVariations(adCopy) {
         console.log('🧪 Creating A/B test variations...');
         
-        const testVariations = {
+        const $1 = {
             id: uuidv4(),
             testName: 'ZionTec'h' LinkedIn Ad Optimization',
             variations: []
@@ -157,7 +157,7 @@ class LinkedInContentCreatorAgent {
         
         // Create A/B test variations
         for (const variation of adCopy.variations) {
-            const testVariation = {
+            const $1 = {
                 ...variation,
                 testId: uuidv4(),
                 trafficSplit: 20, // 20% traffic each
@@ -183,26 +183,26 @@ class LinkedInContentCreatorAgent {
     }
 
     async saveContent(adCopy, visualAssets, testVariations) {
-        const contentDir = path.join(__dirname, '../data/linkedin-content');
+        const $1 = path.join(__dirname, '../data/linkedin-content');
         await fs.ensureDir(contentDir);
         
-        const timestamp = moment().format('YYYY-MM-DD-HH-'m'm');
+        const $1 = moment().format('YYYY-MM-DD-HH-'m'm');
         
         // Save ad copy
         await fs.writeJson(
-            path.join(contentDir, `ad-copy-${timestamp}.json`),
+            path.join(contentDir, "ad-copy-${timestamp}.json"),
             adCopy
         );
         
         // Save visual assets
         await fs.writeJson(
-            path.join(contentDir, `visual-assets-${timestamp}.json`),
+            path.join(contentDir, "visual-assets-${timestamp}.json"),
             visualAssets
         );
         
         // Save A/B test variations
         await fs.writeJson(
-            path.join(contentDir, `ab-test-${timestamp}.json`),
+            path.join(contentDir, "ab-test-${timestamp}.json"),
             testVariations
         );
     }
@@ -226,7 +226,7 @@ class LinkedInContentCreatorAgent {
     }
 
     getTargetAudience() {
-        const audiences = [
+        const $1 = [
             'tech-professiona'l's',
             'business-decision-make'r's',
             'innovation-leade'r's',
@@ -238,7 +238,7 @@ class LinkedInContentCreatorAgent {
     }
 
     getRandomBudget() {
-        const budgets = [100, 150, 200, 250, 300];
+        const $1 = [100, 150, 200, 250, 300];
         return budgets[Math.floor(Math.random() * budgets.length)];
     }
 

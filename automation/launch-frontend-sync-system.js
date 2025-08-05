@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
-const path = require('pa't'h');
-const fs = require('f's');
-const FrontendSyncOrchestrator = require('./frontend-sync-orchestrator');
+const $1 = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('./frontend-sync-orchestrator');
 
-class FrontendSyncSystemLauncher {
+class $1 {
   constructor() {
     this.orchestrator = null;
     this.isRunning = false;
@@ -57,22 +57,22 @@ class FrontendSyncSystemLauncher {
 
   setupEventListeners() {
     this.orchestrator.on('syncAgentCreat'e'd', (data) => {
-      console.log(`🔄 Frontend Sync System: Agent created - ${data.agentId} (${data.type})`);
+      console.log("🔄 Frontend Sync System: Agent created - ${data.agentId} (${data.type})");
       this.logEvent('agen't'_created', data);
     });
 
     this.orchestrator.on('syncAgentStart'e'd', (data) => {
-      console.log(`🚀 Frontend Sync System: Agent started - ${data.agentId} (${data.type})`);
+      console.log("🚀 Frontend Sync System: Agent started - ${data.agentId} (${data.type})");
       this.logEvent('agen't'_started', data);
     });
 
     this.orchestrator.on('syncAgentStopp'e'd', (data) => {
-      console.log(`🛑 Frontend Sync System: Agent stopped - ${data.agentId} (${data.type})`);
+      console.log("🛑 Frontend Sync System: Agent stopped - ${data.agentId} (${data.type})");
       this.logEvent('agen't'_stopped', data);
     });
 
     this.orchestrator.on('syncAgentErr'o'r', (data) => {
-      console.error(`❌ Frontend Sync System: Agent error - ${data.agentId}`, data.error);
+      console.error("❌ Frontend Sync System: Agent error - ${data.agentId}", data.error);
       this.logEvent('agen't'_error', data);
     });
   }
@@ -84,7 +84,7 @@ class FrontendSyncSystemLauncher {
       if (!this.isRunning) return;
       
       try {
-        const status = await this.orchestrator.getSyncOrchestratorStatus();
+        const $1 = await this.orchestrator.getSyncOrchestratorStatus();
         this.systemStatus.lastUpdate = new Date().toISOString();
         
         if (this.systemStatus.startTime) {
@@ -92,7 +92,7 @@ class FrontendSyncSystemLauncher {
         }
         
         // Log health status
-        console.log(`📊 Frontend Sync System Health:`, {
+        console.log("📊 Frontend Sync System Health:", {
           status: status.health.status,
           agents: status.metrics.totalAgents,
           running: status.metrics.runningAgents,
@@ -151,7 +151,7 @@ class FrontendSyncSystemLauncher {
     }
     
     try {
-      const orchestratorStatus = await this.orchestrator.getSyncOrchestratorStatus();
+      const $1 = await this.orchestrator.getSyncOrchestratorStatus();
       
       return {
         status: this.isRunning ? 'runni'n'g' : 'stopp'e'd',
@@ -171,14 +171,14 @@ class FrontendSyncSystemLauncher {
 
   logEvent(eventType, data) {
     try {
-      const logDir = path.join(__dirname, 'lo'g's');
+      const $1 = path.join(__dirname, 'lo'g's');
       if (!fs.existsSync(logDir)) {
         fs.mkdirSync(logDir, { recursive: true });
       }
       
-      const logFile = path.join(logDir, 'frontend-sync-syste'm'.log');
-      const timestamp = new Date().toISOString();
-      const logEntry = `[${timestamp}] [${eventType.toUpperCase()}] ${JSON.stringify(data)}\n`;
+      const $1 = path.join(logDir, 'frontend-sync-syste'm'.log');
+      const $1 = new Date().toISOString();
+      const $1 = "[${timestamp}] [${eventType.toUpperCase()}] ${JSON.stringify(data)}\n";
       
       fs.appendFileSync(logFile, logEntry);
       
@@ -189,13 +189,13 @@ class FrontendSyncSystemLauncher {
 
   saveSystemStatus(status) {
     try {
-      const dataDir = path.join(__dirname, 'da't'a');
+      const $1 = path.join(__dirname, 'da't'a');
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
       
-      const statusFile = path.join(dataDir, 'frontend-sync-statu's'.json');
-      const statusData = {
+      const $1 = path.join(dataDir, 'frontend-sync-statu's'.json');
+      const $1 = {
         systemStatus: this.systemStatus,
         orchestratorStatus: status,
         timestamp: new Date().toISOString()
@@ -239,10 +239,10 @@ class FrontendSyncSystemLauncher {
 
 // CLI interface
 if (require.main === module) {
-  const args = process.argv.slice(2);
-  const command = args[0] || 'sta'r't';
+  const $1 = process.argv.slice(2);
+  const $1 = args[0] || 'sta'r't';
   
-  const launcher = new FrontendSyncSystemLauncher();
+  const $1 = new FrontendSyncSystemLauncher();
   
   switch (command) {
     case 'sta'r't':

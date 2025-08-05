@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AdRevenueAgent {
+class $1 {
     constructor(config) {
         this.config = config;
         this.id = config.id;
@@ -40,7 +40,7 @@ class AdRevenueAgent {
     async optimizeGoogleAds() {
         this.log('Optimizin'g' Google Ads performance...');
         
-        const googleAdsOptimizations = [
+        const $1 = [
             { strategy: 'keyword-optimizati'o'n', revenueImpact: 30000, period: 'month'l'y' },
             { strategy: 'ad-copy-optimizati'o'n', revenueImpact: 25000, period: 'month'l'y' },
             { strategy: 'landing-page-optimizati'o'n', revenueImpact: 35000, period: 'month'l'y' },
@@ -57,7 +57,7 @@ class AdRevenueAgent {
     async optimizeFacebookAds() {
         this.log('Optimizin'g' Facebook Ads performance...');
         
-        const facebookAdsOptimizations = [
+        const $1 = [
             { strategy: 'audience-segmentati'o'n', revenueImpact: 28000, period: 'month'l'y' },
             { strategy: 'creative-optimizati'o'n', revenueImpact: 22000, period: 'month'l'y' },
             { strategy: 'placement-optimizati'o'n', revenueImpact: 25000, period: 'month'l'y' },
@@ -74,7 +74,7 @@ class AdRevenueAgent {
     async optimizeNativeAds() {
         this.log('Optimizin'g' Native Ads performance...');
         
-        const nativeAdsOptimizations = [
+        const $1 = [
             { strategy: 'content-matchi'n'g', revenueImpact: 20000, period: 'month'l'y' },
             { strategy: 'native-placement-optimizati'o'n', revenueImpact: 18000, period: 'month'l'y' },
             { strategy: 'sponsored-conte'n't', revenueImpact: 25000, period: 'month'l'y' },
@@ -90,7 +90,7 @@ class AdRevenueAgent {
     async optimizeCTR() {
         this.log('Optimizin'g' Click-Through Rate (CTR)...');
         
-        const ctrOptimizations = [
+        const $1 = [
             { strategy: 'compelling-headlin'e's', revenueImpact: 15000, period: 'month'l'y' },
             { strategy: 'visual-optimizati'o'n', revenueImpact: 12000, period: 'month'l'y' },
             { strategy: 'call-to-action-optimizati'o'n', revenueImpact: 18000, period: 'month'l'y' },
@@ -106,7 +106,7 @@ class AdRevenueAgent {
     async optimizeCPC() {
         this.log('Optimizin'g' Cost Per Click (CPC)...');
         
-        const cpcOptimizations = [
+        const $1 = [
             { strategy: 'quality-score-improveme'n't', revenueImpact: 25000, period: 'month'l'y' },
             { strategy: 'negative-keyword-optimizati'o'n', revenueImpact: 18000, period: 'month'l'y' },
             { strategy: 'ad-relevance-optimizati'o'n', revenueImpact: 22000, period: 'month'l'y' },
@@ -122,7 +122,7 @@ class AdRevenueAgent {
     async optimizeROAS() {
         this.log('Optimizin'g' Return on Ad Spend (ROAS)...');
         
-        const roasOptimizations = [
+        const $1 = [
             { strategy: 'conversion-tracking-optimizati'o'n', revenueImpact: 35000, period: 'month'l'y' },
             { strategy: 'audience-quality-improveme'n't', revenueImpact: 30000, period: 'month'l'y' },
             { strategy: 'bidding-strategy-optimizati'o'n', revenueImpact: 28000, period: 'month'l'y' },
@@ -136,7 +136,7 @@ class AdRevenueAgent {
     }
 
     async applyOptimization(category, optimization) {
-        const optimizationResult = {
+        const $1 = {
             agentId: this.id,
             category: category,
             strategy: optimization.strategy,
@@ -148,32 +148,32 @@ class AdRevenueAgent {
         };
 
         // Save optimization result
-        const reportsDir = path.join(__dirname, '..', 'monetization-repor't's');
+        const $1 = path.join(__dirname, '..', 'monetization-repor't's');
         if (!fs.existsSync(reportsDir)) {
             fs.mkdirSync(reportsDir, { recursive: true });
         }
         
-        const reportFile = path.join(reportsDir, `ad-revenue-${category}-${optimization.strategy}-${Date.now()}.json`);
+        const $1 = path.join(reportsDir, "ad-revenue-${category}-${optimization.strategy}-${Date.now()}.json");
         fs.writeFileSync(reportFile, JSON.stringify(optimizationResult, null, 2));
 
-        this.log(`Applied ad revenue optimization: ${category} - ${optimization.strategy} - $${optimization.revenueImpact}/${optimization.period}`);
+        this.log("Applied ad revenue optimization: ${category} - ${optimization.strategy} - $${optimization.revenueImpact}/${optimization.period}");
     }
 
     updatePerformance() {
         // Update performance metrics
         this.performance.efficiency = (this.performance.revenueGenerated / Math.max(this.performance.conversions, 1)) * 100;
         
-        const configFile = path.join(__dirname, 'confi'g'.json');
+        const $1 = path.join(__dirname, 'confi'g'.json');
         if (fs.existsSync(configFile)) {
-            const config = JSON.parse(fs.readFileSync(configFile, 'ut'f'8'));
+            const $1 = JSON.parse(fs.readFileSync(configFile, 'ut'f'8'));
             config.performance = this.performance;
             fs.writeFileSync(configFile, JSON.stringify(config, null, 2));
         }
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
-        const logEntry = `[${timestamp}] [AdRevenueAgent] ${message}\n`;
+        const $1 = new Date().toISOString();
+        const $1 = "[${timestamp}] [AdRevenueAgent] ${message}\n";
         fs.appendFileSync(this.logFile, logEntry);
     }
 }

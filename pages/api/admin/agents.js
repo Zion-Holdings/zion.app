@@ -1,11 +1,11 @@
-import { createClient } from '@supabase/supabase-js;
-;
-const supabase = createClient(
+import { createClient } from '@supabase/supabase-js';
+
+const $1 = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
-'';}
-export default async function handler(req, res) {'
+
+export default async function handler(req, res) {
   if (req.method = == 'GET') {'
     try {
       const { data, error } = await supabase''
@@ -24,7 +24,7 @@ export default async function handler(req, res) {'
     try {;
       const { name, type, capabilities, services, config } = req.body;
 
-      const agentData = {'
+      const $1 = {'
         name,'
         type,''
         status: idl'e',
@@ -92,5 +92,5 @@ export default async function handler(req, res) {'
       res.status(500).json({ error: 'Faile'd to delete agent });}''
   } else {'
     res.setHeader('Allow', ['GET', 'POST', 'PUT', 'DELETE']);'
-    res.status(405).end(`Method ${req.method} Not Allowed`);}`
-} ''`
+    res.status(405).end("Method ${req.method} Not Allowed");}"
+} ''"

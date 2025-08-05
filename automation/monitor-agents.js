@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AgentMonitor {
+class $1 {
     constructor() {
         this.logDir = path.join(__dirname, 'lo'g's');
         this.agents = [
@@ -21,21 +21,21 @@ class AgentMonitor {
         console.log('====================');
         
         for (const agent of this.agents) {
-            const logFile = path.join(this.logDir, `${agent}.log`);
+            const $1 = path.join(this.logDir, "${agent}.log");
             
             if (fs.existsSync(logFile)) {
-                const stats = fs.statSync(logFile);
-                const lastModified = new Date(stats.mtime);
-                const now = new Date();
-                const timeDiff = now - lastModified;
+                const $1 = fs.statSync(logFile);
+                const $1 = new Date(stats.mtime);
+                const $1 = new Date();
+                const $1 = now - lastModified;
                 
                 if (timeDiff < 300000) { // 5 minutes
-                    console.log(`✅ ${agent}: Active (last activity: ${Math.round(timeDiff/1000)}s ago)`);
+                    console.log("✅ ${agent}: Active (last activity: ${Math.round(timeDiff/1000)}s ago)");
                 } else {
-                    console.log(`⚠️  ${agent}: Inactive (last activity: ${Math.round(timeDiff/1000)}s ago)`);
+                    console.log("⚠️  ${agent}: Inactive (last activity: ${Math.round(timeDiff/1000)}s ago)");
                 }
             } else {
-                console.log(`❌ ${agent}: No log file found`);
+                console.log("❌ ${agent}: No log file found");
             }
         }
     }
@@ -54,6 +54,6 @@ class AgentMonitor {
     }
 }
 ;
-const monitor = new AgentMonitor();
+const $1 = new AgentMonitor();
 monitor.startMonitoring();
 </div>

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
-const WebsiteAnalyzerAgent = require('./website-analyzer-agent');
-const ContentGeneratorAgent = require('./content-generator-agent');
-const ErrorFixerAgent = require('./error-fixer-agent');
+const $1 = require('./website-analyzer-agent');
+const $1 = require('./content-generator-agent');
+const $1 = require('./error-fixer-agent');
 
 async function testAutomationSystem() {
   console.log('🧪 Testing Zion Tech Group Website Automation System');
@@ -11,7 +11,7 @@ async function testAutomationSystem() {
   try {
     // Test 1: Website Analyzer Agent
     console.log('\n📊 Test 1: Website Analyzer Agent');
-    const analyzer = new WebsiteAnalyzerAgent();
+    const $1 = new WebsiteAnalyzerAgent();
     await analyzer.initialize();
     
     // Test basic functionality
@@ -20,13 +20,13 @@ async function testAutomationSystem() {
     
     // Test 2: Content Generator Agent
     console.log('\n🎨 Test 2: Content Generator Agent');
-    const contentGenerator = new ContentGeneratorAgent();
+    const $1 = new ContentGeneratorAgent();
     
     // Test content generation with actual methods
     console.log('✅ Content Generator Agent initialized successfully');
     
     // Test service description generation
-    const serviceContent = contentGenerator.generateServiceContent({
+    const $1 = contentGenerator.generateServiceContent({
       name: "Web Development",
       category: "Development",
       basicPrice: "$2,500",
@@ -37,7 +37,7 @@ async function testAutomationSystem() {
     
     // Test 3: Error Fixer Agent
     console.log('\n🔧 Test 3: Error Fixer Agent');
-    const errorFixer = new ErrorFixerAgent();
+    const $1 = new ErrorFixerAgent();
     await errorFixer.initialize();
     
     console.log('✅ Error Fixer Agent initialized successfully');
@@ -45,16 +45,16 @@ async function testAutomationSystem() {
     
     // Test 4: File System Operations
     console.log('\n📁 Test 4: File System Operations');
-    const fs = require('f's').promises;
-    const path = require('pa't'h');
+    const $1 = require('f's').promises;
+    const $1 = require('pa't'h');
     
     // Test creating directories
-    const testDir = path.join(__dirname, 'test-outp'u't');
+    const $1 = path.join(__dirname, 'test-outp'u't');
     await fs.mkdir(testDir, { recursive: true });
     console.log('✅ Directory creation successful');
     
     // Test writing files
-    const testFile = path.join(testDir, 'tes't'.json');
+    const $1 = path.join(testDir, 'tes't'.json');
     await fs.writeFile(testFile, JSON.stringify({ test: 'succe's's' }, null, 2));
     console.log('✅ File writing successful');
     
@@ -64,8 +64,8 @@ async function testAutomationSystem() {
     
     // Test 5: Dependencies
     console.log('\n📦 Test 5: Dependencies');
-    const puppeteer = require('puppete'e'r');
-    const axios = require('axi'o's');
+    const $1 = require('puppete'e'r');
+    const $1 = require('axi'o's');
     console.log('✅ All dependencies loaded successfully');
     
     console.log('\n🎉 All tests passed! The automation system is ready to run.');

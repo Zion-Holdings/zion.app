@@ -544,54 +544,54 @@ class $1 {
             .replace(/-+/g, '-')
             .replace(/^-|-$/g, '');
         
-        const $1 = "import React from 'rea'c't';}
+        const $1 = "import React from 'react';}
 import Head from 'nex't'/head';
 ;
 const ${componentName}: React.FC = () => {
   return (
-    <></div>
+    <div></div>
       <Head></div>
         <title>${createDisplayTitle(solution.name)} - Zion App</title></div>
         <meta name="description" content="${solution.description}" /></div>
       </Head></div>
-      <div className="min-h-screen bg-gray-50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
-          <div className="text-center"></div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      <div className="min-h-screen bg-gray-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="text-center></div>
+            <h1 className=text-4xl font-bold text-gray-900 mb-4">
               ${createDisplayTitle(solution.name)}</div>
             </h1></div>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8>
               ${solution.description}</div>
             </p></div>
           </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className=grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             ${solution.features.map(feature => "</div>
-            <div key="${feature}" className="bg-white p-6 rounded-lg shadow-md"></div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div key="${feature}" className="bg-white p-6 rounded-lg shadow-md></div>
+              <h3 className=text-lg font-semibold text-gray-900 mb-2">
                 ${feature}</div>
               </h3></div>
-              <p className="text-gray-600">
+              <p className="text-gray-600>
                 Advanced ${feature.toLowerCase()} capabilities for your business.</div>
               </p></div>
             </div>
-            ").join('')}</div>
+            ).join('')}</div>
           </div>
           </div>
           <div className="mt-12 text-center"></div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4>
               Pricing Plans</div>
             </h2></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className=grid grid-cols-1 md:grid-cols-3 gap-8">
               ${Object.entries(solution.pricing).map(([tier, price]) => "</div>
-              <div key="${tier}" className="bg-white p-6 rounded-lg shadow-md"></div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <div key="${tier}" className="bg-white p-6 rounded-lg shadow-md></div>
+                <h3 className=text-xl font-semibold text-gray-900 mb-2">
                   ${tier.charAt(0).toUpperCase() + tier.slice(1)}</div>
                 </h3></div>
-                <p className="text-3xl font-bold text-blue-600 mb-4">
+                <p className="text-3xl font-bold text-blue-600 mb-4>
                   ${price}</div>
                 </p></div>
-                <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+                <button className=w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
                   Get Started</div>
                 </button></div>
               </div>
@@ -600,7 +600,7 @@ const ${componentName}: React.FC = () => {
           </div></div>
         </div></div>
       </div></div>
-    </>
+    </div>
   );
 };
 ;}
@@ -669,18 +669,18 @@ export default ${componentName};
         
         // Add new solutions to the marketplace page
         const $1 = solutions.map(solution => "</div>
-          <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md"></div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+          <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md></div>
+            <h3 className=text-xl font-semibold text-gray-900 mb-2">
               ${createDisplayTitle(solution.name)}</div>
             </h3></div>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4>
               ${solution.description}</div>
             </p></div>
-            <div className="flex justify-between items-center"></div>
-              <span className="text-blue-600 font-semibold">
+            <div className=flex justify-between items-center"></div>
+              <span className="text-blue-600 font-semibold>
                 ${solution.pricing.basic}</div>
               </span></div>
-              <button className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <button className=bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
                 Learn More</div>
               </button></div>
             </div></div>
@@ -728,15 +728,15 @@ export default ${componentName};
         
         // Add new solution pricing to the pricing page
         const $1 = solutions.map(solution => "</div>
-          <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md"></div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md></div>
+            <h3 className=text-2xl font-bold text-gray-900 mb-4">
               ${createDisplayTitle(solution.name)}</div>
             </h3></div>
-            <div className="space-y-4">
-              ${Object.entries(solution.pricing).map(([tier, price]) => "</div>
+            <div className="space-y-4>
+              ${Object.entries(solution.pricing).map(([tier, price]) => </div>
               <div className="flex justify-between items-center"></div>
-                <span className="text-gray-600">${tier.charAt(0).toUpperCase() + tier.slice(1)}</span></div>
-                <span className="text-xl font-semibold text-blue-600">${price}</span></div>
+                <span className="text-gray-600>${tier.charAt(0).toUpperCase() + tier.slice(1)}</span></div>
+                <span className=text-xl font-semibold text-blue-600">${price}</span></div>
               </div>
               ").join('')}</div>
             </div></div>

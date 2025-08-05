@@ -9,7 +9,7 @@ export default async function handler(
   try {
     const { action } = req.body;
 
-    const mockData = {
+    const $1 = {
       vendors: [
         {
           id: 1',

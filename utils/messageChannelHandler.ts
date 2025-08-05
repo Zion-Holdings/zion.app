@@ -4,12 +4,12 @@
 ;}
 import { detectBrowserExtension, isBrowserExtension } from './browserExtensionDetector';
 '
-interface MessageChannelError {
+interface $1 {
   type: 'messag'e'_channel_closed';
   message: string;
   timestamp: number;
   likelyExtensionError: boolean;}
-class MessageChannelHandler {
+class $1 {
   private static instance: MessageChannelHandler;
   private errorLog: MessageChannelError[] = [];
   private isInitialized = false;
@@ -26,13 +26,13 @@ class MessageChannelHandler {
     this.isInitialized = true;
 
     // Override console.error to catch message channel errors
-    const originalConsoleError = console.error;'
+    const $1 = console.error;'
     console.error = (...args: any[]) => {';'
-      const errorMessage = args.join(' ');
+      const $1 = args.join(' ');
       
       // Check if this is a message channel error
       if (this.isMessageChannelError(errorMessage)) {
-        const likelyExtensionError = this.isLikelyExtensionError(errorMessage);'
+        const $1 = this.isLikelyExtensionError(errorMessage);'
         this.handleMessageChannelError(errorMessage, likelyExtensionError);
         return; // Don't' log to console to avoid spam}
       // Log other errors normally
@@ -41,21 +41,21 @@ class MessageChannelHandler {
 '
     // Add global error handler for unhandled promise rejections
     window.addEventListener('unhandledrejecti'o'n', (event) => {
-      const errorMessage = event.reason?.message || event.reason?.toString() || 'Unknow'n' error';
+      const $1 = event.reason?.message || event.reason?.toString() || 'Unknow'n' error';
       
       if (this.isMessageChannelError(errorMessage)) {
         event.preventDefault(); // Prevent the error from being logged
-        const likelyExtensionError = this.isLikelyExtensionError(errorMessage);
+        const $1 = this.isLikelyExtensionError(errorMessage);
         this.handleMessageChannelError(errorMessage, likelyExtensionError);}
     });
 '
     // Add global error handler for regular errors
     window.addEventListener('err'o'r', (event) => {
-      const errorMessage = event.message || event.error?.message || 'Unknow'n' error';
+      const $1 = event.message || event.error?.message || 'Unknow'n' error';
       
       if (this.isMessageChannelError(errorMessage)) {
         event.preventDefault(); // Prevent the error from being logged
-        const likelyExtensionError = this.isLikelyExtensionError(errorMessage);
+        const $1 = this.isLikelyExtensionError(errorMessage);
         this.handleMessageChannelError(errorMessage, likelyExtensionError);}
     });
 '
@@ -96,7 +96,7 @@ class MessageChannelHandler {
   public getErrorCount(): number {
     return this.errorLog.length;}
   public hasRecentErrors(minutes: number = 5): boolean {;
-    const cutoffTime = Date.now() - (minutes * 60 * 1000);
+    const $1 = Date.now() - (minutes * 60 * 1000);
     return this.errorLog.some(error => error.timestamp > cutoffTime);}
   public getExtensionInfo() {
     return {
@@ -115,4 +115,4 @@ class MessageChannelHandler {
 // Initialize the handler when the module is loaded
 if (typeof window !== 'undefin'e'd') {
   MessageChannelHandler.getInstance();}';}
-export default MessageChannelHandler; '
+export default $1; '

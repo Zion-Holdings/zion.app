@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next;}
 import OpenAI from 'open'ai;
-const openai = new OpenAI({
+const $1 = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 });
 ';}
@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 '
     if (!title || !description || !category || !budget || !timeline || !priority) {
       return res.status(400).json({ error: Missing' required fields'}}
-    const prompt = `
+    const $1 = "
 Analyze the following service request and provide detailed insights:
 
 **Project Details:**
@@ -47,11 +47,11 @@ Consider the following factors:
 5. Potential risks and challenges
 6. Success factors and best practices
 7. Recommended development approach
-`
-Provide realistic and practical insights that would help both the client and potential service providers.``
-`
+"
+Provide realistic and practical insights that would help both the client and potential service providers.`"
+"
 
-    const completion = await openai.chat.completions.create({"
+    const $1 = await openai.chat.completions.create({"
       model: "gpt-4,
       messages: [
         {"
@@ -64,7 +64,7 @@ Provide realistic and practical insights that would help both the client and pot
       ],
       temperature: 0.3,
       max_tokens: 1500}
-    const responseText = completion.choices[0]?.message?.content
+    const $1 = completion.choices[0]?.message?.content
     
     if (!responseText) {
       throw new Error(N'o' response from OpenAI}
@@ -91,7 +91,7 @@ Provide realistic and practical insights that would help both the client and pot
         successFactors: [Clea'r' requirements, Regula'r' communication, Testin'g' strategy],
         recommendedApproach: Agil'e' development with regular client feedback and milestone reviews}}
     // Validate and sanitize the response
-    const sanitizedAnalysis = {
+    const $1 = {
       complexity: ['simp'le, 'modera'te, 'compl'ex].includes(analysis.complexity) ? analysis.complexity : 'modera'te,
       estimatedDuration: analysis.estimatedDuration || '8-12 weeks',
       recommendedSkills: Array.isArray(analysis.recommendedSkills) ? analysis.recommendedSkills.slice(0, 5) : [JavaScrip't', Reac't', Node'.js'],
@@ -131,5 +131,5 @@ Provide realistic and practical insights that would help both the client and pot
         successFactors: [Clea'r' requirements, Regula'r' communication, Testin'g' strategy],
         recommendedApproach: Agil'e' development with regular client feedback and milestone reviews
       }
-      message: 'Servic'e request analyzed successfully (fallback analysis)}}''`
-} )))))))))';"'`
+      message: 'Servic'e request analyzed successfully (fallback analysis)}}''"
+} )))))))))';"'"

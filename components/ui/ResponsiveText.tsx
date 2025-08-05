@@ -1,5 +1,5 @@
 import React from "react";
-interface ResponsiveTextProps {
+interface $1 {
   children: React.ReactNode'
   className?: string
   size?: 'x's | s'm' | ba's'e | 'l'g | x'l' | 2xl | '3xl' | 4xl | '5xl
@@ -43,15 +43,15 @@ const ResponsiveText: React.FC<ResponsiveTextProps> = ({'
     center: text-cent'e'r,
     right: text-rig'h't,
     justify: text-justi'f'y}
-  const sizeClass = sizeClasses[size]
-  const weightClass = weightClasses[weight]
-  const colorClass = colorClasses[color]
-  const alignClass = alignClasses[align]
+  const $1 = sizeClasses[size]
+  const $1 = weightClasses[weight]
+  const $1 = colorClasses[color]
+  const $1 = alignClasses[align]
   return (</div>
-    <Component className="{`${sizeClass} ${weightClass} ${colorClass} ${alignClass} ${className}`}">
+    <Component className="{${sizeClass} ${weightClass} ${colorClass} ${alignClass} ${className}}">
       {children}</div>
     </Component>
   );
 };
-'`;}
-export default ResponsiveText ''`</div>
+'";}
+export default ResponsiveText ''"</div>

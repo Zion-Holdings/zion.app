@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';}
 import type { NextPage } from ne'x't;}
 import Head from next/head';
 
-interface Metric {
+interface $1 {
   id: string;
   name: string;
   value: number;
@@ -12,7 +12,7 @@ interface Metric {
   unit: string;
 }
 
-interface ChartData {
+interface $1 {
   labels: string[];
   datasets: {
     label: string;
@@ -22,7 +22,7 @@ interface ChartData {
   }[];
 }
 
-interface Insight {
+interface $1 {
   id: string;
   type: ''positiv'e' | negativ'e' | neutr'a'l | 'warni'ng;
   title: string;
@@ -31,7 +31,7 @@ interface Insight {
   confidence: number;
 }
 
-interface Report {
+interface $1 {
   id: string;
   name: string;
   type: ''dail'y' | weekl'y' | month'l'y | 'quarter'ly;
@@ -40,7 +40,7 @@ interface Report {
   nextScheduled: string;
 }
 ;
-const AIBusinessIntelligenceDashboardPage: NextPage = () => {
+const $1: NextPage = () => {
   const [activeTab, setActiveTab] = useState('overvi'ew);
   const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
   const [loading, setLoading] = useState(false);
@@ -150,7 +150,7 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
     }, 1000);
   }, []);
 
-  const getTrendIcon = (trend: string) => {
+  const $1 = (trend: string) => {
     switch (trend) {
       case u'p': return ↗️;
       case 'do'wn: return '↘️';
@@ -159,7 +159,7 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
     }
   };
 
-  const getTrendColor = (trend: string) => {
+  const $1 = (trend: string) => {
     switch (trend) {
       case up': return 'text-green-600';
       case 'down': return 'text-red-600';
@@ -168,7 +168,7 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
     }
   };
 
-  const getInsightColor = (type: string) => {
+  const $1 = (type: string) => {
     switch (type) {
       case 'positive': return 'bg-green-100 text-green-800';
       case 'negative': return 'bg-red-100 text-red-800';
@@ -178,7 +178,7 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
     }
   };
 
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case 'generated': return 'bg-green-100 text-green-800';
       case 'pending': return 'bg-yellow-100 text-yellow-800';
@@ -188,31 +188,31 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
   };
 
   return (</div>
-    <></div>
+    <div></div>
       <Head></div>
         <title>AI Business Intelligence Dashboard - Zion App</title></div>
         <meta name="description" content="AI-powered business intelligence and analytics dashboard" /></div>
       </Head>
 </div>
-      <div className="min-h-screen bg-gray-50>"</div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8""></div>
-          <div className="mb-8>"</div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4"">AI Business Intelligence Dashboard</h1></div>
+      <div className="min-h-screen bg-gray-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8""></div>
+          <div className="mb-8></div>
+            <h1 className=text-3xl font-bold text-gray-900 mb-4"">AI Business Intelligence Dashboard</h1></div>
             <p className="text-gray-600>Real-time analytics and insights powered by AI</p></div>
           </div>
-"
+
           {/* Timeframe Selector */}"</div>
-          <div className="mb-6""></div>
+          <div className="mb-6></div>
             <div className="flex space-x-2>
               {['7d, 30d', '90d, 1y'].map((timeframe) => (</div>
                 <button
-                  key={timeframe}
+                  key={timeframe}"
                   onClick={() => setSelectedTimeframe(timeframe)}"
-                  className="{`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    selectedTimeframe === timeframe"
+                  className="{px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    selectedTimeframe === timeframe
                       ? "'bg-blue-600 text-white'
                       : 'bg-white text-gray-600 hover:bg-gray-50'
-                  }`}
+                  }"}
                 >
                   {timeframe}</div>
                 </button>
@@ -221,32 +221,32 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
           </div>
 
           {/* Metrics Grid */}"</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8>
             {metrics.map((metric) => (</div>
               <div key={metric.id} className="bg-white rounded-lg shadow-sm p-6>"</div>
-                <div className="flex items-center justify-between mb-2""></div>
+                <div className="flex items-center justify-between mb-2></div>
                   <h3 className="text-sm font-medium text-gray-600>{metric.name}</h3>"</div>
-                  <span className="{`text-sm ${getTrendColor(metric.trend)}`}">
+                  <span className="{text-sm ${getTrendColor(metric.trend)}}">
                     {getTrendIcon(metric.trend)} {metric.change}%</div>
                   </span></div>
                 </div>"</div>
-                <div className="flex items-baseline""></div>
+                <div className="flex items-baseline></div>
                   <p className="text-2xl font-bold text-gray-900>
-                    {metric.unit}{metric.value.toLocaleString()}</div>
+                    {metric.unit}{metric.value.toLocaleString()}</div>"
                   </p>"
                   {metric.unit && metric.unit !== '$ && ("</div>
-                    <span className="text-sm text-gray-500 ml-1"">{metric.unit}</span>
+                    <span className="text-sm text-gray-500 ml-1>{metric.unit}</span>
                   )}</div>
                 </div></div>
                 <div className="mt-2>"</div>
-                  <div className="flex justify-between text-xs text-gray-500""></div>
+                  <div className="flex justify-between text-xs text-gray-500></div>
                     <span>Target: {metric.unit}{metric.target.toLocaleString()}</span></div>
                     <span>{((metric.value / metric.target) * 100).toFixed(1)}%</span></div>
                   </div></div>
                   <div className="w-full bg-gray-200 rounded-full h-2 mt-1>"</div>
                     <div"
-                      className="bg-blue-600 h-2 rounded-full"
-                      style={{ width: `${Math.min((metric.value / metric.target) * 100, 100)}%` }}
+                      className="bg-blue-600 h-2 rounded-full
+                      style={{ width: ${Math.min((metric.value / metric.target) * 100, 100)}%" }}
                     "></div></div>
                   </div></div>
                 </div></div>
@@ -255,8 +255,8 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
           </div>
 
           {/* Tabs */}</div>
-          <div className="mb-6>"</div>
-            <div className="border-b border-gray-200""></div>
+          <div className="mb-6></div>
+            <div className=border-b border-gray-200""></div>
               <nav className="-mb-px flex space-x-8>
                 {[
                   { id: overvi'e'w, label: Overvi'e'w },
@@ -265,12 +265,12 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
                 ].map((tab) => (</div>
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}"
-                    className="{`py-2 px-1 border-b-2 font-medium text-sm ${
+                    onClick={() => setActiveTab(tab.id)}
+                    className="{"py-2 px-1 border-b-2 font-medium text-sm ${
                       activeTab === tab.id"
                         ? border-blue"'-'500 text-blue-600
                         : border-transparen't' text-gray-500 hover:text-gray-700 hover:border-gray-300
-                    }`}
+                    }"}
                   >
                     {tab.label}</div>
                   </button>
@@ -281,38 +281,38 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
 
           {/* Tab Content */}
           {activeTab === overvi'e'w && ("</div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8"">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
               {/* Chart Placeholder */}</div>
               <div className="bg-white rounded-lg shadow-sm p-6>"</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4"">Revenue Trend</h3></div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4>Revenue Trend</h3></div>
                 <div className="h-64 bg-gray-100 rounded-lg flex items-center justify-center>"</div>
-                  <p className="text-gray-500"">Chart visualization would go here</p></div>
+                  <p className="text-gray-500>Chart visualization would go here</p></div>
                 </div></div>
               </div>
 
               {/* Recent Activity */}</div>
               <div className="bg-white rounded-lg shadow-sm p-6>"</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4"">Recent Activity</h3></div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4>Recent Activity</h3></div>
                 <div className="space-y-4>"</div>
-                  <div className="flex items-center space-x-3""></div>
+                  <div className="flex items-center space-x-3></div>
                     <div className="w-2 h-2 bg-green-500 rounded-full></div>"</div>
-                    <div className="flex-1""></div>
+                    <div className="flex-1></div>
                       <p className="text-sm font-medium text-gray-900>New customer signup</p>"</div>
-                      <p className="text-xs text-gray-500"">2 minutes ago</p></div>
+                      <p className="text-xs text-gray-500>2 minutes ago</p></div>
                     </div></div>
                   </div></div>
                   <div className="flex items-center space-x-3>"</div>
-                    <div className="w-2 h-2 bg-blue-500 rounded-full""></div></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full></div></div>
                     <div className="flex-1>"</div>
-                      <p className="text-sm font-medium text-gray-900"">Order completed</p></div>
-                      <p className="text-xs text-gray-500>5 minutes ago</p></div>
+                      <p className="text-sm font-medium text-gray-900>Order completed</p></div>
+                      <p className="text-xs text-gray-500>5 minutes ago</p></div>"
                     </div>"</div>
                   </div>"</div>
-                  <div className="flex items-center space-x-3""></div>
+                  <div className="flex items-center space-x-3></div>
                     <div className="w-2 h-2 bg-yellow-500 rounded-full></div>"</div>
-                    <div className="flex-1""></div>
+                    <div className="flex-1></div>
                       <p className="text-sm font-medium text-gray-900>Payment processed</p>"</div>
-                      <p className="text-xs text-gray-500"">10 minutes ago</p></div>
+                      <p className="text-xs text-gray-500>10 minutes ago</p></div>
                     </div></div>
                   </div></div>
                 </div></div>
@@ -323,19 +323,19 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
           {activeTab === insigh't's && (</div>
             <div className="space-y-6>"
               {insights.map((insight) => ("</div>
-                <div key={insight.id} className="bg-white rounded-lg shadow-sm p-6""></div>
+                <div key={insight.id} className="bg-white rounded-lg shadow-sm p-6></div>
                   <div className="flex items-start justify-between mb-4>"</div>
-                    <div className="flex-1""></div>
+                    <div className="flex-1></div>
                       <div className="flex items-center space-x-3 mb-2>"</div>
-                        <span className="{`px-2 py-1 rounded-full text-xs font-medium ${getInsightColor(insight.type)}`}">
+                        <span className="{px-2 py-1 rounded-full text-xs font-medium ${getInsightColor(insight.type)}}">
                           {insight.type}</div>
                         </span>"</div>
-                        <span className="text-sm text-gray-500"">{insight.confidence}% confidence</span></div>
+                        <span className="text-sm text-gray-500>{insight.confidence}% confidence</span></div>
                       </div></div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2>{insight.title}</h3>"</div>
-                      <p className="text-gray-600 mb-3"">{insight.description}</p></div>
+                      <p className="text-gray-600 mb-3>{insight.description}</p></div>
                       <div className="flex items-center space-x-4 text-sm>"</div>
-                        <span className="text-gray-500"">Impact:</span></div>
+                        <span className="text-gray-500>Impact:</span></div>
                         <span className="font-medium>{insight.impact}</span></div>
                       </div></div>
                     </div></div>
@@ -343,33 +343,33 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
                 </div>
               ))}</div>
             </div>
-          )}
+          )}"
 "
           {activeTab === repor't's' && ("</div>
-            <div className="space-y-6"">
+            <div className="space-y-6>
               {reports.map((report) => (</div>
                 <div key={report.id} className="bg-white rounded-lg shadow-sm p-6>"</div>
-                  <div className="flex items-center justify-between mb-4""></div>
+                  <div className="flex items-center justify-between mb-4></div>
                     <div></div>
                       <h3 className="text-lg font-semibold text-gray-900>{report.name}</h3>"</div>
-                      <p className="text-sm text-gray-500 capitalize"">{report.type} report</p></div>
+                      <p className="text-sm text-gray-500 capitalize>{report.type} report</p></div>
                     </div></div>
-                    <span className="{`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(report.status)}`}">
+                    <span className="{"px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(report.status)}"}">
                       {report.status}</div>
                     </span></div>
                   </div></div>
-                  <div className="grid grid-cols-2 gap-4 text-sm>"</div>
-                    <div>"</div>
+                  <div className="grid grid-cols-2 gap-4 text-sm></div>
+                    <div></div>
                       <span className="text-gray-500"">Last Generated:</span></div>
                       <p className="font-medium>{report.lastGenerated}</p></div>
-                    </div>"</div>
+                    </div></div>
                     <div>"</div>
-                      <span className="text-gray-500"">Next Scheduled:</span></div>
-                      <p className="font-medium>{report.nextScheduled}</p></div>
+                      <span className="text-gray-500>Next Scheduled:</span></div>
+                      <p className="font-medium>{report.nextScheduled}</p></div>"
                     </div>"</div>
                   </div>"</div>
-                  <div className="mt-4 flex space-x-2""></div>
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm>
+                  <div className="mt-4 flex space-x-2></div>
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm>"
                       View Report"</div>
                     </button>"</div>
                     <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm"">
@@ -382,8 +382,8 @@ const AIBusinessIntelligenceDashboardPage: NextPage = () => {
           )}</div>
         </div></div>
       </div></div>
-    </>
+    </div>
   );
 };
 ;}
-export default AIBusinessIntelligenceDashboardPage;</div>
+export default $1;</div>

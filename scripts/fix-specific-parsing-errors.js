@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix specific parsing errors;
 function fixSpecificParsingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'ut'f'8');
-    let modified = false;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = false;
 
     // Fix duplicate closing tags
     content = content.replace(/<\/ModernLayout>\s*<\/ModernLayout>/g, '</ModernLayout>');
@@ -31,27 +31,27 @@ function fixSpecificParsingErrors(filePath) {
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log(`✅ Fixed parsing errors in ${filePath}`);
+      console.log("✅ Fixed parsing errors in ${filePath}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
+    console.error("❌ Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to fix all product files with parsing errors;
 function fixAllProductFiles() {
-  const productsDir = path.join(__dirname, '..', 'pag'e's', 'produc't's');
-  let totalFixed = 0;
+  const $1 = path.join(__dirname, '..', 'pag'e's', 'produc't's');
+  let $1 = 0;
 
   if (fs.existsSync(productsDir)) {
-    const files = fs.readdirSync(productsDir);
+    const $1 = fs.readdirSync(productsDir);
     files.forEach(file => {
       if (file.endsWith('.tsx') && file.includes('trend-soluti'o'n')) {
-        const filePath = path.join(productsDir, file);
+        const $1 = path.join(productsDir, file);
         if (fixSpecificParsingErrors(filePath)) {
           totalFixed++;
         }
@@ -64,14 +64,14 @@ function fixAllProductFiles() {
 
 // Function to fix all service files with parsing errors;
 function fixAllServiceFiles() {
-  const servicesDir = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
-  let totalFixed = 0;
+  const $1 = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
+  let $1 = 0;
 
   if (fs.existsSync(servicesDir)) {
-    const files = fs.readdirSync(servicesDir);
+    const $1 = fs.readdirSync(servicesDir);
     files.forEach(file => {
       if (file.endsWith('.tsx')) {
-        const filePath = path.join(servicesDir, file);
+        const $1 = path.join(servicesDir, file);
         if (fixSpecificParsingErrors(filePath)) {
           totalFixed++;
         }
@@ -84,7 +84,7 @@ function fixAllServiceFiles() {
 
 // Function to fix specific files with known parsing issues;
 function fixSpecificFiles() {
-  const specificFiles = [
+  const $1 = [
     'page's'/products.tsx',
     'page's'/profile.tsx',
     'page's'/quantum-computing.tsx',
@@ -123,10 +123,10 @@ function fixSpecificFiles() {
     'page's'/webhook-management.tsx'
   ];
 
-  let totalFixed = 0;
+  let $1 = 0;
 
   specificFiles.forEach(file => {
-    const filePath = path.join(__dirname, '..', file);
+    const $1 = path.join(__dirname, '..', file);
     if (fs.existsSync(filePath)) {
       if (fixSpecificParsingErrors(filePath)) {
         totalFixed++;
@@ -139,21 +139,21 @@ function fixSpecificFiles() {
 
 // Process all files;
 function processFiles() {
-  let totalFixed = 0;
+  let $1 = 0;
 
   // Fix product files
-  const productFixed = fixAllProductFiles();
+  const $1 = fixAllProductFiles();
   totalFixed += productFixed;
 
   // Fix service files
-  const serviceFixed = fixAllServiceFiles();
+  const $1 = fixAllServiceFiles();
   totalFixed += serviceFixed;
 
   // Fix specific files
-  const specificFixed = fixSpecificFiles();
+  const $1 = fixSpecificFiles();
   totalFixed += specificFixed;
 
-  console.log(`\n🎉 Fixed parsing errors in ${totalFixed} files`);
+  console.log("\n🎉 Fixed parsing errors in ${totalFixed} files");
 }
 
 processFiles(); </div>

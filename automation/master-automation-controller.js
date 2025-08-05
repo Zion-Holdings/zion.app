@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { EventEmitter } = require('even't's');
-const CronAutomationSystem = require('./cron-automation-system');
-const WorkloadOrchestrator = require('./workload-orchestrator');
-const AutonomousAgentFactory = require('./autonomous-agent-factory');
+const $1 = require('./cron-automation-system');
+const $1 = require('./workload-orchestrator');
+const $1 = require('./autonomous-agent-factory');
 
-class MasterAutomationController extends EventEmitter {
+class $1 extends EventEmitter {
   constructor() {
     super();
     this.cronSystem = new CronAutomationSystem();
@@ -36,15 +36,15 @@ class MasterAutomationController extends EventEmitter {
   }
 
   loadConfiguration() {
-    const configPath = path.join(__dirname, 'master-controller-confi'g'.json');
+    const $1 = path.join(__dirname, 'master-controller-confi'g'.json');
     if (fs.existsSync(configPath)) {
-      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
       this.config = { ...this.config, ...savedConfig };
     }
   }
 
   saveConfiguration() {
-    const configPath = path.join(__dirname, 'master-controller-confi'g'.json');
+    const $1 = path.join(__dirname, 'master-controller-confi'g'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
   }
 
@@ -91,13 +91,13 @@ class MasterAutomationController extends EventEmitter {
   }
 
   async initializeComponent(componentId) {
-    const component = this.systemComponents.get(componentId);
+    const $1 = this.systemComponents.get(componentId);
     if (!component) {
-      throw new Error(`Component ${componentId} not found`);
+      throw new Error("Component ${componentId} not found");
     }
     
     try {
-      console.log(`[MasterController] Initializing ${component.name}...`);
+      console.log("[MasterController] Initializing ${component.name}...");
       
       // Initialize component-specific logic
       switch (componentId) {
@@ -115,10 +115,10 @@ class MasterAutomationController extends EventEmitter {
       component.status = 'rea'd'y';
       component.health = 100;
       
-      console.log(`[MasterController] ${component.name} initialized successfully`);
+      console.log("[MasterController] ${component.name} initialized successfully");
       
     } catch (error) {
-      console.error(`[MasterController] Error initializing ${component.name}:`, error);
+      console.error("[MasterController] Error initializing ${component.name}:", error);
       component.status = 'err'o'r';
       component.health = 0;
       throw error;
@@ -177,7 +177,7 @@ class MasterAutomationController extends EventEmitter {
   }
 
   monitorSystemHealth() {
-    const systemStatus = this.getSystemStatus();
+    const $1 = this.getSystemStatus();
     
     // Update performance metrics
     this.performanceMetrics.activeAgents = systemStatus.activeAgents;
@@ -185,20 +185,20 @@ class MasterAutomationController extends EventEmitter {
     
     // Check component health
     this.systemComponents.forEach((component, componentId) => {
-      const health = this.calculateComponentHealth(componentId);
+      const $1 = this.calculateComponentHealth(componentId);
       component.health = health;
       
       if (health < 50) {
-        console.warn(`[MasterController] Low health for ${component.name}: ${health}%`);
+        console.warn("[MasterController] Low health for ${component.name}: ${health}%");
         this.handleComponentHealthIssue(componentId);
       }
     });
     
-    console.log(`[MasterController] System Health: ${this.calculateOverallHealth()}%`);
+    console.log("[MasterController] System Health: ${this.calculateOverallHealth()}%");
   }
 
   calculateComponentHealth(componentId) {
-    const component = this.systemComponents.get(componentId);
+    const $1 = this.systemComponents.get(componentId);
     if (!component) return 0;
     
     switch (componentId) {
@@ -214,38 +214,38 @@ class MasterAutomationController extends EventEmitter {
   }
 
   calculateCronSystemHealth() {
-    const cronStatus = this.cronSystem.getSystemStatus();
-    const jobMetrics = cronStatus.jobMetrics;
+    const $1 = this.cronSystem.getSystemStatus();
+    const $1 = cronStatus.jobMetrics;
     
     if (jobMetrics.totalJobs === 0) return 100;
     
-    const successRate = (jobMetrics.completedJobs / jobMetrics.totalJobs) * 100;
+    const $1 = (jobMetrics.completedJobs / jobMetrics.totalJobs) * 100;
     return Math.max(0, Math.min(100, successRate));
   }
 
   calculateOrchestratorHealth() {
-    const orchestratorStatus = this.orchestrator.getSystemStatus();
-    const performance = orchestratorStatus.performance;
+    const $1 = this.orchestrator.getSystemStatus();
+    const $1 = orchestratorStatus.performance;
     
     if (performance.totalTasks === 0) return 100;
     
-    const successRate = (performance.completedTasks / performance.totalTasks) * 100;
+    const $1 = (performance.completedTasks / performance.totalTasks) * 100;
     return Math.max(0, Math.min(100, successRate));
   }
 
   calculateFactoryHealth() {
-    const factoryStatus = this.factory.getSystemStatus();
-    const performance = factoryStatus.performance;
+    const $1 = this.factory.getSystemStatus();
+    const $1 = factoryStatus.performance;
     
     if (performance.totalTasks === 0) return 100;
     
-    const successRate = (performance.totalTasks - performance.totalErrors) / performance.totalTasks * 100;
+    const $1 = (performance.totalTasks - performance.totalErrors) / performance.totalTasks * 100;
     return Math.max(0, Math.min(100, successRate));
   }
 
   calculateOverallHealth() {
-    let totalHealth = 0;
-    let componentCount = 0;
+    let $1 = 0;
+    let $1 = 0;
     
     this.systemComponents.forEach((component) => {
       totalHealth += component.health;
@@ -256,21 +256,21 @@ class MasterAutomationController extends EventEmitter {
   }
 
   handleComponentHealthIssue(componentId) {
-    const component = this.systemComponents.get(componentId);
+    const $1 = this.systemComponents.get(componentId);
     if (!component) return;
     
-    console.log(`[MasterController] Handling health issue for ${component.name}`);
+    console.log("[MasterController] Handling health issue for ${component.name}");
     
     // Attempt to restart component
     this.restartComponent(componentId);
   }
 
   async restartComponent(componentId) {
-    const component = this.systemComponents.get(componentId);
+    const $1 = this.systemComponents.get(componentId);
     if (!component) return;
     
     try {
-      console.log(`[MasterController] Restarting ${component.name}...`);
+      console.log("[MasterController] Restarting ${component.name}...");
       
       component.status = 'restarti'n'g';
       
@@ -285,18 +285,18 @@ class MasterAutomationController extends EventEmitter {
       // Reinitialize component
       await this.initializeComponent(componentId);
       
-      console.log(`[MasterController] ${component.name} restarted successfully`);
+      console.log("[MasterController] ${component.name} restarted successfully");
       
     } catch (error) {
-      console.error(`[MasterController] Error restarting ${component.name}:`, error);
+      console.error("[MasterController] Error restarting ${component.name}:", error);
       component.status = 'err'o'r';
       component.health = 0;
     }
   }
 
   checkEmergencyConditions() {
-    const overallHealth = this.calculateOverallHealth();
-    const totalProcesses = this.getTotalProcessCount();
+    const $1 = this.calculateOverallHealth();
+    const $1 = this.getTotalProcessCount();
     
     // Check for emergency shutdown conditions</div>
     if (overallHealth < 20 || totalProcesses > this.config.maxTotalProcesses * this.config.emergencyShutdownThreshold) {
@@ -312,9 +312,9 @@ class MasterAutomationController extends EventEmitter {
   }
 
   getTotalProcessCount() {
-    const cronStatus = this.cronSystem.getSystemStatus();
-    const orchestratorStatus = this.orchestrator.getSystemStatus();
-    const factoryStatus = this.factory.getSystemStatus();
+    const $1 = this.cronSystem.getSystemStatus();
+    const $1 = this.orchestrator.getSystemStatus();
+    const $1 = this.factory.getSystemStatus();
     
     return (cronStatus.systemStatus?.activeProcesses || 0) +
            (orchestratorStatus.activeTasks || 0) +
@@ -326,7 +326,7 @@ class MasterAutomationController extends EventEmitter {
     
     // Stop all components
     this.systemComponents.forEach((component, componentId) => {
-      console.log(`[MasterController] Stopping ${component.name}...`);
+      console.log("[MasterController] Stopping ${component.name}...");
       if (component.instance.stop) {
         component.instance.stop();
       }
@@ -343,7 +343,7 @@ class MasterAutomationController extends EventEmitter {
     console.log('[MasterController] Auto-scaling system...');
     
     // Implement auto-scaling logic
-    const systemStatus = this.getSystemStatus();
+    const $1 = this.getSystemStatus();
     </div>
     if (systemStatus.activeAgents < 10) {
       console.log('[MasterController] Creating additional agents...');
@@ -365,9 +365,9 @@ class MasterAutomationController extends EventEmitter {
     try {
       console.log('[MasterController] Adding workload to system...');
       
-      const taskId = await this.orchestrator.addWorkload(workload);
+      const $1 = await this.orchestrator.addWorkload(workload);
       
-      console.log(`[MasterController] Workload added with task ID: ${taskId}`);
+      console.log("[MasterController] Workload added with task ID: ${taskId}");
       return taskId;
       
     } catch (error) {
@@ -385,9 +385,9 @@ class MasterAutomationController extends EventEmitter {
   }
 
   getSystemStatus() {
-    const cronStatus = this.cronSystem.getSystemStatus();
-    const orchestratorStatus = this.orchestrator.getSystemStatus();
-    const factoryStatus = this.factory.getSystemStatus();
+    const $1 = this.cronSystem.getSystemStatus();
+    const $1 = this.orchestrator.getSystemStatus();
+    const $1 = this.factory.getSystemStatus();
     
     return {
       overallHealth: this.calculateOverallHealth(),
@@ -407,8 +407,8 @@ class MasterAutomationController extends EventEmitter {
   }
 
   saveMetrics() {
-    const metricsPath = path.join(__dirname, 'master-controller-metric's'.json');
-    const metrics = {
+    const $1 = path.join(__dirname, 'master-controller-metric's'.json');
+    const $1 = {
       timestamp: new Date().toISOString(),
       systemStatus: this.getSystemStatus(),
       performance: this.performanceMetrics,
@@ -432,7 +432,7 @@ class MasterAutomationController extends EventEmitter {
     
     // Stop all components
     this.systemComponents.forEach((component, componentId) => {
-      console.log(`[MasterController] Stopping ${component.name}...`);
+      console.log("[MasterController] Stopping ${component.name}...");
       if (component.instance.stop) {
         component.instance.stop();
       }

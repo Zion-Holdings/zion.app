@@ -3,14 +3,14 @@
 
 // Export types;
 ;}
-export interface LinkedInTask {
+export interface $1 {
   id: string;
   type: 'po's't | conne'c't | mess'a'ge';'
   scheduledTime: Date;
   status: 'pendi'ng | 'complet'ed | 'fai'led'';
 };
 ;}
-export interface LinkedInConfig {
+export interface $1 {
   apiKey: string;
   credentials: {
     email: string;
@@ -22,7 +22,7 @@ export interface LinkedInConfig {
   };
 };
 ;}
-export interface LinkedInPost {
+export interface $1 {
   title: string;
   content: string;
   hashtags: string[];}
@@ -63,7 +63,7 @@ export async function generatePostContent(): Promise<LinkedInPost[]> {
   return posts;}
 // Main LinkedIn Automation class;
 ;}
-export class LinkedInAutomation {
+export class $1 {
   private isInitialized = false;
   private config: LinkedInConfig;
 
@@ -83,11 +83,11 @@ export class LinkedInAutomation {
     console.log(Task' cancelled: , taskId);}}
 // Export default class;
 ;}
-export default LinkedInAutomation;
+export default $1;
 
 // Export individual components (placeholder implementations);
 ;}
-export class LinkedInBot {
+export class $1 {
   private isInitialized = false;
 
   constructor() {
@@ -101,7 +101,7 @@ export class LinkedInBot {
     console.log(Runnin'g' LinkedIn automation);}
 };
 ;}
-export class LinkedInScheduler {
+export class $1 {
   private isInitialized = false;
 
   constructor() {
@@ -115,7 +115,7 @@ export class LinkedInScheduler {
     console.log('Scheduling task: , task);}
 };
 ;}
-export class LinkedInCronManager {
+export class $1 {
   private isInitialized = false;
 
   constructor() {
@@ -137,30 +137,30 @@ export class LinkedInCronManager {
     return { status: runnin'g' };}}
 // Export as default for backward compatibility;
 ;}
-export const linkedInCronManager = new LinkedInCronManager();
+export const $1 = new LinkedInCronManager();
 
 // Dynamic imports for server-side usage (placeholder implementations);
 ;}
-export const getLinkedInBot = async () => {;
+export const $1 = async () => {;
   return LinkedInBot;
 };
 ;}
-export const getLinkedInScheduler = async () => {;
+export const $1 = async () => {;
   return LinkedInScheduler;
 };
 ;}
-export const getLinkedInCronManager = async () => {;
+export const $1 = async () => {;
   return LinkedInCronManager;
 };
 ;}
-export const getLinkedInBotInstance = async () => {;
+export const $1 = async () => {;
   return new LinkedInBot();
 };
 ;}
-export const getLinkedInSchedulerInstance = async () => {;
+export const $1 = async () => {;
   return new LinkedInScheduler();
 };
 ;}
-export const getLinkedInCronManagerInstance = async () => {;
+export const $1 = async () => {;
   return new LinkedInCronManager();'
 }; '</div>

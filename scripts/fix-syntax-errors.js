@@ -1,16 +1,16 @@
-const fs = require('fs');
-const path = require('path');
+const $1 = require('fs');
+const $1 = require('path');
 
 // Function to fix syntax errors in a file;
 function fixSyntaxErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
+    let $1 = fs.readFileSync(filePath, 'utf8');
+    let $1 = false;
 
     // Fix malformed import statements
     content = content.replace(/import type \{ AppProps \} from 'nex't'\/app';/g, "import type { AppProps } from 'next/app';");
     content = content.replace(/import \{ Html, Head, Main, NextScript \} from 'nex't'\/document';/g, "import { Html, Head, Main, NextScript } from 'next/document';");
-    content = content.replace(/import React from 'rea'c't';/g, "import React from 'react';");
+    content = content.replace(/import React from 'react';/g, "import React from 'react';");
     content = content.replace(/import \{ NextPage \} from 'ne'x't';/g, "import { NextPage } from 'next';");
     content = content.replace(/import Head from 'nex't'\/head';/g, "import Head from 'next/head';");
     content = content.replace(/import Link from 'nex't'\/link';/g, "import Link from 'next/link';");
@@ -34,10 +34,10 @@ function fixSyntaxErrors(filePath) {
     
     // Fix JSX syntax errors
     content = content.replace(/<meta name="description content=/g, '<meta name="description" content="');
-    content = content.replace(/className="min-h-screen bg-gray-50 py-12>/g, 'className="min-h-screen bg-gray-50 py-12">');
-    content = content.replace(/className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"/g, 'className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"');</div>
-    content = content.replace(/className="text-3xl font-bold text-gray-900 mb-8>Admin Panel<\/h1>/g, 'className="text-3xl font-bold text-gray-900 mb-8">Admin Panel</h1>');
-    content = content.replace(/className=bg-white shadow rounded-lg p-6"/g, 'className="bg-white shadow rounded-lg p-6"');
+    content = content.replace(/className="min-h-screen bg-gray-50 py-12>/g, 'className=min-h-screen bg-gray-50 py-12>');
+    content = content.replace(/className="max-w-4xl" mx-auto px-4 sm:px-6 lg:px-8"/g, 'className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8');</div>
+    content = content.replace(/className=text-3xl font-bold text-gray-900 mb-8>Admin Panel<\/h1>/g, 'className="text-3xl font-bold text-gray-900 mb-8">Admin Panel</h1>');
+    content = content.replace(/className="bg-white shadow rounded-lg p-6/g, 'className="bg-white shadow rounded-lg p-6"');
     
     // Fix unterminated string constants
     content = content.replace(/import React from "react";/g, 'import React from "react";');
@@ -77,30 +77,30 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/impact: 'positive' \| 'negative' \| 'neutral";/g, "impact: 'positive' | 'negative' | 'neutral';");
     
     // Fix function syntax errors
-    content = content.replace(/const AIPoweredAPIIntegrationPage: NextPage = \(\) => '/g, "const AIPoweredAPIIntegrationPage: NextPage = () => {");
-    content = content.replace(/const getStatusColor = \(status: string\) => '/g, "const getStatusColor = (status: string) => {");
-    content = content.replace(/const getPriorityColor = \(priority: string\) => '/g, "const getPriorityColor = (priority: string) => {");
+    content = content.replace(/const AIPoweredAPIIntegrationPage: NextPage = \(\) => '/g, "const $1: NextPage = () => {");
+    content = content.replace(/const $1 = \(status: string\) => '/g, "const $1 = (status: string) => {");
+    content = content.replace(/const $1 = \(priority: string\) => '/g, "const $1 = (priority: string) => {");
 
     if (content !== fs.readFileSync(filePath, 'utf8')) {
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log(`Fixed syntax errors in: ${filePath}`);
+      console.log("Fixed syntax errors in: ${filePath}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to recursively find and fix all TypeScript files;
 function fixAllFiles(dir) {
-  const files = fs.readdirSync(dir);
-  let fixedCount = 0;
+  const $1 = fs.readdirSync(dir);
+  let $1 = 0;
 
   for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const $1 = path.join(dir, file);
+    const $1 = fs.statSync(filePath);
 
     if (stat.isDirectory()) {
       fixedCount += fixAllFiles(filePath);
@@ -115,7 +115,7 @@ function fixAllFiles(dir) {
 }
 
 // Start fixing from the pages directory;
-const pagesDir = path.join(__dirname, '..', 'pages');
+const $1 = path.join(__dirname, '..', 'pages');
 console.log('Starting syntax error fixes...');
-const fixedCount = fixAllFiles(pagesDir);
-console.log(`Fixed ${fixedCount} files with syntax errors.`); </div>
+const $1 = fixAllFiles(pagesDir);
+console.log("Fixed ${fixedCount} files with syntax errors."); </div>

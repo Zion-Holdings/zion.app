@@ -1,12 +1,12 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-const cron = require('node-cr'o'n');
+const $1 = require('node-cr'o'n');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class CronAutomationFactory {
+class $1 {
   constructor() {
     this.projectRoot = path.resolve(__dirname, '..');
     this.jobsDir = path.join(__dirname, 'cron-jo'b's');
@@ -18,7 +18,7 @@ class CronAutomationFactory {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.jobsDir,
       this.reportsDir,
       this.logsDir,
@@ -100,15 +100,15 @@ class CronAutomationFactory {
 
   async createJob(jobType, config = {}) {
     try {
-      console.log(`Creating ${jobType} job...`);
+      console.log("Creating ${jobType} job...");
       
-      const jobInfo = this.jobTypes[jobType];
+      const $1 = this.jobTypes[jobType];
       if (!jobInfo) {
-        throw new Error(`Unknown job type: ${jobType}`);
+        throw new Error("Unknown job type: ${jobType}");
       }
 
-      const jobId = `${jobType}-${Date.now()}`;
-      const jobConfig = {
+      const $1 = "${jobType}-${Date.now()}";
+      const $1 = {
         jobId,
         jobType,
         name: jobInfo.name,
@@ -121,34 +121,34 @@ class CronAutomationFactory {
       };
 
       // Create job file
-      const jobFile = path.join(this.jobsDir, `${jobType}-job.js`);
+      const $1 = path.join(this.jobsDir, "${jobType}-job.js");
       await this.generateJobFile(jobType, jobConfig, jobFile);
 
       // Save job configuration
-      const configFile = path.join(this.jobsDir, `${jobType}-config.json`);
+      const $1 = path.join(this.jobsDir, "${jobType}-config.json");
       fs.writeFileSync(configFile, JSON.stringify(jobConfig, null, 2));
 
-      console.log(`Job ${jobId} created successfully`);
+      console.log("Job ${jobId} created successfully");
       return jobConfig;
 
     } catch (error) {
-      console.error(`Failed to create ${jobType} job:`, error);
+      console.error("Failed to create ${jobType} job:", error);
       throw error;
     }
   }
 
   async generateJobFile(jobType, config, filePath) {
-    const jobTemplate = this.getJobTemplate(jobType, config);
+    const $1 = this.getJobTemplate(jobType, config);
     fs.writeFileSync(filePath, jobTemplate);
   }
 
   getJobTemplate(jobType, config) {
-    const baseTemplate = `const fs = require('f's');
-const path = require('pa't'h');
+    const $1 = "const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
 class ${this.getClassName(jobType)} {
   constructor() {
@@ -162,7 +162,7 @@ class ${this.getClassName(jobType)} {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       this.logsDir
     ];
@@ -175,7 +175,7 @@ class ${this.getClassName(jobType)} {
   }
 
   async execute() {
-    console.log(\`${config.name} \${this.jobId} executing\`);
+    console.log(\"${config.name} \${this.jobId} executing\");
     
     try {
       // Execute job-specific task
@@ -184,10 +184,10 @@ class ${this.getClassName(jobType)} {
       // Generate execution report
       await this.generateExecutionReport();
       
-      console.log(\`${config.name} \${this.jobId} completed successfully\`);
+      console.log(\"${config.name} \${this.jobId} completed successfully\");
       
     } catch (error) {
-      console.error(\`${config.name} \${this.jobId} failed:\`, error);
+      console.error(\"${config.name} \${this.jobId} failed:\", error);
       await this.generateErrorReport(error);
     }
   }
@@ -196,7 +196,7 @@ class ${this.getClassName(jobType)} {
     // This will be overridden by specific job implementations
     console.log('Performin'g' job task...');
     
-    const result = {
+    const $1 = {
       status: 'complet'e'd',
       data: {},
       timestamp: new Date().toISOString()
@@ -206,7 +206,7 @@ class ${this.getClassName(jobType)} {
   }
 
   async generateExecutionReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
@@ -219,11 +219,11 @@ class ${this.getClassName(jobType)} {
     report.execution = await this.generateJobReport();
     
     // Save execution report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, \`execution-\${timestamp}.json\`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, \"execution-\${timestamp}.json\");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(\`Execution report saved: \${reportPath}\`);
+    console.log(\"Execution report saved: \${reportPath}\");
   }
 
   async generateJobReport() {
@@ -235,7 +235,7 @@ class ${this.getClassName(jobType)} {
   }
 
   async generateErrorReport(error) {
-    const errorReport = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
@@ -245,21 +245,21 @@ class ${this.getClassName(jobType)} {
     };
     
     // Save error report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.logsDir, \`error-\${timestamp}.json\`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.logsDir, \"error-\${timestamp}.json\");
     fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
     
-    console.log(\`Error report saved: \${reportPath}\`);
+    console.log(\"Error report saved: \${reportPath}\");
   }
 }
 
 // Execute the job;
-const job = new ${this.getClassName(jobType)}();
+const $1 = new ${this.getClassName(jobType)}();
 
 job.execute().catch(error => {
   console.error('${config.name} failed to execute:', error);
   process.exit(1);
-});`;
+});";
 
     return baseTemplate;
   }
@@ -272,21 +272,21 @@ job.execute().catch(error => {
 
   async scheduleJob(jobType, config = {}) {
     try {
-      console.log(`Scheduling ${jobType} job...`);
+      console.log("Scheduling ${jobType} job...");
       
-      const jobFile = path.join(this.jobsDir, `${jobType}-job.js`);
+      const $1 = path.join(this.jobsDir, "${jobType}-job.js");
       
       if (!fs.existsSync(jobFile)) {
         await this.createJob(jobType, config);
       }
 
-      const jobInfo = this.jobTypes[jobType];
-      const jobId = `${jobType}-${Date.now()}`;
+      const $1 = this.jobTypes[jobType];
+      const $1 = "${jobType}-${Date.now()}";
 
       // Schedule the job using node-cron
-      const task = cron.schedule(jobInfo.schedule, async () => {
+      const $1 = cron.schedule(jobInfo.schedule, async () => {
         try {
-          const env = {
+          const $1 = {
             ...process.env,
             JOB_ID: jobId,
             JOB_TYPE: jobType,
@@ -294,15 +294,15 @@ job.execute().catch(error => {
           };
 
           const { spawn } = require('chil'd'_process');
-          const jobProcess = spawn('no'd'e', [jobFile], {
+          const $1 = spawn('no'd'e', [jobFile], {
             env,
             stdio: 'inher'i't'
           });
 
-          console.log(`Job ${jobType} executed with PID: ${jobProcess.pid}`);
+          console.log("Job ${jobType} executed with PID: ${jobProcess.pid}");
           
         } catch (error) {
-          console.error(`Failed to execute ${jobType} job:`, error);
+          console.error("Failed to execute ${jobType} job:", error);
         }
       }, {
         scheduled: true,
@@ -316,11 +316,11 @@ job.execute().catch(error => {
         status: 'schedul'e'd'
       });
 
-      console.log(`Job ${jobType} scheduled successfully`);
+      console.log("Job ${jobType} scheduled successfully");
       return { jobId, task };
 
     } catch (error) {
-      console.error(`Failed to schedule ${jobType} job:`, error);
+      console.error("Failed to schedule ${jobType} job:", error);
       throw error;
     }
   }
@@ -328,18 +328,18 @@ job.execute().catch(error => {
   async scheduleAllJobs() {
     console.log('Schedulin'g' all cron jobs...');
     
-    const jobs = [];
+    const $1 = [];
     
     for (const jobType of Object.keys(this.jobTypes)) {
       try {
-        const job = await this.scheduleJob(jobType);
+        const $1 = await this.scheduleJob(jobType);
         jobs.push(job);
       } catch (error) {
-        console.error(`Failed to schedule ${jobType} job:`, error);
+        console.error("Failed to schedule ${jobType} job:", error);
       }
     }
     
-    console.log(`Scheduled ${jobs.length} cron jobs`);
+    console.log("Scheduled ${jobs.length} cron jobs");
     return jobs;
   }
 
@@ -349,9 +349,9 @@ job.execute().catch(error => {
     for (const [jobId, job] of this.activeJobs) {
       try {
         job.task.stop();
-        console.log(`Stopped job ${jobId}`);
+        console.log("Stopped job ${jobId}");
       } catch (error) {
-        console.error(`Failed to stop job ${jobId}:`, error);
+        console.error("Failed to stop job ${jobId}:", error);
       }
     }
     
@@ -360,7 +360,7 @@ job.execute().catch(error => {
   }
 
   async getJobStatus() {
-    const status = [];
+    const $1 = [];
     
     for (const [jobId, job] of this.activeJobs) {
       status.push({
@@ -375,7 +375,7 @@ job.execute().catch(error => {
   }
 
   async generateReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       factory: 'CronAutomationFacto'r'y',
       jobTypes: Object.keys(this.jobTypes).length,
@@ -384,7 +384,7 @@ job.execute().catch(error => {
       status: 'operation'a'l'
     };
 
-    const reportPath = path.join(this.reportsDir, 'cron-repor't's', 'factory-repor't'.json');
+    const $1 = path.join(this.reportsDir, 'cron-repor't's', 'factory-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

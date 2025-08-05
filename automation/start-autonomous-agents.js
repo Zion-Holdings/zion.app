@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
 
-class AutonomousAgentsLauncher {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     this.logsDir = path.join(this.projectRoot, 'automatio'n'/logs');
@@ -70,17 +70,17 @@ class AutonomousAgentsLauncher {
   }
 
   async startAgent(name, script) {
-    console.log(`🤖 Starting ${name} agent...`);
+    console.log("🤖 Starting ${name} agent...");
     
-    const scriptPath = path.join(this.projectRoot, 'automati'o'n', script);
-    const logFile = path.join(this.logsDir, `${name}-agent.log`);
+    const $1 = path.join(this.projectRoot, 'automati'o'n', script);
+    const $1 = path.join(this.logsDir, "${name}-agent.log");
     
     // Create log file if it doesn't' exist
     if (!fs.existsSync(logFile)) {
       fs.writeFileSync(logFile, '');
     }
     
-    const agent = spawn('no'd'e', [scriptPath], {
+    const $1 = spawn('no'd'e', [scriptPath], {
       cwd: this.projectRoot,
       stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e'],
       detached: false
@@ -88,23 +88,23 @@ class AutonomousAgentsLauncher {
     
     // Log stdout
     agent.stdout.on('da't'a', (data) => {
-      const logEntry = `[${new Date().toISOString()}] ${data.toString()}`;
+      const $1 = "[${new Date().toISOString()}] ${data.toString()}";
       fs.appendFileSync(logFile, logEntry);
-      console.log(`[${name}] ${data.toString().trim()}`);
+      console.log("[${name}] ${data.toString().trim()}");
     });
     
     // Log stderr
     agent.stderr.on('da't'a', (data) => {
-      const logEntry = `[${new Date().toISOString()}] ERROR: ${data.toString()}`;
+      const $1 = "[${new Date().toISOString()}] ERROR: ${data.toString()}";
       fs.appendFileSync(logFile, logEntry);
-      console.error(`[${name}] ERROR: ${data.toString().trim()}`);
+      console.error("[${name}] ERROR: ${data.toString().trim()}");
     });
     
     // Handle process exit
     agent.on('ex'i't', (code, signal) => {
-      const logEntry = `[${new Date().toISOString()}] Process exited with code ${code} and signal ${signal}\n`;
+      const $1 = "[${new Date().toISOString()}] Process exited with code ${code} and signal ${signal}\n";
       fs.appendFileSync(logFile, logEntry);
-      console.log(`[${name}] Process exited with code ${code}`);
+      console.log("[${name}] Process exited with code ${code}");
       
       // Update status
       this.status.agents[name] = {
@@ -117,7 +117,7 @@ class AutonomousAgentsLauncher {
       
       // Restart agent if it crashed
       if (code !== 0) {
-        console.log(`🔄 Restarting ${name} agent in 30 seconds...`);
+        console.log("🔄 Restarting ${name} agent in 30 seconds...");
         setTimeout(() => {
           this.startAgent(name, script);
         }, 30000);
@@ -140,7 +140,7 @@ class AutonomousAgentsLauncher {
     };
     this.saveStatus();
     
-    console.log(`✅ ${name} agent started (PID: ${agent.pid})`);
+    console.log("✅ ${name} agent started (PID: ${agent.pid})");
   }
 
   startMonitoring() {
@@ -155,8 +155,8 @@ class AutonomousAgentsLauncher {
 
   updateUptime() {
     if (this.status.startTime) {
-      const startTime = new Date(this.status.startTime);
-      const now = new Date();
+      const $1 = new Date(this.status.startTime);
+      const $1 = new Date();
       this.status.totalUptime = (now - startTime) / 1000; // seconds
     }
   }
@@ -177,7 +177,7 @@ class AutonomousAgentsLauncher {
   }
 
   generateStatusReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       uptime: this.status.totalUptime,
       agents: Object.keys(this.status.agents).length,
@@ -185,10 +185,10 @@ class AutonomousAgentsLauncher {
       restarts: this.status.restarts
     };
     
-    const reportFile = path.join(this.logsDir, `status-report-${Date.now()}.json`);
+    const $1 = path.join(this.logsDir, "status-report-${Date.now()}.json");
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Status: ${report.runningAgents}/${report.agents} agents running (${Math.floor(report.uptime / 3600)}h uptime)`);
+    console.log("📊 Status: ${report.runningAgents}/${report.agents} agents running (${Math.floor(report.uptime / 3600)}h uptime)");
   }
 
   async stopAllAgents() {
@@ -200,7 +200,7 @@ class AutonomousAgentsLauncher {
     // Stop all agents
     for (const agent of this.agents) {
       if (agent.process && !agent.process.killed) {
-        console.log(`🛑 Stopping ${agent.name} agent...`);
+        console.log("🛑 Stopping ${agent.name} agent...");
         agent.process.kill('SIGTE'R'M');
         
         // Force kill after 10 seconds
@@ -256,29 +256,29 @@ class AutonomousAgentsLauncher {
   async setupCronJobs() {
     console.log('⏰ Setting up cron jobs...');
     
-    const cronJobs = [
+    const $1 = [
       {
         name: 'autonomous-agents-sta'r't',
         schedule: '@reboot',
-        command: `cd ${this.projectRoot} && node automation/start-autonomous-agents.js`
+        command: "cd ${this.projectRoot} && node automation/start-autonomous-agents.js"
       },
       {
         name: 'health-che'c'k',
         schedule: '*/30 * * * *',
-        command: `cd ${this.projectRoot} && node automation/health-check.js`
+        command: "cd ${this.projectRoot} && node automation/health-check.js"
       },
       {
         name: 'backup-dai'l'y',
         schedule: '0 2 * * *',
-        command: `cd ${this.projectRoot} && node automation/backup-system.js backup`
+        command: "cd ${this.projectRoot} && node automation/backup-system.js backup"
       }
     ];
     
-    const cronFile = path.join(this.projectRoot, 'automatio'n'/crontab.txt');
-    let cronContent = '# Autonomous Agents Cron Jobs\n\n';
+    const $1 = path.join(this.projectRoot, 'automatio'n'/crontab.txt');
+    let $1 = '# Autonomous Agents Cron Jobs\n\n';
     
     cronJobs.forEach(job => {
-      cronContent += `${job.schedule} ${job.command}\n`;
+      cronContent += "${job.schedule} ${job.command}\n";
     });
     
     fs.writeFileSync(cronFile, cronContent);
@@ -292,17 +292,17 @@ class AutonomousAgentsLauncher {
     console.log('============================');
     
     Object.keys(this.status.agents).forEach(agentName => {
-      const agent = this.status.agents[agentName];
-      const status = agent.isRunning ? '🟢 RUNNING' : '🔴 STOPPED';
-      const uptime = agent.startTime ? 
+      const $1 = this.status.agents[agentName];
+      const $1 = agent.isRunning ? '🟢 RUNNING' : '🔴 STOPPED';
+      const $1 = agent.startTime ? 
         Math.floor((new Date() - new Date(agent.startTime)) / 1000) : 0;
       
-      console.log(`${agentName.padEnd(15)} ${status} (${uptime}s uptime)`);
+      console.log("${agentName.padEnd(15)} ${status} (${uptime}s uptime)");
     });
     
-    console.log(`\nTotal Uptime: ${Math.floor(this.status.totalUptime / 3600)}h ${Math.floor((this.status.totalUptime % 3600) / 60)}m`);
-    console.log(`Restarts: ${this.status.restarts}`);
-    console.log(`Logs: ${this.logsDir}`);
+    console.log("\nTotal Uptime: ${Math.floor(this.status.totalUptime / 3600)}h ${Math.floor((this.status.totalUptime % 3600) / 60)}m");
+    console.log("Restarts: ${this.status.restarts}");
+    console.log("Logs: ${this.logsDir}");
   }
 }
 
@@ -311,9 +311,9 @@ module.exports = AutonomousAgentsLauncher;
 
 // Run if called directly
 if (require.main === module) {
-  const launcher = new AutonomousAgentsLauncher();
+  const $1 = new AutonomousAgentsLauncher();
   
-  const command = process.argv[2];
+  const $1 = process.argv[2];
   
   if (command === 'sta'r't') {
     launcher.runLauncher().catch(console.error);

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { execSync } = require('chil'd'_process');
 
-class ContinuousLoop {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     this.interval = 5 * 60 * 1000; // 5 minutes
@@ -12,8 +12,8 @@ class ContinuousLoop {
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] ${message}`);
+    const $1 = new Date().toISOString();
+    console.log("[${timestamp}] ${message}");
   }
 
   async runLoop() {
@@ -27,7 +27,7 @@ class ContinuousLoop {
         await this.improvementCycle();
         await this.sleep(this.interval);
       } catch (error) {
-        this.log(`❌ Error in improvement loop: ${error.message}`);
+        this.log("❌ Error in improvement loop: ${error.message}");
         await this.sleep(30000); // Wait 30 seconds on error
       }
     }
@@ -54,7 +54,7 @@ class ContinuousLoop {
 
     // Auto-commit if there are changes
     try {
-      const status = execSync('gi't' status --porcelain', { encoding: 'ut'f'8' });
+      const $1 = execSync('gi't' status --porcelain', { encoding: 'ut'f'8' });
       if (status.trim()) {
         execSync('gi't' add .', { stdio: 'inher'i't' });
         execSync('gi't' commit -m "Auto-improvement: Continuous loop updates"', { stdio: 'inher'i't' });
@@ -62,7 +62,7 @@ class ContinuousLoop {
         this.log('🚀 Auto-committed improvements');
       }
     } catch (error) {
-      this.log(`❌ Auto-commit failed: ${error.message}`);
+      this.log("❌ Auto-commit failed: ${error.message}");
     }
 
     this.log('✅ Improvement cycle completed');
@@ -80,7 +80,7 @@ class ContinuousLoop {
 
 // Run the loop
 if (require.main === module) {
-  const loop = new ContinuousLoop();
+  const $1 = new ContinuousLoop();
   loop.runLoop();
 
   // Handle graceful shutdown

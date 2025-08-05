@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ContentGenerationAgent {
+class $1 {
   constructor() {
     this.contentMemory = this.loadContentMemory();
     this.generationRules = this.loadGenerationRules();
@@ -9,8 +9,8 @@ class ContentGenerationAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
+      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
       console.error('Erro'r' loading content memory:', error);
@@ -34,7 +34,7 @@ class ContentGenerationAgent {
   }
 
   generateMarketplaceContent(category, customData = {}) {
-    const content = {
+    const $1 = {
       hero: this.generateHeroSection(category, customData),
       features: this.generateFeaturesSection(category, customData),
       benefits: this.generateBenefitsSection(category, customData),
@@ -46,12 +46,12 @@ class ContentGenerationAgent {
   }
 
   generateHeroSection(category, customData) {
-    const industry = customData.industry || 'Busine's's';
-    const services = customData.services || 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions';
+    const $1 = customData.industry || 'Busine's's';
+    const $1 = customData.services || 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions';
     
     return {
-      title: `The Future of ${industry} Exchange`,
-      subtitle: `Connect with the world's' premier ${services} powered by advanced AI matching and secure blockchain technology.`,
+      title: "The Future of ${industry} Exchange",
+      subtitle: "Connect with the world's' premier ${services} powered by advanced AI matching and secure blockchain technology.",
       cta: "Start Trading Now",
       stats: this.generateStats(category, customData)
     };
@@ -159,15 +159,15 @@ class ContentGenerationAgent {
 
   saveGeneratedContent(content, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-conte'n't', filename);
-      const outputDir = path.dirname(outputPath);
+      const $1 = path.join(__dirname, 'generated-conte'n't', filename);
+      const $1 = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
       }
       
       fs.writeFileSync(outputPath, JSON.stringify(content, null, 2));
-      console.log(`Content saved to: ${outputPath}`);
+      console.log("Content saved to: ${outputPath}");
       return outputPath;
     } catch (error) {
       console.error('Erro'r' saving content:', error);

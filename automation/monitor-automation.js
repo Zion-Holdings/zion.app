@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's').promises;
-const path = require('pa't'h');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
 
-class AutomationMonitor {
+class $1 {
   constructor() {
     this.reportsDir = path.join(__dirname, 'repor't's');
     this.logsDir = path.join(__dirname, 'lo'g's');
@@ -16,20 +16,20 @@ class AutomationMonitor {
     
     try {
       // Check if automation is running
-      const isRunning = await this.checkIfAutomationIsRunning();
-      console.log(`🔄 Automation Status: ${isRunning ? 'Runni'n'g' : 'Stopp'e'd'}`);
+      const $1 = await this.checkIfAutomationIsRunning();
+      console.log("🔄 Automation Status: ${isRunning ? 'Runni'n'g' : 'Stopp'e'd'}");
       
       // Get latest reports
-      const reports = await this.getLatestReports();
-      console.log(`📊 Reports Generated: ${reports.length}`);
+      const $1 = await this.getLatestReports();
+      console.log("📊 Reports Generated: ${reports.length}");
       
       // Get latest logs
-      const logs = await this.getLatestLogs();
-      console.log(`📝 Log Files: ${logs.length}`);
+      const $1 = await this.getLatestLogs();
+      console.log("📝 Log Files: ${logs.length}");
       
       // Get generated content
-      const content = await this.getGeneratedContent();
-      console.log(`🎨 Generated Content: ${content.length} items`);
+      const $1 = await this.getGeneratedContent();
+      console.log("🎨 Generated Content: ${content.length} items");
       
       // Display latest activity
       await this.displayLatestActivity();
@@ -43,9 +43,9 @@ class AutomationMonitor {
     try {
       const { exec } = require('chil'd'_process');
       const { promisify } = require('ut'i'l');
-      const execAsync = promisify(exec);
+      const $1 = promisify(exec);
       
-      const result = await execAsync('p's' aux | grep "run-automation.js" | grep -v grep');
+      const $1 = await execAsync('p's' aux | grep "run-automation.js" | grep -v grep');
       return result.stdout.trim().length > 0;
     } catch {
       return false;
@@ -54,7 +54,7 @@ class AutomationMonitor {
 
   async getLatestReports() {
     try {
-      const files = await fs.readdir(this.reportsDir);
+      const $1 = await fs.readdir(this.reportsDir);
       return files.filter(file => file.endsWith('.json'));
     } catch {
       return [];
@@ -63,7 +63,7 @@ class AutomationMonitor {
 
   async getLatestLogs() {
     try {
-      const files = await fs.readdir(this.logsDir);
+      const $1 = await fs.readdir(this.logsDir);
       return files.filter(file => file.endsWith('.log'));
     } catch {
       return [];
@@ -72,7 +72,7 @@ class AutomationMonitor {
 
   async getGeneratedContent() {
     try {
-      const files = await fs.readdir(this.generatedContentDir);
+      const $1 = await fs.readdir(this.generatedContentDir);
       return files.filter(file => file.endsWith('.json'));
     } catch {
       return [];
@@ -84,37 +84,37 @@ class AutomationMonitor {
     
     try {
       // Get the most recent report
-      const reports = await this.getLatestReports();
+      const $1 = await this.getLatestReports();
       if (reports.length > 0) {
-        const latestReport = reports.sort().pop();
-        const reportPath = path.join(this.reportsDir, latestReport);
-        const reportData = await fs.readFile(reportPath, 'ut'f'8');
-        const report = JSON.parse(reportData);
+        const $1 = reports.sort().pop();
+        const $1 = path.join(this.reportsDir, latestReport);
+        const $1 = await fs.readFile(reportPath, 'ut'f'8');
+        const $1 = JSON.parse(reportData);
         
-        console.log(`📊 Latest Report: ${latestReport}`);
-        console.log(`   Timestamp: ${new Date(report.timestamp).toLocaleString()}`);
+        console.log("📊 Latest Report: ${latestReport}");
+        console.log("   Timestamp: ${new Date(report.timestamp).toLocaleString()}");
         
         if (report.totalPages) {
-          console.log(`   Pages Analyzed: ${report.totalPages}`);
+          console.log("   Pages Analyzed: ${report.totalPages}");
         }
         if (report.missingPages) {
-          console.log(`   Missing Pages: ${report.missingPages}`);
+          console.log("   Missing Pages: ${report.missingPages}");
         }
         if (report.errors) {
-          console.log(`   Errors Found: ${report.errors}`);
+          console.log("   Errors Found: ${report.errors}");
         }
       }
       
       // Get the most recent log
-      const logs = await this.getLatestLogs();
+      const $1 = await this.getLatestLogs();
       if (logs.length > 0) {
-        const latestLog = logs.sort().pop();
-        const logPath = path.join(this.logsDir, latestLog);
-        const logData = await fs.readFile(logPath, 'ut'f'8');
-        const logLines = logData.split('\n');
+        const $1 = logs.sort().pop();
+        const $1 = path.join(this.logsDir, latestLog);
+        const $1 = await fs.readFile(logPath, 'ut'f'8');
+        const $1 = logData.split('\n');
         
-        console.log(`📝 Latest Log: ${latestLog}`);
-        console.log(`   Last Activity: ${logLines[logLines.length - 3] || 'N'o' recent activity'}`);
+        console.log("📝 Latest Log: ${latestLog}");
+        console.log("   Last Activity: ${logLines[logLines.length - 3] || 'N'o' recent activity'}");
       }
       
     } catch (error) {
@@ -126,20 +126,20 @@ class AutomationMonitor {
     console.log('\n📋 Detailed Report:');
     
     try {
-      const reports = await this.getLatestReports();
+      const $1 = await this.getLatestReports();
       
       for (const report of reports) {
-        const reportPath = path.join(this.reportsDir, report);
-        const reportData = await fs.readFile(reportPath, 'ut'f'8');
-        const reportObj = JSON.parse(reportData);
+        const $1 = path.join(this.reportsDir, report);
+        const $1 = await fs.readFile(reportPath, 'ut'f'8');
+        const $1 = JSON.parse(reportData);
         
-        console.log(`\n📄 ${report}:`);
-        console.log(`   Generated: ${new Date(reportObj.timestamp).toLocaleString()}`);
+        console.log("\n📄 ${report}:");
+        console.log("   Generated: ${new Date(reportObj.timestamp).toLocaleString()}");
         
         if (reportObj.summary && reportObj.summary.recommendations) {
-          console.log(`   Recommendations: ${reportObj.summary.recommendations.length}`);
+          console.log("   Recommendations: ${reportObj.summary.recommendations.length}");
           reportObj.summary.recommendations.forEach((rec, index) => {
-            console.log(`     ${index + 1}. ${rec.message} (${rec.priority})`);
+            console.log("     ${index + 1}. ${rec.message} (${rec.priority})");
           });
         }
       }
@@ -156,18 +156,18 @@ class AutomationMonitor {
       // Check disk space
       const { exec } = require('chil'd'_process');
       const { promisify } = require('ut'i'l');
-      const execAsync = promisify(exec);
+      const $1 = promisify(exec);
       
-      const diskSpace = await execAsync('d'f' -h . | tail -1');
-      console.log(`💾 Disk Space: ${diskSpace.stdout.split(/\s+/)[4]}`);
+      const $1 = await execAsync('d'f' -h . | tail -1');
+      console.log("💾 Disk Space: ${diskSpace.stdout.split(/\s+/)[4]}");
       
       // Check memory usage
-      const memory = await execAsync('fre'e' -h | grep Mem');
-      console.log(`🧠 Memory Usage: ${memory.stdout.split(/\s+/)[2]}/${memory.stdout.split(/\s+/)[1]}`);
+      const $1 = await execAsync('fre'e' -h | grep Mem');
+      console.log("🧠 Memory Usage: ${memory.stdout.split(/\s+/)[2]}/${memory.stdout.split(/\s+/)[1]}");
       
       // Check if cron job is active
-      const cronJobs = await execAsync('cronta'b' -l 2>/dev/null | grep automation || echo "No cron jobs found"');
-      console.log(`⏰ Cron Jobs: ${cronJobs.stdout.includes('automati'o'n') ? 'Acti'v'e' : 'Inacti'v'e'}`);
+      const $1 = await execAsync('cronta'b' -l 2>/dev/null | grep automation || echo "No cron jobs found"');
+      console.log("⏰ Cron Jobs: ${cronJobs.stdout.includes('automati'o'n') ? 'Acti'v'e' : 'Inacti'v'e'}");
       
     } catch (error) {
       console.log('   Unable to check system health');
@@ -176,7 +176,7 @@ class AutomationMonitor {
 }
 
 async function main() {
-  const monitor = new AutomationMonitor();
+  const $1 = new AutomationMonitor();
   
   // Display basic status
   await monitor.getAutomationStatus();

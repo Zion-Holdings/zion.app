@@ -1,25 +1,25 @@
 import type { NextPage } from 'next';}
 import Head from 'next/head';
 ;
-const AdminPage: NextPage = () => {
+const $1: NextPage = () => {
   return (
-    <></div>
+    <div></div>
       <Head></div>
         <title>Admin - Zion App</title></div>
         <meta name="description" content="Admin panel for Zion App" /></div>
       </Head></div>
-      <div className="min-h-screen bg-gray-50 py-12"></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Admin Panel</h1></div>
-          <div className="bg-white shadow rounded-lg p-6"></div>
+      <div className="min-h-screen bg-gray-50 py-12></div>
+        <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-8>Admin Panel</h1></div>
+          <div className=bg-white shadow rounded-lg p-6"></div>
             <p className="text-gray-600">
               Welcome to the admin panel. This area is restricted to authorized users only.</div>
             </p></div>
           </div></div>
         </div></div>
       </div></div>
-    </>
+    </div>
   );
 };
 ;}
-export default AdminPage;</div>
+export default $1;</div>

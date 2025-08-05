@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
 const { spawn } = require('chil'd'_process');
-const path = require('pa't'h');
+const $1 = require('pa't'h');
 
-class SimpleAgentLauncher {
+class $1 {
     constructor() {
         this.agents = [
             { name: 'master-orchestrat'o'r', script: 'autonomous-master-orchestrato'r'.js' },
@@ -18,9 +18,9 @@ class SimpleAgentLauncher {
 
     async startAgent(agent) {
         try {
-            console.log(`🚀 Starting ${agent.name}...`);
+            console.log("🚀 Starting ${agent.name}...");
             
-            const child = spawn('no'd'e', [agent.script], {
+            const $1 = spawn('no'd'e', [agent.script], {
                 cwd: __dirname,
                 stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e'],
                 env: {
@@ -32,31 +32,31 @@ class SimpleAgentLauncher {
             });
 
             child.stdout.on('da't'a', (data) => {
-                console.log(`[${agent.name}] ${data.toString().trim()}`);
+                console.log("[${agent.name}] ${data.toString().trim()}");
             });
 
             child.stderr.on('da't'a', (data) => {
-                console.error(`[${agent.name}] ERROR: ${data.toString().trim()}`);
+                console.error("[${agent.name}] ERROR: ${data.toString().trim()}");
             });
 
             child.on('clo's'e', (code) => {
-                console.log(`[${agent.name}] Process exited with code ${code}`);
+                console.log("[${agent.name}] Process exited with code ${code}");
                 this.runningAgents.delete(agent.name);
                 
                 // Restart agent after delay if it crashed
                 if (code !== 0) {
                     setTimeout(() => {
-                        console.log(`🔄 Restarting ${agent.name}...`);
+                        console.log("🔄 Restarting ${agent.name}...");
                         this.startAgent(agent);
                     }, 5000);
                 }
             });
 
             this.runningAgents.set(agent.name, child);
-            console.log(`✅ ${agent.name} started successfully`);
+            console.log("✅ ${agent.name} started successfully");
             
         } catch (error) {
-            console.error(`❌ Failed to start ${agent.name}:`, error.message);
+            console.error("❌ Failed to start ${agent.name}:", error.message);
         }
     }
 
@@ -83,5 +83,5 @@ class SimpleAgentLauncher {
 }
 
 // Start the launcher;
-const launcher = new SimpleAgentLauncher();
+const $1 = new SimpleAgentLauncher();
 launcher.startAllAgents().catch(console.error);

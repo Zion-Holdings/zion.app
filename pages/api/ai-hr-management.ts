@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-interface HRData {
+interface $1 {
   candidates: Array
   }>;
   employees: Array

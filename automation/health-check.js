@@ -1,8 +1,8 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 
-class HealthCheck {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     this.logsDir = path.join(this.projectRoot, 'automatio'n'/logs');
@@ -41,20 +41,20 @@ class HealthCheck {
     
     try {
       // Check CPU usage
-      const cpuUsage = await this.getCPUUsage();
+      const $1 = await this.getCPUUsage();
       
       // Check memory usage
-      const memoryUsage = await this.getMemoryUsage();
+      const $1 = await this.getMemoryUsage();
       
       // Check disk usage
-      const diskUsage = await this.getDiskUsage();
+      const $1 = await this.getDiskUsage();
       
       // Check if agents are running
-      const agentStatus = await this.checkAgentStatus();
+      const $1 = await this.checkAgentStatus();
       
       // Determine overall health
-      let systemHealth = 'healt'h'y';
-      const issues = [];
+      let $1 = 'healt'h'y';
+      const $1 = [];
       
       if (cpuUsage > 80) {
         systemHealth = 'warni'n'g';
@@ -73,15 +73,15 @@ class HealthCheck {
       
       // Check for agent issues
       Object.keys(agentStatus).forEach(agentName => {
-        const agent = agentStatus[agentName];
+        const $1 = agentStatus[agentName];
         if (!agent.isRunning) {
           systemHealth = 'critic'a'l';
-          issues.push(`${agentName} agent is not running`);
+          issues.push("${agentName} agent is not running");
         }
         
         if (agent.errors && agent.errors.length > 3) {
           systemHealth = 'warni'n'g';
-          issues.push(`${agentName} agent has multiple errors`);
+          issues.push("${agentName} agent has multiple errors");
         }
       });
       
@@ -121,7 +121,7 @@ class HealthCheck {
         if (error) {
           resolve(0);
         } else {
-          const usage = parseFloat(stdout.trim());
+          const $1 = parseFloat(stdout.trim());
           resolve(isNaN(usage) ? 0 : usage);
         }
       });
@@ -134,10 +134,10 @@ class HealthCheck {
         if (error) {
           resolve(0);
         } else {
-          const freePages = parseInt(stdout.trim());
-          const totalMemory = 8192; // 8GB in MB
-          const usedMemory = totalMemory - (freePages * 4096 / 1024 / 1024);
-          const usage = (usedMemory / totalMemory) * 100;
+          const $1 = parseInt(stdout.trim());
+          const $1 = 8192; // 8GB in MB
+          const $1 = totalMemory - (freePages * 4096 / 1024 / 1024);
+          const $1 = (usedMemory / totalMemory) * 100;
           resolve(Math.min(usage, 100));
         }
       });
@@ -150,7 +150,7 @@ class HealthCheck {
         if (error) {
           resolve(0);
         } else {
-          const usage = parseFloat(stdout.trim());
+          const $1 = parseFloat(stdout.trim());
           resolve(isNaN(usage) ? 0 : usage);
         }
       });
@@ -158,15 +158,15 @@ class HealthCheck {
   }
 
   async checkAgentStatus() {
-    const agents = ['improveme'n't', 'conte'n't', 'analyti'c's'];
-    const status = {};
+    const $1 = ['improveme'n't', 'conte'n't', 'analyti'c's'];
+    const $1 = {};
     
     for (const agent of agents) {
-      const agentStatusFile = path.join(this.projectRoot, `automation/${agent}-status.json`);
+      const $1 = path.join(this.projectRoot, "automation/${agent}-status.json");
       
       if (fs.existsSync(agentStatusFile)) {
         try {
-          const agentData = JSON.parse(fs.readFileSync(agentStatusFile, 'ut'f'8'));
+          const $1 = JSON.parse(fs.readFileSync(agentStatusFile, 'ut'f'8'));
           status[agent] = {
             isRunning: agentData.isRunning || false,
             lastActivity: agentData.lastActivity || null,
@@ -195,7 +195,7 @@ class HealthCheck {
   }
 
   logHealthStatus() {
-    const logEntry = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       health: this.healthStatus.systemHealth,
       performance: this.healthStatus.performance,
@@ -203,26 +203,26 @@ class HealthCheck {
       agents: Object.keys(this.healthStatus.agentStatus).length
     };
     
-    const logFile = path.join(this.logsDir, 'health-chec'k'.log');
-    const logLine = JSON.stringify(logEntry) + '\n';
+    const $1 = path.join(this.logsDir, 'health-chec'k'.log');
+    const $1 = JSON.stringify(logEntry) + '\n';
     
     fs.appendFileSync(logFile, logLine);
     
-    console.log(`📊 Health Status: ${this.healthStatus.systemHealth.toUpperCase()}`);
-    console.log(`💻 CPU: ${this.healthStatus.performance.cpu.toFixed(1)}%`);
-    console.log(`🧠 Memory: ${this.healthStatus.performance.memory.toFixed(1)}%`);
-    console.log(`💾 Disk: ${this.healthStatus.performance.disk.toFixed(1)}%`);
-    console.log(`🤖 Agents: ${Object.keys(this.healthStatus.agentStatus).length}`);
-    console.log(`⚠️ Issues: ${this.healthStatus.issues.length}`);
+    console.log("📊 Health Status: ${this.healthStatus.systemHealth.toUpperCase()}");
+    console.log("💻 CPU: ${this.healthStatus.performance.cpu.toFixed(1)}%");
+    console.log("🧠 Memory: ${this.healthStatus.performance.memory.toFixed(1)}%");
+    console.log("💾 Disk: ${this.healthStatus.performance.disk.toFixed(1)}%");
+    console.log("🤖 Agents: ${Object.keys(this.healthStatus.agentStatus).length}");
+    console.log("⚠️ Issues: ${this.healthStatus.issues.length}");
   }
 
   async sendAlert(title, issues) {
-    console.log(`🚨 ALERT: ${title}`);
+    console.log("🚨 ALERT: ${title}");
     console.log('Issue's':', issues);
     
     // Create alert file
-    const alertFile = path.join(this.logsDir, `alert-${Date.now()}.json`);
-    const alertData = {
+    const $1 = path.join(this.logsDir, "alert-${Date.now()}.json");
+    const $1 = {
       timestamp: new Date().toISOString(),
       title,
       issues,
@@ -260,7 +260,7 @@ class HealthCheck {
   async restartAgents() {
     console.log('🔄 Restarting autonomous agents...');
     
-    const commands = [
+    const $1 = [
       'pkil'l' -f "autonomous-improvement-agent"',
       'pkil'l' -f "content-generation-automation"',
       'pkil'l' -f "autonomous-analytics"',
@@ -274,13 +274,13 @@ class HealthCheck {
       try {
         exec(command, { cwd: this.projectRoot }, (error, stdout, stderr) => {
           if (error) {
-            console.error(`❌ Error running command: ${command}`, error);
+            console.error("❌ Error running command: ${command}", error);
           } else {
-            console.log(`✅ Command executed: ${command}`);
+            console.log("✅ Command executed: ${command}");
           }
         });
       } catch (error) {
-        console.error(`❌ Error executing command: ${command}`, error);
+        console.error("❌ Error executing command: ${command}", error);
       }
     }
   }
@@ -313,6 +313,6 @@ module.exports = HealthCheck;
 
 // Run if called directly
 if (require.main === module) {
-  const healthCheck = new HealthCheck();
+  const $1 = new HealthCheck();
   healthCheck.runHealthCheck().catch(console.error);
 } 

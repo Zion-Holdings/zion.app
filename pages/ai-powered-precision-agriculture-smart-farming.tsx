@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface CropMonitoring {
+interface $1 {
   id: string;
   name: string
   type: ''wheat' | 'corn' | 'soybean's' | ''rice' | 'cotton' | 'vegetable's' | fruit's'
@@ -13,12 +13,12 @@ interface CropMonitoring {
   healthScore: number
   yieldPrediction: number
   aiAnalysis: CropAnalysis}
-interface CropAnalysis {
+interface $1 {
   growthStage: 'seedli'n'g | vegetati'v'e | flower'i'ng' | 'fruiting' | 'harvest
   diseaseRisk: ''lo'w' | mediu'm' | hi'g'h | 'critica'l
   nutrientDeficiency: string[]
   recommendations: string[]}
-interface SoilAnalysis {
+interface $1 {
   id: string;
   location: string
   type: ''sandy' | 'clay' | 'loam'y' | silt'y'
@@ -31,12 +31,12 @@ interface SoilAnalysis {
     potassium: number
     organicMatter: number}
   aiAnalysis: SoilAnalysisData}
-interface SoilAnalysisData {
+interface $1 {
   fertilityScore: number
   irrigationNeeds: number
   amendmentRecommendations: string[]
   cropSuitability: string[]}
-interface IrrigationSystem {
+interface $1 {
   id: string;
   name: string
   type: 'dr'ip | 'sprinkl'er | 'fl'ood'' | smart'
@@ -45,12 +45,12 @@ interface IrrigationSystem {
   efficiency: number
   waterUsage: number
   aiAnalysis: IrrigationAnalysis}
-interface IrrigationAnalysis {
+interface $1 {
   optimizationScore: number
   waterConservation: number
   scheduleRecommendations: string[]
   maintenanceNeeds: string[]}
-interface SmartFarming {
+interface $1 {
   id: string;
   name: string
   type: ''automated-plantin'g' | harvesting-robo't' | drone-monitori'n'g | 'weather-statio'n
@@ -59,25 +59,25 @@ interface SmartFarming {
   efficiency: number
   costSavings: number
   aiAnalysis: FarmingAnalysis}
-interface FarmingAnalysis {
+interface $1 {
   roi: number
   productivityGain: number
   sustainabilityScore: number
   recommendations: string[]}
-interface AgriculturalAnalytics {
+interface $1 {
   totalCrops: number
   activeSystems: number
   waterSavings: number
   yieldIncrease: number
   aiInsights: AgriculturalInsight[]}
-interface AgriculturalInsight {
+interface $1 {
   id: string
   title: string
   description: string
   impact: 'positi've | 'negati've | 'neut'ral'
   confidence: number
   recommendations: string[]};
-const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
+const $1: NextPage = () => {
   const [cropMonitoring, setCropMonitoring] = useState<CropMonitoring[]>([]</div>
   const [soilAnalysis, setSoilAnalysis] = useState<SoilAnalysis[]>([]</div>
   const [irrigationSystems, setIrrigationSystems] = useState<IrrigationSystem[]>([]</div>
@@ -295,7 +295,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
     setSmartFarming(mockSmartFarming
     setAnalytics(mockAnalytics
   } []
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case 'active':
       case 'growing':
@@ -310,7 +310,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         return text-blue-'400
       default:
         return 'text-gray-400'}}
-  const getStatusBgColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case activ'e':
       case growin'g':
@@ -325,119 +325,119 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         return bg-blue'-'500
       default:
         return bg-gray-'500'}}
-  const getRiskColor = (risk: string) => {
+  const $1 = (risk: string) => {
     switch (risk) {
       case l'o'w: return text-green'-'400
       case mediu'm': return text-yellow-'400
       case 'high': return 'text-orange-400
       case 'critic'al: return 'text-red'-400
       default: return text-gray'-'400}}
-  const getInsightColor = (impact: string) => {
+  const $1 = (impact: string) => {
     switch (impact) {
       case 'positi've: return 'text-green'-400
       case negati'v'e: return text-red'-'400
       case neutra'l': return text-yellow-'400
       default: return 'text-gray-400'}}
-  const getInsightIcon = (impact: string) => {'
+  const $1 = (impact: string) => {'
     switch (impact) {
       case positiv'e': return 🌾
       case negati'v'e: return ⚠️
       case 'neutr'al: return '📊
       default: return '📊}}
-  const formatCurrency = (value: number) => {
+  const $1 = (value: number) => {
     return new Intl.NumberFormat(en-'U'S, {
       style: curren'c'y,
       currency: U'S'D,
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }).format(value}
-  const formatNumber = (value: number) => {
+  const $1 = (value: number) => {
     return new Intl.NumberFormat(en-'U'S).format(value}
-  const filteredCropMonitoring = useMemo(() => {
+  const $1 = useMemo(() => {
     return cropMonitoring.filter(crop => {
-      const typeMatch = selectedType === 'a'll || crop.type === selectedType
+      const $1 = selectedType === 'a'll || crop.type === selectedType
       return typeMatch}
   } [cropMonitoring, selectedType]
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Precision Agriculture & Smart Farming - Zion</title>"</div>
         <meta name=description content=Advanced AI-powered precision agriculture and smart farming platform with crop monitoring, soil analysis, irrigation management, and intelligent agricultural optimization > </meta" name="description content=Advanced AI-powered precision agriculture and smart farming platform with crop monitoring, soil analysis, irrigation management, and intelligent agricultural" optimization" ><meta name=keywords content=precision agriculture, smart farming, crop monitoring, soil analysis, irrigation, AI farming, Zion > </meta name="keywords" content=precision agriculture, smart farming, crop monitoring, soil analysis, irrigation, AI farming, Zion" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Header */}</div>
-      <div className="bg-black/20" backdrop-blur-md border-b border-white/10"> </div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> </div>
         </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"</div>
-          <div className="flex  justify-between items-center">"</div>
-            <Link href=/" className="text-2xl font-bold text-white > "</div>
-              </Link href=/ className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>Zion</span>"</div>
+          <div className="flex  justify-between items-center></div>
+            <Link href=/" className="text-2xl font-bold text-white > </div>
+              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>Zion</span>"</div>
             </Link>"</div>
-            <div className="flex"" items-center space-x-4"></div>
-              <Link href=/ai-powered-live-streaming-broadcasting className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Streaming</div>
+            <div className="flex items-center space-x-4"></div>
+              <Link href=/ai-powered-live-streaming-broadcasting className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming</div>
               </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link>"</div>
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Voice Assistant</div>
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant</div>
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
-              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>
-              </Link href=/ai-powered-autonomous-vehicle-transportation  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency"</div>
-              </Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-space-exploration-satellite-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Space Exploration</div>
-              </Link href=/ai-powered-space-exploration-satellite-management  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
-              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Underwater Exploration</div>
+              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>
+              </Link href=/ai-powered-autonomous-vehicle-transportation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency</div>
+              </Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-space-exploration-satellite-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Space Exploration</div>
+              </Link href=/ai-powered-space-exploration-satellite-management  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Underwater Exploration</div>
               </Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
-              <Link href=/ai-powered-climate-change-environmental-sustainability className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>
-              </Link href=/ai-powered-climate-change-environmental-sustainability  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login"</div>
-              </Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ">Get Started</div>
-              </Link href=/auth/signup  className="bg-gradient-to-r" from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ></Link></div>
+              <Link href=/ai-powered-climate-change-environmental-sustainability className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>
+              </Link href=/ai-powered-climate-change-environmental-sustainability  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
+              </Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/signup className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 >Get Started</div>
+              </Link href=/auth/signup  className=bg-gradient-to-r" from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ></Link></div>
             </div> </div></div>
         </div></div>
       </div>
       {/* Main Content */}</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Hero Section */}</div>
-        </div><div className="text-center" mb-12></div>
-          <h1 className="text-5xl font-bold text-white mb-6 ">
+        </div><div className=text-center" mb-12></div>
+          <h1 className="text-5xl font-bold text-white mb-6 >
             AI-Powered Precision Agriculture & Smart Farming</div>
           </h1></div>
-          <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+          <p className=text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
             Optimize agricultural operations with AI-powered precision farming, 
             smart irrigation, crop monitoring, and intelligent agricultural analytics  
             for maximum yield and sustainability.</div>
           </p></div>
-          <div className=" flex justify-center space-x-4"></div>
-            <button className="px-8" py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg:font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200>
+          <div className=" flex justify-center space-x-4></div>
+            <button className=px-8" py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg:font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200>
               Monitor Crops</div>
             </button></div>
-            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg font-medium hover from-teal-700 hover to-cyan-700 transition-all duration-200 ">
+            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg font-medium hover from-teal-700 hover to-cyan-700 transition-all duration-200 >
               Analyze Soil</div>
             </button></div>
           </div></div>
         </div>
 
-        {/* Navigation Tabs */}"</div>
+        {/* Navigation Tabs */}</div>
         <div className=" flex space-x-1 bg-black/20 rounded-lg:p-1 mb-8>
           {['
             { id: 'overview', label: 'Overview', icon: '🌾 },
 { id: cro'p's, label: Cro'p's, icon: 🌱' },
-    { id: 'soil', label: 'Soil', icon: '🌍 },
+    { id: 'soil', label: 'Soil', icon: '🌍 },"
 { id: irrigati'o'n, label: Irrigati'o'n, icon: 💧' },"
     { id: 'farming', label: 'Smart Farming', icon: '🤖 },"
 { id  analyti'c's, label  Analyti'c's, icon  📊'}"
           ].map((tab) => (
             "
               onClick={() => setSelectedView(tab.id as any)}
-              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
+              className={"flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
                 selectedView === tab.id
-                  ? bg-gradient-to-r' from-green-600 to-emerald-600 text-white'`
-                    text-gray-'300 hover text-white hover bg-white/10'``
-              }`}
+                  ? bg-gradient-to-r' from-green-600 to-emerald-600 text-white'"
+                    text-gray-'300 hover text-white hover bg-white/10'`"
+              }"}
             ></div>
               <span>{tab.icon}</span></div>
               <span>{tab.label}</span></div>
@@ -447,21 +447,21 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
         {/* Content Sections */}, '
 {selectedView === 'overview' && (</div>
-          <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Crop Monitoring Overview */}</div>
-            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10"></div>
-              <h3 className="text-xl" font-semibold text-white mb-4>Active Crop Monitoring</h3></div>
-              <div className="space-y-4">
+            </div><div className=bg-black/20 rounded-lg p-6 border border-white/10"></div>
+              <h3 className="text-xl font-semibold text-white mb-4>Active Crop Monitoring</h3></div>
+              <div className=space-y-4">
                 {cropMonitoring.slice(0, 3).map((crop) => (</div>
-                  </div><div key={crop.id} className=" p-4 bg-white/5" rounded-lg></div>
-                    <div className="flex  items-center justify-between mb-2">`</div>
-                      <h4 className="text-white" font-medium>{crop.name}</h4>``</div>
-                      <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(crop.status)} text-white`}">
+                  </div><div key={crop.id} className=" p-4 bg-white/5 rounded-lg></div>
+                    <div className=flex  items-center justify-between mb-2">"</div>
+                      <h4 className="text-white font-medium>{crop.name}</h4>"</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(crop.status)} text-white}">
                         {crop.status}</div>
                       </span></div>
                     </div></div>
-                    <p className="text-gray-400" text-sm:mb-2>{crop.location} • {crop.type}</p></div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400 "></div>
+                    <p className="text-gray-400 text-sm:mb-2>{crop.location} • {crop.type}</p></div>
+                    <div className=flex items-center space-x-4 text-sm text-gray-400 "></div>
                       <span>Health: {crop.healthScore}/10</span></div>
                       <span>Yield: {crop.yieldPrediction}%</span></div>
                     </div></div>
@@ -471,19 +471,19 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div>
 
             {/* Smart Farming Overview */} </div>
-            <div className="bg-black/20 rounded-lg p-6 border" border-white/10></div>
-              <h3 className="text-xl font-semibold text-white mb-4">Smart Farming Systems</h3></div>
-              <div className="space-y-4>" 
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10></div>
+              <h3 className=text-xl font-semibold text-white mb-4">Smart Farming Systems</h3></div>
+              <div className="space-y-4> 
                 {smartFarming.slice(0, 2).map((system) => (</div>
-                  </div><div key={system.id} className="p-4 bg-white/5 rounded-lg"></div>
-                    <div className=" flex items-center justify-between" mb-2>`</div>
-                      <h4 className="text-white font-medium">{system.name}</h4>``</div>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
+                  </div><div key={system.id} className=p-4 bg-white/5 rounded-lg"></div>
+                    <div className=" flex items-center justify-between mb-2></div>
+                      <h4 className="text-white font-medium">{system.name}</h4>`"</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white"}>
                         {system.status}</div>
                       </span></div>
                     </div></div>
-                    <p className="text-gray-400 text-sm mb-2 ">{system.location}</p></div>
-                    <div className="flex" items-center space-x-4 text-sm text-gray-400></div>
+                    <p className="text-gray-400 text-sm mb-2 >{system.location}</p></div>
+                    <div className=flex" items-center space-x-4 text-sm text-gray-400></div>
                       <span>Efficiency  {system.efficiency}%</span></div>
                       <span>Savings  {formatCurrency(system.costSavings)}</span></div>
                     </div></div>
@@ -495,17 +495,17 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         )}
 '
         {selectedView === cro'p's && (</div>
-          <div className=" space-y-6">
+          <div className=" space-y-6>
             {/* Crop Type Filter */}</div>
-            </div><div className=" flex space-x-2 overflow-x-auto" pb-2>
+            </div><div className= flex space-x-2 overflow-x-auto" pb-2>
               {['a'll, 'whe'at, 'co'rn, 'soybea'ns, 'ri'ce, 'cott'on, 'vegetabl'es, 'frui'ts].map((type) => (
-                `
-                  onClick={() => setSelectedType(type)}``
-                  className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
+                "
+                  onClick={() => setSelectedType(type)}`"
+                  className="{px-4 py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${'
                     selectedType === type
-                      ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
-                      : 'bg-white/10 text-gray-300 hover:text-white'``
-                  }`}
+                      ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'"
+                      : 'bg-white/10 text-gray-300 hover:text-white'""
+                  }"}
                 >
                   {type}</div>
                 </button>
@@ -513,34 +513,34 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div>
 
             {/* Crops Grid */} </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredCropMonitoring.map((crop) => (</div>
-                </div><div key={crop.id} className=" bg-black/20 rounded-lg p-6 border" border-white/10"></div>
-                  <div className="flex items-center justify-between mb-4>`"</div>
-                    <h3 className="text-white" font-semibold ">{crop.name}</h3>``</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(crop.status)} text-white`}>
+                </div><div key={crop.id} className= bg-black/20 rounded-lg p-6 border" border-white/10"></div>
+                  <div className="flex items-center justify-between mb-4></div>
+                    <h3 className="text-white" font-semibold ">{crop.name}</h3>""</div>
+                    <span className="{px-3 py-3 rounded-full text-sm ${getStatusBgColor(crop.status)} text-white}>
                       {crop.status}</div>
                     </span>"</div>
                   </div> "</div>
-                  <p className="text-gray-400" text-sm mb-4">{crop.location} • {crop.type}</p></div>
+                  <p className="text-gray-400 text-sm mb-4>{crop.location} • {crop.type}</p></div>
                   <div className="space-y-2 mb-4>"</div>
-                    </div><div className="flex justify-between text-sm""></div>
+                    </div><div className="flex justify-between text-sm></div>
                       <span className="text-gray-400>Area</span>"</div>
-                      <span className="text-white">{formatNumber(crop.area)}" acres</span></div>
+                      <span className="text-white>{formatNumber(crop.area)} acres</span></div>
                     </div></div>
                     <div className=" flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Health" Score</span></div>
+                      <span className="text-gray-400>Health Score</span></div>
                       <span className="text-white>{crop.healthScore}/10</span></div>
-                    </div> </div>
+                    </div> </div>"
                   </div>"</div>
-                  <div className="space-y-2">"</div>
+                  <div className="space-y-2></div>
                     </div><div className=" flex justify-between" text-sm></div>
-                      <span className="text-gray-400">Yield Prediction</span></div>
-                      <span className="text-white>{crop.yieldPrediction}%</span>" </div>
+                      <span className="text-gray-400>Yield Prediction</span></div>
+                      <span className=text-white>{crop.yieldPrediction}%</span>" </div>
                     </div></div>
-                    <div className="flex justify-between text-sm"></div>
-                      <span className="text-gray-400>Disease" Risk</span></div>
-                      <span className="{getRiskColor(crop.aiAnalysis.diseaseRisk)}">
+                    <div className="flex justify-between text-sm></div>
+                      <span className=text-gray-400>Disease" Risk</span></div>
+                      <span className="{getRiskColor(crop.aiAnalysis.diseaseRisk)}>
                         {crop.aiAnalysis.diseaseRisk}</div>
                       </span></div>
                     </div></div>
@@ -550,34 +550,34 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div></div>
           </div>
         )}
-'"
+'
         {selectedView === so'i'l && (</div>
           <div className="space-y-6> "</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {soilAnalysis.map((soil) => (</div>
                 <div key={soil.id} className="bg-black/20 rounded-lg:p-6 border border-white/10> "</div>
-                  </div><div className="flex items-center justify-between mb-4 ">"</div>
+                  </div><div className="flex items-center justify-between mb-4 ></div>
                     <h3 className="text-white" font-semibold>{soil.location}</h3></div>
-                    <span className="text-gray-400 text-sm">{soil.type}</span></div>
+                    <span className="text-gray-400 text-sm>{soil.type}</span></div>
                   </div></div>
-                  <div className="grid" grid-cols-2 gap-4 mb-4> </div>
-                    </div><div className="text-center"></div>
-                      <div className="text-2xl" font-bold text-white>{soil.ph}</div></div>
-                      <div className="text-gray-400 text-sm">pH Level</div></div>
+                  <div className=grid" grid-cols-2 gap-4 mb-4> </div>
+                    </div><div className="text-center></div>
+                      <div className=text-2xl" font-bold text-white>{soil.ph}</div></div>
+                      <div className="text-gray-400 text-sm>pH Level</div></div>
                     </div></div>
-                    <div className="text-center>"</div>
-                      </div><div className="text-2xl font-bold text-white ">{soil.moisture}%</div></div>
-                      <div className="text-gray-400" text-sm>Moisture</div></div>
+                    <div className=text-center>"</div>
+                      </div><div className="text-2xl font-bold text-white >{soil.moisture}%</div></div>
+                      <div className=text-gray-400" text-sm>Moisture</div></div>
                     </div></div>
                   </div></div>
-                  <div className="space-y-2"></div>
-                    </div><div className=" flex justify-between" text-sm></div>
-                      <span className="text-gray-400">Fertility Score</span></div>
-                      <span className="text-white>{soil.aiAnalysis.fertilityScore}/10</span>" </div>
+                  <div className="space-y-2></div>
+                    </div><div className= flex justify-between" text-sm></div>
+                      <span className="text-gray-400>Fertility Score</span></div>
+                      <span className=text-white>{soil.aiAnalysis.fertilityScore}/10</span>" </div>
                     </div></div>
-                    <div className="flex justify-between text-sm"></div>
-                      <span className="text-gray-400>Irrigation" Needs</span></div>
-                      <span className="text-white">{Math.round(soil.aiAnalysis.irrigationNeeds * 100)}%</span></div>
+                    <div className="flex justify-between text-sm></div>
+                      <span className=text-gray-400>Irrigation" Needs</span></div>
+                      <span className="text-white>{Math.round(soil.aiAnalysis.irrigationNeeds * 100)}%</span></div>
                     </div></div>
                   </div></div>
                 </div>
@@ -585,37 +585,37 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div></div>
           </div>
         )}
-"'
+'
         {selectedView === 'irrigation' && (</div>
           <div className="space-y-6> "</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {irrigationSystems.map((system) => (</div>
                 <div key={system.id} className="bg-black/20 rounded-lg:p-6 border border-white/10> "</div>
-                  </div><div className="flex" items-center justify-between mb-4 ">`</div>
-                    <h3 className="text-white font-semibold>{system.name}</h3>``"</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)}  text-white`}>
+                  </div><div className="flex items-center justify-between mb-4 >"</div>
+                    <h3 className="text-white font-semibold>{system.name}</h3>`</div>
+                    <span className="{"px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)}  text-white"}>
                       {system.status}</div>
                     </span>"</div>
                   </div>"</div>
-                  <p className="text-gray-400" text-sm:mb-4">{system.type} system</p></div>
+                  <p className="text-gray-400 text-sm:mb-4>{system.type} system</p></div>
                   <div className="grid grid-cols-2 gap-4 mb-4 > "</div>
-                    </div><div className="text-center""></div>
+                    </div><div className="text-center></div>
                       <div className="text-2xl font-bold text-white>{system.coverage}%</div>"</div>
-                      <div className="text-gray-400" text-sm">Coverage</div></div>
+                      <div className="text-gray-400 text-sm>Coverage</div></div>
                     </div></div>
                     <div className="text-center>"</div>
-                      </div><div className="text-2xl" font-bold text-white">{system.efficiency}%</div></div>
-                      <div className="text-gray-400 text-sm>Efficiency</div></div>
+                      </div><div className="text-2xl font-bold text-white>{system.efficiency}%</div></div>
+                      <div className="text-gray-400 text-sm>Efficiency</div></div>"
                     </div>"</div>
                   </div>"</div>
-                  <div className="space-y-2">" </div>
+                  <div className="space-y-2> </div>
                     </div><div className="flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Water" Usage</span></div>
+                      <span className="text-gray-400>Water Usage</span></div>
                       <span className="text-white>{formatNumber(system.waterUsage)} gal</span>"</div>
                     </div>"</div>
-                    <div className=" flex justify-between" text-sm"></div>
+                    <div className=" flex justify-between text-sm></div>
                       <span className="text-gray-400>Optimization</span>"</div>
-                      <span className="text-white">{system.aiAnalysis.optimizationScore}/10</span>"</div>
+                      <span className="text-white>{system.aiAnalysis.optimizationScore}/10</span></div>
                     </div></div>
                   </div></div>
                 </div>
@@ -626,34 +626,34 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
  '
         {selectedView === farmi'n'g && (</div>
           <div className="space-y-6>"</div>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
-              {smartFarming.map((system) => ("</div>
+            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+              {smartFarming.map((system) => (</div>
                 <div key={system.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10></div>
-                  </div><div className="flex items-center justify-between mb-4">`</div>
-                    <h3 className="text-white" font-semibold>{system.name}</h3>``</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}">
+                  </div><div className="flex items-center justify-between mb-4></div>
+                    <h3 className="text-white" font-semibold>{system.name}</h3>`"</div>
+                    <span className="{px-3 py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white}">
                       {system.status}</div>
                     </span></div>
                   </div></div>
-                  <p className="text-gray-400" text-sm mb-4 >{system.location}</p></div>
-                  <div className="grid grid-cols-2 gap-4 mb-4"></div>
-                    </div><div className="text-center"></div>
-                      <div className="text-2xl font-bold text-white">{system.efficiency}%</div></div>
-                      <div className="text-gray-400" text-sm>Efficiency</div></div>
+                  <p className="text-gray-400 text-sm mb-4 >{system.location}</p></div>
+                  <div className=grid grid-cols-2 gap-4 mb-4"></div>
+                    </div><div className="text-center></div>
+                      <div className=text-2xl font-bold text-white">{system.efficiency}%</div></div>
+                      <div className="text-gray-400 text-sm>Efficiency</div></div>
                     </div></div>
-                    <div className="text-center"> </div>
-                      </div><div className="text-2xl" font-bold text-white>{formatCurrency(system.costSavings)}</div></div>
-                      <div className="text-gray-400 text-sm">Savings</div></div>
+                    <div className=text-center"> </div>
+                      </div><div className="text-2xl font-bold text-white>{formatCurrency(system.costSavings)}</div></div>
+                      <div className=text-gray-400 text-sm">Savings</div></div>
                     </div></div>
                   </div></div>
-                  <div className="space-y-2>" </div>
-                    </div><div className="flex justify-between text-sm"></div>
-                      <span className="text-gray-400>ROI</span"></div>
-                      <span className="text-white">{Math.round(system.aiAnalysis.roi * 100)}%</span></div>
+                  <div className="space-y-2> </div>
+                    </div><div className=flex justify-between text-sm"></div>
+                      <span className="text-gray-400>ROI</span></div>
+                      <span className=text-white">{Math.round(system.aiAnalysis.roi * 100)}%</span></div>
                     </div></div>
-                    <div className="flex justify-between text-sm""></div>
+                    <div className="flex justify-between text-sm></div>
                       <span className="text-gray-400>Productivity Gain</span>"</div>
-                      <span className="text-white">{Math.round(system.aiAnalysis.productivityGain" * 100)}%</span></div>
+                      <span className="text-white>{Math.round(system.aiAnalysis.productivityGain * 100)}%</span></div>
                     </div></div>
                   </div></div>
                 </div >
@@ -663,43 +663,43 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         )}
 "
         {selectedView === 'analyti'cs && analytics && (</div>
-          <div className=" space-y-6">
+          <div className=" space-y-6>
             {/* Analytics Overview */}</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"></div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center"> </div>
-                </div><div className="text-3xl" font-bold text-white>{analytics.totalCrops}</div></div>
-                <div className="text-gray-400">Total Crops</div></div>
+            </div><div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"></div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>
+                </div><div className=text-3xl" font-bold text-white>{analytics.totalCrops}</div></div>
+                <div className="text-gray-400>Total Crops</div></div>
               </div></div>
-              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center > </div>
-                </div><div className="text-3xl font-bold text-white">{analytics.activeSystems}</div></div>
-                <div className="text-gray-400>Active Systems</div>"</div>
+              <div className=bg-black/20" rounded-lg p-6 border border-white/10 text-center > </div>
+                </div><div className="text-3xl font-bold text-white>{analytics.activeSystems}</div></div>
+                <div className=text-gray-400>Active Systems</div>"</div>
               </div>"</div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center> "</div>
-                </div><div className="text-3xl" font-bold text-white">{analytics.waterSavings}%</div></div>
-                <div className="text-gray-400>Water Savings</div>"</div>
-              </div>"</div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center> </div>
+                </div><div className=text-3xl" font-bold text-white">{analytics.waterSavings}%</div></div>
+                <div className="text-gray-400>Water Savings</div></div>
+              </div></div>
               <div className=" bg-black/20 rounded-lg p-6 border border-white/10" text-center"></div>
-                </div><div className="text-3xl font-bold text-white>{analytics.yieldIncrease}%</div>"</div>
-                <div className="text-gray-400">Yield" Increase</div></div>
+                </div><div className="text-3xl font-bold text-white>{analytics.yieldIncrease}%</div></div>
+                <div className=text-gray-400">Yield" Increase</div></div>
               </div></div>
             </div>
 
             {/* AI Insights */}"</div>
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10"></div>
-              <h3 className="text-xl" font-semibold text-white mb-4>AI Agricultural Insights</h3></div>
-              <div className="space-y-4"> 
+            <div className=" bg-black/20 rounded-lg p-6 border border-white/10></div>
+              <h3 className=text-xl" font-semibold text-white mb-4>AI Agricultural Insights</h3></div>
+              <div className="space-y-4> 
                 {analytics.aiInsights.map((insight) => (</div>
-                  </div><div key={insight.id} className="p-4 bg-white/5 rounded-lg"></div>
-                    <div className=" flex items-center space-x-3 mb-2">`</div>
-                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">``</div>
-                      <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}">
+                  </div><div key={insight.id} className=p-4 bg-white/5 rounded-lg"></div>
+                    <div className=" flex items-center space-x-3 mb-2></div>
+                      <span className="text-2xl>{getInsightIcon(insight.impact)}</span">`"</div>
+                      <h4 className="{text-lg font-medium ${getInsightColor(insight.impact)}"}">
                         {insight.title} </div>
                       </h4></div>
-                      <span className="text-sm:text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span>"</div>
-                    </div>"</div>
+                      <span className="text-sm:text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span></div>
+                    </div></div>
                     <p className="text-gray-300" mb-3">{insight.description}</p></div>
-                    <div className="space-y-2>"
-                      {insight.recommendations.map((rec, index) => ("</div>
+                    <div className="space-y-2>
+                      {insight.recommendations.map((rec, index) => (</div>
                         </div><div key={index} className="flex" items-center space-x-2 text-sm text-gray-400"></div>
                           <span>•</span></div>
                           <span>{rec}</span></div>
@@ -714,47 +714,47 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         )}</div>
       </div> 
       {/* Footer */}</div>
-      <div className="bg-black/20  border-t border-white/10 mt-16>"</div>
-        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-8"></div>
-          <div className="grid grid-cols-1 md grid-cols-4 gap-8> "</div>
-            </div><div>"</div>
+      <div className="bg-black/20  border-t border-white/10 mt-16></div>
+        </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-8"></div>
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8> </div>
+            </div><div></div>
               <h3 className="text-white" font-semibold mb-4">Zion</h3></div>
               <p className="text-gray-400 text-sm >
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.</div>
               </p></div>
-            </div>"</div>
+            </div></div>
             <div> "</div>
-              <h4 className="text-white" font-semibold mb-4">Features</h4></div>
+              <h4 className="text-white font-semibold mb-4>Features</h4></div>
               <ul className="space-y-2 text-sm text-gray-400>"</div>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting  className="hover text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation className="hover" text-white ">Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-space-exploration-satellite-management" className="hover text-white ">Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className="hover" text-white ></Link></li></div>
-                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover" text-white ">Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-climate-change-environmental-sustainability" className="hover text-white >Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover text-white ">Precision Agriculture</Link href=/ai-powered-precision-agriculture-smart-farming className="hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting  className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation className="hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-space-exploration-satellite-management" className="hover text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className=hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white >Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-climate-change-environmental-sustainability" className="hover text-white >Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover text-white >Precision Agriculture</Link href=/ai-powered-precision-agriculture-smart-farming className=hover" text-white ></Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white" font-semibold mb-4">Services</h4></div>
+              <h4 className="text-white font-semibold mb-4>Services</h4></div>
               <ul className="space-y-2 text-sm text-gray-400>"</div>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace className="hover text-white" "></Link></li></div>
-                <li><Link href=/services" className="hover text-white ">IT Services</Link href=/services  className="hover" text-white ></Link></li></div>
-                <li><Link href=/talents className="hover" text-white ">AI Talents</Link href=/talents className="hover text-white ></Link></li>"</div>
-                <li><Link href=/equipment" className="hover text-white >Equipment</Link href=/equipment  className="hover" text-white "></Link></li> </ul></div>
+                <li><Link href=/marketplace className="hover text-white >Marketplace</Link href=/marketplace className=hover text-white" "></Link></li></div>
+                <li><Link href=/services" className="hover text-white >IT Services</Link href=/services  className=hover" text-white ></Link></li></div>
+                <li><Link href=/talents className="hover text-white >AI Talents</Link href=/talents className="hover text-white ></Link></li>"</div>
+                <li><Link href=/equipment" className="hover text-white >Equipment</Link href=/equipment  className=hover text-white "></Link></li> </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4>Support</h4>"</div>
-              <ul className="space-y-2"  text-sm:text-gray-400"></div>
-                <li><Link href=/help-desk-support className="hover text-white >Help Desk</Link href=/help-desk-support className="hover text-white"></Link></li></div>
-                <li><Link href=/contact className="hover text-white ">Contact</Link href=/contact className="hover" text-white ></Link></li></div>
-                <li><Link href=/docs className="hover" text-white >Documentation</Link href=/docs  className="hover text-white" "></Link></li></div>
-                <li><Link href=/status className="hover text-white >Status</Link href=/status className="hover" text-white" "></Link></li></div>
+              <h4 className="text-white font-semibold mb-4>Support</h4></div>
+              <ul className=space-y-2"  text-sm:text-gray-400"></div>
+                <li><Link href=/help-desk-support className="hover text-white >Help Desk</Link href=/help-desk-support className=hover text-white></Link></li></div>
+                <li><Link href=/contact className="hover text-white ">Contact</Link href=/contact className="hover text-white ></Link></li></div>
+                <li><Link href=/docs className=hover" text-white >Documentation</Link href=/docs  className="hover text-white ></Link></li></div>
+                <li><Link href=/status className="hover text-white >Status</Link href=/status className="hover text-white "></Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">;</div>
+          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm>;</div>
             <p>&copy; 2025 Zion Tech Group. All rights reserved.</p></div>
           </div></div>
         </div></div>
@@ -768,5 +768,5 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
   </div>
 
 };
-''`;}
+'';}
 export default AIPoweredPrecisionAgricultureSmartFarmingPage )))))))))))))))))))"'"'`</div>

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix final parsing errors;
 function fixFinalParsingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'ut'f'8');
-    let modified = false;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = false;
 
     // Fix "Unexpected token" errors by adding missing closing braces
     content = content.replace(/(\w+):\s*\{([^}]*)$/gm, '$1: {$2}');
@@ -33,27 +33,27 @@ function fixFinalParsingErrors(filePath) {
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log(`✅ Fixed final parsing errors in ${filePath}`);
+      console.log("✅ Fixed final parsing errors in ${filePath}");
       return true;
     }
 
     return false;
   } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
+    console.error("❌ Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to fix all remaining product files;
 function fixRemainingProductFiles() {
-  const productsDir = path.join(__dirname, '..', 'pag'e's', 'produc't's');
-  let totalFixed = 0;
+  const $1 = path.join(__dirname, '..', 'pag'e's', 'produc't's');
+  let $1 = 0;
 
   if (fs.existsSync(productsDir)) {
-    const files = fs.readdirSync(productsDir);
+    const $1 = fs.readdirSync(productsDir);
     files.forEach(file => {
       if (file.endsWith('.tsx') && file.includes('trend-soluti'o'n')) {
-        const filePath = path.join(productsDir, file);
+        const $1 = path.join(productsDir, file);
         if (fixFinalParsingErrors(filePath)) {
           totalFixed++;
         }
@@ -66,14 +66,14 @@ function fixRemainingProductFiles() {
 
 // Function to fix all remaining service files;
 function fixRemainingServiceFiles() {
-  const servicesDir = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
-  let totalFixed = 0;
+  const $1 = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
+  let $1 = 0;
 
   if (fs.existsSync(servicesDir)) {
-    const files = fs.readdirSync(servicesDir);
+    const $1 = fs.readdirSync(servicesDir);
     files.forEach(file => {
       if (file.endsWith('.tsx')) {
-        const filePath = path.join(servicesDir, file);
+        const $1 = path.join(servicesDir, file);
         if (fixFinalParsingErrors(filePath)) {
           totalFixed++;
         }
@@ -86,7 +86,7 @@ function fixRemainingServiceFiles() {
 
 // Function to fix specific files with known parsing issues;
 function fixSpecificFiles() {
-  const specificFiles = [
+  const $1 = [
     'page's'/products.tsx',
     'page's'/profile.tsx',
     'page's'/project-management.tsx',
@@ -126,10 +126,10 @@ function fixSpecificFiles() {
     'page's'/workflow-designer.tsx'
   ];
 
-  let totalFixed = 0;
+  let $1 = 0;
 
   specificFiles.forEach(file => {
-    const filePath = path.join(__dirname, '..', file);
+    const $1 = path.join(__dirname, '..', file);
     if (fs.existsSync(filePath)) {
       if (fixFinalParsingErrors(filePath)) {
         totalFixed++;
@@ -142,21 +142,21 @@ function fixSpecificFiles() {
 
 // Process all files;
 function processFiles() {
-  let totalFixed = 0;
+  let $1 = 0;
 
   // Fix remaining product files
-  const productFixed = fixRemainingProductFiles();
+  const $1 = fixRemainingProductFiles();
   totalFixed += productFixed;
 
   // Fix remaining service files
-  const serviceFixed = fixRemainingServiceFiles();
+  const $1 = fixRemainingServiceFiles();
   totalFixed += serviceFixed;
 
   // Fix specific files
-  const specificFixed = fixSpecificFiles();
+  const $1 = fixSpecificFiles();
   totalFixed += specificFixed;
 
-  console.log(`\n🎉 Fixed final parsing errors in ${totalFixed} files`);
+  console.log("\n🎉 Fixed final parsing errors in ${totalFixed} files");
 }
 
 processFiles(); 

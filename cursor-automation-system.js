@@ -2,16 +2,16 @@
 ;
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
-const fs = require('f's').promises;
-const path = require('pa't'h');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-const chokidar = require('chokid'a'r');
-const OpenAI = require('open'a'i');
+const $1 = require('chokid'a'r');
+const $1 = require('open'a'i');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class CursorAutomationSystem {
+class $1 {
   constructor() {
     this.server = new Server(
       {
@@ -92,7 +92,7 @@ class CursorAutomationSystem {
           return await this.monitorChanges(args);
         
         default:
-          throw new Error(`Unknown tool: ${name}`);
+          throw new Error("Unknown tool: ${name}");
       }
     });
 
@@ -314,7 +314,7 @@ class CursorAutomationSystem {
         return await this.getAutomationLogs();
       }
       
-      throw new Error(`Unknown resource: ${uri}`);
+      throw new Error("Unknown resource: ${uri}");
     });
   }
 
@@ -348,7 +348,7 @@ class CursorAutomationSystem {
   }
 
   async handleFileChange(filePath) {
-    console.log(`File changed: ${filePath}`);
+    console.log("File changed: ${filePath}");
     this.automationQueue.push({
       type: 'fil'e'_change',
       filePath,
@@ -359,7 +359,7 @@ class CursorAutomationSystem {
   }
 
   async handleFileAdd(filePath) {
-    console.log(`File added: ${filePath}`);
+    console.log("File added: ${filePath}");
     this.automationQueue.push({
       type: 'fil'e'_add',
       filePath,
@@ -368,7 +368,7 @@ class CursorAutomationSystem {
   }
 
   async handleFileDelete(filePath) {
-    console.log(`File deleted: ${filePath}`);
+    console.log("File deleted: ${filePath}");
     this.automationQueue.push({
       type: 'fil'e'_delete',
       filePath,
@@ -381,7 +381,7 @@ class CursorAutomationSystem {
     this.isRunning = true;
 
     while (this.automationQueue.length > 0) {
-      const task = this.automationQueue.shift();
+      const $1 = this.automationQueue.shift();
       
       try {
         switch (task.type) {
@@ -395,7 +395,7 @@ class CursorAutomationSystem {
             break;
         }
       } catch (error) {
-        console.error(`Error processing automation task: ${error.message}`);
+        console.error("Error processing automation task: ${error.message}");
         this.logError('automatio'n'_task_error', error.message);
       }
     }
@@ -407,18 +407,18 @@ class CursorAutomationSystem {
     const { filePath, refactorType = 'optimi'z'e', preserveComments = true } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Refactor the following code for better quality and maintainability. 
+      const $1 = "Refactor the following code for better quality and maintainability. 
       Refactor type: ${refactorType}
       Preserve comments: ${preserveComments}
       
       Code:
       ${content}
       
-      Provide the refactored code with explanations of changes.`;
+      Provide the refactored code with explanations of changes.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -433,12 +433,12 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const refactoredCode = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const codeMatch = refactoredCode.match(/```[\s\S]*?```/);
+      const $1 = refactoredCode.match(/``"[\s\S]*?"`"/);
       if (codeMatch) {
-        const code = codeMatch[0].replace(/```[\w]*\n?/, '').replace(/```$/, '');
+        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
         await fs.writeFile(filePath, code);
       }
 
@@ -457,24 +457,24 @@ class CursorAutomationSystem {
     const { filePath, testFramework = 'je's't', coverage = true } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
-      const testFilePath = filePath.replace(/\.(js|ts|jsx|tsx)$/, `.test.$1`);
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, ".test.$1");
       
-      const prompt = `Generate comprehensive tests for the following code using ${testFramework}.
+      const $1 = "Generate comprehensive tests for the following code using ${testFramework}.
       Include unit tests, integration tests, and edge cases.
       Coverage: ${coverage}
       
       Code:
       ${content}
       
-      Generate complete test file.`;
+      Generate complete test file.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
             role: 'syst'e'm',
-            content: `You are an expert in ${testFramework} testing. Generate comprehensive, well-structured tests.`
+            content: "You are an expert in ${testFramework} testing. Generate comprehensive, well-structured tests."
           },
           {
             role: 'us'e'r',
@@ -484,18 +484,18 @@ class CursorAutomationSystem {
         temperature: 0.2
       });
 
-      const testCode = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const codeMatch = testCode.match(/```[\s\S]*?```/);
+      const $1 = testCode.match(/"`"[\s\S]*?"`"/);
       if (codeMatch) {
-        const code = codeMatch[0].replace(/```[\w]*\n?/, '').replace(/```$/, '');
+        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
         await fs.writeFile(testFilePath, code);
       }
 
       return {
         success: true,
-        message: `Tests generated successfully at ${testFilePath}`,
+        message: "Tests generated successfully at ${testFilePath}",
         testFile: testFilePath
       };
     } catch (error) {
@@ -508,16 +508,16 @@ class CursorAutomationSystem {
     const { filePath, optimizationType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Optimize the following code for performance. Focus on: ${optimizationType}.
+      const $1 = "Optimize the following code for performance. Focus on: ${optimizationType}.
       
       Code:
       ${content}
       
-      Provide optimized code with performance improvements.`;
+      Provide optimized code with performance improvements.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -532,12 +532,12 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const optimizedCode = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const codeMatch = optimizedCode.match(/```[\s\S]*?```/);
+      const $1 = optimizedCode.match(/"`"[\s\S]*?"`"/);
       if (codeMatch) {
-        const code = codeMatch[0].replace(/```[\w]*\n?/, '').replace(/```$/, '');
+        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
         await fs.writeFile(filePath, code);
       }
 
@@ -556,16 +556,16 @@ class CursorAutomationSystem {
     const { filePath, fixType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Fix common errors in the following code. Focus on: ${fixType}.
+      const $1 = "Fix common errors in the following code. Focus on: ${fixType}.
       
       Code:
       ${content}
       
-      Provide corrected code with explanations of fixes.`;
+      Provide corrected code with explanations of fixes.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -580,12 +580,12 @@ class CursorAutomationSystem {
         temperature: 0.2
       });
 
-      const fixedCode = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Extract code from response and write to file
-      const codeMatch = fixedCode.match(/```[\s\S]*?```/);
+      const $1 = fixedCode.match(/"`"[\s\S]*?"`"/);
       if (codeMatch) {
-        const code = codeMatch[0].replace(/```[\w]*\n?/, '').replace(/```$/, '');
+        const $1 = codeMatch[0].replace(/"`"[\w]*\n?/, '').replace(/"`"$/, '');
         await fs.writeFile(filePath, code);
       }
 
@@ -604,21 +604,21 @@ class CursorAutomationSystem {
     const { filePath, docType = 'jsd'o'c' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Generate ${docType} documentation for the following code.
+      const $1 = "Generate ${docType} documentation for the following code.
       
       Code:
       ${content}
       
-      Provide comprehensive documentation.`;
+      Provide comprehensive documentation.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
             role: 'syst'e'm',
-            content: `You are an expert in ${docType} documentation. Generate comprehensive, clear documentation.`
+            content: "You are an expert in ${docType} documentation. Generate comprehensive, clear documentation."
           },
           {
             role: 'us'e'r',
@@ -628,15 +628,15 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const documentation = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Write documentation to file
-      const docFilePath = filePath.replace(/\.(js|ts|jsx|tsx)$/, `.${docType}.md`);
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, ".${docType}.md");
       await fs.writeFile(docFilePath, documentation);
 
       return {
         success: true,
-        message: `Documentation generated at ${docFilePath}`,
+        message: "Documentation generated at ${docFilePath}",
         documentation: docFilePath
       };
     } catch (error) {
@@ -649,16 +649,16 @@ class CursorAutomationSystem {
     const { filePath, metrics = ['complexi't'y', 'maintainabili't'y', 'readabili't'y'] } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Analyze the code quality focusing on: ${metrics.join(', ')}.
+      const $1 = "Analyze the code quality focusing on: ${metrics.join(', ')}.
       
       Code:
       ${content}
       
-      Provide detailed analysis with scores and recommendations.`;
+      Provide detailed analysis with scores and recommendations.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -673,10 +673,10 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const analysis = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Save analysis to file
-      const analysisPath = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.quality-analysis.md');
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.quality-analysis.md');
       await fs.writeFile(analysisPath, analysis);
 
       return {
@@ -695,16 +695,16 @@ class CursorAutomationSystem {
     const { filePath, improvementType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Suggest improvements for the following code focusing on: ${improvementType}.
+      const $1 = "Suggest improvements for the following code focusing on: ${improvementType}.
       
       Code:
       ${content}
       
-      Provide specific, actionable improvement suggestions.`;
+      Provide specific, actionable improvement suggestions.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -719,10 +719,10 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const suggestions = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Save suggestions to file
-      const suggestionsPath = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.improvements.md');
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.improvements.md');
       await fs.writeFile(suggestionsPath, suggestions);
 
       return {
@@ -740,19 +740,19 @@ class CursorAutomationSystem {
     const { files, message, analyzeChanges = true } = args;
     
     try {
-      let commitMessage = message;
+      let $1 = message;
       
       if (!commitMessage && analyzeChanges) {
         // Analyze changes to generate intelligent commit message
         const { stdout } = await execAsync('gi't' diff --cached --name-only');
-        const changedFiles = stdout.trim().split('\n').filter(Boolean);
+        const $1 = stdout.trim().split('\n').filter(Boolean);
         
-        const prompt = `Generate a concise, descriptive commit message for the following changes:
+        const $1 = "Generate a concise, descriptive commit message for the following changes:
         Files changed: ${changedFiles.join(', ')}
         
-        Provide a conventional commit message.`;
+        Provide a conventional commit message.";
 
-        const completion = await this.openai.chat.completions.create({
+        const $1 = await this.openai.chat.completions.create({
           model: 'gpt'-'4',
           messages: [
             {
@@ -772,12 +772,12 @@ class CursorAutomationSystem {
 
       // Add files and commit
       if (files && files.length > 0) {
-        await execAsync(`git add ${files.join(' ')}`);
+        await execAsync("git add ${files.join(' ')}");
       } else {
         await execAsync('gi't' add .');
       }
       
-      await execAsync(`git commit -m "${commitMessage}"`);
+      await execAsync("git commit -m "${commitMessage}"");
 
       return {
         success: true,
@@ -794,14 +794,14 @@ class CursorAutomationSystem {
     const { filePath, position, context } = args;
     
     try {
-      const prompt = `Provide intelligent code completion for the following context at position ${JSON.stringify(position)}:
+      const $1 = "Provide intelligent code completion for the following context at position ${JSON.stringify(position)}:
       
       Context:
       ${context}
       
-      Provide relevant code completion suggestions.`;
+      Provide relevant code completion suggestions.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -816,7 +816,7 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const suggestions = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
 
       return {
         success: true,
@@ -833,16 +833,16 @@ class CursorAutomationSystem {
     const { filePath, reviewType = 'comprehensi'v'e' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Perform a ${reviewType} code review for the following code:
+      const $1 = "Perform a ${reviewType} code review for the following code:
       
       Code:
       ${content}
       
-      Provide detailed review with feedback and suggestions.`;
+      Provide detailed review with feedback and suggestions.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -857,10 +857,10 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const review = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Save review to file
-      const reviewPath = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.code-review.md');
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.code-review.md');
       await fs.writeFile(reviewPath, review);
 
       return {
@@ -878,17 +878,17 @@ class CursorAutomationSystem {
     const { packagePath = 'packag'e'.json', analysisType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(packagePath, 'ut'f'8');
-      const packageJson = JSON.parse(content);
+      const $1 = await fs.readFile(packagePath, 'ut'f'8');
+      const $1 = JSON.parse(content);
       
-      const prompt = `Analyze the dependencies in package.json for ${analysisType}:
+      const $1 = "Analyze the dependencies in package.json for ${analysisType}:
       
       Package.json:
       ${content}
       
-      Provide detailed analysis and recommendations.`;
+      Provide detailed analysis and recommendations.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -903,10 +903,10 @@ class CursorAutomationSystem {
         temperature: 0.3
       });
 
-      const analysis = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Save analysis to file
-      const analysisPath = 'dependency-analysi's'.md';
+      const $1 = 'dependency-analysi's'.md';
       await fs.writeFile(analysisPath, analysis);
 
       return {
@@ -924,16 +924,16 @@ class CursorAutomationSystem {
     const { filePath, scanType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'ut'f'8');
+      const $1 = await fs.readFile(filePath, 'ut'f'8');
       
-      const prompt = `Perform a ${scanType} security scan of the following code:
+      const $1 = "Perform a ${scanType} security scan of the following code:
       
       Code:
       ${content}
       
-      Identify security vulnerabilities and provide recommendations.`;
+      Identify security vulnerabilities and provide recommendations.";
 
-      const completion = await this.openai.chat.completions.create({
+      const $1 = await this.openai.chat.completions.create({
         model: 'gpt'-'4',
         messages: [
           {
@@ -948,10 +948,10 @@ class CursorAutomationSystem {
         temperature: 0.2
       });
 
-      const securityReport = completion.choices[0].message.content;
+      const $1 = completion.choices[0].message.content;
       
       // Save security report to file
-      const reportPath = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.security-report.md');
+      const $1 = filePath.replace(/\.(js|ts|jsx|tsx)$/, '.security-report.md');
       await fs.writeFile(reportPath, securityReport);
 
       return {
@@ -969,34 +969,34 @@ class CursorAutomationSystem {
     const { auditType = 'a'l'l', outputPath } = args;
     
     try {
-      const auditPath = outputPath || 'performance-audi't'.md';
+      const $1 = outputPath || 'performance-audi't'.md';
       
-      let auditResults = '';
+      let $1 = '';
       
       if (auditType === 'bund'l'e' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run build');
-          auditResults += `## Bundle Analysis\n\n${stdout}\n\n`;
+          auditResults += "## Bundle Analysis\n\n${stdout}\n\n";
         } catch (error) {
-          auditResults += `## Bundle Analysis\n\nError: ${error.message}\n\n`;
+          auditResults += "## Bundle Analysis\n\nError: ${error.message}\n\n";
         }
       }
       
       if (auditType === 'runti'm'e' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run test -- --coverage');
-          auditResults += `## Runtime Performance\n\n${stdout}\n\n`;
+          auditResults += "## Runtime Performance\n\n${stdout}\n\n";
         } catch (error) {
-          auditResults += `## Runtime Performance\n\nError: ${error.message}\n\n`;
+          auditResults += "## Runtime Performance\n\nError: ${error.message}\n\n";
         }
       }
       
       if (auditType === 'bui'l'd' || auditType === 'a'l'l') {
         try {
           const { stdout } = await execAsync('np'm' run build');
-          auditResults += `## Build Performance\n\n${stdout}\n\n`;
+          auditResults += "## Build Performance\n\n${stdout}\n\n";
         } catch (error) {
-          auditResults += `## Build Performance\n\nError: ${error.message}\n\n`;
+          auditResults += "## Build Performance\n\nError: ${error.message}\n\n";
         }
       }
 
@@ -1017,14 +1017,14 @@ class CursorAutomationSystem {
     const { environment = 'stagi'n'g', runTests = true, runSecurityScan = true } = args;
     
     try {
-      let deploySteps = [];
+      let $1 = [];
       
       if (runTests) {
         try {
           const { stdout } = await execAsync('np'm' run test');
           deploySteps.push('Test's' passed');
         } catch (error) {
-          throw new Error(`Tests failed: ${error.message}`);
+          throw new Error("Tests failed: ${error.message}");
         }
       }
       
@@ -1033,7 +1033,7 @@ class CursorAutomationSystem {
           const { stdout } = await execAsync('np'm' audit');
           deploySteps.push('Securit'y' scan completed');
         } catch (error) {
-          console.warn(`Security scan warning: ${error.message}`);
+          console.warn("Security scan warning: ${error.message}");
         }
       }
       
@@ -1042,7 +1042,7 @@ class CursorAutomationSystem {
         const { stdout } = await execAsync('np'm' run build');
         deploySteps.push('Buil'd' completed');
       } catch (error) {
-        throw new Error(`Build failed: ${error.message}`);
+        throw new Error("Build failed: ${error.message}");
       }
       
       // Deploy to environment
@@ -1056,7 +1056,7 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: `Deployment to ${environment} completed successfully`,
+        message: "Deployment to ${environment} completed successfully`,
         steps: deploySteps
       };
     } catch (error) {
@@ -1083,7 +1083,7 @@ class CursorAutomationSystem {
   }
 
   async getAutomationConfig() {
-    const config = {
+    const $1 = {
       version: '2.0.0',
       features: {
         autoRefactor: true,
@@ -1120,7 +1120,7 @@ class CursorAutomationSystem {
   }
 
   async getAutomationLogs() {
-    const logs = {
+    const $1 = {
       timestamp: Date.now(),
       activities: [
         {
@@ -1141,7 +1141,7 @@ class CursorAutomationSystem {
   }
 
   async logError(type, message) {
-    const errorLog = {
+    const $1 = {
       timestamp: Date.now(),
       type,
       message,
@@ -1156,7 +1156,7 @@ class CursorAutomationSystem {
   }
 
   async run() {
-    const transport = new StdioServerTransport();
+    const $1 = new StdioServerTransport();
     await this.server.connect(transport);
     
     console.log('🚀 Cursor Automation System started');
@@ -1170,7 +1170,7 @@ class CursorAutomationSystem {
 
 // Start the system
 if (require.main === module) {
-  const system = new CursorAutomationSystem();
+  const $1 = new CursorAutomationSystem();
   system.run().catch(console.error);
 }
 

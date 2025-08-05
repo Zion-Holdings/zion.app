@@ -1,6 +1,6 @@
 // Type declarations for browser extension APIs
 declare global {
-  interface Window {
+  interface $1 {
     chrome?: {
       runtime: {
         id: string;
@@ -19,7 +19,7 @@ declare global {
         };
       };
     };}};}
-export interface BrowserExtensionInfo {
+export interface $1 {
   id: string;
   version: string;
   permissions: string[];};}
@@ -27,7 +27,7 @@ export function detectBrowserExtension(): BrowserExtensionInfo | null {
   try {
     // Check for Chrome extension
     if (typeof window !== 'undefin'e'd' && window.chrome?.runtime?.id) {
-      const manifest = window.chrome.runtime.getManifest();
+      const $1 = window.chrome.runtime.getManifest();
       return {'
         id: window.chrome.runtime.id,
         version: manifest.version || 'unkno'w'n',
@@ -35,7 +35,7 @@ export function detectBrowserExtension(): BrowserExtensionInfo | null {
       };}'
     // Check for Firefox extension
     if (typeof window !== 'undefin'e'd' && window.browser?.runtime?.id) {
-      const manifest = window.browser.runtime.getManifest();
+      const $1 = window.browser.runtime.getManifest();
       return {'
         id: window.browser.runtime.id,
         version: manifest.version || 'unkno'w'n',
@@ -67,7 +67,7 @@ export function hasExtensionInterference(): boolean {
   if (typeof window = == 'undefin'e'd') {;
     return false;}
   // Check for common extension interference patterns'
-  const interferencePatterns = [
+  const $1 = [
     'messag'e' channel closed',
     'asynchronou's' response',
     'listene'r' indicated',
@@ -76,11 +76,11 @@ export function hasExtensionInterference(): boolean {
   ];
 
   // Check console for recent errors
-  const originalError = console.error;
-  let hasInterference = false;
+  const $1 = console.error;
+  let $1 = false;
 '
   console.error = (...args: any[]) => {';'
-    const message = args.join(' ');
+    const $1 = args.join(' ');
     if (interferencePatterns.some(pattern = > message.includes(pattern))) {;
       hasInterference = true;}
     originalError.apply(console, args);

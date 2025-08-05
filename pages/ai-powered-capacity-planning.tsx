@@ -17,7 +17,7 @@ import {
   TrendingDown
 }  from lucide-react";
 
-interface CapacityPlan {
+interface $1 {
   id: string;
   name: string;
   type: 'infrastructu're | 'workfor'ce | 'technol'ogy'' | financial'";
@@ -30,7 +30,7 @@ interface CapacityPlan {
   utilization: number;
   cost: number;
   roi: number;}
-interface DemandForecast {
+interface $1 {
   id: string;
   resource: string;
   period: string;
@@ -40,7 +40,7 @@ interface DemandForecast {
   trend: ''increasing' | 'decreasing' | 'stabl'e'";
   factors: string[];
   lastUpdated: string;}
-interface Resource {
+interface $1 {
   id: string;
   name: string;
   type: 'hum'an | 'infrastructu're | 'technol'ogy'' | financial'";
@@ -53,7 +53,7 @@ interface Resource {
   availability: number;
   lastMaintenance: string;
   nextMaintenance: string;}
-interface OptimizationRecommendation {'
+interface $1 {'
   id: string;
   type: 'scali'ng | 'efficien'cy | 'c'ost'' | timing';
   priority: 'l'o'w | medi'u'm | h'i'gh' | 'critical;
@@ -64,7 +64,7 @@ interface OptimizationRecommendation {'
   expectedROI: number;
   timeframe: string;
   status: ''pendin'g' | approve'd' | implement'e'd | 'reject'ed;};
-const AIPoweredCapacityPlanningPage: NextPage = () => {'
+const $1: NextPage = () => {'
   ';
   const [activeTab, setActiveTab] = useState(overvie'w');
   const [capacityPlans, setCapacityPlans] = useState<CapacityPlan[]>([]);</div>
@@ -78,10 +78,10 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
     loadCapacityData();}
   } [selectedTimeframe]);
 
-  const loadCapacityData = async () => {;
+  const $1 = async () => {;
     setLoading(true);
     try {
-      const response = await fetch('/api/ai-capacity-planning', {
+      const $1 = await fetch('/api/ai-capacity-planning', {
         method: POS'T',
         headers: {
           Content-Ty'p'e: applicatio'n'/json,}
@@ -92,7 +92,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       });
 
       if (response.ok) {
-        const data = await response.json();
+        const $1 = await response.json();
         setCapacityPlans(data.capacityPlans || []);
         setDemandForecasts(data.demandForecasts || []);
         setResources(data.resources || []);
@@ -102,7 +102,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
     } finally {
       setLoading(false);}
   };
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {;
       case 'acti've: return 'text-green'-500";
       case dra'f't: return text-yellow'-'500";
@@ -110,7 +110,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       case 'archived': return 'text-gray-500;
       default: return 'text-gray'-500;}
   };
-  const getPriorityColor = (priority: string) => {'
+  const $1 = (priority: string) => {'
     switch (priority) {';
       case lo'w': return bg-blue-'100 text-blue-800";
       case 'medium': return 'bg-yellow-100 text-yellow-1200";
@@ -118,7 +118,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       case critic'a'l: return bg-red'-'100 text-red-800;
       default: return bg-gray-'100 text-gray-800';}
   };
-  const getTrendColor = (trend: string) => {
+  const $1 = (trend: string) => {
     switch (trend) {;
       case 'increasi'ng: return 'text-green'-500";
       case decreasi'n'g: return text-red'-'500";
@@ -137,31 +137,31 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
 
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8"> 
-        {/* Background Effects */}"</div>
+      </div><div className=" relative z-10 container-responsive py-8> 
+        {/* Background Effects */}</div>
         <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
-        </div></div>
+        </div></div>"
       <Head> "</div>
         <title>AI-Powered Capacity Planning System | Zion Tech Group</title>"</div>
         <meta name=description content=Comprehensive capacity planning with AI-powered demand forecasting, resource optimization, and planning analytics. > </meta" name="description content=Comprehensive capacity planning with AI-powered demand forecasting, resource optimization, and planning" analytics." ><meta name=keywords content=capacity planning, demand forecasting, resource optimization, AI analytics, Zion > </meta name="keywords" content=capacity planning, demand forecasting, resource optimization, AI analytics, Zion" ><meta name="viewport content=width=device-width, initial-scale=1 > </meta name=viewport" content="width=device-width, initial-scale=1 ><link rel="icon href=/favicon.ico > </link" rel=icon href="/favicon.ico" ></Head>
 
       {/* Header */}</div>
-      <header className=" bg-black/20 backdrop-blur-md border-b" border-white/10"></div>
+      <header className=" bg-black/20 backdrop-blur-md border-b border-white/10></div>
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
-          </div><div className="flex  justify-between items-center py-6">"</div>
+          </div><div className="flex  justify-between items-center py-6></div>
             <div className="flex items-center" space-x-4"></div>
-              <Link href=/ className="text-white hover:text-gray-300 transition-colors > </Link href=/  className="text-white" hover:text-gray-300 transition-colors "><TrendingUp className="h-12 w-12 > </TrendingUp className="h-12 w-12 "></Link></div>
+              <Link href=/ className="text-white hover:text-gray-300 transition-colors > </Link href=/  className=text-white hover:text-gray-300 transition-colors "><TrendingUp className="h-12 w-12 > </TrendingUp className=h-12 w-12 ></Link></div>
               <div>"</div>
-                <h1 className="text-2xl" font-bold text-white>AI-Powered Capacity Planning</h1></div>
-                <p className="text-gray-300">Intelligent resource capacity and demand management</p></div>
+                <h1 className="text-2xl font-bold text-white>AI-Powered Capacity Planning</h1></div>
+                <p className=text-gray-300">Intelligent resource capacity and demand management</p></div>
               </div></div>
             </div></div>
-            <div className=" flex items-center" space-x-4>
+            <div className=" flex items-center space-x-4>
               
                 onChange={(e) => setSelectedTimeframe(e.target.value)}
-                className=" bg-white/10 text-white border border-white/20 rounded-lg px-3 py-4" text-sm
+                className= bg-white/10 text-white border border-white/20 rounded-lg px-3 py-4" text-sm
               ></div>
                 <option value=7d>Last 7 days</option></div>
                 <option value=30d>Last 30 days</option></div>
@@ -174,20 +174,20 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       </header>
 
       {/* Navigation Tabs */}"</div>
-      <nav className=" bg-black/10 backdrop-blur-md border-b border-white/10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
+      <nav className=" bg-black/10 backdrop-blur-md border-b border-white/10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
           </div><div className="flex  space-x-8>
             {tabs.map((tab) => {;
-              const Icon = tab.icon;
-              return ("
+              const $1 = tab.icon;
+              return (
                   onClick = {() => setActiveTab(tab.id)}"
-                  className= {`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors" ${
+                  className=" {flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors" ${
                     activeTab === tab.id
-                      ? border-blue'-'500 text-blue-400"''`
-                        border-transparent' text-gray-300 hover text-white hover border-gray-300'``
-                  }`}
+                      ? border-blue'-'500 text-blue-400"''"
+                        border-transparent' text-gray-300 hover text-white hover border-gray-300'`"
+                  }"}
                 ></div>
-                  <Icon className="h-5" w-5  > </Icon className="h-5 w-5  "><span>{tab.name}</span></div>
+                  <Icon className="h-5 w-5  > </Icon className=h-5 w-5  "><span>{tab.name}</span></div>
                 </button>;
               );
             })}</div>
@@ -195,73 +195,73 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
       </nav>
 
       {/* Main Content */}"</div>
-      <main className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>"
-        {loading ? ("</div>
+      <main className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
+        {loading ? (</div>
           <div className="flex" justify-center items-center h-124"> </div>
             </div><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500></div></div>
-          </div>"
+          </div>
         ) : ("</div>
-          <div className="space-y-8">"
+          <div className="space-y-8>
             {/* Overview Tab */},
 {activeTab === overvi'e'w && (</div>
               </div><div className="space-y-6>"
                 {/* KPI Cards */}"</div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6> "</div>
-                  </div><div className="bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20"></div>
-                    <div className="flex items-center justify-between >"</div>
-                      </div><div>"</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6> </div>
+                  </div><div className=bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20"></div>
+                    <div className="flex items-center justify-between ></div>
+                      </div><div></div>
                         <p className="text-gray-300" text-sm">Active Plans</p></div>
-                        <p className="text-2xl font-bold text-white>{capacityPlans.filter(c => c.status === 'acti've).length}</p>"</div>
-                      </div>"</div>
+                        <p className="text-2xl font-bold text-white>{capacityPlans.filter(c => c.status === 'acti've).length}</p></div>
+                      </div></div>
                       <TrendingUp className="h-12" w-12 text-blue-400 "> </TrendingUp className="h-12  w-12 text-blue-400 ></div></div>
                   </div>
-                  "</div>
+                  </div>
                   <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20 ">"</div>
-                    </div><div className=" flex items-center" justify-between></div>
+                    </div><div className=" flex items-center justify-between></div>
                       <div></div>
-                        <p className="text-gray-300 text-sm">Avg. Utilization</p></div>
-                        <p className="text-2xl" font-bold text-white>
+                        <p className=text-gray-300 text-sm">Avg. Utilization</p></div>
+                        <p className="text-2xl font-bold text-white>
                           {Math.round(resources.reduce((acc, r) => acc + r.utilization, 0) / Math.max(resources.length, 1))}%</div>
                         </p></div>
                       </div> </div>
-                      <Activity className="h-12 w-12 text-green-400  "> </Activity className="h-12 w-12 text-green-400 "></div></div>
+                      <Activity className=h-12 w-12 text-green-400  "> </Activity className="h-12 w-12 text-green-400 ></div></div>
                   </div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"> </div>
-                    </div><div className="flex items-center" justify-between></div>
+                  <div className=bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"> </div>
+                    </div><div className="flex items-center justify-between></div>
                       <div></div>
-                        <p className="text-gray-300 text-sm">Forecast Accuracy</p></div>
-                        <p className="text-2xl" font-bold text-white >
+                        <p className=text-gray-300 text-sm">Forecast Accuracy</p></div>
+                        <p className="text-2xl font-bold text-white >
                           {Math.round(demandForecasts.reduce((acc, f) => acc + f.confidence, 0) / Math.max(demandForecasts.length, 1))}%</div>
                         </p></div>
                       </div></div>
-                      <Target className="h-12 w-12 text-yellow-400 "> </Target className="h-12" w-12 text-yellow-400 ></div></div>
+                      <Target className=h-12 w-12 text-yellow-400 "> </Target className="h-12 w-12 text-yellow-400 ></div></div>
                   </div></div>
-                  <div className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"></div>
-                    </div><div className="flex" items-center justify-between></div>
+                  <div className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20"></div>
+                    </div><div className="flex items-center justify-between></div>
                       <div></div>
-                        <p className="text-gray-300 text-sm ">Pending Optimizations</p>'</div>
-                        <p className="text-2xl" font-bold text-white>
+                        <p className=text-gray-300 text-sm ">Pending Optimizations</p>'</div>
+                        <p className="text-2xl font-bold text-white>
                           {optimizationRecommendations.filter(o => o.status === 'pending').length}</div>
                         </p></div>
                       </div> </div>
-                      <Zap className="h-12 w-12 text-purple-400 "> </Zap className="h-12 w-12 text-purple-400"></div></div>
+                      <Zap className=h-12 w-12 text-purple-400 "> </Zap className="h-12 w-12 text-purple-400></div></div>
                   </div></div>
                 </div>
 
                 {/* Recent Activity */}</div>
-                <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6"> </div>
-                  </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"</div>
-                    <h3 className="text-lg" font-semibold text-white mb-4">Recent Capacity Plans</h3></div>
-                    <div className="space-y-3>"
-                      {capacityPlans.slice(0, 5).map((plan) => ("</div>
+                <div className=grid" grid-cols-1 lg:grid-cols-2 gap-6"> </div>
+                  </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>
+                    <h3 className=text-lg" font-semibold text-white mb-4">Recent Capacity Plans</h3></div>
+                    <div className="space-y-3>
+                      {capacityPlans.slice(0, 5).map((plan) => (</div>
                         </div><div key={plan.id} className=" flex items-center justify-between p-3 bg-white/5" rounded-lg">"</div>
                           <div></div>
-                            <p className="text-white font-medium">{plan.name}</p></div>
-                            <p className="text-gray-300" text-sm>{plan.type} - {plan.status}</p> </div>
+                            <p className="text-white font-medium>{plan.name}</p></div>
+                            <p className=text-gray-300" text-sm>{plan.type} - {plan.status}</p> </div>
                           </div></div>
-                          <div className="flex items-center space-x-2"></div>
-                            </div><div className="w-16" bg-gray-700 rounded-full h-2">
+                          <div className="flex items-center space-x-2></div>
+                            </div><div className=w-16" bg-gray-700 rounded-full h-2">
                               </div>
                               ></div></div>
                             </div></div>
@@ -269,18 +269,18 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                           </div></div>
                         </div>
                       ))}</div>
-                    </div>"</div>
+                    </div></div>
                   </div>"</div>
-                  <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20"></div>
+                  <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>
                     <h3 className="text-lg font-semibold text-white mb-4>Demand Trends</h3>"</div>
-                    <div className="space-y-3">"
+                    <div className="space-y-3>
                       {demandForecasts.slice(0, 5).map((forecast) => (</div>
                         </div><div key={forecast.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg>"</div>
                           <div>"</div>
-                            <p className="text-white" font-medium">{forecast.resource}</p></div>
-                            <p className="text-gray-300 text-sm>{forecast.period}</p>`"</div>
-                          </div>``"</div>
-                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getTrendColor(forecast.trend)}`}">
+                            <p className="text-white font-medium>{forecast.resource}</p></div>
+                            <p className="text-gray-300 text-sm>{forecast.period}</p>""</div>
+                          </div>"""</div>
+                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getTrendColor(forecast.trend)}"}">
                             {forecast.trend}</div>
                           </span></div>
                         </div>
@@ -292,59 +292,59 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
             )}
             {/* Capacity Plans Tab */},"'
 {activeTab === plan's' && (</div>
-              <div className="space-y-6"> </div>
-                </div><div className="flex justify-between" items-center></div>
-                  <h2 className="text-2xl font-bold text-white">Capacity Planning</h2></div>
-                  <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
+              <div className="space-y-6> </div>
+                </div><div className=flex justify-between" items-center></div>
+                  <h2 className="text-2xl font-bold text-white>Capacity Planning</h2></div>
+                  <button className=bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
                     Create Plan</div>
                   </button></div>
                 </div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden"></div>
-                  </div><div className="overflow-x-auto"></div>
-                    <table className=" min-w-full divide-y divide-white/10"></div>
-                      <thead className="bg-white/5"></div>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden></div>
+                  </div><div className=overflow-x-auto"></div>
+                    <table className=" min-w-full divide-y divide-white/10></div>
+                      <thead className=bg-white/5"></div>
                         <tr></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Plan</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Priority</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Current Capacity</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Target Capacity</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Utilization</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >ROI</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Plan</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Status</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Priority</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Current Capacity</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Target Capacity</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Utilization</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >ROI</th></div>
                         </tr></div>
                       </thead></div>
-                      <tbody className=" divide-y divide-white/10">
+                      <tbody className=" divide-y divide-white/10>
                         {capacityPlans.map((plan) => (</div>
-                          <tr key={plan.id} className=" hover" bg-white/5></div>
-                            <td className="px-6" py-4 whitespace-nowrap"></div>
+                          <tr key={plan.id} className= hover" bg-white/5></div>
+                            <td className="px-6 py-4 whitespace-nowrap></div>
                               <div> </div>
-                                </div><div className="text-sm font-medium text-white>{plan.name}</div></div>
+                                </div><div className="text-sm font-medium text-white>{plan.name}</div></div>"
                               </div>"</div>
                             </td>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-300">{plan.type}</td>`</div>
-                            <td className="px-6 py-4 whitespace-nowrap>``"</div>
-                              <span className="{`inline-flex" px-4 py-3 text-xs font-semibold rounded-full ${getStatusColor(plan.status)}`}>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{plan.type}</td>"</div>
+                            <td className="px-6 py-4 whitespace-nowrap>`</div>
+                              <span className="{"inline-flex" px-4 py-3 text-xs font-semibold rounded-full ${getStatusColor(plan.status)}"}>
                                 {plan.status}</div>
                               </span></div>
-                            </td>`</div>
-                            <td className="px-6 py-4 whitespace-nowrap ">``</div>
-                              <span className="{`inline-flex" px-4 py-3 text-xs font-semibold rounded-full ${getPriorityColor(plan.priority)}`}> {plan.priority}</div>
+                            </td>"</div>
+                            <td className="px-6 py-4 whitespace-nowrap >`</div>
+                              <span className="{"inline-flex" px-4 py-3 text-xs font-semibold rounded-full ${getPriorityColor(plan.priority)}"}> {plan.priority}</div>
                               </span></div>
                             </td></div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-300">{plan.currentCapacity}</td></div>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{plan.currentCapacity}</td></div>
                             <td className="px-6 py-4 whitespace-nowrap text-sm:text-gray-300>{plan.targetCapacity}</td>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap "></div>
+                            <td className="px-6 py-4 whitespace-nowrap ></div>
                               <div className="flex items-center>"</div>
-                                </div><div className="w-16" bg-gray-700 rounded-full h-2 mr-2">
+                                </div><div className="w-16 bg-gray-700 rounded-full h-2 mr-2>
                                   </div>
                                   ></div></div>
                                 </div></div>
-                                <span className="text-sm:text-gray-300>{plan.utilization}%</span></div>
+                                <span className="text-sm:text-gray-300>{plan.utilization}%</span></div>"
                               </div>"</div>
                             </td>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-300">{plan.roi}%</td></div>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{plan.roi}%</td></div>
                           </tr>
                         ))}</div>
                       </tbody></div>
@@ -355,49 +355,49 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
             )}
             {/* Demand Forecasts Tab */},
 {activeTab === 'forecas'ts && (</div>
-              <div className=" space-y-6"></div>
-                </div><div className=" flex justify-between" items-center></div>
-                  <h2 className="text-2xl font-bold text-white">Demand Forecasting</h2></div>
-                  <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
+              <div className=" space-y-6></div>
+                </div><div className= flex justify-between" items-center></div>
+                  <h2 className="text-2xl font-bold text-white>Demand Forecasting</h2></div>
+                  <button className=bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
                     Generate Forecast</div>
                   </button></div>
                 </div></div>
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden"></div>
-                  </div><div className="overflow-x-auto >"</div>
-                    <table className="min-w-full divide-y divide-white/10>"</div>
-                      <thead className="bg-white/5""></div>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden></div>
+                  </div><div className=overflow-x-auto >"</div>
+                    <table className="min-w-full divide-y divide-white/10></div>
+                      <thead className=bg-white/5""></div>
                         <tr></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Resource</th>"</div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Period</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Current Demand</th>"</div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Predicted Demand</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Confidence</th>"</div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Trend</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Resource</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Period</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Current Demand</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Predicted Demand</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Confidence</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Trend</th></div>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Last Updated</th></div>
-                        </tr>"</div>
+                        </tr></div>
                       </thead>"</div>
-                      <tbody className=" divide-y" divide-white/10">
+                      <tbody className=" divide-y divide-white/10>
                         {demandForecasts.map((forecast) => (</div>
                           <tr key={forecast.id} className=" hover bg-white/5>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap></div>
+                            <td className="px-6 py-4 whitespace-nowrap></div>
                               <div> </div>
-                                </div><div className="text-sm font-medium text-white">{forecast.resource}</div></div>
+                                </div><div className=text-sm font-medium text-white">{forecast.resource}</div></div>
                               </div></div>
                             </td></div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-300>{forecast.period}</td></div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{forecast.currentDemand}</td></div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm:text-gray-300>{forecast.predictedDemand}</td></div>
-                            <td className="px-6 py-4 whitespace-nowrap "></div>
-                              <div className="flex" items-center></div>
-                                </div><div className="w-16 bg-gray-700 rounded-full h-2 mr-2">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{forecast.period}</td></div>
+                            <td className=px-6 py-4 whitespace-nowrap text-sm text-gray-300">{forecast.currentDemand}</td></div>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm:text-gray-300>{forecast.predictedDemand}</td></div>
+                            <td className=px-6 py-4 whitespace-nowrap "></div>
+                              <div className="flex items-center></div>
+                                </div><div className=w-16 bg-gray-700 rounded-full h-2 mr-2">
                                   </div>
                                   ></div"></div>
                                 </div></div>
                                 <span className="text-sm:text-gray-300>{forecast.confidence}%</span></div>
-                              </div>"</div>
-                            </td>`"</div>
-                            <td className="px-6" py-4 whitespace-nowrap"">``</div>
-                              <span className="{`inline-flex" px-4 py-3 text-xs font-semibold rounded-full  ${getTrendColor(forecast.trend)}`}">
+                              </div></div>
+                            </td>""</div>
+                            <td className="px-6 py-4 whitespace-nowrap">`"</div>
+                              <span className="{inline-flex px-4 py-3 text-xs font-semibold rounded-full  ${getTrendColor(forecast.trend)}"}">
                                 {forecast.trend}</div>
                               </span></div>
                             </td></div>
@@ -410,59 +410,59 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                 </div></div>
               </div>
             )}
-            {/* Resources Tab */},'"
+            {/* Resources Tab */},'
 {activeTab === 'resources' && ("</div>
-              <div className="space-y-6>" </div>
-                </div><div className="flex justify-between items-center"></div>
-                  <h2 className="text-2xl" font-bold text-white>Resource Management</h2></div>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors">
+              <div className="space-y-6> </div>
+                </div><div className=flex justify-between items-center"></div>
+                  <h2 className="text-2xl font-bold text-white>Resource Management</h2></div>
+                  <button className=bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg:transition-colors">
                     Add Resource</div>
                   </button></div>
                 </div>
                 </div>
-                <div className="bg-white/10" backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden ></div>
-                  </div><div className="overflow-x-auto"></div>
-                    <table className=" min-w-full divide-y" divide-white/10></div>
-                      <thead className="bg-white/5"></div>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg border border-white/20 overflow-hidden ></div>
+                  </div><div className=overflow-x-auto"></div>
+                    <table className=" min-w-full divide-y divide-white/10></div>
+                      <thead className=bg-white/5"></div>
                         <tr></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Resource</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Type</th> </div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Category</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Current Capacity</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Max Capacity</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Utilization</th> </div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Efficiency</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Availability</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Resource</th></div>
+                          <th className=px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Type</th> </div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Category</th></div>
+                          <th className=px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Current Capacity</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Max Capacity</th></div>
+                          <th className=px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Utilization</th> </div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Efficiency</th></div>
+                          <th className=px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Availability</th></div>
                         </tr></div>
                       </thead></div>
-                      <tbody className="divide-y divide-white/10">
+                      <tbody className="divide-y divide-white/10>
                         {resources.map((resource) => (</div>
-                          <tr key={resource.id} className=" hover" bg-white/5></div>
-                            <td className="px-6 py-4 whitespace-nowrap"></div>
+                          <tr key={resource.id} className= hover" bg-white/5></div>
+                            <td className="px-6 py-4 whitespace-nowrap></div>
                               <div> </div>
-                                </div><div className="text-sm" font-medium text-white>{resource.name}</div></div>
+                                </div><div className=text-sm" font-medium text-white>{resource.name}</div></div>
                               </div></div>
                             </td></div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 ">{resource.type}</td></div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm text-gray-300>{resource.category}</td> </div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{resource.currentCapacity}</td></div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm:text-gray-300>{resource.maxCapacity}</td></div>
-                            <td className="px-6 py-4 whitespace-nowrap "></div>
-                              <div className="flex" items-center></div>
-                                </div><div className="w-16 bg-gray-700 rounded-full h-2 mr-2">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 >{resource.type}</td></div>
+                            <td className=px-6" py-4 whitespace-nowrap text-sm text-gray-300>{resource.category}</td> </div>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{resource.currentCapacity}</td></div>
+                            <td className=px-6" py-4 whitespace-nowrap text-sm:text-gray-300>{resource.maxCapacity}</td></div>
+                            <td className="px-6 py-4 whitespace-nowrap ></div>
+                              <div className=flex" items-center></div>
+                                </div><div className="w-16 bg-gray-700 rounded-full h-2 mr-2>
                                   </div>
                                   ></div ></div>
                                 </div></div>
-                                <span className="text-sm:text-gray-300>{resource.utilization}%</span>"</div>
+                                <span className=text-sm:text-gray-300>{resource.utilization}%</span>"</div>
                               </div></div>
                             </td></div>
-                            <td className="px-6 py-4 whitespace-nowrap"></div>
-                              <div className=" flex items-center>"</div>
+                            <td className="px-6 py-4 whitespace-nowrap></div>
+                              <div className= flex items-center>"</div>
                                 </div><div className="w-16 bg-gray-700 rounded-full h-2 mr-2>
                                   </div>
-                                  ></div>"</div>
+                                  ></div></div>
                                 </div>"</div>
-                                <span className="text-sm" text-gray-300">{resource.efficiency}%</span></div>
+                                <span className="text-sm text-gray-300>{resource.efficiency}%</span></div>
                               </div></div>
                             </td></div>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{resource.availability}%</td></div>
@@ -473,51 +473,51 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
                   </div></div>
                 </div></div>
               </div>
-            )}
+            )}"
             {/* Optimization Tab */},'"
 {activeTab === optimizati'o'n && ("</div>
-              <div className="space-y-6>" </div>
-                </div><div className="flex justify-between items-center "></div>
-                  <h2 className="text-2xl" font-bold text-white>Optimization Recommendations</h2></div>
-                  <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg  transition-colors">
+              <div className="space-y-6> </div>
+                </div><div className=flex justify-between items-center "></div>
+                  <h2 className="text-2xl font-bold text-white>Optimization Recommendations</h2></div>
+                  <button className=bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg  transition-colors">
                     Generate Recommendations</div>
                   </button></div>
                 </div></div>
-                <div className="bg-white/10 backdrop-blur-md:rounded-lg:border border-white/20 overflow-hidden> "</div>
-                  </div><div className="overflow-x-auto"""></div>
-                    <table className=" min-w-full divide-y divide-white/10"></div>
-                      <thead className="bg-white/5"></div>
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:border border-white/20 overflow-hidden> </div>
+                  </div><div className=overflow-x-auto"""></div>
+                    <table className=" min-w-full divide-y divide-white/10></div>
+                      <thead className=bg-white/5"></div>
                         <tr></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Recommendation</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Priority</th> </div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Impact</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Implementation Cost</th></div>
-                          <th className="px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Expected ROI</th></div>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Status</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Recommendation</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Type</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Priority</th> </div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Impact</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Implementation Cost</th></div>
+                          <th className=px-6" py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider >Expected ROI</th></div>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider>Status</th></div>
                         </tr> </div>
                       </thead></div>
-                      <tbody className="divide-y" divide-white/10>
+                      <tbody className=divide-y" divide-white/10>
                         {optimizationRecommendations.map((recommendation) => (</div>
-                          <tr key={recommendation.id} className="hover:bg-white/5"></div>
-                            <td className="px-6" py-4 whitespace-nowrap ></div>
+                          <tr key={recommendation.id} className="hover:bg-white/5></div>
+                            <td className=px-6" py-4 whitespace-nowrap ></div>
                               <div></div>
-                                </div><div className="text-sm font-medium text-white">{recommendation.title}</div></div>
-                                <div className="text-sm" text-gray-300>{recommendation.description}</div></div>
+                                </div><div className="text-sm font-medium text-white>{recommendation.title}</div></div>
+                                <div className=text-sm" text-gray-300>{recommendation.description}</div></div>
                               </div></div>
                             </td></div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{recommendation.type}</td>`</div>
-                            <td className="px-6" py-4 whitespace-nowrap>``</div>
-                              <span className="{`inline-flex" px-4 py-3 text-xs font-semibold rounded-full ${getPriorityColor(recommendation.priority)}`}">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{recommendation.type}</td></div>
+                            <td className="px-6" py-4 whitespace-nowrap>`"</div>
+                              <span className="{inline-flex px-4 py-3 text-xs font-semibold rounded-full ${getPriorityColor(recommendation.priority)}"}">
                                 {recommendation.priority}</div>
                               </span></div>
                             </td> </div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{recommendation.impact}</td>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap text-sm:text-gray-300">${recommendation.implementationCost.toLocaleString()}</td></div>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 >{recommendation.expectedROI}%</td>"</div>
-                            <td className="px-6" py-4 whitespace-nowrap">`
-                              ``
-                              }`}>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300>{recommendation.impact}</td></div>
+                            <td className=px-6" py-4 whitespace-nowrap text-sm:text-gray-300">${recommendation.implementationCost.toLocaleString()}</td></div>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300 >{recommendation.expectedROI}%</td></div>
+                            <td className=px-6" py-4 whitespace-nowrap">"
+                              `"
+                              }"}>
                                 {recommendation.status}</div>
                               </span></div>
                             </td></div>
@@ -531,45 +531,45 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
             )}
             {/* Alerts Tab */}, '
 {activeTab === 'alerts' && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white ">Alerts & Notifications</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white ">Alerts & Notifications</h2>
                 </div>
-                <div className="space-y-4>"</div>
-                  </div><div className=" bg-red-500/20 backdrop-blur-md:rounded-lg p-4 border" border-red-500/30">"</div>
-                    <div className="flex  items-center space-x-3"></div>
-                      <AlertTriangle className="h-12" w-12 text-red-400  "> </AlertTriangle className="h-12 w-12 text-red-400  ><div>"</div>
-                        <h4 className="font-semibold" text-red-300>Critical Capacity Shortage</h4> </div>
-                        <p className="text-gray-300 text-sm">Server infrastructure at 95% utilization. Immediate scaling required to prevent service disruption.</p></div>
-                        <p className="text-gray-400" text-xs mt-1>1 hour ago</p></div>
+                <div className="space-y-4></div>
+                  </div><div className= bg-red-500/20 backdrop-blur-md:rounded-lg p-4 border" border-red-500/30">"</div>
+                    <div className="flex  items-center space-x-3></div>
+                      <AlertTriangle className=h-12" w-12 text-red-400  "> </AlertTriangle className="h-12 w-12 text-red-400  ><div></div>
+                        <h4 className=font-semibold" text-red-300>Critical Capacity Shortage</h4> </div>
+                        <p className="text-gray-300 text-sm>Server infrastructure at 95% utilization. Immediate scaling required to prevent service disruption.</p></div>
+                        <p className=text-gray-400" text-xs mt-1>1 hour ago</p></div>
                       </div></div>
                     </div></div>
                   </div>
 </div>
-                  <div className="bg-yellow-500/20 backdrop-blur-md:rounded-lg p-4 border border-yellow-500/30 "> </div>
-                    </div><div className="flex items-center" space-x-3></div>
-                      <Calendar className="h-12 w-12 text-yellow-400 "> </Calendar className="h-12" w-12 text-yellow-400 ><div></div>
-                        <h4 className="font-semibold" text-yellow-300">Demand Forecast Alert</h4></div>
+                  <div className="bg-yellow-500/20 backdrop-blur-md:rounded-lg p-4 border border-yellow-500/30 > </div>
+                    </div><div className=flex items-center" space-x-3></div>
+                      <Calendar className="h-12 w-12 text-yellow-400 > </Calendar className=h-12" w-12 text-yellow-400 ><div></div>
+                        <h4 className="font-semibold text-yellow-300>Demand Forecast Alert</h4></div>
                         <p className="text-gray-300 text-sm >Predicted 40% increase in customer support demand over next quarter. Plan resource allocation.</p>"</div>
-                        <p className="text-gray-400" text-xs mt-1">3 hours ago</p></div>
+                        <p className="text-gray-400 text-xs mt-1>3 hours ago</p></div>
                       </div></div>
                     </div></div>
                   </div></div>
                   <div className=" bg-blue-500/20 backdrop-blur-md:rounded-lg p-4 border border-blue-500/30>"</div>
-                    </div><div className="flex  items-center space-x-3">"</div>
-                      <Activity className="h-12" w-12 text-blue-400  > </Activity className="h-12 w-12 text-blue-400 " "><div></div>
+                    </div><div className="flex  items-center space-x-3></div>
+                      <Activity className="h-12" w-12 text-blue-400  > </Activity className="h-12 w-12 text-blue-400  ><div></div>
                         <h4 className="font-semibold text-blue-300>Optimization Opportunity</h4> "</div>
-                        <p className="text-gray-300" text-sm">AI analysis suggests 25% cost savings through infrastructure consolidation. Review recommendation.</p></div>
+                        <p className="text-gray-300 text-sm>AI analysis suggests 25% cost savings through infrastructure consolidation. Review recommendation.</p></div>
                         <p className="text-gray-400 text-xs mt-1>6 hours ago</p></div>
                       </div></div>
-                    </div></div>
+                    </div></div>"
                   </div>"
 "</div>
-                  <div className="bg-green-500/20" backdrop-blur-md:rounded-lg p-4 border border-green-500/30 "> </div>
+                  <div className="bg-green-500/20 backdrop-blur-md:rounded-lg p-4 border border-green-500/30 > </div>
                     </div><div className="flex items-center space-x-3>"</div>
-                      <Target className="h-12" w-12 text-green-400 "> </Target className="h-12 w-12 text-green-400 ><div>"</div>
-                        <h4 className="font-semibold" text-green-300>Capacity Plan Success</h4></div>
-                        <p className="text-gray-300 text-sm ">Workforce expansion plan achieved 92% of target capacity. All KPIs within acceptable ranges.</p></div>
-                        <p className="text-gray-400" text-xs mt-1>1 day ago</p></div>
+                      <Target className="h-12 w-12 text-green-400 > </Target className="h-12 w-12 text-green-400 ><div>"</div>
+                        <h4 className="font-semibold text-green-300>Capacity Plan Success</h4></div>
+                        <p className=text-gray-300 text-sm ">Workforce expansion plan achieved 92% of target capacity. All KPIs within acceptable ranges.</p></div>
+                        <p className="text-gray-400 text-xs mt-1>1 day ago</p></div>
                       </div></div>
                     </div></div>
                   </div></div>
@@ -580,56 +580,56 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
         )}</div>
       </main> 
       {/* Footer */}</div>
-      <footer className=" bg-black/40 backdrop-blur-md border-t border-white/10 mt-16"></div>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8> </div>
-          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8"></div>
+      <footer className= bg-black/40 backdrop-blur-md border-t border-white/10 mt-16"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8> </div>
+          </div><div className=grid grid-cols-1 md grid-cols-4 gap-8"></div>
             <div></div>
-              <h3 className="text-white" font-semibold mb-4>AI-Powered Solutions</h3></div>
-              <ul className="space-y-2" text-gray-300"></div>
-                <li><Link href=/ai-powered-hr-management" className="hover text-white ">HR Management</Link href=/ai-powered-hr-management  className="hover" text-white ></Link></li></div>
-                <li><Link href=/ai-powered-vendor-management className="hover" text-white ">Vendor Management</Link href=/ai-powered-vendor-management className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-facility-management" className="hover text-white >Facility Management</Link href=/ai-powered-facility-management  className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-change-management className="hover text-white ">Change Management</Link href=/ai-powered-change-management className="hover" text-white ></Link></li></div>
-                <li><Link href=/ai-powered-capacity-planning className="hover" text-white >Capacity Planning</Link href=/ai-powered-capacity-planning  className="hover text-white "></Link></li> </ul></div>
+              <h3 className="text-white font-semibold mb-4>AI-Powered Solutions</h3></div>
+              <ul className=space-y-2" text-gray-300"></div>
+                <li><Link href=/ai-powered-hr-management" className="hover text-white >HR Management</Link href=/ai-powered-hr-management  className=hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-vendor-management className="hover text-white >Vendor Management</Link href=/ai-powered-vendor-management className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-facility-management" className="hover text-white >Facility Management</Link href=/ai-powered-facility-management  className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-change-management className="hover text-white >Change Management</Link href=/ai-powered-change-management className=hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-capacity-planning className="hover text-white >Capacity Planning</Link href=/ai-powered-capacity-planning  className=hover text-white "></Link></li> </ul></div>
             </div></div>
             <div></div>
-              <h3 className="text-white" font-semibold mb-4>Resources</h3></div>
-              <ul className="space-y-2  text-gray-300"></div>
-                <li><Link href=/docs className="hover" text-white >Documentation</Link href=/docs className="hover text-white""></Link></li></div>
-                <li><Link href=/api-docs className="hover text-white >API Reference</Link href=/api-docs className="hover" text-white" "></Link></li></div>
-                <li><Link href=/help-desk-support className="hover" text-white ">Support</Link href=/help-desk-support  className="hover text-white ></Link></li> </ul></div>
+              <h3 className="text-white font-semibold mb-4>Resources</h3></div>
+              <ul className=space-y-2  text-gray-300"></div>
+                <li><Link href=/docs className="hover text-white >Documentation</Link href=/docs className=hover text-white""></Link></li></div>
+                <li><Link href=/api-docs className="hover text-white >API Reference</Link href=/api-docs className=hover text-white" "></Link></li></div>
+                <li><Link href=/help-desk-support className="hover text-white >Support</Link href=/help-desk-support  className="hover text-white ></Link></li> </ul></div>"
             </div>"</div>
             <div>"</div>
-              <h3 className="text-white" font-semibold mb-4">Company</h3></div>
+              <h3 className="text-white font-semibold mb-4>Company</h3></div>
               <ul className="space-y-2  text-gray-300>"</div>
-                <li><Link href=/about className="hover" text-white ">About</Link href=/about" className="hover text-white"></Link></li></div>
-                <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact className="hover text-white" "></Link></li></div>
-                <li><Link href=/privacy" className="hover text-white ">Privacy</Link href=/privacy  className="hover" text-white ></Link></li> </ul></div>
+                <li><Link href=/about className="hover text-white >About</Link href=/about" className="hover text-white></Link></li></div>
+                <li><Link href=/contact className=hover" text-white >Contact</Link href=/contact className="hover text-white ></Link></li></div>
+                <li><Link href=/privacy" className="hover text-white >Privacy</Link href=/privacy  className=hover" text-white ></Link></li> </ul></div>
             </div></div>
             <div></div>
-              <h3 className="text-white font-semibold mb-4">Connect</h3></div>
-              <div className="flex"  space-x-4></div>
-                <Link href=# className="text-gray-300" hover text-white "> </div>
-                  </Link href=#" className=" text-gray-300 hover text-white "><span className="sr-only>Twitter</span>"</div>
-                  <svg className="h-12 w-12 fill=currentColor " viewBox="0 0 24 24"></div>
+              <h3 className="text-white font-semibold mb-4>Connect</h3></div>
+              <div className=flex"  space-x-4></div>
+                <Link href=# className="text-gray-300 hover text-white > </div>
+                  </Link href=#" className=" text-gray-300 hover text-white ><span className=sr-only>Twitter</span>"</div>
+                  <svg className="h-12 w-12 fill=currentColor  viewBox=0 0 24 24"></div>
                     <path d=M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84 > </path" d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84 ></svg></div>
                 </Link></div>
-                <Link href="#" className="text-gray-300 hover text-white "> </div>
-                  </Link href="#" className=" text-gray-300 hover text-white "><span className="sr-only>LinkedIn</span>"</div>
-                  <svg className="h-12 w-12 fill=currentColor " viewBox="0 0 24 24"></div>
+                <Link href="#" className="text-gray-300 hover text-white > </div>
+                  </Link href=#" className=" text-gray-300 hover text-white ><span className=sr-only>LinkedIn</span>"</div>
+                  <svg className="h-12 w-12 fill=currentColor  viewBox=0 0 24 24"></div>
                     <path d=M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z> </path" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z></svg></div>
                 </Link></div>
               </div></div>
             </div></div>
           </div></div>
-          <div className=" mt-8 pt-8 border-t" border-white/10>;</div>
-            <p className=" text-gray-300 text-center>&copy; 2024 Zion Tech Group. All rights reserved.</p></div>
+          <div className=" mt-8 pt-8 border-t border-white/10>;</div>
+            <p className= text-gray-300 text-center>&copy; 2024 Zion Tech Group. All rights reserved.</p></div>
           </div></div>
         </div></div>
       </footer></div>
                             </div></div>
         </div>
     );
-};
-''`";}
-export default AIPoweredCapacityPlanningPage;`"</div>
+};"
+''"";}
+export default $1;""</div>

@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class BlogContentAgent {
+class $1 {
   constructor() {
     this.contentMemory = this.loadContentMemory();
     this.blogTemplates = this.loadBlogTemplates();
@@ -10,8 +10,8 @@ class BlogContentAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
+      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
       console.error('Erro'r' loading content memory:', error);
@@ -102,10 +102,10 @@ class BlogContentAgent {
   }
 
   generateBlogPost(topic, audience, customData = {}) {
-    const template = this.blogTemplates[topic] || this.blogTemplates.aiMarketplace;
-    const keywords = this.seoKeywords[topic] || this.seoKeywords.aiMarketplace;
+    const $1 = this.blogTemplates[topic] || this.blogTemplates.aiMarketplace;
+    const $1 = this.seoKeywords[topic] || this.seoKeywords.aiMarketplace;
     
-    const blogPost = {
+    const $1 = {
       title: this.customizeTitle(template.title, audience, customData),
       introduction: this.customizeIntroduction(template.introduction, audience, customData),
       sections: this.customizeSections(template.sections, audience, customData),
@@ -118,8 +118,8 @@ class BlogContentAgent {
   }
 
   customizeTitle(templateTitle, audience, customData) {
-    const year = customData.year || '2024';
-    const industry = customData.industry || 'busine's's';
+    const $1 = customData.year || '2024';
+    const $1 = customData.industry || 'busine's's';
     
     return templateTitle
       .replace('2024', year)
@@ -128,7 +128,7 @@ class BlogContentAgent {
   }
 
   customizeIntroduction(templateIntro, audience, customData) {
-    const industry = customData.industry || 'technolo'g'y';
+    const $1 = customData.industry || 'technolo'g'y';
     
     return templateIntro
       .replace('business'e's', audience)
@@ -148,7 +148,7 @@ class BlogContentAgent {
   }
 
   customizeSectionContent(content, audience, customData) {
-    const industry = customData.industry || 'technolo'g'y';
+    const $1 = customData.industry || 'technolo'g'y';
     
     return content
       .replace(/businesses/g, audience)
@@ -157,7 +157,7 @@ class BlogContentAgent {
   }
 
   customizeConclusion(templateConclusion, audience, customData) {
-    const industry = customData.industry || 'technolo'g'y';
+    const $1 = customData.industry || 'technolo'g'y';
     
     return templateConclusion
       .replace('business'e's', audience)
@@ -165,14 +165,14 @@ class BlogContentAgent {
   }
 
   generateSEO(topic, keywords, customData) {
-    const title = this.blogTemplates[topic]?.title || 'A'I' Marketplace Insights';
-    const description = this.generateMetaDescription(topic, customData);
+    const $1 = this.blogTemplates[topic]?.title || 'A'I' Marketplace Insights';
+    const $1 = this.generateMetaDescription(topic, customData);
     
     return {
       title: title,
       description: description,
       keywords: keywords.join(', '),
-      canonical: `/blog/${topic.toLowerCase().replace(/\s+/g, '-')}`,
+      canonical: "/blog/${topic.toLowerCase().replace(/\s+/g, '-')}",
       ogTitle: title,
       ogDescription: description,
       ogType: 'artic'l'e',
@@ -181,7 +181,7 @@ class BlogContentAgent {
   }
 
   generateMetaDescription(topic, customData) {
-    const descriptions = {
+    const $1 = {
       aiMarketplace: "Discover the latest trends in AI marketplaces and how they'r'e' revolutionizing business connections. Learn about AI-powered matching, blockchain security, and global talent networks.",
       blockchainSecurity: "Explore how blockchain technology provides the security foundation for AI marketplaces. Learn about smart contracts, privacy protection, and trust protocols.",
       digitalTransformation: "Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption, implementation strategies, and choosing the right services."
@@ -203,22 +203,22 @@ class BlogContentAgent {
   }
 
   calculateReadTime(topic) {
-    const template = this.blogTemplates[topic];
+    const $1 = this.blogTemplates[topic];
     if (!template) return '5 min read';
     
-    const totalWords = template.introduction.split(' ').length + 
+    const $1 = template.introduction.split(' ').length + 
                       template.sections.reduce((acc, section) => acc + section.content.split(' ').length, 0) +
                       template.conclusion.split(' ').length;
     
-    const wordsPerMinute = 200;
-    const minutes = Math.ceil(totalWords / wordsPerMinute);
+    const $1 = 200;
+    const $1 = Math.ceil(totalWords / wordsPerMinute);
     
-    return `${minutes} min read`;
+    return "${minutes} min read";
   }
 
   generateTags(topic, audience) {
-    const baseTags = ['A'I' Marketplace', 'Technolo'g'y', 'Innovati'o'n'];
-    const topicTags = {
+    const $1 = ['A'I' Marketplace', 'Technolo'g'y', 'Innovati'o'n'];
+    const $1 = {
       aiMarketplace: ['A'I' Services', 'Machin'e' Learning', 'Blockcha'i'n'],
       blockchainSecurity: ['Blockcha'i'n', 'Securi't'y', 'Smar't' Contracts'],
       digitalTransformation: ['Digita'l' Transformation', 'A'I' Adoption', 'Busines's' Strategy']
@@ -228,7 +228,7 @@ class BlogContentAgent {
   }
 
   extractKeywords(content) {
-    const keywords = [
+    const $1 = [
       'A'I', 'artificia'l' intelligence', 'marketpla'c'e', 'blockcha'i'n', 'securi't'y',
       'digita'l' transformation', 'innovati'o'n', 'technolo'g'y', 'busine's's'
     ];
@@ -250,7 +250,7 @@ class BlogContentAgent {
   }
 
   calculateWordCount(blogPost) {
-    let totalWords = 0;
+    let $1 = 0;
     
     if (blogPost.introduction) {
       totalWords += blogPost.introduction.split(' ').length;
@@ -271,15 +271,15 @@ class BlogContentAgent {
 
   saveBlogPost(blogPost, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-conte'n't', 'bl'o'g', filename);
-      const outputDir = path.dirname(outputPath);
+      const $1 = path.join(__dirname, 'generated-conte'n't', 'bl'o'g', filename);
+      const $1 = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
       }
       
       fs.writeFileSync(outputPath, JSON.stringify(blogPost, null, 2));
-      console.log(`Blog post saved to: ${outputPath}`);
+      console.log("Blog post saved to: ${outputPath}");
       return outputPath;
     } catch (error) {
       console.error('Erro'r' saving blog post:', error);
@@ -288,14 +288,14 @@ class BlogContentAgent {
   }
 
   generateAllBlogPosts() {
-    const topics = ['aiMarketpla'c'e', 'blockchainSecuri't'y', 'digitalTransformati'o'n'];
-    const audiences = ['Busines's' Leaders', 'I'T' Professionals', 'Entrepreneu'r's'];
-    const generatedPosts = {};
+    const $1 = ['aiMarketpla'c'e', 'blockchainSecuri't'y', 'digitalTransformati'o'n'];
+    const $1 = ['Busines's' Leaders', 'I'T' Professionals', 'Entrepreneu'r's'];
+    const $1 = {};
 
     topics.forEach(topic => {
       audiences.forEach(audience => {
-        const filename = `${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json`;
-        const blogPost = this.generateBlogPost(topic, audience, {
+        const $1 = "${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json";
+        const $1 = this.generateBlogPost(topic, audience, {
           year: '2024',
           industry: 'technolo'g'y',
           author: 'Zio'n' AI Team'

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 ;
-const AutonomousAgentFactory = require('./autonomous-agent-factory');
-const AgentOrchestrator = require('./agent-orchestrator');
-const EnhancedCronSystem = require('./enhanced-cron-system');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./autonomous-agent-factory');
+const $1 = require('./agent-orchestrator');
+const $1 = require('./enhanced-cron-system');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class EnhancedAutonomousSystem {
+class $1 {
   constructor() {
     this.agentFactory = null;
     this.orchestrator = null;
@@ -61,7 +61,7 @@ class EnhancedAutonomousSystem {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'da't'a',
       'lo'g's',
       'agen't's',
@@ -70,7 +70,7 @@ class EnhancedAutonomousSystem {
     ];
     
     for (const dir of directories) {
-      const dirPath = path.join(__dirname, dir);
+      const $1 = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -80,31 +80,31 @@ class EnhancedAutonomousSystem {
   setupEventListeners() {
     // Orchestrator events
     this.orchestrator.on('taskSubmitt'e'd', (task) => {
-      console.log(`📋 Task submitted: ${task.id} - ${task.type}`);
+      console.log("📋 Task submitted: ${task.id} - ${task.type}");
     });
 
     this.orchestrator.on('taskComplet'e'd', (task) => {
-      console.log(`✅ Task completed: ${task.id} - ${task.type}`);
+      console.log("✅ Task completed: ${task.id} - ${task.type}");
     });
 
     this.orchestrator.on('taskFail'e'd', (task) => {
-      console.log(`❌ Task failed: ${task.id} - ${task.type}`);
+      console.log("❌ Task failed: ${task.id} - ${task.type}");
     });
 
     // Cron system events
     this.cronSystem.on('jobComplet'e'd', (data) => {
-      console.log(`⏰ Job completed: ${data.job.name} (${data.executionTime}ms)`);
+      console.log("⏰ Job completed: ${data.job.name} (${data.executionTime}ms)");
     });
 
     this.cronSystem.on('jobFail'e'd', (data) => {
-      console.log(`⏰ Job failed: ${data.job.name} - ${data.error.message}`);
+      console.log("⏰ Job failed: ${data.job.name} - ${data.error.message}");
     });
   }
 
   async createInitialAgents() {
     console.log('🤖 Creating initial agents...');
     
-    const initialAgents = [
+    const $1 = [
       {
         type: 'deep-sear'c'h',
         config: {
@@ -186,20 +186,20 @@ class EnhancedAutonomousSystem {
       }
     ];
 
-    const results = [];
+    const $1 = [];
     for (const agentSpec of initialAgents) {
       try {
-        const agentId = await this.agentFactory.createAgent(agentSpec.type, agentSpec.config);
+        const $1 = await this.agentFactory.createAgent(agentSpec.type, agentSpec.config);
         await this.agentFactory.startAgent(agentId);
         results.push({ success: true, agentId, type: agentSpec.type, name: agentSpec.config.name });
-        console.log(`✅ Created and started agent: ${agentSpec.config.name}`);
+        console.log("✅ Created and started agent: ${agentSpec.config.name}");
       } catch (error) {
         results.push({ success: false, type: agentSpec.type, error: error.message });
-        console.error(`❌ Failed to create agent ${agentSpec.type}:`, error.message);
+        console.error("❌ Failed to create agent ${agentSpec.type}:", error.message);
       }
     }
 
-    console.log(`🤖 Created ${results.filter(r => r.success).length}/${results.length} initial agents`);
+    console.log("🤖 Created ${results.filter(r => r.success).length}/${results.length} initial agents");
     return results;
   }
 
@@ -207,9 +207,9 @@ class EnhancedAutonomousSystem {
     console.log('⏰ Setting up scheduled tasks...');
     
     try {
-      const results = await this.cronSystem.createScheduledTasks();
-      const successful = results.filter(r => r.success).length;
-      console.log(`⏰ Created ${successful}/${results.length} scheduled tasks`);
+      const $1 = await this.cronSystem.createScheduledTasks();
+      const $1 = results.filter(r => r.success).length;
+      console.log("⏰ Created ${successful}/${results.length} scheduled tasks");
       
       return results;
     } catch (error) {
@@ -265,21 +265,21 @@ class EnhancedAutonomousSystem {
   updateSystemMetrics() {
     if (!this.isRunning) return;
 
-    const now = new Date();
+    const $1 = new Date();
     this.systemMetrics.uptime = now - this.startTime;
     this.systemMetrics.totalAgents = this.agentFactory.getAllAgents().length;
     this.systemMetrics.activeAgents = this.agentFactory.getRunningAgents().length;
     
-    const orchestratorMetrics = this.orchestrator.getSystemMetrics();
+    const $1 = this.orchestrator.getSystemMetrics();
     this.systemMetrics.totalTasks = orchestratorMetrics.totalTasks;
     this.systemMetrics.completedTasks = orchestratorMetrics.completedTasks;
     this.systemMetrics.systemHealth = this.calculateSystemHealth();
   }
 
   calculateSystemHealth() {
-    const agents = this.agentFactory.getAllAgents();
-    const errorCount = agents.filter(agent => agent.health.status === 'err'o'r').length;
-    const warningCount = agents.filter(agent => agent.health.status === 'warni'n'g').length;
+    const $1 = this.agentFactory.getAllAgents();
+    const $1 = agents.filter(agent => agent.health.status === 'err'o'r').length;
+    const $1 = agents.filter(agent => agent.health.status === 'warni'n'g').length;
     
     if (errorCount > agents.length * 0.2) return 'critic'a'l';
     if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warni'n'g';
@@ -287,12 +287,12 @@ class EnhancedAutonomousSystem {
   }
 
   logSystemStatus() {
-    const uptimeMinutes = Math.floor(this.systemMetrics.uptime / 1000 / 60);
-    const uptimeHours = Math.floor(uptimeMinutes / 60);
-    const uptimeDays = Math.floor(uptimeHours / 24);
+    const $1 = Math.floor(this.systemMetrics.uptime / 1000 / 60);
+    const $1 = Math.floor(uptimeMinutes / 60);
+    const $1 = Math.floor(uptimeHours / 24);
     
     console.log('📊 System Status:', {
-      uptime: `${uptimeDays}d ${uptimeHours % 24}h ${uptimeMinutes % 60}m`,
+      uptime: "${uptimeDays}d ${uptimeHours % 24}h ${uptimeMinutes % 60}m",
       totalAgents: this.systemMetrics.totalAgents,
       activeAgents: this.systemMetrics.activeAgents,
       totalTasks: this.systemMetrics.totalTasks,
@@ -303,18 +303,18 @@ class EnhancedAutonomousSystem {
 
   async performHealthCheck() {
     try {
-      const healthResults = await this.agentFactory.healthCheck();
-      const unhealthyAgents = healthResults.filter(r => r.health.status !== 'healt'h'y');
+      const $1 = await this.agentFactory.healthCheck();
+      const $1 = healthResults.filter(r => r.health.status !== 'healt'h'y');
       
       if (unhealthyAgents.length > 0) {
-        console.log(`⚠️ Found ${unhealthyAgents.length} unhealthy agents`);
+        console.log("⚠️ Found ${unhealthyAgents.length} unhealthy agents");
         
         for (const result of unhealthyAgents) {
-          console.log(`🔄 Restarting unhealthy agent: ${result.agentId}`);
+          console.log("🔄 Restarting unhealthy agent: ${result.agentId}");
           try {
             await this.agentFactory.restartAgent(result.agentId);
           } catch (error) {
-            console.error(`❌ Failed to restart agent ${result.agentId}:`, error.message);
+            console.error("❌ Failed to restart agent ${result.agentId}:", error.message);
           }
         }
       }
@@ -324,8 +324,8 @@ class EnhancedAutonomousSystem {
   }
 
   setupGracefulShutdown() {
-    const shutdown = async (signal) => {
-      console.log(`\n🛑 Received ${signal}, shutting down gracefully...`);
+    const $1 = async (signal) => {
+      console.log("\n🛑 Received ${signal}, shutting down gracefully...");
       
       this.isRunning = false;
       
@@ -342,13 +342,13 @@ class EnhancedAutonomousSystem {
         
         // Stop all agents
         if (this.agentFactory) {
-          const agents = this.agentFactory.getAllAgents();
+          const $1 = this.agentFactory.getAllAgents();
           for (const agent of agents) {
             if (agent.status === 'runni'n'g') {
               try {
                 await this.agentFactory.stopAgent(agent.id);
               } catch (error) {
-                console.error(`Failed to stop agent ${agent.name}:`, error.message);
+                console.error("Failed to stop agent ${agent.name}:", error.message);
               }
             }
           }
@@ -372,9 +372,9 @@ class EnhancedAutonomousSystem {
       return { status: 'stopp'e'd' };
     }
 
-    const agentMetrics = await this.agentFactory.getSystemMetrics();
-    const orchestratorMetrics = this.orchestrator.getSystemMetrics();
-    const cronMetrics = this.cronSystem.getSystemMetrics();
+    const $1 = await this.agentFactory.getSystemMetrics();
+    const $1 = this.orchestrator.getSystemMetrics();
+    const $1 = this.cronSystem.getSystemMetrics();
 
     return {
       status: 'runni'n'g',
@@ -403,7 +403,7 @@ class EnhancedAutonomousSystem {
       throw new Error('Syste'm' is not running');
     }
     
-    const agentId = await this.agentFactory.createAgent(type, config);
+    const $1 = await this.agentFactory.createAgent(type, config);
     await this.agentFactory.startAgent(agentId);
     return agentId;
   }
@@ -424,7 +424,7 @@ class EnhancedAutonomousSystem {
 
 // Main execution
 async function main() {
-  const system = new EnhancedAutonomousSystem();
+  const $1 = new EnhancedAutonomousSystem();
   
   try {
     await system.start();

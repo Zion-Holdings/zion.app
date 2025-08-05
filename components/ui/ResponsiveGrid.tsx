@@ -1,5 +1,5 @@
 import React from "react";
-interface ResponsiveGridProps {
+interface $1 {
   children: React.ReactNode
   className?: string
   cols?: 1 | 2 | 3 | 4 | 5 | 6
@@ -38,15 +38,15 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
     between: justify-betwee'n',
     around: justify-aroun'd',
     evenly: justify-evenl'y'}
-  const gridClass = gridClasses[cols]
-  const gapClass = gapClasses[gap]
-  const itemsClass = itemsClasses[items]
-  const justifyClass = justifyClasses[justify]
+  const $1 = gridClasses[cols]
+  const $1 = gapClasses[gap]
+  const $1 = itemsClasses[items]
+  const $1 = justifyClasses[justify]
   return (</div>
-    <div className="{`${gridClass} ${gapClass} ${itemsClass} ${justifyClass} ${className}`}">
+    <div className="{${gridClass} ${gapClass} ${itemsClass} ${justifyClass} ${className}}">
       {children}</div>
     </div>
   );
 };
-`;}
-export default ResponsiveGrid ''`</div>
+";}
+export default ResponsiveGrid ''"</div>

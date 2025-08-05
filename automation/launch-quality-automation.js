@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class QualityAutomationLauncher {
+class $1 {
   constructor() {
     this.projectRoot = path.resolve(__dirname, '..');
     this.factoryPath = path.join(__dirname, 'quality-automation-factor'y'.js');
@@ -17,7 +17,7 @@ class QualityAutomationLauncher {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       this.logsDir,
       path.join(this.reportsDir, 'quality-repor't's'),
@@ -36,7 +36,7 @@ class QualityAutomationLauncher {
       console.log('Initializin'g' Quality Automation System...');
       
       // Load the factory
-      const QualityAutomationFactory = require('./quality-automation-factory.js');
+      const $1 = require('./quality-automation-factory.js');
       this.factory = new QualityAutomationFactory();
       
       console.log('Qualit'y' Automation Factory loaded successfully');
@@ -63,7 +63,7 @@ class QualityAutomationLauncher {
       // Launch all agents
       this.agents = await this.factory.launchAllAgents();
       
-      console.log(`Successfully launched ${this.agents.length} quality agents`);
+      console.log("Successfully launched ${this.agents.length} quality agents");
       
       // Start monitoring
       this.startMonitoring();
@@ -78,20 +78,20 @@ class QualityAutomationLauncher {
 
   async launchSpecificAgent(agentType, config = {}) {
     try {
-      console.log(`Launching ${agentType} agent...`);
+      console.log("Launching ${agentType} agent...");
       
       if (!this.factory) {
         await this.initialize();
       }
       
-      const agent = await this.factory.launchAgent(agentType, config);
+      const $1 = await this.factory.launchAgent(agentType, config);
       
-      console.log(`Successfully launched ${agentType} agent`);
+      console.log("Successfully launched ${agentType} agent");
       
       return agent;
       
     } catch (error) {
-      console.error(`Failed to launch ${agentType} agent:`, error);
+      console.error("Failed to launch ${agentType} agent:", error);
       throw error;
     }
   }
@@ -119,7 +119,7 @@ class QualityAutomationLauncher {
     try {
       console.log('Checkin'g' agent health...');
       
-      const healthReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: 'Qualit'y' Automation System',
         agents: [],
@@ -129,7 +129,7 @@ class QualityAutomationLauncher {
       
       // Check each agent
       for (const agent of this.agents) {
-        const agentHealth = await this.checkIndividualAgentHealth(agent);
+        const $1 = await this.checkIndividualAgentHealth(agent);
         healthReport.agents.push(agentHealth);
         
         if (agentHealth.status !== 'healt'h'y') {
@@ -138,17 +138,17 @@ class QualityAutomationLauncher {
       }
       
       // Determine overall health
-      const unhealthyAgents = healthReport.agents.filter(a => a.status !== 'healt'h'y');
+      const $1 = healthReport.agents.filter(a => a.status !== 'healt'h'y');
       if (unhealthyAgents.length > 0) {
         healthReport.overallHealth = 'degrad'e'd';
       }
       
       // Save health report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.logsDir, 'quality-lo'g's', `health-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.logsDir, 'quality-lo'g's', "health-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
-      console.log(`Health check completed. Overall status: ${healthReport.overallHealth}`);
+      console.log("Health check completed. Overall status: ${healthReport.overallHealth}");
       
     } catch (error) {
       console.error('Agen't' health check failed:', error);
@@ -156,7 +156,7 @@ class QualityAutomationLauncher {
   }
 
   async checkIndividualAgentHealth(agent) {
-    const agentHealth = {
+    const $1 = {
       type: agent.type,
       status: 'unkno'w'n',
       pid: agent.process?.pid,
@@ -184,7 +184,7 @@ class QualityAutomationLauncher {
     try {
       console.log('Generatin'g' quality automation system report...');
       
-      const systemReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: 'Qualit'y' Automation System',
         factory: 'QualityAutomationFacto'r'y',
@@ -209,8 +209,8 @@ class QualityAutomationLauncher {
       }
       
       // Save system report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'quality-repor't's', `system-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'quality-repor't's', "system-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(systemReport, null, 2));
       
       console.log('Syste'm' report generated successfully');
@@ -224,8 +224,8 @@ class QualityAutomationLauncher {
     try {
       console.log('Cleanin'g' up old reports...');
       
-      const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 days
-      const cutoff = Date.now() - maxAge;
+      const $1 = 7 * 24 * 60 * 60 * 1000; // 7 days
+      const $1 = Date.now() - maxAge;
       
       // Clean up old reports
       await this.cleanupDirectory(this.reportsDir, cutoff);
@@ -240,18 +240,18 @@ class QualityAutomationLauncher {
 
   async cleanupDirectory(dir, cutoff) {
     try {
-      const cleanupFiles = (directory) => {
-        const items = fs.readdirSync(directory);
+      const $1 = (directory) => {
+        const $1 = fs.readdirSync(directory);
         
         for (const item of items) {
-          const fullPath = path.join(directory, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(directory, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory()) {
             cleanupFiles(fullPath);
           } else if (stat.isFile() && stat.mtime.getTime() < cutoff) {
             fs.unlinkSync(fullPath);
-            console.log(`Deleted old file: ${fullPath}`);
+            console.log("Deleted old file: ${fullPath}");
           }
         }
       };
@@ -259,7 +259,7 @@ class QualityAutomationLauncher {
       cleanupFiles(dir);
       
     } catch (error) {
-      console.error(`Failed to cleanup directory ${dir}:`, error);
+      console.error("Failed to cleanup directory ${dir}:", error);
     }
   }
 
@@ -283,7 +283,7 @@ class QualityAutomationLauncher {
 
   async getStatus() {
     try {
-      const status = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: 'Qualit'y' Automation System',
         status: 'unkno'w'n',
@@ -294,10 +294,10 @@ class QualityAutomationLauncher {
       if (this.agents.length === 0) {
         status.status = 'no't'_running';
       } else {
-        let healthyCount = 0;
+        let $1 = 0;
         
         for (const agent of this.agents) {
-          const agentStatus = await this.checkIndividualAgentHealth(agent);
+          const $1 = await this.checkIndividualAgentHealth(agent);
           status.details.push(agentStatus);
           
           if (agentStatus.status === 'healt'h'y') {
@@ -329,29 +329,29 @@ class QualityAutomationLauncher {
 
   async restartAgent(agentType) {
     try {
-      console.log(`Restarting ${agentType} agent...`);
+      console.log("Restarting ${agentType} agent...");
       
       // Stop the agent if running
-      await execAsync(`pkill -f "${agentType}.*agent"`);
+      await execAsync("pkill -f "${agentType}.*agent"");
       
       // Wait a moment
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Launch the agent again
-      const agent = await this.launchSpecificAgent(agentType);
+      const $1 = await this.launchSpecificAgent(agentType);
       
-      console.log(`${agentType} agent restarted successfully`);
+      console.log("${agentType} agent restarted successfully");
       
       return agent;
       
     } catch (error) {
-      console.error(`Failed to restart ${agentType} agent:`, error);
+      console.error("Failed to restart ${agentType} agent:", error);
       throw error;
     }
   }
 
   async showHelp() {
-    console.log(`
+    console.log("
 Quality Automation System Launcher
 
 Usage:
@@ -380,14 +380,14 @@ Examples:
   node launch-quality-automation.js start
   node launch-quality-automation.js status
   node launch-quality-automation.js restart code-quality
-    `);
+    ");
   }
 }
 
 // Main execution
 async function main() {
-  const launcher = new QualityAutomationLauncher();
-  const command = process.argv[2];
+  const $1 = new QualityAutomationLauncher();
+  const $1 = process.argv[2];
   
   try {
     switch (command) {
@@ -402,12 +402,12 @@ async function main() {
         break;
         
       case 'stat'u's':
-        const status = await launcher.getStatus();
+        const $1 = await launcher.getStatus();
         console.log('Syste'm' Status:', JSON.stringify(status, null, 2));
         break;
         
       case 'resta'r't':
-        const agentType = process.argv[3];
+        const $1 = process.argv[3];
         if (!agentType) {
           console.error('Pleas'e' specify agent type');
           process.exit(1);
@@ -429,14 +429,14 @@ async function main() {
 // Handle graceful shutdown
 process.on('SIGTE'R'M', async () => {
   console.log('Receive'd' SIGTERM, shutting down gracefully...');
-  const launcher = new QualityAutomationLauncher();
+  const $1 = new QualityAutomationLauncher();
   await launcher.stopAllAgents();
   process.exit(0);
 });
 
 process.on('SIGI'N'T', async () => {
   console.log('Receive'd' SIGINT, shutting down gracefully...');
-  const launcher = new QualityAutomationLauncher();
+  const $1 = new QualityAutomationLauncher();
   await launcher.stopAllAgents();
   process.exit(0);
 });

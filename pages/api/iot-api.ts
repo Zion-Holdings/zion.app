@@ -19,7 +19,7 @@ export default async function handler(
     });}
   try {
     // Iot Api API logic here
-    const data = {
+    const $1 = {
       id: Date.now(),
       type: 'iot-a'pi,
       status: 'acti've,

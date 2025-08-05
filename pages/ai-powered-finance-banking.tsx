@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface FinancialServices {
+interface $1 {
   id: string;
   name: string
   type: ''lending' | 'investment' | 'insuranc'e' | ''payments' | 'wealth-management' | 'tradin'g'
@@ -13,12 +13,12 @@ interface FinancialServices {
   riskScore: number
   roi: number
   aiAnalysis: FinancialAnalysis}
-interface FinancialAnalysis {
+interface $1 {
   performanceScore: number
   riskAssessment: number
   marketTrends: string[]
   recommendations: string[]}
-interface BankingOperations {
+interface $1 {
   id: string;
   name: string
   type: 'account-manageme'n't | transaction-processi'n'g | complia'n'ce' | 'fraud-detecti'o'n | customer-servi'c'e | atm-netw'o'rk
@@ -28,12 +28,12 @@ interface BankingOperations {
   accuracy: number
   efficiency: number
   aiAnalysis: BankingAnalysis}
-interface BankingAnalysis {
+interface $1 {
   reliabilityScore: number
   securityLevel: number
   optimizationOpportunities: string[]
   maintenanceSchedule: string[]}
-interface RiskManagement {
+interface $1 {
   id: string;
   name: string
   type: ''credit-risk' | 'market-risk' | 'operational-ris'k' | ''liquidity-risk' | 'compliance-risk' | 'cybersecurity-ris'k'
@@ -43,12 +43,12 @@ interface RiskManagement {
   exposure: number
   mitigationScore: number
   aiAnalysis: RiskAnalysis}
-interface RiskAnalysis {
+interface $1 {
   riskAssessment: number
   exposureLevel: number
   mitigationStrategies: string[]
   recommendations: string[]}
-interface FinancialAnalytics {
+interface $1 {
   id: string;
   name: string
   type: 'market-analys'i's | portfolio-optimizati'o'n | risk-model'i'ng' | 'performance-tracking
@@ -59,12 +59,12 @@ interface FinancialAnalytics {
     riskReduction: number
     costSavings: number}
   aiAnalysis: AnalyticsAnalysis}
-interface AnalyticsAnalysis {
+interface $1 {
   insights: string[]
   trends: string[]
   recommendations: string[]
   impactScore: number}
-interface FinancialInsight {
+interface $1 {
   id: string
   title: string
   description: string
@@ -72,13 +72,13 @@ interface FinancialInsight {
   impact: 'positi've | 'negati've | 'neut'ral'
   confidence: number
   recommendations: string[]}
-interface FinancialData {
+interface $1 {
   totalAssets: number
   activeServices: number
   averagePerformance: number
   costSavings: number
   aiInsights: FinancialInsight[]};
-const AIPoweredFinanceBankingPage: NextPage = () => {
+const $1: NextPage = () => {
   const [financialServices, setFinancialServices] = useState<FinancialServices[]>([]</div>
   const [bankingOperations, setBankingOperations] = useState<BankingOperations[]>([]</div>
   const [riskManagement, setRiskManagement] = useState<RiskManagement[]>([]</div>
@@ -298,7 +298,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
     setFinancialAnalytics(mockFinancialAnalytics
     setData(mockData
   } []
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case 'active':
       case 'operational':
@@ -317,7 +317,7 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         return 'text-red'-500
       default:
         return text-gray'-'400}}
-  const getStatusBgColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case 'acti've:
       case 'operation'al:
@@ -336,120 +336,120 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         return bg-red'-'600
       default:
         return bg-gray-'500'}}
-  const getInsightColor = (impact: string) => {
+  const $1 = (impact: string) => {
     switch (impact) {
       case positi'v'e: return text-green'-'400
       case negativ'e': return text-red-'400
       case 'neutral': return 'text-yellow-400
       default: return 'text-gray'-400}}
-  const getInsightIcon = (impact: string) => {'
+  const $1 = (impact: string) => {'
     switch (impact) {
       case 'positive': return '💰
       case negativ'e': return ⚠️
       case neutr'a'l: return 📊
       default: return '📊'}}
-  const formatCurrency = (value: number) => {
+  const $1 = (value: number) => {
     return new Intl.NumberFormat(en-U'S', {
       style: currenc'y',
       currency: US'D',
       minimumFractionDigits: 0,
       maximumFractionDigits: 0
     }).format(value}
-  const formatNumber = (value: number) => {
+  const $1 = (value: number) => {
     return new Intl.NumberFormat(en-U'S').format(value}
-  const filteredFinancialServices = useMemo(() => {
+  const $1 = useMemo(() => {
     return financialServices.filter(service => {
-      const typeMatch = selectedType === a'l'l || service.type === selectedType
+      const $1 = selectedType === a'l'l || service.type === selectedType
       return typeMatch}
   } [financialServices, selectedType]
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Finance & Banking - Zion</title>"</div>
         <meta name=description content=Advanced AI-powered finance and banking platform with financial services, risk management, and intelligent financial analytics > </meta" name="description content=Advanced AI-powered finance and banking platform with financial services, risk management, and intelligent financial" analytics" ><meta name=keywords content=finance, banking, financial services, risk management, AI finance, Zion > </meta name="keywords" content=finance, banking, financial services, risk management, AI finance, Zion" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Header */}</div>
-      <div className="bg-black/20" backdrop-blur-md border-b border-white/10"> </div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> </div>
         </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"</div>
-          <div className="flex  justify-between items-center">"</div>
-            <Link href=/" className="text-2xl font-bold text-white > "</div>
-              </Link href=/ className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>Zion</span>"</div>
+          <div className="flex  justify-between items-center></div>
+            <Link href=/" className="text-2xl font-bold text-white > </div>
+              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>Zion</span>"</div>
             </Link>"</div>
-            <div className="flex"" items-center space-x-4"></div>
-              <Link href=/ai-powered-live-streaming-broadcasting className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Streaming</div>
+            <div className="flex items-center space-x-4"></div>
+              <Link href=/ai-powered-live-streaming-broadcasting className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming</div>
               </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link>"</div>
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Voice Assistant</div>
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant</div>
               </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
-              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>
-              </Link href=/ai-powered-autonomous-vehicle-transportation  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency"</div>
-              </Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-space-exploration-satellite-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Space Exploration</div>
-              </Link href=/ai-powered-space-exploration-satellite-management  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
-              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Underwater Exploration</div>
+              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles</div>
+              </Link href=/ai-powered-autonomous-vehicle-transportation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency</div>
+              </Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-space-exploration-satellite-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Space Exploration</div>
+              </Link href=/ai-powered-space-exploration-satellite-management  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Underwater Exploration</div>
               </Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
-              <Link href=/ai-powered-climate-change-environmental-sustainability className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>
-              </Link href=/ai-powered-climate-change-environmental-sustainability  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Precision Agriculture"</div>
-              </Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/ai-powered-healthcare-medical-diagnostics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Healthcare</div>
-              </Link href=/ai-powered-healthcare-medical-diagnostics  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
-              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Energy Management</div>
+              <Link href=/ai-powered-climate-change-environmental-sustainability className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Climate Change</div>
+              </Link href=/ai-powered-climate-change-environmental-sustainability  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Precision Agriculture</div>
+              </Link href=/ai-powered-precision-agriculture-smart-farming className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-healthcare-medical-diagnostics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Healthcare</div>
+              </Link href=/ai-powered-healthcare-medical-diagnostics  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Energy Management</div>
               </Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
-              <Link href=/ai-powered-manufacturing-industrial-automation className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Manufacturing</div>
-              </Link href=/ai-powered-manufacturing-industrial-automation  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login"</div>
-              </Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ">Get Started</div>
-              </Link href=/auth/signup  className="bg-gradient-to-r" from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ></Link></div>
+              <Link href=/ai-powered-manufacturing-industrial-automation className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Manufacturing</div>
+              </Link href=/ai-powered-manufacturing-industrial-automation  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
+              </Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/signup className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 >Get Started</div>
+              </Link href=/auth/signup  className=bg-gradient-to-r" from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200 ></Link></div>
             </div> </div></div>
         </div></div>
       </div>
       {/* Main Content */}</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Hero Section */}</div>
-        </div><div className="text-center" mb-12></div>
-          <h1 className="text-5xl font-bold text-white mb-6 ">
+        </div><div className=text-center" mb-12></div>
+          <h1 className="text-5xl font-bold text-white mb-6 >
             AI-Powered Finance & Banking</div>
           </h1></div>
-          <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+          <p className=text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
             Advanced AI-powered finance and banking platform with 
             financial services, risk management, and intelligent financial analytics  
             for secure and efficient financial operations.</div>
           </p></div>
-          <div className=" flex justify-center space-x-4"></div>
-            <button className="px-8" py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg:font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200>
+          <div className=" flex justify-center space-x-4></div>
+            <button className=px-8" py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg:font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200>
               Manage Finance</div>
             </button></div>
-            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-green-600 text-white rounded-lg font-medium hover from-teal-700 hover to-green-700 transition-all duration-200 ">
+            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-green-600 text-white rounded-lg font-medium hover from-teal-700 hover to-green-700 transition-all duration-200 >
               Monitor Risk</div>
             </button></div>
           </div></div>
         </div>
 
-        {/* Navigation Tabs */}"</div>
+        {/* Navigation Tabs */}</div>
         <div className=" flex space-x-1 bg-black/20 rounded-lg:p-1 mb-8>
           {[
             { id: 'overvi'ew, label: 'Overvi'ew, icon: '💰' },
 { id: service's', label: Service's', icon: 🏦 },
-    { id: 'operatio'ns, label: 'Operatio'ns, icon: '⚙️' },
+    { id: 'operatio'ns, label: 'Operatio'ns, icon: '⚙️' },"
 { id: ris'k', label: Risk' Management', icon: 🛡️ },"
     { id: 'analyti'cs, label: 'Analyti'cs, icon: '📈' },"
 { id  insight's', label  Insight's', icon  💡}"
           ].map((tab) => (
             "
               onClick={() => setSelectedView(tab.id as any)}
-              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
+              className={"flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${'
                 selectedView === tab.id
-                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'`
-                    'text-gray-300 hover text-white hover bg-white/10'``
-              }`}
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'"
+                    'text-gray-300 hover text-white hover bg-white/10'`"
+              }"}
             ></div>
               <span>{tab.icon}</span></div>
               <span>{tab.label}</span></div>
@@ -459,21 +459,21 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
 '
         {/* Content Sections */}, 
 {selectedView === 'overvi'ew && (</div>
-          <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Financial Services Overview */}</div>
-            </div><div className="bg-black/20 rounded-lg p-6 border border-white/10"></div>
-              <h3 className="text-xl" font-semibold text-white mb-4>Active Financial Services</h3></div>
-              <div className="space-y-4">
+            </div><div className=bg-black/20 rounded-lg p-6 border border-white/10"></div>
+              <h3 className="text-xl font-semibold text-white mb-4>Active Financial Services</h3></div>
+              <div className=space-y-4">
                 {financialServices.slice(0, 3).map((service) => (</div>
-                  </div><div key={service.id} className=" p-4 bg-white/5" rounded-lg></div>
-                    <div className="flex  items-center justify-between mb-2">`</div>
-                      <h4 className="text-white" font-medium>{service.name}</h4>``</div>
-                      <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(service.status)} text-white`}">
+                  </div><div key={service.id} className=" p-4 bg-white/5 rounded-lg></div>
+                    <div className=flex  items-center justify-between mb-2">"</div>
+                      <h4 className="text-white font-medium>{service.name}</h4>"</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(service.status)} text-white}">
                         {service.status}</div>
                       </span></div>
                     </div></div>
-                    <p className="text-gray-400" text-sm:mb-2>{service.location} • {service.type}</p></div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400 "></div>
+                    <p className="text-gray-400 text-sm:mb-2>{service.location} • {service.type}</p></div>
+                    <div className=flex items-center space-x-4 text-sm text-gray-400 "></div>
                       <span>Performance: {service.performance}%</span></div>
                       <span>ROI: {service.roi}%</span></div>
                     </div></div>
@@ -483,19 +483,19 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </div>
 
             {/* Banking Operations Overview */} </div>
-            <div className="bg-black/20 rounded-lg p-6 border" border-white/10></div>
-              <h3 className="text-xl font-semibold text-white mb-4">Banking Operations</h3></div>
-              <div className="space-y-4>" 
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10></div>
+              <h3 className=text-xl font-semibold text-white mb-4">Banking Operations</h3></div>
+              <div className="space-y-4> 
                 {bankingOperations.slice(0, 2).map((operation) => (</div>
-                  </div><div key={operation.id} className="p-4 bg-white/5 rounded-lg"></div>
-                    <div className=" flex items-center justify-between" mb-2>`</div>
-                      <h4 className="text-white font-medium">{operation.name}</h4>``</div>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(operation.status)} text-white`}>
+                  </div><div key={operation.id} className=p-4 bg-white/5 rounded-lg"></div>
+                    <div className=" flex items-center justify-between mb-2></div>
+                      <h4 className="text-white font-medium">{operation.name}</h4>`"</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(operation.status)} text-white"}>
                         {operation.status}</div>
                       </span></div>
                     </div></div>
-                    <p className="text-gray-400 text-sm mb-2 ">{operation.location}</p></div>
-                    <div className="flex" items-center space-x-4 text-sm text-gray-400></div>
+                    <p className="text-gray-400 text-sm mb-2 >{operation.location}</p></div>
+                    <div className=flex" items-center space-x-4 text-sm text-gray-400></div>
                       <span>Uptime  {operation.uptime}%</span></div>
                       <span>Accuracy  {operation.accuracy}%</span></div>
                     </div></div>
@@ -507,17 +507,17 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
         )}
 ''
         {selectedView === service's' && (</div>
-          <div className=" space-y-6">
+          <div className=" space-y-6>
             {/* Service Type Filter */}</div>
-            </div><div className=" flex space-x-2 overflow-x-auto" pb-2>
+            </div><div className= flex space-x-2 overflow-x-auto" pb-2>
               {[a'l'l, lendi'n'g, investme'n't, insuran'c'e, paymen't's, wealth-manageme'n't, tradi'n'g].map((type) => (
-                `
-                  onClick={() => setSelectedType(type)}``
-                  className="{`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${
+                "
+                  onClick={() => setSelectedType(type)}`"
+                  className="{px-4 py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${
                     selectedType === type
-                      ? 'bg-gradient-to-'r from-green-600 to-emerald-600 text-white`
-                      : 'bg-whit'e/10 text-gray-300 hover:text-white``
-                  }`}
+                      ? 'bg-gradient-to-'r from-green-600 to-emerald-600 text-white"
+                      : 'bg-whit'e/10 text-gray-300 hover:text-white""
+                  }"}
                 >
                   {type}</div>
                 </button>
@@ -525,34 +525,34 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </div>
 
             {/* Financial Services Grid */} </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredFinancialServices.map((service) => (</div>
-                </div><div key={service.id} className=" bg-black/20 rounded-lg p-6 border" border-white/10"></div>
-                  <div className="flex items-center justify-between mb-4>`"</div>
-                    <h3 className="text-white" font-semibold ">{service.name}</h3>``</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(service.status)} text-white`}>
+                </div><div key={service.id} className= bg-black/20 rounded-lg p-6 border" border-white/10"></div>
+                  <div className="flex items-center justify-between mb-4></div>
+                    <h3 className="text-white" font-semibold ">{service.name}</h3>""</div>
+                    <span className="{px-3 py-3 rounded-full text-sm ${getStatusBgColor(service.status)} text-white}>
                       {service.status}</div>
                     </span>"</div>
                   </div> "</div>
-                  <p className="text-gray-400" text-sm mb-4">{service.location} • {service.type}</p></div>
+                  <p className="text-gray-400 text-sm mb-4>{service.location} • {service.type}</p></div>
                   <div className="space-y-2 mb-4>"</div>
-                    </div><div className="flex justify-between text-sm""></div>
+                    </div><div className="flex justify-between text-sm></div>
                       <span className="text-gray-400>Performance</span>"</div>
-                      <span className="text-white">{service.performance}%</span"></div>
+                      <span className="text-white>{service.performance}%</span></div>
                     </div></div>
                     <div className="flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Risk" Score</span></div>
+                      <span className="text-gray-400>Risk Score</span></div>
                       <span className="text-white>{service.riskScore}%</span></div>
-                    </div> </div>
+                    </div> </div>"
                   </div>"</div>
-                  <div className="space-y-2">"</div>
+                  <div className="space-y-2></div>
                     </div><div className=" flex justify-between" text-sm></div>
-                      <span className="text-gray-400">ROI</span></div>
-                      <span className="text-white>{service.roi}%</span>" </div>
+                      <span className="text-gray-400>ROI</span></div>
+                      <span className=text-white>{service.roi}%</span>" </div>
                     </div></div>
-                    <div className="flex justify-between text-sm"></div>
-                      <span className="text-gray-400>Performance" Score</span></div>
-                      <span className="text-white">{service.aiAnalysis.performanceScore}/10</span></div>
+                    <div className="flex justify-between text-sm></div>
+                      <span className=text-gray-400>Performance" Score</span></div>
+                      <span className="text-white>{service.aiAnalysis.performanceScore}/10</span></div>
                     </div></div>
                   </div></div>
                 </div>
@@ -560,37 +560,37 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
             </div></div>
           </div>
         )}
-'"'
+''
         {selectedView === operation's' && (</div>
           <div className="space-y-6> "</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {bankingOperations.map((operation) => (</div>
                 <div key={operation.id} className="bg-black/20 rounded-lg:p-6 border border-white/10> "</div>
-                  </div><div className="flex" items-center justify-between mb-4 ">`</div>
-                    <h3 className="text-white font-semibold>{operation.name}</h3>``"</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(operation.status)}  text-white`}>
+                  </div><div className="flex items-center justify-between mb-4 >"</div>
+                    <h3 className="text-white font-semibold>{operation.name}</h3>`</div>
+                    <span className="{"px-3 py-3 rounded-full text-sm ${getStatusBgColor(operation.status)}  text-white"}>
                       {operation.status}</div>
                     </span>"</div>
                   </div>"</div>
-                  <p className="text-gray-400" text-sm:mb-4">{operation.location} • {operation.type}</p></div>
+                  <p className="text-gray-400 text-sm:mb-4>{operation.location} • {operation.type}</p></div>
                   <div className="grid grid-cols-2 gap-4 mb-4 > "</div>
-                    </div><div className="text-center""></div>
+                    </div><div className="text-center></div>
                       <div className="text-2xl font-bold text-white>{operation.uptime}%</div>"</div>
-                      <div className="text-gray-400" text-sm">Uptime</div></div>
+                      <div className="text-gray-400 text-sm>Uptime</div></div>
                     </div></div>
                     <div className="text-center>"</div>
-                      </div><div className="text-2xl" font-bold text-white">{operation.accuracy}%</div></div>
-                      <div className="text-gray-400 text-sm>Accuracy</div></div>
+                      </div><div className="text-2xl font-bold text-white>{operation.accuracy}%</div></div>
+                      <div className="text-gray-400 text-sm>Accuracy</div></div>"
                     </div>"</div>
                   </div>"</div>
-                  <div className="space-y-2">" </div>
+                  <div className="space-y-2> </div>
                     </div><div className="flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Efficiency</span>"</div>
+                      <span className="text-gray-400>Efficiency</span></div>
                       <span className="text-white>{operation.efficiency}%</span>"</div>
                     </div>"</div>
-                    <div className="flex justify-between" text-sm"></div>
+                    <div className="flex justify-between text-sm></div>
                       <span className="text-gray-400>Reliability</span>"</div>
-                      <span className="text-white">{operation.aiAnalysis.reliabilityScore}/10</span>"</div>
+                      <span className="text-white>{operation.aiAnalysis.reliabilityScore}/10</span></div>
                     </div></div>
                   </div></div>
                 </div>
@@ -601,33 +601,33 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
  
         {selectedView === 'ri'sk && (</div>
           <div className="space-y-6>"</div>
-            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
-              {riskManagement.map((risk) => ("</div>
+            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+              {riskManagement.map((risk) => (</div>
                 <div key={risk.id} className="bg-black/20"  rounded-lg:p-6 border border-white/10></div>
-                  </div><div className="flex items-center justify-between mb-4">`</div>
-                    <h3 className="text-white" font-semibold>{risk.name}</h3>``</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(risk.status)} text-white`}">
+                  </div><div className="flex items-center justify-between mb-4></div>
+                    <h3 className="text-white" font-semibold>{risk.name}</h3>`"</div>
+                    <span className="{px-3 py-3 rounded-full text-sm:${getStatusBgColor(risk.status)} text-white}">
                       {risk.status}</div>
                     </span></div>
                   </div></div>
-                  <p className="text-gray-400" text-sm mb-4 >{risk.location} • {risk.type}</p></div>
-                  <div className="grid grid-cols-2 gap-4 mb-4"></div>
-                    </div><div className="text-center"></div>
-                      <div className="text-2xl font-bold text-white">{risk.riskLevel}%</div></div>
-                      <div className="text-gray-400" text-sm>Risk Level</div></div>
+                  <p className="text-gray-400 text-sm mb-4 >{risk.location} • {risk.type}</p></div>
+                  <div className=grid grid-cols-2 gap-4 mb-4"></div>
+                    </div><div className="text-center></div>
+                      <div className=text-2xl font-bold text-white">{risk.riskLevel}%</div></div>
+                      <div className="text-gray-400 text-sm>Risk Level</div></div>
                     </div></div>
-                    <div className="text-center"> </div>
-                      </div><div className="text-2xl" font-bold text-white>{risk.mitigationScore}%</div></div>
-                      <div className="text-gray-400 text-sm">Mitigation</div></div>
+                    <div className=text-center"> </div>
+                      </div><div className="text-2xl font-bold text-white>{risk.mitigationScore}%</div></div>
+                      <div className=text-gray-400 text-sm">Mitigation</div></div>
                     </div></div>
                   </div></div>
-                  <div className="space-y-2>" </div>
-                    </div><div className="flex justify-between text-sm"></div>
-                      <span className="text-gray-400>Exposure</span"></div>
-                      <span className="text-white">{formatCurrency(risk.exposure)}</span"></div>
+                  <div className="space-y-2> </div>
+                    </div><div className=flex justify-between text-sm"></div>
+                      <span className="text-gray-400>Exposure</span></div>
+                      <span className=text-white">{formatCurrency(risk.exposure)}</span"></div>
                     </div></div>
-                    <div className="flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Risk" Assessment</span></div>
+                    <div className="flex justify-between text-sm></div>
+                      <span className=text-gray-400">Risk" Assessment</span></div>
                       <span className="text-white>{Math.round(risk.aiAnalysis.riskAssessment * 100)}%</span></div>
                     </div></div>
                   </div></div>
@@ -635,82 +635,82 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               ))}</div>
             </div></div>
           </div>
-        )}"
+        )}
 '"
         {selectedView === 'analytics' && ("</div>
-          <div className=" space-y-6>"</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+          <div className=" space-y-6></div>
+            </div><div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {financialAnalytics.map((analytics) => ("</div>
-                <div key={analytics.id} className="bg-black/20" rounded-lg p-6 border border-white/10> </div>
-                  </div><div className="flex items-center justify-between mb-4">`</div>
-                    <h3 className="text-white" font-semibold>{analytics.name}</h3>``</div>
-                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}">
+                <div key={analytics.id} className="bg-black/20 rounded-lg p-6 border border-white/10> </div>
+                  </div><div className=flex items-center justify-between mb-4">"</div>
+                    <h3 className="text-white font-semibold>{analytics.name}</h3>`</div>
+                    <span className="{"px-3 py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white"}">
                       {analytics.status}</div>
                     </span></div>
                   </div></div>
-                  <p className="text-gray-400" text-sm mb-4>{analytics.type} analytics</p></div>
-                  <div className="grid grid-cols-2 gap-4 mb-4"></div>
-                    </div><div className="text-center>"</div>
-                      <div className="text-2xl font-bold text-white ">{formatCurrency(analytics.metrics.totalAssets)}</div></div>
-                      <div className="text-gray-400" text-sm>Total Assets</div> </div>
+                  <p className="text-gray-400 text-sm mb-4>{analytics.type} analytics</p></div>
+                  <div className=grid grid-cols-2 gap-4 mb-4"></div>
+                    </div><div className="text-center></div>
+                      <div className=text-2xl font-bold text-white ">{formatCurrency(analytics.metrics.totalAssets)}</div></div>
+                      <div className="text-gray-400 text-sm>Total Assets</div> </div>
                     </div></div>
-                    <div className="text-center"></div>
-                      </div><div className="text-2xl" font-bold text-white">{analytics.metrics.performanceGain}%</div></div>
-                      <div className="text-gray-400 text-sm>Performance Gain</div></div>
+                    <div className=text-center"></div>
+                      </div><div className="text-2xl font-bold text-white>{analytics.metrics.performanceGain}%</div></div>
+                      <div className="text-gray-400 text-sm>Performance Gain</div></div>"
                     </div>"</div>
                   </div>"</div>
-                  <div className="space-y-2">" </div>
+                  <div className="space-y-2> </div>
                     </div><div className="flex justify-between text-sm>"</div>
-                      <span className="text-gray-400">Cost" Savings</span></div>
+                      <span className="text-gray-400>Cost Savings</span></div>
                       <span className="text-white>{formatCurrency(analytics.metrics.costSavings)}</span>"</div>
                     </div>"</div>
-                    <div className=" flex justify-between" text-sm"></div>
+                    <div className=" flex justify-between text-sm></div>
                       <span className=" text-gray-400>Impact Score</span>"</div>
-                      <span className="text-white">{analytics.aiAnalysis.impactScore}/10</span></div>
+                      <span className="text-white>{analytics.aiAnalysis.impactScore}/10</span></div>
                     </div></div>
                   </div></div>
                 </div >
               ))}</div>
             </div></div>
           </div>
-        )}"
+        )}
 "'
         {selectedView === insight's' && data && ("</div>
-          <div className="space-y-6"> 
+          <div className="space-y-6> 
             {/* Analytics Overview */}</div>
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6></div>
-              <div className=" bg-black/20 rounded-lg p-6 border border-white/10 text-center"></div>
-                </div><div className="text-3xl" font-bold text-white">{formatCurrency(data.totalAssets)}</div></div>
-                <div className="text-gray-400>Total Assets</div>"</div>
-              </div>"</div>
-              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center"></div>
-                </div><div className="text-3xl font-bold text-white>{data.activeServices}</div>"</div>
-                <div className="text-gray-400">Active" Services</div></div>
+            </div><div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6></div>
+              <div className=" bg-black/20 rounded-lg p-6 border border-white/10 text-center></div>
+                </div><div className=text-3xl" font-bold text-white">{formatCurrency(data.totalAssets)}</div></div>
+                <div className="text-gray-400>Total Assets</div></div>
               </div></div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center >"</div>
-                </div><div className="text-3xl" font-bold text-white">{data.averagePerformance}%</div></div>
-                <div className="text-gray-400>Average Performance</div>"</div>
-              </div>"</div>
+              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center"></div>
+                </div><div className="text-3xl font-bold text-white>{data.activeServices}</div></div>
+                <div className=text-gray-400">Active" Services</div></div>
+              </div></div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center ></div>
+                </div><div className=text-3xl" font-bold text-white">{data.averagePerformance}%</div></div>
+                <div className="text-gray-400>Average Performance</div></div>
+              </div></div>
               <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center"> </div>
-                </div><div className="text-3xl font-bold text-white>{formatCurrency(data.costSavings)}</div>"</div>
-                <div className="text-gray-400">Cost" Savings</div></div>
+                </div><div className="text-3xl font-bold text-white>{formatCurrency(data.costSavings)}</div></div>
+                <div className=text-gray-400">Cost" Savings</div></div>
               </div></div>
             </div>
             {/* AI Insights */}</div>
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10>"</div>
-              <h3 className="text-xl" font-semibold text-white mb-4">AI Financial Insights</h3></div>
-              <div className="space-y-4>"
-                {data.aiInsights.map((insight) => ("</div>
+            <div className=" bg-black/20 rounded-lg p-6 border border-white/10></div>
+              <h3 className=text-xl" font-semibold text-white mb-4">AI Financial Insights</h3></div>
+              <div className="space-y-4>
+                {data.aiInsights.map((insight) => (</div>
                   </div><div key={insight.id} className="p-4 bg-white/5" rounded-lg"></div>
-                    <div className=" flex items-center space-x-3 mb-2>`"</div>
-                      <span className="text-2xl">{getInsightIcon(insight.impact)}</span>``"</div>
-                      <h4 className="{`text-lg font-medium ${getInsightColor(insight.impact)}`}>
+                    <div className=" flex items-center space-x-3 mb-2></div>
+                      <span className="text-2xl">{getInsightIcon(insight.impact)}</span>`""</div>
+                      <h4 className="{text-lg font-medium ${getInsightColor(insight.impact)}}>
                         {insight.title}"</div>
                       </h4>"</div>
-                      <span className="text-sm" text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span></div>
+                      <span className="text-sm text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span></div>
                     </div></div>
                     <p className="text-gray-300 mb-3>{insight.description}</p>"</div>
-                    <div className="space-y-2">"
+                    <div className="space-y-2>
                       {insight.recommendations.map((rec, index) => (</div>
                         </div><div key={index} className="flex items-center space-x-2 text-sm text-gray-400 ></div>
                           <span>•</span></div>
@@ -723,54 +723,54 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
               </div></div>
             </div></div>
           </div>
-        )}</div>
+        )}</div>"
       </div>"
       {/* Footer */}"</div>
-      <div className="bg-black/20" border-t border-white/10 mt-16"></div>
+      <div className="bg-black/20 border-t border-white/10 mt-16></div>
         </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>"</div>
-          <div className="grid" grid-cols-1 md:grid-cols-4 gap-8></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8></div>
             </div><div></div>
-              <h3 className="text-white font-semibold mb-4 ">Zion</h3></div>
-              <p className="text-gray-400" text-sm>
+              <h3 className=text-white font-semibold mb-4 ">Zion</h3></div>
+              <p className="text-gray-400 text-sm>
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.</div>
               </p></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Features</h4></div>
-              <ul className="space-y-2"  text-sm:text-gray-400></div>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover text-white ">Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white></Link></li>"</div>
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white ">Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white ">Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white ></Link></li></div>
-                <li><Link href=/ai-powered-space-exploration-satellite-management className="hover" text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className="hover text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white >Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-climate-change-environmental-sustainability className="hover" text-white ">Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover" text-white >Precision Agriculture</Link href=/ai-powered-precision-agriculture-smart-farming className="hover text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-healthcare-medical-diagnostics" className="hover text-white ">Healthcare</Link href=/ai-powered-healthcare-medical-diagnostics  className="hover" text-white ></Link></li></div>
-                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover" text-white ">Energy Management</Link href=/ai-powered-energy-management-renewable-energy className="hover text-white ></Link></li>"</div>
-                <li><Link href=/ai-powered-manufacturing-industrial-automation" className="hover text-white >Manufacturing</Link href=/ai-powered-manufacturing-industrial-automation  className="hover" text-white" "></Link></li></div>
-                <li><Link href=/ai-powered-finance-banking className="hover text-white ">Finance & Banking</Link href=/ai-powered-finance-banking className="hover" text-white ></Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Features</h4></div>
+              <ul className="space-y-2  text-sm:text-gray-400></div>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className=hover text-white ">Live Streaming</Link href=/ai-powered-live-streaming-broadcasting" className="hover text-white></Link></li></div>
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className=hover" text-white ">Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white ></Link></li></div>
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation className="hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover text-white "></Link></li></div>
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-space-exploration-satellite-management className="hover text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover text-white >Underwater Exploration</Link href=/ai-powered-underwater-exploration-marine-research className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-climate-change-environmental-sustainability className="hover text-white >Climate Change</Link href=/ai-powered-climate-change-environmental-sustainability  className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover text-white >Precision Agriculture</Link href=/ai-powered-precision-agriculture-smart-farming className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-healthcare-medical-diagnostics" className="hover text-white >Healthcare</Link href=/ai-powered-healthcare-medical-diagnostics  className=hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover text-white >Energy Management</Link href=/ai-powered-energy-management-renewable-energy className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-manufacturing-industrial-automation" className="hover text-white >Manufacturing</Link href=/ai-powered-manufacturing-industrial-automation  className=hover text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-finance-banking className="hover text-white >Finance & Banking</Link href=/ai-powered-finance-banking className=hover" text-white ></Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white" font-semibold mb-4">Services</h4></div>
+              <h4 className="text-white font-semibold mb-4>Services</h4></div>
               <ul className="space-y-2 text-sm text-gray-400>"</div>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace className="hover text-white" "></Link></li></div>
-                <li><Link href=/services" className="hover text-white ">IT Services</Link href=/services  className="hover" text-white ></Link></li></div>
-                <li><Link href=/talents className="hover" text-white ">AI Talents</Link href=/talents className="hover text-white ></Link></li>"</div>
-                <li><Link href=/equipment" className="hover text-white >Equipment</Link href=/equipment  className="hover" text-white "></Link></li> </ul></div>
+                <li><Link href=/marketplace className="hover text-white >Marketplace</Link href=/marketplace className=hover text-white" "></Link></li></div>
+                <li><Link href=/services" className="hover text-white >IT Services</Link href=/services  className=hover" text-white ></Link></li></div>
+                <li><Link href=/talents className="hover text-white >AI Talents</Link href=/talents className="hover text-white ></Link></li>"</div>
+                <li><Link href=/equipment" className="hover text-white >Equipment</Link href=/equipment  className=hover text-white "></Link></li> </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4>Support</h4>"</div>
-              <ul className="space-y-2"  text-sm:text-gray-400"></div>
-                <li><Link href=/help-desk-support className="hover text-white >Help Desk</Link href=/help-desk-support className="hover text-white"></Link></li></div>
-                <li><Link href=/contact className="hover text-white ">Contact</Link href=/contact className="hover" text-white ></Link></li></div>
-                <li><Link href=/docs className="hover" text-white >Documentation</Link href=/docs  className="hover text-white" "></Link></li></div>
-                <li><Link href=/status className="hover text-white >Status</Link href=/status className="hover" text-white" "></Link></li></div>
+              <h4 className="text-white font-semibold mb-4>Support</h4></div>
+              <ul className=space-y-2"  text-sm:text-gray-400"></div>
+                <li><Link href=/help-desk-support className="hover text-white >Help Desk</Link href=/help-desk-support className=hover text-white></Link></li></div>
+                <li><Link href=/contact className="hover text-white ">Contact</Link href=/contact className="hover text-white ></Link></li></div>
+                <li><Link href=/docs className=hover" text-white >Documentation</Link href=/docs  className="hover text-white ></Link></li></div>
+                <li><Link href=/status className="hover text-white >Status</Link href=/status className="hover text-white "></Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">;</div>
+          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm>;</div>
             <p>&copy; 2025 Zion Tech Group. All rights reserved.</p></div>
           </div></div>
         </div></div>
@@ -784,5 +784,5 @@ const AIPoweredFinanceBankingPage: NextPage = () => {
   </div>
 
 };
-`;}
+;}
 export default AIPoweredFinanceBankingPage )))))))))))))))))))"'"'`</div>

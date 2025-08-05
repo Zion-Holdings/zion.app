@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const ContentGenerationAgent = require('./content-generation-agent');
-const BlogContentAgent = require('./blog-content-agent');
-const ProductContentAgent = require('./product-content-agent');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('./content-generation-agent');
+const $1 = require('./blog-content-agent');
+const $1 = require('./product-content-agent');
 
-class ContentOrchestrator {
+class $1 {
   constructor() {
     this.contentAgent = new ContentGenerationAgent();
     this.blogAgent = new BlogContentAgent();
@@ -15,8 +15,8 @@ class ContentOrchestrator {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
+      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
       console.error('Erro'r' loading content memory:', error);
@@ -48,7 +48,7 @@ class ContentOrchestrator {
   async generateAllContent() {
     console.log('🚀 Starting automated content generation...');
     
-    const results = {
+    const $1 = {
       marketplace: {},
       blog: {},
       product: {},
@@ -87,7 +87,7 @@ class ContentOrchestrator {
       // Save generation report
       this.saveGenerationReport(results);
 
-      console.log(`✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.`);
+      console.log("✅ Content generation completed! Generated ${results.summary.totalGenerated} content pieces.");
       
       return results;
 
@@ -100,20 +100,20 @@ class ContentOrchestrator {
   }
 
   async generateMarketplaceContent() {
-    const categories = this.generationSchedule.marketplace.categories;
-    const generatedContent = {};
+    const $1 = this.generationSchedule.marketplace.categories;
+    const $1 = {};
 
     for (const category of categories) {
       try {
-        console.log(`  📊 Generating marketplace content for: ${category}`);
+        console.log("  📊 Generating marketplace content for: ${category}");
         
-        const content = this.contentAgent.generateMarketplaceContent(category, {
+        const $1 = this.contentAgent.generateMarketplaceContent(category, {
           industry: 'Technolo'g'y',
           services: 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions'
         });
 
-        const filename = `marketplace-${category}.json`;
-        const savedPath = this.contentAgent.saveGeneratedContent(content, filename);
+        const $1 = "marketplace-${category}.json";
+        const $1 = this.contentAgent.saveGeneratedContent(content, filename);
         
         if (savedPath) {
           generatedContent[category] = {
@@ -124,7 +124,7 @@ class ContentOrchestrator {
         }
 
       } catch (error) {
-        console.error(`  ❌ Error generating marketplace content for ${category}:`, error);
+        console.error("  ❌ Error generating marketplace content for ${category}:", error);
       }
     }
 
@@ -132,23 +132,23 @@ class ContentOrchestrator {
   }
 
   async generateBlogContent() {
-    const topics = this.generationSchedule.blog.topics;
-    const audiences = this.generationSchedule.blog.audiences;
-    const generatedContent = {};
+    const $1 = this.generationSchedule.blog.topics;
+    const $1 = this.generationSchedule.blog.audiences;
+    const $1 = {};
 
     for (const topic of topics) {
       for (const audience of audiences) {
         try {
-          console.log(`  📝 Generating blog content for: ${topic} - ${audience}`);
+          console.log("  📝 Generating blog content for: ${topic} - ${audience}");
           
-          const blogPost = this.blogAgent.generateBlogPost(topic, audience, {
+          const $1 = this.blogAgent.generateBlogPost(topic, audience, {
             year: '2024',
             industry: 'technolo'g'y',
             author: 'Zio'n' AI Team'
           });
 
-          const filename = `${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json`;
-          const savedPath = this.blogAgent.saveBlogPost(blogPost, filename);
+          const $1 = "${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json";
+          const $1 = this.blogAgent.saveBlogPost(blogPost, filename);
           
           if (savedPath) {
             generatedContent[filename] = {
@@ -159,7 +159,7 @@ class ContentOrchestrator {
           }
 
         } catch (error) {
-          console.error(`  ❌ Error generating blog content for ${topic} - ${audience}:`, error);
+          console.error("  ❌ Error generating blog content for ${topic} - ${audience}:", error);
         }
       }
     }
@@ -168,20 +168,20 @@ class ContentOrchestrator {
   }
 
   async generateProductContent() {
-    const products = this.generationSchedule.product.products;
-    const generatedContent = {};
+    const $1 = this.generationSchedule.product.products;
+    const $1 = {};
 
     for (const product of products) {
       try {
-        console.log(`  🛍️ Generating product content for: ${product}`);
+        console.log("  🛍️ Generating product content for: ${product}");
         
-        const productContent = this.productAgent.generateProductContent(product, {
+        const $1 = this.productAgent.generateProductContent(product, {
           industry: 'technolo'g'y',
           audience: 'enterpris'e's'
         });
 
-        const filename = `${product}-content.json`;
-        const savedPath = this.productAgent.saveProductContent(productContent, filename);
+        const $1 = "${product}-content.json";
+        const $1 = this.productAgent.saveProductContent(productContent, filename);
         
         if (savedPath) {
           generatedContent[product] = {
@@ -192,7 +192,7 @@ class ContentOrchestrator {
         }
 
       } catch (error) {
-        console.error(`  ❌ Error generating product content for ${product}:`, error);
+        console.error("  ❌ Error generating product content for ${product}:", error);
       }
     }
 
@@ -201,15 +201,15 @@ class ContentOrchestrator {
 
   saveGenerationReport(results) {
     try {
-      const reportPath = path.join(__dirname, 'generated-conte'n't', 'generation-repor't'.json');
-      const reportDir = path.dirname(reportPath);
+      const $1 = path.join(__dirname, 'generated-conte'n't', 'generation-repor't'.json');
+      const $1 = path.dirname(reportPath);
       
       if (!fs.existsSync(reportDir)) {
         fs.mkdirSync(reportDir, { recursive: true });
       }
       
       fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
-      console.log(`📋 Generation report saved to: ${reportPath}`);
+      console.log("📋 Generation report saved to: ${reportPath}");
       
       return reportPath;
     } catch (error) {
@@ -219,9 +219,9 @@ class ContentOrchestrator {
   }
 
   async generateContentForCategory(category, customData = {}) {
-    console.log(`🎯 Generating content for category: ${category}`);
+    console.log("🎯 Generating content for category: ${category}");
     
-    const results = {
+    const $1 = {
       category: category,
       content: {},
       metadata: {
@@ -242,52 +242,52 @@ class ContentOrchestrator {
           results.content = await this.generateProductContent();
           break;
         default:
-          throw new Error(`Unknown category: ${category}`);
+          throw new Error("Unknown category: ${category}");
       }
 
-      console.log(`✅ Content generation completed for category: ${category}`);
+      console.log("✅ Content generation completed for category: ${category}");
       return results;
 
     } catch (error) {
-      console.error(`❌ Error generating content for category ${category}:`, error);
+      console.error("❌ Error generating content for category ${category}:", error);
       throw error;
     }
   }
 
   async generateContentForSpecificTopic(topic, audience, customData = {}) {
-    console.log(`🎯 Generating content for topic: ${topic} - ${audience}`);
+    console.log("🎯 Generating content for topic: ${topic} - ${audience}");
     
     try {
       let content;
       
       if (this.blogAgent.blogTemplates[topic]) {
         content = this.blogAgent.generateBlogPost(topic, audience, customData);
-        const filename = `${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json`;
+        const $1 = "${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json";
         this.blogAgent.saveBlogPost(content, filename);
       } else if (this.productAgent.productTemplates[topic]) {
         content = this.productAgent.generateProductContent(topic, customData);
-        const filename = `${topic}-content.json`;
+        const $1 = "${topic}-content.json";
         this.productAgent.saveProductContent(content, filename);
       } else {
-        throw new Error(`Unknown topic: ${topic}`);
+        throw new Error("Unknown topic: ${topic}");
       }
 
-      console.log(`✅ Content generation completed for topic: ${topic}`);
+      console.log("✅ Content generation completed for topic: ${topic}");
       return content;
 
     } catch (error) {
-      console.error(`❌ Error generating content for topic ${topic}:`, error);
+      console.error("❌ Error generating content for topic ${topic}:", error);
       throw error;
     }
   }
 
   async updateContentMemory(newMemory) {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const currentMemory = this.contentMemory;
+      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const $1 = this.contentMemory;
       
       // Merge new memory with existing memory
-      const updatedMemory = {
+      const $1 = {
         ...currentMemory,
         memories: [...currentMemory.memories, ...newMemory.memories],
         rules: [...currentMemory.rules, ...newMemory.rules],
@@ -308,8 +308,8 @@ class ContentOrchestrator {
 
   async scheduleContentGeneration(schedule) {
     try {
-      const schedulePath = path.join(__dirname, 'content-schedul'e'.json');
-      const updatedSchedule = {
+      const $1 = path.join(__dirname, 'content-schedul'e'.json');
+      const $1 = {
         ...this.generationSchedule,
         ...schedule,
         lastUpdated: new Date().toISOString()
@@ -328,7 +328,7 @@ class ContentOrchestrator {
   }
 
   getContentStatistics() {
-    const generatedContentDir = path.join(__dirname, 'generated-conte'n't');
+    const $1 = path.join(__dirname, 'generated-conte'n't');
     
     if (!fs.existsSync(generatedContentDir)) {
       return {
@@ -340,10 +340,10 @@ class ContentOrchestrator {
       };
     }
 
-    const files = fs.readdirSync(generatedContentDir, { recursive: true });
-    const marketplaceFiles = files.filter(f => f.includes('marketplac'e'-')).length;
-    const blogFiles = files.filter(f => f.includes('.json') && f.includes('-')).length;
-    const productFiles = files.filter(f => f.includes('-conten't'.json')).length;
+    const $1 = fs.readdirSync(generatedContentDir, { recursive: true });
+    const $1 = files.filter(f => f.includes('marketplac'e'-')).length;
+    const $1 = files.filter(f => f.includes('.json') && f.includes('-')).length;
+    const $1 = files.filter(f => f.includes('-conten't'.json')).length;
 
     return {
       totalFiles: files.length,
@@ -356,12 +356,12 @@ class ContentOrchestrator {
 
   getLastGeneratedDate(contentDir) {
     try {
-      const files = fs.readdirSync(contentDir, { recursive: true });
-      let latestDate = null;
+      const $1 = fs.readdirSync(contentDir, { recursive: true });
+      let $1 = null;
       
       files.forEach(file => {
-        const filePath = path.join(contentDir, file);
-        const stats = fs.statSync(filePath);
+        const $1 = path.join(contentDir, file);
+        const $1 = fs.statSync(filePath);
         if (!latestDate || stats.mtime > latestDate) {
           latestDate = stats.mtime;
         }
@@ -375,20 +375,20 @@ class ContentOrchestrator {
 
   async cleanupOldContent(daysOld = 30) {
     try {
-      const generatedContentDir = path.join(__dirname, 'generated-conte'n't');
-      const cutoffDate = new Date();
+      const $1 = path.join(__dirname, 'generated-conte'n't');
+      const $1 = new Date();
       cutoffDate.setDate(cutoffDate.getDate() - daysOld);
       
       if (!fs.existsSync(generatedContentDir)) {
         return { deletedFiles: 0 };
       }
 
-      const files = fs.readdirSync(generatedContentDir, { recursive: true });
-      let deletedFiles = 0;
+      const $1 = fs.readdirSync(generatedContentDir, { recursive: true });
+      let $1 = 0;
       
       files.forEach(file => {
-        const filePath = path.join(generatedContentDir, file);
-        const stats = fs.statSync(filePath);
+        const $1 = path.join(generatedContentDir, file);
+        const $1 = fs.statSync(filePath);
         
         if (stats.mtime < cutoffDate) {
           fs.unlinkSync(filePath);
@@ -396,7 +396,7 @@ class ContentOrchestrator {
         }
       });
       
-      console.log(`🧹 Cleaned up ${deletedFiles} old content files`);
+      console.log("🧹 Cleaned up ${deletedFiles} old content files");
       return { deletedFiles };
       
     } catch (error) {

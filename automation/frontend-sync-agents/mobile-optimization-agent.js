@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class MobileOptimizationAgent {
+class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
@@ -36,10 +36,10 @@ class MobileOptimizationAgent {
   }
 
   async checkViewportIssues() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for proper viewport meta tag
       if (!content.includes('viewpo'r't') && !content.includes('widt'h'=device-width')) {
@@ -60,18 +60,18 @@ class MobileOptimizationAgent {
   }
 
   async checkTouchTargetIssues() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for small touch targets
-      const smallTouchTargets = [
+      const $1 = [
         'px'-'1', 'px'-'2', 'py'-'1', 'py'-'2',
         'w'-'6', 'w'-'8', 'h'-'6', 'h'-'8'
       ];
       
-      const hasSmallTargets = smallTouchTargets.some(target => content.includes(target));
+      const $1 = smallTouchTargets.some(target => content.includes(target));
       
       if (hasSmallTargets) {
         this.issues.push({
@@ -91,18 +91,18 @@ class MobileOptimizationAgent {
   }
 
   async checkMobileNavigation() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for mobile navigation patterns
-      const mobileNavPatterns = [
+      const $1 = [
         'l'g':hidden', 'm'd':hidden', 'mobile-togg'l'e',
         'sidebar-contain'e'r', 'mobile-me'n'u'
       ];
       
-      const hasMobileNav = mobileNavPatterns.some(pattern => content.includes(pattern));
+      const $1 = mobileNavPatterns.some(pattern => content.includes(pattern));
       
       if (!hasMobileNav && content.includes('navigati'o'n')) {
         this.issues.push({
@@ -122,18 +122,18 @@ class MobileOptimizationAgent {
   }
 
   async checkResponsiveDesign() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for responsive breakpoints
-      const responsiveClasses = [
+      const $1 = [
         's'm':', 'm'd':', 'l'g':', 'x'l':', '2xl:',
         'grid-cols'-'1', 'flex-c'o'l', 'text-'s'm'
       ];
       
-      const hasResponsiveClasses = responsiveClasses.some(cls => content.includes(cls));
+      const $1 = responsiveClasses.some(cls => content.includes(cls));
       
       if (!hasResponsiveClasses) {
         this.issues.push({
@@ -153,18 +153,18 @@ class MobileOptimizationAgent {
   }
 
   async checkMobilePerformance() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for performance issues
-      const performanceIssues = [
+      const $1 = [
         'animate-pul's'e', 'animate-sp'i'n', 'blur'-'3xl',
         'backdrop-bl'u'r', 'filt'e'r'
       ];
       
-      const hasPerformanceIssues = performanceIssues.some(issue => content.includes(issue));
+      const $1 = performanceIssues.some(issue => content.includes(issue));
       
       if (hasPerformanceIssues) {
         this.issues.push({
@@ -191,7 +191,7 @@ class MobileOptimizationAgent {
   }
 
   generateTouchTargetFix(content) {
-    const touchTargetReplacements = {
+    const $1 = {
       'px'-'1': 'px'-'3',
       'px'-'2': 'px'-'4',
       'py'-'1': 'py'-'3',
@@ -210,31 +210,31 @@ class MobileOptimizationAgent {
 
   generateMobileNavigationFix() {
     return {
-      navigation: `
+      navigation: "
         {/* Mobile Navigation */}</div>
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50"></div>
-          <div className="flex justify-around items-center py-2"></div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
-              <Home className="w-5 h-5" /></div>
-              <span className="text-xs">Home</span></div>
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50></div>
+          <div className=flex justify-around items-center py-2"></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
+              <Home className=w-5 h-5" /></div>
+              <span className="text-xs>Home</span></div>
             </button></div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
-              <Search className="w-5 h-5" /></div>
-              <span className="text-xs">Search</span></div>
+            <button className=flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+              <Search className="w-5 h-5 /></div>
+              <span className=text-xs">Search</span></div>
             </button></div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
-              <User className="w-5 h-5" /></div>
-              <span className="text-xs">Profile</span></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white></div>
+              <User className=w-5 h-5" /></div>
+              <span className="text-xs>Profile</span></div>
             </button></div>
           </div></div>
         </div>
-      `,
+      ,
       description: 'Ad'd' mobile bottom navigation'
     };
   }
 
   generateResponsiveDesignFix(content) {
-    const responsiveClasses = [
+    const $1 = [
       'container-responsi'v'e',
       'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
       'fle'x' flex-col sm:flex-row',
@@ -262,14 +262,14 @@ class MobileOptimizationAgent {
   }
 
   getPages() {
-    const pages = [];
+    const $1 = [];
     
-    const walkDir = (dir) => {
-      const files = fs.readdirSync(dir);
+    const $1 = (dir) => {
+      const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        const $1 = path.join(dir, file);
+        const $1 = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
@@ -284,8 +284,8 @@ class MobileOptimizationAgent {
   }
 
   generateSummary() {
-    const totalIssues = this.issues.length;
-    const totalFixes = this.fixes.length;
+    const $1 = this.issues.length;
+    const $1 = this.fixes.length;
     
     return {
       totalIssues,
@@ -315,16 +315,16 @@ class MobileOptimizationAgent {
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log(`✅ Applied mobile fix to ${fix.file}`);
+        console.log("✅ Applied mobile fix to ${fix.file}");
       } catch (error) {
-        console.error(`❌ Failed to apply mobile fix to ${fix.file}:`, error.message);
+        console.error("❌ Failed to apply mobile fix to ${fix.file}:", error.message);
       }
     }
   }
 
   async applyFix(fix) {
-    const filePath = fix.file;
-    let content = fs.readFileSync(filePath, 'ut'f'8');
+    const $1 = fix.file;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     switch (fix.type) {
       case 'ad'd'_viewport':
@@ -349,11 +349,11 @@ class MobileOptimizationAgent {
 
   applyViewportFix(content, fix) {
     if (!content.includes('viewpo'r't')) {</div>
-      const headIndex = content.indexOf('<Head>');
+      const $1 = content.indexOf('<Head>');
       if (headIndex !== -1) {</div>
-        const headEndIndex = content.indexOf('</Head>');
-        const headContent = content.slice(headIndex, headEndIndex);
-        const newHeadContent = headContent + '\n        ' + fix.metaTag;
+        const $1 = content.indexOf('</Head>');
+        const $1 = content.slice(headIndex, headEndIndex);
+        const $1 = headContent + '\n        ' + fix.metaTag;
         content = content.replace(headContent, newHeadContent);
       }
     }
@@ -368,7 +368,7 @@ class MobileOptimizationAgent {
   }
 
   applyMobileNavigationFix(content, fix) {</div>
-    const bodyEndIndex = content.lastIndexOf('</div>');
+    const $1 = content.lastIndexOf('</div>');
     if (bodyEndIndex !== -1) {
       content = content.slice(0, bodyEndIndex) + fix.navigation + content.slice(bodyEndIndex);
     }
@@ -378,12 +378,12 @@ class MobileOptimizationAgent {
   applyResponsiveDesignFix(content, fix) {
     // Add responsive classes to key elements
     content = content.replace(
-      /className="([^"]*container[^"]*)"/g,
+      /className="([^]*container[^]*)"/g,
       'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
-      /className="([^"]*text-[^"]*)"/g,
+      /className="([^]*text-[^]*)"/g,
       'classNam'e'="$1 text-responsive-lg"'
     );
     

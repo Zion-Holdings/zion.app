@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const { timeframe, metrics, reportType } = req.body;
 
   // Mock AI-powered analytics and insights
-  const analyticsData = {
+  const $1 = {
     kpis: [
       {
         id: 1',

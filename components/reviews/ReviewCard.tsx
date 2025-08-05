@@ -5,6 +5,6 @@ export default function ReviewCard() {
   return (
     <motion.div className="review-component>
       {/* ReviewCard.tsx implementation */}</div>
-    </motion.div>;"
+    </motion.div>;
   );"
 }'"</div>

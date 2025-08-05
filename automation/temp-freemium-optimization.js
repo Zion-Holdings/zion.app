@@ -1,16 +1,16 @@
 
-            const factory = require('./monetization-autonomous-factory');
-            const factoryInstance = new factory();
+            const $1 = require('./monetization-autonomous-factory');
+            const $1 = new factory();
             
             async function runFreemiumOptimization() {
                 try {
-                    const agent = factoryInstance.createFreemiumAgent();
+                    const $1 = factoryInstance.createFreemiumAgent();
                     console.log('Freemiu'm' agent created:', agent.agentId);
                     
                     // Run optimization every 4 hours
                     setInterval(async () => {
                         try {
-                            const newAgent = factoryInstance.createFreemiumAgent();
+                            const $1 = factoryInstance.createFreemiumAgent();
                             console.log('Freemiu'm' optimization cycle completed');
                         } catch (error) {
                             console.error('Freemiu'm' optimization error:', error);

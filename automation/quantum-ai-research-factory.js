@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
-const cron = require('node-cr'o'n');
+const $1 = require('node-cr'o'n');
 
-class QuantumAIResearchFactory {
+class $1 {
   constructor() {
-    this.factoryId = `quantum-ai-research-factory-${Date.now()}`;
+    this.factoryId = "quantum-ai-research-factory-${Date.now()}";
     this.agents = new Map();
     this.quantumServices = new Map();
     this.aiResearchAreas = new Map();
@@ -201,8 +201,8 @@ class QuantumAIResearchFactory {
   }
 
   createAgent(type, config) {
-    const agentId = `${type}-${Date.now()}`;
-    const agent = {
+    const $1 = "${type}-${Date.now()}";
+    const $1 = {
       id: agentId,
       type: type,
       config: config,
@@ -219,16 +219,16 @@ class QuantumAIResearchFactory {
     this.agents.set(agentId, agent);
     this.performanceMetrics.agentsCreated++;
 
-    const agentFile = path.join(this.agentsPath, `${agentId}.js`);
-    const agentCode = this.generateAgentCode(type, config);
+    const $1 = path.join(this.agentsPath, "${agentId}.js");
+    const $1 = this.generateAgentCode(type, config);
     fs.writeFileSync(agentFile, agentCode);
 
-    console.log(`✅ Created ${type} agent: ${agentId}`);
+    console.log("✅ Created ${type} agent: ${agentId}");
     return agent;
   }
 
   generateAgentCode(type, config) {
-    const agentTemplates = {
+    const $1 = {
       'quantum-computi'n'g': this.generateQuantumComputingAgent(),
       'quantum-algorit'h'm': this.generateQuantumAlgorithmAgent(),
       'quantum-simulati'o'n': this.generateQuantumSimulationAgent(),
@@ -245,18 +245,18 @@ class QuantumAIResearchFactory {
   }
 
   generateQuantumComputingAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class QuantumComputingAgent {
+class $1 {
   constructor() {
     this.agentId = 'quantum-computing-age'n't';
     this.capabilities = ['quantum-processor-manageme'n't', 'quantum-circuit-desi'g'n', 'quantum-error-correcti'o'n'];
   }
 
   async manageQuantumProcessor(processorSpec) {
-    const management = {
+    const $1 = {
       spec: processorSpec,
       calibration: this.calibrateProcessor(processorSpec),
       optimization: this.optimizeProcessor(processorSpec),
@@ -267,7 +267,7 @@ class QuantumComputingAgent {
   }
 
   async designQuantumCircuit(circuitSpec) {
-    const design = {
+    const $1 = {
       spec: circuitSpec,
       gates: this.designGates(circuitSpec),
       optimization: this.optimizeCircuit(circuitSpec),
@@ -278,7 +278,7 @@ class QuantumComputingAgent {
   }
 
   async correctQuantumErrors(errorSpec) {
-    const correction = {
+    const $1 = {
       spec: errorSpec,
       detection: this.detectErrors(errorSpec),
       correction: this.correctErrors(errorSpec),
@@ -326,22 +326,22 @@ class QuantumComputingAgent {
 }
 
 module.exports = QuantumComputingAgent;
-    `;
+    ";
   }
 
   generateQuantumAlgorithmAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class QuantumAlgorithmAgent {
+class $1 {
   constructor() {
     this.agentId = 'quantum-algorithm-age'n't';
     this.capabilities = ['algorithm-developme'n't', 'optimizati'o'n', 'performance-analys'i's'];
   }
 
   async developAlgorithm(algorithmSpec) {
-    const development = {
+    const $1 = {
       spec: algorithmSpec,
       design: this.designAlgorithm(algorithmSpec),
       implementation: this.implementAlgorithm(algorithmSpec),
@@ -352,7 +352,7 @@ class QuantumAlgorithmAgent {
   }
 
   async optimizeAlgorithm(optimizationSpec) {
-    const optimization = {
+    const $1 = {
       spec: optimizationSpec,
       analysis: this.analyzePerformance(optimizationSpec),
       improvement: this.improveAlgorithm(optimizationSpec),
@@ -363,7 +363,7 @@ class QuantumAlgorithmAgent {
   }
 
   async analyzePerformance(performanceSpec) {
-    const analysis = {
+    const $1 = {
       spec: performanceSpec,
       metrics: this.collectMetrics(performanceSpec),
       comparison: this.compareAlgorithms(performanceSpec),
@@ -411,22 +411,22 @@ class QuantumAlgorithmAgent {
 }
 
 module.exports = QuantumAlgorithmAgent;
-    `;
+    ";
   }
 
   generateQuantumSimulationAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class QuantumSimulationAgent {
+class $1 {
   constructor() {
     this.agentId = 'quantum-simulation-age'n't';
     this.capabilities = ['molecular-simulati'o'n', 'material-modeli'n'g', 'chemical-reactio'n's'];
   }
 
   async simulateMolecules(moleculeSpec) {
-    const simulation = {
+    const $1 = {
       spec: moleculeSpec,
       structure: this.modelStructure(moleculeSpec),
       properties: this.calculateProperties(moleculeSpec),
@@ -437,7 +437,7 @@ class QuantumSimulationAgent {
   }
 
   async modelMaterials(materialSpec) {
-    const modeling = {
+    const $1 = {
       spec: materialSpec,
       structure: this.modelCrystalStructure(materialSpec),
       properties: this.calculateMaterialProperties(materialSpec),
@@ -448,7 +448,7 @@ class QuantumSimulationAgent {
   }
 
   async simulateReactions(reactionSpec) {
-    const simulation = {
+    const $1 = {
       spec: reactionSpec,
       mechanism: this.modelReactionMechanism(reactionSpec),
       kinetics: this.calculateKinetics(reactionSpec),
@@ -496,22 +496,22 @@ class QuantumSimulationAgent {
 }
 
 module.exports = QuantumSimulationAgent;
-    `;
+    ";
   }
 
   generateAGIResearchAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AGIResearchAgent {
+class $1 {
   constructor() {
     this.agentId = 'agi-research-age'n't';
     this.capabilities = ['cognitive-architectu'r'e', 'reasoning-syste'm's', 'learning-algorith'm's'];
   }
 
   async developCognitiveArchitecture(architectureSpec) {
-    const development = {
+    const $1 = {
       spec: architectureSpec,
       design: this.designArchitecture(architectureSpec),
       implementation: this.implementArchitecture(architectureSpec),
@@ -522,7 +522,7 @@ class AGIResearchAgent {
   }
 
   async buildReasoningSystem(reasoningSpec) {
-    const reasoning = {
+    const $1 = {
       spec: reasoningSpec,
       logic: this.implementLogic(reasoningSpec),
       inference: this.buildInference(reasoningSpec),
@@ -533,7 +533,7 @@ class AGIResearchAgent {
   }
 
   async developLearningAlgorithms(learningSpec) {
-    const learning = {
+    const $1 = {
       spec: learningSpec,
       algorithms: this.developAlgorithms(learningSpec),
       optimization: this.optimizeLearning(learningSpec),
@@ -581,22 +581,22 @@ class AGIResearchAgent {
 }
 
 module.exports = AGIResearchAgent;
-    `;
+    ";
   }
 
   generateNeuromorphicAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class NeuromorphicAgent {
+class $1 {
   constructor() {
     this.agentId = 'neuromorphic-age'n't';
     this.capabilities = ['brain-inspired-computi'n'g', 'spiking-networ'k's', 'neuromorphic-chi'p's'];
   }
 
   async developBrainInspiredComputing(computingSpec) {
-    const development = {
+    const $1 = {
       spec: computingSpec,
       architecture: this.designArchitecture(computingSpec),
       algorithms: this.developAlgorithms(computingSpec),
@@ -607,7 +607,7 @@ class NeuromorphicAgent {
   }
 
   async buildSpikingNetworks(networkSpec) {
-    const networks = {
+    const $1 = {
       spec: networkSpec,
       design: this.designNetworks(networkSpec),
       training: this.trainNetworks(networkSpec),
@@ -618,7 +618,7 @@ class NeuromorphicAgent {
   }
 
   async developNeuromorphicChips(chipSpec) {
-    const chips = {
+    const $1 = {
       spec: chipSpec,
       design: this.designChips(chipSpec),
       fabrication: this.fabricateChips(chipSpec),
@@ -666,22 +666,22 @@ class NeuromorphicAgent {
 }
 
 module.exports = NeuromorphicAgent;
-    `;
+    ";
   }
 
   generateFederatedLearningAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class FederatedLearningAgent {
+class $1 {
   constructor() {
     this.agentId = 'federated-learning-age'n't';
     this.capabilities = ['distributed-traini'n'g', 'privacy-preservati'o'n', 'secure-aggregati'o'n'];
   }
 
   async coordinateDistributedTraining(trainingSpec) {
-    const coordination = {
+    const $1 = {
       spec: trainingSpec,
       orchestration: this.orchestrateTraining(trainingSpec),
       synchronization: this.synchronizeTraining(trainingSpec),
@@ -692,7 +692,7 @@ class FederatedLearningAgent {
   }
 
   async preservePrivacy(privacySpec) {
-    const preservation = {
+    const $1 = {
       spec: privacySpec,
       encryption: this.encryptData(privacySpec),
       anonymization: this.anonymizeData(privacySpec),
@@ -703,7 +703,7 @@ class FederatedLearningAgent {
   }
 
   async performSecureAggregation(aggregationSpec) {
-    const aggregation = {
+    const $1 = {
       spec: aggregationSpec,
       collection: this.collectUpdates(aggregationSpec),
       aggregation: this.aggregateSecurely(aggregationSpec),
@@ -751,22 +751,22 @@ class FederatedLearningAgent {
 }
 
 module.exports = FederatedLearningAgent;
-    `;
+    ";
   }
 
   generateResearchPaperAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ResearchPaperAgent {
+class $1 {
   constructor() {
     this.agentId = 'research-paper-age'n't';
     this.capabilities = ['paper-generati'o'n', 'literature-revi'e'w', 'citation-analys'i's'];
   }
 
   async generateResearchPaper(paperSpec) {
-    const generation = {
+    const $1 = {
       spec: paperSpec,
       research: this.conductResearch(paperSpec),
       writing: this.writePaper(paperSpec),
@@ -777,7 +777,7 @@ class ResearchPaperAgent {
   }
 
   async conductLiteratureReview(reviewSpec) {
-    const review = {
+    const $1 = {
       spec: reviewSpec,
       search: this.searchLiterature(reviewSpec),
       analysis: this.analyzeLiterature(reviewSpec),
@@ -788,7 +788,7 @@ class ResearchPaperAgent {
   }
 
   async analyzeCitations(citationSpec) {
-    const analysis = {
+    const $1 = {
       spec: citationSpec,
       collection: this.collectCitations(citationSpec),
       analysis: this.analyzeCitations(citationSpec),
@@ -836,22 +836,22 @@ class ResearchPaperAgent {
 }
 
 module.exports = ResearchPaperAgent;
-    `;
+    ";
   }
 
   generatePatentAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class PatentAgent {
+class $1 {
   constructor() {
     this.agentId = 'patent-age'n't';
     this.capabilities = ['patent-resear'c'h', 'prior-art-analys'i's', 'patent-fili'n'g'];
   }
 
   async researchPatents(patentSpec) {
-    const research = {
+    const $1 = {
       spec: patentSpec,
       search: this.searchPatents(patentSpec),
       analysis: this.analyzePatents(patentSpec),
@@ -862,7 +862,7 @@ class PatentAgent {
   }
 
   async analyzePriorArt(priorArtSpec) {
-    const analysis = {
+    const $1 = {
       spec: priorArtSpec,
       search: this.searchPriorArt(priorArtSpec),
       comparison: this.compareWithPriorArt(priorArtSpec),
@@ -873,7 +873,7 @@ class PatentAgent {
   }
 
   async filePatent(filingSpec) {
-    const filing = {
+    const $1 = {
       spec: filingSpec,
       preparation: this.prepareFiling(filingSpec),
       submission: this.submitPatent(filingSpec),
@@ -921,22 +921,22 @@ class PatentAgent {
 }
 
 module.exports = PatentAgent;
-    `;
+    ";
   }
 
   generateAIEthicsAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AIEthicsAgent {
+class $1 {
   constructor() {
     this.agentId = 'ai-ethics-age'n't';
     this.capabilities = ['bias-detecti'o'n', 'fairness-assessme'n't', 'ethical-guidelin'e's'];
   }
 
   async detectBias(biasSpec) {
-    const detection = {
+    const $1 = {
       spec: biasSpec,
       analysis: this.analyzeBias(biasSpec),
       identification: this.identifyBias(biasSpec),
@@ -947,7 +947,7 @@ class AIEthicsAgent {
   }
 
   async assessFairness(fairnessSpec) {
-    const assessment = {
+    const $1 = {
       spec: fairnessSpec,
       evaluation: this.evaluateFairness(fairnessSpec),
       metrics: this.calculateMetrics(fairnessSpec),
@@ -958,7 +958,7 @@ class AIEthicsAgent {
   }
 
   async developEthicalGuidelines(guidelineSpec) {
-    const guidelines = {
+    const $1 = {
       spec: guidelineSpec,
       development: this.developGuidelines(guidelineSpec),
       validation: this.validateGuidelines(guidelineSpec),
@@ -1006,22 +1006,22 @@ class AIEthicsAgent {
 }
 
 module.exports = AIEthicsAgent;
-    `;
+    ";
   }
 
   generateExplainableAIAgent() {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ExplainableAIAgent {
+class $1 {
   constructor() {
     this.agentId = 'explainable-ai-age'n't';
     this.capabilities = ['model-interpretabili't'y', 'decision-explanatio'n's', 'transparency-assessme'n't'];
   }
 
   async interpretModel(interpretationSpec) {
-    const interpretation = {
+    const $1 = {
       spec: interpretationSpec,
       analysis: this.analyzeModel(interpretationSpec),
       explanation: this.explainModel(interpretationSpec),
@@ -1032,7 +1032,7 @@ class ExplainableAIAgent {
   }
 
   async explainDecisions(decisionSpec) {
-    const explanation = {
+    const $1 = {
       spec: decisionSpec,
       analysis: this.analyzeDecision(decisionSpec),
       explanation: this.explainDecision(decisionSpec),
@@ -1043,7 +1043,7 @@ class ExplainableAIAgent {
   }
 
   async assessTransparency(transparencySpec) {
-    const assessment = {
+    const $1 = {
       spec: transparencySpec,
       evaluation: this.evaluateTransparency(transparencySpec),
       metrics: this.calculateTransparencyMetrics(transparencySpec),
@@ -1091,13 +1091,13 @@ class ExplainableAIAgent {
 }
 
 module.exports = ExplainableAIAgent;
-    `;
+    ";
   }
 
   generateGenericAgent(type, config) {
-    return `;
-const fs = require('f's');
-const path = require('pa't'h');
+    return ";
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   constructor() {
@@ -1108,7 +1108,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
   }
 
   async executeTask(taskData) {
-    const result = {
+    const $1 = {
       task: taskData,
       execution: this.performTask(taskData),
       optimization: this.optimizeTask(taskData),
@@ -1132,7 +1132,7 @@ class ${type.charAt(0).toUpperCase() + type.slice(1)}Agent {
 }
 
 module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
-    `;
+    ";
   }
 
   startQuantumAIResearchAutomation() {
@@ -1172,12 +1172,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeQuantumComputing() {
     console.log('⚛️ Executing Quantum Computing...');
     
-    const quantumComputingAgent = this.getOrCreateAgent('quantum-computi'n'g');
-    const quantumAlgorithmAgent = this.getOrCreateAgent('quantum-algorit'h'm');
+    const $1 = this.getOrCreateAgent('quantum-computi'n'g');
+    const $1 = this.getOrCreateAgent('quantum-algorit'h'm');
     
-    const processorManagement = await quantumComputingAgent.manageQuantumProcessor({});
-    const circuitDesign = await quantumComputingAgent.designQuantumCircuit({});
-    const algorithmDevelopment = await quantumAlgorithmAgent.developAlgorithm({});
+    const $1 = await quantumComputingAgent.manageQuantumProcessor({});
+    const $1 = await quantumComputingAgent.designQuantumCircuit({});
+    const $1 = await quantumAlgorithmAgent.developAlgorithm({});
     
     this.performanceMetrics.quantumAlgorithms++;
     this.saveResults('quantum-computi'n'g', { processorManagement, circuitDesign, algorithmDevelopment });
@@ -1186,12 +1186,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeAIResearch() {
     console.log('🧠 Executing AI Research...');
     
-    const agiResearchAgent = this.getOrCreateAgent('agi-resear'c'h');
-    const neuromorphicAgent = this.getOrCreateAgent('neuromorph'i'c');
+    const $1 = this.getOrCreateAgent('agi-resear'c'h');
+    const $1 = this.getOrCreateAgent('neuromorph'i'c');
     
-    const cognitiveArchitecture = await agiResearchAgent.developCognitiveArchitecture({});
-    const reasoningSystem = await agiResearchAgent.buildReasoningSystem({});
-    const brainInspiredComputing = await neuromorphicAgent.developBrainInspiredComputing({});
+    const $1 = await agiResearchAgent.developCognitiveArchitecture({});
+    const $1 = await agiResearchAgent.buildReasoningSystem({});
+    const $1 = await neuromorphicAgent.developBrainInspiredComputing({});
     
     this.performanceMetrics.aiModels++;
     this.saveResults('ai-resear'c'h', { cognitiveArchitecture, reasoningSystem, brainInspiredComputing });
@@ -1200,12 +1200,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeResearchDevelopment() {
     console.log('📚 Executing Research Development...');
     
-    const researchPaperAgent = this.getOrCreateAgent('research-pap'e'r');
-    const patentAgent = this.getOrCreateAgent('pate'n't');
+    const $1 = this.getOrCreateAgent('research-pap'e'r');
+    const $1 = this.getOrCreateAgent('pate'n't');
     
-    const paperGeneration = await researchPaperAgent.generateResearchPaper({});
-    const literatureReview = await researchPaperAgent.conductLiteratureReview({});
-    const patentResearch = await patentAgent.researchPatents({});
+    const $1 = await researchPaperAgent.generateResearchPaper({});
+    const $1 = await researchPaperAgent.conductLiteratureReview({});
+    const $1 = await patentAgent.researchPatents({});
     
     this.performanceMetrics.researchPapers++;
     this.performanceMetrics.patents++;
@@ -1215,12 +1215,12 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   async executeEthicsCompliance() {
     console.log('⚖️ Executing Ethics and Compliance...');
     
-    const aiEthicsAgent = this.getOrCreateAgent('ai-ethi'c's');
-    const explainableAIAgent = this.getOrCreateAgent('explainable-'a'i');
+    const $1 = this.getOrCreateAgent('ai-ethi'c's');
+    const $1 = this.getOrCreateAgent('explainable-'a'i');
     
-    const biasDetection = await aiEthicsAgent.detectBias({});
-    const fairnessAssessment = await aiEthicsAgent.assessFairness({});
-    const modelInterpretation = await explainableAIAgent.interpretModel({});
+    const $1 = await aiEthicsAgent.detectBias({});
+    const $1 = await aiEthicsAgent.assessFairness({});
+    const $1 = await explainableAIAgent.interpretModel({});
     
     this.saveResults('ethics-complian'c'e', { biasDetection, fairnessAssessment, modelInterpretation });
   }
@@ -1228,11 +1228,11 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   getOrCreateAgent(type) {
     for (const [agentId, agent] of this.agents) {
       if (agent.type === type) {
-        return require(path.join(this.agentsPath, `${agentId}.js`));
+        return require(path.join(this.agentsPath, "${agentId}.js"));
       }
     }
     
-    const config = {
+    const $1 = {
       type: type,
       capabilities: ['generic-capabili't'y'],
       frequency: '1h',
@@ -1243,8 +1243,8 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   saveResults(type, results) {
-    const reportPath = path.join(this.reportsPath, `${type}-${Date.now()}.json`);
-    const report = {
+    const $1 = path.join(this.reportsPath, "${type}-${Date.now()}.json");
+    const $1 = {
       type: type,
       timestamp: new Date(),
       results: results,
@@ -1272,26 +1272,26 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   checkAgentHealth(agent) {
-    const now = new Date();
-    const timeSinceLastActivity = now - agent.lastActivity;
+    const $1 = new Date();
+    const $1 = now - agent.lastActivity;
     
     if (timeSinceLastActivity > 3600000) {
-      console.log(`⚠️  Agent ${agent.id} may be inactive`);
+      console.log("⚠️  Agent ${agent.id} may be inactive");
       this.restartAgent(agent.id);
     }
   }
 
   restartAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'restarti'n'g';
       agent.lastActivity = new Date();
-      console.log(`🔄 Restarting agent: ${agentId}`);
+      console.log("🔄 Restarting agent: ${agentId}");
     }
   }
 
   analyzePerformance() {
-    const analysis = {
+    const $1 = {
       totalAgents: this.agents.size,
       activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
       quantumAlgorithms: this.performanceMetrics.quantumAlgorithms,
@@ -1303,7 +1303,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
   }
 
   generateRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     if (this.performanceMetrics.quantumAlgorithms < 5) {
       recommendations.push('Accelerat'e' quantum algorithm development');
@@ -1335,7 +1335,7 @@ module.exports = ${type.charAt(0).toUpperCase() + type.slice(1)}Agent;
 module.exports = QuantumAIResearchFactory;
 
 if (require.main === module) {
-  const factory = new QuantumAIResearchFactory();
+  const $1 = new QuantumAIResearchFactory();
   console.log('🏭 Quantum AI Research Factory started successfully');
   console.log('📊 Factory Status:', factory.getFactoryStatus());
 } 

@@ -11,11 +11,11 @@ export default function Analytics() {
       </div>
         <meta name = viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       </div>
-      <div className="min-h-screen bg-gray-100> "</div>
-        </div><div className="container mx-auto px-4 py-8 container-responsive" container-responsive">
+      <div className="min-h-screen bg-gray-100> </div>
+        </div><div className=container mx-auto px-4 py-8 container-responsive" container-responsive">
           
           >"</div>
-            <h1 className=" text-3xl font-bold mb-8 text-responsive-lg text-responsive-lg">Analytics</h1>
+            <h1 className=" text-3xl font-bold mb-8 text-responsive-lg text-responsive-lg>Analytics</h1>
             {/* Analytics content */}</div>
           </motion.div></div>
         </div></div>
@@ -26,4 +26,4 @@ export default function Analytics() {
 </div>
   </div>
 );
-}"'"</div>
+}'"</div>

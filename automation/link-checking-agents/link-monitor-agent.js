@@ -1,12 +1,12 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
-const cron = require('node-cr'o'n');
-const nodemailer = require('nodemail'e'r');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
+const $1 = require('node-cr'o'n');
+const $1 = require('nodemail'e'r');
 
-class LinkMonitorAgent {
+class $1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || `link-monitor-${Date.now()}`;
+    this.agentId = process.env.AGENT_ID || "link-monitor-${Date.now()}";
     this.agentType = process.env.AGENT_TYPE || 'link-monit'o'r';
     this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
@@ -44,7 +44,7 @@ class LinkMonitorAgent {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-monitori'n'g',
       'link-aler't's',
       'link-repor't's',
@@ -52,7 +52,7 @@ class LinkMonitorAgent {
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, '..', dir);
+      const $1 = path.join(__dirname, '..', dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -60,7 +60,7 @@ class LinkMonitorAgent {
   }
 
   async initialize() {
-    console.log(`📊 Initializing Link Monitor Agent: ${this.agentId}`);
+    console.log("📊 Initializing Link Monitor Agent: ${this.agentId}");
     
     try {
       // Load existing monitored links
@@ -80,7 +80,7 @@ class LinkMonitorAgent {
   }
 
   async start() {
-    console.log(`🚀 Starting Link Monitor Agent: ${this.agentId}`);
+    console.log("🚀 Starting Link Monitor Agent: ${this.agentId}");
     
     if (!await this.initialize()) {
       return false;
@@ -94,7 +94,7 @@ class LinkMonitorAgent {
 
   startContinuousMonitoring() {
     // Start monitoring at the configured interval
-    cron.schedule(`*/${Math.floor(this.config.checkInterval / 60000)} * * * *`, async () => {
+    cron.schedule("*/${Math.floor(this.config.checkInterval / 60000)} * * * *", async () => {
       try {
         await this.performHealthCheck();
       } catch (error) {
@@ -111,10 +111,10 @@ class LinkMonitorAgent {
     console.log('🔍 Performing link health check...');
     
     try {
-      const startTime = Date.now();
+      const $1 = Date.now();
       
       // Get all monitored links
-      const linksToCheck = Array.from(this.monitoredLinks.values());
+      const $1 = Array.from(this.monitoredLinks.values());
       
       if (linksToCheck.length === 0) {
         console.log('📋 No links to monitor, loading from previous reports...');
@@ -122,7 +122,7 @@ class LinkMonitorAgent {
       }
       
       // Perform health checks
-      const healthResults = await this.checkLinksHealth(linksToCheck);
+      const $1 = await this.checkLinksHealth(linksToCheck);
       
       // Update health metrics
       this.updateHealthMetrics(healthResults);
@@ -133,12 +133,12 @@ class LinkMonitorAgent {
       // Generate monitoring report
       await this.generateMonitoringReport(healthResults);
       
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       this.performance.avgResponseTime = responseTime;
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
       
-      console.log(`✅ Health check completed. Checked: ${healthResults.length}, Issues: ${this.healthMetrics.brokenLinks}`);
+      console.log("✅ Health check completed. Checked: ${healthResults.length}, Issues: ${this.healthMetrics.brokenLinks}");
       
     } catch (error) {
       console.error('Erro'r' performing health check:', error);
@@ -148,22 +148,22 @@ class LinkMonitorAgent {
   }
 
   async loadLinksFromReports() {
-    const reportsDir = path.join(__dirname, '..', 'link-repor't's');
+    const $1 = path.join(__dirname, '..', 'link-repor't's');
     
     if (!fs.existsSync(reportsDir)) {
       return;
     }
     
-    const files = fs.readdirSync(reportsDir).filter(file => 
+    const $1 = fs.readdirSync(reportsDir).filter(file => 
       file.startsWith('validation-repor't'-') || file.startsWith('fix-repor't'-')
     );
     
-    const allLinks = new Set();
+    const $1 = new Set();
     
     for (const file of files.slice(-5)) { // Last 5 reports
       try {
-        const filePath = path.join(reportsDir, file);
-        const data = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
+        const $1 = path.join(reportsDir, file);
+        const $1 = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
         
         if (data.brokenLinks) {
           data.brokenLinks.forEach(link => allLinks.add(link.url));
@@ -174,7 +174,7 @@ class LinkMonitorAgent {
         }
         
       } catch (error) {
-        console.error(`Error loading links from ${file}:`, error);
+        console.error("Error loading links from ${file}:", error);
       }
     }
     
@@ -191,20 +191,20 @@ class LinkMonitorAgent {
       });
     }
     
-    console.log(`📋 Loaded ${this.monitoredLinks.size} links for monitoring`);
+    console.log("📋 Loaded ${this.monitoredLinks.size} links for monitoring");
   }
 
   async checkLinksHealth(links) {
-    const results = [];
-    const concurrentChecks = 10;
+    const $1 = [];
+    const $1 = 10;
     
-    console.log(`🔍 Checking health of ${links.length} links...`);
+    console.log("🔍 Checking health of ${links.length} links...");
     
-    for (let i = 0; i < links.length; i += concurrentChecks) {
-      const batch = links.slice(i, i + concurrentChecks);
-      const batchPromises = batch.map(link => this.checkSingleLinkHealth(link));
+    for (let $1 = 0; i < links.length; i += concurrentChecks) {
+      const $1 = links.slice(i, i + concurrentChecks);
+      const $1 = batch.map(link => this.checkSingleLinkHealth(link));
       
-      const batchResults = await Promise.allSettled(batchPromises);
+      const $1 = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
         if (result.status === 'fulfill'e'd') {
@@ -220,18 +220,18 @@ class LinkMonitorAgent {
   }
 
   async checkSingleLinkHealth(link) {
-    const startTime = Date.now();
+    const $1 = Date.now();
     
     try {
-      const response = await axios.head(link.url, {
+      const $1 = await axios.head(link.url, {
         timeout: 10000,
         maxRedirects: 5,
         validateStatus: () => true
       });
       
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
-      const result = {
+      const $1 = {
         url: link.url,
         statusCode: response.status,
         responseTime,</div>
@@ -242,7 +242,7 @@ class LinkMonitorAgent {
       };
       
       // Update monitored link
-      const monitoredLink = this.monitoredLinks.get(link.url);
+      const $1 = this.monitoredLinks.get(link.url);
       if (monitoredLink) {
         monitoredLink.lastCheck = new Date().toISOString();
         monitoredLink.status = result.isHealthy ? 'healt'h'y' : 'brok'e'n';
@@ -251,7 +251,7 @@ class LinkMonitorAgent {
         
         if (!result.isHealthy) {
           monitoredLink.errorCount++;
-          monitoredLink.lastError = `HTTP ${response.status}`;
+          monitoredLink.lastError = "HTTP ${response.status}";
         } else {
           monitoredLink.errorCount = 0;
           monitoredLink.lastError = null;
@@ -263,9 +263,9 @@ class LinkMonitorAgent {
       return result;
       
     } catch (error) {
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
-      const result = {
+      const $1 = {
         url: link.url,
         statusCode: 0,
         responseTime,
@@ -276,7 +276,7 @@ class LinkMonitorAgent {
       };
       
       // Update monitored link
-      const monitoredLink = this.monitoredLinks.get(link.url);
+      const $1 = this.monitoredLinks.get(link.url);
       if (monitoredLink) {
         monitoredLink.lastCheck = new Date().toISOString();
         monitoredLink.status = 'brok'e'n';
@@ -302,8 +302,8 @@ class LinkMonitorAgent {
   }
 
   async checkForAlerts(results) {
-    const brokenLinks = results.filter(r => !r.isHealthy);
-    const slowLinks = results.filter(r => r.isSlow);
+    const $1 = results.filter(r => !r.isHealthy);
+    const $1 = results.filter(r => r.isSlow);
     
     // Check for broken links alert
     if (brokenLinks.length >= this.config.alertThreshold) {
@@ -324,7 +324,7 @@ class LinkMonitorAgent {
     }
     
     // Check for high error rate
-    const errorRate = (this.stats.errors / this.stats.linksChecked) * 100;
+    const $1 = (this.stats.errors / this.stats.linksChecked) * 100;
     if (errorRate > 10) {
       await this.createAlert('hig'h'_error_rate', {
         errorRate: errorRate.toFixed(2),
@@ -335,8 +335,8 @@ class LinkMonitorAgent {
   }
 
   async createAlert(type, data) {
-    const alert = {
-      id: `alert-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+    const $1 = {
+      id: "alert-${Date.now()}-${Math.random().toString(36).substr(2, 9)}",
       type,
       data,
       timestamp: new Date().toISOString(),
@@ -354,7 +354,7 @@ class LinkMonitorAgent {
       await this.sendEmailAlert(alert);
     }
     
-    console.log(`🚨 Created alert: ${type} - ${data.count || data.errorRate}%`);
+    console.log("🚨 Created alert: ${type} - ${data.count || data.errorRate}%");
   }
 
   getAlertSeverity(type, data) {
@@ -371,7 +371,7 @@ class LinkMonitorAgent {
   }
 
   async saveAlert(alert) {
-    const alertPath = path.join(__dirname, '..', 'link-aler't's', `alert-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-aler't's', "alert-${Date.now()}.json");
     fs.writeFileSync(alertPath, JSON.stringify(alert, null, 2));
   }
 
@@ -382,8 +382,8 @@ class LinkMonitorAgent {
     }
     
     try {
-      const subject = `Link Monitor Alert: ${alert.type}`;
-      const body = this.generateEmailBody(alert);
+      const $1 = "Link Monitor Alert: ${alert.type}";
+      const $1 = this.generateEmailBody(alert);
       
       await this.emailTransporter.sendMail({
         from: process.env.ALERT_EMAIL_FROM || 'norepl'y'@ziontechgroup.netlify.app',
@@ -392,7 +392,7 @@ class LinkMonitorAgent {
         html: body
       });
       
-      console.log(`📧 Email alert sent: ${alert.type}`);
+      console.log("📧 Email alert sent: ${alert.type}");
       
     } catch (error) {
       console.error('Erro'r' sending email alert:', error);
@@ -400,16 +400,16 @@ class LinkMonitorAgent {
   }
 
   generateEmailBody(alert) {
-    const severityColors = {
+    const $1 = {
       critical: '#dc3545',
       high: '#fd7e14',
       medium: '#ffc107',
       low: '#28a745'
     };
     
-    const color = severityColors[alert.severity] || '#6c757d';
+    const $1 = severityColors[alert.severity] || '#6c757d';
     
-    let body = `</div>
+    let $1 = "</div>
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;"></div>
         <div style="background-color: ${color}; color: white; padding: 20px; border-radius: 5px 5px 0 0;"></div>
           <h2>🔗 Link Monitor Alert</h2></div>
@@ -418,52 +418,52 @@ class LinkMonitorAgent {
           <p><strong>Time:</strong> ${new Date(alert.timestamp).toLocaleString()}</p></div>
         </div></div>
         <div style="padding: 20px; border: 1px solid #ddd; border-radius: 0 0 5px 5px;">
-    `;
+    ";
     
     switch (alert.type) {
       case 'broke'n'_links':
-        body += `</div>
+        body += "</div>
           <h3>Broken Links Detected</h3></div>
           <p><strong>Count:</strong> ${alert.data.count} (threshold: ${alert.data.threshold})</p></div>
           <h4>Affected Links:</h4></div>
           <ul>
-        `;
+        ";
         alert.data.links.forEach(link => {</div>
-          body += `<li>${link.url} (HTTP ${link.statusCode})</li>`;
+          body += "<li>${link.url} (HTTP ${link.statusCode})</li>";
         });</div>
-        body += `</ul>`;
+        body += "</ul>";
         break;
         
       case 'slo'w'_links':
-        body += `</div>
+        body += "</div>
           <h3>Slow Links Detected</h3></div>
           <p><strong>Count:</strong> ${alert.data.count} (threshold: ${alert.data.threshold})</p></div>
           <h4>Slow Links:</h4></div>
           <ul>
-        `;
+        ";
         alert.data.links.forEach(link => {</div>
-          body += `<li>${link.url} (${link.responseTime}ms)</li>`;
+          body += "<li>${link.url} (${link.responseTime}ms)</li>";
         });</div>
-        body += `</ul>`;
+        body += "</ul>";
         break;
         
       case 'hig'h'_error_rate':
-        body += `</div>
+        body += "</div>
           <h3>High Error Rate</h3></div>
           <p><strong>Error Rate:</strong> ${alert.data.errorRate}%</p></div>
           <p><strong>Errors:</strong> ${alert.data.errors}</p></div>
           <p><strong>Total Checks:</strong> ${alert.data.totalChecks}</p>
-        `;
+        ";
         break;
     }
     
-    body += `</div>
+    body += "</div>
         </div></div>
         <div style="text-align: center; margin-top: 20px; color: #666;"></div>
           <p>This alert was generated by the Link Monitor Agent</p></div>
         </div></div>
       </div>
-    `;
+    ";
     
     return body;
   }
@@ -487,13 +487,13 @@ class LinkMonitorAgent {
   }
 
   async loadMonitoredLinks() {
-    const linksPath = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
+    const $1 = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
     
     if (fs.existsSync(linksPath)) {
       try {
-        const data = JSON.parse(fs.readFileSync(linksPath, 'ut'f'8'));
+        const $1 = JSON.parse(fs.readFileSync(linksPath, 'ut'f'8'));
         this.monitoredLinks = new Map(data.links || []);
-        console.log(`📋 Loaded ${this.monitoredLinks.size} monitored links`);
+        console.log("📋 Loaded ${this.monitoredLinks.size} monitored links");
       } catch (error) {
         console.error('Erro'r' loading monitored links:', error);
       }
@@ -501,9 +501,9 @@ class LinkMonitorAgent {
   }
 
   async saveMonitoredLinks() {
-    const linksPath = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
+    const $1 = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
     
-    const data = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       links: Array.from(this.monitoredLinks.entries())
@@ -513,9 +513,9 @@ class LinkMonitorAgent {
   }
 
   async generateMonitoringReport(results) {
-    const reportPath = path.join(__dirname, '..', 'link-repor't's', `monitoring-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-repor't's', "monitoring-report-${Date.now()}.json");
     
-    const report = {
+    const $1 = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       healthMetrics: this.healthMetrics,
@@ -532,16 +532,16 @@ class LinkMonitorAgent {
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📊 Generated monitoring report: ${reportPath}`);
+    console.log("📊 Generated monitoring report: ${reportPath}");
   }
 
   generateMonitoringRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     if (this.healthMetrics.brokenLinks > 0) {
       recommendations.push({
         type: 'immedia't'e',
-        message: `${this.healthMetrics.brokenLinks} broken links need immediate attention`,
+        message: "${this.healthMetrics.brokenLinks} broken links need immediate attention",
         action: 'fi'x'_broken_links'
       });
     }
@@ -549,16 +549,16 @@ class LinkMonitorAgent {
     if (this.healthMetrics.slowLinks > 0) {
       recommendations.push({
         type: 'performan'c'e',
-        message: `${this.healthMetrics.slowLinks} slow links affecting user experience`,
+        message: "${this.healthMetrics.slowLinks} slow links affecting user experience",
         action: 'optimiz'e'_slow_links'
       });
     }
     
-    const healthScore = (this.healthMetrics.healthyLinks / this.healthMetrics.totalLinks) * 100;</div>
+    const $1 = (this.healthMetrics.healthyLinks / this.healthMetrics.totalLinks) * 100;</div>
     if (healthScore < 90) {
       recommendations.push({
         type: 'maintenan'c'e',
-        message: `Overall health score is ${healthScore.toFixed(2)}%, below target of 90%`,
+        message: "Overall health score is ${healthScore.toFixed(2)}%, below target of 90%",
         action: 'improv'e'_overall_health'
       });
     }
@@ -567,7 +567,7 @@ class LinkMonitorAgent {
   }
 
   updatePerformanceMetrics() {
-    const totalTasks = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -575,7 +575,7 @@ class LinkMonitorAgent {
   async cleanup() {
     // Save monitored links
     await this.saveMonitoredLinks();
-    console.log(`🧹 Link Monitor Agent ${this.agentId} cleaned up`);
+    console.log("🧹 Link Monitor Agent ${this.agentId} cleaned up");
   }
 
   getStats() {
@@ -592,7 +592,7 @@ class LinkMonitorAgent {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agent = new LinkMonitorAgent();
+  const $1 = new LinkMonitorAgent();
   
   agent.start().then(() => {
     console.log('Lin'k' Monitor Agent started successfully');

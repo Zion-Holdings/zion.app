@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next;}
 import { createClient } from '@supabase/supabase-js'
 ;
-const supabase = createClient(
+const $1 = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-k'e'y;
 );
@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       email,
       password,'
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || http'://localhost:3000'}/auth/callback`,
+        emailRedirectTo: "${process.env.NEXT_PUBLIC_SITE_URL || http'://localhost:3000'}/auth/callback",
         data: {
           test: true}}}
     if (error) {
@@ -39,5 +39,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       session: data.session}'
   } catch (error) {
     console.error('Test email confirmation error: , error
-    return res.status(500).json({ error: 'Interna'l server error}}''`
-} ))))))))''`
+    return res.status(500).json({ error: 'Interna'l server error}}''"
+} ))))))))''"

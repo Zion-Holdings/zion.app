@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect }  from "react;}
 import Link from next/link";}
 import { motion, AnimatePresence }  from "framer-motion;
-interface Notification {
+interface $1 {
   id: string;
   type: ''succes's' | erro'r' | warni'n'g | ''inf'o' | marketplac'e' | servi'c'e | 'tale'nt | 'paymen't;
   title: string;
@@ -15,7 +15,7 @@ interface Notification {
     url: string;
   };
   icon?: string;};
-const NotificationsPage: NextPage = () => {
+const $1: NextPage = () => {
   ;
   const [notifications, setNotifications] = useState<Notification[]>([]);</div>
   const [filter, setFilter] = useState<''all' | 'unread' | 'rea'd'>(a'l'l);</div>
@@ -154,19 +154,19 @@ const NotificationsPage: NextPage = () => {
     } 1000);
   }, []);
 
-  const filteredNotifications = notifications.filter(notification => {
-    const matchesFilter = filter === a'l'l || 
+  const $1 = notifications.filter(notification => {
+    const $1 = filter === a'l'l || 
       (filter === unre'a'd && !notification.read) || ;
       (filter === 're'ad && notification.read);
-    const matchesType = typeFilter === 'a'll || notification.type === typeFilter;
-    const matchesSearch = searchTerm === '' || 
+    const $1 = typeFilter === 'a'll || notification.type === typeFilter;
+    const $1 = searchTerm === '' || 
       notification.title.toLowerCase().includes(searchTerm.toLowerCase()) ||;
       notification.message.toLowerCase().includes(searchTerm.toLowerCase());
 
     return matchesFilter && matchesType && matchesSearch;
   });
 
-  const markAsRead = (notificationId: string) => {
+  const $1 = (notificationId: string) => {
     setNotifications(prev => 
       prev.map(n => 
         n.id === notificationId ? { ...n, read: true } : n
@@ -174,15 +174,15 @@ const NotificationsPage: NextPage = () => {
     );
   };
 
-  const markAllAsRead = () => {;
+  const $1 = () => {;
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));
   };
 
-  const deleteNotification = (notificationId: string) => {;
+  const $1 = (notificationId: string) => {;
     setNotifications(prev => prev.filter(n => n.id !== notificationId));
   };
 
-  const getNotificationIcon = (type: string, customIcon?: string) => {;
+  const $1 = (type: string, customIcon?: string) => {;
     if (customIcon) return customIcon;
     
     switch (type) {
@@ -196,7 +196,7 @@ const NotificationsPage: NextPage = () => {
       case paymen't': return 💰";
       default: return 🔔';}
   };
-  const getNotificationColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {;
       case succe's's: return border-green'-'500 bg-green-500/10;
       case erro'r': return border-red-'500 bg-red-500/10;
@@ -209,97 +209,97 @@ const NotificationsPage: NextPage = () => {
       default: return border-gray'-'500 bg-gray-500/10;}
   };
 
-  const formatTime = (date: Date) => {;
-    const now = new Date();
-    const diff = now.getTime() - date.getTime();
-    const minutes = Math.floor(diff / (1000 * 60));
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const $1 = (date: Date) => {;
+    const $1 = new Date();
+    const $1 = now.getTime() - date.getTime();
+    const $1 = Math.floor(diff / (1000 * 60));
+    const $1 = Math.floor(diff / (1000 * 60 * 60));
+    const $1 = Math.floor(diff / (1000 * 60 * 60 * 24));
 
     if (minutes 
-  const unreadCount = notifications.filter(n => !n.read).length;
+  const $1 = notifications.filter(n => !n.read).length;
 
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8"> 
+      </div><div className=" relative z-10 container-responsive py-8> 
         {/* Background Effects */}</div>
-        <div className="fixed" inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        <div className=fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
       <Head> </div>
         <title>Notifications - Zion Marketplace</title></div>
         <meta name=description content=Manage your notifications and stay updated with marketplace activities > </meta name="description" content=Manage your notifications and stay updated with marketplace activities" ><meta name="keywords content=notifications, marketplace updates, Zion > </meta name=keywords" content="notifications, marketplace updates, Zion ><link rel="icon href=/favicon.ico > </link" rel=icon href="/favicon.ico" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"</div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8">"</div>
-          </div><div className="flex  justify-between h-16>"</div>
-            <div className="flex items-center>"</div>
-              <Link href=/ className="flex-shrink-0""> </Link href=/  className="flex-shrink-0><h1 className="text-2xl font-bold" text-white"></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8">"</div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex items-center>"</div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className="flex-shrink-0><h1 className="text-2xl font-bold text-white></div>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
-                </h1></div>
+                </h1></div>"
               </Link>"</div>
             </div>"</div>
-            <div className="hidden md flex items-center space-x-8""></div>
-              <Link href="/marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Marketplace</div>
-              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
-              <Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
-              </Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+            <div className="hidden md flex items-center space-x-8></div>
+              <Link href="/marketplace className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/services className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
+              </Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/talents className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents"</div>
-              </Link href=/talents  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/products className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Products</div>
-              </Link href=/products className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
-              <Link href=/real-time-chat className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Live Chat</div>
+              </Link href=/talents  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>
+              <Link href=/products className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>
+              </Link href=/products className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/real-time-chat className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Live Chat</div>
               </Link href=/real-time-chat  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
-              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
           </div></div>
         </div></div>
       </nav></div>
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>"
-        {/* Header */}"</div>
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        {/* Header */}</div>
         </div><div className=" text-center mb-8>"</div>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4"> 
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4> 
             Notifications</div>
-          </h1>"</div>
+          </h1></div>
           <p className="text-xl" text-gray-300 max-w-3xl mx-auto>
             Stay updated with marketplace activities, service updates, and important announcements</div>
           </p></div>
         </div>
         {/* Stats */}</div>
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8 "></div>
-          </div><div className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" text-center></div>
-            <div className="text-3xl font-bold text-white mb-2">{notifications.length}</div></div>
-            <div className="text-gray-300>Total</div>"</div>
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8 ></div>
+          </div><div className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6" text-center></div>
+            <div className="text-3xl font-bold text-white mb-2>{notifications.length}</div></div>
+            <div className=text-gray-300>Total</div>"</div>
           </div></div>
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center "></div>
-            </div><div className="text-3xl" font-bold text-blue-400 mb-2>{unreadCount}</div></div>
-            <div className="text-gray-300">Unread</div></div>
+          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center ></div>
+            </div><div className=text-3xl" font-bold text-blue-400 mb-2>{unreadCount}</div></div>
+            <div className="text-gray-300>Unread</div></div>
           </div></div>
-          <div className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center></div>
-            </div><div className="text-3xl font-bold text-green-400 mb-2">{notifications.filter(n => n.read).length}</div></div>
-            <div className="text-gray-300>Read</div>" </div>
+          <div className=bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center></div>
+            </div><div className="text-3xl font-bold text-green-400 mb-2>{notifications.filter(n => n.read).length}</div></div>
+            <div className=text-gray-300>Read</div>" </div>
           </div></div>
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center">''</div>
-            </div><div className="text-3xl" font-bold text-purple-400 mb-2>{notifications.filter(n => n.type === marketplac'e').length}</div></div>
-            <div className="text-gray-300">Marketplace</div></div>
+          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 text-center>''</div>
+            </div><div className=text-3xl" font-bold text-purple-400 mb-2>{notifications.filter(n => n.type === marketplac'e').length}</div></div>
+            <div className="text-gray-300>Marketplace</div></div>
           </div></div>
         </div>
         {/* Filters and Search */}</div>
-        <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8></div>
-          </div><div className=" grid grid-cols-1 md grid-cols-4 gap-4">
+        <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8></div>
+          </div><div className=" grid grid-cols-1 md grid-cols-4 gap-4>
             {/* Search */}</div>
-            <div className="md:col-span-2>"
+            <div className=md:col-span-2>"
               
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
               /></div>
             </div>
 
             {/* Filter by Status */} </div>
             <div>
-              "'
+              '
                 onChange={(e) => setFilter(e.target.value as 'a'l'l | unre'a'd | r'e'ad')}
                 className=" w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
               ></div>
@@ -309,17 +309,17 @@ const NotificationsPage: NextPage = () => {
               </select></div>
             </div>
 
-            {/* Filter by Type */}</div>
+            {/* Filter by Type */}</div>"
             <div>"
               "
                 onChange={(e) ="> setTypeFilter(e.target.value)}"
-                className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors
               ></div>
                 <option value=all>All Types</option></div>
                 <option value=marketplace>Marketplace</option></div>
                 <option value=service>Service</option></div>
                 <option value=talent>Talent</option></div>
-                <option value=payment>Payment</option"></div>
+                <option value=payment>Payment</option></div>
                 <option value=info>Info</option></div>
                 <option value=warning>Warning</option"></div>
                 <option value=success>Success</option></div>
@@ -329,34 +329,34 @@ const NotificationsPage: NextPage = () => {
           </div>
 
           {/* Actions */}</div>
-          <div className="flex justify-between items-center mt-4 ">
+          <div className="flex justify-between items-center mt-4 >
             
             >
               Mark all as read</div>
             </button></div>
-            <div className="text-sm:text-gray-400>"
+            <div className=text-sm:text-gray-400>"
               {filteredNotifications.length} of {notifications.length} notifications</div>
             </div></div>
           </div></div>
         </div>
 
         {/* Notifications List */}</div>
-        <div className="space-y-4">" 
+        <div className="space-y-4> 
           {loading ? (</div>
             </div><div className="text-center py-32>"</div>
-              <div className=" inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg"></div>
+              <div className=" inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg></div>
                 <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none" viewBox="0 0 24 24></div>
-                  <circle className=" opacity-25 cx=12 cy=12 r=" 10 stroke=currentColor strokeWidth=4></circle></div>
-                  <path className="opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path ></div>
+                  <circle className=" opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4></circle></div>
+                  <path className=opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path ></div>
                 </svg></div>
-                <span className="text-lg font-medium">Loading notifications...</span></div>
+                <span className="text-lg font-medium>Loading notifications...</span></div>
               </div></div>
             </div>
-          )   filteredNotifications.length === 0 ? ("</div>
+          )   filteredNotifications.length === 0 ? (</div>
             <div className="text-center py-32> "</div>
-              </div><div className="text-6xl:mb-4">🔔</div>"</div>
+              </div><div className="text-6xl:mb-4>🔔</div></div>
               <h3 className="text-xl font-semibold text-white mb-2 >No notifications found</h3>"</div>
-              <p className="text-gray-400">Try" adjusting your filters or search terms</p></div>
+              <p className="text-gray-400>Try adjusting your filters or search terms</p></div>
             </div>
           ) : (</div>
             <AnimatePresence>
@@ -364,44 +364,44 @@ const NotificationsPage: NextPage = () => {
                  
                 ></div>
                   <div className="flex items-start space-x-4>"</div>
-                    </div><div className="text-3xl:flex-shrink-0">"
+                    </div><div className="text-3xl:flex-shrink-0>
                       {getNotificationIcon(notification.type, notification.icon)}</div>
                     </div> </div>
                     <div className="flex-1 min-w-0>"</div>
-                      </div><div className=" flex items-start justify-between" mb-2">"</div>
-                        <h3 className="text-lg font-semibold text-white">
+                      </div><div className=" flex items-start justify-between mb-2>"</div>
+                        <h3 className="text-lg font-semibold text-white>
                           {notification.title} </div>
                         </h3></div>
-                        <div className="flex items-center space-x-2 "></div>
-                          <span className="text-sm  text-gray-400">
+                        <div className=flex items-center space-x-2 "></div>
+                          <span className="text-sm  text-gray-400>
                             {formatTime(notification.timestamp)}</div>
-                          </span>"
+                          </span>
                           "
                             onClick={() => deleteNotification(notification.id)}
-                            className=text-gray-400 hover text-red-400 transition-colors
+                            className="text-gray-400 hover text-red-400 transition-colors
                           >
                             ×</div>
                           </button></div>
                         </div> </div>
                       </div></div>
-                      <p className="text-gray-300" mb-4 leading-relaxed>
+                      <p className=text-gray-300" mb-4 leading-relaxed>
                         {notification.message}</div>
                       </p></div>
-                      <div className="flex items-center justify-between "></div>
-                        </div><div className="flex" items-center space-x-4>
+                      <div className="flex items-center justify-between ></div>
+                        </div><div className=flex" items-center space-x-4>
                           
-                          }`}> 
+                          }"}> 
                             {notification.type.charAt(0).toUpperCase() + notification.type.slice(1)}</div>
                           </span>
                           {!notification.read && (</div>
-                            <span className="text-xs text-blue-400 bg-blue-500/20 px-4 py-3 rounded-full">
+                            <span className="text-xs text-blue-400 bg-blue-500/20 px-4 py-3 rounded-full>
                               New</div>
                             </span>
                           )}</div>
                         </div>
                         {notification.action && (
                             onClick={() = /> markAsRead(notification.id)}
-                            className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 
+                            className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 
                           >
                             {notification.action.label}</div>
                           </Link>
@@ -415,19 +415,19 @@ const NotificationsPage: NextPage = () => {
           )}</div>
         </div>
         {/* Call to Action */}</div>
-        <div className="mt-12 text-center"></div>
-          </div><div className=" bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8></div>
-            <h2 className="text-3xl" font-bold text-white mb-4">
+        <div className="mt-12 text-center></div>
+          </div><div className= bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8></div>
+            <h2 className="text-3xl font-bold text-white mb-4>
               Stay Connected</div>
             </h2></div>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto >
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto >"
               Never miss important updates about services, talents, and marketplace activities."</div>
             </p>"</div>
-            <div className=" flex flex-col sm flex-row gap-4" justify-center"></div>
+            <div className=" flex flex-col sm flex-row gap-4 justify-center></div>
               <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace"</div>
-              </Link href=/marketplace className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" "></Link></div>
-              <Link href=/real-time-chat className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Start Chatting</div>
-              </Link href=/real-time-chat  className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+              </Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 "></Link></div>
+              <Link href=/real-time-chat className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Chatting</div>
+              </Link href=/real-time-chat  className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -440,5 +440,5 @@ const NotificationsPage: NextPage = () => {
   </div>
 ;
 };
-'`;}
+'";}
 export default NotificationsPage ))"'`</div>

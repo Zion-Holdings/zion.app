@@ -1,16 +1,16 @@
 
-            const factory = require('./monetization-autonomous-factory');
-            const factoryInstance = new factory();
+            const $1 = require('./monetization-autonomous-factory');
+            const $1 = new factory();
             
             async function runEcommerceOptimization() {
                 try {
-                    const agent = factoryInstance.createEcommerceAgent();
+                    const $1 = factoryInstance.createEcommerceAgent();
                     console.log('Ecommerc'e' agent created:', agent.agentId);
                     
                     // Run optimization every 2 hours
                     setInterval(async () => {
                         try {
-                            const newAgent = factoryInstance.createEcommerceAgent();
+                            const $1 = factoryInstance.createEcommerceAgent();
                             console.log('Ecommerc'e' optimization cycle completed');
                         } catch (error) {
                             console.error('Ecommerc'e' optimization error:', error);

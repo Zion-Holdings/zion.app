@@ -8,11 +8,11 @@ async function main() {
 
   try {
     // Initialize LinkedIn bot
-    const bot = new LinkedInBot();
+    const $1 = new LinkedInBot();
     await bot.initialize();
     
     // Initialize cron manager
-    const cronManager = new LinkedInCronManager();
+    const $1 = new LinkedInCronManager();
     await cronManager.start();
 
     console.log('LinkedI'n' Automation components initialized successfully');

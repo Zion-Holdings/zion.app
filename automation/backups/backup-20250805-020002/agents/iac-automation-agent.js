@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class IACAutomationAgent {
+class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
@@ -16,7 +16,7 @@ class IACAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'infrastructure-repor't's'),
       path.join(this.reportsDir, 'validation-repor't's'),
@@ -33,7 +33,7 @@ class IACAutomationAgent {
   }
 
   async start() {
-    console.log(`IAC Automation Agent ${this.agentId} started`);
+    console.log("IAC Automation Agent ${this.agentId} started");
     
     // Initial infrastructure analysis
     await this.analyzeInfrastructure();
@@ -58,7 +58,7 @@ class IACAutomationAgent {
     try {
       console.log('Performin'g' comprehensive infrastructure analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         infrastructureFiles: [],
@@ -98,15 +98,15 @@ class IACAutomationAgent {
   }
 
   async discoverInfrastructureFiles() {
-    const files = [];
+    const $1 = [];
     
     try {
       // Look for infrastructure files
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const fileInfo = this.extractInfrastructureInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractInfrastructureInfo(file, content);
         
         if (fileInfo) {
           files.push(fileInfo);
@@ -121,23 +121,23 @@ class IACAutomationAgent {
   }
 
   findIACFiles() {
-    const iacFiles = [];
-    const iacExtensions = ['.tf', '.yaml', '.yml', '.json', '.hcl'];
+    const $1 = [];
+    const $1 = ['.tf', '.yaml', '.yml', '.json', '.hcl'];
     
     try {
-      const findIACFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findIACFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (iacExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsInfrastructureCode(content)) {
                 iacFiles.push(fullPath);
               }
@@ -156,7 +156,7 @@ class IACAutomationAgent {
   }
 
   containsInfrastructureCode(content) {
-    const iacKeywords = [
+    const $1 = [
       'terrafo'r'm', 'aw's'_', 'googl'e'_', 'azur'e'_', 'kubernet'e's', 'dock'e'r',
       'resour'c'e', 'provid'e'r', 'variab'l'e', 'outp'u't', 'modu'l'e',
       'networki'n'g', 'securi't'y', 'compu't'e', 'stora'g'e', 'databa's'e'
@@ -166,7 +166,7 @@ class IACAutomationAgent {
   }
 
   extractInfrastructureInfo(file, content) {
-    const fileInfo = {
+    const $1 = {
       file: file,
       type: 'unkno'w'n',
       provider: 'unkno'w'n',
@@ -175,7 +175,7 @@ class IACAutomationAgent {
       outputs: []
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect provider
     if (lowerContent.includes('aw's'_')) {
@@ -210,10 +210,10 @@ class IACAutomationAgent {
   }
 
   extractResources(content) {
-    const resources = [];
+    const $1 = [];
     
     // Extract Terraform resources
-    const resourceRegex = /resource\s+["']([^"']+)["']\s+["']([^"']+)["']/g;
+    const $1 = /resource\s+["']([^"']+)["']\s+["']([^"']+)["']/g;
     let match;
     
     while ((match = resourceRegex.exec(content)) !== null) {
@@ -225,7 +225,7 @@ class IACAutomationAgent {
     }
     
     // Extract Kubernetes resources
-    const k8sRegex = /kind:\s*([A-Za-z]+)/g;
+    const $1 = /kind:\s*([A-Za-z]+)/g;
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
         type: match[1],
@@ -238,10 +238,10 @@ class IACAutomationAgent {
   }
 
   extractVariables(content) {
-    const variables = [];
+    const $1 = [];
     
     // Extract Terraform variables
-    const varRegex = /variable\s+["']([^"']+)["']/g;
+    const $1 = /variable\s+["']([^"']+)["']/g;
     let match;
     
     while ((match = varRegex.exec(content)) !== null) {
@@ -255,10 +255,10 @@ class IACAutomationAgent {
   }
 
   extractOutputs(content) {
-    const outputs = [];
+    const $1 = [];
     
     // Extract Terraform outputs
-    const outputRegex = /output\s+["']([^"']+)["']/g;
+    const $1 = /output\s+["']([^"']+)["']/g;
     let match;
     
     while ((match = outputRegex.exec(content)) !== null) {
@@ -272,7 +272,7 @@ class IACAutomationAgent {
   }
 
   async analyzeCloudResources() {
-    const resources = {
+    const $1 = {
       compute: [],
       storage: [],
       networking: [],
@@ -282,11 +282,11 @@ class IACAutomationAgent {
     };
     
     try {
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const fileResources = this.categorizeResources(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.categorizeResources(content);
         
         // Add resources to categories
         for (const [category, resourceList] of Object.entries(fileResources)) {
@@ -309,7 +309,7 @@ class IACAutomationAgent {
   }
 
   categorizeResources(content) {
-    const categories = {
+    const $1 = {
       compute: [],
       storage: [],
       networking: [],
@@ -317,7 +317,7 @@ class IACAutomationAgent {
       security: []
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Categorize by resource type
     if (lowerContent.includes('aw's'_instance') || lowerContent.includes('aw's'_lambda')) {
@@ -344,7 +344,7 @@ class IACAutomationAgent {
   }
 
   async analyzeSecurityConfig() {
-    const security = {
+    const $1 = {
       securityGroups: [],
       iamPolicies: [],
       encryption: [],
@@ -353,11 +353,11 @@ class IACAutomationAgent {
     };
     
     try {
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const securityInfo = this.extractSecurityInfo(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractSecurityInfo(content);
         
         // Add security information
         security.securityGroups.push(...securityInfo.securityGroups);
@@ -375,7 +375,7 @@ class IACAutomationAgent {
   }
 
   extractSecurityInfo(content) {
-    const securityInfo = {
+    const $1 = {
       securityGroups: [],
       iamPolicies: [],
       encryption: [],
@@ -383,7 +383,7 @@ class IACAutomationAgent {
       vulnerabilities: []
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Extract security groups
     if (lowerContent.includes('aw's'_security_group')) {
@@ -414,7 +414,7 @@ class IACAutomationAgent {
   }
 
   async analyzeCosts() {
-    const costs = {
+    const $1 = {
       estimatedMonthlyCost: 0,
       costBreakdown: {},
       optimizationOpportunities: [],
@@ -449,18 +449,18 @@ class IACAutomationAgent {
   }
 
   async checkCompliance() {
-    const compliance = {
+    const $1 = {
       standards: [],
       violations: [],
       recommendations: []
     };
     
     try {
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const complianceInfo = this.checkFileCompliance(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.checkFileCompliance(content);
         
         compliance.standards.push(...complianceInfo.standards);
         compliance.violations.push(...complianceInfo.violations);
@@ -475,13 +475,13 @@ class IACAutomationAgent {
   }
 
   checkFileCompliance(content) {
-    const complianceInfo = {
+    const $1 = {
       standards: [],
       violations: [],
       recommendations: []
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Check for security standards
     if (lowerContent.includes('encrypti'o'n')) {
@@ -506,7 +506,7 @@ class IACAutomationAgent {
   }
 
   generateRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
     // Security recommendations
     if (analysis.securityConfig.vulnerabilities.length > 0) {
@@ -545,7 +545,7 @@ class IACAutomationAgent {
     try {
       console.log('Monitorin'g' infrastructure...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         resources: [],
@@ -553,11 +553,11 @@ class IACAutomationAgent {
       };
       
       // Check infrastructure status
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const status = this.checkInfrastructureStatus(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.checkInfrastructureStatus(file, content);
         
         monitoring.resources.push(status);
         
@@ -567,8 +567,8 @@ class IACAutomationAgent {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'infrastructure-repor't's', `monitoring-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'infrastructure-repor't's', "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -577,14 +577,14 @@ class IACAutomationAgent {
   }
 
   checkInfrastructureStatus(file, content) {
-    const status = {
+    const $1 = {
       file: file,
       status: 'healt'h'y',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Check for common issues
     if (lowerContent.includes('0.0.0.0/0')) {
@@ -611,7 +611,7 @@ class IACAutomationAgent {
     try {
       console.log('Validatin'g' infrastructure...');
       
-      const validationReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         validations: [],
@@ -619,11 +619,11 @@ class IACAutomationAgent {
       };
       
       // Validate infrastructure files
-      const iacFiles = this.findIACFiles();
+      const $1 = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const validation = this.validateInfrastructureFile(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.validateInfrastructureFile(file, content);
         
         validationReport.validations.push(validation);
         
@@ -633,8 +633,8 @@ class IACAutomationAgent {
       }
       
       // Save validation report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'validation-repor't's', `validation-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'validation-repor't's', "validation-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(validationReport, null, 2));
       
     } catch (error) {
@@ -643,7 +643,7 @@ class IACAutomationAgent {
   }
 
   validateInfrastructureFile(file, content) {
-    const validation = {
+    const $1 = {
       file: file,
       isValid: true,
       issues: []
@@ -675,7 +675,7 @@ class IACAutomationAgent {
     try {
       console.log('Monitorin'g' deployments...');
       
-      const deploymentReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         deployments: [],
@@ -683,11 +683,11 @@ class IACAutomationAgent {
       };
       
       // Check for deployment files
-      const deploymentFiles = this.findDeploymentFiles();
+      const $1 = this.findDeploymentFiles();
       
       for (const file of deploymentFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const deployment = this.analyzeDeployment(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.analyzeDeployment(file, content);
         
         deploymentReport.deployments.push(deployment);
         
@@ -697,8 +697,8 @@ class IACAutomationAgent {
       }
       
       // Save deployment report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'deployment-repor't's', `deployment-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'deployment-repor't's', "deployment-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(deploymentReport, null, 2));
       
     } catch (error) {
@@ -707,23 +707,23 @@ class IACAutomationAgent {
   }
 
   findDeploymentFiles() {
-    const deploymentFiles = [];
-    const deploymentExtensions = ['.yaml', '.yml', '.json', '.tf'];
+    const $1 = [];
+    const $1 = ['.yaml', '.yml', '.json', '.tf'];
     
     try {
-      const findDeploymentFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findDeploymentFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (deploymentExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsDeploymentCode(content)) {
                 deploymentFiles.push(fullPath);
               }
@@ -742,7 +742,7 @@ class IACAutomationAgent {
   }
 
   containsDeploymentCode(content) {
-    const deploymentKeywords = [
+    const $1 = [
       'deployme'n't', 'servi'c'e', 'ingre's's', 'configm'a'p', 'secr'e't',
       'replic'a's', 'ima'g'e', 'contain'e'r', 'p'o'd', 'namespa'c'e'
     ];
@@ -751,14 +751,14 @@ class IACAutomationAgent {
   }
 
   analyzeDeployment(file, content) {
-    const deployment = {
+    const $1 = {
       file: file,
       status: 'healt'h'y',
       resources: [],
       issues: []
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Extract deployment resources
     if (lowerContent.includes('deployme'n't')) {
@@ -786,20 +786,20 @@ class IACAutomationAgent {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'infrastructure-repor't's', `analysis-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'infrastructure-repor't's', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Analysis report saved: ${reportPath}`);
+    console.log("Analysis report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`IAC Automation Agent ${this.agentId} stopping...`);
+    console.log("IAC Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }
 
 // Start the agent;
-const agent = new IACAutomationAgent();
+const $1 = new IACAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();

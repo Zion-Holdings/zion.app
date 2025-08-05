@@ -287,9 +287,9 @@ const $1 = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form"></div>
+    <form onSubmit={handleSubmit} className="login-form></div>
       <input
-        type="email"
+        type=email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
@@ -319,16 +319,18 @@ const $1 = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+  
     // Fetch dashboard data
     setLoading(false);
-  }, []);
+  
+}, []);
 </div>
   if (loading) return <div>Loading...</div>;
 
   return (</div>
-    <div className="dashboard"></div>
+    <div className="dashboard></div>
       <h1>Dashboard</h1></div>
-      <div className="dashboard-grid">
+      <div className=dashboard-grid">
         {/* Dashboard widgets */}</div>
       </div></div>
     </div>

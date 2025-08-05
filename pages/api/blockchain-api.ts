@@ -19,7 +19,7 @@ export default async function handler(
     });}
   try {
     // Blockchain Api API logic here
-    const data = {
+    const $1 = {
       id: Date.now(),
       type: 'blockchain-a'pi,
       status: 'acti've,

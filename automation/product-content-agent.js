@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ProductContentAgent {
+class $1 {
   constructor() {
     this.contentMemory = this.loadContentMemory();
     this.productTemplates = this.loadProductTemplates();
@@ -10,8 +10,8 @@ class ProductContentAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
+      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
       console.error('Erro'r' loading content memory:', error);
@@ -192,9 +192,9 @@ class ProductContentAgent {
   }
 
   generateProductContent(productType, customData = {}) {
-    const template = this.productTemplates[productType] || this.productTemplates.aiPlatform;
+    const $1 = this.productTemplates[productType] || this.productTemplates.aiPlatform;
     
-    const productContent = {
+    const $1 = {
       overview: this.generateProductOverview(template, customData),
       features: this.generateProductFeatures(template, customData),
       benefits: this.generateProductBenefits(template, customData),
@@ -209,8 +209,8 @@ class ProductContentAgent {
   }
 
   generateProductOverview(template, customData) {
-    const industry = customData.industry || 'busine's's';
-    const audience = customData.audience || 'enterpris'e's';
+    const $1 = customData.industry || 'busine's's';
+    const $1 = customData.audience || 'enterpris'e's';
     
     return {
       title: template.name,
@@ -231,7 +231,7 @@ class ProductContentAgent {
   }
 
   generateFeatureDescription(feature, customData) {
-    const descriptions = {
+    const $1 = {
       "Advanced AI matching algorithms": "Sophisticated machine learning algorithms that analyze requirements, capabilities, and past performance to create optimal matches between buyers and sellers.",
       "Secure blockchain transactions": "All transactions are secured with enterprise-grade blockchain technology, ensuring transparency and immutability of all marketplace activities.",
       "Real-time analytics dashboard": "Comprehensive analytics and reporting tools that provide real-time insights into marketplace performance, user behavior, and transaction metrics.",
@@ -240,7 +240,7 @@ class ProductContentAgent {
       "Multi-language support": "Platform available in multiple languages to serve a global user base and facilitate international transactions."
     };
     
-    return descriptions[feature] || `Advanced ${feature.toLowerCase()} capabilities designed for enterprise use.`;
+    return descriptions[feature] || "Advanced ${feature.toLowerCase()} capabilities designed for enterprise use.";
   }
 
   categorizeFeature(feature) {
@@ -256,7 +256,7 @@ class ProductContentAgent {
   }
 
   assignFeaturePriority(feature) {
-    const highPriorityFeatures = [
+    const $1 = [
       'Advance'd' AI matching algorithms',
       'Secur'e' blockchain transactions',
       'Real-tim'e' analytics dashboard'
@@ -274,7 +274,7 @@ class ProductContentAgent {
   }
 
   extractMetric(benefit) {
-    const metricMatch = benefit.match(/(\d+%|\d+)/);
+    const $1 = benefit.match(/(\d+%|\d+)/);
     return metricMatch ? metricMatch[1] : null;
   }
 
@@ -289,7 +289,7 @@ class ProductContentAgent {
   }
 
   generateProductSpecifications(template, customData) {
-    const specs = template.specifications;
+    const $1 = template.specifications;
     return {
       technical: {
         platform: specs.platform,
@@ -325,7 +325,7 @@ class ProductContentAgent {
   }
 
   generateUseCases(productType, customData) {
-    const useCases = {
+    const $1 = {
       aiPlatform: [
         {
           title: "AI Talent Acquisition",
@@ -380,7 +380,7 @@ class ProductContentAgent {
   }
 
   generateProductTestimonials(productType, customData) {
-    const testimonials = [
+    const $1 = [
       {
         name: "Dr. Sarah Chen",
         role: "CTO, TechFlow Inc.",
@@ -412,10 +412,10 @@ class ProductContentAgent {
 
   generateProductSEO(productType, template, customData) {
     return {
-      title: `${template.name} - ${template.category}`,
+      title: "${template.name} - ${template.category}",
       description: template.overview,
       keywords: this.generateProductKeywords(productType, template),
-      canonical: `/products/${productType}`,
+      canonical: "/products/${productType}",
       ogTitle: template.name,
       ogDescription: template.overview,
       ogType: 'produ'c't'
@@ -423,8 +423,8 @@ class ProductContentAgent {
   }
 
   generateProductKeywords(productType, template) {
-    const baseKeywords = ['A'I' marketplace', 'blockcha'i'n', 'securi't'y', 'automati'o'n'];
-    const productKeywords = {
+    const $1 = ['A'I' marketplace', 'blockcha'i'n', 'securi't'y', 'automati'o'n'];
+    const $1 = {
       aiPlatform: ['A'I' platform', 'marketpla'c'e', 'talen't' acquisition', 'A'I' services'],
       blockchainNetwork: ['blockcha'i'n', 'smar't' contracts', 'securi't'y', 'transparen'c'y'],
       aiMatchingEngine: ['A'I' matching', 'machin'e' learning', 'algorith'm's', 'intelligen't' matching']
@@ -450,15 +450,15 @@ class ProductContentAgent {
 
   saveProductContent(productContent, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-conte'n't', 'produc't's', filename);
-      const outputDir = path.dirname(outputPath);
+      const $1 = path.join(__dirname, 'generated-conte'n't', 'produc't's', filename);
+      const $1 = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
       }
       
       fs.writeFileSync(outputPath, JSON.stringify(productContent, null, 2));
-      console.log(`Product content saved to: ${outputPath}`);
+      console.log("Product content saved to: ${outputPath}");
       return outputPath;
     } catch (error) {
       console.error('Erro'r' saving product content:', error);
@@ -467,12 +467,12 @@ class ProductContentAgent {
   }
 
   generateAllProductContent() {
-    const productTypes = ['aiPlatfo'r'm', 'blockchainNetwo'r'k', 'aiMatchingEngi'n'e'];
-    const generatedProducts = {};
+    const $1 = ['aiPlatfo'r'm', 'blockchainNetwo'r'k', 'aiMatchingEngi'n'e'];
+    const $1 = {};
 
     productTypes.forEach(productType => {
-      const filename = `${productType}-content.json`;
-      const productContent = this.generateProductContent(productType, {
+      const $1 = "${productType}-content.json";
+      const $1 = this.generateProductContent(productType, {
         industry: 'technolo'g'y',
         audience: 'enterpris'e's'
       });

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next
-interface ServiceMatch {
+interface $1 {
   id: string
   title: string
   category: string
@@ -12,7 +12,7 @@ interface ServiceMatch {
   technologies: string[]
   responseTime: string
   availability: string}
-interface AnalysisRequest {
+interface $1 {
   userNeeds: string
   industry?: string
   budget?: string
@@ -50,7 +50,7 @@ export default async function handler(
         responseTime: 
     matches.sort((a, b) => b.matchScore - a.matchScore
     // Limit to top 4 matches
-    const topMatches = matches.slice(0, 4
+    const $1 = matches.slice(0, 4
     return res.status(200).json({
       success: true,
       matches: topMatches,

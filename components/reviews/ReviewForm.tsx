@@ -5,6 +5,6 @@ export default function ReviewForm() {
   return (
     <motion.div className="review-component>
       {/* ReviewForm.tsx implementation */}</div>
-    </motion.div>;"
+    </motion.div>;
   );"
 }'"</div>

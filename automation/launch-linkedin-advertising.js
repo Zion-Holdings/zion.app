@@ -1,11 +1,11 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
-const LinkedInAdvertisingFactory = require('./linkedin-advertising-factory');
-const LinkedInAdManagerAgent = require('./agents/linkedin-ad-manager-agent');
-const LinkedInContentCreatorAgent = require('./agents/linkedin-content-creator-agent');
-const LinkedInAnalyticsAgent = require('./agents/linkedin-analytics-agent');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
+const $1 = require('./linkedin-advertising-factory');
+const $1 = require('./agents/linkedin-ad-manager-agent');
+const $1 = require('./agents/linkedin-content-creator-agent');
+const $1 = require('./agents/linkedin-analytics-agent');
 
-class LinkedInAdvertisingLauncher {
+class $1 {
     constructor() {
         this.factory = new LinkedInAdvertisingFactory();
         this.agents = new Map();
@@ -42,35 +42,35 @@ class LinkedInAdvertisingLauncher {
         } catch (error) {
             console.error('❌ Failed to start LinkedIn Advertising System:', error.message);
             this.status = 'err'o'r';
-            this.log(`Startup failed: ${error.message}`, 'err'o'r');
+            this.log("Startup failed: ${error.message}", 'err'o'r');
             throw error;
         }
     }
 
     async createAgents() {
         // Create LinkedIn Ad Manager Agent
-        const adManagerAgent = new LinkedInAdManagerAgent();
+        const $1 = new LinkedInAdManagerAgent();
         this.agents.set(adManagerAgent.id, adManagerAgent);
-        console.log(`✅ Created LinkedIn Ad Manager Agent: ${adManagerAgent.id}`);
+        console.log("✅ Created LinkedIn Ad Manager Agent: ${adManagerAgent.id}");
         
         // Create LinkedIn Content Creator Agent
-        const contentCreatorAgent = new LinkedInContentCreatorAgent();
+        const $1 = new LinkedInContentCreatorAgent();
         this.agents.set(contentCreatorAgent.id, contentCreatorAgent);
-        console.log(`✅ Created LinkedIn Content Creator Agent: ${contentCreatorAgent.id}`);
+        console.log("✅ Created LinkedIn Content Creator Agent: ${contentCreatorAgent.id}");
         
         // Create LinkedIn Analytics Agent
-        const analyticsAgent = new LinkedInAnalyticsAgent();
+        const $1 = new LinkedInAnalyticsAgent();
         this.agents.set(analyticsAgent.id, analyticsAgent);
-        console.log(`✅ Created LinkedIn Analytics Agent: ${analyticsAgent.id}`);
+        console.log("✅ Created LinkedIn Analytics Agent: ${analyticsAgent.id}");
         
         // Start all agents
         for (const [id, agent] of this.agents) {
             try {
                 await agent.execute();
-                console.log(`✅ Agent ${agent.name} executed successfully`);
+                console.log("✅ Agent ${agent.name} executed successfully");
             } catch (error) {
-                console.error(`❌ Agent ${agent.name} failed:`, error.message);
-                this.log(`Agent ${agent.name} failed: ${error.message}`, 'err'o'r');
+                console.error("❌ Agent ${agent.name} failed:", error.message);
+                this.log("Agent ${agent.name} failed: ${error.message}", 'err'o'r');
             }
         }
     }
@@ -98,7 +98,7 @@ class LinkedInAdvertisingLauncher {
     async monitorSystemHealth() {
         console.log('🏥 Monitoring LinkedIn Advertising System health...');
         
-        const healthReport = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             status: this.status,
             uptime: this.getUptime(),
@@ -112,7 +112,7 @@ class LinkedInAdvertisingLauncher {
         
         // Check agent health
         for (const [id, agent] of this.agents) {
-            const agentHealth = {
+            const $1 = {
                 id: agent.id,
                 name: agent.name,
                 status: agent.status,
@@ -123,7 +123,7 @@ class LinkedInAdvertisingLauncher {
             
             // Check for issues
             if (agent.status !== 'acti'v'e') {
-                healthReport.recommendations.push(`Restart agent: ${agent.name}`);
+                healthReport.recommendations.push("Restart agent: ${agent.name}");
             }
         }
         
@@ -131,13 +131,13 @@ class LinkedInAdvertisingLauncher {
         await this.saveHealthReport(healthReport);
         
         // Log health status
-        this.log(`Health check completed - ${healthReport.agents.length} agents active`, 'in'f'o');
+        this.log("Health check completed - ${healthReport.agents.length} agents active", 'in'f'o');
     }
 
     async generatePerformanceReport() {
         console.log('📊 Generating LinkedIn Advertising performance report...');
         
-        const performanceReport = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             systemUptime: this.getUptime(),
             totalAgents: this.agents.size,
@@ -155,12 +155,12 @@ class LinkedInAdvertisingLauncher {
         };
         
         // Collect campaign data
-        const campaignsDir = path.join(__dirname, 'dat'a'/linkedin-ads');
+        const $1 = path.join(__dirname, 'dat'a'/linkedin-ads');
         if (await fs.pathExists(campaignsDir)) {
-            const campaignFiles = await fs.readdir(campaignsDir);
+            const $1 = await fs.readdir(campaignsDir);
             for (const file of campaignFiles) {
                 if (file.endsWith('.json')) {
-                    const campaignData = await fs.readJson(path.join(campaignsDir, file));
+                    const $1 = await fs.readJson(path.join(campaignsDir, file));
                     performanceReport.campaigns.push(campaignData);
                 }
             }
@@ -168,7 +168,7 @@ class LinkedInAdvertisingLauncher {
         
         // Calculate overall metrics
         if (performanceReport.campaigns.length > 0) {
-            const total = performanceReport.campaigns.reduce((acc, campaign) => {
+            const $1 = performanceReport.campaigns.reduce((acc, campaign) => {
                 acc.impressions += campaign.impressions || 0;
                 acc.clicks += campaign.clicks || 0;
                 acc.conversions += campaign.conversions || 0;
@@ -202,9 +202,9 @@ class LinkedInAdvertisingLauncher {
         for (const [id, agent] of this.agents) {
             try {
                 agent.status = 'stopp'e'd';
-                console.log(`✅ Stopped agent: ${agent.name}`);
+                console.log("✅ Stopped agent: ${agent.name}");
             } catch (error) {
-                console.error(`❌ Failed to stop agent ${agent.name}:`, error.message);
+                console.error("❌ Failed to stop agent ${agent.name}:", error.message);
             }
         }
         
@@ -220,7 +220,7 @@ class LinkedInAdvertisingLauncher {
     }
 
     log(message, level = 'in'f'o') {
-        const logEntry = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             level,
             message
@@ -235,21 +235,21 @@ class LinkedInAdvertisingLauncher {
     }
 
     async saveHealthReport(report) {
-        const reportsDir = path.join(__dirname, 'report's'/linkedin-health');
+        const $1 = path.join(__dirname, 'report's'/linkedin-health');
         await fs.ensureDir(reportsDir);
         
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const filePath = path.join(reportsDir, `health-report-${timestamp}.json`);
+        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+        const $1 = path.join(reportsDir, "health-report-${timestamp}.json");
         
         await fs.writeJson(filePath, report);
     }
 
     async savePerformanceReport(report) {
-        const reportsDir = path.join(__dirname, 'report's'/linkedin-performance');
+        const $1 = path.join(__dirname, 'report's'/linkedin-performance');
         await fs.ensureDir(reportsDir);
         
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const filePath = path.join(reportsDir, `performance-report-${timestamp}.json`);
+        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+        const $1 = path.join(reportsDir, "performance-report-${timestamp}.json");
         
         await fs.writeJson(filePath, report);
     }
@@ -271,7 +271,7 @@ module.exports = LinkedInAdvertisingLauncher;
 
 // If run directly, start the system
 if (require.main === module) {
-    const launcher = new LinkedInAdvertisingLauncher();
+    const $1 = new LinkedInAdvertisingLauncher();
     
     // Handle graceful shutdown
     process.on('SIGI'N'T', async () => {

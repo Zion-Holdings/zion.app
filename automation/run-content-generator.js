@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 ;
-const ContentGeneratorAgent = require('./content-generator-agent');
+const $1 = require('./content-generator-agent');
 
 async function main() {
   console.log('📝 Content Generator Runner');
@@ -9,8 +9,8 @@ async function main() {
   console.log('');
   
   try {
-    const agent = new ContentGeneratorAgent();
-    const results = await agent.run();
+    const $1 = new ContentGeneratorAgent();
+    const $1 = await agent.run();
     
     console.log('');
     console.log('🎉 Content generation completed successfully!');
@@ -23,8 +23,8 @@ async function main() {
     console.log('-' FAQs');
     console.log('');
     console.log('📊 Summary:');
-    console.log(`- Total generated: ${results.summary.totalGenerated}`);
-    console.log(`- By type: ${JSON.stringify(results.summary.byType)}`);
+    console.log("- Total generated: ${results.summary.totalGenerated}");
+    console.log("- By type: ${JSON.stringify(results.summary.byType)}");
     
   } catch (error) {
     console.error('❌ Content generation failed:', error);

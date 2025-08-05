@@ -1,12 +1,12 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
-const cheerio = require('cheer'i'o');
-const puppeteer = require('puppete'e'r');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
+const $1 = require('cheer'i'o');
+const $1 = require('puppete'e'r');
 
-class LinkValidatorAgent {
+class $1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || `link-validator-${Date.now()}`;
+    this.agentId = process.env.AGENT_ID || "link-validator-${Date.now()}";
     this.agentType = process.env.AGENT_TYPE || 'link-validat'o'r';
     this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
@@ -41,14 +41,14 @@ class LinkValidatorAgent {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-da't'a',
       'link-repor't's',
       'link-lo'g's'
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, '..', dir);
+      const $1 = path.join(__dirname, '..', dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -56,7 +56,7 @@ class LinkValidatorAgent {
   }
 
   async initialize() {
-    console.log(`🔗 Initializing Link Validator Agent: ${this.agentId}`);
+    console.log("🔗 Initializing Link Validator Agent: ${this.agentId}");
     
     try {
       this.browser = await puppeteer.launch({
@@ -73,7 +73,7 @@ class LinkValidatorAgent {
   }
 
   async start() {
-    console.log(`🚀 Starting Link Validator Agent: ${this.agentId}`);
+    console.log("🚀 Starting Link Validator Agent: ${this.agentId}");
     
     if (!await this.initialize()) {
       return false;
@@ -104,10 +104,10 @@ class LinkValidatorAgent {
     
     try {
       // Crawl the website to find all links
-      const allLinks = await this.crawlWebsite();
+      const $1 = await this.crawlWebsite();
       
       // Validate each link
-      const validationResults = await this.validateLinks(allLinks);
+      const $1 = await this.validateLinks(allLinks);
       
       // Process results
       await this.processValidationResults(validationResults);
@@ -118,7 +118,7 @@ class LinkValidatorAgent {
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
       
-      console.log(`✅ Link validation completed. Checked: ${allLinks.length}, Broken: ${this.brokenLinks.length}`);
+      console.log("✅ Link validation completed. Checked: ${allLinks.length}, Broken: ${this.brokenLinks.length}");
       
     } catch (error) {
       console.error('Erro'r' performing link validation:', error);
@@ -128,26 +128,26 @@ class LinkValidatorAgent {
   }
 
   async crawlWebsite() {
-    const allLinks = new Set();
-    const pagesToVisit = [this.baseUrl];
-    const visitedPages = new Set();
+    const $1 = new Set();
+    const $1 = [this.baseUrl];
+    const $1 = new Set();
 
     while (pagesToVisit.length > 0 && visitedPages.size < 100) { // Limit to 100 pages
-      const currentUrl = pagesToVisit.shift();
+      const $1 = pagesToVisit.shift();
       
       if (visitedPages.has(currentUrl)) continue;
       visitedPages.add(currentUrl);
 
       try {
-        const page = await this.browser.newPage();
+        const $1 = await this.browser.newPage();
         await page.goto(currentUrl, { 
           waitUntil: 'networkidl'e'0',
           timeout: this.config.timeout 
         });
 
         // Extract all links from the page
-        const links = await page.evaluate(() => {
-          const anchors = document.querySelectorAll('a'[href]');
+        const $1 = await page.evaluate(() => {
+          const $1 = document.querySelectorAll('a'[href]');
           return Array.from(anchors).map(a => ({
             href: a.href,
             text: a.textContent.trim(),
@@ -170,7 +170,7 @@ class LinkValidatorAgent {
         await page.close();
         
       } catch (error) {
-        console.error(`Error crawling ${currentUrl}:`, error);
+        console.error("Error crawling ${currentUrl}:", error);
         this.stats.errors++;
       }
     }
@@ -182,7 +182,7 @@ class LinkValidatorAgent {
     if (!url) return false;
     
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.protocol === 'htt'p':' || parsed.protocol === 'http's':';
     } catch {
       return false;
@@ -191,8 +191,8 @@ class LinkValidatorAgent {
 
   isInternalLink(url) {
     try {
-      const parsed = new URL(url);
-      const baseParsed = new URL(this.baseUrl);
+      const $1 = new URL(url);
+      const $1 = new URL(this.baseUrl);
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -200,16 +200,16 @@ class LinkValidatorAgent {
   }
 
   async validateLinks(links) {
-    const results = [];
-    const concurrentChecks = Math.min(this.config.maxConcurrentChecks, links.length);
+    const $1 = [];
+    const $1 = Math.min(this.config.maxConcurrentChecks, links.length);
     
-    console.log(`🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...`);
+    console.log("🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...");
 </div>
-    for (let i = 0; i < links.length; i += concurrentChecks) {
-      const batch = links.slice(i, i + concurrentChecks);
-      const batchPromises = batch.map(link => this.validateSingleLink(link));
+    for (let $1 = 0; i < links.length; i += concurrentChecks) {
+      const $1 = links.slice(i, i + concurrentChecks);
+      const $1 = batch.map(link => this.validateSingleLink(link));
       
-      const batchResults = await Promise.allSettled(batchPromises);
+      const $1 = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
         if (result.status === 'fulfill'e'd') {
@@ -225,18 +225,18 @@ class LinkValidatorAgent {
   }
 
   async validateSingleLink(url) {
-    const startTime = Date.now();
+    const $1 = Date.now();
     
     try {
-      const response = await axios.head(url, {
+      const $1 = await axios.head(url, {
         timeout: this.config.timeout,
         maxRedirects: this.config.followRedirects ? 5 : 0,
         validateStatus: () => true // Don't' throw on any status code
       });
 
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
-      const result = {
+      const $1 = {
         url,
         statusCode: response.status,
         responseTime,</div>
@@ -258,9 +258,9 @@ class LinkValidatorAgent {
       return result;
       
     } catch (error) {
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
-      const result = {
+      const $1 = {
         url,
         statusCode: 0,
         responseTime,
@@ -278,13 +278,13 @@ class LinkValidatorAgent {
   }
 
   async processValidationResults(results) {
-    const brokenLinks = results.filter(r => !r.isValid);
-    const validLinks = results.filter(r => r.isValid);
+    const $1 = results.filter(r => !r.isValid);
+    const $1 = results.filter(r => r.isValid);
     
-    console.log(`📊 Validation Results:`);
-    console.log(`  - Total checked: ${results.length}`);
-    console.log(`  - Valid links: ${validLinks.length}`);
-    console.log(`  - Broken links: ${brokenLinks.length}`);
+    console.log("📊 Validation Results:");
+    console.log("  - Total checked: ${results.length}");
+    console.log("  - Valid links: ${validLinks.length}");
+    console.log("  - Broken links: ${brokenLinks.length}");
     
     // Save broken links for fixing
     if (brokenLinks.length > 0) {
@@ -297,9 +297,9 @@ class LinkValidatorAgent {
   }
 
   async saveBrokenLinks(brokenLinks) {
-    const brokenLinksPath = path.join(__dirname, '..', 'link-da't'a', `broken-links-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-da't'a', "broken-links-${Date.now()}.json");
     
-    const data = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       brokenLinks: brokenLinks.map(link => ({
@@ -312,13 +312,13 @@ class LinkValidatorAgent {
     };
     
     fs.writeFileSync(brokenLinksPath, JSON.stringify(data, null, 2));
-    console.log(`💾 Saved ${brokenLinks.length} broken links to ${brokenLinksPath}`);
+    console.log("💾 Saved ${brokenLinks.length} broken links to ${brokenLinksPath}");
   }
 
   async generateValidationReport(results) {
-    const reportPath = path.join(__dirname, '..', 'link-repor't's', `validation-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-repor't's', "validation-report-${Date.now()}.json");
     
-    const report = {
+    const $1 = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       summary: {
@@ -342,20 +342,20 @@ class LinkValidatorAgent {
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📊 Generated validation report: ${reportPath}`);
+    console.log("📊 Generated validation report: ${reportPath}");
   }
 
   getStatusCodeDistribution(results) {
-    const distribution = {};
+    const $1 = {};
     results.forEach(result => {
-      const status = result.statusCode;
+      const $1 = result.statusCode;
       distribution[status] = (distribution[status] || 0) + 1;
     });
     return distribution;
   }
 
   categorizeBrokenLinks(brokenLinks) {
-    const categories = {
+    const $1 = {
       '404': [],
       '500': [],
       'timeo'u't': [],
@@ -381,31 +381,31 @@ class LinkValidatorAgent {
   }
 
   generateRecommendations(results) {
-    const recommendations = [];
-    const brokenLinks = results.filter(r => !r.isValid);
+    const $1 = [];
+    const $1 = results.filter(r => !r.isValid);
     
     if (brokenLinks.length > 0) {
       recommendations.push({
         type: 'hig'h'_priority',
-        message: `Found ${brokenLinks.length} broken links that need immediate attention`,
+        message: "Found ${brokenLinks.length} broken links that need immediate attention",
         action: 'fi'x'_broken_links'
       });
     }
     
-    const avgResponseTime = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
+    const $1 = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
     if (avgResponseTime > 3000) {
       recommendations.push({
         type: 'performan'c'e',
-        message: `Average response time is ${avgResponseTime.toFixed(0)}ms, consider optimizing slow links`,
+        message: "Average response time is ${avgResponseTime.toFixed(0)}ms, consider optimizing slow links",
         action: 'optimiz'e'_performance'
       });
     }
     
-    const redirectCount = results.filter(r => r.isRedirect).length;
+    const $1 = results.filter(r => r.isRedirect).length;
     if (redirectCount > results.length * 0.1) {
       recommendations.push({
         type: 's'e'o',
-        message: `High number of redirects (${redirectCount}), consider implementing direct links`,
+        message: "High number of redirects (${redirectCount}), consider implementing direct links",
         action: 'reduc'e'_redirects'
       });
     }
@@ -414,7 +414,7 @@ class LinkValidatorAgent {
   }
 
   updatePerformanceMetrics() {
-    const totalTasks = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -423,7 +423,7 @@ class LinkValidatorAgent {
     if (this.browser) {
       await this.browser.close();
     }
-    console.log(`🧹 Link Validator Agent ${this.agentId} cleaned up`);
+    console.log("🧹 Link Validator Agent ${this.agentId} cleaned up");
   }
 
   getStats() {
@@ -439,7 +439,7 @@ class LinkValidatorAgent {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agent = new LinkValidatorAgent();
+  const $1 = new LinkValidatorAgent();
   
   agent.start().then(() => {
     console.log('Lin'k' Validator Agent started successfully');

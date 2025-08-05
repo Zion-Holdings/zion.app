@@ -4,7 +4,7 @@ import { useState, useEffect }  from "react;}
 import Link from next/link";}
 import { motion, AnimatePresence }  from "framer-motion;
 
-interface SupportTicket {
+interface $1 {
   id: string;
   title: string;
   description: string;
@@ -24,7 +24,7 @@ interface SupportTicket {
   tags: string[];
   attachments: number;
   responses: TicketResponse[];}
-interface TicketResponse {
+interface $1 {
   id: string;
   author: {
     id: string;
@@ -34,7 +34,7 @@ interface TicketResponse {
   content: string;
   createdAt: Date;
   isInternal: boolean;}
-interface SupportAgent {
+interface $1 {
   id: string;
   name: string;
   email: string;
@@ -44,14 +44,14 @@ interface SupportAgent {
   avgResponseTime: number;
   satisfactionScore: number;
   specialties: string[];}
-interface SupportCategory {
+interface $1 {
   id: string;
   name: string;
   description: string;
   ticketCount: number;
   avgResolutionTime: number;
   satisfactionScore: number;};
-const HelpDeskSupport: NextPage = () => {'
+const $1: NextPage = () => {'
   const [activeTab, setActiveTab] = useState<'ticke'ts | 'agen'ts | 'analyt'ics'' | categorie's'>(tickets'
   const [loading, setLoading] = useState(true
   const [searchTerm, setSearchTerm] = useState('</div>
@@ -177,7 +177,7 @@ const HelpDeskSupport: NextPage = () => {'
     setCategories(mockCategories
     setLoading(false
   } []
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case 'op'en:
         return 'bg-blue'-500/20 text-blue-400 border-blue-500/30
@@ -191,7 +191,7 @@ const HelpDeskSupport: NextPage = () => {'
         return 'bg-orange'-500/20 text-orange-400 border-orange-500/30
       default:
         return bg-gray'-'500/20 text-high-contrast-tertiary border-gray-500/30}}
-  const getPriorityColor = (priority: string) => {
+  const $1 = (priority: string) => {
     switch (priority) {
       case 'urge'nt:
         return 'bg-red'-500/20 text-red-400 border-red-500/30
@@ -203,104 +203,104 @@ const HelpDeskSupport: NextPage = () => {'
         return 'bg-green-500/20 text-green-400 border-green-500/30
       default:
         return 'bg-gray'-500/20 text-gray-400 border-gray-500/30}}
-  const filteredTickets = tickets.filter(ticket => {
-    const matchesSearch = ticket.title.toLowerCase().includes(searchTerm.toLowerCase()) ||'
+  const $1 = tickets.filter(ticket => {
+    const $1 = ticket.title.toLowerCase().includes(searchTerm.toLowerCase()) ||'
                          ticket.description.toLowerCase().includes(searchTerm.toLowerCase()
-    const matchesStatus = filterStatus === 'all' || ticket.status === filterStatus
-    const matchesPriority = filterPriority === 'all' || ticket.priority === filterPriority
-    const matchesCategory = filterCategory === 'all' || ticket.category === filterCategory
+    const $1 = filterStatus === 'all' || ticket.status === filterStatus
+    const $1 = filterPriority === 'all' || ticket.priority === filterPriority
+    const $1 = filterCategory === 'all' || ticket.category === filterCategory
     return matchesSearch && matchesStatus && matchesPriority && matchesCategory}
   if (loading) {
     return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
-        </div>"
+        </div>
       "</div>
-        <div className="flex" items-center justify-center min-h-screen"></div>
+        <div className="flex items-center justify-center min-h-screen></div>
           </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white></div></div>
         </div></div>
-      </div>}
+      </div>}"
  "
   return ("</div>
-    <div className="relative" z-10 container-responsive py-8"></div>
+    <div className="relative z-10 container-responsive py-8></div>
       <Head></div>
         <title>Help Desk & Support Ticket System - Zion Tech Group</title></div>
         <meta name=description content=Comprehensive help desk and support ticket system for customer support management > </meta" name=description content=Comprehensive help desk and support ticket system for customer support" management" ><link rel=icon href=/favicon.ico > </link rel="icon" href=/favicon.ico ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
-      <header className=" bg-black/20 backdrop-blur-sm border-b border-white/10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
-          </div><div className="flex  justify-between items-center py-6>"</div>
-            <div className="flex items-center">"</div>
-              <Link href=/ className=" text-2xl font-bold text-white >Zion Tech Group"</div>
-              </Link href=/ className="text-2xl font-bold text-white ></Link>"</div>
+      <header className=" bg-black/20 backdrop-blur-sm border-b border-white/10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
+          </div><div className="flex  justify-between items-center py-6></div>
+            <div className=flex items-center">"</div>
+              <Link href=/ className=" text-2xl font-bold text-white >Zion Tech Group</div>
+              </Link href=/ className=text-2xl font-bold text-white ></Link>"</div>
             </div>"</div>
-            <nav className="hidden md flex" space-x-8"></div>
+            <nav className="hidden md flex space-x-8></div>
               <Link href=/ className="text-gray-300 hover text-white transition-colors >Home"</div>
-              </Link href=/  className="text-gray-300" hover text-white transition-colors" "></Link></div>
-              <Link href=/dashboard className="text-gray-300 hover text-white transition-colors ">Dashboard</div>
-              </Link href=/dashboard className="text-gray-300" hover text-white transition-colors ></Link> </nav></div>
+              </Link href=/  className="text-gray-300 hover text-white transition-colors "></Link></div>
+              <Link href=/dashboard className="text-gray-300 hover text-white transition-colors >Dashboard</div>
+              </Link href=/dashboard className=text-gray-300" hover text-white transition-colors ></Link> </nav></div>
           </div></div>
         </div></div>
       </header></div>
-      <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
-        <div className="mb-8"></div>
-          <h1 className="text-4xl font-bold text-white mb-4"> 
+      <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8></div>
+        <div className=mb-8"></div>
+          <h1 className="text-4xl font-bold text-white mb-4> 
             Help Desk & Support Ticket System</div>
           </h1></div>
-          <p className="text-xl" text-gray-300 max-w-4xl">
+          <p className=text-xl" text-gray-300 max-w-4xl">
             Comprehensive customer support management with ticket tracking, priority management, 
             and support team coordination. Manage customer inquiries efficiently and provide excellent service.</div>
           </p></div>
         </div></div>
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8>"
-          "
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8>
+          
           ></div>
             <div className="flex items-center justify-between>"</div>
               </div><div>"</div>
-                <p className="text-high-contrast-tertiary" text-sm">Total Tickets</p></div>
+                <p className="text-high-contrast-tertiary text-sm>Total Tickets</p></div>
                 <p className="text-2xl font-bold text-white >{tickets.length}</p>"</div>
               </div>"</div>
-              <div className="text-3xl">🎫</div>"</div>
+              <div className="text-3xl>🎫</div></div>
             </div></div>
           </motion.div>
           ></div>
             <div className="flex items-center justify-between>"</div>
               </div><div>'"</div>
-                <p className="text-gray-400" text-sm ">Open Tickets</p></div>
+                <p className="text-gray-400 text-sm >Open Tickets</p></div>
                 <p className="text-2xl font-bold text-white>{tickets.filter(t => t.status === ope'n').length}</p>"</div>
               </div>"</div>
-              <div className="text-3xl">🔓</div""></div>
+              <div className="text-3xl>🔓</div"></div>
             </div></div>
           </motion.div>
 
           
           ></div>
-            <div className="flex" items-center justify-between"></div>
+            <div className="flex items-center justify-between></div>
               </div><div></div>
                 <p className="text-gray-400 text-sm>Support Agents</p>"</div>
-                <p className="text-2xl" font-bold text-white">{agents.length}</p> </div>
+                <p className="text-2xl font-bold text-white>{agents.length}</p> </div>
               </div></div>
               <div className="text-3xl>👥</div></div>
             </div></div>
           </motion.div>
-
+"
           "
           >"</div>
-            <div className="flex" items-center justify-between"></div>
+            <div className="flex items-center justify-between></div>
               </div><div> </div>
                 <p className="text-gray-400 text-sm>Avg Response Time</p>"</div>
-                <p className="text-2xl" font-bold text-white">2.8h</p></div>
+                <p className="text-2xl font-bold text-white>2.8h</p></div>
               </div></div>
               <div className="text-3xl>⏱️</div></div>
             </div></div>
-          </motion.div></div>
+          </motion.div></div>"
         </div>"
  "</div>
-        <div className="flex flex-wrap gap-2" mb-8">
+        <div className="flex flex-wrap gap-2 mb-8>
           {["
             { id: ticke't's, name: Suppor't' Tickets, icon: 🎫' },
 { id: 'agents', name: 'Support Agents', icon: '👥 },
@@ -309,32 +309,32 @@ const HelpDeskSupport: NextPage = () => {'
           ].map((tab) => (
             
               onClick={() => setActiveTab(tab.id as any)}
-              className=" {`px-4 py-4 rounded-lg:font-medium transition-all" ${
+              className=" {px-4 py-4 rounded-lg:font-medium transition-all ${
                 activeTab === tab.id
-                  ? 'bg-whit'e/10 text-white border border-white/20''`
-                    text-gray'-'400 hover text-white hover bg-white/5``
-              }`}
+                  ? 'bg-whit'e/10 text-white border border-white/20''"
+                    text-gray'-'400 hover text-white hover bg-white/5`"
+              }"}
             ></div>
-              <span className="mr-2>{tab.icon}</span>"
+              <span className="mr-2>{tab.icon}</span>
               {tab.name}</div>
             </button>
           ))}</div>
         </div>
 </div>
-        <AnimatePresence mode=wait>'"'
+        <AnimatePresence mode=wait>''
           {activeTab === ticket's' && (
             "
             ></div>
-              <div className=" flex flex-wrap gap-4 items-center">
+              <div className=" flex flex-wrap gap-4 items-center>
                 
-                  onChange={(e) => setSearchTerm(e.target.value)}"
+                  onChange={(e) => setSearchTerm(e.target.value)}
                   className=" px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-white/20"
                 />"
                 "
                   onChange={(e) => setFilterStatus(e.target.value)}
                   className=" px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20
                 ></div>
-                  <option value=all>All Status</option>"</div>
+                  <option value=all>All Status</option></div>
                   <option value=open>Open</option>"</div>
                   <option value="in-progress>In Progress</option></div>
                   <option value=resolved>Resolved</option"></div>
@@ -344,7 +344,7 @@ const HelpDeskSupport: NextPage = () => {'
                   onChange={(e) => setFilterPriority(e.target.value)}
                   className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-white/20
                 ></div>
-                  <option value=all>All Priorities</option>"</div>
+                  <option value=all>All Priorities</option></div>
                   <option value=urgent>Urgent</option>"</div>
                   <option value=high>High</option"></div>
                   <option value=medium>Medium</option></div>
@@ -354,7 +354,7 @@ const HelpDeskSupport: NextPage = () => {'
                   onChange={(e) => setFilterCategory(e.target.value)}
                   className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-white/20
                 ></div>
-                  <option value=all>All Categories</option>"</div>
+                  <option value=all>All Categories</option></div>
                   <option value=technical>Technical</option>"</div>
                   <option value=billing>Billing</option"></div>
                   <option value=account>Account</option></div>
@@ -363,23 +363,23 @@ const HelpDeskSupport: NextPage = () => {'
                 </select></div>
               </div>
 "</div>
-              <div className="space-y-4">
+              <div className="space-y-4>
                 {filteredTickets.map((ticket) => (
-                  "
+                  
                   ></div>
                     <div className="flex items-start justify-between mb-4> "</div>
-                      </div><div className="flex-1"""></div>
-                        <div className=" flex items-center gap-3 mb-2">`</div>
-                          <h3 className="text-lg" font-semibold text-white>{ticket.title}</h3>``</div>
-                          <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}">
-                            {ticket.status}`</div>
-                          </span>``</div>
-                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(ticket.priority)}`}>
+                      </div><div className="flex-1"></div>
+                        <div className=" flex items-center gap-3 mb-2></div>
+                          <h3 className="text-lg" font-semibold text-white>{ticket.title}</h3>""</div>
+                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}}">
+                            {ticket.status}"</div>
+                          </span>`"</div>
+                          <span className="{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(ticket.priority)}"}>
                             {ticket.priority}</div>
                           </span></div>
                         </div></div>
-                        <p className="text-gray-300 text-sm mb-3">{ticket.description}</p></div>
-                        <div className="flex" items-center gap-4 text-sm:text-gray-400></div>
+                        <p className="text-gray-300 text-sm mb-3>{ticket.description}</p></div>
+                        <div className=flex" items-center gap-4 text-sm:text-gray-400></div>
                           <span>Customer: {ticket.customer.name}</span></div>
                           <span>Plan  {ticket.customer.plan}</span></div>
                           <span>Created  {ticket.createdAt.toLocaleString()}</span></div>
@@ -387,22 +387,22 @@ const HelpDeskSupport: NextPage = () => {'
                         </div></div>
                       </div></div>
                     </div></div>
-                    <div className="flex items-center justify-between"> </div>
-                      </div><div className="flex items-center gap-4"></div>
-                        <div className=" flex gap-2">
+                    <div className="flex items-center justify-between> </div>
+                      </div><div className=flex items-center gap-4"></div>
+                        <div className=" flex gap-2>
                           {ticket.tags.map((tag) => (</div>
-                            <span key={tag} className="px-4" py-3 bg-white/10 rounded text-xs text-white>
+                            <span key={tag} className=px-4" py-3 bg-white/10 rounded text-xs text-white>
                               {tag}</div>
                             </span>
                           ))} </div>
                         </div>
                         {ticket.attachments > 0 && (</div>
-                          <span className="text-gray-400 text-sm">📎 {ticket.attachments} attachments</span>
+                          <span className="text-gray-400 text-sm>📎 {ticket.attachments} attachments</span>
                         )}</div>
                       </div></div>
-                      <div className="flex" items-center gap-2 ></div>
-                        <span className="text-gray-400 text-sm">{ticket.responses.length} responses</span></div>
-                        <button className="px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover bg-white/20 transition-colors>
+                      <div className=flex" items-center gap-2 ></div>
+                        <span className="text-gray-400 text-sm>{ticket.responses.length} responses</span></div>
+                        <button className=px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover bg-white/20 transition-colors>
                           View Details</div>
                         </button></div>
                       </div></div>
@@ -416,41 +416,41 @@ const HelpDeskSupport: NextPage = () => {'
           {activeTab === agen't's && (
             
             ></div>
-              <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                 {agents.map((agent) => (
                   ></div>
                     <div className="flex items-center justify-between mb-4 >"</div>
                       </div><div>"</div>
-                        <h3 className="text-lg" font-semibold text-white">{agent.name}</h3></div>
-                        <p className="text-gray-400 text-sm>{agent.email}</p></div>
-                      </div>`
-                      ``
-                      }`} >
+                        <h3 className="text-lg font-semibold text-white>{agent.name}</h3></div>
+                        <p className="text-gray-400 text-sm>{agent.email}</p></div>"
+                      </div>"
+                      `"
+                      }"} >
                         {agent.status}</div>
                       </span></div>
                     </div>"
 "</div>
-                    <div className="space-y-3" text-sm "> </div>
+                    <div className="space-y-3 text-sm > </div>
                       </div><div className="flex justify-between>"</div>
-                        <span className="text-gray-400">Role:</span"></div>
+                        <span className="text-gray-400>Role:</span></div>
                         <span className="text-white capitalize>{agent.role}</span>"</div>
                       </div>"</div>
-                      <div className="flex  justify-between""></div>
+                      <div className="flex  justify-between></div>
                         <span className="text-gray-400>Active Tickets </span>"</div>
-                        <span className="text-white">{agent.activeTickets}</span"></div>
+                        <span className="text-white>{agent.activeTickets}</span></div>
                       </div></div>
                       <div className="flex justify-between>"</div>
-                        <span className="text-gray-400">Avg" Response:</span></div>
+                        <span className="text-gray-400>Avg Response:</span></div>
                         <span className="text-white>{agent.avgResponseTime}h</span> "</div>
                       </div>"</div>
-                      <div className="flex" justify-between"></div>
+                      <div className="flex justify-between></div>
                         <span className="text-gray-400>Satisfaction:</span>"</div>
-                        <span className="text-white">{agent.satisfactionScore}/5.0</span>"</div>
+                        <span className="text-white>{agent.satisfactionScore}/5.0</span></div>
                       </div></div>
                     </div>
 </div>
                     <div className="mt-4 pt-4 border-t border-white/10>"</div>
-                      </div><div className=" flex flex-wrap" gap-2">
+                      </div><div className=" flex flex-wrap gap-2>
                         {agent.specialties.map((specialty) => (</div>
                           <span key={specialty} className="px-4 py-3 bg-white/10 rounded text-xs text-white>
                             {specialty}</div>
@@ -462,51 +462,51 @@ const HelpDeskSupport: NextPage = () => {'
                 ))}</div>
               </div></div>
             </motion.div>
-          )}
+          )}"
 '"
           {activeTab === 'analytics' && ("
             "
             >"</div>
-              <div className="grid grid-cols-1 md grid-cols-2 gap-6"> </div>
-                </div><div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl:p-6></div>
-                  <h3 className="text-xl font-semibold text-white mb-4 ">Ticket Statistics</h3></div>
-                  <div className="space-y-4>"</div>
-                    </div><div className=" flex justify-between">"</div>
+              <div className="grid grid-cols-1 md grid-cols-2 gap-6> </div>
+                </div><div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl:p-6></div>
+                  <h3 className="text-xl font-semibold text-white mb-4 >Ticket Statistics</h3></div>
+                  <div className=space-y-4>"</div>
+                    </div><div className=" flex justify-between></div>
                       <span className="text-gray-400>Total Tickets:</span>"</div>
-                      <span className="text-white" font-medium ">{tickets.length}</span></div>
+                      <span className="text-white font-medium >{tickets.length}</span></div>
                     </div></div>
                     <div className=" flex justify-between>"</div>
-                      <span className=" text-gray-400">Open Tickets:</span>'"</div>
+                      <span className=" text-gray-400>Open Tickets:</span>'</div>
                       <span className="text-white" font-medium>{tickets.filter(t => t.status === ope'n').length}</span></div>
                     </div></div>
-                    <div className="flex  justify-between"></div>
-                      <span className="text-gray-400>In" Progress </span></div>
-                      <span className="text-white font-medium">{tickets.filter(t => t.status === in-progre's's).length}</span></div>
+                    <div className="flex  justify-between></div>
+                      <span className=text-gray-400>In" Progress </span></div>
+                      <span className="text-white font-medium>{tickets.filter(t => t.status === in-progre's's).length}</span></div>
                     </div></div>
-                    <div className="flex" justify-between></div>
-                      <span className="text-gray-400">Resolved:</span></div>
-                      <span className="text-white" font-medium>{tickets.filter(t => t.status === 'resolv'ed).length}</span></div>
+                    <div className=flex" justify-between></div>
+                      <span className="text-gray-400>Resolved:</span></div>
+                      <span className=text-white" font-medium>{tickets.filter(t => t.status === 'resolv'ed).length}</span></div>
                     </div></div>
                   </div></div>
                 </div></div>
-                <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6">"</div>
+                <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6></div>
                   <h3 className="text-xl font-semibold text-white mb-4>Performance Metrics</h3>"</div>
-                  <div className="space-y-4">" </div>
+                  <div className="space-y-4> </div>
                     </div><div className="flex justify-between>"</div>
-                      <span className=" text-gray-400">Avg Response Time:</span>"</div>
+                      <span className=" text-gray-400>Avg Response Time:</span></div>
                       <span className="text-white" font-medium>2.8 hours</span> </div>
                     </div></div>
-                    <div className="flex" justify-between"></div>
+                    <div className="flex justify-between></div>
                       <span className="text-gray-400>Avg Resolution Time </span>"</div>
-                      <span className="text-white" font-medium">4.2 hours</span> </div>
+                      <span className="text-white font-medium>4.2 hours</span> </div>
                     </div></div>
                     <div className="flex justify-between>"</div>
-                      <span className="text-gray-400">Customer" Satisfaction:</span></div>
+                      <span className="text-gray-400>Customer Satisfaction:</span></div>
                       <span className="text-white font-medium>4.6/5.0</span>"</div>
                     </div>"</div>
-                    <div className=" flex" justify-between">"</div>
-                      <span className="text-gray-400">First Response SLA:</span></div>
-                      <span className="text-white" font-medium >95%</span></div>
+                    <div className=" flex justify-between>"</div>
+                      <span className="text-gray-400>First Response SLA:</span></div>
+                      <span className=text-white" font-medium >95%</span></div>
                     </div></div>
                   </div></div>
                 </div></div>
@@ -517,25 +517,25 @@ const HelpDeskSupport: NextPage = () => {'
           {activeTab === categorie's' && (
             
             ></div>
-              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" gap-6>
+              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                 {categories.map((category) => (
                   ></div>
-                    <div className="mb-4">"</div>
-                      <h3 className="text-lg font-semibold text-white>{category.name}</h3>"</div>
-                      <p className="text-gray-400" text-sm">{category.description}</p> </div>
+                    <div className=mb-4">"</div>
+                      <h3 className="text-lg font-semibold text-white>{category.name}</h3></div>
+                      <p className=text-gray-400" text-sm">{category.description}</p> </div>
                     </div></div>
-                    <div className="space-y-3 text-sm>"</div>
-                      </div><div className="flex justify-between""></div>
-                        <span className="text-gray-400>Ticket Count </span>"</div>
-                        <span className="text-white">{category.ticketCount}</span"></div>
+                    <div className="space-y-3 text-sm></div>
+                      </div><div className=flex justify-between""></div>
+                        <span className="text-gray-400>Ticket Count </span></div>
+                        <span className=text-white">{category.ticketCount}</span"></div>
                       </div></div>
-                      <div className="flex justify-between>"</div>
-                        <span className="text-gray-400">Avg" Resolution:</span></div>
-                        <span className="text-white>{category.avgResolutionTime}h</span> "</div>
-                      </div>"</div>
+                      <div className="flex justify-between></div>
+                        <span className=text-gray-400">Avg" Resolution:</span></div>
+                        <span className="text-white>{category.avgResolutionTime}h</span> </div>
+                      </div></div>
                       <div className="flex" justify-between"></div>
-                        <span className="text-gray-400>Satisfaction:</span>"</div>
-                        <span className="text-white">{category.satisfactionScore}/5.0</span>"</div>
+                        <span className="text-gray-400>Satisfaction:</span></div>
+                        <span className=text-white">{category.satisfactionScore}/5.0</span>"</div>
                       </div></div>
                     </div></div>
                   </motion.div>
@@ -554,5 +554,5 @@ const HelpDeskSupport: NextPage = () => {'
   </div>
 ;
 };
-`;}
-export default HelpDeskSupport ))))))))))))))))))"'"'`</div>
+";}
+export default HelpDeskSupport ))))))))))))))))))"'"'"</div>

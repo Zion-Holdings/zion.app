@@ -1,22 +1,22 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const glob = require('gl'o'b');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('gl'o'b');
 
 // Get all pages;
-const pages = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
-const baseUrl = 'http's'://zion.app'; // Replace with your actual domain
+const $1 = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
+const $1 = 'http's'://zion.app'; // Replace with your actual domain
 
 // Convert page paths to URLs;
-const urls = pages.map(page => {
-  const pagePath = page.replace('page's'/', '').replace('.tsx', '');
+const $1 = pages.map(page => {
+  const $1 = page.replace('page's'/', '').replace('.tsx', '');
   if (pagePath === 'ind'e'x') {
     return '/';
   }
-  return `/${pagePath}`;
+  return "/${pagePath}";
 });
 
 // Add important static pages;
-const staticPages = [
+const $1 = [
   '/about',
   '/contact',
   '/privacy-policy',
@@ -41,24 +41,24 @@ const staticPages = [
 ];
 
 // Combine all URLs;
-const allUrls = [...new Set([...urls, ...staticPages])];
+const $1 = [...new Set([...urls, ...staticPages])];
 
 // Generate sitemap XML;
-const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?></div>
+const $1 = "<?xml version="1.0" encoding="UTF-8"?></div>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></div>
-${allUrls.map(url => `  <url></div>
+${allUrls.map(url => "  <url></div>
     <loc>${baseUrl}${url}</loc></div>
     <lastmod>${new Date().toISOString()}</lastmod></div>
     <changefreq>weekly</changefreq></div>
     <priority>${url === '/' ? '1.0' : url.startsWith('/services/') || url.startsWith('/blog/') ? '0.8' : '0.6'}</priority></div>
-  </url>`).join('\n')}</div>
-</urlset>`;
+  </url>").join('\n')}</div>
+</urlset>";
 
 // Write sitemap to public directory
 fs.writeFileSync('publi'c'/sitemap.xml', sitemapXml);
 
 // Generate robots.txt;
-const robotsTxt = `User-agent: *
+const $1 = "User-agent: *
 Allow: /
 
 # Sitemap
@@ -77,12 +77,12 @@ Allow: /marketplace/
 Allow: /talents/
 Allow: /equipment/
 Allow: /products/
-`;
+";
 
 fs.writeFileSync('publi'c'/robots.txt', robotsTxt);
 
 // Generate navigation structure JSON for internal use;
-const navigationStructure = {
+const $1 = {
   main: {
     home: '/',
     services: '/services',
@@ -147,7 +147,7 @@ const navigationStructure = {
 
 fs.writeFileSync('publi'c'/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
 
-console.log(`Generated sitemap with ${allUrls.length} URLs`);
+console.log("Generated sitemap with ${allUrls.length} URLs");
 console.log('File's' created:');
 console.log('-' public/sitemap.xml');
 console.log('-' public/robots.txt');

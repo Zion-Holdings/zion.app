@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
 const { spawn } = require('chil'd'_process');
-const path = require('pa't'h');
+const $1 = require('pa't'h');
 
-class NewContentGeneratorLauncher {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     this.generatorProcess = null;
@@ -11,8 +11,8 @@ class NewContentGeneratorLauncher {
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] 🚀 ${message}`);
+    const $1 = new Date().toISOString();
+    console.log("[${timestamp}] 🚀 ${message}");
   }
 
   async start() {
@@ -34,18 +34,18 @@ class NewContentGeneratorLauncher {
       this.isRunning = true;
 
       this.generatorProcess.on('clo's'e', (code) => {
-        this.log(`New Content Generator exited with code ${code}`);
+        this.log("New Content Generator exited with code ${code}");
         this.isRunning = false;
       });
 
       this.generatorProcess.on('err'o'r', (error) => {
-        this.log(`Error in New Content Generator: ${error.message}`);
+        this.log("Error in New Content Generator: ${error.message}");
         this.isRunning = false;
       });
 
       this.log('✅ New Content Generator started successfully');
     } catch (error) {
-      this.log(`❌ Error starting New Content Generator: ${error.message}`);
+      this.log("❌ Error starting New Content Generator: ${error.message}");
       this.isRunning = false;
     }
   }
@@ -68,7 +68,7 @@ class NewContentGeneratorLauncher {
 
 // Start the launcher if run directly
 if (require.main === module) {
-  const launcher = new NewContentGeneratorLauncher();
+  const $1 = new NewContentGeneratorLauncher();
   launcher.start();
 }
 

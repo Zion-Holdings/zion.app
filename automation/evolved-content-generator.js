@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-class EvolvedContentGenerator {
+class $1 {
   constructor() {
-    this.agentId = `evolved-generator-${Date.now()}`;
+    this.agentId = "evolved-generator-${Date.now()}";
     this.initializeGoogleAI();
     this.loadEvolutionData();
     this.innovationMetrics = {
@@ -17,7 +17,7 @@ class EvolvedContentGenerator {
 
   initializeGoogleAI() {
     try {
-      const apiKey = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
+      const $1 = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
       if (apiKey && apiKey !== 'placeholder-google-ai-k'e'y') {
         this.genAI = new GoogleGenerativeAI(apiKey);
         this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
@@ -46,30 +46,30 @@ class EvolvedContentGenerator {
   }
 
   loadFile(filename, defaultValue) {
-    const filePath = path.join(this.evolutionPath, filename);
+    const $1 = path.join(this.evolutionPath, filename);
     try {
       if (fs.existsSync(filePath)) {
         return JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
       }
     } catch (error) {
-      console.error(`Error loading ${filename}:`, error);
+      console.error("Error loading ${filename}:", error);
     }
     return defaultValue;
   }
 
   saveFile(filename, data) {
-    const filePath = path.join(this.evolutionPath, filename);
+    const $1 = path.join(this.evolutionPath, filename);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
 
   async generateEvolvedContent(pageData) {
-    const evolutionStrategy = this.determineEvolutionStrategy(pageData);
-    const contentVariation = this.generateContentVariation(pageData, evolutionStrategy);
+    const $1 = this.determineEvolutionStrategy(pageData);
+    const $1 = this.generateContentVariation(pageData, evolutionStrategy);
     
-    const prompt = this.buildEvolvedPrompt(pageData, contentVariation, evolutionStrategy);
+    const $1 = this.buildEvolvedPrompt(pageData, contentVariation, evolutionStrategy);
     
     try {
-      const content = await this.generateContentWithAI(prompt);
+      const $1 = await this.generateContentWithAI(prompt);
       this.recordEvolutionData(pageData, contentVariation, evolutionStrategy, content);
       return content;
     } catch (error) {
@@ -78,8 +78,8 @@ class EvolvedContentGenerator {
   }
 
   determineEvolutionStrategy(pageData) {
-    const strategies = ['innovati'v'e', 'experiment'a'l', 'hybr'i'd', 'progressi'v'e', 'disrupti'v'e'];
-    const strategy = strategies[Math.floor(Math.random() * strategies.length)];
+    const $1 = ['innovati'v'e', 'experiment'a'l', 'hybr'i'd', 'progressi'v'e', 'disrupti'v'e'];
+    const $1 = strategies[Math.floor(Math.random() * strategies.length)];
     
     return {
       type: strategy,
@@ -90,7 +90,7 @@ class EvolvedContentGenerator {
   }
 
   generateContentVariation(pageData, strategy) {
-    const variations = {
+    const $1 = {
       innovative: {
         layout: ['gr'i'd', 'mason'r'y', 'flexb'o'x', 'css-gr'i'd'],
         style: ['minimali's't', 'bo'l'd', 'elega'n't', 'mode'r'n'],
@@ -111,7 +111,7 @@ class EvolvedContentGenerator {
       }
     };
 
-    const variationSet = variations[strategy.type] || variations.hybrid;
+    const $1 = variations[strategy.type] || variations.hybrid;
     
     return {
       layout: variationSet.layout[Math.floor(Math.random() * variationSet.layout.length)],
@@ -123,10 +123,10 @@ class EvolvedContentGenerator {
   }
 
   buildEvolvedPrompt(pageData, variation, strategy) {
-    const innovationLevel = strategy.innovationLevel > 0.7 ? 'highl'y' innovative' : 
+    const $1 = strategy.innovationLevel > 0.7 ? 'highl'y' innovative' : 
                            strategy.innovationLevel > 0.4 ? 'moderatel'y' innovative' : 'conservati'v'e';
     
-    return `
+    return "
 Create a ${innovationLevel} and ${variation.style} website page with the following specifications:
 
 Page URL: ${pageData.url}
@@ -153,12 +153,12 @@ Requirements:
 10. Create an immersive user experience
 
 Generate a complete Next.js page that represents the next evolution in web content.
-    `;
+    ";
   }
 
   determineEvolvedPageType(url) {
-    const path = new URL(url).pathname;
-    const evolvedTypes = [
+    const $1 = new URL(url).pathname;
+    const $1 = [
       'ai-powered-dashboa'r'd',
       'interactive-showca's'e', 
       'immersive-experien'c'e',
@@ -175,10 +175,10 @@ Generate a complete Next.js page that represents the next evolution in web conte
       return evolvedTypes[Math.floor(Math.random() * evolvedTypes.length)];
     }
 
-    const baseTypes = ['abo'u't', 'conta'c't', 'servic'e's', 'produc't's', 'bl'o'g', 'priva'c'y', 'ter'm's'];
+    const $1 = ['abo'u't', 'conta'c't', 'servic'e's', 'produc't's', 'bl'o'g', 'priva'c'y', 'ter'm's'];
     for (const type of baseTypes) {
       if (path.includes(type)) {
-        return `${type}-evolved`;
+        return "${type}-evolved";
       }
     }
 
@@ -191,18 +191,18 @@ Generate a complete Next.js page that represents the next evolution in web conte
     }
     
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
+      const $1 = await this.model.generateContent(prompt);
+      const $1 = await result.response;
       return response.text();
     } catch (error) {
-      throw new Error(`AI generation failed: ${error.message}`);
+      throw new Error("AI generation failed: ${error.message}");
     }
   }
 
   generateFallbackEvolvedContent(pageData, variation) {
-    const pageType = this.determineEvolvedPageType(pageData.url);
+    const $1 = this.determineEvolvedPageType(pageData.url);
     
-    return `;}
+    return ";}
 import type { NextPage } from 'ne'x't';}
 import Head from 'nex't'/head';}
 import { useState, useEffect } from 'rea'c't'
@@ -217,35 +217,35 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Zion Tech Group</title></div>
-        <meta name="description" content="Evolved ${pageType} page with innovative features" /></div>
+        <meta name=description" content="Evolved ${pageType} page with innovative features" /></div>
       </Head>
 </div>
-      <main className="relative"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
+      <main className="relative></div>
+        <div className=absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24"></div>
-          <div className="text-center"></div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24></div>
+          <div className=text-center"></div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6></div>
+              <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                 ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</div>
               </span></div>
             </h1>
             </div>
-            <div className="mt-8"></div>
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20"></div>
-                <h2 className="text-2xl font-semibold text-white mb-4">
+            <div className="mt-8></div>
+              <div className=bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20"></div>
+                <h2 className="text-2xl font-semibold text-white mb-4>
                   ${variation.style ? variation.style.charAt(0).toUpperCase() + variation.style.slice(1) : 'Innovati'v'e'} ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</div>
                 </h2></div>
-                <p className="text-gray-300 text-lg">
+                <p className=text-gray-300 text-lg">
                   This is an evolved page with ${variation.features || 'advanc'e'd'} features and ${variation.layout || 'mode'r'n'} layout.</div>
                 </p>
                 
                 {isLoaded && data && (</div>
-                  <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30"></div>
-                    <p className="text-green-400 font-medium">
+                  <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30></div>
+                    <p className=text-green-400 font-medium">
                       ✓ Evolved content loaded successfully</div>
                     </p></div>
                   </div>
@@ -260,11 +260,11 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
 }
 ;}
 export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
-    `;
+    ";
   }
 
   recordEvolutionData(pageData, variation, strategy, content) {
-    const pattern = {
+    const $1 = {
       pageType: this.determineEvolvedPageType(pageData.url),
       variation: variation,
       strategy: strategy,
@@ -279,7 +279,7 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
       performance: Math.random() * 100
     });
 
-    const pageType = pattern.pageType;
+    const $1 = pattern.pageType;
     if (!this.evolutionData.contentVariations[pageType]) {
       this.evolutionData.contentVariations[pageType] = [];
     }
@@ -293,8 +293,8 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
   }
 
   calculateUniqueness(content) {
-    const words = content.split(/\s+/).length;
-    const uniqueWords = new Set(content.toLowerCase().split(/\s+/)).size;
+    const $1 = content.split(/\s+/).length;
+    const $1 = new Set(content.toLowerCase().split(/\s+/)).size;
     return (uniqueWords / words) * 100;
   }
 
@@ -309,12 +309,12 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
     
     for (const page of missingPages) {
       if (page.priority === 'hi'g'h') {
-        console.log(`🔄 Generating evolved content for: ${page.url}`);
+        console.log("🔄 Generating evolved content for: ${page.url}");
         
-        const evolvedContent = await this.generateEvolvedContent(page);
+        const $1 = await this.generateEvolvedContent(page);
         await this.createEvolvedPageFile(page, evolvedContent);
         
-        console.log(`✅ Evolved page created: ${page.url}`);
+        console.log("✅ Evolved page created: ${page.url}");
       }
     }
     
@@ -322,8 +322,8 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
   }
 
   async createEvolvedPageFile(page, content) {
-    const pagePath = this.getPagePath(page.url);
-    const dir = path.dirname(pagePath);
+    const $1 = this.getPagePath(page.url);
+    const $1 = path.dirname(pagePath);
     
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
@@ -331,7 +331,7 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
     
     fs.writeFileSync(pagePath, content);
     
-    const metadata = {
+    const $1 = {
       url: page.url,
       evolvedAt: new Date().toISOString(),
       agentId: this.agentId,
@@ -343,14 +343,14 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
       }
     };
     
-    const metadataPath = pagePath.replace('.tsx', '.evolution.json');
+    const $1 = pagePath.replace('.tsx', '.evolution.json');
     fs.writeFileSync(metadataPath, JSON.stringify(metadata, null, 2));
   }
 
   getPagePath(url) {
-    const cleanUrl = url.replace(/^\//, '').replace(/\/$/, '') || 'ind'e'x';
-    const filename = this.sanitizeFilename(cleanUrl);
-    return path.join(process.cwd(), 'pag'e's', `${filename}.tsx`);
+    const $1 = url.replace(/^\//, '').replace(/\/$/, '') || 'ind'e'x';
+    const $1 = this.sanitizeFilename(cleanUrl);
+    return path.join(process.cwd(), 'pag'e's', "${filename}.tsx");
   }
 
   sanitizeFilename(filename) {

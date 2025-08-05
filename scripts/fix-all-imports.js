@@ -1,15 +1,15 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 ;
 function fixAllImportStatements() {
-    const directories = ['pag'e's', 'componen't's', 's'r'c'];
+    const $1 = ['pag'e's', 'componen't's', 's'r'c'];
     
     directories.forEach(dir => {
         if (fs.existsSync(dir)) {
-            const files = getAllFiles(dir, '.tsx');
+            const $1 = getAllFiles(dir, '.tsx');
             files.forEach(file => {
                 try {
-                    let content = fs.readFileSync(file, 'ut'f'8');
+                    let $1 = fs.readFileSync(file, 'ut'f'8');
                     
                     // Fix all unterminated string literals in imports
                     content = content
@@ -72,9 +72,9 @@ function fixAllImportStatements() {
                         .replace(/;;;/g, ';');
                     
                     fs.writeFileSync(file, content);
-                    console.log(`✅ Fixed imports: ${file}`);
+                    console.log("✅ Fixed imports: ${file}");
                 } catch (error) {
-                    console.log(`❌ Error fixing ${file}:`, error.message);
+                    console.log("❌ Error fixing ${file}:", error.message);
                 }
             });
         }
@@ -82,12 +82,12 @@ function fixAllImportStatements() {
 }
 ;
 function getAllFiles(dir, ext) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+    const $1 = [];
+    const $1 = fs.readdirSync(dir);
     
     for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+        const $1 = path.join(dir, item);
+        const $1 = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
             files.push(...getAllFiles(fullPath, ext));

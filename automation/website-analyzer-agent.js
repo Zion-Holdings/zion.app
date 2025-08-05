@@ -1,9 +1,9 @@
-const puppeteer = require('puppete'e'r');
-const fs = require('f's').promises;
-const path = require('pa't'h');
-const axios = require('axi'o's');
+const $1 = require('puppete'e'r');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
 
-class WebsiteAnalyzerAgent {
+class $1 {
   constructor() {
     this.baseUrl = 'http's'://ziontechgroup.netlify.app';
     this.visitedUrls = new Set();
@@ -51,14 +51,14 @@ class WebsiteAnalyzerAgent {
     if (depth > 5 || this.visitedUrls.has(url)) return;
     
     this.visitedUrls.add(url);
-    console.log(`🔍 Crawling: ${url}`);
+    console.log("🔍 Crawling: ${url}");
     
     try {
       await this.page.goto(url, { waitUntil: 'networkidl'e'2', timeout: 30000 });
       
       // Extract all links
-      const links = await this.page.evaluate(() => {
-        const anchors = document.querySelectorAll('a'[href]');
+      const $1 = await this.page.evaluate(() => {
+        const $1 = document.querySelectorAll('a'[href]');
         return Array.from(anchors).map(a => a.href).filter(href => 
           href.includes('ziontechgrou'p'.netlify.app') || href.startsWith('/')
         );
@@ -69,20 +69,20 @@ class WebsiteAnalyzerAgent {
       
       // Recursively crawl links
       for (const link of links) {
-        const normalizedLink = this.normalizeUrl(link);
+        const $1 = this.normalizeUrl(link);
         if (!this.visitedUrls.has(normalizedLink)) {
           await this.crawlPage(normalizedLink, depth + 1);
         }
       }
     } catch (error) {
-      console.error(`❌ Error crawling ${url}:`, error.message);
+      console.error("❌ Error crawling ${url}:", error.message);
       this.errors.push({ url, error: error.message, timestamp: new Date() });
     }
   }
 
   async analyzePage(url) {
     try {
-      const analysis = {
+      const $1 = {
         url,
         timestamp: new Date(),
         title: '',
@@ -102,7 +102,7 @@ class WebsiteAnalyzerAgent {
 
       // Get headings
       analysis.headings = await this.page.evaluate(() => {
-        const headings = document.querySelectorAll('h'1, h2, h3, h4, h5, h6');
+        const $1 = document.querySelectorAll('h'1, h2, h3, h4, h5, h6');
         return Array.from(headings).map(h => ({
           level: h.tagName.toLowerCase(),
           text: h.textContent.trim()
@@ -111,13 +111,13 @@ class WebsiteAnalyzerAgent {
 
       // Get main content
       analysis.content = await this.page.evaluate(() => {
-        const main = document.querySelector('ma'i'n') || document.querySelector('bo'd'y');
+        const $1 = document.querySelector('ma'i'n') || document.querySelector('bo'd'y');
         return main ? main.textContent.trim() : '';
       });
 
       // Get images
       analysis.images = await this.page.evaluate(() => {
-        const images = document.querySelectorAll('i'm'g');
+        const $1 = document.querySelectorAll('i'm'g');
         return Array.from(images).map(img => ({
           src: img.src,
           alt: img.alt,
@@ -128,7 +128,7 @@ class WebsiteAnalyzerAgent {
 
       // Get links
       analysis.links = await this.page.evaluate(() => {
-        const links = document.querySelectorAll('a'[href]');
+        const $1 = document.querySelectorAll('a'[href]');
         return Array.from(links).map(a => ({
           href: a.href,
           text: a.textContent.trim(),
@@ -151,31 +151,31 @@ class WebsiteAnalyzerAgent {
       await this.checkMissingContent(analysis);
       
     } catch (error) {
-      console.error(`❌ Error analyzing ${url}:`, error.message);
+      console.error("❌ Error analyzing ${url}:", error.message);
       this.errors.push({ url, error: error.message, timestamp: new Date() });
     }
   }
 
   async checkPageErrors() {
-    const errors = [];
+    const $1 = [];
     
     try {
       // Check for console errors
-      const consoleErrors = await this.page.evaluate(() => {
+      const $1 = await this.page.evaluate(() => {
         return window.consoleErrors || [];
       });
       
       // Check for broken images
-      const brokenImages = await this.page.evaluate(() => {
-        const images = document.querySelectorAll('i'm'g');
+      const $1 = await this.page.evaluate(() => {
+        const $1 = document.querySelectorAll('i'm'g');
         return Array.from(images).filter(img => !img.complete || img.naturalWidth === 0);
       });
       
       // Check for broken links
-      const brokenLinks = await this.page.evaluate(() => {
-        const links = document.querySelectorAll('a'[href]');
+      const $1 = await this.page.evaluate(() => {
+        const $1 = document.querySelectorAll('a'[href]');
         return Array.from(links).filter(link => {
-          const href = link.href;
+          const $1 = link.href;
           return href && (href.includes('undefin'e'd') || href.includes('nu'l'l') || href === '#');
         });
       });
@@ -192,15 +192,15 @@ class WebsiteAnalyzerAgent {
   }
 
   async analyzePerformance() {
-    const performance = {};
+    const $1 = {};
     
     try {
       // Get page load metrics
-      const metrics = await this.page.metrics();
+      const $1 = await this.page.metrics();
       performance.loadTime = metrics.Timestamp;
       
       // Get resource timing
-      const resourceTiming = await this.page.evaluate(() => {
+      const $1 = await this.page.evaluate(() => {
         return performance.getEntriesByType('navigati'o'n')[0];
       });
       
@@ -217,16 +217,16 @@ class WebsiteAnalyzerAgent {
   }
 
   async analyzeSEO() {
-    const seo = {};
+    const $1 = {};
     
     try {
       // Check meta tags
-      const metaTags = await this.page.evaluate(() => {
-        const metas = document.querySelectorAll('me't'a');
-        const metaData = {};
+      const $1 = await this.page.evaluate(() => {
+        const $1 = document.querySelectorAll('me't'a');
+        const $1 = {};
         metas.forEach(meta => {
-          const name = meta.getAttribute('na'm'e') || meta.getAttribute('proper't'y');
-          const content = meta.getAttribute('conte'n't');
+          const $1 = meta.getAttribute('na'm'e') || meta.getAttribute('proper't'y');
+          const $1 = meta.getAttribute('conte'n't');
           if (name && content) {
             metaData[name] = content;
           }
@@ -237,8 +237,8 @@ class WebsiteAnalyzerAgent {
       seo.metaTags = metaTags;
       
       // Check for structured data
-      const structuredData = await this.page.evaluate(() => {
-        const scripts = document.querySelectorAll('scrip't'[type="application/ld+json"]');
+      const $1 = await this.page.evaluate(() => {
+        const $1 = document.querySelectorAll('scrip't'[type="application/ld+json"]');
         return Array.from(scripts).map(script => {
           try {
             return JSON.parse(script.textContent);
@@ -264,7 +264,7 @@ class WebsiteAnalyzerAgent {
   }
 
   async checkMissingContent(analysis) {
-    const missing = [];
+    const $1 = [];
     
     // Check for empty content
     if (!analysis.content || analysis.content.length < 100) {
@@ -297,7 +297,7 @@ class WebsiteAnalyzerAgent {
 
   normalizeUrl(url) {
     try {
-      const urlObj = new URL(url, this.baseUrl);
+      const $1 = new URL(url, this.baseUrl);
       return urlObj.href;
     } catch {
       return url;
@@ -305,7 +305,7 @@ class WebsiteAnalyzerAgent {
   }
 
   async generateReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date(),
       baseUrl: this.baseUrl,
       totalPages: this.visitedUrls.size,
@@ -321,23 +321,23 @@ class WebsiteAnalyzerAgent {
     };
 
     // Save report
-    const reportPath = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
+    const $1 = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
     await fs.mkdir(path.dirname(reportPath), { recursive: true });
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Analysis report saved to: ${reportPath}`);
+    console.log("📊 Analysis report saved to: ${reportPath}");
     return report;
   }
 
   generateRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     // Content recommendations
     if (this.missingPages.length > 0) {
       recommendations.push({
         type: 'conte'n't',
         priority: 'hi'g'h',
-        message: `Found ${this.missingPages.length} pages with missing content`,
+        message: "Found ${this.missingPages.length} pages with missing content",
         action: 'Creat'e' missing content for identified pages'
       });
     }
@@ -347,18 +347,18 @@ class WebsiteAnalyzerAgent {
       recommendations.push({
         type: 'erro'r's',
         priority: 'hi'g'h',
-        message: `Found ${this.errors.length} errors across the website`,
+        message: "Found ${this.errors.length} errors across the website",
         action: 'Fi'x' identified errors and broken links'
       });
     }
     
     // SEO recommendations
-    const pagesWithoutMeta = this.contentAnalysis.filter(page => !page.seo.metaTags['descripti'o'n']);
+    const $1 = this.contentAnalysis.filter(page => !page.seo.metaTags['descripti'o'n']);
     if (pagesWithoutMeta.length > 0) {
       recommendations.push({
         type: 's'e'o',
         priority: 'medi'u'm',
-        message: `${pagesWithoutMeta.length} pages missing meta descriptions`,
+        message: "${pagesWithoutMeta.length} pages missing meta descriptions",
         action: 'Ad'd' meta descriptions to improve SEO'
       });
     }
@@ -373,9 +373,9 @@ class WebsiteAnalyzerAgent {
   }
 
   log(message, type = 'in'f'o') {
-    const logEntry = { message, type, timestamp: new Date() };
+    const $1 = { message, type, timestamp: new Date() };
     this.logs.push(logEntry);
-    console.log(`[${type.toUpperCase()}] ${message}`);
+    console.log("[${type.toUpperCase()}] ${message}");
   }
 }
 

@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";
 
-interface QuantumMemory {
+interface $1 {
   id: string;
   name: string
   type: ''quantum-ram' | 'quantum-rom' | 'quantum-cach'e' | quantum-regist'e'r | quantum-buffe'r'
@@ -13,7 +13,7 @@ interface QuantumMemory {
   errorRate: number
   status: ''active' | 'writing' | 'readin'g' | standb'y'
   timestamp: string}
-interface QuantumStorage {
+interface $1 {
   id: string;
   name: string
   storage: 'quantum-di'sk | 'quantum-ta'pe | 'quantum-'ssd'' | quantum-hd'd' | quantum-optical'
@@ -22,7 +22,7 @@ interface QuantumStorage {
   latency: number'
   reliability: number
   status: 'operation'al | 'writi'ng | 'read'ing'' | maintenanc'e'}
-interface QuantumDatabase {
+interface $1 {
   id: string;
   name: string
   database: 'quantum-s'ql | 'quantum-nos'ql | 'quantum-gr'aph'' | quantum-time-serie's' | quantum-document'
@@ -31,7 +31,7 @@ interface QuantumDatabase {
   queries: number'
   performance: number
   status: 'onli'ne | 'back'up | 'recov'ery'' | maintenanc'e'}
-interface QuantumCloud {
+interface $1 {
   id: string;
   name: string
   cloud: 'quantum-publ'ic | 'quantum-priva'te | 'quantum-hyb'rid'' | quantum-edg'e' | quantum-distributed'
@@ -40,7 +40,7 @@ interface QuantumCloud {
   bandwidth: number'
   uptime: number
   status: 'runni'ng | 'scali'ng | 'updat'ing'' | maintenanc'e'}
-interface QuantumBackup {
+interface $1 {
   id: string;
   name: string
   backup: 'quantum-increment'al | 'quantum-fu'll | 'quantum-different'ial'' | quantum-snapsho't' | quantum-replication'
@@ -49,7 +49,7 @@ interface QuantumBackup {
   compression: number'
   encryption: number
   status: 'backing-'up | 'complet'ed | 'fai'led'' | schedule'd'}
-interface QuantumRecovery {
+interface $1 {
   id: string;
   name: string
   recovery: 'quantum-resto're | 'quantum-clo'ne | 'quantum-migrat'ion'' | quantum-syn'c' | quantum-archive'
@@ -58,7 +58,7 @@ interface QuantumRecovery {
   progress: number'
   estimatedTime: number
   status: 'recoveri'ng | 'complet'ed | 'fai'led'' | schedule'd'};
-const AIPoweredQuantumMemoryStorage: NextPage = () => {
+const $1: NextPage = () => {
   const [activeTab, setActiveTab] = useState(dashboar'd'
   const [isStoring, setIsStoring] = useState(false
   const [currentStorage, setCurrentStorage] = useState<any>(null</div>
@@ -144,7 +144,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
     setBackups(mockBackups
     setRecoveries(mockRecoveries
   } []
-  const startStorage = async () => {
+  const $1 = async () => {
     setIsStoring(true
     try {'
       await new Promise(resolve => setTimeout(resolve, 3000)
@@ -153,7 +153,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
       console.error('Storage error: , error
     } finally {
       setIsStoring(false}}
-  const getMemoryTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case 'quantum-ram': return 'text-purple-500
       case 'quantum-r'om: return 'text-blue'-500
@@ -161,7 +161,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
       case quantum-registe'r': return text-yellow-'500
       case 'quantum-buffer': return 'text-red-500
       default: return 'text-gray'-500}}
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case 'active': return 'text-green-500
       case 'operation'al: return 'text-green'-500
@@ -176,29 +176,29 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
       default: return text-gray'-'500}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Quantum Memory & Storage | Zion Tech</title>"</div>
         <meta name=description content=Advanced quantum memory and storage with AI-powered quantum database, quantum cloud, and quantum backup capabilities. > </meta" name="description content=Advanced quantum memory and storage with AI-powered quantum database, quantum cloud, and quantum backup" capabilities." ><meta name=keywords content=quantum memory, quantum storage, quantum database, quantum cloud, quantum backup > </meta name="keywords" content=quantum memory, quantum storage, quantum database, quantum cloud, quantum backup" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}</div>
-      <header className=" relative" z-10></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
-          </div><div className="flex  items-center justify-between">"</div>
+      <header className=" relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          </div><div className="flex  items-center justify-between></div>
             <div className="flex items-center space-x-4 > "</div>
-              </div><div className="flex items-center" space-x-3"></div>
+              </div><div className="flex items-center space-x-3></div>
                 <div className=" w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center>"</div>
-                  <span className="text-white" text-xl">💾</span></div>
+                  <span className="text-white text-xl>💾</span></div>
                 </div></div>
                 <div></div>
                   <h1 className="text-2xl font-bold text-white >Quantum Memory & Storage</h1>"</div>
-                  <p className="text-gray-300">AI-Powered" Quantum Data Management</p></div>
+                  <p className="text-gray-300>AI-Powered Quantum Data Management</p></div>
                 </div></div>
               </div></div>
             </div></div>
@@ -210,31 +210,31 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             </div></div>
           </div></div>
         </div></div>
-      </header>
+      </header>"
 "
       {/* Main Content */}"</div>
-      <main className="relative z-10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}</div>
-          </div><div className="mb-8""></div>
+          </div><div className="mb-8></div>
             <nav className=" flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {['
                 { id: 'dashboard', label: 'Storage Dashboard', icon: '💾 },
 { id: memori'e's, label: Quantu'm' Memories, icon: 🧠' },
     { id: 'storages', label: 'Quantum Storage', icon: '💿 },
-{ id: databas'e's, label: Quantu'm' Databases, icon: 🗄️' },
+{ id: databas'e's, label: Quantu'm' Databases, icon: 🗄️' },"
     { id: 'clouds', label: 'Quantum Cloud', icon: '☁️ },"
 { id: backu'p's, label: Quantu'm' Backup, icon: 🔄' },"
     { id  'recoveries', label  'Quantum Recovery', icon  '🛠️}"
               ].map((tab) => (
                 "
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
+                  className={"flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
-                      ? 'bg-gradient-to-'r from-indigo-600 to-purple-600 text-white`
-                      : 'text-gray'-300 hover:text-white hover:bg-gray-700/50``
-                  }`}
+                      ? 'bg-gradient-to-'r from-indigo-600 to-purple-600 text-white"
+                      : 'text-gray'-300 hover:text-white hover:bg-gray-700/50`"
+                  }"}
                 ></div>
                   <span>{tab.icon}</span></div>
                   <span>{tab.label}</span></div>
@@ -244,62 +244,62 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
           </div>
 
           {/* Tab Content */} </div>
-          <div className="space-y-8">
+          <div className="space-y-8>
             
             {/* Storage Dashboard */},
 {activeTab === 'dashboa'rd && (</div>
-              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6">
+              </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}</div>
-                <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> </div>
-                  </div><div className="flex items-center space-x-3 mb-4"></div>
-                    <div className="w-10" h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center></div>
-                      <span className="text-white text-lg">💾</span></div>
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700> </div>
+                  </div><div className=flex items-center space-x-3 mb-4"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center></div>
+                      <span className=text-white text-lg">💾</span></div>
                     </div></div>
                     <div></div>
-                      <h3 className="text-lg" font-semibold text-white>Storage Status</h3></div>
-                      <p className="text-gray-400 text-sm ">Quantum Data Management Hub</p></div>
+                      <h3 className="text-lg font-semibold text-white>Storage Status</h3></div>
+                      <p className=text-gray-400 text-sm ">Quantum Data Management Hub</p></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className="space-y-3>"</div>
-                    </div><div className=" flex justify-between">"</div>
-                      <span className="text-gray-300>Status</span>"</div>
-                      <span className="text-green-400">Operational</span>"</div>
+                  <div className="space-y-3></div>
+                    </div><div className= flex justify-between">"</div>
+                      <span className="text-gray-300>Status</span></div>
+                      <span className=text-green-400">Operational</span>"</div>
                     </div></div>
-                    <div className=" flex justify-between>"</div>
-                      <span className="text-gray-300">Memories</span"></div>
-                      <span className="text-white>{memories.length}</span>"</div>
-                    </div>"</div>
-                    <div className="flex justify-between"></div>
-                      <span className="text-gray-300">Storage Devices</span></div>
-                      <span className="text-white>{storages.length}</span"></div>
+                    <div className=" flex justify-between></div>
+                      <span className=text-gray-300">Memories</span"></div>
+                      <span className="text-white>{memories.length}</span></div>
                     </div></div>
                     <div className="flex justify-between"></div>
-                      <span className="text-gray-300>Databases</span>"</div>
-                      <span className="text-white">{databases.length}</span></div>
+                      <span className="text-gray-300>Storage Devices</span></div>
+                      <span className=text-white>{storages.length}</span"></div>
+                    </div></div>
+                    <div className="flex justify-between></div>
+                      <span className=text-gray-300>Databases</span>"</div>
+                      <span className="text-white>{databases.length}</span></div>
                     </div></div>
                   </div></div>
                 </div>
  
                 {/* Quick Actions */}</div>
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3></div>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"></div>
-                    <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200"></div>
-                      <div className="text-2xl" mb-2>💾</div></div>
-                      <div className="font-semibold">Start Storage</div></div>
+                <div className=lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3></div>
+                  <div className=grid grid-cols-1 md grid-cols-4 gap-4"></div>
+                    <button className=" p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200></div>
+                      <div className=text-2xl" mb-2>💾</div></div>
+                      <div className="font-semibold>Start Storage</div></div>
                     </button></div>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200""></div>
-                      <div className="text-2xl mb-2>🗄️</div>"</div>
-                      <div className="font-semibold">Database</div"></div>
+                    <button className=p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200""></div>
+                      <div className="text-2xl mb-2>🗄️</div></div>
+                      <div className=font-semibold">Database</div"></div>
                     </button></div>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200>"</div>
-                      <div className="text-2xl:mb-2">☁️</div>"</div>
-                      <div className="font-semibold>Cloud</div> "</div>
-                    </button>"</div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200></div>
+                      <div className=text-2xl:mb-2">☁️</div>"</div>
+                      <div className="font-semibold>Cloud</div> </div>
+                    </button></div>
                     <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all" duration-200"></div>
-                      <div className="text-2xl:mb-2>🔄</div>"</div>
-                      <div className="font-semibold">Backup</div>"</div>
+                      <div className="text-2xl:mb-2>🔄</div></div>
+                      <div className=font-semibold">Backup</div>"</div>
                     </button></div>
                   </div></div>
                 </div></div>
@@ -307,37 +307,37 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}"'
             {/* Quantum Memories */},
 {activeTab === 'memories' && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Memories</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {memories.map((memory) => (</div>
                     </div><div key={memory.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{memory.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{memory.type}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{memory.type}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{memory.capacity} qubits</div></div>
-                          <div className="text-gray-400 text-sm>Capacity</div></div>
+                          </div><div className="text-2xl font-bold text-white>{memory.capacity} qubits</div></div>
+                          <div className="text-gray-400 text-sm>Capacity</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Coherence" Time</span></div>
+                          <span className="text-gray-300>Coherence Time</span></div>
                           <span className="text-white>{memory.coherenceTime} μs</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className="text-gray-300>Access Time</span>"</div>
-                          <span className="text-white">{memory.accessTime}" μs</span> </div>
+                          <span className="text-white>{memory.accessTime} μs</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Error" Rate</span></div>
+                          <span className="text-gray-300>Error Rate</span></div>
                           <span className="text-white>{memory.errorRate}%</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(memory.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>"</div>
+                          <span className="{text-white capitalize ${getStatusColor(memory.status)}"}">
                             {memory.status}</div>
                           </span></div>
                         </div></div>
@@ -349,37 +349,37 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}
             {/* Quantum Storage */},"'
 {activeTab === storag'e's && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Storage</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Storage</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {storages.map((storage) => (</div>
-                    </div><div key={storage.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={storage.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{storage.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{storage.storage}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{storage.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{storage.storage}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{storage.capacity} TB</div></div>
-                          <div className="text-gray-400" text-sm>Capacity</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{storage.capacity} TB</div></div>
+                          <div className=text-gray-400" text-sm>Capacity</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Transfer Rate</span>"</div>
-                          <span className="text-white">{storage.transferRate}" GB/s</span> </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Transfer Rate</span></div>
+                          <span className=text-white">{storage.transferRate}" GB/s</span> </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Latency</span>"</div>
-                          <span className="text-white>{storage.latency} ms</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Latency</span>"</div>
+                          <span className="text-white>{storage.latency} ms</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Reliability</span>"</div>
-                          <span className="text-white">{storage.reliability}%</span""></div>
+                          <span className="text-gray-300>Reliability</span></div>
+                          <span className=text-white">{storage.reliability}%</span""></div>
                         </div></div>
-                        <div className="flex justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(storage.status)}`}">
+                        <div className="flex justify-between ></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(storage.status)}}">
                             {storage.status}</div>
                           </span></div>
                         </div></div>
@@ -391,39 +391,39 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}
             {/* Quantum Databases */},"'
 {activeTab === 'databases' && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white ">Quantum Databases</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white ">Quantum Databases</h2>
                  </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {databases.map((database) => ("</div>
+                  {databases.map((database) => (</div>
                     </div><div key={database.id} className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700">"</div>
-                      <div className="flex" items-center justify-between mb-4></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
-                          <h3 className="text-lg font-semibold text-white ">{database.name}</h3></div>
-                          <p className="text-gray-400" text-sm capitalize>{database.database}</p></div>
+                          <h3 className=text-lg font-semibold text-white ">{database.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{database.database}</p></div>
                         </div></div>
-                        <div className=" text-right"></div>
-                          </div><div className="text-2xl" font-bold text-white">{database.performance}%</div></div>
+                        <div className= text-right"></div>
+                          </div><div className="text-2xl font-bold text-white>{database.performance}%</div></div>
                           <div className="text-gray-400 text-sm>Performance</div></div>
-                        </div></div>
+                        </div></div>"
                       </div>"
                       "</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Tables</span>"</div>
+                          <span className="text-gray-300>Tables</span></div>
                           <span className="text-white>{database.tables}</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className="text-gray-300>Records</span>"</div>
-                          <span className="text-white">{database.records.toLocaleString()}</span""></div>
+                          <span className="text-white>{database.records.toLocaleString()}</span"></div>
                         </div></div>
-                        <div className="flex justify-between"></div>
-                          <span className="text-gray-300>Queries</span>"</div>
-                          <span className="text-white">{database.queries}/s</span></div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300>Queries</span>"</div>
+                          <span className="text-white>{database.queries}/s</span></div>
                         </div></div>
-                        <div className="flex" justify-between>`</div>
-                          <span className="text-gray-300">Status</span>``</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(database.status)}`}>
+                        <div className=flex" justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(database.status)}"}>
                             {database.status}</div>
                           </span></div>
                         </div></div>
@@ -435,38 +435,38 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}
             {/* Quantum Cloud */}, '
 {activeTab === clou'd's && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Cloud</h2></div>
-                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Cloud</h2></div>
+                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {clouds.map((cloud) => (</div>
-                    </div><div key={cloud.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4"> </div>
+                    </div><div key={cloud.id} className= bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4> </div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{cloud.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize ">{cloud.cloud}</p></div>
+                          <h3 className=text-lg" font-semibold text-white>{cloud.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize >{cloud.cloud}</p></div>
                         </div></div>
-                        <div className="text-right>" </div>
-                          </div><div className="text-2xl font-bold text-white">{cloud.uptime}%</div></div>
-                          <div className="text-gray-400" text-sm>Uptime</div></div>
+                        <div className=text-right>" </div>
+                          </div><div className="text-2xl font-bold text-white>{cloud.uptime}%</div></div>
+                          <div className=text-gray-400" text-sm>Uptime</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3"> </div>
-                        </div><div className="flex" justify-between></div>
-                          <span className="text-gray-300">Instances</span></div>
-                          <span className="text-white>{cloud.instances}</span"></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex" justify-between></div>
+                          <span className="text-gray-300>Instances</span></div>
+                          <span className=text-white>{cloud.instances}</span"></div>
                         </div></div>
-                        <div className="flex justify-between""></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Storage</span>"</div>
-                          <span className="text-white">{cloud.storage}" TB</span></div>
+                          <span className="text-white>{cloud.storage} TB</span></div>
                         </div></div>
                         <div className=" flex justify-between>"</div>
-                          <span className="text-gray-300">Bandwidth</span>"</div>
+                          <span className="text-gray-300>Bandwidth</span></div>
                           <span className="text-white>{cloud.bandwidth} Gbps</span> "</div>
                         </div>"</div>
-                        <div className="flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(cloud.status)}`}">
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(cloud.status)}"}">
                             {cloud.status}</div>
                           </span></div>
                         </div></div>
@@ -478,37 +478,37 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}"
             {/* Quantum Backup */},
 {activeTab === 'backu'ps && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Backup</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {backups.map((backup) => (</div>
                     </div><div key={backup.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{backup.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{backup.backup}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{backup.backup}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{backup.size} GB</div></div>
-                          <div className="text-gray-400 text-sm>Size</div></div>
+                          </div><div className="text-2xl font-bold text-white>{backup.size} GB</div></div>
+                          <div className="text-gray-400 text-sm>Size</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Duration</span>"</div>
+                          <span className="text-gray-300>Duration</span></div>
                           <span className="text-white>{backup.duration} s</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className="text-gray-300>Compression</span>"</div>
-                          <span className="text-white">{backup.compression}%</span>" </div>
+                          <span className="text-white>{backup.compression}%</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Encryption</span>"</div>
+                          <span className="text-gray-300>Encryption</span></div>
                           <span className="text-white>{backup.encryption}%</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(backup.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(backup.status)}"}">
                             {backup.status}</div>
                           </span></div>
                         </div></div>
@@ -520,37 +520,37 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             )}
             {/* Quantum Recovery */},"''
 {activeTab === recoverie's' && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Recovery</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Recovery</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {recoveries.map((recovery) => (</div>
-                    </div><div key={recovery.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={recovery.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{recovery.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{recovery.recovery}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{recovery.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{recovery.recovery}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{recovery.progress}%</div></div>
-                          <div className="text-gray-400" text-sm>Progress</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{recovery.progress}%</div></div>
+                          <div className=text-gray-400" text-sm>Progress</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Source</span>"</div>
-                          <span className="text-white">{recovery.source}</span>" </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Source</span></div>
+                          <span className=text-white">{recovery.source}</span>" </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Target</span>"</div>
-                          <span className="text-white>{recovery.target}</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Target</span>"</div>
+                          <span className="text-white>{recovery.target}</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className=" text-gray-300>Estimated Time</span>"</div>
-                          <span className=" text-white">{recovery.estimatedTime} s</span></div>
+                          <span className=" text-gray-300>Estimated Time</span></div>
+                          <span className= text-white">{recovery.estimatedTime} s</span></div>
                         </div>"</div>
-                        <div className="flex" justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(recovery.status)}`}">
+                        <div className="flex justify-between >"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(recovery.status)}"}">
                             {recovery.status}</div>
                           </span></div>
                         </div></div>
@@ -565,10 +565,10 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
       </main>
 "
       {/* Footer */}</div>
-      <footer className="relative  z-10 mt-16"></div>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 "> </div>
-          </div><div className="text-center>"</div>
-            <p className="text-gray-400"">
+      <footer className="relative  z-10 mt-16></div>
+        <div className=max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 "> </div>
+          </div><div className="text-center></div>
+            <p className=text-gray-400"">
               AI-Powered Quantum Memory & Storage | Zion Tech Group</div>
             </p></div>
             <p className=" text-gray-500 text-sm mt-2>
@@ -585,6 +585,6 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
 </div>
   </div>
 ;
-};"
-`";}
+};
+"";}
 export default AIPoweredQuantumMemoryStorage ))))))))))))))))))))))"'"'`</div>

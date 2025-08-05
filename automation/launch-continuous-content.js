@@ -1,8 +1,8 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const ContinuousContentGenerator = require('./continuous-content-generator.js');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('./continuous-content-generator.js');
 
-class ContinuousContentLauncher {
+class $1 {
   constructor() {
     this.generator = null;
     this.isRunning = false;
@@ -11,17 +11,17 @@ class ContinuousContentLauncher {
   }
 
   ensureLogDirectory() {
-    const logDir = path.dirname(this.logFile);
+    const $1 = path.dirname(this.logFile);
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
   }
 
   log(message, level = 'IN'F'O') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [CONTENT-LAUNCHER] ${message}\n`;
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] [${level}] [CONTENT-LAUNCHER] ${message}\n";
     fs.appendFileSync(this.logFile, logEntry);
-    console.log(`[${level}] [CONTENT-LAUNCHER] ${message}`);
+    console.log("[${level}] [CONTENT-LAUNCHER] ${message}");
   }
 
   async start() {
@@ -38,7 +38,7 @@ class ContinuousContentLauncher {
       this.keepAlive();
       
     } catch (error) {
-      this.log(`Failed to start Continuous Content Generator: ${error.message}`, 'ERR'O'R');
+      this.log("Failed to start Continuous Content Generator: ${error.message}", 'ERR'O'R');
       throw error;
     }
   }
@@ -57,7 +57,7 @@ class ContinuousContentLauncher {
       process.exit(0);
       
     } catch (error) {
-      this.log(`Error stopping Continuous Content Generator: ${error.message}`, 'ERR'O'R');
+      this.log("Error stopping Continuous Content Generator: ${error.message}", 'ERR'O'R');
       process.exit(1);
     }
   }
@@ -77,13 +77,13 @@ class ContinuousContentLauncher {
       this.log('Runnin'g' content generation once...');
       
       this.generator = new ContinuousContentGenerator();
-      const results = await this.generator.startContentGeneration();
+      const $1 = await this.generator.startContentGeneration();
       
-      this.log(`Content generation completed: ${JSON.stringify(results)}`);
+      this.log("Content generation completed: ${JSON.stringify(results)}");
       return results;
       
     } catch (error) {
-      this.log(`Error in runOnce: ${error.message}`, 'ERR'O'R');
+      this.log("Error in runOnce: ${error.message}", 'ERR'O'R');
       throw error;
     }
   }
@@ -109,7 +109,7 @@ module.exports = ContinuousContentLauncher;
 
 // Run if called directly
 if (require.main === module) {
-  const launcher = new ContinuousContentLauncher();
+  const $1 = new ContinuousContentLauncher();
   global.launcher = launcher;
   
   // Check if run once mode is requested

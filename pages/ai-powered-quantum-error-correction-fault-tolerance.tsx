@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";
 
-interface QuantumErrorCorrectionCode {
+interface $1 {
   id: string;
   name: string
   type: ''surface-code' | 'stabilizer-code' | 'css-cod'e' | color-co'd'e | toric-cod'e'
@@ -14,7 +14,7 @@ interface QuantumErrorCorrectionCode {
   correctionRate: number
   status: ''active' | 'testing' | 'optimizin'g' | deprecate'd'
   timestamp: string}
-interface FaultTolerantOperation {
+interface $1 {
   id: string;
   name: string
   operation: 'logical-ga'te | 'error-syndro'me | 'measurem'ent'' | state-preparation'
@@ -23,7 +23,7 @@ interface FaultTolerantOperation {
   runtime: number'
   overhead: number
   status: 'runni'ng | 'complet'ed | 'fai'led'' | schedule'd'}
-interface DecoherenceMitigation {
+interface $1 {
   id: string;
   name: string
   technique: 'dynamical-decoupli'ng | 'quantum-error-correcti'on | 'quantum-mem'ory'' | quantum-refrigeration'
@@ -32,7 +32,7 @@ interface DecoherenceMitigation {
   improvement: number'
   energyCost: number
   status: 'acti've | 'testi'ng | 'optimiz'ing'' | inactiv'e'}
-interface QuantumNoiseReduction {
+interface $1 {
   id: string;
   name: string
   method: 'noise-filteri'ng | 'quantum-filteri'ng | 'adaptive-cont'rol'' | quantum-feedback'
@@ -41,7 +41,7 @@ interface QuantumNoiseReduction {
   bandwidth: number'
   latency: number
   status: 'acti've | 'calibrati'ng | 'optimiz'ing'' | standb'y'}
-interface QuantumFaultDiagnosis {
+interface $1 {
   id: string;
   name: string
   diagnosis: 'error-syndro'me | 'fault-localizati'on | 'error-classificat'ion'' | recovery-strategy'
@@ -50,7 +50,7 @@ interface QuantumFaultDiagnosis {
   falsePositiveRate: number'
   coverage: number
   status: 'monitori'ng | 'analyzi'ng | 'report'ing'' | idl'e'}
-interface QuantumRecoveryProtocol {
+interface $1 {
   id: string;
   name: string
   protocol: 'error-recove'ry | 'state-recove'ry | 'gate-recov'ery'' | system-recovery'
@@ -59,7 +59,7 @@ interface QuantumRecoveryProtocol {
   resourceOverhead: number'
   reliability: number
   status: 'rea'dy | 'executi'ng | 'comple'ted'' | faile'd'};
-const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
+const $1: NextPage = () => {
   const [activeTab, setActiveTab] = useState(dashboar'd'
   const [isErrorCorrection, setIsErrorCorrection] = useState(false
   const [currentCode, setCurrentCode] = useState<any>(null</div>
@@ -146,7 +146,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
     setFaultDiagnosis(mockFaultDiagnosis
     setRecoveryProtocols(mockRecoveryProtocols
   } []
-  const startErrorCorrection = async () => {
+  const $1 = async () => {
     setIsErrorCorrection(true
     try {'
       await new Promise(resolve => setTimeout(resolve, 3000)
@@ -155,7 +155,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
       console.error('Error correction error: , error
     } finally {
       setIsErrorCorrection(false}}
-  const getCodeTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case 'surface-code': return 'text-blue-500
       case 'stabilizer-co'de: return 'text-green'-500
@@ -163,7 +163,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
       case color-cod'e': return text-yellow-'500
       case 'toric-code': return 'text-red-500
       default: return 'text-gray'-500}}
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {
       case 'active': return 'text-green-500
       case 'runni'ng: return 'text-blue'-500
@@ -173,29 +173,29 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
       default: return 'text-gray'-500}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech</title>"</div>
         <meta name=description content=Advanced quantum error correction and fault tolerance with AI-powered error correction codes, fault-tolerant operations, and decoherence mitigation. > </meta" name="description content=Advanced quantum error correction and fault tolerance with AI-powered error correction codes, fault-tolerant operations, and decoherence" mitigation." ><meta name=keywords content=quantum error correction, fault tolerance, decoherence mitigation, quantum noise reduction, quantum fault diagnosis > </meta name="keywords" content=quantum error correction, fault tolerance, decoherence mitigation, quantum noise reduction, quantum fault diagnosis" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}</div>
-      <header className=" relative" z-10></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
-          </div><div className="flex  items-center justify-between">"</div>
+      <header className=" relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          </div><div className="flex  items-center justify-between></div>
             <div className="flex items-center space-x-4 > "</div>
-              </div><div className="flex items-center" space-x-3"></div>
+              </div><div className="flex items-center space-x-3></div>
                 <div className=" w-12 h-12 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center>"</div>
-                  <span className="text-white" text-xl">🛡️</span></div>
+                  <span className="text-white text-xl>🛡️</span></div>
                 </div></div>
                 <div></div>
                   <h1 className="text-2xl font-bold text-white >Quantum Error Correction & Fault Tolerance</h1>"</div>
-                  <p className="text-gray-300">AI-Powered" Quantum Reliability</p></div>
+                  <p className="text-gray-300>AI-Powered Quantum Reliability</p></div>
                 </div></div>
               </div></div>
             </div></div>
@@ -207,31 +207,31 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             </div></div>
           </div></div>
         </div></div>
-      </header>
+      </header>"
 "
       {/* Main Content */}"</div>
-      <main className="relative z-10"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="relative z-10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}</div>
-          </div><div className="mb-8""></div>
+          </div><div className="mb-8></div>
             <nav className=" flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {['
                 { id: dashboar'd', label: Error' Dashboard', icon: 🛡️ },
 { id: 'error-correcti'on, label: 'Erro'r Correction, icon: '🔧' },
     { id: fault-toleranc'e', label: Fault' Tolerance', icon: ⚡ },
-{ id: 'decoheren'ce, label: 'Decoheren'ce, icon: '🌊' },
+{ id: 'decoheren'ce, label: 'Decoheren'ce, icon: '🌊' },"
     { id: noise-reductio'n', label: Noise' Reduction', icon: 🔇 },"
 { id: 'fault-diagnos'is, label: 'Faul't Diagnosis, icon: '🔍' },"
     { id  recover'y', label  Recovery' Protocols', icon  🔄}"
               ].map((tab) => (
                 "
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
+                  className={"flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${'
                     activeTab === tab.id
-                      ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'`
-                      : 'text-gray-300 hover:text-white hover:bg-gray-700/50'``
-                  }`}
+                      ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'"
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700/50'`"
+                  }"}
                 ></div>
                   <span>{tab.icon}</span></div>
                   <span>{tab.label}</span></div>
@@ -241,104 +241,104 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
           </div>
 
           {/* Tab Content */} </div>
-          <div className="space-y-8">
+          <div className="space-y-8>
             
             {/* Error Dashboard */},
 {activeTab === 'dashboard' && (</div>
-              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6">
+              </div><div className= grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}</div>
-                <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700> </div>
-                  </div><div className="flex items-center space-x-3 mb-4"></div>
-                    <div className="w-10" h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center></div>
-                      <span className="text-white text-lg">🛡️</span></div>
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700> </div>
+                  </div><div className=flex items-center space-x-3 mb-4"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center></div>
+                      <span className=text-white text-lg">🛡️</span></div>
                     </div></div>
                     <div></div>
-                      <h3 className="text-lg" font-semibold text-white>Error Correction Status</h3></div>
-                      <p className="text-gray-400 text-sm ">Fault Tolerance Lab</p></div>
+                      <h3 className="text-lg font-semibold text-white>Error Correction Status</h3></div>
+                      <p className=text-gray-400 text-sm ">Fault Tolerance Lab</p></div>
                     </div></div>
                   </div>
                   </div>
-                  <div className="space-y-3>"</div>
-                    </div><div className=" flex justify-between">"</div>
-                      <span className="text-gray-300>Status</span>"</div>
-                      <span className="text-green-400">Protected</span>"</div>
+                  <div className="space-y-3></div>
+                    </div><div className= flex justify-between">"</div>
+                      <span className="text-gray-300>Status</span></div>
+                      <span className=text-green-400">Protected</span>"</div>
                     </div></div>
-                    <div className=" flex justify-between>"</div>
-                      <span className=" text-gray-300">Error Codes</span>"</div>
-                      <span className="text-white>{errorCorrectionCodes.length}</span"></div>
+                    <div className=" flex justify-between></div>
+                      <span className= text-gray-300">Error Codes</span>"</div>
+                      <span className="text-white>{errorCorrectionCodes.length}</span></div>
                     </div></div>
-                    <div className="flex justify-between"></div>
-                      <span className="text-gray-300>Fault" Operations</span></div>
-                      <span className="text-white">{faultTolerantOperations.length}</span></div>
+                    <div className=flex justify-between"></div>
+                      <span className="text-gray-300>Fault Operations</span></div>
+                      <span className=text-white">{faultTolerantOperations.length}</span></div>
                     </div></div>
-                    <div className="flex" justify-between></div>
-                      <span className="text-gray-300">Recovery Protocols</span></div>
-                      <span className="text-white>{recoveryProtocols.length}</span>"</div>
+                    <div className="flex justify-between></div>
+                      <span className=text-gray-300">Recovery Protocols</span></div>
+                      <span className="text-white>{recoveryProtocols.length}</span></div>
                     </div></div>
                   </div></div>
                 </div>
  
                 {/* Quick Actions */}</div>
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
-                  <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3></div>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"></div>
-                    <button className=" p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white hover from-red-700 hover to-red-800 transition-all" duration-200></div>
-                      <div className="text-2xl mb-2">🔧</div></div>
-                      <div className="font-semibold>Correct Errors</div>"</div>
-                    </button>"</div>
+                <div className=lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3></div>
+                  <div className=grid grid-cols-1 md grid-cols-4 gap-4"></div>
+                    <button className=" p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white hover from-red-700 hover to-red-800 transition-all duration-200></div>
+                      <div className=text-2xl mb-2">🔧</div></div>
+                      <div className="font-semibold>Correct Errors</div></div>
+                    </button></div>
                     <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>"</div>
-                      <div className="text-2xl" mb-2">⚡</div></div>
+                      <div className="text-2xl mb-2>⚡</div></div>
                       <div className="font-semibold>Fault Tolerance</div>"</div>
                     </button>"</div>
-                    <button className=" p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all" duration-200"></div>
+                    <button className=" p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200></div>
                       <div className="text-2xl:mb-2>🌊</div>"</div>
-                      <div className="font-semibold">Mitigate" Decoherence</div> </div>
+                      <div className="font-semibold>Mitigate Decoherence</div> </div>
                     </button></div>
                     <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>"</div>
-                      <div className="text-2xl:mb-2">🔄</div>"</div>
+                      <div className="text-2xl:mb-2>🔄</div></div>
                       <div className="font-semibold>Recovery Protocol</div></div>
                     </button></div>
                   </div></div>
                 </div></div>
-              </div>
+              </div>"
             )}'"
             {/* Error Correction Codes */},"
 {activeTab === error-correctio'n' && ("</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white">Quantum Error Correction Codes</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> "
-                  {errorCorrectionCodes.map((code) => ("</div>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white">Quantum Error Correction Codes</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
+                  {errorCorrectionCodes.map((code) => (</div>
                     </div><div key={code.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700""></div>
-                      <div className="flex items-center justify-between mb-4>"</div>
-                        </div><div>"</div>
+                      <div className="flex items-center justify-between mb-4></div>
+                        </div><div></div>
                           <h3 className="text-lg" font-semibold text-white">{code.name}</h3></div>
-                          <p className="text-gray-400 text-sm:capitalize>{code.type}</p>"</div>
-                        </div>"</div>
+                          <p className="text-gray-400 text-sm:capitalize>{code.type}</p></div>
+                        </div></div>
                         <div className="text-right">"</div>
-                          </div><div className="text-2xl font-bold text-white>{code.correctionRate}%</div>"</div>
-                          <div className="text-gray-400" text-sm">Correction Rate</div></div>
+                          </div><div className="text-2xl font-bold text-white>{code.correctionRate}%</div></div>
+                          <div className=text-gray-400" text-sm">Correction Rate</div></div>
                         </div></div>
                       </div></div>
-                      <div className="space-y-3> "</div>
-                        </div><div className="flex justify-between""></div>
-                          <span className="text-gray-300>Distance</span>"</div>
-                          <span className="text-white">{code.distance}</span"></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex justify-between""></div>
+                          <span className="text-gray-300>Distance</span></div>
+                          <span className=text-white">{code.distance}</span"></div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Logical" Qubits</span></div>
-                          <span className="text-white>{code.logicalQubits}</span> "</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">Logical" Qubits</span></div>
+                          <span className="text-white>{code.logicalQubits}</span> </div>
+                        </div></div>
                         <div className="flex" justify-between"></div>
-                          <span className="text-gray-300>Physical Qubits</span>"</div>
-                          <span className="text-white">{code.physicalQubits}</span>"</div>
+                          <span className="text-gray-300>Physical Qubits</span></div>
+                          <span className=text-white">{code.physicalQubits}</span>"</div>
                         </div></div>
-                        <div className=" flex justify-between>"</div>
-                          <span className=" text-gray-300">Error Threshold</span>"</div>
-                          <span className="text-white>{code.errorThreshold}%</span"></div>
+                        <div className=" flex justify-between></div>
+                          <span className= text-gray-300">Error Threshold</span>"</div>
+                          <span className="text-white>{code.errorThreshold}%</span></div>
                         </div></div>
-                        <div className="flex justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(code.status)}`}">
+                        <div className=flex justify-between ">"</div>
+                          <span className="text-gray-300>Status</span>"</div>
+                          <span className="{text-white capitalize ${getStatusColor(code.status)}}">
                             {code.status}</div>
                           </span></div>
                         </div></div>
@@ -350,39 +350,39 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             )}
             {/* Fault Tolerant Operations */},"
 {activeTab === 'fault-toleran'ce && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white >Fault Tolerant Operations</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white >Fault Tolerant Operations</h2>
                  </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {faultTolerantOperations.map((operation) => (</div>
-                    </div><div key={operation.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700"></div>
-                      <div className="flex items-center justify-between mb-4>"</div>
-                        </div><div>"</div>
+                    </div><div key={operation.id} className= bg-gray-800/50 rounded-xl p-6 border" border-gray-700"></div>
+                      <div className="flex items-center justify-between mb-4></div>
+                        </div><div></div>
                           <h3 className="text-lg" font-semibold text-white ">{operation.name}</h3></div>
                           <p className="text-gray-400 text-sm capitalize>{operation.operation}</p></div>
-                        </div>"</div>
+                        </div></div>
                         <div className=" text-right">"</div>
-                          </div><div className="text-2xl" font-bold text-white>{operation.fidelity}%</div></div>
-                          <div className="text-gray-400 text-sm">Fidelity</div></div>
+                          </div><div className="text-2xl font-bold text-white>{operation.fidelity}%</div></div>
+                          <div className=text-gray-400 text-sm">Fidelity</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3>" </div>
-                        </div><div className="flex justify-between"></div>
-                          <span className="text-gray-300>Error" Rate</span></div>
-                          <span className="text-white">{operation.errorRate}%</span></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex justify-between"></div>
+                          <span className="text-gray-300>Error Rate</span></div>
+                          <span className=text-white">{operation.errorRate}%</span></div>
                         </div></div>
-                        <div className=" flex" justify-between></div>
-                          <span className="text-gray-300">Runtime</span></div>
-                          <span className="text-white>{operation.runtime} ms</span>"</div>
-                        </div>"</div>
+                        <div className=" flex justify-between></div>
+                          <span className=text-gray-300">Runtime</span></div>
+                          <span className="text-white>{operation.runtime} ms</span></div>
+                        </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Overhead</span>"</div>
+                          <span className="text-gray-300>Overhead</span></div>
                           <span className="text-white>{operation.overhead}x</span>"</div>
                         </div>"</div>
-                        <div className="flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(operation.status)}`}">
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(operation.status)}"}">
                             {operation.status}</div>
                           </span></div>
                         </div></div>
@@ -394,38 +394,38 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             )}
             {/* Decoherence Mitigation */}, ''
 {activeTab === decoherenc'e' && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white">Decoherence Mitigation</h2></div>
-                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>"
-                  {decoherenceMitigation.map((mitigation) => ("</div>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white">Decoherence Mitigation</h2></div>
+                <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                  {decoherenceMitigation.map((mitigation) => (</div>
                     </div><div key={mitigation.id} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700"></div>
-                      <div className="flex items-center justify-between mb-4> "</div>
-                        </div><div>"</div>
+                      <div className="flex items-center justify-between mb-4> </div>
+                        </div><div></div>
                           <h3 className="text-lg" font-semibold text-white">{mitigation.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize >{mitigation.technique}</p>"</div>
-                        </div>"</div>
+                          <p className="text-gray-400 text-sm capitalize >{mitigation.technique}</p></div>
+                        </div></div>
                         <div className="text-right">" </div>
-                          </div><div className="text-2xl font-bold text-white>{mitigation.improvement}%</div>"</div>
-                          <div className="text-gray-400" text-sm">Improvement</div></div>
+                          </div><div className="text-2xl font-bold text-white>{mitigation.improvement}%</div></div>
+                          <div className=text-gray-400" text-sm">Improvement</div></div>
                         </div></div>
                       </div>
                       </div>
-                      <div className="space-y-3> "</div>
-                        </div><div className="flex" justify-between"></div>
-                          <span className=" text-gray-300>Coherence Time</span>"</div>
-                          <span className=" text-white">{mitigation.coherenceTime} μs</span></div>
+                      <div className="space-y-3> </div>
+                        </div><div className=flex" justify-between"></div>
+                          <span className=" text-gray-300>Coherence Time</span></div>
+                          <span className= text-white">{mitigation.coherenceTime} μs</span></div>
                         </div>"</div>
-                        <div className="flex justify-between""></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Decoherence Rate</span>"</div>
-                          <span className="text-white">{mitigation.decoherenceRate}%</span"></div>
+                          <span className="text-white>{mitigation.decoherenceRate}%</span></div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Energy" Cost</span></div>
+                          <span className="text-gray-300>Energy Cost</span></div>
                           <span className="text-white>{mitigation.energyCost} mW</span> "</div>
                         </div>"</div>
-                        <div className="flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(mitigation.status)}`}">
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(mitigation.status)}"}">
                             {mitigation.status}</div>
                           </span></div>
                         </div></div>
@@ -437,37 +437,37 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             )}"
             {/* Noise Reduction */},
 {activeTab === noise-reducti'o'n && (</div>
-              <div className="space-y-6""></div>
+              <div className="space-y-6></div>
                 <h2 className="text-2xl font-bold text-white>Quantum Noise Reduction</h2>"</div>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
                   {noiseReduction.map((reduction) => (</div>
                     </div><div key={reduction.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
-                      <div className="flex" items-center justify-between mb-4"></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
                           <h3 className="text-lg font-semibold text-white>{reduction.name}</h3>"</div>
-                          <p className="text-gray-400" text-sm:capitalize">{reduction.method}</p></div>
+                          <p className="text-gray-400 text-sm:capitalize>{reduction.method}</p></div>
                         </div></div>
                         <div className="text-right>"</div>
-                          </div><div className="text-2xl" font-bold text-white">{reduction.reductionFactor}x</div></div>
-                          <div className="text-gray-400 text-sm>Reduction</div></div>
+                          </div><div className="text-2xl font-bold text-white>{reduction.reductionFactor}x</div></div>
+                          <div className="text-gray-400 text-sm>Reduction</div></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Noise" Level</span></div>
+                          <span className="text-gray-300>Noise Level</span></div>
                           <span className="text-white>{reduction.noiseLevel}%</span>"</div>
                         </div>"</div>
-                        <div className="flex" justify-between"></div>
+                        <div className="flex justify-between></div>
                           <span className="text-gray-300>Bandwidth</span>"</div>
-                          <span className="text-white">{reduction.bandwidth}" MHz</span> </div>
+                          <span className="text-white>{reduction.bandwidth} MHz</span> </div>
                         </div></div>
                         <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Latency</span>"</div>
+                          <span className="text-gray-300>Latency</span></div>
                           <span className="text-white>{reduction.latency} ms</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white" capitalize ${getStatusColor(reduction.status)}`}">
+                        <div className=" flex justify-between>"</div>
+                          <span className="text-gray-300>Status</span>`</div>
+                          <span className="{"text-white" capitalize ${getStatusColor(reduction.status)}"}">
                             {reduction.status}</div>
                           </span></div>
                         </div></div>
@@ -479,37 +479,37 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             )}
             {/* Fault Diagnosis */},"'
 {activeTab === 'fault-diagnosis' && (</div>
-              <div className="space-y-6"></div>
-                <h2 className="text-2xl" font-bold text-white>Quantum Fault Diagnosis</h2></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white>Quantum Fault Diagnosis</h2></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
                   {faultDiagnosis.map((diagnosis) => (</div>
-                    </div><div key={diagnosis.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
-                      <div className="flex items-center justify-between mb-4 "></div>
+                    </div><div key={diagnosis.id} className=bg-gray-800/50" rounded-xl:p-6 border border-gray-700></div>
+                      <div className="flex items-center justify-between mb-4 ></div>
                         </div><div></div>
-                          <h3 className="text-lg" font-semibold text-white>{diagnosis.name}</h3></div>
-                          <p className="text-gray-400 text-sm capitalize">{diagnosis.diagnosis}</p> </div>
+                          <h3 className=text-lg" font-semibold text-white>{diagnosis.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{diagnosis.diagnosis}</p> </div>
                         </div></div>
-                        <div className="text-right>"</div>
-                          </div><div className="text-2xl font-bold text-white ">{diagnosis.accuracy}%</div></div>
-                          <div className="text-gray-400" text-sm>Accuracy</div></div>
+                        <div className=text-right>"</div>
+                          </div><div className="text-2xl font-bold text-white >{diagnosis.accuracy}%</div></div>
+                          <div className=text-gray-400" text-sm>Accuracy</div></div>
                         </div> </div>
                       </div></div>
-                      <div className="space-y-3"></div>
-                        </div><div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Detection Time</span>"</div>
-                          <span className="text-white">{diagnosis.detectionTime}" ms</span> </div>
+                      <div className="space-y-3></div>
+                        </div><div className= flex" justify-between"></div>
+                          <span className="text-gray-300>Detection Time</span></div>
+                          <span className=text-white">{diagnosis.detectionTime}" ms</span> </div>
                         </div></div>
-                        <div className="flex justify-between>"</div>
-                          <span className="text-gray-300">False" Positive Rate</span></div>
-                          <span className="text-white>{diagnosis.falsePositiveRate}%</span>"</div>
-                        </div>"</div>
+                        <div className="flex justify-between></div>
+                          <span className=text-gray-300">False" Positive Rate</span></div>
+                          <span className="text-white>{diagnosis.falsePositiveRate}%</span></div>
+                        </div></div>
                         <div className=" flex" justify-between"></div>
-                          <span className="text-gray-300>Coverage</span>"</div>
-                          <span className="text-white">{diagnosis.coverage}%</span""></div>
+                          <span className="text-gray-300>Coverage</span></div>
+                          <span className=text-white">{diagnosis.coverage}%</span""></div>
                         </div></div>
-                        <div className="flex justify-between ">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(diagnosis.status)}`}">
+                        <div className="flex justify-between ></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(diagnosis.status)}}">
                             {diagnosis.status}</div>
                           </span></div>
                         </div></div>
@@ -521,39 +521,39 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             )}
             {/* Recovery Protocols */},"'
 {activeTab === recove'r'y && (</div>
-              <div className="space-y-6>"</div>
-                <h2 className="text-2xl" font-bold text-white ">Quantum Recovery Protocols</h2>
+              <div className="space-y-6></div>
+                <h2 className=text-2xl" font-bold text-white ">Quantum Recovery Protocols</h2>
                  </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {recoveryProtocols.map((protocol) => ("</div>
+                  {recoveryProtocols.map((protocol) => (</div>
                     </div><div key={protocol.id} className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700">"</div>
-                      <div className="flex" items-center justify-between mb-4></div>
+                      <div className="flex items-center justify-between mb-4></div>
                         </div><div></div>
-                          <h3 className="text-lg font-semibold text-white ">{protocol.name}</h3></div>
-                          <p className="text-gray-400" text-sm capitalize>{protocol.protocol}</p></div>
+                          <h3 className=text-lg font-semibold text-white ">{protocol.name}</h3></div>
+                          <p className="text-gray-400 text-sm capitalize>{protocol.protocol}</p></div>
                         </div></div>
-                        <div className=" text-right"></div>
-                          </div><div className="text-2xl" font-bold text-white">{protocol.successRate}%</div></div>
+                        <div className= text-right"></div>
+                          </div><div className="text-2xl font-bold text-white>{protocol.successRate}%</div></div>
                           <div className="text-gray-400 text-sm>Success Rate</div></div>
-                        </div></div>
+                        </div></div>"
                       </div>"
                       "</div>
-                      <div className="space-y-3">" </div>
+                      <div className="space-y-3> </div>
                         </div><div className="flex justify-between>"</div>
-                          <span className="text-gray-300">Recovery" Time</span></div>
+                          <span className="text-gray-300>Recovery Time</span></div>
                           <span className="text-white>{protocol.recoveryTime} ms</span>"</div>
                         </div>"</div>
-                        <div className=" flex" justify-between"></div>
+                        <div className=" flex justify-between></div>
                           <span className=" text-gray-300>Resource Overhead</span>"</div>
-                          <span className="text-white">{protocol.resourceOverhead}x</span></div>
-                        </div>"</div>
-                        <div className="flex justify-between"></div>
-                          <span className="text-gray-300">Reliability</span></div>
-                          <span className="text-white>{protocol.reliability}%</span"></div>
+                          <span className="text-white>{protocol.resourceOverhead}x</span></div>
                         </div></div>
-                        <div className="flex justify-between">`</div>
-                          <span className="text-gray-300>Status</span>``"</div>
-                          <span className="{`text-white capitalize ${getStatusColor(protocol.status)}`}">
+                        <div className="flex justify-between"></div>
+                          <span className="text-gray-300>Reliability</span></div>
+                          <span className=text-white>{protocol.reliability}%</span"></div>
+                        </div></div>
+                        <div className="flex justify-between></div>
+                          <span className="text-gray-300>Status</span>`""</div>
+                          <span className="{text-white capitalize ${getStatusColor(protocol.status)}}">
                             {protocol.status}</div>
                           </span></div>
                         </div></div>
@@ -568,10 +568,10 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
       </main>
  
       {/* Footer */}</div>
-      <footer className="relative z-10" mt-16></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> </div>
-          </div><div className="text-center"></div>
-            <p className="text-gray-400">"
+      <footer className="relative z-10 mt-16></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> </div>
+          </div><div className="text-center></div>
+            <p className=text-gray-400">"
               AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech Group </div>
             </p></div>
             <p className="text-gray-500 text-sm mt-2>
@@ -588,6 +588,6 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
 </div>
   </div>
 ;
-};"
-'`";}
+};
+'"";}
 export default AIPoweredQuantumErrorCorrectionFaultTolerance ))))))))))))))))))))))"'"'`</div>

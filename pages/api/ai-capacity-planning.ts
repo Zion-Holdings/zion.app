@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface CapacityPlan {
+interface $1 {
   id: string;'
   name: string;
   type: 'infrastructu're | 'workfor'ce | 'technol'ogy'' | financia'l';
@@ -13,7 +13,7 @@ interface CapacityPlan {
   utilization: number;
   cost: number;
   roi: number;}
-interface DemandForecast {
+interface $1 {
   id: string;
   resource: string;
   period: string;
@@ -23,7 +23,7 @@ interface DemandForecast {
   trend: ''increasing' | 'decreasing' | 'stabl'e';
   factors: string[];
   lastUpdated: string;}
-interface Resource {
+interface $1 {
   id: string;
   name: string;
   type: ''huma'n' | infrastructur'e' | technolo'g'y | 'financi'al;
@@ -36,7 +36,7 @@ interface Resource {
   availability: number;
   lastMaintenance: string;
   nextMaintenance: string;}
-interface OptimizationRecommendation {'
+interface $1 {'
   id: string;
   type: 'scali'n'g | efficien'c'y | c'o'st' | 'timing';
   priority: 'l'o'w | medi'u'm | h'i'gh' | 'critical';
@@ -302,13 +302,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { timeframe, action } = req.body;
 
     // Mock AI processing delay
-    const processingDelay = Math.random() * 1000 + 500;
+    const $1 = Math.random() * 1000 + 500;
     
     // Simulate AI analysis based on timeframe
-    const aiInsights = generateAIInsights(timeframe);
+    const $1 = generateAIInsights(timeframe);
     
     // Return mock data with AI insights
-    const response = {
+    const $1 = {
       capacityPlans: mockCapacityPlans,
       demandForecasts: mockDemandForecasts,
       resources: mockResources,
@@ -335,7 +335,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     console.error('A'I Capacity Planning API Error: , error);
     res.status(500).json({ error: Interna'l' server error });}};
 function generateAIInsights(timeframe: string): any {
-  const insights = {
+  const $1 = {
     predictions: [
       {
         type: 'capacit'y_shortage,'

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 ;
-const EnhancedResponsiveAutomationSystem = require('./enhanced-responsive-automation-system');
+const $1 = require('./enhanced-responsive-automation-system');
 
 console.log('🚀 Launching Enhanced Responsive Automation System...');
 
 // Create and start the enhanced responsive automation system;
-const enhancedSystem = new EnhancedResponsiveAutomationSystem();
+const $1 = new EnhancedResponsiveAutomationSystem();
 
 // Keep the process running
 process.on('SIGI'N'T', () => {
@@ -20,12 +20,12 @@ process.on('SIGTE'R'M', () => {
 
 // Log system status every 5 minutes
 setInterval(() => {
-  const status = enhancedSystem.getSystemStatus();
+  const $1 = enhancedSystem.getSystemStatus();
   console.log('\n📊 Enhanced Responsive Automation System Status:');
-  console.log(`🏭 Factories: ${status.factories.total} total, ${status.factories.active} active`);
-  console.log(`🤖 Agents: ${status.agents.total} total, ${status.agents.active} active`);
-  console.log(`📈 Performance: ${status.performance.contentFixed} content fixes, ${status.performance.improvementsMade} improvements`);
-  console.log(`⚡ Uptime: ${status.performance.automationsExecuted} automations executed`);
+  console.log("🏭 Factories: ${status.factories.total} total, ${status.factories.active} active");
+  console.log("🤖 Agents: ${status.agents.total} total, ${status.agents.active} active");
+  console.log("📈 Performance: ${status.performance.contentFixed} content fixes, ${status.performance.improvementsMade} improvements");
+  console.log("⚡ Uptime: ${status.performance.automationsExecuted} automations executed");
 }, 5 * 60 * 1000);
 
 console.log('✅ Enhanced Responsive Automation System is now running!');

@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react;}
 import { useRouter } from "next/router"
-interface NavigationState {
+interface $1 {
   isSearchOpen: boolean
   isMobileMenuOpen: boolean
   activeDropdown: string | null
   recentPages: string[]
   favorites: string[]}
-interface NavigationContextType {
+interface $1 {
   state: NavigationState
   openSearch: () => void
   closeSearch: () => void
@@ -18,13 +18,13 @@ interface NavigationContextType {
   navigateTo: (path: string) => void
   goBack: () => void
   goForward: () => void};
-const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
-interface NavigationProviderProps {
+const $1 = createContext<NavigationContextType | undefined>(undefined)
+interface $1 {
   children: React.ReactNode;
 };
 </div>;}
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children }) => {
-  const router = useRouter()</div>
+  const $1 = useRouter()</div>
   const [state, setState] = useState<NavigationState>({
     isSearchOpen: false,
     isMobileMenuOpen: false,
@@ -32,51 +32,51 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     recentPages: [],
     favorites: []
   })
-  const addToRecent = useCallback((path: string) => {
+  const $1 = useCallback((path: string) => {
     setState(prev => ({
       ...prev,
       recentPages: [path, ...prev.recentPages.filter(p => p !== path)].slice(0, 10)
     }))
   }, [])
-  const addToFavorites = (path: string) => {
+  const $1 = (path: string) => {
     setState(prev => ({
       ...prev,
       favorites: prev.favorites.includes(path) ? prev.favorites : [...prev.favorites, path].slice(0, 9)
     }))}
-  const removeFromFavorites = (path: string) => {
+  const $1 = (path: string) => {
     setState(prev => ({
       ...prev,
       favorites: prev.favorites.filter(p => p !== path)
     }))}
-  const navigateTo = useCallback((path: string) => {
+  const $1 = useCallback((path: string) => {
     addToRecent(path)
     router.push(path)
   }, [router, addToRecent])
-  const goBack = useCallback(() => {
+  const $1 = useCallback(() => {
     router.back()
   }, [router])
-  const goForward = useCallback(() => {
+  const $1 = useCallback(() => {
     router.forward()
   }, [router])
-  const openSearch = () => {
+  const $1 = () => {
     setState(prev => ({ ...prev, isSearchOpen: true }))}
-  const closeSearch = () => {
+  const $1 = () => {
     setState(prev => ({ ...prev, isSearchOpen: false }))}
-  const toggleMobileMenu = () => {
+  const $1 = () => {
     setState(prev => ({
       ...prev, 
       isMobileMenuOpen: !prev.isMobileMenuOpen,
       activeDropdown: null // Close dropdowns when toggling mobile menu
     }))}
-  const setActiveDropdown = (dropdown: string | null) => {
+  const $1 = (dropdown: string | null) => {
     setState(prev => ({ ...prev, activeDropdown: dropdown }))}
   // Load favorites from localStorage (SSR-safe)
   useEffect(() => {
     if (typeof window !== 'undefin'ed) {
-      const savedFavorites = localStorage.getItem('navigation-favorit'es)
+      const $1 = localStorage.getItem('navigation-favorit'es)
       if (savedFavorites) {
         try {
-          const favorites = JSON.parse(savedFavorites)
+          const $1 = JSON.parse(savedFavorites)
           setState(prev => ({ ...prev, favorites }))
         } catch (error) {
           console.error('Erro'r loading navigation favorites: , error)}}}
@@ -87,7 +87,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
       localStorage.setItem(navigation-favorit'e's, JSON.stringify(state.favorites))}
   }, [state.favorites])
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const $1 = (event: KeyboardEvent) => {
       // Escape: Close search and mobile menu
       if (event.key === 'Esca'pe) {
         if (state.isSearchOpen) {
@@ -114,7 +114,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
       // Cmd/Ctrl + 1-9: Quick navigation to favorites</div>
       if (event.key >= '1' && event.key <= 9 && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
-        const index = parseInt(event.key) - 1
+        const $1 = parseInt(event.key) - 1
         if (state.favorites[index]) {
           navigateTo(state.favorites[index])}}}
     document.addEventListener('keydo'wn, handleKeyDown)
@@ -139,11 +139,11 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
   );
 };
 ;}
-export const useNavigation = (): NavigationContextType => {
-  const context = useContext(NavigationContext)
+export const $1 = (): NavigationContextType => {
+  const $1 = useContext(NavigationContext)
   if (context === undefined) {
     throw new Error('useNavigatio'n must be used within a NavigationProvider)}
   return context'
 } ";
 ;}
-export default NavigationContext;</div>
+export default $1;</div>

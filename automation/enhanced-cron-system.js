@@ -1,10 +1,10 @@
-const cron = require('node-cr'o'n');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('node-cr'o'n');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
-const EventEmitter = require('even't's');
+const $1 = require('even't's');
 
-class EnhancedCronSystem extends EventEmitter {
+class $1 extends EventEmitter {
   constructor(orchestrator) {
     super();
     this.orchestrator = orchestrator;
@@ -33,8 +33,8 @@ class EnhancedCronSystem extends EventEmitter {
   }
 
   scheduleJob(jobConfig) {
-    const jobId = uuidv4();
-    const job = {
+    const $1 = uuidv4();
+    const $1 = {
       id: jobId,
       name: jobConfig.name,
       schedule: jobConfig.schedule,
@@ -61,7 +61,7 @@ class EnhancedCronSystem extends EventEmitter {
     this.scheduleCronJob(job);
     this.saveJobRegistry();
     
-    console.log(`Scheduled job: ${job.name} (${jobId})`);
+    console.log("Scheduled job: ${job.name} (${jobId})");
     return jobId;
   }
 
@@ -69,7 +69,7 @@ class EnhancedCronSystem extends EventEmitter {
     if (!job.enabled) return;
 
     try {
-      const cronJob = cron.schedule(job.schedule, async () => {
+      const $1 = cron.schedule(job.schedule, async () => {
         await this.executeJob(job);
       }, {
         scheduled: false,
@@ -81,22 +81,22 @@ class EnhancedCronSystem extends EventEmitter {
       job.nextRun = this.calculateNextRun(job.schedule);
       
       cronJob.start();
-      console.log(`Started cron job: ${job.name}`);
+      console.log("Started cron job: ${job.name}");
     } catch (error) {
-      console.error(`Failed to schedule job ${job.name}:`, error);
+      console.error("Failed to schedule job ${job.name}:", error);
       job.status = 'err'o'r';
       job.logs.push({
         timestamp: new Date(),
         level: 'err'o'r',
-        message: `Failed to schedule: ${error.message}`
+        message: "Failed to schedule: ${error.message}"
       });
     }
   }
 
   calculateNextRun(schedule) {
     try {
-      const cronParser = require('cron-pars'e'r');
-      const interval = cronParser.parseExpression(schedule);
+      const $1 = require('cron-pars'e'r');
+      const $1 = cronParser.parseExpression(schedule);
       return interval.next().toDate();
     } catch (error) {
       console.error('Erro'r' calculating next run:', error);
@@ -106,16 +106,16 @@ class EnhancedCronSystem extends EventEmitter {
   }
 
   async executeJob(job) {
-    const startTime = Date.now();
+    const $1 = Date.now();
     job.lastRun = new Date();
     job.status = 'runni'n'g';
     job.performance.totalRuns++;
     
-    console.log(`Executing job: ${job.name}`);
+    console.log("Executing job: ${job.name}");
     
     try {
       // Check if we'r'e' at capacity
-      const runningJobs = Array.from(this.jobs.values())
+      const $1 = Array.from(this.jobs.values())
         .filter(j => j.status === 'runni'n'g').length;
       
       if (runningJobs >= this.config.maxConcurrentJobs) {
@@ -123,12 +123,12 @@ class EnhancedCronSystem extends EventEmitter {
       }
 
       // Execute the task through orchestrator
-      const taskId = await this.orchestrator.submitTask(job.task);
+      const $1 = await this.orchestrator.submitTask(job.task);
       
       // Wait for task completion with timeout
-      const result = await this.waitForTaskCompletion(taskId, job.timeout);
+      const $1 = await this.waitForTaskCompletion(taskId, job.timeout);
       
-      const executionTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
       job.status = 'complet'e'd';
       job.performance.successfulRuns++;
@@ -145,15 +145,15 @@ class EnhancedCronSystem extends EventEmitter {
       job.logs.push({
         timestamp: new Date(),
         level: 'in'f'o',
-        message: `Job completed successfully in ${executionTime}ms`,
+        message: "Job completed successfully in ${executionTime}ms",
         result: result
       });
       
-      console.log(`Job completed: ${job.name} (${executionTime}ms)`);
+      console.log("Job completed: ${job.name} (${executionTime}ms)");
       this.emit('jobComplet'e'd', { job, result, executionTime });
       
     } catch (error) {
-      const executionTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
       job.status = 'fail'e'd';
       job.performance.failedRuns++;
@@ -164,11 +164,11 @@ class EnhancedCronSystem extends EventEmitter {
       job.logs.push({
         timestamp: new Date(),
         level: 'err'o'r',
-        message: `Job failed: ${error.message}`,
+        message: "Job failed: ${error.message}",
         error: error.message
       });
       
-      console.error(`Job failed: ${job.name}`, error);
+      console.error("Job failed: ${job.name}", error);
       this.emit('jobFail'e'd', { job, error, executionTime });
       
       // Handle retry logic
@@ -181,10 +181,10 @@ class EnhancedCronSystem extends EventEmitter {
 
   async waitForTaskCompletion(taskId, timeout) {
     return new Promise((resolve, reject) => {
-      const startTime = Date.now();
+      const $1 = Date.now();
       
-      const checkInterval = setInterval(() => {
-        const task = this.orchestrator.getTaskStatus(taskId);
+      const $1 = setInterval(() => {
+        const $1 = this.orchestrator.getTaskStatus(taskId);
         
         if (task && task.status === 'complet'e'd') {
           clearInterval(checkInterval);
@@ -201,34 +201,34 @@ class EnhancedCronSystem extends EventEmitter {
   }
 
   async handleJobRetry(job, error) {
-    const retryCount = job.logs.filter(log => 
+    const $1 = job.logs.filter(log => 
       log.level === 'err'o'r' && log.message.includes('Jo'b' failed')
     ).length;
     
     if (retryCount < job.retryAttempts) {
-      console.log(`Retrying job ${job.name} (attempt ${retryCount + 1}/${job.retryAttempts})`);
+      console.log("Retrying job ${job.name} (attempt ${retryCount + 1}/${job.retryAttempts})");
       
       setTimeout(async () => {
         try {
           await this.executeJob(job);
         } catch (retryError) {
-          console.error(`Retry failed for job ${job.name}:`, retryError);
+          console.error("Retry failed for job ${job.name}:", retryError);
         }
       }, this.config.retryDelay);
     } else {
-      console.error(`Job ${job.name} failed after ${job.retryAttempts} attempts`);
+      console.error("Job ${job.name} failed after ${job.retryAttempts} attempts");
       
       if (this.config.autoRestart) {
-        console.log(`Auto-restarting job ${job.name}`);
+        console.log("Auto-restarting job ${job.name}");
         this.restartJob(job.id);
       }
     }
   }
 
   restartJob(jobId) {
-    const job = this.jobs.get(jobId);
+    const $1 = this.jobs.get(jobId);
     if (!job) {
-      throw new Error(`Job not found: ${jobId}`);
+      throw new Error("Job not found: ${jobId}");
     }
 
     if (job.cronJob) {
@@ -245,13 +245,13 @@ class EnhancedCronSystem extends EventEmitter {
     this.scheduleCronJob(job);
     this.saveJobRegistry();
     
-    console.log(`Restarted job: ${job.name}`);
+    console.log("Restarted job: ${job.name}");
   }
 
   stopJob(jobId) {
-    const job = this.jobs.get(jobId);
+    const $1 = this.jobs.get(jobId);
     if (!job) {
-      throw new Error(`Job not found: ${jobId}`);
+      throw new Error("Job not found: ${jobId}");
     }
 
     if (job.cronJob) {
@@ -266,13 +266,13 @@ class EnhancedCronSystem extends EventEmitter {
     });
 
     this.saveJobRegistry();
-    console.log(`Stopped job: ${job.name}`);
+    console.log("Stopped job: ${job.name}");
   }
 
   deleteJob(jobId) {
-    const job = this.jobs.get(jobId);
+    const $1 = this.jobs.get(jobId);
     if (!job) {
-      throw new Error(`Job not found: ${jobId}`);
+      throw new Error("Job not found: ${jobId}");
     }
 
     if (job.cronJob) {
@@ -281,7 +281,7 @@ class EnhancedCronSystem extends EventEmitter {
 
     this.jobs.delete(jobId);
     this.saveJobRegistry();
-    console.log(`Deleted job: ${job.name}`);
+    console.log("Deleted job: ${job.name}");
   }
 
   getJob(jobId) {
@@ -301,9 +301,9 @@ class EnhancedCronSystem extends EventEmitter {
   }
 
   updateJobConfig(jobId, newConfig) {
-    const job = this.jobs.get(jobId);
+    const $1 = this.jobs.get(jobId);
     if (!job) {
-      throw new Error(`Job not found: ${jobId}`);
+      throw new Error("Job not found: ${jobId}");
     }
 
     // Stop current job
@@ -318,12 +318,12 @@ class EnhancedCronSystem extends EventEmitter {
     this.scheduleCronJob(job);
     this.saveJobRegistry();
     
-    console.log(`Updated job: ${job.name}`);
+    console.log("Updated job: ${job.name}");
   }
 
   getSystemMetrics() {
-    const now = new Date();
-    const uptime = now - this.startTime;
+    const $1 = new Date();
+    const $1 = now - this.startTime;
     
     return {
       ...this.performanceMetrics,
@@ -339,7 +339,7 @@ class EnhancedCronSystem extends EventEmitter {
   }
 
   async createScheduledTasks() {
-    const defaultJobs = [
+    const $1 = [
       {
         name: 'Dee'p' Search - Market Research',
         schedule: '0 */6 * * *', // Every 6 hours
@@ -470,10 +470,10 @@ class EnhancedCronSystem extends EventEmitter {
       }
     ];
 
-    const results = [];
+    const $1 = [];
     for (const jobConfig of defaultJobs) {
       try {
-        const jobId = this.scheduleJob(jobConfig);
+        const $1 = this.scheduleJob(jobConfig);
         results.push({ success: true, jobId, name: jobConfig.name });
       } catch (error) {
         results.push({ success: false, error: error.message, name: jobConfig.name });
@@ -485,10 +485,10 @@ class EnhancedCronSystem extends EventEmitter {
 
   loadJobRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'da't'a', 'job-registr'y'.json');
+      const $1 = path.join(__dirname, 'da't'a', 'job-registr'y'.json');
       if (fs.existsSync(registryPath)) {
-        const data = fs.readFileSync(registryPath, 'ut'f'8');
-        const registry = JSON.parse(data);
+        const $1 = fs.readFileSync(registryPath, 'ut'f'8');
+        const $1 = JSON.parse(data);
         
         // Recreate cron jobs for loaded jobs
         for (const jobData of registry) {
@@ -505,12 +505,12 @@ class EnhancedCronSystem extends EventEmitter {
 
   saveJobRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'da't'a');
+      const $1 = path.join(__dirname, 'da't'a');
       if (!fs.existsSync(registryPath)) {
         fs.mkdirSync(registryPath, { recursive: true });
       }
 
-      const registry = Array.from(this.jobs.values()).map(job => {
+      const $1 = Array.from(this.jobs.values()).map(job => {
         // Remove cronJob reference before saving
         const { cronJob, ...jobData } = job;
         return jobData;
@@ -533,7 +533,7 @@ class EnhancedCronSystem extends EventEmitter {
 
     // Clean up old job history every hour
     setInterval(() => {
-      const retentionDate = new Date();
+      const $1 = new Date();
       retentionDate.setDate(retentionDate.getDate() - this.config.logRetention);
       
       this.jobHistory = this.jobHistory.filter(job => 
@@ -543,18 +543,18 @@ class EnhancedCronSystem extends EventEmitter {
 
     // Log system status every 5 minutes
     setInterval(() => {
-      const metrics = this.getSystemMetrics();
+      const $1 = this.getSystemMetrics();
       console.log('Cro'n' System Status:', {
         totalJobs: metrics.totalJobs,
         runningJobs: metrics.runningJobs,
-        successRate: `${metrics.successRate.toFixed(2)}%`,
-        uptime: `${Math.floor(metrics.systemUptime / 1000 / 60)} minutes`
+        successRate: "${metrics.successRate.toFixed(2)}%",
+        uptime: "${Math.floor(metrics.systemUptime / 1000 / 60)} minutes"
       });
     }, 5 * 60 * 1000);
   }
 
   updatePerformanceMetrics() {
-    const now = new Date();
+    const $1 = new Date();
     this.performanceMetrics.systemUptime = now - this.startTime;
   }
 
@@ -569,11 +569,11 @@ class EnhancedCronSystem extends EventEmitter {
     }
     
     // Wait for running jobs to complete
-    const runningJobs = this.getRunningJobs();
+    const $1 = this.getRunningJobs();
     if (runningJobs.length > 0) {
-      console.log(`Waiting for ${runningJobs.length} jobs to complete...`);
+      console.log("Waiting for ${runningJobs.length} jobs to complete...");
       await new Promise(resolve => {
-        const checkInterval = setInterval(() => {
+        const $1 = setInterval(() => {
           if (this.getRunningJobs().length === 0) {
             clearInterval(checkInterval);
             resolve();

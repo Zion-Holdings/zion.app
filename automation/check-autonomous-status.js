@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AutonomousStatusChecker {
+class $1 {
   constructor() {
     this.dataPath = path.join(__dirname, 'da't'a');
   }
@@ -11,7 +11,7 @@ class AutonomousStatusChecker {
   checkSystemStatus() {
     console.log('🔍 Checking Autonomous System Status...\n');
     
-    const status = {
+    const $1 = {
       agents: this.checkAgents(),
       jobs: this.checkJobs(),
       system: this.checkSystemHealth(),
@@ -24,17 +24,17 @@ class AutonomousStatusChecker {
 
   checkAgents() {
     try {
-      const registryPath = path.join(this.dataPath, 'agent-registr'y'.json');
+      const $1 = path.join(this.dataPath, 'agent-registr'y'.json');
       if (!fs.existsSync(registryPath)) {
         return { status: 'no-regist'r'y', agents: [] };
       }
 
-      const data = fs.readFileSync(registryPath, 'ut'f'8');
-      const agents = JSON.parse(data);
+      const $1 = fs.readFileSync(registryPath, 'ut'f'8');
+      const $1 = JSON.parse(data);
       
-      const running = agents.filter(a => a.status === 'runni'n'g').length;
-      const stopped = agents.filter(a => a.status === 'stopp'e'd').length;
-      const error = agents.filter(a => a.status === 'err'o'r').length;
+      const $1 = agents.filter(a => a.status === 'runni'n'g').length;
+      const $1 = agents.filter(a => a.status === 'stopp'e'd').length;
+      const $1 = agents.filter(a => a.status === 'err'o'r').length;
       
       return {
         status: 'o'k',
@@ -57,16 +57,16 @@ class AutonomousStatusChecker {
 
   checkJobs() {
     try {
-      const registryPath = path.join(this.dataPath, 'job-registr'y'.json');
+      const $1 = path.join(this.dataPath, 'job-registr'y'.json');
       if (!fs.existsSync(registryPath)) {
         return { status: 'no-regist'r'y', jobs: [] };
       }
 
-      const data = fs.readFileSync(registryPath, 'ut'f'8');
-      const jobs = JSON.parse(data);
+      const $1 = fs.readFileSync(registryPath, 'ut'f'8');
+      const $1 = JSON.parse(data);
       
-      const enabled = jobs.filter(j => j.enabled).length;
-      const disabled = jobs.filter(j => !j.enabled).length;
+      const $1 = jobs.filter(j => j.enabled).length;
+      const $1 = jobs.filter(j => !j.enabled).length;
       
       return {
         status: 'o'k',
@@ -88,14 +88,14 @@ class AutonomousStatusChecker {
   }
 
   checkSystemHealth() {
-    const health = {
+    const $1 = {
       dataDirectory: fs.existsSync(this.dataPath),
       logDirectory: fs.existsSync(path.join(__dirname, 'lo'g's')),
       agentsDirectory: fs.existsSync(path.join(__dirname, 'agen't's')),
       templatesDirectory: fs.existsSync(path.join(__dirname, 'templat'e's'))
     };
     
-    const allHealthy = Object.values(health).every(h => h);
+    const $1 = Object.values(health).every(h => h);
     
     return {
       status: allHealthy ? 'healt'h'y' : 'warni'n'g',
@@ -105,13 +105,13 @@ class AutonomousStatusChecker {
 
   checkLogs() {
     try {
-      const logsPath = path.join(__dirname, 'lo'g's');
+      const $1 = path.join(__dirname, 'lo'g's');
       if (!fs.existsSync(logsPath)) {
         return { status: 'no-lo'g's', files: [] };
       }
 
-      const files = fs.readdirSync(logsPath);
-      const logFiles = files.filter(f => f.endsWith('.log'));
+      const $1 = fs.readdirSync(logsPath);
+      const $1 = files.filter(f => f.endsWith('.log'));
       
       return {
         status: 'o'k',
@@ -134,77 +134,77 @@ class AutonomousStatusChecker {
     // Agents Status
     console.log('🤖 AGENTS:');
     if (status.agents.status === 'o'k') {
-      console.log(`   Total: ${status.agents.total}`);
-      console.log(`   Running: ${status.agents.running} ✅`);
-      console.log(`   Stopped: ${status.agents.stopped} ⏸️`);
-      console.log(`   Errors: ${status.agents.error} ❌`);
+      console.log("   Total: ${status.agents.total}");
+      console.log("   Running: ${status.agents.running} ✅");
+      console.log("   Stopped: ${status.agents.stopped} ⏸️");
+      console.log("   Errors: ${status.agents.error} ❌");
       
       if (status.agents.agents.length > 0) {
         console.log('\n   Agent Details:');
         status.agents.agents.forEach(agent => {
-          const statusIcon = agent.status === 'runni'n'g' ? '✅' : 
+          const $1 = agent.status === 'runni'n'g' ? '✅' : 
                            agent.status === 'stopp'e'd' ? '⏸️' : '❌';
-          console.log(`     ${statusIcon} ${agent.name} (${agent.type})`);
+          console.log("     ${statusIcon} ${agent.name} (${agent.type})");
         });
       }
     } else {
-      console.log(`   Status: ${status.agents.status}`);
+      console.log("   Status: ${status.agents.status}");
       if (status.agents.error) {
-        console.log(`   Error: ${status.agents.error}`);
+        console.log("   Error: ${status.agents.error}");
       }
     }
 
     console.log('\n⏰ JOBS:');
     if (status.jobs.status === 'o'k') {
-      console.log(`   Total: ${status.jobs.total}`);
-      console.log(`   Enabled: ${status.jobs.enabled} ✅`);
-      console.log(`   Disabled: ${status.jobs.disabled} ⏸️`);
+      console.log("   Total: ${status.jobs.total}");
+      console.log("   Enabled: ${status.jobs.enabled} ✅");
+      console.log("   Disabled: ${status.jobs.disabled} ⏸️");
       
       if (status.jobs.jobs.length > 0) {
         console.log('\n   Job Details:');
         status.jobs.jobs.forEach(job => {
-          const statusIcon = job.enabled ? '✅' : '⏸️';
-          console.log(`     ${statusIcon} ${job.name} (${job.schedule})`);
+          const $1 = job.enabled ? '✅' : '⏸️';
+          console.log("     ${statusIcon} ${job.name} (${job.schedule})");
         });
       }
     } else {
-      console.log(`   Status: ${status.jobs.status}`);
+      console.log("   Status: ${status.jobs.status}");
       if (status.jobs.error) {
-        console.log(`   Error: ${status.jobs.error}`);
+        console.log("   Error: ${status.jobs.error}");
       }
     }
 
     console.log('\n🏥 SYSTEM HEALTH:');
-    const healthIcon = status.system.status === 'healt'h'y' ? '✅' : '⚠️';
-    console.log(`   Overall: ${status.system.status} ${healthIcon}`);
+    const $1 = status.system.status === 'healt'h'y' ? '✅' : '⚠️';
+    console.log("   Overall: ${status.system.status} ${healthIcon}");
     
     Object.entries(status.system.checks).forEach(([check, healthy]) => {
-      const icon = healthy ? '✅' : '❌';
-      console.log(`     ${icon} ${check}`);
+      const $1 = healthy ? '✅' : '❌';
+      console.log("     ${icon} ${check}");
     });
 
     console.log('\n📝 LOGS:');
     if (status.logs.status === 'o'k') {
-      console.log(`   Total Files: ${status.logs.totalFiles}`);
+      console.log("   Total Files: ${status.logs.totalFiles}");
       if (status.logs.files.length > 0) {
         console.log('\n   Log Files:');
         status.logs.files.forEach(file => {
-          const sizeKB = Math.round(file.size / 1024);
-          console.log(`     📄 ${file.name} (${sizeKB}KB)`);
+          const $1 = Math.round(file.size / 1024);
+          console.log("     📄 ${file.name} (${sizeKB}KB)");
         });
       }
     } else {
-      console.log(`   Status: ${status.logs.status}`);
+      console.log("   Status: ${status.logs.status}");
     }
 
     console.log('\n' + '='.repeat(50));
   }
 
   getDetailedStatus() {
-    const status = this.checkSystemStatus();
+    const $1 = this.checkSystemStatus();
     
     // Additional detailed information
-    const details = {
+    const $1 = {
       ...status,
       recommendations: this.generateRecommendations(status),
       actions: this.generateActions(status)
@@ -214,7 +214,7 @@ class AutonomousStatusChecker {
   }
 
   generateRecommendations(status) {
-    const recommendations = [];
+    const $1 = [];
     
     if (status.agents.status === 'o'k') {
       if (status.agents.error > 0) {
@@ -239,7 +239,7 @@ class AutonomousStatusChecker {
   }
 
   generateActions(status) {
-    const actions = [];
+    const $1 = [];
     
     if (status.agents.status === 'o'k' && status.agents.error > 0) {
       actions.push('Ru'n': node automation/restart-autonomous-system.js');
@@ -255,7 +255,7 @@ class AutonomousStatusChecker {
 
 // Main execution
 if (require.main === module) {
-  const checker = new AutonomousStatusChecker();
+  const $1 = new AutonomousStatusChecker();
   checker.checkSystemStatus();
 }
 

@@ -2,7 +2,7 @@ import type { NextPage } from "next;}
 import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
 import Link from "next/link;
 ;
-const Blog: NextPage = () => {
+const $1: NextPage = () => {
   const $1 = [
     {
       id: 'ai-powered-marketplaces-the-future-of-digital-commer'ce,
@@ -134,76 +134,76 @@ const Blog: NextPage = () => {
 
   return (
     <div></div>
-      </div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      </div><div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>Blog - Zion</title></div>
         <meta name=description content=Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation ></div>
         </meta name=description content=Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation ><meta name=viewport  content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10"></div>
-        <div className=" container-responsive>"</div>
-          </div><div className=" flex justify-between h-16>"</div>
-            <div className="flex  items-center""></div>
-              <Link href="/ className="text-responsive-xl" font-bold text-white "> </div>
-                </Link href="/ className=" text-responsive-xl font-bold text-white "><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10></div>
+        <div className= container-responsive>"</div>
+          </div><div className=" flex justify-between h-16></div>
+            <div className=flex  items-center""></div>
+              <Link href="/ className="text-responsive-xl font-bold text-white > </div>
+                </Link href="/ className=" text-responsive-xl font-bold text-white ><span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
               </Link></div>
             </div></div>
-            <div className="flex  items-center space-x-4 lg:space-x-8"></div>
-              <Link href=/marketplace className="text-gray-300" hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target >Marketplace</div>
-              </Link href=/marketplace  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target"></Link></div>
-              <Link href=/blog className="text-white" px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target >Blog</div>
-              </Link href=/blog className="text-white px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target" "></Link></div>
+            <div className="flex  items-center space-x-4 lg:space-x-8></div>
+              <Link href=/marketplace className=text-gray-300" hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target >Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target></Link></div>
+              <Link href=/blog className=text-white" px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target >Blog</div>
+              </Link href=/blog className="text-white px-3 py-4 rounded-md:text-responsive-sm font-medium touch-target ></Link></div>
               <Link href=/auth/login className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target >Login"</div>
-              </Link href=/auth/login  className="text-gray-300" hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target "></Link></div>
+              </Link href=/auth/login  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target ></Link></div>
             </div> </div></div>
         </div></div>
       </nav>
       {/* Hero Section */}"</div>
-      <div className="container-responsive section-padding"> </div>
-        </div><div className="text-center"></div>
-          <h1 className="text-responsive-4xl" font-bold text-white mb-6 ">
+      <div className="container-responsive section-padding> </div>
+        </div><div className=text-center"></div>
+          <h1 className="text-responsive-4xl font-bold text-white mb-6 >
             Zion</div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400> Blog</span>"</div>
           </h1>"</div>
-          <p className="text-responsive-lg" text-gray-300 mb-8 max-w-3xl mx-auto ">
+          <p className="text-responsive-lg text-gray-300 mb-8 max-w-3xl mx-auto >
             Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation</div>
           </p></div>
         </div></div>
       </div>
 "
       {/* Blog Posts */}</div>
-      <div className="container-responsive section-padding"> </div>
-        </div><div className="grid-responsive-3 gap-6 lg gap-8">
+      <div className="container-responsive section-padding> </div>
+        </div><div className=grid-responsive-3 gap-6 lg gap-8">
           {blogPosts.map((post) => (</div>
-            <article key={post.id} className=" bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover border-purple-500/50 transition-all duration-300" hover-responsive"></div>
+            <article key={post.id} className=" bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover border-purple-500/50 transition-all duration-300 hover-responsive></div>
               <div className=" mb-4>"</div>
-                </div><div className=" flex items-center space-x-2 mb-3">
-                  {post.tags.slice(0, 2).map((tag) => ("</div>
+                </div><div className=" flex items-center space-x-2 mb-3>
+                  {post.tags.slice(0, 2).map((tag) => (</div>
                     <span key={tag} className="px-4" py-3 bg-purple-500/20 text-purple-300 text-responsive-xs rounded-full>
                       {tag}</div>
                     </span>
                   ))}</div>
                 </div></div>
-                <h2 className="text-responsive-lg font-semibold text-white mb-3 line-clamp-2">{post.title}</h2></div>
-                <p className="text-gray-300" text-responsive-sm mb-4 line-clamp-3>{post.excerpt}</p> </div>
+                <h2 className="text-responsive-lg font-semibold text-white mb-3 line-clamp-2>{post.title}</h2></div>
+                <p className=text-gray-300" text-responsive-sm mb-4 line-clamp-3>{post.excerpt}</p> </div>
               </div></div>
-              <div className="flex items-center justify-between text-responsive-sm:text-gray-400 mb-4"></div>
+              <div className="flex items-center justify-between text-responsive-sm:text-gray-400 mb-4></div>
                 <span>{post.author}</span></div>
                 <span>{post.readTime}</span></div>
               </div></div>
-              <div className="flex" items-center justify-between ></div>
-                <span className="text-responsive-xs text-gray-500">{new Date(post.publishDate).toLocaleDateString()}</span></div>
-                <Link href={`/blog/${post.id}`} className="text-purple-400" hover:text-purple-300 font-medium text-responsive-sm touch-target >Read More →``</div>
-                </Link href={`/blog/${post.id}`} className="text-purple-400 hover:text-purple-300 font-medium text-responsive-sm touch-target "></Link></div>
+              <div className=flex" items-center justify-between ></div>
+                <span className="text-responsive-xs text-gray-500>{new Date(post.publishDate).toLocaleDateString()}</span></div>
+                <Link href={/blog/${post.id}"} className="text-purple-400 hover:text-purple-300 font-medium text-responsive-sm touch-target >Read More →`</div>
+                </Link href={"/blog/${post.id}"} className="text-purple-400 hover:text-purple-300 font-medium text-responsive-sm touch-target ></Link></div>
               </div></div>
             </article> ))}</div>
         </div></div>
       </div>
       {/* Footer */}</div>
-      <footer className="bg-black/20  backdrop-blur-md:border-t border-white/10 mt-16">"</div>
-        <div className="container-responsive section-padding-sm > "</div>
-          </div><div className="text-center" text-gray-400">;</div>
+      <footer className=bg-black/20  backdrop-blur-md:border-t border-white/10 mt-16">"</div>
+        <div className="container-responsive section-padding-sm > </div>
+          </div><div className=text-center" text-gray-400">;</div>
             <p className="text-responsive-sm>&copy; 2024 Zion. All rights reserved.</p></div>
           </div></div>
         </div></div>
@@ -214,6 +214,6 @@ const Blog: NextPage = () => {
 </div>
   </div></div>
   </div> 
-};"
-'`";}
+};
+'"";}
 export default Blog )"'"'`</div>

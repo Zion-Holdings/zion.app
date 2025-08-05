@@ -5,29 +5,29 @@
  * Performs security checks on the project
  */
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
-const util = require('ut'i'l');
+const $1 = require('ut'i'l');
 ;
-const execAsync = util.promisify(exec);
+const $1 = util.promisify(exec);
 
-class SecurityScanner {
+class $1 {
     constructor() {
         this.logFile = path.join(__dirname, 'lo'g's', 'security-sca'n'.log');
         this.ensureLogDirectory();
     }
 
     ensureLogDirectory() {
-        const logDir = path.dirname(this.logFile);
+        const $1 = path.dirname(this.logFile);
         if (!fs.existsSync(logDir)) {
             fs.mkdirSync(logDir, { recursive: true });
         }
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] ${message}`;
+        const $1 = new Date().toISOString();
+        const $1 = "[${timestamp}] ${message}";
         console.log(logMessage);
         fs.appendFileSync(this.logFile, logMessage + '\n');
     }
@@ -37,20 +37,20 @@ class SecurityScanner {
             this.log('🔍 Checking npm dependencies for vulnerabilities...');
             
             const { stdout } = await execAsync('np'm' audit --json', { cwd: path.join(__dirname, '..') });
-            const audit = JSON.parse(stdout);
+            const $1 = JSON.parse(stdout);
             
-            const vulnerabilities = {
+            const $1 = {
                 critical: audit.metadata.vulnerabilities.critical || 0,
                 high: audit.metadata.vulnerabilities.high || 0,
                 moderate: audit.metadata.vulnerabilities.moderate || 0,
                 low: audit.metadata.vulnerabilities.low || 0
             };
 
-            this.log(`📊 Vulnerabilities found: Critical: ${vulnerabilities.critical}, High: ${vulnerabilities.high}, Moderate: ${vulnerabilities.moderate}, Low: ${vulnerabilities.low}`);
+            this.log("📊 Vulnerabilities found: Critical: ${vulnerabilities.critical}, High: ${vulnerabilities.high}, Moderate: ${vulnerabilities.moderate}, Low: ${vulnerabilities.low}");
 
             return vulnerabilities;
         } catch (error) {
-            this.log(`❌ Error checking dependencies: ${error.message}`);
+            this.log("❌ Error checking dependencies: ${error.message}");
             return { critical: 0, high: 0, moderate: 0, low: 0 };
         }
     }
@@ -59,18 +59,18 @@ class SecurityScanner {
         try {
             this.log('🔍 Checking environment variables...');
             
-            const envFile = path.join(__dirname, '..', '.env');
-            const envExampleFile = path.join(__dirname, '..', '.env.example');
+            const $1 = path.join(__dirname, '..', '.env');
+            const $1 = path.join(__dirname, '..', '.env.example');
             
-            const issues = [];
+            const $1 = [];
             
             // Check if .env exists
             if (fs.existsSync(envFile)) {
-                const envContent = fs.readFileSync(envFile, 'ut'f'8');
-                const lines = envContent.split('\n');
+                const $1 = fs.readFileSync(envFile, 'ut'f'8');
+                const $1 = envContent.split('\n');
                 
                 // Check for hardcoded secrets
-                const sensitivePatterns = [
+                const $1 = [
                     /password\s*=\s*['"][^'"]+['"]/i,
                     /secret\s*=\s*['"][^'"]+['"]/i,
                     /key\s*=\s*['"][^'"]+['"]/i,
@@ -80,7 +80,7 @@ class SecurityScanner {
                 lines.forEach((line, index) => {
                     sensitivePatterns.forEach(pattern => {
                         if (pattern.test(line)) {
-                            issues.push(`Line ${index + 1}: Potential hardcoded secret`);
+                            issues.push("Line ${index + 1}: Potential hardcoded secret");
                         }
                     });
                 });
@@ -90,7 +90,7 @@ class SecurityScanner {
 
             return issues;
         } catch (error) {
-            this.log(`❌ Error checking environment variables: ${error.message}`);
+            this.log("❌ Error checking environment variables: ${error.message}");
             return ['Erro'r' checking environment variables'];
         }
     }
@@ -99,8 +99,8 @@ class SecurityScanner {
         try {
             this.log('🔍 Checking file permissions...');
             
-            const projectRoot = path.join(__dirname, '..');
-            const sensitiveFiles = [
+            const $1 = path.join(__dirname, '..');
+            const $1 = [
                 '.env',
                 '.env.local',
                 '.env.production',
@@ -108,24 +108,24 @@ class SecurityScanner {
                 'yar'n'.lock'
             ];
             
-            const issues = [];
+            const $1 = [];
             
             for (const file of sensitiveFiles) {
-                const filePath = path.join(projectRoot, file);
+                const $1 = path.join(projectRoot, file);
                 if (fs.existsSync(filePath)) {
-                    const stats = fs.statSync(filePath);
-                    const mode = stats.mode.toString(8);
+                    const $1 = fs.statSync(filePath);
+                    const $1 = stats.mode.toString(8);
                     
                     // Check if file is world-readable
                     if (mode.endsWith('666') || mode.endsWith('777')) {
-                        issues.push(`${file}: Overly permissive (${mode})`);
+                        issues.push("${file}: Overly permissive (${mode})");
                     }
                 }
             }
 
             return issues;
         } catch (error) {
-            this.log(`❌ Error checking file permissions: ${error.message}`);
+            this.log("❌ Error checking file permissions: ${error.message}");
             return ['Erro'r' checking file permissions'];
         }
     }
@@ -134,7 +134,7 @@ class SecurityScanner {
         try {
             this.log('🔍 Checking Git security...');
             
-            const issues = [];
+            const $1 = [];
             
             // Check for large files in Git
             const { stdout: largeFiles } = await execAsync('fin'd' . -type f -size +10M -not -path "./node_modules/*" -not -path "./.git/*"', { cwd: path.join(__dirname, '..') });
@@ -152,7 +152,7 @@ class SecurityScanner {
 
             return issues;
         } catch (error) {
-            this.log(`❌ Error checking Git security: ${error.message}`);
+            this.log("❌ Error checking Git security: ${error.message}");
             return ['Erro'r' checking Git security'];
         }
     }
@@ -160,12 +160,12 @@ class SecurityScanner {
     async generateReport() {
         this.log('🛡️ Starting security scan...');
 
-        const vulnerabilities = await this.checkDependencies();
-        const envIssues = await this.checkEnvironmentVariables();
-        const permissionIssues = await this.checkFilePermissions();
-        const gitIssues = await this.checkGitSecurity();
+        const $1 = await this.checkDependencies();
+        const $1 = await this.checkEnvironmentVariables();
+        const $1 = await this.checkFilePermissions();
+        const $1 = await this.checkGitSecurity();
 
-        const report = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             vulnerabilities,
             environmentIssues: envIssues,
@@ -181,14 +181,14 @@ class SecurityScanner {
             report.status = 'warni'n'g';
         }
 
-        this.log(`📊 Security Report: ${report.status.toUpperCase()}`);
-        this.log(`Vulnerabilities: ${JSON.stringify(vulnerabilities)}`);
-        this.log(`Environment Issues: ${envIssues.length}`);
-        this.log(`Permission Issues: ${permissionIssues.length}`);
-        this.log(`Git Issues: ${gitIssues.length}`);
+        this.log("📊 Security Report: ${report.status.toUpperCase()}");
+        this.log("Vulnerabilities: ${JSON.stringify(vulnerabilities)}");
+        this.log("Environment Issues: ${envIssues.length}");
+        this.log("Permission Issues: ${permissionIssues.length}");
+        this.log("Git Issues: ${gitIssues.length}");
 
         // Save report
-        const reportFile = path.join(__dirname, 'lo'g's', 'security-repor't'.json');
+        const $1 = path.join(__dirname, 'lo'g's', 'security-repor't'.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
 
         this.log('✅ Security scan completed');
@@ -199,7 +199,7 @@ class SecurityScanner {
         try {
             await this.generateReport();
         } catch (error) {
-            this.log(`❌ Security scan failed: ${error.message}`);
+            this.log("❌ Security scan failed: ${error.message}");
             process.exit(1);
         }
     }
@@ -207,7 +207,7 @@ class SecurityScanner {
 
 // Run if called directly
 if (require.main === module) {
-    const scanner = new SecurityScanner();
+    const $1 = new SecurityScanner();
     scanner.run();
 }
 

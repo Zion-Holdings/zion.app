@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface MLModel {
+interface $1 {
   id: string;
   name: string;
   type: ''classification' | 'regression' | 'clusterin'g' | ''nlp' | 'computer-vision' | 'recommendatio'n'";
@@ -24,7 +24,7 @@ interface MLModel {
     cpuUsage: number;
     memoryUsage: number;
   };}
-interface TrainingJob {
+interface $1 {
   id: string;
   modelName: string;
   type: string;
@@ -45,7 +45,7 @@ interface TrainingJob {
     validationAccuracy: number;
   };
   aiAssisted: boolean;}
-interface MLAnalytics {
+interface $1 {
   id: string;
   metric: string;
   current: number;
@@ -53,7 +53,7 @@ interface MLAnalytics {
   improvement: number;
   trend: ''up' | 'down' | 'stabl'e'";
   period: string;};
-const AIPoweredMachineLearningPage: NextPage = () => {
+const $1: NextPage = () => {
   ;
   const [models, setModels] = useState<MLModel[]>([]);</div>
   const [trainingJobs, setTrainingJobs] = useState<TrainingJob[]>([]);</div>
@@ -212,8 +212,8 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       setLoading(false);
     } 1000);
   }, []);
-  const filteredModels = useMemo(() => {
-    let filtered = models.filter(model => {;
+  const $1 = useMemo(() => {
+    let $1 = models.filter(model => {;
       if (filterType !== 'a'll && model.type !== filterType) return false;
       if (filterStatus !== 'a'll && model.status !== filterStatus) return false;
       if (searchTerm && !model.name.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -235,7 +235,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 
     return filtered;
   } [models, filterType, filterStatus, searchTerm, sortBy]);
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch (status) {';
       case deploye'd': return text-green-'400 bg-green-500/20";
       case 'training': return 'text-blue-400 bg-blue-500/20;
@@ -244,7 +244,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       case archive'd': return text-gray-'400 bg-gray-500/20";
       default: return 'text-gray-400 bg-gray-500/20';}
   };
-  const getTypeIcon = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {;
       case classificati'o'n: return 🎯;
       case 'regressi'on: return '📈;
@@ -254,7 +254,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       case 'recommendati'on: return '💡;
       default: return '🤖;}
   };
-  const getJobStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {';
       case 'running': return 'text-blue-400 bg-blue-500/20";
       case 'complet'ed: return 'text-green'-400 bg-green-500/20";
@@ -263,7 +263,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
       case 'cancelled': return 'text-gray-400 bg-gray-500/20";
       default: return 'text-gray'-400 bg-gray-500/20;}
   };
-  const getTrendIcon = (trend: string) => {'
+  const $1 = (trend: string) => {'
     switch (trend) {';
       case up': return '📈";
       case dow'n': return 📉;
@@ -274,66 +274,66 @@ const AIPoweredMachineLearningPage: NextPage = () => {
   if (loading) {
     return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8> "
-        {/* Background Effects */}"</div>
+      </div><div className=" relative z-10 container-responsive py-8> 
+        {/* Background Effects */}</div>
         <div className="fixed inset-0 z-0"> </div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
         </div>
       </div>
-        <div className="text-center>" </div>
-          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill=none viewBox="0 0 24" 24></div>
-              <circle className=" opacity-25 cx=12 cy=12 r=" 10" stroke=currentColor strokeWidth=4"></circle></div>
-              <path className="opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></div>
+        <div className="text-center> </div>
+          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill=none viewBox=0 0 24" 24></div>
+              <circle className=" opacity-25 cx=12 cy=12 r= 10 stroke=currentColor strokeWidth=4"></circle></div>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg></div>
             <span className="text-lg font-medium>Loading AI-Powered Machine Learning...</span></div>
           </div ></div>
-        </div></div>
+        </div></div>"
       </div>"
     );}"
 "
   return ("</div>
-    <div className="relative z-10 container-responsive py-8"></div>
+    <div className="relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>AI-Powered Machine Learning - Zion</title></div>
-        <meta name=description content=Intelligent model training, deployment, monitoring, and AI-driven model optimization > </meta" name=description content="Intelligent model training, deployment, monitoring, and AI-driven model optimization ><meta name="keywords content=AI machine learning, model training, deployment, monitoring, Zion > </meta" name=keywords content="AI machine learning, model training, deployment, monitoring," Zion ><link rel=icon href=/favicon.ico > </link" rel="icon href=/favicon.ico" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name=description content=Intelligent model training, deployment, monitoring, and AI-driven model optimization > </meta name=description content="Intelligent model training, deployment, monitoring, and AI-driven model optimization ><meta name="keywords content=AI machine learning, model training, deployment, monitoring, Zion > </meta" name=keywords content="AI machine learning, model training, deployment, monitoring," Zion ><link rel=icon href=/favicon.ico > </link" rel="icon href=/favicon.ico" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8"></div>
-          </div><div className="flex  justify-between h-16"></div>
-            <div className="flex" items-center></div>
-              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold text-white"></div>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8"></div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex" items-center></div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white></div>
+                  <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
                 </h1></div>
               </Link></div>
             </div></div>
-            <div className="hidden md flex items-center space-x-8"></div>
-              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Analytics</div>
-              </Link href= /ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
-              <Link href=/ai-powered-customer-support className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Support</div>
+            <div className="hidden md flex items-center space-x-8></div>
+              <Link href=/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Analytics</div>
+              </Link href= /ai-powered-data-analytics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
+              <Link href=/ai-powered-customer-support className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Support</div>
               </Link href=/ai-powered-customer-support className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
           </div></div>
         </div></div>
       </nav></div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-8>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Header */}</div>
-        </div><div className="text-center mb-8"></div>
-          <h1 className="text-4xl" md text-5xl font-bold text-white mb-4 >
+        </div><div className=text-center mb-8"></div>
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4 >
             AI-Powered Machine Learning</div>
           </h1></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto">
             Intelligent model training, deployment, monitoring, and AI-driven 
             model optimization with advanced ML capabilities and automated model management.</div>
           </p></div>
         </div>
  
         {/* Tab Selector */}"</div>
-        <div className="flex justify-center mb-8> "</div>
-          </div><div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1">
+        <div className="flex justify-center mb-8> </div>
+          </div><div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1">
             {[
               { id: overvi'e'w, name: Overvi'e'w, icon: 📊' },
 { id: 'models', name: 'Models', icon: '🤖 },
@@ -341,11 +341,11 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 { id: 'analytics', name: 'Analytics', icon: '📈}
             ].map((tab) => (
                 onClick={() => setSelectedView(tab.id as any)}
-                className="{`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className="{flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
-                    ? 'bg-purple'-600 text-white`
-                    : 'text-gray'-300 hover:text-white hover:bg-white/10``
-                }`}
+                    ? 'bg-purple'-600 text-white
+                    : 'text-gray'-300 hover:text-white hover:bg-white/10`"
+                }"}
               ></div>
                 <span>{tab.icon}</span></div>
                 <span>{tab.name}</span></div>
@@ -357,79 +357,79 @@ const AIPoweredMachineLearningPage: NextPage = () => {
         {/* Analytics Overview */},"
 {selectedView === 'overview' && ("</div>
           <div className=" grid grid-cols-1 md grid-cols-2 gap-6 mb-8>
-            {analytics.map((metric) => ("</div>
+            {analytics.map((metric) => (</div>
               </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">"</div>
-                <div className="flex" items-center justify-between mb-4></div>
-                  <h3 className="text-lg font-semibold text-white ">{metric.metric}</h3></div>
-                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>" </div>
+                <div className="flex items-center justify-between mb-4></div>
+                  <h3 className=text-lg font-semibold text-white ">{metric.metric}</h3></div>
+                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span> </div>
                 </div></div>
-                <div className="mb-4"></div>
-                  </div><div className="text-3xl" font-bold text-white mb-2">{metric.current}</div></div>
-                  <p className="text-sm:text-gray-400>Target: {metric.target}</p></div>
+                <div className=mb-4"></div>
+                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div></div>
+                  <p className="text-sm:text-gray-400>Target: {metric.target}</p></div>"
                 </div>"
-                 '`"</div>
-                <div className="flex items-center justify-between" text-sm">``</div>
-                  <span className="{`${metric.improvement > 0 ? 'text-green'-400 : 'text-red'-400}`}>
+                 '""</div>
+                <div className="flex items-center justify-between text-sm>""</div>
+                  <span className="{${metric.improvement > 0 ? 'text-green'-400 : 'text-red'-400}}>
                     {metric.improvement > 0 ? '+'   }, 
 {metric.improvement.toFixed(1)}%</div>
                   </span>"</div>
-                  <span className="text-gray-400">{metric.period}</span></div>
+                  <span className="text-gray-400>{metric.period}</span></div>
                 </div></div>
               </div>
             ))}</div>
           </div>
         )}
-        {/* ML Models */},"
+        {/* ML Models */},
 {selectedView === 'mode'ls && ("</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > "
-            {filteredModels.map((model) => ("</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
+            {filteredModels.map((model) => (</div>
               </div><div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6"></div>
-                <div className=" flex items-start justify-between mb-4>"</div>
-                  </div><div className="flex items-center space-x-3">"</div>
-                    <div className="text-3xl>{getTypeIcon(model.type)}</div>"</div>
+                <div className=" flex items-start justify-between mb-4></div>
+                  </div><div className=flex items-center space-x-3">"</div>
+                    <div className="text-3xl>{getTypeIcon(model.type)}</div></div>
                     <div></div>
-                      <h3 className="text-lg font-semibold text-white mb-1">{model.name}</h3></div>
-                      <p className="text-gray-300" text-sm capitalize>{model.type}</p></div>
+                      <h3 className=text-lg font-semibold text-white mb-1">{model.name}</h3></div>
+                      <p className="text-gray-300 text-sm capitalize>{model.type}</p></div>
                     </div> </div>
-                  </div>`</div>
-                  <div className="text-right"">``</div>
-                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(model.status)}`}>
+                  </div></div>
+                  <div className="text-right"">`"</div>
+                    <span className="{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(model.status)}}>
                       {model.status.toUpperCase()} </div>
-                    </span>'`"</div>
-                    <div className="mt-2">'``"</div>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${model.aiOptimized ? text-green'-'400 bg-green-500/20 : text-red'-'400 bg-red-500/20}`}>
+                    </span>'""</div>
+                    <div className="mt-2>'`"</div>
+                      <span className="{px-4 py-3 rounded text-xs font-medium ${model.aiOptimized ? text-green'-'400 bg-green-500/20 : text-red'-'400 bg-red-500/20}"}>
                         {model.aiOptimized ? A'I' OPTIMIZED   A'I' DISABLED}</div>
                       </span></div>
                     </div></div>
                   </div></div>
                 </div></div>
-                <div className="grid grid-cols-2 gap-4 mb-4"></div>
+                <div className="grid grid-cols-2 gap-4 mb-4></div>
                   </div><div></div>
-                    <p className="text-sm:text-gray-400>Accuracy</p>"</div>
-                    <p className="text-lg font-semibold text-green-400">{model.accuracy}%</p></div>
+                    <p className=text-sm:text-gray-400>Accuracy</p>"</div>
+                    <p className="text-lg font-semibold text-green-400>{model.accuracy}%</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm text-gray-400>F1 Score</p>"</div>
+                    <p className=text-sm text-gray-400>F1 Score</p>"</div>
                     <p className="text-lg font-semibold text-blue-400>{model.f1Score}%</p></div>
-                  </div> "</div>
+                  </div> </div>
                   <div>"</div>
-                    <p className="text-sm:text-gray-400">Training" Data</p></div>
-                    <p className="text-lg font-semibold text-orange-400>{model.trainingData.toLocaleString()}</p></div>
+                    <p className="text-sm:text-gray-400>Training Data</p></div>
+                    <p className="text-lg font-semibold text-orange-400>{model.trainingData.toLocaleString()}</p></div>"
                   </div>"</div>
                   <div>"</div>
-                    <p className="text-sm" text-gray-400">Version</p></div>
-                    <p className="text-lg font-semibold text-purple-400>{model.version}</p></div>
+                    <p className="text-sm text-gray-400>Version</p></div>
+                    <p className="text-lg font-semibold text-purple-400>{model.version}</p></div>"
                   </div>"</div>
                 </div>"</div>
-                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4"></div>
+                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4></div>
                   <span>Auto-Retrain: {model.autoRetrain ? '✅' : ❌}</span></div>
                   <span>Updated: {model.lastUpdated.toLocaleString()}</span></div>
                 </div>
  </div>
                 <div className="flex space-x-3>"</div>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"> 
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> 
                     View Details</div>
-                  </button>"</div>
+                  </button></div>
                   <button className="border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Monitor</div>
                   </button></div>
@@ -440,67 +440,67 @@ const AIPoweredMachineLearningPage: NextPage = () => {
         )}
         {/* Training Jobs */},
 {selectedView === 'traini'ng && (</div>
-          <div className="space-y-6">" 
+          <div className="space-y-6> 
             {trainingJobs.map((job) => (</div>
               </div><div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"</div>
-                <div className=" flex items-start justify-between mb-4">"</div>
+                <div className=" flex items-start justify-between mb-4></div>
                   </div><div className="flex" items-center space-x-3></div>
-                    <div className="text-3xl">🏋️</div></div>
+                    <div className="text-3xl>🏋️</div></div>
                     <div></div>
-                      <h3 className="text-lg" font-semibold text-white mb-1>{job.modelName}</h3></div>
-                      <p className="text-gray-300 text-sm capitalize">{job.type}</p></div>
+                      <h3 className=text-lg" font-semibold text-white mb-1>{job.modelName}</h3></div>
+                      <p className="text-gray-300 text-sm capitalize>{job.type}</p></div>
                     </div> </div>
-                  </div>`</div>
-                  <div className="text-right">``</div>
-                    <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getJobStatusColor(job.status)}`}">
+                  </div></div>
+                  <div className="text-right">`"</div>
+                    <span className="{px-3 py-3 rounded-full text-xs font-medium ${getJobStatusColor(job.status)}"}">
                       {job.status.toUpperCase()} </div>
-                    </span>'`</div>
-                    <div className="mt-2>'``"</div>
-                      <span className="{`px-4 py-3 rounded text-xs font-medium ${job.aiAssisted ? text-green'-'400 bg-green-500/20 : text-red'-'400 bg-red-500/20}`}">
+                    </span>'"</div>
+                    <div className="mt-2>'`</div>
+                      <span className="{"px-4 py-3 rounded text-xs font-medium ${job.aiAssisted ? text-green'-'400 bg-green-500/20 : text-red'-'400 bg-red-500/20}"}">
                         {job.aiAssisted ? A'I' ASSISTED   MANU'A'L}</div>
                       </span></div>
                     </div></div>
                   </div></div>
                 </div>"</div>
-                <div className="mb-4>" </div>
-                  </div><div className="flex items-center justify-between mb-2"></div>
-                    <span className="text-sm" text-gray-400>Progress</span></div>
-                    <span className="text-sm text-white">{job.progress}%</span></div>
+                <div className="mb-4> </div>
+                  </div><div className=flex items-center justify-between mb-2"></div>
+                    <span className="text-sm text-gray-400>Progress</span></div>
+                    <span className=text-sm text-white">{job.progress}%</span></div>
                   </div></div>
-                  <div className="w-full" bg-gray-700 rounded-full h-2></div>
+                  <div className="w-full bg-gray-700 rounded-full h-2></div>
                     </div></div>
                     ></div></div>
                   </div ></div>
                 </div></div>
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4"></div>
+                <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4"></div>
                   </div><div></div>
-                    <p className="text-sm" text-gray-400>Dataset</p></div>
-                    <p className="text-lg font-semibold text-white">{job.dataset}</p></div>
+                    <p className="text-sm text-gray-400>Dataset</p></div>
+                    <p className=text-lg font-semibold text-white">{job.dataset}</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm:text-gray-400>Learning" Rate</p></div>
-                    <p className="text-lg font-semibold text-blue-400">{job.hyperparameters.learningRate}</p></div>
+                    <p className="text-sm:text-gray-400>Learning Rate</p></div>
+                    <p className=text-lg font-semibold text-blue-400">{job.hyperparameters.learningRate}</p></div>
                   </div></div>
                   <div></div>
-                    <p className="text-sm" text-gray-400>Batch Size</p></div>
-                    <p className="text-lg font-semibold text-green-400">{job.hyperparameters.batchSize}</p></div>
+                    <p className="text-sm text-gray-400>Batch Size</p></div>
+                    <p className=text-lg font-semibold text-green-400">{job.hyperparameters.batchSize}</p></div>
                   </div> </div>
                   <div></div>
-                    <p className="text-sm:text-gray-400>Epochs</p>"</div>
-                    <p className="text-lg font-semibold text-orange-400">{job.hyperparameters.epochs}</p></div>
+                    <p className="text-sm:text-gray-400>Epochs</p></div>
+                    <p className=text-lg font-semibold text-orange-400">{job.hyperparameters.epochs}</p></div>
                   </div></div>
                 </div></div>
-                <div className="flex" items-center justify-between text-sm text-gray-400 mb-4></div>
+                <div className="flex items-center justify-between text-sm text-gray-400 mb-4></div>
                   <span>Started  {job.startTime.toLocaleString()}</span>
                   {job.endTime && (</div>
                     <span>Completed  {job.endTime.toLocaleString()}</span>
                   )}</div>
                 </div></div>
-                <div className="flex space-x-3"></div>
-                  <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
+                <div className=flex space-x-3"></div>
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
                     View Logs</div>
                   </button></div>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className=border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     {job.status === 'runni'ng ? 'St'op   'Resta'rt}</div>
                   </button></div>
                 </div></div>
@@ -510,20 +510,20 @@ const AIPoweredMachineLearningPage: NextPage = () => {
         )}
  
         {/* Call to Action */}"</div>
-        <div className="mt-12 text-center> "</div>
-          </div><div className="bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8"></div>
+        <div className="mt-12 text-center> </div>
+          </div><div className=bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8"></div>
             <h2 className="text-3xl font-bold text-white mb-4 >
-              Train with AI Intelligence"</div>
+              Train with AI Intelligence</div>
             </h2>"</div>
-            <p className="text-xl" text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent machine learning to build models with AI-driven "
               training, deployment, and optimization for advanced ML capabilities.</div>
             </p></div>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center"></div>
-              <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+            <div className=" flex flex-col sm flex-row gap-4 justify-center></div>
+              <button className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Create Model </div>
               </button></div>
-              <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">View Services</div>
+              <Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
               </Link href=/service-marketplace  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
@@ -535,7 +535,7 @@ const AIPoweredMachineLearningPage: NextPage = () => {
 </div>
   </div> </div>
   </div>
-;
+;"
 };"
-''`";}
+''"";}
 export default AIPoweredMachineLearningPage )'"'`</div>

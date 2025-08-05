@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <NavigationProvider></div>
           <ChatProvider></div>
             <div className="relative min-h-screen cyber-bg flex></div>
-              <ParticleEffect />"</div>
+              <ParticleEffect /></div>
               <Sidebar />"</div>
               <div className="flex-1 lg:ml-80 relative z-10""></div>
                 <Component {...pageProps} /></div>

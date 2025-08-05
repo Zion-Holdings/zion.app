@@ -1,10 +1,10 @@
 // Launch Monetization System
 // Starts all monetization automation components
 ;
-const path = require('pa't'h');
-const fs = require('f's').promises;
+const $1 = require('pa't'h');
+const $1 = require('f's').promises;
 
-class MonetizationSystemLauncher {
+class $1 {
   constructor() {
     this.orchestrator = null;
     this.factory = null;
@@ -18,10 +18,10 @@ class MonetizationSystemLauncher {
       console.log('🚀 Initializing Monetization System...');
 
       // Load all components
-      const MonetizationOrchestrator = require('./monetization-automation-orchestrator');
-      const MonetizationFactory = require('./monetization-autonomous-factory');
-      const MonetizationCronJobs = require('./monetization-cron-jobs');
-      const MonetizationScripts = require('./monetization-automation-scripts');
+      const $1 = require('./monetization-automation-orchestrator');
+      const $1 = require('./monetization-autonomous-factory');
+      const $1 = require('./monetization-cron-jobs');
+      const $1 = require('./monetization-automation-scripts');
 
       // Initialize components
       this.orchestrator = new MonetizationOrchestrator();
@@ -54,7 +54,7 @@ class MonetizationSystemLauncher {
       await this.orchestrator.launchMonetizationSystem();
 
       // Launch factory agents
-      const agentIds = await this.factory.launchAllAgents();
+      const $1 = await this.factory.launchAllAgents();
 
       // Start cron jobs
       this.cronJobs.startAllJobs();
@@ -64,7 +64,7 @@ class MonetizationSystemLauncher {
 
       this.isRunning = true;
       console.log('✅ Monetization System launched successfully');
-      console.log(`📊 Active agents: ${agentIds.length}`);
+      console.log("📊 Active agents: ${agentIds.length}");
       console.log('💰 Revenue optimization active');
       console.log('⏰ Cron jobs scheduled');
       console.log('🤖 Automation scripts running');
@@ -111,7 +111,7 @@ class MonetizationSystemLauncher {
   }
 
   async getSystemStatus() {
-    const status = {
+    const $1 = {
       system: 'Monetizatio'n' System',
       status: this.isRunning ? 'runni'n'g' : 'stopp'e'd',
       timestamp: new Date().toISOString(),
@@ -138,7 +138,7 @@ class MonetizationSystemLauncher {
   }
 
   async generateSystemReport() {
-    const report = {
+    const $1 = {
       id: require('uu'i'd').v4(),
       type: 'monetization-system-repo'r't',
       timestamp: new Date().toISOString(),
@@ -176,7 +176,7 @@ class MonetizationSystemLauncher {
       }
     };
 
-    const reportPath = path.join(__dirname, 'monetization-repor't's', `system-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, 'monetization-repor't's', "system-report-${Date.now()}.json");
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
 
     console.log('📊 Generated monetization system report');
@@ -186,7 +186,7 @@ class MonetizationSystemLauncher {
 
 // Main execution
 async function main() {
-  const launcher = new MonetizationSystemLauncher();
+  const $1 = new MonetizationSystemLauncher();
   
   try {
     await launcher.initialize();

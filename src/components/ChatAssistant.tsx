@@ -1,8 +1,8 @@
 'use client';}
-import React, { useState, useRef, useEffect , useCallback } from "react;}
+import React, { useState, useRef, useEffect , useCallback } from "react";}
 import Link from next/link";
 
-interface Message {
+interface $1 {
   id: string;
   content: string;
   role: 'user' | 'assistant';
@@ -13,7 +13,7 @@ interface Message {
     action: string;
     link?: string;
   }>;}
-interface ChatAssistantProps {
+interface $1 {
   isOpen: boolean;
   onToggle: () => void;}</div>;
 const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {</div>
@@ -32,8 +32,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
   ]);
   const [inputValue, setInputValue] = useState();
   const [isLoading, setIsLoading] = useState(false);</div>
-  const messagesEndRef = useRef<HTMLDivElement>(null);</div>
-  const inputRef = useRef<HTMLInputElement>(null);
+  const $1 = useRef<HTMLDivElement>(null);</div>
+  const $1 = useRef<HTMLInputElement>(null);
 '
   const $1 = () => {'
     messagesEndRef.current?.scrollIntoView({ behavior: smoot'h' });
@@ -48,7 +48,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
       inputRef.current.focus();}
   }, [isOpen]);
 
-  const handleQuickAction = async (action: string) => {
+  const $1 = async (action: string) => {
     const userMessage: Message = {
       id: Date.now().toString(),
       content: action,
@@ -62,7 +62,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
     setIsLoading(true);
 
     try {
-      const response = await fetch(/api/chat', {
+      const $1 = await fetch(/api/chat', {
         method: 'POST','
         headers: {
           Content-Typ'e': application'/json',
@@ -78,7 +78,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
 
       if (!response.ok) {
         throw new Error(Faile'd' to get response);}
-      const data = await response.json();
+      const $1 = await response.json();
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -102,7 +102,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
       setIsLoading(false);}
   };
 
-  const handleSendMessage = async () => {;
+  const $1 = async () => {;
     if (!inputValue.trim() || isLoading) return;
 
     const userMessage: Message = {
@@ -118,7 +118,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
     setIsLoading(true);
 
     try {
-      const response = await fetch(/api/chat', {
+      const $1 = await fetch(/api/chat', {
         method: 'POST','
         headers: {
           Content-Typ'e': application'/json',
@@ -134,7 +134,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
 
       if (!response.ok) {
         throw new Error(Faile'd' to get response);}
-      const data = await response.json();
+      const $1 = await response.json();
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -158,44 +158,44 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
       setIsLoading(false);}
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const $1 = (e: React.KeyboardEvent) => {
     if (e.key === Ent'e'r && !e.shiftKey) {;
       e.preventDefault();
       handleSendMessage();}
   };
 
-  const formatTime = (date: Date) => {';
+  const $1 = (date: Date) => {';
     return date.toLocaleTimeString([], { hour: '2-digit, minute: 2-digit' });
   };
 
-  const renderMessage = (message: Message) => {
+  const $1 = (message: Message) => {
     return (</div>
       <div'
         key={message.id}
-        className="{`flex ${message.role === use'r' ? justify-en'd' : justify-star't'}`}
-      >`"</div>
-        <div'``"
-          className="{`max-w-[85%] md:max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
+        className="{flex ${message.role === use'r' ? justify-en'd' : justify-star't'}}
+      >""</div>
+        <div'"""
+          className="{max-w-[85%] md:max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
             message.role === 'user
-              ? 'bg-blue'-600 text-white`
-              : 'bg-whit'e text-gray-800 border border-gray-200 ``
-          }`}"
+              ? 'bg-blue'-600 text-white
+              : 'bg-whit'e text-gray-800 border border-gray-200 ""
+          }"}"
         >"</div>
-          <p className="text-sm leading-relaxed"">{message.content}</p>
+          <p className="text-sm leading-relaxed>{message.content}</p>
           "'
           {message.actions && message.role === 'assistant' && (</div>
-            <div className="mt-3 space-y-2"">
+            <div className="mt-3 space-y-2>
               {message.actions.map((action, index) => (</div>
                 <button key={index}
                   onClick={() => handleQuickAction(action.action)}
                   className="block w-full text-left px-3 py-2 text-xs bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors >
                   {action.label}</div>
-                </button > ))}</div>
-            </div>`
-          )}``"</div>
-          <p className="{`text-xs mt-1 ${'`"
-            message.role === us'e'r ? text-blue'-'100 : text-gray'-'500``"
-          }`}"">
+                </button > ))}</div>"
+            </div>"
+          )}"""</div>
+          <p className="{text-xs mt-1 ${'"
+            message.role === us'e'r ? text-blue'-'100 : text-gray'-'500"""
+          }"}"">
             {formatTime(message.timestamp)}</div>
           </p></div>
         </div></div>
@@ -208,76 +208,76 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
       {/* Chat Toggle Button */}</div>
       <button 
         onClick = {onToggle}
-        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2"
-        aria-label=Toggle chat assistant"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2
+        aria-label=Toggle chat assistant
       ">
         {isOpen ? ("</div>
-          <svg className=" w-5 h-5 md w-6 md h-6 fill= none stroke="currentColor" viewBox=0 0 24 24"""></div>
+          <svg className=" w-5 h-5 md w-6 md h-6 fill= none stroke=currentColor viewBox=0 0 24 24"""></div>
             <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M6 18L18 6M6 6l12 12 > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M6 18L18 6M6 6l12 12" ></svg>
         ) : ("</div>
-          <svg className=" w-5 h-5 md w-6 md h-6 fill= none stroke="currentColor" viewBox=0 0 24 24"""></div>
+          <svg className=" w-5 h-5 md w-6 md h-6 fill= none stroke=currentColor viewBox=0 0 24 24"""></div>
             <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" ></svg>
         )}</div>
       </button>
       {/* Chat Window */},
     {isOpen && ("</div>
-        <div className=" fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40 w-[calc(100vw-2rem)] md w-96 h-[calc(100vh-8rem)] md h-[500px] bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col"">
+        <div className=" fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40 w-[calc(100vw-2rem)] md w-96 h-[calc(100vh-8rem)] md h-[500px] bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col>
           {/* Header */}"</div>
-          <div className=" bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-t-lg flex items-center justify-between""></div>
+          <div className=" bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-t-lg flex items-center justify-between></div>
             <div className=" flex items-center space-x-2>"</div>
-              <div className=" w-6 h-6 md w-8 md h-8 bg-white/20 rounded-full flex items-center justify-center"></div>
-                <svg className=" w-4 h-4 md w-5 md h-5 fill= none" stroke="currentColor viewBox=0 0 24" 24""></div>
+              <div className=" w-6 h-6 md w-8 md h-8 bg-white/20 rounded-full flex items-center justify-center></div>
+                <svg className= w-4 h-4 md w-5 md h-5 fill= none" stroke="currentColor viewBox=0 0 24" 24""></div>
                   <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4" 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" ></svg></div>
               </div></div>
               <div></div>
-                <h3 className=" font-semibold text-sm md text-base">Zion AI Assistant</h3></div>
-                <p className="text-xs text-blue-100"">Online • Ready to help</p ></div>
+                <h3 className=" font-semibold text-sm md text-base>Zion AI Assistant</h3></div>
+                <p className=text-xs text-blue-100"">Online • Ready to help</p ></div>
               </div></div>
             </div></div>
             <button
               onClick={onToggle}"
-              className=" md:hidden text-white hover text-blue-100 focus outline-none aria-label= Close chat"
-            ""></div>
-              <svg className=" w-5 h-5 fill= none stroke=currentColor" viewBox="0 0 24 24"></div>
+              className=" md:hidden text-white hover text-blue-100 focus outline-none aria-label= Close chat
+            "></div>
+              <svg className=" w-5 h-5 fill= none stroke=currentColor viewBox=0 0 24 24"></div>
                 <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M6 18L18 6M6 6l12 12 > </path" strokeLinecap="round strokeLinejoin=round" strokeWidth={2} d="M6 18L18 6M6 6l12 12 ></svg></div>
             </button></div>
           </div>
 
           {/* Messages Container */}"</div>
-          <div className=" flex-1 overflow-y-auto p-3 md p-4 space-y-3 md space-y-4 bg-gray-50>"
-            {messages.map(renderMessage)},"
+          <div className=" flex-1 overflow-y-auto p-3 md p-4 space-y-3 md space-y-4 bg-gray-50>
+            {messages.map(renderMessage)},
     {isLoading && ("</div>
-              <div className=" flex justify-start>"</div>
-                <div className=" bg-white text-gray-800 border border-gray-200 px-3 py-2 rounded-lg"></div>
-                  <div className=" flex space-x-1"""></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.1s' }}"></div></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.2s' }}"></div></div>
+              <div className=" flex justify-start></div>
+                <div className= bg-white text-gray-800 border border-gray-200 px-3 py-2 rounded-lg"></div>
+                  <div className=" flex space-x-1"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce></div></div>
+                    <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.1s' }}"></div></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.2s' }}></div></div>
                   </div></div>
                 </div></div>
               </div>
             )}</div>
             <div ref={messagesEndRef} > </div ref={messagesEndRef} ></div>
 
-          {/* Input Area */}"</div>
+          {/* Input Area */}</div>
           <div className=" p-3 md p-4 border-t border-gray-200 bg-white rounded-b-lg>"</div>
-            <div className=" flex space-x-2"></div>
+            <div className=" flex space-x-2></div>
               <input
                 ref={inputRef}
-                type="text"
+                type=text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me about services, talents, or" equipment...
-                className= flex-1 px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus ring-blue-500 focus border-transparent disabled={isLoading}
-              /">"</div>
+                className=" flex-1 px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus ring-blue-500 focus border-transparent disabled={isLoading}
+              />"</div>
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
-                className="px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2 transition-colors"
-                aria-label= Send message"
+                className="px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2 transition-colors
+                aria-label= Send message
               ""></div>
-                <svg className=" w-4 h-4 md w-5 md h-5 fill= none stroke="currentColor" viewBox=0 0 24 24"""></div>
+                <svg className=" w-4 h-4 md w-5 md h-5 fill= none stroke=currentColor viewBox=0 0 24 24"""></div>
                   <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M12 19l9 2-9-18-9 18 9-2zm0 0v-8 > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M12 19l9 2-9-18-9 18 9-2zm0 0v-8" ></svg></div>
               </button></div>
             </div></div>
@@ -287,5 +287,5 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {<
     </>
   );
 };
-''`;}
-export default ChatAssistant;`</div>
+''";}
+export default $1;"</div>

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix Image component syntax errors;
 function fixImageComponents(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'ut'f'8');
-    let modified = false;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = false;
     
     // Fix Image components with incorrect syntax
     // Pattern: <Image ... / width={400} height={300} />
@@ -33,14 +33,14 @@ function fixImageComponents(filePath) {
     
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to fix specific files with known issues;
 function fixSpecificFiles() {
-  const filesToFix = [
+  const $1 = [
     'page's'/service-request-system.tsx',
     'page's'/real-time-chat.tsx',
     'page's'/user-profiles.tsx',
@@ -49,19 +49,19 @@ function fixSpecificFiles() {
     'page's'/service-marketplace.tsx'
   ];
   
-  let totalFixed = 0;
+  let $1 = 0;
   
   filesToFix.forEach(file => {
-    const filePath = path.join(__dirname, '..', file);
+    const $1 = path.join(__dirname, '..', file);
     if (fs.existsSync(filePath)) {
       if (fixImageComponents(filePath)) {
-        console.log(`Fixed Image components in ${file}`);
+        console.log("Fixed Image components in ${file}");
         totalFixed++;
       }
     }
   });
   
-  console.log(`\nTotal files fixed: ${totalFixed}`);
+  console.log("\nTotal files fixed: ${totalFixed}");
 }
 
 // Run the script

@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
-const cron = require('node-cr'o'n');
-const LinkCheckingAgentFactory = require('./link-checking-agent-factory');
+const $1 = require('node-cr'o'n');
+const $1 = require('./link-checking-agent-factory');
 
-class LinkCheckingOrchestrator {
+class $1 {
   constructor() {
     this.agentFactory = new LinkCheckingAgentFactory();
     this.agents = new Map();
@@ -30,7 +30,7 @@ class LinkCheckingOrchestrator {
 
   loadConfig() {
     try {
-      const configPath = path.join(__dirname, 'link-checking-orchestrator-confi'g'.json');
+      const $1 = path.join(__dirname, 'link-checking-orchestrator-confi'g'.json');
       if (fs.existsSync(configPath)) {
         return JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
       }
@@ -77,7 +77,7 @@ class LinkCheckingOrchestrator {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-orchestrato'r's',
       'link-tas'k's',
       'link-workloa'd's',
@@ -88,7 +88,7 @@ class LinkCheckingOrchestrator {
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, dir);
+      const $1 = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -116,7 +116,7 @@ class LinkCheckingOrchestrator {
 
       if (data) {
         for (const agentData of data) {
-          const agent = await this.agentFactory.createAgent(agentData.type, agentData.config);
+          const $1 = await this.agentFactory.createAgent(agentData.type, agentData.config);
           agent.id = agentData.id;
           this.agents.set(agent.id, agent);
         }
@@ -165,9 +165,9 @@ class LinkCheckingOrchestrator {
   }
 
   async createLinkTask(taskType, priority = 'norm'a'l', requirements = {}) {
-    const taskId = `link-task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const $1 = "link-task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}";
     
-    const task = {
+    const $1 = {
       id: taskId,
       type: taskType,
       priority,
@@ -182,12 +182,12 @@ class LinkCheckingOrchestrator {
     this.tasks.set(taskId, task);
     await this.saveTaskToDatabase(task);
     
-    console.log(`📋 Created link task: ${taskId} (${taskType})`);
+    console.log("📋 Created link task: ${taskId} (${taskType})");
     return task;
   }
 
   findSuitableAgent(task) {
-    const availableAgents = Array.from(this.agents.values())
+    const $1 = Array.from(this.agents.values())
       .filter(agent => agent.status === 'runni'n'g' && this.agentCanHandleTask(agent, task));
 
     if (availableAgents.length === 0) {
@@ -195,7 +195,7 @@ class LinkCheckingOrchestrator {
     }
 
     // Score agents based on capabilities and current workload
-    const scoredAgents = availableAgents.map(agent => ({
+    const $1 = availableAgents.map(agent => ({
       agent,
       score: this.calculateAgentScore(agent, task)
     }));
@@ -205,14 +205,14 @@ class LinkCheckingOrchestrator {
   }
 
   agentCanHandleTask(agent, task) {
-    const requiredCapabilities = this.getRequiredCapabilities(task.type);
+    const $1 = this.getRequiredCapabilities(task.type);
     return requiredCapabilities.every(capability => 
       agent.capabilities.includes(capability)
     );
   }
 
   getRequiredCapabilities(taskType) {
-    const capabilityMap = {
+    const $1 = {
       'link-validati'o'n': ['link-validati'o'n', 'http-status-checki'n'g'],
       'link-fixi'n'g': ['link-repa'i'r', 'redirect-handli'n'g'],
       'link-monitori'n'g': ['continuous-monitori'n'g', 'link-health-tracki'n'g'],
@@ -224,7 +224,7 @@ class LinkCheckingOrchestrator {
   }
 
   calculateAgentScore(agent, task) {
-    let score = 0;
+    let $1 = 0;
     
     // Base score from agent performance
     score += agent.performance.successRate * 0.3;
@@ -238,7 +238,7 @@ class LinkCheckingOrchestrator {
     }
     
     // Workload consideration
-    const currentWorkload = this.getAgentWorkload(agent.id);
+    const $1 = this.getAgentWorkload(agent.id);
     score -= currentWorkload * 0.1;
     
     return Math.max(0, score);
@@ -251,9 +251,9 @@ class LinkCheckingOrchestrator {
   }
 
   async assignTask(taskId, agent) {
-    const task = this.tasks.get(taskId);
+    const $1 = this.tasks.get(taskId);
     if (!task) {
-      throw new Error(`Task not found: ${taskId}`);
+      throw new Error("Task not found: ${taskId}");
     }
 
     task.assignedAgent = agent.id;
@@ -262,14 +262,14 @@ class LinkCheckingOrchestrator {
 
     await this.updateTaskInDatabase(task);
     
-    console.log(`📋 Assigned task ${taskId} to agent ${agent.id}`);
+    console.log("📋 Assigned task ${taskId} to agent ${agent.id}");
     return task;
   }
 
   async completeTask(taskId, result) {
-    const task = this.tasks.get(taskId);
+    const $1 = this.tasks.get(taskId);
     if (!task) {
-      throw new Error(`Task not found: ${taskId}`);
+      throw new Error("Task not found: ${taskId}");
     }
 
     task.status = 'complet'e'd';
@@ -282,38 +282,38 @@ class LinkCheckingOrchestrator {
 
     await this.updateTaskInDatabase(task);
     
-    console.log(`✅ Completed task ${taskId}`);
+    console.log("✅ Completed task ${taskId}");
     return task;
   }
 
   async balanceWorkload() {
-    const runningAgents = Array.from(this.agents.values())
+    const $1 = Array.from(this.agents.values())
       .filter(agent => agent.status === 'runni'n'g');
 
     if (runningAgents.length === 0) return;
 
-    const workloads = runningAgents.map(agent => ({
+    const $1 = runningAgents.map(agent => ({
       agent,
       workload: this.getAgentWorkload(agent.id)
     }));
 
-    const avgWorkload = workloads.reduce((sum, w) => sum + w.workload, 0) / workloads.length;
-    const maxWorkload = Math.max(...workloads.map(w => w.workload));
+    const $1 = workloads.reduce((sum, w) => sum + w.workload, 0) / workloads.length;
+    const $1 = Math.max(...workloads.map(w => w.workload));
 
     // Redistribute tasks if workload is imbalanced
     if (maxWorkload > avgWorkload * 1.5) {
       console.log('⚖️ Balancing link checking workload...');
       
-      const overloadedAgents = workloads.filter(w => w.workload > avgWorkload * 1.2);
-      const underloadedAgents = workloads.filter(w => w.workload < avgWorkload * 0.8);
+      const $1 = workloads.filter(w => w.workload > avgWorkload * 1.2);
+      const $1 = workloads.filter(w => w.workload < avgWorkload * 0.8);
 
       for (const overloaded of overloadedAgents) {
-        const tasksToReassign = this.getTasksForAgent(overloaded.agent.id)
+        const $1 = this.getTasksForAgent(overloaded.agent.id)
           .filter(task => task.status === 'runni'n'g')
           .slice(0, Math.floor(overloaded.workload - avgWorkload));
 
         for (const task of tasksToReassign) {
-          const newAgent = this.findSuitableAgent(task);
+          const $1 = this.findSuitableAgent(task);
           if (newAgent && newAgent.id !== overloaded.agent.id) {
             await this.reassignTask(task.id, newAgent.id);
           }
@@ -328,18 +328,18 @@ class LinkCheckingOrchestrator {
   }
 
   async reassignTask(taskId, newAgentId) {
-    const task = this.tasks.get(taskId);
+    const $1 = this.tasks.get(taskId);
     if (!task) {
-      throw new Error(`Task not found: ${taskId}`);
+      throw new Error("Task not found: ${taskId}");
     }
 
-    const oldAgentId = task.assignedAgent;
+    const $1 = task.assignedAgent;
     task.assignedAgent = newAgentId;
     task.reassignedAt = new Date();
 
     await this.updateTaskInDatabase(task);
     
-    console.log(`🔄 Reassigned task ${taskId} from ${oldAgentId} to ${newAgentId}`);
+    console.log("🔄 Reassigned task ${taskId} from ${oldAgentId} to ${newAgentId}");
     return task;
   }
 
@@ -372,12 +372,12 @@ class LinkCheckingOrchestrator {
   async performLinkHealthCheck() {
     console.log('🔍 Performing link health check...');
     
-    const healthCheckTask = await this.createLinkTask('link-validati'o'n', 'hi'g'h', {
+    const $1 = await this.createLinkTask('link-validati'o'n', 'hi'g'h', {
       scope: 'health-che'c'k',
       priority: 'hi'g'h'
     });
 
-    const suitableAgent = this.findSuitableAgent(healthCheckTask);
+    const $1 = this.findSuitableAgent(healthCheckTask);
     if (suitableAgent) {
       await this.assignTask(healthCheckTask.id, suitableAgent);
     }
@@ -386,13 +386,13 @@ class LinkCheckingOrchestrator {
   async performComprehensiveLinkAudit() {
     console.log('📊 Performing comprehensive link audit...');
     
-    const auditTask = await this.createLinkTask('link-analys'i's', 'norm'a'l', {
+    const $1 = await this.createLinkTask('link-analys'i's', 'norm'a'l', {
       scope: 'comprehensive-aud'i't',
       includeExternal: true,
       includeImages: true
     });
 
-    const suitableAgent = this.findSuitableAgent(auditTask);
+    const $1 = this.findSuitableAgent(auditTask);
     if (suitableAgent) {
       await this.assignTask(auditTask.id, suitableAgent);
     }
@@ -401,10 +401,10 @@ class LinkCheckingOrchestrator {
   async generateDailyLinkReport() {
     console.log('📈 Generating daily link report...');
     
-    const report = await this.agentFactory.generateLinkReport();
-    const metrics = await this.agentFactory.getSystemMetrics();
+    const $1 = await this.agentFactory.generateLinkReport();
+    const $1 = await this.agentFactory.getSystemMetrics();
     
-    const dailyReport = {
+    const $1 = {
       date: new Date().toISOString().split('T')[0],
       metrics,
       report,
@@ -417,7 +417,7 @@ class LinkCheckingOrchestrator {
       }
     };
 
-    const reportPath = path.join(__dirname, 'link-repor't's', `daily-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, 'link-repor't's', "daily-report-${Date.now()}.json");
     fs.writeFileSync(reportPath, JSON.stringify(dailyReport, null, 2));
     
     console.log('📊 Daily link report generated');
@@ -426,47 +426,47 @@ class LinkCheckingOrchestrator {
   async performWeeklyLinkOptimization() {
     console.log('⚡ Performing weekly link optimization...');
     
-    const optimizationTask = await this.createLinkTask('link-optimizati'o'n', 'hi'g'h', {
+    const $1 = await this.createLinkTask('link-optimizati'o'n', 'hi'g'h', {
       scope: 'weekly-optimizati'o'n',
       includeSeo: true,
       includeUserExperience: true
     });
 
-    const suitableAgent = this.findSuitableAgent(optimizationTask);
+    const $1 = this.findSuitableAgent(optimizationTask);
     if (suitableAgent) {
       await this.assignTask(optimizationTask.id, suitableAgent);
     }
   }
 
   monitorPerformance() {
-    const runningAgents = Array.from(this.agents.values())
+    const $1 = Array.from(this.agents.values())
       .filter(agent => agent.status === 'runni'n'g');
 
     if (runningAgents.length === 0) return;
 
-    const totalResponseTime = runningAgents.reduce((sum, agent) => 
+    const $1 = runningAgents.reduce((sum, agent) => 
       sum + agent.performance.avgResponseTime, 0);
     
     this.systemMetrics.avgResponseTime = totalResponseTime / runningAgents.length;
     this.systemMetrics.activeAgents = runningAgents.length;
     this.systemMetrics.totalAgents = this.agents.size;
 
-    const totalErrors = runningAgents.reduce((sum, agent) => 
+    const $1 = runningAgents.reduce((sum, agent) => 
       sum + agent.stats.errors, 0);
-    const totalTasks = runningAgents.reduce((sum, agent) => 
+    const $1 = runningAgents.reduce((sum, agent) => 
       sum + agent.performance.tasksCompleted + agent.performance.tasksFailed, 0);
     
     this.systemMetrics.errorRate = totalTasks > 0 ? (totalErrors / totalTasks) * 100 : 0;
   }
 
   checkAgentHealth() {
-    const agents = Array.from(this.agents.values());
+    const $1 = Array.from(this.agents.values());
     
     for (const agent of agents) {
       if (agent.status === 'runni'n'g') {
-        const uptime = Date.now() - agent.lastActive.getTime();
+        const $1 = Date.now() - agent.lastActive.getTime();
         if (uptime > 300000) { // 5 minutes
-          console.log(`⚠️ Agent ${agent.id} may be unresponsive`);
+          console.log("⚠️ Agent ${agent.id} may be unresponsive");
           this.handleAgentUnresponsive(agent);
         }
       }
@@ -474,16 +474,16 @@ class LinkCheckingOrchestrator {
   }
 
   async handleAgentUnresponsive(agent) {
-    console.log(`🔄 Restarting unresponsive agent: ${agent.id}`);
+    console.log("🔄 Restarting unresponsive agent: ${agent.id}");
     try {
       await this.agentFactory.restartAgent(agent.id);
     } catch (error) {
-      console.error(`Failed to restart agent ${agent.id}:`, error);
+      console.error("Failed to restart agent ${agent.id}:", error);
     }
   }
 
   async optimizeSystem() {
-    const metrics = await this.agentFactory.getSystemMetrics();
+    const $1 = await this.agentFactory.getSystemMetrics();
     </div>
     if (metrics.successRate < 90) {
       console.log('🔧 Optimizing system for better success rate...');
@@ -497,27 +497,27 @@ class LinkCheckingOrchestrator {
   }
 
   async optimizeAgentAllocation() {
-    const agents = await this.agentFactory.getAllLinkAgents();
-    const runningAgents = agents.filter(agent => agent.status === 'runni'n'g');
+    const $1 = await this.agentFactory.getAllLinkAgents();
+    const $1 = agents.filter(agent => agent.status === 'runni'n'g');
     
     // Analyze agent performance and redistribute tasks
-    const performanceMap = new Map();
+    const $1 = new Map();
     
     for (const agent of runningAgents) {
-      const performance = await this.agentFactory.getAgentPerformance(agent.id);
+      const $1 = await this.agentFactory.getAgentPerformance(agent.id);
       performanceMap.set(agent.id, performance);
     }
     
     // Reassign tasks from low-performing agents to high-performing ones
-    const sortedAgents = Array.from(performanceMap.entries())
+    const $1 = Array.from(performanceMap.entries())
       .sort((a, b) => b[1].performance.successRate - a[1].performance.successRate);
     </div>
-    for (let i = 0; i < sortedAgents.length - 1; i++) {
+    for (let $1 = 0; i < sortedAgents.length - 1; i++) {
       const [lowPerformingId, lowPerforming] = sortedAgents[sortedAgents.length - 1 - i];
       const [highPerformingId, highPerforming] = sortedAgents[i];
       
       if (lowPerforming.performance.successRate < highPerforming.performance.successRate * 0.8) {
-        const tasksToReassign = this.getTasksForAgent(lowPerformingId)
+        const $1 = this.getTasksForAgent(lowPerformingId)
           .filter(task => task.status === 'runni'n'g')
           .slice(0, 2);
         
@@ -534,8 +534,8 @@ class LinkCheckingOrchestrator {
   }
 
   async autoScale() {
-    const metrics = await this.agentFactory.getSystemMetrics();
-    const runningAgents = await this.agentFactory.getRunningLinkAgents();
+    const $1 = await this.agentFactory.getSystemMetrics();
+    const $1 = await this.agentFactory.getRunningLinkAgents();
     
     // Scale up if needed
     if (metrics.totalBrokenLinks > runningAgents.length * 10) {
@@ -551,7 +551,7 @@ class LinkCheckingOrchestrator {
   }
 
   async scaleUp() {
-    const newAgent = await this.agentFactory.createLinkValidatorAgent({
+    const $1 = await this.agentFactory.createLinkValidatorAgent({
       maxConcurrentChecks: 15,
       timeout: 20000
     });
@@ -559,12 +559,12 @@ class LinkCheckingOrchestrator {
     await this.agentFactory.startAgent(newAgent.id);
     this.agents.set(newAgent.id, newAgent);
     
-    console.log(`📈 Scaled up: Created new link validator agent ${newAgent.id}`);
+    console.log("📈 Scaled up: Created new link validator agent ${newAgent.id}");
   }
 
   async scaleDown() {
-    const runningAgents = await this.agentFactory.getRunningLinkAgents();
-    const agentsByType = new Map();
+    const $1 = await this.agentFactory.getRunningLinkAgents();
+    const $1 = new Map();
     
     for (const agent of runningAgents) {
       if (!agentsByType.has(agent.type)) {
@@ -576,15 +576,15 @@ class LinkCheckingOrchestrator {
     // Remove the least performing agent of each type
     for (const [type, agents] of agentsByType) {
       if (agents.length > 1) {
-        const sortedAgents = agents.sort((a, b) => 
+        const $1 = agents.sort((a, b) => 
           a.performance.successRate - b.performance.successRate
         );
         
-        const agentToRemove = sortedAgents[0];
+        const $1 = sortedAgents[0];
         await this.agentFactory.stopAgent(agentToRemove.id);
         this.agents.delete(agentToRemove.id);
         
-        console.log(`📉 Scaled down: Removed ${type} agent ${agentToRemove.id}`);
+        console.log("📉 Scaled down: Removed ${type} agent ${agentToRemove.id}");
       }
     }
   }

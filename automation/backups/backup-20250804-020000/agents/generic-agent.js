@@ -1,4 +1,4 @@
-class GenericAgent {
+class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
@@ -17,16 +17,16 @@ class GenericAgent {
   }
 
   async startAgent() {
-    console.log(`🤖 Generic Agent ${this.agentId} starting...`);
+    console.log("🤖 Generic Agent ${this.agentId} starting...");
     
     try {
-      console.log(`✅ Generic Agent ${this.agentId} started successfully`);
+      console.log("✅ Generic Agent ${this.agentId} started successfully");
       
       // Start listening for tasks
       this.startTaskListener();
       
     } catch (error) {
-      console.error(`❌ Failed to start Generic Agent ${this.agentId}:`, error);
+      console.error("❌ Failed to start Generic Agent ${this.agentId}:", error);
       process.exit(1);
     }
   }
@@ -38,7 +38,7 @@ class GenericAgent {
       
       try {
         // Simulate receiving tasks
-        const task = this.simulateTask();
+        const $1 = this.simulateTask();
         if (task) {
           await this.processTask(task);
         }
@@ -50,7 +50,7 @@ class GenericAgent {
 
   simulateTask() {
     // Simulate different types of tasks
-    const taskTypes = [
+    const $1 = [
       {
         type: 'generic-ta's'k',
         data: {
@@ -79,9 +79,9 @@ class GenericAgent {
   }
 
   async processTask(task) {
-    console.log(`🤖 Processing ${task.type} task...`);
+    console.log("🤖 Processing ${task.type} task...");
     
-    const startTime = Date.now();
+    const $1 = Date.now();
     
     try {
       let result;
@@ -100,9 +100,9 @@ class GenericAgent {
           result = await this.performDefaultTask(task);
       }
       
-      const executionTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
-      console.log(`✅ Task completed in ${executionTime}ms`);
+      console.log("✅ Task completed in ${executionTime}ms");
       
       // Update performance metrics
       this.updatePerformanceMetrics(executionTime, true);
@@ -110,8 +110,8 @@ class GenericAgent {
       return result;
       
     } catch (error) {
-      const executionTime = Date.now() - startTime;
-      console.error(`❌ Task failed:`, error.message);
+      const $1 = Date.now() - startTime;
+      console.error("❌ Task failed:", error.message);
       
       this.updatePerformanceMetrics(executionTime, false);
       throw error;
@@ -119,7 +119,7 @@ class GenericAgent {
   }
 
   async performGenericTask(data) {
-    console.log(`🔧 Performing generic task: ${data.action}`);
+    console.log("🔧 Performing generic task: ${data.action}");
     
     // Simulate task execution
     await this.sleep(Math.random() * 3000 + 1000);
@@ -133,7 +133,7 @@ class GenericAgent {
   }
 
   async performDataProcessing(data) {
-    console.log(`📊 Processing data: ${data.dataset}`);
+    console.log("📊 Processing data: ${data.dataset}");
     
     // Simulate data processing
     await this.sleep(Math.random() * 2000 + 500);
@@ -148,12 +148,12 @@ class GenericAgent {
   }
 
   async performMonitoring(data) {
-    console.log(`📈 Monitoring: ${data.target}`);
+    console.log("📈 Monitoring: ${data.target}");
     
     // Simulate monitoring
     await this.sleep(Math.random() * 1000 + 500);
     
-    const metrics = {};
+    const $1 = {};
     for (const metric of data.metrics) {
       metrics[metric] = Math.random() * 100;
     }
@@ -167,7 +167,7 @@ class GenericAgent {
   }
 
   async performDefaultTask(task) {
-    console.log(`⚙️ Performing default task: ${task.type}`);
+    console.log("⚙️ Performing default task: ${task.type}");
     
     // Simulate default task execution
     await this.sleep(Math.random() * 1500 + 500);
@@ -187,11 +187,11 @@ class GenericAgent {
     }
     
     // Update average response time
-    const totalTasks = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.averageResponseTime = 
       (this.performance.averageResponseTime * (totalTasks - 1) + executionTime) / totalTasks;
     
-    console.log(`Performance: ${success ? 'SUCCE'S'S' : 'FAIL'E'D'} in ${executionTime}ms`);
+    console.log("Performance: ${success ? 'SUCCE'S'S' : 'FAIL'E'D'} in ${executionTime}ms");
   }
 
   sleep(ms) {
@@ -199,11 +199,11 @@ class GenericAgent {
   }
 
   setupGracefulShutdown() {
-    const shutdown = async () => {
-      console.log(`🛑 Generic Agent ${this.agentId} shutting down...`);
+    const $1 = async () => {
+      console.log("🛑 Generic Agent ${this.agentId} shutting down...");
       this.isRunning = false;
       
-      console.log(`✅ Generic Agent ${this.agentId} shutdown complete`);
+      console.log("✅ Generic Agent ${this.agentId} shutdown complete");
       process.exit(0);
     };
 

@@ -491,7 +491,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     if (!improved.includes('classNa'm'e') && improved.includes('d'i'v')) {
       improved = improved.replace(</div>
         /<div>/g,</div>
-        "<div className="w-full">"
+        "<div className="w-full>
       );
     }
     

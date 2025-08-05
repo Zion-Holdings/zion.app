@@ -1,6 +1,6 @@
 
-            const factory = require('./monetization-autonomous-factory');
-            const factoryInstance = new factory();
+            const $1 = require('./monetization-autonomous-factory');
+            const $1 = new factory();
             
             async function runContinuousImprovement() {
                 try {
@@ -8,8 +8,8 @@
                     setInterval(async () => {
                         try {
                             // Create new agents based on performance
-                            const agents = factoryInstance.getAllAgents();
-                            const totalRevenue = agents.reduce((sum, a) => sum + (a.performance?.revenueGenerated || 0), 0);
+                            const $1 = factoryInstance.getAllAgents();
+                            const $1 = agents.reduce((sum, a) => sum + (a.performance?.revenueGenerated || 0), 0);
                             
                             if (totalRevenue < 500000) {
                                 console.log('Creatin'g' new revenue agents due to low performance...');

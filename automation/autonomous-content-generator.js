@@ -307,29 +307,29 @@ const $1: NextPage = () => {
   const $1 = ${JSON.stringify(blogPosts, null, 2)};
 
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>Blog - Zion</title></div>
-        <meta name="description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" /></div>
+        <meta name=description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <Link href="/" className="text-2xl font-bold text-white"></div>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white></div>
+                <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
               </Link></div>
             </div></div>
-            <div className="flex items-center space-x-8"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <div className="flex items-center space-x-8></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Marketplace</div>
               </Link></div>
-              <Link href="/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium>
                 Blog</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Login</div>
               </Link></div>
             </div></div>
@@ -338,39 +338,39 @@ const $1: NextPage = () => {
       </nav>
 
       {/* Hero Section */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
-        <div className="text-center"></div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <div className="text-center></div>
+          <h1 className=text-4xl md:text-6xl font-bold text-white mb-6">
             Zion</div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Blog</span></div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400> Blog</span></div>
           </h1></div>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation</div>
           </p></div>
         </div></div>
       </div>
 
       {/* Blog Posts */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8></div>
+        <div className=grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post) => (</div>
-            <article key={post.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"></div>
-              <div className="mb-4"></div>
-                <div className="flex items-center space-x-2 mb-2">
+            <article key={post.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300></div>
+              <div className=mb-4"></div>
+                <div className="flex items-center space-x-2 mb-2>
                   {post.tags.map((tag) => (</div>
-                    <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
+                    <span key={tag} className=px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                       {tag}</div>
                     </span>
                   ))}</div>
                 </div></div>
-                <h2 className="text-xl font-semibold text-white mb-2">{post.title}</h2></div>
-                <p className="text-gray-300 text-sm mb-4">{post.excerpt}</p></div>
+                <h2 className="text-xl font-semibold text-white mb-2>{post.title}</h2></div>
+                <p className=text-gray-300 text-sm mb-4">{post.excerpt}</p></div>
               </div></div>
-              <div className="flex items-center justify-between text-sm text-gray-400"></div>
+              <div className="flex items-center justify-between text-sm text-gray-400></div>
                 <span>{post.author}</span></div>
                 <span>{post.readTime}</span></div>
               </div></div>
-              <Link href={\"/blog/\${post.id}\"} className="mt-4 inline-block text-purple-400 hover:text-purple-300">
+              <Link href={\/blog/\${post.id}\"} className="mt-4 inline-block text-purple-400 hover:text-purple-300>
                 Read More →</div>
               </Link></div>
             </article>
@@ -382,7 +382,7 @@ const $1: NextPage = () => {
 }
 ;}
 export default Blog
-";
+;
 
     const $1 = path.join(blogPath, 'inde'x'.tsx');
     fs.writeFileSync(blogIndexFile, blogIndexContent);
@@ -399,29 +399,29 @@ const $1: NextPage = () => {
   const $1 = ${JSON.stringify(post, null, 2)};
 
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>{post.title} - Zion Blog</title></div>
-        <meta name="description" content={post.excerpt} /></div>
+        <meta name=description" content={post.excerpt} /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <Link href="/" className="text-2xl font-bold text-white"></div>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white></div>
+                <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
               </Link></div>
             </div></div>
-            <div className="flex items-center space-x-8"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <div className="flex items-center space-x-8></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Marketplace</div>
               </Link></div>
-              <Link href="/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium>
                 Blog</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Login</div>
               </Link></div>
             </div></div>
@@ -430,18 +430,18 @@ const $1: NextPage = () => {
       </nav>
 
       {/* Article */}</div>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
-        <article className="prose prose-invert prose-lg max-w-none"></div>
-          <div className="mb-8"></div>
-            <div className="flex items-center space-x-2 mb-4">
+      <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <article className="prose prose-invert prose-lg max-w-none></div>
+          <div className=mb-8"></div>
+            <div className="flex items-center space-x-2 mb-4>
               {post.tags.map((tag) => (</div>
-                <span key={tag} className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full">
+                <span key={tag} className=px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full">
                   {tag}</div>
                 </span>
               ))}</div>
             </div></div>
-            <h1 className="text-4xl font-bold text-white mb-4">{post.title}</h1></div>
-            <div className="flex items-center space-x-4 text-gray-400 text-sm"></div>
+            <h1 className="text-4xl font-bold text-white mb-4>{post.title}</h1></div>
+            <div className=flex items-center space-x-4 text-gray-400 text-sm"></div>
               <span>{post.author}</span></div>
               <span>•</span></div>
               <span>{post.publishDate}</span></div>
@@ -450,10 +450,10 @@ const $1: NextPage = () => {
             </div></div>
           </div>
           </div>
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10"></div>
-            <div className="prose prose-invert prose-lg max-w-none">
+          <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10></div>
+            <div className=prose prose-invert prose-lg max-w-none">
               {post.content.split('\\n').map((paragraph, index) => (</div>
-                <p key={index} className="text-gray-300 mb-4">
+                <p key={index} className="text-gray-300 mb-4>
                   {paragraph}</div>
                 </p>
               ))}</div>
@@ -466,7 +466,7 @@ const $1: NextPage = () => {
 }
 ;}
 export default BlogPost
-";
+;
 
       const $1 = path.join(blogPath, "${post.id}.tsx");
       fs.writeFileSync(postFile, postContent);
@@ -545,29 +545,29 @@ const $1: NextPage = () => {
   const $1 = ${JSON.stringify(serviceCategories, null, 2)};
 
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>Services - Zion</title></div>
-        <meta name="description" content="Comprehensive IT services, AI development, cloud solutions, and blockchain technology" /></div>
+        <meta name=description" content="Comprehensive IT services, AI development, cloud solutions, and blockchain technology" /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <Link href="/" className="text-2xl font-bold text-white"></div>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white></div>
+                <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
               </Link></div>
             </div></div>
-            <div className="flex items-center space-x-8"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <div className="flex items-center space-x-8></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Marketplace</div>
               </Link></div>
-              <Link href="/services" className="text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/services" className="text-white px-3 py-2 rounded-md text-sm font-medium>
                 Services</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium>
                 Login</div>
               </Link></div>
             </div></div>
@@ -576,34 +576,34 @@ const $1: NextPage = () => {
       </nav>
 
       {/* Hero Section */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
-        <div className="text-center"></div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <div className="text-center></div>
+          <h1 className=text-4xl md:text-6xl font-bold text-white mb-6">
             Our</div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Services</span></div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400> Services</span></div>
           </h1></div>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Comprehensive IT solutions powered by cutting-edge technology and expert teams</div>
           </p></div>
         </div></div>
       </div>
 
       {/* Service Categories */}</div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8></div>
+        <div className=grid grid-cols-1 md:grid-cols-2 gap-8">
           {categories.map((category) => (</div>
-            <div key={category.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"></div>
-              <h3 className="text-2xl font-semibold text-white mb-4">{category.name}</h3></div>
-              <p className="text-gray-300 mb-6">{category.description}</p></div>
-              <div className="space-y-2">
+            <div key={category.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300></div>
+              <h3 className=text-2xl font-semibold text-white mb-4">{category.name}</h3></div>
+              <p className="text-gray-300 mb-6>{category.description}</p></div>
+              <div className=space-y-2">
                 {category.services.map((service, index) => (</div>
-                  <div key={index} className="flex items-center"></div>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div></div>
-                    <span className="text-gray-300">{service}</span></div>
+                  <div key={index} className="flex items-center></div>
+                    <div className=w-2 h-2 bg-purple-400 rounded-full mr-3"></div></div>
+                    <span className="text-gray-300>{service}</span></div>
                   </div>
                 ))}</div>
               </div></div>
-              <Link href={\"/services/\${category.id}\"} className="mt-6 inline-block text-purple-400 hover:text-purple-300">
+              <Link href={\/services/\${category.id}\"} className="mt-6 inline-block text-purple-400 hover:text-purple-300">
                 Learn More →</div>
               </Link></div>
             </div>

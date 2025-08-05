@@ -5,6 +5,6 @@ export default function NotificationSystem() {
   return (
     <motion.div className="notification-system>
       {/* Notification system implementation */}</div>
-    </motion.div>;"
+    </motion.div>;
   );"
 }'"</div>

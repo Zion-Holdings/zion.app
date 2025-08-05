@@ -1,10 +1,10 @@
 // Content Generation Automation System
 // Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 
-class ContentGenerationAutomation {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     this.contentDir = path.join(this.projectRoot, 'sr'c'/content/generated');
@@ -16,7 +16,7 @@ class ContentGenerationAutomation {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       'sr'c'/content/generated',
       'automatio'n'/content-analytics',
       'automatio'n'/generated-content/blog',
@@ -24,7 +24,7 @@ class ContentGenerationAutomation {
     ];
     
     dirs.forEach(dir => {
-      const fullPath = path.join(this.projectRoot, dir);
+      const $1 = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: true });
       }
@@ -50,7 +50,7 @@ class ContentGenerationAutomation {
   async generateDynamicContent() {
     console.log('📝 Generating dynamic content...');
     
-    const contentTypes = [
+    const $1 = [
       {
         type: 'hero-secti'o'n',
         template: this.generateHeroSection(),
@@ -312,15 +312,15 @@ class ContentGenerationAutomation {
 
   async saveContent(contentItem) {
     try {
-      const fullPath = path.join(this.projectRoot, contentItem.path);
-      const dir = path.dirname(fullPath);
+      const $1 = path.join(this.projectRoot, contentItem.path);
+      const $1 = path.dirname(fullPath);
       
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
       
       fs.writeFileSync(fullPath, JSON.stringify(contentItem.template, null, 2));
-      console.log(`✅ Generated: ${contentItem.type}`);
+      console.log("✅ Generated: ${contentItem.type}");
       
       // Track generation
       this.lastGeneration.generatedContent.push({
@@ -330,7 +330,7 @@ class ContentGenerationAutomation {
       });
       
     } catch (error) {
-      console.error(`❌ Error generating ${contentItem.type}:`, error);
+      console.error("❌ Error generating ${contentItem.type}:", error);
     }
   }
 
@@ -339,7 +339,7 @@ class ContentGenerationAutomation {
     this.lastGeneration.analytics.lastUpdate = new Date().toISOString();
     
     // Count content types
-    const typeCount = {};
+    const $1 = {};
     this.lastGeneration.generatedContent.forEach(item => {
       typeCount[item.type] = (typeCount[item.type] || 0) + 1;
     });
@@ -372,15 +372,15 @@ class ContentGenerationAutomation {
 
   async commitAndPushChanges(message) {
     return new Promise((resolve, reject) => {
-      const commands = [
+      const $1 = [
         'gi't' add .',
-        `git commit -m "🤖 Content generation: ${message}"`,
+        "git commit -m "🤖 Content generation: ${message}"",
         'gi't' push origin main'
       ];
 
-      let currentCommand = 0;
+      let $1 = 0;
 
-      const runNextCommand = () => {
+      const $1 = () => {
         if (currentCommand >= commands.length) {
           console.log('✅ Content changes committed and pushed successfully');
           resolve();
@@ -389,12 +389,12 @@ class ContentGenerationAutomation {
 
         exec(commands[currentCommand], { cwd: this.projectRoot }, (error, stdout, stderr) => {
           if (error) {
-            console.error(`❌ Error running command: ${commands[currentCommand]}`, error);
+            console.error("❌ Error running command: ${commands[currentCommand]}", error);
             reject(error);
             return;
           }
           
-          console.log(`✅ Command executed: ${commands[currentCommand]}`);
+          console.log("✅ Command executed: ${commands[currentCommand]}");
           currentCommand++;
           runNextCommand();
         });
@@ -410,6 +410,6 @@ module.exports = ContentGenerationAutomation;
 
 // Run if called directly
 if (require.main === module) {
-  const automation = new ContentGenerationAutomation();
+  const $1 = new ContentGenerationAutomation();
   automation.runContinuousGeneration().catch(console.error);
 } 

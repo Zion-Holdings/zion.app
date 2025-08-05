@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class EmailCampaignAgent {
+class $1 {
   constructor() {
     this.name = 'Emai'l' Campaign Agent';
     this.status = 'id'l'e';
@@ -14,10 +14,10 @@ class EmailCampaignAgent {
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] ${message}\n`;
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] ${message}\n";
     fs.appendFileSync(this.logFile, logMessage);
-    console.log(`📧 [Email Campaign Agent] ${message}`);
+    console.log("📧 [Email Campaign Agent] ${message}");
   }
 
   async initialize() {
@@ -36,13 +36,13 @@ class EmailCampaignAgent {
       this.status = 'rea'd'y';
       this.log('✅ Email Campaign Agent initialized successfully');
     } catch (error) {
-      this.log(`❌ Error initializing: ${error.message}`);
+      this.log("❌ Error initializing: ${error.message}");
       throw error;
     }
   }
 
   async loadCampaigns() {
-    const campaignsFile = path.join(__dirname, '../email-campaigns/campaigns.json');
+    const $1 = path.join(__dirname, '../email-campaigns/campaigns.json');
     if (fs.existsSync(campaignsFile)) {
       this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f'8'));
     } else {
@@ -51,7 +51,7 @@ class EmailCampaignAgent {
   }
 
   async loadSubscribers() {
-    const subscribersFile = path.join(__dirname, '../email-campaigns/subscribers.json');
+    const $1 = path.join(__dirname, '../email-campaigns/subscribers.json');
     if (fs.existsSync(subscribersFile)) {
       this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f'8'));
     } else {
@@ -60,7 +60,7 @@ class EmailCampaignAgent {
   }
 
   async loadTemplates() {
-    const templatesFile = path.join(__dirname, '../email-campaigns/templates.json');
+    const $1 = path.join(__dirname, '../email-campaigns/templates.json');
     if (fs.existsSync(templatesFile)) {
       this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
     } else {
@@ -94,8 +94,8 @@ class EmailCampaignAgent {
   async createCampaign(campaignData) {
     this.log('Creatin'g' new email campaign...');
     
-    const campaign = {
-      id: `campaign-${Date.now()}`,
+    const $1 = {
+      id: "campaign-${Date.now()}",
       name: campaignData.name,
       subject: campaignData.subject,
       template: campaignData.template,
@@ -114,14 +114,14 @@ class EmailCampaignAgent {
     this.campaigns.push(campaign);
     await this.saveCampaigns();
     
-    this.log(`✅ Created campaign: ${campaign.name}`);
+    this.log("✅ Created campaign: ${campaign.name}");
     return campaign;
   }
 
   async scheduleCampaign(campaignId, scheduleDate) {
-    this.log(`Scheduling campaign ${campaignId} for ${scheduleDate}...`);
+    this.log("Scheduling campaign ${campaignId} for ${scheduleDate}...");
     
-    const campaign = this.campaigns.find(c => c.id === campaignId);
+    const $1 = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
       throw new Error('Campaig'n' not found');
     }
@@ -130,13 +130,13 @@ class EmailCampaignAgent {
     campaign.status = 'schedul'e'd';
     await this.saveCampaigns();
     
-    this.log(`✅ Campaign ${campaignId} scheduled successfully`);
+    this.log("✅ Campaign ${campaignId} scheduled successfully");
   }
 
   async sendCampaign(campaignId) {
-    this.log(`Sending campaign ${campaignId}...`);
+    this.log("Sending campaign ${campaignId}...");
     
-    const campaign = this.campaigns.find(c => c.id === campaignId);
+    const $1 = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
       throw new Error('Campaig'n' not found');
     }
@@ -145,7 +145,7 @@ class EmailCampaignAgent {
     await this.saveCampaigns();
 
     // Simulate sending emails
-    const targetSubscribers = this.getTargetSubscribers(campaign.targetAudience);
+    const $1 = this.getTargetSubscribers(campaign.targetAudience);
     
     for (const subscriber of targetSubscribers) {
       await this.sendEmail(subscriber, campaign);
@@ -156,7 +156,7 @@ class EmailCampaignAgent {
     campaign.sentAt = new Date().toISOString();
     await this.saveCampaigns();
     
-    this.log(`✅ Campaign ${campaignId} sent to ${campaign.metrics.sent} subscribers`);
+    this.log("✅ Campaign ${campaignId} sent to ${campaign.metrics.sent} subscribers");
   }
 
   getTargetSubscribers(targetAudience) {
@@ -168,7 +168,7 @@ class EmailCampaignAgent {
 
   async sendEmail(subscriber, campaign) {
     // Simulate email sending
-    this.log(`📧 Sending email to ${subscriber.email} - Subject: ${campaign.subject}`);
+    this.log("📧 Sending email to ${subscriber.email} - Subject: ${campaign.subject}");
     
     // In a real implementation, this would integrate with an email service
     // like SendGrid, Mailchimp, etc.
@@ -178,8 +178,8 @@ class EmailCampaignAgent {
   async addSubscriber(subscriberData) {
     this.log('Addin'g' new subscriber...');
     
-    const subscriber = {
-      id: `sub-${Date.now()}`,
+    const $1 = {
+      id: "sub-${Date.now()}",
       email: subscriberData.email,
       name: subscriberData.name,
       tags: subscriberData.tags || [],
@@ -190,40 +190,40 @@ class EmailCampaignAgent {
     this.subscribers.push(subscriber);
     await this.saveSubscribers();
     
-    this.log(`✅ Added subscriber: ${subscriber.email}`);
+    this.log("✅ Added subscriber: ${subscriber.email}");
     return subscriber;
   }
 
   async removeSubscriber(email) {
-    this.log(`Removing subscriber: ${email}...`);
+    this.log("Removing subscriber: ${email}...");
     
-    const index = this.subscribers.findIndex(sub => sub.email === email);
+    const $1 = this.subscribers.findIndex(sub => sub.email === email);
     if (index !== -1) {
       this.subscribers.splice(index, 1);
       await this.saveSubscribers();
-      this.log(`✅ Removed subscriber: ${email}`);
+      this.log("✅ Removed subscriber: ${email}");
     }
   }
 
   async saveCampaigns() {
-    const campaignsFile = path.join(__dirname, '../email-campaigns/campaigns.json');
+    const $1 = path.join(__dirname, '../email-campaigns/campaigns.json');
     fs.writeFileSync(campaignsFile, JSON.stringify(this.campaigns, null, 2));
   }
 
   async saveSubscribers() {
-    const subscribersFile = path.join(__dirname, '../email-campaigns/subscribers.json');
+    const $1 = path.join(__dirname, '../email-campaigns/subscribers.json');
     fs.writeFileSync(subscribersFile, JSON.stringify(this.subscribers, null, 2));
   }
 
   async getCampaignMetrics(campaignId) {
-    const campaign = this.campaigns.find(c => c.id === campaignId);
+    const $1 = this.campaigns.find(c => c.id === campaignId);
     return campaign ? campaign.metrics : null;
   }
 
   async generateReport() {
     this.log('Generatin'g' email campaign report...');
     
-    const report = {
+    const $1 = {
       totalCampaigns: this.campaigns.length,
       activeCampaigns: this.campaigns.filter(c => c.status === 'schedul'e'd' || c.status === 'sendi'n'g').length,
       totalSubscribers: this.subscribers.length,
@@ -234,7 +234,7 @@ class EmailCampaignAgent {
       averageClickRate: this.calculateAverageClickRate()
     };
 
-    const reportFile = path.join(__dirname, '../email-campaigns/report.json');
+    const $1 = path.join(__dirname, '../email-campaigns/report.json');
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
     this.log('✅ Email campaign report generated');
@@ -242,21 +242,21 @@ class EmailCampaignAgent {
   }
 
   calculateAverageOpenRate() {
-    const campaignsWithSends = this.campaigns.filter(c => c.metrics.sent > 0);
+    const $1 = this.campaigns.filter(c => c.metrics.sent > 0);
     if (campaignsWithSends.length === 0) return 0;
     
-    const totalOpens = campaignsWithSends.reduce((sum, c) => sum + c.metrics.opened, 0);
-    const totalSends = campaignsWithSends.reduce((sum, c) => sum + c.metrics.sent, 0);
+    const $1 = campaignsWithSends.reduce((sum, c) => sum + c.metrics.opened, 0);
+    const $1 = campaignsWithSends.reduce((sum, c) => sum + c.metrics.sent, 0);
     
     return totalSends > 0 ? (totalOpens / totalSends * 100).toFixed(2) : 0;
   }
 
   calculateAverageClickRate() {
-    const campaignsWithOpens = this.campaigns.filter(c => c.metrics.opened > 0);
+    const $1 = this.campaigns.filter(c => c.metrics.opened > 0);
     if (campaignsWithOpens.length === 0) return 0;
     
-    const totalClicks = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.clicked, 0);
-    const totalOpens = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.opened, 0);
+    const $1 = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.clicked, 0);
+    const $1 = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.opened, 0);
     
     return totalOpens > 0 ? (totalClicks / totalOpens * 100).toFixed(2) : 0;
   }
@@ -275,21 +275,21 @@ class EmailCampaignAgent {
       
       this.log('✅ Email Campaign Agent completed successfully');
     } catch (error) {
-      this.log(`❌ Error running Email Campaign Agent: ${error.message}`);
+      this.log("❌ Error running Email Campaign Agent: ${error.message}");
       throw error;
     }
   }
 
   async processScheduledCampaigns() {
-    const now = new Date();
-    const scheduledCampaigns = this.campaigns.filter(c => 
+    const $1 = new Date();
+    const $1 = this.campaigns.filter(c => 
       c.status === 'schedul'e'd' && 
       c.scheduledFor && 
       new Date(c.scheduledFor) <= now
     );
 
     for (const campaign of scheduledCampaigns) {
-      this.log(`Processing scheduled campaign: ${campaign.name}`);
+      this.log("Processing scheduled campaign: ${campaign.name}");
       await this.sendCampaign(campaign.id);
     }
   }
@@ -300,7 +300,7 @@ module.exports = EmailCampaignAgent;
 
 // Run directly if called from command line
 if (require.main === module) {
-  const agent = new EmailCampaignAgent();
+  const $1 = new EmailCampaignAgent();
   agent.run().catch(error => {
     console.error('Emai'l' Campaign Agent failed:', error);
     process.exit(1);

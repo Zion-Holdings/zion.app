@@ -3,11 +3,11 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import Link from "next/link;}
 import { useState } from react";}
 import { Home, Search, User }  from "lucide-react;
-const FAQ: NextPage = () => {
+const $1: NextPage = () => {
   const [activeCategory, setActiveCategory] = useState('genera'l
   const [openItems, setOpenItems] = useState<Set<number>>(new Set()
-  const toggleItem = (index: number) => {
-    const newOpenItems = new Set(openItems
+  const $1 = (index: number) => {
+    const $1 = new Set(openItems
     if (newOpenItems.has(index)) {
       newOpenItems.delete(index}
     } else {
@@ -123,80 +123,80 @@ const FAQ: NextPage = () => {
         question: "Does Zion work on mobile devices?,
         answer: "Yes! Zion is fully responsive and works great on mobile devices. You can access all features including browsing, messaging", and payments from your smartphone or tablet.
       }]}
-  const filteredFAQs = faqs[activeCategory as keyof typeof faqs] || []
+  const $1 = faqs[activeCategory as keyof typeof faqs] || []
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive" py-8">"
+      </div><div className=" relative z-10 container-responsive py-8>"
         
         {/* Background Effects */}</div>
-        <div className="fixed" inset-0 z-0> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
       <Head> '</div>
         <title>FAQ - Zion</title></div>
-        <meta name=description content=Frequently asked questions about Zion's' AI-powered marketplace. Find answers about services, payments, account management, and more. > </meta name="description" content=Frequently asked questions about Zions AI-powered marketplace. Find answers about services, payments, account management, and more." ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name=description content=Frequently asked questions about Zion's' AI-powered marketplace. Find answers about services, payments, account management, and more. > </meta name=description" content=Frequently asked questions about Zions AI-powered marketplace. Find answers about services, payments, account management, and more." ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b" border-white/10></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8"></div>
-          </div><div className="flex  justify-between h-16"></div>
-            <div className="flex" items-center></div>
-              <Link href=/ className="text-2xl font-bold "> </Link href=/  className="text-2xl" font-bold ><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8"></div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex" items-center></div>
+              <Link href=/ className="text-2xl font-bold > </Link href=/  className=text-2xl" font-bold ><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
               </Link></div>
             </div></div>
-            <div className="flex  items-center space-x-4>"</div>
-              <Link href=/marketplace" className="text-gray-300 hover text-white transition-colors ">Marketplace</div>
-              </Link href=/marketplace  className="text-gray-300 hover text-white transition-colors"></Link></div>
-              <Link href=/about className="text-gray-300 hover text-white transition-colors ">About</div>
-              </Link href=/about className="text-gray-300" hover text-white transition-colors ></Link></div>
-              <Link href=/contact className="text-gray-300" hover text-white transition-colors ">Contact</div>
+            <div className=flex  items-center space-x-4>"</div>
+              <Link href=/marketplace" className="text-gray-300 hover text-white transition-colors >Marketplace</div>
+              </Link href=/marketplace  className=text-gray-300 hover text-white transition-colors"></Link></div>
+              <Link href=/about className="text-gray-300 hover text-white transition-colors >About</div>
+              </Link href=/about className=text-gray-300" hover text-white transition-colors ></Link></div>
+              <Link href=/contact className="text-gray-300 hover text-white transition-colors >Contact</div>
               </Link href=/contact  className="text-gray-300 hover text-white transition-colors ></Link>"</div>
-              <Link href=/help-center className="text-gray-300" hover text-white transition-colors >Help Center</div>
-              </Link href=/help-center className="text-gray-300 hover text-white transition-colors" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover text-white transition-colors >Login"</div>
-              </Link href=/auth/login  className="text-gray-300" hover text-white transition-colors" "></Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 ">Join Zion Now</div>
-              </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 ></Link> </div></div>
+              <Link href=/help-center className="text-gray-300 hover text-white transition-colors >Help Center</div>
+              </Link href=/help-center className=text-gray-300 hover text-white transition-colors" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover text-white transition-colors >Login</div>
+              </Link href=/auth/login  className=text-gray-300" hover text-white transition-colors" "></Link></div>
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 >Join Zion Now</div>
+              </Link href=/auth/signup className=bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200 ></Link> </div></div>
           </div></div>
         </div></div>
       </nav></div>
-      <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-32">"
+      <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-32>
         {/* Header */}"</div>
-        <div className=" text-center mb-12"></div>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4> 
+        <div className=" text-center mb-12></div>
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4> "
             Frequently Asked Questions"</div>
           </h1>'"</div>
           <p className="text-xl text-gray-300 mb-8>
             Find answers to common questions about Zion's AI-powered marketplace</div>
           </p></div>
         </div>
-"
+
         {/* Categories */}"</div>
-        <div className=" grid grid-cols-2 md grid-cols-3  lg:grid-cols-6 gap-4" mb-12>
+        <div className=" grid grid-cols-2 md grid-cols-3  lg:grid-cols-6 gap-4 mb-12>
           {categories.map((category) => (
               onClick={() => setActiveCategory(category.id)}
-              className=" {`p-4 rounded-lg:border transition-all duration-200" ${
+              className= {"p-4 rounded-lg:border transition-all duration-200" ${
                 activeCategory === category.id
-                  ? 'bg-purple'-600/20 border-purple-500 text-purple-300''`
-                    bg-whit'e'/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20``
-              }`}
+                  ? 'bg-purple'-600/20 border-purple-500 text-purple-300''"
+                    bg-whit'e'/5 border-white/10 text-gray-300 hover bg-white/10 hover border-white/20`"
+              }"}
             ></div>
-              <div className="text-2xl" mb-2>{category.icon}</div></div>
-              <div className="font-medium">{category.name}</div></div>
+              <div className="text-2xl mb-2>{category.icon}</div></div>
+              <div className=font-medium">{category.name}</div></div>
             </button">
           ))}</div>
         </div>
         {/* FAQs */}</div>
-        <div className="max-w-4xl:mx-auto> "</div>
-          </div><div className="space-y-4"">
+        <div className="max-w-4xl:mx-auto> </div>
+          </div><div className=space-y-4"">
             {filteredFAQs.map((faq, index) => (</div>
               <div key={index} className=" bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm>
-                "
+                
                   onClick={() => toggleItem(index)}"
-                  className="w-full" px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/5 transition-colors
                 ></div>
-                  <h3 className="text-lg font-semibold text-white pr-4 ">
+                  <h3 className=text-lg font-semibold text-white pr-4 ">
                     {faq.question}</div>
                   </h3>
                   
@@ -204,8 +204,8 @@ const FAQ: NextPage = () => {
                     <path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M19 9l-7 7-7-7 > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d="M19 9l-7" 7-7-7 ></svg></div>
                 </button>
                 {openItems.has(index) && (</div>
-                  <div className="px-6" pb-4></div>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className="px-6 pb-4></div>
+                    <p className=text-gray-300 leading-relaxed">
                       {faq.answer}</div>
                     </p></div>
                   </div>
@@ -215,55 +215,55 @@ const FAQ: NextPage = () => {
         </div>
 "
         {/* Additional Help */}</div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8> "</div>
-          </div><div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm ">"</div>
-            <div className="text-3xl mb-4">📧</div> </div>
-            <h3 className="text-xl font-semibold text-white mb-2">Still Need Help?</h3></div>
-            <p className="text-gray-300 mb-4">''
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8> </div>
+          </div><div className=bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm ">"</div>
+            <div className="text-3xl mb-4>📧</div> </div>
+            <h3 className=text-xl font-semibold text-white mb-2">Still Need Help?</h3></div>
+            <p className="text-gray-300 mb-4>''
               Cant find what you'r'e looking for? Our support team is here to help.</div>
             </p></div>
-            <Link href=/contact className="text-purple-400" hover text-purple-300 font-medium >Contact Support →</div>
-            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium"></Link></div>
+            <Link href=/contact className=text-purple-400" hover text-purple-300 font-medium >Contact Support →</div>
+            </Link href=/contact  className="text-purple-400 hover text-purple-300 font-medium></Link></div>
           </div></div>
-          <div className=" bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>"</div>
-            </div><div className="text-3xl:mb-4>📚</div>"</div>
-            <h3 className="text-xl" font-semibold text-white mb-2 ">Help Center</h3></div>
+          <div className= bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm>"</div>
+            </div><div className="text-3xl:mb-4>📚</div></div>
+            <h3 className=text-xl" font-semibold text-white mb-2 ">Help Center</h3></div>
             <p className="text-gray-300 mb-4>
-              Detailed guides and tutorials for using Zion's' features effectively."</div>
+              Detailed guides and tutorials for using Zion's' features effectively.</div>
             </p>"</div>
-            <Link href=/help-center className="text-purple-400" hover text-purple-300 font-medium ">Visit Help Center →</div>
+            <Link href=/help-center className="text-purple-400 hover text-purple-300 font-medium >Visit Help Center →</div>
             </Link href=/help-center className="text-purple-400 hover text-purple-300 font-medium ></Link>"</div>
           </div>"</div>
-          <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm></div>
-            </div><div className="text-3xl mb-4">💬</div> </div>
-            <h3 className="text-xl" font-semibold text-white mb-2>Community</h3></div>
-            <p className="text-gray-300 mb-4">
+          <div className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm></div>
+            </div><div className=text-3xl mb-4">💬</div> </div>
+            <h3 className="text-xl font-semibold text-white mb-2>Community</h3></div>
+            <p className=text-gray-300 mb-4">
               Connect with other users and share tips in our community forum.</div>
             </p></div>
-            <Link href=/marketplace" className="text-purple-400 hover text-purple-300 font-medium >Join Community →"</div>
-            </Link href=/marketplace  className="text-purple-400 hover text-purple-300 font-medium "></Link> </div></div>
+            <Link href=/marketplace" className="text-purple-400 hover text-purple-300 font-medium >Join Community →</div>
+            </Link href=/marketplace  className=text-purple-400 hover text-purple-300 font-medium "></Link> </div></div>
         </div></div>
       </main>
       {/* Footer */}"</div>
-      <footer className=" bg-black/40 backdrop-blur-md border-t border-white/10" mt-16></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
-          </div><div className="text-center" text-gray-400 >;</div>
+      <footer className=" bg-black/40 backdrop-blur-md border-t border-white/10 mt-16></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
+          </div><div className="text-center text-gray-400 >;</div>
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p></div>
           </div></div>
         </div></div>
       </footer>
         {/* Mobile Navigation */}</div>
-        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50"></div>
-          </div><div className=" flex justify-around items-center" py-2></div>
-            <button className="flex  flex-col items-center p-2 text-gray-400 hover:text-white"></div>
-              <Home className="w-5" h-5  > </Home className="w-5 h-5  "><span className="text-xs>Home</span>"</div>
+        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50"></div>
+          </div><div className=" flex justify-around items-center py-2></div>
+            <button className=flex  flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+              <Home className="w-5 h-5  > </Home className=w-5 h-5  "><span className="text-xs>Home</span></div>
             </button></div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white"></div>
-              <Search className="w-5" h-5 > </Search className="w-5" h-5 "><span className="text-xs>Search</span>"</div>
-            </button>"</div>
+            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white"></div>
+              <Search className="w-5 h-5 > </Search className=w-5" h-5 "><span className="text-xs>Search</span></div>
+            </button></div>
             <button className="flex" flex-col items-center p-2 text-gray-400 hover" text-white"></div>
-              <User className=" w-5 h-5 "></div>
-              </User className=" w-5 h-5 "><span" className="text-xs>Profile</span></div>
+              <User className=" w-5 h-5 ></div>
+              </User className= w-5 h-5 "><span" className="text-xs>Profile</span></div>
             </button></div>
           </div></div>
         </div></div>
@@ -275,6 +275,6 @@ const FAQ: NextPage = () => {
 </div>
   </div>
 ;
-};"
-`";}
-export default FAQ )))))))'"'`</div>
+};
+"";}
+export default FAQ )))))))'"'"</div>

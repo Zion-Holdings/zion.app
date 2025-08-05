@@ -1,36 +1,36 @@
 'use client';}
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-interface ChatContextType {
+interface $1 {
   isChatOpen: boolean;
   toggleChat: () => void;
   openChat: () => void;
   closeChat: () => void;};
-const ChatContext = createContext<ChatContextType | undefined>(undefined);
+const $1 = createContext<ChatContextType | undefined>(undefined);
 ;}
-export const useChat = () => {;
-  const context = useContext(ChatContext);
+export const $1 = () => {;
+  const $1 = useContext(ChatContext);
   if (context = == undefined) {';
     throw new Error(useChat' must be used within a ChatProvider');}
   return context;
 };
 
-interface ChatProviderProps {
+interface $1 {
   children: ReactNode;
 };
 </div>;}
 export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
-  const toggleChat = () => {;
+  const $1 = () => {;
     setIsChatOpen(prev => !prev);
   };
 
-  const openChat = () => {;
+  const $1 = () => {;
     setIsChatOpen(true);
   };
 
-  const closeChat = () => {;
+  const $1 = () => {;
     setIsChatOpen(false);
   };
 
@@ -48,4 +48,4 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   );
 }; '
 ;}
-export default ChatContext;</div>
+export default $1;</div>

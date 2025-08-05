@@ -170,7 +170,7 @@ class $1 {
   generatePageContent(pageData) {
     const { title, description, content, slug, layout = 'defau'l't' } = pageData;
     
-    return "import React from 'rea'c't';}
+    return "import React from 'react';}
 import Head from 'nex't'/head';}
 import { NextPage } from 'ne'x't';
 
@@ -180,25 +180,25 @@ interface ${title.replace(/\s+/g, '')}PageProps {
 ;
 const ${title.replace(/\s+/g, '')}Page: NextPage<${title.replace(/\s+/g, '')}PageProps> = () => {
   return (</div>
-    <></div>
+    <div></div>
       <Head></div>
         <title>${title}</title></div>
         <meta name="description" content="${description}" /></div>
         <meta name="viewport" content="width=device-width, initial-scale=1" /></div>
       </Head>
       </div>
-      <main className="min-h-screen bg-white"></div>
-        <div className="container mx-auto px-4 py-8"></div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">
+      <main className="min-h-screen bg-white></div>
+        <div className=container mx-auto px-4 py-8"></div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-6>
             ${title}</div>
           </h1>
           </div>
-          <div className="prose prose-lg max-w-none">
+          <div className=prose prose-lg max-w-none">
             ${content}</div>
           </div></div>
         </div></div>
       </main></div>
-    </>
+    </div>
   );
 };
 ;}

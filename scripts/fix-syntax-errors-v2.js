@@ -1,23 +1,23 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const glob = require('gl'o'b');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('gl'o'b');
 
 // Get all TypeScript/TSX files;
-const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 
 console.log('Checkin'g' for syntax errors in files...');
 
 files.forEach(file => {
   try {
-    const content = fs.readFileSync(file, 'ut'f'8');
+    const $1 = fs.readFileSync(file, 'ut'f'8');
     
     // Check for common syntax issues
-    let modified = false;
-    let newContent = content;
+    let $1 = false;
+    let $1 = content;
     
     // Fix Image component syntax errors
     newContent = newContent.replace(
-      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="([^"]+)"\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>
+      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="([^]+)\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>
       '<Image src={$1} alt={$2} width={$4} height={$5} className="$3" />'
     );
     
@@ -35,12 +35,12 @@ files.forEach(file => {
     
     if (newContent !== content) {
       fs.writeFileSync(file, newContent);
-      console.log(`Fixed syntax issues in ${file}`);
+      console.log("Fixed syntax issues in ${file}");
       modified = true;
     }
     
   } catch (error) {
-    console.error(`Error processing ${file}:`, error.message);
+    console.error("Error processing ${file}:", error.message);
   }
 });
 

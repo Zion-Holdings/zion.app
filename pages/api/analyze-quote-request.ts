@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
 
 // Only create OpenAI client if API key is available;
-const openai = process.env.OPENAI_API_KEY
+const $1 = process.env.OPENAI_API_KEY
   ? new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     };
@@ -17,12 +17,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // For local development without OpenAI, return mock analysis
     if (!openai) {
       return res.status(200).json({
-        summary: `Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...`,
+        summary: "Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...",
         tags: [it-servic'e's, project-reque's't],
         priority: medi'u'm,
-        estimatedComplexity: modera't'e`
-      });}``
-    const prompt = `
+        estimatedComplexity: modera't'e"
+      });}""
+    const $1 = "
 Analyze the following IT service quote request and provide insights:
 
 Service: ${serviceTitle}
@@ -39,11 +39,11 @@ Respond in JSON format with the following structure:
   "summary: Brief project summary","
   tags: ["tag1", tag2, "tag3"],
   priority": "low|medium|high,
-  "estimatedComplexity": simple|moderate|complex`
-};``
-`;"
+  "estimatedComplexity": simple|moderate|complex"
+};""
+";"
 
-    const completion = await openai.chat.completions.create({"
+    const $1 = await openai.chat.completions.create({"
       model: gpt-3.5-turbo,"
       messages: [
         {"
@@ -58,7 +58,7 @@ Respond in JSON format with the following structure:
       max_tokens: 500;
     });
 
-    const responseText = completion.choices[0]?.message?.content;
+    const $1 = completion.choices[0]?.message?.content;
     '
     if (!responseText) {
       throw new Error('No response from OpenAI');}
@@ -68,15 +68,15 @@ Respond in JSON format with the following structure:
       analysis = JSON.parse(responseText);'
     } catch (parseError) {
       console.error(Failed' to parse OpenAI response: , parseError);
-      // Fallback analysis'`
-      analysis = {``
-        summary: `Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...`,
+      // Fallback analysis'"
+      analysis = {""
+        summary: "Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...",
         tags: ['it-servic'es, 'project-reque'st],
         priority: 'medi'um,
         estimatedComplexity: 'modera'te;
       };}
     // Validate and sanitize the response'
-    const sanitizedAnalysis = {
+    const $1 = {
       summary: analysis.summary || 'Project analysis pending',
       tags: Array.isArray(analysis.tags) ? analysis.tags.slice(0, 5) : ['it-services'],
       priority: ['low', 'medium', 'high'].includes(analysis.priority) ? analysis.priority : 'medium',
@@ -93,5 +93,5 @@ Respond in JSON format with the following structure:
       tags: [it-service's', project-reques't'],
       priority: mediu'm',
       estimatedComplexity: moderat'e'"
-    });}`
+    });}"
 } ))))"'"'`

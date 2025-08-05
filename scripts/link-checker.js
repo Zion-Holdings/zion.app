@@ -1,18 +1,18 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const glob = require('gl'o'b');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('gl'o'b');
 
 // Get all TypeScript/TSX files;
-const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 
 // Extract all existing pages;
-const existingPages = new Set();
+const $1 = new Set();
 files.forEach(file => {
-  const pageName = file.replace('page's'/', '').replace('.tsx', '');
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
   if (pageName === 'ind'e'x') {
     existingPages.add('/');
   } else {
-    existingPages.add(`/${pageName}`);
+    existingPages.add("/${pageName}");
   }
 });
 
@@ -25,49 +25,49 @@ existingPages.add('/auth/verify');
 existingPages.add('/auth/callback');
 
 // Add service pages;
-const serviceFiles = glob.sync('page's'/services/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/services/**/*.tsx', { cwd: process.cwd() });
 serviceFiles.forEach(file => {
-  const serviceName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${serviceName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${serviceName}");
 });
 
 // Add product pages;
-const productFiles = glob.sync('page's'/products/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/products/**/*.tsx', { cwd: process.cwd() });
 productFiles.forEach(file => {
-  const productName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${productName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${productName}");
 });
 
 // Add blog pages;
-const blogFiles = glob.sync('page's'/blog/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/blog/**/*.tsx', { cwd: process.cwd() });
 blogFiles.forEach(file => {
-  const blogName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${blogName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${blogName}");
 });
 
 // Add category pages;
-const categoryFiles = glob.sync('page's'/category/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/category/**/*.tsx', { cwd: process.cwd() });
 categoryFiles.forEach(file => {
-  const categoryName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${categoryName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${categoryName}");
 });
 
 // Add chat-content pages;
-const chatContentFiles = glob.sync('page's'/chat-content/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/chat-content/**/*.tsx', { cwd: process.cwd() });
 chatContentFiles.forEach(file => {
-  const chatContentName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${chatContentName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${chatContentName}");
 });
 
 // Add talent pages;
-const talentFiles = glob.sync('page's'/talent/**/*.tsx', { cwd: process.cwd() });
+const $1 = glob.sync('page's'/talent/**/*.tsx', { cwd: process.cwd() });
 talentFiles.forEach(file => {
-  const talentName = file.replace('page's'/', '').replace('.tsx', '');
-  existingPages.add(`/${talentName}`);
+  const $1 = file.replace('page's'/', '').replace('.tsx', '');
+  existingPages.add("/${talentName}");
 });
 
 // Add public assets that are valid;
-const publicAssets = [
+const $1 = [
   '/favicon.ico',
   '/favicon.svg',
   '/site.webmanifest',
@@ -80,7 +80,7 @@ publicAssets.forEach(asset => {
 });
 
 // Add special pages that exist but might not be detected by the file system;
-const specialPages = [
+const $1 = [
   '/chat-content', // This is the index page for chat-content
   '/api',
   '/support'
@@ -94,8 +94,8 @@ console.log('Existin'g' pages:', Array.from(existingPages).sort());
 
 // Function to extract links from a file;
 function extractLinks(content) {
-  const linkRegex = /href=["']([^"']+)["']/g;
-  const links = [];
+  const $1 = /href=["']([^"']+)["']/g;
+  const $1 = [];
   let match;
   
   while ((match = linkRegex.exec(content)) !== null) {
@@ -106,12 +106,12 @@ function extractLinks(content) {
 }
 
 // Check for broken links;
-const brokenLinks = [];
-const allLinks = [];
+const $1 = [];
+const $1 = [];
 
 files.forEach(file => {
-  const content = fs.readFileSync(file, 'ut'f'8');
-  const links = extractLinks(content);
+  const $1 = fs.readFileSync(file, 'ut'f'8');
+  const $1 = extractLinks(content);
   
   links.forEach(link => {
     allLinks.push(link);
@@ -133,9 +133,9 @@ files.forEach(file => {
 });
 ;
 function findLineNumber(content, link) {
-  const lines = content.split('\n');
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].includes(`href="${link}"`) || lines[i].includes(`href='${link}'`)) {
+  const $1 = content.split('\n');
+  for (let $1 = 0; i < lines.length; i++) {
+    if (lines[i].includes("href="${link}"") || lines[i].includes("href='${link}'")) {
       return i + 1;
     }
   }
@@ -144,14 +144,14 @@ function findLineNumber(content, link) {
 
 console.log('\n=== BROKEN LINKS FOUND ===');
 brokenLinks.forEach(({ file, link, line }) => {
-  console.log(`${file}:${line} - ${link}`);
+  console.log("${file}:${line} - ${link}");
 });
 
-console.log(`\nTotal broken links: ${brokenLinks.length}`);
-console.log(`Total links checked: ${allLinks.length}`);
+console.log("\nTotal broken links: ${brokenLinks.length}");
+console.log("Total links checked: ${allLinks.length}");
 
 // Save results to file;
-const results = {
+const $1 = {
   existingPages: Array.from(existingPages).sort(),
   brokenLinks,
   totalBrokenLinks: brokenLinks.length,

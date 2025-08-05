@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
-const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator');
-const fs = require('f's').promises;
-const path = require('pa't'h');
+const $1 = require('./website-automation-orchestrator');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
 
 async function main() {
   console.log('🚀 Starting Zion Tech Group Website Automation System');
@@ -13,7 +13,7 @@ async function main() {
     await createDirectories();
     
     // Initialize the orchestrator
-    const orchestrator = new WebsiteAutomationOrchestrator();
+    const $1 = new WebsiteAutomationOrchestrator();
     
     // Handle graceful shutdown
     process.on('SIGI'N'T', async () => {
@@ -38,7 +38,7 @@ async function main() {
 }
 
 async function createDirectories() {
-  const directories = [
+  const $1 = [
     'automatio'n'/reports',
     'automatio'n'/generated-content',
     'automatio'n'/fixes',
@@ -51,9 +51,9 @@ async function createDirectories() {
   for (const dir of directories) {
     try {
       await fs.mkdir(path.join(__dirname, '..', dir), { recursive: true });
-      console.log(`✅ Created directory: ${dir}`);
+      console.log("✅ Created directory: ${dir}");
     } catch (error) {
-      console.log(`ℹ️  Directory already exists: ${dir}`);
+      console.log("ℹ️  Directory already exists: ${dir}");
     }
   }
 }

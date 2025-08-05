@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-class ContinuousContentGenerator {
+class $1 {
   constructor() {
-    this.agentId = `continuous-content-${Date.now()}`;
+    this.agentId = "continuous-content-${Date.now()}";
     this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-k'e'y');
     this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
     
@@ -22,7 +22,7 @@ class ContinuousContentGenerator {
       startTime: Date.now()
     };
     
-    this.logFile = path.join(__dirname, 'lo'g's', `continuous-content-${this.agentId}.log`);
+    this.logFile = path.join(__dirname, 'lo'g's', "continuous-content-${this.agentId}.log");
     this.ensureLogDirectory();
     
     this.contentIdeas = this.loadContentIdeas();
@@ -31,17 +31,17 @@ class ContinuousContentGenerator {
   }
 
   ensureLogDirectory() {
-    const logDir = path.dirname(this.logFile);
+    const $1 = path.dirname(this.logFile);
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
   }
 
   log(message, level = 'IN'F'O') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [${this.agentId}] ${message}\n`;
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] [${level}] [${this.agentId}] ${message}\n";
     fs.appendFileSync(this.logFile, logEntry);
-    console.log(`[${level}] [${this.agentId}] ${message}`);
+    console.log("[${level}] [${this.agentId}] ${message}");
   }
 
   loadContentIdeas() {
@@ -111,7 +111,7 @@ class ContinuousContentGenerator {
   }
 
   createDirectories() {
-    const dirs = [
+    const $1 = [
       path.join(this.pagesDir, 'bl'o'g'),
       path.join(this.pagesDir, 'catego'r'y'),
       path.join(this.pagesDir, 'servic'e's'),
@@ -151,7 +151,7 @@ class ContinuousContentGenerator {
         await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
         
       } catch (error) {
-        this.log(`Error in continuous generation loop: ${error.message}`, 'ERR'O'R');
+        this.log("Error in continuous generation loop: ${error.message}", 'ERR'O'R');
         this.analytics.errors++;
         
         // Wait a bit longer on error before retrying
@@ -172,7 +172,7 @@ class ContinuousContentGenerator {
       this.continuousGenerationLoop();
       
       // Return the generated content results
-      const results = {
+      const $1 = {
         blogPosts: this.analytics.blogPostsCreated,
         marketplacePages: this.analytics.marketplacePagesCreated,
         servicePages: this.analytics.pagesCreated,
@@ -190,7 +190,7 @@ class ContinuousContentGenerator {
       return results;
       
     } catch (error) {
-      this.log(`Error in startContentGeneration: ${error.message}`, 'ERR'O'R');
+      this.log("Error in startContentGeneration: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
       throw error;
     }
@@ -200,20 +200,20 @@ class ContinuousContentGenerator {
     this.log('Generatin'g' initial content...');
     
     // Generate blog posts
-    for (let i = 0; i < 5; i++) {
-      const topic = this.contentIdeas.blogTopics[i];
+    for (let $1 = 0; i < 5; i++) {
+      const $1 = this.contentIdeas.blogTopics[i];
       await this.generateBlogPost(topic);
     }
     
     // Generate marketplace pages
-    for (let i = 0; i < 5; i++) {
-      const category = this.contentIdeas.marketplaceCategories[i];
+    for (let $1 = 0; i < 5; i++) {
+      const $1 = this.contentIdeas.marketplaceCategories[i];
       await this.generateMarketplacePage(category);
     }
     
     // Generate service pages
-    for (let i = 0; i < 5; i++) {
-      const service = this.contentIdeas.serviceTypes[i];
+    for (let $1 = 0; i < 5; i++) {
+      const $1 = this.contentIdeas.serviceTypes[i];
       await this.generateServicePage(service);
     }
     
@@ -225,23 +225,23 @@ class ContinuousContentGenerator {
     
     try {
       // Generate multiple pieces of content simultaneously
-      const promises = [];
+      const $1 = [];
       
       // Generate 3 blog posts simultaneously
-      for (let i = 0; i < 3; i++) {
-        const randomTopic = this.contentIdeas.blogTopics[Math.floor(Math.random() * this.contentIdeas.blogTopics.length)];
+      for (let $1 = 0; i < 3; i++) {
+        const $1 = this.contentIdeas.blogTopics[Math.floor(Math.random() * this.contentIdeas.blogTopics.length)];
         promises.push(this.generateBlogPost(randomTopic));
       }
       
       // Generate 3 marketplace pages simultaneously
-      for (let i = 0; i < 3; i++) {
-        const randomCategory = this.contentIdeas.marketplaceCategories[Math.floor(Math.random() * this.contentIdeas.marketplaceCategories.length)];
+      for (let $1 = 0; i < 3; i++) {
+        const $1 = this.contentIdeas.marketplaceCategories[Math.floor(Math.random() * this.contentIdeas.marketplaceCategories.length)];
         promises.push(this.generateMarketplacePage(randomCategory));
       }
       
       // Generate 3 service pages simultaneously
-      for (let i = 0; i < 3; i++) {
-        const randomService = this.contentIdeas.serviceTypes[Math.floor(Math.random() * this.contentIdeas.serviceTypes.length)];
+      for (let $1 = 0; i < 3; i++) {
+        const $1 = this.contentIdeas.serviceTypes[Math.floor(Math.random() * this.contentIdeas.serviceTypes.length)];
         promises.push(this.generateServicePage(randomService));
       }
       
@@ -249,36 +249,36 @@ class ContinuousContentGenerator {
       await Promise.all(promises);
       
       this.lastGenerationTime = Date.now();
-      this.log(`Generated ${promises.length} new content pieces`);
+      this.log("Generated ${promises.length} new content pieces");
       
     } catch (error) {
-      this.log(`Error generating new content: ${error.message}`, 'ERR'O'R');
+      this.log("Error generating new content: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async generateBlogPost(topic) {
     try {
-      this.log(`Generating blog post: ${topic}`);
+      this.log("Generating blog post: ${topic}");
       
-      const content = await this.generateBlogContent(topic);
-      const filename = this.sanitizeFilename(topic);
-      const pagePath = path.join(this.pagesDir, 'bl'o'g', `${filename}.tsx`);
+      const $1 = await this.generateBlogContent(topic);
+      const $1 = this.sanitizeFilename(topic);
+      const $1 = path.join(this.pagesDir, 'bl'o'g', "${filename}.tsx");
       
-      const pageContent = this.generateBlogPageContent(topic, content);
+      const $1 = this.generateBlogPageContent(topic, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.blogPostsCreated++;
-      this.log(`Created blog post: ${pagePath}`);
+      this.log("Created blog post: ${pagePath}");
       
     } catch (error) {
-      this.log(`Error generating blog post: ${error.message}`, 'ERR'O'R');
+      this.log("Error generating blog post: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async generateBlogContent(topic) {
-    const prompt = `
+    const $1 = "
 Create comprehensive blog content about "${topic}" for Zion Tech Group, an AI-powered marketplace company. 
 Include:
 - Engaging introduction
@@ -290,11 +290,11 @@ Include:
 - Relevant keywords
 
 Make it informative, engaging, and valuable for technology professionals and business leaders.
-    `;
+    ";
     
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
+      const $1 = await this.model.generateContent(prompt);
+      const $1 = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackBlogContent(topic);
@@ -302,52 +302,52 @@ Make it informative, engaging, and valuable for technology professionals and bus
   }
 
   generateBlogPageContent(topic, content) {
-    const filename = this.sanitizeFilename(topic);
-    const pageName = filename.split('-').map(word => 
+    const $1 = this.sanitizeFilename(topic);
+    const $1 = filename.split('-').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join('');
     
-    return `import type { NextPage } from 'ne'x't';}
+    return "import type { NextPage } from 'ne'x't';}
 import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
 ;
 const ${pageName}Page: NextPage = () => {
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>${topic} - Zion Tech Blog</title></div>
-        <meta name="description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>
+        <meta name=description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>
         <meta name="keywords" content="${topic.toLowerCase()}, AI, technology, business, Zion" /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <div className="flex-shrink-0"></div>
-                <h1 className="text-2xl font-bold text-white"></div>
-                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <div className="flex-shrink-0></div>
+                <h1 className=text-2xl font-bold text-white"></div>
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     Zion</div>
                   </Link></div>
                 </h1></div>
               </div></div>
             </div>
             </div>
-            <div className="hidden md:flex items-center space-x-8"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+            <div className=hidden md:flex items-center space-x-8"></div>
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Marketplace</div>
               </Link></div>
-              <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Blog</div>
               </Link></div>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 About</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Login</div>
               </Link></div>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href=/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -356,38 +356,38 @@ const ${pageName}Page: NextPage = () => {
       </nav>
 
       {/* Blog Content */}</div>
-      <main className="flex-1"></div>
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
-          <div className="mb-8"></div>
-            <Link href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
+      <main className=flex-1"></div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>
+          <div className=mb-8"></div>
+            <Link href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block>
               ← Back to Blog</div>
             </Link></div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6"></div>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <h1 className=text-4xl md:text-5xl font-bold text-white mb-6"></div>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                 ${topic}</div>
               </span></div>
             </h1></div>
-            <div className="flex items-center text-gray-400 text-sm mb-8"></div>
+            <div className=flex items-center text-gray-400 text-sm mb-8"></div>
               <span>Published on {new Date().toLocaleDateString()}</span></div>
-              <span className="mx-2">•</span></div>
+              <span className="mx-2>•</span></div>
               <span>Zion Tech Group</span></div>
             </div></div>
           </div>
           </div>
-          <div className="prose prose-invert prose-lg max-w-none"></div>
-            <div className="text-gray-300 leading-relaxed">
+          <div className=prose prose-invert prose-lg max-w-none"></div>
+            <div className="text-gray-300 leading-relaxed>
               ${content.split('\n').map(paragraph => </div>
-                paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
+                paragraph.trim() ? <p className="mb-6">${paragraph}</p>" : ''
               ).join('\n')}</div>
             </div></div>
           </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-white/10"></div>
-            <div className="flex flex-col sm:flex-row gap-4"></div>
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+          <div className="mt-12 pt-8 border-t border-white/10></div>
+            <div className=flex flex-col sm:flex-row gap-4"></div>
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25>
                 Explore Our Services</div>
               </Link></div>
-              <Link href="/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href=/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>
                 Read More Articles</div>
               </Link></div>
             </div></div>
@@ -396,42 +396,42 @@ const ${pageName}Page: NextPage = () => {
       </main>
 
       {/* Footer */}</div>
-      <footer className="bg-black/20 border-t border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+      <footer className=bg-black/20 border-t border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>
+          <div className=grid grid-cols-1 md:grid-cols-4 gap-8"></div>
             <div></div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-white font-semibold mb-4>Zion</h3></div>
+              <p className=text-gray-400 text-sm">
                 The future of AI-powered marketplace technology.</div>
               </p></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              <h4 className="text-white font-semibold mb-4>Marketplace</h4></div>
+              <ul className=space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors>Browse Services</Link></li></div>
+                <li><Link href=/talents" className="text-gray-400 hover:text-white transition-colors>AI Talents</Link></li></div>
+                <li><Link href=/equipment" className="text-gray-400 hover:text-white transition-colors>Equipment</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Company</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors>About</Link></li></div>
+                <li><Link href=/contact" className="text-gray-400 hover:text-white transition-colors>Contact</Link></li></div>
+                <li><Link href=/blog" className="text-gray-400 hover:text-white transition-colors>Blog</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Support</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/help" className="text-gray-400 hover:text-white transition-colors>Help Center</Link></li></div>
+                <li><Link href=/privacy" className="text-gray-400 hover:text-white transition-colors>Privacy</Link></li></div>
+                <li><Link href=/terms" className="text-gray-400 hover:text-white transition-colors>Terms</Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
-            <p className="text-gray-400 text-sm">
+          <div className=mt-8 pt-8 border-t border-white/10 text-center"></div>
+            <p className="text-gray-400 text-sm>
               © 2024 Zion. All rights reserved.</div>
             </p></div>
           </div></div>
@@ -441,11 +441,11 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 ;}
-export default ${pageName}Page`
+export default ${pageName}Page
   }
 
   generateFallbackBlogContent(topic) {
-    return `
+    return "
 ${topic} represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.
 
 The integration of ${topic.toLowerCase()} into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.
@@ -457,31 +457,31 @@ As we look toward the future, ${topic.toLowerCase()} will continue to evolve and
 The key to successful implementation lies in understanding both the technical requirements and the business objectives. By aligning technology solutions with strategic goals, companies can maximize the value they derive from these innovations.
 
 In conclusion, ${topic.toLowerCase()} represents not just a technological advancement, but a fundamental shift in how we approach business challenges and opportunities. The organizations that embrace these changes today will be the leaders of tomorrow.
-    `;
+    ";
   }
 
   async generateMarketplacePage(category) {
     try {
-      this.log(`Generating marketplace page: ${category}`);
+      this.log("Generating marketplace page: ${category}");
       
-      const content = await this.generateMarketplaceContent(category);
-      const filename = this.sanitizeFilename(category);
-      const pagePath = path.join(this.pagesDir, 'catego'r'y', `${filename}.tsx`);
+      const $1 = await this.generateMarketplaceContent(category);
+      const $1 = this.sanitizeFilename(category);
+      const $1 = path.join(this.pagesDir, 'catego'r'y', "${filename}.tsx");
       
-      const pageContent = this.generateMarketplacePageContent(category, content);
+      const $1 = this.generateMarketplacePageContent(category, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.marketplacePagesCreated++;
-      this.log(`Created marketplace page: ${pagePath}`);
+      this.log("Created marketplace page: ${pagePath}");
       
     } catch (error) {
-      this.log(`Error generating marketplace page: ${error.message}`, 'ERR'O'R');
+      this.log("Error generating marketplace page: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async generateMarketplaceContent(category) {
-    const prompt = `
+    const $1 = "
 Create comprehensive marketplace content for "${category}" category on Zion AI Marketplace. 
 Include:
 - Hero section with compelling title and description
@@ -492,11 +492,11 @@ Include:
 - SEO-optimized content
 
 Make it engaging and informative for potential buyers and sellers in the ${category} space.
-    `;
+    ";
     
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
+      const $1 = await this.model.generateContent(prompt);
+      const $1 = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackMarketplaceContent(category);
@@ -504,51 +504,51 @@ Make it engaging and informative for potential buyers and sellers in the ${categ
   }
 
   generateMarketplacePageContent(category, content) {
-    const categoryTitle = category.split('-').map(word => 
+    const $1 = category.split('-').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
     
-    const filename = this.sanitizeFilename(category);
-    const pageName = categoryTitle.replace(/\s+/g, '');
+    const $1 = this.sanitizeFilename(category);
+    const $1 = categoryTitle.replace(/\s+/g, '');
     
-    return `import type { NextPage } from 'ne'x't';}
+    return "import type { NextPage } from 'ne'x't';}
 import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
 ;
 const ${pageName}Page: NextPage = () => {
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>${categoryTitle} - Zion AI Marketplace</title></div>
-        <meta name="description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
+        <meta name=description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
         <meta name="keywords" content="${category}, AI marketplace, IT services, Zion" /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <div className="flex-shrink-0"></div>
-                <h1 className="text-2xl font-bold text-white"></div>
-                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <div className="flex-shrink-0></div>
+                <h1 className=text-2xl font-bold text-white"></div>
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     Zion</div>
                   </Link></div>
                 </h1></div>
               </div></div>
             </div>
             </div>
-            <div className="hidden md:flex items-center space-x-8"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+            <div className=hidden md:flex items-center space-x-8"></div>
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Marketplace</div>
               </Link></div>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 About</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Login</div>
               </Link></div>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href=/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -557,28 +557,28 @@ const ${pageName}Page: NextPage = () => {
       </nav>
 
       {/* Hero Section */}</div>
-      <main className="flex-1"></div>
-        <div className="relative overflow-hidden"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
+      <main className=flex-1"></div>
+        <div className="relative overflow-hidden></div>
+          <div className=absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
-            <div className="text-center"></div>
-              <div className="mb-8"></div>
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>
+            <div className=text-center"></div>
+              <div className="mb-8></div>
+                <h1 className=text-4xl md:text-6xl font-bold text-white mb-6"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     ${categoryTitle}</div>
                   </span></div>
                 </h1></div>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p className=text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                   ${content.split('\n')[0] || 'Discove'r' top professionals and services in the ' + categoryTitle.toLowerCase() + ' space.'}</div>
                 </p></div>
               </div>
               </div>
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"></div>
-                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>
+                <Link href=/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>
                   Browse Services</div>
                 </Link></div>
-                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                <Link href=/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>
                   Join as Provider</div>
                 </Link></div>
               </div></div>
@@ -587,11 +587,11 @@ const ${pageName}Page: NextPage = () => {
         </div>
         
         {/* Content Section */}</div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
-          <div className="prose prose-invert prose-lg max-w-none"></div>
-            <div className="text-gray-300 leading-relaxed">
+        <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none></div>
+            <div className=text-gray-300 leading-relaxed">
               ${content.split('\n').slice(1).map(paragraph => </div>
-                paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
               ).join('\n')}</div>
             </div></div>
           </div></div>
@@ -600,41 +600,41 @@ const ${pageName}Page: NextPage = () => {
 
       {/* Footer */}</div>
       <footer className="bg-black/20 border-t border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>
+          <div className=grid grid-cols-1 md:grid-cols-4 gap-8"></div>
             <div></div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-white font-semibold mb-4>Zion</h3></div>
+              <p className=text-gray-400 text-sm">
                 The future of AI-powered marketplace technology.</div>
               </p></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              <h4 className="text-white font-semibold mb-4>Marketplace</h4></div>
+              <ul className=space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors>Browse Services</Link></li></div>
+                <li><Link href=/talents" className="text-gray-400 hover:text-white transition-colors>AI Talents</Link></li></div>
+                <li><Link href=/equipment" className="text-gray-400 hover:text-white transition-colors>Equipment</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Company</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors>About</Link></li></div>
+                <li><Link href=/contact" className="text-gray-400 hover:text-white transition-colors>Contact</Link></li></div>
+                <li><Link href=/blog" className="text-gray-400 hover:text-white transition-colors>Blog</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Support</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/help" className="text-gray-400 hover:text-white transition-colors>Help Center</Link></li></div>
+                <li><Link href=/privacy" className="text-gray-400 hover:text-white transition-colors>Privacy</Link></li></div>
+                <li><Link href=/terms" className="text-gray-400 hover:text-white transition-colors>Terms</Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
-            <p className="text-gray-400 text-sm">
+          <div className=mt-8 pt-8 border-t border-white/10 text-center"></div>
+            <p className="text-gray-400 text-sm>
               © 2024 Zion. All rights reserved.</div>
             </p></div>
           </div></div>
@@ -644,11 +644,11 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 ;}
-export default ${pageName}Page`
+export default ${pageName}Page
   }
 
   generateFallbackMarketplaceContent(category) {
-    return `
+    return "
 Discover top professionals and services in the ${category} space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.
 
 Our ${category} category features a diverse range of services including consulting, development, implementation, and ongoing support. Whether you'r'e' a startup looking to scale or an enterprise seeking optimization, we have the right professionals for your needs.
@@ -663,31 +663,31 @@ Key benefits of our ${category} marketplace include:
 Success stories from our ${category} marketplace demonstrate the value our platform delivers. Clients report significant improvements in efficiency, cost savings, and project outcomes when working with Zion-verified professionals.
 
 Join thousands of satisfied clients who have found their ideal ${category} solutions through our marketplace. Start your project today and experience the difference that professional expertise makes.
-    `;
+    ";
   }
 
   async generateServicePage(service) {
     try {
-      this.log(`Generating service page: ${service}`);
+      this.log("Generating service page: ${service}");
       
-      const content = await this.generateServiceContent(service);
-      const filename = this.sanitizeFilename(service);
-      const pagePath = path.join(this.pagesDir, 'servic'e's', `${filename}.tsx`);
+      const $1 = await this.generateServiceContent(service);
+      const $1 = this.sanitizeFilename(service);
+      const $1 = path.join(this.pagesDir, 'servic'e's', "${filename}.tsx");
       
-      const pageContent = this.generateServicePageContent(service, content);
+      const $1 = this.generateServicePageContent(service, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.pagesCreated++;
-      this.log(`Created service page: ${pagePath}`);
+      this.log("Created service page: ${pagePath}");
       
     } catch (error) {
-      this.log(`Error generating service page: ${error.message}`, 'ERR'O'R');
+      this.log("Error generating service page: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async generateServiceContent(service) {
-    const prompt = `
+    const $1 = "
 Create comprehensive service content for "${service}" offered by Zion Tech Group. 
 Include:
 - Service overview and benefits
@@ -698,11 +698,11 @@ Include:
 - Call-to-action for consultation
 
 Make it compelling and informative for potential clients seeking ${service.toLowerCase()} services.
-    `;
+    ";
     
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
+      const $1 = await this.model.generateContent(prompt);
+      const $1 = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackServiceContent(service);
@@ -710,50 +710,50 @@ Make it compelling and informative for potential clients seeking ${service.toLow
   }
 
   generateServicePageContent(service, content) {
-    const filename = this.sanitizeFilename(service);
-    const pageName = service.replace(/\s+/g, '');
+    const $1 = this.sanitizeFilename(service);
+    const $1 = service.replace(/\s+/g, '');
     
-    return `import type { NextPage } from 'ne'x't';}
+    return "import type { NextPage } from 'ne'x't';}
 import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
 ;
 const ${pageName}Page: NextPage = () => {
   return (</div>
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>${service} - Zion Tech Group</title></div>
-        <meta name="description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>
+        <meta name=description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>
         <meta name="keywords" content="${service.toLowerCase()}, IT services, technology solutions, Zion" /></div>
       </Head>
 
       {/* Navigation */}</div>
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
-          <div className="flex justify-between h-16"></div>
-            <div className="flex items-center"></div>
-              <div className="flex-shrink-0"></div>
-                <h1 className="text-2xl font-bold text-white"></div>
-                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16></div>
+            <div className=flex items-center"></div>
+              <div className="flex-shrink-0></div>
+                <h1 className=text-2xl font-bold text-white"></div>
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     Zion</div>
                   </Link></div>
                 </h1></div>
               </div></div>
             </div>
             </div>
-            <div className="hidden md:flex items-center space-x-8"></div>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+            <div className=hidden md:flex items-center space-x-8"></div>
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Services</div>
               </Link></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Marketplace</div>
               </Link></div>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 About</div>
               </Link></div>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors>
                 Login</div>
               </Link></div>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href=/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25>
                 Join Zion</div>
               </Link></div>
             </div></div>
@@ -762,28 +762,28 @@ const ${pageName}Page: NextPage = () => {
       </nav>
 
       {/* Hero Section */}</div>
-      <main className="flex-1"></div>
-        <div className="relative overflow-hidden"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
+      <main className=flex-1"></div>
+        <div className="relative overflow-hidden></div>
+          <div className=absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
-            <div className="text-center"></div>
-              <div className="mb-8"></div>
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32></div>
+            <div className=text-center"></div>
+              <div className="mb-8></div>
+                <h1 className=text-4xl md:text-6xl font-bold text-white mb-6"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
                     ${service}</div>
                   </span></div>
                 </h1></div>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p className=text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                   ${content.split('\n')[0] || 'Professiona'l' ' + service.toLowerCase() + ' services tailored to your business needs.'}</div>
                 </p></div>
               </div>
               </div>
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"></div>
-                <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center></div>
+                <Link href=/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105>
                   Get Started</div>
                 </Link></div>
-                <Link href="/marketplace" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                <Link href=/marketplace" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300>
                   Explore Marketplace</div>
                 </Link></div>
               </div></div>
@@ -792,11 +792,11 @@ const ${pageName}Page: NextPage = () => {
         </div>
         
         {/* Content Section */}</div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
-          <div className="prose prose-invert prose-lg max-w-none"></div>
-            <div className="text-gray-300 leading-relaxed">
+        <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none></div>
+            <div className=text-gray-300 leading-relaxed">
               ${content.split('\n').slice(1).map(paragraph => </div>
-                paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
               ).join('\n')}</div>
             </div></div>
           </div></div>
@@ -805,41 +805,41 @@ const ${pageName}Page: NextPage = () => {
 
       {/* Footer */}</div>
       <footer className="bg-black/20 border-t border-white/10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12></div>
+          <div className=grid grid-cols-1 md:grid-cols-4 gap-8"></div>
             <div></div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
-              <p className="text-gray-400 text-sm">
+              <h3 className="text-white font-semibold mb-4>Zion</h3></div>
+              <p className=text-gray-400 text-sm">
                 The future of AI-powered marketplace technology.</div>
               </p></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              <h4 className="text-white font-semibold mb-4>Marketplace</h4></div>
+              <ul className=space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors>Browse Services</Link></li></div>
+                <li><Link href=/talents" className="text-gray-400 hover:text-white transition-colors>AI Talents</Link></li></div>
+                <li><Link href=/equipment" className="text-gray-400 hover:text-white transition-colors>Equipment</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Company</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/about" className="text-gray-400 hover:text-white transition-colors>About</Link></li></div>
+                <li><Link href=/contact" className="text-gray-400 hover:text-white transition-colors>Contact</Link></li></div>
+                <li><Link href=/blog" className="text-gray-400 hover:text-white transition-colors>Blog</Link></li></div>
               </ul></div>
             </div></div>
             <div></div>
-              <h4 className="text-white font-semibold mb-4">Support</h4></div>
-              <ul className="space-y-2 text-sm"></div>
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              <h4 className=text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm></div>
+                <li><Link href=/help" className="text-gray-400 hover:text-white transition-colors>Help Center</Link></li></div>
+                <li><Link href=/privacy" className="text-gray-400 hover:text-white transition-colors>Privacy</Link></li></div>
+                <li><Link href=/terms" className="text-gray-400 hover:text-white transition-colors>Terms</Link></li></div>
               </ul></div>
             </div></div>
           </div></div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
-            <p className="text-gray-400 text-sm">
+          <div className=mt-8 pt-8 border-t border-white/10 text-center"></div>
+            <p className="text-gray-400 text-sm>
               © 2024 Zion. All rights reserved.</div>
             </p></div>
           </div></div>
@@ -849,11 +849,11 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 ;}
-export default ${pageName}Page`
+export default ${pageName}Page
   }
 
   generateFallbackServiceContent(service) {
-    return `
+    return "
 ${service} represents a comprehensive solution designed to address the complex challenges facing modern businesses. Our expert team delivers customized ${service.toLowerCase()} services that drive measurable results and sustainable growth.
 
 Our approach to ${service.toLowerCase()} combines deep technical expertise with strategic business understanding. We work closely with clients to understand their unique requirements and develop tailored solutions that align with their organizational goals and constraints.
@@ -865,7 +865,7 @@ Pricing for ${service.toLowerCase()} services is structured to provide maximum v
 Our track record in ${service.toLowerCase()} includes numerous successful implementations across diverse industries. Case studies demonstrate significant improvements in efficiency, cost reduction, and competitive advantage for our clients.
 
 To learn more about our ${service.toLowerCase()} capabilities and discuss how we can help your organization, contact our team for a complimentary consultation and assessment.
-    `;
+    ";
   }
 
   sanitizeFilename(filename) {
@@ -877,13 +877,13 @@ To learn more about our ${service.toLowerCase()} capabilities and discuss how we
   }
 
   async saveAnalytics() {
-    const analytics = {
+    const $1 = {
       ...this.analytics,
       lastGenerationTime: this.lastGenerationTime,
       uptime: Date.now() - this.analytics.startTime
     };
     
-    const analyticsPath = path.join(__dirname, 'lo'g's', `continuous-content-analytics-${this.agentId}.json`);
+    const $1 = path.join(__dirname, 'lo'g's', "continuous-content-analytics-${this.agentId}.json");
     fs.writeFileSync(analyticsPath, JSON.stringify(analytics, null, 2));
   }
 }
@@ -893,6 +893,6 @@ module.exports = ContinuousContentGenerator;
 
 // Run if called directly
 if (require.main === module) {
-  const generator = new ContinuousContentGenerator();
+  const $1 = new ContinuousContentGenerator();
   generator.initialize().catch(console.error);
 } </div>

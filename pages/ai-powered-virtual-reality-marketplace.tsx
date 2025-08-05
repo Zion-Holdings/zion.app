@@ -4,7 +4,7 @@ import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";}
 import { Home, Search, User }  from "lucide-react;
 
-interface VRProduct {
+interface $1 {
   id: string
   name: string
   description: string
@@ -18,7 +18,7 @@ interface VRProduct {
   features: string[]
   rating: number
   reviews: number}
-interface VRExperience {
+interface $1 {
   id: string
   name: string
   description: string
@@ -26,7 +26,7 @@ interface VRExperience {
   lighting: string
   atmosphere: string
   products: VRProduct[]};
-const AIPoweredVirtualRealityMarketplace: NextPage = () => {
+const $1: NextPage = () => {
   const [isVRMode, setIsVRMode] = useState(false
   const [currentExperience, setCurrentExperience] = useState<VRExperience | null>(null</div>
   const [selectedProduct, setSelectedProduct] = useState<VRProduct | null>(null
@@ -35,8 +35,8 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
   const [userRotation, setUserRotation] = useState({ x: 0, y: 0, z: 0}</div>
   const [vrDevices, setVrDevices] = useState<string[]>([]
   const [vrSupported, setVrSupported] = useState(false</div>
-  const canvasRef = useRef<HTMLCanvasElement>(null</div>
-  const vrContainerRef = useRef<HTMLDivElement>(null
+  const $1 = useRef<HTMLCanvasElement>(null</div>
+  const $1 = useRef<HTMLDivElement>(null
   // Sample VR experiences
   const $1: $2[] = [
     {
@@ -135,11 +135,11 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
     if (isVRMode && canvasRef.current) {
       initializeVRExperience(}
   } [isVRMode]
-  const initializeVRExperience = () => {
+  const $1 = () => {
     if (!canvasRef.current) return
 '
-    const canvas = canvasRef.current
-    const gl = canvas.getContext('webgl2') || canvas.getContext('webgl
+    const $1 = canvasRef.current
+    const $1 = canvas.getContext('webgl2') || canvas.getContext('webgl
     if (!gl) {
       console.error('WebG'L not supported
       return}
@@ -149,22 +149,22 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT
     // Initialize VR scene
     setupVRScene(gl}
-  const setupVRScene = (gl: WebGLRenderingContext) => {
+  const $1 = (gl: WebGLRenderingContext) => {
     // Create VR scene with products
     if (currentExperience) {
       currentExperience.products.forEach(product => {
         // Render 3D product model
         renderProductModel(gl, product}}}
-  const renderProductModel = (gl: WebGLRenderingContext, product: VRProduct) => {
+  const $1 = (gl: WebGLRenderingContext, product: VRProduct) => {
     // Simplified 3D rendering for product models
     // In a real implementation, this would load GLB/GLTF models
-    console.log(`Rendering ${product.name} at position:`, product.position}
-  const enterVRMode = async () => {
+    console.log("Rendering ${product.name} at position:", product.position}
+  const $1 = async () => {
     setIsLoading(true
     try {
       // Request VR session
       if ('getVRDispla'ys in navigator) {
-        const displays = await (navigator as any).getVRDisplays(
+        const $1 = await (navigator as any).getVRDisplays(
         if (displays.length > 0) {
           setIsVRMode(true
           setCurrentExperience(vrExperiences[0]}}
@@ -174,22 +174,22 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       setIsVRMode(true
       setCurrentExperience(vrExperiences[0]}
     setIsLoading(false}
-  const exitVRMode = () => {
+  const $1 = () => {
     setIsVRMode(false
     setCurrentExperience(null
     setSelectedProduct(null}
-  const selectProduct = (product: VRProduct) => {
+  const $1 = (product: VRProduct) => {
     setSelectedProduct(product}
-  const purchaseProduct = (product: VRProduct) => {`
-    // Handle product purchase``
-    console.log(`Purchasing ${product.name} for $${product.price}``
-    // Navigate to checkout``
-    window.location.href = `/checkout?product=${product.id}`}
-  const changeExperience = (experience: VRExperience) => {
+  const $1 = (product: VRProduct) => {"
+    // Handle product purchase""
+    console.log("Purchasing ${product.name} for $${product.price}`"
+    // Navigate to checkout""
+    window.location.href = "/checkout?product=${product.id}"}
+  const $1 = (experience: VRExperience) => {
     setCurrentExperience(experience
     setSelectedProduct(null}
-  const handleVRMovement = (direction: string) => {
-    const speed = 0.1
+  const $1 = (direction: string) => {
+    const $1 = 0.1
     switch (direction) {
       case 'forwa'rd:
         setUserPosition(prev => ({ ...prev, z: prev.z - speed })
@@ -205,51 +205,51 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
         break}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive" py-8">
+      </div><div className=" relative z-10 container-responsive py-8>
         "
         {/* Background Effects */}</div>
-        <div className="fixed" inset-0 z-0"> </div>
+        <div className="fixed inset-0 z-0> </div>
           </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
       <Head> </div>
         <title>AI-Powered Virtual Reality Marketplace - Zion</title></div>
         <meta name="description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. > </meta name=description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments. ><meta name="keywords content=VR marketplace, AI shopping, virtual reality, 3D products, immersive shopping > </meta" name=keywords content="VR marketplace, AI shopping, virtual reality, 3D products, immersive" shopping ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}"</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
-          </div><div className="flex  justify-between h-16>"</div>
-            <div className="flex items-center">"</div>
-              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white></div>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex items-center">"</div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white></div>
+                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
                 </h1></div>
               </Link></div>
             </div></div>
-            <div className="flex items-center space-x-4 ">
+            <div className="flex items-center space-x-4 >
               
-                onClick={() => setIsVRMode(!isVRMode)}"
+                onClick={() => setIsVRMode(!isVRMode)}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25
               >'
                 {isVRMode ? 'Exit VR'   'Enter VR'}</div>
               </button></div>
             </div></div>
-          </div></div>
+          </div></div>"
         </div> "</div>
       </nav>"</div>
-      <main className="flex-1"">
+      <main className="flex-1>
         {!isVRMode ? ("
           /* VR Experience Selection */</div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32"> </div>
-            </div><div className="text-center" mb-12></div>
-              <h1 className="text-4xl" md text-6xlfont-bold text-white mb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32> </div>
+            </div><div className=text-center" mb-12></div>
+              <h1 className="text-4xl md text-6xlfont-bold text-white mb-6>
                 AI-Powered Virtual Reality Marketplace</div>
               </h1></div>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
-                Experience the future of shopping with immersive AI-powered virtual reality.  
+                Experience the future of shopping with immersive AI-powered virtual reality.  "
                 Explore products in stunning 3D environments and interact with AI assistants."</div>
               </p>"</div>
-              <div className="flex" justify-center space-x-4">
+              <div className="flex justify-center space-x-4>
                 '
                 >
                   {isLoading ? Loading' VR...' : Enter' Virtual Reality'}</div>
@@ -261,35 +261,35 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
               </div></div>
             </div>
             {/* VR Features */}"</div>
-            <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-12"> </div>
-              </div><div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg:border border-white/10>"</div>
-                <div className="text-4xl:mb-4>🥽</div> "</div>
-                <h3 className="text-xl" font-semibold text-white mb-2">Immersive Experience</h3></div>
+            <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-12> </div>
+              </div><div className=bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg:border border-white/10>"</div>
+                <div className="text-4xl:mb-4>🥽</div> </div>
+                <h3 className=text-xl" font-semibold text-white mb-2">Immersive Experience</h3></div>
                 <p className="text-gray-300>Explore products in stunning 3D environments with realistic lighting and physics.</p></div>
-              </div>"</div>
+              </div></div>
               <div className="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 p-6 rounded-lg border border-white/10"> "</div>
-                </div><div className="text-4xl:mb-4>🤖</div>"</div>
-                <h3 className="text-xl font-semibold text-white mb-2">AI Assistant</h3></div>
-                <p className="text-gray-300>Interact with AI-powered virtual assistants for personalized recommendations.</p>"</div>
-              </div>"</div>
+                </div><div className="text-4xl:mb-4>🤖</div></div>
+                <h3 className=text-xl font-semibold text-white mb-2">AI Assistant</h3></div>
+                <p className="text-gray-300>Interact with AI-powered virtual assistants for personalized recommendations.</p></div>
+              </div></div>
               <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 p-6 rounded-lg border border-white/10> "</div>
-                </div><div className="text-4xl:mb-4">🎯</div>"</div>
+                </div><div className="text-4xl:mb-4>🎯</div></div>
                 <h3 className="text-xl font-semibold text-white mb-2>Smart Navigation</h3>"</div>
-                <p className="text-gray-300">Intelligent" navigation and product discovery powered by AI algorithms.</p"></div>
+                <p className="text-gray-300>Intelligent navigation and product discovery powered by AI algorithms.</p"></div>
               </div></div>
             </div>
 
             {/* VR Experiences */}</div>
-            <div className="mb-12">"</div>
+            <div className="mb-12></div>
               <h2 className="text-3xl font-bold text-white mb-8 text-center >Available VR Experiences</h2>"</div>
-              <div className="grid" grid-cols-1 md grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md grid-cols-3 gap-8>
                 {vrExperiences.map((experience) => (</div>
                   </div>
                     onClick={() => changeExperience(experience)}"
                   ></div>
-                    <h3 className="text-xl font-semibold text-white mb-2">{experience.name}</h3></div>
-                    <p className="text-gray-300" mb-4 >{experience.description}</p></div>
-                    <div className="flex items-center justify-between text-sm:text-gray-400"></div>
+                    <h3 className="text-xl font-semibold text-white mb-2>{experience.name}</h3></div>
+                    <p className=text-gray-300" mb-4 >{experience.description}</p></div>
+                    <div className="flex items-center justify-between text-sm:text-gray-400></div>
                       <span>Environment  {experience.environment}</span></div>
                       <span>{experience.products.length} products</span></div>
                     </div></div>
@@ -298,12 +298,12 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
               </div></div>
             </div>
             {/* VR Requirements */}</div>
-            <div className=" bg-gradient-to-br from-orange-900/50 to-red-900/50 p-8 rounded-lg border" border-white/10></div>
-              <h3 className="text-2xl font-bold text-white mb-4">VR Requirements</h3></div>
-              <div className="grid" grid-cols-1 md grid-cols-2 gap-6 ></div>
+            <div className= bg-gradient-to-br from-orange-900/50 to-red-900/50 p-8 rounded-lg border" border-white/10></div>
+              <h3 className="text-2xl font-bold text-white mb-4>VR Requirements</h3></div>
+              <div className=grid" grid-cols-1 md grid-cols-2 gap-6 ></div>
                 </div><div></div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Hardware</h4></div>
-                  <ul className="text-gray-300" space-y-1></div>
+                  <h4 className="text-lg font-semibold text-white mb-2>Hardware</h4></div>
+                  <ul className=text-gray-300" space-y-1></div>
                     <li>• VR Headset (Oculus Quest, HTC Vive, etc.)</li></div>
                     <li>• Motion Controllers</li></div>
                     <li>• High-performance computer (for PC VR)</li></div>
@@ -311,8 +311,8 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                   </ul></div>
                 </div></div>
                 <div></div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Software</h4></div>
-                  <ul className="text-gray-300" space-y-1 ></div>
+                  <h4 className="text-lg font-semibold text-white mb-2>Software</h4></div>
+                  <ul className=text-gray-300" space-y-1 ></div>
                     <li>• WebVR-compatible browser</li></div>
                     <li>• VR runtime (SteamVR, Oculus)</li></div>
                     <li>• WebGL 2.0 support</li></div>
@@ -324,16 +324,16 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           </div>
         ) : (
           /* VR Experience Interface */ </div>
-          <div className="relative h-screen">
-            {/* VR Canvas */}"
+          <div className="relative h-screen>
+            {/* VR Canvas */}
             />
 "
             {/* VR UI Overlay */}</div>
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none"> 
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none> 
               {/* VR Controls */}</div>
-              </div><div className="absolute bottom-4 left-4 pointer-events-auto"></div>
-                <div className="bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20"> </div>
-                  </div><div className="grid grid-cols-3" gap-2>
+              </div><div className=absolute bottom-4 left-4 pointer-events-auto"></div>
+                <div className="bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20> </div>
+                  </div><div className=grid grid-cols-3" gap-2>
                     '
                       onClick={() => handleVRMovement('forward')}
                       className=bg-purple-600" hover:bg-purple-700 text-white p-2 rounded
@@ -344,7 +344,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                       className="bg-purple-600 hover bg-purple-700 text-white p-2 rounded 
                     >
                       ←</div>
-                    </button>"
+                    </button>
                       onClick={() => handleVRMovement(rig'h't)}"
                       className=bg-purple-600" hover bg-purple-700 text-white p-2 rounded
                     >
@@ -352,7 +352,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                     </button>
                     "''
                       onClick={() => handleVRMovement(backwar'd')}
-                      className=bg-purple-600 hover bg-purple-700 text-white p-2 rounded col-start-2
+                      className="bg-purple-600 hover bg-purple-700 text-white p-2 rounded col-start-2
                     >
                       ↓</div>
                     </button></div>
@@ -362,40 +362,40 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
 
               {/* Product Info Panel */}, 
 {selectedProduct && (</div>
-                <div className="absolute" top-4 right-4 pointer-events-auto></div>
-                  </div><div className="bg-black/80 backdrop-blur-md:rounded-lg p-6 border border-white/20 max-w-sm "></div>
-                    <h3 className="text-xl" font-bold text-white mb-2>{selectedProduct.name}</h3></div>
-                    <p className="text-gray-300 mb-4">{selectedProduct.description}</p></div>
-                    <div className="mb-4>"</div>
-                      <span className="text-2xl font-bold text-green-400 ">${selectedProduct.price}</span></div>
+                <div className=absolute" top-4 right-4 pointer-events-auto></div>
+                  </div><div className="bg-black/80 backdrop-blur-md:rounded-lg p-6 border border-white/20 max-w-sm ></div>
+                    <h3 className=text-xl" font-bold text-white mb-2>{selectedProduct.name}</h3></div>
+                    <p className="text-gray-300 mb-4>{selectedProduct.description}</p></div>
+                    <div className=mb-4>"</div>
+                      <span className="text-2xl font-bold text-green-400 >${selectedProduct.price}</span></div>
                     </div></div>
-                    <div className="mb-4>" </div>
-                      </div><div className="flex items-center mb-2"></div>
-                        <div className="flex" text-yellow-400>
+                    <div className=mb-4>" </div>
+                      </div><div className="flex items-center mb-2></div>
+                        <div className=flex" text-yellow-400>
                           {[...Array(5)].map((_, i) => (</div>
-                            <span key={i} className="{i < Math.floor(selectedProduct.rating) ? text-yellow'-'400 : text-gray'-'600}">
+                            <span key={i} className="{i < Math.floor(selectedProduct.rating) ? text-yellow'-'400 : text-gray'-'600}>
                               ★</div>
                             </span>
                           ))}</div>
                         </div></div>
-                        <span className="text-gray-400" ml-2>({selectedProduct.reviews} reviews)</span></div>
+                        <span className=text-gray-400" ml-2>({selectedProduct.reviews} reviews)</span></div>
                       </div> </div>
                     </div></div>
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-2 mb-4>
                       {selectedProduct.features.map((feature, index) => (</div>
-                        </div><div key={index} className="text-sm:text-gray-300">•" {feature}</div>
+                        </div><div key={index} className=text-sm:text-gray-300">•" {feature}</div>
                       ))}</div>
                     </div></div>
                     <div className="flex space-x-2 >
                       
-                        onClick={() => purchaseProduct(selectedProduct)}"
-                        className=bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300 "
+                        onClick={() => purchaseProduct(selectedProduct)}
+                        className="bg-gradient-to-r" from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300 "
                      ">
                         Purchase</div>
                       </button>
                       "
                         onClick={() => setSelectedProduct(null)}
-                        className=bg-gray-600 hover bg-gray-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300
+                        className="bg-gray-600 hover bg-gray-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300
                       >
                         Close</div>
                       </button></div>
@@ -405,17 +405,17 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
               )}
  
               {/* Experience Selector */}</div>
-              <div className="absolute" top-4 left-4 pointer-events-auto></div>
-                </div><div className="bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20"></div>
-                  <h4 className="text-white" font-semibold mb-2>VR Experiences</h4></div>
-                  <div className="space-y-2">
-                    {vrExperiences.map((experience) => (`
-                        onClick={() => changeExperience(experience)}``
-                        className="{`block" w-full text-left px-3 py-4 rounded text-sm:transition-all duration-300 ${
+              <div className=absolute" top-4 left-4 pointer-events-auto></div>
+                </div><div className="bg-black/50 backdrop-blur-md:rounded-lg p-4 border border-white/20></div>
+                  <h4 className=text-white" font-semibold mb-2>VR Experiences</h4></div>
+                  <div className="space-y-2>
+                    {vrExperiences.map((experience) => (
+                        onClick={() => changeExperience(experience)}`"
+                        className="{block w-full text-left px-3 py-4 rounded text-sm:transition-all duration-300 ${
                           currentExperience?.id === experience.id
-                            ? 'bg-purple'-600 text-white`
-                              'text-gray'-300 hover text-white hover bg-gray-700``
-                        }`}
+                            ? 'bg-purple'-600 text-white"
+                              'text-gray'-300 hover text-white hover bg-gray-700""
+                        }"}
                       >
                         {experience.name}</div>
                       </button>
@@ -424,7 +424,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                 </div></div>
               </div>
               {/* Exit VR Button */}</div>
-              <div className="absolute top-4 right-4 pointer-events-auto">
+              <div className="absolute top-4 right-4 pointer-events-auto>
                 
                 >
                   Exit VR</div>
@@ -437,26 +437,26 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
 
       {/* Footer */}, 
 {!isVRMode && (</div>
-        <footer className="bg-black/40 backdrop-blur-md border-t" border-white/10></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
-            </div><div className="text-center" text-gray-400 ></div>
+        <footer className=bg-black/40 backdrop-blur-md border-t" border-white/10></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8></div>
+            </div><div className=text-center" text-gray-400 ></div>
               <p>© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p></div>
             </div></div>
           </div></div>
         </footer>
       )},
     {/* Mobile Navigation */}</div>
-        <div className="lg" hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50"> </div>
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> </div>
           </div><div className="flex justify-around items-center py-2>"</div>
-            <button className="flex  flex-col items-center p-2 text-gray-400 hover:text-white">"</div>
-              <Home className="w-5 h-5  > </Home className="w-5" h-5  "><span className="text-xs>Home</span>"</div>
+            <button className="flex  flex-col items-center p-2 text-gray-400 hover:text-white></div>
+              <Home className="w-5 h-5  > </Home className="w-5 h-5  ><span className="text-xs>Home</span>"</div>
             </button>"</div>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover" text-white"></div>
-              <Search className="w-5 h-5 > </Search className="w-5"" h-5 "><span className="text-xs">Search</span></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white></div>
+              <Search className="w-5 h-5 > </Search className="w-5 h-5 "><span className="text-xs>Search</span></div>
             </button></div>
-            <button className="flex" flex-col items-center p-2 text-gray-400 hover text-white></div>
-              <User className=" w-5 h-5 "></div>
-              </User className=" w-5 h-5 ><span" className="text-xs">Profile</span></div>
+            <button className=flex" flex-col items-center p-2 text-gray-400 hover text-white></div>
+              <User className=" w-5 h-5 ></div>
+              </User className= w-5 h-5 ><span" className="text-xs>Profile</span></div>
             </button></div>
           </div></div>
         </div></div>
@@ -469,5 +469,5 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
   </div>
 ;
 };
-''`;}
-export default AIPoweredVirtualRealityMarketplace ))))))))))))))))))))))))))))))))))))))))))))"'"'`</div>
+'';}
+export default AIPoweredVirtualRealityMarketplace ))))))))))))))))))))))))))))))))))))))))))))"'"'"</div>

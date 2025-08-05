@@ -1,9 +1,9 @@
 import { useChat } from '../contexts/ChatContext;
 ;}
-export const useChatAssistant = () => {;
+export const $1 = () => {;
   const { isChatOpen, toggleChat, openChat, closeChat } = useChat();
 
-  const triggerChat = (message?: string) => {
+  const $1 = (message?: string) => {
     if (!isChatOpen) {;
       openChat();}
     // If a specific message is provided, we could potentially

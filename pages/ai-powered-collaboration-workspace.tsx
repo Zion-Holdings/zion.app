@@ -5,7 +5,7 @@ import Link from next/link";}
 import PageLayout from '../components/layout/PageLayout;}
 import { motion } from "framer-motion;
 
-interface WorkspaceProject {
+interface $1 {
   id: string
   name: string
   description: string
@@ -16,7 +16,7 @@ interface WorkspaceProject {
   documents: WorkspaceDocument[]
   createdAt: Date
   updatedAt: Date}
-interface WorkspaceMember {
+interface $1 {
   id: string
   name: string
   email: string
@@ -24,7 +24,7 @@ interface WorkspaceMember {
   avatar: string
   status: 'onli'n'e | offli'n'e | a'w'ay
   lastActive: Date}
-interface WorkspaceTask {
+interface $1 {
   id: string
   title: string
   description: string
@@ -34,7 +34,7 @@ interface WorkspaceTask {
   dueDate: Date
   createdAt: Date
   updatedAt: Date}
-interface WorkspaceDocument {
+interface $1 {
   id: string;
   name: string
   type: 'docume'nt | 'spreadshe'et | 'presentat'ion'' | design'
@@ -42,14 +42,14 @@ interface WorkspaceDocument {
   lastModified: Date
   createdBy: string
   collaborators: string[]}
-interface AISuggestion {'
+interface $1 {'
   id: string
   type: 'ta'sk | 'docume'nt | 'meet'ing'' | deadlin'e'
   title: string
   description: string
   priority: 'l'ow | 'medi'um | 'h'igh'' | urgent'
   action: string};
-const AIPoweredCollaborationWorkspace: NextPage = () => {'
+const $1: NextPage = () => {'
   const [activeTab, setActiveTab] = useState(overview'
   const [selectedProject, setSelectedProject] = useState<WorkspaceProject | null>(null
   const [isCreatingProject, setIsCreatingProject] = useState(false
@@ -58,7 +58,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
   const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false'</div>
   const [chatMessages, setChatMessages] = useState<any[]>([]
   const [newMessage, setNewMessage] = useState(</div>
-  const chatEndRef = useRef<HTMLDivElement>(null
+  const $1 = useRef<HTMLDivElement>(null
   // Mock data
   const $1: $2[] = [
     {
@@ -118,22 +118,22 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth'}
   } [chatMessages]
-  const handleCreateProject = () => {
+  const $1 = () => {
     setIsCreatingProject(true
     // Simulate project creation
     setTimeout(() => {
       setIsCreatingProject(false
     } 2000}
-  const handleInviteMembers = () => {
+  const $1 = () => {
     setIsInvitingMembers(true
     // Simulate member invitation
     setTimeout(() => {
       setIsInvitingMembers(false
     } 2000}
-  const handleAISuggestion = (suggestion: AISuggestion) => {'
+  const $1 = (suggestion: AISuggestion) => {'
     // Handle AI suggestion action
     console.log(Handling' AI suggestion: , suggestion}
-  const sendMessage = () => {'
+  const $1 = () => {'
     if (newMessage.trim()) {
       setChatMessages([...chatMessages, { text: newMessage, sender: use'r', timestamp: new Date() }]
       setNewMessage(
@@ -141,13 +141,13 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
       setTimeout(() => {
         setChatMessages(prev => [...prev, { text: I'\'m here to help with your collaboration needs!, sender: 'a'i, timestamp: new Date() }]
       } 1000}}
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case 'onli'ne: return 'bg-green'-500
       case aw'a'y: return bg-yellow'-'500
       case offlin'e': return bg-gray-'500
       default: return 'bg-gray-500'}}
-  const getPriorityColor = (priority: string) => {'
+  const $1 = (priority: string) => {'
     switch (priority) {
       case lo'w': return bg-green-'500
       case 'medium': return 'bg-yellow-500
@@ -160,54 +160,54 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
         <title>AI-Powered Collaboration Workspace - Zion</title></div>
         <meta name=description content=Real-time collaboration workspace with AI assistance for project management, document collaboration, and team coordination. > </meta" name="description content=Real-time collaboration workspace with AI assistance for project management, document collaboration, and team" coordination." ><link rel=icon href=/favicon.ico > </link rel="icon" href=/favicon.ico ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       {/* Page Header */}</div>
-      <div className="mb-8"> </div>
-        </div><div className="flex items-center" justify-between></div>
-          <div className="flex items-center space-x-4"></div>
-            </div><div className="text-white/60>|</div>"</div>
-            <h1 className="text-3xl font-bold text-white">Collaboration Workspace</h1></div>
+      <div className="mb-8> </div>
+        </div><div className=flex items-center" justify-between></div>
+          <div className="flex items-center space-x-4></div>
+            </div><div className=text-white/60>|</div>"</div>
+            <h1 className="text-3xl font-bold text-white>Collaboration Workspace</h1></div>
           </div></div>
-          <div className=" flex items-center" space-x-4>
+          <div className= flex items-center" space-x-4>
             
               onClick={() => setIsAIAssistantOpen(!isAIAssistantOpen)}
-              className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:transition-all duration-300
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:transition-all duration-300
             >
               🤖 AI Assistant</div>
             </button></div>
           </div></div>
         </div></div>
       </div></div>
-      <div className="flex h-screen ">
+      <div className=flex h-screen ">
         {/* Sidebar */}</div>
-        </div><div className="w-120 bg-black/20 backdrop-blur-lg border-r" border-white/10></div>
-          <div className=" p-6"></div>
-            </div><div className="mb-6">"</div>
+        </div><div className="w-120 bg-black/20 backdrop-blur-lg border-r border-white/10></div>
+          <div className= p-6"></div>
+            </div><div className="mb-6></div>
               <h2 className="text-white font-semibold mb-4 >Projects</h2>
               
-              >
+              >"
                 + New Project"</div>
               </button>"</div>
               <div className=" space-y-2>
-                {mockProjects.map((project) => ("</div>
+                {mockProjects.map((project) => (</div>
                   </div>"
                     onClick={() => setSelectedProject(project)}"
-                    className= {`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
+                    className=" {p-3 rounded-lg cursor-pointer transition-all duration-300 ${
                       selectedProject?.id === project.id
-                        ? bg-purple'-'600/20 border border-purple-500/50"''`
-                          bg-white'/5 hover bg-white/10'``
-                    }`}"
+                        ? bg-purple'-'600/20 border border-purple-500/50"''"
+                          bg-white'/5 hover bg-white/10'`"
+                    }"}"
                   ></div>
-                    <div className="flex  items-center justify-between"></div>
-                      <h3 className="text-white" font-medium>{project.name}</h3>`
-                      ``
-                      }`} /></div>
+                    <div className="flex  items-center justify-between></div>
+                      <h3 className=text-white" font-medium>{project.name}</h3>"
+                      ""
+                      }"} /></div>
                     </div></div>
-                    <p className="text-white/60 text-sm:mt-1">{project.description.substring(0, 50)}...</p></div>
-                    <div className="mt-2>"</div>
-                      </div><div className="flex items-center justify-between text-xs text-white/60"></div>
+                    <p className="text-white/60 text-sm:mt-1>{project.description.substring(0, 50)}...</p></div>
+                    <div className=mt-2>"</div>
+                      </div><div className="flex items-center justify-between text-xs text-white/60></div>
                         <span>Progress</span></div>
                         <span>{project.progress}%</span></div>
                       </div></div>
-                      <div className="w-full" bg-gray-700 rounded-full h-1 mt-1></div>
+                      <div className=w-full" bg-gray-700 rounded-full h-1 mt-1></div>
                         </div>
                         /></div>
                       </div></div>
@@ -216,23 +216,23 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                 ))}</div>
               </div></div>
             </div></div>
-            <div className="mb-6"></div>
-              <h2 className="text-white" font-semibold mb-4>Team Members</h2>
+            <div className="mb-6></div>
+              <h2 className=text-white" font-semibold mb-4>Team Members</h2>
               
               > 
                 + Invite Members</div>
               </button></div>
-              <div className="space-y-2"> 
+              <div className="space-y-2> 
                 {selectedProject?.team.map((member) => (</div>
-                  </div><div key={member.id} className="flex items-center space-x-3 p-2 rounded-lg bg-white/5 >"</div>
-                    <div className="relative>"</div>
-                      </div><div className="w-12" h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold"> 
-                        {member.name.charAt(0)}`</div>
-                      </div>``</div>
-                      <div className="{`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} > </div className="{`absolute"" -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} "></div></div>
-                    <div className="flex-1"></div>
-                      <p className="text-white" text-sm font-medium>{member.name}</p></div>
-                      <p className="text-white/60 text-xs">{member.role}</p></div>
+                  </div><div key={member.id} className=flex items-center space-x-3 p-2 rounded-lg bg-white/5 >"</div>
+                    <div className="relative></div>
+                      </div><div className=w-12" h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold"> 
+                        {member.name.charAt(0)}"</div>
+                      </div>""</div>
+                      <div className="{absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}} > </div className="{"absolute"" -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}"} "></div></div>
+                    <div className="flex-1></div>
+                      <p className=text-white" text-sm font-medium>{member.name}</p></div>
+                      <p className="text-white/60 text-xs>{member.role}</p></div>
                     </div></div>
                   </div>
                 ))}</div>
@@ -240,16 +240,16 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
             </div>
             {/* AI Suggestions */}</div>
             <div></div>
-              <h2 className="text-white" font-semibold mb-4>AI Suggestions</h2></div>
-              <div className="space-y-2">
+              <h2 className=text-white" font-semibold mb-4>AI Suggestions</h2></div>
+              <div className="space-y-2>
                 {aiSuggestions.map((suggestion) => (</div>
-                  </div><div key={suggestion.id} className="p-3 rounded-lg bg-white/5 border" border-white/10></div>
-                    <div className=" flex items-start justify-between"></div>
-                      </div><div className="flex-1">"</div>
-                        <h4 className="text-white text-sm font-medium >{suggestion.title}</h4>"</div>
-                        <p className="text-white/60" text-xs mt-1">{suggestion.description}</p>`</div>
-                      </div>``</div>
-                      <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(suggestion.priority)}`}>
+                  </div><div key={suggestion.id} className=p-3 rounded-lg bg-white/5 border" border-white/10></div>
+                    <div className=" flex items-start justify-between></div>
+                      </div><div className=flex-1">"</div>
+                        <h4 className="text-white text-sm font-medium >{suggestion.title}</h4></div>
+                        <p className=text-white/60" text-xs mt-1">{suggestion.description}</p>"</div>
+                      </div>`"</div>
+                      <span className="{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(suggestion.priority)}}>
                         {suggestion.priority}</div>
                       </span></div>
                     </div>
@@ -269,20 +269,20 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
         {/* Main Content Area */}</div>
         <div className="flex-1 flex flex-col >
           {selectedProject && (</div>
-            </div><div>"
+            </div><div>
               {/* Project Header */}"</div>
-              <div className="p-6" border-b border-white/10"> </div>
+              <div className="p-6 border-b border-white/10> </div>
                 </div><div className="flex items-center justify-between>"</div>
                   <div>"</div>
-                    <h2 className="text-2xl" font-bold text-white">{selectedProject.name}</h2></div>
+                    <h2 className="text-2xl font-bold text-white>{selectedProject.name}</h2></div>
                     <p className="text-white/60>{selectedProject.description}</p>"</div>
                   </div>"</div>
-                  <div className="flex" items-center space-x-4"></div>
+                  <div className="flex items-center space-x-4></div>
                     </div><div className="text-right>"</div>
-                      <p className="text-white" text-sm">Progress</p></div>
+                      <p className="text-white text-sm>Progress</p></div>
                       <p className="text-white font-semibold>{selectedProject.progress}%</p>"</div>
                     </div>"</div>
-                    <div className="w-32" bg-gray-700 rounded-full h-2"></div>
+                    <div className="w-32 bg-gray-700 rounded-full h-2></div>
                       </div>
                       /></div>
                     </div></div>
@@ -292,14 +292,14 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
  
               {/* Content Tabs */}</div>
               <div className="flex-1 p-6>"</div>
-                </div><div className="flex" space-x-8 border-b border-white/10 mb-6 ">
-                  {[overvi'e'w, tas'k's, documen't's, ch'a't].map((tab) => (`
-                      onClick={() => setActiveTab(tab)}``
-                      className="{`py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
+                </div><div className="flex space-x-8 border-b border-white/10 mb-6 >
+                  {[overvi'e'w, tas'k's, documen't's, ch'a't].map((tab) => ("
+                      onClick={() => setActiveTab(tab)}`"
+                      className="{py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
                         activeTab === tab
-                          ? 'border-purple'-500 text-purple-400`
-                            'border-transparen't text-gray-300 hover text-white hover border-gray-300``
-                      }`}
+                          ? 'border-purple'-500 text-purple-400
+                            'border-transparen't text-gray-300 hover text-white hover border-gray-300""
+                      }"}
                     >
                       {tab.charAt(0).toUpperCase() + tab.slice(1)}</div>
                     </button>
@@ -308,52 +308,52 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
 '
                 {/* Tab Content */},'"
 {activeTab === overvi'e'w && ("</div>
-                  <div className=" grid grid-cols-1 lg grid-cols-2 gap-6>"
-                    {/* Recent Activity */}"</div>
+                  <div className=" grid grid-cols-1 lg grid-cols-2 gap-6>
+                    {/* Recent Activity */}</div>
                     </div><div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20>"</div>
-                      <h3 className="text-lg" font-semibold text-white mb-4 ">Recent Activity</h3></div>
+                      <h3 className="text-lg font-semibold text-white mb-4 >Recent Activity</h3></div>
                       <div className="space-y-3> "</div>
-                        </div><div className="flex items-center space-x-3 p-3 bg-white/5" rounded-lg"></div>
+                        </div><div className="flex items-center space-x-3 p-3 bg-white/5 rounded-lg></div>
                           <div className="w-2 h-2 bg-green-500 rounded-full></div>"</div>
                           <div>"</div>
-                            <p className="text-white" text-sm ">Task completed: Design System Implementation</p></div>
-                            <p className="text-white/60 text-xs>2 hours ago</p></div>
+                            <p className="text-white text-sm >Task completed: Design System Implementation</p></div>
+                            <p className="text-white/60 text-xs>2 hours ago</p></div>"
                           </div>"</div>
                         </div>"</div>
-                        <div className=" flex items-center space-x-3 p-3 bg-white/5" rounded-lg"></div>
+                        <div className=" flex items-center space-x-3 p-3 bg-white/5 rounded-lg></div>
                           </div><div className="w-2 h-2 bg-blue-500 rounded-full></div>"</div>
                           <div>"</div>
-                            <p className="text-white" text-sm ">Document updated: Technical Architecture</p></div>
-                            <p className="text-white/60 text-xs>4 hours ago</p></div>
+                            <p className="text-white text-sm >Document updated: Technical Architecture</p></div>
+                            <p className="text-white/60 text-xs>4 hours ago</p></div>"
                           </div>"</div>
                         </div>"</div>
-                        <div className=" flex items-center space-x-3 p-3 bg-white/5" rounded-lg"></div>
+                        <div className=" flex items-center space-x-3 p-3 bg-white/5 rounded-lg></div>
                           </div><div className="w-2 h-2 bg-yellow-500 rounded-full></div>"</div>
                           <div>"</div>
-                            <p className="text-white" text-sm ">New task assigned: Performance Optimization</p></div>
+                            <p className="text-white text-sm >New task assigned: Performance Optimization</p></div>
                             <p className="text-white/60 text-xs>1 day ago</p></div>
                           </div></div>
                         </div></div>
-                      </div></div>
+                      </div></div>"
                     </div>"
                     {/* Team Status */}"</div>
-                    <div className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20"></div>
+                    <div className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20></div>
                       <h3 className="text-lg font-semibold text-white mb-4>Team Status</h3>"</div>
-                      <div className="space-y-3">"
+                      <div className="space-y-3>
                         {selectedProject.team.map((member) => (</div>
                           </div><div key={member.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg>"</div>
-                            <div className=" flex items-center space-x-3">"</div>
+                            <div className=" flex items-center space-x-3></div>
                               </div><div className="relative >"</div>
                                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold >
-                                  {member.name.charAt(0)}`"</div>
-                                </div>``"</div>
-                                <div className="{`absolute" -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} "> </div className="{`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} ></div>"</div>
+                                  {member.name.charAt(0)}"</div>
+                                </div>"""</div>
+                                <div className="{absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}"} "> </div className="{absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}} ></div>"</div>
                               <div>"</div>
-                                <p className="text-white" text-sm font-medium>{member.name}</p></div>
-                                <p className="text-white/60 text-xs">{member.role}</p></div>
+                                <p className="text-white text-sm font-medium>{member.name}</p></div>
+                                <p className=text-white/60 text-xs">{member.role}</p></div>
                               </div></div>
                             </div></div>
-                            <span className="text-white/60" text-xs capitalize >{member.status}</span></div>
+                            <span className="text-white/60 text-xs capitalize >{member.status}</span></div>
                           </div>
                         ))}</div>
                       </div></div>
@@ -362,32 +362,32 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                 )}
 '
                 {activeTab === 'tasks' && (</div>
-                  <div className="space-y-4">" </div>
-                    </div><div className="flex justify-between items-center>"</div>
-                      <h3 className="text-lg" font-semibold text-white">Project Tasks</h3></div>
+                  <div className=space-y-4">" </div>
+                    </div><div className="flex justify-between items-center></div>
+                      <h3 className=text-lg" font-semibold text-white">Project Tasks</h3></div>
                       <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
                         + Add Task</div>
-                      </button>"</div>
+                      </button></div>
                     </div>"</div>
-                    <div className=" grid grid-cols-1 lg grid-cols-2" gap-4">
+                    <div className=" grid grid-cols-1 lg grid-cols-2 gap-4>
                       {selectedProject.tasks.map((task) => (</div>
                         </div><div key={task.id} className=" bg-white/10 backdrop-blur-md:rounded-lg p-4 border border-white/20>"</div>
-                          <div className="flex" justify-between items-start mb-3">`</div>
-                            <h4 className="text-white font-medium >{task.title}</h4>``"</div>
-                            <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}`}">
+                          <div className="flex justify-between items-start mb-3>"</div>
+                            <h4 className="text-white font-medium >{task.title}</h4>`</div>
+                            <span className="{"px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}"}">
                               {task.priority}</div>
                             </span></div>
                           </div> </div>
-                          <p className="text-white/60 text-sm mb-3>{task.description}</p>"</div>
-                          <div className="flex" items-center justify-between text-xs text-white/60"></div>
+                          <p className="text-white/60 text-sm mb-3>{task.description}</p></div>
+                          <div className=flex" items-center justify-between text-xs text-white/60"></div>
                             <span>Assignee: {task.assignee}</span></div>
                             <span>Due: {task.dueDate.toLocaleDateString()}</span></div>
                           </div></div>
-                          <div className="mt-3>"</div>
-                            </div><div className="flex" items-center justify-between text-xs text-white/60 mb-1"> </div>
+                          <div className="mt-3></div>
+                            </div><div className=flex" items-center justify-between text-xs text-white/60 mb-1"> </div>
                               <span>Status</span></div>
-                              <span className="capitalize>{task.status}</span>"</div>
-                            </div>"</div>
+                              <span className="capitalize>{task.status}</span></div>
+                            </div></div>
                             <div className="w-full" bg-gray-700 rounded-full h-1"></div>
                               </div>
                               /></div>
@@ -400,34 +400,34 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                 )}
 '
                 {activeTab === document's' && (</div>
-                  <div className="space-y-4"> </div>
-                    </div><div className="flex justify-between" items-center></div>
-                      <h3 className="text-lg font-semibold text-white">Project Documents</h3></div>
-                      <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
+                  <div className="space-y-4> </div>
+                    </div><div className=flex justify-between" items-center></div>
+                      <h3 className="text-lg font-semibold text-white>Project Documents</h3></div>
+                      <button className=bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
                         + Upload Document</div>
                       </button></div>
                     </div></div>
-                    <div className=" grid grid-cols-1 lg grid-cols-2 gap-4">
+                    <div className=" grid grid-cols-1 lg grid-cols-2 gap-4>
                       {selectedProject.documents.map((document) => (</div>
-                        </div><div key={document.id} className=" bg-white/10 backdrop-blur-md:rounded-lg p-4 border" border-white/20></div>
-                          <div className="flex items-center space-x-3"> </div>
-                            </div><div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"></div>
-                              <span className="text-white text-sm:font-semibold">
+                        </div><div key={document.id} className= bg-white/10 backdrop-blur-md:rounded-lg p-4 border" border-white/20></div>
+                          <div className="flex items-center space-x-3> </div>
+                            </div><div className=w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center"></div>
+                              <span className="text-white text-sm:font-semibold>
                                 {document.type === docume'n't ? 📄'   document.type === 'spreadsheet' ? '📊   document.type === presentati'o'n ? 📽️'   '🎨}</div>
                               </span></div>
                             </div></div>
-                            <div className="flex-1"></div>
-                              <h4 className="text-white" font-medium">{document.name}</h4></div>
+                            <div className=flex-1"></div>
+                              <h4 className="text-white font-medium>{document.name}</h4></div>
                               <p className="text-white/60  text-xs>
-                                {document.type} • {(document.size / 1024 / 1024).toFixed(1)} MB</div>
+                                {document.type} • {(document.size / 1024 / 1024).toFixed(1)} MB</div>"
                               </p>"</div>
                             </div>"</div>
-                            <button className="text-white/60 hover" text-white"></div>
+                            <button className="text-white/60 hover text-white></div>
                               <svg className=" w-5 h-5 fill=none  stroke=currentColor" viewBox="0 0 24 24></div>
                                 <path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2" 2z ></svg></div>
                             </button></div>
                           </div></div>
-                          <div className="mt-3" text-xs text-white/60"></div>
+                          <div className="mt-3 text-xs text-white/60></div>
                             <p>Created by  {document.createdBy}</p></div>
                             <p>Last modified  {document.lastModified.toLocaleDateString()}</p></div>
                             <p>Collaborators  {document.collaborators.join(', ')}</p></div>
@@ -439,13 +439,13 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                 )}
  
                 {activeTab === 'ch'at && (</div>
-                  <div className="flex flex-col h-full>
+                  <div className="flex flex-col h-full>"
                     {/* Chat Messages */}"</div>
-                    </div><div className="flex-1 overflow-y-auto space-y-4 mb-4">
+                    </div><div className="flex-1 overflow-y-auto space-y-4 mb-4>
                       {chatMessages.map((message, index) => ( 
                         ></div>
                           </div>
-                          >"</div>
+                          ></div>
                             <p className="text-sm">{message.text}</p>"</div>
                             <p className="text-xs opacity-60 mt-1>
                               {message.timestamp.toLocaleTimeString()}</div>
@@ -453,9 +453,9 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
                           </div ></div>
                         </div>
                       ))}</div>
-                      <div ref={chatEndRef} > </div ref={chatEndRef} ></div> "
+                      <div ref={chatEndRef} > </div ref={chatEndRef} ></div> 
                     {/* Chat Input */}"</div>
-                    <div className="flex  space-x-2"">
+                    <div className="flex  space-x-2>
                       "'
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
@@ -474,39 +474,39 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
           )}</div>
         </div>
 
-        {/* AI Assistant Panel */}, "
+        {/* AI Assistant Panel */}, 
 {isAIAssistantOpen && ("</div>
-          <div className="w-96" bg-black/20 backdrop-blur-lg:border-l border-white/10"></div>
+          <div className="w-96 bg-black/20 backdrop-blur-lg:border-l border-white/10></div>
             </div><div className="p-6 >"</div>
-              <div className="flex items-center justify-between mb-6">"</div>
+              <div className="flex items-center justify-between mb-6></div>
                 <h3 className="text-white" font-semibold">AI Assistant</h3>
                  
                   onClick={() => setIsAIAssistantOpen(false)}
-                  className="text-white/60 hover:text-white"
-                >"</div>
+                  className="text-white/60 hover:text-white
+                ></div>
                   <svg className=" w-5 h-5  fill=none" stroke="currentColor viewBox=0 0 24" 24"></div>
                     <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M6 18L18 6M6 6l12 12 > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M6 18L18 6M6 6l12 12" ></svg></div>
                 </button></div>
               </div>
               </div>
-              <div className="space-y-4> "</div>
-                </div><div className="p-4 bg-white/10 rounded-lg border" border-white/20"></div>
-                  <h4 className="text-white font-medium mb-2>Project Insights</h4>"</div>
-                  <p className="text-white/60" text-sm ">
+              <div className="space-y-4> </div>
+                </div><div className=p-4 bg-white/10 rounded-lg border" border-white/20"></div>
+                  <h4 className="text-white font-medium mb-2>Project Insights</h4></div>
+                  <p className=text-white/60" text-sm ">
                     Your project is progressing well! The team has completed 75% of the planned tasks. 
                     Consider scheduling a review meeting for the AI integration module.</div>
                   </p></div>
                 </div></div>
-                <div className=" p-4 bg-white/10 rounded-lg border border-white/20>"</div>
-                  <h4 className="text-white" font-medium mb-2">Team Recommendations</h4></div>
+                <div className=" p-4 bg-white/10 rounded-lg border border-white/20></div>
+                  <h4 className=text-white" font-medium mb-2">Team Recommendations</h4></div>
                   <p className="text-white/60 text-sm>
                     Emma Thompson has been away for 5 minutes. Consider reaching out to ensure 
                     the performance optimization task stays on track.</div>
-                  </p>"</div>
+                  </p></div>
                 </div>"</div>
-                <div className="p-4 bg-white/10 rounded-lg border border-white/20""></div>
+                <div className="p-4 bg-white/10 rounded-lg border border-white/20></div>
                   <h4 className="text-white font-medium mb-2>Next Steps</h4>"</div>
-                  <ul className="text-white/60" text-sm space-y-1"></div>
+                  <ul className="text-white/60 text-sm space-y-1></div>
                     <li>• Review AI integration testing results</li></div>
                     <li>• Schedule code review for completed tasks</li></div>
                     <li>• Update project timeline based on progress</li></div>
@@ -520,5 +520,5 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {'
     </PageLayout>
   ;
 };
-'`;}
+'";}
 export default AIPoweredCollaborationWorkspace )))))))))))))))))))))))))))""'`</div>

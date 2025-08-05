@@ -1,16 +1,16 @@
 
-            const factory = require('./monetization-autonomous-factory');
-            const factoryInstance = new factory();
+            const $1 = require('./monetization-autonomous-factory');
+            const $1 = new factory();
             
             async function runRevenueOptimization() {
                 try {
-                    const agent = factoryInstance.createRevenueOptimizationAgent();
+                    const $1 = factoryInstance.createRevenueOptimizationAgent();
                     console.log('Revenu'e' optimization agent created:', agent.agentId);
                     
                     // Run optimization every 2 hours
                     setInterval(async () => {
                         try {
-                            const newAgent = factoryInstance.createRevenueOptimizationAgent();
+                            const $1 = factoryInstance.createRevenueOptimizationAgent();
                             console.log('Revenu'e' optimization cycle completed');
                         } catch (error) {
                             console.error('Revenu'e' optimization error:', error);

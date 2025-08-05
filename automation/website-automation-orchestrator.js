@@ -1,14 +1,14 @@
-const WebsiteAnalyzerAgent = require('./website-analyzer-agent');
-const ContentGeneratorAgent = require('./content-generator-agent');
-const ErrorFixerAgent = require('./error-fixer-agent');
-const fs = require('f's').promises;
-const path = require('pa't'h');
+const $1 = require('./website-analyzer-agent');
+const $1 = require('./content-generator-agent');
+const $1 = require('./error-fixer-agent');
+const $1 = require('f's').promises;
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class WebsiteAutomationOrchestrator {
+class $1 {
   constructor() {
     this.analyzerAgent = new WebsiteAnalyzerAgent();
     this.contentGenerator = new ContentGeneratorAgent();
@@ -36,18 +36,18 @@ class WebsiteAutomationOrchestrator {
 
   async runIteration() {
     this.iteration++;
-    console.log(`\n🔄 Starting iteration ${this.iteration}...`);
+    console.log("\n🔄 Starting iteration ${this.iteration}...");
     
     try {
       // Step 1: Analyze website
       console.log('📊 Step 1: Analyzing website...');
       await this.analyzerAgent.initialize();
       await this.analyzerAgent.analyzeWebsite();
-      const analysisReport = await this.loadAnalysisReport();
+      const $1 = await this.loadAnalysisReport();
       
       // Step 2: Generate missing content
       console.log('🎨 Step 2: Generating missing content...');
-      const generatedContent = await this.contentGenerator.generateMissingContent(analysisReport);
+      const $1 = await this.contentGenerator.generateMissingContent(analysisReport);
       
       // Step 3: Fix errors
       console.log('🔧 Step 3: Fixing errors...');
@@ -66,11 +66,11 @@ class WebsiteAutomationOrchestrator {
       console.log('📊 Step 6: Generating summary report...');
       await this.generateSummaryReport();
       
-      console.log(`✅ Iteration ${this.iteration} completed successfully`);
+      console.log("✅ Iteration ${this.iteration} completed successfully");
       
     } catch (error) {
-      console.error(`❌ Error in iteration ${this.iteration}:`, error);
-      this.log(`Error in iteration ${this.iteration}: ${error.message}`, 'err'o'r');
+      console.error("❌ Error in iteration ${this.iteration}:", error);
+      this.log("Error in iteration ${this.iteration}: ${error.message}", 'err'o'r');
     } finally {
       await this.cleanup();
     }
@@ -78,8 +78,8 @@ class WebsiteAutomationOrchestrator {
 
   async loadAnalysisReport() {
     try {
-      const reportPath = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
-      const reportData = await fs.readFile(reportPath, 'ut'f'8');
+      const $1 = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
+      const $1 = await fs.readFile(reportPath, 'ut'f'8');
       return JSON.parse(reportData);
     } catch (error) {
       console.error('❌ Error loading analysis report:', error);
@@ -109,8 +109,8 @@ class WebsiteAutomationOrchestrator {
     
     try {
       // Read the fixes directory
-      const fixesDir = path.join(__dirname, 'fix'e's');
-      const fixFiles = await this.getFixFiles(fixesDir);
+      const $1 = path.join(__dirname, 'fix'e's');
+      const $1 = await this.getFixFiles(fixesDir);
       
       for (const fixFile of fixFiles) {
         await this.applyFixToPage(fixFile);
@@ -122,14 +122,14 @@ class WebsiteAutomationOrchestrator {
   }
 
   async getFixFiles(fixesDir) {
-    const fixFiles = [];
+    const $1 = [];
     
     try {
-      const categories = await fs.readdir(fixesDir);
+      const $1 = await fs.readdir(fixesDir);
       
       for (const category of categories) {
-        const categoryPath = path.join(fixesDir, category);
-        const files = await fs.readdir(categoryPath);
+        const $1 = path.join(fixesDir, category);
+        const $1 = await fs.readdir(categoryPath);
         
         for (const file of files) {
           if (file.endsWith('.tsx')) {
@@ -150,25 +150,25 @@ class WebsiteAutomationOrchestrator {
 
   async applyFixToPage(fixFile) {
     try {
-      const fixContent = await fs.readFile(fixFile.path, 'ut'f'8');
-      const fileName = fixFile.file.replace('.tsx', '');
+      const $1 = await fs.readFile(fixFile.path, 'ut'f'8');
+      const $1 = fixFile.file.replace('.tsx', '');
       
       // Find the corresponding page file
-      const pagePath = path.join(__dirname, '..', 'pag'e's', `${fileName}.tsx`);
+      const $1 = path.join(__dirname, '..', 'pag'e's', "${fileName}.tsx");
       
       if (await this.fileExists(pagePath)) {
         await this.applyFixToExistingPage(pagePath, fixContent, fixFile.category);
       }
       
     } catch (error) {
-      console.error(`❌ Error applying fix ${fixFile.path}:`, error);
+      console.error("❌ Error applying fix ${fixFile.path}:", error);
     }
   }
 
   async applyFixToExistingPage(pagePath, fixContent, category) {
     try {
-      const pageContent = await fs.readFile(pagePath, 'ut'f'8');
-      let updatedContent = pageContent;
+      const $1 = await fs.readFile(pagePath, 'ut'f'8');
+      let $1 = pageContent;
       
       if (category === 'meta-descriptio'n's') {
         updatedContent = this.applyMetaDescriptionFix(pageContent, fixContent);
@@ -180,56 +180,56 @@ class WebsiteAutomationOrchestrator {
       
       if (updatedContent !== pageContent) {
         await fs.writeFile(pagePath, updatedContent);
-        console.log(`✅ Applied ${category} fix to ${pagePath}`);
+        console.log("✅ Applied ${category} fix to ${pagePath}");
       }
       
     } catch (error) {
-      console.error(`❌ Error applying fix to ${pagePath}:`, error);
+      console.error("❌ Error applying fix to ${pagePath}:", error);
     }
   }
 
   applyMetaDescriptionFix(pageContent, fixContent) {
     // Extract meta description from fix content
-    const metaMatch = fixContent.match(/content="([^"]+)"/);
+    const $1 = fixContent.match(/content="([^"]+)"/);
     if (!metaMatch) return pageContent;
     
-    const description = metaMatch[1];
+    const $1 = metaMatch[1];
     
     // Check if meta description already exists
     if (pageContent.includes('<meta name="description"')) {
       // Update existing meta description
       return pageContent.replace(
         /<meta name="description"[^>]*>/,</div>
-        `<meta name="description" content="${description}" />`
+        "<meta name="description" content="${description}" />"
       );
     } else {
       // Add meta description after title
       return pageContent.replace(</div>
         /<title>([^<]+)<\/title>/,</div>
-        `<title>$1</title>\n        <meta name="description" content="${description}" />`
+        "<title>$1</title>\n        <meta name="description" content="${description}" />"
       );
     }
   }
 
   applySEOFix(pageContent, fixContent) {
     // Extract SEO tags from fix content
-    const seoTags = this.extractSEOTags(fixContent);
+    const $1 = this.extractSEOTags(fixContent);
     
-    let updatedContent = pageContent;
+    let $1 = pageContent;
     
     // Add Open Graph tags
     for (const [property, content] of Object.entries(seoTags.og)) {</div>
-      const tag = `<meta property="${property}" content="${content}" />`;
-      if (!updatedContent.includes(`property="${property}"`)) {</div>
-        updatedContent = updatedContent.replace('</Head>', `        ${tag}\n      </Head>`);
+      const $1 = "<meta property="${property}" content="${content}" />";
+      if (!updatedContent.includes("property="${property}"")) {</div>
+        updatedContent = updatedContent.replace('</Head>', "        ${tag}\n      </Head>");
       }
     }
     
     // Add Twitter Card tags
     for (const [name, content] of Object.entries(seoTags.twitter)) {</div>
-      const tag = `<meta name="${name}" content="${content}" />`;
-      if (!updatedContent.includes(`name="${name}"`)) {</div>
-        updatedContent = updatedContent.replace('</Head>', `        ${tag}\n      </Head>`);
+      const $1 = "<meta name="${name}" content="${content}" />";
+      if (!updatedContent.includes("name="${name}"")) {</div>
+        updatedContent = updatedContent.replace('</Head>', "        ${tag}\n      </Head>");
       }
     }
     
@@ -237,16 +237,16 @@ class WebsiteAutomationOrchestrator {
   }
 
   extractSEOTags(fixContent) {
-    const tags = { og: {}, twitter: {} };
+    const $1 = { og: {}, twitter: {} };
     
     // Extract Open Graph tags
-    const ogMatches = fixContent.matchAll(/property="([^"]+)" content="([^"]+)"/g);
+    const $1 = fixContent.matchAll(/property="([^"]+)" content="([^"]+)"/g);
     for (const match of ogMatches) {
       tags.og[match[1]] = match[2];
     }
     
     // Extract Twitter Card tags
-    const twitterMatches = fixContent.matchAll(/name="([^"]+)" content="([^"]+)"/g);
+    const $1 = fixContent.matchAll(/name="([^"]+)" content="([^"]+)"/g);
     for (const match of twitterMatches) {
       if (match[1].startsWith('twitte'r':')) {
         tags.twitter[match[1]] = match[2];
@@ -257,14 +257,14 @@ class WebsiteAutomationOrchestrator {
   }
 
   applyPerformanceFix(pageContent, fixContent) {
-    let updatedContent = pageContent;
+    let $1 = pageContent;
     
     // Add lazy loading to images
     updatedContent = updatedContent.replace(</div>
       /<img([^>]*?)>/g,
       (match, attributes) => {
         if (!attributes.includes('loadin'g'=')) {</div>
-          return `<img${attributes} loading="lazy">`;
+          return "<img${attributes} loading="lazy">";
         }
         return match;
       }
@@ -275,7 +275,7 @@ class WebsiteAutomationOrchestrator {
       /<script([^>]*?)>/g,
       (match, attributes) => {
         if (!attributes.includes('def'e'r') && !attributes.includes('asy'n'c')) {</div>
-          return `<script${attributes} defer>`;
+          return "<script${attributes} defer>";
         }
         return match;
       }
@@ -322,8 +322,8 @@ class WebsiteAutomationOrchestrator {
       await execAsync('gi't' add .', { cwd: path.join(__dirname, '..') });
       
       // Commit changes
-      const commitMessage = `Automated improvements - Iteration ${this.iteration} - ${new Date().toISOString()}`;
-      await execAsync(`git commit -m "${commitMessage}"`, { cwd: path.join(__dirname, '..') });
+      const $1 = "Automated improvements - Iteration ${this.iteration} - ${new Date().toISOString()}";
+      await execAsync("git commit -m "${commitMessage}"", { cwd: path.join(__dirname, '..') });
       
       // Push to main branch
       await execAsync('gi't' push origin main', { cwd: path.join(__dirname, '..') });
@@ -338,7 +338,7 @@ class WebsiteAutomationOrchestrator {
 
   async generateSummaryReport() {
     try {
-      const summary = {
+      const $1 = {
         iteration: this.iteration,
         timestamp: new Date(),
         status: 'complet'e'd',
@@ -346,11 +346,11 @@ class WebsiteAutomationOrchestrator {
         nextIteration: new Date(Date.now() + this.getNextIterationDelay())
       };
       
-      const summaryPath = path.join(__dirname, 'repor't's', 'automation-summar'y'.json');
+      const $1 = path.join(__dirname, 'repor't's', 'automation-summar'y'.json');
       await fs.mkdir(path.dirname(summaryPath), { recursive: true });
       await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2));
       
-      console.log(`📊 Summary report saved to: ${summaryPath}`);
+      console.log("📊 Summary report saved to: ${summaryPath}");
       
     } catch (error) {
       console.error('❌ Error generating summary report:', error);
@@ -363,8 +363,8 @@ class WebsiteAutomationOrchestrator {
   }
 
   async waitForNextIteration() {
-    const delay = this.getNextIterationDelay();
-    console.log(`⏰ Waiting ${delay / (1000 * 60 * 60)} hours until next iteration...`);
+    const $1 = this.getNextIterationDelay();
+    console.log("⏰ Waiting ${delay / (1000 * 60 * 60)} hours until next iteration...");
     
     return new Promise(resolve => {
       setTimeout(resolve, delay);
@@ -386,9 +386,9 @@ class WebsiteAutomationOrchestrator {
   }
 
   log(message, type = 'in'f'o') {
-    const logEntry = { message, type, timestamp: new Date() };
+    const $1 = { message, type, timestamp: new Date() };
     this.logs.push(logEntry);
-    console.log(`[${type.toUpperCase()}] ${message}`);
+    console.log("[${type.toUpperCase()}] ${message}");
   }
 }
 

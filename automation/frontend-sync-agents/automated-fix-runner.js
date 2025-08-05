@@ -1,8 +1,8 @@
-const FrontendAutomationOrchestrator = require('./frontend-automation-orchestrator');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./frontend-automation-orchestrator');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AutomatedFixRunner {
+class $1 {
   constructor() {
     this.orchestrator = new FrontendAutomationOrchestrator();
     this.logsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/logs');
@@ -18,27 +18,27 @@ class AutomatedFixRunner {
     
     try {
       // Run comprehensive analysis
-      const analysis = await this.orchestrator.runFullAnalysis();
+      const $1 = await this.orchestrator.runFullAnalysis();
       
       // Log initial state
       this.logAnalysis(analysis, 'initi'a'l');
       
       // Apply all fixes
-      const fixResults = await this.orchestrator.applyAllFixes();
+      const $1 = await this.orchestrator.applyAllFixes();
       
       // Re-analyze to verify fixes
-      const verification = await this.orchestrator.runFullAnalysis();
+      const $1 = await this.orchestrator.runFullAnalysis();
       
       // Log final state
       this.logAnalysis(verification, 'fin'a'l');
       
       // Generate summary
-      const summary = this.generateFixSummary(analysis, verification);
+      const $1 = this.generateFixSummary(analysis, verification);
       
       console.log('✅ Immediate fixes completed!');
-      console.log(`📊 Issues resolved: ${summary.issuesResolved}`);
-      console.log(`📊 Remaining issues: ${summary.remainingIssues}`);
-      console.log(`📊 Success rate: ${summary.successRate}%`);
+      console.log("📊 Issues resolved: ${summary.issuesResolved}");
+      console.log("📊 Remaining issues: ${summary.remainingIssues}");
+      console.log("📊 Success rate: ${summary.successRate}%");
       
       return {
         initialAnalysis: analysis,
@@ -59,10 +59,10 @@ class AutomatedFixRunner {
     
     try {
       // Focus on marketplace page
-      const marketplacePath = path.join(process.cwd(), 'page's'/marketplace.tsx');
+      const $1 = path.join(process.cwd(), 'page's'/marketplace.tsx');
       
       if (fs.existsSync(marketplacePath)) {
-        let content = fs.readFileSync(marketplacePath, 'ut'f'8');
+        let $1 = fs.readFileSync(marketplacePath, 'ut'f'8');
         
         // Apply marketplace-specific fixes
         content = this.applyMarketplaceFixes(content);
@@ -96,45 +96,45 @@ class AutomatedFixRunner {
   applyMarketplaceFixes(content) {
     // Fix 1: Add ModernLayout import and wrapper
     if (!content.includes('impor't' ModernLayout')) {
-      const importIndex = content.indexOf('impo'r't');
-      const nextImportIndex = content.indexOf('\n', importIndex);
-      const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
+      const $1 = content.indexOf('impo'r't');
+      const $1 = content.indexOf('\n', importIndex);
+      const $1 = "import ModernLayout from '../components/layout/ModernLayout'\n";
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
     // Fix 2: Wrap content with ModernLayout
-    const returnIndex = content.indexOf('retur'n' (');
-    const closingIndex = content.lastIndexOf(')');
+    const $1 = content.indexOf('retur'n' (');
+    const $1 = content.lastIndexOf(')');
     
     if (returnIndex !== -1 && closingIndex !== -1) {
-      const beforeReturn = content.slice(0, returnIndex);
-      const afterReturn = content.slice(returnIndex);
-      const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
-      const afterClosing = content.slice(closingIndex + 1);
+      const $1 = content.slice(0, returnIndex);
+      const $1 = content.slice(returnIndex);
+      const $1 = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
+      const $1 = content.slice(closingIndex + 1);
       
       content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
     
     // Fix 3: Improve mobile responsiveness
     content = content.replace(
-      /className="([^"]*container[^"]*)"/g,
+      /className="([^]*container[^]*)"/g,
       'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
-      /className="([^"]*text-[^"]*)"/g,
+      /className="([^]*text-[^]*)"/g,
       'classNam'e'="$1 text-responsive-lg"'
     );
     
     // Fix 4: Add mobile-specific classes
     content = content.replace(
-      /className="([^"]*grid[^"]*)"/g,
+      /className="([^]*grid[^]*)"/g,
       'classNam'e'="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"'
     );
     
     content = content.replace(
-      /className="([^"]*flex[^"]*)"/g,
+      /className="([^]*flex[^]*)"/g,
       'classNam'e'="$1 flex-col sm:flex-row"'
     );
     
@@ -146,7 +146,7 @@ class AutomatedFixRunner {
     
     try {
       // Start the continuous monitoring
-      const watcher = await this.orchestrator.runContinuousMonitoring();
+      const $1 = await this.orchestrator.runContinuousMonitoring();
       
       // Set up graceful shutdown
       process.on('SIGI'N'T', () => {
@@ -168,7 +168,7 @@ class AutomatedFixRunner {
     console.log('🛠️ Running scheduled maintenance...');
     
     try {
-      const results = await this.orchestrator.runScheduledMaintenance();
+      const $1 = await this.orchestrator.runScheduledMaintenance();
       
       console.log('✅ Scheduled maintenance completed!');
       
@@ -185,7 +185,7 @@ class AutomatedFixRunner {
     console.log('🏥 Generating health report...');
     
     try {
-      const healthReport = await this.orchestrator.generateHealthReport();
+      const $1 = await this.orchestrator.generateHealthReport();
       
       console.log('✅ Health report generated!');
       
@@ -199,33 +199,33 @@ class AutomatedFixRunner {
   }
 
   logAnalysis(analysis, stage) {
-    const logEntry = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       stage: stage,
       summary: analysis.summary,
       issues: analysis.layout.issues.length + analysis.mobile.issues.length + analysis.sidebar.issues.length
     };
     
-    const logPath = path.join(this.logsDir, `analysis-${stage}-${Date.now()}.json`);
+    const $1 = path.join(this.logsDir, "analysis-${stage}-${Date.now()}.json");
     fs.writeFileSync(logPath, JSON.stringify(logEntry, null, 2));
   }
 
   logError(error) {
-    const errorEntry = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       error: error.message,
       stack: error.stack
     };
     
-    const errorPath = path.join(this.logsDir, `error-${Date.now()}.json`);
+    const $1 = path.join(this.logsDir, "error-${Date.now()}.json");
     fs.writeFileSync(errorPath, JSON.stringify(errorEntry, null, 2));
   }
 
   generateFixSummary(initialAnalysis, finalAnalysis) {
-    const initialIssues = initialAnalysis.summary.totalIssues;
-    const finalIssues = finalAnalysis.summary.totalIssues;
-    const issuesResolved = initialIssues - finalIssues;
-    const successRate = initialIssues > 0 ? Math.round((issuesResolved / initialIssues) * 100) : 100;
+    const $1 = initialAnalysis.summary.totalIssues;
+    const $1 = finalAnalysis.summary.totalIssues;
+    const $1 = initialIssues - finalIssues;
+    const $1 = initialIssues > 0 ? Math.round((issuesResolved / initialIssues) * 100) : 100;
     
     return {
       initialIssues,
@@ -241,18 +241,18 @@ class AutomatedFixRunner {
     
     try {
       // Step 1: Run immediate fixes
-      const immediateResults = await this.runImmediateFixes();
+      const $1 = await this.runImmediateFixes();
       
       // Step 2: Fix marketplace specifically
-      const marketplaceResults = await this.fixMarketplaceSpecific();
+      const $1 = await this.fixMarketplaceSpecific();
       
       // Step 3: Generate health report
-      const healthReport = await this.generateHealthReport();
+      const $1 = await this.generateHealthReport();
       
       // Step 4: Run verification
-      const verification = await this.orchestrator.runFullAnalysis();
+      const $1 = await this.orchestrator.runFullAnalysis();
       
-      const cycleResults = {
+      const $1 = {
         immediateFixes: immediateResults,
         marketplaceFixes: marketplaceResults,
         healthReport: healthReport,
@@ -261,7 +261,7 @@ class AutomatedFixRunner {
       };
       
       // Save cycle results
-      const cyclePath = path.join(this.logsDir, `automation-cycle-${Date.now()}.json`);
+      const $1 = path.join(this.logsDir, "automation-cycle-${Date.now()}.json");
       fs.writeFileSync(cyclePath, JSON.stringify(cycleResults, null, 2));
       
       console.log('✅ Full automation cycle completed!');
@@ -281,14 +281,14 @@ module.exports = AutomatedFixRunner;
 
 // If run directly, execute the automation
 if (require.main === module) {
-  const runner = new AutomatedFixRunner();
+  const $1 = new AutomatedFixRunner();
   
   async function main() {
     try {
       console.log('🚀 Starting automated frontend fix system...');
       
       // Run full automation cycle
-      const results = await runner.runFullAutomationCycle();
+      const $1 = await runner.runFullAutomationCycle();
       
       console.log('✅ Automation completed successfully!');
       console.log('📊 Results:', JSON.stringify(results, null, 2));

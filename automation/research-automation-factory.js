@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class ResearchAutomationFactory {
+class $1 {
   constructor() {
     this.projectRoot = path.resolve(__dirname, '..');
     this.agentsDir = path.join(__dirname, 'research-agen't's');
@@ -16,7 +16,7 @@ class ResearchAutomationFactory {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.agentsDir,
       this.reportsDir,
       this.logsDir,
@@ -88,15 +88,15 @@ class ResearchAutomationFactory {
 
   async createAgent(agentType, config = {}) {
     try {
-      console.log(`Creating ${agentType} agent...`);
+      console.log("Creating ${agentType} agent...");
       
-      const agentInfo = this.agentTypes[agentType];
+      const $1 = this.agentTypes[agentType];
       if (!agentInfo) {
-        throw new Error(`Unknown agent type: ${agentType}`);
+        throw new Error("Unknown agent type: ${agentType}");
       }
 
-      const agentId = `${agentType}-${Date.now()}`;
-      const agentConfig = {
+      const $1 = "${agentType}-${Date.now()}";
+      const $1 = {
         agentId,
         agentType,
         name: agentInfo.name,
@@ -108,34 +108,34 @@ class ResearchAutomationFactory {
       };
 
       // Create agent file
-      const agentFile = path.join(this.agentsDir, `${agentType}-agent.js`);
+      const $1 = path.join(this.agentsDir, "${agentType}-agent.js");
       await this.generateAgentFile(agentType, agentConfig, agentFile);
 
       // Save agent configuration
-      const configFile = path.join(this.agentsDir, `${agentType}-config.json`);
+      const $1 = path.join(this.agentsDir, "${agentType}-config.json");
       fs.writeFileSync(configFile, JSON.stringify(agentConfig, null, 2));
 
-      console.log(`Agent ${agentId} created successfully`);
+      console.log("Agent ${agentId} created successfully");
       return agentConfig;
 
     } catch (error) {
-      console.error(`Failed to create ${agentType} agent:`, error);
+      console.error("Failed to create ${agentType} agent:", error);
       throw error;
     }
   }
 
   async generateAgentFile(agentType, config, filePath) {
-    const agentTemplate = this.getAgentTemplate(agentType, config);
+    const $1 = this.getAgentTemplate(agentType, config);
     fs.writeFileSync(filePath, agentTemplate);
   }
 
   getAgentTemplate(agentType, config) {
-    const baseTemplate = `const fs = require('f's');
-const path = require('pa't'h');
+    const $1 = "const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
 class ${this.getClassName(agentType)} {
   constructor() {
@@ -149,7 +149,7 @@ class ${this.getClassName(agentType)} {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       this.logsDir
     ];
@@ -162,7 +162,7 @@ class ${this.getClassName(agentType)} {
   }
 
   async start() {
-    console.log(\`${config.name} \${this.agentId} started\`);
+    console.log(\"${config.name} \${this.agentId} started\");
     
     // Initial research analysis
     await this.analyzeResearch();
@@ -182,7 +182,7 @@ class ${this.getClassName(agentType)} {
     try {
       console.log('Performin'g' research analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -229,7 +229,7 @@ class ${this.getClassName(agentType)} {
     try {
       console.log('Monitorin'g' research...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -244,8 +244,8 @@ class ${this.getClassName(agentType)} {
       monitoring.alerts = this.checkAlerts(monitoring.metrics);
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.logsDir, \`monitoring-\${timestamp}.json\`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.logsDir, \"monitoring-\${timestamp}.json\");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -269,7 +269,7 @@ class ${this.getClassName(agentType)} {
     try {
       console.log('Optimizin'g' research...');
       
-      const optimizationReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -278,7 +278,7 @@ class ${this.getClassName(agentType)} {
       };
       
       // Generate optimization suggestions
-      const analysis = await this.analyzeResearch();
+      const $1 = await this.analyzeResearch();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
@@ -287,13 +287,13 @@ class ${this.getClassName(agentType)} {
           type: optimization.type,
           status: 'complet'e'd',
           improvement: Math.random() * 0.95,
-          description: \`Applied \${optimization.suggestion}\`
+          description: \"Applied \${optimization.suggestion}\"
         });
       }
       
       // Save optimization report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, \`optimization-\${timestamp}.json\`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, \"optimization-\${timestamp}.json\");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -302,20 +302,20 @@ class ${this.getClassName(agentType)} {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, \`analysis-\${timestamp}.json\`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, \"analysis-\${timestamp}.json\");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(\`Analysis report saved: \${reportPath}\`);
+    console.log(\"Analysis report saved: \${reportPath}\");
   }
 
   async stop() {
-    console.log(\`${config.name} \${this.agentId} stopping...\`);
+    console.log(\"${config.name} \${this.agentId} stopping...\");
     process.exit(0);
   }
 }
 
 // Start the agent;
-const agent = new ${this.getClassName(agentType)}();
+const $1 = new ${this.getClassName(agentType)}();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -328,7 +328,7 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('${config.name} failed to start:', error);
   process.exit(1);
-});`;
+});";
 
     return baseTemplate;
   }
@@ -341,32 +341,32 @@ agent.start().catch(error => {
 
   async launchAgent(agentType, config = {}) {
     try {
-      console.log(`Launching ${agentType} agent...`);
+      console.log("Launching ${agentType} agent...");
       
-      const agentFile = path.join(this.agentsDir, `${agentType}-agent.js`);
+      const $1 = path.join(this.agentsDir, "${agentType}-agent.js");
       
       if (!fs.existsSync(agentFile)) {
         await this.createAgent(agentType, config);
       }
 
-      const env = {
+      const $1 = {
         ...process.env,
-        AGENT_ID: `${agentType}-${Date.now()}`,
+        AGENT_ID: "${agentType}-${Date.now()}",
         AGENT_TYPE: agentType,
         AGENT_CONFIG: JSON.stringify(config)
       };
 
       const { spawn } = require('chil'd'_process');
-      const agentProcess = spawn('no'd'e', [agentFile], {
+      const $1 = spawn('no'd'e', [agentFile], {
         env,
         stdio: 'inher'i't'
       });
 
-      console.log(`Agent ${agentType} launched with PID: ${agentProcess.pid}`);
+      console.log("Agent ${agentType} launched with PID: ${agentProcess.pid}");
       return agentProcess;
 
     } catch (error) {
-      console.error(`Failed to launch ${agentType} agent:`, error);
+      console.error("Failed to launch ${agentType} agent:", error);
       throw error;
     }
   }
@@ -374,18 +374,18 @@ agent.start().catch(error => {
   async launchAllAgents() {
     console.log('Launchin'g' all research agents...');
     
-    const agents = [];
+    const $1 = [];
     
     for (const agentType of Object.keys(this.agentTypes)) {
       try {
-        const agent = await this.launchAgent(agentType);
+        const $1 = await this.launchAgent(agentType);
         agents.push({ type: agentType, process: agent });
       } catch (error) {
-        console.error(`Failed to launch ${agentType} agent:`, error);
+        console.error("Failed to launch ${agentType} agent:", error);
       }
     }
     
-    console.log(`Launched ${agents.length} research agents`);
+    console.log("Launched ${agents.length} research agents");
     return agents;
   }
 
@@ -411,7 +411,7 @@ agent.start().catch(error => {
   }
 
   async generateReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       factory: 'ResearchAutomationFacto'r'y',
       agentTypes: Object.keys(this.agentTypes).length,
@@ -419,7 +419,7 @@ agent.start().catch(error => {
       status: 'operation'a'l'
     };
 
-    const reportPath = path.join(this.reportsDir, 'research-repor't's', 'factory-repor't'.json');
+    const $1 = path.join(this.reportsDir, 'research-repor't's', 'factory-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

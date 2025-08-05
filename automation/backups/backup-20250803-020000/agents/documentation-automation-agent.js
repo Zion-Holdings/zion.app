@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class DocumentationAutomationAgent {
+class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
@@ -16,7 +16,7 @@ class DocumentationAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'generated-do'c's'),
       path.join(this.reportsDir, 'api-do'c's'),
@@ -32,7 +32,7 @@ class DocumentationAutomationAgent {
   }
 
   async start() {
-    console.log(`Documentation Automation Agent ${this.agentId} started`);
+    console.log("Documentation Automation Agent ${this.agentId} started");
     
     // Initial documentation generation
     await this.generateDocumentation();
@@ -57,7 +57,7 @@ class DocumentationAutomationAgent {
     try {
       console.log('Generatin'g' comprehensive documentation...');
       
-      const documentation = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         apiDocs: {},
@@ -92,7 +92,7 @@ class DocumentationAutomationAgent {
     try {
       console.log('Generatin'g' API documentation...');
       
-      const apiDocs = {
+      const $1 = {
         endpoints: [],
         schemas: [],
         examples: [],
@@ -100,23 +100,23 @@ class DocumentationAutomationAgent {
       };
       
       // Find API routes
-      const apiRoutes = await this.findAPIRoutes();
+      const $1 = await this.findAPIRoutes();
       
       for (const route of apiRoutes) {
-        const endpointDoc = await this.documentEndpoint(route);
+        const $1 = await this.documentEndpoint(route);
         apiDocs.endpoints.push(endpointDoc);
       }
       
       // Generate OpenAPI/Swagger spec
-      const openAPISpec = await this.generateOpenAPISpec(apiDocs);
+      const $1 = await this.generateOpenAPISpec(apiDocs);
       
       // Save API documentation
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const apiDocPath = path.join(this.reportsDir, 'api-do'c's', `api-docs-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'api-do'c's', "api-docs-${timestamp}.json");
       fs.writeFileSync(apiDocPath, JSON.stringify(apiDocs, null, 2));
       
       // Generate OpenAPI spec file
-      const openAPIPath = path.join(this.reportsDir, 'api-do'c's', `openapi-${timestamp}.json`);
+      const $1 = path.join(this.reportsDir, 'api-do'c's', "openapi-${timestamp}.json");
       fs.writeFileSync(openAPIPath, JSON.stringify(openAPISpec, null, 2));
       
       return apiDocs;
@@ -128,12 +128,12 @@ class DocumentationAutomationAgent {
   }
 
   async findAPIRoutes() {
-    const routes = [];
+    const $1 = [];
     
     try {
-      const apiDir = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
+      const $1 = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
       if (fs.existsSync(apiDir)) {
-        const files = fs.readdirSync(apiDir, { recursive: true });
+        const $1 = fs.readdirSync(apiDir, { recursive: true });
         for (const file of files) {
           if (file.endsWith('.js') || file.endsWith('.ts')) {
             routes.push(path.join(apiDir, file));
@@ -142,9 +142,9 @@ class DocumentationAutomationAgent {
       }
       
       // Also check for API routes in src directory
-      const srcApiDir = path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i');
+      const $1 = path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i');
       if (fs.existsSync(srcApiDir)) {
-        const files = fs.readdirSync(srcApiDir, { recursive: true });
+        const $1 = fs.readdirSync(srcApiDir, { recursive: true });
         for (const file of files) {
           if (file.endsWith('.js') || file.endsWith('.ts')) {
             routes.push(path.join(srcApiDir, file));
@@ -161,10 +161,10 @@ class DocumentationAutomationAgent {
 
   async documentEndpoint(routePath) {
     try {
-      const content = fs.readFileSync(routePath, 'ut'f'8');
-      const routeName = path.basename(routePath, path.extname(routePath));
+      const $1 = fs.readFileSync(routePath, 'ut'f'8');
+      const $1 = path.basename(routePath, path.extname(routePath));
       
-      const endpointDoc = {
+      const $1 = {
         path: routePath,
         name: routeName,
         method: this.extractHTTPMethod(content),
@@ -177,16 +177,16 @@ class DocumentationAutomationAgent {
       return endpointDoc;
       
     } catch (error) {
-      console.error(`Failed to document endpoint ${routePath}:`, error);
+      console.error("Failed to document endpoint ${routePath}:", error);
       return { error: error.message };
     }
   }
 
   extractHTTPMethod(content) {
-    const methods = ['G'E'T', 'PO'S'T', 'P'U'T', 'DELE'T'E', 'PAT'C'H'];
+    const $1 = ['G'E'T', 'PO'S'T', 'P'U'T', 'DELE'T'E', 'PAT'C'H'];
     for (const method of methods) {
-      if (content.includes(`export default async function ${method.toLowerCase()}`) || 
-          content.includes(`export async function ${method.toLowerCase()}`)) {
+      if (content.includes("export default async function ${method.toLowerCase()}") || 
+          content.includes("export async function ${method.toLowerCase()}")) {
         return method;
       }
     }
@@ -195,13 +195,13 @@ class DocumentationAutomationAgent {
 
   extractDescription(content) {
     // Look for JSDoc comments
-    const jsdocMatch = content.match(/\/\*\*([\s\S]*?)\*\//);
+    const $1 = content.match(/\/\*\*([\s\S]*?)\*\//);
     if (jsdocMatch) {
       return jsdocMatch[1].replace(/\*/g, '').trim();
     }
     
     // Look for regular comments
-    const commentMatch = content.match(/\/\/\s*(.+)/);
+    const $1 = content.match(/\/\/\s*(.+)/);
     if (commentMatch) {
       return commentMatch[1];
     }
@@ -210,12 +210,12 @@ class DocumentationAutomationAgent {
   }
 
   extractParameters(content) {
-    const parameters = [];
+    const $1 = [];
     
     // Look for function parameters
-    const paramMatch = content.match(/function\s+\w*\s*\(([^)]*)\)/);
+    const $1 = content.match(/function\s+\w*\s*\(([^)]*)\)/);
     if (paramMatch) {
-      const params = paramMatch[1].split(',').map(p => p.trim());
+      const $1 = paramMatch[1].split(',').map(p => p.trim());
       for (const param of params) {
         if (param) {
           parameters.push({
@@ -231,10 +231,10 @@ class DocumentationAutomationAgent {
   }
 
   extractResponses(content) {
-    const responses = [];
+    const $1 = [];
     
     // Look for return statements
-    const returnMatches = content.match(/return\s+({[^}]+})/g);
+    const $1 = content.match(/return\s+({[^}]+})/g);
     if (returnMatches) {
       for (const match of returnMatches) {
         responses.push({
@@ -248,10 +248,10 @@ class DocumentationAutomationAgent {
   }
 
   extractExamples(content) {
-    const examples = [];
+    const $1 = [];
     
     // Look for example usage in comments
-    const exampleMatches = content.match(/\/\/\s*Example:\s*(.+)/g);
+    const $1 = content.match(/\/\/\s*Example:\s*(.+)/g);
     if (exampleMatches) {
       for (const match of exampleMatches) {
         examples.push(match.replace('// Example:', '').trim());
@@ -262,7 +262,7 @@ class DocumentationAutomationAgent {
   }
 
   async generateOpenAPISpec(apiDocs) {
-    const openAPISpec = {
+    const $1 = {
       openapi: '3.0.0',
       info: {
         title: 'Zio'n' App API',
@@ -278,7 +278,7 @@ class DocumentationAutomationAgent {
     
     // Convert endpoints to OpenAPI paths
     for (const endpoint of apiDocs.endpoints) {
-      const path = `/${endpoint.name}`;
+      const $1 = "/${endpoint.name}";
       openAPISpec.paths[path] = {
         [endpoint.method.toLowerCase()]: {
           summary: endpoint.description,
@@ -309,17 +309,17 @@ class DocumentationAutomationAgent {
     try {
       console.log('Analyzin'g' code comments...');
       
-      const comments = [];
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = [];
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const fileComments = await this.analyzeFileComments(file);
+        const $1 = await this.analyzeFileComments(file);
         comments.push(...fileComments);
       }
       
       // Save code comments analysis
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const commentsPath = path.join(this.reportsDir, 'code-commen't's', `comments-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'code-commen't's', "comments-${timestamp}.json");
       fs.writeFileSync(commentsPath, JSON.stringify(comments, null, 2));
       
       return comments;
@@ -331,8 +331,8 @@ class DocumentationAutomationAgent {
   }
 
   async findSourceFiles() {
-    const files = [];
-    const patterns = [
+    const $1 = [];
+    const $1 = [
       'sr'c'/**/*.{js,ts,jsx,tsx}',
       'page's'/**/*.{js,ts,jsx,tsx}',
       'component's'/**/*.{js,ts,jsx,tsx}',
@@ -341,30 +341,30 @@ class DocumentationAutomationAgent {
     
     for (const pattern of patterns) {
       try {
-        const { stdout } = await execAsync(`find ${this.projectRoot} -name "${pattern}" -type f`);
-        const foundFiles = stdout.trim().split('\n').filter(file => file);
+        const { stdout } = await execAsync("find ${this.projectRoot} -name "${pattern}" -type f");
+        const $1 = stdout.trim().split('\n').filter(file => file);
         files.push(...foundFiles);
       } catch (error) {
-        console.error(`Error finding files with pattern ${pattern}:`, error);
+        console.error("Error finding files with pattern ${pattern}:", error);
       }
     }
     
     return files.filter(file => {
-      const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
+      const $1 = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
       return !excludePatterns.some(exclude => file.includes(exclude));
     });
   }
 
   async analyzeFileComments(filePath) {
-    const comments = [];
+    const $1 = [];
     
     try {
-      const content = fs.readFileSync(filePath, 'ut'f'8');
-      const lines = content.split('\n');
+      const $1 = fs.readFileSync(filePath, 'ut'f'8');
+      const $1 = content.split('\n');
       
-      for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        const lineNumber = i + 1;
+      for (let $1 = 0; i < lines.length; i++) {
+        const $1 = lines[i];
+        const $1 = i + 1;
         
         // Look for JSDoc comments
         if (line.includes('/**') || line.includes(' *')) {
@@ -398,7 +398,7 @@ class DocumentationAutomationAgent {
       }
       
     } catch (error) {
-      console.error(`Failed to analyze comments in ${filePath}:`, error);
+      console.error("Failed to analyze comments in ${filePath}:", error);
     }
     
     return comments;
@@ -408,18 +408,18 @@ class DocumentationAutomationAgent {
     try {
       console.log('Updatin'g' README...');
       
-      const readmeUpdates = [];
-      const readmePath = path.join(this.projectRoot, 'READM'E'.md');
+      const $1 = [];
+      const $1 = path.join(this.projectRoot, 'READM'E'.md');
       
       if (fs.existsSync(readmePath)) {
-        const currentContent = fs.readFileSync(readmePath, 'ut'f'8');
+        const $1 = fs.readFileSync(readmePath, 'ut'f'8');
         
         // Check for outdated information
-        const updates = await this.checkREADMEUpdates(currentContent);
+        const $1 = await this.checkREADMEUpdates(currentContent);
         readmeUpdates.push(...updates);
         
         // Generate new README sections
-        const newSections = await this.generateREADMESections();
+        const $1 = await this.generateREADMESections();
         
         // Update README if needed
         if (readmeUpdates.length > 0 || newSections.length > 0) {
@@ -427,7 +427,7 @@ class DocumentationAutomationAgent {
         }
       } else {
         // Create new README
-        const newREADME = await this.generateNewREADME();
+        const $1 = await this.generateNewREADME();
         fs.writeFileSync(readmePath, newREADME);
         readmeUpdates.push({
           type: 'creat'e'd',
@@ -436,8 +436,8 @@ class DocumentationAutomationAgent {
       }
       
       // Save README updates
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const readmeUpdatePath = path.join(this.reportsDir, 'readme-updat'e's', `readme-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'readme-updat'e's', "readme-${timestamp}.json");
       fs.writeFileSync(readmeUpdatePath, JSON.stringify(readmeUpdates, null, 2));
       
       return readmeUpdates;
@@ -449,18 +449,18 @@ class DocumentationAutomationAgent {
   }
 
   async checkREADMEUpdates(content) {
-    const updates = [];
+    const $1 = [];
     
     // Check for outdated dependencies
     if (content.includes('packag'e'.json')) {
-      const packageJson = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
-      const dependencies = { ...packageJson.dependencies, ...packageJson.devDependencies };
+      const $1 = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
+      const $1 = { ...packageJson.dependencies, ...packageJson.devDependencies };
       
       for (const [dep, version] of Object.entries(dependencies)) {
         if (version.includes('^') || version.includes('~')) {
           updates.push({
             type: 'dependen'c'y',
-            message: `Consider updating ${dep} to latest version`,
+            message: "Consider updating ${dep} to latest version",
             dependency: dep,
             currentVersion: version
           });
@@ -469,12 +469,12 @@ class DocumentationAutomationAgent {
     }
     
     // Check for missing sections
-    const requiredSections = ['## Installation', '## Usage', '## API', '## Contributing'];
+    const $1 = ['## Installation', '## Usage', '## API', '## Contributing'];
     for (const section of requiredSections) {
       if (!content.includes(section)) {
         updates.push({
           type: 'missin'g'_section',
-          message: `Missing section: ${section}`,
+          message: "Missing section: ${section}",
           section
         });
       }
@@ -484,10 +484,10 @@ class DocumentationAutomationAgent {
   }
 
   async generateREADMESections() {
-    const sections = [];
+    const $1 = [];
     
     // Generate API section
-    const apiDocs = await this.generateAPIDocumentation();
+    const $1 = await this.generateAPIDocumentation();
     if (apiDocs.endpoints && apiDocs.endpoints.length > 0) {
       sections.push({
         title: '## API',
@@ -511,25 +511,25 @@ class DocumentationAutomationAgent {
   }
 
   generateAPISection(apiDocs) {
-    let content = '### Available Endpoints\n\n';
+    let $1 = '### Available Endpoints\n\n';
     
     for (const endpoint of apiDocs.endpoints) {
-      content += `#### ${endpoint.method} /${endpoint.name}\n\n`;
-      content += `${endpoint.description}\n\n`;
+      content += "#### ${endpoint.method} /${endpoint.name}\n\n";
+      content += "${endpoint.description}\n\n";
       
       if (endpoint.parameters.length > 0) {
         content += '**Parameters:**\n';
         for (const param of endpoint.parameters) {
-          content += `- \`${param.name}\` (${param.type})${param.required ? ' - required' : ' - optional'}\n`;
+          content += "- \"${param.name}\" (${param.type})${param.required ? ' - required' : ' - optional'}\n";
         }
         content += '\n';
       }
       
       if (endpoint.examples.length > 0) {
         content += '**Example:**\n';
-        content += '```bash\n';
+        content += '``"bash\n';
         content += endpoint.examples[0];
-        content += '\n```\n\n';
+        content += '\n"`"\n\n';
       }
     }
     
@@ -537,7 +537,7 @@ class DocumentationAutomationAgent {
   }
 
   generateInstallationSection() {
-    return `\`\`\`bash
+    return "\"\"\"bash
 # Clone the repository
 git clone https://github.com/Zion-Holdings/zion.app.git
 cd zion.app
@@ -550,16 +550,16 @@ cp .env.example .env.local
 
 # Run the development server
 npm run dev
-\`\`\`
+\"\"\"
 
 The application will be available at [http://localhost:3000](http://localhost:3000).
-`;
+";
   }
 
   generateUsageSection() {
-    return `## Development
+    return "## Development
 
-\`\`\`bash
+\"\"\"bash
 # Start development server
 npm run dev
 
@@ -571,21 +571,21 @@ npm run build
 
 # Start production server
 npm start
-\`\`\`
+\"\"\"
 
 ## Available Scripts
 
-- \`npm run dev\` - Start development server
-- \`npm run build\` - Build for production
-- \`npm run start\` - Start production server
-- \`npm run test\` - Run tests
-- \`npm run lint\` - Run ESLint
-- \`npm run type-check\` - Run TypeScript type checking
-`;
+- \"npm run dev\" - Start development server
+- \"npm run build\" - Build for production
+- \"npm run start\" - Start production server
+- \"npm run test\" - Run tests
+- \"npm run lint\" - Run ESLint
+- \"npm run type-check\" - Run TypeScript type checking
+";
   }
 
   async updateREADMEFile(readmePath, currentContent, newSections) {
-    let updatedContent = currentContent;
+    let $1 = currentContent;
     
     for (const section of newSections) {
       // Check if section already exists
@@ -598,13 +598,13 @@ npm start
   }
 
   async generateNewREADME() {
-    const packageJson = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
+    const $1 = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
     
-    let readme = `# ${packageJson.name}\n\n`;
-    readme += `${packageJson.description || 'A' Next.js application'}\n\n`;
+    let $1 = "# ${packageJson.name}\n\n";
+    readme += "${packageJson.description || 'A' Next.js application'}\n\n";
     
     // Add sections
-    const sections = await this.generateREADMESections();
+    const $1 = await this.generateREADMESections();
     for (const section of sections) {
       readme += section.title + '\n' + section.content + '\n\n';
     }
@@ -616,23 +616,23 @@ npm start
     try {
       console.log('Generatin'g' additional documentation...');
       
-      const additionalDocs = [];
+      const $1 = [];
       
       // Generate component documentation
-      const componentDocs = await this.generateComponentDocs();
+      const $1 = await this.generateComponentDocs();
       additionalDocs.push(componentDocs);
       
       // Generate utility documentation
-      const utilityDocs = await this.generateUtilityDocs();
+      const $1 = await this.generateUtilityDocs();
       additionalDocs.push(utilityDocs);
       
       // Generate deployment documentation
-      const deploymentDocs = await this.generateDeploymentDocs();
+      const $1 = await this.generateDeploymentDocs();
       additionalDocs.push(deploymentDocs);
       
       // Save additional documentation
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const docsPath = path.join(this.reportsDir, 'generated-do'c's', `additional-docs-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'generated-do'c's', "additional-docs-${timestamp}.json");
       fs.writeFileSync(docsPath, JSON.stringify(additionalDocs, null, 2));
       
       return additionalDocs;
@@ -645,15 +645,15 @@ npm start
 
   async generateComponentDocs() {
     try {
-      const components = [];
-      const componentsDir = path.join(this.projectRoot, 'componen't's');
+      const $1 = [];
+      const $1 = path.join(this.projectRoot, 'componen't's');
       
       if (fs.existsSync(componentsDir)) {
-        const files = fs.readdirSync(componentsDir, { recursive: true });
+        const $1 = fs.readdirSync(componentsDir, { recursive: true });
         for (const file of files) {
           if (file.endsWith('.js') || file.endsWith('.jsx') || file.endsWith('.ts') || file.endsWith('.tsx')) {
-            const componentPath = path.join(componentsDir, file);
-            const componentDoc = await this.documentComponent(componentPath);
+            const $1 = path.join(componentsDir, file);
+            const $1 = await this.documentComponent(componentPath);
             components.push(componentDoc);
           }
         }
@@ -672,8 +672,8 @@ npm start
 
   async documentComponent(componentPath) {
     try {
-      const content = fs.readFileSync(componentPath, 'ut'f'8');
-      const componentName = path.basename(componentPath, path.extname(componentPath));
+      const $1 = fs.readFileSync(componentPath, 'ut'f'8');
+      const $1 = path.basename(componentPath, path.extname(componentPath));
       
       return {
         name: componentName,
@@ -684,18 +684,18 @@ npm start
       };
       
     } catch (error) {
-      console.error(`Failed to document component ${componentPath}:`, error);
+      console.error("Failed to document component ${componentPath}:", error);
       return { error: error.message };
     }
   }
 
   extractComponentProps(content) {
-    const props = [];
+    const $1 = [];
     
     // Look for prop types or interface definitions
-    const propTypesMatch = content.match(/PropTypes\s*=\s*{([^}]+)}/);
+    const $1 = content.match(/PropTypes\s*=\s*{([^}]+)}/);
     if (propTypesMatch) {
-      const propTypes = propTypesMatch[1].split(',').map(p => p.trim());
+      const $1 = propTypesMatch[1].split(',').map(p => p.trim());
       for (const prop of propTypes) {
         if (prop) {
           const [name, type] = prop.split(':').map(p => p.trim());
@@ -705,9 +705,9 @@ npm start
     }
     
     // Look for TypeScript interfaces
-    const interfaceMatch = content.match(/interface\s+\w+Props\s*{([^}]+)}/);
+    const $1 = content.match(/interface\s+\w+Props\s*{([^}]+)}/);
     if (interfaceMatch) {
-      const interfaceProps = interfaceMatch[1].split(';').map(p => p.trim());
+      const $1 = interfaceMatch[1].split(';').map(p => p.trim());
       for (const prop of interfaceProps) {
         if (prop) {
           const [name, type] = prop.split(':').map(p => p.trim());
@@ -720,10 +720,10 @@ npm start
   }
 
   extractComponentExamples(content) {
-    const examples = [];
+    const $1 = [];
     
     // Look for example usage in comments
-    const exampleMatches = content.match(/\/\/\s*Example:\s*(.+)/g);
+    const $1 = content.match(/\/\/\s*Example:\s*(.+)/g);
     if (exampleMatches) {
       for (const match of exampleMatches) {
         examples.push(match.replace('// Example:', '').trim());
@@ -735,15 +735,15 @@ npm start
 
   async generateUtilityDocs() {
     try {
-      const utilities = [];
-      const utilsDir = path.join(this.projectRoot, 'uti'l's');
+      const $1 = [];
+      const $1 = path.join(this.projectRoot, 'uti'l's');
       
       if (fs.existsSync(utilsDir)) {
-        const files = fs.readdirSync(utilsDir);
+        const $1 = fs.readdirSync(utilsDir);
         for (const file of files) {
           if (file.endsWith('.js') || file.endsWith('.ts')) {
-            const utilityPath = path.join(utilsDir, file);
-            const utilityDoc = await this.documentUtility(utilityPath);
+            const $1 = path.join(utilsDir, file);
+            const $1 = await this.documentUtility(utilityPath);
             utilities.push(utilityDoc);
           }
         }
@@ -762,8 +762,8 @@ npm start
 
   async documentUtility(utilityPath) {
     try {
-      const content = fs.readFileSync(utilityPath, 'ut'f'8');
-      const utilityName = path.basename(utilityPath, path.extname(utilityPath));
+      const $1 = fs.readFileSync(utilityPath, 'ut'f'8');
+      const $1 = path.basename(utilityPath, path.extname(utilityPath));
       
       return {
         name: utilityName,
@@ -774,28 +774,28 @@ npm start
       };
       
     } catch (error) {
-      console.error(`Failed to document utility ${utilityPath}:`, error);
+      console.error("Failed to document utility ${utilityPath}:", error);
       return { error: error.message };
     }
   }
 
   extractFunctions(content) {
-    const functions = [];
+    const $1 = [];
     
     // Look for function declarations
-    const functionMatches = content.match(/function\s+(\w+)\s*\(/g);
+    const $1 = content.match(/function\s+(\w+)\s*\(/g);
     if (functionMatches) {
       for (const match of functionMatches) {
-        const funcName = match.match(/function\s+(\w+)/)[1];
+        const $1 = match.match(/function\s+(\w+)/)[1];
         functions.push(funcName);
       }
     }
     
     // Look for const function declarations
-    const constFunctionMatches = content.match(/const\s+(\w+)\s*=\s*\(/g);
+    const $1 = content.match(/const\s+(\w+)\s*=\s*\(/g);
     if (constFunctionMatches) {
       for (const match of constFunctionMatches) {
-        const funcName = match.match(/const\s+(\w+)/)[1];
+        const $1 = match.match(/const\s+(\w+)/)[1];
         functions.push(funcName);
       }
     }
@@ -805,7 +805,7 @@ npm start
 
   async generateDeploymentDocs() {
     try {
-      const deploymentDocs = {
+      const $1 = {
         type: 'deployme'n't',
         platforms: [],
         environment: {},
@@ -822,14 +822,14 @@ npm start
       }
       
       // Check package.json scripts
-      const packageJson = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
       deploymentDocs.scripts = packageJson.scripts || {};
       
       // Check environment variables
-      const envExamplePath = path.join(this.projectRoot, '.env.example');
+      const $1 = path.join(this.projectRoot, '.env.example');
       if (fs.existsSync(envExamplePath)) {
-        const envContent = fs.readFileSync(envExamplePath, 'ut'f'8');
-        const envVars = envContent.split('\n').filter(line => line.includes('='));
+        const $1 = fs.readFileSync(envExamplePath, 'ut'f'8');
+        const $1 = envContent.split('\n').filter(line => line.includes('='));
         deploymentDocs.environment = envVars.map(line => {
           const [key] = line.split('=');
           return key;
@@ -849,10 +849,10 @@ npm start
       console.log('Updatin'g' documentation...');
       
       // Check for changes in source files
-      const changedFiles = await this.detectChangedFiles();
+      const $1 = await this.detectChangedFiles();
       
       if (changedFiles.length > 0) {
-        console.log(`Found ${changedFiles.length} changed files, updating documentation...`);
+        console.log("Found ${changedFiles.length} changed files, updating documentation...");
         
         // Update relevant documentation
         for (const file of changedFiles) {
@@ -866,16 +866,16 @@ npm start
   }
 
   async detectChangedFiles() {
-    const changedFiles = [];
+    const $1 = [];
     
     try {
       // This would typically use git to detect changes
       // For now, we'l'l' check file modification times
-      const sourceFiles = await this.findSourceFiles();
-      const lastCheck = this.getLastCheckTime();
+      const $1 = await this.findSourceFiles();
+      const $1 = this.getLastCheckTime();
       
       for (const file of sourceFiles) {
-        const stats = fs.statSync(file);
+        const $1 = fs.statSync(file);
         if (stats.mtime > lastCheck) {
           changedFiles.push(file);
         }
@@ -889,9 +889,9 @@ npm start
   }
 
   getLastCheckTime() {
-    const lastCheckPath = path.join(this.reportsDir, 'last-chec'k'.json');
+    const $1 = path.join(this.reportsDir, 'last-chec'k'.json');
     if (fs.existsSync(lastCheckPath)) {
-      const lastCheck = JSON.parse(fs.readFileSync(lastCheckPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(lastCheckPath, 'ut'f'8'));
       return new Date(lastCheck.timestamp);
     }
     return new Date(0);
@@ -899,7 +899,7 @@ npm start
 
   async updateFileDocumentation(filePath) {
     try {
-      console.log(`Updating documentation for ${filePath}`);
+      console.log("Updating documentation for ${filePath}");
       
       // Update relevant documentation based on file type
       if (filePath.includes('/api/')) {
@@ -911,52 +911,52 @@ npm start
       }
       
     } catch (error) {
-      console.error(`Failed to update documentation for ${filePath}:`, error);
+      console.error("Failed to update documentation for ${filePath}:", error);
     }
   }
 
   async updateAPIDocumentation(filePath) {
     // Update API documentation for the changed endpoint
-    const endpointDoc = await this.documentEndpoint(filePath);
+    const $1 = await this.documentEndpoint(filePath);
     
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const updatePath = path.join(this.reportsDir, 'api-do'c's', `update-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'api-do'c's', "update-${timestamp}.json");
     fs.writeFileSync(updatePath, JSON.stringify(endpointDoc, null, 2));
   }
 
   async updateComponentDocumentation(filePath) {
     // Update component documentation for the changed component
-    const componentDoc = await this.documentComponent(filePath);
+    const $1 = await this.documentComponent(filePath);
     
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const updatePath = path.join(this.reportsDir, 'generated-do'c's', `component-update-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'generated-do'c's', "component-update-${timestamp}.json");
     fs.writeFileSync(updatePath, JSON.stringify(componentDoc, null, 2));
   }
 
   async updateUtilityDocumentation(filePath) {
     // Update utility documentation for the changed utility
-    const utilityDoc = await this.documentUtility(filePath);
+    const $1 = await this.documentUtility(filePath);
     
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const updatePath = path.join(this.reportsDir, 'generated-do'c's', `utility-update-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'generated-do'c's', "utility-update-${timestamp}.json");
     fs.writeFileSync(updatePath, JSON.stringify(utilityDoc, null, 2));
   }
 
   async saveDocumentationReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'generated-do'c's', `documentation-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'generated-do'c's', "documentation-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Documentation report saved: ${reportPath}`);
+    console.log("Documentation report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`Documentation Automation Agent ${this.agentId} stopping...`);
+    console.log("Documentation Automation Agent ${this.agentId} stopping...`);
     process.exit(0);
   }
 }
 
 // Start the agent;
-const agent = new DocumentationAutomationAgent();
+const $1 = new DocumentationAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();

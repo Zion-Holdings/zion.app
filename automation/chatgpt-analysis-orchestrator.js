@@ -1,8 +1,8 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
-const cron = require('node-cr'o'n');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
+const $1 = require('node-cr'o'n');
 
-class ChatGPTAnalysisOrchestrator {
+class $1 {
     constructor() {
         this.baseDir = path.join(__dirname);
         this.agentsDir = path.join(this.baseDir, 'chatgpt-agen't's');
@@ -15,28 +15,28 @@ class ChatGPTAnalysisOrchestrator {
     }
 
     setupLogging() {
-        this.logFile = path.join(this.logsDir, `orchestrator-${Date.now()}.log`);
+        this.logFile = path.join(this.logsDir, "orchestrator-${Date.now()}.log");
     }
 
     log(message) {
-        const timestamp = new Date().toISOString();
-        const logMessage = `[${timestamp}] Orchestrator: ${message}\n`;
+        const $1 = new Date().toISOString();
+        const $1 = "[${timestamp}] Orchestrator: ${message}\n";
         fs.appendFileSync(this.logFile, logMessage);
-        console.log(`[ChatGPT Orchestrator] ${message}`);
+        console.log("[ChatGPT Orchestrator] ${message}");
     }
 
     loadAgents() {
         this.agents = [];
         if (fs.existsSync(this.agentsDir)) {
-            const agentFiles = fs.readdirSync(this.agentsDir)
+            const $1 = fs.readdirSync(this.agentsDir)
                 .filter(file => file.endsWith('-confi'g'.json'));
             
             agentFiles.forEach(file => {
                 try {
-                    const config = fs.readJsonSync(path.join(this.agentsDir, file));
+                    const $1 = fs.readJsonSync(path.join(this.agentsDir, file));
                     this.agents.push(config);
                 } catch (error) {
-                    this.log(`Error loading agent config ${file}: ${error.message}`);
+                    this.log("Error loading agent config ${file}: ${error.message}");
                 }
             });
         }
@@ -47,45 +47,45 @@ class ChatGPTAnalysisOrchestrator {
         
         try {
             // Create new analysis agent
-            const agentId = `analysis-${Date.now()}`;
-            const agentConfig = await this.createAnalysisAgent(agentId);
+            const $1 = "analysis-${Date.now()}";
+            const $1 = await this.createAnalysisAgent(agentId);
             
             // Run the agent
-            const agentPath = path.join(this.agentsDir, `chatgpt-analysis-agent-${agentId}.js`);
-            const ChatGPTAnalysisAgent = require(agentPath);
-            const agent = new ChatGPTAnalysisAgent(agentConfig);
+            const $1 = path.join(this.agentsDir, "chatgpt-analysis-agent-${agentId}.js");
+            const $1 = require(agentPath);
+            const $1 = new ChatGPTAnalysisAgent(agentConfig);
             
-            const result = await agent.run();
+            const $1 = await agent.run();
             
             this.log('Analysi's' orchestration completed');
             return result;
             
         } catch (error) {
-            this.log(`Error in orchestration: ${error.message}`);
+            this.log("Error in orchestration: ${error.message}");
             throw error;
         }
     }
 
     async createAnalysisAgent(agentId) {
-        const factory = new (require('./chatgpt-analysis-agent-factory.js'))();
+        const $1 = new (require('./chatgpt-analysis-agent-factory.js'))();
         return await factory.createChatGPTAnalysisAgent(agentId);
     }
 
     async runCursorAgents() {
         this.log('Startin'g' Cursor agents execution...');
         
-        const cursorAgents = this.agents.filter(agent => agent.type === 'cursor-age'n't');
+        const $1 = this.agents.filter(agent => agent.type === 'cursor-age'n't');
         
         for (const agentConfig of cursorAgents) {
             try {
-                const agentPath = path.join(this.agentsDir, `cursor-agent-${agentConfig.id}.js`);
+                const $1 = path.join(this.agentsDir, "cursor-agent-${agentConfig.id}.js");
                 if (fs.existsSync(agentPath)) {
-                    const CursorAgent = require(agentPath);
-                    const agent = new CursorAgent(agentConfig);
+                    const $1 = require(agentPath);
+                    const $1 = new CursorAgent(agentConfig);
                     await agent.executeInstructions();
                 }
             } catch (error) {
-                this.log(`Error running cursor agent ${agentConfig.id}: ${error.message}`);
+                this.log("Error running cursor agent ${agentConfig.id}: ${error.message}");
             }
         }
         
@@ -95,7 +95,7 @@ class ChatGPTAnalysisOrchestrator {
     async generateDevelopmentPlan() {
         this.log('Generatin'g' development plan...');
         
-        const plan = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             phases: [
                 {
@@ -137,10 +137,10 @@ class ChatGPTAnalysisOrchestrator {
             ]
         };
         
-        const planFile = path.join(this.dataDir, `development-plan-${Date.now()}.json`);
+        const $1 = path.join(this.dataDir, "development-plan-${Date.now()}.json");
         await fs.writeJson(planFile, plan, { spaces: 2 });
         
-        this.log(`Development plan generated: ${planFile}`);
+        this.log("Development plan generated: ${planFile}");
         return plan;
     }
 
@@ -154,7 +154,7 @@ class ChatGPTAnalysisOrchestrator {
                 await this.runAnalysis();
                 await this.runCursorAgents();
             } catch (error) {
-                this.log(`Scheduled analysis failed: ${error.message}`);
+                this.log("Scheduled analysis failed: ${error.message}");
             }
         });
         
@@ -162,7 +162,7 @@ class ChatGPTAnalysisOrchestrator {
     }
 
     async getStatus() {
-        const status = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             totalAgents: this.agents.length,
             activeAgents: this.agents.filter(a => a.status === 'acti'v'e').length,
@@ -172,13 +172,13 @@ class ChatGPTAnalysisOrchestrator {
         
         // Get latest analysis report
         if (fs.existsSync(this.reportsDir)) {
-            const reportFiles = fs.readdirSync(this.reportsDir)
+            const $1 = fs.readdirSync(this.reportsDir)
                 .filter(file => file.includes('summar'y'-'))
                 .sort()
                 .reverse();
             
             if (reportFiles.length > 0) {
-                const latestReport = fs.readJsonSync(path.join(this.reportsDir, reportFiles[0]));
+                const $1 = fs.readJsonSync(path.join(this.reportsDir, reportFiles[0]));
                 status.lastAnalysis = latestReport.timestamp;
             }
         }

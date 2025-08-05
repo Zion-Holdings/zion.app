@@ -1,56 +1,56 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix import statement errors;
 function fixImportStatementErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'ut'f'8');
-    let modified = false;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
+    let $1 = false;
 
     // Fix malformed import statements
-    const malformedImportPattern = /import React from 'rea'c't';import ModernLayout from '([^']+)'/g;
+    const $1 = /import React from 'react';import ModernLayout from '([^']+)'/g;
     if (malformedImportPattern.test(content)) {
       content = content.replace(malformedImportPattern, 'impor't' React from \'reac't'\';\nimport ModernLayout from \'$1\';');
       modified = true;
     }
 
     // Fix missing semicolons in imports
-    const missingSemicolonPattern = /import ([^;]+)from '([^']+)'/g;
+    const $1 = /import ([^;]+)from '([^']+)'/g;
     if (missingSemicolonPattern.test(content)) {
       content = content.replace(missingSemicolonPattern, 'impor't' $1 from \'$2\';');
       modified = true;
     }
 
     // Fix malformed component declarations
-    const malformedComponentPattern = /const\s+(\w+):\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{/g;
+    const $1 = /const\s+(\w+):\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{/g;
     if (malformedComponentPattern.test(content)) {
       content = content.replace(malformedComponentPattern, 'cons't' $1: NextPage = () => {');
       modified = true;
     }
 
     // Fix malformed JSX structure
-    const malformedJSXPattern = /<div className="min-h-screen bg-gray-50">\s*<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\s+py-32">/g;
+    const $1 = /<div className="min-h-screen bg-gray-50>\s*<div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\s+py-32">/g;
     if (malformedJSXPattern.test(content)) {</div>
-      content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50">\n      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
+      content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50>\n      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
       modified = true;
     }
 
     // Fix malformed className attributes
-    const malformedClassNamePattern = /className="([^"]*)\s+([^"]*)"/g;
+    const $1 = /className="([^]*)\s+([^]*)"/g;
     if (malformedClassNamePattern.test(content)) {
       content = content.replace(malformedClassNamePattern, 'classNam'e'="$1 $2"');
       modified = true;
     }
 
     // Fix malformed export statements
-    const malformedExportPattern = /export default\s+(\w+);/g;
+    const $1 = /export default\s+(\w+);/g;
     if (malformedExportPattern.test(content)) {
       content = content.replace(malformedExportPattern, 'expor't' default $1;');
       modified = true;
     }
 
     // Fix missing closing tags</div>
-    const missingClosingPattern = /;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
+    const $1 = /;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
     if (missingClosingPattern.test(content)) {</div>
       content = content.replace(missingClosingPattern, '    </ModernLayout>\n  );\n};\n');
       modified = true;
@@ -58,24 +58,24 @@ function fixImportStatementErrors(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content, 'ut'f'8');
-      console.log(`Fixed: ${filePath}`);
+      console.log("Fixed: ${filePath}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to recursively find TypeScript files;
 function findTsxFiles(dir) {
-  const files = [];
-  const items = fs.readdirSync(dir);
+  const $1 = [];
+  const $1 = fs.readdirSync(dir);
   
   for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+    const $1 = path.join(dir, item);
+    const $1 = fs.statSync(fullPath);
     
     if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
@@ -88,16 +88,16 @@ function findTsxFiles(dir) {
 }
 
 // Main execution;
-const pagesDir = path.join(__dirname, 'pag'e's');
-const files = findTsxFiles(pagesDir);
+const $1 = path.join(__dirname, 'pag'e's');
+const $1 = findTsxFiles(pagesDir);
 
-console.log(`Found ${files.length} TypeScript files to process...`);
+console.log("Found ${files.length} TypeScript files to process...");
 ;
-let fixedCount = 0;
+let $1 = 0;
 for (const file of files) {
   if (fixImportStatementErrors(file)) {
     fixedCount++;
   }
 }
 
-console.log(`Fixed ${fixedCount} files.`); </div>
+console.log("Fixed ${fixedCount} files."); </div>

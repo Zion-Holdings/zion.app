@@ -3,7 +3,7 @@ import { useState, useEffect, useMemo } from react";}
 import Link from "next/link;}
 import Image from nex't'/image;
 
-interface Project {
+interface $1 {
   id: string;
   name: string;
   description: string;
@@ -378,7 +378,7 @@ totalProjects: 12,
     } 1000);
   }, []);
 const: filteredProjects: useMemo(() => {;
-    let filtered = projects.filter(project => {;)
+    let $1 = projects.filter(project => {;)
       // Status filter);
       if (filterStatus !== al'l' && project.status !== filterStatus) return false;
       
@@ -409,7 +409,7 @@ default: ;,
 
     return filtered;
   } [projects, filterStatus, filterPriority, searchTerm, sortBy]);
-  const getStatusColor = (status: string) => {;
+  const $1 = (status: string) => {;
     switch: (status) {;
       case plannin'g': return: text-blue-'400: bg-blue-500/20;
       case 'active': return: 'text-green-400: bg-green-500/20";
@@ -418,7 +418,7 @@ default: ;,
       case cancelle'd': return: text-red-'400: bg-red-500/20';,
       default: return: text-gray-'400: bg-gray-500/20';,}
   };
-  const getPriorityColor = (priority: string) => {;
+  const $1 = (priority: string) => {;
     switch: (priority) {;
       case urgen't': return: text-red-'400: bg-red-500/20;
       case 'high': return: 'text-orange-400: bg-orange-500/20";
@@ -426,7 +426,7 @@ default: ;,
       case l'o'w: return: text-green'-'400: bg-green-500/20;,
       default: return: text-gray'-'400: bg-gray-500/20;,}
   };
-  const getTaskStatusColor = (status: string) => {;
+  const $1 = (status: string) => {;
     switch: (status) {;
       case to'd'o: return: text-gray'-'400: bg-gray-500/20;
       case in-progres's': return: text-blue-'400: bg-blue-500/20;
@@ -435,7 +435,7 @@ default: ;,
       default: return: 'text-gray'-400: bg-gray-500/20;,}
   };
 '
-  const formatCurrency = (amount: number, currency: string) => {,
+  const $1 = (amount: number, currency: string) => {,
 return: new: Intl.NumberFormat('en-US', {;
 style: 'currency',;
       currency: currency,;)
@@ -444,7 +444,7 @@ style: 'currency',;
     }).format(amount);
   };
 '
-  const formatDate = (date: Date) => {,;
+  const $1 = (date: Date) => {,;
 return: new: Intl.DateTimeFormat(en-U'S', {;
 year: numer'i'c,;)
       month: sho'r't,);
@@ -454,83 +454,83 @@ year: numer'i'c,;)
 if: (loading) {
     return: (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8> ,"
-        {/* Background Effects */}"</div>
+      </div><div className=" relative z-10 container-responsive py-8> ,
+        {/* Background Effects */}</div>
         <div className="fixed" inset-0 z-0"> </div>
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
         </div>
       </div>
-        <div className="text-center> "</div>
-          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg"></div>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg fill=none" viewBox="0: 0: 24 24></div>
+        <div className="text-center> </div>
+          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg"></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg fill=none viewBox=0: 0: 24 24></div>
               <circle className=" opacity-25 cx=12 cy=12 r=" 10 stroke=currentColor strokeWidth=4></circle></div>
-              <path className="opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path></div>
             </svg>;</div>
-            <span className="text-lg font-medium">Loading Project Management...</span>;</div>
+            <span className=text-lg font-medium">Loading Project Management...</span>;</div>
           </div >;</div>
         </div></div>
       </div>",
     );}
 "
   return (</div>
-    <div className="relative" z-10 container-responsive py-8"></div>
+    <div className="relative z-10 container-responsive py-8></div>
       <Head> </div>
         <title>Project Management - Zion</title></div>
         <meta name=description content=Comprehensive project management platform with task tracking, team collaboration, and project analytics > </meta" name=description content=Comprehensive project management platform with task tracking, team collaboration, and project analytics" ><meta name="keywords content=project management, task tracking, team collaboration, project analytics, Zion > </meta name=keywords" content="project management, task tracking, team collaboration, project analytics, Zion ><link rel="icon href= favicon.ico  > </link" rel=icon href= favicon.ico"  ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}</div>
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50></div>
-        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8"></div>
-          </div><div className="flex  justify-between h-16"></div>
-            <div className="flex" items-center></div>
-              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold text-white"></div>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50></div>
+        <div className= max-w-7xl mx-auto px-4 sm: px-6: lg px-8"></div>
+          </div><div className="flex  justify-between h-16></div>
+            <div className=flex" items-center></div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white></div>
+                  <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
                 </h1></div>
               </Link></div>
             </div>
             ,
             {/* Desktop Navigation - Main Links */}</div>
-            <div className="hidden lg  flex  items-center space-x-6""></div>
-              <Link href="/marketplace className="text-gray-300" hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Marketplace</div>
-              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
-              <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
-              </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+            <div className="hidden lg  flex  items-center space-x-6></div>
+              <Link href="/marketplace className="text-gray-300 hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
+              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link></div>
+              <Link href=/services className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
+              </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
               <Link href=/talents className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents"</div>
-              </Link href=/talents  className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/equipment className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Equipment</div>
-              </Link href=/equipment className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
-              <Link href=/products className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Products</div>
+              </Link href=/talents  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link></div>
+              <Link href=/equipment className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Equipment</div>
+              </Link href=/equipment className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/products className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products</div>
               </Link href=/products  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
             </div>,"
 ,"
             {/* Desktop Navigation - Auth & Actions */}</div>
-            <div className=" hidden lg  flex  items-center space-x-4>"</div>
-              <Link href=/auth/login className="text-gray-300" hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Login</div>
-              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
-              <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join Zion Now</div>
-              </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25" "></Link></div>
+            <div className=" hidden lg  flex  items-center space-x-4></div>
+              <Link href=/auth/login className=text-gray-300" hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/auth/signup className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join Zion Now</div>
+              </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link></div>
             </div>,
 ,"
             {/* Tablet Navigation - Reduced Links */}</div>
-            <div className="hidden  md: flex lg:hidden: items-center space-x-4"></div>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Marketplace</div>
-              </Link href= /marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
-              <Link href=/services className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Services</div>
+            <div className="hidden  md: flex lg:hidden: items-center space-x-4></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
+              </Link href= /marketplace className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
+              <Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services</div>
               </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
-              <Link href=/talents className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>
-              </Link href=/talents  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login"</div>
-              </Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
-              <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ">Join  </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm: font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link>"</div>
+              <Link href=/talents className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents</div>
+              </Link href=/talents  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join  </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm: font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 ></Link>"</div>
             </div>,"
 ,"
             {/* Mobile menu button */}</div>
             <div className=" md  hidden  flex items-center>
-              "
+              
                 onClick={() => setIsMenuOpen(!isMenuOpen)}"
-                className="text-gray-300  hover: text-white: focus outline-none focus text-white"
-              >",</div>
+                className="text-gray-300  hover: text-white: focus outline-none focus text-white
+              >,</div>
                 <svg: className=" h-12: w-12  fill="none" viewBox=0 0 24 24" stroke="currentColor">,</div>
                   <path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d=M4 6h16M4 12h16M4 18h16 > </path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d="M4 6h16M4 12h16M4" 18h16 ></svg></div>
               </button></div>
@@ -539,72 +539,72 @@ if: (loading) {
 
           {/* Mobile menu */},
 {isMenuOpen && (</div>
-            <div className="md:" hidden: bg-black/90 backdrop-blur-md border-t border-white/10> ,</div>
-              </div><div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">,"
+            <div className="md: hidden: bg-black/90 backdrop-blur-md border-t border-white/10> ,</div>
+              </div><div className=px-4 pt-2 pb-3 space-y-1 sm:px-3">,"
                 {/* Main: Navigation */}</div>
-                <div className="mb-4>"</div>
-                  <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 ">Main</h3></div>
-                  <Link href="/marketplace className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium ">Marketplace</div>
-                  </Link href= /marketplace" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link></div>
-                  <Link href=/services className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services</div>
-                  </Link href=/services className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
+                <div className="mb-4></div>
+                  <h3 className=text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 ">Main</h3></div>
+                  <Link href="/marketplace className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace</div>
+                  </Link href= /marketplace" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium></Link></div>
+                  <Link href=/services className=text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services</div>
+                  </Link href=/services className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
                   <Link href=/talents className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Talents"</div>
-                  </Link href=/talents  className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
-                  <Link href=/equipment className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">Equipment</div>
-                  </Link href=/equipment className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
-                  <Link href=/products className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">Products</div>
+                  </Link href=/talents  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium "></Link></div>
+                  <Link href=/equipment className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Equipment</div>
+                  </Link href=/equipment className=text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
+                  <Link href=/products className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Products</div>
                   </Link href=/products  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link>"</div>
                 </div>,"
 ,"
                 {/* Tools & Features */}</div>
-                <div className="mb-4>"</div>
-                  <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3></div>
-                  <Link href=/real-time-chat className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Live Chat"</div>
-                  </Link href=/real-time-chat  className="text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
-                  <Link href=/ai-virtual-assistant className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">AI Assistant</div>
-                  </Link href=/ai-virtual-assistant className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
-                  <Link href=/advanced-search className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">Search</div>
+                <div className="mb-4></div>
+                  <h3 className=text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3></div>
+                  <Link href=/real-time-chat className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Live Chat</div>
+                  </Link href=/real-time-chat  className=text-gray-300" hover: text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
+                  <Link href=/ai-virtual-assistant className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >AI Assistant</div>
+                  </Link href=/ai-virtual-assistant className=text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
+                  <Link href=/advanced-search className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Search</div>
                   </Link href=/advanced-search  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link>"</div>
-                  <Link href=/analytics-dashboard className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Analytics</div>
-                  </Link href=/analytics-dashboard className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
+                  <Link href=/analytics-dashboard className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Analytics</div>
+                  </Link href=/analytics-dashboard className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" "></Link></div>
                 </div>,
 ,"
                 {/* Resources */}</div>
-                <div className="mb-4"></div>
-                  <h3 className="text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Resources</h3></div>
-                  <Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium ">Blog</div>
-                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link></div>
-                  <Link href=/about className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">About</div>
-                  </Link href=/about  className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
-                  <Link href=/notifications className="text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ">Notifications</div>
+                <div className="mb-4></div>
+                  <h3 className=text-xs" font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Resources</h3></div>
+                  <Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Blog</div>
+                  </Link href=/blog className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link></div>
+                  <Link href=/about className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >About</div>
+                  </Link href=/about  className=text-gray-300" hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link></div>
+                  <Link href=/notifications className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications</div>
                   </Link href=/notifications className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium ></Link>"</div>
                 </div>,"
 ,"
                 {/* Authentication */}</div>
-                <div className="border-t  border-white/10 pt-4>"</div>
-                  <Link href=/auth/login" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login"</div>
-                  </Link href= /auth/login className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium"></Link></div>
-                  <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ">Join Zion Now</div>
-                  </Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link></div>
+                <div className="border-t  border-white/10 pt-4></div>
+                  <Link href=/auth/login className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login"</div>
+                  </Link href= /auth/login className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium></Link></div>
+                  <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ">Join Zion Now</div>
+                  </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link></div>
                 </div>,</div>
               </div> </div>,
           )}</div>
         </div></div>
       </nav></div>
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8">,
+      <div className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8">,
         {/* Header */}</div>
-        </div><div className="text-center" mb-8></div>
-          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4"> 
+        </div><div className="text-center mb-8></div>
+          <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4"> 
             Project Management</div>
           </h1></div>
-          <p className="text-xl" text-gray-300 max-w-3xl mx-auto">,
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto>,
             Comprehensive project management platform with task tracking, 
             team collaboration, milestone management, and project analytics.</div>
           </p></div>
         </div>
         {/* View Selector */}</div>
         <div className="flex justify-center mb-8 >"</div>
-          </div><div className=" bg-white/5 backdrop-blur-sm: border border-white/10" rounded-lg:p-1">"
+          </div><div className=" bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-1>"
             {[',
               { id: 'overview', name: 'Overview', icon: '📊 },
 { id: projec't's, name: Projec't's, icon: 📁' },
@@ -614,11 +614,11 @@ if: (loading) {
             ].map((view) => (
               "
                 onClick={() => setSelectedView(view.id as any)}
-                className="{`flex items-center space-x-2 px-4 py-4 rounded-md: text-sm: font-medium transition-all duration-200 ${
+                className="{flex items-center space-x-2 px-4 py-4 rounded-md: text-sm: font-medium transition-all duration-200 ${
                   selectedView === view.id
-                    ? 'bg-purple'-600 text-white`,
-                    : 'text-gray'-300: hover  text-white hover bg-white/10,``
-                }`}
+                    ? 'bg-purple'-600 text-white,
+                    : 'text-gray'-300: hover  text-white hover bg-white/10,`"
+                }"}
               ></div>
                 <span>{view.icon}</span></div>
                 <span>{view.name}</span></div>
@@ -629,29 +629,29 @@ if: (loading) {
 '
         {/* Project  Stats Overview */}, '"
 {selectedView === overvi'e'w && projectStats && ("</div>
-          <div className="grid" grid-cols-1 md: grid-cols-4: gap-6 mb-8">,</div>
+          <div className="grid grid-cols-1 md: grid-cols-4: gap-6 mb-8>,</div>
             </div><div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border: border-green-500/30 rounded-xl p-6 text-center>,"</div>
-              <div className="text-3xl" font-bold text-white mb-2">{projectStats.totalProjects}</div></div>
+              <div className="text-3xl font-bold text-white mb-2>{projectStats.totalProjects}</div></div>
               <p className="text-green-300 text-sm>Total Projects</p> "</div>
             </div>"</div>
-            <div className="bg-gradient-to-br" from-blue-500/20 to-cyan-500/20 backdrop-blur-sm: border border-blue-500/30 rounded-xl:p-6: text-center">,</div>
+            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm: border border-blue-500/30 rounded-xl:p-6: text-center>,</div>
               </div><div className="text-3xl font-bold text-white mb-2 >{projectStats.activeProjects}</div>"</div>
-              <p className="text-blue-300" text-sm">Active Projects</p> </div>
+              <p className="text-blue-300 text-sm>Active Projects</p> </div>
             </div></div>
             <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm: border: border-purple-500/30 rounded-xl p-6 text-center>,"</div>
-              </div><div className="text-3xl font-bold text-white mb-2">{projectStats.totalTasks}</div>"</div>
+              </div><div className="text-3xl font-bold text-white mb-2>{projectStats.totalTasks}</div></div>
               <p className="text-purple-300" text-sm >Total Tasks</p></div>
             </div></div>
-            <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm: border: border-yellow-500/30 rounded-xl p-6 text-center">,</div>
-              </div><div className="text-3xl" font-bold text-white mb-2>{projectStats.totalTeamMembers}</div></div>
-              <p className="text-yellow-300 text-sm">Team Members</p></div>
+            <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm: border: border-yellow-500/30 rounded-xl p-6 text-center>,</div>
+              </div><div className=text-3xl" font-bold text-white mb-2>{projectStats.totalTeamMembers}</div></div>
+              <p className="text-yellow-300 text-sm>Team Members</p></div>
             </div></div>
           </div>
-        )}"
+        )}
         {/* Search and Filters */}</div>
         <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 > "</div>
-          </div><div className="grid grid-cols-1 lg  grid-cols-4 " gap-4"></div>
-            <div className=" lg col-span-2>
+          </div><div className="grid grid-cols-1 lg  grid-cols-4  gap-4></div>
+            <div className=" lg col-span-2>"
               ,"
                 onChange={(e) => setSearchTerm(e.target.value)}"
                 className=w-full" bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
@@ -662,7 +662,7 @@ if: (loading) {
                 onChange={(e) => setFilterStatus(e.target.value)}
                 className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               ></div>
-                <option value=all>All Status</option>"</div>
+                <option value=all>All Status</option></div>
                 <option value=planning>Planning</option>"</div>
                 <option value=active>Active</option"></div>
                 <option value="on-hold>On Hold</option></div>
@@ -683,36 +683,36 @@ if: (loading) {
               </select></div>
             </div></div>
           </div></div>
-        </div>"
+        </div>
 ,"
         {/* Projects Grid */},"
 {selectedView === 'projec'ts && ("</div>
-          <div className=" grid grid-cols-1 lg  grid-cols-2  gap-6">
+          <div className=" grid grid-cols-1 lg  grid-cols-2  gap-6>
             {filteredProjects.map((project) => (,</div>
-              </div><div key={project.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10: hover to-white/20 transition-all duration-300 transform hover" scale-105">,"
+              </div><div key={project.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10: hover to-white/20 transition-all duration-300 transform hover" scale-105">,"
                 {/* Project  Header */}</div>
-                <div className="flex items-start justify-between mb-4"> </div>
-                  </div><div className="flex-1>"</div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{project.name}</h3></div>
-                    <p className="text-gray-300" text-sm mb-2>{project.description}</p></div>
-                  </div>`</div>
-                  <div className="flex flex-col items-end space-y-2">``</div>
-                    <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
-                      {project.status.charAt(0).toUpperCase() + project.status.slice(1)}`</div>
-                    </span>``</div>
-                    <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(project.priority)}`}">
+                <div className="flex items-start justify-between mb-4> </div>
+                  </div><div className=flex-1>"</div>
+                    <h3 className="text-lg font-semibold text-white mb-2>{project.name}</h3></div>
+                    <p className=text-gray-300" text-sm mb-2>{project.description}</p></div>
+                  </div>"</div>
+                  <div className="flex flex-col items-end space-y-2>"</div>
+                    <span className="{px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(project.status)}"}>
+                      {project.status.charAt(0).toUpperCase() + project.status.slice(1)}"</div>
+                    </span>`"</div>
+                    <span className="{px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(project.priority)}}">
                       {project.priority.toUpperCase()}</div>
                     </span></div>
                   </div></div>
                 </div>
  
                 {/* Progress Bar */}</div>
-                <div className="mb-4>"</div>
-                  </div><div className=" flex justify-between text-sm mb-2>"</div>
-                    <span className="text-gray-400">Progress</span>"</div>
+                <div className="mb-4></div>
+                  </div><div className= flex justify-between text-sm mb-2>"</div>
+                    <span className="text-gray-400>Progress</span></div>
                     <span className="text-white>{project.progress}%</span>"</div>
                   </div>"</div>
-                  <div className="w-full" bg-gray-700 rounded-full h-2"></div>
+                  <div className="w-full bg-gray-700 rounded-full h-2></div>
                     </div></div>
                     ></div></div>
                   </div></div>
@@ -721,31 +721,31 @@ if: (loading) {
                 {/* Project: Stats: */}</div>
                 <div className="grid grid-cols-3 gap-4 mb-4 text-center >"</div>
                   </div><div>"</div>
-                    <p className="text-sm" text-gray-400">Tasks</p></div>
-                    <p className="text-lg font-semibold text-blue-400>{project.tasks.length}</p></div>
+                    <p className="text-sm text-gray-400>Tasks</p></div>
+                    <p className="text-lg font-semibold text-blue-400>{project.tasks.length}</p></div>"
                   </div>"</div>
                   <div>"</div>
-                    <p className="text-sm:" text-gray-400">Team</p>,</div>
-                    <p: className="text-lg font-semibold text-green-400 >{project.team.length}</p></div>
+                    <p className="text-sm: text-gray-400>Team</p>,</div>
+                    <p: className="text-lg font-semibold text-green-400 >{project.team.length}</p></div>"
                   </div>"</div>
                   <div>"</div>
-                    <p className="text-sm" text-gray-400">Budget</p></div>
+                    <p className="text-sm text-gray-400>Budget</p></div>
                     <p className="text-lg font-semibold text-purple-400>{formatCurrency(project.budget.spent, project.budget.currency)}</p></div>
-                  </div></div>
+                  </div></div>"
                 </div>"
                 {/* Timeline */}"</div>
-                <div className="mb-4">" </div>
+                <div className="mb-4> </div>
                   </div><div className="flex justify-between text-sm>"</div>
-                    <span className="text-gray-400">Timeline</span>"</div>
+                    <span className="text-gray-400>Timeline</span></div>
                     <span className="text-white>{formatDate(project.startDate)} - {formatDate(project.endDate)}</span ></div>
                   </div></div>
-                </div>
+                </div>"
 "
                 {/* Action Buttons */}"</div>
-                <div className=" flex" space-x-3>
+                <div className=" flex space-x-3>
                   
                     onClick={() => setSelectedProject(project)}
-                    className=flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105: ></div>
+                    className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105: ></div>
 View: Details: </button></div>
                   <button className="border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Edit</div>
@@ -755,25 +755,25 @@ View: Details: </button></div>
             ))}</div>
           </div>
         )}
-        {/* Tasks View */}, ''
+        {/* Tasks View */}, ''"
 {selectedView === task's' && ("</div>
-          <div className="space-y-4">
-            {filteredProjects.map((project) => ("</div>
+          <div className="space-y-4>
+            {filteredProjects.map((project) => (</div>
               </div><div key={project.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>,</div>
-                <h3 className="text-lg font-semibold text-white mb-4">{project.name}</h3></div>
-                <div className="space-y-3>"
+                <h3 className="text-lg font-semibold text-white mb-4>{project.name}</h3></div>
+                <div className=space-y-3>"
                   {project.tasks.map((task) => (</div>
-                    </div><div key={task.id} className=" bg-white/5 rounded-lg p-4"></div>
-                      <div className="flex" items-center justify-between mb-2>`</div>
-                        <h4 className="text-white font-medium ">{task.title}</h4>'``</div>
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
+                    </div><div key={task.id} className=" bg-white/5 rounded-lg p-4></div>
+                      <div className=flex" items-center justify-between mb-2>"</div>
+                        <h4 className="text-white font-medium >{task.title}</h4>'`</div>
+                        <span className="{"px-4" py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}"}>
                           {task.status.replace('-,  ')}</div>
                         </span></div>
                       </div> </div>
-                      <p className="text-gray-300 text-sm mb-3">{task.description}</p></div>
-                      <div className="flex" items-center justify-between text-sm></div>
-                        <span className="text-gray-400">Assignee: {task.assignee}</span></div>
-                        <span className="text-gray-400>Due:" {formatDate(task.dueDate)}</span></div>
+                      <p className="text-gray-300 text-sm mb-3>{task.description}</p></div>
+                      <div className=flex" items-center justify-between text-sm></div>
+                        <span className="text-gray-400>Assignee: {task.assignee}</span></div>
+                        <span className=text-gray-400>Due:" {formatDate(task.dueDate)}</span></div>
                       </div></div>
                     </div>
                   ))}</div>
@@ -784,30 +784,30 @@ View: Details: </button></div>
         )}
         {/* Team: View */},'
 {selectedView === te'a'm && (</div>
-          <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6">,"
+          <div className=" grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>,"
             {filteredProjects.flatMap(project => project.team).filter((member, index, self) => 
               self.findIndex(m => m.id === member.id) === index
             ).map((member) => (</div>
-              </div><div key={member.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm: border border-white/10 rounded-xl:p-6"></div>
-                <div: className="flex items-center space-x-3 mb-4 ""> "
+              </div><div key={member.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm: border border-white/10 rounded-xl:p-6></div>
+                <div: className=flex items-center space-x-3 mb-4 ""> "
                    /></div>
                   <div>,</div>
-                    <h3 className="text-white" font-semibold">{member.name}</h3></div>
-                    <p className="text-gray-400 text-sm>{member.role}</p></div>
+                    <h3 className="text-white font-semibold>{member.name}</h3></div>
+                    <p className="text-gray-400 text-sm>{member.role}</p></div>"
                   </div>"</div>
                 </div>"</div>
-                <div className="space-y-2">"</div>
+                <div className="space-y-2></div>
                   </div><div className=" flex justify-between text-sm>"</div>
-                    <span className=" text-gray-400">Assigned Tasks</span>"</div>
+                    <span className=" text-gray-400>Assigned Tasks</span></div>
                     <span className="text-white>{member.assignedTasks}</span"></div>
                   </div></div>
-                  <div className="flex justify-between text-sm"></div>
-                    <span className="text-gray-400>Completed" Tasks</span></div>
-                    <span className="text-white">{member.completedTasks}</span></div>
+                  <div className="flex justify-between text-sm></div>
+                    <span className=text-gray-400>Completed" Tasks</span></div>
+                    <span className="text-white>{member.completedTasks}</span></div>
                   </div></div>
-                  <div className="flex justify-between" text-sm>'`</div>
-                    <span className="text-gray-400">Status</span>``</div>
-                    <span className="{`px-4" py-3 rounded-full text-xs ${member.status === 'active' ? 'text-green-400 bg-green-500/20' : 'text-gray-400: bg-gray-500/20'}`}>
+                  <div className=flex justify-between" text-sm>'"</div>
+                    <span className="text-gray-400>Status</span>`</div>
+                    <span className="{"px-4" py-3 rounded-full text-xs ${member.status === 'active' ? 'text-green-400 bg-green-500/20' : 'text-gray-400: bg-gray-500/20'}"}>
                       {member.status}</div>
                     </span></div>
                   </div></div>
@@ -818,39 +818,39 @@ View: Details: </button></div>
         )}
         {/* Analytics View */}, '
 {selectedView === analyti'c's && projectStats && (</div>
-          <div className="space-y-6"></div>
-            </div><div className=" grid grid-cols-1 md  grid-cols-2 " gap-6"></div>
-              <div className="bg-white/5  backdrop-blur-sm: border border-white/10 rounded-xl:p-6>"</div>
-                <h3: className="text-lg" font-semibold text-white mb-4">Budget Overview</h3></div>
-                <div className="space-y-4>"</div>
-                  </div><div className=" flex" justify-between">',</div>
-                    <span className="text-gray-400>Total Budget</span>,"</div>
-                    <span className="text-white">{formatCurrency(projectStats.totalBudget," 'USD')}</span></div>
+          <div className="space-y-6></div>
+            </div><div className= grid grid-cols-1 md  grid-cols-2 " gap-6"></div>
+              <div className="bg-white/5  backdrop-blur-sm: border border-white/10 rounded-xl:p-6></div>
+                <h3: className=text-lg" font-semibold text-white mb-4">Budget Overview</h3></div>
+                <div className="space-y-4></div>
+                  </div><div className= flex" justify-between">',</div>
+                    <span className="text-gray-400>Total Budget</span>,</div>
+                    <span className=text-white">{formatCurrency(projectStats.totalBudget," 'USD')}</span></div>
                   </div></div>
-                  <div className="flex justify-between>'"</div>
-                    <span className="text-gray-400>Spent" Budget</span></div>
-                    <span className="text-white">{formatCurrency(projectStats.spentBudget, US'D')}</span></div>
+                  <div className="flex justify-between>'</div>
+                    <span className=text-gray-400>Spent" Budget</span></div>
+                    <span className="text-white>{formatCurrency(projectStats.spentBudget, US'D')}</span></div>
                   </div></div>
-                  <div className="flex" justify-between></div>
-                    <span className="text-gray-400">Remaining</span>'</div>
-                    <span className="text-green-400>{formatCurrency(projectStats.totalBudget - projectStats.spentBudget, 'USD')}</span></div>
-                  </div></div>
+                  <div className=flex" justify-between></div>
+                    <span className="text-gray-400>Remaining</span>'</div>
+                    <span className=text-green-400>{formatCurrency(projectStats.totalBudget - projectStats.spentBudget, 'USD')}</span></div>
+                  </div></div>"
                 </div>"</div>
               </div>"</div>
-              <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6>"</div>
-                <h3 className="text-lg" font-semibold text-white mb-4">Task Completion</h3></div>
-                <div className="space-y-4>"</div>
-                  </div><div className=" flex" justify-between"></div>
-                    <span className="text-gray-400>Total Tasks</span>,"</div>
-                    <span className="text-white">{projectStats.totalTasks}</span>" </div>
+              <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6></div>
+                <h3 className=text-lg" font-semibold text-white mb-4">Task Completion</h3></div>
+                <div className="space-y-4></div>
+                  </div><div className= flex" justify-between"></div>
+                    <span className="text-gray-400>Total Tasks</span>,</div>
+                    <span className=text-white">{projectStats.totalTasks}</span>" </div>
                   </div></div>
-                  <div className="flex justify-between>"</div>
-                    <span className="text-gray-400">Completed" Tasks</span></div>
-                    <span className="text-green-400>{projectStats.completedTasks}</span>"</div>
-                  </div>"</div>
+                  <div className="flex justify-between></div>
+                    <span className=text-gray-400">Completed" Tasks</span></div>
+                    <span className="text-green-400>{projectStats.completedTasks}</span></div>
+                  </div></div>
                   <div className=" flex" justify-between"></div>
-                    <span className=" text-gray-400>Completion Rate</span>"</div>
-                    <span className="text-blue-400">{Math.round((projectStats.completedTasks / projectStats.totalTasks) * 100)}%</span></div>
+                    <span className=" text-gray-400>Completion Rate</span></div>
+                    <span className=text-blue-400">{Math.round((projectStats.completedTasks / projectStats.totalTasks) * 100)}%</span></div>
                   </div></div>
                 </div></div>
               </div></div>
@@ -858,21 +858,21 @@ View: Details: </button></div>
           </div>"
         )}"
         {/* Call to Action */}</div>
-        <div className="mt-12 text-center > "</div>
-          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8"></div>
+        <div className="mt-12 text-center > </div>
+          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl" p-8"></div>
             <h2 className="text-3xl font-bold text-white mb-4> 
               Start Managing Your Projects</div>
-            </h2>"</div>
+            </h2></div>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl: mx-auto">,
               Create: new projects, assign tasks to team members, track progress,  
               and manage your project portfolio with our comprehensive platform.</div>
             </p>"</div>
-            <div className="flex flex-col sm flex-row  gap-4 justify-center ""></div>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover  scale-105>
+            <div className="flex flex-col sm flex-row  gap-4 justify-center ></div>
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover  scale-105>"
                 Create  New Project"</div>
               </button>"</div>
-              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Find Team Members</div>
-              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm "></Link></div>
+              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Find Team Members</div>
+              </Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm "></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -883,5 +883,5 @@ View: Details: </button></div>
 </div>
   </div>,;
 ),;
-};`;}
-export default ProjectManagementPage;`</div>
+};";}
+export default $1;`</div>

@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     specialConditions
   } = req.body;
   // Mock AI generation (replace with real AI integration as needed
-  const contract = `;'
+  const $1 = ";'
     <div style="font-family: 'Times New Roman', serif; max-width: 800px; margin: auto; padding: 20px; line-height: 1.6;></div>
       </div><div style=text-align: center; margin-bottom: 30px;"></div>
         <h1 style=font-size: 24px; margin-bottom: 10px; color: #333;>${contractType}</h1></div>
@@ -53,20 +53,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       <div style=margin-bottom: 30px;></div>
         <h2 style=font-size: 18px; margin-bottom: 15px; color: #333;>5. DELIVERABLES</h2"></div>
         <p>${deliverables}</p></div>
-      </div>`
-``
-      ${terms ? `"</div>
+      </div>"
+`"
+      ${terms ? ""</div>
       <div style=margin-bottom: 30px;"></div>
         <h2 style="font-size: 18px; margin-bottom: 15px; color: #333;>6. TERMS AND CONDITIONS</h2></div>
-        <p>${terms}</p>'`</div>
-      </div>``
-      ` : ''}``
-      ${specialConditions ? `</div>
+        <p>${terms}</p>'"</div>
+      </div>""
+      " : ''}`"
+      ${specialConditions ? "</div>
       <div style="margin-bottom:" 30px;></div>
         <h2 style=font-size: 18px; margin-bottom: 15px; color: #333;>7. SPECIAL CONDITIONS</h2></div>
-        <p>${specialConditions}</p>`</div>
-      </div>"'``
-      ` : '}
+        <p>${specialConditions}</p>"</div>
+      </div>"'""
+      " : '}
 "</div>
       <div style=margin-bottom: 30px;"></div>
         <h2 style="font-size: 18px; margin-bottom: 15px; color: #333;>8. SIGNATURES</h2></div>
@@ -86,9 +86,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 </div>
       <div style=margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 12px; color: #666;></div>
         <p><strong>Disclaimer:</strong> This contract was generated using AI assistance. It is recommended to have this document reviewed by a legal professional before execution.</p></div>
-      </div>`</div>
-    </div">``
-  `;"
+      </div>"</div>
+    </div">""
+  ";"
 "
-  res.status(200).json({ contract });'`
-} )"'"'`</div>
+  res.status(200).json({ contract });'"
+} )"'"'"</div>

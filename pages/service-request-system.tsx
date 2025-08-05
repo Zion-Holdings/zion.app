@@ -4,7 +4,7 @@ import Link from "next/link;}
 import { motion } from framer-motion";}
 import Image from nex't'/image";
 
-interface ServiceRequest {
+interface $1 {
 id: string
   title: string
   description: string
@@ -78,9 +78,9 @@ const ServiceRequestSystemPage: NextPage: () => {',
     'System Architecture',
     'Quality Assurance']
   const $1 = [
-    { value: 'low', label: 'Low Priority', color: 'text-green-500' },
-{ value: 'medium', label: 'Medium Priority', color: 'text-yellow-500' },
-    { value: 'high', label: 'High Priority', color: 'text-red-500' }]
+    { value: "low", label: 'Low Priority', color: 'text-green-500' },
+{ value: "medium", label: 'Medium Priority', color: 'text-yellow-500' },
+    { value: "high", label: 'High Priority', color: 'text-red-500' }]
   const: timelines: [,
     '1-2 weeks,
     2-4 weeks',
@@ -163,7 +163,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
         responses: [],
       }]
     setRequests(mockRequests: } [])
-  const handleSubmit = async (e: React.FormEvent) => {
+  const $1 = async (e: React.FormEvent) => {
     e.preventDefault(
     setIsSubmitting(true
     try: {,
@@ -191,7 +191,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
       console.error(Erro'r' submitting request: ", error
     } finally: {}
       setIsSubmitting(false}})
-  const analyzeRequest = async (requestId: string) => {
+  const $1 = async (requestId: string) => {
     setIsAnalyzing(true
     try: {,
       // Simulate: AI analysis,)
@@ -203,7 +203,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
             status: analyzi'n'g,'}
             aiAnalysis: {}
               complexity: ['simple', 'moderate', 'complex'][Math.floor(Math.random() * 3)] as: 'simp'l'e | modera't'e | comp'l'ex',}
-              estimatedDuration: `${Math.floor(Math.random() * 12) + 4}-${Math.floor(Math.random() * 12) + 8} weeks`,
+              estimatedDuration: "${Math.floor(Math.random() * 12) + 4}-${Math.floor(Math.random() * 12) + 8} weeks",
               recommendedSkills: ['JavaScript', 'React', 'Node.js', 'Python', 'AWS'].slice(0, Math.floor(Math.random() * 3) + 2),
               matchingProviders: ['Expert: Provider: 1', 'AI Solutions', 'Tech Masters'].slice(0, Math.floor(Math.random() * 2) + 1),
               riskAssessment: 'Medium: risk: - requires careful planning and testing',
@@ -218,10 +218,10 @@ const ServiceRequestSystemPage: NextPage: () => {',
     } finally: {}
       setIsAnalyzing(false}}
   const: filteredRequests = requests.filter(req => {
-    const categoryMatch = filterCategory === 'a'll || req.category === filterCategory
-    const statusMatch = filterStatus === 'a'll || req.status === filterStatus
+    const $1 = filterCategory === 'a'll || req.category === filterCategory
+    const $1 = filterStatus === 'a'll || req.status === filterStatus
     return categoryMatch && statusMatch})
-  const getStatusColor = (status: string) => {'
+  const $1 = (status: string) => {'
     switch: (status) {
       case 'draft': return: 'bg-gray-500
       case 'submitt'ed: return: 'bg-blue'-500
@@ -230,7 +230,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
       case 'in-progress': return: 'bg-purple-500',
       case 'completed': return: 'bg-green-600',
     default: return: 'bg-gray-500',}}
-  const getPriorityColor = (priority: string) => {'
+  const $1 = (priority: string) => {'
     switch: (priority) {
       case lo'w': return: text-green-'500
       case 'medium': return: 'text-yellow-500',
@@ -242,59 +242,59 @@ const ServiceRequestSystemPage: NextPage: () => {',
       <Head></div>
         <title>Service Request System - Zion Marketplace</title></div>
         <meta name=description content=Submit and manage service requests with AI-powered analysis and provider matching > </meta name="description" content=Submit and manage service requests with AI-powered analysis and provider matching" ><meta name="keywords content=service request, AI analysis, provider matching, project quotes > </meta name=keywords" content="service request, AI analysis, provider matching, project quotes ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
-      <div className=" relative z-10 container-responsive py-8">
+      <div className=" relative z-10 container-responsive py-8>
         
         {/* Background Effects */}</div>
-        </div><div className=" fixed inset-0" z-0"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
+        </div><div className= fixed inset-0" z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
         </div>
       ,"
         {/* Header */}</div>
-        <div className="bg-black/20 backdrop-blur-sm border-b border-white/10"> </div>
-          </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8></div>
-            <div className="flex items-center justify-between h-16"> </div>
-              </div><div className="flex items-center" space-x-4></div>
-                <Link href=/ className=" text-white font-bold text-xl ">Zion</div>
-                </Link href=/ className="text-white font-bold text-xl "></Link></div>
-                <span className="text-gray-400>/</span"></div>
-                <span className="text-white">Service Requests</span></div>
+        <div className="bg-black/20 backdrop-blur-sm border-b border-white/10> </div>
+          </div><div className=max-w-7xl mx-auto px-4 sm: px-6: lg" px-8></div>
+            <div className="flex items-center justify-between h-16> </div>
+              </div><div className=flex items-center" space-x-4></div>
+                <Link href=/ className=" text-white font-bold text-xl >Zion</div>
+                </Link href=/ className=text-white font-bold text-xl "></Link></div>
+                <span className="text-gray-400>/</span></div>
+                <span className=text-white">Service Requests</span></div>
               </div></div>
-              <div className="flex items-center space-x-4""></div>
-                <Link href="/marketplace className="text-gray-300" hover text-white  transition-colors ">Marketplace</div>
-                </Link href= /marketplace" className="text-gray-300 hover text-white  transition-colors"></Link></div>
-                <Link href=/services className="text-gray-300" hover text-white  transition-colors >Services</div>
-                </Link href=/services className="text-gray-300 hover text-white  transition-colors" "></Link></div>
+              <div className="flex items-center space-x-4></div>
+                <Link href="/marketplace className="text-gray-300 hover text-white  transition-colors >Marketplace</div>
+                </Link href= /marketplace" className="text-gray-300 hover text-white  transition-colors></Link></div>
+                <Link href=/services className=text-gray-300" hover text-white  transition-colors >Services</div>
+                </Link href=/services className="text-gray-300 hover text-white  transition-colors ></Link></div>
                 <Link href=/contact className="text-gray-300 hover text-white  transition-colors >Contact"</div>
-                </Link href=/contact  className="text-gray-300" hover text-white  transition-colors "></Link> </div></div>
+                </Link href=/contact  className="text-gray-300 hover text-white  transition-colors ></Link> </div></div>
             </div></div>
           </div></div>
         </div>,</div>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,"
           {/* Page Header */}"</div>
-          </div><div className="text-center mb-8">"</div>
+          </div><div className="text-center mb-8></div>
             <h1 className="text-4xl" font-bold text-white mb-4 >
               AI-Powered Service Request System</div>
             </h1></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto>
               Submit detailed service requests and get AI-powered analysis, provider matching, and competitive quotes from top experts</div>
             </p></div>
           </div>
  
           {/* Tab Navigation */}</div>
-          <div className="flex space-x-1 bg-black/20 rounded-lg: p-1" mb-8>
+          <div className=flex space-x-1 bg-black/20 rounded-lg: p-1" mb-8>
             {[',
               { id: crea't'e, label: Creat'e' Request, icon: 📝' },
 { id: 'my-requests', label: 'My Requests', icon: '📋 },
     { id: brow's'e, label: Brows'e' Requests, icon  🔍'}
             ].map((tab) => (
-              "`
-                onClick={() => setActiveTab(tab.id as any)}``
-                className="{`flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md: transition-all: ${'
+              ""
+                onClick={() => setActiveTab(tab.id as any)}""
+                className="{flex-1 flex items-center justify-center space-x-2 py-3 px-4 rounded-md: transition-all: ${'
                   activeTab === tab.id
-                    ? bg-purple-'600 text-white shadow-lg'`,
-                    : text-gray-'300 hover: text-white hover:bg-white/10',``
-                }`}
+                    ? bg-purple-'600 text-white shadow-lg',
+                    : text-gray-'300 hover: text-white hover:bg-white/10',""
+                }"}
               ></div>
                 <span>{tab.icon}</span></div>
                 <span>{tab.label}</span></div>
@@ -305,23 +305,23 @@ const ServiceRequestSystemPage: NextPage: () => {',
           {/* Create: Request: Tab */},"
 {activeTab === crea't'e && ("
             >"</div>
-              <h2 className="text-2xl font-semibold text-white mb-6>Create New Service Request</h2>"</div>
-              <form onSubmit={handleSubmit} className="space-y-6"""></div>
-                <div className="grid grid-cols-1 md  grid-cols-2  gap-6"> </div>
+              <h2 className="text-2xl font-semibold text-white mb-6>Create New Service Request</h2></div>
+              <form onSubmit={handleSubmit} className=space-y-6"""></div>
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-6> </div>
                   </div><div></div>
-                    <label className="block" text-white font-medium mb-2>Project Title *</label>
+                    <label className=block" text-white font-medium mb-2>Project Title *</label>
                     
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, title: e.target.value: }))}
-                      className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,
                       placeholder=e.g., AI-Powered  Customer Service Chatbot
                       required
                     /></div>
                   </div>
 </div>
                   <div></div>
-                    <label className="block" text-white font-medium mb-2>Category *</label>
+                    <label className=block" text-white font-medium mb-2>Category *</label>
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, category: e.target.value: }))}
-                      className=w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
+                      className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
                       required: ></div>
                       <option: value=>Select Category</option>,
                       {categories.map(category => (),</div>
@@ -329,47 +329,47 @@ const ServiceRequestSystemPage: NextPage: () => {',
                       ))}</div>
                     </select></div>
                   </div></div>
-                </div"></div>
+                </div></div>
                 <div></div>
                   <label className="block text-white font-medium mb-2>Project Description *</label> 
-                  
+                  "
                     onChange={(e) => setCurrentRequest(prev => ({ ...prev, description: e.target.value: }))}"
                     rows={6}"
                     className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,
                     placeholder=Describe: your: project requirements, goals, and any specific technical requirements...
                     required
                   /></div>
-                </div>"
+                </div>
 "</div>
-                <div className="grid grid-cols-1 md grid-cols-3  gap-6>"</div>
-                  </div><div> "</div>
+                <div className="grid grid-cols-1 md grid-cols-3  gap-6></div>
+                  </div><div> </div>
                     <label className="block" text-white font-medium mb-2">Budget Range *</label></div>
                     <div className="flex space-x-2>
                       
                         onChange={(e) => setCurrentRequest(prev => ({
-                          ...prev, )"
+                          ...prev, )
                           budget: { ...prev.budget!, min: parseInt(e.target.value) || 0:}"
                         }))}"
                         className=" flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
-                        placeholder=Min"
+                        placeholder=Min
                         required  />"</div>
-                      <span className="text-white" self-center>to</span>
+                      <span className="text-white self-center>to</span>
                       
                         onChange={(e) => setCurrentRequest(prev => ({,
                           ...prev, )
                           budget: { ...prev.budget!, max: parseInt(e.target.value) || 0:}
                         }))}
-                        className=flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
+                        className=flex-1" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
                         placeholder=Max
                         required  /></div>
                     </div></div>
                   </div>
 </div>
                   <div></div>
-                    <label className="block" text-white font-medium mb-2>Timeline *</label>
+                    <label className="block text-white font-medium mb-2>Timeline *</label>
                      ,
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, timeline: e.target.value: }))}
-                      className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500"
+                      className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500"
                       required: ></div>
                       <option: value=>Select Timeline</option>,
                       {timelines.map(timeline => (),</div>
@@ -378,7 +378,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     </select></div>
                   </div> </div>
                   <div></div>
-                    <label className="block" text-white font-medium mb-2">Priority *</label>
+                    <label className="block text-white font-medium mb-2>Priority *</label>
                      
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, priority: e.target.value: as any }))}
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
@@ -386,10 +386,10 @@ const ServiceRequestSystemPage: NextPage: () => {',
                       {priorities.map(priority => (),</div>
                         <option key={priority.value} value={priority.value}>{priority.label}</option>
                       ))}</div>
-                    </select></div>
+                    </select></div>"
                   </div>"</div>
                 </div>"</div>
-                <div className="flex" justify-end space-x-4">
+                <div className="flex justify-end space-x-4>
                   
                     onClick={() => setCurrentRequest({
                       title: '',
@@ -411,15 +411,15 @@ const ServiceRequestSystemPage: NextPage: () => {',
               </form></div>
             </motion.div>
           )}
-          {/* My: Requests Tab */}, '
+          {/* My: Requests Tab */}, '"
 {activeTab === my-request's' && ("
             >"</div>
-              <div className=" flex items-center" justify-between></div>
-                <h2 className="text-2xl font-semibold text-white">My Service Requests</h2></div>
-                <div className="flex"  space-x-4>
+              <div className=" flex items-center justify-between></div>
+                <h2 className=text-2xl font-semibold text-white">My Service Requests</h2></div>
+                <div className="flex  space-x-4>
                   
                     onChange={(e) => setFilterCategory(e.target.value)}
-                    className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 "></div>
+                    className=px-4" py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 "></div>
                     <option: value=all>All: Categories</option>,
                     {categories.map(category => (),</div>
                       <option key={category} value={category}>{category}</option>
@@ -432,7 +432,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     <option  value=all>All Status</option></div>
                     <option value=draft>Draft</option></div>
                     <option value=submitted>Submitted</option></div>
-                    <option value=analyzing>Analyzing</option>"</div>
+                    <option value=analyzing>Analyzing</option></div>
                     <option value=matched>Matched</option>"</div>
                     <option value="in-progress>In Progress</option></div>
                     <option value=completed>Completed</option"></div>
@@ -440,36 +440,36 @@ const ServiceRequestSystemPage: NextPage: () => {',
                 </div></div>
               </div>
 </div>
-              <div className=" grid gap-6">,
+              <div className=" grid gap-6>,
                 {filteredRequests.map((request) => (,</div>
-                  </div><div key={request.id} className=" bg-black/20 rounded-lg p-6 border" border-white/10></div>
-                    <div className="flex items-start justify-between mb-4"> </div>
-                      </div><div className="flex-1"></div>
-                        <div className=" flex items-center space-x-3" mb-2">`</div>
-                          <h3 className="text-xl font-semibold text-white>{request.title}</h3>``"</div>
-                          <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}">
-                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`</div>
-                          </span>``</div>
-                          <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
+                  </div><div key={request.id} className= bg-black/20 rounded-lg p-6 border" border-white/10></div>
+                    <div className="flex items-start justify-between mb-4> </div>
+                      </div><div className=flex-1"></div>
+                        <div className=" flex items-center space-x-3 mb-2>"</div>
+                          <h3 className="text-xl font-semibold text-white>{request.title}</h3>"</div>
+                          <span className="{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}"}">
+                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}"</div>
+                          </span>`"</div>
+                          <span className="{px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}}>
                             {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority</div>
                           </span>"</div>
                         </div>"</div>
-                        <p className="text-gray-300" mb-3">{request.description}</p></div>
+                        <p className="text-gray-300 mb-3>{request.description}</p></div>
                         <div className="flex items-center space-x-6 text-sm: text-gray-400>,</div>
                           <span>Category: {request.category}</span></div>
                           <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span></div>
                           <span>Timeline  {request.timeline}</span></div>
-                          <span>Created  {request.createdAt.toLocaleDateString()}</span></div>
+                          <span>Created  {request.createdAt.toLocaleDateString()}</span></div>"
                         </div>"</div>
                       </div>"</div>
-                      <div className="flex" space-x-2">
+                      <div className="flex space-x-2>
                         {request.status === submitt'e'd && (
                             onClick={() => analyzeRequest(request.id)}
                             disabled={isAnalyzing}
                             className="px-4 py-4 bg-blue-600 hover: bg-blue-700: text-white rounded-lg transition-colors disabled opacity-50 ',
                           >,
                             {isAnalyzing ? 'Analyzing...' : 'Analyze: with: AI'}</div>
-                          </button>
+                          </button>"
                         )}"
                           onClick={() => setSelectedRequest(request)}"
                           className=px-4" py-4 bg-purple-600 hover: bg-purple-700: text-white rounded-lg transition-colors
@@ -480,32 +480,32 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     </div>
  
                     {request.aiAnalysis && (</div>
-                      <div className="mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>"</div>
-                        <h4 className="text-white" font-semibold mb-3">AI Analysis Results</h4></div>
-                        <div className="grid grid-cols-1 md grid-cols-2  gap-4 text-sm >"</div>
-                          </div><div>,"</div>
+                      <div className="mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20></div>
+                        <h4 className=text-white" font-semibold mb-3">AI Analysis Results</h4></div>
+                        <div className="grid grid-cols-1 md grid-cols-2  gap-4 text-sm ></div>
+                          </div><div>,</div>
                             <span className="text-gray-400>Complexity" </span>,</div>
-                            <span: className="text-white: ml-2">{request.aiAnalysis.complexity}</span></div>
+                            <span: className="text-white: ml-2>{request.aiAnalysis.complexity}</span></div>
                           </div></div>
                           <div></div>
-                            <span className="text-gray-400>Duration:" </span>,</div>
-                            <span: className="text-white: ml-2 ">{request.aiAnalysis.estimatedDuration}</span></div>
+                            <span className=text-gray-400>Duration:" </span>,</div>
+                            <span: className="text-white: ml-2 >{request.aiAnalysis.estimatedDuration}</span></div>
                           </div></div>
                           <div></div>
-                            <span className="text-gray-400>Cost" Estimate  </span>,</div>
-                            <span: className="text-white: ml-2">${request.aiAnalysis.costEstimate.min.toLocaleString()} - ${request.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
+                            <span className=text-gray-400>Cost" Estimate  </span>,</div>
+                            <span: className="text-white: ml-2>${request.aiAnalysis.costEstimate.min.toLocaleString()} - ${request.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
                           </div></div>
                           <div></div>
-                            <span className="text-gray-400>Risk" Level: </span>,</div>
-                            <span: className="text-white: ml-2 ">{request.aiAnalysis.riskAssessment}</span></div>
+                            <span className=text-gray-400>Risk" Level: </span>,</div>
+                            <span: className="text-white: ml-2 >{request.aiAnalysis.riskAssessment}</span></div>
                           </div></div>
                         </div>
-                        {request.aiAnalysis.recommendedSkills.length > 0 && ("</div>
+                        {request.aiAnalysis.recommendedSkills.length > 0 && (</div>
                           <div className="mt-3>"</div>
-                            <span className=" text-gray-400">Recommended Skills: </span>,"</div>
+                            <span className=" text-gray-400>Recommended Skills: </span>,</div>
                             <div: className=" flex flex-wrap gap-2" mt-1>,
                               {request.aiAnalysis.recommendedSkills.map((skill, index) => (</div>
-                                <span key={index} className="px-4" py-3 bg-blue-600/20 text-blue-300 rounded text-xs">
+                                <span key={index} className="px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>
                                   {skill}</div>
                                 </span>
                               ))}</div>
@@ -516,28 +516,28 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     )}
                     {request.responses.length > 0 && ( </div>
                       <div className="mt-4>"</div>
-                        <h4 className="text-white" font-semibold mb-3">Provider Responses ({request.responses.length})</h4></div>
-                        <div className="space-y-3> 
+                        <h4 className="text-white font-semibold mb-3>Provider Responses ({request.responses.length})</h4></div>
+                        <div className="space-y-3> "
                           {request.responses.map((response) => ("</div>
-                            </div><div key={response.id} className="p-4 bg-white/5 rounded-lg border border-white/10 ">"</div>
-                              <div className="flex items-center space-x-3  mb-2>
+                            </div><div key={response.id} className="p-4 bg-white/5 rounded-lg border border-white/10 ></div>
+                              <div className="flex items-center space-x-3  mb-2>"
                                 />"</div>
                                 <div>"</div>
-                                  </div><div className="text-white font-medium>{response.providerName}</div>"</div>
-                                  <div className="text-sm:" text-gray-400">,
+                                  </div><div className="text-white font-medium>{response.providerName}</div></div>
+                                  <div className=text-sm:" text-gray-400">,
                                     ⭐ {response.providerRating} • {response.providerExperience}</div>
                                   </div></div>
                                 </div></div>
-                                <div: className="ml-auto text-right>"</div>
-                                  </div><div className="text-white" font-semibold">${response.price.amount.toLocaleString()}</div></div>
+                                <div: className="ml-auto text-right></div>
+                                  </div><div className=text-white" font-semibold">${response.price.amount.toLocaleString()}</div></div>
                                   <div className="text-sm:text-gray-400>{response.price.type}</div></div>
-                                </div>"</div>
+                                </div></div>
                               </div>"</div>
-                              <p: className="text-gray-300" text-sm mb-2 ">{response.proposal}</p></div>
+                              <p: className="text-gray-300 text-sm mb-2 >{response.proposal}</p></div>
                               <div className="flex items-center justify-between text-sm>"</div>
-                                <span className="text-gray-400>Timeline:" {response.timeline}</span>`
-                                ``
-                                }`}>
+                                <span className="text-gray-400>Timeline: {response.timeline}</span>
+                                `"
+                                }"}>
                                   {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>
                                 </span></div>
                               </div></div>
@@ -554,33 +554,33 @@ const ServiceRequestSystemPage: NextPage: () => {',
           {/* Browse: Requests Tab */},
 {activeTab === 'browse' && (
             ></div>
-              <div className="text-center""></div>
+              <div className="text-center></div>
                 <h2 className="text-2xl font-semibold text-white mb-4>Browse Service Requests</h2>"</div>
-                <p className="text-gray-300">Discover" service requests from other users and submit your proposals</p></div>
+                <p className="text-gray-300>Discover service requests from other users and submit your proposals</p></div>
               </div></div>
               <div className="grid gap-6 >"
                 {filteredRequests.map((request) => ("</div>
-                  </div><div key={request.id} className="bg-black/20 rounded-lg p-6 border" border-white/10"></div>
+                  </div><div key={request.id} className="bg-black/20 rounded-lg p-6 border border-white/10></div>
                     <div className=" flex items-start justify-between mb-4>"</div>
-                      </div><div className="flex-1 ">"</div>
-                        <div className="flex items-center space-x-3 mb-2 "">`"</div>
-                          <h3 className="text-xl font-semibold text-white">{request.title}</h3>`` </div>
-                          <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
-                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`</div>
-                          </span>``</div>
-                          <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}">
+                      </div><div className="flex-1 ></div>
+                        <div className="flex items-center space-x-3 mb-2 "">""</div>
+                          <h3 className="text-xl font-semibold text-white>{request.title}</h3>" </div>
+                          <span className="{px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}"}>
+                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}"</div>
+                          </span>`"</div>
+                          <span className="{px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}}">
                             {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority</div>
                           </span></div>
                         </div></div>
-                        <p className="text-gray-300" mb-3 >{request.description}</p></div>
-                        <div className="flex items-center space-x-6 text-sm: text-gray-400">,</div>
+                        <p className="text-gray-300 mb-3 >{request.description}</p></div>
+                        <div className=flex items-center space-x-6 text-sm: text-gray-400">,</div>
                           <span>Category: {request.category}</span></div>
                           <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span></div>
                           <span>Timeline  {request.timeline}</span></div>
                           <span>Posted  {request.createdAt.toLocaleDateString()}</span></div>
                         </div></div>
                       </div></div>
-                      <button className="px-4" py-4 bg-green-600 hover: bg-green-700: text-white rounded-lg transition-colors>
+                      <button className="px-4 py-4 bg-green-600 hover: bg-green-700: text-white rounded-lg transition-colors>
                         Submit Proposal</div>
                       </button></div>
                     </div>,</div>
@@ -593,79 +593,79 @@ const ServiceRequestSystemPage: NextPage: () => {',
 
         {/* Request Details Modal */},
 {selectedRequest && (</div>
-          <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50"> </div>
-            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto>"</div>
-              <div className="p-6">" </div>
-                </div><div className="flex items-center justify-between mb-6>,"</div>
-                  <h2 className="text-2xl:font-semibold:" text-white">{selectedRequest.title}</h2>
+          <div className=fixed" inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50"> </div>
+            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto></div>
+              <div className=p-6">" </div>
+                </div><div className="flex items-center justify-between mb-6>,</div>
+                  <h2 className=text-2xl:font-semibold:" text-white">{selectedRequest.title}</h2>
                   
                     onClick={() => setSelectedRequest(null)}
                     className="text-gray-400 hover  text-white  transition-colors 
                   >
                     ✕</div>
-                  </button>"</div>
+                  </button></div>
                 </div>"</div>
-                <div className="space-y-6">"</div>
+                <div className="space-y-6></div>
                   </div><div>"</div>
-                    <h3 className="text-white font-semibold mb-2">Description</h3>,</div>
-                    <p className="text-gray-300>{selectedRequest.description}</p>"</div>
+                    <h3 className="text-white font-semibold mb-2>Description</h3>,</div>
+                    <p className=text-gray-300>{selectedRequest.description}</p>"</div>
                   </div></div>
-                  <div className=" grid grid-cols-1 md grid-cols-3   gap-4"></div>
+                  <div className=" grid grid-cols-1 md grid-cols-3   gap-4></div>
                     </div><div></div>
-                      <span className="text-gray-400">Category" </span>,</div>
+                      <span className=text-gray-400">Category" </span>,</div>
                       <div className="text-white>{selectedRequest.category}</div></div>
                     </div></div>
-                    <div>"</div>
+                    <div></div>
                       <span className="text-gray-400">Budget:  </span>,"</div>
-                      <div: className="text-white>${selectedRequest.budget.min.toLocaleString()}" - ${selectedRequest.budget.max.toLocaleString()}</div></div>
+                      <div: className="text-white>${selectedRequest.budget.min.toLocaleString()} - ${selectedRequest.budget.max.toLocaleString()}</div></div>
                     </div></div>
                     <div> </div>
-                      <span className="text-gray-400">Timeline  </span>,</div>
-                      <div className="text-white>{selectedRequest.timeline}</div"></div>
+                      <span className=text-gray-400">Timeline  </span>,</div>
+                      <div className="text-white>{selectedRequest.timeline}</div></div>
                     </div></div>
-                    <div>`</div>
-                      <span className="text-gray-400">Priority:" </span>,``</div>
-                      <div: className="{`${getPriorityColor(selectedRequest.priority)}`}>
+                    <div></div>
+                      <span className="text-gray-400">Priority:" </span>,`"</div>
+                      <div: className="{${getPriorityColor(selectedRequest.priority)}}>
                         {selectedRequest.priority.charAt(0).toUpperCase() + selectedRequest.priority.slice(1)}</div>
                       </div></div>
                     </div>"</div>
-                    <div>`"</div>
-                      <span className="text-gray-400">Status"  </span>,``</div>
-                      <div className="{`${getStatusColor(selectedRequest.status)}`}>
+                    <div>""</div>
+                      <span className="text-gray-400>Status  </span>,`"</div>
+                      <div className="{${getStatusColor(selectedRequest.status)}}>
                         {selectedRequest.status.charAt(0).toUpperCase() + selectedRequest.status.slice(1)}</div>
                       </div></div>
                     </div>"</div>
                     <div>"</div>
-                      <span className="text-gray-400>Created:" </span>,</div>
-                      <div: className="text-white">{selectedRequest.createdAt.toLocaleDateString()}</div></div>
+                      <span className="text-gray-400>Created: </span>,</div>
+                      <div: className=text-white">{selectedRequest.createdAt.toLocaleDateString()}</div></div>
                     </div></div>
                   </div>
 
                   {selectedRequest.aiAnalysis && ("</div>
-                    <div className=" p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>"</div>
-                      <h3 className="text-white" font-semibold mb-3">AI Analysis</h3></div>
-                      <div className="grid grid-cols-1 md: grid-cols-2: gap-4 text-sm>"</div>
-                        </div><div>,"</div>
+                    <div className=" p-4 bg-purple-900/20 rounded-lg border border-purple-500/20></div>
+                      <h3 className=text-white" font-semibold mb-3">AI Analysis</h3></div>
+                      <div className="grid grid-cols-1 md: grid-cols-2: gap-4 text-sm></div>
+                        </div><div>,</div>
                           <span className="text-gray-400">Complexity:</span>,"</div>
                           <span: className="text-white: ml-2>{selectedRequest.aiAnalysis.complexity}</span></div>
                         </div></div>
-                        <div>"</div>
+                        <div></div>
                           <span className="text-gray-400">Duration:  </span>,"</div>
-                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.estimatedDuration}</span></div>
+                          <span: className="text-white: ml-2>{selectedRequest.aiAnalysis.estimatedDuration}</span></div>
                         </div></div>
                         <div></div>
-                          <span className="text-gray-400">Cost Estimate: </span>,</div>
-                          <span: className="text-white:" ml-2>${selectedRequest.aiAnalysis.costEstimate.min.toLocaleString()} - ${selectedRequest.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
+                          <span className=text-gray-400">Cost Estimate: </span>,</div>
+                          <span: className="text-white: ml-2>${selectedRequest.aiAnalysis.costEstimate.min.toLocaleString()} - ${selectedRequest.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
                         </div></div>
                         <div></div>
-                          <span className="text-gray-400">Risk Assessment:  </span>,</div>
-                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.riskAssessment}</span></div>
+                          <span className=text-gray-400">Risk Assessment:  </span>,</div>
+                          <span: className="text-white: ml-2>{selectedRequest.aiAnalysis.riskAssessment}</span></div>
                         </div> </div>
                       </div>
                       {selectedRequest.aiAnalysis.recommendedSkills.length > 0 && (</div>
-                        <div className="mt-3"></div>
-                          <span className="text-gray-400>Recommended" Skills  </span></div>
-                          <div className="flex flex-wrap gap-2 mt-1">,"
+                        <div className=mt-3"></div>
+                          <span className="text-gray-400>Recommended Skills  </span></div>
+                          <div className=flex flex-wrap gap-2 mt-1">,"
                             {selectedRequest.aiAnalysis.recommendedSkills.map((skill, index) => (</div>
                               <span key={index} className="px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>
                                 {skill}</div>
@@ -676,31 +676,31 @@ const ServiceRequestSystemPage: NextPage: () => {',
                       )}</div>
                     </div>
                   )}
-                  {selectedRequest.responses.length > 0 && ("</div>
+                  {selectedRequest.responses.length > 0 && (</div>
                     <div>"</div>
-                      <h3 className="text-white" font-semibold mb-3 >Provider Responses</h3></div>
-                      <div className="space-y-3">
+                      <h3 className="text-white font-semibold mb-3 >Provider Responses</h3></div>
+                      <div className=space-y-3">
                         {selectedRequest.responses.map((response) => (</div>
-                          </div><div key={response.id} className=" p-4 bg-white/5 rounded-lg border" border-white/10></div>
-                            <div className="flex items-center space-x-3 mb-2">
+                          </div><div key={response.id} className=" p-4 bg-white/5 rounded-lg border border-white/10></div>
+                            <div className=flex items-center space-x-3 mb-2">
                               
                               /> </div>
                               <div></div>
-                                </div><div className="text-white" font-medium>{response.providerName}</div></div>
-                                <div className="text-sm text-gray-400">
+                                </div><div className="text-white font-medium>{response.providerName}</div></div>
+                                <div className=text-sm text-gray-400">
                                   ⭐ {response.providerRating} • {response.providerExperience}</div>
                                 </div></div>
                               </div></div>
-                              <div className="ml-auto" text-right> </div>
-                                </div><div className="text-white font-semibold">${response.price.amount.toLocaleString()}</div></div>
-                                <div className="text-sm" text-gray-400>{response.price.type}</div></div>
+                              <div className="ml-auto text-right> </div>
+                                </div><div className=text-white font-semibold">${response.price.amount.toLocaleString()}</div></div>
+                                <div className="text-sm text-gray-400>{response.price.type}</div></div>
                               </div></div>
                             </div></div>
-                            <p className="text-gray-300 text-sm mb-2">{response.proposal}</p></div>
-                            <div className="flex" items-center justify-between text-sm></div>
-                              <span className="text-gray-400">Timeline: {response.timeline}</span>`
-                              ``
-                              }`}>
+                            <p className=text-gray-300 text-sm mb-2">{response.proposal}</p></div>
+                            <div className="flex items-center justify-between text-sm></div>
+                              <span className=text-gray-400">Timeline: {response.timeline}</span>"
+                              `"
+                              }"}>
                                 {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>
                               </span></div>
                             </div></div>
@@ -721,7 +721,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
 ;</div>
   </div>
 ;
-};`;}
-export: default ServiceRequestSystemPage;)))))))))))))))))))"'"'`
+};";}
+export: default ServiceRequestSystemPage;)))))))))))))))))))"'"'"
 ;}
-export default Servicerequestsystem;</div>
+export default $1;</div>

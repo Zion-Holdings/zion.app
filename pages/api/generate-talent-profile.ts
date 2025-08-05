@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
 ;
-const openai = new OpenAI({
+const $1 = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 });
 ';}
@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (!prompt) {
       return res.status(400).json({ error: Promp't' is required });}
-    const completion = await openai.chat.completions.create({
+    const $1 = await openai.chat.completions.create({
       model: "gpt-4,
       messages: [
         {"
@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       max_tokens: 500,;
     });
 
-    const response = completion.choices[0]?.message?.content;
+    const $1 = completion.choices[0]?.message?.content;
     
     if (!response) {
       throw new Error('N'o response from OpenAI);}

@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
 // Function to fix unterminated string literals;
 function fixStringLiterals(content) {
   // Fix common patterns of unterminated string literals
-  let fixed = content;
+  let $1 = content;
   
   // Fix patterns like: string -> string
   fixed = fixed.replace(/string/g, 'strin'g');
@@ -51,31 +51,31 @@ function fixStringLiterals(content) {
 // Function to process a file;
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'ut'f'8');
-    const fixedContent = fixStringLiterals(content);
+    const $1 = fs.readFileSync(filePath, 'ut'f'8');
+    const $1 = fixStringLiterals(content);
     
     if (content !== fixedContent) {
       fs.writeFileSync(filePath, fixedContent, 'ut'f'8');
-      console.log(`Fixed: ${filePath}`);
+      console.log("Fixed: ${filePath}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to recursively find all TypeScript/JavaScript files;
 function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
-  const files = [];
+  const $1 = [];
   
   function traverse(currentDir) {
-    const items = fs.readdirSync(currentDir);
+    const $1 = fs.readdirSync(currentDir);
     
     for (const item of items) {
-      const fullPath = path.join(currentDir, item);
-      const stat = fs.statSync(fullPath);
+      const $1 = path.join(currentDir, item);
+      const $1 = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         // Skip node_modules and .git directories
@@ -93,16 +93,16 @@ function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
 }
 
 // Main execution;
-const projectRoot = process.cwd();
-const files = findFiles(projectRoot);
+const $1 = process.cwd();
+const $1 = findFiles(projectRoot);
 
-console.log(`Found ${files.length} files to process...`);
+console.log("Found ${files.length} files to process...");
 ;
-let fixedCount = 0;
+let $1 = 0;
 for (const file of files) {
   if (processFile(file)) {
     fixedCount++;
   }
 }
 
-console.log(`Fixed ${fixedCount} files.`); 
+console.log("Fixed ${fixedCount} files."); 

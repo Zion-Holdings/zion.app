@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
 const { v4: uuidv4 } = require('uu'i'd');
-const axios = require('axi'o's');
-const cheerio = require('cheer'i'o');
+const $1 = require('axi'o's');
+const $1 = require('cheer'i'o');
 
-class LinkCheckingAgentFactory {
+class $1 {
   constructor() {
     this.agents = new Map();
     this.agentTypes = {
@@ -72,7 +72,7 @@ class LinkCheckingAgentFactory {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-checking-agen't's',
       'link-repor't's',
       'link-backu'p's',
@@ -81,7 +81,7 @@ class LinkCheckingAgentFactory {
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, dir);
+      const $1 = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -90,13 +90,13 @@ class LinkCheckingAgentFactory {
 
   async createAgent(type, config = {}) {
     if (!this.agentTypes[type]) {
-      throw new Error(`Unknown agent type: ${type}`);
+      throw new Error("Unknown agent type: ${type}");
     }
 
-    const agentId = `link-${type}-${uuidv4()}`;
-    const agentConfig = { ...this.agentTypes[type].config, ...config };
+    const $1 = "link-${type}-${uuidv4()}";
+    const $1 = { ...this.agentTypes[type].config, ...config };
     
-    const agent = {
+    const $1 = {
       id: agentId,
       type: type,
       status: 'creat'e'd',
@@ -123,25 +123,25 @@ class LinkCheckingAgentFactory {
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();
     
-    console.log(`🔗 Created link checking agent: ${agentId} (${type})`);
+    console.log("🔗 Created link checking agent: ${agentId} (${type})");
     return agent;
   }
 
   async startAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     agent.status = 'starti'n'g';
     agent.lastActive = new Date();
 
-    const scriptPath = this.getAgentScript(agent.type);
+    const $1 = this.getAgentScript(agent.type);
     if (!scriptPath) {
-      throw new Error(`No script found for agent type: ${agent.type}`);
+      throw new Error("No script found for agent type: ${agent.type}");
     }
 
-    const env = {
+    const $1 = {
       ...process.env,
       AGENT_ID: agentId,
       AGENT_TYPE: agent.type,
@@ -149,7 +149,7 @@ class LinkCheckingAgentFactory {
       ...agent.config
     };
 
-    const child = spawn('no'd'e', [scriptPath], {
+    const $1 = spawn('no'd'e', [scriptPath], {
       env,
       stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e']
     });
@@ -175,14 +175,14 @@ class LinkCheckingAgentFactory {
     });
 
     await this.saveAgentRegistry();
-    console.log(`🚀 Started link checking agent: ${agentId}`);
+    console.log("🚀 Started link checking agent: ${agentId}");
     return agent;
   }
 
   async stopAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     if (agent.process) {
@@ -193,7 +193,7 @@ class LinkCheckingAgentFactory {
     }
 
     await this.saveAgentRegistry();
-    console.log(`⏹️ Stopped link checking agent: ${agentId}`);
+    console.log("⏹️ Stopped link checking agent: ${agentId}");
   }
 
   async restartAgent(agentId) {
@@ -203,7 +203,7 @@ class LinkCheckingAgentFactory {
   }
 
   getAgentScript(type) {
-    const scripts = {
+    const $1 = {
       'link-validat'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-validator-agen't'.js'),
       'link-fix'e'r': path.join(__dirname, 'link-checking-agen't's', 'link-fixer-agen't'.js'),
       'link-monit'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-monitor-agen't'.js'),
@@ -234,9 +234,9 @@ class LinkCheckingAgentFactory {
   }
 
   async batchCreateLinkAgents(specs) {
-    const agents = [];
+    const $1 = [];
     for (const spec of specs) {
-      const agent = await this.createAgent(spec.type, spec.config);
+      const $1 = await this.createAgent(spec.type, spec.config);
       agents.push(agent);
     }
     return agents;
@@ -255,23 +255,23 @@ class LinkCheckingAgentFactory {
   }
 
   async updateAgentConfig(agentId, newConfig) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     agent.config = { ...agent.config, ...newConfig };
     agent.lastActive = new Date();
     await this.saveAgentRegistry();
     
-    console.log(`⚙️ Updated config for link agent: ${agentId}`);
+    console.log("⚙️ Updated config for link agent: ${agentId}");
     return agent;
   }
 
   async getAgentPerformance(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     return {
@@ -286,13 +286,13 @@ class LinkCheckingAgentFactory {
   }
 
   async getSystemMetrics() {
-    const agents = Array.from(this.agents.values());
-    const runningAgents = agents.filter(a => a.status === 'runni'n'g');
+    const $1 = Array.from(this.agents.values());
+    const $1 = agents.filter(a => a.status === 'runni'n'g');
     
-    const totalLinksChecked = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
-    const totalBrokenLinks = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
-    const totalLinksFixed = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0);
-    const totalErrors = agents.reduce((sum, agent) => sum + agent.stats.errors, 0);
+    const $1 = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
+    const $1 = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
+    const $1 = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0);
+    const $1 = agents.reduce((sum, agent) => sum + agent.stats.errors, 0);
 
     return {
       totalAgents: agents.length,
@@ -307,8 +307,8 @@ class LinkCheckingAgentFactory {
   }
 
   async healthCheck() {
-    const metrics = await this.getSystemMetrics();
-    const health = {
+    const $1 = await this.getSystemMetrics();
+    const $1 = {
       status: 'healt'h'y',
       issues: [],
       recommendations: []
@@ -316,57 +316,57 @@ class LinkCheckingAgentFactory {
 
     if (metrics.totalErrors > 0) {
       health.status = 'warni'n'g';
-      health.issues.push(`High error rate: ${metrics.totalErrors} errors`);
+      health.issues.push("High error rate: ${metrics.totalErrors} errors");
     }
 
     if (metrics.successRate < 90) {
       health.status = 'warni'n'g';
-      health.issues.push(`Low success rate: ${metrics.successRate.toFixed(2)}%`);
+      health.issues.push("Low success rate: ${metrics.successRate.toFixed(2)}%");
     }
 
     if (metrics.fixRate < 80) {
-      health.recommendations.push(`Improve link fixing rate: ${metrics.fixRate.toFixed(2)}%`);
+      health.recommendations.push("Improve link fixing rate: ${metrics.fixRate.toFixed(2)}%");
     }
 
     return health;
   }
 
   handleAgentExit(agentId, code) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'stopp'e'd';
       agent.lastActive = new Date();
-      console.log(`🔗 Link agent ${agentId} exited with code ${code}`);
+      console.log("🔗 Link agent ${agentId} exited with code ${code}");
       this.saveAgentRegistry();
     }
   }
 
   handleAgentError(agentId, error) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'err'o'r';
       agent.lastActive = new Date();
       agent.stats.errors++;
-      console.error(`🔗 Link agent ${agentId} error:`, error.message);
+      console.error("🔗 Link agent ${agentId} error:", error.message);
       this.saveAgentRegistry();
     }
   }
 
   logAgentOutput(agentId, type, data) {
-    const logPath = path.join(__dirname, 'link-lo'g's', `${agentId}.log`);
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
+    const $1 = path.join(__dirname, 'link-lo'g's', "${agentId}.log");
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] [${type.toUpperCase()}] ${data}";
     
     fs.appendFileSync(logPath, logEntry);
     
     if (type === 'stde'r'r') {
-      console.error(`🔗 ${agentId}: ${data}`);
+      console.error("🔗 ${agentId}: ${data}");
     }
   }
 
   async saveAgentRegistry() {
-    const registryPath = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
-    const registry = {
+    const $1 = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
+    const $1 = {
       agents: Array.from(this.agents.entries()),
       lastUpdated: new Date().toISOString()
     };
@@ -375,19 +375,19 @@ class LinkCheckingAgentFactory {
   }
 
   async loadAgentRegistry() {
-    const registryPath = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
+    const $1 = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
       this.agents = new Map(registry.agents);
     }
   }
 
   async generateLinkReport() {
-    const metrics = await this.getSystemMetrics();
-    const agents = await this.getAllLinkAgents();
-    const health = await this.healthCheck();
+    const $1 = await this.getSystemMetrics();
+    const $1 = await this.getAllLinkAgents();
+    const $1 = await this.healthCheck();
 
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       metrics,
       health,
@@ -401,7 +401,7 @@ class LinkCheckingAgentFactory {
       recommendations: health.recommendations
     };
 
-    const reportPath = path.join(__dirname, 'link-repor't's', `link-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, 'link-repor't's', "link-report-${Date.now()}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

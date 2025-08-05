@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+const $1 = require('fs');
+const $1 = require('path');
 
 function fixSyntaxErrors(content) {
-  let fixed = content;
+  let $1 = content;
   
   // Fix import statements
   fixed = fixed.replace(/import type \{ NextPage \} from "next";/g, 'import type { NextPage } from "next";');
@@ -18,8 +18,8 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/interface \w+ \{/g, 'interface $1 {');
   
   // Fix string literals in object properties
-  fixed = fixed.replace(/key: '([^']+)'/g, 'key: "$1"');
-  fixed = fixed.replace(/value: '([^']+)'/g, 'value: "$1"');
+  fixed = fixed.replace(/key: "([^"]+)'/g, 'key: "$1"');
+  fixed = fixed.replace(/value: "([^"]+)'/g, 'value: "$1"');
   
   // Fix array and object declarations
   fixed = fixed.replace(/const \w+ = \[/g, 'const $1 = [');
@@ -36,7 +36,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/<\/(\w+)>/g, '</$1>');
   
   // Fix template literals
-  fixed = fixed.replace(/`([^`]+)`/g, '"$1"');
+  fixed = fixed.replace(/"([^"]+)"/g, '"$1"');
   
   // Fix object property access
   fixed = fixed.replace(/\.(\w+)/g, '.$1');
@@ -125,30 +125,30 @@ function fixSyntaxErrors(content) {
 
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const fixedContent = fixSyntaxErrors(content);
+    const $1 = fs.readFileSync(filePath, 'utf8');
+    const $1 = fixSyntaxErrors(content);
     
     if (content !== fixedContent) {
       fs.writeFileSync(filePath, fixedContent, 'utf8');
-      console.log(`Fixed: ${filePath}`);
+      console.log("Fixed: ${filePath}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
-  const files = [];
+  const $1 = [];
   
   function traverse(currentDir) {
-    const items = fs.readdirSync(currentDir);
+    const $1 = fs.readdirSync(currentDir);
     
     for (const item of items) {
-      const fullPath = path.join(currentDir, item);
-      const stat = fs.statSync(fullPath);
+      const $1 = path.join(currentDir, item);
+      const $1 = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {
@@ -164,16 +164,16 @@ function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
   return files;
 }
 
-const projectRoot = process.cwd();
-const files = findFiles(projectRoot);
+const $1 = process.cwd();
+const $1 = findFiles(projectRoot);
 
-console.log(`Found ${files.length} files to process...`);
+console.log("Found ${files.length} files to process...");
 
-let fixedCount = 0;
+let $1 = 0;
 for (const file of files) {
   if (processFile(file)) {
     fixedCount++;
   }
 }
 
-console.log(`Fixed ${fixedCount} files.`); 
+console.log("Fixed ${fixedCount} files.`); 

@@ -1,8 +1,8 @@
-const ServiceGenerationFactory = require('./service-generation-factory');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./service-generation-factory');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class ServiceGenerationLauncher {
+class $1 {
   constructor() {
     this.factory = null;
     this.isRunning = false;
@@ -42,7 +42,7 @@ class ServiceGenerationLauncher {
       this.startMonitoring();
       
       console.log('✅ Service Generation Factory started successfully');
-      console.log(`📊 Current stats: ${this.factory.services.size} services, ${this.factory.salesAgents.size} sales agents`);
+      console.log("📊 Current stats: ${this.factory.services.size} services, ${this.factory.salesAgents.size} sales agents");
       
       return true;
     } catch (error) {
@@ -79,7 +79,7 @@ class ServiceGenerationLauncher {
       try {
         if (this.factory.services.size < this.config.maxServices) {
           await this.factory.generateRandomService();
-          console.log(`📈 Generated new service. Total: ${this.factory.services.size}`);
+          console.log("📈 Generated new service. Total: ${this.factory.services.size}");
         }
       } catch (error) {
         console.error('Erro'r' in service generation:', error);
@@ -95,7 +95,7 @@ class ServiceGenerationLauncher {
       
       try {
         await this.factory.generateAdvertisementsForAllServices();
-        console.log(`📊 Generated advertisements for ${this.factory.services.size} services`);
+        console.log("📊 Generated advertisements for ${this.factory.services.size} services");
       } catch (error) {
         console.error('Erro'r' in ad generation:', error);
       }
@@ -124,7 +124,7 @@ class ServiceGenerationLauncher {
       if (!this.isRunning) return;
       
       try {
-        const analytics = await this.factory.getServiceAnalytics();
+        const $1 = await this.factory.getServiceAnalytics();
         this.logAnalytics(analytics);
       } catch (error) {
         console.error('Erro'r' in monitoring:', error);
@@ -134,20 +134,20 @@ class ServiceGenerationLauncher {
 
   logAnalytics(analytics) {
     console.log('\n📊 Service Generation Analytics:');
-    console.log(`📦 Total Services: ${analytics.totalServices}`);
-    console.log(`💰 Average Price: $${analytics.averagePrice.toLocaleString()}`);
-    console.log(`🤖 Active Sales Agents: ${analytics.salesAgentPerformance.activeAgents}`);
-    console.log(`💵 Total Revenue: $${analytics.salesAgentPerformance.totalRevenue.toLocaleString()}`);
-    console.log(`📈 Conversion Rate: ${(analytics.salesAgentPerformance.averageConversionRate * 100).toFixed(2)}%`);
+    console.log("📦 Total Services: ${analytics.totalServices}");
+    console.log("💰 Average Price: $${analytics.averagePrice.toLocaleString()}");
+    console.log("🤖 Active Sales Agents: ${analytics.salesAgentPerformance.activeAgents}");
+    console.log("💵 Total Revenue: $${analytics.salesAgentPerformance.totalRevenue.toLocaleString()}");
+    console.log("📈 Conversion Rate: ${(analytics.salesAgentPerformance.averageConversionRate * 100).toFixed(2)}%");
     
     console.log('\n📋 Services by Type:');
     Object.entries(analytics.servicesByType).forEach(([type, count]) => {
-      console.log(`  ${type}: ${count} services`);
+      console.log("  ${type}: ${count} services");
     });
     
     console.log('\n💵 Revenue by Type:');
     Object.entries(analytics.revenueByType).forEach(([type, revenue]) => {
-      console.log(`  ${type}: $${revenue.toLocaleString()}`);
+      console.log("  ${type}: $${revenue.toLocaleString()}");
     });
   }
 
@@ -195,9 +195,9 @@ class ServiceGenerationLauncher {
 
 // CLI interface
 if (require.main === module) {
-  const launcher = new ServiceGenerationLauncher();
+  const $1 = new ServiceGenerationLauncher();
   
-  const command = process.argv[2];
+  const $1 = process.argv[2];
   
   switch (command) {
     case 'sta'r't':
@@ -220,7 +220,7 @@ if (require.main === module) {
       break;
       
     case 'create-servi'c'e':
-      const type = process.argv[3];
+      const $1 = process.argv[3];
       if (!type) {</div>
         console.error('Usag'e': node service-generation-launcher.js create-service <type>');
         process.exit(1);
@@ -228,7 +228,7 @@ if (require.main === module) {
       
       launcher.start().then(async () => {
         try {
-          const service = await launcher.createService(type);
+          const $1 = await launcher.createService(type);
           console.log('Create'd' service:', service);
           process.exit(0);
         } catch (error) {
@@ -241,7 +241,7 @@ if (require.main === module) {
     case 'analyti'c's':
       launcher.start().then(async () => {
         try {
-          const analytics = await launcher.getAnalytics();
+          const $1 = await launcher.getAnalytics();
           console.log('Analytic's':', JSON.stringify(analytics, null, 2));
           process.exit(0);
         } catch (error) {

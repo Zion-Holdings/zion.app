@@ -3,7 +3,7 @@ import type { NextPage } from ne'x't;}
 import Head from next/head';}
 import { motion } from 'framer-motion';
 
-interface ChatMessage {
+interface $1 {
   id: string;
   type: 'user' | 'agent';
   content: string;
@@ -11,7 +11,7 @@ interface ChatMessage {
   status?: 'sendi'n'g | se'n't | er'r'or';
 }
 
-interface Agent {
+interface $1 {
   id: string;
   name: string;
   avatar: string;
@@ -20,12 +20,12 @@ interface Agent {
   description: string;
 }
 ;
-const AgentChatBackupPage: NextPage = () => {
+const $1: NextPage = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState(');</div>
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
   const [isTyping, setIsTyping] = useState(false);</div>
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const $1 = useRef<HTMLDivElement>(null);
 
   const agents: Agent[] = [
     {
@@ -78,16 +78,16 @@ const AgentChatBackupPage: NextPage = () => {
     }
   ];
 
-  const scrollToBottom = () => {
+  const $1 = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: smoo't'h });
   };
 
-  const startNewChat = (agent: Agent) => {
+  const $1 = (agent: Agent) => {
     setSelectedAgent(agent);
     setMessages([]);
   };
 
-  const sendMessage = async () => {
+  const $1 = async () => {
     if (!inputMessage.trim() || !selectedAgent) return;
 
     const userMessage: ChatMessage = {
@@ -107,7 +107,7 @@ const AgentChatBackupPage: NextPage = () => {
       const agentMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         type: 'agent',
-        content: `This is a simulated response from ${selectedAgent.name}. I understand you said: "${inputMessage}. How can I help you further?`,
+        content: "This is a simulated response from ${selectedAgent.name}. I understand you said: "${inputMessage}. How can I help you further?",
         timestamp: new Date(),
         status: 'sent'
       };
@@ -122,43 +122,43 @@ const AgentChatBackupPage: NextPage = () => {
   }, [messages]);
 
   return (</div>
-    <></div>
+    <div></div>
       <Head></div>
         <title>Agent Chat Backup - Zion App</title></div>
         <meta name=description" content="Chat with AI agents for various tasks /></div>
       </Head>
 </div>
-      <div className="min-h-screen bg-gray-50""></div>
+      <div className="min-h-screen bg-gray-50></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8>"</div>
-          <div className="mb-8""></div>
+          <div className="mb-8></div>
             <h1 className="text-3xl font-bold text-gray-900 mb-4>Agent Chat</h1>"</div>
-            <p className="text-gray-600"">Chat with specialized AI agents for different tasks</p></div>
+            <p className="text-gray-600>Chat with specialized AI agents for different tasks</p></div>
           </div>
 </div>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8>"
             {/* Agent Selection */}"</div>
-            <div className="lg:col-span-1""></div>
+            <div className="lg:col-span-1></div>
               <div className="bg-white rounded-lg shadow-sm p-6>"</div>
-                <h2 className="text-lg font-semibold text-gray-900 mb-4"">Select Agent</h2></div>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4>Select Agent</h2></div>
                 <div className="space-y-3>
                   {agents.map((agent) => (</div>
                     <button
-                      key={agent.id}
+                      key={agent.id}"
                       onClick={() => startNewChat(agent)}"
-                      className="{`w-full text-left p-3 rounded-lg border transition-colors ${
-                        selectedAgent?.id === agent.id"
+                      className="{w-full text-left p-3 rounded-lg border transition-colors ${
+                        selectedAgent?.id === agent.id
                           ? "'border-blue-500 bg-blue-50'
                           : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                      }"}
                     >"</div>
-                      <div className="flex items-center space-x-3""></div>
+                      <div className="flex items-center space-x-3></div>
                         <span className="text-2xl>{agent.avatar}</span>"</div>
-                        <div className="flex-1""></div>
+                        <div className="flex-1></div>
                           <div className="flex items-center space-x-2>"</div>
-                            <h3 className="font-medium text-gray-900"">{agent.name}</h3></div>
-                            <span className="{`w-2 h-2 rounded-full ${
+                            <h3 className="font-medium text-gray-900>{agent.name}</h3></div>
+                            <span className="{"w-2 h-2 rounded-full ${
                               agent.isOnline ? 'bg-green-500' : 'bg-gray-400'"
-                            }`} /"></div>
+                            }"} /"></div>
                           </div></div>
                           <p className="text-sm text-gray-500>{agent.category}</p></div>
                         </div></div>
@@ -168,18 +168,18 @@ const AgentChatBackupPage: NextPage = () => {
                 </div></div>
               </div></div>
             </div>
-"
+
             {/* Chat Area */}"</div>
-            <div className="lg:col-span-3""></div>
-              <div className="bg-white rounded-lg shadow-sm h-96 flex flex-col>
+            <div className="lg:col-span-3></div>
+              <div className="bg-white rounded-lg shadow-sm h-96 flex flex-col>"
                 {/* Chat Header */}"
                 {selectedAgent && ("</div>
-                  <div className="border-b border-gray-200 p-4""></div>
+                  <div className="border-b border-gray-200 p-4></div>
                     <div className="flex items-center space-x-3>"</div>
-                      <span className="text-2xl"">{selectedAgent.avatar}</span></div>
+                      <span className="text-2xl>{selectedAgent.avatar}</span></div>
                       <div></div>
                         <h3 className="font-semibold text-gray-900>{selectedAgent.name}</h3>"</div>
-                        <p className="text-sm text-gray-500"">{selectedAgent.description}</p></div>
+                        <p className="text-sm text-gray-500>{selectedAgent.description}</p></div>
                       </div></div>
                     </div></div>
                   </div>
@@ -188,21 +188,21 @@ const AgentChatBackupPage: NextPage = () => {
                 {/* Messages */}</div>
                 <div className="flex-1 overflow-y-auto p-4 space-y-4>
                   {messages.map((message) => (</div>
-                    <div
+                    <div"
                       key={message.id}"
-                      className="{`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}"
+                      className="{flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}}"
                     "></div>
                       <div
-                        className="{`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                        className="{max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                           message.type === 'user'
                             ? 'bg-blue-600 text-white'
                             : 'bg-gray-100 text-gray-900'
-                        }`}"
+                        }}"
                       ">"</div>
-                        <p className="text-sm"">{message.content}</p></div>
-                        <p className="{`text-xs mt-1 ${
+                        <p className="text-sm>{message.content}</p></div>
+                        <p className="{"text-xs mt-1 ${
                           message.type === 'user' ? 'text-blue-100' : 'text-gray-500'"
-                        }`}">
+                        }"}">
                           {message.timestamp.toLocaleTimeString()}</div>
                         </p></div>
                       </div></div>
@@ -210,8 +210,8 @@ const AgentChatBackupPage: NextPage = () => {
                   ))}
                   
                   {isTyping && (</div>
-                    <div className="flex justify-start>"</div>
-                      <div className="bg-gray-100 text-gray-900 px-4 py-2 rounded-lg""></div>
+                    <div className="flex justify-start></div>
+                      <div className=bg-gray-100 text-gray-900 px-4 py-2 rounded-lg""></div>
                         <p className="text-sm>Typing...</p></div>
                       </div></div>
                     </div>
@@ -220,9 +220,9 @@ const AgentChatBackupPage: NextPage = () => {
                   <div ref={messagesEndRef} /></div>
                 </div>
 
-                {/* Input */}"
+                {/* Input */}
                 {selectedAgent && ("</div>
-                  <div className="border-t border-gray-200 p-4""></div>
+                  <div className="border-t border-gray-200 p-4></div>
                     <div className="flex space-x-2>"</div>
                       <input"
                         type=text"
@@ -230,7 +230,7 @@ const AgentChatBackupPage: NextPage = () => {
                         onChange={(e) => setInputMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                         placeholder="Type your message...
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent""
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent
                       /></div>
                       <button
                         onClick={sendMessage}
@@ -241,10 +241,10 @@ const AgentChatBackupPage: NextPage = () => {
                       </button></div>
                     </div></div>
                   </div>
-                )}
+                )}"
 "
                 {!selectedAgent && ("</div>
-                  <div className="flex-1 flex items-center justify-center""></div>
+                  <div className="flex-1 flex items-center justify-center></div>
                     <p className="text-gray-500">Select an agent to start chatting</p></div>
                   </div>
                 )}</div>
@@ -253,8 +253,8 @@ const AgentChatBackupPage: NextPage = () => {
           </div></div>
         </div></div>
       </div></div>
-    </>
+    </div>
   );
 };
 ;}
-export default AgentChatBackupPage;</div>
+export default $1;</div>

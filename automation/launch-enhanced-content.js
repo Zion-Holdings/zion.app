@@ -1,6 +1,6 @@
-const EnhancedContentGenerator = require('./enhanced-content-generator.js');
+const $1 = require('./enhanced-content-generator.js');
 
-class EnhancedContentLauncher {
+class $1 {
   constructor() {
     this.generator = null;
     this.isRunning = false;
@@ -53,8 +53,8 @@ class EnhancedContentLauncher {
       }
       
       if (this.generator) {
-        const stats = this.generator.getStats();
-        console.log(`📊 Enhanced Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages, ${stats.chatBasedContentCreated} chat-based content created`);
+        const $1 = this.generator.getStats();
+        console.log("📊 Enhanced Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages, ${stats.chatBasedContentCreated} chat-based content created");
       }
     }, 30000); // Show stats every 30 seconds
   }
@@ -68,8 +68,8 @@ class EnhancedContentLauncher {
       // Generate one batch
       await this.generator.generateEnhancedBatch();
       
-      const stats = this.generator.getStats();
-      console.log(`✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated + stats.chatBasedContentCreated} enhanced content pieces`);
+      const $1 = this.generator.getStats();
+      console.log("✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated + stats.chatBasedContentCreated} enhanced content pieces");
       
       return stats;
       
@@ -100,7 +100,7 @@ module.exports = EnhancedContentLauncher;
 
 // Run if called directly
 if (require.main === module) {
-  const launcher = new EnhancedContentLauncher();
+  const $1 = new EnhancedContentLauncher();
   global.launcher = launcher;
   
   // Check if run once mode is requested

@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class SidebarIntegrationAgent {
+class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
@@ -36,10 +36,10 @@ class SidebarIntegrationAgent {
   }
 
   async checkSidebarLoading() {
-    const sidebarComponent = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
+    const $1 = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
     
     if (fs.existsSync(sidebarComponent)) {
-      const content = fs.readFileSync(sidebarComponent, 'ut'f'8');
+      const $1 = fs.readFileSync(sidebarComponent, 'ut'f'8');
       
       // Check for proper state initialization
       if (!content.includes('useSta't'e') || !content.includes('isOp'e'n')) {
@@ -76,10 +76,10 @@ class SidebarIntegrationAgent {
   }
 
   async checkSidebarNavigation() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check if page uses layout with sidebar
       if (!content.includes('ModernLayo'u't') && !content.includes('PageLayo'u't')) {
@@ -100,18 +100,18 @@ class SidebarIntegrationAgent {
   }
 
   async checkSidebarStateManagement() {
-    const sidebarComponent = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
+    const $1 = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
     
     if (fs.existsSync(sidebarComponent)) {
-      const content = fs.readFileSync(sidebarComponent, 'ut'f'8');
+      const $1 = fs.readFileSync(sidebarComponent, 'ut'f'8');
       
       // Check for proper state management patterns
-      const statePatterns = [
+      const $1 = [
         'useSta't'e', 'useEffe'c't', 'useCallba'c'k',
         'expandedSectio'n's', 'searchQue'r'y'
       ];
       
-      const hasStateManagement = statePatterns.every(pattern => content.includes(pattern));
+      const $1 = statePatterns.every(pattern => content.includes(pattern));
       
       if (!hasStateManagement) {
         this.issues.push({
@@ -131,18 +131,18 @@ class SidebarIntegrationAgent {
   }
 
   async checkSidebarMobileResponsiveness() {
-    const sidebarComponent = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
+    const $1 = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
     
     if (fs.existsSync(sidebarComponent)) {
-      const content = fs.readFileSync(sidebarComponent, 'ut'f'8');
+      const $1 = fs.readFileSync(sidebarComponent, 'ut'f'8');
       
       // Check for mobile-specific classes
-      const mobileClasses = [
+      const $1 = [
         'l'g':hidden', 'l'g':translate-x-0', 'l'g':relative',
         'mobile-togg'l'e', 'sidebar-contain'e'r'
       ];
       
-      const hasMobileClasses = mobileClasses.every(cls => content.includes(cls));
+      const $1 = mobileClasses.every(cls => content.includes(cls));
       
       if (!hasMobileClasses) {
         this.issues.push({
@@ -162,18 +162,18 @@ class SidebarIntegrationAgent {
   }
 
   async checkSidebarAccessibility() {
-    const sidebarComponent = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
+    const $1 = path.join(this.componentsDir, 'u'i'/Sidebar.tsx');
     
     if (fs.existsSync(sidebarComponent)) {
-      const content = fs.readFileSync(sidebarComponent, 'ut'f'8');
+      const $1 = fs.readFileSync(sidebarComponent, 'ut'f'8');
       
       // Check for accessibility attributes
-      const accessibilityAttributes = [
+      const $1 = [
         'aria-lab'e'l', 'aria-expand'e'd', 'aria-hidd'e'n',
         'rol'e'="navigation"', 'tabInd'e'x'
       ];
       
-      const hasAccessibility = accessibilityAttributes.some(attr => content.includes(attr));
+      const $1 = accessibilityAttributes.some(attr => content.includes(attr));
       
       if (!hasAccessibility) {
         this.issues.push({
@@ -194,22 +194,22 @@ class SidebarIntegrationAgent {
 
   generateSidebarStateFix() {
     return {
-      stateCode: `
+      stateCode: "
   const [isOpen, setIsOpen] = useState(false)
   const [expandedSections, setExpandedSections] = useState(new Set())
   const [searchQuery, setSearchQuery] = useState('')
-      `,
+      ",
       description: 'Ad'd' proper state management for sidebar'
     };
   }
 
   generateSidebarHandlersFix() {
     return {
-      handlersCode: `
-  const toggleSidebar = () => setIsOpen(!isOpen)
-  const closeSidebar = () => setIsOpen(false)
-  const toggleSection = (sectionId) => {
-    const newExpanded = new Set(expandedSections)
+      handlersCode: "
+  const $1 = () => setIsOpen(!isOpen)
+  const $1 = () => setIsOpen(false)
+  const $1 = (sectionId) => {
+    const $1 = new Set(expandedSections)
     if (newExpanded.has(sectionId)) {
       newExpanded.delete(sectionId)
     } else {
@@ -217,14 +217,14 @@ class SidebarIntegrationAgent {
     }
     setExpandedSections(newExpanded)
   }
-      `,
+      ",
       description: 'Ad'd' proper event handlers for sidebar'
     };
   }
 
   generateSidebarLayoutFix() {
     return {
-      layoutCode: `;}
+      layoutCode: ";}
 import ModernLayout from '../components/layout/ModernLayout'
 
 // Wrap component content with ModernLayout
@@ -233,14 +233,14 @@ return (
     {/* Your component content */}</div>
   </ModernLayout>
 )
-      `,
+      ",
       description: 'Ad'd' ModernLayout wrapper for sidebar integration'
     };
   }
 
   generateStateManagementFix() {
     return {
-      stateManagementCode: `
+      stateManagementCode: "
   // Enhanced state management
   const [isOpen, setIsOpen] = useState(false)
   const [expandedSections, setExpandedSections] = useState(new Set())
@@ -249,7 +249,7 @@ return (
   
   // Persist sidebar state
   useEffect(() => {
-    const savedState = localStorage.getItem('sidebar-sta't'e')
+    const $1 = localStorage.getItem('sidebar-sta't'e')
     if (savedState) {
       const { expandedSections: saved } = JSON.parse(savedState)
       setExpandedSections(new Set(saved))
@@ -261,17 +261,17 @@ return (
       expandedSections: Array.from(expandedSections)
     }))
   }, [expandedSections])
-      `,
+      ",
       description: 'Improv'e' state management with persistence'
     };
   }
 
   generateMobileResponsivenessFix() {
     return {
-      mobileCode: `
+      mobileCode: "
   // Mobile responsiveness improvements
   useEffect(() => {
-    const handleResize = () => {
+    const $1 = () => {
       if (window.innerWidth >= 1024) {
         setIsOpen(true)
       } else {
@@ -284,41 +284,41 @@ return (
     
     return () => window.removeEventListener('resi'z'e', handleResize)
   }, [])
-      `,
+      ",
       description: 'Ad'd' mobile responsiveness improvements'
     };
   }
 
   generateAccessibilityFix() {
     return {
-      accessibilityCode: `
+      accessibilityCode: "
   // Accessibility improvements
-  const sidebarProps = {
+  const $1 = {
     'aria-lab'e'l': 'Mai'n' navigation',
     'ro'l'e': 'navigati'o'n',
     'aria-expand'e'd': isOpen,
     'aria-hidd'e'n': !isOpen
   }
   
-  const toggleProps = {
+  const $1 = {
     'aria-lab'e'l': isOpen ? 'Clos'e' sidebar' : 'Ope'n' sidebar',
     'aria-expand'e'd': isOpen,
     'aria-contro'l's': 'sidebar-navigati'o'n'
   }
-      `,
+      ",
       description: 'Ad'd' accessibility attributes to sidebar'
     };
   }
 
   getPages() {
-    const pages = [];
+    const $1 = [];
     
-    const walkDir = (dir) => {
-      const files = fs.readdirSync(dir);
+    const $1 = (dir) => {
+      const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        const $1 = path.join(dir, file);
+        const $1 = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
@@ -333,8 +333,8 @@ return (
   }
 
   generateSummary() {
-    const totalIssues = this.issues.length;
-    const totalFixes = this.fixes.length;
+    const $1 = this.issues.length;
+    const $1 = this.fixes.length;
     
     return {
       totalIssues,
@@ -364,16 +364,16 @@ return (
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log(`✅ Applied sidebar fix to ${fix.file}`);
+        console.log("✅ Applied sidebar fix to ${fix.file}");
       } catch (error) {
-        console.error(`❌ Failed to apply sidebar fix to ${fix.file}:`, error.message);
+        console.error("❌ Failed to apply sidebar fix to ${fix.file}:", error.message);
       }
     }
   }
 
   async applyFix(fix) {
-    const filePath = fix.file;
-    let content = fs.readFileSync(filePath, 'ut'f'8');
+    const $1 = fix.file;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     switch (fix.type) {
       case 'ad'd'_sidebar_state':
@@ -400,11 +400,11 @@ return (
   }
 
   applySidebarStateFix(content, fix) {
-    const useStateIndex = content.indexOf('useSta't'e');
+    const $1 = content.indexOf('useSta't'e');
     if (useStateIndex === -1) {
-      const importIndex = content.indexOf('impo'r't');
-      const nextImportIndex = content.indexOf('\n', importIndex);
-      const newState = fix.stateCode;
+      const $1 = content.indexOf('impo'r't');
+      const $1 = content.indexOf('\n', importIndex);
+      const $1 = fix.stateCode;
       
       content = content.slice(0, nextImportIndex) + newState + content.slice(nextImportIndex);
     }
@@ -412,11 +412,11 @@ return (
   }
 
   applySidebarHandlersFix(content, fix) {
-    const componentIndex = content.indexOf('cons't' Sidebar');
+    const $1 = content.indexOf('cons't' Sidebar');
     if (componentIndex !== -1) {
-      const handlersCode = fix.handlersCode;
-      const beforeHandlers = content.slice(0, componentIndex);
-      const afterHandlers = content.slice(componentIndex);
+      const $1 = fix.handlersCode;
+      const $1 = content.slice(0, componentIndex);
+      const $1 = content.slice(componentIndex);
       
       content = beforeHandlers + handlersCode + afterHandlers;
     }
@@ -426,22 +426,22 @@ return (
   applySidebarLayoutFix(content, fix) {
     // Add ModernLayout import and wrapper
     if (!content.includes('impor't' ModernLayout')) {
-      const importIndex = content.indexOf('impo'r't');
-      const nextImportIndex = content.indexOf('\n', importIndex);
-      const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
+      const $1 = content.indexOf('impo'r't');
+      const $1 = content.indexOf('\n', importIndex);
+      const $1 = "import ModernLayout from '../components/layout/ModernLayout'\n";
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
     // Wrap content with ModernLayout
-    const returnIndex = content.indexOf('retur'n' (');
-    const closingIndex = content.lastIndexOf(')');
+    const $1 = content.indexOf('retur'n' (');
+    const $1 = content.lastIndexOf(')');
     
     if (returnIndex !== -1 && closingIndex !== -1) {
-      const beforeReturn = content.slice(0, returnIndex);
-      const afterReturn = content.slice(returnIndex);
-      const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
-      const afterClosing = content.slice(closingIndex + 1);
+      const $1 = content.slice(0, returnIndex);
+      const $1 = content.slice(returnIndex);
+      const $1 = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
+      const $1 = content.slice(closingIndex + 1);
       </div>
       content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
@@ -450,12 +450,12 @@ return (
   }
 
   applyStateManagementFix(content, fix) {
-    const stateManagementCode = fix.stateManagementCode;
-    const componentIndex = content.indexOf('cons't' Sidebar');
+    const $1 = fix.stateManagementCode;
+    const $1 = content.indexOf('cons't' Sidebar');
     
     if (componentIndex !== -1) {
-      const beforeComponent = content.slice(0, componentIndex);
-      const afterComponent = content.slice(componentIndex);
+      const $1 = content.slice(0, componentIndex);
+      const $1 = content.slice(componentIndex);
       
       content = beforeComponent + stateManagementCode + afterComponent;
     }
@@ -464,12 +464,12 @@ return (
   }
 
   applyMobileResponsivenessFix(content, fix) {
-    const mobileCode = fix.mobileCode;
-    const componentIndex = content.indexOf('cons't' Sidebar');
+    const $1 = fix.mobileCode;
+    const $1 = content.indexOf('cons't' Sidebar');
     
     if (componentIndex !== -1) {
-      const beforeComponent = content.slice(0, componentIndex);
-      const afterComponent = content.slice(componentIndex);
+      const $1 = content.slice(0, componentIndex);
+      const $1 = content.slice(componentIndex);
       
       content = beforeComponent + mobileCode + afterComponent;
     }
@@ -478,12 +478,12 @@ return (
   }
 
   applyAccessibilityFix(content, fix) {
-    const accessibilityCode = fix.accessibilityCode;
-    const componentIndex = content.indexOf('cons't' Sidebar');
+    const $1 = fix.accessibilityCode;
+    const $1 = content.indexOf('cons't' Sidebar');
     
     if (componentIndex !== -1) {
-      const beforeComponent = content.slice(0, componentIndex);
-      const afterComponent = content.slice(componentIndex);
+      const $1 = content.slice(0, componentIndex);
+      const $1 = content.slice(componentIndex);
       
       content = beforeComponent + accessibilityCode + afterComponent;
     }

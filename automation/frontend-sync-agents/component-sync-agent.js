@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
-const chokidar = require('chokid'a'r');
+const $1 = require('chokid'a'r');
 
-class ComponentSyncAgent {
+class $1 {
   constructor() {
     this.name = 'component-sync-age'n't';
     this.status = 'rea'd'y';
@@ -74,8 +74,8 @@ class ComponentSyncAgent {
   async initializeComponentWatcher() {
     console.log('👀 Initializing component watcher...');
     
-    const watchPaths = this.config.watchPaths.filter(path => {
-      const fullPath = path.join(this.projectRoot, path);
+    const $1 = this.config.watchPaths.filter(path => {
+      const $1 = path.join(this.projectRoot, path);
       return fs.existsSync(fullPath);
     });
     
@@ -100,19 +100,19 @@ class ComponentSyncAgent {
       .on('unli'n'k', (filePath) => this.handleComponentChange('unli'n'k', filePath))
       .on('err'o'r', (error) => this.handleWatcherError(error));
 
-    console.log(`✅ Component watcher initialized for: ${watchPaths.join(', ')}`);
+    console.log("✅ Component watcher initialized for: ${watchPaths.join(', ')}");
   }
 
   handleComponentChange(event, filePath) {
-    const relativePath = path.relative(this.projectRoot, filePath);
-    const fileExt = path.extname(filePath).toLowerCase();
+    const $1 = path.relative(this.projectRoot, filePath);
+    const $1 = path.extname(filePath).toLowerCase();
     
     // Only process component and style files
-    const isComponent = this.config.componentTypes.includes(fileExt.slice(1));
-    const isStyle = this.config.styleTypes.includes(fileExt.slice(1));
+    const $1 = this.config.componentTypes.includes(fileExt.slice(1));
+    const $1 = this.config.styleTypes.includes(fileExt.slice(1));
     
     if (isComponent || isStyle) {
-      console.log(`📝 Component ${event}: ${relativePath}`);
+      console.log("📝 Component ${event}: ${relativePath}");
       
       this.addToSyncQueue({
         event,
@@ -151,7 +151,7 @@ class ComponentSyncAgent {
     }
     
     this.syncQueue.push(change);
-    console.log(`📋 Added to component sync queue: ${change.relativePath} (${this.syncQueue.length} items)`);
+    console.log("📋 Added to component sync queue: ${change.relativePath} (${this.syncQueue.length} items)");
   }
 
   startContinuousSync() {
@@ -168,10 +168,10 @@ class ComponentSyncAgent {
     }
     
     this.syncInProgress = true;
-    console.log(`🔄 Processing component sync queue (${this.syncQueue.length} items)...`);
+    console.log("🔄 Processing component sync queue (${this.syncQueue.length} items)...");
     
     try {
-      const changes = [...this.syncQueue];
+      const $1 = [...this.syncQueue];
       this.syncQueue = [];
       
       await this.syncComponentChanges(changes);
@@ -179,7 +179,7 @@ class ComponentSyncAgent {
       this.syncCount++;
       this.lastSync = new Date().toISOString();
       
-      console.log(`✅ Component sync completed (${changes.length} changes processed)`);
+      console.log("✅ Component sync completed (${changes.length} changes processed)");
       
     } catch (error) {
       console.error('❌ Component sync failed:', error);
@@ -193,11 +193,11 @@ class ComponentSyncAgent {
   }
 
   async syncComponentChanges(changes) {
-    console.log(`🔄 Syncing ${changes.length} component changes...`);
+    console.log("🔄 Syncing ${changes.length} component changes...");
     
     // Group changes by type
-    const componentChanges = changes.filter(c => c.fileType === 'compone'n't');
-    const styleChanges = changes.filter(c => c.fileType === 'sty'l'e');
+    const $1 = changes.filter(c => c.fileType === 'compone'n't');
+    const $1 = changes.filter(c => c.fileType === 'sty'l'e');
     
     // Process component changes
     if (componentChanges.length > 0) {
@@ -214,33 +214,33 @@ class ComponentSyncAgent {
   }
 
   async handleComponentChanges(changes) {
-    console.log(`🔄 Handling ${changes.length} component changes...`);
+    console.log("🔄 Handling ${changes.length} component changes...");
     
     for (const change of changes) {
       try {
         await this.processComponentChange(change);
       } catch (error) {
-        console.error(`❌ Failed to process component change ${change.relativePath}:`, error);
+        console.error("❌ Failed to process component change ${change.relativePath}:", error);
       }
     }
   }
 
   async handleStyleChanges(changes) {
-    console.log(`🎨 Handling ${changes.length} style changes...`);
+    console.log("🎨 Handling ${changes.length} style changes...");
     
     for (const change of changes) {
       try {
         await this.processStyleChange(change);
       } catch (error) {
-        console.error(`❌ Failed to process style change ${change.relativePath}:`, error);
+        console.error("❌ Failed to process style change ${change.relativePath}:", error);
       }
     }
   }
 
   async processComponentChange(change) {
-    console.log(`📝 Processing component change: ${change.relativePath}`);
+    console.log("📝 Processing component change: ${change.relativePath}");
     
-    const fileExt = path.extname(change.filePath).toLowerCase();
+    const $1 = path.extname(change.filePath).toLowerCase();
     
     switch (change.event) {
       case 'a'd'd':
@@ -256,7 +256,7 @@ class ComponentSyncAgent {
   }
 
   async processStyleChange(change) {
-    console.log(`🎨 Processing style change: ${change.relativePath}`);
+    console.log("🎨 Processing style change: ${change.relativePath}");
     
     switch (change.event) {
       case 'a'd'd':
@@ -272,7 +272,7 @@ class ComponentSyncAgent {
   }
 
   async handleComponentAdded(change) {
-    console.log(`➕ Component added: ${change.relativePath}`);
+    console.log("➕ Component added: ${change.relativePath}");
     
     // Validate component
     await this.validateComponent(change.filePath);
@@ -288,7 +288,7 @@ class ComponentSyncAgent {
   }
 
   async handleComponentChanged(change) {
-    console.log(`🔄 Component changed: ${change.relativePath}`);
+    console.log("🔄 Component changed: ${change.relativePath}");
     
     // Validate component
     await this.validateComponent(change.filePath);
@@ -304,7 +304,7 @@ class ComponentSyncAgent {
   }
 
   async handleComponentDeleted(change) {
-    console.log(`🗑️  Component deleted: ${change.relativePath}`);
+    console.log("🗑️  Component deleted: ${change.relativePath}");
     
     // Remove from exports
     await this.removeComponentExports(change);
@@ -314,7 +314,7 @@ class ComponentSyncAgent {
   }
 
   async handleStyleAdded(change) {
-    console.log(`🎨 Style added: ${change.relativePath}`);
+    console.log("🎨 Style added: ${change.relativePath}");
     
     // Validate CSS
     await this.validateCSS(change.filePath);
@@ -324,7 +324,7 @@ class ComponentSyncAgent {
   }
 
   async handleStyleChanged(change) {
-    console.log(`🎨 Style changed: ${change.relativePath}`);
+    console.log("🎨 Style changed: ${change.relativePath}");
     
     // Validate CSS
     await this.validateCSS(change.filePath);
@@ -334,7 +334,7 @@ class ComponentSyncAgent {
   }
 
   async handleStyleDeleted(change) {
-    console.log(`🗑️  Style deleted: ${change.relativePath}`);
+    console.log("🗑️  Style deleted: ${change.relativePath}");
     
     // Clean up style imports
     await this.cleanupStyleImports(change);
@@ -342,9 +342,9 @@ class ComponentSyncAgent {
 
   async validateComponent(filePath) {
     try {
-      console.log(`🔍 Validating component: ${path.relative(this.projectRoot, filePath)}`);
+      console.log("🔍 Validating component: ${path.relative(this.projectRoot, filePath)}");
       
-      const fileExt = path.extname(filePath).toLowerCase();
+      const $1 = path.extname(filePath).toLowerCase();
       
       if (fileExt === '.tsx' || fileExt === '.ts') {
         // TypeScript validation
@@ -364,7 +364,7 @@ class ComponentSyncAgent {
 
   async validateCSS(filePath) {
     try {
-      console.log(`🎨 Validating CSS: ${path.relative(this.projectRoot, filePath)}`);
+      console.log("🎨 Validating CSS: ${path.relative(this.projectRoot, filePath)}");
       
       // Add CSS validation logic here
       // For now, just check if file is readable
@@ -378,8 +378,8 @@ class ComponentSyncAgent {
 
   async runTypeScriptCheck(filePath) {
     try {
-      console.log(`🔍 Running TypeScript check for: ${path.relative(this.projectRoot, filePath)}`);
-      execSync(`npx tsc --noEmit "${filePath}"`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      console.log("🔍 Running TypeScript check for: ${path.relative(this.projectRoot, filePath)}");
+      execSync("npx tsc --noEmit "${filePath}"", { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ TypeScript check passed');
     } catch (error) {
       console.warn('⚠️  TypeScript check failed:', error.message);
@@ -388,8 +388,8 @@ class ComponentSyncAgent {
 
   async runLinting(filePath) {
     try {
-      console.log(`🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}`);
-      execSync(`npx eslint "${filePath}" --fix`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      console.log("🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}");
+      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ Linting completed');
     } catch (error) {
       console.warn('⚠️  Linting failed:', error.message);
@@ -398,15 +398,15 @@ class ComponentSyncAgent {
 
   async checkComponentImports(change) {
     try {
-      console.log(`📦 Checking component imports for: ${change.relativePath}`);
+      console.log("📦 Checking component imports for: ${change.relativePath}");
       
-      const content = fs.readFileSync(change.filePath, 'ut'f'8');
+      const $1 = fs.readFileSync(change.filePath, 'ut'f'8');
       
       // Check for missing imports
-      const missingImports = this.findMissingImports(content, change.filePath);
+      const $1 = this.findMissingImports(content, change.filePath);
       
       if (missingImports.length > 0) {
-        console.log(`📦 Found missing imports: ${missingImports.join(', ')}`);
+        console.log("📦 Found missing imports: ${missingImports.join(', ')}");
         await this.addMissingImports(change.filePath, missingImports);
       }
       
@@ -417,17 +417,17 @@ class ComponentSyncAgent {
   }
 
   findMissingImports(content, filePath) {
-    const missingImports = [];
+    const $1 = [];
     
     // Simple regex to find potential missing imports
-    const importRegex = /import\s+{([^}]+)}\s+from\s+['"]([^'"]+)['"]/g;
-    const matches = content.match(importRegex);
+    const $1 = /import\s+{([^}]+)}\s+from\s+['"]([^'"]+)['"]/g;
+    const $1 = content.match(importRegex);
     
     if (matches) {
       for (const match of matches) {
         // Check if the imported module exists
-        const modulePath = match.match(/from\s+['"]([^'"]+)['"]/)[1];
-        const fullModulePath = path.resolve(path.dirname(filePath), modulePath);
+        const $1 = match.match(/from\s+['"]([^'"]+)['"]/)[1];
+        const $1 = path.resolve(path.dirname(filePath), modulePath);
         
         if (!fs.existsSync(fullModulePath) && !fs.existsSync(fullModulePath + '.tsx') && !fs.existsSync(fullModulePath + '.ts')) {
           missingImports.push(modulePath);
@@ -440,13 +440,13 @@ class ComponentSyncAgent {
 
   async addMissingImports(filePath, missingImports) {
     try {
-      console.log(`📦 Adding missing imports to: ${path.relative(this.projectRoot, filePath)}`);
+      console.log("📦 Adding missing imports to: ${path.relative(this.projectRoot, filePath)}");
       
       // Add import statements for missing modules
       for (const modulePath of missingImports) {
         // This is a simplified implementation
         // In a real scenario, you'd' want to analyze the actual usage and add proper imports
-        console.log(`📦 Would add import for: ${modulePath}`);
+        console.log("📦 Would add import for: ${modulePath}");
       }
       
       console.log('✅ Missing imports added');
@@ -457,9 +457,9 @@ class ComponentSyncAgent {
 
   async generateComponentTypes(change) {
     try {
-      console.log(`📝 Generating types for: ${change.relativePath}`);
+      console.log("📝 Generating types for: ${change.relativePath}");
       
-      const fileExt = path.extname(change.filePath).toLowerCase();
+      const $1 = path.extname(change.filePath).toLowerCase();
       
       if (fileExt === '.jsx' || fileExt === '.js') {
         // Convert JS to TS if needed
@@ -474,7 +474,7 @@ class ComponentSyncAgent {
 
   async convertJsToTs(filePath) {
     try {
-      console.log(`🔄 Converting JS to TS: ${path.relative(this.projectRoot, filePath)}`);
+      console.log("🔄 Converting JS to TS: ${path.relative(this.projectRoot, filePath)}");
       
       // This is a simplified implementation
       // In a real scenario, you'd' want to use a proper JS to TS converter
@@ -488,7 +488,7 @@ class ComponentSyncAgent {
 
   async updateComponentTypes(change) {
     try {
-      console.log(`📝 Updating types for: ${change.relativePath}`);
+      console.log("📝 Updating types for: ${change.relativePath}");
       
       // Update type definitions if needed
       console.log('✅ Component types updated');
@@ -499,7 +499,7 @@ class ComponentSyncAgent {
 
   async updateComponentExports(change) {
     try {
-      console.log(`📦 Updating exports for: ${change.relativePath}`);
+      console.log("📦 Updating exports for: ${change.relativePath}");
       
       // Update index files or barrel exports
       await this.updateBarrelExports(change);
@@ -512,22 +512,22 @@ class ComponentSyncAgent {
 
   async updateBarrelExports(change) {
     try {
-      const componentDir = path.dirname(change.filePath);
-      const indexFile = path.join(componentDir, 'inde'x'.ts');
+      const $1 = path.dirname(change.filePath);
+      const $1 = path.join(componentDir, 'inde'x'.ts');
       
       if (fs.existsSync(indexFile)) {
-        console.log(`📦 Updating barrel exports in: ${path.relative(this.projectRoot, indexFile)}`);
+        console.log("📦 Updating barrel exports in: ${path.relative(this.projectRoot, indexFile)}");
         
         // Read current exports
-        const content = fs.readFileSync(indexFile, 'ut'f'8');
+        const $1 = fs.readFileSync(indexFile, 'ut'f'8');
         
         // Add new export if not already present
-        const componentName = path.basename(change.filePath, path.extname(change.filePath));
-        const exportStatement = `export { default as ${componentName} } from './${componentName}';\n`;
+        const $1 = path.basename(change.filePath, path.extname(change.filePath));
+        const $1 = "export { default as ${componentName} } from './${componentName}';\n";
         
         if (!content.includes(exportStatement)) {
           fs.appendFileSync(indexFile, exportStatement);
-          console.log(`📦 Added export for: ${componentName}`);
+          console.log("📦 Added export for: ${componentName}");
         }
       }
       
@@ -539,7 +539,7 @@ class ComponentSyncAgent {
 
   async removeComponentExports(change) {
     try {
-      console.log(`🗑️  Removing exports for: ${change.relativePath}`);
+      console.log("🗑️  Removing exports for: ${change.relativePath}");
       
       // Remove from barrel exports
       await this.removeFromBarrelExports(change);
@@ -552,23 +552,23 @@ class ComponentSyncAgent {
 
   async removeFromBarrelExports(change) {
     try {
-      const componentDir = path.dirname(change.filePath);
-      const indexFile = path.join(componentDir, 'inde'x'.ts');
+      const $1 = path.dirname(change.filePath);
+      const $1 = path.join(componentDir, 'inde'x'.ts');
       
       if (fs.existsSync(indexFile)) {
-        console.log(`🗑️  Removing from barrel exports: ${path.relative(this.projectRoot, indexFile)}`);
+        console.log("🗑️  Removing from barrel exports: ${path.relative(this.projectRoot, indexFile)}");
         
         // Read current exports
-        let content = fs.readFileSync(indexFile, 'ut'f'8');
+        let $1 = fs.readFileSync(indexFile, 'ut'f'8');
         
         // Remove export for deleted component
-        const componentName = path.basename(change.filePath, path.extname(change.filePath));
-        const exportRegex = new RegExp(`export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+['"]\\./${componentName}['"];?\\n?`, 'g');
+        const $1 = path.basename(change.filePath, path.extname(change.filePath));
+        const $1 = new RegExp("export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+['"]\\./${componentName}['"];?\\n?", 'g');
         
         content = content.replace(exportRegex, '');
         fs.writeFileSync(indexFile, content);
         
-        console.log(`🗑️  Removed export for: ${componentName}`);
+        console.log("🗑️  Removed export for: ${componentName}");
       }
       
       console.log('✅ Barrel exports cleaned');
@@ -579,7 +579,7 @@ class ComponentSyncAgent {
 
   async cleanupComponentImports(change) {
     try {
-      console.log(`🧹 Cleaning up imports for: ${change.relativePath}`);
+      console.log("🧹 Cleaning up imports for: ${change.relativePath}");
       
       // Find files that import the deleted component
       await this.removeComponentImports(change);
@@ -592,14 +592,14 @@ class ComponentSyncAgent {
 
   async removeComponentImports(change) {
     try {
-      const componentName = path.basename(change.filePath, path.extname(change.filePath));
+      const $1 = path.basename(change.filePath, path.extname(change.filePath));
       
       // Search for files that import this component
-      const searchPattern = new RegExp(`import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+['"][^'"]*['"]`, 'g');
+      const $1 = new RegExp("import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+['"][^'"]*['"]", 'g');
       
       // This is a simplified implementation
       // In a real scenario, you'd' want to scan all files and remove the imports
-      console.log(`🧹 Would remove imports of: ${componentName}`);
+      console.log("🧹 Would remove imports of: ${componentName}");
       
       console.log('✅ Component imports removed');
     } catch (error) {
@@ -609,7 +609,7 @@ class ComponentSyncAgent {
 
   async updateStyleImports(change) {
     try {
-      console.log(`🎨 Updating style imports for: ${change.relativePath}`);
+      console.log("🎨 Updating style imports for: ${change.relativePath}");
       
       // Update style imports in components
       await this.updateComponentStyleImports(change);
@@ -622,11 +622,11 @@ class ComponentSyncAgent {
 
   async updateComponentStyleImports(change) {
     try {
-      const styleName = path.basename(change.filePath, path.extname(change.filePath));
+      const $1 = path.basename(change.filePath, path.extname(change.filePath));
       
       // Find components that might need this style
       // This is a simplified implementation
-      console.log(`🎨 Would update style imports for: ${styleName}`);
+      console.log("🎨 Would update style imports for: ${styleName}");
       
       console.log('✅ Component style imports updated');
     } catch (error) {
@@ -636,13 +636,13 @@ class ComponentSyncAgent {
 
   async cleanupStyleImports(change) {
     try {
-      console.log(`🧹 Cleaning up style imports for: ${change.relativePath}`);
+      console.log("🧹 Cleaning up style imports for: ${change.relativePath}");
       
-      const styleName = path.basename(change.filePath, path.extname(change.filePath));
+      const $1 = path.basename(change.filePath, path.extname(change.filePath));
       
       // Remove style imports from components
       // This is a simplified implementation
-      console.log(`🧹 Would remove style imports for: ${styleName}`);
+      console.log("🧹 Would remove style imports for: ${styleName}");
       
       console.log('✅ Style imports cleaned');
     } catch (error) {
@@ -678,11 +678,11 @@ class ComponentSyncAgent {
     try {
       console.log('💾 Auto-committing component changes...');
       
-      const changeSummary = changes.map(c => c.relativePath).join(', ');
-      const commitMessage = `Auto-sync components: ${changeSummary}`;
+      const $1 = changes.map(c => c.relativePath).join(', ');
+      const $1 = "Auto-sync components: ${changeSummary}";
       
       execSync('gi't' add .', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      execSync(`git commit -m "${commitMessage}"`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: 'pi'p'e' });
       
       console.log('✅ Component changes auto-committed');
     } catch (error) {
@@ -729,7 +729,7 @@ class ComponentSyncAgent {
   }
 
   checkHealth() {
-    const health = {
+    const $1 = {
       status: this.status,
       syncCount: this.syncCount,
       errorCount: this.errorCount,
@@ -742,7 +742,7 @@ class ComponentSyncAgent {
     console.log('❤️  Component health check:', health);
     
     // Save health data
-    const healthPath = path.join(__dirname, '../frontend-sync-status/component-agent-health.json');
+    const $1 = path.join(__dirname, '../frontend-sync-status/component-agent-health.json');
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
   }
 
@@ -760,8 +760,8 @@ class ComponentSyncAgent {
     console.log('🔧 Improving component sync agent...');
     
     // Analyze learning data for improvements
-    const recentData = this.learningData.slice(-100);
-    const errorRate = recentData.filter(d => !d.success).length / recentData.length;
+    const $1 = this.learningData.slice(-100);
+    const $1 = recentData.filter(d => !d.success).length / recentData.length;
     
     if (errorRate > 0.1) {
       console.log('🔧 High error rate detected, implementing improvements...');
@@ -770,7 +770,7 @@ class ComponentSyncAgent {
     
     // Optimize sync intervals based on performance
     if (this.syncCount > 100) {
-      const avgSyncTime = this.calculateAverageSyncTime();
+      const $1 = this.calculateAverageSyncTime();
       if (avgSyncTime > 3000) {
         console.log('🔧 Slow sync detected, optimizing...');
         this.config.syncInterval = Math.max(1000, this.config.syncInterval * 0.8);
@@ -811,7 +811,7 @@ class ComponentSyncAgent {
 
 // Auto-start if run directly
 if (require.main === module) {
-  const agent = new ComponentSyncAgent();
+  const $1 = new ComponentSyncAgent();
   
   process.on('SIGI'N'T', async () => {
     console.log('\n🛑 Received SIGINT, shutting down...');

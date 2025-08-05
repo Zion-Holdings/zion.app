@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 ;
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
 const { v4: uuidv4 } = require('uu'i'd');
 
-class PerformanceMonitor {
+class $1 {
   constructor() {
     this.name = 'performance-monit'o'r';
     this.status = 'rea'd'y';
@@ -25,7 +25,7 @@ class PerformanceMonitor {
 
   loadConfig() {
     try {
-      const configPath = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-autonomous-agents-confi'g'.json');
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-autonomous-agents-confi'g'.json');
       return JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
     } catch (error) {
       console.error('Erro'r' loading config:', error.message);
@@ -54,7 +54,7 @@ class PerformanceMonitor {
 
   async collectMetrics() {
     try {
-      const metrics = {
+      const $1 = {
         timestamp: Date.now(),
         system: await this.getSystemMetrics(),
         agents: await this.getAgentMetrics(),
@@ -80,8 +80,8 @@ class PerformanceMonitor {
 
   async getSystemMetrics() {
     try {
-      const memory = process.memoryUsage();
-      const cpu = await this.getCpuUsage();
+      const $1 = process.memoryUsage();
+      const $1 = await this.getCpuUsage();
       
       return {
         memory: {
@@ -103,9 +103,9 @@ class PerformanceMonitor {
 
   async getCpuUsage() {
     try {
-      const startUsage = process.cpuUsage();
+      const $1 = process.cpuUsage();
       await new Promise(resolve => setTimeout(resolve, 100));
-      const endUsage = process.cpuUsage(startUsage);
+      const $1 = process.cpuUsage(startUsage);
       
       return {
         user: endUsage.user,
@@ -120,21 +120,21 @@ class PerformanceMonitor {
 
   async getAgentMetrics() {
     try {
-      const agentsDir = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-agen't's');
-      const agents = [];
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-agen't's');
+      const $1 = [];
       
       if (fs.existsSync(agentsDir)) {
-        const agentDirs = fs.readdirSync(agentsDir, { withFileTypes: true })
+        const $1 = fs.readdirSync(agentsDir, { withFileTypes: true })
           .filter(dirent => dirent.isDirectory())
           .map(dirent => dirent.name);
         
         for (const agentName of agentDirs) {
-          const agentPath = path.join(agentsDir, agentName);
-          const configPath = path.join(agentPath, `${agentName}-config.json`);
+          const $1 = path.join(agentsDir, agentName);
+          const $1 = path.join(agentPath, "${agentName}-config.json");
           
           if (fs.existsSync(configPath)) {
             try {
-              const config = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+              const $1 = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
               agents.push({
                 name: agentName,
                 status: config.status || 'unkno'w'n',
@@ -143,7 +143,7 @@ class PerformanceMonitor {
                 version: config.version
               });
             } catch (error) {
-              console.error(`Error reading agent config for ${agentName}:`, error.message);
+              console.error("Error reading agent config for ${agentName}:", error.message);
             }
           }
         }
@@ -162,21 +162,21 @@ class PerformanceMonitor {
 
   async getFactoryMetrics() {
     try {
-      const factoriesDir = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-factori'e's');
-      const factories = [];
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-factori'e's');
+      const $1 = [];
       
       if (fs.existsSync(factoriesDir)) {
-        const factoryDirs = fs.readdirSync(factoriesDir, { withFileTypes: true })
+        const $1 = fs.readdirSync(factoriesDir, { withFileTypes: true })
           .filter(dirent => dirent.isDirectory())
           .map(dirent => dirent.name);
         
         for (const factoryName of factoryDirs) {
-          const factoryPath = path.join(factoriesDir, factoryName);
-          const configPath = path.join(factoryPath, `${factoryName}-config.json`);
+          const $1 = path.join(factoriesDir, factoryName);
+          const $1 = path.join(factoryPath, "${factoryName}-config.json");
           
           if (fs.existsSync(configPath)) {
             try {
-              const config = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+              const $1 = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
               factories.push({
                 name: factoryName,
                 status: config.status || 'unkno'w'n',
@@ -185,7 +185,7 @@ class PerformanceMonitor {
                 version: config.version
               });
             } catch (error) {
-              console.error(`Error reading factory config for ${factoryName}:`, error.message);
+              console.error("Error reading factory config for ${factoryName}:", error.message);
             }
           }
         }
@@ -204,11 +204,11 @@ class PerformanceMonitor {
 
   async getPerformanceMetrics() {
     try {
-      const responseTimes = this.monitoringData
+      const $1 = this.monitoringData
         .slice(-10)
         .map(metric => metric.responseTime || 0);
       
-      const errorRates = this.monitoringData
+      const $1 = this.monitoringData
         .slice(-10)
         .map(metric => metric.errorRate || 0);
       
@@ -231,27 +231,27 @@ class PerformanceMonitor {
 
   calculateThroughput() {
     // Calculate operations per second
-    const recentMetrics = this.monitoringData.slice(-10);
+    const $1 = this.monitoringData.slice(-10);
     if (recentMetrics.length < 2) return 0;
     
-    const timeSpan = recentMetrics[recentMetrics.length - 1].timestamp - recentMetrics[0].timestamp;
-    const operations = recentMetrics.length;
+    const $1 = recentMetrics[recentMetrics.length - 1].timestamp - recentMetrics[0].timestamp;
+    const $1 = recentMetrics.length;
     
     return (operations / timeSpan) * 1000; // ops per second
   }
 
   calculateLatency() {
     // Calculate average latency
-    const recentMetrics = this.monitoringData.slice(-10);
+    const $1 = this.monitoringData.slice(-10);
     if (recentMetrics.length === 0) return 0;
     
-    const latencies = recentMetrics.map(metric => metric.latency || 0);
+    const $1 = recentMetrics.map(metric => metric.latency || 0);
     return latencies.reduce((a, b) => a + b, 0) / latencies.length;
   }
 
   async analyzeMetrics(metrics) {
     try {
-      const alerts = [];
+      const $1 = [];
       
       // Check CPU usage
       if (metrics.system.cpu && metrics.system.cpu.percentage > this.thresholds.cpu) {
@@ -261,7 +261,7 @@ class PerformanceMonitor {
           metric: 'c'p'u',
           value: metrics.system.cpu.percentage,
           threshold: this.thresholds.cpu,
-          message: `High CPU usage: ${metrics.system.cpu.percentage.toFixed(2)}%`
+          message: "High CPU usage: ${metrics.system.cpu.percentage.toFixed(2)}%"
         });
       }
       
@@ -273,7 +273,7 @@ class PerformanceMonitor {
           metric: 'memo'r'y',
           value: metrics.system.memory.percentage,
           threshold: this.thresholds.memory,
-          message: `High memory usage: ${metrics.system.memory.percentage.toFixed(2)}%`
+          message: "High memory usage: ${metrics.system.memory.percentage.toFixed(2)}%"
         });
       }
       
@@ -285,7 +285,7 @@ class PerformanceMonitor {
           metric: 'responseTi'm'e',
           value: metrics.performance.averageResponseTime,
           threshold: this.thresholds.responseTime,
-          message: `High response time: ${metrics.performance.averageResponseTime.toFixed(2)}ms`
+          message: "High response time: ${metrics.performance.averageResponseTime.toFixed(2)}ms"
         });
       }
       
@@ -297,7 +297,7 @@ class PerformanceMonitor {
           metric: 'errorRa't'e',
           value: metrics.performance.averageErrorRate,
           threshold: this.thresholds.errorRate,
-          message: `High error rate: ${metrics.performance.averageErrorRate.toFixed(2)}%`
+          message: "High error rate: ${metrics.performance.averageErrorRate.toFixed(2)}%"
         });
       }
       
@@ -323,7 +323,7 @@ class PerformanceMonitor {
 
   async processAlert(alert) {
     try {
-      console.log(`🚨 Performance Alert: ${alert.message}`);
+      console.log("🚨 Performance Alert: ${alert.message}");
       
       this.alerts.push({
         ...alert,
@@ -350,11 +350,11 @@ class PerformanceMonitor {
   async sendAlert(alert) {
     try {
       // Send to console for now, could be extended to email, Slack, etc.
-      console.log(`📊 Performance Alert [${alert.type.toUpperCase()}]: ${alert.message}`);
+      console.log("📊 Performance Alert [${alert.type.toUpperCase()}]: ${alert.message}");
       
       // Save alert to file
-      const alertPath = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-lo'g's', 'performance-alert's'.json');
-      const alerts = fs.existsSync(alertPath) ? JSON.parse(fs.readFileSync(alertPath, 'ut'f'8')) : [];
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-lo'g's', 'performance-alert's'.json');
+      const $1 = fs.existsSync(alertPath) ? JSON.parse(fs.readFileSync(alertPath, 'ut'f'8')) : [];
       alerts.push({
         ...alert,
         timestamp: Date.now()
@@ -384,7 +384,7 @@ class PerformanceMonitor {
           }
           break;
         default:
-          console.log(`No specific action for alert type: ${alert.component}.${alert.metric}`);
+          console.log("No specific action for alert type: ${alert.component}.${alert.metric}");
       }
     } catch (error) {
       console.error('Erro'r' taking corrective action:', error.message);
@@ -450,8 +450,8 @@ class PerformanceMonitor {
 
   async checkAutoScaling(metrics) {
     try {
-      const cpuUsage = metrics.system.cpu?.percentage || 0;
-      const memoryUsage = metrics.system.memory?.percentage || 0;
+      const $1 = metrics.system.cpu?.percentage || 0;
+      const $1 = metrics.system.memory?.percentage || 0;
       
       if (cpuUsage > 90 || memoryUsage > 90) {
         console.log('🔄 Auto-scaling triggered due to high resource usage');
@@ -504,8 +504,8 @@ class PerformanceMonitor {
 
   async checkPerformanceOptimization(metrics) {
     try {
-      const responseTime = metrics.performance?.averageResponseTime || 0;
-      const errorRate = metrics.performance?.averageErrorRate || 0;
+      const $1 = metrics.performance?.averageResponseTime || 0;
+      const $1 = metrics.performance?.averageErrorRate || 0;
       
       if (responseTime > 3000 || errorRate > 3) {
         console.log('🔧 Performance optimization triggered');
@@ -538,8 +538,8 @@ class PerformanceMonitor {
 
   async saveMetrics(metrics) {
     try {
-      const metricsPath = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-lo'g's', 'performance-metric's'.json');
-      const existingMetrics = fs.existsSync(metricsPath) ? JSON.parse(fs.readFileSync(metricsPath, 'ut'f'8')) : [];
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'frontend-sync-lo'g's', 'performance-metric's'.json');
+      const $1 = fs.existsSync(metricsPath) ? JSON.parse(fs.readFileSync(metricsPath, 'ut'f'8')) : [];
       
       existingMetrics.push(metrics);
       
@@ -557,7 +557,7 @@ class PerformanceMonitor {
   }
 
   createAlert(type, message, details = '') {
-    const alert = {
+    const $1 = {
       type,
       message,
       details,
@@ -566,7 +566,7 @@ class PerformanceMonitor {
     };
     
     this.alerts.push(alert);
-    console.log(`🚨 Alert created: ${message}`);
+    console.log("🚨 Alert created: ${message}");
     
     return alert;
   }
@@ -616,7 +616,7 @@ module.exports = PerformanceMonitor;
 
 // Auto-start if run directly
 if (require.main === module) {
-  const monitor = new PerformanceMonitor();
+  const $1 = new PerformanceMonitor();
   console.log('Performanc'e' Monitor initialized:', monitor.getStatus());
 }
 </div>

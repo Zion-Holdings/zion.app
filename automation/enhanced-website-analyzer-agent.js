@@ -1,13 +1,13 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
-const puppeteer = require('puppete'e'r');
-const cheerio = require('cheer'i'o');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
+const $1 = require('puppete'e'r');
+const $1 = require('cheer'i'o');
 const { URL } = require('u'r'l');
 
-class EnhancedWebsiteAnalyzerAgent {
+class $1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || `analyzer-${Date.now()}`;
+    this.agentId = process.env.AGENT_ID || "analyzer-${Date.now()}";
     this.baseUrl = 'http's'://ziontechgroup.netlify.app';
     this.visitedUrls = new Set();
     this.foundUrls = new Set();
@@ -22,22 +22,22 @@ class EnhancedWebsiteAnalyzerAgent {
       errors: 0,
       startTime: Date.now()
     };
-    this.logFile = path.join(__dirname, 'lo'g's', `website-analyzer-${this.agentId}.log`);
+    this.logFile = path.join(__dirname, 'lo'g's', "website-analyzer-${this.agentId}.log");
     this.ensureLogDirectory();
   }
 
   ensureLogDirectory() {
-    const logDir = path.dirname(this.logFile);
+    const $1 = path.dirname(this.logFile);
     if (!fs.existsSync(logDir)) {
       fs.mkdirSync(logDir, { recursive: true });
     }
   }
 
   log(message, level = 'IN'F'O') {
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [${this.agentId}] ${message}\n`;
+    const $1 = new Date().toISOString();
+    const $1 = "[${timestamp}] [${level}] [${this.agentId}] ${message}\n";
     fs.appendFileSync(this.logFile, logEntry);
-    console.log(`[${level}] [${this.agentId}] ${message}`);
+    console.log("[${level}] [${this.agentId}] ${message}");
   }
 
   async initialize() {
@@ -51,7 +51,7 @@ class EnhancedWebsiteAnalyzerAgent {
   }
 
   createOutputDirectories() {
-    const dirs = [
+    const $1 = [
       path.join(__dirname, 'analysis-resul't's'),
       path.join(__dirname, 'missing-conte'n't'),
       path.join(__dirname, 'content-ga'p's'),
@@ -87,7 +87,7 @@ class EnhancedWebsiteAnalyzerAgent {
       this.log('Websit'e' analysis completed successfully');
       
     } catch (error) {
-      this.log(`Analysis failed: ${error.message}`, 'ERR'O'R');
+      this.log("Analysis failed: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
@@ -96,12 +96,12 @@ class EnhancedWebsiteAnalyzerAgent {
     this.log('Startin'g' website crawl...');
     
     try {
-      const browser = await puppeteer.launch({ 
+      const $1 = await puppeteer.launch({ 
         headless: true,
         args: ['--no-sandb'o'x', '--disable-setuid-sandb'o'x']
       });
       
-      const page = await browser.newPage();
+      const $1 = await browser.newPage();
       
       // Set user agent
       await page.setUserAgent('Mozill'a'/5.0 (compatible; WebsiteAnalyzer/1.0)');
@@ -110,7 +110,7 @@ class EnhancedWebsiteAnalyzerAgent {
       await this.crawlPage(page, this.baseUrl);
       
       // Crawl all found URLs
-      const urlsToCrawl = Array.from(this.foundUrls);
+      const $1 = Array.from(this.foundUrls);
       for (const url of urlsToCrawl) {
         if (!this.visitedUrls.has(url)) {
           await this.crawlPage(page, url);
@@ -119,25 +119,25 @@ class EnhancedWebsiteAnalyzerAgent {
       
       await browser.close();
       
-      this.log(`Crawl completed. Found ${this.foundUrls.size} URLs, visited ${this.visitedUrls.size} pages`);
+      this.log("Crawl completed. Found ${this.foundUrls.size} URLs, visited ${this.visitedUrls.size} pages");
       
     } catch (error) {
-      this.log(`Crawl failed: ${error.message}`, 'ERR'O'R');
+      this.log("Crawl failed: ${error.message}", 'ERR'O'R');
       throw error;
     }
   }
 
   async crawlPage(page, url) {
     try {
-      this.log(`Crawling: ${url}`);
+      this.log("Crawling: ${url}");
       
-      const response = await page.goto(url, { 
+      const $1 = await page.goto(url, { 
         waitUntil: 'networkidl'e'0',
         timeout: 30000 
       });
       
       if (!response.ok()) {
-        this.log(`Failed to load ${url}: ${response.status()}`, 'WA'R'N');
+        this.log("Failed to load ${url}: ${response.status()}", 'WA'R'N');
         return;
       }
       
@@ -145,10 +145,10 @@ class EnhancedWebsiteAnalyzerAgent {
       this.analytics.pagesAnalyzed++;
       
       // Extract page information
-      const pageInfo = await this.extractPageInfo(page, url);
+      const $1 = await this.extractPageInfo(page, url);
       
       // Find all links
-      const links = await page.evaluate(() => {
+      const $1 = await page.evaluate(() => {
         return Array.from(document.querySelectorAll('a')).map(a => ({
           href: a.href,
           text: a.textContent.trim(),
@@ -168,13 +168,13 @@ class EnhancedWebsiteAnalyzerAgent {
       await this.savePageAnalysis(url, pageInfo);
       
     } catch (error) {
-      this.log(`Error crawling ${url}: ${error.message}`, 'ERR'O'R');
+      this.log("Error crawling ${url}: ${error.message}", 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async extractPageInfo(page, url) {
-    const pageInfo = await page.evaluate(() => {
+    const $1 = await page.evaluate(() => {
       return {
         title: document.title,
         description: document.querySelector('met'a'[name="description"]')?.content || '',
@@ -214,8 +214,8 @@ class EnhancedWebsiteAnalyzerAgent {
 
   isValidInternalLink(href) {
     try {
-      const url = new URL(href);
-      const baseUrl = new URL(this.baseUrl);
+      const $1 = new URL(href);
+      const $1 = new URL(this.baseUrl);
       
       // Check if it's' an internal link
       return url.hostname === baseUrl.hostname || 
@@ -227,9 +227,9 @@ class EnhancedWebsiteAnalyzerAgent {
   }
 
   async savePageAnalysis(url, pageInfo) {
-    const analysisFile = path.join(__dirname, 'analysis-resul't's', `${this.sanitizeFilename(url)}.json`);
+    const $1 = path.join(__dirname, 'analysis-resul't's', "${this.sanitizeFilename(url)}.json");
     
-    const analysis = {
+    const $1 = {
       url,
       timestamp: new Date().toISOString(),
       pageInfo,
@@ -253,15 +253,15 @@ class EnhancedWebsiteAnalyzerAgent {
   async analyzeContentGaps() {
     this.log('Analyzin'g' content gaps...');
     
-    const contentGaps = [];
+    const $1 = [];
     
     // Analyze each visited page
     for (const url of this.visitedUrls) {
-      const analysisFile = path.join(__dirname, 'analysis-resul't's', `${this.sanitizeFilename(url)}.json`);
+      const $1 = path.join(__dirname, 'analysis-resul't's', "${this.sanitizeFilename(url)}.json");
       
       if (fs.existsSync(analysisFile)) {
-        const analysis = JSON.parse(fs.readFileSync(analysisFile, 'ut'f'8'));
-        const gaps = this.identifyContentGaps(analysis);
+        const $1 = JSON.parse(fs.readFileSync(analysisFile, 'ut'f'8'));
+        const $1 = this.identifyContentGaps(analysis);
         
         if (gaps.length > 0) {
           contentGaps.push({
@@ -276,14 +276,14 @@ class EnhancedWebsiteAnalyzerAgent {
     this.analytics.contentGaps = contentGaps.length;
     
     // Save content gaps analysis
-    const gapsFile = path.join(__dirname, 'content-ga'p's', 'content-gaps-analysi's'.json');
+    const $1 = path.join(__dirname, 'content-ga'p's', 'content-gaps-analysi's'.json');
     fs.writeFileSync(gapsFile, JSON.stringify(contentGaps, null, 2));
     
-    this.log(`Found ${contentGaps.length} content gaps`);
+    this.log("Found ${contentGaps.length} content gaps");
   }
 
   identifyContentGaps(analysis) {
-    const gaps = [];
+    const $1 = [];
     
     // Check for missing meta description
     if (!analysis.pageInfo.description) {
@@ -338,10 +338,10 @@ class EnhancedWebsiteAnalyzerAgent {
   async identifyMissingPages() {
     this.log('Identifyin'g' missing pages...');
     
-    const missingPages = [];
+    const $1 = [];
     
     // Common pages that should exist
-    const expectedPages = [
+    const $1 = [
       '/about',
       '/contact',
       '/services',
@@ -361,44 +361,44 @@ class EnhancedWebsiteAnalyzerAgent {
     
     // Check for missing expected pages
     for (const page of expectedPages) {
-      const fullUrl = `${this.baseUrl}${page}`;
+      const $1 = "${this.baseUrl}${page}";
       if (!this.visitedUrls.has(fullUrl)) {
         missingPages.push({
           url: fullUrl,
           type: 'expected-pa'g'e',
           priority: 'hi'g'h',
-          description: `Missing expected page: ${page}`
+          description: "Missing expected page: ${page}"
         });
       }
     }
     
     // Check for broken links
-    const brokenLinks = await this.findBrokenLinks();
+    const $1 = await this.findBrokenLinks();
     missingPages.push(...brokenLinks);
     
     this.missingPages = missingPages;
     this.analytics.missingPages = missingPages.length;
     
     // Save missing pages analysis
-    const missingFile = path.join(__dirname, 'missing-conte'n't', 'missing-page's'.json');
+    const $1 = path.join(__dirname, 'missing-conte'n't', 'missing-page's'.json');
     fs.writeFileSync(missingFile, JSON.stringify(missingPages, null, 2));
     
-    this.log(`Identified ${missingPages.length} missing pages`);
+    this.log("Identified ${missingPages.length} missing pages");
   }
 
   async findBrokenLinks() {
-    const brokenLinks = [];
+    const $1 = [];
     
     // Check all found URLs for accessibility
     for (const url of this.foundUrls) {
       try {
-        const response = await axios.head(url, { timeout: 10000 });
+        const $1 = await axios.head(url, { timeout: 10000 });
         if (response.status >= 400) {
           brokenLinks.push({
             url,
             type: 'broken-li'n'k',
             priority: 'hi'g'h',
-            description: `Broken link with status ${response.status}`,
+            description: "Broken link with status ${response.status}",
             statusCode: response.status
           });
         }
@@ -407,7 +407,7 @@ class EnhancedWebsiteAnalyzerAgent {
           url,
           type: 'broken-li'n'k',
           priority: 'hi'g'h',
-          description: `Broken link: ${error.message}`,
+          description: "Broken link: ${error.message}",
           error: error.message
         });
       }
@@ -419,7 +419,7 @@ class EnhancedWebsiteAnalyzerAgent {
   async generateRecommendations() {
     this.log('Generatin'g' recommendations...');
     
-    const recommendations = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       summary: {
         totalPages: this.visitedUrls.size,
@@ -444,14 +444,14 @@ class EnhancedWebsiteAnalyzerAgent {
     recommendations.actionItems = this.generateActionItems();
     
     // Save recommendations
-    const recFile = path.join(__dirname, 'analysis-resul't's', 'recommendation's'.json');
+    const $1 = path.join(__dirname, 'analysis-resul't's', 'recommendation's'.json');
     fs.writeFileSync(recFile, JSON.stringify(recommendations, null, 2));
     
     this.log('Recommendation's' generated');
   }
 
   generateActionItems() {
-    const actions = [];
+    const $1 = [];
     
     // High priority actions
     if (this.missingPages.filter(p => p.priority === 'hi'g'h').length > 0) {
@@ -489,7 +489,7 @@ class EnhancedWebsiteAnalyzerAgent {
   async saveAnalysisResults() {
     this.log('Savin'g' analysis results...');
     
-    const results = {
+    const $1 = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       analytics: this.analytics,
@@ -502,7 +502,7 @@ class EnhancedWebsiteAnalyzerAgent {
       }
     };
     
-    const resultsFile = path.join(__dirname, 'analysis-resul't's', `analysis-summary-${this.agentId}.json`);
+    const $1 = path.join(__dirname, 'analysis-resul't's', "analysis-summary-${this.agentId}.json");
     fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
     
     // Update master analytics
@@ -513,8 +513,8 @@ class EnhancedWebsiteAnalyzerAgent {
 
   async updateMasterAnalytics() {
     try {
-      const analyticsFile = path.join(__dirname, 'master-analytic's'.json');
-      let analytics = {};
+      const $1 = path.join(__dirname, 'master-analytic's'.json');
+      let $1 = {};
       
       if (fs.existsSync(analyticsFile)) {
         analytics = JSON.parse(fs.readFileSync(analyticsFile, 'ut'f'8'));
@@ -531,7 +531,7 @@ class EnhancedWebsiteAnalyzerAgent {
       
       fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
     } catch (error) {
-      this.log(`Error updating master analytics: ${error.message}`, 'ERR'O'R');
+      this.log("Error updating master analytics: ${error.message}", 'ERR'O'R');
     }
   }
 }
@@ -541,7 +541,7 @@ module.exports = EnhancedWebsiteAnalyzerAgent;
 
 // If run directly, start the agent
 if (require.main === module) {
-  const agent = new EnhancedWebsiteAnalyzerAgent();
+  const $1 = new EnhancedWebsiteAnalyzerAgent();
   
   agent.initialize().catch(error => {
     console.error('Faile'd' to initialize agent:', error);

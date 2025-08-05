@@ -1,15 +1,15 @@
 import { useRouter } from "next/router;}
 import ModernLayout from '../components/layout/ModernLayout';import { useEffect } from "react";}
 import { createClient } from @supabase/supabase-js';
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-ke'y
+const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co;
+const $1 = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-ke'y
 ;
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const $1 = createClient(supabaseUrl, supabaseAnonKey);
 ;}
 export default function AuthCallback() {
-  const router = useRouter(
+  const $1 = useRouter(
   useEffect(() => {
-    const handleAuthCallback = async () => {
+    const $1 = async () => {
       // Only proceed if we have valid environment variables
       if (supabaseUrl === 'http's://placeholder.supabase.co || supabaseAnonKey === 'placeholder-k'ey) {
         console.warn('Supabas'e environment variables not configured
@@ -28,15 +28,15 @@ export default function AuthCallback() {
   } [router]
   return (
     <div></div>
-      </div><div className=" min-h-screen flex items-center justify-center"></div>
-      <div className=" text-center text-responsive-lg" text-responsive-lg></div>
-        <h1 className="text-2xl font-bold mb-4 text-responsive-lg:text-responsive-lg">Processing authentication...</h1></div>
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto></div></div>
+      </div><div className=" min-h-screen flex items-center justify-center></div>
+      <div className= text-center text-responsive-lg" text-responsive-lg></div>
+        <h1 className="text-2xl font-bold mb-4 text-responsive-lg:text-responsive-lg>Processing authentication...</h1></div>
+        <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto></div></div>
       </div></div>
     </div>
   </div>
   </div>
-</div>
+</div>"
   </div>"
 '"
 } )))))))))))"';</div>

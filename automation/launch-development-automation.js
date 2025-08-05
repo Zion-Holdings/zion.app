@@ -1,8 +1,8 @@
-const DevelopmentAutomationFactory = require('./development-automation-factory');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./development-automation-factory');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class DevelopmentAutomationLauncher {
+class $1 {
   constructor() {
     this.factory = new DevelopmentAutomationFactory();
     this.config = this.loadConfig();
@@ -10,7 +10,7 @@ class DevelopmentAutomationLauncher {
   }
 
   loadConfig() {
-    const configPath = path.join(__dirname, 'development-automation-confi'g'.json');
+    const $1 = path.join(__dirname, 'development-automation-confi'g'.json');
     
     if (fs.existsSync(configPath)) {
       return JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
@@ -155,14 +155,14 @@ class DevelopmentAutomationLauncher {
   async startEnabledAgents() {
     console.log('📋 Starting enabled development automation agents...');
     
-    const enabledAgents = Object.entries(this.config.agents)
+    const $1 = Object.entries(this.config.agents)
       .filter(([type, config]) => config.enabled);
     
     for (const [type, agentConfig] of enabledAgents) {
       try {
-        console.log(`🔄 Starting ${type} agent...`);
+        console.log("🔄 Starting ${type} agent...");
         
-        const agentId = await this.factory.createAgent(type, agentConfig.config);
+        const $1 = await this.factory.createAgent(type, agentConfig.config);
         await this.factory.startAgent(agentId);
         
         this.agents.set(agentId, {
@@ -171,14 +171,14 @@ class DevelopmentAutomationLauncher {
           status: 'runni'n'g'
         });
         
-        console.log(`✅ ${type} agent started successfully (ID: ${agentId})`);
+        console.log("✅ ${type} agent started successfully (ID: ${agentId})");
         
       } catch (error) {
-        console.error(`❌ Failed to start ${type} agent:`, error);
+        console.error("❌ Failed to start ${type} agent:", error);
       }
     }
     
-    console.log(`📊 Started ${this.agents.size} development automation agents`);
+    console.log("📊 Started ${this.agents.size} development automation agents");
   }
 
   setupSystemMonitoring() {
@@ -204,7 +204,7 @@ class DevelopmentAutomationLauncher {
 
   async checkAgentHealth() {
     try {
-      const healthReport = await this.factory.healthCheck();
+      const $1 = await this.factory.healthCheck();
       
       // Log health status
       if (healthReport.status === 'critic'a'l') {
@@ -216,8 +216,8 @@ class DevelopmentAutomationLauncher {
       }
       
       // Save health report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const healthPath = path.join(__dirname, 'repor't's', 'system-heal't'h', `health-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(__dirname, 'repor't's', 'system-heal't'h', "health-${timestamp}.json");
       
       if (!fs.existsSync(path.dirname(healthPath))) {
         fs.mkdirSync(path.dirname(healthPath), { recursive: true });
@@ -232,10 +232,10 @@ class DevelopmentAutomationLauncher {
 
   async checkSystemPerformance() {
     try {
-      const metrics = await this.factory.getSystemMetrics();
+      const $1 = await this.factory.getSystemMetrics();
       
       // Log performance metrics
-      console.log(`📈 Performance - Tasks: ${metrics.totalTasksCompleted}, Errors: ${metrics.totalErrors}, Error Rate: ${metrics.errorRate.toFixed(2)}%`);
+      console.log("📈 Performance - Tasks: ${metrics.totalTasksCompleted}, Errors: ${metrics.totalErrors}, Error Rate: ${metrics.errorRate.toFixed(2)}%");
       
       // Alert if error rate is high
       if (metrics.errorRate > 10) {
@@ -249,17 +249,17 @@ class DevelopmentAutomationLauncher {
 
   async autoRestartFailedAgents() {
     try {
-      const agents = this.factory.getAllAgents();
+      const $1 = this.factory.getAllAgents();
       
       for (const agent of agents) {
         if (agent.status === 'stopp'e'd' || agent.status === 'err'o'r') {
-          console.log(`🔄 Auto-restarting failed agent: ${agent.type} (${agent.id})`);
+          console.log("🔄 Auto-restarting failed agent: ${agent.type} (${agent.id})");
           
           try {
             await this.factory.restartAgent(agent.id);
-            console.log(`✅ Successfully restarted agent: ${agent.type}`);
+            console.log("✅ Successfully restarted agent: ${agent.type}");
           } catch (error) {
-            console.error(`❌ Failed to restart agent ${agent.type}:`, error);
+            console.error("❌ Failed to restart agent ${agent.type}:", error);
           }
         }
       }
@@ -282,7 +282,7 @@ class DevelopmentAutomationLauncher {
     try {
       console.log('🔍 Performing comprehensive health check...');
       
-      const healthCheck = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: await this.factory.getSystemMetrics(),
         agents: [],
@@ -290,9 +290,9 @@ class DevelopmentAutomationLauncher {
       };
       
       // Check each agent
-      const agents = this.factory.getAllAgents();
+      const $1 = this.factory.getAllAgents();
       for (const agent of agents) {
-        const agentHealth = await this.factory.checkAgentHealth(agent.id);
+        const $1 = await this.factory.checkAgentHealth(agent.id);
         healthCheck.agents.push(agentHealth);
         
         // Generate recommendations for unhealthy agents
@@ -301,14 +301,14 @@ class DevelopmentAutomationLauncher {
             type: 'agen't'_restart',
             agentId: agent.id,
             agentType: agent.type,
-            message: `Agent ${agent.type} is not healthy. Consider restarting.`
+            message: "Agent ${agent.type} is not healthy. Consider restarting."
           });
         }
       }
       
       // Save comprehensive health check
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const healthPath = path.join(__dirname, 'repor't's', 'system-heal't'h', `comprehensive-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(__dirname, 'repor't's', 'system-heal't'h', "comprehensive-${timestamp}.json");
       
       if (!fs.existsSync(path.dirname(healthPath))) {
         fs.mkdirSync(path.dirname(healthPath), { recursive: true });
@@ -316,7 +316,7 @@ class DevelopmentAutomationLauncher {
       
       fs.writeFileSync(healthPath, JSON.stringify(healthCheck, null, 2));
       
-      console.log(`✅ Health check completed. ${healthCheck.agents.length} agents checked.`);
+      console.log("✅ Health check completed. ${healthCheck.agents.length} agents checked.");
       
     } catch (error) {
       console.error('Faile'd' to perform comprehensive health check:', error);
@@ -328,11 +328,11 @@ class DevelopmentAutomationLauncher {
     
     try {
       // Stop all agents
-      const agents = this.factory.getAllAgents();
+      const $1 = this.factory.getAllAgents();
       for (const agent of agents) {
         if (agent.status === 'runni'n'g') {
           await this.factory.stopAgent(agent.id);
-          console.log(`🛑 Stopped agent: ${agent.type}`);
+          console.log("🛑 Stopped agent: ${agent.type}");
         }
       }
       
@@ -348,7 +348,7 @@ class DevelopmentAutomationLauncher {
 
   async getStatus() {
     try {
-      const status = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: await this.factory.getSystemMetrics(),
         agents: this.factory.getAllAgents().map(agent => ({
@@ -372,7 +372,7 @@ class DevelopmentAutomationLauncher {
     try {
       console.log('📊 Generating development automation report...');
       
-      const report = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         system: await this.factory.getSystemMetrics(),
         agents: this.factory.getAllAgents(),
@@ -381,12 +381,12 @@ class DevelopmentAutomationLauncher {
       };
       
       // Generate recommendations
-      const metrics = report.system;
+      const $1 = report.system;
       if (metrics.errorRate > 5) {
         report.recommendations.push({
           type: 'erro'r'_rate',
           priority: 'hi'g'h',
-          message: `High error rate (${metrics.errorRate.toFixed(2)}%). Review agent configurations.`
+          message: "High error rate (${metrics.errorRate.toFixed(2)}%). Review agent configurations."
         });
       }
       
@@ -394,13 +394,13 @@ class DevelopmentAutomationLauncher {
         report.recommendations.push({
           type: 'agen't'_health',
           priority: 'medi'u'm',
-          message: `${metrics.totalAgents - metrics.runningAgents} agents are not running.`
+          message: "${metrics.totalAgents - metrics.runningAgents} agents are not running."
         });
       }
       
       // Save report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(__dirname, 'repor't's', `development-automation-report-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(__dirname, 'repor't's', "development-automation-report-${timestamp}.json");
       
       if (!fs.existsSync(path.dirname(reportPath))) {
         fs.mkdirSync(path.dirname(reportPath), { recursive: true });
@@ -408,7 +408,7 @@ class DevelopmentAutomationLauncher {
       
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
-      console.log(`✅ Report generated: ${reportPath}`);
+      console.log("✅ Report generated: ${reportPath}");
       return report;
       
     } catch (error) {
@@ -419,10 +419,10 @@ class DevelopmentAutomationLauncher {
 }
 
 // Handle command line arguments;
-const args = process.argv.slice(2);
-const command = args[0];
+const $1 = process.argv.slice(2);
+const $1 = args[0];
 ;
-const launcher = new DevelopmentAutomationLauncher();
+const $1 = new DevelopmentAutomationLauncher();
 
 async function main() {
   try {
@@ -437,7 +437,7 @@ async function main() {
         break;
         
       case 'stat'u's':
-        const status = await launcher.getStatus();
+        const $1 = await launcher.getStatus();
         console.log(JSON.stringify(status, null, 2));
         process.exit(0);
         break;

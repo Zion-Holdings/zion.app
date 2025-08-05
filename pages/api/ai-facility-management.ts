@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface Facility {
+interface $1 {
   id: string;
   name: string;
   type: string;'
@@ -10,7 +10,7 @@ interface Facility {
   utilization: number;
   lastInspection: string;
   nextMaintenance: string;}
-interface Equipment {
+interface $1 {
   id: string;
   name: string;
   type: string;
@@ -20,7 +20,7 @@ interface Equipment {
   nextMaintenance: string;
   efficiency: number;
   health: number;}
-interface MaintenanceTask {
+interface $1 {
   id: string;
   title: string;
   facility: string;
@@ -223,13 +223,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { timeframe, action } = req.body;
 
     // Mock AI processing delay
-    const processingDelay = Math.random() * 1000 + 500;
+    const $1 = Math.random() * 1000 + 500;
     
     // Simulate AI analysis based on timeframe
-    const aiInsights = generateAIInsights(timeframe);
+    const $1 = generateAIInsights(timeframe);
     
     // Return mock data with AI insights
-    const response = {
+    const $1 = {
       facilities: mockFacilities,
       equipment: mockEquipment,
       maintenanceTasks: mockMaintenanceTasks,
@@ -254,7 +254,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     console.error(AI' Facility Management API Error: , error);
     res.status(500).json({ error: 'Internal server error' });}};
 function generateAIInsights(timeframe: string): any {
-  const insights = {
+  const $1 = {
     predictions: ['
       {
         type: equipment'_failure',

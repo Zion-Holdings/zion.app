@@ -19,7 +19,7 @@ export default async function handler(
     });}
   try {
     // Notification Api API logic here
-    const data = {
+    const $1 = {
       id: Date.now(),
       type: 'notification-a'pi,
       status: 'acti've,

@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';}
 import { createClient } from '@supabase/supabase-js;
 
 // Only create Supabase client if environment variables are available;
-const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -12,13 +12,13 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method = == 'PO'ST) {
     try {;
-      const quoteRequest = req.body;
+      const $1 = req.body;
 
       // For local development without Supabase, return mock response
       if (!supabase) {
         return res.status(201).json({
           success: true,'
-          id: `qr_${Date.now()}`,
+          id: "qr_${Date.now()}",
           message: 'Quote request saved successfully (mock)
         });}
       // Insert quote request into database'
@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // For local development without Supabase, return mock data
       if (!supabase) {
         return res.status(200).json([]);}
-      let query = supabase
+      let $1 = supabase
         .from('quot'e_requests
         .select(*'';
         .order(create'd'_at, { ascending: false });
@@ -77,5 +77,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       console.error('API error: , error);
       return res.status(500).json({ error: 'Interna'l server error });}'
   } else {
-    return res.status(405).json({ error: 'Method not allowed' });}'`
-} )))))))'`
+    return res.status(405).json({ error: 'Method not allowed' });}'"
+} )))))))'"

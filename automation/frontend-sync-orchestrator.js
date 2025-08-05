@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
-const EventEmitter = require('even't's');
-const FrontendSyncAgentFactory = require('./frontend-sync-agent-factory');
+const $1 = require('even't's');
+const $1 = require('./frontend-sync-agent-factory');
 
-class FrontendSyncOrchestrator extends EventEmitter {
+class $1 extends EventEmitter {
   constructor() {
     super();
     this.syncFactory = new FrontendSyncAgentFactory();
@@ -33,22 +33,22 @@ class FrontendSyncOrchestrator extends EventEmitter {
 
   setupEventListeners() {
     this.syncFactory.on('agentCreat'e'd', (data) => {
-      console.log(`🔄 Sync agent created: ${data.agentId} (${data.type})`);
+      console.log("🔄 Sync agent created: ${data.agentId} (${data.type})");
       this.emit('syncAgentCreat'e'd', data);
     });
 
     this.syncFactory.on('agentStart'e'd', (data) => {
-      console.log(`🚀 Sync agent started: ${data.agentId} (${data.type})`);
+      console.log("🚀 Sync agent started: ${data.agentId} (${data.type})");
       this.emit('syncAgentStart'e'd', data);
     });
 
     this.syncFactory.on('agentStopp'e'd', (data) => {
-      console.log(`🛑 Sync agent stopped: ${data.agentId} (${data.type})`);
+      console.log("🛑 Sync agent stopped: ${data.agentId} (${data.type})");
       this.emit('syncAgentStopp'e'd', data);
     });
 
     this.syncFactory.on('agentErr'o'r', (data) => {
-      console.error(`❌ Sync agent error: ${data.agentId}`, data.error);
+      console.error("❌ Sync agent error: ${data.agentId}", data.error);
       this.emit('syncAgentErr'o'r', data);
     });
   }
@@ -79,7 +79,7 @@ class FrontendSyncOrchestrator extends EventEmitter {
   async createInitialSyncAgents() {
     console.log('🔄 Creating initial frontend sync agents...');
     
-    const initialAgents = [
+    const $1 = [
       { type: 'page-sy'n'c', config: { priority: 'hi'g'h' } },
       { type: 'component-sy'n'c', config: { priority: 'hi'g'h' } },
       { type: 'api-sy'n'c', config: { priority: 'medi'u'm' } },
@@ -94,7 +94,7 @@ class FrontendSyncOrchestrator extends EventEmitter {
       try {
         await this.syncFactory.createSyncAgent(agentSpec.type, agentSpec.config);
       } catch (error) {
-        console.error(`❌ Failed to create sync agent ${agentSpec.type}:`, error);
+        console.error("❌ Failed to create sync agent ${agentSpec.type}:", error);
       }
     }
 
@@ -104,17 +104,17 @@ class FrontendSyncOrchestrator extends EventEmitter {
   async startAllSyncAgents() {
     console.log('🚀 Starting all sync agents...');
     
-    const agents = this.syncFactory.getAllSyncAgents();
+    const $1 = this.syncFactory.getAllSyncAgents();
     
     for (const agent of agents) {
       try {
         await this.syncFactory.startSyncAgent(agent.id);
       } catch (error) {
-        console.error(`❌ Failed to start sync agent ${agent.id}:`, error);
+        console.error("❌ Failed to start sync agent ${agent.id}:", error);
       }
     }
 
-    console.log(`✅ Started ${agents.length} sync agents`);
+    console.log("✅ Started ${agents.length} sync agents");
   }
 
   startContinuousSyncMonitoring() {
@@ -136,9 +136,9 @@ class FrontendSyncOrchestrator extends EventEmitter {
     
     try {
       // Check for new pages and improvements
-      const newPages = await this.detectNewPages();
-      const newComponents = await this.detectNewComponents();
-      const newContent = await this.detectNewContent();
+      const $1 = await this.detectNewPages();
+      const $1 = await this.detectNewComponents();
+      const $1 = await this.detectNewContent();
       
       // Queue sync tasks
       if (newPages.length > 0) {
@@ -169,19 +169,19 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   async detectNewPages() {
-    const pagesDir = path.join(process.cwd(), 'pag'e's');
-    const generatedPagesDir = path.join(process.cwd(), 'automati'o'n', 'generated-pag'e's');
+    const $1 = path.join(process.cwd(), 'pag'e's');
+    const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-pag'e's');
     
-    const newPages = [];
+    const $1 = [];
     
     try {
       // Check generated pages directory
       if (fs.existsSync(generatedPagesDir)) {
-        const files = fs.readdirSync(generatedPagesDir);
+        const $1 = fs.readdirSync(generatedPagesDir);
         for (const file of files) {
           if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
-            const pagePath = path.join(generatedPagesDir, file);
-            const targetPath = path.join(pagesDir, file);
+            const $1 = path.join(generatedPagesDir, file);
+            const $1 = path.join(pagesDir, file);
             
             if (!fs.existsSync(targetPath)) {
               newPages.push({
@@ -196,7 +196,7 @@ class FrontendSyncOrchestrator extends EventEmitter {
       }
       
       // Check for dynamic page generation
-      const dynamicPages = await this.detectDynamicPages();
+      const $1 = await this.detectDynamicPages();
       newPages.push(...dynamicPages);
       
     } catch (error) {
@@ -207,19 +207,19 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   async detectNewComponents() {
-    const componentsDir = path.join(process.cwd(), 'componen't's');
-    const generatedComponentsDir = path.join(process.cwd(), 'automati'o'n', 'generated-componen't's');
+    const $1 = path.join(process.cwd(), 'componen't's');
+    const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-componen't's');
     
-    const newComponents = [];
+    const $1 = [];
     
     try {
       // Check generated components directory
       if (fs.existsSync(generatedComponentsDir)) {
-        const files = fs.readdirSync(generatedComponentsDir);
+        const $1 = fs.readdirSync(generatedComponentsDir);
         for (const file of files) {
           if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
-            const componentPath = path.join(generatedComponentsDir, file);
-            const targetPath = path.join(componentsDir, file);
+            const $1 = path.join(generatedComponentsDir, file);
+            const $1 = path.join(componentsDir, file);
             
             if (!fs.existsSync(targetPath)) {
               newComponents.push({
@@ -234,7 +234,7 @@ class FrontendSyncOrchestrator extends EventEmitter {
       }
       
       // Check for dynamic component generation
-      const dynamicComponents = await this.detectDynamicComponents();
+      const $1 = await this.detectDynamicComponents();
       newComponents.push(...dynamicComponents);
       
     } catch (error) {
@@ -245,25 +245,25 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   async detectNewContent() {
-    const contentDirs = [
+    const $1 = [
       path.join(process.cwd(), 'pag'e's'),
       path.join(process.cwd(), 'componen't's'),
       path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't')
     ];
     
-    const newContent = [];
+    const $1 = [];
     
     try {
       for (const contentDir of contentDirs) {
         if (fs.existsSync(contentDir)) {
-          const files = this.getAllFiles(contentDir);
+          const $1 = this.getAllFiles(contentDir);
           for (const file of files) {
             if (file.endsWith('.tsx') || file.endsWith('.jsx') || file.endsWith('.md')) {
-              const content = fs.readFileSync(file, 'ut'f'8');
-              const lastModified = fs.statSync(file).mtime;
+              const $1 = fs.readFileSync(file, 'ut'f'8');
+              const $1 = fs.statSync(file).mtime;
               
               // Check if content has been updated recently
-              const timeSinceModified = Date.now() - lastModified.getTime();
+              const $1 = Date.now() - lastModified.getTime();
               if (timeSinceModified < 300000) { // 5 minutes
                 newContent.push({
                   path: file,
@@ -284,12 +284,12 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   getAllFiles(dir) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+    const $1 = [];
+    const $1 = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const $1 = path.join(dir, item);
+      const $1 = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...this.getAllFiles(fullPath));
@@ -303,21 +303,21 @@ class FrontendSyncOrchestrator extends EventEmitter {
 
   async detectDynamicPages() {
     // This would integrate with the existing content generation system
-    const dynamicPages = [];
+    const $1 = [];
     
     try {
       // Check for new pages generated by the autonomous system
-      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
+      const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
       if (fs.existsSync(generatedContentDir)) {
-        const files = fs.readdirSync(generatedContentDir);
+        const $1 = fs.readdirSync(generatedContentDir);
         for (const file of files) {
           if (file.endsWith('.json')) {
-            const content = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), 'ut'f'8'));
+            const $1 = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), 'ut'f'8'));
             if (content.type === 'pa'g'e' && content.status === 'pendi'n'g') {
               dynamicPages.push({
                 source: content,
-                target: path.join(process.cwd(), 'pag'e's', `${content.slug}.tsx`),
-                name: `${content.slug}.tsx`,
+                target: path.join(process.cwd(), 'pag'e's', "${content.slug}.tsx"),
+                name: "${content.slug}.tsx",
                 type: 'dynam'i'c'
               });
             }
@@ -333,21 +333,21 @@ class FrontendSyncOrchestrator extends EventEmitter {
 
   async detectDynamicComponents() {
     // This would integrate with the existing component generation system
-    const dynamicComponents = [];
+    const $1 = [];
     
     try {
       // Check for new components generated by the autonomous system
-      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
+      const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
       if (fs.existsSync(generatedContentDir)) {
-        const files = fs.readdirSync(generatedContentDir);
+        const $1 = fs.readdirSync(generatedContentDir);
         for (const file of files) {
           if (file.endsWith('.json')) {
-            const content = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), 'ut'f'8'));
+            const $1 = JSON.parse(fs.readFileSync(path.join(generatedContentDir, file), 'ut'f'8'));
             if (content.type === 'compone'n't' && content.status === 'pendi'n'g') {
               dynamicComponents.push({
                 source: content,
-                target: path.join(process.cwd(), 'componen't's', `${content.name}.tsx`),
-                name: `${content.name}.tsx`,
+                target: path.join(process.cwd(), 'componen't's', "${content.name}.tsx"),
+                name: "${content.name}.tsx",
                 type: 'dynam'i'c'
               });
             }
@@ -362,8 +362,8 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   queueSyncTask(type, data) {
-    const taskId = `sync-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    const task = {
+    const $1 = "sync-${Date.now()}-${Math.random().toString(36).substr(2, 9)}";
+    const $1 = {
       id: taskId,
       type: type,
       data: data,
@@ -373,32 +373,32 @@ class FrontendSyncOrchestrator extends EventEmitter {
     };
     
     this.syncQueue.push(task);
-    console.log(`📋 Queued sync task ${taskId} (${type})`);
+    console.log("📋 Queued sync task ${taskId} (${type})");
   }
 
   async processSyncQueue() {
     while (this.syncQueue.length > 0 && this.activeSyncs.size < this.config.maxConcurrentSyncs) {
-      const task = this.syncQueue.shift();
+      const $1 = this.syncQueue.shift();
       await this.executeSyncTask(task);
     }
   }
 
   async executeSyncTask(task) {
-    const startTime = Date.now();
+    const $1 = Date.now();
     task.status = 'runni'n'g';
     this.activeSyncs.set(task.id, task);
     
     try {
-      console.log(`🔄 Executing sync task ${task.id} (${task.type})`);
+      console.log("🔄 Executing sync task ${task.id} (${task.type})");
       
       // Find appropriate sync agent
-      const agents = this.syncFactory.getSyncAgentsByType(task.type);
+      const $1 = this.syncFactory.getSyncAgentsByType(task.type);
       if (agents.length === 0) {
-        throw new Error(`No sync agents available for type ${task.type}`);
+        throw new Error("No sync agents available for type ${task.type}");
       }
       
       // Use the first available agent
-      const agent = agents[0];
+      const $1 = agents[0];
       
       // Execute the sync operation
       await this.performSyncOperation(agent, task);
@@ -409,10 +409,10 @@ class FrontendSyncOrchestrator extends EventEmitter {
       task.duration = Date.now() - startTime;
       
       this.syncMetrics.successfulSyncs++;
-      console.log(`✅ Sync task ${task.id} completed in ${task.duration}ms`);
+      console.log("✅ Sync task ${task.id} completed in ${task.duration}ms");
       
     } catch (error) {
-      console.error(`❌ Sync task ${task.id} failed:`, error);
+      console.error("❌ Sync task ${task.id} failed:", error);
       task.status = 'fail'e'd';
       task.error = error.message;
       task.attempts++;
@@ -421,7 +421,7 @@ class FrontendSyncOrchestrator extends EventEmitter {
       
       // Retry if attempts < max retries
       if (task.attempts < this.config.retryAttempts) {
-        console.log(`🔄 Retrying sync task ${task.id} (attempt ${task.attempts + 1})`);
+        console.log("🔄 Retrying sync task ${task.id} (attempt ${task.attempts + 1})");
         setTimeout(() => {
           this.syncQueue.unshift(task);
         }, this.config.retryDelay);
@@ -459,12 +459,12 @@ class FrontendSyncOrchestrator extends EventEmitter {
         await this.syncPerformance(agent, task.data);
         break;
       default:
-        throw new Error(`Unknown sync type: ${task.type}`);
+        throw new Error("Unknown sync type: ${task.type}");
     }
   }
 
   async syncPages(agent, data) {
-    console.log(`📄 Syncing ${data.pages.length} pages...`);
+    console.log("📄 Syncing ${data.pages.length} pages...");
     
     for (const page of data.pages) {
       try {
@@ -475,22 +475,22 @@ class FrontendSyncOrchestrator extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log(`✅ Synced page: ${page.name}`);
+        console.log("✅ Synced page: ${page.name}");
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges(`Sync page: ${page.name}`);
+          await this.commitChanges("Sync page: ${page.name}");
         }
         
       } catch (error) {
-        console.error(`❌ Failed to sync page ${page.name}:`, error);
+        console.error("❌ Failed to sync page ${page.name}:", error);
         throw error;
       }
     }
   }
 
   async syncComponents(agent, data) {
-    console.log(`🧩 Syncing ${data.components.length} components...`);
+    console.log("🧩 Syncing ${data.components.length} components...");
     
     for (const component of data.components) {
       try {
@@ -501,27 +501,27 @@ class FrontendSyncOrchestrator extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log(`✅ Synced component: ${component.name}`);
+        console.log("✅ Synced component: ${component.name}");
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges(`Sync component: ${component.name}`);
+          await this.commitChanges("Sync component: ${component.name}");
         }
         
       } catch (error) {
-        console.error(`❌ Failed to sync component ${component.name}:`, error);
+        console.error("❌ Failed to sync component ${component.name}:", error);
         throw error;
       }
     }
   }
 
   async syncContent(agent, data) {
-    console.log(`📝 Syncing ${data.content.length} content items...`);
+    console.log("📝 Syncing ${data.content.length} content items...");
     
     for (const content of data.content) {
       try {
         // Update content file
-        const contentData = fs.readFileSync(content.path, 'ut'f'8');
+        const $1 = fs.readFileSync(content.path, 'ut'f'8');
         // Apply any content transformations here
         fs.writeFileSync(content.path, contentData);
         
@@ -529,50 +529,50 @@ class FrontendSyncOrchestrator extends EventEmitter {
         agent.metrics.syncsPerformed++;
         agent.metrics.lastSync = new Date().toISOString();
         
-        console.log(`✅ Synced content: ${path.basename(content.path)}`);
+        console.log("✅ Synced content: ${path.basename(content.path)}");
         
         // Auto-commit if enabled
         if (this.config.autoCommit) {
-          await this.commitChanges(`Sync content: ${path.basename(content.path)}`);
+          await this.commitChanges("Sync content: ${path.basename(content.path)}");
         }
         
       } catch (error) {
-        console.error(`❌ Failed to sync content ${path.basename(content.path)}:`, error);
+        console.error("❌ Failed to sync content ${path.basename(content.path)}:", error);
         throw error;
       }
     }
   }
 
   async syncApis(agent, data) {
-    console.log(`🔌 Syncing APIs...`);
+    console.log("🔌 Syncing APIs...");
     // API sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncState(agent, data) {
-    console.log(`🔄 Syncing state...`);
+    console.log("🔄 Syncing state...");
     // State sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncAuth(agent, data) {
-    console.log(`🔐 Syncing auth...`);
+    console.log("🔐 Syncing auth...");
     // Auth sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncUI(agent, data) {
-    console.log(`🎨 Syncing UI...`);
+    console.log("🎨 Syncing UI...");
     // UI sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
   }
 
   async syncPerformance(agent, data) {
-    console.log(`⚡ Syncing performance...`);
+    console.log("⚡ Syncing performance...");
     // Performance sync implementation
     agent.metrics.syncsPerformed++;
     agent.metrics.lastSync = new Date().toISOString();
@@ -582,9 +582,9 @@ class FrontendSyncOrchestrator extends EventEmitter {
     try {
       const { execSync } = require('chil'd'_process');
       execSync('gi't' add .', { stdio: 'pi'p'e' });
-      execSync(`git commit -m "${message}"`, { stdio: 'pi'p'e' });
+      execSync("git commit -m "${message}"", { stdio: 'pi'p'e' });
       execSync('gi't' push', { stdio: 'pi'p'e' });
-      console.log(`🚀 Committed and pushed changes: ${message}`);
+      console.log("🚀 Committed and pushed changes: ${message}");
     } catch (error) {
       console.error('❌ Failed to commit changes:', error);
     }
@@ -595,12 +595,12 @@ class FrontendSyncOrchestrator extends EventEmitter {
     this.isRunning = false;
     
     // Stop all sync agents
-    const agents = this.syncFactory.getAllSyncAgents();
+    const $1 = this.syncFactory.getAllSyncAgents();
     for (const agent of agents) {
       try {
         await this.syncFactory.stopSyncAgent(agent.id);
       } catch (error) {
-        console.error(`❌ Failed to stop sync agent ${agent.id}:`, error);
+        console.error("❌ Failed to stop sync agent ${agent.id}:", error);
       }
     }
     
@@ -608,8 +608,8 @@ class FrontendSyncOrchestrator extends EventEmitter {
   }
 
   async getSyncOrchestratorStatus() {
-    const metrics = await this.syncFactory.getSystemSyncMetrics();
-    const health = await this.syncFactory.healthCheck();
+    const $1 = await this.syncFactory.getSystemSyncMetrics();
+    const $1 = await this.syncFactory.healthCheck();
     
     return {
       isRunning: this.isRunning,

@@ -3,7 +3,7 @@ import ModernLayout from '../components/layout/ModernLayout';import Head from ne
 import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
-interface HolographicDisplay {
+interface $1 {
   id: string;
   name: string;
   description: string;
@@ -13,13 +13,13 @@ interface HolographicDisplay {
   refreshRate: number;
   fieldOfView: number;
   aiAnalysis: DisplayAnalysis;}
-interface DisplayAnalysis {
+interface $1 {
   id: string;
   performanceScore: number;
   qualityScore: number;
   immersionScore: number;
   recommendations: string[];}
-interface ThreeDVisualization {
+interface $1 {
   id: string;
   title: string;
   description: string;
@@ -28,13 +28,13 @@ interface ThreeDVisualization {
   polygons: number;
   textures: number;
   aiOptimization: VisualizationOptimization;}
-interface VisualizationOptimization {
+interface $1 {
   id: string;
   renderingScore: number;
   qualityScore: number;
   performanceScore: number;
   recommendations: string[];}
-interface SpatialComputing {
+interface $1 {
   id: string;
   name: string;
   description: string;
@@ -43,13 +43,13 @@ interface SpatialComputing {
   sensors: number;
   accuracy: number;
   aiAnalysis: SpatialAnalysis;}
-interface SpatialAnalysis {
+interface $1 {
   id: string;
   mappingScore: number;
   trackingScore: number;
   interactionScore: number;
   recommendations: string[];}
-interface HolographicProjection {
+interface $1 {
   id: string;
   projectionId: string;
   title: string;
@@ -59,13 +59,13 @@ interface HolographicProjection {
   brightness: number;
   contrast: number;
   aiAnalysis: ProjectionAnalysis;}
-interface ProjectionAnalysis {
+interface $1 {
   id: string;
   brightnessScore: number;
   contrastScore: number;
   clarityScore: number;
   recommendations: string[];}
-interface VolumetricDisplay {
+interface $1 {
   id: string;
   displayId: string;
   title: string;
@@ -75,13 +75,13 @@ interface VolumetricDisplay {
   voxels: number;
   depth: number;
   aiAnalysis: VolumetricAnalysis;}
-interface VolumetricAnalysis {
+interface $1 {
   id: string;
   volumetricScore: number;
   depthScore: number;
   interactionScore: number;
   recommendations: string[];}
-interface HolographicSystemManagement {
+interface $1 {
   id: string;
   systemId: string;
   title: string;
@@ -91,13 +91,13 @@ interface HolographicSystemManagement {
   displays: number;
   efficiency: number;
   aiAnalysis: ManagementAnalysis;}
-interface ManagementAnalysis {
+interface $1 {
   id: string;
   managementScore: number;
   performanceScore: number;
   reliabilityScore: number;
   recommendations: string[];}
-interface HolographicDisplayAnalytics {
+interface $1 {
   totalDisplays: number;
   activeVisualizations: number;
   spatialSystems: number;
@@ -107,14 +107,14 @@ interface HolographicDisplayAnalytics {
   averageResolution: number;
   aiOptimizationScore: number;
   aiInsights: HolographicDisplayInsight[];}
-interface HolographicDisplayInsight {
+interface $1 {
   id: string;
   title: string;
   description: string;
   impact: ''positive' | 'negative' | 'neutra'l';
   confidence: number;
   recommendations: string[];};
-const AIPoweredHolographicDisplayPage: NextPage = () => {
+const $1: NextPage = () => {
   const [holographicDisplays, setHolographicDisplays] = useState<HolographicDisplay[]>([]</div>
   const [threeDVisualizations, setThreeDVisualizations] = useState<ThreeDVisualization[]>([]</div>
   const [spatialComputing, setSpatialComputing] = useState<SpatialComputing[]>([]</div>
@@ -256,13 +256,13 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
       setIsLoading(false
     } 1000
   } []
-  const filteredDisplays = useMemo(() => {'
-    let filtered = holographicDisplays
+  const $1 = useMemo(() => {'
+    let $1 = holographicDisplays
     if (selectedType !== al'l') {
       filtered = filtered.filter(display => display.type === selectedType}
     return filtered;
   } [holographicDisplays, selectedType]
-  const getStatusColor = (status: string) => {
+  const $1 = (status: string) => {
     switch (status) {
       case acti'v'e: return bg-green'-'500/20 text-green-300
       case inactiv'e': return bg-gray-'500/20 text-gray-300
@@ -275,7 +275,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
       case operation'a'l: return bg-green'-'500/20 text-green-300
       case maintenanc'e': return bg-yellow-'500/20 text-yellow-300
       default: return 'bg-gray-500/20 text-gray-300'}}
-  const getTypeColor = (type: string) => {'
+  const $1 = (type: string) => {'
     switch (type) {
       case volumetri'c': return bg-blue-'500/20 text-blue-300
       case 'light_field': return 'bg-green-500/20 text-green-300
@@ -310,37 +310,37 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
       default: return 'bg-gray'-500/20 text-gray-300}}
   return (</div>
     <div></div>
-      </div><div className=" relative z-10 container-responsive py-8>"
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"</div>
-        <div className="fixed inset-0 z-0> "</div>
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+        <div className="fixed inset-0 z-0> </div>
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div></div>
-      <Head> "</div>
+      <Head> </div>
         <title>AI-Powered Holographic Display & 3D Visualization System | Zion Tech Group</title>"</div>
         <meta name=description content=Holographic displays, 3D visualization, spatial computing, holographic projection, volumetric displays, and automated holographic system management powered by AI. > </meta" name="description content=Holographic displays, 3D visualization, spatial computing, holographic projection, volumetric displays, and automated holographic system management powered by" AI." ><meta name=keywords content=holographic display, 3D visualization, spatial computing, holographic projection, volumetric displays, AI holographic > </meta name="keywords" content=holographic display, 3D visualization, spatial computing, holographic projection, volumetric displays, AI holographic" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
       {/* Header */}</div>
-      <div className="relative" overflow-hidden"></div>
+      <div className="relative overflow-hidden></div>
         </div><div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20></div>"</div>
-        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44"> </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> </div>
           </div><div className="text-center>"</div>
-            <h1 className="text-5xl" md text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Holographic Display & 3D Visualization System</div>
             </h1></div>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
-              Holographic displays, 3D visualization, spatial computing, 
+              Holographic displays, 3D visualization, spatial computing, "
               holographic projection, volumetric displays, and automated holographic system management powered by AI."</div>
             </p>"</div>
-            <div className="flex" flex-wrap justify-center gap-4> </div>
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
-                <span className="text-white" font-semibold">🌟 Holographic Display</span> </div>
+            <div className="flex flex-wrap justify-center gap-4> </div>
+              </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
+                <span className="text-white font-semibold>🌟 Holographic Display</span> </div>
               </div></div>
               <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"</div>
-                <span className="text-white" font-semibold">🎨 3D Visualization</span></div>
+                <span className="text-white font-semibold>🎨 3D Visualization</span></div>
               </div></div>
               <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
-                <span className="text-white" font-semibold">🌐 Spatial Computing</span></div>
+                <span className="text-white font-semibold>🌐 Spatial Computing</span></div>
               </div></div>
             </div"></div>
           </div></div>
@@ -348,82 +348,82 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
       </div>
 
       {/* Main Content */}</div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? (</div>
-          </div><div className="flex" justify-center items-center py-40></div>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 "></div></div>
+          </div><div className=flex" justify-center items-center py-40></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500 ></div></div>
           </div>
-        ) : ("</div>
+        ) : (</div>
           </>
             {/* Tabs */}"</div>
-            <div className=" flex flex-wrap justify-center mb-8">'
-              "'
+            <div className=" flex flex-wrap justify-center mb-8>'
+              '
                 onClick={() => setActiveTab(displa'y's)}"
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={"px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'display's
-                    ? bg-gradient-to-'r' from-cyan-600 to-blue-600 text-white`
-                      bg-whit'e'/10 text-gray-300 hover bg-white/20``
-                }`}
+                    ? bg-gradient-to-'r' from-cyan-600 to-blue-600 text-white"
+                      bg-whit'e'/10 text-gray-300 hover bg-white/20`"
+                }"}
               >
                 Holographic Displays ({holographicDisplays.length}</div>
               </button> 
-              "''`
-                onClick={() => setActiveTab(visualizati'o'n)}``
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              "''"
+                onClick={() => setActiveTab(visualizati'o'n)}""
+                className="{px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === visualizatio'n'
-                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 3D Visualization ({threeDVisualizations.length}</div>
               </button>
-              `"
-                onClick={() => setActiveTab(spati'a'l)}``"
-                className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              ""
+                onClick={() => setActiveTab(spati'a'l)}"""
+                className={"px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === spatia'l'
-                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Spatial Computing ({spatialComputing.length}</div>
               </button>
-              `
-                onClick={() => setActiveTab(projecti'o'n)}``
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              "
+                onClick={() => setActiveTab(projecti'o'n)}""
+                className="{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === projectio'n'
-                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'`
-                      bg-white'/10 text-gray-300 hover bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'
+                      bg-white'/10 text-gray-300 hover bg-white/20'""
+                }"}
               >
                 Holographic Projection ({holographicProjections.length}</div>
               </button>"
-              ''`"
-                onClick={() => setActiveTab(volumetri'c')}"``
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+              ''""
+                onClick={() => setActiveTab(volumetri'c')}"""
+                className="{px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'volumetri'c
-                    ? bg-gradient-to-'r' from-cyan-600 to-blue-600 text-white`
-                      bg-whit'e'/10 text-gray-300 hover bg-white/20``
-                }`}
+                    ? bg-gradient-to-'r' from-cyan-600 to-blue-600 text-white
+                      bg-whit'e'/10 text-gray-300 hover bg-white/20""
+                }"}
               >
                 Volumetric Displays ({volumetricDisplays.length}</div>
               </button> 
-              ''`"
-                onClick={() => setActiveTab(manageme'n't)}``"
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              ''""
+                onClick={() => setActiveTab(manageme'n't)}"""
+                className="{px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === managemen't'
-                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Management ({holographicSystemManagement.length}</div>
               </button>
-              `
-                onClick={() => setActiveTab(overvi'e'w)}``
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
+              "
+                onClick={() => setActiveTab(overvi'e'w)}""
+                className={"px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === overvie'w'
-                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'`
-                    : bg-white'/10 text-gray-300 hover:bg-white/20'``
-                }`}
+                    ? bg-gradient-to-r' from-cyan-600 to-blue-600 text-white'"
+                    : bg-white'/10 text-gray-300 hover:bg-white/20'""
+                }"}
               >
                 Overview</div>
               </button></div>
@@ -431,94 +431,94 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
 "
             {/* Holographic Displays Tab */},
 {activeTab === displa'y's && ("</div>
-              <div className=" space-y-8">
+              <div className=" space-y-8>
                 {/* Controls */}</div>
-                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6"></div>
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> "</div>
-                    </div><div className="flex items-center space-x-4"">
+                </div><div className= bg-white/10 backdrop-blur-sm:rounded-xl" p-6"></div>
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> </div>
+                    </div><div className=flex items-center space-x-4"">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
-                        className= bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500"
+                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500
                       ></div>
                         <option value=all className="bg-slate-800>All Types</option>"</div>
-                        <option value=volumetric className="bg-slate-800">Volumetric</option>"</div>
+                        <option value=volumetric className="bg-slate-800>Volumetric</option></div>
                         <option value=light_field className="bg-slate-800>Light Field</option>"</div>
-                        <option value=holographic_projection className="bg-slate-800">Holographic" Projection</option></div>
+                        <option value=holographic_projection className="bg-slate-800>Holographic Projection</option></div>
                         <option value=spatial_computing className="bg-slate-800>Spatial Computing</option>"</div>
-                        <option value=mixed_reality className="bg-slate-800">Mixed" Reality</option></div>
-                        <option value=augmented_reality className="bg-slate-800>Augmented Reality</option></div>
+                        <option value=mixed_reality className="bg-slate-800>Mixed Reality</option></div>
+                        <option value=augmented_reality className="bg-slate-800>Augmented Reality</option></div>"
                       </select>"</div>
                     </div>"</div>
-                    <button className="bg-gradient-to-r" from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 ">
+                    <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
                       Create Holographic Display</div>
                     </button> </div></div>
                 </div>
 
                 {/* Holographic Displays Grid */}"</div>
-                <div className=" grid grid-cols-1 lg grid-cols-2 gap-6">
+                <div className=" grid grid-cols-1 lg grid-cols-2 gap-6>
                   {filteredDisplays.map((display) => (</div>
-                    </div><div key={display.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10"></div>
-                      <div className="flex items-start justify-between mb-4>"</div>
-                        </div><div>"</div>
+                    </div><div key={display.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10"></div>
+                      <div className="flex items-start justify-between mb-4></div>
+                        </div><div></div>
                           <h3 className="text-xl" font-semibold text-white mb-2 ">{display.name}</h3></div>
-                          <p className="text-gray-300 text-sm capitalize>{display.type.replace('_',  )} Display</p>"</div>
-                        </div>`"</div>
-                        <div className="text-right"">``</div>
-                          <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(display.status)}`}>
+                          <p className="text-gray-300 text-sm capitalize>{display.type.replace('_',  )} Display</p></div>
+                        </div>"</div>
+                        <div className="text-right>""</div>
+                          <span className="{px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(display.status)}}>
                             {display.status} "</div>
-                          </span>`"</div>
-                          <div className="mt-2""">``</div>
-                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(display.type)}`}">
+                          </span>""</div>
+                          <div className="mt-2">`"</div>
+                            <span className="{px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(display.type)}}">
                               {display.resolution}p resolution</div>
                             </span></div>
                           </div></div>
                         </div> </div>
                       </div></div>
-                      <div className="mb-4>"</div>
-                        <p className="text-gray-300 text-sm>{display.description}</p> "</div>
+                      <div className="mb-4></div>
+                        <p className=text-gray-300 text-sm>{display.description}</p> "</div>
                       </div>"</div>
-                      <div className="grid" grid-cols-3 gap-4 mb-4"></div>
+                      <div className="grid grid-cols-3 gap-4 mb-4></div>
                         </div><div className=" bg-white/5 rounded-lg p-4>"</div>
-                          <div className="text-sm" text-gray-400 mb-1">Resolution</div></div>
+                          <div className="text-sm text-gray-400 mb-1>Resolution</div></div>
                           <div className="text-2xl font-bold text-white>{display.resolution}p</div>"</div>
                         </div>"</div>
-                        <div className="bg-white/5" rounded-lg p-4 "></div>
+                        <div className="bg-white/5 rounded-lg p-4 ></div>
                           </div><div className="text-sm text-gray-400 mb-1>Refresh Rate</div>"</div>
-                          <div className="text-2xl" font-bold text-white">{display.refreshRate}Hz</div></div>
+                          <div className="text-2xl font-bold text-white>{display.refreshRate}Hz</div></div>
                         </div></div>
                         <div className="bg-white/5 rounded-lg:p-4>"</div>
-                          </div><div className="text-sm" text-gray-400 mb-1 ">Field of View</div></div>
+                          </div><div className="text-sm text-gray-400 mb-1 >Field of View</div></div>
                           <div className="text-2xl font-bold text-white>{display.fieldOfView}°</div></div>
-                        </div></div>
+                        </div></div>"
                       </div>"
                       {/* AI Analysis */}"</div>
-                      <div className="mb-4""></div>
+                      <div className="mb-4></div>
                         <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"</div>
-                        <div className="bg-gradient-to-r" from-cyan-600/20 to-blue-600/20 rounded-lg:p-4"></div>
+                        <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg:p-4></div>
                           </div><div className="grid grid-cols-3 gap-4 text-sm>"</div>
                             <div> "</div>
-                              </div><div className="text-gray-400" mb-1">Performance</div></div>
-                              <div className="text-white font-semibold>{display.aiAnalysis.performanceScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1>Performance</div></div>
+                              <div className="text-white font-semibold>{display.aiAnalysis.performanceScore}%</div></div>"
                             </div>"</div>
                             <div>"</div>
-                              </div><div className="text-gray-400" mb-1 ">Quality</div></div>
-                              <div className="text-white font-semibold>{display.aiAnalysis.qualityScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1 >Quality</div></div>
+                              <div className="text-white font-semibold>{display.aiAnalysis.qualityScore}%</div></div>"
                             </div>"</div>
                             <div> "</div>
-                              </div><div className="text-gray-400" mb-1">Immersion</div></div>
-                              <div className="text-white font-semibold>{display.aiAnalysis.immersionScore}%</div></div>
+                              </div><div className="text-gray-400 mb-1>Immersion</div></div>
+                              <div className="text-white font-semibold>{display.aiAnalysis.immersionScore}%</div></div>"
                             </div>"</div>
                           </div>"</div>
-                          <div className="mt-3">"</div>
+                          <div className="mt-3></div>
                             </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>'"</div>
-                            <div className="text-xs" text-gray-300">
+                            <div className="text-xs text-gray-300>
                               {display.aiAnalysis.recommendations.join(', )}</div>
                             </div></div>
                           </div></div>
                         </div> </div>
                       </div></div>
                       <div className="flex space-x-2>"</div>
-                        <button className="flex-1" bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 ">
+                        <button className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >
                           View Details</div>
                         </button></div>
                         <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
@@ -529,45 +529,45 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
                   ))}</div>
                 </div></div>
               </div>
-            )}
+            )}"
             {/* Overview Tab */},'"
 {activeTab === 'overview' && analytics && ("</div>
-              <div className=" space-y-8>"</div>
-                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"</div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
+              <div className=" space-y-8></div>
+                </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10></div>
                     </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalDisplays.toLocaleString()}</div>"</div>
-                    <div className="text-gray-400" text-sm">Total Holographic Displays</div> </div>
+                    <div className="text-gray-400 text-sm>Total Holographic Displays</div> </div>
                   </div></div>
                   <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"</div>
-                    </div><div className="text-3xl" font-bold text-white mb-2 ">{analytics.averageResolution.toLocaleString()}p</div></div>
-                    <div className="text-gray-400 text-sm>Avg Resolution</div> </div>
+                    </div><div className="text-3xl font-bold text-white mb-2 >{analytics.averageResolution.toLocaleString()}p</div></div>
+                    <div className="text-gray-400 text-sm>Avg Resolution</div> </div>"
                   </div>"</div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">"</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
                     </div><div className="text-3xl" font-bold text-white mb-2>{analytics.activeVisualizations.toLocaleString()}</div></div>
-                    <div className="text-gray-400 text-sm ">Active Visualizations</div></div>
+                    <div className="text-gray-400 text-sm >Active Visualizations</div></div>
                   </div></div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
-                    </div><div className="text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div></div>
-                    <div className="text-gray-400" text-sm>AI Optimization Score</div></div>
+                  <div className=bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div></div>
+                    <div className=text-gray-400" text-sm>AI Optimization Score</div></div>
                   </div></div>
                 </div></div>
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
-                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3></div>
-                  <div className="space-y-4">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                  <h3 className=text-xl" font-semibold text-white mb-6>AI Insights</h3></div>
+                  <div className="space-y-4>
                     {analytics.aiInsights.map((insight) => (</div>
-                      </div><div key={insight.id} className=" bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg" p-4></div>
-                        <div className="flex  items-start justify-between mb-2"></div>
-                          <h4 className="text-white" font-semibold>{insight.title}</h4>`
-                          ``
-                          }`}>
+                      </div><div key={insight.id} className= bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg" p-4></div>
+                        <div className="flex  items-start justify-between mb-2></div>
+                          <h4 className=text-white" font-semibold>{insight.title}</h4>"
+                          `"
+                          }"}>
                             {insight.impact}</div>
                           </span></div>
                         </div></div>
-                        <p className="text-gray-300" text-sm:mb-3>{insight.description}</p></div>
-                        <div className="text-xs text-gray-400 mb-2 ">
+                        <p className="text-gray-300 text-sm:mb-3>{insight.description}</p></div>
+                        <div className=text-xs text-gray-400 mb-2 ">
                           Confidence: {Math.round(insight.confidence * 100)}%</div>
                         </div>'</div>
-                        <div className="text-xs" text-gray-400></div>
+                        <div className="text-xs text-gray-400></div>
                           <strong>Recommendations </strong> {insight.recommendations.join(, )}</div>
                         </div></div>
                       </div>
@@ -580,21 +580,21 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
         )}</div>
       </div> 
       {/* CTA Section */}</div>
-      <div className="bg-gradient-to-r" from-cyan-600/20 to-blue-600/20 mt-16"> </div>
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>"</div>
-          <div className="text-center>"</div>
-            <h2 className="text-3xl font-bold text-white mb-4">
+      <div className=bg-gradient-to-r" from-cyan-600/20 to-blue-600/20 mt-16"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36></div>
+          <div className=text-center>"</div>
+            <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Experience Holographic Technology?</div>
             </h2></div>
-            <p className="text-xl" text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl" text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your holographic journey with our AI-powered system  
               and ensure comprehensive holographic display management.</div>
             </p></div>
-            <div className="flex  flex-col sm:flex-row gap-4 justify-center"></div>
-              <Link href=/ai-service-matcher className="bg-gradient-to-r" from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105 >Start Experiencing</div>
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105"></Link></div>
-              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>
-              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm "></Link></div>
+            <div className="flex  flex-col sm:flex-row gap-4 justify-center></div>
+              <Link href=/ai-service-matcher className=bg-gradient-to-r" from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105 >Start Experiencing</div>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105></Link></div>
+              <Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
             </div></div>
           </div></div>
         </div></div>
@@ -608,5 +608,5 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
   </div>
 ;
 };
-''`;}
-export default AIPoweredHolographicDisplayPage )))))))))))))))))))))))))))))"'"'`</div>
+''";}
+export default AIPoweredHolographicDisplayPage )))))))))))))))))))))))))))))"'"'"</div>

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 ;
-const fs = require('fs');
-const path = require('path');
+const $1 = require('fs');
+const $1 = require('path');
 
 // Function to fix common syntax errors;
 function fixSyntaxErrors(content) {
-  let fixed = content;
+  let $1 = content;
   
   // Fix unterminated string literals in imports
   fixed = fixed.replace(/import React, { useEffect, useRef } from "react";/g, 'import React, { useEffect, useRef } from "react";');
@@ -13,10 +13,10 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/import { [^}]+ } from "react;/g, (match) => match.replace(/;$/, '";'));
   
   // Fix unterminated string literals in JSX
-  fixed = fixed.replace(/className="fixed inset-0 pointer-events-none z-0"/g, 'className="fixed inset-0 pointer-events-none z-0"');
-  fixed = fixed.replace(/className="([^"]*)$/gm, (match, className) => {
-    if (!match.endsWith('"')) {
-      return `className="${className}"`;
+  fixed = fixed.replace(/className="fixed inset-0 pointer-events-none z-0/g, 'className=fixed inset-0 pointer-events-none z-0"');
+  fixed = fixed.replace(/className="([^]*)$/gm, (match, className) => {
+    if (!match.endsWith('')) {
+      return "className="${className};
     }
     return match;
   });
@@ -25,7 +25,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/style={{ background: 'transparent' }}/g, 'style={{ background: \'transparent\' }}');
   fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) => {
     if (bg.includes("'") && !bg.endsWith("'")) {
-      return `style={{ background: 'transparent' }}`;
+      return "style={{ background: 'transparent' }}";
     }
     return match;
   });
@@ -34,7 +34,7 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, "['#00d4ff', '#8b5cf6', '#ec4899', '#10b981']");
   fixed = fixed.replace(/\[([^]]+)\]/g, (match, content) => {
     if (content.includes("'") && !content.includes("'")) {
-      return `['${content.split("'")[0]}']`;
+      return "['${content.split("'")[0]}']";
     }
     return match;
   });
@@ -47,9 +47,9 @@ function fixSyntaxErrors(content) {
   fixed = fixed.replace(/getContext\('2d\)/g, "getContext('2d')");
   
   // Fix common JSX syntax errors
-  fixed = fixed.replace(/<([^>]+) className=([^>]+)>/g, (match, tag, className) => {
-    if (!className.startsWith('"') && !className.startsWith("'")) {</div>
-      return `<${tag} className="${className}">`;
+  fixed = fixed.replace(/<([^>]+) className="([^>]+)>/g, (match, tag, className) => {
+    if (!className.startsWith('') && !className.startsWith("'")) {</div>
+      return "<${tag} className="${className}>;
     }
     return match;
   });
@@ -57,7 +57,7 @@ function fixSyntaxErrors(content) {
   // Fix export statements
   fixed = fixed.replace(/export default ([^;]+);/g, (match, component) => {
     if (!match.endsWith(';')) {
-      return `${match};`;
+      return "${match};";
     }
     return match;
   });
@@ -68,29 +68,29 @@ function fixSyntaxErrors(content) {
 // Function to process a file;
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const fixedContent = fixSyntaxErrors(content);
+    const $1 = fs.readFileSync(filePath, 'utf8');
+    const $1 = fixSyntaxErrors(content);
     
     if (content !== fixedContent) {
       fs.writeFileSync(filePath, fixedContent, 'utf8');
-      console.log(`Fixed: ${filePath}`);
+      console.log("Fixed: ${filePath}");
       return true;
     }
     return false;
   } catch (error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    console.error("Error processing ${filePath}:", error.message);
     return false;
   }
 }
 
 // Function to recursively find and process files;
 function processDirectory(dir) {
-  const items = fs.readdirSync(dir);
-  let fixedCount = 0;
+  const $1 = fs.readdirSync(dir);
+  let $1 = 0;
   
   for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+    const $1 = path.join(dir, item);
+    const $1 = fs.statSync(fullPath);
     
     if (stat.isDirectory()) {
       // Skip node_modules and .git
@@ -109,8 +109,8 @@ function processDirectory(dir) {
 
 // Main execution
 console.log('Starting syntax error fixes...');
-const startTime = Date.now();
-const fixedCount = processDirectory('.');
-const endTime = Date.now();
+const $1 = Date.now();
+const $1 = processDirectory('.');
+const $1 = Date.now();
 
-console.log(`\nCompleted! Fixed ${fixedCount} files in ${endTime - startTime}ms`); </div>
+console.log("\nCompleted! Fixed ${fixedCount} files in ${endTime - startTime}ms"); </div>

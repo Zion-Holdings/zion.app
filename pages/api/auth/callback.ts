@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js;}
 import { NextApiRequest, NextApiResponse } from nex't'
 ;
-const supabase = createClient(
+const $1 = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-k'e'y;
 );
@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Handle errors from Supabase
   if (error) {
     console.error('Aut'h callback error: ", error", error_description
-    return res.redirect(`/auth/login?error = ${encodeURIComponent(error_description as string || Authenticatio'n' failed)}`}
+    return res.redirect("/auth/login?error = ${encodeURIComponent(error_description as string || Authenticatio'n' failed)}"}
   if (code) {
     try {
       const { data, error } = await supabase.auth.exchangeCodeForSession(code as string
@@ -29,5 +29,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       console.error(Unexpecte'd' error in auth callback: , err
       return res.redirect(/auth/login?error=Unexpected error occurred}}'
   // No code provided
-  return res.redirect('/auth/login?error=Invalid authentication request`
-} ))))))))))';'`
+  return res.redirect('/auth/login?error=Invalid authentication request"
+} ))))))))))';'"

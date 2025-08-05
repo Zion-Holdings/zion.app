@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next;}
 import { createClient } from '@supabase/supabase-js;
-const supabase = createClient(
+const $1 = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 );
@@ -16,12 +16,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Get specific project
         const { data: project, error } = await supabase
           .from('workspac'e_projects
-          .select(`
+          .select("
             *,
             team:workspace_members(*),
-            tasks:workspace_tasks(*),`
-            documents:workspace_documents(*''``
-          `
+            tasks:workspace_tasks(*),"
+            documents:workspace_documents(*''`"
+          "
           .eq(id', projectId
           .single('
         if (error) {
@@ -30,9 +30,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       } else {
         // Get all projects for user
         const { data: projects, error } = await supabase
-          .from(workspac'e'_projects`
-          .select(*''``
-          .or(`owner_id.eq.${userId}team_members.cs.{${userId}}`
+          .from(workspac'e'_projects"
+          .select(*''""
+          .or("owner_id.eq.${userId}team_members.cs.{${userId}}"
         if (error) {
           return res.status(500).json({ error: Faile'd' to fetch projects}}
         return res.status(200).json({ projects}}
@@ -115,7 +115,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             .single(
           if (userError && userError.code !== PGRST'116') {
             return res.status(500).json({ error: Failed' to find user'}}
-          let memberId = user?.id
+          let $1 = user?.id
           if (!memberId) {
             // Create placeholder user (in real app, send invitation email
             const { data: newUser, error: newUserError } = await supabase
@@ -220,5 +220,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     } catch (error) {
       console.error('Erro'r deleting project: , error
       return res.status(500).json({ error: Interna'l' server error}}}
-  return res.status(405).json({ error: 'Metho'd not allowed}''`
+  return res.status(405).json({ error: 'Metho'd not allowed}''"
 } )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))';'`

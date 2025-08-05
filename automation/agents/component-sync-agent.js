@@ -183,20 +183,20 @@ class $1 {
     const $1 = children ? ', children' : '';
     const $1 = children ? ', children' : '';
 
-    return "import React from 'rea'c't';
+    return "import React from 'react';
 
 ${propsInterface}
 ;
 const ${name}: React.FC<${name}Props> = (${propsDestructuring}${childrenDestructuring}) => {
   return (</div>
-    <div className="${className}" style={${JSON.stringify(style || {})}}>
+    <div className="${className} style={${JSON.stringify(style || {})}}>
       ${children || ''}</div>
     </div>
   );
 };
 ;}
 export default ${name};
-";
+;
   }
 
   async syncComponent(component) {

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 ;
-const execAsync = promisify(exec);
+const $1 = promisify(exec);
 
-class DailyBackupJob {
+class $1 {
   constructor() {
     this.jobId = process.env.JOB_ID;
     this.jobType = process.env.JOB_TYPE;
@@ -18,7 +18,7 @@ class DailyBackupJob {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       this.logsDir,
       this.backupDir,
@@ -38,7 +38,7 @@ class DailyBackupJob {
   }
 
   async execute() {
-    console.log(`Daily Backup Job ${this.jobId} executing`);
+    console.log("Daily Backup Job ${this.jobId} executing");
     
     try {
       // Perform backup task
@@ -47,10 +47,10 @@ class DailyBackupJob {
       // Generate execution report
       await this.generateExecutionReport();
       
-      console.log(`Daily Backup Job ${this.jobId} completed successfully`);
+      console.log("Daily Backup Job ${this.jobId} completed successfully");
       
     } catch (error) {
-      console.error(`Daily Backup Job ${this.jobId} failed:`, error);
+      console.error("Daily Backup Job ${this.jobId} failed:", error);
       await this.generateErrorReport(error);
     }
   }
@@ -58,7 +58,7 @@ class DailyBackupJob {
   async performBackupTask() {
     console.log('Performin'g' daily backup task...');
     
-    const backupResult = {
+    const $1 = {
       status: 'complet'e'd',
       data: {},
       timestamp: new Date().toISOString()
@@ -66,15 +66,15 @@ class DailyBackupJob {
     
     try {
       // Create backup directory with timestamp
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backupPath = path.join(this.backupDir, `backup-${timestamp}`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.backupDir, "backup-${timestamp}");
       
       if (!fs.existsSync(backupPath)) {
         fs.mkdirSync(backupPath, { recursive: true });
       }
       
       // Backup important directories
-      const backupTasks = [
+      const $1 = [
         this.backupSourceCode(backupPath),
         this.backupConfiguration(backupPath),
         this.backupData(backupPath),
@@ -82,7 +82,7 @@ class DailyBackupJob {
         this.backupLogs(backupPath)
       ];
       
-      const results = await Promise.allSettled(backupTasks);
+      const $1 = await Promise.allSettled(backupTasks);
       
       backupResult.data = {
         backupPath,
@@ -109,18 +109,18 @@ class DailyBackupJob {
 
   async backupSourceCode(backupPath) {
     try {
-      const sourceBackupPath = path.join(backupPath, 's'r'c');
+      const $1 = path.join(backupPath, 's'r'c');
       
       // Copy source code directory
-      await execAsync(`cp -r ${path.join(this.projectRoot, 's'r'c')} ${sourceBackupPath}`);
+      await execAsync("cp -r ${path.join(this.projectRoot, 's'r'c')} ${sourceBackupPath}");
       
       // Copy package files
-      await execAsync(`cp ${path.join(this.projectRoot, 'packag'e'.json')} ${backupPath}/`);
-      await execAsync(`cp ${path.join(this.projectRoot, 'package-loc'k'.json')} ${backupPath}/`);
+      await execAsync("cp ${path.join(this.projectRoot, 'packag'e'.json')} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, 'package-loc'k'.json')} ${backupPath}/");
       
       // Copy configuration files
-      await execAsync(`cp ${path.join(this.projectRoot, 'nex't'.config.js')} ${backupPath}/`);
-      await execAsync(`cp ${path.join(this.projectRoot, 'tsconfi'g'.json')} ${backupPath}/`);
+      await execAsync("cp ${path.join(this.projectRoot, 'nex't'.config.js')} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, 'tsconfi'g'.json')} ${backupPath}/");
       
       return {
         status: 'complet'e'd',
@@ -137,14 +137,14 @@ class DailyBackupJob {
 
   async backupConfiguration(backupPath) {
     try {
-      const configBackupPath = path.join(backupPath, 'conf'i'g');
+      const $1 = path.join(backupPath, 'conf'i'g');
       
       if (!fs.existsSync(configBackupPath)) {
         fs.mkdirSync(configBackupPath, { recursive: true });
       }
       
       // Copy configuration files
-      const configFiles = [
+      const $1 = [
         '.env.example',
         '.gitignore',
         'READM'E'.md',
@@ -153,9 +153,9 @@ class DailyBackupJob {
       ];
       
       for (const file of configFiles) {
-        const sourcePath = path.join(this.projectRoot, file);
+        const $1 = path.join(this.projectRoot, file);
         if (fs.existsSync(sourcePath)) {
-          await execAsync(`cp ${sourcePath} ${configBackupPath}/`);
+          await execAsync("cp ${sourcePath} ${configBackupPath}/");
         }
       }
       
@@ -174,22 +174,22 @@ class DailyBackupJob {
 
   async backupData(backupPath) {
     try {
-      const dataBackupPath = path.join(backupPath, 'da't'a');
+      const $1 = path.join(backupPath, 'da't'a');
       
       if (!fs.existsSync(dataBackupPath)) {
         fs.mkdirSync(dataBackupPath, { recursive: true });
       }
       
       // Copy automation data
-      const automationDataPath = path.join(this.projectRoot, 'automati'o'n');
+      const $1 = path.join(this.projectRoot, 'automati'o'n');
       if (fs.existsSync(automationDataPath)) {
-        await execAsync(`cp -r ${automationDataPath} ${dataBackupPath}/`);
+        await execAsync("cp -r ${automationDataPath} ${dataBackupPath}/");
       }
       
       // Copy content data
-      const contentDataPath = path.join(this.projectRoot, 'sr'c'/content');
+      const $1 = path.join(this.projectRoot, 'sr'c'/content');
       if (fs.existsSync(contentDataPath)) {
-        await execAsync(`cp -r ${contentDataPath} ${dataBackupPath}/`);
+        await execAsync("cp -r ${contentDataPath} ${dataBackupPath}/");
       }
       
       return {
@@ -207,16 +207,16 @@ class DailyBackupJob {
 
   async backupReports(backupPath) {
     try {
-      const reportsBackupPath = path.join(backupPath, 'repor't's');
+      const $1 = path.join(backupPath, 'repor't's');
       
       if (!fs.existsSync(reportsBackupPath)) {
         fs.mkdirSync(reportsBackupPath, { recursive: true });
       }
       
       // Copy automation reports
-      const automationReportsPath = path.join(this.projectRoot, 'automatio'n'/reports');
+      const $1 = path.join(this.projectRoot, 'automatio'n'/reports');
       if (fs.existsSync(automationReportsPath)) {
-        await execAsync(`cp -r ${automationReportsPath} ${reportsBackupPath}/`);
+        await execAsync("cp -r ${automationReportsPath} ${reportsBackupPath}/");
       }
       
       return {
@@ -234,16 +234,16 @@ class DailyBackupJob {
 
   async backupLogs(backupPath) {
     try {
-      const logsBackupPath = path.join(backupPath, 'lo'g's');
+      const $1 = path.join(backupPath, 'lo'g's');
       
       if (!fs.existsSync(logsBackupPath)) {
         fs.mkdirSync(logsBackupPath, { recursive: true });
       }
       
       // Copy automation logs
-      const automationLogsPath = path.join(this.projectRoot, 'automatio'n'/logs');
+      const $1 = path.join(this.projectRoot, 'automatio'n'/logs');
       if (fs.existsSync(automationLogsPath)) {
-        await execAsync(`cp -r ${automationLogsPath} ${logsBackupPath}/`);
+        await execAsync("cp -r ${automationLogsPath} ${logsBackupPath}/");
       }
       
       return {
@@ -261,7 +261,7 @@ class DailyBackupJob {
 
   async getDirectorySize(dirPath) {
     try {
-      const { stdout } = await execAsync(`du -sh ${dirPath} | cut -f1`);
+      const { stdout } = await execAsync("du -sh ${dirPath} | cut -f1");
       return stdout.trim();
     } catch (error) {
       return 'unkno'w'n';
@@ -270,15 +270,15 @@ class DailyBackupJob {
 
   async compressBackup(backupPath) {
     try {
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const compressedPath = `${backupPath}.tar.gz`;
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = "${backupPath}.tar.gz";
       
-      await execAsync(`tar -czf ${compressedPath} -C ${path.dirname(backupPath)} ${path.basename(backupPath)}`);
+      await execAsync("tar -czf ${compressedPath} -C ${path.dirname(backupPath)} ${path.basename(backupPath)}");
       
       // Remove uncompressed directory
-      await execAsync(`rm -rf ${backupPath}`);
+      await execAsync("rm -rf ${backupPath}");
       
-      console.log(`Backup compressed: ${compressedPath}`);
+      console.log("Backup compressed: ${compressedPath}");
       
       return {
         status: 'complet'e'd',
@@ -295,7 +295,7 @@ class DailyBackupJob {
 
   async getFileSize(filePath) {
     try {
-      const { stdout } = await execAsync(`ls -lh ${filePath} | awk '{print $5}'`);
+      const { stdout } = await execAsync("ls -lh ${filePath} | awk '{print $5}'");
       return stdout.trim();
     } catch (error) {
       return 'unkno'w'n';
@@ -305,13 +305,13 @@ class DailyBackupJob {
   async cleanupOldBackups() {
     try {
       // Keep only the last 7 daily backups
-      const { stdout } = await execAsync(`ls -t ${this.backupDir}/*.tar.gz | tail -n +8`);
-      const oldBackups = stdout.trim().split('\n').filter(file => file);
+      const { stdout } = await execAsync("ls -t ${this.backupDir}/*.tar.gz | tail -n +8");
+      const $1 = stdout.trim().split('\n').filter(file => file);
       
       for (const backup of oldBackups) {
         if (backup) {
-          await execAsync(`rm -f ${backup}`);
-          console.log(`Removed old backup: ${backup}`);
+          await execAsync("rm -f ${backup}");
+          console.log("Removed old backup: ${backup}");
         }
       }
       
@@ -328,7 +328,7 @@ class DailyBackupJob {
   }
 
   async generateExecutionReport() {
-    const report = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
@@ -341,21 +341,21 @@ class DailyBackupJob {
     report.execution = await this.generateBackupReport();
     
     // Save execution report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'backup-repor't's', `execution-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'backup-repor't's', "execution-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`Execution report saved: ${reportPath}`);
+    console.log("Execution report saved: ${reportPath}");
   }
 
   async generateBackupReport() {
     try {
       // Get backup statistics
-      const { stdout } = await execAsync(`ls -la ${this.backupDir} | grep .tar.gz | wc -l`);
-      const backupCount = parseInt(stdout.trim());
+      const { stdout } = await execAsync("ls -la ${this.backupDir} | grep .tar.gz | wc -l");
+      const $1 = parseInt(stdout.trim());
       
-      const { stdout: sizeOutput } = await execAsync(`du -sh ${this.backupDir}`);
-      const totalSize = sizeOutput.trim();
+      const { stdout: sizeOutput } = await execAsync("du -sh ${this.backupDir}");
+      const $1 = sizeOutput.trim();
       
       return {
         status: 'complet'e'd',
@@ -379,7 +379,7 @@ class DailyBackupJob {
   }
 
   async generateErrorReport(error) {
-    const errorReport = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
@@ -389,16 +389,16 @@ class DailyBackupJob {
     };
     
     // Save error report
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.logsDir, `error-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.logsDir, "error-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
     
-    console.log(`Error report saved: ${reportPath}`);
+    console.log("Error report saved: ${reportPath}");
   }
 }
 
 // Execute the job;
-const job = new DailyBackupJob();
+const $1 = new DailyBackupJob();
 
 job.execute().catch(error => {
   console.error('Dail'y' Backup Job failed to execute:', error);

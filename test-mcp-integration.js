@@ -7,8 +7,8 @@ const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio
 async function testMCPIntegration() {
   console.log('🧪 Testing MCP Integration...');
   
-  let serverProcess = null;
-  let client = null;
+  let $1 = null;
+  let $1 = null;
   
   try {
     // Start the MCP server process
@@ -21,7 +21,7 @@ async function testMCPIntegration() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Create transport for the client
-    const transport = new StdioClientTransport(
+    const $1 = new StdioClientTransport(
       serverProcess.stdin,
       serverProcess.stdout
     );
@@ -38,23 +38,23 @@ async function testMCPIntegration() {
 
     // Test listing tools
     console.log('📋 Testing tool listing...');
-    const toolsResponse = await client.listTools();
-    console.log(`✅ Found ${toolsResponse.tools.length} tools:`);
+    const $1 = await client.listTools();
+    console.log("✅ Found ${toolsResponse.tools.length} tools:");
     toolsResponse.tools.forEach(tool => {
-      console.log(`  - ${tool.name}: ${tool.description}`);
+      console.log("  - ${tool.name}: ${tool.description}");
     });
 
     // Test listing resources
     console.log('📁 Testing resource listing...');
-    const resourcesResponse = await client.listResources();
-    console.log(`✅ Found ${resourcesResponse.resources.length} resources:`);
+    const $1 = await client.listResources();
+    console.log("✅ Found ${resourcesResponse.resources.length} resources:");
     resourcesResponse.resources.forEach(resource => {
-      console.log(`  - ${resource.name}: ${resource.description}`);
+      console.log("  - ${resource.name}: ${resource.description}");
     });
 
     // Test calling a simple tool
     console.log('🔧 Testing tool execution...');
-    const result = await client.callTool({
+    const $1 = await client.callTool({
       name: 'analyz'e'_project_structure',
       arguments: {}
     });

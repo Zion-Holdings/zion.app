@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-interface Particle {
+interface $1 {
   x: number;
   y: number;
   vx: number;
@@ -11,18 +11,18 @@ interface Particle {
 }
 ;
 const ParticleEffect: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);</div>
-  const particlesRef = useRef<Particle[]>([]);</div>
-  const animationRef = useRef<number>();
+  const $1 = useRef<HTMLCanvasElement>(null);</div>
+  const $1 = useRef<Particle[]>([]);</div>
+  const $1 = useRef<number>();
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const $1 = canvasRef.current;
     if (!canvas) return;
     
-    const ctx = canvas.getContext('2d');
+    const $1 = canvas.getContext('2d');
     if (!ctx) return;
 
-    const resizeCanvas = () => {
+    const $1 = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
@@ -31,7 +31,7 @@ const ParticleEffect: React.FC = () => {
     window.addEventListener('resize', resizeCanvas);
 
     // Initialize particles
-    const initParticles = () => {
+    const $1 = () => {
       particlesRef.current = Array.from({ length: 50 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -43,7 +43,7 @@ const ParticleEffect: React.FC = () => {
       }));
     };
 
-    const animate = () => {
+    const $1 = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particlesRef.current.forEach((particle) => {
@@ -86,4 +86,4 @@ const ParticleEffect: React.FC = () => {
   );
 };
 ;}
-export default ParticleEffect;</div>
+export default $1;</div>

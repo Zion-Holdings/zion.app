@@ -1,12 +1,12 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
-const cheerio = require('cheer'i'o');
-const puppeteer = require('puppete'e'r');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
+const $1 = require('cheer'i'o');
+const $1 = require('puppete'e'r');
 
-class LinkFixerAgent {
+class $1 {
   constructor() {
-    this.agentId = process.env.AGENT_ID || `link-fixer-${Date.now()}`;
+    this.agentId = process.env.AGENT_ID || "link-fixer-${Date.now()}";
     this.agentType = process.env.AGENT_TYPE || 'link-fix'e'r';
     this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
@@ -39,7 +39,7 @@ class LinkFixerAgent {
   }
 
   ensureDirectories() {
-    const directories = [
+    const $1 = [
       'link-fix'e's',
       'link-backu'p's',
       'link-repor't's',
@@ -47,7 +47,7 @@ class LinkFixerAgent {
     ];
 
     directories.forEach(dir => {
-      const dirPath = path.join(__dirname, '..', dir);
+      const $1 = path.join(__dirname, '..', dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -55,7 +55,7 @@ class LinkFixerAgent {
   }
 
   async initialize() {
-    console.log(`🔧 Initializing Link Fixer Agent: ${this.agentId}`);
+    console.log("🔧 Initializing Link Fixer Agent: ${this.agentId}");
     
     try {
       this.browser = await puppeteer.launch({
@@ -75,7 +75,7 @@ class LinkFixerAgent {
   }
 
   async start() {
-    console.log(`🚀 Starting Link Fixer Agent: ${this.agentId}`);
+    console.log("🚀 Starting Link Fixer Agent: ${this.agentId}");
     
     if (!await this.initialize()) {
       return false;
@@ -106,14 +106,14 @@ class LinkFixerAgent {
     
     try {
       // Load broken links from data directory
-      const brokenLinks = await this.loadBrokenLinks();
+      const $1 = await this.loadBrokenLinks();
       
       if (brokenLinks.length === 0) {
         console.log('✅ No broken links to fix');
         return;
       }
       
-      console.log(`🔧 Found ${brokenLinks.length} broken links to fix`);
+      console.log("🔧 Found ${brokenLinks.length} broken links to fix");
       
       // Process broken links
       for (const brokenLink of brokenLinks) {
@@ -131,7 +131,7 @@ class LinkFixerAgent {
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
       
-      console.log(`✅ Link fixing completed. Fixed: ${this.stats.linksFixed}, Failed: ${this.failedFixes.length}`);
+      console.log("✅ Link fixing completed. Fixed: ${this.stats.linksFixed}, Failed: ${this.failedFixes.length}");
       
     } catch (error) {
       console.error('Erro'r' performing link fixing:', error);
@@ -141,25 +141,25 @@ class LinkFixerAgent {
   }
 
   async loadBrokenLinks() {
-    const brokenLinks = [];
-    const dataDir = path.join(__dirname, '..', 'link-da't'a');
+    const $1 = [];
+    const $1 = path.join(__dirname, '..', 'link-da't'a');
     
     if (!fs.existsSync(dataDir)) {
       return brokenLinks;
     }
     
-    const files = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-link's'-'));
+    const $1 = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-link's'-'));
     
     for (const file of files) {
       try {
-        const filePath = path.join(dataDir, file);
-        const data = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
+        const $1 = path.join(dataDir, file);
+        const $1 = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
         
         if (data.brokenLinks) {
           brokenLinks.push(...data.brokenLinks);
         }
       } catch (error) {
-        console.error(`Error loading broken links from ${file}:`, error);
+        console.error("Error loading broken links from ${file}:", error);
       }
     }
     
@@ -167,21 +167,21 @@ class LinkFixerAgent {
   }
 
   async fixBrokenLink(brokenLink) {
-    console.log(`🔧 Fixing broken link: ${brokenLink.url}`);
+    console.log("🔧 Fixing broken link: ${brokenLink.url}");
     
     try {
-      const startTime = Date.now();
+      const $1 = Date.now();
       
       // Analyze the broken link
-      const analysis = await this.analyzeBrokenLink(brokenLink);
+      const $1 = await this.analyzeBrokenLink(brokenLink);
       
       // Determine the best fix strategy
-      const fixStrategy = this.determineFixStrategy(analysis);
+      const $1 = this.determineFixStrategy(analysis);
       
       // Apply the fix
-      const fixResult = await this.applyFix(brokenLink, fixStrategy);
+      const $1 = await this.applyFix(brokenLink, fixStrategy);
       
-      const responseTime = Date.now() - startTime;
+      const $1 = Date.now() - startTime;
       
       if (fixResult.success) {
         this.stats.linksFixed++;
@@ -193,7 +193,7 @@ class LinkFixerAgent {
           timestamp: new Date().toISOString()
         });
         
-        console.log(`✅ Fixed: ${brokenLink.url} -> ${fixResult.fixedUrl}`);
+        console.log("✅ Fixed: ${brokenLink.url} -> ${fixResult.fixedUrl}");
       } else {
         this.failedFixes.push({
           url: brokenLink.url,
@@ -202,14 +202,14 @@ class LinkFixerAgent {
           timestamp: new Date().toISOString()
         });
         
-        console.log(`❌ Failed to fix: ${brokenLink.url} - ${fixResult.error}`);
+        console.log("❌ Failed to fix: ${brokenLink.url} - ${fixResult.error}");
       }
       
       this.stats.linksChecked++;
       this.updatePerformanceMetrics();
       
     } catch (error) {
-      console.error(`Error fixing broken link ${brokenLink.url}:`, error);
+      console.error("Error fixing broken link ${brokenLink.url}:", error);
       this.stats.errors++;
       this.failedFixes.push({
         url: brokenLink.url,
@@ -220,7 +220,7 @@ class LinkFixerAgent {
   }
 
   async analyzeBrokenLink(brokenLink) {
-    const analysis = {
+    const $1 = {
       url: brokenLink.url,
       statusCode: brokenLink.statusCode,
       error: brokenLink.error,
@@ -241,8 +241,8 @@ class LinkFixerAgent {
 
   isInternalLink(url) {
     try {
-      const parsed = new URL(url);
-      const baseParsed = new URL(this.baseUrl);
+      const $1 = new URL(url);
+      const $1 = new URL(this.baseUrl);
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -250,13 +250,13 @@ class LinkFixerAgent {
   }
 
   isImageLink(url) {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+    const $1 = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
     return imageExtensions.some(ext => url.toLowerCase().includes(ext));
   }
 
   extractPath(url) {
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.pathname;
     } catch {
       return url;
@@ -265,7 +265,7 @@ class LinkFixerAgent {
 
   extractDomain(url) {
     try {
-      const parsed = new URL(url);
+      const $1 = new URL(url);
       return parsed.hostname;
     } catch {
       return '';
@@ -273,11 +273,11 @@ class LinkFixerAgent {
   }
 
   async findSimilarPages(path) {
-    const similarPages = [];
+    const $1 = [];
     
     try {
       // Common page patterns to try
-      const patterns = [
+      const $1 = [
         path.replace(/\/[^\/]+$/, ''), // Remove last segment
         path.replace(/\/[^\/]+$/, '/index'), // Add index
         path.replace(/\/[^\/]+$/, '/home'), // Add home
@@ -290,8 +290,8 @@ class LinkFixerAgent {
       
       for (const pattern of patterns) {
         try {
-          const testUrl = new URL(pattern, this.baseUrl).href;
-          const response = await axios.head(testUrl, { timeout: 5000 });
+          const $1 = new URL(pattern, this.baseUrl).href;
+          const $1 = await axios.head(testUrl, { timeout: 5000 });
           
           if (response.status < 400) {
             similarPages.push({
@@ -316,10 +316,10 @@ class LinkFixerAgent {
   }
 
   calculateSimilarity(originalPath, testPath) {
-    const originalSegments = originalPath.split('/').filter(s => s);
-    const testSegments = testPath.split('/').filter(s => s);
+    const $1 = originalPath.split('/').filter(s => s);
+    const $1 = testPath.split('/').filter(s => s);
     
-    const commonSegments = originalSegments.filter(seg => 
+    const $1 = originalSegments.filter(seg => 
       testSegments.includes(seg)
     );
     
@@ -454,13 +454,13 @@ class LinkFixerAgent {
   }
 
   async loadRedirectRules() {
-    const rulesPath = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
+    const $1 = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
     
     if (fs.existsSync(rulesPath)) {
       try {
-        const data = JSON.parse(fs.readFileSync(rulesPath, 'ut'f'8'));
+        const $1 = JSON.parse(fs.readFileSync(rulesPath, 'ut'f'8'));
         this.redirectRules = new Map(data.rules || []);
-        console.log(`📋 Loaded ${this.redirectRules.size} redirect rules`);
+        console.log("📋 Loaded ${this.redirectRules.size} redirect rules");
       } catch (error) {
         console.error('Erro'r' loading redirect rules:', error);
       }
@@ -468,9 +468,9 @@ class LinkFixerAgent {
   }
 
   async saveRedirectRules() {
-    const rulesPath = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
+    const $1 = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
     
-    const data = {
+    const $1 = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       rules: Array.from(this.redirectRules.entries())
@@ -480,9 +480,9 @@ class LinkFixerAgent {
   }
 
   async generateFixReport() {
-    const reportPath = path.join(__dirname, '..', 'link-repor't's', `fix-report-${Date.now()}.json`);
+    const $1 = path.join(__dirname, '..', 'link-repor't's', "fix-report-${Date.now()}.json");
     
-    const report = {
+    const $1 = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       summary: {
@@ -498,16 +498,16 @@ class LinkFixerAgent {
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📊 Generated fix report: ${reportPath}`);
+    console.log("📊 Generated fix report: ${reportPath}");
   }
 
   generateFixRecommendations() {
-    const recommendations = [];
+    const $1 = [];
     
     if (this.failedFixes.length > 0) {
       recommendations.push({
         type: 'manua'l'_review',
-        message: `${this.failedFixes.length} links failed to fix automatically and need manual review`,
+        message: "${this.failedFixes.length} links failed to fix automatically and need manual review",
         action: 'revie'w'_failed_fixes'
       });
     }
@@ -515,16 +515,16 @@ class LinkFixerAgent {
     if (this.stats.linksFixed > 0) {
       recommendations.push({
         type: 'implementati'o'n',
-        message: `${this.stats.linksFixed} redirects created and need to be implemented on the server`,
+        message: "${this.stats.linksFixed} redirects created and need to be implemented on the server",
         action: 'implemen't'_redirects'
       });
     }
     
-    const redirectCount = this.redirectRules.size;
+    const $1 = this.redirectRules.size;
     if (redirectCount > 100) {
       recommendations.push({
         type: 'optimizati'o'n',
-        message: `High number of redirects (${redirectCount}), consider consolidating similar redirects`,
+        message: "High number of redirects (${redirectCount}), consider consolidating similar redirects",
         action: 'consolidat'e'_redirects'
       });
     }
@@ -533,7 +533,7 @@ class LinkFixerAgent {
   }
 
   updatePerformanceMetrics() {
-    const totalTasks = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -542,7 +542,7 @@ class LinkFixerAgent {
     if (this.browser) {
       await this.browser.close();
     }
-    console.log(`🧹 Link Fixer Agent ${this.agentId} cleaned up`);
+    console.log("🧹 Link Fixer Agent ${this.agentId} cleaned up");
   }
 
   getStats() {
@@ -558,7 +558,7 @@ class LinkFixerAgent {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agent = new LinkFixerAgent();
+  const $1 = new LinkFixerAgent();
   
   agent.start().then(() => {
     console.log('Lin'k' Fixer Agent started successfully');

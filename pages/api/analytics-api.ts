@@ -19,7 +19,7 @@ export default async function handler(
     });}
   try {
     // Analytics Api API logic here
-    const data = {
+    const $1 = {
       id: Date.now(),
       type: 'analytics-a'pi,
       status: 'acti've,

@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const parser = require('@babel/parser');
-const traverse = require('@babel/traverse').default;
-const generate = require('@babel/generator').default;
-const t = require('@babel/types');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('@babel/parser');
+const $1 = require('@babel/traverse').default;
+const $1 = require('@babel/generator').default;
+const $1 = require('@babel/types');
 
-class EnhancedLayoutValidator {
+class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
@@ -18,13 +18,13 @@ class EnhancedLayoutValidator {
   async analyzeWithAST() {
     console.log('🔍 Running enhanced AST-based layout analysis...');
     
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
       try {
         await this.analyzePageWithAST(page);
       } catch (error) {
-        console.error(`Error analyzing ${page}:`, error.message);
+        console.error("Error analyzing ${page}:", error.message);
       }
     }
     
@@ -36,10 +36,10 @@ class EnhancedLayoutValidator {
   }
 
   async analyzePageWithAST(filePath) {
-    const content = fs.readFileSync(filePath, 'ut'f'8');
+    const $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     try {
-      const ast = parser.parse(content, {
+      const $1 = parser.parse(content, {
         sourceType: 'modu'l'e',
         plugins: ['j's'x', 'typescri'p't']
       });
@@ -62,12 +62,12 @@ class EnhancedLayoutValidator {
       this.analyzeAccessibility(ast, filePath);
       
     } catch (error) {
-      console.error(`Failed to parse AST for ${filePath}:`, error.message);
+      console.error("Failed to parse AST for ${filePath}:", error.message);
     }
   }
 
   analyzeImports(ast, filePath) {
-    const imports = [];
+    const $1 = [];
     
     traverse(ast, {
       ImportDeclaration(path) {
@@ -79,7 +79,7 @@ class EnhancedLayoutValidator {
     });
     
     // Check for missing layout imports
-    const hasLayoutImport = imports.some(imp => 
+    const $1 = imports.some(imp => 
       imp.source.includes('ModernLayo'u't') || imp.source.includes('PageLayo'u't')
     );
     
@@ -101,9 +101,9 @@ class EnhancedLayoutValidator {
   }
 
   analyzeComponentStructure(ast, filePath) {
-    let hasDefaultExport = false;
-    let hasReturnStatement = false;
-    let hasJSXReturn = false;
+    let $1 = false;
+    let $1 = false;
+    let $1 = false;
     
     traverse(ast, {
       ExportDefaultDeclaration(path) {
@@ -137,13 +137,13 @@ class EnhancedLayoutValidator {
   }
 
   analyzeJSXStructure(ast, filePath) {
-    let hasLayoutWrapper = false;
-    let hasHeadComponent = false;
-    let hasMainContent = false;
+    let $1 = false;
+    let $1 = false;
+    let $1 = false;
     
     traverse(ast, {
       JSXElement(path) {
-        const elementName = path.node.openingElement.name.name;
+        const $1 = path.node.openingElement.name.name;
         
         if (elementName === 'ModernLayo'u't' || elementName === 'PageLayo'u't') {
           hasLayoutWrapper = true;
@@ -188,13 +188,13 @@ class EnhancedLayoutValidator {
   }
 
   analyzeResponsiveClasses(ast, filePath) {
-    const responsiveClasses = [];
-    const mobileClasses = [];
+    const $1 = [];
+    const $1 = [];
     
     traverse(ast, {
       JSXAttribute(path) {
         if (path.node.name.name === 'classNa'm'e' && path.node.value) {
-          const className = path.node.value.value || path.node.value.expression?.value;
+          const $1 = path.node.value.value || path.node.value.expression?.value;
           
           if (className) {
             // Check for responsive breakpoints
@@ -229,13 +229,13 @@ class EnhancedLayoutValidator {
   }
 
   analyzeAccessibility(ast, filePath) {
-    let hasAriaLabels = false;
-    let hasRoles = false;
-    let hasAltText = false;
+    let $1 = false;
+    let $1 = false;
+    let $1 = false;
     
     traverse(ast, {
       JSXAttribute(path) {
-        const attrName = path.node.name.name;
+        const $1 = path.node.name.name;
         
         if (attrName.startsWith('ari'a'-')) {
           hasAriaLabels = true;
@@ -269,14 +269,14 @@ class EnhancedLayoutValidator {
 
   generateLayoutImportFix() {
     return {
-      importStatement: `import ModernLayout from '../components/layout/ModernLayout'`,
+      importStatement: "import ModernLayout from '../components/layout/ModernLayout'",
       description: 'Ad'd' ModernLayout import'
     };
   }
 
   generateLayoutWrapperFix() {
     return {
-      wrapperCode: `<ModernLayout>\n  {/* Your content */}\n</ModernLayout>`,
+      wrapperCode: "<ModernLayout>\n  {/* Your content */}\n</ModernLayout>",
       description: 'Wra'p' content with ModernLayout'
     };
   }
@@ -313,16 +313,16 @@ class EnhancedLayoutValidator {
     for (const fix of this.fixes) {
       try {
         await this.applyASTFix(fix);
-        console.log(`✅ Applied AST fix to ${fix.file}`);
+        console.log("✅ Applied AST fix to ${fix.file}");
       } catch (error) {
-        console.error(`❌ Failed to apply AST fix to ${fix.file}:`, error.message);
+        console.error("❌ Failed to apply AST fix to ${fix.file}:", error.message);
       }
     }
   }
 
   async applyASTFix(fix) {
-    const filePath = fix.file;
-    const ast = this.astCache.get(filePath);
+    const $1 = fix.file;
+    const $1 = this.astCache.get(filePath);
     
     if (!ast) {
       throw new Error('AS'T' not found for file');
@@ -344,7 +344,7 @@ class EnhancedLayoutValidator {
     }
     
     // Generate code from AST
-    const output = generate(ast, {
+    const $1 = generate(ast, {
       retainLines: true,
       compact: false
     });
@@ -353,7 +353,7 @@ class EnhancedLayoutValidator {
   }
 
   addLayoutImport(ast, fix) {
-    const importDeclaration = t.importDeclaration(
+    const $1 = t.importDeclaration(
       [t.importDefaultSpecifier(t.identifier('ModernLayo'u't'))],
       t.stringLiteral('../components/layout/ModernLayout')
     );
@@ -366,10 +366,10 @@ class EnhancedLayoutValidator {
     traverse(ast, {
       ReturnStatement(path) {
         if (path.node.argument && path.node.argument.type === 'JSXEleme'n't') {
-          const jsxElement = path.node.argument;
+          const $1 = path.node.argument;
           
           // Create ModernLayout wrapper
-          const wrapper = t.jsxElement(
+          const $1 = t.jsxElement(
             t.jsxOpeningElement(t.jsxIdentifier('ModernLayo'u't'), [], false),
             t.jsxClosingElement(t.jsxIdentifier('ModernLayo'u't')),
             [jsxElement]
@@ -385,7 +385,7 @@ class EnhancedLayoutValidator {
     traverse(ast, {
       JSXAttribute(path) {
         if (path.node.name.name === 'classNa'm'e' && path.node.value) {
-          const currentClass = path.node.value.value || '';
+          const $1 = path.node.value.value || '';
           
           if (currentClass.includes('contain'e'r') && !currentClass.includes('responsi'v'e')) {
             path.node.value.value = currentClass + ' container-responsive';
@@ -398,15 +398,15 @@ class EnhancedLayoutValidator {
   addAccessibilityAttributes(ast, fix) {
     traverse(ast, {
       JSXElement(path) {
-        const elementName = path.node.openingElement.name.name;
+        const $1 = path.node.openingElement.name.name;
         
         if (elementName === 'd'i'v' || elementName === 'secti'o'n') {
-          const hasRole = path.node.openingElement.attributes.some(attr => 
+          const $1 = path.node.openingElement.attributes.some(attr => 
             attr.name && attr.name.name === 'ro'l'e'
           );
           
           if (!hasRole) {
-            const roleAttr = t.jsxAttribute(
+            const $1 = t.jsxAttribute(
               t.jsxIdentifier('ro'l'e'),
               t.stringLiteral('ma'i'n')
             );
@@ -419,14 +419,14 @@ class EnhancedLayoutValidator {
   }
 
   getPages() {
-    const pages = [];
+    const $1 = [];
     
-    const walkDir = (dir) => {
-      const files = fs.readdirSync(dir);
+    const $1 = (dir) => {
+      const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        const $1 = path.join(dir, file);
+        const $1 = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
@@ -441,8 +441,8 @@ class EnhancedLayoutValidator {
   }
 
   generateSummary() {
-    const totalIssues = this.issues.length;
-    const totalFixes = this.fixes.length;
+    const $1 = this.issues.length;
+    const $1 = this.fixes.length;
     
     return {
       totalIssues,

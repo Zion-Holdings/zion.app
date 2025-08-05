@@ -1,4 +1,4 @@
-import React, { useState } from "react;}
+import React, { useState } from "react";}
 import { motion } from framer-motion";
 ';}
 export default function SearchFilter() {
@@ -6,13 +6,13 @@ export default function SearchFilter() {
   const [filters, setFilters] = useState({});
 
   return (
-    <motion.div className="search-filter>"</div>
-      <input"
+    <motion.div className="search-filter></div>
+      <input
         type="text 
         placeholder="Search...
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className=search-input /> 
+        className="search-input" /> 
       {/* Filter options */}</div>
     </motion.div>;
   );

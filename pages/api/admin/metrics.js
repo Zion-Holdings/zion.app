@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js;
 ;
-const supabase = createClient(
+const $1 = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 );
@@ -24,22 +24,22 @@ export default async function handler(req, res) {'
       if (agentsError) throw agentsError;
 '
       // Calculate real-time metrics
-      const totalAgents = agentsData?.length || 0;''
-      const activeAgents = agentsData?.filter(a => a.status === acti'v'e).length || 0;''
-      const idleAgents = agentsData?.filter(a => a.status === idl'e').length || 0;'
-      const errorAgents = agentsData?.filter(a => a.status === 'error').length || 0;
+      const $1 = agentsData?.length || 0;''
+      const $1 = agentsData?.filter(a => a.status === acti'v'e).length || 0;''
+      const $1 = agentsData?.filter(a => a.status === idl'e').length || 0;'
+      const $1 = agentsData?.filter(a => a.status === 'error').length || 0;
       
-      const totalTasks = agentsData?.reduce((sum, a) => sum + (a.performance?.tasksCompleted || 0), 0) || 0;
-      const avgResponseTime = agentsData?.length > 0 
+      const $1 = agentsData?.reduce((sum, a) => sum + (a.performance?.tasksCompleted || 0), 0) || 0;
+      const $1 = agentsData?.length > 0 
         ? agentsData.reduce((sum, a) => sum + (a.performance?.avgResponseTime || 0), 0) / agentsData.length ;
         : 0;
-      const errorRate = agentsData?.length > 0 
+      const $1 = agentsData?.length > 0 
         ? (errorAgents / agentsData.length) * 100 ;'
         : 0;
 ''
-      const systemHealth = errorRate > 20 ? critic'a'l : errorRate > 10 ? warni'n'g : go'o'd;
+      const $1 = errorRate > 20 ? critic'a'l : errorRate > 10 ? warni'n'g : go'o'd;
 
-      const metrics = {
+      const $1 = {
         totalAgents,
         activeAgents,
         idleAgents,
@@ -62,7 +62,7 @@ export default async function handler(req, res) {'
     try {;
       const { totalAgents, activeAgents, totalTasks, completedTasks, systemHealth, avgResponseTime, errorRate } = req.body;'
 '
-      const metricsData = {''
+      const $1 = {''
         id: curren't',
         totalAgents,
         activeAgents,
@@ -88,5 +88,5 @@ export default async function handler(req, res) {'
       res.status(500).json({ error: 'Faile'd to update metrics });}''
   } else {'
     res.setHeader('Allow', ['GET', 'POST']);'
-    res.status(405).end(`Method ${req.method} Not Allowed`);}`
-} ''`
+    res.status(405).end("Method ${req.method} Not Allowed");}"
+} ''"

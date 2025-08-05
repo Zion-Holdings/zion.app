@@ -1,7 +1,7 @@
 import React from "react";}
 import ModernLayout from '../components/layout/ModernLayout';import { useRouter } from next/router"";
 
-interface QuoteFormData {
+interface $1 {
   services: string[];
   talent: string[];
   equipment: string[];
@@ -19,8 +19,8 @@ interface QuoteFormData {
   email: string;
   phone: string;
   company: string;};
-const QuoteRequestForm = () => {;
-  const router = useRouter();
+const $1 = () => {;
+  const $1 = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<QuoteFormData>({
     services: [],
@@ -69,103 +69,103 @@ const QuoteRequestForm = () => {;
     'Standar'd (2-4 weeks), Rus'h' (1-2 weeks), Express' (3-7 days), 'Same Day;
   ];
 
-  const handleInputChange = (field: keyof QuoteFormData, value: any) => {;
+  const $1 = (field: keyof QuoteFormData, value: any) => {;
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleMultiSelect = (field: keyof QuoteFormData, value: string) => {
+  const $1 = (field: keyof QuoteFormData, value: string) => {
     setFormData(prev => {;
-      const currentArray = prev[field] as string[];
-      const newArray = currentArray.includes(value
+      const $1 = prev[field] as string[];
+      const $1 = currentArray.includes(value
         ? currentArray.filter(item => item !== value;
         : [...currentArray, value];
       return { ...prev, [field]: newArray };
     });
   };
 
-  const nextStep = () => currentStep ;
-  const prevStep = () => currentStep > 1 && setCurrentStep(currentStep - 1);
-  const handleSubmit = async () => {'
+  const $1 = () => currentStep ;
+  const $1 = () => currentStep > 1 && setCurrentStep(currentStep - 1);
+  const $1 = async () => {'
     try {
-      const response = await fetch('/api/quote-request, {
+      const $1 = await fetch('/api/quote-request, {
         method: PO'S'T,
         headers: {
           'Content-Ty'pe: 'applicatio'n/json,}
         body: JSON.stringify(formData),;
       });
 
-      const result = await response.json();
+      const $1 = await response.json();
 '
       if (response.ok) {
-        alert(`Quote request submitted successfully! Quote ID: ${result.quoteId}\nWe'll get back to you within 24 hours.`);
-        router.push('/');`
-      } else {``
-        alert(`Error: ${result.error}`);}
+        alert("Quote request submitted successfully! Quote ID: ${result.quoteId}\nWe'll get back to you within 24 hours.");
+        router.push('/');"
+      } else {""
+        alert("Error: ${result.error}");}
     } catch (error) {
       console.error(Erro'r' submitting quote request: , error);
       alert(There' was an error submitting your request. Please try again.');}
   };
 
-  const renderStep1 = () => (</div>
-    <div className="space-y-6>"</div>
+  const $1 = () => (</div>
+    <div className="space-y-6></div>
       </div><div></div>
-        <h3 className="text-lg font-semibold mb-4 text-responsive-lg">Select Services</h3></div>
-        <div className="grid"  grid-cols-2 gap-3>
+        <h3 className=text-lg font-semibold mb-4 text-responsive-lg">Select Services</h3></div>
+        <div className="grid  grid-cols-2 gap-3>
           {services.map(service => (</div>
-            <label key={service} className="flex items-center space-x-2 cursor-pointer"">
+            <label key={service} className=flex items-center space-x-2 cursor-pointer"">
               '
                 onChange={() => handleMultiSelect('services', service)}"
-                className= rounded border-gray-300"
+                className=" rounded border-gray-300
               /></div>
               <span className="text-sm text-responsive-lg>{service}</span></div>
             </label>
           ))}</div>
-        </div ></div>
+        </div ></div>"
       </div>"</div>
       <div>"</div>
-        <h3 className="text-lg" font-semibold mb-4 text-responsive-lg">Select Talent</h3></div>
+        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Talent</h3></div>
         <div className="grid  grid-cols-2 gap-3>"
           {talent.map(t => ("</div>
             <label key={t} className=" flex items-center space-x-2 cursor-pointer>'
-              "
+              
                 onChange={() => handleMultiSelect('tale'nt, t)}"
-                className=" rounded" border-gray-300
+                className=" rounded border-gray-300
               /></div>
-              <span className="text-sm:text-responsive-lg">{t}</span>"</div>
+              <span className=text-sm:text-responsive-lg">{t}</span>"</div>
             </label>
           ))}</div>
         </div></div>
       </div></div>
       <div> </div>
-        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Equipment</h3>"</div>
-        <div className="grid grid-cols-2" gap-3">
+        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Equipment</h3></div>
+        <div className=grid grid-cols-2" gap-3">
           {equipment.map(eq => (</div>
             <label key={eq} className="flex  items-center space-x-2 cursor-pointer>'
-              '"
+              '
                 onChange={() => handleMultiSelect(equipme'n't, eq)}"
-                className= rounded" border-gray-300"
+                className=" rounded border-gray-300"
               /></div>
-              <span className="text-sm text-responsive-lg">{eq}</span></div>
+              <span className="text-sm text-responsive-lg>{eq}</span></div>
             </label>
           ))}</div>
         </div></div>
       </div ></div>
-    </div>"
+    </div>
   );
 
-  const renderStep2 = () => ("</div>
-    <div className="space-y-6"></div>
+  const $1 = () => ("</div>
+    <div className="space-y-6></div>
       </div><div></div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg >Project Name</label>
+        <label className=block" text-sm font-medium mb-2 text-responsive-lg >Project Name</label>
         
           onChange={(e) => handleInputChange('projectNa'me, e.target.value)}
-          className=w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
           placeholder=Enter project name
         /></div>
       </div>
 </div>
       <div></div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg>Project Type</label>'
+        <label className=block" text-sm font-medium mb-2 text-responsive-lg>Project Type</label>'
          '
           onChange={(e) => handleInputChange(projectTy'p'e, e.target.value)}
           className=w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500"
@@ -185,24 +185,24 @@ const QuoteRequestForm = () => {;
       <div></div>
         <label className="block text-sm font-medium mb-2 text-responsive-lg>Project Description</label>
          
-          onChange={(e) => handleInputChange('projectDescripti'on, e.target.value)}"
+          onChange={(e) => handleInputChange('projectDescripti'on, e.target.value)}
           rows={4}"
           className=" w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
           placeholder=Describe your project in detail...
         /></div>
-      </div>"
+      </div>
 "</div>
-      <div className="grid grid-cols-2 gap-4>"</div>
-        </div><div>"</div>
+      <div className="grid grid-cols-2 gap-4></div>
+        </div><div></div>
           <label className="block" text-sm font-medium mb-2 text-responsive-lg">Location</label>'
             onChange={(e) => handleInputChange('location', e.target.value)}
             className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
             placeholder=Project location
           /></div>
         </div>
-"</div>
+</div>
         <div>"</div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg">Duration</label>'
+          <label className="block text-sm font-medium mb-2 text-responsive-lg>Duration</label>'
             onChange={(e) => handleInputChange(duratio'n', e.target.value)}
             className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
             placeholder=e.g., 2 hours, 1 day
@@ -210,32 +210,32 @@ const QuoteRequestForm = () => {;
         </div></div>
       </div></div>
     </div> 
-  );
+  );"
 "
-  const renderStep3 = () => ("</div>
-    <div className=" space-y-6>"</div>
-      </div><div className="grid grid-cols-2 gap-4>"</div>
+  const $1 = () => ("</div>
+    <div className=" space-y-6></div>
+      </div><div className=grid grid-cols-2 gap-4>"</div>
         <div>"</div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg">Start Date</label> 
+          <label className="block text-sm font-medium mb-2 text-responsive-lg>Start Date</label> 
           "'
             onChange={(e) => handleInputChange('startDate', e.target.value)}
-            className=w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
           /></div>
         </div>
 </div>
         <div></div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg>End Date</label>'
+          <label className=block" text-sm font-medium mb-2 text-responsive-lg>End Date</label>'
             onChange={(e) => handleInputChange(endDat'e', e.target.value)}
-            className=w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
           /></div>
         </div></div>
       </div>
 </div>
       <div></div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg>Urgency Level</label>
+        <label className=block" text-sm font-medium mb-2 text-responsive-lg>Urgency Level</label>
          '
           onChange={(e) => handleInputChange('urgency', e.target.value)}
-          className=w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
+          className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
         ></div>
           <option value=>Select urgency level</option>
           {urgencyLevels.map(level => (</div>
@@ -246,11 +246,11 @@ const QuoteRequestForm = () => {;
     </div>
   );
 
-  const renderStep4 = () => (</div>
-    <div className="space-y-6>"</div>
+  const $1 = () => (</div>
+    <div className=space-y-6>"</div>
       </div><div></div>
-        <label className="block text-sm font-medium mb-2 text-responsive-lg">Budget Range</label>'
-        "
+        <label className="block text-sm font-medium mb-2 text-responsive-lg>Budget Range</label>'
+        
           onChange={(e) => handleInputChange('budgetRan'ge, e.target.value)}
           className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
         ></div>
@@ -259,49 +259,49 @@ const QuoteRequestForm = () => {;
             <option key={range} value={range}>{range}</option>
           ))}</div>
         </select></div>
-      </div>
+      </div>"
 "</div>
       <div>"</div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg">Budget Details</label>'
+        <label className="block text-sm font-medium mb-2 text-responsive-lg>Budget Details</label>'
         '
           onChange={(e) => handleInputChange(budgetDetai'l's, e.target.value)} 
           rows={3}
           className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
           placeholder=Any specific budget requirements or constraints...
-        /></div>
+        /></div>"
       </div>"
 "</div>
-      <div className=" bg-blue-50 p-4" rounded-md></div>
-        <h4 className="font-medium text-blue-900 mb-2 text-responsive-lg">Contact Information</h4></div>
-        <div className="grid" grid-cols-2 gap-4></div>
+      <div className=" bg-blue-50 p-4 rounded-md></div>
+        <h4 className=font-medium text-blue-900 mb-2 text-responsive-lg">Contact Information</h4></div>
+        <div className="grid grid-cols-2 gap-4></div>
           </div><div></div>
-            <label className="block text-sm font-medium mb-2 text-responsive-lg ">Full Name</label>
+            <label className=block text-sm font-medium mb-2 text-responsive-lg ">Full Name</label>
               onChange={(e) => handleInputChange('clientNa'me, e.target.value)}
-              className="w-full" px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
               placeholder=Your full name
             /></div>
           </div>
 </div>
           <div></div>
-            <label className="block text-sm font-medium mb-2 text-responsive-lg">Company</label>'
+            <label className=block text-sm font-medium mb-2 text-responsive-lg">Company</label>'
               onChange={(e) => handleInputChange('company', e.target.value)}
-              className="w-full" px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
               placeholder=Company name (optional)
             /></div>
           </div>
 </div>
           <div></div>
-            <label className="block text-sm font-medium mb-2 text-responsive-lg">Email</label>'
+            <label className=block text-sm font-medium mb-2 text-responsive-lg">Email</label>'
               onChange={(e) => handleInputChange(emai'l', e.target.value)}
-              className="w-full" px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
               placeholder=your.email@example.com
             /></div>
           </div>
 </div>
           <div></div>
-            <label className="block text-sm font-medium mb-2 text-responsive-lg">Phone</label>
+            <label className=block text-sm font-medium mb-2 text-responsive-lg">Phone</label>
               onChange={(e) => handleInputChange(pho'n'e, e.target.value)}
-              className="w-full" px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus outline-none focus ring-2 focus ring-blue-500
               placeholder=Phone number
             /></div>
           </div></div>
@@ -310,64 +310,64 @@ const QuoteRequestForm = () => {;
     </div>
   );
 
-  const renderStep5 = () => (</div>
-    <div className=" space-y-6>"</div>
-      </div><div className="bg-gray-50 p-6 rounded-lg>"</div>
-        <h3 className="text-lg" font-semibold mb-4 text-responsive-lg">Quote Request Summary</h3></div>
-        <div className="space-y-4>"</div>
-          </div><div>"</div>
+  const $1 = () => (</div>
+    <div className= space-y-6>"</div>
+      </div><div className="bg-gray-50 p-6 rounded-lg></div>
+        <h3 className=text-lg" font-semibold mb-4 text-responsive-lg">Quote Request Summary</h3></div>
+        <div className="space-y-4></div>
+          </div><div></div>
             <h4 className="font-medium" text-gray-700 text-responsive-lg">Services Selected</h4></div>
             <p className="text-sm:text-gray-600 text-responsive-lg>
               {formData.services.length > 0 ? formData.services.join(', ') : None' selected'}</div>
             </p></div>
           </div>
-"</div>
+</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Talent Required</h4></div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Talent Required</h4></div>
             <p className="text-sm:text-gray-600 text-responsive-lg>
               {formData.talent.length > 0 ? formData.talent.join(, ')   'None selected'}</div>
             </p></div>
-          </div>
+          </div>"
 "</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Equipment Needed</h4>'</div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Equipment Needed</h4>'</div>
             <p className="text-sm text-gray-600 text-responsive-lg >
               {formData.equipment.length > 0 ? formData.equipment.join(, ) : 'Non'e selected}</div>
             </p></div>
-          </div>
+          </div>"
 "</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Project Details</h4>'</div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Project Details</h4>'</div>
             <p className="text-sm:text-gray-600 text-responsive-lg></div>
               <strong>Name:</strong> {formData.projectName || 'Not specified'}<br > </br ><strong>Type </strong> {formData.projectType || 'Not specified'}<br > </br ><strong>Location </strong> {formData.location || 'Not specified'}<br > </br ><strong>Duration </strong> {formData.duration || 'Not specified'}</div>
             </p></div>
-          </div>
+          </div>"
 "</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Timeline</h4>'</div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Timeline</h4>'</div>
             <p className="text-sm text-gray-600 text-responsive-lg ></div>
               <strong>Start:</strong> {formData.startDate || Not' specified'}<br > </br ><strong>End:</strong> {formData.endDate || Not' specified'}<br > </br ><strong>Urgency:</strong> {formData.urgency || Not' specified'}</div>
             </p></div>
-          </div>
+          </div>"
 "</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Budget</h4></div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Budget</h4></div>
             <p className="text-sm text-gray-600 text-responsive-lg></div>
               <strong>Range </strong> {formData.budgetRange || No't' specified}<br >{formData.budgetDetails && (</div>
                 </br ><div><strong>Details </strong> {formData.budgetDetails}<br /></div>
               )}</div>
             </p></div>
-          </div>
+          </div>"
 "</div>
           <div>"</div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg">Contact Information</h4></div>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Contact Information</h4></div>
             <p className="text-sm text-gray-600 text-responsive-lg ></div>
               <strong>Name:</strong> {formData.clientName || 'No't specified}<br > </br ><strong>Company:</strong> {formData.company || 'No't specified}<br > </br ><strong>Email:</strong> {formData.email || 'No't specified}<br > </br ><strong>Phone:</strong> {formData.phone || 'No't specified}</div>
             </p></div>
-          </div></div>
+          </div></div>"
         </div>"</div>
       </div>"</div>
-      <div className="bg-blue-50" p-4 rounded-md"></div>
+      <div className="bg-blue-50 p-4 rounded-md></div>
         <p className="text-sm:text-blue-800 text-responsive-lg>
           By submitting this quote request, you agree to receive a response within 24 hours. 
           Our team will review your requirements and provide a detailed quote tailored to your needs.</div>
@@ -376,11 +376,11 @@ const QuoteRequestForm = () => {;
     </div>
   );
 
-  const renderStepContent = () = > {
+  const $1 = () = > {
     switch (currentStep) {;
       case 1: return renderStep1();
       case 2: return renderStep2();
-      case 3: return renderStep3();
+      case 3: return renderStep3();"
       case 4  return renderStep4();"
       case 5  return renderStep5();"
       default  return null;}"
@@ -396,34 +396,34 @@ const QuoteRequestForm = () => {;
 
   return (</div>
     <div></div>
-      </div><div className="min-h-screen  bg-gray-50 py-8">"</div>
+      </div><div className="min-h-screen  bg-gray-50 py-8></div>
       <div className="max-w-4xl mx-auto px-4 > "</div>
-        </div><div className="bg-white rounded-lg:shadow-lg" p-8"></div>
+        </div><div className="bg-white rounded-lg:shadow-lg p-8></div>
           <div className="mb-8>'"</div>
-            <h1 className="text-3xl" font-bold text-gray-900 mb-2 text-responsive-lg">Request a Quote</h1>'</div>
-            <p className="text-gray-600 text-responsive-lg>Tell us about your project and wel'l' provide a detailed quote</p></div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2 text-responsive-lg>Request a Quote</h1>'</div>
+            <p className="text-gray-600 text-responsive-lg>Tell us about your project and wel'l' provide a detailed quote</p></div>"
           </div>"
 "</div>
-          <div className="mb-8">" </div>
+          <div className="mb-8> </div>
             </div><div className="flex items-center justify-between mb-4>"
               {stepTitles.map((title, index) => ("</div>
-                <div key={index} className="flex" items-center"></div>
+                <div key={index} className="flex items-center></div>
                   </div>
                     currentStep > index + 1 
                       ? bg-green'-'500 text-white 
                       : currentStep === index + 1 
-                        ? 'bg-blue'-500 text-white `
-                        : 'bg-gray'-200 text-gray-600``
-                  }`}>
+                        ? 'bg-blue'-500 text-white "
+                        : 'bg-gray'-200 text-gray-600`"
+                  }"}>
                     {currentStep > index + 1 ? ✓' : index + 1}</div>
-                  </div>`
-                  ``
-                  }`}>
+                  </div>"
+                  ""
+                  }"}>
                     {title}</div>
                   </span>'
-                  {index `
-                      currentStep > index + 1 ? bg-green-'500'   bg-gray-'200'``
-                    }`} />
+                  {index "
+                      currentStep > index + 1 ? bg-green-'500'   bg-gray-'200'""
+                    }"} />
                   )}</div>
                 </div>
               ))}</div>
@@ -431,9 +431,9 @@ const QuoteRequestForm = () => {;
           </div></div>
           <div className="mb-8>
             {renderStepContent()}</div>
-          </div>"
+          </div>
 "</div>
-          <div className="flex" justify-between ">
+          <div className="flex justify-between >
             
             >
               Previous</div>
@@ -455,7 +455,7 @@ const QuoteRequestForm = () => {;
         </div></div>
       </div></div>
     </div>
-  );
+  );"
 };"
-`";}
-export default QuoteRequestForm;))'"'`</div>
+"";}
+export default $1;))'"'"</div>

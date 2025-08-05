@@ -1,9 +1,9 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
-const moment = require('mome'n't');
+const $1 = require('mome'n't');
 
-class LinkedInAdvertisingFactory {
+class $1 {
     constructor() {
         this.id = uuidv4();
         this.name = 'LinkedI'n' Advertising Factory';
@@ -79,16 +79,16 @@ class LinkedInAdvertisingFactory {
         
         try {
             // Phase 1: Analyze Current Campaigns
-            const campaignAnalysis = await this.analyzeCurrentCampaigns();
+            const $1 = await this.analyzeCurrentCampaigns();
             
             // Phase 2: Create New Ad Campaigns
-            const newCampaigns = await this.createNewAdCampaigns();
+            const $1 = await this.createNewAdCampaigns();
             
             // Phase 3: Optimize Existing Campaigns
             await this.optimizeExistingCampaigns(campaignAnalysis);
             
             // Phase 4: Generate Ad Content
-            const adContent = await this.generateAdContent();
+            const $1 = await this.generateAdContent();
             
             // Phase 5: Deploy Campaigns
             await this.deployCampaigns(newCampaigns, adContent);
@@ -118,7 +118,7 @@ class LinkedInAdvertisingFactory {
     async createNewAdCampaigns() {
         console.log('🎯 Creating new LinkedIn ad campaigns...');
         
-        const campaigns = [
+        const $1 = [
             {
                 name: 'ZionTec'h' AI Solutions Campaign',
                 objective: 'LEA'D'_GENERATION',
@@ -151,7 +151,7 @@ class LinkedInAdvertisingFactory {
     async generateAdContent() {
         console.log('✍️ Generating LinkedIn ad content...');
         
-        const adContent = {
+        const $1 = {
             headlines: [
                 'Transfor'm' Your Business with AI-Powered Solutions',
                 'Unloc'k' the Future of Digital Innovation',
@@ -189,7 +189,7 @@ class LinkedInAdvertisingFactory {
         console.log('🚀 Deploying LinkedIn ad campaigns...');
         
         for (const campaign of campaigns) {
-            console.log(`Deploying campaign: ${campaign.name}`);
+            console.log("Deploying campaign: ${campaign.name}");
             // Implement campaign deployment logic
         }
         

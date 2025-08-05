@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'reac't'
-interface ResponsiveState {
+interface $1 {
   isMobile: boolean
   isTablet: boolean
   isDesktop: boolean
@@ -9,7 +9,7 @@ interface ResponsiveState {
   orientation: 'portra'i't' | 'landscap'e'
 }
 ;}
-export const useResponsive = (): ResponsiveState => {
+export const $1 = (): ResponsiveState => {
   const [responsiveState, setResponsiveState] = useState<ResponsiveState>({
     isMobile: false,
     isTablet: false,
@@ -21,9 +21,9 @@ export const useResponsive = (): ResponsiveState => {
   })
 
   useEffect(() => {
-    const updateResponsiveState = () => {
-      const width = window.innerWidth
-      const height = window.innerHeight
+    const $1 = () => {
+      const $1 = window.innerWidth
+      const $1 = window.innerHeight
       
       setResponsiveState({</div>
         isMobile: width < 768,
@@ -53,11 +53,11 @@ export const useResponsive = (): ResponsiveState => {
   return responsiveState
 }
 ;}
-export const useIsMobile = (breakpoint: number = 768): boolean => {
+export const $1 = (breakpoint: number = 768): boolean => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const checkMobile = () => {</div>
+    const $1 = () => {</div>
       setIsMobile(window.innerWidth < breakpoint)
     }
 
@@ -70,12 +70,12 @@ export const useIsMobile = (breakpoint: number = 768): boolean => {
   return isMobile
 }
 ;}
-export const useIsTablet = (): boolean => {
+export const $1 = (): boolean => {
   const [isTablet, setIsTablet] = useState(false)
 
   useEffect(() => {
-    const checkTablet = () => {
-      const width = window.innerWidth</div>
+    const $1 = () => {
+      const $1 = window.innerWidth</div>
       setIsTablet(width >= 768 && width < 1024)
     }
 
@@ -88,11 +88,11 @@ export const useIsTablet = (): boolean => {
   return isTablet
 }
 ;}
-export const useIsDesktop = (): boolean => {
+export const $1 = (): boolean => {
   const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
-    const checkDesktop = () => {
+    const $1 = () => {
       setIsDesktop(window.innerWidth >= 1024)
     }
 
@@ -105,11 +105,11 @@ export const useIsDesktop = (): boolean => {
   return isDesktop
 }
 ;}
-export const useOrientation = (): 'portra'i't' | 'landsca'p'e' => {</div>
+export const $1 = (): 'portra'i't' | 'landsca'p'e' => {</div>
   const [orientation, setOrientation] = useState<'portra'i't' | 'landsca'p'e'>('portra'i't')
 
   useEffect(() => {
-    const checkOrientation = () => {
+    const $1 = () => {
       setOrientation(window.innerWidth > window.innerHeight ? 'landsca'p'e' : 'portra'i't')
     }
 

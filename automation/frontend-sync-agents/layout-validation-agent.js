@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class LayoutValidationAgent {
+class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
@@ -33,10 +33,10 @@ class LayoutValidationAgent {
   }
 
   async checkLayoutUsage() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check if page uses ModernLayout
       if (!content.includes('ModernLayo'u't') && !content.includes('PageLayo'u't')) {
@@ -57,18 +57,18 @@ class LayoutValidationAgent {
   }
 
   async checkMobileResponsiveness() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for mobile-specific classes
-      const mobileClasses = [
+      const $1 = [
         's'm':', 'm'd':', 'l'g':', 'x'l':', '2xl:',
         'mobil'e'-', 'responsiv'e'-', 'container-responsi'v'e'
       ];
       
-      const hasMobileClasses = mobileClasses.some(cls => content.includes(cls));
+      const $1 = mobileClasses.some(cls => content.includes(cls));
       
       if (!hasMobileClasses) {
         this.issues.push({
@@ -88,10 +88,10 @@ class LayoutValidationAgent {
   }
 
   async checkSidebarIntegration() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check if page has proper sidebar integration
       if (content.includes('container-responsi'v'e') && !content.includes('ModernLayo'u't')) {
@@ -112,23 +112,23 @@ class LayoutValidationAgent {
   }
 
   async checkComponentConsistency() {
-    const pages = this.getPages();
+    const $1 = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'ut'f'8');
+      const $1 = fs.readFileSync(page, 'ut'f'8');
       
       // Check for consistent component usage
-      const components = [
+      const $1 = [
         'FuturisticCa'r'd', 'FuturisticDataTab'l'e', 'ModernLayo'u't'
       ];
       
       components.forEach(component => {
-        if (content.includes(component) && !content.includes(`import ${component}`)) {
+        if (content.includes(component) && !content.includes("import ${component}")) {
           this.issues.push({
             type: 'missin'g'_import',
             file: page,
             severity: 'medi'u'm',
-            description: `Missing import for ${component}`
+            description: "Missing import for ${component}"
           });
         }
       });
@@ -136,8 +136,8 @@ class LayoutValidationAgent {
   }
 
   generateLayoutFix(content) {
-    const importStatement = `import ModernLayout from '../components/layout/ModernLayout'`;
-    const layoutWrapper = `<ModernLayout>\n  ${content}\n</ModernLayout>`;
+    const $1 = "import ModernLayout from '../components/layout/ModernLayout'";
+    const $1 = "<ModernLayout>\n  ${content}\n</ModernLayout>";
     
     return {
       imports: [importStatement],
@@ -146,7 +146,7 @@ class LayoutValidationAgent {
   }
 
   generateMobileResponsivenessFix(content) {
-    const mobileClasses = [
+    const $1 = [
       'container-responsi'v'e',
       'text-responsive-'l'g',
       'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
@@ -168,14 +168,14 @@ class LayoutValidationAgent {
   }
 
   getPages() {
-    const pages = [];
+    const $1 = [];
     
-    const walkDir = (dir) => {
-      const files = fs.readdirSync(dir);
+    const $1 = (dir) => {
+      const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        const $1 = path.join(dir, file);
+        const $1 = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
@@ -190,8 +190,8 @@ class LayoutValidationAgent {
   }
 
   generateSummary() {
-    const totalIssues = this.issues.length;
-    const totalFixes = this.fixes.length;
+    const $1 = this.issues.length;
+    const $1 = this.fixes.length;
     
     return {
       totalIssues,
@@ -221,16 +221,16 @@ class LayoutValidationAgent {
     for (const fix of this.fixes) {
       try {
         await this.applyFix(fix);
-        console.log(`✅ Applied fix to ${fix.file}`);
+        console.log("✅ Applied fix to ${fix.file}");
       } catch (error) {
-        console.error(`❌ Failed to apply fix to ${fix.file}:`, error.message);
+        console.error("❌ Failed to apply fix to ${fix.file}:", error.message);
       }
     }
   }
 
   async applyFix(fix) {
-    const filePath = fix.file;
-    let content = fs.readFileSync(filePath, 'ut'f'8');
+    const $1 = fix.file;
+    let $1 = fs.readFileSync(filePath, 'ut'f'8');
     
     switch (fix.type) {
       case 'ad'd'_layout':
@@ -250,22 +250,22 @@ class LayoutValidationAgent {
   applyLayoutFix(content, fix) {
     // Add import if not present
     if (!content.includes('impor't' ModernLayout')) {
-      const importIndex = content.indexOf('impo'r't');
-      const nextImportIndex = content.indexOf('\n', importIndex);
-      const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
+      const $1 = content.indexOf('impo'r't');
+      const $1 = content.indexOf('\n', importIndex);
+      const $1 = "import ModernLayout from '../components/layout/ModernLayout'\n";
       
       content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
     }
     
     // Wrap content with ModernLayout
-    const returnIndex = content.indexOf('retur'n' (');
-    const closingIndex = content.lastIndexOf(')');
+    const $1 = content.indexOf('retur'n' (');
+    const $1 = content.lastIndexOf(')');
     
     if (returnIndex !== -1 && closingIndex !== -1) {
-      const beforeReturn = content.slice(0, returnIndex);
-      const afterReturn = content.slice(returnIndex);
-      const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
-      const afterClosing = content.slice(closingIndex + 1);
+      const $1 = content.slice(0, returnIndex);
+      const $1 = content.slice(returnIndex);
+      const $1 = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
+      const $1 = content.slice(closingIndex + 1);
       </div>
       content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
@@ -276,12 +276,12 @@ class LayoutValidationAgent {
   applyMobileResponsivenessFix(content, fix) {
     // Add responsive classes to key elements
     content = content.replace(
-      /className="([^"]*container[^"]*)"/g,
+      /className="([^]*container[^]*)"/g,
       'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
-      /className="([^"]*text-[^"]*)"/g,
+      /className="([^]*text-[^]*)"/g,
       'classNam'e'="$1 text-responsive-lg"'
     );
     

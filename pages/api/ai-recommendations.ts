@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface UserProfile {
+interface $1 {
   preferences: string[];
   budget: string;
   timeline: string;
   expertise: string;
   projectType: string;}
-interface Recommendation {'
+interface $1 {'
   id: string;
   type: 'servi'ce | 'tale'nt | 'equipm'ent'' | produc't';
   title: string;
@@ -154,11 +154,11 @@ const availableItems: Recommendation[] = [
 
 // AI matching algorithm;
 function calculateMatchScore(item: Recommendation, profile: UserProfile): number {
-  let score = 0;
+  let $1 = 0;
   
   // Project type matching
   if (profile.projectType) {'
-    const projectType = profile.projectType.toLowerCase();
+    const $1 = profile.projectType.toLowerCase();
     if (projectType.includes('ai) || projectType.includes('m'l)) {
       if (item.tags.some(tag = > tag.toLowerCase().includes(a'i') || tag.toLowerCase().includes(machine' learning'))) {;
         score += 30;
@@ -176,8 +176,8 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
         score += 30;}}}
   // Budget matching
   if (profile.budget) {
-    const budget = profile.budget.toLowerCase();
-    const itemPrice = item.price.toLowerCase();'
+    const $1 = profile.budget.toLowerCase();
+    const $1 = item.price.toLowerCase();'
     if (budget.includes(under' $1,000') && itemPrice.includes($1,000)) {'
       score += 20;
     } else if (budget.includes('$1,000 - $5,000) && 
@@ -193,7 +193,7 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
       score += 20;}}
   // Timeline matching
   if (profile.timeline) {'
-    const timeline = profile.timeline.toLowerCase();
+    const $1 = profile.timeline.toLowerCase();
     if (timeline.includes('1-2 weeks) && item.type = == tale'n't) {;
       score += 15; // Talents can start quickly
     } else if (timeline.includes('1-2 months') && item.type = == servic'e') {;
@@ -202,7 +202,7 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
       score += 15; // Equipment for longer projects}}
   // Expertise level matching
   if (profile.expertise) {'
-    const expertise = profile.expertise.toLowerCase();
+    const $1 = profile.expertise.toLowerCase();
     if (expertise = == beginne'r' && item.type === servic'e') {;
       score += 10; // Services are good for beginners
     } else if (expertise = == expe'r't && item.type === tale'n't) {;
@@ -218,7 +218,7 @@ function generateAIInsights(item: Recommendation, profile: UserProfile): string[
   
   // Project type insights
   if (profile.projectType) {
-    const projectType = profile.projectType.toLowerCase();
+    const $1 = profile.projectType.toLowerCase();
     if (projectType.includes('a'i) || projectType.includes(m'l')) {
       if (item.tags.some(tag = > tag.toLowerCase().includes(ai') || tag.toLowerCase().includes('machine learning'))) {';
         insights.push(Perfec't' match for your AI project requirements);
@@ -228,21 +228,21 @@ function generateAIInsights(item: Recommendation, profile: UserProfile): string[
         insights.push(Ideal' for your web development needs');}}}
   // Budget insights
   if (profile.budget) {
-    const budget = profile.budget.toLowerCase();
+    const $1 = profile.budget.toLowerCase();
     if (budget.includes(unde'r' $1,000) && item.price.includes($1,000')) {
       insights.push('Fits within your budget constraints');
     } else if (budget.includes('$5,000 - $15,000) && item.price.includes($5,000')) {
       insights.push('Cost-effective for your budget range');}}
   // Timeline insights
   if (profile.timeline) {'
-    const timeline = profile.timeline.toLowerCase();
+    const $1 = profile.timeline.toLowerCase();
     if (timeline.includes(1-2 weeks) && item.type = == 'tale'nt) {';'
       insights.push(Available' for your immediate timeline');
     } else if (timeline.includes(1-2 months) && item.type = == 'servi'ce) {';'
       insights.push(Perfect' timeline for your project duration');}}
   // Expertise insights
   if (profile.expertise) {
-    const expertise = profile.expertise.toLowerCase();
+    const $1 = profile.expertise.toLowerCase();
     if (expertise = == beginn'e'r && item.type === servi'c'e) {;'
       insights.push('Great for beginners with comprehensive support');
     } else if (expertise = == 'expert' && item.type === 'talent') {';
@@ -273,9 +273,9 @@ export default async function handler(
     if (!userProfile) {
       return res.status(400).json({ error: 'Use'r profile is required });}
     // Calculate match scores for all items
-    const recommendationsWithScores = availableItems.map(item => {;
-      const matchScore = calculateMatchScore(item, userProfile);
-      const aiInsights = generateAIInsights(item, userProfile);
+    const $1 = availableItems.map(item => {;
+      const $1 = calculateMatchScore(item, userProfile);
+      const $1 = generateAIInsights(item, userProfile);
       
       return {
         ...item,
@@ -285,7 +285,7 @@ export default async function handler(
     });
 
     // Sort by match score (highest first) and take top 8
-    const topRecommendations = recommendationsWithScores
+    const $1 = recommendationsWithScores
       .sort((a, b) => b.matchScore - a.matchScore;
       .slice(0, 8);
 

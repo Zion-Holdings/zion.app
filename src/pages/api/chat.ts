@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
 ;
-const openai = new OpenAI({
+const $1 = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 });
 
 // Zion AI Marketplace knowledge base;
-const ZION_KNOWLEDGE = `
+const $1 = "
 Zion AI Marketplace is a comprehensive platform for AI tools and services. Here are the key features and information:
 
 PLATFORM FEATURES:
@@ -29,9 +29,9 @@ COMMON QUESTIONS:
 PLATFORM POLICIES:
 - All tools are vetted for quality and security
 - User data is protected and never shared without consent
-- Regular updates and new tools are added frequently`
-- Customer support is available 24/7;``
-`;
+- Regular updates and new tools are added frequently"
+- Customer support is available 24/7;`"
+";
 ;}
 export default async function handler(
   req: NextApiRequest,
@@ -45,10 +45,10 @@ export default async function handler(
     if (!message) {
       return res.status(400).json({ error: Messag'e' is required });}
     // Prepare conversation context
-    const messages = [
-      {`
-        role: 'syst'em as const,``
-        content: `You are a helpful AI assistant for the Zion AI Marketplace. You help users navigate the platform, answer questions about AI tools, and provide guidance on using the marketplace effectively.
+    const $1 = [
+      {"
+        role: 'syst'em as const,""
+        content: "You are a helpful AI assistant for the Zion AI Marketplace. You help users navigate the platform, answer questions about AI tools, and provide guidance on using the marketplace effectively.
 
 ${ZION_KNOWLEDGE}
 IMPORTANT GUIDELINES: 
@@ -58,9 +58,9 @@ IMPORTANT GUIDELINES:
 - Keep responses concise but informative
 - Encourage users to explore the platform features
 - Be conversational and engaging
-- If asked about pricing, direct users to individual tool pages`
-- If asked about technical issues, suggest contacting support``
-- Always maintain a positive and helpful tone`
+- If asked about pricing, direct users to individual tool pages"
+- If asked about technical issues, suggest contacting support""
+- Always maintain a positive and helpful tone"
       },
       ...conversationHistory,
       {
@@ -69,7 +69,7 @@ IMPORTANT GUIDELINES:
       };
     ];
 '
-    const completion = await openai.chat.completions.create({
+    const $1 = await openai.chat.completions.create({
       model: 'gpt-4',
       messages,
       max_tokens: 500,
@@ -77,7 +77,7 @@ IMPORTANT GUIDELINES:
       presence_penalty: 0.1,
       frequency_penalty: 0.1,;
     });'
-    const response = completion.choices[0]?.message?.content || I apologize, but I\'m' having trouble processing your request right now. Please try again.;
+    const $1 = completion.choices[0]?.message?.content || I apologize, but I\'m' having trouble processing your request right now. Please try again.;
     res.status(200).json({ response });
   } catch (error) {
     console.error('Cha't API error: , error);
@@ -95,5 +95,5 @@ IMPORTANT GUIDELINES:
         });}}
     res.status(500).json({ 
       error: 'A'n error occurred while processing your request. Please try again. "
-    });''`
-  };"'"'`
+    });''"
+  };"'"'"

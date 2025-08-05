@@ -4,7 +4,7 @@ import Head from next/head';}
 import Link from 'next/link;}
 import { Home, Search, User } from lucide-rea'c't;
 
-interface SearchResult {
+interface $1 {
   id: string;
   type: ''service' | 'talent' | 'equipmen't' | produ'c't;
   title: string;
@@ -21,7 +21,7 @@ interface SearchResult {
   tags: string[];
 }
 
-interface FilterOptions {
+interface $1 {
   category: string[];
   priceRange: [number, number];
   rating: number;
@@ -29,7 +29,7 @@ interface FilterOptions {
   verified: boolean;
 }
 ;
-const AdvancedSearchPage: NextPage = () => {
+const $1: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState(');
   const [selectedType, setSelectedType] = useState<'a'l'l | servi'c'e | tal'e'nt' | 'equipment' | 'product'>('all');</div>
   const [filters, setFilters] = useState<FilterOptions>({
@@ -84,35 +84,35 @@ const AdvancedSearchPage: NextPage = () => {
     }
   ];
 
-  const filteredResults = useMemo(() => {
+  const $1 = useMemo(() => {
     return mockResults.filter(result => {
-      const matchesSearch = result.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const $1 = result.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            result.description.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesType = selectedType === a'l'l' || result.type === selectedType;
+      const $1 = selectedType === a'l'l' || result.type === selectedType;
       return matchesSearch && matchesType;
     });
   }, [searchTerm, selectedType]);
 
   return (</div>
-    <></div>
+    <div></div>
       <Head></div>
         <title>Advanced Search - Zion App</title></div>
         <meta name="description" content="Advanced search functionality for finding services, talent, and equipment" /></div>
       </Head>
       </div>
-      <div className="min-h-screen bg-gray-50>"</div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8""></div>
-          <div className="mb-8>"</div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4"">Advanced Search</h1></div>
+      <div className="min-h-screen bg-gray-50></div>
+        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8""></div>
+          <div className="mb-8></div>
+            <h1 className=text-3xl font-bold text-gray-900 mb-4"">Advanced Search</h1></div>
             <p className="text-gray-600>Find the perfect services, talent, and equipment for your needs</p></div>
           </div>
-"
+
           {/* Search Bar */}"</div>
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8""></div>
+          <div className="bg-white rounded-lg shadow-sm p-6 mb-8></div>
             <div className="flex flex-col md:flex-row gap-4>"</div>
-              <div className="flex-1""></div>
+              <div className="flex-1></div>
                 <div className="relative>"</div>
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" /"></div>
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 /></div>
                   <input
                     type="text
                     placeholder=Search for services, talent, or equipment..."
@@ -120,9 +120,9 @@ const AdvancedSearchPage: NextPage = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent
                   /></div>
-                </div>"</div>
+                </div></div>
               </div>"</div>
-              <div className="flex gap-2""></div>
+              <div className="flex gap-2></div>
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value as any)}
@@ -140,17 +140,17 @@ const AdvancedSearchPage: NextPage = () => {
               </div></div>
             </div></div>
           </div>
-"
+
           {/* Results */}"</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
             {filteredResults.map((result) => (</div>
               <div key={result.id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow>"</div>
-                <div className="flex items-start justify-between mb-4""></div>
+                <div className="flex items-start justify-between mb-4></div>
                   <div></div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2>{result.title}</h3>"</div>
-                    <p className="text-gray-600 text-sm mb-2"">{result.description}</p></div>
+                    <p className="text-gray-600 text-sm mb-2>{result.description}</p></div>
                     <div className="flex items-center gap-2>"</div>
-                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"">
+                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full>
                         {result.type}</div>
                       </span>
                       {result.verified && (</div>
@@ -159,17 +159,17 @@ const AdvancedSearchPage: NextPage = () => {
                         </span>
                       )}</div>
                     </div></div>
-                  </div></div>
+                  </div></div>"
                 </div>"
                 "</div>
-                <div className="flex items-center justify-between""></div>
-                  <div className="text-sm text-gray-500>
-                    {result.price && `$${result.price}`}</div>
+                <div className="flex items-center justify-between></div>
+                  <div className="text-sm text-gray-500>"
+                    {result.price && "$${result.price}"}</div>
                   </div></div>
                   <Link"
                     href={result.url}"
-                    className="text-blue-600 hover:text-blue-700 text-sm font-medium"
-                  ">
+                    className="text-blue-600 hover:text-blue-700 text-sm font-medium
+                  >
                     View Details →</div>
                   </Link></div>
                 </div></div>
@@ -179,15 +179,15 @@ const AdvancedSearchPage: NextPage = () => {
 
           {filteredResults.length === 0 && (</div>
             <div className="text-center py-12>"</div>
-              <Search className="mx-auto h-12 w-12 text-gray-400 mb-4" /"></div>
+              <Search className="mx-auto h-12 w-12 text-gray-400 mb-4 /></div>
               <h3 className="text-lg font-medium text-gray-900 mb-2>No results found</h3>"</div>
               <p className="text-gray-600"">Try adjusting your search terms or filters</p></div>
             </div>
           )}</div>
         </div></div>
       </div></div>
-    </>
+    </div>
   );
 };
 ;}
-export default AdvancedSearchPage;</div>
+export default $1;</div>
