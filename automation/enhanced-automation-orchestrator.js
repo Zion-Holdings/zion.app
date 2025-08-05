@@ -286,10 +286,28 @@ class EnhancedAutomationOrchestrator {
   }
 
   generateUniqueContent(strategyKey, variation, strategy) {
-    const contentTemplates = this.getContentTemplates(strategyKey, variation);
-    const selectedTemplate = this.selectOptimalTemplate(contentTemplates);
-    
-    return this.populateTemplate(selectedTemplate, strategyKey, variation, strategy);
+    try {
+      const contentTemplates = this.getContentTemplates(strategyKey, variation);
+      const selectedTemplate = this.selectOptimalTemplate(contentTemplates);
+      
+      // Ensure template is a string
+      if (typeof selectedTemplate !== 'string') {
+        console.warn(`⚠️ Invalid template type for ${strategyKey}:${variation}, using default`);
+        return `Generated content for ${strategyKey}: ${variation}`;
+      }
+      
+      // Limit template length to prevent issues
+      const maxTemplateLength = 10000;
+      if (selectedTemplate.length > maxTemplateLength) {
+        console.warn(`⚠️ Template too long for ${strategyKey}:${variation}, truncating`);
+        return `Generated content for ${strategyKey}: ${variation}`;
+      }
+      
+      return this.populateTemplate(selectedTemplate, strategyKey, variation, strategy);
+    } catch (error) {
+      console.error(`❌ Error generating content for ${strategyKey}:${variation}:`, error.message);
+      return `Generated content for ${strategyKey}: ${variation}`;
+    }
   }
 
   getContentTemplates(strategyKey, variation) {
@@ -364,8 +382,27 @@ class EnhancedAutomationOrchestrator {
     };
     
     let populatedContent = template;
+    
+    // Add safety checks for string length
+    const MAX_STRING_LENGTH = 1000000; // 1MB limit
+    
     Object.entries(placeholders).forEach(([placeholder, value]) => {
-      populatedContent = populatedContent.replace(new RegExp(placeholder, 'g'), value);
+      try {
+        // Check if the replacement would exceed maximum string length
+        const placeholderRegex = new RegExp(placeholder, 'g');
+        const matches = populatedContent.match(placeholderRegex);
+        const totalReplacementLength = (matches ? matches.length : 0) * value.length;
+        
+        if (populatedContent.length + totalReplacementLength > MAX_STRING_LENGTH) {
+          console.warn(`⚠️ String length limit exceeded for placeholder ${placeholder}, truncating content`);
+          populatedContent = populatedContent.substring(0, MAX_STRING_LENGTH / 2);
+        }
+        
+        populatedContent = populatedContent.replace(placeholderRegex, value);
+      } catch (error) {
+        console.error(`❌ Error replacing placeholder ${placeholder}:`, error.message);
+        // Continue with other replacements
+      }
     });
     
     return populatedContent;
