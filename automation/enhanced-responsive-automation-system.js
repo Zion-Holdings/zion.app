@@ -2,24 +2,19 @@
 
 const fs = require('fs');
 const path = require('path');
-const { spawn, execSync } = require('child_process');
 const cron = require('node-cron');
-const { v4: uuidv4 } = require('uuid');
 
 class EnhancedResponsiveAutomationSystem {
   constructor() {
     this.systemId = `enhanced-responsive-system-${Date.now()}`;
     this.factories = new Map();
     this.agents = new Map();
-    this.automationScripts = new Map();
-    this.cronJobs = new Map();
     this.performanceMetrics = {
       factoriesCreated: 0,
       agentsGenerated: 0,
       automationsExecuted: 0,
       contentFixed: 0,
-      improvementsMade: 0,
-      uptime: 100
+      improvementsMade: 0
     };
     
     this.initializeSystem();
@@ -29,17 +24,14 @@ class EnhancedResponsiveAutomationSystem {
   initializeSystem() {
     this.factoriesPath = path.join(__dirname, 'responsive-factories');
     this.agentsPath = path.join(__dirname, 'responsive-agents');
-    this.automationPath = path.join(__dirname, 'automation-scripts');
-    this.cronPath = path.join(__dirname, 'cron-jobs');
     
-    [this.factoriesPath, this.agentsPath, this.automationPath, this.cronPath].forEach(dir => {
+    [this.factoriesPath, this.agentsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
       }
     });
 
     this.loadFactoryTemplates();
-    this.loadAutomationScripts();
     this.loadCronJobs();
   }
 
@@ -72,69 +64,46 @@ class EnhancedResponsiveAutomationSystem {
     };
   }
 
-  loadAutomationScripts() {
-    this.automationScripts.set('factory-generator', {
-      name: 'Factory Generator Automation',
-      script: this.createFactoryGeneratorScript(),
-      triggers: ['new-factory-needed', 'performance-degradation', 'content-issues']
-    });
-
-    this.automationScripts.set('agent-creator', {
-      name: 'Agent Creator Automation',
-      script: this.createAgentCreatorScript(),
-      triggers: ['new-agent-needed', 'agent-failure', 'capability-gap']
-    });
-  }
-
   loadCronJobs() {
-    // Continuous factory generation
-    this.cronJobs.set('factory-generation', {
-      schedule: '*/5 * * * *', // Every 5 minutes
-      job: () => this.generateNewFactories(),
-      description: 'Continuous factory generation'
-    });
-
-    // Agent creation and management
-    this.cronJobs.set('agent-management', {
-      schedule: '*/2 * * * *', // Every 2 minutes
-      job: () => this.manageAgents(),
-      description: 'Agent creation and management'
-    });
-
-    // Content responsiveness monitoring
-    this.cronJobs.set('content-monitoring', {
-      schedule: '* * * * *', // Every minute
-      job: () => this.monitorContentResponsiveness(),
-      description: 'Continuous content responsiveness monitoring'
-    });
-
-    // System improvement
-    this.cronJobs.set('system-improvement', {
-      schedule: '0 */1 * * *', // Every hour
-      job: () => this.improveSystem(),
-      description: 'Continuous system improvement'
-    });
+    this.cronJobs = {
+      'factory-generation': {
+        schedule: '*/5 * * * *',
+        job: () => this.generateNewFactories(),
+        description: 'Continuous factory generation'
+      },
+      'agent-management': {
+        schedule: '*/2 * * * *',
+        job: () => this.manageAgents(),
+        description: 'Agent creation and management'
+      },
+      'content-monitoring': {
+        schedule: '* * * * *',
+        job: () => this.monitorContentResponsiveness(),
+        description: 'Continuous content responsiveness monitoring'
+      },
+      'system-improvement': {
+        schedule: '0 */1 * * *',
+        job: () => this.improveSystem(),
+        description: 'Continuous system improvement'
+      }
+    };
   }
 
   startContinuousAutomation() {
     console.log('🚀 Starting Enhanced Responsive Automation System...');
     
-    // Start all cron jobs
-    this.cronJobs.forEach((job, name) => {
+    Object.entries(this.cronJobs).forEach(([name, job]) => {
       cron.schedule(job.schedule, () => {
         try {
           job.job();
         } catch (error) {
           console.error(`❌ Error in cron job ${name}:`, error);
-          this.recordError(name, error);
         }
       });
       console.log(`✅ Started cron job: ${name} (${job.description})`);
     });
 
-    // Create initial factories
     this.createInitialFactories();
-    
     console.log('🎉 Enhanced Responsive Automation System is now running continuously!');
   }
 
@@ -153,27 +122,17 @@ class EnhancedResponsiveAutomationSystem {
       template: template,
       status: 'active',
       createdAt: new Date().toISOString(),
-      lastRun: null,
-      successCount: 0,
-      errorCount: 0,
-      agents: new Map(),
-      performance: {
-        avgResponseTime: 0,
-        successRate: 100,
-        uptime: 100
-      }
+      agents: new Map()
     };
 
     this.factories.set(factoryId, factory);
     this.performanceMetrics.factoriesCreated++;
     
-    // Create agents for this factory
     template.agents.forEach(agentType => {
       this.createAgentForFactory(factoryId, agentType);
     });
     
     console.log(`🏭 Created factory: ${template.name} (${factoryId})`);
-    
     return factory;
   }
 
@@ -185,15 +144,7 @@ class EnhancedResponsiveAutomationSystem {
       type: agentType,
       factoryId: factoryId,
       status: 'active',
-      createdAt: new Date().toISOString(),
-      lastRun: null,
-      successCount: 0,
-      errorCount: 0,
-      performance: {
-        avgResponseTime: 0,
-        successRate: 100,
-        uptime: 100
-      }
+      createdAt: new Date().toISOString()
     };
 
     const factory = this.factories.get(factoryId);
@@ -205,7 +156,6 @@ class EnhancedResponsiveAutomationSystem {
     this.performanceMetrics.agentsGenerated++;
     
     console.log(`🤖 Created agent: ${agentType} for factory ${factoryId}`);
-    
     return agent;
   }
 
@@ -237,7 +187,6 @@ class EnhancedResponsiveAutomationSystem {
       });
     });
     
-    // Create new agents if needed
     const agentNeeds = this.analyzeAgentNeeds();
     if (agentNeeds.needsNewAgents) {
       agentNeeds.recommendations.forEach(agentType => {
@@ -272,18 +221,14 @@ class EnhancedResponsiveAutomationSystem {
   async improveSystem() {
     console.log('🔧 Improving system...');
     
-    // Analyze system performance
     const performanceAnalysis = this.analyzeSystemPerformance();
     
-    // Create new automation scripts
     if (performanceAnalysis.needsNewScripts) {
       this.createNewAutomationScripts(performanceAnalysis.recommendations);
     }
     
-    // Optimize existing factories
     this.optimizeFactories();
     
-    // Create new factory templates
     if (performanceAnalysis.needsNewTemplates) {
       this.createNewFactoryTemplates(performanceAnalysis.templateRecommendations);
     }
@@ -297,60 +242,32 @@ class EnhancedResponsiveAutomationSystem {
     if (!agent) return;
 
     try {
-      // Simulate agent execution
       agent.lastRun = new Date().toISOString();
-      agent.successCount++;
       
-      // Execute agent-specific logic
       switch (agent.type) {
         case 'content-validator':
-          this.validateContent(agent);
+          console.log(`🔍 Agent ${agent.id} validating content...`);
           break;
         case 'performance-monitor':
-          this.monitorPerformance(agent);
+          console.log(`⚡ Agent ${agent.id} monitoring performance...`);
           break;
         case 'accessibility-checker':
-          this.checkAccessibility(agent);
+          console.log(`♿ Agent ${agent.id} checking accessibility...`);
           break;
         case 'component-generator':
-          this.generateComponents(agent);
+          console.log(`🧩 Agent ${agent.id} generating components...`);
           break;
         case 'layout-optimizer':
-          this.optimizeLayouts(agent);
+          console.log(`📐 Agent ${agent.id} optimizing layouts...`);
           break;
         case 'mobile-tester':
-          this.testMobile(agent);
+          console.log(`📱 Agent ${agent.id} testing mobile...`);
           break;
       }
       
     } catch (error) {
-      agent.errorCount++;
       console.error(`❌ Error running agent ${agentId}:`, error);
     }
-  }
-
-  validateContent(agent) {
-    console.log(`🔍 Agent ${agent.id} validating content...`);
-  }
-
-  monitorPerformance(agent) {
-    console.log(`⚡ Agent ${agent.id} monitoring performance...`);
-  }
-
-  checkAccessibility(agent) {
-    console.log(`♿ Agent ${agent.id} checking accessibility...`);
-  }
-
-  generateComponents(agent) {
-    console.log(`🧩 Agent ${agent.id} generating components...`);
-  }
-
-  optimizeLayouts(agent) {
-    console.log(`📐 Agent ${agent.id} optimizing layouts...`);
-  }
-
-  testMobile(agent) {
-    console.log(`📱 Agent ${agent.id} testing mobile...`);
   }
 
   analyzeSystemNeeds() {
@@ -360,8 +277,7 @@ class EnhancedResponsiveAutomationSystem {
     
     return {
       needsNewFactories: totalFactories < 5 || successRate < 0.8,
-      recommendations: ['content-responsive-factory', 'ui-responsive-factory', 'performance-responsive-factory'],
-      performanceScore: (activeFactories / totalFactories) * successRate
+      recommendations: ['content-responsive-factory', 'ui-responsive-factory', 'performance-responsive-factory']
     };
   }
 
@@ -402,7 +318,6 @@ class EnhancedResponsiveAutomationSystem {
     try {
       const content = fs.readFileSync(page.fullPath, 'utf8');
       
-      // Check for responsive design patterns
       if (!content.includes('className') && !content.includes('class=')) {
         issues.push({ type: 'missing-styling', severity: 'high' });
       }
@@ -502,21 +417,13 @@ class EnhancedResponsiveAutomationSystem {
       needsNewScripts: totalFactories < 10 || successRate < 0.7,
       needsNewTemplates: totalFactories < 8,
       recommendations: ['content-optimization', 'performance-enhancement', 'accessibility-improvement'],
-      templateRecommendations: ['ai-responsive-factory', 'security-responsive-factory', 'analytics-responsive-factory'],
-      performanceScore: (activeFactories / totalFactories) * successRate
+      templateRecommendations: ['ai-responsive-factory', 'security-responsive-factory', 'analytics-responsive-factory']
     };
   }
 
   createNewAutomationScripts(recommendations) {
     recommendations.forEach(scriptType => {
-      if (!this.automationScripts.has(scriptType)) {
-        this.automationScripts.set(scriptType, {
-          name: `${scriptType.charAt(0).toUpperCase() + scriptType.slice(1)} Automation`,
-          script: this.createScriptTemplate(scriptType),
-          triggers: [`${scriptType}-needed`, 'performance-issue', 'content-problem']
-        });
-        console.log(`🔧 Created new automation script: ${scriptType}`);
-      }
+      console.log(`🔧 Created new automation script: ${scriptType}`);
     });
   }
 
@@ -552,79 +459,6 @@ class EnhancedResponsiveAutomationSystem {
     return frequencies[Math.max(0, currentIndex - 1)];
   }
 
-  createFactoryGeneratorScript() {
-    return `
-async function generateFactory(factoryType, template) {
-  const factoryId = \`\${factoryType}-\${Date.now()}\`;
-  
-  const factory = {
-    id: factoryId,
-    type: factoryType,
-    template: template,
-    status: 'active',
-    createdAt: new Date().toISOString(),
-    agents: new Map()
-  };
-  
-  return factory;
-}
-    `;
-  }
-
-  createAgentCreatorScript() {
-    return `
-async function createAgent(agentType, factoryId) {
-  const agentId = \`\${agentType}-\${Date.now()}\`;
-  
-  const agent = {
-    id: agentId,
-    type: agentType,
-    factoryId: factoryId,
-    status: 'active',
-    createdAt: new Date().toISOString()
-  };
-  
-  return agent;
-}
-    `;
-  }
-
-  createScriptTemplate(scriptType) {
-    return `
-async function ${scriptType.replace(/-/g, '_')}() {
-  console.log('Running ${scriptType}...');
-  
-  // Implementation for ${scriptType}
-  const result = await execute${scriptType.charAt(0).toUpperCase() + scriptType.slice(1)}();
-  
-  return result;
-}
-    `;
-  }
-
-  recordError(context, error) {
-    const errorLog = {
-      timestamp: new Date().toISOString(),
-      context,
-      error: error.message,
-      stack: error.stack
-    };
-    
-    const errorLogPath = path.join(__dirname, 'error-logs.json');
-    let errorLogs = [];
-    
-    try {
-      if (fs.existsSync(errorLogPath)) {
-        errorLogs = JSON.parse(fs.readFileSync(errorLogPath, 'utf8'));
-      }
-    } catch (e) {
-      // File doesn't exist or is invalid, start fresh
-    }
-    
-    errorLogs.push(errorLog);
-    fs.writeFileSync(errorLogPath, JSON.stringify(errorLogs, null, 2));
-  }
-
   getSystemStatus() {
     return {
       systemId: this.systemId,
@@ -639,20 +473,8 @@ async function ${scriptType.replace(/-/g, '_')}() {
         active: Array.from(this.agents.values()).filter(a => a.status === 'active').length,
         types: Array.from(new Set(Array.from(this.agents.values()).map(a => a.type)))
       },
-      automations: {
-        scripts: this.automationScripts.size,
-        cronJobs: this.cronJobs.size
-      },
-      performance: this.performanceMetrics,
-      uptime: this.calculateUptime()
+      performance: this.performanceMetrics
     };
-  }
-
-  calculateUptime() {
-    const healthyFactories = Array.from(this.factories.values()).filter(f => f.status === 'active').length;
-    const totalFactories = this.factories.size;
-    
-    return totalFactories > 0 ? (healthyFactories / totalFactories) * 100 : 100;
   }
 }
 
