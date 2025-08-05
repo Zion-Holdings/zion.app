@@ -1,392 +1,438 @@
+#!/usr/bin/env node
+
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { spawn, execSync } = require('child_process');
+const { EventEmitter } = require('events');
 
-// Import all automation agents
-const AutonomousImprovementAgent = require('./autonomous-improvement-agent');
-const ContentGenerationAutomation = require('./content-generation-automation');
-const AutonomousAnalytics = require('./autonomous-analytics');
-
-class AutomationOrchestrator {
+class AutomationOrchestrator extends EventEmitter {
   constructor() {
+    super();
     this.projectRoot = process.cwd();
-    this.logsDir = path.join(this.projectRoot, 'automation/logs');
-    this.statusFile = path.join(this.projectRoot, 'automation/orchestrator-status.json');
-    
-    this.agents = {
-      improvement: new AutonomousImprovementAgent(),
-      content: new ContentGenerationAutomation(),
-      analytics: new AutonomousAnalytics()
+    this.factories = new Map();
+    this.processes = new Map();
+    this.health = {
+      totalFactories: 0,
+      activeFactories: 0,
+      failedFactories: 0,
+      uptime: Date.now()
     };
     
-    this.ensureDirectories();
-    this.loadStatus();
+    this.config = {
+      maxFactories: 100,
+      healthCheckInterval: 30000, // 30 seconds
+      restartThreshold: 3, // Restart after 3 failures
+      maxRestarts: 5
+    };
+    
+    this.loadConfiguration();
+    this.initializeSystem();
   }
 
-  ensureDirectories() {
+  log(message) {
+    const timestamp = new Date().toISOString();
+    console.log(`[${timestamp}] 🎼 ORCHESTRATOR: ${message}`);
+  }
+
+  loadConfiguration() {
+    const configPath = path.join(__dirname, 'data', 'orchestrator-config.json');
+    if (fs.existsSync(configPath)) {
+      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      this.config = { ...this.config, ...savedConfig };
+    }
+  }
+
+  saveConfiguration() {
+    const configPath = path.join(__dirname, 'data', 'orchestrator-config.json');
+    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
+  }
+
+  async initializeSystem() {
+    this.log('Initializing automation orchestrator...');
+    
+    try {
+      // Create necessary directories
+      this.createDirectories();
+      
+      // Load existing factories
+      await this.loadFactories();
+      
+      // Start health monitoring
+      this.startHealthMonitoring();
+      
+      // Start continuous factory generation
+      this.startContinuousGeneration();
+      
+      this.log('Automation orchestrator initialized successfully');
+    } catch (error) {
+      this.log(`Error initializing system: ${error.message}`);
+      throw error;
+    }
+  }
+
+  createDirectories() {
     const dirs = [
+      'automation/factories',
+      'automation/variations',
+      'automation/data',
       'automation/logs',
-      'automation/backups',
-      'automation/status'
+      'automation/reports',
+      'automation/pids'
     ];
     
-    dirs.forEach(dir => {
+    for (const dir of dirs) {
       const fullPath = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: true });
       }
-    });
+    }
   }
 
-  loadStatus() {
-    if (fs.existsSync(this.statusFile)) {
-      this.status = JSON.parse(fs.readFileSync(this.statusFile, 'utf8'));
-    } else {
-      this.status = {
-        isRunning: false,
-        lastStart: null,
-        agentStatus: {},
-        totalImprovements: 0,
-        totalContentGenerated: 0,
-        totalAnalyticsReports: 0,
-        errors: [],
-        performance: {
-          uptime: 0,
-          cyclesCompleted: 0,
-          lastCycle: null
+  async loadFactories() {
+    const factoriesDir = path.join(this.projectRoot, 'automation', 'factories');
+    if (!fs.existsSync(factoriesDir)) {
+      return;
+    }
+    
+    const factoryDirs = fs.readdirSync(factoriesDir).filter(dir => {
+      return fs.statSync(path.join(factoriesDir, dir)).isDirectory();
+    });
+    
+    for (const factoryDir of factoryDirs) {
+      const factoryId = factoryDir;
+      const configPath = path.join(factoriesDir, factoryDir, `${factoryId}-config.json`);
+      
+      if (fs.existsSync(configPath)) {
+        try {
+          const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+          this.factories.set(factoryId, {
+            id: factoryId,
+            config: config,
+            status: 'stopped',
+            failures: 0,
+            restarts: 0,
+            lastStarted: null
+          });
+        } catch (error) {
+          this.log(`Error loading factory ${factoryId}: ${error.message}`);
         }
-      };
-    }
-  }
-
-  saveStatus() {
-    fs.writeFileSync(this.statusFile, JSON.stringify(this.status, null, 2));
-  }
-
-  async startAllAgents() {
-    console.log('🚀 Starting all autonomous agents...');
-    
-    this.status.isRunning = true;
-    this.status.lastStart = new Date().toISOString();
-    this.saveStatus();
-
-    // Start improvement agent
-    this.startAgent('improvement', async () => {
-      await this.agents.improvement.runContinuousImprovement();
-    });
-
-    // Start content generation agent
-    this.startAgent('content', async () => {
-      await this.agents.content.runContinuousGeneration();
-    });
-
-    // Start analytics agent
-    this.startAgent('analytics', async () => {
-      await this.agents.analytics.runContinuousAnalytics();
-    });
-
-    // Start monitoring
-    this.startMonitoring();
-  }
-
-  startAgent(name, agentFunction) {
-    console.log(`🤖 Starting ${name} agent...`);
-    
-    this.status.agentStatus[name] = {
-      isRunning: true,
-      lastStart: new Date().toISOString(),
-      errors: [],
-      cyclesCompleted: 0
-    };
-    this.saveStatus();
-
-    agentFunction().catch(error => {
-      console.error(`❌ Error in ${name} agent:`, error);
-      this.status.agentStatus[name].errors.push({
-        timestamp: new Date().toISOString(),
-        error: error.message
-      });
-      this.status.errors.push({
-        agent: name,
-        timestamp: new Date().toISOString(),
-        error: error.message
-      });
-      this.saveStatus();
-    });
-  }
-
-  async startMonitoring() {
-    console.log('📊 Starting monitoring system...');
-    
-    setInterval(() => {
-      this.updatePerformanceMetrics();
-      this.checkAgentHealth();
-      this.generateSystemReport();
-    }, 300000); // Every 5 minutes
-  }
-
-  updatePerformanceMetrics() {
-    const now = new Date();
-    const lastStart = new Date(this.status.lastStart);
-    this.status.performance.uptime = (now - lastStart) / 1000; // seconds
-    
-    Object.keys(this.status.agentStatus).forEach(agentName => {
-      if (this.status.agentStatus[agentName].isRunning) {
-        this.status.agentStatus[agentName].cyclesCompleted++;
       }
-    });
-    
-    this.status.performance.lastCycle = now.toISOString();
-    this.status.performance.cyclesCompleted++;
-    this.saveStatus();
-  }
-
-  checkAgentHealth() {
-    Object.keys(this.status.agentStatus).forEach(agentName => {
-      const agent = this.status.agentStatus[agentName];
-      
-      // Check if agent has too many errors
-      if (agent.errors.length > 5) {
-        console.warn(`⚠️ Agent ${agentName} has ${agent.errors.length} errors`);
-      }
-      
-      // Check if agent has been running for too long without activity
-      const lastActivity = new Date(agent.lastStart);
-      const hoursSinceActivity = (new Date() - lastActivity) / (1000 * 60 * 60);
-      
-      if (hoursSinceActivity > 24) {
-        console.warn(`⚠️ Agent ${agentName} has been running for ${hoursSinceActivity.toFixed(1)} hours`);
-      }
-    });
-  }
-
-  async generateSystemReport() {
-    console.log('📋 Generating system report...');
-    
-    const report = {
-      timestamp: new Date().toISOString(),
-      systemStatus: {
-        isRunning: this.status.isRunning,
-        uptime: this.status.performance.uptime,
-        totalCycles: this.status.performance.cyclesCompleted
-      },
-      agentStatus: this.status.agentStatus,
-      metrics: {
-        totalImprovements: this.status.totalImprovements,
-        totalContentGenerated: this.status.totalContentGenerated,
-        totalAnalyticsReports: this.status.totalAnalyticsReports
-      },
-      errors: this.status.errors.slice(-10), // Last 10 errors
-      recommendations: this.generateSystemRecommendations()
-    };
-    
-    const reportPath = path.join(this.logsDir, `system-report-${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    // Keep only last 10 reports
-    const reports = fs.readdirSync(this.logsDir)
-      .filter(file => file.startsWith('system-report-'))
-      .sort()
-      .reverse()
-      .slice(10);
-    
-    reports.forEach(file => {
-      fs.unlinkSync(path.join(this.logsDir, file));
-    });
-    
-    return report;
-  }
-
-  generateSystemRecommendations() {
-    const recommendations = [];
-    
-    // Check for high error rates
-    const totalErrors = this.status.errors.length;
-    if (totalErrors > 10) {
-      recommendations.push({
-        type: 'error',
-        priority: 'high',
-        title: 'High Error Rate',
-        description: `System has ${totalErrors} errors. Review logs and implement fixes.`,
-        action: 'Review error logs and implement fixes'
-      });
     }
     
-    // Check agent performance
-    Object.keys(this.status.agentStatus).forEach(agentName => {
-      const agent = this.status.agentStatus[agentName];
-      if (agent.errors.length > 3) {
-        recommendations.push({
-          type: 'agent',
-          priority: 'medium',
-          title: `${agentName} Agent Issues`,
-          description: `${agentName} agent has ${agent.errors.length} errors.`,
-          action: `Review and fix ${agentName} agent issues`
-        });
-      }
-    });
-    
-    return recommendations;
+    this.health.totalFactories = this.factories.size;
+    this.log(`Loaded ${this.factories.size} factories`);
   }
 
-  async stopAllAgents() {
-    console.log('🛑 Stopping all autonomous agents...');
+  async startFactory(factoryId) {
+    const factory = this.factories.get(factoryId);
+    if (!factory) {
+      throw new Error(`Factory ${factoryId} not found`);
+    }
     
-    this.status.isRunning = false;
-    this.saveStatus();
+    if (factory.status === 'running') {
+      this.log(`Factory ${factoryId} is already running`);
+      return;
+    }
     
-    // Generate final report
-    await this.generateSystemReport();
-    
-    console.log('✅ All agents stopped');
-  }
-
-  async runOrchestrator() {
-    console.log('🎼 Starting automation orchestrator...');
+    this.log(`Starting factory ${factoryId}...`);
     
     try {
-      // Start all agents
-      await this.startAllAgents();
+      const factoryDir = path.join(this.projectRoot, 'automation', 'factories', factoryId);
+      const mainFile = path.join(factoryDir, `${factoryId}-main.js`);
       
-      // Keep orchestrator running
-      process.on('SIGINT', async () => {
-        console.log('\n🛑 Received SIGINT, stopping orchestrator...');
-        await this.stopAllAgents();
-        process.exit(0);
+      if (!fs.existsSync(mainFile)) {
+        throw new Error(`Main file not found: ${mainFile}`);
+      }
+      
+      // Start factory process
+      const process = spawn('node', [mainFile], {
+        cwd: factoryDir,
+        stdio: ['pipe', 'pipe', 'pipe']
       });
       
-      process.on('SIGTERM', async () => {
-        console.log('\n🛑 Received SIGTERM, stopping orchestrator...');
-        await this.stopAllAgents();
-        process.exit(0);
+      // Store process reference
+      this.processes.set(factoryId, process);
+      
+      // Set up event handlers
+      process.on('error', (error) => {
+        this.handleFactoryError(factoryId, error);
       });
       
-      // Keep the process alive
-      setInterval(() => {
-        // Heartbeat
-        console.log('💓 Orchestrator heartbeat...');
-      }, 300000); // Every 5 minutes
+      process.on('exit', (code) => {
+        this.handleFactoryExit(factoryId, code);
+      });
+      
+      // Update factory status
+      factory.status = 'running';
+      factory.lastStarted = new Date().toISOString();
+      factory.failures = 0;
+      
+      this.health.activeFactories++;
+      
+      this.log(`Factory ${factoryId} started successfully`);
       
     } catch (error) {
-      console.error('❌ Error in orchestrator:', error);
-      await this.stopAllAgents();
-      process.exit(1);
+      this.handleFactoryError(factoryId, error);
     }
   }
 
-  async createCronJobs() {
-    console.log('⏰ Creating cron jobs for automation...');
+  async stopFactory(factoryId) {
+    const factory = this.factories.get(factoryId);
+    if (!factory) {
+      return;
+    }
     
-    const cronJobs = [
-      {
-        name: 'automation-start',
-        schedule: '0 0 * * *', // Daily at midnight
-        command: 'node automation/automation-orchestrator.js start'
-      },
-      {
-        name: 'backup-system',
-        schedule: '0 2 * * *', // Daily at 2 AM
-        command: 'node automation/backup-system.js'
-      },
-      {
-        name: 'health-check',
-        schedule: '*/30 * * * *', // Every 30 minutes
-        command: 'node automation/health-check.js'
+    const process = this.processes.get(factoryId);
+    if (process) {
+      this.log(`Stopping factory ${factoryId}...`);
+      
+      try {
+        process.kill('SIGTERM');
+        
+        // Wait for graceful shutdown
+        setTimeout(() => {
+          if (process.killed === false) {
+            process.kill('SIGKILL');
+          }
+        }, 5000);
+        
+        factory.status = 'stopped';
+        this.health.activeFactories--;
+        
+        this.processes.delete(factoryId);
+        
+        this.log(`Factory ${factoryId} stopped`);
+      } catch (error) {
+        this.log(`Error stopping factory ${factoryId}: ${error.message}`);
       }
-    ];
-    
-    const cronFile = path.join(this.projectRoot, 'automation/crontab.txt');
-    let cronContent = '# Automation cron jobs\n\n';
-    
-    cronJobs.forEach(job => {
-      cronContent += `${job.schedule} cd ${this.projectRoot} && ${job.command}\n`;
-    });
-    
-    fs.writeFileSync(cronFile, cronContent);
-    console.log('✅ Cron jobs created');
-    
-    return cronJobs;
+    }
   }
 
-  async setupContinuousDeployment() {
-    console.log('🚀 Setting up continuous deployment...');
+  async restartFactory(factoryId) {
+    this.log(`Restarting factory ${factoryId}...`);
     
-    // Create GitHub Actions workflow
-    const workflowContent = `name: Autonomous Improvement Pipeline
+    await this.stopFactory(factoryId);
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
+    await this.startFactory(factoryId);
+  }
 
-on:
-  push:
-    branches: [ main ]
-  schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
+  handleFactoryError(factoryId, error) {
+    const factory = this.factories.get(factoryId);
+    if (factory) {
+      factory.failures++;
+      factory.status = 'failed';
+      this.health.failedFactories++;
+      this.health.activeFactories--;
+      
+      this.log(`Factory ${factoryId} error: ${error.message}`);
+      
+      // Auto-restart if within threshold
+      if (factory.failures <= this.config.restartThreshold && factory.restarts < this.config.maxRestarts) {
+        factory.restarts++;
+        setTimeout(() => {
+          this.restartFactory(factoryId);
+        }, 5000); // Wait 5 seconds before restart
+      }
+    }
+  }
 
-jobs:
-  autonomous-improvement:
-    runs-on: ubuntu-latest
+  handleFactoryExit(factoryId, code) {
+    const factory = this.factories.get(factoryId);
+    if (factory) {
+      factory.status = 'stopped';
+      this.health.activeFactories--;
+      
+      this.log(`Factory ${factoryId} exited with code: ${code}`);
+      
+      // Remove process reference
+      this.processes.delete(factoryId);
+    }
+  }
+
+  startHealthMonitoring() {
+    setInterval(() => {
+      this.performHealthCheck();
+    }, this.config.healthCheckInterval);
     
-    steps:
-    - uses: actions/checkout@v3
+    this.log('Health monitoring started');
+  }
+
+  async performHealthCheck() {
+    this.log('Performing health check...');
     
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
+    let healthyCount = 0;
+    let totalCount = 0;
     
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Run autonomous improvement agent
-      run: node automation/autonomous-improvement-agent.js
-      env:
-        OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
-        SUPABASE_URL: \${{ secrets.SUPABASE_URL }}
-        SUPABASE_ANON_KEY: \${{ secrets.SUPABASE_ANON_KEY }}
-    
-    - name: Run content generation
-      run: node automation/content-generation-automation.js
-      env:
-        OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
-    
-    - name: Run analytics
-      run: node automation/autonomous-analytics.js
-    
-    - name: Deploy to Netlify
-      run: |
-        git config --global user.name "Autonomous Agent"
-        git config --global user.email "agent@bolt.new"
-        git add .
-        git commit -m "🤖 Autonomous improvement cycle" || exit 0
-        git push origin main
-`;
-    
-    const workflowPath = path.join(this.projectRoot, '.github/workflows/autonomous-improvement.yml');
-    const workflowDir = path.dirname(workflowPath);
-    
-    if (!fs.existsSync(workflowDir)) {
-      fs.mkdirSync(workflowDir, { recursive: true });
+    for (const [factoryId, factory] of this.factories) {
+      totalCount++;
+      
+      if (factory.status === 'running') {
+        const process = this.processes.get(factoryId);
+        if (process && !process.killed) {
+          healthyCount++;
+        } else {
+          factory.status = 'failed';
+          this.health.failedFactories++;
+          this.health.activeFactories--;
+        }
+      }
     }
     
-    fs.writeFileSync(workflowPath, workflowContent);
-    console.log('✅ GitHub Actions workflow created');
+    const healthPercentage = totalCount > 0 ? (healthyCount / totalCount) * 100 : 0;
+    
+    this.log(`Health check: ${healthyCount}/${totalCount} factories healthy (${healthPercentage.toFixed(1)}%)`);
+    
+    // Save health report
+    this.saveHealthReport(healthyCount, totalCount, healthPercentage);
+  }
+
+  saveHealthReport(healthyCount, totalCount, healthPercentage) {
+    const reportPath = path.join(this.projectRoot, 'automation', 'reports', 'health-report.json');
+    const report = {
+      timestamp: new Date().toISOString(),
+      health: {
+        healthyCount,
+        totalCount,
+        healthPercentage,
+        activeFactories: this.health.activeFactories,
+        failedFactories: this.health.failedFactories
+      },
+      uptime: Date.now() - this.health.uptime,
+      config: this.config
+    };
+    
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+  }
+
+  startContinuousGeneration() {
+    setInterval(async () => {
+      await this.generateNewFactories();
+    }, 300000); // Every 5 minutes
+    
+    this.log('Continuous factory generation started');
+  }
+
+  async generateNewFactories() {
+    this.log('Generating new automation factories...');
+    
+    try {
+      // Check if we need more factories
+      if (this.factories.size < this.config.maxFactories) {
+        const factoryTypes = [
+          'content-automation-factory',
+          'marketing-automation-factory',
+          'development-automation-factory'
+        ];
+        
+        const randomType = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
+        
+        // Generate new factory
+        const factoryGenerator = require('./continuous-automation-factory-generator.js');
+        const generator = new factoryGenerator();
+        
+        const factoryId = await generator.generateAutomationFactory(randomType, {
+          maxOutputs: Math.floor(Math.random() * 1000) + 100,
+          qualityThreshold: Math.random() * 0.5 + 0.5,
+          autoImprove: true,
+          monitoring: true
+        });
+        
+        // Add to orchestrator
+        const factory = {
+          id: factoryId,
+          config: {
+            type: randomType,
+            generatedAt: new Date().toISOString()
+          },
+          status: 'stopped',
+          failures: 0,
+          restarts: 0,
+          lastStarted: null
+        };
+        
+        this.factories.set(factoryId, factory);
+        this.health.totalFactories++;
+        
+        // Start the new factory
+        await this.startFactory(factoryId);
+        
+        this.log(`Generated and started new factory: ${factoryId}`);
+      }
+    } catch (error) {
+      this.log(`Error generating new factories: ${error.message}`);
+    }
+  }
+
+  async startAllFactories() {
+    this.log('Starting all factories...');
+    
+    for (const [factoryId, factory] of this.factories) {
+      if (factory.status !== 'running') {
+        await this.startFactory(factoryId);
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second between starts
+      }
+    }
+    
+    this.log('All factories started');
+  }
+
+  async stopAllFactories() {
+    this.log('Stopping all factories...');
+    
+    for (const [factoryId, factory] of this.factories) {
+      if (factory.status === 'running') {
+        await this.stopFactory(factoryId);
+      }
+    }
+    
+    this.log('All factories stopped');
+  }
+
+  getStatus() {
+    return {
+      orchestrator: {
+        status: 'running',
+        uptime: Date.now() - this.health.uptime,
+        config: this.config
+      },
+      health: this.health,
+      factories: Array.from(this.factories.values()).map(factory => ({
+        id: factory.id,
+        status: factory.status,
+        failures: factory.failures,
+        restarts: factory.restarts,
+        lastStarted: factory.lastStarted
+      }))
+    };
+  }
+
+  async start() {
+    this.log('Starting automation orchestrator...');
+    
+    try {
+      await this.initializeSystem();
+      await this.startAllFactories();
+      
+      this.log('Automation orchestrator started successfully');
+      
+      // Keep the process running
+      process.on('SIGINT', async () => {
+        this.log('Shutting down orchestrator...');
+        await this.stopAllFactories();
+        process.exit(0);
+      });
+      
+    } catch (error) {
+      this.log(`Error starting orchestrator: ${error.message}`);
+      throw error;
+    }
   }
 }
 
-// Export for use in other modules
 module.exports = AutomationOrchestrator;
 
-// Run if called directly
+// Auto-start if run directly
 if (require.main === module) {
   const orchestrator = new AutomationOrchestrator();
-  
-  const command = process.argv[2];
-  
-  if (command === 'start') {
-    orchestrator.runOrchestrator().catch(console.error);
-  } else if (command === 'setup') {
-    orchestrator.createCronJobs();
-    orchestrator.setupContinuousDeployment();
-  } else {
-    console.log('Usage: node automation-orchestrator.js [start|setup]');
-  }
+  orchestrator.start().catch(console.error);
 } 
