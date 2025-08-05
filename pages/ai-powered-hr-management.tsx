@@ -827,10 +827,9 @@ const AIHRManagement: React.FC = () => {
           </div>
         </div>
       </footer>
-    </div>
-  
-      </div>
-  );
+          </div>
+        </div>
+    );
 };
 
 export default AIHRManagement;

@@ -289,8 +289,8 @@ const DigitalTwins = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default DigitalTwins;

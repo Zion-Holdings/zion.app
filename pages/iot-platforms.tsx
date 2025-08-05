@@ -289,8 +289,8 @@ const IotPlatforms = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default IotPlatforms;

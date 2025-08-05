@@ -105,8 +105,8 @@ const PortfolioBuilder = () => {
       </div>
     </>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default PortfolioBuilder;

@@ -289,8 +289,8 @@ const AiPoweredRecommendation = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredRecommendation;

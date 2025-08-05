@@ -126,9 +126,9 @@ const Https___ziontechgroup_netlify_app_adminPage: NextPage = () => {
             </div>
           </div>
         </footer>
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 };
 
 export default Https___ziontechgroup_netlify_app_adminPage;

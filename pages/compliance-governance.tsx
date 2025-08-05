@@ -1007,11 +1007,10 @@ const ComplianceGovernancePage: NextPage = () => {
             )}
           </div>
         </div>
-      </div>
-    </div>
-  
-      </div>
-  );
+              </div>
+            </div>
+        </div>
+    );
 };
 
 export default ComplianceGovernancePage;

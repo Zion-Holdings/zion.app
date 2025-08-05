@@ -415,8 +415,8 @@ const ContractGenerator = () => {
       </div>
     </>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default ContractGenerator;

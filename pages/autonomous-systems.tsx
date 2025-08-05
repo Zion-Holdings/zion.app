@@ -289,8 +289,8 @@ const AutonomousSystems = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AutonomousSystems;

@@ -136,7 +136,7 @@ const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
         </div>
       </div>
     </ModernLayout>
-  );
+    );
 };
 
 export default Https___ziontechgroup_netlify_app_aboutPage;

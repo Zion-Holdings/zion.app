@@ -196,12 +196,10 @@ const opportunity_solution_1754022651945_3Page: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  
-  </div>
-
-  </div>
-      );
+            </div>
+            </div>
+        </div>
+    );
 };
 
 export default opportunity_solution_1754022651945_3Page;

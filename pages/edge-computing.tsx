@@ -289,8 +289,8 @@ const EdgeComputing = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default EdgeComputing;

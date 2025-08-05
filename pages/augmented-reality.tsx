@@ -289,8 +289,8 @@ const AugmentedReality = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AugmentedReality;

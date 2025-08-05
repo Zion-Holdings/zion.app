@@ -1077,7 +1077,7 @@ Designer: </button>
   </div>
 
   </div>;
-      );
+        );
 };
 
 export default WorkflowDesignerPage;

@@ -602,8 +602,8 @@ const BusinessIntelligenceDashboard = () => {
       </div>
     </>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default BusinessIntelligenceDashboard;

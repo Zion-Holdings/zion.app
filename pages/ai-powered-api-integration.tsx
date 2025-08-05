@@ -617,7 +617,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-        );
+          );
 };
 
 export default AIPoweredAPIIntegrationPage;

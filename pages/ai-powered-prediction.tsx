@@ -289,8 +289,8 @@ const AiPoweredPrediction = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredPrediction;

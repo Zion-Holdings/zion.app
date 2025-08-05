@@ -7,59 +7,38 @@ function fixJSXStructureErrors(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
 
-    // Fix malformed closing tags
-    const malformedClosingPattern = /;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
+    // Fix malformed JSX structure with missing closing tags
+    const malformedStructurePattern = /<div>\s*<div className="min-h-screen bg-gray-50">\s*<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">/g;
+    if (malformedStructurePattern.test(content)) {
+      content = content.replace(malformedStructurePattern, '<div className="min-h-screen bg-gray-50">\n      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
+      modified = true;
+    }
+
+    // Fix malformed JSX structure with missing closing tags
+    const malformedClosingPattern = /<\/div>\s*<\/div>\s*<\/div>\s*\);\s*\};\s*\n\nexport default/g;
     if (malformedClosingPattern.test(content)) {
-      content = content.replace(malformedClosingPattern, '    </ModernLayout>\n  );\n};\n');
+      content = content.replace(malformedClosingPattern, '        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default');
       modified = true;
     }
 
-    // Fix missing closing parentheses
-    const missingParenPattern = /\)\s*;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
-    if (missingParenPattern.test(content)) {
-      content = content.replace(missingParenPattern, '  );\n    </ModernLayout>\n  );\n};\n');
+    // Fix malformed JSX structure with missing closing tags
+    const malformedClosingPattern2 = /<\/div>\s*<\/div>\s*\);\s*\};\s*\n\nexport default/g;
+    if (malformedClosingPattern2.test(content)) {
+      content = content.replace(malformedClosingPattern2, '      </div>\n    </div>\n  );\n};\n\nexport default');
       modified = true;
     }
 
-    // Fix malformed button attributes
-    const malformedButtonPattern = /hover\s+bg-blue-700/g;
-    if (malformedButtonPattern.test(content)) {
-      content = content.replace(malformedButtonPattern, 'hover:bg-blue-700');
+    // Fix malformed JSX structure with missing closing tags
+    const malformedClosingPattern3 = /<\/div>\s*\);\s*\};\s*\n\nexport default/g;
+    if (malformedClosingPattern3.test(content)) {
+      content = content.replace(malformedClosingPattern3, '    </div>\n  );\n};\n\nexport default');
       modified = true;
     }
 
-    // Fix malformed className attributes
-    const malformedClassNamePattern = /className="([^"]*)\s+([^"]*)"/g;
-    if (malformedClassNamePattern.test(content)) {
-      content = content.replace(malformedClassNamePattern, 'className="$1 $2"');
-      modified = true;
-    }
-
-    // Fix malformed export statements
-    const malformedExportPattern = /export default\s+(\w+);/g;
-    if (malformedExportPattern.test(content)) {
-      content = content.replace(malformedExportPattern, 'export default $1;');
-      modified = true;
-    }
-
-    // Fix missing semicolons
-    const missingSemicolonPattern = /\)\s*;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
-    if (missingSemicolonPattern.test(content)) {
-      content = content.replace(missingSemicolonPattern, ');\n    </ModernLayout>\n  );\n};\n');
-      modified = true;
-    }
-
-    // Fix malformed component structure
-    const malformedComponentStructurePattern = /const\s+(\w+):\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>/g;
-    if (malformedComponentStructurePattern.test(content)) {
-      content = content.replace(malformedComponentStructurePattern, 'const $1: NextPage = () => {\n  return (\n    <ModernLayout>');
-      modified = true;
-    }
-
-    // Fix malformed closing tags at the end
-    const malformedEndPattern = /;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
-    if (malformedEndPattern.test(content)) {
-      content = content.replace(malformedEndPattern, '    </ModernLayout>\n  );\n};\n');
+    // Fix malformed JSX structure with missing closing tags
+    const malformedClosingPattern4 = /\);\s*\};\s*\n\nexport default/g;
+    if (malformedClosingPattern4.test(content)) {
+      content = content.replace(malformedClosingPattern4, '  );\n};\n\nexport default');
       modified = true;
     }
 

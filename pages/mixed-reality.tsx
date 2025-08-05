@@ -289,8 +289,8 @@ const MixedReality = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default MixedReality;

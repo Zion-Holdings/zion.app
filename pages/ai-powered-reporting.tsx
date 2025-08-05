@@ -289,8 +289,8 @@ const AiPoweredReporting = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredReporting;

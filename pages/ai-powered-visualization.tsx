@@ -289,8 +289,8 @@ const AiPoweredVisualization = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredVisualization;

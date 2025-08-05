@@ -289,8 +289,8 @@ const AiPoweredIntegration = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredIntegration;

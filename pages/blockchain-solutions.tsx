@@ -289,8 +289,8 @@ const BlockchainSolutions = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default BlockchainSolutions;

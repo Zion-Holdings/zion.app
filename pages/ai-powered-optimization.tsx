@@ -289,8 +289,8 @@ const AiPoweredOptimization = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredOptimization;

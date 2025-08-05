@@ -289,8 +289,8 @@ const AiPoweredMonitoring = () => {
       </div>
     </Layout>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default AiPoweredMonitoring;

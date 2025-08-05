@@ -1032,8 +1032,8 @@ const ResumeBuilder = () => {
       </div>
     </>
   
-      </div>
-  );
+          </div>
+    );
 };
 
 export default ResumeBuilder;
