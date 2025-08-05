@@ -37,7 +37,7 @@ const WebDevelopmentChatPage: NextPage = () => {
                 Expert discussion about web development services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>analytical-research • technology-deep-dive • innovation-spotlight</span>
+                <span>analytical-research • how-to-guide • real-world-examples</span>
               </div>
             </div>
           </div>
