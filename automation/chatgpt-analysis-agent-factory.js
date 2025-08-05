@@ -320,7 +320,7 @@ class ChatGPTAnalysisAgent {
     }
 
     generateCursorAgentCode(config) {
-        return \`
+        return `
 const fs = require('fs-extra');
 const path = require('path');
 
@@ -348,8 +348,8 @@ class CursorAgent {
         console.log(\`[Cursor Agent \${this.config.id}] \${message}\`);
     }
 
-    async executeInstructions() {
-        this.log('Executing Cursor agent instructions...');
+    async run() {
+        this.log('Starting Cursor agent execution...');
         
         try {
             // Parse instructions and execute accordingly
@@ -370,17 +370,33 @@ class CursorAgent {
     async executeInstruction(instruction) {
         this.log(\`Executing instruction: \${instruction.content}\`);
         
-        // Implementation would depend on the specific instruction type
-        // This is a placeholder for the actual implementation
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        this.log(\`Instruction completed: \${instruction.content}\`);
+        // Simple instruction execution
+        switch (instruction.type) {
+            case 'code-analysis':
+                await this.analyzeCode();
+                break;
+            case 'feature-implementation':
+                await this.implementFeature(instruction.content);
+                break;
+            default:
+                this.log(\`Unknown instruction type: \${instruction.type}\`);
+        }
+    }
+
+    async analyzeCode() {
+        this.log('Analyzing code structure...');
+        // Placeholder for code analysis
+    }
+
+    async implementFeature(feature) {
+        this.log(\`Implementing feature: \${feature}\`);
+        // Placeholder for feature implementation
     }
 }
 
 // Export for use
 module.exports = CursorAgent;
-\`;
+`;
     }
 
     async generatePrompts(analysisReport, projectAnalysis) {
