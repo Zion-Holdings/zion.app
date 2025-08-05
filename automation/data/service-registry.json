@@ -1655,7 +1655,558 @@
         },
         "updatedAt": "2025-08-04T19:56:16.682Z"
       }
+    ],
+    [
+      "c7959b66-1171-4847-b178-861b237ca78a",
+      {
+        "id": "c7959b66-1171-4847-b178-861b237ca78a",
+        "type": "mobile-app",
+        "name": "Smart MOBILE APP Application",
+        "description": "A state-of-the-art mobile application that provides seamless cross-platform functionality and intuitive user interfaces.",
+        "capabilities": [
+          "ios",
+          "android",
+          "cross-platform",
+          "native"
+        ],
+        "technologies": [
+          "react-native",
+          "flutter",
+          "swift",
+          "kotlin"
+        ],
+        "marketSegments": [
+          "consumer",
+          "enterprise",
+          "healthcare",
+          "education"
+        ],
+        "pricing": {
+          "basePrice": 25000,
+          "finalPrice": 32500,
+          "priceRange": {
+            "min": 15000,
+            "max": 40000
+          },
+          "complexityMultiplier": 1.3,
+          "timelineMultiplier": 1,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "6-12 weeks",
+        "features": [
+          "push-notifications",
+          "offline-support",
+          "biometric-auth",
+          "in-app-purchases"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-05T00:09:51.064Z",
+        "marketAnalysis": {
+          "marketSize": "$100B",
+          "growthRate": "15%",
+          "competition": "Low",
+          "demand": "Stable",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Consumers",
+            "Businesses",
+            "Developers"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - mobile-app",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - mobile-app",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "Rapid deployment",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/mobile-app-services",
+            "features": [
+              "push-notifications",
+              "offline-support",
+              "biometric-auth",
+              "in-app-purchases"
+            ],
+            "pricing": {
+              "basePrice": 25000,
+              "finalPrice": 32500,
+              "priceRange": {
+                "min": 15000,
+                "max": 40000
+              },
+              "complexityMultiplier": 1.3,
+              "timelineMultiplier": 1,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of MOBILE APP",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "mobile-app",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of MOBILE APP",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/mobile-app-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "MOBILE APP Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/mobile-app-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our mobile-app solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "mobile-app services",
+                "mobile-app development",
+                "mobile-app solutions"
+              ],
+              "adCopy": "Professional mobile-app development services. Get your free consultation today.",
+              "landingPage": "/mobile-app-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our mobile-app solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-05T00:09:51.064Z"
+      }
+    ],
+    [
+      "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+      {
+        "id": "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+        "type": "blockchain-service",
+        "name": "NextGen BLOCKCHAIN SERVICE Service",
+        "description": "A secure and transparent blockchain-based solution that ensures trust and reliability in digital transactions.",
+        "capabilities": [
+          "smart-contracts",
+          "defi",
+          "nft",
+          "web3"
+        ],
+        "technologies": [
+          "ethereum",
+          "solidity",
+          "web3.js",
+          "ipfs",
+          "polygon"
+        ],
+        "marketSegments": [
+          "defi",
+          "gaming",
+          "art",
+          "finance"
+        ],
+        "pricing": {
+          "basePrice": 40000,
+          "finalPrice": 62400,
+          "priceRange": {
+            "min": 25000,
+            "max": 70000
+          },
+          "complexityMultiplier": 1.3,
+          "timelineMultiplier": 1.2,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "10-20 weeks",
+        "features": [
+          "smart-contract-development",
+          "wallet-integration",
+          "token-economics",
+          "dapp-frontend"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-05T00:09:51.069Z",
+        "marketAnalysis": {
+          "marketSize": "$30B",
+          "growthRate": "20%",
+          "competition": "High",
+          "demand": "Stable",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Financial institutions",
+            "Gaming companies",
+            "Art marketplaces"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - blockchain-service",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - blockchain-service",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "Advanced AI integration",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/blockchain-service-services",
+            "features": [
+              "smart-contract-development",
+              "wallet-integration",
+              "token-economics",
+              "dapp-frontend"
+            ],
+            "pricing": {
+              "basePrice": 40000,
+              "finalPrice": 62400,
+              "priceRange": {
+                "min": 25000,
+                "max": 70000
+              },
+              "complexityMultiplier": 1.3,
+              "timelineMultiplier": 1.2,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of BLOCKCHAIN SERVICE",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "blockchain-service",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of BLOCKCHAIN SERVICE",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/blockchain-service-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "BLOCKCHAIN SERVICE Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/blockchain-service-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our blockchain-service solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "blockchain-service services",
+                "blockchain-service development",
+                "blockchain-service solutions"
+              ],
+              "adCopy": "Professional blockchain-service development services. Get your free consultation today.",
+              "landingPage": "/blockchain-service-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our blockchain-service solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-05T00:09:51.069Z"
+      }
     ]
   ],
-  "lastUpdated": "2025-08-04T19:56:16.682Z"
+  "lastUpdated": "2025-08-05T00:09:51.069Z"
 }

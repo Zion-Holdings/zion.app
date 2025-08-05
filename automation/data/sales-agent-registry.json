@@ -29,13 +29,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 9,
-          "dealsClosed": 0,
-          "revenueGenerated": 3597,
+          "leadsGenerated": 12,
+          "dealsClosed": 1,
+          "revenueGenerated": 7808,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.226Z",
-        "updatedAt": "2025-08-04T16:13:26.236Z"
+        "updatedAt": "2025-08-05T00:09:51.061Z"
       }
     ],
     [
@@ -67,13 +67,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 1,
-          "dealsClosed": 0,
-          "revenueGenerated": 661,
+          "leadsGenerated": 5,
+          "dealsClosed": 1,
+          "revenueGenerated": 3686,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.227Z",
-        "updatedAt": "2025-08-04T16:13:26.242Z"
+        "updatedAt": "2025-08-05T00:09:51.067Z"
       }
     ],
     [
@@ -106,12 +106,12 @@
         "status": "active",
         "performance": {
           "leadsGenerated": 2,
-          "dealsClosed": 1,
-          "revenueGenerated": 3157,
-          "conversionRate": 0
+          "dealsClosed": 2,
+          "revenueGenerated": 8020,
+          "conversionRate": 1
         },
         "createdAt": "2025-08-04T15:39:37.232Z",
-        "updatedAt": "2025-08-04T16:13:26.243Z"
+        "updatedAt": "2025-08-05T00:09:51.068Z"
       }
     ],
     [
@@ -143,13 +143,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 3,
-          "dealsClosed": 1,
-          "revenueGenerated": 3755,
-          "conversionRate": 0
+          "leadsGenerated": 8,
+          "dealsClosed": 2,
+          "revenueGenerated": 6402,
+          "conversionRate": 1
         },
         "createdAt": "2025-08-04T15:39:37.233Z",
-        "updatedAt": "2025-08-04T16:13:26.244Z"
+        "updatedAt": "2025-08-05T00:09:51.070Z"
       }
     ],
     [
@@ -181,13 +181,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
-          "dealsClosed": 1,
-          "revenueGenerated": 977,
-          "conversionRate": 0
+          "leadsGenerated": 6,
+          "dealsClosed": 2,
+          "revenueGenerated": 5322,
+          "conversionRate": 1
         },
         "createdAt": "2025-08-04T15:39:37.235Z",
-        "updatedAt": "2025-08-04T16:13:26.246Z"
+        "updatedAt": "2025-08-05T00:09:51.072Z"
       }
     ],
     [
@@ -219,13 +219,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 7,
+          "leadsGenerated": 8,
           "dealsClosed": 1,
-          "revenueGenerated": 1049,
-          "conversionRate": 0
+          "revenueGenerated": 3969,
+          "conversionRate": 1
         },
         "createdAt": "2025-08-04T15:39:37.237Z",
-        "updatedAt": "2025-08-04T16:13:26.247Z"
+        "updatedAt": "2025-08-05T00:09:51.073Z"
       }
     ],
     [
@@ -257,13 +257,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 2,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 4879,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T16:13:26.243Z",
-        "updatedAt": "2025-08-04T16:13:26.243Z"
+        "updatedAt": "2025-08-05T00:09:51.074Z"
       }
     ],
     [
@@ -295,13 +295,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 8,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 870,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T16:13:26.244Z",
-        "updatedAt": "2025-08-04T16:13:26.244Z"
+        "updatedAt": "2025-08-05T00:09:51.076Z"
       }
     ],
     [
@@ -333,13 +333,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 9,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 4697,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T16:13:26.247Z",
-        "updatedAt": "2025-08-04T16:13:26.247Z"
+        "updatedAt": "2025-08-05T00:09:51.077Z"
       }
     ],
     [
@@ -371,13 +371,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
-          "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "leadsGenerated": 2,
+          "dealsClosed": 1,
+          "revenueGenerated": 3293,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T16:13:26.247Z",
-        "updatedAt": "2025-08-04T16:13:26.247Z"
+        "updatedAt": "2025-08-05T00:09:51.078Z"
       }
     ],
     [
@@ -409,13 +409,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
-          "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "leadsGenerated": 9,
+          "dealsClosed": 1,
+          "revenueGenerated": 185,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T19:56:16.685Z",
-        "updatedAt": "2025-08-04T19:56:16.685Z"
+        "updatedAt": "2025-08-05T00:09:51.080Z"
       }
     ],
     [
@@ -447,13 +447,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 1,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 2391,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T19:56:16.686Z",
-        "updatedAt": "2025-08-04T19:56:16.686Z"
+        "updatedAt": "2025-08-05T00:09:51.082Z"
       }
     ],
     [
@@ -482,15 +482,167 @@
         ],
         "status": "active",
         "performance": {
+          "leadsGenerated": 8,
+          "dealsClosed": 0,
+          "revenueGenerated": 4299,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.687Z",
+        "updatedAt": "2025-08-05T00:09:51.083Z"
+      }
+    ],
+    [
+      "bf8c6201-a0ba-49a4-9840-cc80ca3fd35f",
+      {
+        "id": "bf8c6201-a0ba-49a4-9840-cc80ca3fd35f",
+        "type": "digital-marketer",
+        "serviceId": "c7959b66-1171-4847-b178-861b237ca78a",
+        "name": "Smart MOBILE APP Application Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
           "leadsGenerated": 0,
           "dealsClosed": 0,
           "revenueGenerated": 0,
           "conversionRate": 0
         },
-        "createdAt": "2025-08-04T19:56:16.687Z",
-        "updatedAt": "2025-08-04T19:56:16.687Z"
+        "createdAt": "2025-08-05T00:09:51.067Z",
+        "updatedAt": "2025-08-05T00:09:51.067Z"
+      }
+    ],
+    [
+      "e5c08f9b-9ea9-40e6-92e5-c93505c8fdf4",
+      {
+        "id": "e5c08f9b-9ea9-40e6-92e5-c93505c8fdf4",
+        "type": "sales-representative",
+        "serviceId": "c7959b66-1171-4847-b178-861b237ca78a",
+        "name": "Smart MOBILE APP Application Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.068Z",
+        "updatedAt": "2025-08-05T00:09:51.068Z"
+      }
+    ],
+    [
+      "e8258e55-92e0-415c-bb61-9ddac09278be",
+      {
+        "id": "e8258e55-92e0-415c-bb61-9ddac09278be",
+        "type": "digital-marketer",
+        "serviceId": "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+        "name": "NextGen BLOCKCHAIN SERVICE Service Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.071Z",
+        "updatedAt": "2025-08-05T00:09:51.071Z"
+      }
+    ],
+    [
+      "625502c6-4c94-4106-bb08-82f0d2e22b41",
+      {
+        "id": "625502c6-4c94-4106-bb08-82f0d2e22b41",
+        "type": "sales-representative",
+        "serviceId": "677b4c3b-fe5e-46de-9cd6-0f2ebf8a1a4c",
+        "name": "NextGen BLOCKCHAIN SERVICE Service Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-05T00:09:51.073Z",
+        "updatedAt": "2025-08-05T00:09:51.073Z"
       }
     ]
   ],
-  "lastUpdated": "2025-08-04T19:56:16.687Z"
+  "lastUpdated": "2025-08-05T00:09:51.083Z"
 }
