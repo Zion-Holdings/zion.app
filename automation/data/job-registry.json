@@ -648,5 +648,236 @@
       "lastExecutionTime": 0
     },
     "logs": []
+  },
+  {
+    "id": "d5578868-46b2-4cc3-9ad2-5a07aebf48d4",
+    "name": "Deep Search - Market Research",
+    "schedule": "0 */6 * * *",
+    "task": {
+      "type": "deep-search",
+      "service": "market-research",
+      "data": {
+        "query": "latest market trends technology 2024",
+        "depth": 3,
+        "sources": [
+          "news",
+          "blogs",
+          "social-media"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "high",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.350Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "fad7d5cf-c707-44c2-a2c2-f1d513537265",
+    "name": "Content Generation - Blog Posts",
+    "schedule": "0 9 * * *",
+    "task": {
+      "type": "content-generation",
+      "service": "blog-posts",
+      "data": {
+        "topic": "technology trends",
+        "wordCount": 1000,
+        "seoOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.353Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "dcb4b757-544c-489a-92f4-f81b6b371536",
+    "name": "Data Analysis - Performance Review",
+    "schedule": "0 2 * * *",
+    "task": {
+      "type": "data-analysis",
+      "service": "performance-review",
+      "data": {
+        "dataset": "system_metrics",
+        "analysisType": "trend",
+        "timeRange": "7d"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.355Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "1d675fab-028d-4837-be44-664b369b5b7c",
+    "name": "Web Research - Competitive Analysis",
+    "schedule": "0 */12 * * *",
+    "task": {
+      "type": "web-scraping",
+      "service": "competitive-analysis",
+      "data": {
+        "urls": [
+          "competitor1.com",
+          "competitor2.com",
+          "competitor3.com"
+        ],
+        "extractData": [
+          "pricing",
+          "features",
+          "content"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.357Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "61d2958b-c9a3-4303-8b85-dc783104dab7",
+    "name": "SEO Optimization - Keyword Research",
+    "schedule": "0 6 * * 1",
+    "task": {
+      "type": "seo-optimizer",
+      "service": "keyword-research",
+      "data": {
+        "keywords": [
+          "technology",
+          "innovation",
+          "digital transformation"
+        ],
+        "analysisDepth": "comprehensive"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.358Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "7fa71481-fd99-4bc3-a54d-69bbe5991619",
+    "name": "Social Media - Content Scheduling",
+    "schedule": "0 */4 * * *",
+    "task": {
+      "type": "social-media-manager",
+      "service": "post-scheduling",
+      "data": {
+        "platforms": [
+          "twitter",
+          "linkedin",
+          "facebook"
+        ],
+        "contentType": "automated",
+        "engagementOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.360Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "8daaa4b8-1305-4a2b-ada8-c8e6fcd643c2",
+    "name": "System Health Check",
+    "schedule": "*/15 * * * *",
+    "task": {
+      "type": "monitor",
+      "service": "health-check",
+      "data": {
+        "checkTypes": [
+          "performance",
+          "errors",
+          "resources"
+        ],
+        "alertThreshold": 0.8
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-05T01:45:05.362Z",
+    "lastRun": null,
+    "nextRun": null,
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
   }
 ]
