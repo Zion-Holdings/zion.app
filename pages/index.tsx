@@ -172,12 +172,12 @@ const Home: NextPage = () => {
         <section className="relative py-20 lg:py-32">
           <div className="container-responsive">
             <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
                   Marketplace Categories
                 </span>
               </h2>
-              <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Explore our comprehensive marketplace featuring cutting-edge technology solutions
               </p>
             </div>
@@ -198,12 +198,12 @@ const Home: NextPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
           <div className="container-responsive relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink">
                   Featured IT Services
                 </span>
               </h2>
-              <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Professional IT services delivered by certified experts
               </p>
             </div>
@@ -223,12 +223,12 @@ const Home: NextPage = () => {
         <section className="relative py-20 lg:py-32">
           <div className="container-responsive">
             <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue">
                   Top AI Talents
                 </span>
               </h2>
-              <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Connect with world-class AI experts and developers
               </p>
             </div>
@@ -249,12 +249,12 @@ const Home: NextPage = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50"></div>
           <div className="container-responsive relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple">
                   Premium Equipment
                 </span>
               </h2>
-              <p className="text-responsive-lg text-gray-400 max-w-2xl mx-auto">
+              <p className="text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 High-performance computing hardware and advanced technology solutions
               </p>
             </div>

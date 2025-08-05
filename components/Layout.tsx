@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -14,6 +14,8 @@ const Layout: React.FC<LayoutProps> = ({
   title = 'Zion App - AI-Powered Solutions',
   description = 'Advanced AI-powered solutions for modern businesses'
 }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -27,59 +29,133 @@ const Layout: React.FC<LayoutProps> = ({
         {/* Header */}
         <header className="bg-white shadow-sm">
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-              <div className="flex items-center">
+            <div className="flex justify-between items-center py-4 sm:py-6 max-[320px]:flex-wrap">
+              <div className="flex items-center flex-shrink-0">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-2xl font-bold text-blue-600"
+                  className="text-xl sm:text-2xl font-bold text-blue-600 truncate"
                 >
                   Zion App
                 </motion.div>
               </div>
               
-              <div className="hidden md:flex items-center space-x-8">
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors text-sm lg:text-base">
                     Home
                   </Link>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Link href="/services" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link href="/services" className="text-gray-700 hover:text-blue-600 transition-colors text-sm lg:text-base">
                     Services
                   </Link>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link href="/about" className="text-gray-700 hover:text-blue-600 transition-colors text-sm lg:text-base">
                     About
                   </Link>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition-colors text-sm lg:text-base">
                     Contact
                   </Link>
                 </motion.div>
               </div>
               
-              <div className="flex items-center space-x-4">
+              {/* Desktop CTA Button */}
+              <div className="hidden md:flex items-center space-x-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition-colors text-sm lg:text-base"
                 >
                   Get Started
                 </motion.button>
               </div>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden flex items-center">
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 p-2"
+                  aria-label="Toggle mobile menu"
+                >
+                  <svg 
+                    className="h-6 w-6" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    {isMobileMenuOpen ? (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    ) : (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    )}
+                  </svg>
+                </button>
+              </div>
             </div>
+
+            {/* Mobile menu */}
+            {isMobileMenuOpen && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="md:hidden bg-white border-t border-gray-200"
+              >
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                  <Link 
+                    href="/" 
+                    className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    href="/services" 
+                    className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <Link 
+                    href="/about" 
+                    className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                  <div className="pt-2">
+                    <motion.button
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition-colors text-base"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Get Started
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+            )}
           </nav>
         </header>
 
