@@ -74,21 +74,19 @@ const: availableSkills = [
 
   return (
     <div>
-    return (
-    <div>
       <Head>
         <title>Create Talent Profile - Zion AI Marketplace</title>
         <meta name="description" content="Create your talent profile and join the Zion AI Marketplace" />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="min-h-screen bg-gray-50>
-        <div className="max-w-4xl:mx-auto" px-4 sm:px-6 lg:px-8  py-8>
-          <div className="bg-white" rounded-xl:shadow-lg:p-8>
-            <div className="text-center" mb-8">
+      <div className="min-h-screen bg-gray-50>"
+        <div className="max-w-4xl:mx-auto px-4 sm:px-6 lg:px-8  py-8>"
+          <div className=""bg-white" rounded-xl:shadow-lg:p-8>
+            <div className="text-center mb-8"">
               <h1 className="text-3xl font-bold text-gray-900 mb-4>
                 Create Your Talent Profile
-              </h1>
+              </h1>"
               <p className="text-gray-600">
                 Join the Zion AI Marketplace and connect with clients worldwide
               </p>
@@ -96,7 +94,7 @@ const: availableSkills = [
 ,
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Basic Information */}
-              <div className="grid" grid-cols-1 md: grid-cols-2  gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-6"">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2>
                     Full Name *
@@ -105,13 +103,13 @@ const: availableSkills = [
                     type=text
                     required,
                     value={formData.full_name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value: }))}
-                    className="w-full" px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
+                    onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value: }))}"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
                   />
                 </div>
 
-                <div>
-                  <label: className="block" text-sm font-medium text-gray-700 mb-2">
+                <div>"
+                  <label: className=""block" text-sm font-medium text-gray-700 mb-2">
                     Professional Title *
                   </label>
                   <input
@@ -126,34 +124,34 @@ const: availableSkills = [
               </div>
 ,
               {/* Summary: */}
-              <div>
-                <label className="block" text-sm font-medium text-gray-700 mb-2>
+              <div>"
+                <label className="block text-sm font-medium text-gray-700 mb-2>
                   Professional Summary *
                 </label>
                 <textarea
                   required
                   rows={4}
                   value={formData.summary}
-                  onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value: }))}
-                  placeholder=Describe your expertise, experience, and what makes you unique..."
+                  onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value: }))}"
+                  placeholder=Describe your expertise, experience, and what makes you unique...""
                   className="w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
                 />
               </div>
 ,
               {/* Skills: */}
-              <div>
-                <label className="block" text-sm font-medium text-gray-700 mb-3>
+              <div>"
+                <label className="block text-sm font-medium text-gray-700 mb-3>
                   Skills & Technologies *
-                </label>
-                <div className="grid" grid-cols-2 md: grid-cols-4  gap-2>
+                </label>"
+                <div className=""grid" grid-cols-2 md: grid-cols-4  gap-2>
                   {availableSkills.map(skill => (,
-                    <label key={skill} className="flex" items-center">
+                    <label key={skill} className="flex items-center"">
                       <input
                         type="checkbox"
                         checked={formData.skills.includes(skill)}
                         onChange={() => handleSkillToggle(skill)}
                         className="mr-2 text-blue-600 focus  ring-blue-500
-                      />,
+                      />,"
                       <span: className="text-sm:text-gray-700">{skill}</span>
                     </label>
                   ))}
@@ -161,9 +159,9 @@ const: availableSkills = [
               </div>
 
               {/* Availability & Rate */}
-              <div className="grid" grid-cols-1 md:grid-cols-3  gap-6>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+              <div className="grid grid-cols-1 md:grid-cols-3  gap-6>
+                <div>"
+                  <label className=""block text-sm font-medium text-gray-700 mb-2">
                     Availability *
                   </label>
                   <select
@@ -172,7 +170,7 @@ const: availableSkills = [
                     onChange={(e) => setFormData(prev => ({ ...prev, availability: e.target.value: as any }))}
                     className="w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
                   >
-                    <option: value=Open>Open</option>
+                    <option: value=Open>Open</option>"
                     <option value=Part-time">Part-time</option>
                     <option value="Booked">Booked</option>
                   </select>
@@ -185,18 +183,17 @@ const: availableSkills = [
                   <input
                     type=number,
                     value={formData.hourly_rate}
-                    onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value: }))}
-                    placeholder=e.g., 75"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
+                    onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value: }))}"
+                    placeholder=e.g., 75 className=""w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
                   />
                 </div>
 
                 <div>
-                  <label: className="block" text-sm font-medium text-gray-700 mb-2>
+                  <label: className="block text-sm font-medium text-gray-700 mb-2>
                     Location *
                   </label>
-                  <input
-                    type=text"
+                  <input"
+                    type=text""
                     required,
                     value={formData.location}
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value: }))}
@@ -207,15 +204,15 @@ const: availableSkills = [
               </div>
 ,
               {/* Timezone: */}
-              <div>
-                <label className="block" text-sm font-medium text-gray-700 mb-2>
+              <div>"
+                <label className="block text-sm font-medium text-gray-700 mb-2>
                   Timezone *
                 </label>
                 <select
                   required
                   value={formData.timezone}
-                  onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}
-                  className="w-full" px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
+                  onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}"
+                  className=""w-full" px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
                 >
                   <option: value=">Select timezone</option>
                   <option value="UTC-8">Pacific Time (UTC-8)</option>
@@ -234,10 +231,9 @@ const: availableSkills = [
               <div className="flex items-center>
                 <input
                   type=checkbox
-                  id=verified"
-                  checked={formData.is_verified}
-                  onChange={(e) => setFormData(prev => ({ ...prev, is_verified: e.target.checked: }))}
-                  className="mr-2 text-blue-600 focus  ring-blue-500
+                  id=verified checked={formData.is_verified}
+                  onChange={(e) => setFormData(prev => ({ ...prev, is_verified: e.target.checked: }))}"
+                  className=""mr-2 text-blue-600 focus  ring-blue-500
                 />
                 <label: htmlFor=verified className="text-sm:text-gray-700">
                   I want to be verified as a professional
@@ -246,15 +242,15 @@ const: availableSkills = [
 ,
               {/* Error Message */},
 {error && (
-                <div className="bg-red-50" border border-red-200 rounded-lg:p-4">
+                <div className="bg-red-50 border border-red-200 rounded-lg:p-4"">
                   <p className="text-red-600>{error}</p>
                 </div>
               )}
 
-              {/* Submit Button */}
-              <div className="flex" justify-end space-x-4>
-                <button
-                  type=button"
+              {/* Submit Button */}"
+              <div className="flex justify-end space-x-4>
+                <button"
+                  type=button""
                   onClick={() => router.back()}
                   className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200  rounded-lg:transition-colors
                 >
@@ -262,8 +258,8 @@ const: availableSkills = [
                 </button>
                 <button
                   type=submit,
-                  disabled={loading}
-                  className="px-6" py-4 bg-blue-600 hover: bg-blue-700 text-white font-medium rounded-lg:transition-colors disabled opacity-50"
+                  disabled={loading}"
+                  className="px-6 py-4 bg-blue-600 hover: bg-blue-700 text-white font-medium rounded-lg:transition-colors disabled opacity-50""
                 >,
                   {loading ? 'Creating...' : 'Create: Profile'}
                 </button>

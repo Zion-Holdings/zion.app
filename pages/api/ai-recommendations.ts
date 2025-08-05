@@ -351,4 +351,4 @@ export default async function handler(
       message: 'Failed to generate AI recommendations'
     });
   }
-} 
+} ))

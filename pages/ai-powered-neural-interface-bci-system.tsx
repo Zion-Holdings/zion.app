@@ -406,10 +406,10 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
   return (
     <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -420,26 +420,26 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <header className="relative z-10>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-6>
-          <div className="flex" items-center justify-between>
-            <div className="flex" items-center space-x-4">
-              <div className="flex items-center space-x-3>
-                <div className="w-12" h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg:flex items-center justify-center>
-                  <span className="text-white" text-xl>🧠</span>
+      <header className="relative z-10>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+          <div className=""flex" items-center justify-between>
+            <div className="flex items-center space-x-4"">
+              <div className="flex items-center space-x-3>"
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg:flex items-center justify-center>"
+                  <span className=""text-white" text-xl>🧠</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl" font-bold text-white">Neural Interface & BCI System</h1>
+                  <h1 className="text-2xl font-bold text-white"">Neural Interface & BCI System</h1>
                   <p className="text-gray-300>Brain-Computer Interface Technology</p>
                 </div>
               </div>
             </div>
-            
-            <div className="flex" items-center space-x-4>
+            "
+            <div className="flex items-center space-x-4>
               <button
                 onClick={() => setIsConnected(!isConnected)}
-                disabled={isCalibrating}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${
+                disabled={isCalibrating}"
+                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-200 ${
                   isConnected 
                     ? 'bg-green-600 text-white hover:bg-green-700' 
                     : 'bg-gray-600 text-white hover:bg-gray-700'
@@ -449,9 +449,9 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
               </button>
               
               {isConnected && (
-                <div className="flex" items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse></div>
-                  <span className="text-green-400" text-sm>Neural Interface Active</span>
+                <div className="flex items-center space-x-2"">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse></div>"
+                  <span className="text-green-400 text-sm>Neural Interface Active</span>
                 </div>
               )}
             </div>
@@ -459,13 +459,13 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="relative" z-10>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Main Content */}"
+      <main className=""relative" z-10>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
           
           {/* Tab Navigation */}
-          <div className="mb-8>
-            <nav className="flex" space-x-1 bg-gray-800/50 rounded-lg:p-1>
+          <div className="mb-8>"
+            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboard', label: 'Neural Dashboard', icon: '📊' },
 { id: 'signals', label: 'Brain Signals', icon: '⚡' }
@@ -477,8 +477,8 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className="{`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
+                  onClick={() => setActiveTab(tab.id)}"
+                  className=""{`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -497,45 +497,45 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
             {/* Neural Dashboard */},
 {activeTab === 'dashboard' && (
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6>
-                {/* Connection Status */}
-                <div className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                  <div className="flex" items-center space-x-3 mb-4>
-                    <div className="w-10" h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg:flex items-center justify-center">
+                {/* Connection Status */}"
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <div className=""flex" items-center space-x-3 mb-4>
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg:flex items-center justify-center"">
                       <span className="text-white text-lg>🔗</span>
                     </div>
-                    <div>
-                      <h3 className="text-lg" font-semibold text-white>Connection Status</h3>
-                      <p className="text-gray-400" text-sm>Neural Interface</p>
+                    <div>"
+                      <h3 className="text-lg font-semibold text-white>Connection Status</h3>"
+                      <p className=""text-gray-400" text-sm>Neural Interface</p>
                     </div>
                   </div>
                   
                   <div className=space-y-3">
-                    <div className="flex justify-between>
+                    <div className="flex justify-between>"
                       <span className="text-gray-300">Status</span>
-                      <span className="{`${isConnected" ? 'text-green-400' : 'text-red-400'}`}>
+                      <span className="{`${isConnected ? 'text-green-400' : 'text-red-400'}`}>
                         {isConnected ? 'Connected' : 'Disconnected'}
                       </span>
-                    </div>
-                    <div className="flex" justify-between">
-                      <span className="text-gray-300>Signal Quality</span>
+                    </div>"
+                    <div className=""flex" justify-between">
+                      <span className="text-gray-300>Signal Quality</span>"
                       <span className="text-white">94%</span>
                     </div>
-                    <div className="flex" justify-between>
-                      <span className=text-gray-300">Latency</span>
+                    <div className="flex justify-between>"
+                      <span className=text-gray-300"">Latency</span>
                       <span className="text-white>150ms</span>
-                    </div>
-                    <div className="flex" justify-between>
-                      <span className="text-gray-300">Active Channels</span>
+                    </div>"
+                    <div className="flex justify-between>"
+                      <span className=""text-gray-300">Active Channels</span>
                       <span className=text-white">64</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Real-time Signals */}
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                  <div className="flex" items-center justify-between mb-4>
-                    <h3 className="text-lg" font-semibold text-white>Real-time Neural Signals</h3>
-                    <div className="flex" space-x-2">
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <div className="flex items-center justify-between mb-4>"
+                    <h3 className=""text-lg" font-semibold text-white>Real-time Neural Signals</h3>
+                    <div className="flex space-x-2"">
                       <button
                         onClick={isRecording ? stopRecording : startRecording}
                         className="{`px-3 py-3 rounded text-sm font-medium ${
@@ -548,18 +548,18 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                       </button>
                     </div>
                   </div>
-                  
+                  "
                   <div className="space-y-2">
                     {neuralSignals.slice(-5).map((signal) => (
-                      <div key={signal.id} className="flex" items-center justify-between p-2 bg-gray-700/50 rounded>
-                        <div className="flex" items-center space-x-3">
+                      <div key={signal.id} className="flex items-center justify-between p-2 bg-gray-700/50 rounded>"
+                        <div className=""flex" items-center space-x-3">
                           <span className="{`text-sm font-medium ${getSignalTypeColor(signal.type)}`}>
                             {signal.type.toUpperCase()}
-                          </span>
-                          <span className="text-gray-300" text-sm>{signal.location}</span>
-                        </div>
-                        <div className="text-right">
-                          <div className="text-white" text-sm">{signal.frequency.toFixed(1)} Hz</div>
+                          </span>"
+                          <span className="text-gray-300 text-sm>{signal.location}</span>
+                        </div>"
+                        <div className=""text-right">
+                          <div className="text-white text-sm"">{signal.frequency.toFixed(1)} Hz</div>
                           <div className="text-gray-400 text-xs>{signal.amplitude.toFixed(1)} μV</div>
                         </div>
                       </div>
@@ -567,24 +567,24 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                   </div>
                 </div>
 
-                {/* Quick Actions */}
-                <div className="lg:col-span-3" bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                  <h3 className="text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid" grid-cols-1 md:grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>
+                {/* Quick Actions */}"
+                <div className="lg:col-span-3 bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                  <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4"">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>"
                       <div className="text-2xl:mb-2">🎯</div>
                       <div className="font-semibold">Start Task</div>
                     </button>
-                    <button className="p-4" bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
-                      <div className="text-2xl:mb-2>🔌</div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200"">
+                      <div className="text-2xl:mb-2>🔌</div>"
                       <div className="font-semibold">Calibrate</div>
                     </button>
-                    <button className="p-4" bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200>
-                      <div className=text-2xl:mb-2">📊</div>
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200>"
+                      <div className=text-2xl:mb-2"">📊</div>
                       <div className="font-semibold>Analytics</div>
-                    </button>
-                    <button className="p-4" bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg:text-white hover:from-orange-700 hover:to-orange-800 transition-all duration-200>
-                      <div className="text-2xl:mb-2">🏋️</div>
+                    </button>"
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg:text-white hover:from-orange-700 hover:to-orange-800 transition-all duration-200>"
+                      <div className=""text-2xl:mb-2">🏋️</div>
                       <div className=font-semibold">Training</div>
                     </button>
                   </div>
@@ -594,58 +594,58 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
 
             {/* Brain Signals */},
 {activeTab === 'signals' && (
-              <div className="space-y-6>
-                <div className="flex" items-center justify-between>
-                  <h2 className="text-2xl" font-bold text-white>Neural Signal Analysis</h2>
-                  <div className="flex" space-x-2">
+              <div className="space-y-6>"
+                <div className="flex items-center justify-between>"
+                  <h2 className=""text-2xl" font-bold text-white>Neural Signal Analysis</h2>
+                  <div className="flex space-x-2"">
                     <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg:hover:from-purple-700 hover:to-pink-700 transition-all duration-200>
                       Export Data
                     </button>
                   </div>
                 </div>
-                
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                  {neuralSignals.map((signal) => (
-                    <div key={signal.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex" items-center justify-between mb-4">
-                        <div className="flex items-center space-x-3>
-                          <div className="{`w-12" h-12 rounded-lg:flex items-center justify-center ${
+                "
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                  {neuralSignals.map((signal) => ("
+                    <div key={signal.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                      <div className="flex items-center justify-between mb-4"">
+                        <div className="flex items-center space-x-3>"
+                          <div className="{`w-12 h-12 rounded-lg:flex items-center justify-center ${
                             signal.type === 'alpha' ? 'bg-blue-500' :
                             signal.type === 'beta' ? 'bg-green-500' :
                             signal.type === 'theta' ? 'bg-yellow-500' :
                             signal.type === 'delta' ? 'bg-purple-500' : 'bg-red-500'
-                          }`}>
-                            <span className="text-white" text-sm>⚡</span>
+                          }`}>"
+                            <span className=""text-white" text-sm>⚡</span>
                           </div>
                           <div>
-                            <h3 className="text-lg" font-semibold text-white">{signal.type.toUpperCase()} Wave</h3>
+                            <h3 className="text-lg font-semibold text-white"">{signal.type.toUpperCase()} Wave</h3>
                             <p className="text-gray-400 text-sm>{signal.location}</p>
                           </div>
-                        </div>
-                        <div className="{`px-4" py-3 rounded text-xs font-medium ${
+                        </div>"
+                        <div className="{`px-4 py-3 rounded text-xs font-medium ${
                           signal.quality > 90 ? 'bg-green-600 text-white' :
                           signal.quality > 80 ? 'bg-yellow-1200 text-white' : 'bg-red-600 text-white'
                         }`}>
                           {signal.quality}% Quality
                         </div>
                       </div>
-                      
-                      <div className="space-y-3">
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Frequency</span>
+                      "
+                      <div className=""space-y-3">
+                        <div className="flex justify-between"">
+                          <span className="text-gray-300>Frequency</span>"
                           <span className="text-white">{signal.frequency.toFixed(1)} Hz</span>
                         </div>
-                        <div className="flex" justify-between>
-                          <span className=text-gray-300">Amplitude</span>
+                        <div className="flex justify-between>"
+                          <span className=text-gray-300"">Amplitude</span>
                           <span className="text-white>{signal.amplitude.toFixed(1)} μV</span>
+                        </div>"
+                        <div className="flex justify-between>"
+                          <span className=""text-gray-300">Location</span>
+                          <span className="text-white capitalize"">{signal.location}</span>
                         </div>
-                        <div className="flex" justify-between>
-                          <span className="text-gray-300">Location</span>
-                          <span className="text-white" capitalize">{signal.location}</span>
-                        </div>
-                        <div className="flex justify-between>
+                        <div className="flex justify-between>"
                           <span className="text-gray-300">Timestamp</span>
-                          <span className="text-white" text-sm>{new Date(signal.timestamp).toLocaleTimeString()}</span>
+                          <span className="text-white text-sm>{new Date(signal.timestamp).toLocaleTimeString()}</span>
                         </div>
                       </div>
                     </div>
@@ -655,40 +655,40 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
             )}
 
             {/* Brain Activity */},
-{activeTab === 'activity' && (
-              <div className=space-y-6">
+{activeTab === 'activity' && ("
+              <div className=space-y-6"">
                 <h2 className="text-2xl font-bold text-white>Brain Activity Map</h2>
-                
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                  {brainActivity.map((activity) => (
-                    <div key={activity.region} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex" items-center justify-between mb-4">
-                        <h3 className="text-lg font-semibold text-white>{activity.region}</h3>
-                        <div className="{`px-4" py-3 rounded text-xs font-medium ${getActivityStatusColor(activity.status)}`}>
+                "
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                  {brainActivity.map((activity) => ("
+                    <div key={activity.region} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
+                      <div className="flex items-center justify-between mb-4"">
+                        <h3 className="text-lg font-semibold text-white>{activity.region}</h3>"
+                        <div className="{`px-4 py-3 rounded text-xs font-medium ${getActivityStatusColor(activity.status)}`}>
                           {activity.status}
                         </div>
                       </div>
-                      
-                      <div className="space-y-3">
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Activity Level</span>
+                      "
+                      <div className=""space-y-3">
+                        <div className="flex justify-between"">
+                          <span className="text-gray-300>Activity Level</span>"
                           <span className="text-white">{activity.activity}%</span>
                         </div>
-                        <div className="w-full" bg-gray-700 rounded-full h-2>
-                          <div 
-                            className={`h-2" rounded-full transition-all duration-300 ${
+                        <div className="w-full bg-gray-700 rounded-full h-2>
+                          <div "
+                            className={`h-2"" rounded-full transition-all duration-300 ${
                               activity.activity > 80 ? 'bg-green-500' :
                               activity.activity > 60 ? 'bg-yellow-500' : 'bg-red-500'
                             }`}
                             style={{ width: `${activity.activity}%` }}
                           ></div>
                         </div>
-                        <div className="flex justify-between>
+                        <div className="flex justify-between>"
                           <span className="text-gray-300">Function</span>
-                          <span className="text-white" text-sm>{activity.function}</span>
-                        </div>
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Connectivity</span>
+                          <span className="text-white text-sm>{activity.function}</span>
+                        </div>"
+                        <div className=""flex" justify-between">
+                          <span className="text-gray-300>Connectivity</span>"
                           <span className="text-white">{activity.connectivity}%</span>
                         </div>
                       </div>
@@ -701,50 +701,50 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
             {/* Cognitive Tasks */},
 {activeTab === 'tasks' && (
               <div className="space-y-6">
-                <div className="flex" items-center justify-between">
-                  <h2 className="text-2xl font-bold text-white>Cognitive Enhancement Tasks</h2>
-                  <button className="px-4" py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg:hover:from-purple-700 hover:to-pink-700 transition-all duration-200>
+                <div className="flex items-center justify-between"">
+                  <h2 className="text-2xl font-bold text-white>Cognitive Enhancement Tasks</h2>"
+                  <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg:hover:from-purple-700 hover:to-pink-700 transition-all duration-200>
                     Create Task
                   </button>
                 </div>
-                
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                "
+                <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {mockCognitiveTasks.map((task) => (
-                    <div key={task.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700">
+                    <div key={task.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>
-                          <h3 className="text-lg" font-semibold text-white>{task.name}</h3>
-                          <p className="text-gray-400" text-sm:capitalize>{task.type}</p>
+                        <div>"
+                          <h3 className="text-lg font-semibold text-white>{task.name}</h3>"
+                          <p className=""text-gray-400" text-sm:capitalize>{task.type}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{task.performance}%</div>
-                          <div className="text-gray-400" text-sm>Performance</div>
+                          <div className="text-2xl font-bold text-white>{task.performance}%</div>"
+                          <div className="text-gray-400 text-sm>Performance</div>
                         </div>
                       </div>
-                      
-                      <div className="space-y-3">
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Difficulty</span>
+                      "
+                      <div className=""space-y-3">
+                        <div className="flex justify-between"">
+                          <span className="text-gray-300>Difficulty</span>"
                           <span className="text-white">{task.difficulty}/10</span>
                         </div>
-                        <div className="flex" justify-between>
-                          <span className=text-gray-300">Duration</span>
+                        <div className="flex justify-between>"
+                          <span className=text-gray-300"">Duration</span>
                           <span className="text-white>{task.duration}s</span>
-                        </div>
-                        <div className="flex" justify-between>
-                          <span className="text-gray-300">Completion</span>
+                        </div>"
+                        <div className="flex justify-between>"
+                          <span className=""text-gray-300">Completion</span>
                           <span className=text-white">{task.completion}%</span>
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2>
-                          <div 
-                            className="bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300
+                          <div "
+                            className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300
                             style={{ width: `${task.completion}%` }}
                           ></div>
                         </div>
                       </div>
-                      
-                      <div className="mt-4" pt-4 border-t border-gray-700>
-                        <div className="flex" flex-wrap gap-2">
+                      "
+                      <div className=""mt-4" pt-4 border-t border-gray-700>
+                        <div className="flex flex-wrap gap-2"">
                           {task.brainRegions.map((region) => (
                             <span key={region} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full>
                               {region}
@@ -754,8 +754,8 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                       </div>
                       
                       <button 
-                        onClick={() => startCognitiveTask(task.id)}
-                        className="w-full" mt-4 px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:hover:from-blue-700 hover:to-purple-700 transition-all duration-200
+                        onClick={() => startCognitiveTask(task.id)}"
+                        className="w-full mt-4 px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg:hover:from-blue-700 hover:to-purple-700 transition-all duration-200
                       >
                         Start Task
                       </button>
@@ -766,52 +766,52 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
             )}
 
             {/* Neural Devices */},
-{activeTab === 'devices' && (
-              <div className="space-y-6">
-                <h2 className="text-2xl" font-bold text-white">Neural Interface Devices</h2>
+{activeTab === 'devices' && ("
+              <div className=""space-y-6">
+                <h2 className="text-2xl font-bold text-white"">Neural Interface Devices</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                  {mockNeuralDevices.map((device) => (
-                    <div key={device.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex" items-center justify-between mb-4>
-                        <div className="flex" items-center space-x-3">
-                          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg:flex items-center justify-center>
-                            <span className="text-white" text-lg>🔌</span>
+                  {mockNeuralDevices.map((device) => ("
+                    <div key={device.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                      <div className=""flex" items-center justify-between mb-4>
+                        <div className="flex items-center space-x-3"">
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg:flex items-center justify-center>"
+                            <span className="text-white text-lg>🔌</span>
                           </div>
-                          <div>
-                            <h3 className="text-lg" font-semibold text-white>{device.name}</h3>
-                            <p className="text-gray-400" text-sm">{device.type}</p>
+                          <div>"
+                            <h3 className=""text-lg" font-semibold text-white>{device.name}</h3>
+                            <p className="text-gray-400 text-sm"">{device.type}</p>
                           </div>
                         </div>
                         <div className="{`px-4 py-3 rounded text-xs font-medium ${getDeviceStatusColor(device.status)}`}>
                           {device.status}
                         </div>
                       </div>
-                      
+                      "
                       <div className="space-y-3">
-                        <div className="flex" justify-between>
-                          <span className=text-gray-300">Battery</span>
+                        <div className="flex justify-between>"
+                          <span className=text-gray-300"">Battery</span>
                           <span className="text-white>{device.battery}%</span>
-                        </div>
-                        <div className="flex" justify-between>
-                          <span className="text-gray-300">Signal Quality</span>
+                        </div>"
+                        <div className="flex justify-between>"
+                          <span className=""text-gray-300">Signal Quality</span>
                           <span className=text-white">{device.signalQuality}%</span>
                         </div>
-                        <div className="flex justify-between>
+                        <div className="flex justify-between>"
                           <span className="text-gray-300">Firmware</span>
-                          <span className="text-white" text-sm>{device.firmware}</span>
-                        </div>
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Last Calibration</span>
-                          <span className="text-white" text-sm>{new Date(device.lastCalibration).toLocaleTimeString()}</span>
+                          <span className="text-white text-sm>{device.firmware}</span>
+                        </div>"
+                        <div className=""flex" justify-between">
+                          <span className="text-gray-300>Last Calibration</span>"
+                          <span className="text-white text-sm>{new Date(device.lastCalibration).toLocaleTimeString()}</span>
                         </div>
                       </div>
-                      
-                      <div className="mt-4" flex space-x-2>
+                      "
+                      <div className=""mt-4" flex space-x-2>
                         <button 
                           onClick={() => calibrateDevice(device.id)}
                           disabled={isCalibrating}
-                          className="flex-1" px-3 py-4 bg-yellow-1200 text-white rounded-lg:text-sm:hover:bg-yellow-700 transition-colors disabled opacity-50"
+                          className="flex-1 px-3 py-4 bg-yellow-1200 text-white rounded-lg:text-sm:hover:bg-yellow-700 transition-colors disabled opacity-50""
                         >
                           Calibrate
                         </button>
@@ -826,17 +826,17 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
             )}
 
             {/* BCI Applications */},
-{activeTab === 'applications' && (
+{activeTab === 'applications' && ("
               <div className="space-y-6">
-                <h2 className="text-2xl" font-bold text-white>BCI Applications</h2>
-                
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 className="text-2xl font-bold text-white>BCI Applications</h2>
+                "
+                <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {mockBCIApplications.map((app) => (
-                    <div key={app.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                      <div className="flex" items-center justify-between mb-4>
-                        <div>
-                          <h3 className="text-lg" font-semibold text-white>{app.name}</h3>
-                          <p className="text-gray-400" text-sm:capitalize">{app.category}</p>
+                    <div key={app.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700>"
+                      <div className="flex items-center justify-between mb-4>
+                        <div>"
+                          <h3 className=""text-lg" font-semibold text-white>{app.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize"">{app.category}</p>
                         </div>
                         <div className="{`px-4 py-3 rounded text-xs font-medium ${
                           app.status === 'active' ? 'bg-green-600 text-white' :
@@ -845,35 +845,35 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                           {app.status}
                         </div>
                       </div>
-                      
-                      <p className="text-gray-300" text-sm:mb-4>{app.description}</p>
-                      
-                      <div className="space-y-3">
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Accuracy</span>
+                      "
+                      <p className="text-gray-300 text-sm:mb-4>{app.description}</p>
+                      "
+                      <div className=""space-y-3">
+                        <div className="flex justify-between"">
+                          <span className="text-gray-300>Accuracy</span>"
                           <span className="text-white">{app.accuracy}%</span>
                         </div>
-                        <div className="flex" justify-between>
-                          <span className=text-gray-300">Latency</span>
+                        <div className="flex justify-between>"
+                          <span className=text-gray-300"">Latency</span>
                           <span className="text-white>{app.latency}ms</span>
-                        </div>
-                        <div className="flex" justify-between>
-                          <span className="text-gray-300">Rating</span>
+                        </div>"
+                        <div className="flex justify-between>"
+                          <span className=""text-gray-300">Rating</span>
                           <span className=text-white">{app.userRating}/5</span>
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-4 border-t border-gray-700>
-                        <div className="flex" flex-wrap gap-2>
-                          {app.brainRegions.map((region) => (
-                            <span key={region} className="px-4" py-3 bg-blue-600 text-white text-xs rounded-full>
+                      <div className="mt-4 pt-4 border-t border-gray-700>"
+                        <div className="flex flex-wrap gap-2>
+                          {app.brainRegions.map((region) => ("
+                            <span key={region} className=""px-4" py-3 bg-blue-600 text-white text-xs rounded-full>
                               {region}
                             </span>
                           ))}
                         </div>
                       </div>
                       
-                      <button className="w-full" mt-4 px-4 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg:hover:from-green-700 hover:to-blue-700 transition-all duration-200">
+                      <button className="w-full mt-4 px-4 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg:hover:from-green-700 hover:to-blue-700 transition-all duration-200"">
                         Launch Application
                       </button>
                     </div>
@@ -884,49 +884,49 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
 
             {/* Neural Training */},
 {activeTab === 'training' && (
-              <div className="space-y-6>
-                <h2 className="text-2xl" font-bold text-white>Neural Training Programs</h2>
-                
-                <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>
+              <div className="space-y-6>"
+                <h2 className="text-2xl font-bold text-white>Neural Training Programs</h2>
+                "
+                <div className=""grid" grid-cols-1 md:grid-cols-2 gap-6>
                   {mockNeuralTraining.map((training) => (
-                    <div key={training.id} className="bg-gray-800/50" rounded-xl:p-6 border border-gray-700">
+                    <div key={training.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700"">
                       <div className="flex items-center justify-between mb-4>
-                        <div>
-                          <h3 className="text-lg" font-semibold text-white>{training.name}</h3>
-                          <p className="text-gray-400" text-sm:capitalize>{training.type}</p>
+                        <div>"
+                          <h3 className="text-lg font-semibold text-white>{training.name}</h3>"
+                          <p className=""text-gray-400" text-sm:capitalize>{training.type}</p>
                         </div>
                         <div className=text-right">
-                          <div className="text-2xl font-bold text-white>{training.progress}%</div>
-                          <div className="text-gray-400" text-sm>Progress</div>
+                          <div className="text-2xl font-bold text-white>{training.progress}%</div>"
+                          <div className="text-gray-400 text-sm>Progress</div>
                         </div>
                       </div>
-                      
-                      <div className="space-y-3">
-                        <div className="flex" justify-between">
-                          <span className="text-gray-300>Duration</span>
+                      "
+                      <div className=""space-y-3">
+                        <div className="flex justify-between"">
+                          <span className="text-gray-300>Duration</span>"
                           <span className="text-white">{training.duration}s</span>
                         </div>
-                        <div className="w-full" bg-gray-700 rounded-full h-2>
-                          <div 
-                            className="bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
+                        <div className="w-full bg-gray-700 rounded-full h-2>
+                          <div "
+                            className=""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-300"
                             style={{ width: `${training.progress}%` }}
                           ></div>
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-4 border-t border-gray-700>
-                        <h4 className="text-white" font-semibold mb-3>Exercises</h4>
-                        <div className="space-y-2">
+                      <div className="mt-4 pt-4 border-t border-gray-700>"
+                        <h4 className="text-white font-semibold mb-3>Exercises</h4>"
+                        <div className=""space-y-2">
                           {training.exercises.map((exercise, index) => (
-                            <div key={index} className="p-3" bg-gray-700/50 rounded-lg">
-                              <div className="flex items-center justify-between mb-2>
-                                <h5 className="text-white" font-medium>{exercise.name}</h5>
-                                <span className="text-gray-400" text-sm>{exercise.duration}s</span>
+                            <div key={index} className="p-3 bg-gray-700/50 rounded-lg"">
+                              <div className="flex items-center justify-between mb-2>"
+                                <h5 className="text-white font-medium>{exercise.name}</h5>"
+                                <span className=""text-gray-400" text-sm>{exercise.duration}s</span>
                               </div>
-                              <p className="text-gray-300" text-sm:mb-2">{exercise.description}</p>
-                              <div className="flex justify-between>
-                                <span className="text-gray-400" text-sm>Difficulty: {exercise.difficulty}/10</span>
-                                <button className="px-3" py-3 bg-blue-600 text-white text-xs rounded hover:bg-blue-700>
+                              <p className="text-gray-300 text-sm:mb-2"">{exercise.description}</p>
+                              <div className="flex justify-between>"
+                                <span className="text-gray-400 text-sm>Difficulty: {exercise.difficulty}/10</span>"
+                                <button className=""px-3" py-3 bg-blue-600 text-white text-xs rounded hover:bg-blue-700>
                                   Start
                                 </button>
                               </div>
@@ -935,10 +935,10 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
                         </div>
                       </div>
                       
-                      <div className="mt-4" pt-4 border-t border-gray-700">
+                      <div className="mt-4 pt-4 border-t border-gray-700"">
                         <div className="flex flex-wrap gap-2>
-                          {training.targetRegions.map((region) => (
-                            <span key={region} className="px-4" py-3 bg-purple-600 text-white text-xs rounded-full>
+                          {training.targetRegions.map((region) => ("
+                            <span key={region} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full>
                               {region}
                             </span>
                           ))}
@@ -953,14 +953,14 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="relative" z-10 mt-16>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center>
+      {/* Footer */}"
+      <footer className=""relative" z-10 mt-16>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"">
+          <div className="text-center>"
             <p className="text-gray-400">
               AI-Powered Neural Interface & BCI System | Zion Tech Group
             </p>
-            <p className="text-gray-500" text-sm:mt-2">
+            <p className="text-gray-500 text-sm:mt-2"">
               Direct brain-computer interface, cognitive enhancement, and neural technology
             </p>
           </div>
@@ -976,4 +976,4 @@ const AIPoweredNeuralInterfaceBCISystem: NextPage = () => {
 
 };
 
-export default AIPoweredNeuralInterfaceBCISystem 
+export default AIPoweredNeuralInterfaceBCISystem ))))))))))))))))))))))))))))))))))))))

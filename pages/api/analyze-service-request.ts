@@ -152,4 +152,4 @@ Provide realistic and practical insights that would help both the client and pot
       message: 'Service request analyzed successfully (fallback analysis)'
     }
   }
-} 
+} )))))))))

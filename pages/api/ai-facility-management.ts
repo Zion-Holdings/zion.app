@@ -324,4 +324,4 @@ function generateAIInsights(timeframe: string): any {
   };
 
   return insights;
-} 
+} )

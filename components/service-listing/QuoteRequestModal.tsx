@@ -111,8 +111,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-              onClick={onClose}
+              className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity onClick={onClose}
             />
 
             {/* Modal */}
@@ -120,8 +119,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.2 }}
-              className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm max-w-2xl sm w-full"
+              transition={{ duration: 0.2 }}"
+              className=""inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm max-w-2xl sm w-full"
             >
               {/* Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
@@ -131,9 +130,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   </h3>
                   <button
                     onClick={onClose}
-                    className="text-white hover text-gray-200 transition-colors"
-                  >
-                    <X className="w-6 h-6" />
+                    className="text-white hover text-gray-200 transition-colors >"
+                    <X className=""w-6 h-6" />
                   </button>
                 </div>
                 <p className="text-blue-100 mt-1">
@@ -147,7 +145,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   {/* Project Description */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <FileText className="w-4 h-4 inline mr-2" />
+                      <FileText className="w-4 h-4 inline mr-2 />
                       Project Description *
                     </label>
                     <textarea
@@ -156,8 +154,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                       rows={4}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                         errors.projectDescription ? 'border-red-500' : 'border-gray-300'
-                      }`}
-                      placeholder="Describe your project requirements, goals, and any specific needs..."
+                      }`}"
+                      placeholder=""Describe your project requirements, goals, and any specific needs..."
                     />
                     {errors.projectDescription && (
                       <p className="text-red-500 text-sm mt-1">{errors.projectDescription}</p>
@@ -168,7 +166,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 inline mr-2" />
+                        <Calendar className="w-4 h-4 inline mr-2 />
                         Start Date *
                       </label>
                       <DatePicker
@@ -180,8 +178,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                         minDate={new Date()}
                         className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                           errors.startDate ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholderText="Select start date"
+                        }`}"
+                        placeholderText=""Select start date"
                       />
                       {errors.startDate && (
                         <p className="text-red-500 text-sm mt-1">{errors.startDate}</p>
@@ -190,7 +188,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
 
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        <Calendar className="w-4 h-4 inline mr-2" />
+                        <Calendar className="w-4 h-4 inline mr-2 />
                         End Date *
                       </label>
                       <DatePicker
@@ -202,8 +200,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                         minDate={formData.timeline?.startDate || new Date()}
                         className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                           errors.endDate ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholderText="Select end date"
+                        }`}"
+                        placeholderText=""Select end date"
                       />
                       {errors.endDate && (
                         <p className="text-red-500 text-sm mt-1">{errors.endDate}</p>
@@ -214,7 +212,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   {/* Budget Range */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <DollarSign className="w-4 h-4 inline mr-2" />
+                      <DollarSign className="w-4 h-4 inline mr-2 />
                       Budget Range *
                     </label>
                     <select
@@ -223,8 +221,8 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                         errors.budgetRange ? 'border-red-500' : 'border-gray-300'
                       }`}
-                    >
-                      <option value="">Select budget range</option>
+                    >"
+                      <option value=""">Select budget range</option>
                       {BUDGET_RANGES.map((range) => (
                         <option key={range.value} value={range.value}>
                           {range.label}
@@ -239,11 +237,11 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   {/* Contact Email */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <Mail className="w-4 h-4 inline mr-2" />
+                      <Mail className="w-4 h-4 inline mr-2 />
                       Contact Email *
                     </label>
-                    <input
-                      type="email"
+                    <input"
+                      type=""email"
                       value={formData.contactEmail}
                       onChange={(e) => handleInputChange('contactEmail', e.target.value)}
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
@@ -259,14 +257,14 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   {/* Additional Requirements */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      <FileText className="w-4 h-4 inline mr-2" />
+                      <FileText className="w-4 h-4 inline mr-2 />
                       Additional Requirements (Optional)
                     </label>
                     <textarea
                       value={formData.additionalRequirements}
                       onChange={(e) => handleInputChange('additionalRequirements', e.target.value)}
-                      rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus ring-2 focus ring-blue-500"
+                      rows={3}"
+                      className=""w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus ring-2 focus ring-blue-500"
                       placeholder="Any additional requirements, preferences, or special considerations..."
                     />
                   </div>
@@ -277,14 +275,12 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   <button
                     type="button"
                     onClick={onClose}
-                    className="px-4 py-2 text-gray-700 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors"
-                  >
+                    className="px-4 py-2 text-gray-700 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors >
                     Cancel
                   </button>
-                  <button
-                    type="submit"
-                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2"
-                  >
+                  <button"
+                    type=""submit"
+                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2 >
                     Submit Request
                   </button>
                 </div>
@@ -296,5 +292,5 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
     </AnimatePresence>
   );
 };
-
-export default QuoteRequestModal;
+"
+export default QuoteRequestModal;"

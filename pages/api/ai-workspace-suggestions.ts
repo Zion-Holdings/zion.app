@@ -241,3 +241,4 @@ Format each suggestion as a JSON object with:
     return res.status(500).json({ error: 'Failed to generate suggestions' }
   }
 }
+))))))))))))))))))

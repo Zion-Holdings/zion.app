@@ -154,7 +154,7 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
 
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © 2024 Zion. Made with <Heart className="inline w-4 h-4 text-red-500" /> for the future.
+              © 2024 Zion. Made with <Heart className="inline w-4 h-4 text-red-500 /> for the future.
             </div>
           </div>
         </div>
@@ -162,20 +162,19 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
     )
   }
 
-  return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20">
+  return ("
+    <footer className=""relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20">
       {/* Scroll to Top Button */}
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow"
-          aria-label="Scroll to top"
+          className="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow aria-label=""Scroll to top"
         >
-          <ChevronUp className="w-5 h-5 text-white" />
+          <ChevronUp className="w-5 h-5 text-white />
         </button>
       )}
-
-      <div className="container-responsive section-padding">
+"
+      <div className=""container-responsive section-padding">
         {/* Main Footer Content */}
         <div className="grid-responsive-4 gap-8 lg gap-12 mb-12">
           
@@ -200,12 +199,11 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
                 <Link
                   key={social.label}
                   href={social.href}
-                  className="p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group"
-                  target="_blank"
+                  className="p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group target=""_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors" />
+                  <social.icon className="w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors />
                 </Link>
               ))}
             </div>
@@ -213,20 +211,19 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
 
           {/* Footer Sections */}
           {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-responsive-lg font-semibold mb-4 text-white flex items-center space-x-2">
-                <section.icon className="w-4 h-4 text-neon-blue" />
+            <div key={section.title}>"
+              <h4 className=""text-responsive-lg font-semibold mb-4 text-white flex items-center space-x-2">
+                <section.icon className="w-4 h-4 text-neon-blue />
                 <span>{section.title}</span>
-              </h4>
-              <ul className="space-y-3">
+              </h4>"
+              <ul className=""space-y-3">
                 {section.links.map((link) => (
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className="text-gray-400 hover text-white transition-colors touch-target flex items-center space-x-2 group"
-                    >
-                      <span>{link.label}</span>
-                      <ExternalLink className="w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity" />
+                      className="text-gray-400 hover text-white transition-colors touch-target flex items-center space-x-2 group >
+                      <span>{link.label}</span>"
+                      <ExternalLink className=""w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity" />
                     </Link>
                   </li>
                 ))}
@@ -257,15 +254,15 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
             {/* Additional Info */}
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-neon-green" />
+                <Shield className="w-4 h-4 text-neon-green />
                 <span>Secure & Reliable</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap className="w-4 h-4 text-neon-blue" />
+              </div>"
+              <div className=""flex items-center space-x-2">
+                <Zap className="w-4 h-4 text-neon-blue />
                 <span>AI-Powered</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Users className="w-4 h-4 text-neon-purple" />
+              </div>"
+              <div className=""flex items-center space-x-2">
+                <Users className="w-4 h-4 text-neon-purple />
                 <span>Community Driven</span>
               </div>
             </div>
@@ -275,5 +272,5 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
     </footer>
   )
 };
-
-export default ModernFooter 
+"
+export default ModernFooter "

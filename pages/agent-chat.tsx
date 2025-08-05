@@ -136,36 +136,36 @@ const AgentChat: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue>
-        <div className="container-responsive" py-8>
+      <main className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue>"
+        <div className="container-responsive py-8>
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center" mb-12
+            animate={{ opacity: 1, y: 0 }}"
+            className=""text-center" mb-12
           >
-            <h1 className="text-responsive-4xl:lg:text-responsive-5xl:font-bold" text-high-contrast mb-4">
+            <h1 className="text-responsive-4xl:lg:text-responsive-5xl:font-bold text-high-contrast mb-4"">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple>
                 AI Agent Chat
               </span>
-            </h1>
-            <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl:mx-auto>
+            </h1>"
+            <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl:mx-auto>
               Start a conversation with specialized AI agents for various tasks and assistance
             </p>
           </motion.div>
-
-          <div className="grid" grid-cols-1 lg:grid-cols-3 gap-8>
+"
+          <div className=""grid" grid-cols-1 lg:grid-cols-3 gap-8>
             {/* Agent Selection */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className=lg:col-span-1"
             >
-              <div className="glass-dark border border-neon-blue/30 rounded-2xl:p-6>
-                <h2 className="text-2xl" font-bold text-high-contrast mb-6>
+              <div className="glass-dark border border-neon-blue/30 rounded-2xl:p-6>"
+                <h2 className="text-2xl font-bold text-high-contrast mb-6>
                   Available Agents
-                </h2>
-                <div className="space-y-4">
+                </h2>"
+                <div className=""space-y-4">
                   {availableAgents.map((agent) => (
                     <motion.div
                       key={agent.id}
@@ -178,16 +178,16 @@ const AgentChat: NextPage = () => {
                       }`}
                       onClick={() => startNewChat(agent)}
                     >
-                      <div className="flex items-center space-x-3>
+                      <div className="flex items-center space-x-3>"
                         <div className="text-2xl">{agent.avatar}</div>
                         <div className="flex-1">
-                          <h3 className="font-semibold" text-high-contrast">{agent.name}</h3>
-                          <p className="text-sm:text-high-contrast-secondary>{agent.description}</p>
-                          <div className="flex" items-center mt-2>
-                            <span className="{`w-2" h-2 rounded-full mr-2 ${
+                          <h3 className="font-semibold text-high-contrast"">{agent.name}</h3>
+                          <p className="text-sm:text-high-contrast-secondary>{agent.description}</p>"
+                          <div className="flex items-center mt-2>"
+                            <span className=""{`w-2" h-2 rounded-full mr-2 ${
                               agent.isOnline ? 'bg-neon-green' : 'bg-gray-500'
                             }`}></span>
-                            <span className="text-xs" text-high-contrast-secondary">
+                            <span className="text-xs text-high-contrast-secondary"">
                               {agent.isOnline ? 'Online' : 'Offline'}
                             </span>
                           </div>
@@ -204,16 +204,16 @@ const AgentChat: NextPage = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               className="lg:col-span-2
-            >
-              <div className="glass-dark" border border-neon-blue/30 rounded-2xl:h-[600px] flex flex-col>
-                {/* Chat Header */}
-                <div className="p-6" border-b border-neon-blue/20>
+            >"
+              <div className="glass-dark border border-neon-blue/30 rounded-2xl:h-[600px] flex flex-col>
+                {/* Chat Header */}"
+                <div className=""p-6" border-b border-neon-blue/20>
                   {selectedAgent ? (
-                    <div className="flex" items-center space-x-3">
+                    <div className="flex items-center space-x-3"">
                       <div className="text-2xl>{selectedAgent.avatar}</div>
-                      <div>
-                        <h3 className="font-semibold" text-high-contrast>{selectedAgent.name}</h3>
-                        <p className="text-sm:text-high-contrast-secondary">{selectedAgent.description}</p>
+                      <div>"
+                        <h3 className="font-semibold text-high-contrast>{selectedAgent.name}</h3>"
+                        <p className=""text-sm:text-high-contrast-secondary">{selectedAgent.description}</p>
                       </div>
                       <div className=ml-auto">
                         <span className="{`w-3 h-3 rounded-full ${
@@ -221,17 +221,17 @@ const AgentChat: NextPage = () => {
                         }`}></span>
                       </div>
                     </div>
-                  ) : (
-                    <h3 className="text-xl" font-semibold text-high-contrast>
+                  ) : ("
+                    <h3 className="text-xl font-semibold text-high-contrast>
                       Select an agent to start chatting
                     </h3>
                   )}
                 </div>
 
-                {/* Messages */}
-                <div className="flex-1" overflow-y-auto p-6 space-y-4>
+                {/* Messages */}"
+                <div className=""flex-1" overflow-y-auto p-6 space-y-4>
                   {messages.length === 0 && selectedAgent && (
-                    <div className="text-center" text-high-contrast-secondary">
+                    <div className="text-center text-high-contrast-secondary"">
                       <p>Start a conversation with {selectedAgent.name}</p>
                     </div>
                   )}
@@ -242,14 +242,14 @@ const AgentChat: NextPage = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="{`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
-                    >
-                      <div className="{`max-w-xs" lg:max-w-md:p-4 rounded-2xl:${
+                    >"
+                      <div className="{`max-w-xs lg:max-w-md:p-4 rounded-2xl:${
                         message.type === 'user'
                           ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white'
                           : 'glass border border-neon-blue/30 text-high-contrast'
-                      }`}>
-                        <p className="text-sm">{message.content}</p>
-                        <p className="text-xs" opacity-70 mt-2">
+                      }`}>"
+                        <p className=""text-sm">{message.content}</p>
+                        <p className="text-xs opacity-70 mt-2"">
                           {message.timestamp.toLocaleTimeString()}
                         </p>
                       </div>
@@ -261,12 +261,12 @@ const AgentChat: NextPage = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       className="flex justify-start
-                    >
-                      <div className="glass" border border-neon-blue/30 p-4 rounded-2xl>
-                        <div className="flex" space-x-1>
-                          <div className="w-2" h-2 bg-neon-blue rounded-full animate-bounce"></div>
-                          <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay: '0.1s' }}></div>
-                          <div className="w-2" h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay: '0.2s' }}></div>
+                    >"
+                      <div className="glass border border-neon-blue/30 p-4 rounded-2xl>"
+                        <div className=""flex" space-x-1>
+                          <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce""></div>
+                          <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay: '0.1s' }}></div>"
+                          <div className="w-2 h-2 bg-neon-blue rounded-full animate-bounce style={{ animationDelay: '0.2s' }}></div>
                         </div>
                       </div>
                     </motion.div>
@@ -276,9 +276,9 @@ const AgentChat: NextPage = () => {
                 </div>
 
                 {/* Input */},
-{selectedAgent && (
-                  <div className="p-6" border-t border-neon-blue/20>
-                    <div className="flex" space-x-4">
+{selectedAgent && ("
+                  <div className=""p-6" border-t border-neon-blue/20>
+                    <div className="flex space-x-4"">
                       <input
                         type="text"
                         value={inputMessage}
@@ -290,8 +290,8 @@ const AgentChat: NextPage = () => {
                       />
                       <button
                         onClick={sendMessage}
-                        disabled={!inputMessage.trim() || isTyping}
-                        className="px-6" py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-xl:font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled={!inputMessage.trim() || isTyping}"
+                        className="px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-xl:font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed""
                       >
                         Send
                       </button>
@@ -307,4 +307,4 @@ const AgentChat: NextPage = () => {
   );
 };
 
-export default AgentChat;
+export default AgentChat;))

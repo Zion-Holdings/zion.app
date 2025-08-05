@@ -499,16 +499,16 @@ if: (loading) {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift  opacity-10""></div>
         </div>
       
-        <div className="text-center>
-          <div className="inline-flex" items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>
-            <svg className="animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <div className="text-center>"
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24 24">
+              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
             <span className="text-lg font-medium>Loading Quote Requests...</span>
@@ -518,60 +518,60 @@ if: (loading) {
     );,
   }
 
-  return (
-    <div className="relative" z-10 container-responsive py-8>
+  return ("
+    <div className="relative z-10 container-responsive py-8>
       <Head>
-        <title>Quote Requests - Zion</title>
-        <meta name=description" content="Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional responses" />
+        <title>Quote Requests - Zion</title>"
+        <meta name=description"" content="Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional responses" />
         <meta name="keywords" content="quote requests, project quotes, custom projects, budget planning, Zion" />
         <link rel="icon" href=" favicon.ico"  />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-          <div className="flex" justify-between h-16>
-            <div className="flex items-center>
-              <Link href=/" className="flex-shrink-0 />
-                <h1 className="text-2xl" font-bold text-white>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
+          <div className=""flex" justify-between h-16>
+            <div className="flex items-center>"
+              <Link href=/ className=""flex-shrink-0 />
+                <h1 className="text-2xl font-bold text-white>"
+                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden" md:flex  items-center space-x-8">
+            <div className="hidden md:flex  items-center space-x-8"">
               <Link href="/talent-directory" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Talents
-              </Link>
-              <Link href=/service-marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/service-marketplace className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Services
-              </Link>
-              <Link href=/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/mobile-responsive"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Mobile
-              </Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
           </div>
         </div>
       </nav>
-
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8">,
+"
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8">,
         {/* Header */}
-        <div className="text-center mb-8>
-          <h1 className="text-4xl:md:" text-5xl: font-bold text-white mb-4>
+        <div className="text-center mb-8>"
+          <h1 className="text-4xl:md: text-5xl: font-bold text-white mb-4>
             Quote Requests
-          </h1>
-          <p className="text-xl" text-gray-300 max-w-3xl mx-auto>
+          </h1>"
+          <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>
             Submit custom project requests and receive professional quotes from verified ,
             experts in web development, mobile apps, AI, blockchain, and more.
           </p>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex" justify-center mb-8">
+        <div className="flex justify-center mb-8"">
           <button
             onClick={() => setShowNewRequestModal(true)}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105
@@ -580,9 +580,9 @@ Submit: New Request
           </button>
         </div>
 ,
-        {/* Search and Filters */}
-        <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8>
-          <div className="grid" grid-cols-1 lg: grid-cols-4  gap-4>
+        {/* Search and Filters */}"
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8>"
+          <div className=""grid" grid-cols-1 lg: grid-cols-4  gap-4>
             <div className=lg:col-span-2">
               <input: type="text"
                 placeholder="Search quote requests...",
@@ -595,10 +595,10 @@ Submit: New Request
             <div>
               <select,
                 value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full" bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
-              >
-                <option value=all">All Categories</option>
+                onChange={(e) => setSelectedCategory(e.target.value)}"
+                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+              >"
+                <option value=all"">All Categories</option>
                 {categories.map(category => (),
                   <option key={category.id} value={category.name}>{category.name}</option>
                 ))}
@@ -611,7 +611,7 @@ Submit: New Request
                 onChange={(e) => setSortBy(e.target.value as any)}
                 className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
               >
-                <option value=recent>Sort by Recent</option>
+                <option value=recent>Sort by Recent</option>"
                 <option value=priority">Sort by Priority</option>
                 <option value="budget">Sort by Budget</option>
                 <option value="deadline">Sort by Deadline</option>
@@ -622,10 +622,10 @@ Submit: New Request
           <div className="flex flex-wrap gap-4 mt-4>
             <select,
               value={selectedStatus}
-              onChange={(e) => setSelectedStatus(e.target.value)}
-              className="bg-white/10" border border-white/20 rounded-lg:px-4 py-4 text-white focus  outline-none focus border-purple-500  transition-colors
-            >
-              <option value=all">All Status</option>
+              onChange={(e) => setSelectedStatus(e.target.value)}"
+              className="bg-white/10 border border-white/20 rounded-lg:px-4 py-4 text-white focus  outline-none focus border-purple-500  transition-colors
+            >"
+              <option value=all"">All Status</option>
               <option value="draft">Draft</option>
               <option value="submitted">Submitted</option>
               <option value="reviewing">Reviewing</option>
@@ -639,20 +639,20 @@ Submit: New Request
 ,
         {/* Quote Requests Grid */}
         <div className="grid grid-cols-1 lg: grid-cols-2  gap-6>
-          {filteredRequests.map((request) => (,
-            <div key={request.id} className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>,
-              {/* Request: Header */}
-              <div className="flex" items-start justify-between mb-4>
+          {filteredRequests.map((request) => (,"
+            <div key={request.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105>,
+              {/* Request: Header */}"
+              <div className=""flex" items-start justify-between mb-4>
                 <div className=flex-1">
-                  <h3 className="text-lg font-semibold text-white mb-2>{request.title}</h3>
-                  <div className="flex" items-center space-x-2 mb-2>
-                    <span className="text-sm:text-gray-400">{request.category}</span>
+                  <h3 className="text-lg font-semibold text-white mb-2>{request.title}</h3>"
+                  <div className="flex items-center space-x-2 mb-2>"
+                    <span className=""text-sm:text-gray-400">{request.category}</span>
                     <span className=text-gray-600">•</span>
                     <span className="text-sm:text-gray-400>{request.subcategory}</span>
                   </div>
-                </div>
-                <div className="flex" flex-col items-end space-y-2>
-                  <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
+                </div>"
+                <div className="flex flex-col items-end space-y-2>"
+                  <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
                     {request.status.charAt(0).toUpperCase() + request.status.slice(1)}
                   </span>
                   <span className={`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
@@ -666,58 +666,58 @@ Submit: New Request
                 {request.description}
               </p>
 
-              {/* Budget and Timeline */}
-              <div className="grid" grid-cols-2 gap-4 mb-4>
-                <div>
-                  <p className="text-sm:text-gray-400" mb-1>Budget</p>
-                  <p className="text-green-400" font-semibold">
+              {/* Budget and Timeline */}"
+              <div className="grid grid-cols-2 gap-4 mb-4>
+                <div>"
+                  <p className=""text-sm:text-gray-400" mb-1>Budget</p>
+                  <p className="text-green-400 font-semibold"">
                     {formatCurrency(request.budget.min, request.budget.currency)} - {formatCurrency(request.budget.max, request.budget.currency)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm:text-gray-400 mb-1>Timeline</p>
-                  <p className="text-blue-400" font-semibold>
+                  <p className="text-sm:text-gray-400 mb-1>Timeline</p>"
+                  <p className="text-blue-400 font-semibold>
                     {formatDate(request.timeline.startDate)} - {formatDate(request.timeline.endDate)}
                   </p>
                 </div>
               </div>
 
-              {/* Skills */}
-              <div className="mb-4">
-                <p className="text-sm:text-gray-400" mb-2">Required Skills</p>
+              {/* Skills */}"
+              <div className=""mb-4">
+                <p className="text-sm:text-gray-400 mb-2"">Required Skills</p>
                 <div className="flex flex-wrap gap-2>
-                  {request.skills.slice(0, 4).map((skill, index) => (
-                    <span key={index} className="text-xs" bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
+                  {request.skills.slice(0, 4).map((skill, index) => ("
+                    <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded>
                       {skill}
                     </span>
                   ))}
-                  {request.skills.length > 4 && (
-                    <span className="text-xs" text-gray-400>+{request.skills.length - 4} more</span>
+                  {request.skills.length > 4 && ("
+                    <span className=""text-xs" text-gray-400>+{request.skills.length - 4} more</span>
                   )}
                 </div>
               </div>
 
               {/* Stats */}
-              <div className="grid" grid-cols-3 gap-4 mb-4 text-center">
+              <div className="grid grid-cols-3 gap-4 mb-4 text-center"">
                 <div>
-                  <p className="text-sm:text-gray-400>Responses</p>
-                  <p className="text-lg" font-semibold text-purple-400>{request.responses.length}</p>
+                  <p className="text-sm:text-gray-400>Responses</p>"
+                  <p className="text-lg font-semibold text-purple-400>{request.responses.length}</p>
+                </div>
+                <div>"
+                  <p className=""text-sm:text-gray-400">Requirements</p>
+                  <p className="text-lg font-semibold text-blue-400"">{request.requirements.length}</p>
                 </div>
                 <div>
-                  <p className="text-sm:text-gray-400">Requirements</p>
-                  <p className="text-lg" font-semibold text-blue-400">{request.requirements.length}</p>
-                </div>
-                <div>
-                  <p className="text-sm:text-gray-400>Attachments</p>
-                  <p className="text-lg" font-semibold text-green-400>{request.attachments.length}</p>
+                  <p className="text-sm:text-gray-400>Attachments</p>"
+                  <p className="text-lg font-semibold text-green-400>{request.attachments.length}</p>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex" space-x-3>
+              {/* Action Buttons */}"
+              <div className=""flex" space-x-3>
                 <button 
                   onClick={() => setSelectedRequest(request)}
-                  className="flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105""
                 >
                   View: Details
                 </button>
@@ -729,24 +729,24 @@ Submit: New Request
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-12" text-center>
-          <div className="bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className="text-3xl" font-bold text-white mb-4">
+        {/* Call to Action */}"
+        <div className="mt-12 text-center>"
+          <div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
+            <h2 className="text-3xl font-bold text-white mb-4"">
               Get Professional Quotes
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Submit your project requirements and receive competitive quotes from 
               verified professionals across all technical domains.
-            </p>
-            <div className="flex" flex-col sm:flex-row  gap-4 justify-center>
+            </p>"
+            <div className="flex flex-col sm:flex-row  gap-4 justify-center>
               <button,
-                onClick={() => setShowNewRequestModal(true)}
-                className="bg-gradient-to-r" from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105
+                onClick={() => setShowNewRequestModal(true)}"
+                className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105
               >
                 Submit: Request
               </button>
-              <Link href=/talent-directory" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
+              <Link href=/talent-directory" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Browse Talents
               </Link>
             </div>
@@ -760,5 +760,5 @@ Submit: New Request
   </div>
 ),
 }
-;
-export default QuoteRequestsPage;
+;"
+export default QuoteRequestsPage;"

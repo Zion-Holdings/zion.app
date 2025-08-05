@@ -79,7 +79,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         
         <div className="relative h-32">
           {chart.type === 'line' && (
-            <svg className="w-full h-full" viewBox="0 0 100 40">
+            <svg className="w-full h-full viewBox=""0 0 100 40">
               <defs>
                 <linearGradient id={`gradient-${chart.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor={chart.color === 'blue' ? '#00d4ff' : chart.color === 'purple' ? '#8b5cf6' : chart.color === 'pink' ? '#ec4899' : '#10b981'} stopOpacity="0.8"/>
@@ -95,8 +95,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
                 stroke={chart.color === 'blue' ? '#00d4ff' : chart.color === 'purple' ? '#8b5cf6' : chart.color === 'pink' ? '#ec4899' : '#10b981'}
                 strokeWidth="2"
                 fill="none"
-                className="animate-pulse"
-              />
+                className="animate-pulse />
               <path
                 d={`M 0 40 ${chart.data.map((value, index) => {
                   const x = (index / (chart.data.length - 1)) * 100;
@@ -108,8 +107,8 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
             </svg>
           )}
           
-          {chart.type === 'bar' && (
-            <div className="flex items-end justify-between h-full space-x-1">
+          {chart.type === 'bar' && ("
+            <div className=""flex items-end justify-between h-full space-x-1">
               {chart.data.map((value, index) => (
                 <div key={index} className="flex-1 flex flex-col items-center">
                   <div
@@ -204,8 +203,8 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
 
         {/* Floating Elements */}
         <div className="fixed top-20 right-20 w-32 h-32 bg-neon-blue/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="fixed bottom-20 left-20 w-48 h-48 bg-neon-purple/10 rounded-full blur-3xl animate-pulse style={{ animationDelay: '1s' }}></div>"
+        <div className=""fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
     </div>
   );

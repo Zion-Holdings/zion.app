@@ -14,5 +14,4 @@ export default async function handler(
     res.status(200).json({ results: [] });
   } catch (error) {
     res.status(500).json({ error: 'Search failed' });
-  }
-}
+  };

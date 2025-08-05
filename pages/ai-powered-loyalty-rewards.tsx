@@ -465,10 +465,10 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -479,25 +479,25 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden>
-        <div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+      <div className="relative overflow-hidden>"
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
           <div className=text-center">
             <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
               AI-Powered Loyalty & Rewards
-            </h1>
-            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+            </h1>"
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Earn points, unlock badges, achieve milestones, and redeem exclusive rewards 
               with our intelligent gamification system designed to enhance your marketplace experience.
-            </p>
-            <div className="flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+            </p>"
+            <div className=""flex" flex-wrap justify-center gap-4>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>🎯 Earn Points</span>
+              </div>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+                <span className=""text-white" font-semibold>🏆 Unlock Badges</span>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3>
-                <span className="text-white" font-semibold>🏆 Unlock Badges</span>
-              </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>🎁 Redeem Rewards</span>
               </div>
             </div>
@@ -505,19 +505,19 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-        {isLoading ? (
-          <div className="flex" justify-center items-center py-40>
-            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+      {/* Main Content */}"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+        {isLoading ? ("
+          <div className=""flex" justify-center items-center py-40>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
               <button
-                onClick={() => setActiveTab('profile')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('profile')}"
+                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'profile'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -526,8 +526,8 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Profile
               </button>
               <button
-                onClick={() => setActiveTab('badges')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('badges')}"
+                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'badges'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -556,8 +556,8 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Rewards
               </button>
               <button
-                onClick={() => setActiveTab('leaderboards')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('leaderboards')}"
+                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'leaderboards'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -566,8 +566,8 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 Leaderboards
               </button>
               <button
-                onClick={() => setActiveTab('events')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('events')}"
+                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'events'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -581,60 +581,60 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
 {activeTab === 'profile' && userProfile && (
               <div className=space-y-8">
                 {/* User Profile Card */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-8 border border-white/10>
-                  <div className="flex" items-center space-x-6 mb-6>
-                    <div className="w-20" h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
-                      <span className="text-white" font-bold text-2xl">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-8 border border-white/10>"
+                  <div className="flex items-center space-x-6 mb-6>"
+                    <div className=""w-20" h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
+                      <span className="text-white font-bold text-2xl"">
                         {userProfile.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold text-white>{userProfile.name}</h2>
+                      <h2 className="text-2xl font-bold text-white>{userProfile.name}</h2>"
                       <p className="text-gray-300">{userProfile.rank}</p>
                       <p className="text-sm:text-gray-400">Member since {userProfile.memberSince.toLocaleDateString()}</p>
                     </div>
                   </div>
 
-                  <div className="grid" grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                    <div className="text-center>
-                      <div className="text-3xl" font-bold text-white>{userProfile.level}</div>
-                      <div className="text-gray-400">Level</div>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6"">
+                    <div className="text-center>"
+                      <div className="text-3xl font-bold text-white>{userProfile.level}</div>"
+                      <div className=""text-gray-400">Level</div>
                     </div>
                     <div className=text-center">
-                      <div className="text-3xl font-bold text-white>{userProfile.points.toLocaleString()}</div>
+                      <div className="text-3xl font-bold text-white>{userProfile.points.toLocaleString()}</div>"
                       <div className="text-gray-400">Points</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl" font-bold text-white">{userProfile.streak}</div>
+                      <div className="text-3xl font-bold text-white"">{userProfile.streak}</div>
                       <div className="text-gray-400>Day Streak</div>
-                    </div>
+                    </div>"
                     <div className="text-center">
-                      <div className="text-3xl" font-bold text-white>{userProfile.totalTransactions}</div>
-                      <div className=text-gray-400">Transactions</div>
+                      <div className="text-3xl font-bold text-white>{userProfile.totalTransactions}</div>"
+                      <div className=text-gray-400"">Transactions</div>
                     </div>
                   </div>
 
                   {/* Experience Bar */}
-                  <div className="mb-6>
-                    <div className="flex" justify-between text-sm:mb-2>
-                      <span className="text-gray-400">Experience</span>
+                  <div className="mb-6>"
+                    <div className="flex justify-between text-sm:mb-2>"
+                      <span className=""text-gray-400">Experience</span>
                       <span className=text-white">{userProfile.experience.toLocaleString()} / 20,000</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-3>
-                      <div className="bg-gradient-to-r" from-purple-500 to-pink-500 h-3 rounded-full style={{ width: `${(userProfile.experience / 20000) * 100}%` }}></div>
+                    <div className="w-full bg-gray-700 rounded-full h-3>"
+                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full style={{ width: `${(userProfile.experience / 20000) * 100}%` }}></div>
                     </div>
                   </div>
 
                   {/* Recent Badges */}
-                  <div>
-                    <h3 className="text-lg" font-semibold text-white mb-4>Recent Badges</h3>
-                    <div className="flex" space-x-4">
+                  <div>"
+                    <h3 className=""text-lg" font-semibold text-white mb-4>Recent Badges</h3>
+                    <div className="flex space-x-4"">
                       {userProfile.badges.slice(0, 3).map((badge) => (
-                        <div key={badge.id} className="flex items-center space-x-2 bg-white/5 rounded-lg:p-3>
+                        <div key={badge.id} className="flex items-center space-x-2 bg-white/5 rounded-lg:p-3>"
                           <span className="text-2xl">{badge.icon}</span>
                           <div>
-                            <div className="text-white" font-semibold>{badge.name}</div>
-                            <div className="text-gray-400" text-sm">{badge.description}</div>
+                            <div className="text-white font-semibold>{badge.name}</div>"
+                            <div className=""text-gray-400" text-sm">{badge.description}</div>
                           </div>
                         </div>
                       ))}
@@ -643,23 +643,23 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                 </div>
 
                 {/* Points History */}
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                  <h3 className="text-lg" font-semibold text-white mb-4>Recent Activity</h3>
-                  <div className="space-y-3">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                  <h3 className="text-lg font-semibold text-white mb-4>Recent Activity</h3>"
+                  <div className=""space-y-3">
                     {pointsHistory.map((entry) => (
-                      <div key={entry.id} className="flex" items-center justify-between p-3 bg-white/5 rounded-lg">
-                        <div className="flex items-center space-x-3>
-                          <div className="w-10" h-10 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center>
-                            <span className="text-white" font-semibold>+</span>
+                      <div key={entry.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg"">
+                        <div className="flex items-center space-x-3>"
+                          <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center>"
+                            <span className=""text-white" font-semibold>+</span>
                           </div>
                           <div>
-                            <div className="text-white" font-semibold">{entry.action}</div>
+                            <div className="text-white font-semibold"">{entry.action}</div>
                             <div className="text-gray-400 text-sm>{entry.description}</div>
                           </div>
-                        </div>
+                        </div>"
                         <div className="text-right">
-                          <div className="text-green-400" font-semibold>+{entry.points}</div>
-                          <div className="text-gray-400" text-xs">{entry.timestamp.toLocaleDateString()}</div>
+                          <div className="text-green-400 font-semibold>+{entry.points}</div>"
+                          <div className=""text-gray-400" text-xs">{entry.timestamp.toLocaleDateString()}</div>
                         </div>
                       </div>
                     ))}
@@ -671,34 +671,34 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
             {/* Badges Tab */},
 {activeTab === 'badges' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                {badges.map((badge) => (
-                  <div key={badge.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex" items-start justify-between mb-4>
+                {badges.map((badge) => ("
+                  <div key={badge.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                    <div className=""flex" items-start justify-between mb-4>
                       <span className=text-4xl">{badge.icon}</span>
                       <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getRarityColor(badge.rarity)}`}>
                         {badge.rarity}
                       </span>
                     </div>
-                    
-                    <h3 className="text-lg" font-semibold text-white mb-2>{badge.name}</h3>
-                    <p className="text-gray-300" text-sm:mb-4>{badge.description}</p>
+                    "
+                    <h3 className="text-lg font-semibold text-white mb-2>{badge.name}</h3>"
+                    <p className=""text-gray-300" text-sm:mb-4>{badge.description}</p>
                     
                     <div className=space-y-3">
-                      <div className="flex justify-between text-sm>
+                      <div className="flex justify-between text-sm>"
                         <span className="text-gray-400">Category:</span>
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getCategoryColor(badge.category)}`}>
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getCategoryColor(badge.category)}`}>
                           {badge.category}
                         </span>
                       </div>
                       
                       {badge.progress !== undefined && (
-                        <div>
-                          <div className="flex" justify-between text-sm:mb-1">
-                            <span className="text-gray-400>Progress:</span>
+                        <div>"
+                          <div className=""flex" justify-between text-sm:mb-1">
+                            <span className="text-gray-400>Progress:</span>"
                             <span className="text-white">{badge.progress} / {badge.maxProgress}</span>
                           </div>
-                          <div className="w-full" bg-gray-700 rounded-full h-2>
-                            <div className="bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: `${(badge.progress / badge.maxProgress!) * 100}%` }}></div>
+                          <div className="w-full bg-gray-700 rounded-full h-2>"
+                            <div className=""bg-gradient-to-r" from-purple-500 to-pink-500 h-2 rounded-full" style={{ width: `${(badge.progress / badge.maxProgress!) * 100}%` }}></div>
                           </div>
                         </div>
                       )}
@@ -715,39 +715,39 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
             )}
 
             {/* Achievements Tab */},
-{activeTab === 'achievements' && (
-              <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                {achievements.map((achievement) => (
-                  <div key={achievement.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex" items-start justify-between mb-4">
+{activeTab === 'achievements' && ("
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                {achievements.map((achievement) => ("
+                  <div key={achievement.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <div className="flex items-start justify-between mb-4"">
                       <span className="text-4xl>{achievement.icon}</span>
-                      {achievement.aiRecommended && (
-                        <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
+                      {achievement.aiRecommended && ("
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
                           AI Recommended
                         </span>
                       )}
                     </div>
+                    "
+                    <h3 className=""text-lg" font-semibold text-white mb-2>{achievement.name}</h3>
+                    <p className="text-gray-300 text-sm:mb-4"">{achievement.description}</p>
                     
-                    <h3 className="text-lg" font-semibold text-white mb-2>{achievement.name}</h3>
-                    <p className="text-gray-300" text-sm:mb-4">{achievement.description}</p>
-                    
-                    <div className="space-y-3>
-                      <div className="flex" justify-between text-sm>
-                        <span className="text-gray-400">Points:</span>
+                    <div className="space-y-3>"
+                      <div className="flex justify-between text-sm>"
+                        <span className=""text-gray-400">Points:</span>
                         <span className=text-white">{achievement.points}</span>
                       </div>
                       
                       <div>
-                        <div className="flex justify-between text-sm:mb-1>
+                        <div className="flex justify-between text-sm:mb-1>"
                           <span className="text-gray-400">Progress:</span>
                           <span className="text-white">{achievement.progress} / {achievement.maxProgress}</span>
                         </div>
-                        <div className="w-full" bg-gray-700 rounded-full h-2">
+                        <div className="w-full bg-gray-700 rounded-full h-2"">
                           <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full style={{ width: `${(achievement.progress / achievement.maxProgress) * 100}%` }}></div>
                         </div>
                       </div>
                       
-                      {achievement.unlockedAt && (
+                      {achievement.unlockedAt && ("
                         <div className="text-sm:text-green-400">
                           ✓ Unlocked {achievement.unlockedAt.toLocaleDateString()}
                         </div>
@@ -760,33 +760,33 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
 
             {/* Rewards Tab */},
 {activeTab === 'rewards' && (
-              <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-                {rewards.map((reward) => (
-                  <div key={reward.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="flex items-start justify-between mb-4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+                {rewards.map((reward) => ("
+                  <div key={reward.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="flex items-start justify-between mb-4>"
                       <div className="text-3xl">🎁</div>
-                      <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getRewardTypeColor(reward.type)}`}>
+                      <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getRewardTypeColor(reward.type)}`}>
                         {reward.type}
                       </span>
                     </div>
-                    
-                    <h3 className="text-lg" font-semibold text-white mb-2">{reward.name}</h3>
+                    "
+                    <h3 className=""text-lg" font-semibold text-white mb-2">{reward.name}</h3>
                     <p className="text-gray-300 text-sm:mb-4>{reward.description}</p>
-                    
+                    "
                     <div className="space-y-3">
-                      <div className="flex" justify-between text-sm>
-                        <span className=text-gray-400">Value:</span>
+                      <div className="flex justify-between text-sm>"
+                        <span className=text-gray-400"">Value:</span>
                         <span className="text-white>{reward.value},
 {reward.currency}</span>
                       </div>
-                      
-                      <div className="flex" justify-between text-sm>
-                        <span className="text-gray-400">Points Cost:</span>
+                      "
+                      <div className="flex justify-between text-sm>"
+                        <span className=""text-gray-400">Points Cost:</span>
                         <span className=text-white">{reward.pointsCost.toLocaleString()}</span>
                       </div>
                       
                       {reward.maxUsage && (
-                        <div className="flex justify-between text-sm>
+                        <div className="flex justify-between text-sm>"
                           <span className="text-gray-400">Usage:</span>
                           <span className="text-white">{reward.usageCount} / {reward.maxUsage}</span>
                         </div>
@@ -812,12 +812,12 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
             )}
 
             {/* Leaderboards Tab */},
-{activeTab === 'leaderboards' && (
+{activeTab === 'leaderboards' && ("
               <div className="space-y-6">
                 {leaderboards.map((leaderboard) => (
-                  <div key={leaderboard.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="flex" items-center justify-between mb-6">
-                      <h3 className="text-xl font-semibold text-white>{leaderboard.name}</h3>
+                  <div key={leaderboard.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                    <div className=""flex" items-center justify-between mb-6">
+                      <h3 className="text-xl font-semibold text-white>{leaderboard.name}</h3>"
                       <div className="text-sm:text-gray-400">
                         Your Rank: #{leaderboard.userRank} of {leaderboard.totalParticipants}
                       </div>
@@ -825,23 +825,23 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     
                     <div className="space-y-3">
                       {leaderboard.entries.map((entry) => (
-                        <div key={entry.user.id} className="flex" items-center justify-between p-3 bg-white/5 rounded-lg">
-                          <div className="flex items-center space-x-3>
-                            <div className="text-lg:font-bold" text-white>#{entry.rank}</div>
-                            <div className="w-10" h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
-                              <span className="text-white" font-semibold text-sm">
+                        <div key={entry.user.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg"">
+                          <div className="flex items-center space-x-3>"
+                            <div className="text-lg:font-bold text-white>#{entry.rank}</div>"
+                            <div className=""w-10" h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center>
+                              <span className="text-white font-semibold text-sm"">
                                 {entry.user.name.split(' ').map(n => n[0]).join('')}
                               </span>
                             </div>
                             <div>
-                              <div className="text-white font-semibold>{entry.user.name}</div>
-                              <div className="text-gray-400" text-sm>{entry.score.toLocaleString()} points</div>
+                              <div className="text-white font-semibold>{entry.user.name}</div>"
+                              <div className="text-gray-400 text-sm>{entry.score.toLocaleString()} points</div>
                             </div>
-                          </div>
-                          <div className="text-right">
-                            {entry.change > 0 && <div className="text-green-400" text-sm">+{entry.change}</div>}
-                            {entry.change < 0 && <div className="text-red-400 text-sm>{entry.change}</div>}
-                            {entry.change === 0 && <div className="text-gray-400" text-sm>-</div>}
+                          </div>"
+                          <div className=""text-right">
+                            {entry.change > 0 && <div className="text-green-400 text-sm"">+{entry.change}</div>}
+                            {entry.change < 0 && <div className="text-red-400 text-sm>{entry.change}</div>}"
+                            {entry.change === 0 && <div className="text-gray-400 text-sm>-</div>}
                           </div>
                         </div>
                       ))}
@@ -852,36 +852,36 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
             )}
 
             {/* Events Tab */},
-{activeTab === 'events' && (
-              <div className="grid" grid-cols-1 md:grid-cols-2 gap-6>
+{activeTab === 'events' && ("
+              <div className=""grid" grid-cols-1 md:grid-cols-2 gap-6>
                 {events.map((event) => (
-                  <div key={event.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="flex items-start justify-between mb-4>
-                      <h3 className="text-xl" font-semibold text-white>{event.name}</h3>
-                      {event.aiOptimized && (
-                        <span className="px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
+                  <div key={event.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
+                    <div className="flex items-start justify-between mb-4>"
+                      <h3 className="text-xl font-semibold text-white>{event.name}</h3>
+                      {event.aiOptimized && ("
+                        <span className=""px-4" py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300>
                           AI Optimized
                         </span>
                       )}
                     </div>
                     
-                    <p className="text-gray-300" text-sm:mb-4">{event.description}</p>
+                    <p className="text-gray-300 text-sm:mb-4"">{event.description}</p>
                     
-                    <div className="space-y-3 mb-4>
-                      <div className="flex" justify-between text-sm>
-                        <span className="text-gray-400">Type:</span>
-                        <span className="text-white" capitalize">{event.type}</span>
+                    <div className="space-y-3 mb-4>"
+                      <div className="flex justify-between text-sm>"
+                        <span className=""text-gray-400">Type:</span>
+                        <span className="text-white capitalize"">{event.type}</span>
                       </div>
                       
-                      <div className="flex justify-between text-sm>
+                      <div className="flex justify-between text-sm>"
                         <span className="text-gray-400">Duration:</span>
                         <span className="text-white">
                           {event.startDate.toLocaleDateString()} - {event.endDate.toLocaleDateString()}
                         </span>
                       </div>
                       
-                      <div className="flex" justify-between text-sm">
-                        <span className="text-gray-400>Participants:</span>
+                      <div className="flex justify-between text-sm"">
+                        <span className="text-gray-400>Participants:</span>"
                         <span className="text-white">
                           {event.participants.toLocaleString()},
 {event.maxParticipants && ` / ${event.maxParticipants.toLocaleString()}`}
@@ -890,17 +890,17 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     </div>
                     
                     <div className="mb-4">
-                      <div className="text-sm" font-medium text-gray-400 mb-2">Rewards:</div>
+                      <div className="text-sm font-medium text-gray-400 mb-2"">Rewards:</div>
                       <div className="flex space-x-2>
-                        {event.rewards.slice(0, 3).map((reward, index) => (
-                          <span key={index} className="px-4" py-3 bg-white/10 rounded-full text-xs text-gray-300>
+                        {event.rewards.slice(0, 3).map((reward, index) => ("
+                          <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300>
                             {reward.name}
                           </span>
                         ))}
                       </div>
                     </div>
-                    
-                    <button className="w-full" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                    "
+                    <button className=""w-full" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
                       Join Event
                     </button>
                   </div>
@@ -912,21 +912,21 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>
+      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16"">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>"
           <div className="text-center">
-            <h2 className="text-3xl" font-bold text-white mb-4>
+            <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Start Earning Rewards?
-            </h2>
-            <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto">
+            </h2>"
+            <p className=""text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto">
               Join our AI-powered loyalty program and start earning points, unlocking badges, 
               and redeeming exclusive rewards for your marketplace activities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center>
-              <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
                 Join Now
-              </Link>
-              <Link href=/ai-service-matcher" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
+              </Link>"
+              <Link href=/ai-service-matcher"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 Explore Services
               </Link>
             </div>
@@ -942,5 +942,5 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
   </div>
 
 };
-
-export default AIPoweredLoyaltyRewardsPage 
+"
+export default AIPoweredLoyaltyRewardsPage ")))))))))))))))))))))))))))

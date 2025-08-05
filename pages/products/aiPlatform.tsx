@@ -8,36 +8,36 @@ const aiPlatformPage: NextPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
       <Head>
         <title>Zion AI Platform - Zion AI Products</title>
-        <meta name=description content=A comprehensive AI-powered marketplace platform that connects enterprises with top-tier AI services, talents, and innovative solutions." />
-        <meta name="keywords" content="AI marketplace, blockchain, security, automation, AI platform, marketplace, talent acquisition, AI services" />
+        <meta name=description content=A comprehensive AI-powered marketplace platform that connects enterprises with top-tier AI services, talents, and innovative solutions. />"
+        <meta name=""keywords" content="AI marketplace, blockchain, security, automation, AI platform, marketplace, talent acquisition, AI services" />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-          <div className="flex" justify-between h-16>
-            <div className="flex items-center>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
+          <div className=""flex" justify-between h-16>
+            <div className="flex items-center>"
               <div className=flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white>
-                  <Link href=/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 />
+                <h1 className="text-2xl font-bold text-white>"
+                  <Link href=/ className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 />
                     Zion
                   </Link>
                 </h1>
               </div>
             </div>
-            
-            <div className="hidden" md:flex items-center space-x-8">
+            "
+            <div className=""hidden" md:flex items-center space-x-8">
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Marketplace
-              </Link>
-              <Link href=/products className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/products className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Products
-              </Link>
-              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Login
-              </Link>
-              <Link href=/auth/signup className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 />
+              </Link>"
+              <Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 />
                 Join Zion
               </Link>
             </div>
@@ -45,111 +45,111 @@ const aiPlatformPage: NextPage = () => {
         </div>
       </nav>
 
-      {/* Product Content */}
-      <main className=flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
-          <div className="text-center" mb-16>
-            <h1 className="text-5xl:md:text-6xl:font-bold" text-white mb-6>
+      {/* Product Content */}"
+      <main className=flex-1"">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>"
+          <div className="text-center mb-16>"
+            <h1 className=""text-5xl:md:text-6xl:font-bold" text-white mb-6>
               Zion AI Platform
             </h1>
-            <p className="text-xl" text-gray-300 max-w-4xl:mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-4xl:mx-auto leading-relaxed"">
               A comprehensive AI-powered marketplace platform that connects enterprises with top-tier AI services, talents, and innovative solutions.
             </p>
           </div>
 
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16>
-            
-              <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Advanced AI matching algorithms</h3>
+            "
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className=""text-xl:font-bold" text-white mb-4>Advanced AI matching algorithms</h3>
                 <p className=text-gray-300">Sophisticated machine learning algorithms that analyze requirements, capabilities, and past performance to create optimal matches between buyers and sellers.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Secure blockchain transactions</h3>
-                <p className="text-gray-300">All transactions are secured with enterprise-grade blockchain technology, ensuring transparency and immutability of all marketplace activities.</p>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className="text-xl:font-bold text-white mb-4>Secure blockchain transactions</h3>"
+                <p className=""text-gray-300">All transactions are secured with enterprise-grade blockchain technology, ensuring transparency and immutability of all marketplace activities.</p>
               </div>
             
-              <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
-                <h3 className="text-xl:font-bold text-white mb-4>Real-time analytics dashboard</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10"">
+                <h3 className="text-xl:font-bold text-white mb-4>Real-time analytics dashboard</h3>"
                 <p className="text-gray-300">Comprehensive analytics and reporting tools that provide real-time insights into marketplace performance, user behavior, and transaction metrics.</p>
               </div>
             
-              <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4">Global talent network</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className=""text-xl:font-bold" text-white mb-4">Global talent network</h3>
                 <p className="text-gray-300>Access to a worldwide network of verified AI professionals, ensuring businesses can find the right talent regardless of geographical location.</p>
               </div>
-            
-              <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Smart contract automation</h3>
+            "
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className=""text-xl:font-bold" text-white mb-4>Smart contract automation</h3>
                 <p className=text-gray-300">Automated execution of agreements using blockchain smart contracts, reducing manual intervention and ensuring compliance.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Multi-language support</h3>
-                <p className="text-gray-300">Platform available in multiple languages to serve a global user base and facilitate international transactions.</p>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className="text-xl:font-bold text-white mb-4>Multi-language support</h3>"
+                <p className=""text-gray-300">Platform available in multiple languages to serve a global user base and facilitate international transactions.</p>
               </div>
             
           </div>
 
           {/* Benefits */}
-          <div className="grid" grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"">
             
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Reduce time-to-hire by 70%</h3>
-                <div className="text-3xl" font-bold text-green-400>70%</div>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className="text-xl:font-bold text-white mb-4>Reduce time-to-hire by 70%</h3>"
+                <div className=""text-3xl" font-bold text-green-400>70%</div>
               </div>
             
-              <div className="bg-gradient-to-br" from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10">
-                <h3 className="text-xl:font-bold text-white mb-4>Increase transaction success rate to 99.9%</h3>
-                <div className="text-3xl" font-bold text-green-400>99</div>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10"">
+                <h3 className="text-xl:font-bold text-white mb-4>Increase transaction success rate to 99.9%</h3>"
+                <div className="text-3xl font-bold text-green-400>99</div>
               </div>
-            
-              <div className="bg-gradient-to-br" from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4">Lower operational costs by 40%</h3>
+            "
+              <div className=""bg-gradient-to-br" from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>
+                <h3 className="text-xl:font-bold text-white mb-4"">Lower operational costs by 40%</h3>
                 <div className="text-3xl font-bold text-green-400>40%</div>
               </div>
-            
-              <div className="bg-gradient-to-br" from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>
-                <h3 className="text-xl:font-bold" text-white mb-4>Access to global AI talent pool</h3>
+            "
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10>"
+                <h3 className=""text-xl:font-bold" text-white mb-4>Access to global AI talent pool</h3>
                 
               </div>
             
           </div>
 
           {/* Pricing */}
-          <div className="text-center" mb-16">
-            <h2 className="text-4xl:font-bold text-white mb-8>Pricing Plans</h2>
-            <div className="grid" grid-cols-1 md:grid-cols-3 gap-8>
-              
-                <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 >
-                  <h3 className="text-2xl" font-bold text-white mb-4">Starter</h3>
-                  <div className="text-4xl:font-bold text-white mb-6>$99/month</div>
-                  <ul className="space-y-3" mb-8>
-                    
-                      <li className="text-gray-300" flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <div className="text-center mb-16"">
+            <h2 className="text-4xl:font-bold text-white mb-8>Pricing Plans</h2>"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8>
+              "
+                <div className=""bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 >
+                  <h3 className="text-2xl font-bold text-white mb-4"">Starter</h3>
+                  <div className="text-4xl:font-bold text-white mb-6>$99/month</div>"
+                  <ul className="space-y-3 mb-8>
+                    "
+                      <li className=""text-gray-300" flex items-center>
+                        <svg className="w-5 h-5 text-green-400 mr-2"" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Up to 10 users
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Basic AI matching
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Email support
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         5GB storage
@@ -160,42 +160,42 @@ const aiPlatformPage: NextPage = () => {
                     Get Started
                   </button>
                 </div>
-              
-                <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 border-purple-500/50>
-                  <h3 className="text-2xl" font-bold text-white mb-4>Professional</h3>
-                  <div className="text-4xl:font-bold" text-white mb-6">$299/month</div>
+              "
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 border-purple-500/50>"
+                  <h3 className=""text-2xl" font-bold text-white mb-4>Professional</h3>
+                  <div className="text-4xl:font-bold text-white mb-6"">$299/month</div>
                   <ul className="space-y-3 mb-8>
-                    
-                      <li className="text-gray-300" flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                    "
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className=""w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Up to 100 users
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Advanced AI matching
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Priority support
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         50GB storage
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         API access
@@ -206,42 +206,42 @@ const aiPlatformPage: NextPage = () => {
                     Get Started
                   </button>
                 </div>
-              
-                <div className="bg-gradient-to-br" from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 >
-                  <h3 className="text-2xl" font-bold text-white mb-4>Enterprise</h3>
-                  <div className="text-4xl:font-bold" text-white mb-6">Custom</div>
+              "
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 >"
+                  <h3 className=""text-2xl" font-bold text-white mb-4>Enterprise</h3>
+                  <div className="text-4xl:font-bold text-white mb-6"">Custom</div>
                   <ul className="space-y-3 mb-8>
-                    
-                      <li className="text-gray-300" flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                    "
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className=""w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Unlimited users
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Custom AI algorithms
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Dedicated support
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Unlimited storage
                       </li>
                     
-                      <li className="text-gray-300 flex items-center>
-                        <svg className="w-5" h-5 text-green-400 mr-2 fill=currentColor" viewBox="0 0 20 20">
+                      <li className="text-gray-300 flex items-center>"
+                        <svg className="w-5 h-5 text-green-400 mr-2 fill=currentColor"" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         Custom integrations
@@ -265,4 +265,4 @@ const aiPlatformPage: NextPage = () => {
 
 };
 
-export default aiPlatformPage
+export default aiPlatformPage)

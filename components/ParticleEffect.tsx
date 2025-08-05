@@ -144,10 +144,9 @@ const ParticleEffect: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'transparent' }}
+      className="fixed inset-0 pointer-events-none z-0 style={{ background: 'transparent' }}
     />
   );
 };
-
-export default ParticleEffect;
+"
+export default ParticleEffect;"

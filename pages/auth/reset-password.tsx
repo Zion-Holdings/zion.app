@@ -61,8 +61,6 @@ const ResetPassword: NextPage = () => {
   }
 
   return (
-    <div>
-    return (
     <AuthLayout>
       <Head>
         <title>Reset Password - Zion</title>
@@ -70,36 +68,36 @@ const ResetPassword: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md:mx-auto px-4 sm:px-6 lg:px-8 py-40>
-        <div className="text-center" mb-8>
-          <h1 className="text-3xl" font-bold text-white mb-4>
-            Reset Your <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Password</span>
+      <div className="max-w-md:mx-auto px-4 sm:px-6 lg:px-8 py-40>"
+        <div className="text-center mb-8>"
+          <h1 className=""text-3xl" font-bold text-white mb-4>
+            Reset Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"">Password</span>
           </h1>
           <p className="text-gray-300>
             Enter your new password below.
           </p>
         </div>
-
-        <div className="bg-black/20" backdrop-blur-md:rounded-lg:p-8 border border-white/10>
-          {error && (
-            <div className="mb-4" p-4 bg-red-500/20 border border-red-500/30 rounded-lg:text-red-300>
+"
+        <div className="bg-black/20 backdrop-blur-md:rounded-lg:p-8 border border-white/10>
+          {error && ("
+            <div className=""mb-4" p-4 bg-red-500/20 border border-red-500/30 rounded-lg:text-red-300>
               {error}
             </div>
           )}
           
           {message && (
-            <div className="mb-4" p-4 bg-green-500/20 border border-green-500/30 rounded-lg:text-green-300">
+            <div className="mb-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg:text-green-300"">
               {message}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6>
-            <div>
-              <label htmlFor=password className="block" text-sm font-medium text-gray-300 mb-2>
+            <div>"
+              <label htmlFor=password className="block text-sm font-medium text-gray-300 mb-2>
                 New Password
               </label>
-              <input
-                type=password"
+              <input"
+                type=password""
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -109,8 +107,8 @@ const ResetPassword: NextPage = () => {
               />
             </div>
             
-            <div>
-              <label htmlFor=confirmPassword" className="block text-sm font-medium text-gray-300 mb-2>
+            <div>"
+              <label htmlFor=confirmPassword className=""block text-sm font-medium text-gray-300 mb-2>
                 Confirm New Password
               </label>
               <input
@@ -125,16 +123,15 @@ const ResetPassword: NextPage = () => {
             </div>
             
             <button
-              type=submit"
-              disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled opacity-50 disabled cursor-not-allowed text-white px-8 py-3 rounded-lg:text-lg font-semibold transition-all duration-300
+              type=submit disabled={loading}"
+              className=""w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled opacity-50 disabled cursor-not-allowed text-white px-8 py-3 rounded-lg:text-lg font-semibold transition-all duration-300
             >
               {loading ? 'Updating Password...' : 'Update Password'}
             </button>
           </form>
           
-          <div className="mt-6" text-center>
-            <Link href=/auth/login" className="text-purple-400 hover:text-purple-300 transition-colors" />
+          <div className="mt-6 text-center>"
+            <Link href=/auth/login"" className="text-purple-400 hover:text-purple-300 transition-colors />
               Back to Login
             </Link>
           </div>
@@ -147,5 +144,5 @@ const ResetPassword: NextPage = () => {
   </div>
 
 };
-
-export default ResetPassword 
+"
+export default ResetPassword "))))))))))))))))))))))))))

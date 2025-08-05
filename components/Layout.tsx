@@ -144,8 +144,7 @@ const Layout: React.FC<LayoutProps> = ({
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg text-base shadow-lg"
-    >
+      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg text-base shadow-lg >
       Get Started
     </motion.button>
   );
@@ -153,8 +152,8 @@ const Layout: React.FC<LayoutProps> = ({
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{title}</title>"
+        <meta name=""description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -40,14 +40,13 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl font-bold text-blue-600"
-            >
+              className="text-2xl font-bold text-blue-600 >
               Zion App
             </motion.div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg flex items-center space-x-8">
+          {/* Desktop Navigation */}"
+          <div className=""hidden lg flex items-center space-x-8">
             {items.map((item) => (
               <div key={item.href} className="relative">
                 {item.children ? (
@@ -65,8 +64,7 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
                           <div key={child.href}>
                             <Link 
                               href={child.href}
-                              className="text-gray-600 hover text-blue-600 text-sm block py-1"
-                            >
+                              className="text-gray-600 hover text-blue-600 text-sm block py-1 >
                               {child.label}
                             </Link>
                           </div>
@@ -88,16 +86,15 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="flex items-center space-x-4">
+          {/* CTA Button */}"
+          <div className=""flex items-center space-x-4">
             {ctaButton}
             
             {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              className="lg:hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors >"
+              <svg className=""h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -114,9 +111,8 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg hidden border-t border-gray-200 py-4"
-          >
-            <div className="space-y-4">
+            className="lg hidden border-t border-gray-200 py-4 >"
+            <div className=""space-y-4">
               {items.map((item) => (
                 <div key={item.href}>
                   {item.children ? (

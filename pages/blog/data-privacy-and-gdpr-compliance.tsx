@@ -9,15 +9,15 @@ const DataPrivacyAndGdprCompliancePage: NextPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>
       <Head>
         <title>Data Privacy and GDPR Compliance - Zion Tech Blog</title>
-        <meta name=description content=Learn about data privacy and gdpr compliance and its impact on modern business technology." />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name=description content=Learn about data privacy and gdpr compliance and its impact on modern business technology. />
+      "
+        <meta name=""viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-          <div className="flex" justify-between h-16>
-            <div className="flex items-center>
-              <h1 className="text-2xl" font-bold text-white">
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
+          <div className=""flex" justify-between h-16>
+            <div className="flex items-center>"
+              <h1 className="text-2xl font-bold text-white"">
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 />
                   Zion
                 </Link>
@@ -26,22 +26,22 @@ const DataPrivacyAndGdprCompliancePage: NextPage = () => {
           </div>
         </div>
       </nav>
-
+"
       <main className="flex-1">
-        <article className="max-w-4xl:mx-auto" px-4 sm:px-6 lg:px-8 py-32>
-          <h1 className="text-4xl:md:text-5xl:font-bold" text-white mb-6">
+        <article className="max-w-4xl:mx-auto px-4 sm:px-6 lg:px-8 py-32>"
+          <h1 className=""text-4xl:md:text-5xl:font-bold" text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               Data Privacy and GDPR Compliance
             </span>
           </h1>
-          
-          <div className="prose" prose-invert prose-lg:max-w-none>
-            <div className="text-gray-300" leading-relaxed>
+          "
+          <div className="prose prose-invert prose-lg:max-w-none>"
+            <div className=""text-gray-300" leading-relaxed>
               
 <p className=mb-6">Data Privacy and GDPR Compliance represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.</p>
 
 <p className="mb-6>The integration of data privacy and gdpr compliance into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.</p>
-
+"
 <p className="mb-6">Real-world applications of data privacy and gdpr compliance can be found across various industries, from healthcare to finance, manufacturing to retail. Companies that successfully implement these solutions often see dramatic improvements in their operational metrics and customer satisfaction scores.</p>
 
 <p className="mb-6">As we look toward the future, data privacy and gdpr compliance will continue to evolve and become even more sophisticated. Organizations that stay ahead of these trends will be well-positioned to thrive in the increasingly competitive digital marketplace.</p>
@@ -63,4 +63,4 @@ const DataPrivacyAndGdprCompliancePage: NextPage = () => {
 }
 };
 
-export default DataPrivacyAndGdprCompliancePage
+export default DataPrivacyAndGdprCompliancePage)

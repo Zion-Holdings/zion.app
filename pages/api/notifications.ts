@@ -13,5 +13,4 @@ export default async function handler(
     res.status(200).json({ success: true, notificationId: 'notif_123' });
   } catch (error) {
     res.status(500).json({ error: 'Notification failed' });
-  }
-}
+  };

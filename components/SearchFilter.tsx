@@ -12,9 +12,8 @@ export default function SearchFilter() {
         placeholder="Search..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="search-input"
-      />
+        className="search-input />
       {/* Filter options */}
     </motion.div>
-  );
-}
+  );"
+}"

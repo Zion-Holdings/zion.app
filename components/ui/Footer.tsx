@@ -234,11 +234,10 @@ const Footer: React.FC = () => {
               </Link>
               <button
                 onClick={scrollToTop}
-                className="group flex items-center space-x-2 text-gray-400 hover text-white transition-all duration-300 hover scale-105 touch-target"
-                aria-label="Back to top"
+                className="group flex items-center space-x-2 text-gray-400 hover text-white transition-all duration-300 hover scale-105 touch-target aria-label=""Back to top"
               >
-                <ChevronUp className="w-4 h-4 group-hover -translate-y-1 transition-transform duration-300" />
-                <span className="hidden sm inline">Back to Top</span>
+                <ChevronUp className="w-4 h-4 group-hover -translate-y-1 transition-transform duration-300 />"
+                <span className=""hidden sm inline">Back to Top</span>
               </button>
             </div>
           </div>

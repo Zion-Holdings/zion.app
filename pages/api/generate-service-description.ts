@@ -102,5 +102,4 @@ Format the description as a single paragraph that flows naturally and is ready t
       error: 'Failed to generate service description',
       details: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
     });
-  }
-} 
+  };

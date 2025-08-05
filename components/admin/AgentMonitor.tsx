@@ -148,15 +148,14 @@ export default function AgentMonitor({ agents, onAgentClick }: AgentMonitorProps
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-1">
                     <div
-                      className="bg-blue-600 h-1 rounded-full transition-all duration-300"
-                      style={{ width: `${agent.workload}%` }}
+                      className="bg-blue-600 h-1 rounded-full transition-all duration-300 style={{ width: `${agent.workload}%` }}
                     ></div>
                   </div>
                 </div>
               )}
 
-              {agent.currentTask && (
-                <div className="text-xs">
+              {agent.currentTask && ("
+                <div className=""text-xs">
                   <div className="text-gray-600 mb-1">Current Task:</div>
                   <div className="text-gray-900 bg-gray-50 p-2 rounded text-xs">
                     {agent.currentTask}

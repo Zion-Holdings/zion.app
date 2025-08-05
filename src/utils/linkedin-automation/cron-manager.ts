@@ -1,1 +1,1 @@
-export default class LinkedInCronManager { constructor() {} async start() { console.log("LinkedIn cron manager started"); } }
+export default class LinkedInCronManager { constructor() {} async start() { console.log("LinkedIn cron manager started"); };

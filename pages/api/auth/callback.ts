@@ -38,4 +38,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // No code provided
   return res.redirect('/auth/login?error=Invalid authentication request'
-} 
+} ))))))))))

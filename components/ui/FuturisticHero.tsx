@@ -34,8 +34,8 @@ const FuturisticHero: React.FC = () => {
         
         {/* Floating Orbs */}
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-neon-blue to-transparent rounded-full blur-xl opacity-30 animate-cyber-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-neon-purple to-transparent rounded-full blur-xl opacity-30 animate-cyber-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-neon-pink to-transparent rounded-full blur-xl opacity-30 animate-cyber-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-gradient-to-br from-neon-purple to-transparent rounded-full blur-xl opacity-30 animate-cyber-float style={{ animationDelay: '2s' }}></div>"
+        <div className=""absolute bottom-1/4 left-1/3 w-20 h-20 bg-gradient-to-br from-neon-pink to-transparent rounded-full blur-xl opacity-30 animate-cyber-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       {/* Content */}
@@ -63,17 +63,15 @@ const FuturisticHero: React.FC = () => {
           <div className="flex flex-col sm flex-row gap-4 justify-center items-center mb-12">
             <Link
               href="/auth/signup"
-              className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105"
-            >
-              <span className="relative z-10">Start Trading Now</span>
+              className="group relative px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105 >"
+              <span className=""relative z-10">Start Trading Now</span>
               <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg blur-sm opacity-50 animate-pulse-neon"></div>
             </Link>
             
             <Link
               href="/marketplace"
-              className="group relative px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105"
-            >
-              <span className="relative z-10">Explore Marketplace</span>
+              className="group relative px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105 >"
+              <span className=""relative z-10">Explore Marketplace</span>
               <div className="absolute inset-0 bg-gradient-to-r from-neon-blue to-transparent rounded-lg opacity-0 group-hover opacity-20 transition-opacity duration-300"></div>
             </Link>
           </div>
@@ -120,8 +118,7 @@ const FuturisticHero: React.FC = () => {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="particle"
-            style={{
+            className="particle style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 8}s`,
@@ -133,5 +130,5 @@ const FuturisticHero: React.FC = () => {
     </section>
   );
 };
-
-export default FuturisticHero;
+"
+export default FuturisticHero;"

@@ -26,13 +26,12 @@ const MessageChannelDebugger: React.FC<MessageChannelDebuggerProps> = ({
         <h3 className="font-semibold text-yellow-400">Message Channel Debugger</h3>
         <button
           onClick={clearErrors}
-          className="text-xs bg-red-600 hover bg-red-700 px-2 py-1 rounded transition-colors"
-        >
+          className="text-xs bg-red-600 hover bg-red-700 px-2 py-1 rounded transition-colors >
           Clear
         </button>
       </div>
-      
-      <div className="space-y-2">
+      "
+      <div className=""space-y-2">
         <div className="flex justify-between">
           <span>Total Errors:</span>
           <span className={errorCount > 0 ? 'text-red-400' : 'text-green-400'}>

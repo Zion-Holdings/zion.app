@@ -111,10 +111,10 @@ const HelpCenter: NextPage = () => {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -124,46 +124,46 @@ const HelpCenter: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-          <div className="flex" justify-between h-16>
-            <div className="flex items-center>
-              <Link href=/" className="text-2xl font-bold />
-                <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
+          <div className=""flex" justify-between h-16>
+            <div className="flex items-center>"
+              <Link href=/ className=""text-2xl font-bold />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
               </Link>
-            </div>
-            <div className="flex" items-center space-x-4>
+            </div>"
+            <div className=""flex" items-center space-x-4>
               <Link href=/marketplace" className="text-gray-300 hover:text-white transition-colors />
                 Marketplace
-              </Link>
-              <Link href=/about className="text-gray-300" hover:text-white transition-colors />
+              </Link>"
+              <Link href=/about className="text-gray-300 hover:text-white transition-colors />
                 About
-              </Link>
-              <Link href=/contact" className="text-gray-300 hover:text-white transition-colors />
+              </Link>"
+              <Link href=/contact"" className="text-gray-300 hover:text-white transition-colors />
                 Contact
-              </Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white transition-colors />
+              </Link>"
+              <Link href=/auth/login className="text-gray-300 hover:text-white transition-colors />
                 Login
-              </Link>
-              <Link href=/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:transition-all duration-200 />
+              </Link>"
+              <Link href=/auth/signup"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:transition-all duration-200 />
                 Join Zion Now
               </Link>
             </div>
           </div>
         </div>
       </nav>
-
-      <main className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-        {/* Header */}
-        <div className="text-center" mb-12>
-          <h1 className="text-4xl:md:text-5xl:font-bold" text-white mb-4">
+"
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+        {/* Header */}"
+        <div className=""text-center" mb-12>
+          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4"">
             How can we help you?
           </h1>
           <p className="text-xl text-gray-300 mb-8>
             Find answers to your questions and learn how to make the most of Zion's AI-powered marketplace
           </p>
           
-          {/* Search */}
+          {/* Search */}"
           <div className="max-w-2xl:mx-auto">
             <div className="relative">
               <input
@@ -172,9 +172,9 @@ const HelpCenter: NextPage = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent backdrop-blur-sm
-              />
-              <div className="absolute" right-3 top-1/2 transform -translate-y-1/2>
-                <svg className="w-12" h-12 text-gray-400 fill=none" stroke="currentColor" viewBox="0 0 24 24">
+              />"
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2>"
+                <svg className=""w-12" h-12 text-gray-400 fill=none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -187,32 +187,32 @@ const HelpCenter: NextPage = () => {
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className="{`p-4" rounded-lg:border transition-all duration-200 ${
+              onClick={() => setActiveCategory(category.id)}"
+              className="{`p-4 rounded-lg:border transition-all duration-200 ${
                 activeCategory === category.id
                   ? 'bg-purple-600/20 border-purple-500 text-purple-300'
                   : 'bg-white/5 border-white/10 text-gray-300 hover:bg-white/10 hover:border-white/20'
               }`}
-            >
-              <div className="text-2xl:mb-2>{category.icon}</div>
+            >"
+              <div className=""text-2xl:mb-2>{category.icon}</div>
               <div className=font-medium">{category.name}</div>
             </button>
           ))}
         </div>
 
         {/* FAQs */}
-        <div className="max-w-4xl:mx-auto>
-          <h2 className="text-3xl" font-bold text-white mb-8>
+        <div className="max-w-4xl:mx-auto>"
+          <h2 className="text-3xl font-bold text-white mb-8>
             Frequently Asked Questions
           </h2>
-          
-          <div className="space-y-6">
+          "
+          <div className=""space-y-6">
             {filteredFAQs.map((faq, index) => (
-              <div key={index} className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm">
+              <div key={index} className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm"">
                 <h3 className="text-xl font-semibold text-white mb-3>
                   {faq.question}
-                </h3>
-                <p className="text-gray-300" leading-relaxed>
+                </h3>"
+                <p className="text-gray-300 leading-relaxed>
                   {faq.answer}
                 </p>
               </div>
@@ -220,34 +220,34 @@ const HelpCenter: NextPage = () => {
           </div>
         </div>
 
-        {/* Additional Help */}
-        <div className="mt-16" grid grid-cols-1 md:grid-cols-3 gap-8>
-          <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm">
-            <div className="text-3xl:mb-4>📧</div>
-            <h3 className="text-xl" font-semibold text-white mb-2>Contact Support</h3>
-            <p className="text-gray-300" mb-4>
+        {/* Additional Help */}"
+        <div className=""mt-16" grid grid-cols-1 md:grid-cols-3 gap-8>
+          <div className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm"">
+            <div className="text-3xl:mb-4>📧</div>"
+            <h3 className="text-xl font-semibold text-white mb-2>Contact Support</h3>"
+            <p className=""text-gray-300" mb-4>
               Can't find what you're looking for? Our support team is here to help.
             </p>
             <Link href=/contact" className="text-purple-400 hover:text-purple-300 font-medium />
               Get in touch →
             </Link>
           </div>
-
-          <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm>
-            <div className="text-3xl:mb-4">📚</div>
-            <h3 className="text-xl" font-semibold text-white mb-2">Documentation</h3>
+"
+          <div className="bg-white/5 border border-white/10 rounded-lg:p-6 backdrop-blur-sm>"
+            <div className=""text-3xl:mb-4">📚</div>
+            <h3 className="text-xl font-semibold text-white mb-2"">Documentation</h3>
             <p className="text-gray-300 mb-4>
               Detailed guides and tutorials for using Zion's features effectively.
-            </p>
-            <Link href=/blog className="text-purple-400" hover:text-purple-300 font-medium />
+            </p>"
+            <Link href=/blog className="text-purple-400 hover:text-purple-300 font-medium />
               Read guides →
             </Link>
           </div>
-
-          <div className="bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm">
-            <div className="text-3xl:mb-4>💬</div>
-            <h3 className="text-xl" font-semibold text-white mb-2>Community</h3>
-            <p className="text-gray-300" mb-4>
+"
+          <div className=""bg-white/5" border border-white/10 rounded-lg:p-6 backdrop-blur-sm">
+            <div className="text-3xl:mb-4>💬</div>"
+            <h3 className="text-xl font-semibold text-white mb-2>Community</h3>"
+            <p className=""text-gray-300" mb-4>
               Connect with other users and share tips in our community forum.
             </p>
             <Link href=/marketplace" className="text-purple-400 hover:text-purple-300 font-medium />
@@ -257,29 +257,29 @@ const HelpCenter: NextPage = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black/40" backdrop-blur-md:border-t border-white/10 mt-16>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-          <div className="text-center" text-gray-400">
+      {/* Footer */}"
+      <footer className="bg-black/40 backdrop-blur-md:border-t border-white/10 mt-16>"
+        <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
+          <div className="text-center text-gray-400"">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>
         </div>
       </footer>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>
-          <div className="flex" justify-around items-center py-2>
-            <button className="flex" flex-col items-center p-2 text-gray-400 hover:text-white>
-              <Home className="w-5" h-5" />
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>"
+          <div className="flex justify-around items-center py-2>"
+            <button className=""flex" flex-col items-center p-2 text-gray-400 hover:text-white>
+              <Home className="w-5 h-5"" />
               <span className="text-xs>Home</span>
-            </button>
-            <button className="flex" flex-col items-center p-2 text-gray-400 hover:text-white>
-              <Search className="w-5" h-5 />
+            </button>"
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white>"
+              <Search className=""w-5" h-5 />
               <span className=text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white>
-              <User className="w-5" h-5 />
-              <span className=text-xs">Profile</span>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white>"
+              <User className="w-5 h-5 />"
+              <span className=text-xs"">Profile</span>
             </button>
           </div>
         </div>
@@ -293,4 +293,4 @@ const HelpCenter: NextPage = () => {
 
 };
 
-export default HelpCenter 
+export default HelpCenter )))

@@ -280,10 +280,10 @@ const AIPoweredRecommendationsPage: NextPage = () => {
   return (
     <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -294,25 +294,25 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden>
-        <div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+      <div className="relative overflow-hidden>"
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>"
+        <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
           <div className=text-center">
             <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
               AI-Powered Recommendations
-            </h1>
-            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+            </h1>"
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Discover personalized recommendations powered by advanced machine learning algorithms. 
               Get the best products, services, and talents tailored to your specific needs and preferences.
-            </p>
-            <div className="flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+            </p>"
+            <div className=""flex" flex-wrap justify-center gap-4>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>🎯 95% Accuracy</span>
+              </div>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+                <span className=""text-white" font-semibold>⚡ Real-time Updates</span>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3>
-                <span className="text-white" font-semibold>⚡ Real-time Updates</span>
-              </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>🧠 Deep Learning</span>
               </div>
             </div>
@@ -320,26 +320,26 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-        {isLoading ? (
-          <div className="flex" justify-center items-center py-40>
-            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+      {/* Main Content */}"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+        {isLoading ? ("
+          <div className=""flex" justify-center items-center py-40>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8>
-            {/* Filters Sidebar */}
+            {/* Filters Sidebar */}"
             <div className="lg:col-span-1">
-              <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 sticky top-6>
-                <h3 className="text-xl" font-semibold text-white mb-4">Filters</h3>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 sticky top-6>"
+                <h3 className=""text-xl" font-semibold text-white mb-4">Filters</h3>
                 
                 {/* Category Filter */}
-                <div className="mb-6>
-                  <label className="block" text-sm font-medium text-gray-300 mb-2>Category</label>
+                <div className="mb-6>"
+                  <label className="block text-sm font-medium text-gray-300 mb-2>Category</label>
                   <select
                     value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                    onChange={(e) => setSelectedCategory(e.target.value)}"
+                    className=""w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                   >
                     {categories.map(category => (
                       <option key={category} value={category} className=bg-slate-800">
@@ -350,32 +350,32 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                 </div>
 
                 {/* Type Filter */}
-                <div className="mb-6>
-                  <label className="block" text-sm font-medium text-gray-300 mb-2>Type</label>
+                <div className="mb-6>"
+                  <label className="block text-sm font-medium text-gray-300 mb-2>Type</label>
                   <select
                     value={filterType}
-                    onChange={(e) => setFilterType(e.target.value)}
-                    className="w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
+                    onChange={(e) => setFilterType(e.target.value)}"
+                    className=""w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
                   >
-                    <option value=all" className="bg-slate-800>All Types</option>
+                    <option value=all" className="bg-slate-800>All Types</option>"
                     <option value=product className="bg-slate-800">Products</option>
-                    <option value=service" className="bg-slate-800>Services</option>
+                    <option value=service" className="bg-slate-800>Services</option>"
                     <option value=talent className="bg-slate-800">Talents</option>
                     <option value=equipment" className="bg-slate-800>Equipment</option>
                   </select>
                 </div>
 
-                {/* Sort By */}
+                {/* Sort By */}"
                 <div className="mb-6">
-                  <label className="block" text-sm font-medium text-gray-300 mb-2>Sort By</label>
+                  <label className="block text-sm font-medium text-gray-300 mb-2>Sort By</label>
                   <select
                     value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500"
+                    onChange={(e) => setSortBy(e.target.value as any)}"
+                    className=""w-full" bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500"
                   >
-                    <option value="confidence" className="bg-slate-800>Confidence Score</option>
+                    <option value="confidence" className="bg-slate-800>Confidence Score</option>"
                     <option value=rating className="bg-slate-800">Rating</option>
-                    <option value=price" className="bg-slate-800>Price</option>
+                    <option value=price" className="bg-slate-800>Price</option>"
                     <option value=aiScore className="bg-slate-800">AI Score</option>
                   </select>
                 </div>
@@ -388,14 +388,14 @@ const AIPoweredRecommendationsPage: NextPage = () => {
             </div>
 
             {/* Recommendations Grid */}
-            <div className="lg:col-span-3>
-              <div className="grid" grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6>
-                {filteredRecommendations.map((recommendation) => (
-                  <div key={recommendation.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 hover:bg-white/15 transition-all duration-300 border border-white/10>
+            <div className="lg:col-span-3>"
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6>
+                {filteredRecommendations.map((recommendation) => ("
+                  <div key={recommendation.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 hover:bg-white/15 transition-all duration-300 border border-white/10>
                     {/* Header */}
-                    <div className="flex" items-start justify-between mb-4">
-                      <div className="flex items-center space-x-2>
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${
+                    <div className="flex items-start justify-between mb-4"">
+                      <div className="flex items-center space-x-2>"
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
                           recommendation.type === 'product' ? 'bg-blue-500/20 text-blue-300' :
                           recommendation.type === 'service' ? 'bg-green-500/20 text-green-300' :
                           recommendation.type === 'talent' ? 'bg-purple-500/20 text-purple-300' :
@@ -403,38 +403,38 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                         }`}>
                           {recommendation.type.charAt(0).toUpperCase() + recommendation.type.slice(1)}
                         </span>
-                        {recommendation.trending && (
-                          <span className="px-4" py-3 rounded-full text-xs font-medium bg-red-500/20 text-red-300>
+                        {recommendation.trending && ("
+                          <span className=""px-4" py-3 rounded-full text-xs font-medium bg-red-500/20 text-red-300>
                             Trending
                           </span>
                         )},
 {recommendation.featured && (
-                          <span className="px-4" py-3 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300">
+                          <span className="px-4 py-3 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300"">
                             Featured
                           </span>
                         )}
                       </div>
-                      <div className="text-right>
-                        <div className="{`text-sm:font-semibold" ${getConfidenceColor(recommendation.confidence)}`}>
+                      <div className="text-right>"
+                        <div className="{`text-sm:font-semibold ${getConfidenceColor(recommendation.confidence)}`}>
                           {Math.round(recommendation.confidence * 100)}%
-                        </div>
-                        <div className="text-xs" text-gray-400>
+                        </div>"
+                        <div className=""text-xs" text-gray-400>
                           {getConfidenceText(recommendation.confidence)}
                         </div>
                       </div>
                     </div>
 
                     {/* Image Placeholder */}
-                    <div className="w-full" h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg:mb-4 flex items-center justify-center">
+                    <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg:mb-4 flex items-center justify-center"">
                       <div className="text-4xl>📦</div>
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-lg" font-semibold text-white mb-2>{recommendation.title}</h3>
-                    <p className="text-gray-300" text-sm:mb-3 line-clamp-2>{recommendation.description}</p>
+                    {/* Content */}"
+                    <h3 className="text-lg font-semibold text-white mb-2>{recommendation.title}</h3>"
+                    <p className=""text-gray-300" text-sm:mb-3 line-clamp-2>{recommendation.description}</p>
 
                     {/* Tags */}
-                    <div className="flex" flex-wrap gap-1 mb-3">
+                    <div className="flex flex-wrap gap-1 mb-3"">
                       {recommendation.tags.slice(0, 3).map((tag, index) => (
                         <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300>
                           {tag}
@@ -442,49 +442,49 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                       ))}
                     </div>
 
-                    {/* Stats */}
-                    <div className="flex" items-center justify-between mb-4>
-                      <div className="flex" items-center space-x-4>
+                    {/* Stats */}"
+                    <div className="flex items-center justify-between mb-4>"
+                      <div className=""flex" items-center space-x-4>
                         {recommendation.rating && (
-                          <div className="flex" items-center space-x-1">
-                            <span className="text-yellow-400>★</span>
-                            <span className="text-white" text-sm>{recommendation.rating}</span>
-                            <span className="text-gray-400" text-xs>({recommendation.reviewCount})</span>
+                          <div className="flex items-center space-x-1"">
+                            <span className="text-yellow-400>★</span>"
+                            <span className="text-white text-sm>{recommendation.rating}</span>"
+                            <span className=""text-gray-400" text-xs>({recommendation.reviewCount})</span>
                           </div>
                         )}
                         {recommendation.price && (
-                          <div className="text-white" font-semibold">
+                          <div className="text-white font-semibold"">
                             ${recommendation.price.toLocaleString()}
                           </div>
                         )}
                       </div>
-                      <div className="text-right>
-                        <div className="text-xs" text-gray-400>AI Score</div>
-                        <div className="text-sm:font-semibold" text-purple-400>
+                      <div className="text-right>"
+                        <div className="text-xs text-gray-400>AI Score</div>"
+                        <div className=""text-sm:font-semibold" text-purple-400>
                           {Math.round(recommendation.aiScore * 100)}%
                         </div>
                       </div>
                     </div>
 
                     {/* Reason */}
-                    <div className="bg-white/5" rounded-lg:p-3 mb-4">
-                      <div className="text-xs text-gray-400 mb-1>Why recommended:</div>
+                    <div className="bg-white/5 rounded-lg:p-3 mb-4"">
+                      <div className="text-xs text-gray-400 mb-1>Why recommended:</div>"
                       <div className="text-sm:text-gray-300">{recommendation.reason}</div>
                     </div>
 
                     {/* Action Button */}
-                    <button className="w-full" bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300 transform hover:scale-105>
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300 transform hover:scale-105>
                       View Details
                     </button>
                   </div>
                 ))}
               </div>
 
-              {filteredRecommendations.length === 0 && (
-                <div className="text-center" py-32">
-                  <div className="text-6xl:mb-4>🔍</div>
-                  <h3 className="text-xl" font-semibold text-white mb-2>No recommendations found</h3>
-                  <p className="text-gray-400">Try adjusting your filters to see more recommendations.</p>
+              {filteredRecommendations.length === 0 && ("
+                <div className=""text-center" py-32">
+                  <div className="text-6xl:mb-4>🔍</div>"
+                  <h3 className="text-xl font-semibold text-white mb-2>No recommendations found</h3>"
+                  <p className=""text-gray-400">Try adjusting your filters to see more recommendations.</p>
                 </div>
               )}
             </div>
@@ -494,13 +494,13 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         {/* Recommendation Engines Section */},
 {!isLoading && (
           <div className=mt-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center>AI Recommendation Engines</h2>
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
-              {recommendationEngines.map((engine) => (
-                <div key={engine.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                  <div className="flex" items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white>{engine.name}</h3>
-                    <span className="{`px-4" py-3 rounded-full text-xs font-medium ${
+            <h2 className="text-3xl font-bold text-white mb-8 text-center>AI Recommendation Engines</h2>"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
+              {recommendationEngines.map((engine) => ("
+                <div key={engine.id} className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                  <div className="flex items-center justify-between mb-4"">
+                    <h3 className="text-lg font-semibold text-white>{engine.name}</h3>"
+                    <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
                       engine.status === 'active' ? 'bg-green-500/20 text-green-300' :
                       engine.status === 'training' ? 'bg-yellow-500/20 text-yellow-300' :
                       'bg-red-500/20 text-red-300'
@@ -508,30 +508,30 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                       {engine.status}
                     </span>
                   </div>
-                  
-                  <div className="space-y-3">
+                  "
+                  <div className=""space-y-3">
                     <div>
-                      <div className="flex" justify-between text-sm">
-                        <span className="text-gray-400>Accuracy</span>
+                      <div className="flex justify-between text-sm"">
+                        <span className="text-gray-400>Accuracy</span>"
                         <span className="text-white">{Math.round(engine.accuracy * 100)}%</span>
                       </div>
-                      <div className="w-full" bg-gray-700 rounded-full h-2 mt-1>
-                        <div className="bg-green-500" h-2 rounded-full" style={{ width: `${engine.accuracy * 100}%` }}></div>
+                      <div className="w-full bg-gray-700 rounded-full h-2 mt-1>"
+                        <div className=""bg-green-500" h-2 rounded-full" style={{ width: `${engine.accuracy * 100}%` }}></div>
                       </div>
                     </div>
                     
                     <div>
-                      <div className="flex justify-between text-sm>
+                      <div className="flex justify-between text-sm>"
                         <span className="text-gray-400">Coverage</span>
                         <span className="text-white">{Math.round(engine.coverage * 100)}%</span>
                       </div>
-                      <div className="w-full" bg-gray-700 rounded-full h-2 mt-1">
+                      <div className="w-full bg-gray-700 rounded-full h-2 mt-1"">
                         <div className="bg-blue-500 h-2 rounded-full style={{ width: `${engine.coverage * 100}%` }}></div>
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="mt-4" text-xs text-gray-400>
+                  "
+                  <div className="mt-4 text-xs text-gray-400>
                     <div>Version: {engine.modelVersion}</div>
                     <div>Last trained: {engine.lastTrained.toLocaleDateString()}</div>
                   </div>
@@ -542,24 +542,24 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         )}
 
         {/* Analytics Section */},
-{!isLoading && analytics && (
-          <div className="mt-16">
-            <h2 className="text-3xl" font-bold text-white mb-8 text-center">Recommendation Analytics</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                <div className="text-3xl" font-bold text-white mb-2>{analytics.totalRecommendations.toLocaleString()}</div>
+{!isLoading && analytics && ("
+          <div className=""mt-16">
+            <h2 className="text-3xl font-bold text-white mb-8 text-center"">Recommendation Analytics</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className=""text-3xl" font-bold text-white mb-2>{analytics.totalRecommendations.toLocaleString()}</div>
                 <div className=text-gray-400">Total Recommendations</div>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                <div className="text-3xl" font-bold text-white mb-2>{Math.round(analytics.clickThroughRate * 100)}%</div>
-                <div className="text-gray-400">Click Through Rate</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className="text-3xl font-bold text-white mb-2>{Math.round(analytics.clickThroughRate * 100)}%</div>"
+                <div className=""text-gray-400">Click Through Rate</div>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                <div className="text-3xl font-bold text-white mb-2>{Math.round(analytics.conversionRate * 100)}%</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
+                <div className="text-3xl font-bold text-white mb-2>{Math.round(analytics.conversionRate * 100)}%</div>"
                 <div className="text-gray-400">Conversion Rate</div>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                <div className="text-3xl" font-bold text-white mb-2">{analytics.averageRating.toFixed(1)}</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                <div className=""text-3xl" font-bold text-white mb-2">{analytics.averageRating.toFixed(1)}</div>
                 <div className="text-gray-400>Average Rating</div>
               </div>
             </div>
@@ -567,21 +567,21 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         )}
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
+      {/* CTA Section */}"
+      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16>"
+        <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
           <div className=text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Get Personalized Recommendations?
-            </h2>
-            <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
+            </h2>"
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Our AI-powered recommendation system learns from your preferences and behavior to provide you with the most relevant suggestions.
-            </p>
-            <div className="flex" flex-col sm:flex-row gap-4 justify-center>
+            </p>"
+            <div className=""flex" flex-col sm:flex-row gap-4 justify-center>
               <Link href=/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
                 Get Started
-              </Link>
-              <Link href=/ai-service-matcher className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
+              </Link>"
+              <Link href=/ai-service-matcher className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Try AI Matcher
               </Link>
             </div>
@@ -598,4 +598,4 @@ const AIPoweredRecommendationsPage: NextPage = () => {
 
 };
 
-export default AIPoweredRecommendationsPage 
+export default AIPoweredRecommendationsPage )))))))))))))))))))))))))

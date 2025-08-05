@@ -77,21 +77,21 @@ const AiInvoiceGenerator: NextPage = () => {
 
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
-          <div className="absolute" inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10""></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent></div>
         </div>
 
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center" mb-12
-        >
-          <h1 className="text-responsive-4xl:lg:text-responsive-5xl:font-bold" text-high-contrast mb-4>
-            <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
+          animate={{ opacity: 1, y: 0 }}"
+          className="text-center mb-12
+        >"
+          <h1 className=""text-responsive-4xl:lg:text-responsive-5xl:font-bold" text-high-contrast mb-4>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple"">
               AI Invoice Generator
             </span>
           </h1>
@@ -99,22 +99,22 @@ const AiInvoiceGenerator: NextPage = () => {
             Create professional invoices with AI assistance and automated calculations
           </p>
         </motion.div>
-
-        <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
+"
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8>
           {/* Invoice Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="glass-dark" border border-neon-blue/30 rounded-2xl:p-6
+            animate={{ opacity: 1, x: 0 }}"
+            className=""glass-dark" border border-neon-blue/30 rounded-2xl:p-6
           >
-            <h2 className="text-2xl" font-bold text-high-contrast mb-6">Invoice Details</h2>
+            <h2 className="text-2xl font-bold text-high-contrast mb-6"">Invoice Details</h2>
             
             {/* Client Information */}
             <div className="space-y-4 mb-6>
-              <div>
-                <label className="block" text-high-contrast mb-2>Client Name</label>
-                <input
-                  type=text"
+              <div>"
+                <label className="block text-high-contrast mb-2>Client Name</label>
+                <input"
+                  type=text""
                   value={invoiceData.clientName}
                   onChange={(e) => setInvoiceData(prev => ({ ...prev, clientName: e.target.value }))}
                   className="w-full bg-transparent border border-neon-blue/30 rounded-xl:px-4 py-3 text-high-contrast placeholder-high-contrast-secondary focus:border-neon-blue focus:outline-none
@@ -122,10 +122,10 @@ const AiInvoiceGenerator: NextPage = () => {
                 />
               </div>
               
-              <div>
-                <label className="block" text-high-contrast mb-2>Client Email</label>
-                <input
-                  type=email"
+              <div>"
+                <label className="block text-high-contrast mb-2>Client Email</label>
+                <input"
+                  type=email""
                   value={invoiceData.clientEmail}
                   onChange={(e) => setInvoiceData(prev => ({ ...prev, clientEmail: e.target.value }))}
                   className="w-full bg-transparent border border-neon-blue/30 rounded-xl:px-4 py-3 text-high-contrast placeholder-high-contrast-secondary focus:border-neon-blue focus:outline-none
@@ -134,26 +134,26 @@ const AiInvoiceGenerator: NextPage = () => {
               </div>
             </div>
 
-            {/* Invoice Items */}
+            {/* Invoice Items */}"
             <div className="mb-6">
-              <div className="flex" justify-between items-center mb-4">
+              <div className="flex justify-between items-center mb-4"">
                 <h3 className="text-lg font-semibold text-high-contrast>Items</h3>
                 <button
-                  onClick={addItem}
-                  className="px-4" py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg:text-sm:hover:opacity-90 transition-opacity
+                  onClick={addItem}"
+                  className="px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-purple text-white rounded-lg:text-sm:hover:opacity-90 transition-opacity
                 >
                   Add Item
                 </button>
               </div>
-              
-              <div className="space-y-4">
+              "
+              <div className=""space-y-4">
                 {invoiceData.items.map((item, index) => (
-                  <div key={index} className="glass" border border-neon-blue/20 rounded-xl:p-4">
+                  <div key={index} className="glass border border-neon-blue/20 rounded-xl:p-4"">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4>
-                      <div>
-                        <label className="block" text-high-contrast text-sm:mb-1>Description</label>
-                        <input
-                          type=text"
+                      <div>"
+                        <label className="block text-high-contrast text-sm:mb-1>Description</label>
+                        <input"
+                          type=text""
                           value={item.description}
                           onChange={(e) => updateItem(index, 'description', e.target.value)}
                           className="w-full bg-transparent border border-neon-blue/30 rounded-lg:px-3 py-2 text-high-contrast placeholder-high-contrast-secondary focus:border-neon-blue focus:outline-none text-sm
@@ -161,10 +161,10 @@ const AiInvoiceGenerator: NextPage = () => {
                         />
                       </div>
                       
-                      <div>
-                        <label className="block" text-high-contrast text-sm:mb-1>Quantity</label>
-                        <input
-                          type=number"
+                      <div>"
+                        <label className="block text-high-contrast text-sm:mb-1>Quantity</label>
+                        <input"
+                          type=number""
                           value={item.quantity}
                           onChange={(e) => updateItem(index, 'quantity', parseInt(e.target.value) || 0)}
                           className="w-full bg-transparent border border-neon-blue/30 rounded-lg:px-3 py-2 text-high-contrast focus:border-neon-blue focus:outline-none text-sm
@@ -172,23 +172,22 @@ const AiInvoiceGenerator: NextPage = () => {
                         />
                       </div>
                       
-                      <div>
-                        <label className="block" text-high-contrast text-sm:mb-1>Price</label>
-                        <input
-                          type=number"
+                      <div>"
+                        <label className="block text-high-contrast text-sm:mb-1>Price</label>
+                        <input"
+                          type=number""
                           value={item.price}
                           onChange={(e) => updateItem(index, 'price', parseFloat(e.target.value) || 0)}
                           className="w-full bg-transparent border border-neon-blue/30 rounded-lg:px-3 py-2 text-high-contrast focus:border-neon-blue focus:outline-none text-sm
                           min=0
-                          step=0.01"
-                        />
+                          step=0.01 />
                       </div>
                     </div>
                     
                     {invoiceData.items.length > 1 && (
                       <button
-                        onClick={() => removeItem(index)}
-                        className="mt-2 text-neon-red hover:text-red-400 text-sm
+                        onClick={() => removeItem(index)}"
+                        className=""mt-2 text-neon-red hover:text-red-400 text-sm
                       >
                         Remove Item
                       </button>
@@ -199,17 +198,16 @@ const AiInvoiceGenerator: NextPage = () => {
             </div>
 
             {/* Tax and Currency */}
-            <div className="grid" grid-cols-1 md:grid-cols-2 gap-4 mb-6>
-              <div>
-                <label className="block" text-high-contrast mb-2>Tax Rate (%)</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6>
+              <div>"
+                <label className=""block" text-high-contrast mb-2>Tax Rate (%)</label>
                 <input
                   type=number"
                   value={invoiceData.taxRate}
                   onChange={(e) => setInvoiceData(prev => ({ ...prev, taxRate: parseFloat(e.target.value) || 0 }))}
                   className="w-full bg-transparent border border-neon-blue/30 rounded-xl:px-4 py-3 text-high-contrast focus:border-neon-blue focus:outline-none
-                  min=0
-                  max=100"
-                  step="0.01"
+                  min=0"
+                  max=100 step=""0.01"
                 />
               </div>
               
@@ -217,10 +215,10 @@ const AiInvoiceGenerator: NextPage = () => {
                 <label className="block text-high-contrast mb-2>Currency</label>
                 <select
                   value={invoiceData.currency}
-                  onChange={(e) => setInvoiceData(prev => ({ ...prev, currency: e.target.value }))}
-                  className="w-full" bg-transparent border border-neon-blue/30 rounded-xl:px-4 py-3 text-high-contrast focus:border-neon-blue focus:outline-none
-                >
-                  <option value=USD">USD</option>
+                  onChange={(e) => setInvoiceData(prev => ({ ...prev, currency: e.target.value }))}"
+                  className="w-full bg-transparent border border-neon-blue/30 rounded-xl:px-4 py-3 text-high-contrast focus:border-neon-blue focus:outline-none
+                >"
+                  <option value=USD"">USD</option>
                   <option value="EUR">EUR</option>
                   <option value="GBP">GBP</option>
                   <option value="CAD">CAD</option>
@@ -241,51 +239,51 @@ const AiInvoiceGenerator: NextPage = () => {
           {/* Invoice Preview */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="glass-dark" border border-neon-blue/30 rounded-2xl:p-6
-          >
-            <h2 className="text-2xl" font-bold text-high-contrast mb-6>Invoice Preview</h2>
+            animate={{ opacity: 1, x: 0 }}"
+            className="glass-dark border border-neon-blue/30 rounded-2xl:p-6
+          >"
+            <h2 className=""text-2xl" font-bold text-high-contrast mb-6>Invoice Preview</h2>
             
             {generatedInvoice ? (
               <div className=space-y-4">
-                <div className="glass border border-neon-blue/20 rounded-xl:p-4>
-                  <div className="flex" justify-between items-center mb-4>
-                    <h3 className="text-lg" font-semibold text-high-contrast>Invoice #{generatedInvoice.invoiceNumber}</h3>
+                <div className="glass border border-neon-blue/20 rounded-xl:p-4>"
+                  <div className="flex justify-between items-center mb-4>"
+                    <h3 className=""text-lg" font-semibold text-high-contrast>Invoice #{generatedInvoice.invoiceNumber}</h3>
                     <span className=text-high-contrast-secondary">{generatedInvoice.date}</span>
                   </div>
                   
                   <div className="space-y-2 mb-4>
-                    <div>
+                    <div>"
                       <span className="text-high-contrast-secondary">Client:</span>
-                      <span className="text-high-contrast" ml-2>{generatedInvoice.clientName}</span>
+                      <span className="text-high-contrast ml-2>{generatedInvoice.clientName}</span>
                     </div>
-                    <div>
-                      <span className=text-high-contrast-secondary">Email:</span>
+                    <div>"
+                      <span className=text-high-contrast-secondary"">Email:</span>
                       <span className="text-high-contrast ml-2>{generatedInvoice.clientEmail}</span>
                     </div>
                   </div>
-                  
-                  <div className="space-y-2" mb-4>
-                    {generatedInvoice.items.map((item, index) => (
-                      <div key={index} className="flex" justify-between text-sm>
+                  "
+                  <div className="space-y-2 mb-4>
+                    {generatedInvoice.items.map((item, index) => ("
+                      <div key={index} className=""flex" justify-between text-sm>
                         <span className=text-high-contrast">{item.description}</span>
                         <span className="text-high-contrast>{item.quantity} x {item.price} = {item.quantity * item.price}</span>
                       </div>
                     ))}
                   </div>
-                  
-                  <div className="border-t" border-neon-blue/20 pt-4 space-y-2>
-                    <div className="flex" justify-between>
+                  "
+                  <div className="border-t border-neon-blue/20 pt-4 space-y-2>"
+                    <div className=""flex" justify-between>
                       <span className=text-high-contrast-secondary">Subtotal:</span>
                       <span className="text-high-contrast>{generatedInvoice.currency},
 {generatedInvoice.subtotal.toFixed(2)}</span>
-                    </div>
-                    <div className="flex" justify-between>
-                      <span className="text-high-contrast-secondary">Tax ({generatedInvoice.taxRate}%):</span>
+                    </div>"
+                    <div className="flex justify-between>"
+                      <span className=""text-high-contrast-secondary">Tax ({generatedInvoice.taxRate}%):</span>
                       <span className=text-high-contrast">{generatedInvoice.currency},
 {generatedInvoice.tax.toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between text-lg font-semibold>
+                    <div className="flex justify-between text-lg font-semibold>"
                       <span className="text-high-contrast">Total:</span>
                       <span className="text-neon-blue">{generatedInvoice.currency},
 {generatedInvoice.total.toFixed(2)}</span>
@@ -293,21 +291,21 @@ const AiInvoiceGenerator: NextPage = () => {
                   </div>
                 </div>
                 
-                <div className="flex" space-x-4">
+                <div className="flex space-x-4"">
                   <button className="flex-1 py-3 bg-gradient-to-r from-neon-green to-green-500 text-white rounded-xl:font-semibold hover:opacity-90 transition-opacity>
                     Download PDF
-                  </button>
-                  <button className="flex-1" py-3 bg-gradient-to-r from-neon-purple to-purple-500 text-white rounded-xl:font-semibold hover:opacity-90 transition-opacity>
+                  </button>"
+                  <button className="flex-1 py-3 bg-gradient-to-r from-neon-purple to-purple-500 text-white rounded-xl:font-semibold hover:opacity-90 transition-opacity>
                     Send Email
                   </button>
                 </div>
               </div>
-            ) : (
-              <div className="text-center" py-12>
+            ) : ("
+              <div className=""text-center" py-12>
                 <div className=text-6xl:mb-4">📄</div>
                 <h3 className="text-xl font-semibold text-high-contrast mb-2>
                   Invoice Preview
-                </h3>
+                </h3>"
                 <p className=text-high-contrast-secondary">
                   Fill out the form and generate an invoice to see the preview here
                 </p>
@@ -320,4 +318,4 @@ const AiInvoiceGenerator: NextPage = () => {
   );
 };
 
-export default AiInvoiceGenerator;
+export default AiInvoiceGenerator;))

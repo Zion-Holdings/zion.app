@@ -39,23 +39,23 @@ export default function ContributeTranslations() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
-        <div className="max-w-xl:w-full bg-black/30 rounded-xl:shadow-lg:p-8 border border-white/10>
-          <h1 className="text-3xl" font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text>Contribute Translations</h1>
-          <p className="text-gray-300" mb-8 text-center>Join our global community and help make Zion Marketplace accessible in more languages. Submit your translation for any key below!</p>
+        <div className="max-w-xl:w-full bg-black/30 rounded-xl:shadow-lg:p-8 border border-white/10>"
+          <h1 className="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text>Contribute Translations</h1>"
+          <p className=""text-gray-300" mb-8 text-center>Join our global community and help make Zion Marketplace accessible in more languages. Submit your translation for any key below!</p>
           {submitted ? (
-            <div className="bg-green-600/20" text-green-300 rounded-lg:p-4 text-center font-semibold mb-4">Thank you for your contribution! Our team will review your translation.</div>
+            <div className="bg-green-600/20 text-green-300 rounded-lg:p-4 text-center font-semibold mb-4"">Thank you for your contribution! Our team will review your translation.</div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6>
-              <div>
-                <label htmlFor=language className="block" text-sm font-medium mb-1>Language</label>
-                <select
-                  id=language"
+              <div>"
+                <label htmlFor=language className="block text-sm font-medium mb-1>Language</label>
+                <select"
+                  id=language""
                   name="language"
                   value={form.language}
                   onChange={handleChange}
@@ -68,8 +68,8 @@ export default function ContributeTranslations() {
                   ))}
                 </select>
               </div>
-              <div>
-                <label htmlFor=key" className="block text-sm font-medium mb-1>Translation Key</label>
+              <div>"
+                <label htmlFor=key className=""block text-sm font-medium mb-1>Translation Key</label>
                 <input
                   id=key
                   name=key"
@@ -81,10 +81,10 @@ export default function ContributeTranslations() {
                   required
                 />
               </div>
-              <div>
-                <label htmlFor=translation className="block" text-sm font-medium mb-1>Translation</label>
-                <input
-                  id=translation"
+              <div>"
+                <label htmlFor=translation className="block text-sm font-medium mb-1>Translation</label>
+                <input"
+                  id=translation""
                   name="translation"
                   type="text"
                   value={form.translation}
@@ -93,12 +93,12 @@ export default function ContributeTranslations() {
                   className="w-full px-4 py-4 rounded-lg:bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500
                   required
                 />
-              </div>
-              <button type=submit className="w-full" py-3 rounded-lg:bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg:shadow-lg:hover:from-pink-500 hover:to-purple-500 transition>Submit Translation</button>
+              </div>"
+              <button type=submit className="w-full py-3 rounded-lg:bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg:shadow-lg:hover:from-pink-500 hover:to-purple-500 transition>Submit Translation</button>
             </form>
-          )}
-          <div className="mt-8" text-center">
-            <Link href="/multi-language" className="text-purple-300 hover:underline" />Back to Multi-Language Page</Link>
+          )}"
+          <div className=""mt-8" text-center">
+            <Link href="/multi-language" className="text-purple-300 hover:underline />Back to Multi-Language Page</Link>
           </div>
         </div>
       </div>
@@ -109,5 +109,5 @@ export default function ContributeTranslations() {
   </div>
 
   </div>
-);
-}
+);"
+}"

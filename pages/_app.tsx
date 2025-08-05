@@ -26,8 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <ChatProvider>
             <div className="relative min-h-screen cyber-bg flex>
               <ParticleEffect />
-              <Sidebar />
-              <div className="flex-1" lg:ml-80 relative z-10">
+              <Sidebar />"
+              <div className="flex-1 lg:ml-80 relative z-10"">
                 <Component {...pageProps} />
                 <ChatWrapper />
                 <MessageChannelDebugger />

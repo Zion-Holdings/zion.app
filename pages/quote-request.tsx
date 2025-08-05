@@ -114,17 +114,17 @@ const QuoteRequestForm = () => {
 
   const renderStep1 = () => (
     <div className="space-y-6>
-      <div>
-        <h3 className="text-lg" font-semibold mb-4 text-responsive-lg>Select Services</h3>
-        <div className="grid" grid-cols-2 gap-3>
+      <div>"
+        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Services</h3>"
+        <div className=""grid" grid-cols-2 gap-3>
           {services.map(service => (
-            <label key={service} className="flex" items-center space-x-2 cursor-pointer">
+            <label key={service} className="flex items-center space-x-2 cursor-pointer"">
               <input
                 type="checkbox"
                 checked={formData.services.includes(service)}
                 onChange={() => handleMultiSelect('services', service)}
                 className="rounded border-gray-300
-              />
+              />"
               <span className="text-sm:text-responsive-lg">{service}</span>
             </label>
           ))}
@@ -132,33 +132,33 @@ const QuoteRequestForm = () => {
       </div>
 
       <div>
-        <h3 className="text-lg" font-semibold mb-4 text-responsive-lg>Select Talent</h3>
-        <div className="grid" grid-cols-2 gap-3">
+        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Talent</h3>"
+        <div className=""grid" grid-cols-2 gap-3">
           {talent.map(t => (
             <label key={t} className="flex items-center space-x-2 cursor-pointer>
               <input
                 type=checkbox
                 checked={formData.talent.includes(t)}
-                onChange={() => handleMultiSelect('talent', t)}
-                className="rounded" border-gray-300
-              />
-              <span className=text-sm:text-responsive-lg">{t}</span>
+                onChange={() => handleMultiSelect('talent', t)}"
+                className="rounded border-gray-300
+              />"
+              <span className=text-sm:text-responsive-lg"">{t}</span>
             </label>
           ))}
         </div>
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Equipment</h3>
-        <div className="grid" grid-cols-2 gap-3>
-          {equipment.map(eq => (
-            <label key={eq} className="flex" items-center space-x-2 cursor-pointer>
+        <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Select Equipment</h3>"
+        <div className="grid grid-cols-2 gap-3>
+          {equipment.map(eq => ("
+            <label key={eq} className=""flex" items-center space-x-2 cursor-pointer>
               <input
                 type=checkbox"
                 checked={formData.equipment.includes(eq)}
                 onChange={() => handleMultiSelect('equipment', eq)}
                 className="rounded border-gray-300
-              />
+              />"
               <span className="text-sm:text-responsive-lg">{eq}</span>
             </label>
           ))}
@@ -170,7 +170,7 @@ const QuoteRequestForm = () => {
   const renderStep2 = () => (
     <div className="space-y-6">
       <div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg">Project Name</label>
+        <label className="block text-sm font-medium mb-2 text-responsive-lg"">Project Name</label>
         <input
           type="text"
           value={formData.projectName}
@@ -180,12 +180,12 @@ const QuoteRequestForm = () => {
         />
       </div>
 
-      <div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg>Project Type</label>
+      <div>"
+        <label className="block text-sm font-medium mb-2 text-responsive-lg>Project Type</label>
         <select
           value={formData.projectType}
-          onChange={(e) => handleInputChange('projectType', e.target.value)}
-          className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500"
+          onChange={(e) => handleInputChange('projectType', e.target.value)}"
+          className=""w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500"
         >
           <option value="">Select project type</option>
           <option value="commercial">Commercial</option>
@@ -205,17 +205,17 @@ const QuoteRequestForm = () => {
         <textarea
           value={formData.projectDescription}
           onChange={(e) => handleInputChange('projectDescription', e.target.value)}
-          rows={4}
-          className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
-          placeholder=Describe your project in detail..."
+          rows={4}"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500"
+          placeholder=Describe your project in detail...""
         />
       </div>
 
       <div className="grid grid-cols-2 gap-4>
-        <div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg>Location</label>
-          <input
-            type=text"
+        <div>"
+          <label className="block text-sm font-medium mb-2 text-responsive-lg>Location</label>
+          <input"
+            type=text""
             value={formData.location}
             onChange={(e) => handleInputChange('location', e.target.value)}
             className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
@@ -223,10 +223,10 @@ const QuoteRequestForm = () => {
           />
         </div>
 
-        <div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg>Duration</label>
-          <input
-            type=text"
+        <div>"
+          <label className="block text-sm font-medium mb-2 text-responsive-lg>Duration</label>
+          <input"
+            type=text""
             value={formData.duration}
             onChange={(e) => handleInputChange('duration', e.target.value)}
             className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
@@ -237,21 +237,21 @@ const QuoteRequestForm = () => {
     </div>
   );
 
-  const renderStep3 = () => (
+  const renderStep3 = () => ("
     <div className="space-y-6">
-      <div className="grid" grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4"">
         <div>
           <label className="block text-sm font-medium mb-2 text-responsive-lg>Start Date</label>
           <input
             type=date
             value={formData.startDate}
-            onChange={(e) => handleInputChange('startDate', e.target.value)}
-            className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
+            onChange={(e) => handleInputChange('startDate', e.target.value)}"
+            className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
           />
         </div>
 
-        <div>
-          <label className="block" text-sm font-medium mb-2 text-responsive-lg">End Date</label>
+        <div>"
+          <label className=""block" text-sm font-medium mb-2 text-responsive-lg">End Date</label>
           <input
             type="date"
             value={formData.endDate}
@@ -261,12 +261,12 @@ const QuoteRequestForm = () => {
         </div>
       </div>
 
-      <div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg>Urgency Level</label>
+      <div>"
+        <label className="block text-sm font-medium mb-2 text-responsive-lg>Urgency Level</label>
         <select
           value={formData.urgency}
-          onChange={(e) => handleInputChange('urgency', e.target.value)}
-          className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
+          onChange={(e) => handleInputChange('urgency', e.target.value)}"
+          className=""w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
         >
           <option value=">Select urgency level</option>
           {urgencyLevels.map(level => (
@@ -279,12 +279,12 @@ const QuoteRequestForm = () => {
 
   const renderStep4 = () => (
     <div className="space-y-6>
-      <div>
-        <label className="block" text-sm font-medium mb-2 text-responsive-lg>Budget Range</label>
+      <div>"
+        <label className="block text-sm font-medium mb-2 text-responsive-lg>Budget Range</label>
         <select
           value={formData.budgetRange}
-          onChange={(e) => handleInputChange('budgetRange', e.target.value)}
-          className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
+          onChange={(e) => handleInputChange('budgetRange', e.target.value)}"
+          className=""w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
         >
           <option value=">Select budget range</option>
           {budgetRanges.map(range => (
@@ -298,17 +298,17 @@ const QuoteRequestForm = () => {
         <textarea
           value={formData.budgetDetails}
           onChange={(e) => handleInputChange('budgetDetails', e.target.value)}
-          rows={3}
-          className="w-full" px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
-          placeholder=Any specific budget requirements or constraints..."
+          rows={3}"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500"
+          placeholder=Any specific budget requirements or constraints...""
         />
       </div>
 
-      <div className="bg-blue-50 p-4 rounded-md>
-        <h4 className="font-medium" text-blue-900 mb-2 text-responsive-lg>Contact Information</h4>
-        <div className="grid" grid-cols-2 gap-4>
+      <div className="bg-blue-50 p-4 rounded-md>"
+        <h4 className="font-medium text-blue-900 mb-2 text-responsive-lg>Contact Information</h4>"
+        <div className=""grid" grid-cols-2 gap-4>
           <div>
-            <label className="block" text-sm font-medium mb-2 text-responsive-lg">Full Name</label>
+            <label className="block text-sm font-medium mb-2 text-responsive-lg"">Full Name</label>
             <input
               type="text"
               value={formData.clientName}
@@ -318,10 +318,10 @@ const QuoteRequestForm = () => {
             />
           </div>
 
-          <div>
-            <label className="block" text-sm font-medium mb-2 text-responsive-lg>Company</label>
-            <input
-              type=text"
+          <div>"
+            <label className="block text-sm font-medium mb-2 text-responsive-lg>Company</label>
+            <input"
+              type=text""
               value={formData.company}
               onChange={(e) => handleInputChange('company', e.target.value)}
               className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
@@ -329,10 +329,10 @@ const QuoteRequestForm = () => {
             />
           </div>
 
-          <div>
-            <label className="block" text-sm font-medium mb-2 text-responsive-lg>Email</label>
-            <input
-              type=email"
+          <div>"
+            <label className="block text-sm font-medium mb-2 text-responsive-lg>Email</label>
+            <input"
+              type=email""
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
               className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
@@ -340,10 +340,10 @@ const QuoteRequestForm = () => {
             />
           </div>
 
-          <div>
-            <label className="block" text-sm font-medium mb-2 text-responsive-lg>Phone</label>
-            <input
-              type=tel"
+          <div>"
+            <label className="block text-sm font-medium mb-2 text-responsive-lg>Phone</label>
+            <input"
+              type=tel""
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               className="w-full px-3 py-4 border border-gray-300 rounded-md:focus outline-none focus ring-2 focus ring-blue-500
@@ -355,36 +355,36 @@ const QuoteRequestForm = () => {
     </div>
   );
 
-  const renderStep5 = () => (
+  const renderStep5 = () => ("
     <div className="space-y-6">
-      <div className="bg-gray-50" p-6 rounded-lg">
+      <div className="bg-gray-50 p-6 rounded-lg"">
         <h3 className="text-lg font-semibold mb-4 text-responsive-lg>Quote Request Summary</h3>
-        
+        "
         <div className="space-y-4">
           <div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg>Services Selected</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg">
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Services Selected</h4>"
+            <p className=""text-sm:text-gray-600" text-responsive-lg">
               {formData.services.length > 0 ? formData.services.join(', ') : 'None selected'}
             </p>
           </div>
 
           <div>
-            <h4 className="font-medium text-gray-700 text-responsive-lg>Talent Required</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Talent Required</h4>"
+            <p className="text-sm:text-gray-600 text-responsive-lg>
               {formData.talent.length > 0 ? formData.talent.join(', ') : 'None selected'}
             </p>
           </div>
 
-          <div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg>Equipment Needed</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg">
+          <div>"
+            <h4 className=""font-medium" text-gray-700 text-responsive-lg>Equipment Needed</h4>
+            <p className="text-sm:text-gray-600 text-responsive-lg"">
               {formData.equipment.length > 0 ? formData.equipment.join(', ') : 'None selected'}
             </p>
           </div>
 
           <div>
-            <h4 className="font-medium text-gray-700 text-responsive-lg>Project Details</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Project Details</h4>"
+            <p className="text-sm:text-gray-600 text-responsive-lg>
               <strong>Name:</strong> {formData.projectName || 'Not specified'}<br />
               <strong>Type:</strong> {formData.projectType || 'Not specified'}<br />
               <strong>Location:</strong> {formData.location || 'Not specified'}<br />
@@ -392,9 +392,9 @@ const QuoteRequestForm = () => {
             </p>
           </div>
 
-          <div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg>Timeline</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg">
+          <div>"
+            <h4 className=""font-medium" text-gray-700 text-responsive-lg>Timeline</h4>
+            <p className="text-sm:text-gray-600 text-responsive-lg"">
               <strong>Start:</strong> {formData.startDate || 'Not specified'}<br />
               <strong>End:</strong> {formData.endDate || 'Not specified'}<br />
               <strong>Urgency:</strong> {formData.urgency || 'Not specified'}
@@ -402,8 +402,8 @@ const QuoteRequestForm = () => {
           </div>
 
           <div>
-            <h4 className="font-medium text-gray-700 text-responsive-lg>Budget</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg>
+            <h4 className="font-medium text-gray-700 text-responsive-lg>Budget</h4>"
+            <p className="text-sm:text-gray-600 text-responsive-lg>
               <strong>Range:</strong> {formData.budgetRange || 'Not specified'}<br />
               {formData.budgetDetails && (
                 <div><strong>Details:</strong> {formData.budgetDetails}<br /></div>
@@ -411,9 +411,9 @@ const QuoteRequestForm = () => {
             </p>
           </div>
 
-          <div>
-            <h4 className="font-medium" text-gray-700 text-responsive-lg>Contact Information</h4>
-            <p className="text-sm:text-gray-600" text-responsive-lg">
+          <div>"
+            <h4 className=""font-medium" text-gray-700 text-responsive-lg>Contact Information</h4>
+            <p className="text-sm:text-gray-600 text-responsive-lg"">
               <strong>Name:</strong> {formData.clientName || 'Not specified'}<br />
               <strong>Company:</strong> {formData.company || 'Not specified'}<br />
               <strong>Email:</strong> {formData.email || 'Not specified'}<br />
@@ -423,8 +423,8 @@ const QuoteRequestForm = () => {
         </div>
       </div>
 
-      <div className="bg-blue-50 p-4 rounded-md>
-        <p className="text-sm:text-blue-800" text-responsive-lg>
+      <div className="bg-blue-50 p-4 rounded-md>"
+        <p className="text-sm:text-blue-800 text-responsive-lg>
           By submitting this quote request, you agree to receive a response within 24 hours. 
           Our team will review your requirements and provide a detailed quote tailored to your needs.
         </p>
@@ -452,19 +452,19 @@ const QuoteRequestForm = () => {
   ];
 
   return (
-    <div>
-      <div className="min-h-screen" bg-gray-50 py-8>
-      <div className="max-w-4xl:mx-auto" px-4">
-        <div className="bg-white rounded-lg:shadow-lg:p-8>
+    <div>"
+      <div className=""min-h-screen" bg-gray-50 py-8>
+      <div className="max-w-4xl:mx-auto px-4"">
+        <div className="bg-white rounded-lg:shadow-lg:p-8>"
           <div className="mb-8">
-            <h1 className="text-3xl" font-bold text-gray-900 mb-2 text-responsive-lg>Request a Quote</h1>
-            <p className="text-gray-600" text-responsive-lg">Tell us about your project and we'll provide a detailed quote</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2 text-responsive-lg>Request a Quote</h1>"
+            <p className=""text-gray-600" text-responsive-lg">Tell us about your project and we'll provide a detailed quote</p>
           </div>
 
-          <div className="mb-8>
-            <div className="flex" items-center justify-between mb-4>
-              {stepTitles.map((title, index) => (
-                <div key={index} className="flex" items-center>
+          <div className="mb-8>"
+            <div className="flex items-center justify-between mb-4>
+              {stepTitles.map((title, index) => ("
+                <div key={index} className=""flex" items-center>
                   <div className={`w-12" h-12 rounded-full flex items-center justify-center text-sm font-medium ${
                     currentStep > index + 1 
                       ? 'bg-green-500 text-white' 
@@ -479,8 +479,8 @@ const QuoteRequestForm = () => {
                   }`}>
                     {title}
                   </span>
-                  {index < stepTitles.length - 1 && (
-                    <div className="{`w-16" h-1 mx-4 ${
+                  {index < stepTitles.length - 1 && ("
+                    <div className="{`w-16 h-1 mx-4 ${
                       currentStep > index + 1 ? 'bg-green-500' : 'bg-gray-200'
                     }`} />
                   )}
@@ -488,12 +488,12 @@ const QuoteRequestForm = () => {
               ))}
             </div>
           </div>
-
-          <div className="mb-8">
+"
+          <div className=""mb-8">
             {renderStepContent()}
           </div>
 
-          <div className="flex" justify-between">
+          <div className="flex justify-between"">
             <button
               onClick={prevStep}
               disabled={currentStep === 1}
@@ -505,19 +505,19 @@ const QuoteRequestForm = () => {
             >
               Previous
             </button>
-
-            <div className="flex" space-x-4>
+"
+            <div className="flex space-x-4>
               {currentStep < 5 ? (
                 <button
-                  onClick={nextStep}
-                  className="px-6" py-4 bg-blue-500 text-white rounded-md:font-medium hover:bg-blue-600 text-responsive-lg
+                  onClick={nextStep}"
+                  className=""px-6" py-4 bg-blue-500 text-white rounded-md:font-medium hover:bg-blue-600 text-responsive-lg
                 >
                   Next
                 </button>
               ) : (
                 <button
                   onClick={handleSubmit}
-                  className="px-6" py-4 bg-green-500 text-white rounded-md:font-medium hover:bg-green-600 text-responsive-lg"
+                  className="px-6 py-4 bg-green-500 text-white rounded-md:font-medium hover:bg-green-600 text-responsive-lg""
                 >
                   Submit Quote Request
                 </button>
@@ -532,4 +532,4 @@ const QuoteRequestForm = () => {
   );
 };
 
-export default QuoteRequestForm;
+export default QuoteRequestForm;))

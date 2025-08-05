@@ -66,5 +66,4 @@ export default async function handler(
       success: false,
       error: 'Internal server error'
     });
-  }
-} 
+  };

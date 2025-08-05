@@ -528,16 +528,16 @@ const AIPoweredIoTPage: NextPage = () => {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
-        <div className="text-center>
-          <div className="inline-flex" items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>
-            <svg className="animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <div className="text-center>"
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
+            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
             <span className="text-lg font-medium>Loading AI-Powered IoT...</span>
@@ -547,47 +547,47 @@ const AIPoweredIoTPage: NextPage = () => {
     );
   }
 
-  return (
-    <div className="relative" z-10 container-responsive py-8>
+  return ("
+    <div className="relative z-10 container-responsive py-8>
       <Head>
-        <title>AI-Powered IoT - Zion</title>
-        <meta name=description" content="Intelligent device management, sensor analytics, automation, and AI-driven IoT optimization" />
+        <title>AI-Powered IoT - Zion</title>"
+        <meta name=description"" content="Intelligent device management, sensor analytics, automation, and AI-driven IoT optimization" />
         <meta name="keywords" content="AI IoT, device management, sensor analytics, automation, Zion" />
         <link rel="icon" href="/favicon.ico" />
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8>
-          <div className="flex" justify-between h-16>
-            <div className="flex items-center>
-              <Link href=/" className="flex-shrink-0 />
-                <h1 className="text-2xl" font-bold text-white>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>"
+          <div className=""flex" justify-between h-16>
+            <div className="flex items-center>"
+              <Link href=/ className=""flex-shrink-0 />
+                <h1 className="text-2xl font-bold text-white>"
+                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden" md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8"">
               <Link href="/ai-powered-blockchain" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Blockchain
-              </Link>
-              <Link href=/ai-powered-machine-learning className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/ai-powered-machine-learning className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 ML
-              </Link>
-              <Link href=/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
+              </Link>"
+              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium transition-colors />
                 Login
               </Link>
             </div>
           </div>
         </div>
       </nav>
-
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-        {/* Header */}
-        <div className="text-center" mb-8>
-          <h1 className="text-4xl:md:text-5xl:font-bold" text-white mb-4">
+"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        {/* Header */}"
+        <div className=""text-center" mb-8>
+          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4"">
             AI-Powered IoT
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto>
@@ -596,9 +596,9 @@ const AIPoweredIoTPage: NextPage = () => {
           </p>
         </div>
 
-        {/* Tab Selector */}
-        <div className="flex" justify-center mb-8>
-          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
+        {/* Tab Selector */}"
+        <div className="flex justify-center mb-8>"
+          <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
 { id: 'devices', name: 'Devices', icon: '📱' }
@@ -625,24 +625,24 @@ const AIPoweredIoTPage: NextPage = () => {
         {/* Analytics Overview */},
 {selectedView === 'overview' && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => (
-              <div key={metric.id} className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-                <div className="flex items-center justify-between mb-4>
-                  <h3 className="text-lg" font-semibold text-white">{metric.metric}</h3>
+            {analytics.map((metric) => ("
+              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+                <div className=""flex items-center justify-between mb-4>
+                  <h3 className="text-lg font-semibold text-white"">{metric.metric}</h3>
                   <span className="text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
-                
+                "
                 <div className="mb-4">
-                  <div className="text-3xl" font-bold text-white mb-2>{metric.current}</div>
-                  <p className=text-sm:text-gray-400">Target: {metric.target}</p>
+                  <div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
+                  <p className=text-sm:text-gray-400"">Target: {metric.target}</p>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm>
-                  <span className="{`${metric.improvement" > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="flex items-center justify-between text-sm>"
+                  <span className="{`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.improvement > 0 ? '+' : ''},
 {metric.improvement.toFixed(1)}%
-                  </span>
-                  <span className="text-gray-400">{metric.period}</span>
+                  </span>"
+                  <span className=""text-gray-400">{metric.period}</span>
                 </div>
               </div>
             ))}
@@ -651,71 +651,71 @@ const AIPoweredIoTPage: NextPage = () => {
 
         {/* IoT Devices */},
 {selectedView === 'devices' && (
-          <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
             {filteredDevices.map((device) => (
-              <div key={device.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-                <div className="flex" items-start justify-between mb-4>
-                  <div className="flex" items-center space-x-3>
+              <div key={device.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+                <div className="flex items-start justify-between mb-4>"
+                  <div className=""flex" items-center space-x-3>
                     <div className=text-3xl">{getTypeIcon(device.type)}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1>{device.name}</h3>
-                      <p className="text-gray-300" text-sm:capitalize>{device.type}</p>
+                      <h3 className="text-lg font-semibold text-white mb-1>{device.name}</h3>"
+                      <p className="text-gray-300 text-sm:capitalize>{device.type}</p>
                     </div>
-                  </div>
-                  <div className="text-right">
+                  </div>"
+                  <div className=""text-right">
                     <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(device.status)}`}>
                       {device.status.toUpperCase()}
                     </span>
-                    <div className="mt-2>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${device.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                    <div className="mt-2>"
+                      <span className="{`px-4 py-3 rounded text-xs font-medium ${device.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {device.aiEnabled ? 'AI ENABLED' : 'AI DISABLED'}
                       </span>
                     </div>
                   </div>
                 </div>
-
-                <div className="mb-4">
-                  <div className="flex" items-center justify-between mb-2">
-                    <span className="text-sm:text-gray-400>Location:</span>
+"
+                <div className=""mb-4">
+                  <div className="flex items-center justify-between mb-2"">
+                    <span className="text-sm:text-gray-400>Location:</span>"
                     <span className="text-sm:text-white">{device.location}</span>
                   </div>
-                  <div className="flex" items-center justify-between mb-2>
-                    <span className=text-sm:text-gray-400">Battery:</span>
+                  <div className="flex items-center justify-between mb-2>"
+                    <span className=text-sm:text-gray-400"">Battery:</span>
                     <span className="{`text-sm:font-semibold ${getBatteryColor(device.batteryLevel)}`}>
                       {device.batteryLevel}%
                     </span>
                   </div>
                 </div>
-
-                <div className="grid" grid-cols-2 gap-4 mb-4>
-                  <div>
-                    <p className="text-sm:text-gray-400">Data Points</p>
-                    <p className="text-lg" font-semibold text-white">{device.dataPoints.toLocaleString()}</p>
+"
+                <div className="grid grid-cols-2 gap-4 mb-4>
+                  <div>"
+                    <p className=""text-sm:text-gray-400">Data Points</p>
+                    <p className="text-lg font-semibold text-white"">{device.dataPoints.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm:text-gray-400>Response Time</p>
-                    <p className="text-lg" font-semibold text-green-400>{device.performance.responseTime}s</p>
+                    <p className="text-sm:text-gray-400>Response Time</p>"
+                    <p className="text-lg font-semibold text-green-400>{device.performance.responseTime}s</p>
+                  </div>
+                  <div>"
+                    <p className=""text-sm:text-gray-400">Accuracy</p>
+                    <p className="text-lg font-semibold text-blue-400"">{device.performance.accuracy}%</p>
                   </div>
                   <div>
-                    <p className="text-sm:text-gray-400">Accuracy</p>
-                    <p className="text-lg" font-semibold text-blue-400">{device.performance.accuracy}%</p>
-                  </div>
-                  <div>
-                    <p className="text-sm:text-gray-400>Reliability</p>
-                    <p className="text-lg" font-semibold text-orange-400>{device.performance.reliability}%</p>
+                    <p className="text-sm:text-gray-400>Reliability</p>"
+                    <p className="text-lg font-semibold text-orange-400>{device.performance.reliability}%</p>
                   </div>
                 </div>
-
-                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4>
+"
+                <div className=""flex" items-center justify-between text-sm:text-gray-400 mb-4>
                   <span>Auto-Update: {device.autoUpdate ? '✅' : '❌'}</span>
                   <span>Last Seen: {device.lastSeen.toLocaleString()}</span>
                 </div>
 
-                <div className="flex" space-x-3">
+                <div className="flex space-x-3"">
                   <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     View Details
-                  </button>
-                  <button className="border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>"
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Configure
                   </button>
                 </div>
@@ -725,65 +725,65 @@ const AIPoweredIoTPage: NextPage = () => {
         )}
 
         {/* Sensor Data */},
-{selectedView === 'sensors' && (
-          <div className="space-y-6">
+{selectedView === 'sensors' && ("
+          <div className=""space-y-6">
             {sensorData.map((data) => (
-              <div key={data.id} className="bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
-                <div className="flex items-start justify-between mb-4>
-                  <div className="flex" items-center space-x-3>
-                    <div className="text-3xl">{getSensorTypeIcon(data.sensorType)}</div>
+              <div key={data.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"">
+                <div className="flex items-start justify-between mb-4>"
+                  <div className="flex items-center space-x-3>"
+                    <div className=""text-3xl">{getSensorTypeIcon(data.sensorType)}</div>
                     <div>
-                      <h3 className="text-lg" font-semibold text-white mb-1">{data.sensorType.toUpperCase()}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-1"">{data.sensorType.toUpperCase()}</h3>
                       <p className="text-gray-300 text-sm>{data.location}</p>
                     </div>
-                  </div>
+                  </div>"
                   <div className="text-right">
-                    <div className="text-2xl" font-bold text-white mb-1>
+                    <div className="text-2xl font-bold text-white mb-1>
                       {data.value},
 {data.unit}
-                    </div>
-                    <div className="flex" items-center space-x-2">
+                    </div>"
+                    <div className=""flex" items-center space-x-2">
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${data.aiProcessed ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {data.aiProcessed ? 'AI PROCESSED' : 'RAW DATA'}
                       </span>
-                      {data.anomaly && (
-                        <span className="px-4" py-3 rounded text-xs font-medium text-red-400 bg-red-500/20>
+                      {data.anomaly && ("
+                        <span className="px-4 py-3 rounded text-xs font-medium text-red-400 bg-red-500/20>
                           ANOMALY
                         </span>
                       )}
                     </div>
                   </div>
                 </div>
-
-                <div className="grid" grid-cols-2 md:grid-cols-4 gap-4 mb-4>
+"
+                <div className=""grid" grid-cols-2 md:grid-cols-4 gap-4 mb-4>
                   <div>
                     <p className=text-sm:text-gray-400">Device ID</p>
                     <p className="text-sm:font-semibold text-white>{data.deviceId}</p>
                   </div>
-                  <div>
+                  <div>"
                     <p className="text-sm:text-gray-400">Trend</p>
-                    <p className="text-sm:font-semibold" text-blue-400 capitalize>{data.trend}</p>
+                    <p className="text-sm:font-semibold text-blue-400 capitalize>{data.trend}</p>
                   </div>
-                  <div>
-                    <p className=text-sm:text-gray-400">Min Threshold</p>
+                  <div>"
+                    <p className=text-sm:text-gray-400"">Min Threshold</p>
                     <p className="text-sm:font-semibold text-green-400>{data.threshold.min}</p>
                   </div>
-                  <div>
+                  <div>"
                     <p className="text-sm:text-gray-400">Max Threshold</p>
-                    <p className="text-sm:font-semibold" text-orange-400>{data.threshold.max}</p>
+                    <p className="text-sm:font-semibold text-orange-400>{data.threshold.max}</p>
                   </div>
                 </div>
-
-                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4">
+"
+                <div className=""flex" items-center justify-between text-sm:text-gray-400 mb-4">
                   <span>Time: {data.timestamp.toLocaleString()}</span>
                   <span>Critical: {data.threshold.critical ? '⚠️' : '✅'}</span>
                 </div>
 
-                <div className="flex space-x-3>
-                  <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                <div className="flex space-x-3>"
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     View History
-                  </button>
-                  <button className="border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>"
+                  <button className=""border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Configure Alerts
                   </button>
                 </div>
@@ -796,17 +796,17 @@ const AIPoweredIoTPage: NextPage = () => {
 {selectedView === 'automations' && (
           <div className=space-y-6">
             {automations.map((automation) => (
-              <div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-                <div className="flex" items-start justify-between mb-4>
-                  <div>
-                    <h3 className="text-lg" font-semibold text-white mb-2>{automation.name}</h3>
-                    <p className="text-gray-300" text-sm">{automation.description}</p>
+              <div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"
+                <div className="flex items-start justify-between mb-4>
+                  <div>"
+                    <h3 className=""text-lg" font-semibold text-white mb-2>{automation.name}</h3>
+                    <p className="text-gray-300 text-sm"">{automation.description}</p>
                   </div>
-                  <div className="text-right>
-                    <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
+                  <div className="text-right>"
+                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
                       {automation.status.toUpperCase()}
-                    </span>
-                    <div className="mt-2">
+                    </span>"
+                    <div className=""mt-2">
                       <span className={`px-4" py-3 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {automation.aiOptimized ? 'AI OPTIMIZED' : 'MANUAL'}
                       </span>
@@ -815,53 +815,53 @@ const AIPoweredIoTPage: NextPage = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-4>
-                  <div>
+                  <div>"
                     <p className="text-sm:text-gray-400">Executions</p>
-                    <p className="text-lg" font-semibold text-white>{automation.executionCount.toLocaleString()}</p>
+                    <p className="text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p>
                   </div>
-                  <div>
-                    <p className=text-sm:text-gray-400">Success Rate</p>
+                  <div>"
+                    <p className=text-sm:text-gray-400"">Success Rate</p>
                     <p className="text-lg font-semibold text-green-400>{automation.successRate}%</p>
                   </div>
                 </div>
-
+"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400" mb-2>Triggers:</p>
-                  <div className=space-y-2">
+                  <p className="text-sm:text-gray-400 mb-2>Triggers:</p>"
+                  <div className=space-y-2"">
                     {automation.triggers.map((trigger, index) => (
-                      <div key={index} className="bg-white/5 rounded p-2>
-                        <div className="flex" items-center justify-between>
-                          <span className="text-sm:text-white">{trigger.device}</span>
-                          <span className="text-xs" text-gray-400">{trigger.condition}</span>
+                      <div key={index} className="bg-white/5 rounded p-2>"
+                        <div className="flex items-center justify-between>"
+                          <span className=""text-sm:text-white">{trigger.device}</span>
+                          <span className="text-xs text-gray-400"">{trigger.condition}</span>
                         </div>
                         <p className="text-xs text-gray-400>Threshold: {trigger.threshold}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-
+"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400" mb-2>Actions:</p>
-                  <div className=space-y-2">
+                  <p className="text-sm:text-gray-400 mb-2>Actions:</p>"
+                  <div className=space-y-2"">
                     {automation.actions.map((action, index) => (
-                      <div key={index} className="bg-white/5 rounded p-2>
-                        <div className="flex" items-center justify-between>
-                          <span className="text-sm:text-white">{action.device}</span>
-                          <span className="text-xs" text-gray-400">{action.action}</span>
+                      <div key={index} className="bg-white/5 rounded p-2>"
+                        <div className="flex items-center justify-between>"
+                          <span className=""text-sm:text-white">{action.device}</span>
+                          <span className="text-xs text-gray-400"">{action.action}</span>
                         </div>
                         <p className="text-xs text-gray-400>Value: {JSON.stringify(action.value)}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-
-                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4>
+"
+                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4>
                   <span>Last Executed: {automation.lastExecuted.toLocaleString()}</span>
                   <span>ID: {automation.id}</span>
                 </div>
-
-                <div className="flex" space-x-3>
-                  <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
+"
+                <div className=""flex" space-x-3>
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"">
                     View Logs
                   </button>
                   <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
@@ -873,21 +873,21 @@ const AIPoweredIoTPage: NextPage = () => {
           </div>
         )}
 
-        {/* Call to Action */}
-        <div className="mt-12" text-center>
-          <div className="bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className="text-3xl" font-bold text-white mb-4">
+        {/* Call to Action */}"
+        <div className="mt-12 text-center>"
+          <div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
+            <h2 className="text-3xl font-bold text-white mb-4"">
               Connect with IoT Intelligence
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Leverage intelligent IoT technology to manage devices, analyze sensor data, 
               and create automated solutions with AI-driven optimization.
-            </p>
-            <div className="flex" flex-col sm:flex-row gap-4 justify-center>
-              <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+            </p>"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center>"
+              <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Add Device
               </button>
-              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
+              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
                 View Services
               </Link>
             </div>
@@ -903,5 +903,5 @@ const AIPoweredIoTPage: NextPage = () => {
   </div>
 
 };
-
-export default AIPoweredIoTPage 
+"
+export default AIPoweredIoTPage ")

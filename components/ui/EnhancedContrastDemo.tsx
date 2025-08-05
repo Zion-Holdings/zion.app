@@ -153,8 +153,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
               <input
                 type="text"
                 placeholder="Enter your text here"
-                className="w-full p-3 rounded-md bg-high-contrast-secondary border-high-contrast-primary focus-high-contrast"
-                aria-describedby="input-help"
+                className="w-full p-3 rounded-md bg-high-contrast-secondary border-high-contrast-primary focus-high-contrast aria-describedby=""input-help"
               />
               <p id="input-help" className="text-high-contrast-muted text-sm mt-2">
                 This input has enhanced contrast and focus indicators
@@ -223,29 +222,27 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
               </div>
               <div className="progress bg-high-contrast-secondary border-high-contrast-primary rounded-full h-3">
                 <div 
-                  className="progress-bar bg-high-contrast-accent rounded-full h-full transition-all duration-300"
-                  style={{ width: '75%' }}
+                  className="progress-bar bg-high-contrast-accent rounded-full h-full transition-all duration-300 style={{ width: '75%' }}
                 ></div>
               </div>
             </div>
-            
-            <div className="bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
+            "
+            <div className=""bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-high-contrast font-semibold">Upload Progress</span>
                 <span className="text-high-contrast-success font-semibold">100%</span>
               </div>
               <div className="progress bg-high-contrast-secondary border-high-contrast-primary rounded-full h-3">
                 <div 
-                  className="progress-bar bg-high-contrast-success rounded-full h-full transition-all duration-300"
-                  style={{ width: '100%' }}
+                  className="progress-bar bg-high-contrast-success rounded-full h-full transition-all duration-300 style={{ width: '100%' }}
                 ></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Accessibility Features Summary */}
-        <section className="accessibility-summary bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
+        {/* Accessibility Features Summary */}"
+        <section className=""accessibility-summary bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
           <h2 className="text-high-contrast text-2xl font-bold mb-4">Accessibility Features</h2>
           <div className="grid grid-cols-1 md grid-cols-2 gap-6">
             <div>

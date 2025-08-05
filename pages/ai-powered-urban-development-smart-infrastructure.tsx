@@ -426,10 +426,10 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -440,68 +440,68 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-6>
-          <div className="flex" justify-between items-center>
-            <Link href=/" className="text-2xl font-bold text-white />
-              <span className="text-transparent" bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400>Zion</span>
-            </Link>
-            <div className="flex" items-center space-x-4>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6>"
+          <div className=""flex" justify-between items-center>
+            <Link href=/" className="text-2xl font-bold text-white />"
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400>Zion</span>
+            </Link>"
+            <div className=""flex" items-center space-x-4>
               <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Streaming
-              </Link>
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Voice Assistant
-              </Link>
-              <Link href=/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-autonomous-vehicle-transportation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Autonomous Vehicles
-              </Link>
-              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Cryptocurrency
-              </Link>
-              <Link href=/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-space-exploration-satellite-management"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Space Exploration
-              </Link>
-              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-underwater-exploration-marine-research className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Underwater Exploration
-              </Link>
-              <Link href=/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-climate-change-environmental-sustainability"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Climate Change
-              </Link>
-              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-precision-agriculture-smart-farming className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Precision Agriculture
-              </Link>
-              <Link href=/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-healthcare-medical-diagnostics"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Healthcare
-              </Link>
-              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-energy-management-renewable-energy className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Energy Management
-              </Link>
-              <Link href=/ai-powered-manufacturing-industrial-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-manufacturing-industrial-automation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Manufacturing
-              </Link>
-              <Link href=/ai-powered-finance-banking className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-finance-banking className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Finance & Banking
-              </Link>
-              <Link href=/ai-powered-retail-ecommerce" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-retail-ecommerce"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Retail & E-commerce
-              </Link>
-              <Link href=/ai-powered-education-training className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-education-training className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Education & Training
-              </Link>
-              <Link href=/ai-powered-security-cybersecurity" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-security-cybersecurity"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Security & Cybersecurity
-              </Link>
-              <Link href=/ai-powered-entertainment-gaming className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-entertainment-gaming className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Entertainment & Gaming
-              </Link>
-              <Link href=/ai-powered-social-media-community" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/ai-powered-social-media-community"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Social Media & Community
-              </Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
+              </Link>"
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm font-medium />
                 Login
-              </Link>
-              <Link href=/auth/signup" className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-4 py-4 rounded-lg:text-sm font-medium hover:from-indigo-700 hover:to-blue-700 transition-all duration-200 />
+              </Link>"
+              <Link href=/auth/signup"" className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-4 py-4 rounded-lg:text-sm font-medium hover:from-indigo-700 hover:to-blue-700 transition-all duration-200 />
                 Get Started
               </Link>
             </div>
@@ -509,23 +509,23 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-        {/* Hero Section */}
-        <div className="text-center" mb-12>
-          <h1 className="text-5xl:font-bold" text-white mb-6">
+      {/* Main Content */}"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
+        {/* Hero Section */}"
+        <div className=""text-center" mb-12>
+          <h1 className="text-5xl:font-bold text-white mb-6"">
             AI-Powered Urban Development & Smart Infrastructure
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
             Advanced AI-powered urban development and smart infrastructure platform with 
             urban planning, infrastructure management, and intelligent urban development optimization 
             for sustainable and efficient cities.
-          </p>
-          <div className="flex" justify-center space-x-4>
-            <button className="px-8" py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg:font-medium hover:from-indigo-700 hover:to-blue-700 transition-all duration-200>
+          </p>"
+          <div className="flex justify-center space-x-4>"
+            <button className=""px-8" py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg:font-medium hover:from-indigo-700 hover:to-blue-700 transition-all duration-200>
               Plan City
             </button>
-            <button className="px-8" py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg:font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg:font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"">
               View Analytics
             </button>
           </div>
@@ -543,8 +543,8 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
           ].map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setSelectedView(tab.id as any)}
-              className="{`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${
+              onClick={() => setSelectedView(tab.id as any)}"
+              className="{`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -557,22 +557,22 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         </div>
 
         {/* Content Sections */},
-{selectedView === 'overview' && (
-          <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
+{selectedView === 'overview' && ("
+          <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Urban Planning Overview */}
-            <div className="bg-black/20" rounded-lg:p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4>Active Urban Planning</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10"">
+              <h3 className="text-xl font-semibold text-white mb-4>Active Urban Planning</h3>"
               <div className="space-y-4">
                 {urbanPlanning.slice(0, 3).map((planning) => (
-                  <div key={planning.id} className="p-4" bg-white/5 rounded-lg>
-                    <div className="flex" items-center justify-between mb-2">
-                      <h4 className="text-white font-medium>{planning.name}</h4>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(planning.status)} text-white`}>
+                  <div key={planning.id} className="p-4 bg-white/5 rounded-lg>"
+                    <div className=""flex" items-center justify-between mb-2">
+                      <h4 className="text-white font-medium>{planning.name}</h4>"
+                      <span className="{`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(planning.status)} text-white`}>
                         {planning.status}
                       </span>
-                    </div>
-                    <p className="text-high-contrast-tertiary" text-sm:mb-2>{planning.location} • {planning.type}</p>
-                    <div className="flex" items-center space-x-4 text-sm:text-high-contrast-tertiary">
+                    </div>"
+                    <p className=""text-high-contrast-tertiary" text-sm:mb-2>{planning.location} • {planning.type}</p>
+                    <div className="flex items-center space-x-4 text-sm:text-high-contrast-tertiary"">
                       <span>Population: {formatNumber(planning.population)}</span>
                       <span>Efficiency: {planning.efficiencyScore}%</span>
                     </div>
@@ -582,18 +582,18 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
             </div>
 
             {/* Infrastructure Management Overview */}
-            <div className="bg-black/20 rounded-lg:p-6 border border-white/10>
-              <h3 className="text-xl" font-semibold text-white mb-4>Infrastructure Management</h3>
-              <div className="space-y-4">
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+              <h3 className="text-xl font-semibold text-white mb-4>Infrastructure Management</h3>"
+              <div className=""space-y-4">
                 {infrastructureManagement.slice(0, 2).map((infrastructure) => (
-                  <div key={infrastructure.id} className="p-4" bg-white/5 rounded-lg">
-                    <div className="flex items-center justify-between mb-2>
-                      <h4 className="text-white" font-medium>{infrastructure.name}</h4>
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(infrastructure.status)} text-white`}>
+                  <div key={infrastructure.id} className="p-4 bg-white/5 rounded-lg"">
+                    <div className="flex items-center justify-between mb-2>"
+                      <h4 className="text-white font-medium>{infrastructure.name}</h4>"
+                      <span className=""{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(infrastructure.status)} text-white`}>
                         {infrastructure.status}
                       </span>
                     </div>
-                    <p className="text-high-contrast-tertiary" text-sm:mb-2">{infrastructure.location}</p>
+                    <p className="text-high-contrast-tertiary text-sm:mb-2"">{infrastructure.location}</p>
                     <div className="flex items-center space-x-4 text-sm:text-high-contrast-tertiary>
                       <span>Uptime: {infrastructure.uptime}%</span>
                       <span>Efficiency: {infrastructure.efficiency}%</span>
@@ -605,15 +605,15 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
           </div>
         )}
 
-        {selectedView === 'planning' && (
+        {selectedView === 'planning' && ("
           <div className="space-y-6">
             {/* Planning Type Filter */}
-            <div className="flex" space-x-2 overflow-x-auto pb-2>
+            <div className="flex space-x-2 overflow-x-auto pb-2>
               {['all', 'city-planning', 'land-use-optimization', 'zoning-management', 'development-strategy', 'sustainability-planning', 'growth-management'].map((type) => (
                 <button
                   key={type}
-                  onClick={() => setSelectedType(type)}
-                  className={`px-4" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${
+                  onClick={() => setSelectedType(type)}"
+                  className={`px-4"" py-4 rounded-lg:text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -626,32 +626,32 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 
             {/* Urban Planning Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-              {filteredUrbanPlanning.map((planning) => (
-                <div key={planning.id} className="bg-black/20" rounded-lg:p-6 border border-white/10>
-                  <div className="flex" items-center justify-between mb-4>
-                    <h3 className="text-white" font-semibold">{planning.name}</h3>
+              {filteredUrbanPlanning.map((planning) => ("
+                <div key={planning.id} className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+                  <div className=""flex" items-center justify-between mb-4>
+                    <h3 className="text-white font-semibold"">{planning.name}</h3>
                     <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(planning.status)} text-white`}>
                       {planning.status}
                     </span>
-                  </div>
-                  <p className="text-high-contrast-tertiary" text-sm:mb-4>{planning.location} • {planning.type}</p>
-                  <div className="space-y-2" mb-4>
-                    <div className="flex" justify-between text-sm">
-                      <span className="text-high-contrast-tertiary>Population</span>
+                  </div>"
+                  <p className="text-high-contrast-tertiary text-sm:mb-4>{planning.location} • {planning.type}</p>"
+                  <div className=""space-y-2" mb-4>
+                    <div className="flex justify-between text-sm"">
+                      <span className="text-high-contrast-tertiary>Population</span>"
                       <span className="text-white">{formatNumber(planning.population)}</span>
                     </div>
-                    <div className="flex" justify-between text-sm>
-                      <span className=text-high-contrast-tertiary">Area Covered</span>
+                    <div className="flex justify-between text-sm>"
+                      <span className=text-high-contrast-tertiary"">Area Covered</span>
                       <span className="text-white>{planning.areaCovered} km²</span>
                     </div>
-                  </div>
+                  </div>"
                   <div className="space-y-2">
-                    <div className="flex" justify-between text-sm>
-                      <span className=text-high-contrast-tertiary">Efficiency Score</span>
+                    <div className="flex justify-between text-sm>"
+                      <span className=text-high-contrast-tertiary"">Efficiency Score</span>
                       <span className="text-white>{planning.efficiencyScore}%</span>
-                    </div>
-                    <div className="flex" justify-between text-sm>
-                      <span className="text-high-contrast-tertiary">Planning Accuracy</span>
+                    </div>"
+                    <div className="flex justify-between text-sm>"
+                      <span className=""text-high-contrast-tertiary">Planning Accuracy</span>
                       <span className=text-white">{planning.aiAnalysis.planningAccuracy}/10</span>
                     </div>
                   </div>
@@ -662,34 +662,34 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         )}
 
         {selectedView === 'infrastructure' && (
-          <div className="space-y-6>
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-              {infrastructureManagement.map((infrastructure) => (
-                <div key={infrastructure.id} className="bg-black/20" rounded-lg:p-6 border border-white/10>
-                  <div className="flex" items-center justify-between mb-4">
-                    <h3 className="text-white font-semibold>{infrastructure.name}</h3>
-                    <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(infrastructure.status)} text-white`}>
+          <div className="space-y-6>"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              {infrastructureManagement.map((infrastructure) => ("
+                <div key={infrastructure.id} className=""bg-black/20" rounded-lg:p-6 border border-white/10>
+                  <div className="flex items-center justify-between mb-4"">
+                    <h3 className="text-white font-semibold>{infrastructure.name}</h3>"
+                    <span className="{`px-3 py-3 rounded-full text-sm:${getStatusBgColor(infrastructure.status)} text-white`}>
                       {infrastructure.status}
                     </span>
-                  </div>
-                  <p className="text-high-contrast-tertiary" text-sm:mb-4>{infrastructure.location} • {infrastructure.type}</p>
-                  <div className="grid" grid-cols-2 gap-4 mb-4">
-                    <div className="text-center>
-                      <div className="text-2xl" font-bold text-white>{infrastructure.uptime}%</div>
-                      <div className="text-high-contrast-tertiary" text-sm>Uptime</div>
+                  </div>"
+                  <p className=""text-high-contrast-tertiary" text-sm:mb-4>{infrastructure.location} • {infrastructure.type}</p>
+                  <div className="grid grid-cols-2 gap-4 mb-4"">
+                    <div className="text-center>"
+                      <div className="text-2xl font-bold text-white>{infrastructure.uptime}%</div>"
+                      <div className=""text-high-contrast-tertiary" text-sm>Uptime</div>
                     </div>
                     <div className=text-center">
-                      <div className="text-2xl font-bold text-white>{infrastructure.efficiency}%</div>
-                      <div className="text-high-contrast-tertiary" text-sm>Efficiency</div>
+                      <div className="text-2xl font-bold text-white>{infrastructure.efficiency}%</div>"
+                      <div className="text-high-contrast-tertiary text-sm>Efficiency</div>
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex" justify-between text-sm">
-                      <span className="text-high-contrast-tertiary>Capacity</span>
+                  </div>"
+                  <div className=""space-y-2">
+                    <div className="flex justify-between text-sm"">
+                      <span className="text-high-contrast-tertiary>Capacity</span>"
                       <span className="text-white">{formatNumber(infrastructure.capacity)} MW</span>
                     </div>
-                    <div className="flex" justify-between text-sm>
-                      <span className=text-high-contrast-tertiary">Operational Efficiency</span>
+                    <div className="flex justify-between text-sm>"
+                      <span className=text-high-contrast-tertiary"">Operational Efficiency</span>
                       <span className="text-white>{infrastructure.aiAnalysis.operationalEfficiency}/10</span>
                     </div>
                   </div>
@@ -699,35 +699,35 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
           </div>
         )}
 
-        {selectedView === 'analytics' && (
+        {selectedView === 'analytics' && ("
           <div className="space-y-6">
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
-              {smartCityAnalytics.map((analytics) => (
-                <div key={analytics.id} className="bg-black/20" rounded-lg:p-6 border border-white/10">
-                  <div className="flex items-center justify-between mb-4>
-                    <h3 className="text-white" font-semibold>{analytics.name}</h3>
-                    <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              {smartCityAnalytics.map((analytics) => ("
+                <div key={analytics.id} className=""bg-black/20" rounded-lg:p-6 border border-white/10">
+                  <div className="flex items-center justify-between mb-4>"
+                    <h3 className="text-white font-semibold>{analytics.name}</h3>"
+                    <span className=""{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
                     </span>
                   </div>
-                  <p className="text-high-contrast-tertiary" text-sm:mb-4">{analytics.location} • {analytics.type}</p>
-                  <div className="grid grid-cols-2 gap-4 mb-4>
+                  <p className="text-high-contrast-tertiary text-sm:mb-4"">{analytics.location} • {analytics.type}</p>
+                  <div className="grid grid-cols-2 gap-4 mb-4>"
                     <div className="text-center">
-                      <div className="text-2xl" font-bold text-white>{formatNumber(analytics.dataPoints)}</div>
-                      <div className="text-high-contrast-tertiary" text-sm">Data Points</div>
+                      <div className="text-2xl font-bold text-white>{formatNumber(analytics.dataPoints)}</div>"
+                      <div className=""text-high-contrast-tertiary" text-sm">Data Points</div>
                     </div>
-                    <div className="text-center>
-                      <div className="text-2xl" font-bold text-white>{analytics.accuracy}%</div>
-                      <div className="text-high-contrast-tertiary" text-sm>Accuracy</div>
+                    <div className="text-center>"
+                      <div className="text-2xl font-bold text-white>{analytics.accuracy}%</div>"
+                      <div className=""text-high-contrast-tertiary" text-sm>Accuracy</div>
                     </div>
                   </div>
                   <div className=space-y-2">
-                    <div className="flex justify-between text-sm>
+                    <div className="flex justify-between text-sm>"
                       <span className="text-high-contrast-tertiary">Response Time</span>
                       <span className="text-white">{analytics.responseTime}s</span>
                     </div>
-                    <div className="flex" justify-between text-sm">
-                      <span className="text-high-contrast-tertiary>Data Accuracy</span>
+                    <div className="flex justify-between text-sm"">
+                      <span className="text-high-contrast-tertiary>Data Accuracy</span>"
                       <span className="text-white">{analytics.aiAnalysis.dataAccuracy}/10</span>
                     </div>
                   </div>
@@ -739,32 +739,32 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 
         {selectedView === 'development' && (
           <div className="space-y-6">
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
               {urbanDevelopment.map((development) => (
-                <div key={development.id} className="bg-black/20 rounded-lg:p-6 border border-white/10>
-                  <div className="flex" items-center justify-between mb-4>
-                    <h3 className="text-white" font-semibold>{development.name}</h3>
+                <div key={development.id} className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+                  <div className="flex items-center justify-between mb-4>"
+                    <h3 className=""text-white" font-semibold>{development.name}</h3>
                     <span className={`px-3" py-3 rounded-full text-sm:${getStatusBgColor(development.status)} text-white`}>
                       {development.status}
                     </span>
                   </div>
-                  <p className="text-high-contrast-tertiary text-sm:mb-4>{development.type} development</p>
-                  <div className="grid" grid-cols-2 gap-4 mb-4>
-                    <div className="text-center">
-                      <div className="text-2xl" font-bold text-white">{development.metrics.totalProjects}</div>
+                  <p className="text-high-contrast-tertiary text-sm:mb-4>{development.type} development</p>"
+                  <div className="grid grid-cols-2 gap-4 mb-4>"
+                    <div className=""text-center">
+                      <div className="text-2xl font-bold text-white"">{development.metrics.totalProjects}</div>
                       <div className="text-high-contrast-tertiary text-sm>Total Projects</div>
-                    </div>
+                    </div>"
                     <div className="text-center">
-                      <div className="text-2xl" font-bold text-white>{development.metrics.completionRate}%</div>
-                      <div className="text-high-contrast-tertiary" text-sm">Completion Rate</div>
+                      <div className="text-2xl font-bold text-white>{development.metrics.completionRate}%</div>"
+                      <div className=""text-high-contrast-tertiary" text-sm">Completion Rate</div>
                     </div>
                   </div>
-                  <div className="space-y-2>
-                    <div className="flex" justify-between text-sm>
-                      <span className="text-high-contrast-tertiary">Cost Savings</span>
+                  <div className="space-y-2>"
+                    <div className="flex justify-between text-sm>"
+                      <span className=""text-high-contrast-tertiary">Cost Savings</span>
                       <span className=text-white">{formatCurrency(development.metrics.costSavings)}</span>
                     </div>
-                    <div className="flex justify-between text-sm>
+                    <div className="flex justify-between text-sm>"
                       <span className="text-high-contrast-tertiary">Impact Score</span>
                       <span className="text-white">{development.aiAnalysis.impactScore}/10</span>
                     </div>
@@ -778,42 +778,42 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className=space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
-              <div className="bg-black/20" rounded-lg:p-6 border border-white/10 text-center>
-                <div className="text-3xl" font-bold text-white>{formatNumber(data.totalPopulation)}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
+                <div className=""text-3xl" font-bold text-white>{formatNumber(data.totalPopulation)}</div>
                 <div className=text-high-contrast-tertiary">Total Population</div>
               </div>
-              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>
-                <div className="text-3xl" font-bold text-white>{data.activeProjects}</div>
-                <div className="text-high-contrast-tertiary">Active Projects</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
+                <div className="text-3xl font-bold text-white>{data.activeProjects}</div>"
+                <div className=""text-high-contrast-tertiary">Active Projects</div>
               </div>
-              <div className="bg-black/20" rounded-lg:p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white>{data.infrastructureEfficiency}%</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center"">
+                <div className="text-3xl font-bold text-white>{data.infrastructureEfficiency}%</div>"
                 <div className="text-high-contrast-tertiary">Infrastructure Efficiency</div>
               </div>
-              <div className="bg-black/20" rounded-lg:p-6 border border-white/10 text-center>
-                <div className="text-3xl" font-bold text-white">{data.sustainabilityIndex}%</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center>"
+                <div className=""text-3xl" font-bold text-white">{data.sustainabilityIndex}%</div>
                 <div className="text-high-contrast-tertiary>Sustainability Index</div>
               </div>
             </div>
 
-            {/* AI Insights */}
-            <div className="bg-black/20" rounded-lg:p-6 border border-white/10>
-              <h3 className="text-xl" font-semibold text-white mb-4>AI Urban Development Insights</h3>
+            {/* AI Insights */}"
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10>"
+              <h3 className=""text-xl" font-semibold text-white mb-4>AI Urban Development Insights</h3>
               <div className=space-y-4">
                 {data.aiInsights.map((insight) => (
-                  <div key={insight.id} className="p-4 bg-white/5 rounded-lg>
-                    <div className="flex" items-center space-x-3 mb-2>
-                      <span className="text-2xl">{getInsightIcon(insight.impact)}</span>
+                  <div key={insight.id} className="p-4 bg-white/5 rounded-lg>"
+                    <div className="flex items-center space-x-3 mb-2>"
+                      <span className=""text-2xl">{getInsightIcon(insight.impact)}</span>
                       <h4 className={`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
                       <span className="text-sm:text-high-contrast-tertiary>{Math.round(insight.confidence * 100)}% confidence</span>
-                    </div>
-                    <p className="text-gray-300" mb-3>{insight.description}</p>
-                    <div className="space-y-2">
+                    </div>"
+                    <p className="text-gray-300 mb-3>{insight.description}</p>"
+                    <div className=""space-y-2">
                       {insight.recommendations.map((rec, index) => (
-                        <div key={index} className="flex" items-center space-x-2 text-sm:text-high-contrast-tertiary">
+                        <div key={index} className="flex items-center space-x-2 text-sm:text-high-contrast-tertiary"">
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
@@ -828,58 +828,58 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-black/20 border-t border-white/10 mt-16>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
-          <div className="grid" grid-cols-1 md:grid-cols-4 gap-8>
+      <div className="bg-black/20 border-t border-white/10 mt-16>"
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>"
+          <div className=""grid" grid-cols-1 md:grid-cols-4 gap-8>
             <div>
-              <h3 className="text-white" font-semibold mb-4">Zion</h3>
+              <h3 className="text-white font-semibold mb-4"">Zion</h3>
               <p className="text-gray-400 text-sm>
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.
               </p>
             </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Features</h4>
-              <ul className="space-y-2" text-sm:text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting" className="hover:text-white />Live Streaming</Link></li>
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover:text-white" />Voice Assistant</Link></li>
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover:text-white />Autonomous Vehicles</Link></li>
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover:text-white" />Cryptocurrency</Link></li>
-                <li><Link href=/ai-powered-space-exploration-satellite-management" className="hover:text-white />Space Exploration</Link></li>
-                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover:text-white" />Underwater Exploration</Link></li>
-                <li><Link href=/ai-powered-climate-change-environmental-sustainability" className="hover:text-white />Climate Change</Link></li>
-                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover:text-white" />Precision Agriculture</Link></li>
-                <li><Link href=/ai-powered-healthcare-medical-diagnostics" className="hover:text-white />Healthcare</Link></li>
-                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover:text-white" />Energy Management</Link></li>
-                <li><Link href=/ai-powered-manufacturing-industrial-automation" className="hover:text-white />Manufacturing</Link></li>
-                <li><Link href=/ai-powered-finance-banking className="hover:text-white" />Finance & Banking</Link></li>
-                <li><Link href=/ai-powered-retail-ecommerce" className="hover:text-white />Retail & E-commerce</Link></li>
-                <li><Link href=/ai-powered-education-training className="hover:text-white" />Education & Training</Link></li>
-                <li><Link href=/ai-powered-security-cybersecurity" className="hover:text-white />Security & Cybersecurity</Link></li>
-                <li><Link href=/ai-powered-entertainment-gaming className="hover:text-white" />Entertainment & Gaming</Link></li>
-                <li><Link href=/ai-powered-social-media-community" className="hover:text-white />Social Media & Community</Link></li>
-                <li><Link href=/ai-powered-urban-development-smart-infrastructure className="hover:text-white" />Urban Development & Smart Infrastructure</Link></li>
+            <div>"
+              <h4 className="text-white font-semibold mb-4>Features</h4>"
+              <ul className=""space-y-2" text-sm:text-gray-400>
+                <li><Link href=/ai-powered-live-streaming-broadcasting" className="hover:text-white />Live Streaming</Link></li>"
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover:text-white />Voice Assistant</Link></li>"
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation"" className="hover:text-white />Autonomous Vehicles</Link></li>"
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover:text-white />Cryptocurrency</Link></li>"
+                <li><Link href=/ai-powered-space-exploration-satellite-management"" className="hover:text-white />Space Exploration</Link></li>"
+                <li><Link href=/ai-powered-underwater-exploration-marine-research className="hover:text-white />Underwater Exploration</Link></li>"
+                <li><Link href=/ai-powered-climate-change-environmental-sustainability"" className="hover:text-white />Climate Change</Link></li>"
+                <li><Link href=/ai-powered-precision-agriculture-smart-farming className="hover:text-white />Precision Agriculture</Link></li>"
+                <li><Link href=/ai-powered-healthcare-medical-diagnostics"" className="hover:text-white />Healthcare</Link></li>"
+                <li><Link href=/ai-powered-energy-management-renewable-energy className="hover:text-white />Energy Management</Link></li>"
+                <li><Link href=/ai-powered-manufacturing-industrial-automation"" className="hover:text-white />Manufacturing</Link></li>"
+                <li><Link href=/ai-powered-finance-banking className="hover:text-white />Finance & Banking</Link></li>"
+                <li><Link href=/ai-powered-retail-ecommerce"" className="hover:text-white />Retail & E-commerce</Link></li>"
+                <li><Link href=/ai-powered-education-training className="hover:text-white />Education & Training</Link></li>"
+                <li><Link href=/ai-powered-security-cybersecurity"" className="hover:text-white />Security & Cybersecurity</Link></li>"
+                <li><Link href=/ai-powered-entertainment-gaming className="hover:text-white />Entertainment & Gaming</Link></li>"
+                <li><Link href=/ai-powered-social-media-community"" className="hover:text-white />Social Media & Community</Link></li>"
+                <li><Link href=/ai-powered-urban-development-smart-infrastructure className="hover:text-white />Urban Development & Smart Infrastructure</Link></li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm:text-gray-400>
-                <li><Link href=/marketplace className="hover:text-white" />Marketplace</Link></li>
-                <li><Link href=/services" className="hover:text-white />IT Services</Link></li>
-                <li><Link href=/talents className="hover:text-white" />AI Talents</Link></li>
-                <li><Link href=/equipment" className="hover:text-white />Equipment</Link></li>
+            <div>"
+              <h4 className=""text-white" font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-sm:text-gray-400>"
+                <li><Link href=/marketplace className="hover:text-white />Marketplace</Link></li>"
+                <li><Link href=/services"" className="hover:text-white />IT Services</Link></li>"
+                <li><Link href=/talents className="hover:text-white />AI Talents</Link></li>"
+                <li><Link href=/equipment"" className="hover:text-white />Equipment</Link></li>
               </ul>
             </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Support</h4>
-              <ul className="space-y-2" text-sm:text-gray-400>
-                <li><Link href=/help-desk-support" className="hover:text-white />Help Desk</Link></li>
-                <li><Link href=/contact className="hover:text-white" />Contact</Link></li>
-                <li><Link href=/docs" className="hover:text-white />Documentation</Link></li>
-                <li><Link href=/status className="hover:text-white" />Status</Link></li>
+            <div>"
+              <h4 className="text-white font-semibold mb-4>Support</h4>"
+              <ul className=""space-y-2" text-sm:text-gray-400>
+                <li><Link href=/help-desk-support" className="hover:text-white />Help Desk</Link></li>"
+                <li><Link href=/contact className="hover:text-white />Contact</Link></li>"
+                <li><Link href=/docs"" className="hover:text-white />Documentation</Link></li>"
+                <li><Link href=/status className="hover:text-white />Status</Link></li>
               </ul>
             </div>
-          </div>
-          <div className="border-t" border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">
+          </div>"
+          <div className=""border-t" border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">
             <p>&copy; 2025 Zion Tech Group. All rights reserved.</p>
           </div>
         </div>
@@ -894,4 +894,4 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 
 };
 
-export default AIPoweredUrbanDevelopmentSmartInfrastructurePage 
+export default AIPoweredUrbanDevelopmentSmartInfrastructurePage )))))))))))))))))))

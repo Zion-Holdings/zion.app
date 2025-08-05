@@ -56,5 +56,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (error) {
     console.error('Error generating talent profile:', error);
     res.status(500).json({ error: 'Failed to generate profile content' });
-  }
-} 
+  };

@@ -242,4 +242,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     aiModel: 'GPT-4 Analytics Engine',
     confidence: 0.89
   });
-} 
+} )))

@@ -415,9 +415,8 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500"
-                      >
-                        <option value="all" className="bg-slate-800">All Types</option>
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500 >"
+                        <option value=""all" className="bg-slate-800">All Types</option>
                         <option value="full" className="bg-slate-800">Full</option>
                         <option value="incremental" className="bg-slate-800">Incremental</option>
                         <option value="differential" className="bg-slate-800">Differential</option>
@@ -595,4 +594,4 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
   
 };
 
-export default AIPoweredBackupRecoveryPage 
+export default AIPoweredBackupRecoveryPage ))))))))))))))))))))))))))))

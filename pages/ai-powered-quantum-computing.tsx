@@ -358,10 +358,10 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
     <div>
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}"
+        <div className="fixed inset-0 z-0>"
+          <div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10""></div>
         </div>
       
       <Head>
@@ -372,25 +372,25 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden>
-        <div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20></div>
-        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+      <div className="relative overflow-hidden>"
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20></div>"
+        <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
           <div className=text-center">
             <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6>
               AI-Powered Quantum Computing & Optimization System
-            </h1>
-            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+            </h1>"
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Quantum algorithms, quantum optimization, quantum simulation, 
               quantum cryptography, quantum machine learning, and automated quantum computing management powered by AI.
-            </p>
-            <div className="flex" flex-wrap justify-center gap-4>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+            </p>"
+            <div className=""flex" flex-wrap justify-center gap-4>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>⚛️ Quantum Algorithms</span>
+              </div>"
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3>"
+                <span className=""text-white" font-semibold>🔬 Quantum Simulation</span>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3>
-                <span className="text-white" font-semibold>🔬 Quantum Simulation</span>
-              </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg:px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3"">
                 <span className="text-white font-semibold>🔐 Quantum Cryptography</span>
               </div>
             </div>
@@ -398,19 +398,19 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-        {isLoading ? (
-          <div className="flex" justify-center items-center py-40>
-            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
+      {/* Main Content */}"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32>
+        {isLoading ? ("
+          <div className=""flex" justify-center items-center py-40>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500""></div>
           </div>
         ) : (
           <>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
               <button
-                onClick={() => setActiveTab('algorithms')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('algorithms')}"
+                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'algorithms'
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -419,8 +419,8 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Algorithms ({quantumAlgorithms.length}
               </button>
               <button
-                onClick={() => setActiveTab('optimization')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('optimization')}"
+                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'optimization'
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -449,8 +449,8 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Cryptography ({quantumCryptography.length}
               </button>
               <button
-                onClick={() => setActiveTab('machine_learning')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('machine_learning')}"
+                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'machine_learning'
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -459,8 +459,8 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
                 Machine Learning ({quantumMachineLearning.length}
               </button>
               <button
-                onClick={() => setActiveTab('management')}
-                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                onClick={() => setActiveTab('management')}"
+                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management'
                     ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -483,25 +483,25 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
             {/* Algorithms Tab */},
 {activeTab === 'algorithms' && (
               <div className="space-y-8>
-                {/* Controls */}
-                <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6>
-                  <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0>
-                    <div className="flex" items-center space-x-4">
+                {/* Controls */}"
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6>"
+                  <div className=""flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0>
+                    <div className="flex items-center space-x-4"">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
                         className="bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
-                      >
+                      >"
                         <option value=all className="bg-slate-800">All Types</option>
-                        <option value=shor" className="bg-slate-800>Shor</option>
+                        <option value=shor" className="bg-slate-800>Shor</option>"
                         <option value=grover className="bg-slate-800">Grover</option>
-                        <option value=quantum_fourier" className="bg-slate-800>Quantum Fourier</option>
+                        <option value=quantum_fourier" className="bg-slate-800>Quantum Fourier</option>"
                         <option value=quantum_phase className="bg-slate-800">Quantum Phase</option>
-                        <option value=quantum_walk" className="bg-slate-800>Quantum Walk</option>
+                        <option value=quantum_walk" className="bg-slate-800>Quantum Walk</option>"
                         <option value=variational className="bg-slate-800">Variational</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r" from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-4 rounded-lg:font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-4 rounded-lg:font-medium transition-all duration-300"">
                       Create Algorithm
                     </button>
                   </div>
@@ -509,73 +509,73 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
 
                 {/* Algorithms Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6>
-                  {filteredAlgorithms.map((algorithm) => (
-                    <div key={algorithm.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                      <div className="flex" items-start justify-between mb-4>
+                  {filteredAlgorithms.map((algorithm) => ("
+                    <div key={algorithm.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                      <div className=""flex" items-start justify-between mb-4>
                         <div>
-                          <h3 className="text-xl" font-semibold text-white mb-2">{algorithm.name}</h3>
+                          <h3 className="text-xl font-semibold text-white mb-2"">{algorithm.name}</h3>
                           <p className="text-gray-300 text-sm:capitalize>{algorithm.type.replace('_', ' ')} Algorithm</p>
-                        </div>
+                        </div>"
                         <div className="text-right">
-                          <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(algorithm.status)}`}>
+                          <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(algorithm.status)}`}>
                             {algorithm.status}
-                          </span>
-                          <div className=mt-2">
+                          </span>"
+                          <div className=mt-2"">
                             <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(algorithm.type)}`}>
                               {algorithm.qubits} qubits
                             </span>
                           </div>
                         </div>
                       </div>
-
+"
                       <div className="mb-4">
-                        <p className="text-gray-300" text-sm>{algorithm.description}</p>
+                        <p className="text-gray-300 text-sm>{algorithm.description}</p>
                       </div>
-
-                      <div className="grid" grid-cols-3 gap-4 mb-4">
-                        <div className="bg-white/5 rounded-lg:p-4>
-                          <div className="text-sm:text-gray-400" mb-1>Depth</div>
-                          <div className="text-2xl" font-bold text-white>{algorithm.depth}</div>
+"
+                      <div className=""grid" grid-cols-3 gap-4 mb-4">
+                        <div className="bg-white/5 rounded-lg:p-4>"
+                          <div className="text-sm:text-gray-400 mb-1>Depth</div>"
+                          <div className=""text-2xl" font-bold text-white>{algorithm.depth}</div>
                         </div>
-                        <div className="bg-white/5" rounded-lg:p-4">
-                          <div className="text-sm:text-gray-400 mb-1>Execution</div>
-                          <div className="text-2xl" font-bold text-white>{algorithm.executionTime}s</div>
-                        </div>
-                        <div className="bg-white/5" rounded-lg:p-4>
-                          <div className="text-sm:text-gray-400" mb-1">Qubits</div>
+                        <div className="bg-white/5 rounded-lg:p-4"">
+                          <div className="text-sm:text-gray-400 mb-1>Execution</div>"
+                          <div className="text-2xl font-bold text-white>{algorithm.executionTime}s</div>
+                        </div>"
+                        <div className=""bg-white/5" rounded-lg:p-4>
+                          <div className="text-sm:text-gray-400 mb-1"">Qubits</div>
                           <div className="text-2xl font-bold text-white>{algorithm.qubits}</div>
                         </div>
                       </div>
 
-                      {/* AI Analysis */}
+                      {/* AI Analysis */}"
                       <div className="mb-4">
-                        <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
-                        <div className="bg-gradient-to-r" from-purple-600/20 to-blue-600/20 rounded-lg:p-4">
+                        <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"
+                        <div className=""bg-gradient-to-r" from-purple-600/20 to-blue-600/20 rounded-lg:p-4">
                           <div className="grid grid-cols-3 gap-4 text-sm>
-                            <div>
-                              <div className="text-gray-400" mb-1>Efficiency</div>
-                              <div className="text-white" font-semibold>{algorithm.aiAnalysis.efficiencyScore}%</div>
+                            <div>"
+                              <div className="text-gray-400 mb-1>Efficiency</div>"
+                              <div className=""text-white" font-semibold>{algorithm.aiAnalysis.efficiencyScore}%</div>
                             </div>
                             <div>
-                              <div className="text-gray-400" mb-1">Accuracy</div>
+                              <div className="text-gray-400 mb-1"">Accuracy</div>
                               <div className="text-white font-semibold>{algorithm.aiAnalysis.accuracyScore}%</div>
                             </div>
-                            <div>
-                              <div className="text-gray-400" mb-1>Scalability</div>
-                              <div className="text-white" font-semibold>{algorithm.aiAnalysis.scalabilityScore}%</div>
+                            <div>"
+                              <div className="text-gray-400 mb-1>Scalability</div>"
+                              <div className=""text-white" font-semibold>{algorithm.aiAnalysis.scalabilityScore}%</div>
                             </div>
                           </div>
                           <div className=mt-3">
-                            <div className="text-sm font-medium text-gray-400 mb-1>Recommendations:</div>
-                            <div className="text-xs" text-gray-300>
+                            <div className="text-sm font-medium text-gray-400 mb-1>Recommendations:</div>"
+                            <div className="text-xs text-gray-300>
                               {algorithm.aiAnalysis.recommendations.join(', ')}
                             </div>
                           </div>
                         </div>
                       </div>
-
-                      <div className="flex" space-x-2>
-                        <button className="flex-1" bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300">
+"
+                      <div className=""flex" space-x-2>
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300"">
                           View Details
                         </button>
                         <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
@@ -589,44 +589,44 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
             )}
 
             {/* Analytics Tab */},
-{activeTab === 'analytics' && analytics && (
+{activeTab === 'analytics' && analytics && ("
               <div className="space-y-8">
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2>{analytics.totalAlgorithms.toLocaleString()}</div>
-                    <div className="text-gray-400" text-sm>Total Algorithms</div>
-                  </div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="text-3xl" font-bold text-white mb-2">{analytics.averageQubits.toLocaleString()}</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>"
+                  <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl font-bold text-white mb-2>{analytics.totalAlgorithms.toLocaleString()}</div>"
+                    <div className="text-gray-400 text-sm>Total Algorithms</div>
+                  </div>"
+                  <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <div className="text-3xl font-bold text-white mb-2"">{analytics.averageQubits.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm>Avg Qubits</div>
+                  </div>"
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                    <div className=""text-3xl" font-bold text-white mb-2>{analytics.runningSimulations.toLocaleString()}</div>
+                    <div className="text-gray-400 text-sm"">Running Simulations</div>
                   </div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="text-3xl" font-bold text-white mb-2>{analytics.runningSimulations.toLocaleString()}</div>
-                    <div className="text-gray-400" text-sm">Running Simulations</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <div className="text-3xl" font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
-                    <div className="text-gray-400" text-sm>AI Optimization Score</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"
+                    <div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>"
+                    <div className=""text-gray-400" text-sm>AI Optimization Score</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"">
+                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>"
                   <div className="space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r" from-purple-600/20 to-blue-600/20 rounded-lg:p-4>
-                        <div className="flex" items-start justify-between mb-2">
-                          <h4 className="text-white font-semibold>{insight.title}</h4>
-                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${
+                      <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-lg:p-4>"
+                        <div className=""flex" items-start justify-between mb-2">
+                          <h4 className="text-white font-semibold>{insight.title}</h4>"
+                          <span className="{`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
                           }`}>
                             {insight.impact}
                           </span>
-                        </div>
-                        <p className="text-gray-300" text-sm:mb-3>{insight.description}</p>
-                        <div className="text-xs" text-gray-400 mb-2">
+                        </div>"
+                        <p className=""text-gray-300" text-sm:mb-3>{insight.description}</p>
+                        <div className="text-xs text-gray-400 mb-2"">
                           Confidence: {Math.round(insight.confidence * 100)}%
                         </div>
                         <div className="text-xs text-gray-400>
@@ -642,22 +642,22 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
         )}
       </div>
 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r" from-purple-600/20 to-blue-600/20 mt-16>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
+      {/* CTA Section */}"
+      <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 mt-16>"
+        <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
           <div className=text-center">
             <h2 className="text-3xl font-bold text-white mb-4>
               Ready to Explore Quantum Computing?
-            </h2>
-            <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
+            </h2>"
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Start your quantum computing journey with our AI-powered system 
               and ensure comprehensive quantum optimization and management.
-            </p>
-            <div className="flex" flex-col sm:flex-row gap-4 justify-center>
+            </p>"
+            <div className=""flex" flex-col sm:flex-row gap-4 justify-center>
               <Link href=/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105 />
                 Start Computing
-              </Link>
-              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm" />
+              </Link>"
+              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
                 Learn More
               </Link>
             </div>
@@ -674,4 +674,4 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
 
 };
 
-export default AIPoweredQuantumComputingPage 
+export default AIPoweredQuantumComputingPage )))))))))))))))))))))))))))))
