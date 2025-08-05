@@ -1,0 +1,60 @@
+{
+  "timestamp": "2025-08-05T02:08:57.432Z",
+  "totalProcesses": 9,
+  "processes": [
+    {
+      "name": "orchestrator",
+      "pid": 83548,
+      "displayName": "Monetization Orchestrator",
+      "startTime": "2025-08-05T02:08:57.399Z"
+    },
+    {
+      "name": "revenue-optimization",
+      "pid": 83551,
+      "displayName": "Revenue Optimization",
+      "startTime": "2025-08-05T02:08:57.404Z"
+    },
+    {
+      "name": "ad-revenue-optimization",
+      "pid": 83552,
+      "displayName": "Ad Revenue Optimization",
+      "startTime": "2025-08-05T02:08:57.408Z"
+    },
+    {
+      "name": "subscription-optimization",
+      "pid": 83553,
+      "displayName": "Subscription Optimization",
+      "startTime": "2025-08-05T02:08:57.415Z"
+    },
+    {
+      "name": "affiliate-optimization",
+      "pid": 83556,
+      "displayName": "Affiliate Optimization",
+      "startTime": "2025-08-05T02:08:57.421Z"
+    },
+    {
+      "name": "ecommerce-optimization",
+      "pid": 83557,
+      "displayName": "Ecommerce Optimization",
+      "startTime": "2025-08-05T02:08:57.423Z"
+    },
+    {
+      "name": "freemium-optimization",
+      "pid": 83558,
+      "displayName": "Freemium Optimization",
+      "startTime": "2025-08-05T02:08:57.425Z"
+    },
+    {
+      "name": "performance-monitoring",
+      "pid": 83559,
+      "displayName": "Performance Monitoring",
+      "startTime": "2025-08-05T02:08:57.427Z"
+    },
+    {
+      "name": "continuous-improvement",
+      "pid": 83560,
+      "displayName": "Continuous Improvement",
+      "startTime": "2025-08-05T02:08:57.429Z"
+    }
+  ]
+}

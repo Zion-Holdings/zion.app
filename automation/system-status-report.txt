@@ -1,9 +1,19 @@
-=== COMPREHENSIVE AUTOMATION SYSTEM STATUS ===
-Generated: Mon Aug  4 21:15:45 -03 2025
+=== AUTOMATION SYSTEM STATUS REPORT ===
+Generated: Mon Aug  4 23:10:40 -03 2025
 
-1. ADMIN AUTONOMOUS SYSTEM:
+=== RUNNING SYSTEMS ===
+miami2           92046  83.9  0.3 48465008 186728 s096  R    11:10PM   0:02.39 node autonomous-master-orchestrator.js
+miami2           75210   8.6  0.2 48397404 127172 s096  S    11:07PM   0:12.07 node enhanced-content-generator.js
+miami2           83537   0.0  0.0 35425580  32232 s096  S    11:08PM   0:00.12 node launch-monetization-automation.js
+miami2           53649   0.0  0.1 46555120  47492 s096  S    11:00PM   0:00.26 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/agents/AdminBackupAgent-1754359212033.js
+miami2           53648   0.0  0.1 46424304  47140 s096  S    11:00PM   0:00.26 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/agents/AdminAnalyticsAgent-1754359212031.js
+miami2           53647   0.0  0.1 46292976  46956 s096  S    11:00PM   0:00.26 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/agents/AdminSecurityAgent-1754359212030.js
+miami2           53646   0.0  0.1 46555376  47884 s096  S    11:00PM   0:00.26 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/agents/AdminEvolutionAgent-1754359212027.js
+miami2           53642   0.0  0.1 46555120  47756 s096  S    11:00PM   0:00.25 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/agents/AdminAgentCreator-1754359212011.js
+
+=== ADMIN SYSTEM STATUS ===
 === Admin Autonomous System Status ===
-Admin Orchestrator: STOPPED
+Admin Orchestrator: RUNNING
 Agent Creator: RUNNING
 Web Researcher: RUNNING
 Status Monitor: RUNNING
@@ -12,26 +22,3 @@ Security Agent: RUNNING
 Analytics Agent: RUNNING
 Backup Agent: RUNNING
 =====================================
-
-2. SERVICE GENERATION SYSTEM:
-[2025-08-04 21:15:46] [INFO] Checking process status...
-[2025-08-04 21:15:46] [INFO] Service generation: Running (PID: 52096)
-[2025-08-04 21:15:46] [WARNING] Advertisement generation: Not running
-[2025-08-04 21:15:46] [WARNING] Sales optimization: Not running
-[2025-08-04 21:15:46] [WARNING] Performance tracking: Not running
-[2025-08-04 21:15:46] [WARNING] Some automation processes are not running
-
-3. SYSTEM HEALTH:
-[2025-08-04 21:15:46] 🏥 Starting system health check...
-[2025-08-04 21:15:46] ✅ Node.js found: v22.16.0
-[2025-08-04 21:15:46] ✅ npm found: 10.9.2
-[2025-08-04 21:15:46] ✅ git found: git version 2.37.1 (Apple Git-137.1)
-[2025-08-04 21:15:46] ✅ Disk usage: 47%
-[2025-08-04 21:15:46] ✅ Memory usage: 0%
-[2025-08-04 21:15:46] 📊 Running processes: 3/3
-[2025-08-04 21:15:47] ⚠️  Found       23 log files with recent errors
-[2025-08-04 21:15:47] ✅ Cron jobs are configured
-[2025-08-04 21:15:47] ✅ System health check completed
-
-4. RUNNING PROCESSES:
-Total running processes: 100
