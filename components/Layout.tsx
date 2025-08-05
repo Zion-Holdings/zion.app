@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import EnhancedNavigation from './EnhancedNavigation';
-import ResponsiveNavigation from './ResponsiveNavigation';
 
 interface LayoutProps {
   children: React.ReactNode;
