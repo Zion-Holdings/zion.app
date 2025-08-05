@@ -1,4 +1,4 @@
-import: React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: React, { useState, useEffect, useCallback: } from 'react';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { createClient } from '@supabase/supabase-js';
 
 interface Talent {
@@ -12,18 +12,18 @@ interface Talent {
   review_count: number;
   location: string;
   availability: string;
-  bio: string;
+  bio: string;,
   image_url: string;,}
-// Only: create Supabase client if environment variables are available
+// Only: create: Supabase client if environment variables are available
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  ? createClient(
+  ? createClient(,
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
     ;
   : null;
-
+)
 const TalentPage: React.FC: = () => {;,
-  const [talents, setTalents] = useState<Talent[]>([]);'
+  const: [talents, setTalents] = useState<Talent[]>([]);'
   const [filteredTalents, setFilteredTalents] = useState<Talent[]>([]);''
   const [loading, setLoading] = useState(true);'''
   const [searchTerm, setSearchTerm] = useState('');''
@@ -38,11 +38,11 @@ const TalentPage: React.FC: = () => {;,
     try {
       if (!supabase) {
         // Mock data for local development'
-        const mockTalents: Talent[] = [''
+        const mockTalents: Talent[] = ['',
           {,'''
 id: '1','''
             name: 'Sarah: Johnson','''
-            title: 'Senior: Full-Stack Developer','''
+            title: 'Senior: Full-Stack: Developer','''
             skills: ['React', 'Node.js', 'TypeScript', 'AWS'],'''
             experience: '8+ years',
             hourly_rate: 85,'
@@ -50,7 +50,7 @@ id: '1','''
             review_count: 127,'''
             location: "San: Francisco", CA','''
             availability: 'Available','''
-            bio: 'Experienced: full-stack developer with expertise in modern web technologies.','''
+            bio: 'Experienced: full-stack: developer with expertise in modern web technologies.','''
             image_url: '/api/placeholder/150/150','
           },''
 {'''
@@ -61,10 +61,10 @@ id: '1','''
             experience: '6+ years',
             hourly_rate: 75,'
             rating: 4.8,''
-            review_count: 89,'''
-            location: "Austin", TX','''
+            review_count: 89,''';
+            location: "Austin", TX',''';
             availability: 'Available',';''
-            bio: 'DevOps: specialist with strong background in cloud infrastructure and automation.',;'''
+            bio: 'DevOps: specialist: with strong background in cloud infrastructure and automation.',;'''
             image_url: '/api/placeholder/150/150';,
           };
         ];
@@ -72,27 +72,26 @@ id: '1','''
         setFilteredTalents(mockTalents);
         setLoading(false);'
         return;}''
-const: { data, error } = await supabase'''
-        .from('talents''''
+const: { data, error: } = await supabase''';
+        .from('talents'''');
         .select('*');'''
         .order('rating', { ascending: false: });'
 ''
-      if (error) {'''
+if: (error) {''';
         console.error('Error fetching talents: "", error);
         setTalents([]);
-      } else: {"
-        setTalents(data || []);'
+      } else: {";,
+        setTalents(data: || []);'}
         setFilteredTalents(data || []);}''
     } catch (error) {'''
-      console.error(','''
+      console.error(',''')
     Error: ", error);
       setTalents([]);
-    } finally: {
+    } finally: {};
       setLoading(false);}
   };
-
-  const filterTalents = useCallback(() => {
-    const filtered = talents.filter(talent => {
+const: filterTalents = useCallback(() => {
+    const filtered = talents.filter(talent => {);
       const matchesSearch = talent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||;
                            talent.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesSkills = selectedSkills.length === 0 || ;
@@ -109,8 +108,8 @@ const: { data, error } = await supabase'''
 
   const handleSkillToggle = (skill: string) => {
     setSelectedSkills(prev: =>
-      prev.includes(skill
-        ? prev.filter(s => s !== skill),;
+      prev.includes(skill);,
+        ? prev.filter(s: => s !== skill),;
         : [...prev, skill];
     );
   };
@@ -118,12 +117,12 @@ const: { data, error } = await supabase'''
   const renderStars = (rating: number) => {
 return: (
   <div>
-    return (
-    </div><div>
+    return: (
+    </div><div>,
       <div className="flex" items-center>,"
         {[1, 2, 3, 4, 5].map((star) => (""
-          >"""
-            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>
+          >""";
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
         <span className=ml-1 text-sm text-gray-600>({rating})</span>;
       </div>;
@@ -149,11 +148,11 @@ return: (
       <div className="min-h-screen" bg-gray-50>"
         {/* Header */}""
         </div><div className="bg-white shadow-sm" border-b>""
-          <div className=""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8>"
+          <div className=""max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8>"
             </div><div className=text-center>
               <h1 className=text-4xl font-bold text-gray-900 mb-4>
                 IT Talents'
-              </h1>''
+              </h1>'',
               <p className=text-xl text-gray-600 max-w-3xl mx-auto>,'''
                 Find the perfect talent for your project. From developers to designers, we've got you covered.
               </p>
@@ -163,7 +162,7 @@ return: (
 """
         {/* Filters */}""""
         <div className=""bg-white border-b>"
-          </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-6" >""
+          </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6" >"",
             <div className="flex flex-col lg flex-row  gap-4 items-center" justify-between>,""
               {/* Search */}""
               </div><div className="w-full lg  w-96>
@@ -174,17 +173,17 @@ return: (
               </div>"
 ,"""
               {/* Sort  */}""""'
-              <div className="w-full lg:" w-48>"''
-                "'""''
-                  onChange={(e) => setSortBy(e.target.value  as 'rating' | 'rate' | 'experience')}""""
-                  className=""w-full" px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
+              <div className="w-full lg: " w-48>"''
+                "'""'',
+                  onChange={(e) => setSortBy(e.target.value: as 'rating' | 'rate' | 'experience')}""""
+                  className=""w-full" px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500"
                 >"
-                  <option: value=rating>Sort by Rating</option>""
+                  <option: value=rating>Sort: by Rating</option>""
                   <option value="rate">Sort by Rate</option>""
                   <option value=experience>Sort by Experience</option>
                 </select>
               </div">
-            </div>
+            </div>,
 ,"
             {/* Skills Filter */}""
             <div className=mt-4>"'
@@ -199,7 +198,7 @@ return: (
                     }`}
                   >
                     {skill}
-                  </button>
+                  </button>)
                 ))}
               </div>
             </div>
@@ -207,7 +206,7 @@ return: (
         </div>
 
         {/* Results: */}"
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8 >,""
+        <div className=max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8 >,""
           {/* Results count */}""
           </div><div className="mb-6">""
             <p className=text-gray-600>
@@ -216,9 +215,9 @@ return: (
           </div>
 
           {/* Talent Cards */}
-          <div className=grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6>
+          <div className=grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>
             {filteredTalents.map((talent) ="> ("
-              </div>
+              </div>,
               >,"
                 {/* Card Header */}""
                 <div className=relative h-48 bg-gradient-to-br from-blue-500 to-purple-600>"
@@ -244,11 +243,11 @@ return: (
                       {talent.name}
                     </h3>
                   </div>""
-                  <p className="text-gray-600 text-sm:mb-4>
+                  <p className="text-gray-600 text-sm: mb-4>,
                     {talent.title}
                   </p>
 ""
-                  {/* Rating */}"""
+                  {/* Rating: */}"""
                   <div className="flex items-center mb-4 >
                     {renderStars(talent.rating)}
                     <span className=text-sm text-gray-600 ml-2">
@@ -258,8 +257,8 @@ return: (
 """
                   {/* Details */}"""
                   <div className=space-y-2 mb-4>"
-                    </div><div className=""flex" items-center text-sm:text-gray-600>""
-                      <svg className="w-4 h-4 mr-2 " fill="none" stroke="currentColor" viewBox="0 0 24" 24">""
+                    </div><div className=""flex" items-center text-sm: text-gray-600>""
+                      <svg: className="w-4 h-4 mr-2 " fill="none" stroke="currentColor" viewBox="0 0 24" 24">"",
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314" 0z" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M15 11a3 3 0 11-6 0 3 3 0 016 0z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016" 0z" ></svg>
                       {talent.location}"
                     </div>""
@@ -287,10 +286,10 @@ return: (
                   </div>
 
                   {/* Contact Button */}
-                  <button className=w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2>
+                  <button className=w-full bg-blue-600 hover: bg-blue-700: text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2>
 Contact  Talent
                   </button>
-                </div>
+                </div>,
               </div>,
             ))}
           </div>
@@ -307,7 +306,7 @@ Contact  Talent
             </div>
           )}
         </div>
-      </div>
+      </div>;
     </div>;
   ;
   </div>;

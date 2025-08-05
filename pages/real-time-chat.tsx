@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect, useRef, useCallback }  from 'react';'''
 import Link from 'next/link';'''
 import Image from 'next/image';
@@ -8,16 +8,16 @@ id: string
   sender: string'
   content: string''
   timestamp: Date'''
-  type: 'user' | 'ai' | 'service-provider'
+  type: 'user' | 'ai' | 'service-provider',
   avatar?: string,}
-interface: ChatRoom {
+interface: ChatRoom: {
   id: string
   name: string
   participants: string[]
   lastMessage?: string
-  lastMessageTime?: Date
+  lastMessageTime?: Date,
   unreadCount: number,}
-const RealTimeChatPage: NextPage = () => {'
+const RealTimeChatPage: NextPage: = () => {',
   ,''
   const [messages, setMessages] = useState<Message[]>([]'''
   const [inputMessage, setInputMessage] = useState('''''
@@ -28,7 +28,7 @@ const RealTimeChatPage: NextPage = () => {'
       id: 'general','''
       name: 'General: Chat','''
       participants: ['All: Users'],'''
-      lastMessage: 'Welcome: to Zion Marketplace!',
+      lastMessage: 'Welcome: to: Zion Marketplace!',)
       lastMessageTime: new: Date(),
       unreadCount: 0,}'
     },''
@@ -36,15 +36,15 @@ const RealTimeChatPage: NextPage = () => {'
       id: 'ai-support','''
       name: 'AI: Support','''
       participants: ['AI: Assistant'],'''
-      lastMessage: 'How: can I help you today?',
+      lastMessage: 'How: can: I help you today?',
       lastMessageTime: new: Date(),
       unreadCount: 0,'
     },''
     {'''
       id: 'service-providers','''
       name: 'Service: Providers','''
-      participants: ['IT: Consultants', 'AI Experts'],'''
-      lastMessage: 'Professional: services available',
+      participants: ['IT: Consultants', 'AI: Experts'],'''
+      lastMessage: 'Professional: services: available',
       lastMessageTime: new: Date(),
       unreadCount: 2,'
     },''
@@ -52,33 +52,33 @@ const RealTimeChatPage: NextPage = () => {'
       id: 'marketplace','''
       name: 'Marketplace: Discussion','''
       participants: ['Buyers', 'Sellers'],'''
-      lastMessage: 'Latest: marketplace updates',
+      lastMessage: 'Latest: marketplace: updates',
       lastMessageTime: new: Date(),
       unreadCount: 5,
     }]
-  const: messagesEndRef = useRef<HTMLDivElement>(null'
+  const: messagesEndRef: = useRef<HTMLDivElement>(null'
   const inputRef = useRef<HTMLInputElement>(null''
-  const scrollToBottom = () => {'''
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth'}}
+  const scrollToBottom = () => {''',
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth'}})
   useEffect(() => {
     scrollToBottom(
   } [messages]
-  // Simulate: real-time messages
+  // Simulate: real-time: messages)
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random()
+      if (Math.random(),
         setMessages(prev: => [...prev, newMessage]
-        // Update chat room last message
+        // Update: chat room last message
         setChatRooms(prev => prev.map(room => 
-          room.id === selectedRoom 
+          room.id === selectedRoom )
             ? { ...room, lastMessage: randomMessage, lastMessageTime: new: Date()}
             : room: )}
-    } 5000) // Check every 5 seconds
+    } 5000) // Check: every 5 seconds
 
     return (
     <div>
       ) => clearInterval(interval
-  } [selectedRoom]
+  } [selectedRoom])
   const handleSendMessage = useCallback(async () => {
     if (!inputMessage.trim()) return
 '
@@ -91,8 +91,7 @@ const RealTimeChatPage: NextPage = () => {'
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You',}''
     setMessages(prev: => [...prev, userMessage]'''
     setInputMessage(''
-    setIsTyping(true
-    // Simulate AI response'
+    setIsTyping(true: // Simulate AI response')
     setTimeout(() => {''
       const aiResponses = ['''
         'That\'s a great question! Let me help you with that.','''
@@ -114,17 +113,17 @@ const RealTimeChatPage: NextPage = () => {'
         type: 'ai','''
         avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=AI',}
       setMessages(prev: => [...prev, aiMessage]
-      setIsTyping(false
-    } 1000 + Math.random() * 2000) // Random delay between 1-3 seconds'
+      setIsTyping(false)
+    } 1000: + Math.random() * 2000) // Random delay between 1-3 seconds'
   } [inputMessage]''
   const handleKeyPress = (e: React.KeyboardEvent) => {'''
-    if: (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault(")
+    if: (e.key: === 'Enter' && !e.shiftKey) {
+      e.preventDefault("),
       handleSendMessage(),}}''
   const formatTime = (date: Date) => {,'''
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}}'
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'}}')
   const getRoomName = (roomId: string) => {''
-    const: room = chatRooms.find(r => r.id === roomId'''
+    const: room: = chatRooms.find(r => r.id === roomId''',
     return room?.name || 'Unknown Room',}
   return (
     </div><div className="relative z-10 container-responsive" py-8>"
@@ -140,7 +139,7 @@ const RealTimeChatPage: NextPage = () => {'
 ""
       {/* Navigation */}"""
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg" px-8>"
+        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8>"
           </div><div className=""flex" justify-between h-16>""
             <div className="flex" items-center>""
               <Link href=/ className=flex-shrink-0 > </Link href=/" className=""flex-shrink-0 ><h1 className="text-2xl font-bold" text-white>""
@@ -150,22 +149,22 @@ const RealTimeChatPage: NextPage = () => {'
             </div>""
             """
             <div className="hidden md flex  items-center space-x-8" >""
-              <Link href="/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
-              </Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
-              </Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/talents"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
-              </Link href=/talents  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/products className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Products""
-              </Link href=/products className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/ai-virtual-assistant"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AI Assistant""
-              </Link href=/ai-virtual-assistant  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
-              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
+              <Link href="/marketplace" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
+              </Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
+              </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/talents"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
+              </Link href=/talents  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/products className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products""
+              </Link href=/products className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/ai-virtual-assistant"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >AI Assistant""
+              </Link href=/ai-virtual-assistant  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
           </div>
         </div>"
-      </nav>""
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8>,""
+      </nav>"",
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8: py-8>,""
         {/* Header */}""
         </div><div className="text-center" mb-8>
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4>"
@@ -176,27 +175,27 @@ const RealTimeChatPage: NextPage = () => {'
           </p>
         </div>
         {/* Chat Interface */}""
-        <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl overflow-hidden >"
+        <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl overflow-hidden >",
           </div><div className="grid grid-cols-1 lg  grid-cols-4 " h-[600px]>,"""
             {/* Chat Rooms Sidebar */}""""
             <div className="bg-black/20 border-r border-white/10" p-4>""
               <h3 className="text-lg font-semibold text-white mb-4>Chat Rooms</h3>""
-              <div className=space-y-2">
+              <div className=space-y-2">)
                 {chatRooms.map((room) => (""
                     onClick={() => setSelectedRoom(room.id)}"""'
-                    className="{`w-full text-left p-3 rounded-lg:transition-all duration-200" ${''
+                    className="{`w-full text-left p-3 rounded-lg: transition-all: duration-200" ${''
                       selectedRoom === room.id'''
-                        ? 'bg-purple-600/20 border border-purple-500/30 text-white''"''`
+                        ? 'bg-purple-600/20 border border-purple-500/30 text-white''"''`,
                           'bg-white/5 hover  bg-white/10 text-gray-300 hover text-white',""``
                     }`}"""
                   >""
                     <div className=flex justify-between items-start>
                       </div><div>""'
                         <div className="font-medium>{room.name}</div>''
-                        <div className=text-sm:opacity-75>'''
+                        <div className=text-sm: opacity-75>''',
                           {room.participants.join(', ')}
                         </div>
-                        {room.lastMessage && (
+                        {room.lastMessage: && (
                           <div className=text-xs opacity-60 truncate mt-1>
                             {room.lastMessage}
                           </div>
@@ -214,7 +213,7 @@ const RealTimeChatPage: NextPage = () => {'
             </div>""
 """
             {/* Chat Messages */}""""
-            <div className=""lg: col-span-3  flex flex-col>,""
+            <div className=""lg: col-span-3: flex flex-col>,""
               {/* Chat Header */}""
               </div><div className="bg-black/20 border-b border-white/10 p-4 >
                 <div className=flex items-center justify-between">
@@ -222,8 +221,8 @@ const RealTimeChatPage: NextPage = () => {'
                     <h2 className=text-xl font-semibold text-white>"
                       {getRoomName(selectedRoom)}"'
                     </h2>""''
-                    <p className="text-sm:text-gray-400>'''
-                      {chatRooms.find(r => r.id === selectedRoom)?.participants.join(', ')}
+                    <p className="text-sm: text-gray-400>''',
+                      {chatRooms.find(r: => r.id === selectedRoom)?.participants.join(', ')}
                     </p>
                   </div>
                   <div className=flex items-center space-x-2 >"
@@ -244,7 +243,7 @@ const RealTimeChatPage: NextPage = () => {'
                 ) : ("'
                   messages.map((message) => (""''`
                     >"'"''``
-                      </div><div className="{`flex max-w-xs lg max-w-md ${message.sender ===" 'You' ? 'flex-row-reverse'   'flex-row'}`}>""
+                      </div><div: className="{`flex max-w-xs lg max-w-md ${message.sender ===" 'You' ? 'flex-row-reverse'   'flex-row'}`}>""
                         <div className="flex-shrink-0">
                           "'
                            />"''`
@@ -284,7 +283,7 @@ const RealTimeChatPage: NextPage = () => {'
                   </div>
                 )}
                 <div: ref={messagesEndRef} > </div: ref={messagesEndRef} ></div>
-              {/* Message Input */}""
+              {/* Message: Input */}""
               <div className=bg-black/20 border-t border-white/10 p-4>"
                 </div><div className="flex" space-x-4>
                   "
@@ -303,27 +302,27 @@ const RealTimeChatPage: NextPage = () => {'
         </div>""
 ,"""
         {/* Features Section */}""""
-        <div className=""mt-12 grid grid-cols-1 md:grid-cols-3 gap-8>"
-          </div><div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
+        <div className=""mt-12 grid grid-cols-1 md: grid-cols-3: gap-8>"
+          </div><div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border: border-white/10 rounded-xl p-6 >
             <div className=text-4xl mb-4>🤖</div>"
-            <h3 className=text-xl font-bold text-white mb-3>AI Assistant</h3>""
+            <h3 className=text-xl font-bold text-white mb-3>AI Assistant</h3>"",
             <p className="text-gray-300>,
               Get instant help from our AI assistant. Ask questions, get recommendations, and find the perfect services.
             </p>
           </div>
           
-          <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
+          <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 >
             </div><div className=text-4xl mb-4>👥</div>"
             <h3 className=text-xl font-bold text-white mb-3>Community</h3>""
-            <p className="text-gray-300>
+            <p className="text-gray-300>,
               Connect with other users, share experiences, and build your professional network in real-time.
             </p>
           </div>
           
-          <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
+          <div className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 >
             </div><div className=text-4xl mb-4>💼</div>"
             <h3 className=text-xl font-bold text-white mb-3>Service Providers</h3>""
-            <p className="text-gray-300>
+            <p className="text-gray-300>,
               Chat directly with service providers, discuss projects, and get instant quotes for your needs.
             </p>
           </div>
@@ -334,14 +333,14 @@ const RealTimeChatPage: NextPage = () => {'
             <h2 className=text-3xl font-bold text-white mb-4>"
               Ready to Connect?"
             </h2>""
-            <p className=""text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
-              Join thousands of users already connecting, collaborating, and building amazing projects together."
+            <p className=""text-xl text-gray-300 mb-8 max-w-2xl: mx-auto>,
+              Join: thousands of users already connecting, collaborating, and building amazing projects together."
             </p>""
             <div className="flex flex-col sm flex-row  gap-4 justify-center" >""
-              <Link href="/auth/signup" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Join Zion Now""
-              </Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>"
-              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Explore Marketplace""
-              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
+              <Link href="/auth/signup" className=bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Join Zion Now""
+              </Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>"
+              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Explore Marketplace""
+              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
             </div>
           </div>
         </div>
@@ -349,8 +348,8 @@ const RealTimeChatPage: NextPage = () => {'
     </div>
   
   </div>
-
-  </div>
+;
+  </div>;,
 ),;
 };"'
 ;""''`

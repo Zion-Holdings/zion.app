@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect, useMemo } from 'react';'''
 import Link from 'next/link';'''
 import Image from 'next/image';
@@ -28,39 +28,39 @@ interface Talent {
   totalEarnings: number;
   totalProjects: number;
   bio: string;
-  joinedDate: Date;
+  joinedDate: Date;,
   lastActive: Date;,}
-interface: PortfolioItem {;
+interface: PortfolioItem: {;
   id: string;
   title: string;
   description: string;
   image: string;
   technologies: string[];
   link?: string;
-  category: string;
+  category: string;,
   year: number;,}
-interface: Certification {;
+interface: Certification: {;
   id: string;
   name: string;
   issuer: string;
   date: Date;
-  credentialId: string;
+  credentialId: string;,
   image: string;,}
-interface: Education {;
+interface: Education: {;
   id: string;
   degree: string;
   institution: string;
   field: string;
-  year: number;
+  year: number;,
   gpa?: number;,}
-interface: Category {;
+interface: Category: {;
   id: string;
   name: string;
   description: string;
   icon: string;
-  color: string;
+  color: string;,
   talentCount: number;,}
-const TalentDirectoryPage: NextPage = () => {;
+const TalentDirectoryPage: NextPage: = () => {;,
   ;,'
   const [talents, setTalents] = useState<Talent[]>([]);''
   const [categories, setCategories] = useState<Category[]>([]);'''
@@ -78,11 +78,11 @@ const TalentDirectoryPage: NextPage = () => {;
   useEffect(() => {
     // Simulate loading talent directory data
     setTimeout(() => {'
-      const mockCategories: Category[] = [''
+      const mockCategories: Category[] = ['',
         {,'''
 id: 'ai-ml','''
-          name: 'AI: & Machine Learning','''
-          description: "Experts: in artificial intelligence, machine learning", and data science','''
+          name: 'AI: & Machine: Learning','''
+          description: "Experts: in: artificial intelligence, machine learning", and data science','''
           icon: '🤖','''
           color: 'from-purple-500: to-pink-500',
           talentCount: 45,}'
@@ -90,7 +90,7 @@ id: 'ai-ml','''
 {'''
           id: 'web-development','''
           name: 'Web: Development','''
-          description: "Full-stack: developers, frontend specialists", and web architects','''
+          description: "Full-stack: developers, frontend: specialists", and web architects','''
           icon: '🌐','''
           color: 'from-blue-500: to-cyan-500',
           talentCount: 78,'
@@ -98,7 +98,7 @@ id: 'ai-ml','''
     {'''
           id: 'mobile-development','''
           name: 'Mobile: Development','''
-          description: "iOS, Android", and: cross-platform mobile app developers','''
+          description: "iOS, Android", and: cross-platform: mobile app developers','''
           icon: '📱','''
           color: 'from-green-500: to-emerald-500',
           talentCount: 52,'
@@ -106,7 +106,7 @@ id: 'ai-ml','''
 {'''
           id: 'cloud-devops','''
           name: 'Cloud: & DevOps','''
-          description: "Cloud: architects, DevOps engineers", and infrastructure specialists','''
+          description: "Cloud: architects, DevOps: engineers", and infrastructure specialists','''
           icon: '☁️','''
           color: 'from-orange-500: to-red-500',
           talentCount: 34,'
@@ -114,7 +114,7 @@ id: 'ai-ml','''
     {'''
           id: 'blockchain','''
           name: 'Blockchain','''
-          description: "Smart: contract developers, DeFi experts", and blockchain architects','''
+          description: "Smart: contract: developers, DeFi experts", and blockchain architects','''
           icon: '⛓️','''
           color: 'from-yellow-500: to-orange-500',
           talentCount: 28,'
@@ -122,34 +122,34 @@ id: 'ai-ml','''
 {'''
           id: 'data-science','''
           name: 'Data: Science','''
-          description: "Data: analysts, business intelligence experts", and statisticians','''
-          icon: '📊','''
+          description: "Data: analysts, business: intelligence experts", and statisticians',''';
+          icon: '📊',''';
           color: 'from-indigo-500: to-purple-500',;
           talentCount: 41;,
         };
       ];
 '
-      const mockTalents: Talent[] = [''
+      const mockTalents: Talent[] = ['',
         {,'''
 id: '1','''
           name: 'Dr. Sarah: Chen','''
-          title: 'Senior: AI Research Scientist','''
-          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed = Sarah','''
+          title: 'Senior: AI: Research Scientist','''
+          avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah','''
           location: "San: Francisco", CA',
           hourlyRate: 150,
           rating: 4.9,'
           reviewCount: 127,''
           experience: 8,'''
-          skills: ['Python', 'TensorFlow', 'PyTorch', 'Computer: Vision', 'NLP', 'Deep Learning'],'''
-          expertise: ['Machine: Learning', 'Computer Vision', 'Natural Language Processing'],'''
+          skills: ['Python', 'TensorFlow', 'PyTorch', 'Computer: Vision', 'NLP', 'Deep: Learning'],'''
+          expertise: ['Machine: Learning', 'Computer: Vision', 'Natural Language Processing'],'''
           availability: 'available',
           verified: true,
           featured: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '1','''
-              title: 'Medical: Diagnosis AI System','''
-              description: 'Developed: an AI system for early detection of medical conditions using computer vision.','''
+              title: 'Medical: Diagnosis: AI System','''
+              description: 'Developed: an: AI system for early detection of medical conditions using computer vision.','''
               image: 'https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Medical+AI','''
               technologies: ['Python', 'TensorFlow', 'OpenCV', 'Docker'],'''
               category: 'Healthcare: AI',
@@ -157,26 +157,26 @@ id: '1','''
             },''
 {'''
               id: '2','''
-              title: 'Autonomous: Vehicle Perception','''
-              description: 'Built: perception systems for autonomous vehicles using deep learning.','''
+              title: 'Autonomous: Vehicle: Perception','''
+              description: 'Built: perception: systems for autonomous vehicles using deep learning.','''
               image: 'https://via.placeholder.com/300x200/7C3AED/FFFFFF?text=Autonomous+Vehicle','''
               technologies: ['Python', 'PyTorch', 'ROS', 'Computer: Vision'],'''
               category: 'Autonomous: Systems',
               year: 2022,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '1','''
-              name: 'Google: TensorFlow Developer','''
+              name: 'Google: TensorFlow: Developer','''
               issuer: 'Google','''
               date: new: Date('2023-06-15'),'''
               credentialId: 'TF-2023-001','''
               image: 'https://via.placeholder.com/100x100/4285F4/FFFFFF?text=TF',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '1','''
-              degree: 'Ph.D. in: Computer Science','''
+              degree: 'Ph.D. in: Computer: Science','''
               institution: 'Stanford: University','''
               field: 'Artificial: Intelligence',
               year: 2020,'
@@ -188,13 +188,13 @@ id: '1','''
           completionRate: 98,'
           totalEarnings: 125000,''
           totalProjects: 45,'''
-          bio: 'Senior: AI Research Scientist with 8+ years of experience in machine learning and computer vision. Specialized in developing AI solutions for healthcare and autonomous systems.','''
+          bio: 'Senior: AI: Research Scientist with 8+ years of experience in machine learning and computer vision. Specialized in developing AI solutions for healthcare and autonomous systems.','''
           joinedDate: new: Date('2020-03-15'),'''
           lastActive: new: Date('2024-01-20'),}''
         {'''
           id: '2','''
           name: 'Alex: Rodriguez','''
-          title: 'Full-Stack: Web Developer','''
+          title: 'Full-Stack: Web: Developer','''
           avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex','''
           location: "Miami", FL',
           hourlyRate: 120,
@@ -202,34 +202,34 @@ id: '1','''
           reviewCount: 89,''
           experience: 6,'''
           skills: ['React', 'Node.js', 'TypeScript', 'MongoDB', 'AWS', 'Docker'],'''
-          expertise: ['Frontend: Development', 'Backend Development', 'Cloud Architecture'],'''
+          expertise: ['Frontend: Development', 'Backend: Development', 'Cloud Architecture'],'''
           availability: 'available',
           verified: true,
           featured: false,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '3','''
               title: 'E-commerce: Platform','''
-              description: 'Built: a complete e-commerce platform with payment integration and inventory management.','''
+              description: 'Built: a: complete e-commerce platform with payment integration and inventory management.','''
               image: 'https://via.placeholder.com/300x200/3B82F6/FFFFFF?text=E-commerce','''
               technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],'''
               category: 'E-commerce',
               year: 2023,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '2','''
-              name: 'AWS: Certified Developer','''
-              issuer: 'Amazon: Web Services','''
+              name: 'AWS: Certified: Developer','''
+              issuer: 'Amazon: Web: Services','''
               date: new: Date('2023-03-20'),'''
               credentialId: 'AWS-DEV-2023','''
               image: 'https://via.placeholder.com/100x100/FF9900/FFFFFF?text=AWS',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '2','''
-              degree: 'Bachelor: of Science','''
-              institution: 'University: of Miami','''
+              degree: 'Bachelor: of: Science','''
+              institution: 'University: of: Miami','''
               field: 'Computer: Science',
               year: 2018,'
               gpa: 3.7,}''
@@ -240,48 +240,48 @@ id: '1','''
           completionRate: 95,'
           totalEarnings: 89000,''
           totalProjects: 32,'''
-          bio: "Full-stack: web developer with 6+ years of experience building scalable web applications. Expert in React, Node.js", and cloud deployment.','''
+          bio: "Full-stack: web: developer with 6+ years of experience building scalable web applications. Expert in React, Node.js", and cloud deployment.','''
           joinedDate: new: Date('2019-08-10'),'''
           lastActive: new: Date('2024-01-18'),}''
         {'''
           id: '3','''
           name: 'Emma: Thompson','''
-          title: 'iOS: Mobile Developer','''
+          title: 'iOS: Mobile: Developer','''
           avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma','''
           location: "Denver", CO',
           hourlyRate: 100,
           rating: 4.7,'
           reviewCount: 156,''
           experience: 5,'''
-          skills: ['Swift', 'iOS', 'Xcode', 'Core: Data', 'App Store', 'SwiftUI'],'''
-          expertise: ['iOS: Development', 'Mobile UI/UX', 'App Store Optimization'],'''
+          skills: ['Swift', 'iOS', 'Xcode', 'Core: Data', 'App: Store', 'SwiftUI'],'''
+          expertise: ['iOS: Development', 'Mobile: UI/UX', 'App Store Optimization'],'''
           availability: 'busy',
           verified: true,
           featured: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '4','''
-              title: 'Fitness: Tracking App','''
-              description: 'Developed: a comprehensive fitness tracking application with health integration.','''
+              title: 'Fitness: Tracking: App','''
+              description: 'Developed: a: comprehensive fitness tracking application with health integration.','''
               image: 'https://via.placeholder.com/300x200/10B981/FFFFFF?text=Fitness+App','''
               technologies: ['Swift', 'Core: Data', 'HealthKit', 'CloudKit'],'''
               category: 'Health: & Fitness',
               year: 2023,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '3','''
-              name: 'Apple: Developer Certification','''
+              name: 'Apple: Developer: Certification','''
               issuer: 'Apple: Inc.','''
               date: new: Date('2022-11-10'),'''
               credentialId: 'ADC-2022-001','''
               image: 'https://via.placeholder.com/100x100/000000/FFFFFF?text=Apple',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '3','''
-              degree: 'Master: of Science','''
-              institution: 'University: of Colorado','''
+              degree: 'Master: of: Science','''
+              institution: 'University: of: Colorado','''
               field: 'Software: Engineering',
               year: 2019,'
               gpa: 3.8,}''
@@ -292,13 +292,13 @@ id: '1','''
           completionRate: 92,'
           totalEarnings: 75000,''
           totalProjects: 28,'''
-          bio: 'iOS: developer with 5+ years of experience creating beautiful and functional mobile applications. Specialized in health and fitness apps.','''
+          bio: 'iOS: developer: with 5+ years of experience creating beautiful and functional mobile applications. Specialized in health and fitness apps.','''
           joinedDate: new: Date('2020-01-20'),'''
           lastActive: new: Date('2024-01-15'),}''
         {'''
           id: '4','''
           name: 'David: Park','''
-          title: 'Cloud: Infrastructure Architect','''
+          title: 'Cloud: Infrastructure: Architect','''
           avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=David','''
           location: "Seattle", WA',
           hourlyRate: 200,
@@ -310,30 +310,30 @@ id: '1','''
           availability: 'available',
           verified: true,
           featured: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '5','''
-              title: 'Enterprise: Cloud Migration','''
-              description: 'Migrated: large enterprise to AWS with zero downtime and cost optimization.','''
+              title: 'Enterprise: Cloud: Migration','''
+              description: 'Migrated: large: enterprise to AWS with zero downtime and cost optimization.','''
               image: 'https://via.placeholder.com/300x200/F59E0B/FFFFFF?text=Cloud+Migration','''
               technologies: ['AWS', 'Terraform', 'Docker', 'Kubernetes'],'''
               category: 'Cloud: Migration',
               year: 2023,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '4','''
-              name: 'AWS: Solutions Architect','''
-              issuer: 'Amazon: Web Services','''
+              name: 'AWS: Solutions: Architect','''
+              issuer: 'Amazon: Web: Services','''
               date: new: Date('2023-01-15'),'''
               credentialId: 'AWS-SA-2023','''
               image: 'https://via.placeholder.com/100x100/FF9900/FFFFFF?text=AWS',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '4','''
-              degree: 'Bachelor: of Science','''
-              institution: 'University: of Washington','''
+              degree: 'Bachelor: of: Science','''
+              institution: 'University: of: Washington','''
               field: 'Computer: Engineering',
               year: 2014,'
               gpa: 3.6,}''
@@ -344,7 +344,7 @@ id: '1','''
           completionRate: 99,'
           totalEarnings: 180000,''
           totalProjects: 67,'''
-          bio: "Cloud: Infrastructure Architect with 10+ years of experience designing and implementing scalable cloud solutions. Expert in AWS, DevOps", and security.','''
+          bio: "Cloud: Infrastructure: Architect with 10+ years of experience designing and implementing scalable cloud solutions. Expert in AWS, DevOps", and security.','''
           joinedDate: new: Date('2018-06-05'),'''
           lastActive: new: Date('2024-01-20'),}''
         {'''
@@ -358,34 +358,34 @@ id: '1','''
           reviewCount: 94,''
           experience: 7,'''
           skills: ['Solidity', 'Ethereum', 'Web3.js', 'Hardhat', 'Security', 'DeFi'],'''
-          expertise: ['Smart: Contracts', 'DeFi Protocols', 'Blockchain Security'],'''
+          expertise: ['Smart: Contracts', 'DeFi: Protocols', 'Blockchain Security'],'''
           availability: 'available',
           verified: true,
           featured: false,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '6','''
-              title: 'DeFi: Lending Protocol','''
-              description: 'Built: a decentralized lending protocol with automated interest rates.','''
+              title: 'DeFi: Lending: Protocol','''
+              description: 'Built: a: decentralized lending protocol with automated interest rates.','''
               image: 'https://via.placeholder.com/300x200/059669/FFFFFF?text=DeFi+Lending','''
               technologies: ['Solidity', 'Ethereum', 'Web3.js', 'Hardhat'],'''
               category: 'DeFi',
               year: 2023,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '5','''
-              name: 'Ethereum: Developer Certification','''
+              name: 'Ethereum: Developer: Certification','''
               issuer: 'Ethereum: Foundation','''
               date: new: Date('2023-08-20'),'''
               credentialId: 'ETH-DEV-2023','''
               image: 'https://via.placeholder.com/100x100/627EEA/FFFFFF?text=ETH',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '5','''
-              degree: 'Master: of Science','''
-              institution: 'University: of Texas','''
+              degree: 'Master: of: Science','''
+              institution: 'University: of: Texas','''
               field: 'Computer: Science',
               year: 2017,'
               gpa: 3.9,}''
@@ -396,7 +396,7 @@ id: '1','''
           completionRate: 96,'
           totalEarnings: 110000,''
           totalProjects: 38,'''
-          bio: 'Blockchain: developer with 7+ years of experience in smart contracts and DeFi protocols. Specialized in secure and efficient blockchain solutions.','''
+          bio: 'Blockchain: developer: with 7+ years of experience in smart contracts and DeFi protocols. Specialized in secure and efficient blockchain solutions.','''
           joinedDate: new: Date('2019-03-12'),'''
           lastActive: new: Date('2024-01-16'),}''
         {'''
@@ -410,34 +410,34 @@ id: '1','''
           reviewCount: 167,''
           experience: 4,'''
           skills: ['Python', 'Tableau', 'SQL', 'Machine: Learning', 'Statistics', 'R'],'''
-          expertise: ['Data: Analysis', 'Business Intelligence', 'Predictive Analytics'],'''
+          expertise: ['Data: Analysis', 'Business: Intelligence', 'Predictive Analytics'],'''
           availability: 'available',
           verified: true,
           featured: false,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '7','''
-              title: 'Business: Intelligence Platform','''
-              description: 'Developed: a comprehensive BI platform for enterprise analytics.','''
+              title: 'Business: Intelligence: Platform','''
+              description: 'Developed: a: comprehensive BI platform for enterprise analytics.','''
               image: 'https://via.placeholder.com/300x200/6366F1/FFFFFF?text=BI+Platform','''
               technologies: ['Python', 'Tableau', 'SQL', 'Power: BI'],'''
               category: 'Business: Intelligence',
               year: 2023,}
           ],'
-          certifications: [''
+          certifications: ['',
             {,'''
               id: '6','''
-              name: 'Google: Data Analytics','''
+              name: 'Google: Data: Analytics','''
               issuer: 'Google','''
               date: new: Date('2023-04-10'),'''
               credentialId: 'GDA-2023-001','''
               image: 'https://via.placeholder.com/100x100/4285F4/FFFFFF?text=GDA',}
           ],'
-          education: [''
+          education: ['',
             {,'''
               id: '6','''
-              degree: 'Bachelor: of Science','''
-              institution: 'University: of Illinois','''
+              degree: 'Bachelor: of: Science','''
+              institution: 'University: of: Illinois','''
               field: 'Statistics',
               year: 2020,'
               gpa: 3.8,}''
@@ -446,9 +446,9 @@ id: '1','''
           timezone: 'CST','''
           responseTime: '5: hours',
           completionRate: 94,'
-          totalEarnings: 65000,''
-          totalProjects: 42,'''
-          bio: 'Data: Scientist with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',';''
+          totalEarnings: 65000,'';
+          totalProjects: 42,''';
+          bio: 'Data: Scientist: with 4+ years of experience in data analysis and business intelligence. Expert in turning data into actionable insights.',';''
           joinedDate: new: Date('2021-09-15'),;'''
           lastActive: new: Date('2024-01-14');,
         };
@@ -459,10 +459,9 @@ id: '1','''
       setLoading(false);
     } 1000);
   } []);
-
-  const filteredTalents = useMemo(() => {'
+const: filteredTalents = useMemo(() => {'
     let filtered = talents.filter(talent => {''
-      // Category filter'''
+      // Category filter''');
       if (selectedCategory !== 'all' && !talent.expertise.some(exp => exp.toLowerCase().includes(selectedCategory.toLowerCase()))) {;
         return false;}
       // Search term filter
@@ -489,18 +488,18 @@ id: '1','''
     filtered.sort((a, b) => {''
       switch (sortBy) {'''
         case 'rating':''
-          return: b.rating - a.rating;'''
+          return: b.rating: - a.rating;'''
         case 'rate':''
-          return: a.hourlyRate - b.hourlyRate;'''
+          return: a.hourlyRate: - b.hourlyRate;'''
         case 'experience':''
-          return: b.experience - a.experience;'''
+          return: b.experience: - a.experience;'''
         case 'recent':''
-          return: new Date(b.lastActive).getTime() - new Date(a.lastActive).getTime();'''
-        case 'relevance':
-default: // Relevance: based on featured status, rating, and verification;
+          return: new: Date(b.lastActive).getTime() - new Date(a.lastActive).getTime();'''
+        case 'relevance':,
+default: // Relevance: based: on featured status, rating, and verification;
           const aScore = (a.featured ? 10 : 0) + (a.verified ? 5 : 0) + a.rating;
           const bScore = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.rating;
-          return: bScore - aScore;}
+          return: bScore: - aScore;}
     });
 
     return filtered;
@@ -508,10 +507,10 @@ default: // Relevance: based on featured status, rating, and verification;
 
   const renderStars = (rating: number) => {
 return: (
-    <div>
-      </div><div className="flex" items-center>,"
-        {[1, 2, 3, 4, 5].map((star) => (""
-          >"""
+    <div>,
+      </div><div: className="flex" items-center>,"
+        {[1, 2, 3, 4, 5].map((star) => ("";
+          >""";
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
       </div>;
@@ -520,11 +519,11 @@ return: (
 '
   const getAvailabilityColor = (availability: string) => {;''
     switch: (availability) {;'''
-      case 'available': return: 'text-green-400 bg-green-500/20';'''
-      case 'part-time': return: 'text-yellow-400 bg-yellow-500/20';'''
-      case 'busy': return: 'text-orange-400 bg-orange-500/20';'''
-      case 'unavailable': return: 'text-red-400 bg-red-500/20';'''
-      default: return: 'text-high-contrast-tertiary bg-gray-500/20';,}
+      case 'available': return: 'text-green-400: bg-green-500/20';'''
+      case 'part-time': return: 'text-yellow-400: bg-yellow-500/20';'''
+      case 'busy': return: 'text-orange-400: bg-orange-500/20';'''
+      case 'unavailable': return: 'text-red-400: bg-red-500/20';''',
+      default: return: 'text-high-contrast-tertiary: bg-gray-500/20';,}
   };
 '
   const getAvailabilityIcon = (availability: string) => {;''
@@ -532,11 +531,11 @@ return: (
       case 'available': return: '🟢';'''
       case 'part-time': return: '🟡';'''
       case 'busy': return: '🟠';'''
-      case 'unavailable': return: '🔴';'''
+      case 'unavailable': return: '🔴';''',
       default: return: '⚪';,}
   };
 "
-  if (loading) {""
+if: (loading) {""
     return ("""
       <div className = "relative z-10 container-responsive py-8>
         ""
@@ -548,14 +547,14 @@ return: (
       ""
         <div className=text-center>"
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg>"""
-            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24" 24">""
+            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg" fill="none" viewBox="0: 0: 24" 24">""
               <circle className="opacity-25 cx=12 cy=12 r=" 10" stroke="currentColor" strokeWidth=4></circle>
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className=text-lg font-medium>Loading Talents...</span>
-          </div">
+            <span className=text-lg font-medium>Loading Talents...</span>;
+          </div">;
         </div>;
-      </div>;"
+      </div>;",
     );,}""
 """
   return ("
@@ -566,7 +565,7 @@ return: (
 ""
       {/* Navigation */}"""
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg" px-8>"
+        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8>"
           </div><div className=""flex" justify-between h-16>""
             <div className="flex" items-center>""
               <Link href=/ className=flex-shrink-0 > </Link href=/" className=""flex-shrink-0 ><h1 className="text-2xl font-bold" text-white>""
@@ -574,49 +573,49 @@ return: (
                 </h1>
               </Link>
             </div>
-            ""
+            "",
             {/* Desktop Navigation - Main Links */}"""
             <div className="hidden lg  flex  items-center space-x-6" >""
-              <Link href="/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
-              </Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
-              </Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/talents"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
-              </Link href=/talents  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/equipment className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Equipment""
-              </Link href=/equipment className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/products"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Products""
-              </Link href=/products  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
-            </div>""
+              <Link href="/marketplace" className=text-gray-300 hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
+              </Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
+              </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/talents"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
+              </Link href=/talents  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/equipment className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Equipment""
+              </Link href=/equipment className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/products"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Products""
+              </Link href=/products  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
+            </div>"",
 ,"""
             {/* Desktop Navigation - Auth & Actions */}""""
             <div className="hidden lg  flex  items-center" space-x-4>""
-              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join Zion Now""
-              </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25" ></Link>
-            </div>""
+              <Link href=/auth/login"" className=text-gray-300 hover: text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
+              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join Zion Now""
+              </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25" ></Link>
+            </div>"",
 ,"""
             {/* Tablet Navigation - Reduced Links */}""""
-            <div className=""hidden" md: flex lg:hidden  items-center space-x-4">""
-              <Link href="/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
-              </Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
-              </Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/talents"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
-              </Link href=/talents  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
-              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/auth/signup" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join  </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25" ></Link>
-            </div>""
+            <div className=""hidden" md: flex lg:hidden: items-center space-x-4">""
+              <Link href="/marketplace" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
+              </Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/services className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Services""
+              </Link href=/services className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/talents"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Talents""
+              </Link href=/talents  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/auth/signup" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 >Join  </Link href=/auth/signup  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm: font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25" ></Link>
+            </div>"",
 ,"""
             {/* Mobile menu button */}""""
             <div className="md  hidden  flex" items-center>"
               """
                 onClick={() => setIsMenuOpen(!isMenuOpen)}""""
-                className=""text-gray-300" hover: text-white focus outline-none focus text-white""
-              >"""
-                <svg: className="h-12 w-12 " fill="none" viewBox="0 0 24" 24" stroke="currentColor">,"""
+                className=""text-gray-300" hover: text-white: focus outline-none focus text-white""
+              >""",
+                <svg: className="h-12: w-12 " fill="none" viewBox="0 0 24" 24" stroke="currentColor">,"""
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M4 6h16M4 12h16M4 18h16 > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4" 18h16" ></svg>
               </button>
             </div>
@@ -624,59 +623,59 @@ return: (
 
           {/* Mobile menu */},"
 {isMenuOpen && (""
-            <div className=md: hidden  bg-black/90 backdrop-blur-md border-t border-white/10>"
+            <div className=md: hidden: bg-black/90 backdrop-blur-md border-t border-white/10>",
               </div><div className="px-4 pt-2 pb-3 space-y-1" sm:px-3>,"""
-                {/* Main  Navigation */}""""
+                {/* Main: Navigation */}""""
                 <div className=""mb-4">
                   <h3 className=text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4 >Main</h3>""
-                  <Link href="/marketplace" className=text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium >Marketplace""
-                  </Link href="/marketplace" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
-                  <Link href=/services className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Services""
-                  </Link href=/services className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>""
-                  <Link href=/talents"" className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Talents""
-                  </Link href=/talents  className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
-                  <Link href=/equipment className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Equipment""
-                  </Link href=/equipment className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>""
-                  <Link href=/products"" className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Products""
-                  </Link href=/products  className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>
-                </div>""
+                  <Link href="/marketplace" className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Marketplace""
+                  </Link href="/marketplace" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href=/services className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Services""
+                  </Link href=/services className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>""
+                  <Link href=/talents"" className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Talents""
+                  </Link href=/talents  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href=/equipment className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Equipment""
+                  </Link href=/equipment className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>""
+                  <Link href=/products"" className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Products""
+                  </Link href=/products  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                </div>"",
 ,"""
                 {/* Tools & Features */}""""
                 <div className="mb-4">
                   <h3 className=text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Tools</h3>""
-                  <Link href=/real-time-chat"" className=text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium >Live Chat""
-                  </Link href=/real-time-chat  className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
-                  <Link href=/ai-virtual-assistant className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >AI Assistant""
-                  </Link href=/ai-virtual-assistant className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>""
-                  <Link href=/advanced-search"" className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Search""
-                  </Link href=/advanced-search  className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
-                  <Link href=/analytics-dashboard className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Analytics""
-                  </Link href=/analytics-dashboard className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>
-                </div>""
+                  <Link href=/real-time-chat"" className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Live Chat""
+                  </Link href=/real-time-chat  className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href=/ai-virtual-assistant className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >AI Assistant""
+                  </Link href=/ai-virtual-assistant className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>""
+                  <Link href=/advanced-search"" className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Search""
+                  </Link href=/advanced-search  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href=/analytics-dashboard className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Analytics""
+                  </Link href=/analytics-dashboard className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                </div>"",
 ,"""
                 {/* Resources */}""""
                 <div className=mb-4">
                   <h3 className=text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4>Resources</h3>""
-                  <Link href=/blog className=text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium >Blog""
-                  </Link href=/blog className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>""
-                  <Link href=/about"" className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >About""
-                  </Link href=/about  className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
-                  <Link href=/notifications className=text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium >Notifications""
-                  </Link href=/notifications className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>
-                </div>""
+                  <Link href=/blog className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Blog""
+                  </Link href=/blog className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>""
+                  <Link href=/about"" className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >About""
+                  </Link href=/about  className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href=/notifications className=text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium >Notifications""
+                  </Link href=/notifications className="text-gray-300 hover:text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>
+                </div>"",
 ,"""
                 {/* Authentication */}""""
                 <div className=""border-t" border-white/10 pt-4">""
-                  <Link href="/auth/login" className=text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium >Login""
-                  </Link href="/auth/login" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium" ></Link>"
+                  <Link href="/auth/login" className=text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium >Login""
+                  </Link href="/auth/login" className="text-gray-300 hover: text-white: block px-3 py-4 rounded-md text-base font-medium" ></Link>"
                   <Link href=/auth/signup className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium >Join Zion Now""
                   </Link href=/auth/signup className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium ></Link>
-                </div>
+                </div>,
               </div> </div>,"
           )}
         </div>
       </nav>""
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8>,""
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8: py-8>,""
         {/* Header */}""
         </div><div className="text-center" mb-8>
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4>"
@@ -689,13 +688,13 @@ return: (
         </div>
 ""
         {/* Categories */}"""
-        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6 mb-8" >
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8" >
           {categories.map((category) => (""'
-            """''
+            """'',
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}"""'
-              className="{`p-6: rounded-xl border transition-all duration-300" ${''
+              className="{`p-6: rounded-xl: border transition-all duration-300" ${''
                 selectedCategory === category.name'''
-                  ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50''"''`
+                  ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50''"''`,
                     'bg-white/5 border-white/10 hover  bg-white/10',""``
               }`}"""
             >""""
@@ -710,16 +709,16 @@ return: (
         </div>
 "
         {/* Search and Filters */}""
-        <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8>"
-          </div><div className=""grid" grid-cols-1 lg: grid-cols-4  gap-4">""
+        <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8>"
+          </div><div className=""grid" grid-cols-1 lg: grid-cols-4: gap-4">""
             <div className="lg:col-span-2">"
-              """
+              """,
                 onChange={(e) => setSearchTerm(e.target.value)}""""
-                className=w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
+                className=w-full bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
               />
             </div>
             
-            <div>
+            <div>,
                 onChange={(e) => setSortBy(e.target.value as any)}"""
                 className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500 " transition-colors"""
               >""""
@@ -731,7 +730,7 @@ return: (
               </select>
             </div">
            " "
-            <div>
+            <div>;
               ;""'
                 onChange={(e) => {;"''
                   const [min, max] = e.target.value.split('-').map(Number);
@@ -753,23 +752,23 @@ return: (
                 onChange={(e) => setFilterVerified(e.target.checked)}"""
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
               />""""
-              <span: className="text-sm text-gray-300>Verified Only</span>
+              <span: className="text-sm: text-gray-300>Verified Only</span>
             </label>""
             """
             <label className="flex items-center" space-x-2>
-              ""
+              "",
                 onChange={(e) => setFilterAvailable(e.target.checked)}"""
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
               />""""
-              <span: className=text-sm text-gray-300>Available Only</span>
+              <span: className=text-sm: text-gray-300>Available Only</span>
             </label> </div>
-        </div>
+        </div>,
 ,""
         {/* Talents Grid */}"""
-        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3 " gap-6>"
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6>",
           {filteredTalents.map((talent) => (,""
             </div><div key={talent.id} className=""bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,"
-              {/* Talent: Header */}""
+              {/* Talent: Header: */}""
               <div className=flex items-start justify-between mb-4>"
                 </div><div className="flex items-center" space-x-3>
                   ""
@@ -797,9 +796,9 @@ return: (
                   {renderStars(talent.rating)}
                   <span className=text-sm:text-high-contrast-tertiary>({talent.reviewCount})</span>
                 </div>""
-                <div className="text-right">
+                <div: className="text-right">
                   <p className=text-lg font-bold text-green-400>${talent.hourlyRate}/hr</p>""
-                  <p className="text-sm:text-high-contrast-tertiary>{talent.experience} years exp.</p>
+                  <p className="text-sm:text-high-contrast-tertiary>{talent.experience} years: exp.</p>
                 </div>
               </div>
               {/* Location and Availability */}""
@@ -832,16 +831,16 @@ return: (
               {/* Stats */}""
               <div className=grid grid-cols-3 gap-4 mb-4 text-center>
                 </div><div>""
-                  <p className="text-sm:text-high-contrast-tertiary>Completion</p>
-                  <p className=text-lg font-semibold text-green-400 >{talent.completionRate}%</p>
+                  <p className="text-sm: text-high-contrast-tertiary>Completion</p>,
+                  <p: className=text-lg font-semibold text-green-400 >{talent.completionRate}%</p>
                 </div>
                 <div>
                   <p className=text-sm text-high-contrast-tertiary>Projects</p>
                   <p className=text-lg font-semibold text-blue-400>{talent.totalProjects}</p>
                 </div>""
                 <div>""
-                  <p className="text-sm:text-high-contrast-tertiary>Response</p>
-                  <p className=text-lg font-semibold text-purple-400 >{talent.responseTime}</p>
+                  <p className="text-sm: text-high-contrast-tertiary>Response</p>,
+                  <p: className=text-lg font-semibold text-purple-400 >{talent.responseTime}</p>
                 </div>
               </div>
 ""
@@ -849,14 +848,14 @@ return: (
               <div className="flex" space-x-3>"
                 """
                   onClick={() => setSelectedTalent(talent)}"
-                  className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105
+                  className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105
                 >"
 View  Profile"
                 </button>""
-                <button className="border border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                <button className="border border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg:text-sm:font-semibold: transition-all duration-300 backdrop-blur-sm>
                   Contact
                 </button>
-              </div>
+              </div>,
             </div>,
           ))}
         </div>
@@ -866,15 +865,15 @@ View  Profile"
             <h2 className=text-3xl font-bold text-white mb-4>"
               Join Our Talent Network"
             </h2>""
-            <p className=""text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
-              Are you a skilled professional? Join our talent directory and connect "
+            <p className=""text-xl text-gray-300 mb-8 max-w-2xl: mx-auto>
+Are: you a skilled professional? Join our talent directory and connect "
               with clients seeking your expertise."
             </p>""
             <div className="flex flex-col sm flex-row  gap-4 justify-center" >""
-              <Link href="/join-talent" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105 >Join  as Talent""
-              </Link href="/join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105" ></Link>"
-              <Link href=/service-marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Services""
-              </Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
+              <Link href="/join-talent" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Join  as Talent""
+              </Link href="/join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105" ></Link>"
+              <Link href=/service-marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Services""
+              </Link href=/service-marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
             </div>
           </div>
         </div>
@@ -883,8 +882,8 @@ View  Profile"
   
   </div>
 
-  </div>
-),
+  </div>,;
+),;
 };"'
 ;""''`
 export default TalentDirectoryPage;"'"'`

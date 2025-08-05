@@ -103,6 +103,7 @@ interface BackupRecoveryInsight {
   recommendations: string[];}
 const AIPoweredBackupRecoveryPage: NextPage = () => {
   
+  
   const [backupJobs, setBackupJobs] = useState<BackupJob[]>([]
   const [recoveryPlans, setRecoveryPlans] = useState<RecoveryPlan[]>([]
   const [disasterRecoveries, setDisasterRecoveries] = useState<DisasterRecovery[]>([]
@@ -129,6 +130,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         successRate: 98,'
         efficiencyScore: 92,''
         reliabilityScore: 95,'''
+}
 }
         recommendations: ['Optimize compression', 'Schedule during off-peak hours']}}
     }]'
@@ -263,47 +265,47 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
 """
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}"
-        </div><div className="fixed inset-0 z-0>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
+        {/* Background Effects */}
+        </div><div className="fixed" inset-0 z-0>
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
         </div>
-      "
-      {/* Header */}"""
+      
+      {/* Header */}""
       <div className="relative overflow-hidden>
-        </div><div className="absolute" inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div>"
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div>
+        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44>
           </div><div className="text-center">""
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Backup & Recovery System
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
               Data backup, disaster recovery, system restoration, 
-              backup management, recovery planning, and automated backup scheduling powered by AI."
-            </p>""
+              backup management, recovery planning, and automated backup scheduling powered by AI.
+            </p>
             <div className="flex flex-wrap justify-center gap-4>
               </div><div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3">""
                 <span className="text-white font-semibold>💾 Data Backup</span>
               </div>
-              <div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3>""
+              <div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3>
                 <span className="text-white font-semibold>🔄 Disaster Recovery</span>
               </div>
               <div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3>""
-                <span className="text-white" font-semibold>🛠️ System Restoration</span>
+                <span className="text-white font-semibold>🛠️ System Restoration</span>
               </div>
             </div>
-          </div">
+          </div>
         </div>
-      </div>"
-""
+      </div>
+"
       {/* Main Content */}"""
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? (
-          </div><div className="flex justify-center items-center py-40>
+          </div><div className="flex" justify-center items-center py-40>
             <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-violet-500></div>
           </div>
         ) : (
-          </div>"
+          </div>
             {/* Tabs */}"""
             <div className="flex flex-wrap justify-center mb-8>'
               ''
@@ -328,7 +330,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
               </button>''
               '''`
                 onClick={() => setActiveTab('disasters')}''``
-                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${'''
                   activeTab === 'disasters''''
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'``
@@ -338,7 +340,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
               </button>''
               '''`
                 onClick={() => setActiveTab('storage')}''``
-                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                className={`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
                   activeTab === 'storage''''
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'``
@@ -348,7 +350,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
               </button>''
               '''`
                 onClick={() => setActiveTab('restoration')}''``
-                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${'''
                   activeTab === 'restoration''''
                     ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'``
@@ -358,36 +360,36 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
               </button>
             </div>'
 ''
-            {/* Backups Tab */},'"''
-{activeTab === 'backups' && ("""
+            {/* Backups Tab */},'''
+{activeTab === 'backups' && ("
               <div className="space-y-8>
                 {/* Controls */}
-                </div><div className="bg-white/10 backdrop-blur-sm rounded-xl p-6>""
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0>
+                </div><div className="bg-white/10" backdrop-blur-sm rounded-xl p-6>
+                  <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md space-y-0>
                     </div><div className="flex" items-center space-x-4">
                       ""
                         onChange={(e) => setSelectedType(e.target.value)}"""
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500 >"
-                        <option value=""all" className="bg-slate-800>All Types</option>
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500 >
+                        <option value=all className="bg-slate-800>All Types</option>
                         <option value=full className="bg-slate-800">Full</option>
-                        <option value="incremental" className="bg-slate-800">Incremental</option>
-                        <option value="differential" className="bg-slate-800">Differential</option>
-                        <option value="snapshot" className="bg-slate-800">Snapshot</option>
-                        <option value="archive" className="bg-slate-800">Archive</option>
-                        <option value="replication" className="bg-slate-800">Replication</option>
-                      </select>"
-                    </div>""
-                    <button className="bg-gradient-to-r" from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
+                        <option value="incremental" className="bg-slate-800>Incremental</option>
+                        <option value=differential className="bg-slate-800">Differential</option>
+                        <option value=snapshot" className="bg-slate-800>Snapshot</option>
+                        <option value=archive className="bg-slate-800">Archive</option>
+                        <option value=replication" className="bg-slate-800>Replication</option>
+                      </select>
+                    </div>
+                    <button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
                       Create Backup
-                    </button">
+                    </button>
                   </div>
                 </div>"
 ""
                 {/* Backups Grid */}"""
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                   {filteredBackups.map((backup) => (
-                    </div><div key={backup.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>""
-                      <div className="flex items-start justify-between mb-4>
+                    </div><div key={backup.id} className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                      <div className="flex" items-start justify-between mb-4>
                         </div><div>
                           <h3 className="text-xl" font-semibold text-white mb-2>{backup.name}</h3>
                           <p className="text-gray-300 text-sm capitalize">{backup.type} Backup</p>
@@ -395,8 +397,8 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                         <div className="text-right>``
                           <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(backup.status)}`}>
                             {backup.status}
-                          </span>"
-                          <div className="mt-2>
+                          </span>
+                          <div className="mt-2">
                             <span className="px-4" py-3 rounded-full text-xs font-medium bg-violet-500/20 text-violet-300>
                               {formatBytes(backup.size)}
                             </span>
@@ -407,18 +409,18 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                       <div className="mb-4>
                         <p className="text-gray-300" text-sm>{backup.description}</p>
                       </div>
-"""
+"
                       <div className="grid grid-cols-3 gap-4 mb-4>
-                        </div><div className="bg-white/5" rounded-lg p-4">""
+                        </div><div className="bg-white/5" rounded-lg p-4>"
                           <div className="text-sm text-gray-400 mb-1>Duration</div>
                           <div className="text-2xl" font-bold text-white>{backup.duration}m</div>
-                        </div>"
-                        <div className="bg-white/5 rounded-lg p-4>
+                        </div>
+                        <div className="bg-white/5" rounded-lg p-4>
                           </div><div className="text-sm" text-gray-400 mb-1>Size</div>"
                           <div className="text-2xl font-bold text-white>{formatBytes(backup.size)}</div>
                         </div>
-                        <div className="bg-white/5" rounded-lg p-4>"
-                          </div><div className="text-sm text-gray-400 mb-1>Next Run</div>
+                        <div className="bg-white/5" rounded-lg p-4>
+                          </div><div className="text-sm" text-gray-400 mb-1>Next Run</div>
                           <div className="text-sm" font-bold text-white>
                             {backup.nextRun.toLocaleDateString()}
                           </div>
@@ -427,22 +429,22 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
 ""
                       {/* AI Analysis */}"""
                       <div className="mb-4>
-                        <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>"
-                        <div className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>
+                        <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
+                        <div className="bg-gradient-to-r" from-violet-600/20 to-purple-600/20 rounded-lg p-4>
                           </div><div className="grid" grid-cols-3 gap-4 text-sm>"
                             <div>"
                               </div><div className="text-gray-400 mb-1>Success Rate</div>
                               <div className="text-white" font-semibold>{backup.aiAnalysis.successRate}%</div>
                             </div>
-                            <div>"
-                              </div><div className="text-gray-400 mb-1>Efficiency</div>
+                            <div>
+                              </div><div className="text-gray-400" mb-1>Efficiency</div>
                               <div className="text-white" font-semibold>{backup.aiAnalysis.efficiencyScore}%</div>
                             </div>"
                             <div>"
                               </div><div className="text-gray-400 mb-1>Reliability</div>
                               <div className="text-white" font-semibold>{backup.aiAnalysis.reliabilityScore}%</div>
                             </div>
-                          </div>""
+                          </div>
                           <div className="mt-3>
                             </div><div className="text-sm" font-medium text-gray-400 mb-1>Recommendations:</div>"'
                             <div className="text-xs text-gray-300>''
@@ -452,8 +454,8 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
                         </div>
                       </div>
 
-                      <div className="flex space-x-2>""
-                        <button className="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                      <div className="flex" space-x-2>
+                        <button className="flex-1" bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           View Details
                         </button>
                         <button className="flex-1" border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
@@ -468,41 +470,41 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
             {/* Analytics Tab */},"""''
 {activeTab === 'analytics' && analytics && ("""
               <div className="space-y-8>
-                </div><div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">""
+                </div><div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalBackups.toLocaleString()}</div>"
-                    <div className="text-gray-400 text-sm>Total Backups</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalBackups.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm>Total Backups</div>
                   </div>
                   <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
                     </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeRecoveryPlans.toLocaleString()}</div>""
                     <div className="text-gray-400 text-sm>Recovery Plans</div>
                   </div>
                   <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.averageSuccessRate}%</div>""
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.averageSuccessRate}%</div>"
                     <div className="text-gray-400 text-sm>Success Rate</div>
                   </div>
                   <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>""
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>"
                     <div className="text-gray-400 text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-"
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>"
+
+                <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
                   <div className="space-y-4>
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>""
+                      </div><div key={insight.id} className="bg-gradient-to-r" from-violet-600/20 to-purple-600/20 rounded-lg p-4>"
                         <div className="flex items-start justify-between mb-2>
-                          <h4 className="text-white" font-semibold>{insight.title}</h4">`
-                          ``"
+                          <h4 className="text-white" font-semibold>{insight.title}</h4>`
+                          ``
                          " }`}>"
                             {insight.impact}
                           </span>
                         </div>""
                         <p className="text-gray-300 text-sm mb-3>{insight.description}</p>
                         <div className="text-xs" text-gray-400 mb-2>
-                          Confidence: {Math.round(insight.confidence * 100)}%"
-                        </div>""'
+                          Confidence: {Math.round(insight.confidence * 100)}%
+                        </div>"'
                         <div className="text-xs text-gray-400>''
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
                         </div>
@@ -516,22 +518,22 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         )}
       </div>
 
-      {/* CTA Section */}""
-      <div className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 mt-16>
-        </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-36">""
+      {/* CTA Section */}
+      <div className="bg-gradient-to-r" from-violet-600/20 to-purple-600/20 mt-16>
+        </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-36>""
           <div className="text-center>
             <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Protect Your Data?
-            </h2>""
+            </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your backup journey with our AI-powered recovery system 
               and ensure comprehensive data protection and business continuity.
-            </p>"
-            <div className="flex flex-col sm flex-row gap-4 justify-center>
+            </p>
+            <div className="flex" flex-col sm flex-row gap-4 justify-center>
               <Link href="/ai-service-matcher" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-violet-500/25 transform hover scale-105>
                 Start Backing Up
               </Link>
-              <Link href="/talent-directory" className="border" border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>
                 Learn More
               </Link>
             </div>

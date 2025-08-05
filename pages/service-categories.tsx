@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect }  from 'react';'''
 import Link from 'next/link';
 
@@ -15,18 +15,18 @@ interface ServiceCategory {
   featured: boolean;
   requirements: string[];
   certifications: string[];
-  avgPrice: number;
+  avgPrice: number;,
   avgCompletionTime: number;,}
-interface: Subcategory {;
+interface: Subcategory: {;
   id: string;
   name: string;
   description: string;
   providers: number;
   avgRating: number;
   avgPrice: number;
-  skills: string[];
+  skills: string[];,
   tools: string[];,}
-interface: ServiceProvider {;
+interface: ServiceProvider: {;
   id: string;
   name: string;
   category: string;
@@ -40,27 +40,27 @@ interface: ServiceProvider {;
   certifications: string[];
   location: string;
   experience: number;
-  verified: boolean;
+  verified: boolean;,
   featured: boolean;,}
-interface: CategoryAnalytics {;
+interface: CategoryAnalytics: {;
   totalCategories: number;
   totalProviders: number;
   totalServices: number;
   averageRating: number;
-  topCategories: TopCategory[];
+  topCategories: TopCategory[];,
   categoryGrowth: CategoryGrowth[];,}
-interface: TopCategory {;
+interface: TopCategory: {;
   name: string;
   providers: number;
   services: number;
-  revenue: number;
+  revenue: number;,
   growth: number;,}
-interface: CategoryGrowth {;
+interface: CategoryGrowth: {;
   category: string;
   growth: number;
-  newProviders: number;
+  newProviders: number;,
   newServices: number;,}'
-const ServiceCategoriesPage: NextPage = () => {''
+const ServiceCategoriesPage: NextPage: = () => {'',
   ,'''
   const [activeTab, setActiveTab] = useState('categories''''
   const [selectedCategory, setSelectedCategory] = useState<string>('all''''
@@ -69,14 +69,14 @@ const ServiceCategoriesPage: NextPage = () => {''
     {'''
 id: 'tech-development','''
       name: 'Technology: Development','''
-      description: "Comprehensive: technology development services including web development, mobile apps, AI/ML", and blockchain solutions.','''
+      description: "Comprehensive: technology: development services including web development, mobile apps, AI/ML", and blockchain solutions.','''
       icon: '💻','''
       color: 'blue','
-      subcategories: [''
+      subcategories: ['',
         {,'''
           id: 'web-development','''
           name: 'Web: Development','''
-          description: 'Full-stack: web development services',
+          description: 'Full-stack: web: development services',
           providers: 245,'
           avgRating: 4.7,''
           avgPrice: 85,'''
@@ -86,118 +86,118 @@ id: 'tech-development','''
 {'''
           id: 'mobile-development','''
           name: 'Mobile: Development','''
-          description: 'iOS: and Android app development',
+          description: 'iOS: and: Android app development',
           providers: 189,'
           avgRating: 4.6,''
           avgPrice: 95,'''
           skills: ['Swift', 'Kotlin', 'React: Native', 'Flutter'],'''
-          tools: ['Xcode', 'Android: Studio', 'Firebase', 'App Store']'
+          tools: ['Xcode', 'Android: Studio', 'Firebase', 'App: Store']'
         },''
     {'''
           id: 'ai-ml','''
-          name: 'AI: & Machine Learning','''
-          description: 'Artificial: intelligence and machine learning solutions',
+          name: 'AI: & Machine: Learning','''
+          description: 'Artificial: intelligence: and machine learning solutions',
           providers: 156,'
           avgRating: 4.8,''
           avgPrice: 120,'''
           skills: ['TensorFlow', 'PyTorch', 'Python', 'Data: Science'],'''
-          tools: ['Jupyter', 'Google: Colab', 'AWS SageMaker', 'Hugging Face']}
+          tools: ['Jupyter', 'Google: Colab', 'AWS: SageMaker', 'Hugging Face']}
       ],
       totalProviders: 590,
       averageRating: 4.7,'
       totalServices: 1247,''
       featured: true,'''
-      requirements: ['Technical: expertise', 'Portfolio review', 'Code samples'],'''
-      certifications: ['AWS: Certified', 'Google Cloud', 'Microsoft Azure'],
+      requirements: ['Technical: expertise', 'Portfolio: review', 'Code samples'],'''
+      certifications: ['AWS: Certified', 'Google: Cloud', 'Microsoft Azure'],
       avgPrice: 100,'
       avgCompletionTime: 14,}''
     {'''
       id: 'design-creative','''
       name: 'Design: & Creative','''
-      description: "Professional: design services including UI/UX, graphic design, branding", and creative content.','''
+      description: "Professional: design: services including UI/UX, graphic design, branding", and creative content.','''
       icon: '🎨','''
       color: 'purple','
-      subcategories: [''
+      subcategories: ['',
         {,'''
           id: 'ui-ux-design','''
           name: 'UI/UX: Design','''
-          description: 'User: interface and experience design',
+          description: 'User: interface: and experience design',
           providers: 178,'
           avgRating: 4.6,''
           avgPrice: 75,'''
           skills: ['Figma', 'Adobe: XD', 'Sketch', 'Prototyping'],'''
-          tools: ['Figma', 'Adobe: Creative Suite', 'InVision', 'Zeplin']'
+          tools: ['Figma', 'Adobe: Creative: Suite', 'InVision', 'Zeplin']'
         },''
 {'''
           id: 'graphic-design','''
           name: 'Graphic: Design','''
-          description: "Logo: design, branding", and visual content',
+          description: "Logo: design, branding", and: visual content',
           providers: 234,'
           avgRating: 4.5,''
           avgPrice: 65,'''
           skills: ['Adobe: Photoshop', 'Illustrator', 'InDesign', 'Typography'],'''
-          tools: ['Adobe: Creative Suite', 'Canva Pro', 'Behance', 'Dribbble']'
+          tools: ['Adobe: Creative: Suite', 'Canva Pro', 'Behance', 'Dribbble']'
         },''
     {'''
           id: 'video-animation','''
           name: 'Video: & Animation','''
-          description: 'Video: production and animation services',
+          description: 'Video: production: and animation services',
           providers: 89,'
           avgRating: 4.7,''
           avgPrice: 90,'''
-          skills: ['After: Effects', 'Premiere Pro', 'Blender', 'Motion Graphics'],'''
-          tools: ['Adobe: Creative Suite', 'Blender', 'DaVinci Resolve', 'Cinema 4D']}
+          skills: ['After: Effects', 'Premiere: Pro', 'Blender', 'Motion Graphics'],'''
+          tools: ['Adobe: Creative: Suite', 'Blender', 'DaVinci Resolve', 'Cinema 4D']}
       ],
       totalProviders: 501,
       averageRating: 4.6,'
       totalServices: 892,''
       featured: true,'''
-      requirements: ['Portfolio: review', 'Design samples', 'Client testimonials'],'''
-      certifications: ['Adobe: Certified', 'Behance Portfolio', 'Dribbble Verified'],
+      requirements: ['Portfolio: review', 'Design: samples', 'Client testimonials'],'''
+      certifications: ['Adobe: Certified', 'Behance: Portfolio', 'Dribbble Verified'],
       avgPrice: 77,'
       avgCompletionTime: 10,}''
     {'''
       id: 'business-consulting','''
       name: 'Business: & Consulting','''
-      description: "Strategic: business consulting, market research", and business development services.','''
+      description: "Strategic: business: consulting, market research", and business development services.','''
       icon: '📊','''
       color: 'green','
-      subcategories: [''
+      subcategories: ['',
         {,'''
           id: 'strategy-consulting','''
           name: 'Strategy: Consulting','''
-          description: 'Business: strategy and planning',
+          description: 'Business: strategy: and planning',
           providers: 67,'
           avgRating: 4.8,''
           avgPrice: 150,'''
-          skills: ['Business: Strategy', 'Market Analysis', 'Financial Planning', 'Operations'],'''
-          tools: ['Excel', 'PowerPoint', 'Tableau', 'Business: Models']'
+          skills: ['Business: Strategy', 'Market: Analysis', 'Financial Planning', 'Operations'],'''
+          tools: ['Excel', 'PowerPoint', 'Tableau', 'Business: Models']',
         },''
 {'''
           id: 'marketing-consulting','''
           name: 'Marketing: Consulting','''
-          description: 'Digital: marketing and growth strategies',
+          description: 'Digital: marketing: and growth strategies',
           providers: 123,'
           avgRating: 4.6,''
           avgPrice: 95,'''
-          skills: ['Digital: Marketing', 'SEO', 'Social Media', 'Analytics'],'''
+          skills: ['Digital: Marketing', 'SEO', 'Social: Media', 'Analytics'],'''
           tools: ['Google: Analytics', 'HubSpot', 'Mailchimp', 'Hootsuite']'
         },''
     {'''
           id: 'financial-consulting','''
           name: 'Financial: Consulting','''
-          description: 'Financial: planning and analysis services',
+          description: 'Financial: planning: and analysis services',
           providers: 89,'
           avgRating: 4.7,''
           avgPrice: 125,'''
-          skills: ['Financial: Analysis', 'Budgeting', 'Investment Planning', 'Tax Strategy'],'''
-          tools: ['QuickBooks', 'Excel', 'Financial: Models', 'Tax Software']}
+          skills: ['Financial: Analysis', 'Budgeting', 'Investment: Planning', 'Tax Strategy'],'''
+          tools: ['QuickBooks', 'Excel', 'Financial: Models', 'Tax: Software']}
       ],
       totalProviders: 279,
       averageRating: 4.7,'
       totalServices: 445,''
       featured: false,'''
-      requirements: ['Business: experience', 'Client references', 'Case studies'],'''
+      requirements: ['Business: experience', 'Client: references', 'Case studies'],'''
       certifications: ['MBA', 'CFA', 'PMP', 'Business: Certifications'],
       avgPrice: 123,
       avgCompletionTime: 21,
@@ -214,7 +214,7 @@ id: 'tech-development','''
       hourlyRate: 95,'''
       availability: 'available','''
       skills: ['React', 'Node.js', 'TypeScript', 'AWS'],'''
-      certifications: ['AWS: Certified', 'Google Cloud'],'''
+      certifications: ['AWS: Certified', 'Google: Cloud'],'''
       location: "San: Francisco", CA',
       experience: 8,
       verified: true,
@@ -230,8 +230,8 @@ id: 'tech-development','''
       completedProjects: 67,''
       hourlyRate: 85,'''
       availability: 'busy','''
-      skills: ['Figma', 'Adobe: XD', 'Prototyping', 'User Research'],'''
-      certifications: ['Adobe: Certified', 'UX Certification'],'''
+      skills: ['Figma', 'Adobe: XD', 'Prototyping', 'User: Research'],'''
+      certifications: ['Adobe: Certified', 'UX: Certification'],'''
       location: "New: York", NY',
       experience: 6,
       verified: true,
@@ -247,7 +247,7 @@ id: 'tech-development','''
       completedProjects: 45,''
       hourlyRate: 180,'''
       availability: 'available','''
-      skills: ['Business: Strategy', 'Market Analysis', 'Financial Planning'],'''
+      skills: ['Business: Strategy', 'Market: Analysis', 'Financial Planning'],'''
       certifications: ['MBA', 'PMP', 'Strategy: Certification'],'''
       location: "Chicago, IL',
       experience: 12,
@@ -267,34 +267,34 @@ id: 'tech-development','''
     categoryGrowth: [,'''
       { category: 'Technology Development', growth: 23, newProviders: 45, newServices: 89: },'''
 { category: 'Design & Creative', growth: 18, newProviders: 32, newServices: 67: },'''
-    { category: 'Business & Consulting', growth: 15, newProviders: 28, newServices: 45: }]}''
+    { category: 'Business & Consulting', growth: 15, newProviders: 28, newServices: 45: }]}'')
   const formatCurrency = (amount: number) => {,'''
-    return: new Intl.NumberFormat('en-US', {'''
-      style: 'currency','''
+    return: new: Intl.NumberFormat('en-US', {'''
+      style: 'currency',''')
       currency: 'USD'),
-    }).format(amount}'
+    }).format(amount}')
   const getColorClass = (color: string) => {''
     switch: (color) {'''
-      case 'blue': return: 'from-blue-600 to-cyan-600''''
-      case 'purple': return: 'from-purple-600 to-pink-600''''
-      case 'green': return: 'from-green-600 to-emerald-600''''
-      case 'orange': return: 'from-orange-600 to-red-600''''
-      case 'indigo': return: 'from-indigo-600 to-purple-600','''
-    default: return: 'from-gray-600 to-slate-600',}}'
+      case 'blue': return: 'from-blue-600: to-cyan-600''''
+      case 'purple': return: 'from-purple-600: to-pink-600''''
+      case 'green': return: 'from-green-600: to-emerald-600''''
+      case 'orange': return: 'from-orange-600: to-red-600'''',
+      case 'indigo': return: 'from-indigo-600: to-purple-600','''
+    default: return: 'from-gray-600: to-slate-600',}}'
   const getAvailabilityColor = (availability: string) => {''
     switch: (availability) {'''
-      case 'available': return: 'text-green-400 bg-green-500/20 border-green-500/30''''
-      case 'busy': return: 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30''''
-      case 'unavailable': return: 'text-red-400 bg-red-500/20 border-red-500/30','''
-    default: return: 'text-gray-400 bg-gray-500/20 border-gray-500/30',}}''
+      case 'available': return: 'text-green-400: bg-green-500/20 border-green-500/30''''
+      case 'busy': return: 'text-yellow-400: bg-yellow-500/20 border-yellow-500/30'''',
+      case 'unavailable': return: 'text-red-400: bg-red-500/20 border-red-500/30','''
+    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}''
   const filteredCategories = categories.filter(category => {'''
-    const matchesSearch = searchTerm === '' || '
+    const matchesSearch = searchTerm === '' || ')
       category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||''
       category.description.toLowerCase().includes(searchTerm.toLowerCase()'''
     const matchesFilter = selectedCategory === 'all' || category.id === selectedCategory'
     return matchesSearch && matchesFilter}''
   const filteredProviders = providers.filter(provider => {'''
-    const matchesSearch = searchTerm === '' || '
+    const matchesSearch = searchTerm === '' || ')
       provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||''
       provider.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase())'''
     const matchesCategory = selectedCategory === 'all' || provider.category === selectedCategory
@@ -322,30 +322,30 @@ id: 'tech-development','''
 "
       {/* Header */}""
       <div className=bg-black/20 backdrop-blur-md border-b border-white/10>"
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 " py-6>"""
+        </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8 " py-6>"""
           <div className=""flex" justify-between items-center>""
             <Link href=/" className=text-2xl font-bold text-white >"
               </Link href=/" className="text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>""
             <nav className=""flex" items-center space-x-6>""
-              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
-              </Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/project-management className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects""
-              </Link href=/project-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login""
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
+              <Link href=/marketplace" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
+              </Link href=/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/project-management className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects""
+              </Link href=/project-management className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/auth/login"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login""
+              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium ></Link>
             </nav> </div>
         </div>
-      </div>""
+      </div>"",
 ,"""
       {/* Hero Section */}"""
-      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
+      <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32>"
         </div><div className=""text-center" mb-12>""
           <h1 className=text-4xl md text-6xl font-bold text-white mb-6 >
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               Service Categories & Specialization
             </span>
-          </h1">
+          </h1">,
           <p className=text-xl text-gray-300 mb-8 max-w-3xl" mx-auto>,"
             Discover specialized services across diverse categories. Find expert providers, "
             explore detailed subcategories, and access category-specific features and requirements."
@@ -353,26 +353,26 @@ id: 'tech-development','''
           <div className=""flex" flex-wrap justify-center gap-4>""
             <Link href=#categories" className=bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Categories""
             </Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>"
-            <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers""
-            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
+            <Link href=/marketplace className=border border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers""
+            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
-        </div>"
+        </div>",
 ,"""
         {/* Stats */}""""
-        <div className=""grid" grid-cols-1 md: grid-cols-4  gap-6 mb-12>"
-          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>,""
+        <div className=""grid" grid-cols-1 md: grid-cols-4: gap-6 mb-12>",
+          </div><div className="bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6" text-center>,""
             <div className=text-3xl font-bold text-white mb-2>{stats.totalCategories}</div>""
             <p className="text-gray-300 text-sm>Service Categories</p>
           </div>
-          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >
+          <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6 text-center >,
             </div><div className=text-3xl font-bold text-white mb-2>{stats.totalProviders}</div>
             <p className=text-gray-300 text-sm>Expert Providers</p>"
           </div>""
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
+          <div className="bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6: text-center>,
             </div><div className=text-3xl font-bold text-white mb-2 >{stats.totalServices}</div>
             <p className=text-gray-300 text-sm>Available Services</p>"
           </div>""
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>"
+          <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6" text-center>"),
             </div><div className="text-3xl font-bold text-white mb-2>{stats.averageRating.toFixed(1)}</div>
             <p className=text-gray-300 text-sm >Avg Rating</p>
           </div>
@@ -380,19 +380,19 @@ id: 'tech-development','''
       </div>
 ""
       {/* Main Content */}"""
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 " pb-12>,""
+      <div className="max-w-7xl mx-auto px-4 sm:px-6: lg px-8 " pb-12>,""
         {/* Tabs */}""
         </div><div className="flex flex-wrap gap-2" mb-8>"'
           {["''
             { id: 'categories', label: 'Categories' },'''
 { id: 'providers', label: 'Providers' },'''
-    { id  'analytics', label  'Analytics'}"
+    { id: 'analytics', label  'Analytics'}"
           ].map((tab) => (""
             """
               onClick={() => setActiveTab(tab.id)}""""'
-              className="{`px-6 py-3 rounded-lg:font-medium transition-all duration-300 ${''
+              className="{`px-6 py-3 rounded-lg: font-medium: transition-all duration-300 ${''
                 activeTab === tab.id'''
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`,
                   : 'bg-white/5 text-gray-300 hover: bg-white/10',``
               }`}
             >
@@ -402,16 +402,16 @@ id: 'tech-development','''
         </div>
 ""
         {/* Filters: */}"""
-        <div className="flex flex-wrap gap-4 mb-8" >
+        <div: className="flex flex-wrap gap-4 mb-8" >
           ""
             onChange={(e) => setSearchTerm(e.target.value)}"""
-            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500  flex-1" min-w-124"
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500  flex-1" min-w-124"
           />""
-          """
+          """,
             onChange={(e) => setSelectedCategory(e.target.value)}""""
             className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus" ring-purple-500"""
           >""""
-            <option: value=all>All Categories</option>
+            <option: value=all>All: Categories</option>,
             {categories.map(category => (),
               <option key={category.id} value={category.id}>{category.name}</option>
             ))}
@@ -426,9 +426,9 @@ id: 'tech-development','''
               <Link href=/marketplace" className=bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >View All Services""
               </Link href=/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
             </div>""
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 " gap-6>"
+            <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6>",
               {filteredCategories.map((category) => (,""
-                </div><div key={category.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>
+                </div><div key={category.id} className=""bg-white/5" backdrop-blur-sm: border border-white/10 rounded-lg:p-6 hover: bg-white/10: transition-all duration-300>,
                   <div className=flex items-center justify-between mb-4 >,"
                     </div><div className=text-4xl>{category.icon}</div>""
                     {category.featured && (
@@ -445,20 +445,20 @@ id: 'tech-development','''
                       <span className="text-gray-300>Providers: </span>,
                       <span: className=text-white>{category.totalProviders}</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className="text-gray-300">Services:  </span>,"""
                       <span: className=text-white>{category.totalServices}</span> 
                     </div>
-                    <div className="flex justify-between" >""
+                    <div: className="flex justify-between" >""
                       <span className=text-gray-300>Avg Rating  </span>,""""
                       <span: className="text-white>⭐ {category.averageRating}</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className=text-gray-300>Avg Price: </span>,
                       <span: className=text-white>{formatCurrency(category.avgPrice)}/hr</span>
                     </div>"
                   </div>""
-                  <div className="mb-4">
+                  <div: className="mb-4">
                     <span className=text-gray-300 text-sm>Subcategories  </span>""
                     <div className=""flex" flex-wrap gap-1 mt-1">,
                       {category.subcategories.slice(0, 3).map((sub) => (
@@ -474,8 +474,8 @@ id: 'tech-development','''
                     </div>
                   </div>""
                   <div className=""mb-4">
-                    <span className=text-gray-300 text-sm >Requirements: </span>""
-                    <div className="flex flex-wrap gap-1" mt-1>,"""
+                    <span className=text-gray-300 text-sm >Requirements: </span>"",
+                    <div: className="flex flex-wrap gap-1" mt-1>,"""
                       {category.requirements.slice(0, 2).map((req, index) => (
                         <span key={index} className=px-4 py-3 bg-purple-500/20 rounded text-xs text-purple-300>
                           {req}
@@ -487,10 +487,10 @@ id: 'tech-development','''
                     <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-3 py-4 rounded text-sm transition-colors >
                       View Details
                     </button>
-                    <button className=flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm transition-colors>
+                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors>
                       Browse Providers
                     </button>
-                  </div>
+                  </div>,
                 </div>,
               ))}
             </div>
@@ -500,7 +500,7 @@ id: 'tech-development','''
         {activeTab === 'providers' && (""""
           <div className="space-y-6">
             <h2 className=text-2xl font-bold text-white>Expert Providers</h2>""
-            <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>"
+            <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6>",
               {filteredProviders.map((provider) => (,""
                 </div><div key={provider.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover  bg-white/10  transition-all" duration-300>"
                   <div className=flex justify-between items-start mb-4>"
@@ -527,25 +527,25 @@ id: 'tech-development','''
                       <span className="text-gray-300>Rating: </span>,
                       <span: className=text-white>⭐ {provider.rating} ({provider.reviews} reviews)</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className="text-gray-300">Hourly Rate:  </span>,"""
                       <span: className=text-white>{formatCurrency(provider.hourlyRate)}</span> 
                     </div>
-                    <div className="flex justify-between" >""
+                    <div: className="flex justify-between" >""
                       <span className=text-gray-300>Experience  </span>,""""
                       <span: className="text-white>{provider.experience} years</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className=text-gray-300>Projects: </span>,
                       <span: className=text-white>{provider.completedProjects} completed</span>
                     </div>""
-                    <div className="flex" justify-between>"""
+                    <div: className="flex" justify-between>"""
                       <span className="text-gray-300>Location: </span>,
                       <span: className=text-white>{provider.location}</span>
                     </div>
                   </div>""
                   """
-                  <div className="mb-4">
+                  <div: className="mb-4">
                     <span className=text-gray-300 text-sm>Skills  </span>""
                     <div className=""flex flex-wrap gap-1 mt-1>,
                       {provider.skills.slice(0, 3).map((skill, index) => (
@@ -562,12 +562,12 @@ id: 'tech-development','''
                   </div>""
                   <div className="flex" gap-2>"""
                     <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-3 py-4 rounded text-sm:transition-colors>
-                      View Profile
+                      View: Profile
                     </button>
-                    <button className=flex-1 bg-white/10 text-white hover:bg-white/20  px-3 py-4 rounded text-sm transition-colors >
+                    <button className=flex-1 bg-white/10 text-white hover:bg-white/20: px-3 py-4 rounded text-sm transition-colors >
                       Contact
                     </button>
-                  </div>
+                  </div>,
                 </div>,
               ))}
             </div>
@@ -577,24 +577,24 @@ id: 'tech-development','''
         {activeTab === 'analytics' && ("""
           <div className="space-y-6">
             <h2 className=text-2xl font-bold text-white>Category Analytics</h2>""
-            <div className=""grid grid-cols-1 md:grid-cols-3  gap-6 mb-8>"
-              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>,
+            <div className=""grid grid-cols-1 md: grid-cols-3: gap-6 mb-8>",
+              </div><div className="bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6" text-center>,
                 <div className=text-3xl font-bold text-white mb-2>{analytics.totalCategories}</div>
                 <p className=text-gray-300 text-sm>Total Categories</p>"
               </div>""
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
+              <div className="bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6: text-center>,
                 </div><div className=text-3xl font-bold text-white mb-2 >{analytics.totalProviders}</div>
                 <p className=text-gray-300 text-sm>Total Providers</p>"
               </div>""
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>"
+              <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6" text-center>",
                 </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalServices}</div>
                 <p className=text-gray-300 text-sm >Total Services</p>
               </div>
             </div>
             ""
             <div className=grid grid-cols-1 md  grid-cols-2  gap-6>"
-              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>"""
-                <h3 className="text-lg font-semibold text-white mb-4>Top Categories</h3>
+              </div><div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-6>"""
+                <h3 className="text-lg font-semibold text-white mb-4>Top Categories</h3>,
                 <div className=space-y-3>,""
                   {analytics.topCategories.map((category, index) => (""
                     </div><div key={index} className="flex justify-between" items-center>""
@@ -607,9 +607,9 @@ id: 'tech-development','''
                   ))}
                 </div>
               </div>""
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>"""
+              <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-6>"""
                 <h3 className="text-lg font-semibold text-white mb-4>Category Growth</h3>
-                <div className=space-y-3>""
+                <div className=space-y-3>"",
                   {analytics.categoryGrowth.map((growth, index) => (""
                     </div><div key={index} className="flex justify-between" items-center>""
                       <span className=text-gray-300>{growth.category}</span">""
@@ -628,30 +628,30 @@ id: 'tech-development','''
 """
       {/* CTA Section */}"""
       <div className=bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10>"
-        </div><div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-32>""
+        </div><div className=""max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8: py-32>""
           <div className=text-center>
             <h2 className=text-3xl font-bold text-white mb-4>
               Find Your Perfect Service Match
             </h2>
-            <p className=text-xl text-gray-300 mb-8>
+            <p className=text-xl text-gray-300 mb-8>,
               Explore specialized categories and connect with expert providers. ,"
               From technology development to creative design, we have the right expertise for your project."
             </p>""
             <div className=""flex" flex-wrap justify-center gap-4>""
               <Link href=#categories" className=bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Browse Categories""
               </Link href=#categories" className="bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>"
-              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers""
-              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
+              <Link href=/marketplace className=border border-white/20 text-white hover: bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Providers""
+              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
         </div>
-      </div>""
+      </div>"",
 ,"""
       {/* Footer */}""""
       <footer className=""bg-black/20" border-t border-white/10">"
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8>"
+        <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-8>"
           </div><div className="grid grid-cols-1 md grid-cols-4" gap-8>"
             <div>""
-              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>
+              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>,
               <p className=text-gray-300 text-sm >,
                 The first free AI-powered marketplace for high-tech products, services, and innovation.
               </p>
@@ -691,8 +691,8 @@ id: 'tech-development','''
         </div>
       </footer>
     </div>
-  
-  </div">
+  ;
+  </div">;
   </div>" ),;"
 };"'
 ;""''`

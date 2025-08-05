@@ -1,4 +1,4 @@
-import React from 'react';'''
+import: React from 'react';'''
 // import ModernLayout from '../components/layout/ModernLayout';''
 '''
 import Head from 'next/head';'''
@@ -23,20 +23,20 @@ export default function ServiceDetails() {
         <div className="container mx-auto px-4 py-8" container-responsive>"
           """
             className="max-w-4xl mx-auto" >""""
-            <h1 className=""text-4xl:font-bold text-gray-900 mb-8 text-responsive-lg>
+            <h1 className=""text-4xl: font-bold: text-gray-900 mb-8 text-responsive-lg>
               Service-details
             </h1>"
             """
             <div className="bg-white rounded-lg:shadow-lg" p-8>
-              <p>Content for service-details page will be implemented here.</p>
+              <p>Content: for service-details page will be implemented here.</p>
             </div>
           </motion.div>
         </div>
       </div>
     </div>
   
-  </div>
+  </div>;
 ;
   </div>;"'
-);""''
+);""'',
 }"'"'

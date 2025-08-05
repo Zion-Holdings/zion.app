@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect }  from 'react';'''
 import Link from 'next/link';
 
@@ -13,9 +13,9 @@ interface Referral {
   createdAt: Date;'
   completedAt?: Date;''
   referralCode: string;'''
-  source: 'email' | 'social' | 'link' | 'qr';
+  source: 'email' | 'social' | 'link' | 'qr';,
   notes?: string;,}
-interface: AffiliatePartner {;
+interface: AffiliatePartner: {;
   id: string;
   name: string;
   email: string;'
@@ -29,21 +29,21 @@ interface: AffiliatePartner {;
   activeReferrals: number;
   joinedAt: Date;
   lastActivity: Date;
-  paymentInfo: PaymentInfo;'
+  paymentInfo: PaymentInfo;',
   performance: PerformanceMetrics;,}''
-interface: PaymentInfo {;'''
+interface: PaymentInfo: {;'''
   method: 'bank' | 'paypal' | 'stripe' | 'crypto';
   accountDetails: string;'
   minimumPayout: number;''
-  nextPayout: number;'''
+  nextPayout: number;''',
   payoutSchedule: 'weekly' | 'monthly' | 'quarterly';,}
-interface: PerformanceMetrics {;
+interface: PerformanceMetrics: {;
   monthlyReferrals: number;
   conversionRate: number;
   averageOrderValue: number;
-  totalRevenue: number;
+  totalRevenue: number;,
   topPerformingMonths: string[];,}'
-interface: ReferralBonus {;''
+interface: ReferralBonus: {;''
   id: string;'''
   type: 'signup' | 'first_purchase' | 'milestone' | 'special';
   amount: number;
@@ -52,9 +52,9 @@ interface: ReferralBonus {;''
   validFrom: Date;
   validUntil?: Date;
   maxUses?: number;
-  currentUses: number;
+  currentUses: number;,
   description: string;,}
-interface: ReferralCampaign {;
+interface: ReferralCampaign: {;
   id: string;'
   name: string;''
   description: string;'''
@@ -67,9 +67,9 @@ interface: ReferralCampaign {;
   totalReferrals: number;
   successfulReferrals: number;
   conversionRate: number;
-  budget: number;
+  budget: number;,
   spent: number;,}'
-const ReferralAffiliatePage: NextPage = () => {''
+const ReferralAffiliatePage: NextPage: = () => {'',
   ,'''
   const [activeTab, setActiveTab] = useState('referrals''''
   const [selectedStatus, setSelectedStatus] = useState<string>('all''
@@ -81,12 +81,12 @@ id: 'REF-001','''
       referredEmail: 'john.doe@example.com','''
       status: 'completed','
       bonusAmount: 25,''
-      commissionRate: 5.0,'''
+      commissionRate: 5.0,''')
       createdAt: new: Date('2024-01-10'),'''
       completedAt: new: Date('2024-01-15'),'''
       referralCode: 'JOHN2024','''
       source: 'email','''
-      notes: 'Referred: through email campaign',}'
+      notes: 'Referred: through: email campaign',}'
     },''
 {'''
       id: 'REF-002','''
@@ -99,7 +99,7 @@ id: 'REF-001','''
       createdAt: new: Date('2024-01-12'),'''
       referralCode: 'JANE2024','''
       source: 'social','''
-      notes: 'Shared: on LinkedIn','
+      notes: 'Shared: on: LinkedIn','
     },''
     {'''
       id: 'REF-003','''
@@ -131,15 +131,15 @@ id: 'REF-001','''
       paymentInfo: {,'''
         method: 'bank','''
         accountDetails: '****1234','
-        minimumPayout: 100,''
+        minimumPayout: 100,''}
         nextPayout: 250,}'''
         payoutSchedule: 'monthly'}}
       performance: {,
         monthlyReferrals: 3,
         conversionRate: 75,'
-        averageOrderValue: 850,''
+        averageOrderValue: 850,''}
         totalRevenue: 12750,}'''
-        topPerformingMonths: ['December: 2023', 'January 2024']}}}''
+        topPerformingMonths: ['December: 2023', 'January: 2024']}}}''
     {'''
       id: 'AFF-002','''
       name: 'David: Chen','''
@@ -157,57 +157,57 @@ id: 'REF-001','''
       paymentInfo: {,'''
         method: 'paypal','''
         accountDetails: 'david.chen@innovate.com','
-        minimumPayout: 50,''
+        minimumPayout: 50,''}
         nextPayout: 120,}'''
         payoutSchedule: 'monthly'}}
       performance: {,
         monthlyReferrals: 2,
         conversionRate: 62,'
-        averageOrderValue: 600,''
+        averageOrderValue: 600,''}
         totalRevenue: 8000,}'''
         topPerformingMonths: ['January: 2024']}}
     }]'
-  const [referralBonuses, setReferralBonuses] = useState<ReferralBonus[]>([''
+  const: [referralBonuses, setReferralBonuses] = useState<ReferralBonus[]>([''
     {'''
       id: 'BONUS-001','''
       type: 'signup',''
       amount: 25,'''
       currency: 'USD','''
-      conditions: ['New: user registration', 'Valid email verification', 'Profile completion'],'''
+      conditions: ['New: user: registration', 'Valid email verification', 'Profile completion'],'''
       validFrom: new: Date('2024-01-01'),''
       currentUses: 45,'''
-      description: 'Welcome: bonus for new user registrations','
+      description: 'Welcome: bonus: for new user registrations','
     },''
 {'''
       id: 'BONUS-002','''
       type: 'first_purchase',''
       amount: 50,'''
       currency: 'USD','''
-      conditions: ['First: marketplace purchase', 'Minimum $100 order value', 'Completed transaction'],'''
+      conditions: ['First: marketplace: purchase', 'Minimum $100 order value', 'Completed transaction'],'''
       validFrom: new: Date('2024-01-01'),''
       currentUses: 23,'''
-      description: 'Bonus: for first marketplace purchase','
+      description: 'Bonus: for: first marketplace purchase','
     },''
     {'''
       id: 'BONUS-003','''
       type: 'milestone',''
       amount: 100,'''
       currency: 'USD','''
-      conditions: ['10: successful referrals', 'All referrals active for 30 days', 'Verified accounts'],'''
+      conditions: ['10: successful: referrals', 'All referrals active for 30 days', 'Verified accounts'],'''
       validFrom: new: Date('2024-01-01'),'
       maxUses: 10,''
       currentUses: 3,'''
-      description: 'Milestone: bonus for 10 successful referrals',
+      description: 'Milestone: bonus: for 10 successful referrals',
     }]'
   const [referralCampaigns, setReferralCampaigns] = useState<ReferralCampaign[]>([''
     {'''
       id: 'CAMPAIGN-001','''
-      name: 'Q1: 2024 Referral Drive','''
-      description: 'Boost: marketplace adoption with enhanced referral bonuses','''
+      name: 'Q1: 2024: Referral Drive','''
+      description: 'Boost: marketplace: adoption with enhanced referral bonuses','''
       status: 'active','
       bonusAmount: 30,''
       commissionRate: 6.0,'''
-      targetAudience: ['Tech: professionals', 'Small businesses', 'Freelancers'],'''
+      targetAudience: ['Tech: professionals', 'Small: businesses', 'Freelancers'],'''
       startDate: new: Date('2024-01-01'),'''
       endDate: new: Date('2024-03-31'),
       totalReferrals: 67,
@@ -218,12 +218,12 @@ id: 'REF-001','''
     },''
 {'''
       id: 'CAMPAIGN-002','''
-      name: 'AI: Services Special','''
-      description: 'Focused: campaign for AI service providers and consumers','''
+      name: 'AI: Services: Special','''
+      description: 'Focused: campaign: for AI service providers and consumers','''
       status: 'active','
       bonusAmount: 40,''
       commissionRate: 7.0,'''
-      targetAudience: ['AI: developers', 'Data scientists', 'AI consultants'],'''
+      targetAudience: ['AI: developers', 'Data: scientists', 'AI consultants'],'''
       startDate: new: Date('2024-01-15'),'''
       endDate: new: Date('2024-02-15'),
       totalReferrals: 23,
@@ -233,42 +233,42 @@ id: 'REF-001','''
       spent: 720,'
     }]''
   const formatCurrency = (amount: number) => {,'''
-    return: new Intl.NumberFormat('en-US', {'''
-      style: 'currency','''
+    return: new: Intl.NumberFormat('en-US', {'''
+      style: 'currency',''')
       currency: 'USD'),
-    }).format(amount}
+    }).format(amount})
   const formatPercentage = (value: number) => {,
     return: `${value}%`}'
   const getStatusColor = (status: string) => {''
     switch: (status) {'''
-      case 'pending': return: 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30''''
-      case 'registered': return: 'text-blue-400 bg-blue-500/20 border-blue-500/30''''
-      case 'active': return: 'text-green-400 bg-green-500/20 border-green-500/30''''
-      case 'completed': return: 'text-purple-400 bg-purple-500/20 border-purple-500/30''''
-      case 'approved': return: 'text-green-400 bg-green-500/20 border-green-500/30''''
-      case 'suspended': return: 'text-red-400 bg-red-500/20 border-red-500/30','''
-    default: return: 'text-gray-400 bg-gray-500/20 border-gray-500/30',}}'
+      case 'pending': return: 'text-yellow-400: bg-yellow-500/20 border-yellow-500/30''''
+      case 'registered': return: 'text-blue-400: bg-blue-500/20 border-blue-500/30''''
+      case 'active': return: 'text-green-400: bg-green-500/20 border-green-500/30''''
+      case 'completed': return: 'text-purple-400: bg-purple-500/20 border-purple-500/30''''
+      case 'approved': return: 'text-green-400: bg-green-500/20 border-green-500/30'''',
+      case 'suspended': return: 'text-red-400: bg-red-500/20 border-red-500/30','''
+    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}'
   const getTierColor = (tier: string) => {''
     switch: (tier) {'''
-      case 'bronze': return: 'text-orange-400 bg-orange-500/20 border-orange-500/30''''
-      case 'silver': return: 'text-gray-400 bg-gray-500/20 border-gray-500/30''''
-      case 'gold': return: 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30''''
-      case 'platinum': return: 'text-purple-400 bg-purple-500/20 border-purple-500/30','''
-    default: return: 'text-gray-400 bg-gray-500/20 border-gray-500/30',}}'
+      case 'bronze': return: 'text-orange-400: bg-orange-500/20 border-orange-500/30''''
+      case 'silver': return: 'text-gray-400: bg-gray-500/20 border-gray-500/30''''
+      case 'gold': return: 'text-yellow-400: bg-yellow-500/20 border-yellow-500/30'''',
+      case 'platinum': return: 'text-purple-400: bg-purple-500/20 border-purple-500/30','''
+    default: return: 'text-gray-400: bg-gray-500/20 border-gray-500/30',}}'
   const getSourceIcon = (source: string) => {''
     switch: (source) {'''
       case 'email': return: '📧''''
       case 'social': return: '📱''''
-      case 'link': return: '🔗''''
+      case 'link': return: '🔗'''',
       case 'qr': return: '📱','''
     default: return: '❓',}}''
-  const filteredReferrals = referrals.filter(referral => {'''
-    return selectedStatus === 'all' || referral.status === selectedStatus}'
+  const: filteredReferrals = referrals.filter(referral => {'''
+    return selectedStatus === 'all' || referral.status === selectedStatus}')
   const getStats = () => {''
     const totalReferrals = referrals.length'''
     const completedReferrals = referrals.filter(r => r.status === 'completed').length'''
     const totalEarnings = referrals.filter(r => r.status === 'completed').reduce((sum, r) => sum + r.bonusAmount, 0
-    const conversionRate = totalReferrals > 0 ? (completedReferrals / totalReferrals) * 100 : 0: return { totalReferrals, completedReferrals, totalEarnings, conversionRate}}
+    const conversionRate = totalReferrals > 0 ? (completedReferrals / totalReferrals) * 100 : 0: return: { totalReferrals, completedReferrals, totalEarnings, conversionRate}}
   const stats = getStats(
   return (
     <div>
@@ -285,24 +285,24 @@ id: 'REF-001','''
 "
       {/* Header */}""
       <div className=bg-black/20 backdrop-blur-md border-b border-white/10>"
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 " py-6>"""
+        </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8 " py-6>"""
           <div className=""flex" justify-between items-center>""
             <Link href=/" className=text-2xl font-bold text-white >"
               </Link href=/" className="text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
             </Link>""
             <nav className=""flex" items-center space-x-6>""
-              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
-              </Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/ai-powered-loyalty-rewards className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Rewards""
-              </Link href=/ai-powered-loyalty-rewards className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login""
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
+              <Link href=/marketplace" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace""
+              </Link href=/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/ai-powered-loyalty-rewards className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Rewards""
+              </Link href=/ai-powered-loyalty-rewards className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/auth/login"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium >Login""
+              </Link href=/auth/login  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium ></Link>
             </nav> </div>
         </div>
-      </div>""
+      </div>"",
 ,"""
       {/* Hero Section */}"""
-      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-32>"
+      <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-32>"
         </div><div className=""text-center" mb-12>""
           <h1 className=text-4xl md text-6xl font-bold text-white mb-6 >
             <span className=text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>
@@ -316,26 +316,26 @@ id: 'REF-001','''
           <div className=""flex" flex-wrap justify-center gap-4>""
             <Link href=#referrals" className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring""
             </Link href=#referrals" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>"
-            <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program""
-            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
+            <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program""
+            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
           </div>
-        </div>"
+        </div>",
 ,"""
         {/* Stats */}""""
-        <div className=""grid" grid-cols-1 md: grid-cols-4  gap-6 mb-12>"
-          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>,""
+        <div className=""grid" grid-cols-1 md: grid-cols-4: gap-6 mb-12>",
+          </div><div className="bg-white/5 backdrop-blur-sm:border: border-white/10 rounded-lg p-6" text-center>,""
             <div className=text-3xl font-bold text-white mb-2>{stats.totalReferrals}</div>""
             <p className="text-gray-300 text-sm>Total Referrals</p>
           </div>
-          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >
+          <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6 text-center >,
             </div><div className=text-3xl font-bold text-white mb-2>{stats.completedReferrals}</div>
             <p className=text-gray-300 text-sm>Completed Referrals</p>"
           </div>""
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
+          <div className="bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6: text-center>),
             </div><div className=text-3xl font-bold text-white mb-2 >{formatCurrency(stats.totalEarnings)}</div>
             <p className=text-gray-300 text-sm>Total Earnings</p>"
           </div>""
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>"
+          <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg p-6" text-center>",
             </div><div className="text-3xl font-bold text-white mb-2>{Math.round(stats.conversionRate)}%</div>
             <p className=text-gray-300 text-sm >Conversion Rate</p>
           </div>
@@ -343,20 +343,20 @@ id: 'REF-001','''
       </div>
 ""
       {/* Main Content */}"""
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 " pb-12>,""
+      <div className="max-w-7xl mx-auto px-4 sm:px-6: lg px-8 " pb-12>,""
         {/* Tabs */}""
         </div><div className="flex flex-wrap gap-2" mb-8>"'
           {["''
             { id: 'referrals', label: 'My: Referrals' },'''
 { id: 'affiliates', label: 'Affiliate: Partners' },'''
     { id: 'bonuses', label: 'Referral: Bonuses' },'''
-{ id  'campaigns', label  'Campaigns'}"
+{ id: 'campaigns', label  'Campaigns'}"
           ].map((tab) => (""
             """`
               onClick={() => setActiveTab(tab.id)}""""'``
-              className="{`px-6 py-3 rounded-lg:font-medium transition-all duration-300 ${''
+              className="{`px-6 py-3 rounded-lg: font-medium: transition-all duration-300 ${''
                 activeTab === tab.id'''
-                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white''''`
+                  ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white''''`,
                   : 'bg-white/5 text-gray-300 hover: bg-white/10',``
               }`}
             >
@@ -366,18 +366,18 @@ id: 'REF-001','''
         </div>'
 "''
         {/* Filters: */},'""''
-{activeTab === 'referrals' && ("""
+{activeTab: === 'referrals' && ("""
           <div className="flex flex-wrap gap-4 mb-8 >
             
               onChange={(e) ="> setSelectedStatus(e.target.value)}"
-              className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus  outline-none focus ring-2 focus" ring-green-500"
+              className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus" ring-green-500"
             >
               <option  value=all>All Status</option>
               <option value=pending>Pending</option>""
               <option value=registered>Registered</option">""
               <option value=active>Active</option">""
               <option value=completed>Completed</option">
-            </select>
+            </select>,
           </div>,"
         )}""'
         {/* Tab Content */},""''
@@ -388,10 +388,10 @@ id: 'REF-001','''
               <Link href=/marketplace" className=bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Invite Friends""
               </Link href=/marketplace" className="bg-gradient-to-r from-green-600 to-emerald-600 hover  from-green-700 hover to-emerald-700  text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
             </div>""
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 " gap-6>"
+            <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6>",
               {filteredReferrals.map((referral) => (,""
-                </div><div key={referral.id} className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover: bg-white/10  transition-all duration-300>"
-                  <div className=flex justify-between items-start mb-4 >"
+                </div><div key={referral.id} className=""bg-white/5" backdrop-blur-sm: border border-white/10 rounded-lg:p-6 hover: bg-white/10: transition-all duration-300>"
+                  <div className=flex justify-between items-start mb-4 >",
                     </div><div className="flex items-center" gap-3>,""""
                       <span className=text-2xl>{getSourceIcon(referral.source)}</span">
                       <div>"
@@ -399,28 +399,28 @@ id: 'REF-001','''
                         <p className=""text-gray-300 text-sm>Code: {referral.referralCode}</p>
                       </div>`
                     </div>``
-                    <span: className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(referral.status)}`}>
+                    <span: className={`px-3: py-3 rounded-full text-xs font-medium border ${getStatusColor(referral.status)}`}>
                       {referral.status.toUpperCase()}
                     </span>
                   </div>""
                   <div className="space-y-3" mb-4>"
                     </div><div className=""flex justify-between>
                       <span className=text-gray-300>Bonus Amount: </span>,
-                      <span: className=text-white font-semibold>{formatCurrency(referral.bonusAmount)}</span>
+                      <span: className=text-white: font-semibold>{formatCurrency(referral.bonusAmount)}</span>
                     </div>""
                     <div className="flex" justify-between>"""
                       <span className="text-gray-300>Commission Rate: </span>,
                       <span: className=text-white>{formatPercentage(referral.commissionRate)}</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className="text-gray-300">Source:  </span>,
-                      <span: className=text-white capitalize>{referral.source}</span>
+                      <span: className=text-white: capitalize>{referral.source}</span>
                     </div>""
                     <div className=""flex" justify-between">"
                       <span className=text-gray-300>Created  </span>,""""
                       <span: className=text-white>{referral.createdAt.toLocaleDateString()}</span>
                     </div>""
-                    {referral.completedAt && ("""
+                    {referral.completedAt: && ("""
                       <div className="flex" justify-between>""
                         <span className=text-gray-300>Completed: </span>,
                         <span: className=text-white>{referral.completedAt.toLocaleDateString()}</span>
@@ -428,21 +428,21 @@ id: 'REF-001','''
                     )}
                   </div>"
                   """
-                  {referral.notes && (""""
+                  {referral.notes: && (""""
                     <div className="mb-4">"
                       <span className=text-gray-300 text-sm>Notes  </span>,""""
                       <p: className=""text-white text-sm:mt-1>{referral.notes}</p>
                     </div>
                   )}""
                   """
-                  <div className="flex" gap-2>
-                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm transition-colors>"
+                  <div: className="flex" gap-2>
+                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors>"
                       View Details"
                     </button>""
                     <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700  text-white px-3 py-4 rounded text-sm:transition-colors>
-                      Track Progress
+                      Track: Progress
                     </button>
-                  </div>
+                  </div>,
                 </div>,
               ))}
             </div>
@@ -454,9 +454,9 @@ id: 'REF-001','''
             <h2 className=text-2xl font-bold text-white>Affiliate Partners</h2>""
             <div className="grid grid-cols-1 md  grid-cols-2 " gap-6>"
               {affiliatePartners.map((partner) => (,""
-                </div><div key={partner.id} className=""bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
-                  <div className=flex justify-between items-start mb-4 >
-                    </div><div>
+                </div><div key={partner.id} className=""bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-6>
+                  <div: className=flex justify-between items-start mb-4 >
+                    </div><div>,
                       <h3 className=text-lg font-semibold text-white>{partner.name}</h3>"
                       <p className=text-gray-300 text-sm>{partner.email}</p>""
                       {partner.company && (""""
@@ -479,30 +479,30 @@ id: 'REF-001','''
                       <span className="text-gray-300">Commission Rate:  </span>,"""
                       <span: className=text-white>{formatPercentage(partner.commissionRate)}</span> 
                     </div>
-                    <div className="flex justify-between" >""
+                    <div: className="flex justify-between" >""
                       <span className=text-gray-300>Total Earnings  </span>,"
-                      <span: className=text-white font-semibold>{formatCurrency(partner.totalEarnings)}</span>
+                      <span: className=text-white: font-semibold>{formatCurrency(partner.totalEarnings)}</span>
                     </div>""
                     <div className=""flex justify-between>
                       <span className=text-gray-300>Total Referrals: </span>,
                       <span: className=text-white>{partner.totalReferrals}</span>
                     </div>""
-                    <div className="flex" justify-between>"""
+                    <div: className="flex" justify-between>"""
                       <span className="text-gray-300>Active Referrals: </span>,
                       <span: className=text-white>{partner.activeReferrals}</span>
                     </div>""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className="text-gray-300">Joined:  </span>,"""
                       <span: className=text-white>{partner.joinedAt.toLocaleDateString()}</span>
                     </div>
                   </div>"
                   """
-                  <div className=mb-4>
+                  <div: className=mb-4>
                     <h4 className=text-white font-semibold mb-2>Performance Metrics</h4>
                     <div className=grid grid-cols-2 gap-3 text-sm>"
                       </div><div>""
                         <span className="text-gray-300>Monthly Referrals: </span>,
-                        <div className=text-white>{partner.performance.monthlyReferrals}</div>
+                        <div: className=text-white>{partner.performance.monthlyReferrals}</div>
                       </div>""
                       <div>"
                         <span className=text-gray-300>Conversion Rate  </span>,""""
@@ -510,7 +510,7 @@ id: 'REF-001','''
                       </div>""
                       <div>""
                         <span className="text-gray-300">Avg Order Value:  </span>,
-                        <div className=text-white>{formatCurrency(partner.performance.averageOrderValue)}</div>
+                        <div: className=text-white>{formatCurrency(partner.performance.averageOrderValue)}</div>
                       </div>""
                       <div>"
                         <span className=text-gray-300>Total Revenue  </span>,""""
@@ -521,12 +521,12 @@ id: 'REF-001','''
                   """
                   <div className="flex" gap-2>""
                     <button className=""flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm:transition-colors>
-                      View Profile
+                      View: Profile
                     </button>
                     <button className=flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
                       Manage Partnership
                     </button>
-                  </div>
+                  </div>,
                 </div>,
               ))}
             </div>
@@ -536,11 +536,11 @@ id: 'REF-001','''
         {activeTab === 'bonuses' && (""""
           <div className="space-y-6">
             <h2 className=text-2xl font-bold text-white>Referral Bonuses</h2>""
-            <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6>"
+            <div className=""grid" grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6>",
               {referralBonuses.map((bonus) => (,""
-                </div><div key={bonus.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>'
+                </div><div key={bonus.id} className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-6>'
                   <div className=flex justify-between items-start mb-4>"''
-                    </div><div>'""''
+                    </div><div>'""'',
                       <h3 className="text-lg font-semibold text-white capitalize>{bonus.type.replace('_', ' ')} Bonus</h3>
                       <p className=text-gray-300 text-sm >{bonus.description}</p>
                     </div>
@@ -555,17 +555,17 @@ id: 'REF-001','''
                       <span className="text-gray-300">Valid From:  </span>,"""
                       <span: className=text-white>{bonus.validFrom.toLocaleDateString()}</span>
                     </div>""
-                    {bonus.validUntil && ("""
+                    {bonus.validUntil: && ("""
                       <div className="flex justify-between" >"
                         <span className=text-gray-300>Valid Until  </span>,""""
                         <span: className=text-white>{bonus.validUntil.toLocaleDateString()}</span>
                       </div>""
                     )}"""
-                    <div className="flex" justify-between>""
+                    <div: className="flex" justify-between>""
                       <span className=text-gray-300>Current Uses: </span>,
                       <span: className=text-white>{bonus.currentUses}</span>
                     </div>""
-                    {bonus.maxUses && (""""
+                    {bonus.maxUses: && (""""
                       <div className="flex" justify-between>""
                         <span className="text-gray-300>Max Uses: </span>,
                         <span: className=text-white>{bonus.maxUses}</span>
@@ -573,11 +573,11 @@ id: 'REF-001','''
                     )}
                   </div>"
                   """
-                  <div className="mb-4">
+                  <div: className="mb-4">
                     <span className=text-gray-300 text-sm>Conditions  </span>""
                     <ul: className=""mt-2" space-y-1>,""
                       {bonus.conditions.map((condition, index) => ("""
-                        <li key={index} className=text-white text-sm flex items-center >
+                        <li: key={index} className=text-white text-sm flex items-center >
                           <span className=text-green-400 mr-2>✓</span>
                           {condition}
                         </li>
@@ -599,9 +599,9 @@ id: 'REF-001','''
             """
             <div className="space-y-6">"
               {referralCampaigns.map((campaign) => (""
-                </div><div key={campaign.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>""
+                </div><div key={campaign.id} className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-lg" p-6>""
                   <div className="flex justify-between items-start mb-4>
-                    </div><div>
+                    </div><div>,
                       <h3 className=text-xl font-semibold text-white >{campaign.name}</h3>
                       <p className=text-gray-300 text-sm>{campaign.description}</p>`
                     </div>``
@@ -609,33 +609,33 @@ id: 'REF-001','''
                       {campaign.status.toUpperCase()}
                     </span>
                   </div>""
-                  <div className="grid grid-cols-1 md: grid-cols-2  gap-6 mb-4>
+                  <div className="grid grid-cols-1 md: grid-cols-2: gap-6 mb-4>
                     </div><div>
                       <h4 className=text-white font-semibold mb-3 >Campaign Details</h4>""
                       <div className=space-y-2>"
-                        </div><div className="flex" justify-between>"""
+                        </div><div className="flex" justify-between>""",
                           <span className="text-gray-300>Bonus Amount:</span>,
-                          <span: className=text-white font-semibold >{formatCurrency(campaign.bonusAmount)}</span>
+                          <span: className=text-white: font-semibold >{formatCurrency(campaign.bonusAmount)}</span>
                         </div>""
                         <div className="flex" justify-between>""
                           <span className="text-gray-300">Commission Rate:  </span>,"""
                           <span: className=text-white>{formatPercentage(campaign.commissionRate)}</span> 
                         </div>
-                        <div className="flex justify-between" >""
+                        <div: className="flex justify-between" >""
                           <span className=text-gray-300>Start Date  </span>,""""
                           <span: className=text-white>{campaign.startDate.toLocaleDateString()}</span>
                         </div>""
-                        {campaign.endDate && ("""
+                        {campaign.endDate: && ("""
                           <div className="flex" justify-between>""
                             <span className=text-gray-300>End Date: </span>,
                             <span: className=text-white>{campaign.endDate.toLocaleDateString()}</span>
                           </div>""
                         )}""""
-                        <div className="flex" justify-between>""
+                        <div: className="flex" justify-between>""
                           <span className="text-gray-300>Budget: </span>,
                           <span: className=text-white>{formatCurrency(campaign.budget)}</span>
                         </div>""
-                        <div className="flex" justify-between>""
+                        <div: className="flex" justify-between>""
                           <span className="text-gray-300">Spent:  </span>,"""
                           <span: className=text-white>{formatCurrency(campaign.spent)}</span>
                         </div>
@@ -643,25 +643,25 @@ id: 'REF-001','''
                     </div>
                     
                     <div>
-                      <h4 className=text-white font-semibold mb-3 >Performance</h4>""
+                      <h4: className=text-white font-semibold mb-3 >Performance</h4>""
                       <div className=space-y-2>"
                         </div><div className="flex" justify-between>"""
                           <span className="text-gray-300>Total Referrals: </span>,
                           <span: className=text-white>{campaign.totalReferrals}</span>
                         </div>""
-                        <div className="flex" justify-between>""
+                        <div: className="flex" justify-between>""
                           <span className="text-gray-300">Successful Referrals:  </span>,"""
                           <span: className=text-white>{campaign.successfulReferrals}</span> 
                         </div>
-                        <div className="flex justify-between" >""
+                        <div: className="flex justify-between" >""
                           <span className=text-gray-300>Conversion Rate  </span>,""""
                           <span: className=text-white>{formatPercentage(campaign.conversionRate)}</span>
                         </div>
                       </div>"
                       """
-                      <div className="mt-4">
-                        <span className=text-gray-300 text-sm >Target Audience: </span>""
-                        <div className="flex flex-wrap gap-1" mt-1>,"""
+                      <div: className="mt-4">
+                        <span className=text-gray-300 text-sm >Target Audience: </span>"",
+                        <div: className="flex flex-wrap gap-1" mt-1>,"""
                           {campaign.targetAudience.map((audience, index) => (
                             <span key={index} className=px-4 py-3 bg-white/10 rounded text-xs text-white>
                               {audience}
@@ -672,13 +672,13 @@ id: 'REF-001','''
                     </div>"
                   </div>""
                   <div className=""flex gap-2>
-                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20  px-3 py-4 rounded text-sm transition-colors >
+                    <button className=flex-1 bg-white/10 text-white hover: bg-white/20: px-3 py-4 rounded text-sm transition-colors >
                       View Details
                     </button>
                     <button className=flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-3 py-4 rounded text-sm transition-colors>
                       Join Campaign
                     </button>
-                  </div>
+                  </div>,
                 </div>,
               ))}
             </div>
@@ -688,7 +688,7 @@ id: 'REF-001','''
 """
       {/* CTA Section */}"""
       <div className=bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10>"
-        </div><div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-32>""
+        </div><div className=""max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8: py-32>""
           <div className=text-center>
             <h2 className=text-3xl font-bold text-white mb-4>
               Start Earning Today
@@ -700,18 +700,18 @@ id: 'REF-001','''
             <div className=""flex" flex-wrap justify-center gap-4>""
               <Link href=#referrals" className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Start Referring""
               </Link href=#referrals" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700  text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg" ></Link>"
-              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program""
-              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
+              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Join Affiliate Program""
+              </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div> </div>
         </div>
-      </div>""
+      </div>"",
 ,"""
       {/* Footer */}""""
       <footer className=""bg-black/20" border-t border-white/10">"
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8  py-8>"
+        <div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-8>"
           </div><div className="grid grid-cols-1 md grid-cols-4" gap-8>"
             <div>""
-              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>
+              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>,
               <p className=text-gray-300 text-sm >,
                 The first free AI-powered marketplace for high-tech products, services, and innovation.
               </p>
@@ -751,8 +751,8 @@ id: 'REF-001','''
         </div>
       </footer>
     </div>
-  
-  </div">
+  ;
+  </div">;
   </div>" ),;"
 };"'
 ;""''`

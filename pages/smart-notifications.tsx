@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect, useMemo } from 'react';'''
 import Link from 'next/link';
 '
@@ -21,27 +21,27 @@ metadata: {;
     projectId?: string;
     serviceId?: string;
     paymentId?: string;
-    userId?: string;
-    amount?: number;,
+    userId?: string;,
+    amount?: number;,}
     currency?: string;}
     status?: string;}
   };
 smartFeatures: {;
-    aiAnalyzed: boolean;
-    personalized: boolean;,
+    aiAnalyzed: boolean;,
+    personalized: boolean;,}
     predictive: boolean;}
     automated: boolean;}
   };}
-interface: NotificationStats {;
+interface: NotificationStats: {;
   totalNotifications: number;
   unreadCount: number;
   urgentCount: number;
   todayCount: number;
   weeklyCount: number;
   monthlyCount: number;
-  readRate: number;
+  readRate: number;,
   responseRate: number;,}
-interface: NotificationPreferences {;
+interface: NotificationPreferences: {;
   email: boolean;
   push: boolean;
   sms: boolean;
@@ -51,23 +51,23 @@ categories: {;
     projects: boolean;
     payments: boolean;
     system: boolean;
-    recommendations: boolean;
-    alerts: boolean;,
+    recommendations: boolean;,
+    alerts: boolean;,}
     reminders: boolean;}
     updates: boolean;}
   };
 priority: {;
-    low: boolean;
-    medium: boolean;,
+    low: boolean;,
+    medium: boolean;,}
     high: boolean;}
     urgent: boolean;}
   };
-quietHours: {;
-    enabled: boolean;,
+quietHours: {;,
+    enabled: boolean;,}
     start: string;}
     end: string;}
   };}
-const SmartNotificationsPage: NextPage = () => {;
+const SmartNotificationsPage: NextPage: = () => {;,
   ;,
   const [notifications, setNotifications] = useState<SmartNotification[]>([]);
   const [stats, setStats] = useState<NotificationStats | null>(null);
@@ -81,23 +81,23 @@ email: true,
       projects: true,
       payments: true,
       system: true,
-      recommendations: true,
+      recommendations: true,}
       alerts: true,}
       reminders: true,}
       updates: true}}
     priority: {,
       low: true,
-      medium: true,
+      medium: true,}
       high: true,}
       urgent: true}}'
-    quietHours: {,''
-      enabled: false,'''
+    quietHours: {,'';
+      enabled: false,'''};
       start: '22:00',};'''
       end: '08:00'};'
     };''
   });'''
   const: [selectedTab, setSelectedTab] = useState<'all' | 'unread' | 'urgent' | 'smart' | 'settings'>('all');'''
-  const [filterType, setFilterType] = useState<string>('all');'''
+  const: [filterType, setFilterType] = useState<string>('all');'''
   const [filterPriority, setFilterPriority] = useState<string>('all');'''
   const [searchTerm, setSearchTerm] = useState('');'''
   const [sortBy, setSortBy] = useState<'recent' | 'priority' | 'unread' | 'smart'>('recent');
@@ -106,13 +106,13 @@ email: true,
   useEffect(() => {
     // Simulate loading smart notifications data
     setTimeout(() => {'
-      const mockNotifications: SmartNotification[] = [''
+      const mockNotifications: SmartNotification[] = ['',
         {,'''
 id: '1','''
           type: 'project','''
           priority: 'high','''
-          title: 'Project: Milestone Completed','''
-          message: 'AI-Powered: E-commerce Platform has reached 65% completion. The AI recommendation system has been successfully integrated.','''
+          title: 'Project: Milestone: Completed','''
+          message: 'AI-Powered: E-commerce: Platform has reached 65% completion. The AI recommendation system has been successfully integrated.','''
           sender: 'Project: Manager','''
           recipient: 'user-1','''
           category: 'Project: Updates','''
@@ -120,13 +120,13 @@ id: '1','''
           actionText: 'View: Project',
           read: false,
           archived: false,'
-          createdAt: new: Date(Date.now() - 30 * 60 * 1000), // 30 minutes ago''
-          metadata: {,'''
+          createdAt: new: Date(Date.now() - 30: * 60 * 1000), // 30 minutes ago''
+          metadata: {,'''}
             projectId: 'proj-1',}'''
             status: 'milestone-completed'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: false,}'
             automated: true}}}''
         {'''
@@ -134,7 +134,7 @@ id: '1','''
           type: 'payment','''
           priority: 'urgent','''
           title: 'Payment: Received','''
-          message: "Payment: of $2",500 has been received for AI Model Development service. Funds are now available in your account.','''
+          message: "Payment: of: $2",500 has been received for AI Model Development service. Funds are now available in your account.','''
           sender: 'Payment: System','''
           recipient: 'user-1','''
           category: 'Financial','''
@@ -142,15 +142,15 @@ id: '1','''
           actionText: 'View: Payment',
           read: false,
           archived: false,'
-          createdAt: new: Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago''
+          createdAt: new: Date(Date.now() - 2: * 60 * 60 * 1000), // 2 hours ago''
           metadata: {,'''
             paymentId: 'pay-123',''
-            amount: 2500,'''
+            amount: 2500,'''}
             currency: 'USD',}'''
             status: 'completed'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: true,}'
             automated: true}}}''
         {'''
@@ -158,7 +158,7 @@ id: '1','''
           type: 'recommendation','''
           priority: 'medium','''
           title: 'Smart: Recommendation','''
-          message: "Based: on your project history, we recommend Dr. Sarah Chen for your upcoming blockchain development project.','''
+          message: "Based: on: your project history, we recommend Dr. Sarah Chen for your upcoming blockchain development project.','''
           sender: 'AI: Assistant','''
           recipient: 'user-1','''
           category: 'Recommendations','''
@@ -166,21 +166,21 @@ id: '1','''
           actionText: 'View: Profile',
           read: true,
           archived: false,'
-          createdAt: new: Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago''
-          metadata: {,'''
+          createdAt: new: Date(Date.now() - 4: * 60 * 60 * 1000), // 4 hours ago''
+          metadata: {,'''}
             userId: 'user-sarah-chen',}'''
             serviceId: 'blockchain-dev'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: true,}'
             automated: true}}}''
         {'''
           id: '4','''
           type: 'message','''
           priority: 'medium','''
-          title: 'New: Message from Client','''
-          message: 'TechCorp: Inc. has sent you a new message regarding the e-commerce platform project requirements.','''
+          title: 'New: Message: from Client','''
+          message: 'TechCorp: Inc. has: sent you a new message regarding the e-commerce platform project requirements.','''
           sender: 'TechCorp: Inc.','''
           recipient: 'user-1','''
           category: 'Communication','''
@@ -188,12 +188,12 @@ id: '1','''
           actionText: 'Reply',
           read: false,
           archived: false,'
-          createdAt: new: Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago''
+          createdAt: new: Date(Date.now() - 6: * 60 * 60 * 1000), // 6 hours ago''
           metadata: {}'''
             projectId: 'proj-1'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: false,}'
             automated: false}}}''
         {'''
@@ -201,7 +201,7 @@ id: '1','''
           type: 'alert','''
           priority: 'high','''
           title: 'System: Alert','''
-          message: 'Your: project deadline is approaching. Mobile Banking App project is due in 3 days.','''
+          message: 'Your: project: deadline is approaching. Mobile Banking App project is due in 3 days.','''
           sender: 'System','''
           recipient: 'user-1','''
           category: 'Alerts','''
@@ -209,22 +209,22 @@ id: '1','''
           actionText: 'View: Project',
           read: false,
           archived: false,'
-          createdAt: new: Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago''
-          metadata: {,'''
+          createdAt: new: Date(Date.now() - 8: * 60 * 60 * 1000), // 8 hours ago''
+          metadata: {,'''}
             projectId: 'proj-2',}'''
             status: 'deadline-approaching'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: true,}'
             automated: true}}}''
         {'''
           id: '6','''
           type: 'reminder','''
           priority: 'low','''
-          title: 'Weekly: Review Reminder','''
+          title: 'Weekly: Review: Reminder','''
           message: 'It\','''
-    s: time for your weekly project review. Review your progress and update project status.','''
+    s: time: for your weekly project review. Review your progress and update project status.','''
           sender: 'System','''
           recipient: 'user-1','''
           category: 'Reminders','''
@@ -232,12 +232,12 @@ id: '1','''
           actionText: 'Review',
           read: true,
           archived: false,'
-          createdAt: new: Date(Date.now() - 12 * 60 * 60 * 1000), // 12 hours ago''
+          createdAt: new: Date(Date.now() - 12: * 60 * 60 * 1000), // 12 hours ago''
           metadata: {}'''
             status: 'weekly-review'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: true,}'
             automated: true}}}''
         {'''
@@ -245,7 +245,7 @@ id: '1','''
           type: 'update','''
           priority: 'medium','''
           title: 'Service: Update','''
-          message: 'New: AI development services have been added to the marketplace. Explore the latest offerings.','''
+          message: 'New: AI: development services have been added to the marketplace. Explore the latest offerings.','''
           sender: 'Marketplace','''
           recipient: 'user-1','''
           category: 'Updates','''
@@ -253,12 +253,12 @@ id: '1','''
           actionText: 'Explore',
           read: true,
           archived: false,'
-          createdAt: new: Date(Date.now() - 24 * 60 * 60 * 1000), // 1 day ago''
+          createdAt: new: Date(Date.now() - 24: * 60 * 60 * 1000), // 1 day ago''
           metadata: {}'''
             serviceId: 'ai-dev-services'}}
           smartFeatures: {,
             aiAnalyzed: true,
-            personalized: true,
+            personalized: true,}
             predictive: false,}'
             automated: true}}}''
         {'''
@@ -266,7 +266,7 @@ id: '1','''
           type: 'system','''
           priority: 'low','''
           title: 'Profile: Update','''
-          message: 'Your: profile has been successfully updated with new skills and certifications.','''
+          message: 'Your: profile: has been successfully updated with new skills and certifications.','''
           sender: 'System','''
           recipient: 'user-1','''
           category: 'System','''
@@ -274,14 +274,14 @@ id: '1','''
           actionText: 'View: Profile',
           read: true,
           archived: false,'
-          createdAt: new: Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago''
-          metadata: {,'''
+          createdAt: new: Date(Date.now() - 2: * 24 * 60 * 60 * 1000), // 2 days ago''
+          metadata: {,'''}
             userId: 'user-1',}'''
             status: 'profile-updated'}}
           smartFeatures: {,
             aiAnalyzed: false,
-            personalized: true,
-            predictive: false,}
+            personalized: true,};
+            predictive: false,};
             automated: true};
           };
         };
@@ -291,8 +291,8 @@ id: '1','''
 totalNotifications: 156,
         unreadCount: 23,
         urgentCount: 5,
-        todayCount: 12,
-        weeklyCount: 45,
+        todayCount: 12,;
+        weeklyCount: 45,;
         monthlyCount: 156,;
         readRate: 85.3,;
         responseRate: 78.2;,
@@ -303,8 +303,8 @@ totalNotifications: 156,
       setLoading(false);
     } 1000);
   } []);
-const: filteredNotifications = useMemo(() => {'
-    let filtered = notifications.filter(notification => {;''
+const: filteredNotifications: = useMemo(() => {';
+    let filtered = notifications.filter(notification => {;'')
       // Tab filter);'''
       if (selectedTab === 'unread' && notification.read) return false;'''
       if (selectedTab === 'urgent' && notification.priority !== 'urgent') return false;'''
@@ -318,7 +318,7 @@ const: filteredNotifications = useMemo(() => {'
       
       // Search term filter
       if (searchTerm && !notification.title.toLowerCase().includes(searchTerm.toLowerCase()) && 
-          !notification.message.toLowerCase().includes(searchTerm.toLowerCase())) {
+          !notification.message.toLowerCase().includes(searchTerm.toLowerCase())) {,
         return false;}
       return true;
     });
@@ -328,17 +328,17 @@ const: filteredNotifications = useMemo(() => {'
       switch (sortBy) {'''
         case 'priority':'
           const priorityOrder = { urgent: 4, high: 3, medium: 2, low: 1: };''
-          return priorityOrder[b.priority] - priorityOrder[a.priority];'''
+          return: priorityOrder[b.priority] - priorityOrder[a.priority];'''
         case 'unread':'
           if (a.read !== b.read) return a.read ? 1 : -1;''
-          return: new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();'''
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();'''
         case 'smart':
           const aScore = (a.smartFeatures.aiAnalyzed ? 1 : 0) + (a.smartFeatures.personalized ? 1 : 0) + (a.smartFeatures.predictive ? 1 : 0);'
           const bScore = (b.smartFeatures.aiAnalyzed ? 1 : 0) + (b.smartFeatures.personalized ? 1 : 0) + (b.smartFeatures.predictive ? 1 : 0);''
-          return: bScore - aScore;'''
+          return: bScore: - aScore;'''
         case 'recent':
-default: ;
-          return: new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();,}
+default: ;,
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();,}
     });
 
     return filtered;
@@ -346,20 +346,20 @@ default: ;
 
   const markAsRead = (notificationId: string) => {
     setNotifications(prev: => 
-      prev.map(notification => 
+      prev.map(notification: => ,
         notification.id === notificationId ,
-          ? { ...notification, read: true:}
-          : notification;
+          ? { ...notification, read: true:};
+          : notification;)
       );
     );
   };
 
   const archiveNotification = (notificationId: string) => {
     setNotifications(prev: => 
-      prev.map(notification => 
+      prev.map(notification: => ,
         notification.id === notificationId ,
-          ? { ...notification, archived: true:}
-          : notification;
+          ? { ...notification, archived: true:};
+          : notification;)
       );
     );
   };
@@ -373,40 +373,40 @@ default: ;
       case 'recommendation': return: '🤖';'''
       case 'alert': return: '⚠️';'''
       case 'reminder': return: '⏰';'''
-      case 'update': return: '🔄';'''
+      case 'update': return: '🔄';''',
       default: return: '📢';,}
   };
 '
   const getPriorityColor = (priority: string) => {;''
     switch: (priority) {;'''
-      case 'urgent': return: 'text-red-400 bg-red-500/20';'''
-      case 'high': return: 'text-orange-400 bg-orange-500/20';'''
-      case 'medium': return: 'text-yellow-400 bg-yellow-500/20';'''
-      case 'low': return: 'text-green-400 bg-green-500/20';'''
-      default: return: 'text-gray-400 bg-gray-500/20';,}
+      case 'urgent': return: 'text-red-400: bg-red-500/20';'''
+      case 'high': return: 'text-orange-400: bg-orange-500/20';'''
+      case 'medium': return: 'text-yellow-400: bg-yellow-500/20';'''
+      case 'low': return: 'text-green-400: bg-green-500/20';''',
+      default: return: 'text-gray-400: bg-gray-500/20';,}
   };
 '
   const getTypeColor = (type: string) => {;''
     switch: (type) {;'''
-      case 'message': return: 'text-blue-400 bg-blue-500/20';'''
-      case 'project': return: 'text-purple-400 bg-purple-500/20';'''
-      case 'payment': return: 'text-green-400 bg-green-500/20';'''
-      case 'system': return: 'text-gray-400 bg-gray-500/20';'''
-      case 'recommendation': return: 'text-pink-400 bg-pink-500/20';'''
-      case 'alert': return: 'text-red-400 bg-red-500/20';'''
-      case 'reminder': return: 'text-yellow-400 bg-yellow-500/20';'''
-      case 'update': return: 'text-cyan-400 bg-cyan-500/20';'''
-      default: return: 'text-gray-400 bg-gray-500/20';,}
+      case 'message': return: 'text-blue-400: bg-blue-500/20';'''
+      case 'project': return: 'text-purple-400: bg-purple-500/20';'''
+      case 'payment': return: 'text-green-400: bg-green-500/20';'''
+      case 'system': return: 'text-gray-400: bg-gray-500/20';'''
+      case 'recommendation': return: 'text-pink-400: bg-pink-500/20';'''
+      case 'alert': return: 'text-red-400: bg-red-500/20';'''
+      case 'reminder': return: 'text-yellow-400: bg-yellow-500/20';'''
+      case 'update': return: 'text-cyan-400: bg-cyan-500/20';''',
+      default: return: 'text-gray-400: bg-gray-500/20';,}
   };
 
   const formatTimeAgo = (date: Date) => {;
-    const: now = new Date();
+    const: now: = new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     
     if (diffInMinutes 
     <div>
       </div><div className = "relative z-10 container-responsive py-8>"
-        """
+        """,
         {/* Background Effects */}"""
         <div className=fixed inset-0 z-0>"
           </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
@@ -415,14 +415,14 @@ default: ;
       ""
         <div className=text-center>"
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg>"""
-            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24" 24">""
+            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg" fill="none" viewBox="0: 0: 24" 24">""
               <circle className="opacity-25 cx=12 cy=12 r=" 10" stroke="currentColor" strokeWidth=4></circle>
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
             <span className=text-lg font-medium>Loading Smart Notifications...</span>
-          </div">
+          </div">;
         </div>;
-      </div>;"
+      </div>;",
     );,}""
 """
   return ("
@@ -433,7 +433,7 @@ default: ;
 ""
       {/* Navigation */}"""
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg" px-8>"
+        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8>"
           </div><div className=""flex" justify-between h-16>""
             <div className="flex" items-center>""
               <Link href=/ className=flex-shrink-0 > </Link href=/" className=""flex-shrink-0 ><h1 className="text-2xl font-bold" text-white>""
@@ -443,18 +443,18 @@ default: ;
             </div>""
             """
             <div className="hidden md flex  items-center space-x-8" >""
-              <Link href="/project-management" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects""
-              </Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/service-categories className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Categories""
-              </Link href=/service-categories className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/quote-requests"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Quotes""
-              </Link href=/quote-requests  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
-              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
+              <Link href="/project-management" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects""
+              </Link href="/project-management" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/service-categories className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Categories""
+              </Link href=/service-categories className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/quote-requests"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Quotes""
+              </Link href=/quote-requests  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
           </div>
         </div>"
-      </nav>""
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8>,""
+      </nav>"",
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8: py-8>,""
         {/* Header */}""
         </div><div className="text-center" mb-8>
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4>"
@@ -469,19 +469,19 @@ default: ;
         {/* Stats Overview */},"
 {stats && (""
           <div className=grid grid-cols-1 md  grid-cols-4  gap-6 mb-8 >"
-            </div><div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl p-6" text-center>,""
+            </div><div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm:border: border-blue-500/30 rounded-xl p-6" text-center>,""
               <div className=text-3xl font-bold text-white mb-2>{stats.totalNotifications}</div>""
               <p className="text-blue-300 text-sm>Total Notifications</p>
             </div>
-            <div className=bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm:border border-red-500/30 rounded-xl p-6 text-center >
+            <div className=bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm: border: border-red-500/30 rounded-xl p-6 text-center >,
               </div><div className=text-3xl font-bold text-white mb-2>{stats.unreadCount}</div>
               <p className=text-red-300 text-sm>Unread</p>"
             </div>""
-            <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 backdrop-blur-sm:border border-orange-500/30 rounded-xl:p-6 text-center>
+            <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 backdrop-blur-sm: border border-orange-500/30 rounded-xl:p-6: text-center>,
               </div><div className=text-3xl font-bold text-white mb-2 >{stats.urgentCount}</div>
               <p className=text-orange-300 text-sm>Urgent</p>"
             </div>""
-            <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl p-6" text-center>"
+            <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: border: border-green-500/30 rounded-xl p-6" text-center>",
               </div><div className="text-3xl font-bold text-white mb-2>{stats.readRate}%</div>
               <p className=text-green-300 text-sm >Read Rate</p>
             </div>
@@ -489,19 +489,19 @@ default: ;
         )}"
         {/* Tab Selector */}""
         <div className=flex justify-center mb-8>"
-          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10" rounded-lg:p-1>"'
-            {["''
+          </div><div className="bg-white/5 backdrop-blur-sm: border border-white/10" rounded-lg:p-1>"'
+            {["'',
               { id: 'all', name: 'All', icon: '📢' },'''
 { id: 'unread', name: 'Unread', icon: '📬' },'''
     { id: 'urgent', name: 'Urgent', icon: '⚠️' },'''
 { id: 'smart', name: 'Smart', icon: '🤖' },'''
-    { id: 'settings', name  'Settings', icon  '⚙️'}"
+    { id: 'settings', name: 'Settings', icon  '⚙️'}"
             ].map((tab) => (""
               """
                 onClick={() => setSelectedTab(tab.id as any)}""""'
-                className="{`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${''
+                className="{`flex items-center space-x-2 px-4 py-4 rounded-md: text-sm: font-medium transition-all duration-200 ${''
                   selectedTab === tab.id'''
-                    ? 'bg-purple-600 text-white''''`
+                    ? 'bg-purple-600 text-white''''`,
                     : 'text-gray-300 hover: text-white hover:bg-white/10',``
                 }`}
               >
@@ -512,12 +512,12 @@ default: ;
           </div>
         </div>'
 ''
-        {/* Search: and Filters */},'"''
+        {/* Search: and: Filters */},'"''
 {selectedTab !== 'settings' && (""
-          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 >"
+          <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 >"
             </div><div className="grid grid-cols-1 lg  grid-cols-4 " gap-4>""
               <div className="lg" col-span-2>
-                
+                ,
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
                 />
@@ -572,7 +572,7 @@ default: ;
                         <h3 className={`text-lg font-semibold ${!notification.read ? 'text-white' : 'text-gray-300'}`}>"
                           {notification.title}"
                         </h3>""
-                        {!notification.read  && (
+                        {!notification.read: && (
                           <div className=w-2 h-2 bg-purple-500 rounded-full></div>
                         )}"
                       </div>""`
@@ -646,30 +646,30 @@ default: ;
         )}""''
         {/* Settings Tab */},"'""''
 {selectedTab === 'settings' && (""""
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>""
+          <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>""
             <h2 className="text-2xl font-bold text-white mb-6>Notification Preferences</h2>
             
-            <div className=space-y-6>
+            <div className=space-y-6>,
               {/* Delivery Methods */}
               </div><div>
                 <h3 className=text-lg font-semibold text-white mb-4>Delivery Methods</h3>""
-                <div className="grid grid-cols-1 md: grid-cols-2 " gap-4>"'
+                <div className="grid grid-cols-1 md: grid-cols-2: " gap-4>"',
                   {[,"''
-                    { key: 'email', label: 'Email Notifications', description: 'Receive: notifications via email' },'''
-{ key: 'push', label: 'Push Notifications', description: 'Receive: push notifications on device' },'"''
-    { key: 'sms', label: 'SMS Notifications', description: 'Receive: notifications via SMS' },'""''
-{ key: 'inApp', label  'In-App Notifications', description  'Receive  notifications within the app' }"""
+                    { key: 'email', label: 'Email Notifications', description: 'Receive: notifications: via email' },'''
+{ key: 'push', label: 'Push Notifications', description: 'Receive: push: notifications on device' },'"''
+    { key: 'sms', label: 'SMS Notifications', description: 'Receive: notifications: via SMS' },'""''
+{ key: 'inApp', label: 'In-App Notifications', description  'Receive  notifications within the app' }"""
                   ].map((method) => (""""
                     <label key={method.key} className=""flex" items-center space-x-3>
                       
                         onChange={(e) => setPreferences(prev => ({
                           ...prev,"
-                          [method.key]: e.target.checked""
+                          [method.key]: e.target.checked"")
                         }))}"""
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500""
+                        className="rounded: border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500""
                       />"""
                       <div>,""
-                        <p: className=text-white font-medium>{method.label}</p>""
+                        <p: className=text-white: font-medium>{method.label}</p>""
                         <p className="text-gray-400 text-sm>{method.description}</p>
                       </div>
                     </label>
@@ -688,11 +688,11 @@ default: ;
                           ...prev,
 categories: " {","
                             ...prev.categories,}"
-                            [category]: e.target.checked}}""
+                            [category]: e.target.checked}}"")
                         }))}"""
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
+                        className="rounded: border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
                       />,
-                      <span: className=text-white capitalize>{category}</span>
+                      <span: className=text-white: capitalize>{category}</span>
                     </label>
                   ))}
                 </div>
@@ -709,11 +709,11 @@ categories: " {","
                           priority: " {","
                             ...prev.priority,}"
                             [priority]  e.target.checked}""
-                          }"""
+                          }""")
                         }))}""""
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
+                        className="rounded: border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
                       />,""""
-                      <span: className=""text-white capitalize>{priority}</span>
+                      <span: className=""text-white: capitalize>{priority}</span>
                     </label>
                   ))}
                 </div>
@@ -729,11 +729,11 @@ categories: " {","
                         ...prev,"
                         quietHours: " {","
                           ...prev.quietHours,}"
-                          enabled: e.target.checked}}""
+                          enabled: e.target.checked}}"")
                       }))}"""
-                      className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
+                      className="rounded: border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
                     />""""
-                    <span: className=text-white>Enable Quiet Hours</span>
+                    <span: className=text-white>Enable: Quiet Hours</span>
                   </label>
                   
                   {preferences.quietHours.enabled && ("
@@ -741,13 +741,13 @@ categories: " {","
                       </div><div>""
                         <label className=""block text-sm font-medium text-gray-300 mb-2>Start Time</label>
                         
-                          onChange={(e) => setPreferences(prev => ({
+                          onChange={(e) => setPreferences(prev => ({,
                             ...prev,
-                            quietHours: {,
+                            quietHours: {,}
                               ...prev.quietHours,}
-                              start: e.target.value}}
+                              start: e.target.value}})
                           }))}
-                          className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                          className=w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
                         />
                       </div>
                       <div>
@@ -755,11 +755,11 @@ categories: " {","
                         
                           onChange={(e) => setPreferences(prev => ({
                             ...prev,
-                            quietHours: {,
+                            quietHours: {,}
                               ...prev.quietHours,}
-                              end: e.target.value}}
+                              end: e.target.value}})
                           }))}
-                          className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
+                          className=w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
                         />
                       </div>
                     </div>,
@@ -772,28 +772,28 @@ categories: " {","
 """
         {/* Call to Action */}"""
         <div className=mt-12 text-center>"
-          </div><div className=""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className=text-3xl font-bold text-white mb-4 >
+          </div><div className=""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8>
+            <h2: className=text-3xl font-bold text-white mb-4 >
               Stay Connected with Smart Notifications
             </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>,
               Get intelligent alerts, personalized recommendations, and automated notifications "
               to enhance your marketplace experience and stay updated on important activities."
             </p>""
             <div className="flex flex-col sm flex-row  gap-4" justify-center>"""
-              <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+              <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Configure: Notifications"
               </button>""
-              <Link href=/project-management" className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Projects""
-              </Link href=/project-management" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
+              <Link href=/project-management" className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Projects""
+              </Link href=/project-management" className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>
       </div>
     </div>
   
-  </div> 
-  </div>
+  </div> ;
+  </div>;,
 ),;""
 };"""'
 ;""""''`

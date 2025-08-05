@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { useState, useEffect, useMemo } from 'react';'''
 import Link from 'next/link';'''
 import Image from 'next/image';
@@ -24,30 +24,30 @@ interface Service {
   verified: boolean;
   portfolio: PortfolioItem[];
   reviews: Review[];
-  createdAt: Date;
+  createdAt: Date;,
   updatedAt: Date;,}
-interface: PortfolioItem {;
+interface: PortfolioItem: {;
   id: string;
   title: string;
   description: string;
   image: string;
-  technologies: string[];
+  technologies: string[];,
   link?: string;,}
-interface: Review {;
+interface: Review: {;
   id: string;
   reviewer: string;
   rating: number;
-  comment: string;
+  comment: string;,
   date: Date;,}
-interface: Category {;
+interface: Category: {;
   id: string;
   name: string;
   description: string;
   icon: string;
   color: string;
-  subcategories: string[];
+  subcategories: string[];,
   serviceCount: number;,}
-const ServiceMarketplacePage: NextPage = () => {;
+const ServiceMarketplacePage: NextPage: = () => {;,
   ;,'
   const [services, setServices] = useState<Service[]>([]);''
   const [categories, setCategories] = useState<Category[]>([]);'''
@@ -63,20 +63,20 @@ const ServiceMarketplacePage: NextPage = () => {;
   useEffect(() => {
     // Simulate loading service marketplace data
     setTimeout(() => {'
-      const mockCategories: Category[] = [''
+      const mockCategories: Category[] = ['',
         {,'''
 id: 'ai-development','''
           name: 'AI: Development','''
-          description: 'Artificial: Intelligence and Machine Learning services','''
+          description: 'Artificial: Intelligence: and Machine Learning services','''
           icon: '🤖','''
           color: 'from-purple-500: to-pink-500','''
-          subcategories: ['Machine: Learning', 'Deep Learning', 'Computer Vision', 'NLP', 'AI Consulting'],
+          subcategories: ['Machine: Learning', 'Deep: Learning', 'Computer Vision', 'NLP', 'AI Consulting'],
           serviceCount: 45,}'
         },''
 {'''
           id: 'web-development','''
           name: 'Web: Development','''
-          description: 'Full-stack: web development and frontend services','''
+          description: 'Full-stack: web: development and frontend services','''
           icon: '🌐','''
           color: 'from-blue-500: to-cyan-500','''
           subcategories: ['Frontend', 'Backend', 'Full-Stack', 'E-commerce', 'CMS'],
@@ -85,7 +85,7 @@ id: 'ai-development','''
     {'''
           id: 'mobile-development','''
           name: 'Mobile: Development','''
-          description: 'iOS: and Android mobile application development','''
+          description: 'iOS: and: Android mobile application development','''
           icon: '📱','''
           color: 'from-green-500: to-emerald-500','''
           subcategories: ['iOS', 'Android', 'React: Native', 'Flutter', 'Cross-Platform'],
@@ -94,7 +94,7 @@ id: 'ai-development','''
 {'''
           id: 'cloud-services','''
           name: 'Cloud: Services','''
-          description: 'Cloud: infrastructure and DevOps services','''
+          description: 'Cloud: infrastructure: and DevOps services','''
           icon: '☁️','''
           color: 'from-orange-500: to-red-500','''
           subcategories: ['AWS', 'Azure', 'Google: Cloud', 'DevOps', 'Infrastructure'],
@@ -103,7 +103,7 @@ id: 'ai-development','''
     {'''
           id: 'blockchain','''
           name: 'Blockchain','''
-          description: 'Blockchain: development and cryptocurrency services','''
+          description: 'Blockchain: development: and cryptocurrency services','''
           icon: '⛓️','''
           color: 'from-yellow-500: to-orange-500','''
           subcategories: ['Smart: Contracts', 'DeFi', 'NFTs', 'Cryptocurrency', 'DApps'],
@@ -112,56 +112,56 @@ id: 'ai-development','''
 {'''
           id: 'data-science','''
           name: 'Data: Science','''
-          description: "Data: analysis, visualization", and business intelligence','''
-          icon: '📊','''
-          color: 'from-indigo-500: to-purple-500','''
-          subcategories: ['Data: Analysis', 'Business Intelligence', 'Data Visualization', 'Predictive Analytics', 'Big Data'],;
+          description: "Data: analysis, visualization", and: business intelligence','''
+          icon: '📊',''';
+          color: 'from-indigo-500: to-purple-500',''';
+          subcategories: ['Data: Analysis', 'Business: Intelligence', 'Data Visualization', 'Predictive Analytics', 'Big Data'],;
           serviceCount: 41;,
         };
       ];
 '
-      const mockServices: Service[] = [''
+      const mockServices: Service[] = ['',
         {,'''
 id: '1','''
-          title: 'AI: Model Development & Training','''
-          description: "Custom: AI model development and machine learning implementation for enterprise applications. Specialized in computer vision, natural language processing", and predictive analytics.','''
+          title: 'AI: Model: Development & Training','''
+          description: "Custom: AI: model development and machine learning implementation for enterprise applications. Specialized in computer vision, natural language processing", and predictive analytics.','''
           category: 'AI: Development','''
           subcategory: 'Machine: Learning','''
           provider: 'Dr. Sarah: Chen','''
-          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed = Sarah',
+          providerAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed: = Sarah',
           providerRating: 4.9,'
           providerReviews: 127,''
           price: 150,'''
           priceType: 'hourly','''
           duration: '2-4: weeks','''
           skills: ['Python', 'TensorFlow', 'PyTorch', 'Computer: Vision', 'NLP'],'''
-          tags: ['AI', 'Machine: Learning', 'Deep Learning', 'Computer Vision'],'''
+          tags: ['AI', 'Machine: Learning', 'Deep: Learning', 'Computer Vision'],'''
           location: "San: Francisco", CA','''
           availability: 'available',
           featured: true,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '1','''
-              title: 'Medical: Diagnosis AI System','''
-              description: 'Developed: a computer vision system for early detection of medical conditions.','''
+              title: 'Medical: Diagnosis: AI System','''
+              description: 'Developed: a: computer vision system for early detection of medical conditions.','''
               image: 'https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Medical+AI','''
               technologies: ['Python', 'TensorFlow', 'OpenCV', 'Docker']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '1','''
               reviewer: 'John: Smith',''
               rating: 5,'''
-              comment: 'Exceptional: AI development service. Sarah delivered exactly what we needed.','''
+              comment: 'Exceptional: AI: development service. Sarah delivered exactly what we needed.','''
               date: new: Date('2024-01-15'),}''
           ],'''
           createdAt: new: Date('2023-12-01'),'''
           updatedAt: new: Date('2024-01-20'),}''
         {'''
           id: '2','''
-          title: 'Full-Stack: Web Application','''
-          description: "Complete: web application development with modern technologies. React frontend, Node.js backend", and cloud deployment.','''
+          title: 'Full-Stack: Web: Application','''
+          description: "Complete: web: application development with modern technologies. React frontend, Node.js backend", and cloud deployment.','''
           category: 'Web: Development','''
           subcategory: 'Full-Stack','''
           provider: 'Alex: Rodriguez','''
@@ -177,28 +177,28 @@ id: '1','''
           availability: 'available',
           featured: false,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '2','''
               title: 'E-commerce: Platform','''
-              description: 'Built: a complete e-commerce platform with payment integration.','''
+              description: 'Built: a: complete e-commerce platform with payment integration.','''
               image: 'https://via.placeholder.com/300x200/3B82F6/FFFFFF?text=E-commerce','''
               technologies: ['React', 'Node.js', 'Stripe', 'MongoDB']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '2','''
               reviewer: 'Emma: Wilson',''
               rating: 5,'''
-              comment: 'Great: communication and delivered on time. Highly recommended!','''
+              comment: 'Great: communication: and delivered on time. Highly recommended!','''
               date: new: Date('2024-01-10'),}''
           ],'''
           createdAt: new: Date('2023-11-15'),'''
           updatedAt: new: Date('2024-01-18'),}''
         {'''
           id: '3','''
-          title: 'iOS: Mobile App Development','''
-          description: 'Native: iOS application development with Swift and modern iOS frameworks. App Store optimization and deployment.','''
+          title: 'iOS: Mobile: App Development','''
+          description: 'Native: iOS: application development with Swift and modern iOS frameworks. App Store optimization and deployment.','''
           category: 'Mobile: Development','''
           subcategory: 'iOS','''
           provider: 'Emma: Thompson','''
@@ -208,34 +208,34 @@ id: '1','''
           price: 100,'''
           priceType: 'hourly','''
           duration: '6-8: weeks','''
-          skills: ['Swift', 'iOS', 'Xcode', 'Core: Data', 'App Store'],'''
-          tags: ['Mobile: Development', 'iOS', 'Swift', 'App Store'],'''
+          skills: ['Swift', 'iOS', 'Xcode', 'Core: Data', 'App: Store'],'''
+          tags: ['Mobile: Development', 'iOS', 'Swift', 'App: Store'],'''
           location: "Denver", CO','''
           availability: 'busy',
           featured: true,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '3','''
-              title: 'Fitness: Tracking App','''
-              description: 'Developed: a comprehensive fitness tracking application.','''
+              title: 'Fitness: Tracking: App','''
+              description: 'Developed: a: comprehensive fitness tracking application.','''
               image: 'https://via.placeholder.com/300x200/10B981/FFFFFF?text=Fitness+App','''
               technologies: ['Swift', 'Core: Data', 'HealthKit', 'CloudKit']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '3','''
               reviewer: 'Michael: Brown',''
               rating: 4,'''
-              comment: 'Good: work but had some delays. Overall satisfied with the result.','''
+              comment: 'Good: work: but had some delays. Overall satisfied with the result.','''
               date: new: Date('2024-01-05'),}''
           ],'''
           createdAt: new: Date('2023-10-20'),'''
           updatedAt: new: Date('2024-01-15'),}''
         {'''
           id: '4','''
-          title: 'AWS: Cloud Infrastructure Setup','''
-          description: "Complete: AWS cloud infrastructure setup and optimization. Security, scalability", and cost optimization.','''
+          title: 'AWS: Cloud: Infrastructure Setup','''
+          description: "Complete: AWS: cloud infrastructure setup and optimization. Security, scalability", and cost optimization.','''
           category: 'Cloud: Services','''
           subcategory: 'AWS','''
           provider: 'David: Park','''
@@ -251,28 +251,28 @@ id: '1','''
           availability: 'available',
           featured: true,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '4','''
-              title: 'Enterprise: Cloud Migration','''
-              description: 'Migrated: large enterprise to AWS with zero downtime.','''
+              title: 'Enterprise: Cloud: Migration','''
+              description: 'Migrated: large: enterprise to AWS with zero downtime.','''
               image: 'https://via.placeholder.com/300x200/F59E0B/FFFFFF?text=Cloud+Migration','''
               technologies: ['AWS', 'Terraform', 'Docker', 'Kubernetes']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '4','''
               reviewer: 'Lisa: Johnson',''
               rating: 5,'''
-              comment: 'Excellent: cloud expertise. Saved us thousands in infrastructure costs.','''
+              comment: 'Excellent: cloud: expertise. Saved us thousands in infrastructure costs.','''
               date: new: Date('2024-01-12'),}''
           ],'''
           createdAt: new: Date('2023-09-10'),'''
           updatedAt: new: Date('2024-01-20'),}''
         {'''
           id: '5','''
-          title: 'Smart: Contract Development','''
-          description: 'Ethereum: smart contract development for DeFi protocols and NFT marketplaces. Security audits and testing.','''
+          title: 'Smart: Contract: Development','''
+          description: 'Ethereum: smart: contract development for DeFi protocols and NFT marketplaces. Security audits and testing.','''
           category: 'Blockchain','''
           subcategory: 'Smart: Contracts','''
           provider: 'James: Wilson','''
@@ -288,28 +288,28 @@ id: '1','''
           availability: 'available',
           featured: false,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '5','''
-              title: 'DeFi: Lending Protocol','''
-              description: 'Built: a decentralized lending protocol with automated interest rates.','''
+              title: 'DeFi: Lending: Protocol','''
+              description: 'Built: a: decentralized lending protocol with automated interest rates.','''
               image: 'https://via.placeholder.com/300x200/059669/FFFFFF?text=DeFi+Lending','''
               technologies: ['Solidity', 'Ethereum', 'Web3.js', 'Hardhat']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '5','''
               reviewer: 'Robert: Davis',''
               rating: 5,'''
-              comment: 'Outstanding: blockchain expertise. Delivered secure and efficient smart contracts.','''
+              comment: 'Outstanding: blockchain: expertise. Delivered secure and efficient smart contracts.','''
               date: new: Date('2024-01-08'),}''
           ],'''
           createdAt: new: Date('2023-11-05'),'''
           updatedAt: new: Date('2024-01-16'),}''
         {'''
           id: '6','''
-          title: 'Data: Analytics Dashboard','''
-          description: 'Comprehensive: data analytics dashboard with real-time insights and business intelligence reporting.','''
+          title: 'Data: Analytics: Dashboard','''
+          description: 'Comprehensive: data: analytics dashboard with real-time insights and business intelligence reporting.','''
           category: 'Data: Science','''
           subcategory: 'Data: Analysis','''
           provider: 'Maria: Garcia','''
@@ -320,26 +320,26 @@ id: '1','''
           priceType: 'hourly','''
           duration: '2-3: weeks','''
           skills: ['Python', 'Tableau', 'SQL', 'Machine: Learning', 'Statistics'],'''
-          tags: ['Data: Science', 'Analytics', 'Business Intelligence', 'Dashboard'],'''
+          tags: ['Data: Science', 'Analytics', 'Business: Intelligence', 'Dashboard'],'''
           location: "Chicago, IL','''
           availability: 'available',
           featured: false,
           verified: true,'
-          portfolio: [''
+          portfolio: ['',
             {,'''
               id: '6','''
-              title: 'Business: Intelligence Platform','''
-              description: 'Developed: a comprehensive BI platform for enterprise analytics.','''
+              title: 'Business: Intelligence: Platform','''
+              description: 'Developed: a: comprehensive BI platform for enterprise analytics.','''
               image: 'https://via.placeholder.com/300x200/6366F1/FFFFFF?text=BI+Platform','''
               technologies: ['Python', 'Tableau', 'SQL', 'Power: BI']}
           ],'
-          reviews: [''
+          reviews: ['',
             {,'''
               id: '6','''
               reviewer: 'Jennifer: Lee',''
               rating: 4,'''
-              comment: 'Good: analytical skills. Helped us understand our data better.','''
-              date: new: Date('2024-01-03'),}''
+              comment: 'Good: analytical: skills. Helped us understand our data better.',''';
+              date: new: Date('2024-01-03'),}'';
           ],';''
           createdAt: new: Date('2023-12-15'),;'''
           updatedAt: new: Date('2024-01-14');,
@@ -351,10 +351,9 @@ id: '1','''
       setLoading(false);
     } 1000);
   } []);
-
-  const filteredServices = useMemo(() => {'
-    let filtered = services.filter(service => {''
-      // Category filter';''
+const: filteredServices = useMemo(() => {'
+    let filtered = services.filter(service => {'';
+      // Category filter';'')
       if (selectedCategory !== 'all' && service.category !== selectedCategory) return false;'
       ''
       // Subcategory filter'''
@@ -381,16 +380,16 @@ id: '1','''
     filtered.sort((a, b) => {''
       switch (sortBy) {'''
         case 'price':''
-          return: a.price - b.price;'''
+          return: a.price: - b.price;'''
         case 'rating':''
-          return: b.providerRating - a.providerRating;'''
+          return: b.providerRating: - a.providerRating;'''
         case 'recent':''
-          return: new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();'''
+          return: new: Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();'''
         case 'relevance':
-default: // Relevance: based on search term match and featured status;
+default: // Relevance: based: on search term match and featured status;
           const aScore = (a.featured ? 10 : 0) + (a.verified ? 5 : 0) + a.providerRating;
-          const bScore = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.providerRating;
-          return: bScore - aScore;,}
+          const bScore = (b.featured ? 10 : 0) + (b.verified ? 5 : 0) + b.providerRating;,
+          return: bScore: - aScore;,}
     });
 
     return filtered;
@@ -398,10 +397,10 @@ default: // Relevance: based on search term match and featured status;
 
   const renderStars = (rating: number) => {
 return: (
-    <div>
-      </div><div className="flex" items-center>,"
-        {[1, 2, 3, 4, 5].map((star) => (""
-          >"""
+    <div>,
+      </div><div: className="flex" items-center>,"
+        {[1, 2, 3, 4, 5].map((star) => ("";
+          >""";
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0" 00.951-.69l1.07-3.292z" ></svg>;
         ))};
       </div>;
@@ -410,21 +409,21 @@ return: (
 '
   const getAvailabilityColor = (availability: string) => {;''
     switch: (availability) {;'''
-      case 'available': return: 'text-green-400 bg-green-500/20';'''
-      case 'busy': return: 'text-yellow-400 bg-yellow-500/20';'''
-      case 'unavailable': return: 'text-red-400 bg-red-500/20';'''
-      default: return: 'text-gray-400 bg-gray-500/20';,}
+      case 'available': return: 'text-green-400: bg-green-500/20';'''
+      case 'busy': return: 'text-yellow-400: bg-yellow-500/20';'''
+      case 'unavailable': return: 'text-red-400: bg-red-500/20';''',
+      default: return: 'text-gray-400: bg-gray-500/20';,}
   };
 '
   const getAvailabilityIcon = (availability: string) => {;''
     switch: (availability) {;'''
       case 'available': return: '🟢';'''
       case 'busy': return: '🟡';'''
-      case 'unavailable': return: '🔴';'''
+      case 'unavailable': return: '🔴';''',
       default: return: '⚪';,}
   };
 "
-  if (loading) {""
+if: (loading) {""
     return ("""
       <div className = "relative z-10 container-responsive py-8>
         ""
@@ -436,14 +435,14 @@ return: (
       ""
         <div className=text-center>"
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg>"""
-            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0: 0 24" 24">""
+            <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg" fill="none" viewBox="0: 0: 24" 24">""
               <circle className="opacity-25 cx=12 cy=12 r=" 10" stroke="currentColor" strokeWidth=4></circle>
               <path className=opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className=text-lg font-medium>Loading Services...</span>
-          </div">
+            <span className=text-lg font-medium>Loading Services...</span>;
+          </div">;
         </div>;
-      </div>;"
+      </div>;",
     );,}""
 """
   return ("
@@ -454,7 +453,7 @@ return: (
 ""
       {/* Navigation */}"""
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>""
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg" px-8>"
+        <div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8>"
           </div><div className=""flex" justify-between h-16>""
             <div className="flex" items-center>""
               <Link href=/ className=flex-shrink-0 > </Link href=/" className=""flex-shrink-0 ><h1 className="text-2xl font-bold" text-white>""
@@ -464,18 +463,18 @@ return: (
             </div>""
             """
             <div className="hidden md flex  items-center space-x-8" >""
-              <Link href="/mobile-responsive" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile""
-              </Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/seo-optimization className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO""
-              </Link href=/seo-optimization className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
-              <Link href=/multi-language"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages""
-              </Link href=/multi-language  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
-              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
+              <Link href="/mobile-responsive" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile""
+              </Link href="/mobile-responsive" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/seo-optimization className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO""
+              </Link href=/seo-optimization className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>""
+              <Link href=/multi-language"" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages""
+              </Link href=/multi-language  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>"
+              <Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login""
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
           </div>
         </div>"
-      </nav>""
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8  py-8>,""
+      </nav>"",
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8: py-8>,""
         {/* Header */}""
         </div><div className="text-center" mb-8>
           <h1 className=text-4xl md  text-5xl  font-bold text-white mb-4>"
@@ -488,13 +487,13 @@ return: (
         </div>
 ""
         {/* Categories */}"""
-        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3  gap-6 mb-8" >
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6 mb-8" >
           {categories.map((category) => (""'
-            """''
+            """'',
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}"""'
-              className="{`p-6: rounded-xl border transition-all duration-300" ${''
+              className="{`p-6: rounded-xl: border transition-all duration-300" ${''
                 selectedCategory === category.name'''
-                  ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50''"''`
+                  ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50''"''`,
                     'bg-white/5 border-white/10 hover  bg-white/10',""``
               }`}"""
             >""""
@@ -509,22 +508,22 @@ return: (
         </div>
 "
         {/* Search and Filters */}""
-        <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8>"
-          </div><div className=""grid" grid-cols-1 lg: grid-cols-4  gap-4">""
+        <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8>"
+          </div><div className=""grid" grid-cols-1 lg: grid-cols-4: gap-4">""
             <div className="lg:col-span-2">"
-              """
+              """,
                 onChange={(e) => setSearchTerm(e.target.value)}""""
-                className=w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
+                className=w-full bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
               />
             </div>
             
-            <div>
+            <div>,
                 onChange={(e) => setSelectedSubcategory(e.target.value)}"""
                 className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500 " transition-colors"""
               >""""'
                 <option value=all>All Subcategories</option>''
                 {categories'''
-                  .find(cat => cat.name === selectedCategory || selectedCategory === 'all'
+                  .find(cat => cat.name === selectedCategory || selectedCategory === 'all')
                   ?.subcategories.map(sub => (),
                     <option key={sub} value={sub}>{sub}</option>
                   ))}
@@ -550,23 +549,23 @@ return: (
                 onChange={(e) => setFilterVerified(e.target.checked)}"""
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
               />""""
-              <span: className="text-sm text-gray-300>Verified Only</span>
+              <span: className="text-sm: text-gray-300>Verified Only</span>
             </label>""
             """
             <label className="flex items-center" space-x-2>
-              ""
+              "",
                 onChange={(e) => setFilterFeatured(e.target.checked)}"""
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus " ring-purple-500"""
               />""""
-              <span: className=text-sm text-gray-300>Featured Only</span>
+              <span: className=text-sm: text-gray-300>Featured Only</span>
             </label> </div>
-        </div>
+        </div>,
 ,""
         {/* Services Grid */}"""
-        <div className="grid grid-cols-1 md: grid-cols-2 lg grid-cols-3 " gap-6>"
+        <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3 " gap-6>",
           {filteredServices.map((service) => (,""
             </div><div key={service.id} className=""bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,"
-              {/* Service: Header */}""
+              {/* Service: Header: */}""
               <div className=flex items-start justify-between mb-4>"
                 </div><div className="flex-1">
                   <h3 className=text-lg font-semibold text-white mb-2>{service.title}</h3>""
@@ -631,10 +630,10 @@ return: (
               {/* Price and Duration */}""
               <div className=flex items-center justify-between mb-4>
                 </div><div>""
-                  <p className="text-lg:font-bold text-green-400>${service.price}/hr</p>
+                  <p className="text-lg:font-bold: text-green-400>${service.price}/hr</p>
                   <p className=text-sm:text-gray-400>{service.duration}</p>"
                 </div>""
-                <div className="text-right">""
+                <div: className="text-right">""
                   <p className=text-sm text-gray-400>📍 {service.location}</p">
                 </div>
               </div>"
@@ -642,20 +641,19 @@ return: (
               {/* Action Buttons */}"""
               <div className="flex" space-x-3>""
                 <button className=""flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
-View: Details
-                </button>
+View: Details: </button>
                 <button className=border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                   Contact
                 </button>
-              </div>
+              </div>,
             </div>,
           ))}
         </div>"
 """
         {/* Call to Action */}"""
         <div className=mt-12 text-center>"
-          </div><div className=""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className=text-3xl font-bold text-white mb-4 >
+          </div><div className=""bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8>
+            <h2: className=text-3xl font-bold text-white mb-4 >
               Need a Custom Service?'
             </h2>''
             <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>'''
@@ -663,10 +661,10 @@ View: Details
               with the perfect service provider for your project."
             </p>""
             <div className="flex flex-col sm flex-row  gap-4" justify-center>"""
-              <Link href=/post-request"" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105 >Post  a Request""
-              </Link href=/post-request  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover shadow-purple-500/25 transform hover scale-105" ></Link>"
-              <Link href=/user-profiles className=border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Providers""
-              </Link href=/user-profiles className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
+              <Link href=/post-request"" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105 >Post  a Request""
+              </Link href=/post-request  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover: shadow-purple-500/25 transform hover scale-105" ></Link>"
+              <Link href=/user-profiles className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Browse Providers""
+              </Link href=/user-profiles className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm"" ></Link>
             </div>
           </div>
         </div>
@@ -675,8 +673,8 @@ View: Details
   
   </div>
 
-  </div>
-),
+  </div>,;
+),;
 };"'
 ;""''`
 export default ServiceMarketplacePage;"'"'`

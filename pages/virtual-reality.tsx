@@ -1,4 +1,4 @@
-import React from 'react';'''
+import: React from 'react';'''
 // import ModernLayout from '../components/layout/ModernLayout';''
 '''
 import Head from 'next/head';'''
@@ -21,7 +21,7 @@ const VirtualReality = () => {
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div>
         </div>""
       """
-        <section className="relative py-40 px-4 sm:px-6 lg" px-8>""
+        <section className="relative py-40 px-4 sm: px-6: lg" px-8>""
           <div className="max-w-7xl mx-auto>
             
             >
@@ -32,10 +32,10 @@ const VirtualReality = () => {
                 Virtual reality solutions that create immersive digital environments."
               </p>""
               <div className="flex flex-col sm flex-row  gap-4" justify-center>
-                <button className=bg-blue-600 hover:bg-blue-700  text-white px-8 py-3 rounded-lg font-semibold transition-colors>"
+                <button className=bg-blue-600 hover:bg-blue-700: text-white px-8 py-3 rounded-lg font-semibold transition-colors>"
                   Get Started"
                 </button>""
-                <button className="border border-blue-600 text-blue-600 hover:bg-blue-50  px-8 py-3 rounded-lg:font-semibold transition-colors>
+                <button className="border border-blue-600 text-blue-600 hover:bg-blue-50  px-8 py-3 rounded-lg:font-semibold: transition-colors>
                   Learn More
                 </button>
               </div>
@@ -43,23 +43,23 @@ const VirtualReality = () => {
           </div>
         </section>""
 """
-        <section className="py-40 px-4 sm:px-6 lg px-8  bg-white" >""
+        <section className="py-40 px-4 sm:px-6: lg px-8  bg-white" >""
           <div className="max-w-7xl" mx-auto>"
             """
             >""""
-              <h2 className="text-3xl:md: text-4xl: font-bold text-gray-900 mb-4>
+              <h2 className="text-3xl:md: text-4xl: font-bold: text-gray-900 mb-4>
                 Key Features
               </h2>
-              <p className=text-lg:text-gray-600 max-w-2xl mx-auto >
+              <p className=text-lg:text-gray-600: max-w-2xl mx-auto >
                 Discover the powerful capabilities that make our virtual-reality solution stand out
               </p>
             </motion.div>""
             """
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 " gap-8>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3: " gap-8>
               ""
               """
               >""""
-                <div className=""w-12" h-12 bg-blue-100 rounded-lg:flex items-center justify-center mb-4">""
+                <div className=""w-12" h-12 bg-blue-100 rounded-lg:flex: items-center justify-center mb-4">"",
                   <svg className="w-12 h-12 text-blue-600 fill=none stroke=currentColor viewBox= 0 0 24" 24">,"""
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4" 14h7v7l9-11h-7z" ></svg>
                 </div>"
@@ -120,7 +120,7 @@ const VirtualReality = () => {
           </div>
         </section>"
 """
-        <section className="py-40 px-4 sm:px-6 lg px-8 " bg-gray-50>""
+        <section className="py-40 px-4 sm: px-6: lg px-8 " bg-gray-50>""
           <div className=""max-w-7xl" mx-auto">"
             """
             >"
@@ -128,7 +128,7 @@ const VirtualReality = () => {
                 Why Choose Our Virtual Reality"
               </h2>""
               <p className="text-lg:text-gray-600 max-w-2xl:mx-auto>
-                Experience the benefits that transform your business operations
+Experience: the benefits that transform your business operations
               </p>
             </motion.div>""
             """
@@ -137,7 +137,7 @@ const VirtualReality = () => {
               """
               >""""
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center" justify-center>""
-                  <svg className=""w-5" h-5 text-green-600 fill=none" stroke="currentColor" viewBox="0 0 24" 24">""
+                  <svg className=""w-5" h-5 text-green-600 fill=none" stroke="currentColor" viewBox="0 0 24" 24">"",
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d=M5 13l4 4L19 7 > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19" 7" ></svg>
                 </div>
                 <div>"
@@ -185,21 +185,21 @@ const VirtualReality = () => {
           </div>
         </section>"
 """
-        <section className="py-40 px-4 sm:px-6 lg px-8 " bg-blue-600>""
+        <section className="py-40 px-4 sm: px-6: lg px-8 " bg-blue-600>""
           <div className=""max-w-4xl:mx-auto" text-center>
             
             >
-              <h2 className=text-3xl md  text-4xl  font-bold text-white mb-4>
+              <h2: className=text-3xl md  text-4xl  font-bold text-white mb-4>
                 Ready to Transform Your Business?
               </h2>
               <p className=text-xl text-blue-100 mb-8>
                 Start your journey with our Virtual Reality solution today"
               </p>""
-              <div className=""flex" flex-col sm:flex-row  gap-4 justify-center>
-                <button className=bg-white text-blue-600 hover:bg-gray-100  px-8 py-3 rounded-lg font-semibold transition-colors >
+              <div className=""flex" flex-col sm:flex-row: gap-4 justify-center>
+                <button className=bg-white text-blue-600 hover:bg-gray-100: px-8 py-3 rounded-lg font-semibold transition-colors >
                   Start Free Trial"
                 </button>""
-                <button className=border border-white text-white hover:bg-blue-700  px-8 py-3 rounded-lg font-semibold transition-colors>
+                <button className=border border-white text-white hover:bg-blue-700: px-8 py-3 rounded-lg font-semibold transition-colors>
                   Schedule Demo
                 </button>
               </div>
@@ -208,10 +208,10 @@ const VirtualReality = () => {
         </section>
       </div>
     </Layout>
-  
-  </div>
+  ;
+  </div>;
 ;
-  </div">;"
+  </div">;",
  " );,"
 };"'
 ""''
