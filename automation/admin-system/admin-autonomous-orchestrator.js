@@ -104,6 +104,10 @@ class AdminAutonomousOrchestrator {
             stdio: 'pipe'
         });
         
+        // Create PID file for cron system tracking
+        const pidPath = path.join(this.adminConfig.adminPath, 'pids', `admin-${agentType.toLowerCase()}.pid`);
+        fs.writeFileSync(pidPath, agentProcess.pid.toString());
+        
         // Store process information
         this.agents.set(agentId, {
             type: agentType,
@@ -113,7 +117,8 @@ class AdminAutonomousOrchestrator {
             pid: agentProcess.pid,
             status: 'active',
             createdAt: new Date().toISOString(),
-            lastActivity: new Date().toISOString()
+            lastActivity: new Date().toISOString(),
+            pidFile: pidPath
         });
         
         // Handle process events
@@ -121,11 +126,21 @@ class AdminAutonomousOrchestrator {
             console.log(`🤖 Agent ${agentType} (${agentId}) exited with code ${code}`);
             this.agents.get(agentId).status = 'stopped';
             this.status.activeAgents--;
+            
+            // Clean up PID file
+            if (fs.existsSync(pidPath)) {
+                fs.unlinkSync(pidPath);
+            }
         });
         
         agentProcess.on('error', (error) => {
             console.error(`🤖 Agent ${agentType} (${agentId}) error:`, error);
             this.agents.get(agentId).status = 'error';
+            
+            // Clean up PID file
+            if (fs.existsSync(pidPath)) {
+                fs.unlinkSync(pidPath);
+            }
         });
         
         console.log(`🤖 Created and started agent: ${agentType} (${agentId}) with PID ${agentProcess.pid}`);
