@@ -2,5 +2,12 @@
   "servicesCreated": 2,
   "agentsDeployed": 0,
   "revenueGenerated": 90408,
-  "marketAnalyses": 6
+  "marketAnalyses": 6,
+  "systemHealth": {
+    "services": 10,
+    "salesAgents": 21,
+    "marketData": 6,
+    "lastUpdated": "2025-08-05T01:00:00.332Z"
+  },
+  "timestamp": "2025-08-05T01:00:00.332Z"
 }

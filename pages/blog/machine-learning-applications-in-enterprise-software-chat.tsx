@@ -36,7 +36,7 @@ const MachineLearningApplicationsInEnterpriseSoftwareChatPage: NextPage = () => 
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • innovative-futuristic • future-predictions</span>
+              <span>Expert Discussion • trend-analysis • comparison-review</span>
             </div>
           </div>
           
