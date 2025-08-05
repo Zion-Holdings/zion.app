@@ -207,7 +207,7 @@ const BlockchainSolutions = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Improved Accuracy</h3>
-                  <p className="text-gray-600">Reduce errors and improve accuracy with intelligent systems</p>
+                  <p className="text-high-contrast-tertiary">Reduce errors and improve accuracy with intelligent systems</p>
                 </div>
               </motion.div>
               
@@ -225,7 +225,7 @@ const BlockchainSolutions = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Cost Optimization</h3>
-                  <p className="text-gray-600">Lower costs while maintaining or improving performance</p>
+                  <p className="text-high-contrast-tertiary">Lower costs while maintaining or improving performance</p>
                 </div>
               </motion.div>
               
@@ -243,7 +243,7 @@ const BlockchainSolutions = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Competitive Advantage</h3>
-                  <p className="text-gray-600">Stay ahead of the competition with cutting-edge technology</p>
+                  <p className="text-high-contrast-tertiary">Stay ahead of the competition with cutting-edge technology</p>
                 </div>
               </motion.div>
               

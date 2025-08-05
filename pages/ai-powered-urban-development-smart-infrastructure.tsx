@@ -357,21 +357,11 @@ const AIPoweredUrbanDevelopmentSmartInfrastructurePage: NextPage = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active':
-      case 'operational':
-        return 'text-green-400'
-      case 'planning':
-      case 'maintenance':
-        return 'text-yellow-400'
-      case 'offline':
-        return 'text-red-400'
-      case 'upgrading':
-      case 'implementation':
-        return 'text-blue-400'
-      case 'completed':
-        return 'text-purple-400'
-      default:
-        return 'text-gray-400'
+      case 'active': return 'text-high-contrast-success'
+      case 'pending': return 'text-high-contrast-warning'
+      case 'completed': return 'text-high-contrast-accent'
+      case 'archived': return 'text-high-contrast-tertiary'
+      default: return 'text-high-contrast-tertiary'
     }
   }
 
