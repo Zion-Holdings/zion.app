@@ -37,7 +37,7 @@ const BusinessIntelligenceChatPage: NextPage = () => {
                 Expert discussion about business intelligence services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • comparison-review • step-by-step-guide</span>
+                <span>collaborative-team • how-to-guide • real-world-examples</span>
               </div>
             </div>
           </div>
