@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import { useState } from 'react'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const ApiDocs: NextPage = () => {
   const [activeSection, setActiveSection] = useState('authentication')

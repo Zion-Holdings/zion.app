@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const AIPoweredBiddingAuction: NextPage = () => {
   const [currentBid, setCurrentBid] = useState(0)

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/router'
 
 interface NavigationState {
@@ -26,7 +26,7 @@ interface NavigationContextType {
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
 
 interface NavigationProviderProps {
-  children: ReactNode
+  children: React.ReactNode
 }
 
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children }) => {
@@ -39,12 +39,12 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     favorites: []
   })
 
-  const addToRecent = (path: string) => {
+  const addToRecent = useCallback((path: string) => {
     setState(prev => ({
       ...prev,
       recentPages: [path, ...prev.recentPages.filter(p => p !== path)].slice(0, 10)
     }))
-  }
+  }, [])
 
   const addToFavorites = (path: string) => {
     setState(prev => ({
@@ -60,18 +60,18 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     }))
   }
 
-  const navigateTo = (path: string) => {
+  const navigateTo = useCallback((path: string) => {
     addToRecent(path)
     router.push(path)
-  }
+  }, [router, addToRecent])
 
-  const goBack = () => {
+  const goBack = useCallback(() => {
     router.back()
-  }
+  }, [router])
 
-  const goForward = () => {
+  const goForward = useCallback(() => {
     router.forward()
-  }
+  }, [router])
 
   const openSearch = () => {
     setState(prev => ({ ...prev, isSearchOpen: true }))

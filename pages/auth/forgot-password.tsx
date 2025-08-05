@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import AuthLayout from '../../components/layout/AuthLayout'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import AuthLayout from '../../components/layout/AuthLayout';
 
 const ForgotPassword: NextPage = () => {
   return (

@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface LiveStream {
   id: string

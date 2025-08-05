@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/auth/signup/",
-  "timestamp": "2025-08-05T15:15:16.491Z",
+  "timestamp": "2025-08-05T15:40:46.685Z",
   "pageInfo": {
     "title": "Sign Up - Zion",
     "description": "Create your Zion account to access the AI-powered marketplace.",
@@ -15,7 +15,7 @@
         "text": "Join Zion"
       }
     ],
-    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutJoin ZionCreate your account and start exploring our AI-powered marketplace.Full NameEmail AddressPasswordCreate AccountAlready have an account? Login{\"props\":{\"pageProps\":{}},\"page\":\"/auth/signup\",\"query\":{},\"buildId\":\"FYTyUcvjvytp29vZoznYq\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutJoin ZionCreate your account and start exploring our AI-powered marketplace.Full NameEmail AddressPasswordCreate AccountAlready have an account? Login{\"props\":{\"pageProps\":{}},\"page\":\"/auth/signup\",\"query\":{},\"buildId\":\"xobv0xOkBBo1tTaoZQgZu\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [
       {
@@ -58,7 +58,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-279802257cfef0d9.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-dcd8d3574c3dbd84.js",
         "type": "text/javascript"
       },
       {
@@ -66,11 +66,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/FYTyUcvjvytp29vZoznYq/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/FYTyUcvjvytp29vZoznYq/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -84,7 +84,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5093061d5ab20cca.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/45f6b410ef799d9e.css",
         "media": "all"
       }
     ]

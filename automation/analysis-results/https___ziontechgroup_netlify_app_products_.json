@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/products/",
-  "timestamp": "2025-08-05T15:15:29.538Z",
+  "timestamp": "2025-08-05T15:40:53.979Z",
   "pageInfo": {
     "title": "Our Products - Zion Tech Group",
     "description": "Discover our innovative product solutions",
@@ -35,7 +35,7 @@
         "text": "Support"
       }
     ],
-    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZionMarketplaceAboutLoginJoin ZionOur Products - Zion Tech GroupDiscover our innovative product solutionsExplore MarketplaceGet StartedZionThe future of AI-powered marketplace technology.MarketplaceBrowse ServicesAI TalentsEquipmentCompanyAboutContactBlogSupportHelp CenterPrivacyTerms© 2024 Zion. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/products\",\"query\":{},\"buildId\":\"4b1ypScEv-Ff6vcmBcueF\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZionMarketplaceAboutLoginJoin ZionOur Products - Zion Tech GroupDiscover our innovative product solutionsExplore MarketplaceGet StartedZionThe future of AI-powered marketplace technology.MarketplaceBrowse ServicesAI TalentsEquipmentCompanyAboutContactBlogSupportHelp CenterPrivacyTerms© 2024 Zion. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/products\",\"query\":{},\"buildId\":\"xobv0xOkBBo1tTaoZQgZu\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,7 +56,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-279802257cfef0d9.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-dcd8d3574c3dbd84.js",
         "type": "text/javascript"
       },
       {
@@ -64,11 +64,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/4b1ypScEv-Ff6vcmBcueF/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/4b1ypScEv-Ff6vcmBcueF/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/xobv0xOkBBo1tTaoZQgZu/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -76,7 +76,19 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-aa4901e547dc1f51.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-591ceaf4cde98d72.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-744230f6a1245008.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-c8d8c11522502c3f.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-13055b9ded64975b.js",
         "type": "text/javascript"
       },
       {
@@ -84,15 +96,27 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-9519fb92a9fbe6b7.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/privacy-9b03c39a9696c423.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-c8d8c11522502c3f.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/help-24b907576b404ab6.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog-b5bee86a27add935.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/terms-e6f3be26c36a16de.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-9519fb92a9fbe6b7.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-aa4901e547dc1f51.js",
         "type": "text/javascript"
       },
       {
@@ -102,35 +126,11 @@
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-3cd8993ead6cdc9a.js",
         "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/terms-e6f3be26c36a16de.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog-b5bee86a27add935.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/help-24b907576b404ab6.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-13055b9ded64975b.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-591ceaf4cde98d72.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-744230f6a1245008.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/93bb7918e96afb50.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/45f6b410ef799d9e.css",
         "media": "all"
       }
     ]

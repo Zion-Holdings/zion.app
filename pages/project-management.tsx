@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Project {
   id: string;
@@ -875,10 +876,12 @@ const ProjectManagementPage: NextPage = () => {
             ).map((member) => (
               <div key={member.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center space-x-3 mb-4">
-                  <img
+                  <Image 
                     src={member.avatar}
                     alt={member.name}
                     className="w-12 h-12 rounded-full border-2 border-purple-500/30"
+                    width={48} 
+                    height={48} 
                   />
                   <div>
                     <h3 className="text-white font-semibold">{member.name}</h3>

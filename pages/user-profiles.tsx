@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface UserProfile {
   id: string;
@@ -530,10 +531,12 @@ const UserProfilesPage: NextPage = () => {
               {/* Profile Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <img
+                  <Image 
                     src={profile.avatar}
                     alt={profile.fullName}
                     className="w-16 h-16 rounded-full border-2 border-purple-500/30"
+                    width={64} 
+                    height={64} 
                   />
                   <div>
                     <h3 className="text-lg font-semibold text-white">{profile.fullName}</h3>
@@ -628,10 +631,12 @@ const UserProfilesPage: NextPage = () => {
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
-                  <img
+                  <Image 
                     src={selectedProfile.avatar}
                     alt={selectedProfile.fullName}
                     className="w-20 h-20 rounded-full border-2 border-purple-500/30"
+                    width={64} 
+                    height={64} 
                   />
                   <div>
                     <h2 className="text-2xl font-bold text-white">{selectedProfile.fullName}</h2>
@@ -714,10 +719,12 @@ const UserProfilesPage: NextPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedProfile.portfolio.map((item) => (
                     <div key={item.id} className="bg-white/5 rounded-lg p-4">
-                      <img
+                      <Image 
                         src={item.image}
                         alt={item.title}
                         className="w-full h-32 object-cover rounded-lg mb-3"
+                        width={64} 
+                        height={64} 
                       />
                       <h4 className="text-white font-semibold mb-2">{item.title}</h4>
                       <p className="text-gray-300 text-sm mb-3">{item.description}</p>
@@ -749,10 +756,12 @@ const UserProfilesPage: NextPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedProfile.certifications.map((cert) => (
                     <div key={cert.id} className="flex items-center space-x-3 bg-white/5 rounded-lg p-4">
-                      <img
+                      <Image 
                         src={cert.image}
                         alt={cert.name}
                         className="w-12 h-12 rounded"
+                        width={64} 
+                        height={64} 
                       />
                       <div>
                         <h4 className="text-white font-semibold text-sm">{cert.name}</h4>

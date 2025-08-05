@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe } from 'lucide-react'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe } from 'lucide-react';
 
 const Accessibility: NextPage = () => {
   return (

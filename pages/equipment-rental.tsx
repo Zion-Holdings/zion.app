@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Equipment {
   id: string;
@@ -462,11 +463,10 @@ const EquipmentRentalPage: NextPage = () => {
               {filteredEquipment.map((item) => (
                 <div key={item.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="mb-4">
-                    <img 
-                      src={item.images[0]} 
+                    <Image src={item.images[0]} 
                       alt={item.name}
                       className="w-full h-48 object-cover rounded-lg mb-4"
-                    />
+                    width={400} height={300} />
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="text-lg font-semibold text-white">{item.name}</h3>

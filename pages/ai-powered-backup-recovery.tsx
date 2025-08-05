@@ -1,8 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
-import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers';
 
 interface BackupJob {
   id: string;

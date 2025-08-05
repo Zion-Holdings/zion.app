@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Service {
   id: string;
@@ -653,10 +654,12 @@ const ServiceMarketplacePage: NextPage = () => {
 
               {/* Provider Info */}
               <div className="flex items-center space-x-3 mb-4">
-                <img
+                <Image 
                   src={service.providerAvatar}
                   alt={service.provider}
-                  className="w-10 h-10 rounded-full border-2 border-purple-500/30"
+                  className="w-12 h-12 rounded-full border-2 border-purple-500/30"
+                  width={48} 
+                  height={48} 
                 />
                 <div className="flex-1">
                   <h4 className="text-white font-medium">{service.provider}</h4>

@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers';
 
 interface Contract {
   id: string;
@@ -138,269 +139,149 @@ interface ComplianceCheck {
   checkedAt: Date;
 }
 
+interface ContractLegalAnalytics {
+  totalContracts: number;
+  activeDisputes: number;
+  templates: number;
+  complianceChecks: number;
+  averageComplianceScore: number;
+  aiOptimizationScore: number;
+  aiInsights: {
+    id: string;
+    title: string;
+    description: string;
+    impact: 'positive' | 'negative' | 'neutral';
+    confidence: number;
+    recommendations: string[];
+  }[];
+}
+
 const AIPoweredContractLegalPage: NextPage = () => {
   const [contracts, setContracts] = useState<Contract[]>([])
   const [disputes, setDisputes] = useState<Dispute[]>([])
   const [templates, setTemplates] = useState<LegalTemplate[]>([])
   const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([])
+  const [analytics, setAnalytics] = useState<ContractLegalAnalytics | null>(null)
+  const [activeTab, setActiveTab] = useState<'contracts' | 'disputes' | 'templates' | 'compliance' | 'analytics'>('contracts')
   const [selectedStatus, setSelectedStatus] = useState<string>('all')
   const [selectedType, setSelectedType] = useState<string>('all')
   const [sortBy, setSortBy] = useState<'date' | 'value' | 'risk' | 'compliance'>('date')
-  const [activeTab, setActiveTab] = useState<'contracts' | 'disputes' | 'templates' | 'compliance'>('contracts')
   const [isLoading, setIsLoading] = useState(true)
 
-  // Mock contracts
-  const mockContracts: Contract[] = [
+  // Mock data using useMemo to prevent re-renders
+  const mockContracts = useMockArray<Contract>(() => [
     {
       id: '1',
-      title: 'AI Development Service Agreement',
+      title: 'AI Service Agreement',
       type: 'service',
       status: 'active',
       parties: [
         {
           id: '1',
-          name: 'TechCorp Solutions',
+          name: 'Zion Tech Group',
           type: 'provider',
-          email: 'contact@techcorp.com',
-          address: '123 Tech Street, San Francisco, CA',
+          email: 'contact@ziontech.com',
+          address: '123 Tech Street, Innovation City',
           verified: true
         },
         {
           id: '2',
-          name: 'InnovateStartup Inc',
+          name: 'Client Corp',
           type: 'client',
-          email: 'legal@innovatestartup.com',
-          address: '456 Innovation Ave, New York, NY',
+          email: 'legal@clientcorp.com',
+          address: '456 Business Ave, Corporate City',
           verified: true
         }
       ],
-      terms: [
-        {
-          id: '1',
-          section: 'Services',
-          title: 'AI Development Services',
-          content: 'Provider shall develop and implement AI-powered features including machine learning models, natural language processing, and computer vision capabilities.',
-          aiGenerated: true,
-          compliance: true,
-          riskLevel: 'low',
-          recommendations: ['Add specific performance metrics', 'Include data privacy clauses']
-        },
-        {
-          id: '2',
-          section: 'Payment',
-          title: 'Payment Terms',
-          content: 'Client shall pay $25,000 in three installments: 40% upon signing, 30% at project midpoint, 30% upon completion.',
-          aiGenerated: false,
-          compliance: true,
-          riskLevel: 'medium',
-          recommendations: ['Add late payment penalties', 'Include milestone verification']
-        }
-      ],
-      value: 25000,
+      terms: [],
+      value: 500000,
       currency: 'USD',
-      startDate: new Date('2024-01-15'),
-      endDate: new Date('2024-06-15'),
+      startDate: new Date(),
       aiGenerated: true,
-      complianceScore: 85,
+      complianceScore: 92,
       riskLevel: 'medium',
       legalReview: {
         id: '1',
-        reviewer: 'AI Legal Assistant',
+        reviewer: 'Legal Team',
         status: 'approved',
-        comments: ['Contract structure is sound', 'Payment terms are clear'],
-        complianceIssues: ['Missing force majeure clause'],
-        recommendations: ['Add dispute resolution clause', 'Include data protection terms'],
-        reviewDate: new Date('2024-01-14'),
-        aiAssisted: true
-      },
-      signatures: [
-        {
-          id: '1',
-          partyId: '1',
-          signature: 'TechCorp_Signature_2024',
-          timestamp: new Date('2024-01-15'),
-          ipAddress: '192.168.1.100',
-          verified: true
-        }
-      ],
-      attachments: [
-        {
-          id: '1',
-          name: 'Technical_Specifications.pdf',
-          type: 'application/pdf',
-          size: 2048576,
-          uploadedAt: new Date('2024-01-15'),
-          aiAnalyzed: true
-        }
-      ]
-    },
-    {
-      id: '2',
-      title: 'Talent Employment Contract',
-      type: 'employment',
-      status: 'pending',
-      parties: [
-        {
-          id: '3',
-          name: 'Sarah Chen',
-          type: 'provider',
-          email: 'sarah.chen@email.com',
-          address: '789 Talent Lane, Remote',
-          verified: true
-        },
-        {
-          id: '4',
-          name: 'AI Startup Co',
-          type: 'client',
-          email: 'hr@aistartup.com',
-          address: '321 Startup Blvd, Silicon Valley, CA',
-          verified: true
-        }
-      ],
-      terms: [
-        {
-          id: '3',
-          section: 'Employment',
-          title: 'AI Engineer Position',
-          content: 'Employee shall serve as Senior AI Engineer with responsibilities including model development, algorithm optimization, and team leadership.',
-          aiGenerated: true,
-          compliance: true,
-          riskLevel: 'low',
-          recommendations: ['Add non-compete clause', 'Include IP assignment terms']
-        }
-      ],
-      value: 120000,
-      currency: 'USD',
-      startDate: new Date('2024-02-01'),
-      aiGenerated: true,
-      complianceScore: 92,
-      riskLevel: 'low',
-      legalReview: {
-        id: '2',
-        reviewer: 'AI Legal Assistant',
-        status: 'pending',
-        comments: ['Employment terms are standard', 'Compensation is competitive'],
+        comments: ['Contract looks good'],
         complianceIssues: [],
-        recommendations: ['Add remote work policies', 'Include performance metrics'],
-        reviewDate: new Date('2024-01-20'),
+        recommendations: ['Add liability clauses'],
+        reviewDate: new Date(),
         aiAssisted: true
       },
       signatures: [],
       attachments: []
     }
-  ]
+  ])
 
-  // Mock disputes
-  const mockDisputes: Dispute[] = [
+  const mockDisputes = useMockArray<Dispute>(() => [
     {
       id: '1',
+      title: 'Service Delivery Dispute',
+      description: 'Dispute regarding service delivery timeline and quality',
+      type: 'delivery',
+      status: 'open',
       contractId: '1',
-      type: 'payment',
-      status: 'mediation',
-      description: 'Client disputes final payment due to alleged quality issues with delivered AI models',
-      evidence: [
-        {
-          id: '1',
-          type: 'document',
-          title: 'Quality Assessment Report',
-          description: 'Third-party assessment of AI model performance',
-          uploadedAt: new Date('2024-01-25'),
-          aiAnalyzed: true,
-          relevance: 0.85
-        },
-        {
-          id: '2',
-          type: 'testimony',
-          title: 'Client Testimony',
-          description: 'Client statement regarding model performance issues',
-          uploadedAt: new Date('2024-01-26'),
-          aiAnalyzed: true,
-          relevance: 0.72
-        }
-      ],
+      evidence: [],
       aiAnalysis: {
-        strength: 0.65,
-        weakness: 0.35,
-        recommendation: 'Consider partial payment with performance guarantees',
-        predictedOutcome: 'Likely settlement with 70-80% payment',
-        confidence: 0.78,
-        legalBasis: ['Contract performance terms', 'Industry standards', 'Precedent cases']
+        strength: 78,
+        weakness: 22,
+        recommendation: 'Mediation recommended',
+        predictedOutcome: 'Likely settlement',
+        confidence: 0.85,
+        legalBasis: ['Contract terms', 'Delivery timeline']
       },
-      createdAt: new Date('2024-01-24'),
-      updatedAt: new Date('2024-01-28')
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
-  ]
+  ])
 
-  // Mock templates
-  const mockTemplates: LegalTemplate[] = [
+  const mockTemplates = useMockArray<LegalTemplate>(() => [
     {
       id: '1',
-      name: 'AI Service Agreement Template',
-      category: 'Service Contracts',
-      description: 'Comprehensive template for AI development and consulting services',
-      aiOptimized: true,
-      complianceScore: 88,
-      usageCount: 156,
-      lastUpdated: new Date('2024-01-10'),
-      preview: 'This agreement governs the provision of AI development services...'
-    },
-    {
-      id: '2',
-      name: 'Employment Contract Template',
-      category: 'Employment',
-      description: 'Standard employment agreement with AI-specific clauses',
+      name: 'AI Development Contract',
+      category: 'development',
+      description: 'Standard template for AI development projects',
       aiOptimized: true,
       complianceScore: 92,
-      usageCount: 89,
-      lastUpdated: new Date('2024-01-15'),
-      preview: 'This employment agreement establishes the terms of employment...'
-    },
-    {
-      id: '3',
-      name: 'NDA Template',
-      category: 'Confidentiality',
-      description: 'Non-disclosure agreement for AI projects and trade secrets',
-      aiOptimized: true,
-      complianceScore: 95,
-      usageCount: 234,
-      lastUpdated: new Date('2024-01-08'),
-      preview: 'This non-disclosure agreement protects confidential information...'
+      usageCount: 45,
+      lastUpdated: new Date('2024-01-10'),
+      preview: 'This agreement governs the provision of AI development services...'
     }
-  ]
+  ])
 
-  // Mock compliance checks
-  const mockComplianceChecks: ComplianceCheck[] = [
+  const mockComplianceChecks = useMockArray<ComplianceCheck>(() => [
     {
       id: '1',
       contractId: '1',
-      checkType: 'Data Privacy',
+      checkType: 'privacy',
       status: 'pass',
-      description: 'Contract includes appropriate data protection clauses',
+      description: 'Compliance check for data privacy regulations',
       recommendation: 'Consider adding GDPR compliance if applicable',
       aiGenerated: true,
       checkedAt: new Date('2024-01-15')
-    },
-    {
-      id: '2',
-      contractId: '1',
-      checkType: 'Payment Terms',
-      status: 'warning',
-      description: 'Payment terms are clear but missing late payment penalties',
-      recommendation: 'Add late payment interest rates and penalties',
-      aiGenerated: true,
-      checkedAt: new Date('2024-01-15')
-    },
-    {
-      id: '3',
-      contractId: '2',
-      checkType: 'Employment Law',
-      status: 'pass',
-      description: 'Contract complies with local employment regulations',
-      recommendation: 'Consider adding remote work policies',
-      aiGenerated: true,
-      checkedAt: new Date('2024-01-20')
     }
-  ]
+  ])
+
+  const mockAnalytics = useMockObject<ContractLegalAnalytics>(() => ({
+    totalContracts: 156,
+    activeDisputes: 8,
+    templates: 25,
+    complianceChecks: 45,
+    averageComplianceScore: 92.5,
+    aiOptimizationScore: 94.2,
+    aiInsights: [
+      {
+        id: '1',
+        title: 'High Compliance Rate',
+        description: 'AI-powered legal system shows 92.5% average compliance score',
+        impact: 'positive',
+        confidence: 0.95,
+        recommendations: ['Continue AI monitoring', 'Expand compliance coverage']
+      }
+    ]
+  }))
 
   useEffect(() => {
     setTimeout(() => {
@@ -408,9 +289,10 @@ const AIPoweredContractLegalPage: NextPage = () => {
       setDisputes(mockDisputes)
       setTemplates(mockTemplates)
       setComplianceChecks(mockComplianceChecks)
+      setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockContracts, mockDisputes, mockTemplates, mockComplianceChecks])
+  }, [mockContracts, mockDisputes, mockTemplates, mockComplianceChecks, mockAnalytics])
 
   const filteredContracts = useMemo(() => {
     let filtered = contracts
@@ -566,6 +448,16 @@ const AIPoweredContractLegalPage: NextPage = () => {
                 }`}
               >
                 Compliance Checks
+              </button>
+              <button
+                onClick={() => setActiveTab('analytics')}
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === 'analytics'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                }`}
+              >
+                Analytics
               </button>
             </div>
 
@@ -879,6 +771,43 @@ const AIPoweredContractLegalPage: NextPage = () => {
                     <button className="w-full border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
                       View Details
                     </button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Analytics Tab */}
+            {activeTab === 'analytics' && (
+              <div className="space-y-6">
+                {analytics?.aiInsights.map((insight) => (
+                  <div key={insight.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
+                        insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
+                        'bg-yellow-500/20 text-yellow-300'
+                      }`}>
+                        {insight.impact}
+                      </span>
+                    </div>
+                    
+                    <p className="text-gray-300 text-sm mb-4">{insight.description}</p>
+                    
+                    <div className="space-y-3 mb-4">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-400">Confidence:</span>
+                        <span className="text-white">{Math.round(insight.confidence * 100)}%</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-400">Recommendations:</span>
+                        <ul className="text-white text-sm list-disc list-inside">
+                          {insight.recommendations.map((rec, index) => (
+                            <li key={index}>{rec}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

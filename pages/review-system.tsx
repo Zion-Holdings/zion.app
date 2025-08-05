@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Review {
   id: string;
@@ -692,10 +693,12 @@ const ReviewSystemPage: NextPage = () => {
                   <div key={review.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
-                        <img
+                        <Image 
                           src={review.reviewerAvatar}
                           alt={review.reviewerName}
                           className="w-10 h-10 rounded-full"
+                          width={40} 
+                          height={40} 
                         />
                         <div>
                           <h4 className="text-lg font-semibold text-white">{review.reviewerName}</h4>

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 interface WarrantyPlan {
   id: string;

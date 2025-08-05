@@ -1,9 +1,9 @@
 
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import FuturisticCard from '../components/ui/FuturisticCard'
-import FuturisticDataTable from '../components/ui/FuturisticDataTable'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import FuturisticCard from '../components/ui/FuturisticCard';
+import FuturisticDataTable from '../components/ui/FuturisticDataTable';
 
 const Marketplace: NextPage = () => {
   const marketplaceCategories = [

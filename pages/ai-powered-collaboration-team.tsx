@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers';
 
 interface Team {
   id: string;
@@ -55,6 +56,7 @@ interface AITeamAnalysis {
 interface Workspace {
   id: string;
   name: string;
+  description: string;
   type: 'virtual' | 'hybrid' | 'physical' | 'project-based';
   teams: string[];
   tools: WorkspaceTool[];
@@ -158,341 +160,145 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all')
   const [isLoading, setIsLoading] = useState(true)
 
-  // Mock data
-  const mockTeams: Team[] = [
+  // Mock data using useMemo to prevent re-renders
+  const mockTeams = useMockArray<Team>(() => [
     {
       id: '1',
-      name: 'Product Development Team',
-      description: 'Cross-functional team focused on product innovation and development',
+      name: 'AI Innovation Team',
+      description: 'Cross-functional team focused on AI product development',
       type: 'cross-functional',
-      status: 'performing',
+      status: 'active',
       members: [
         {
           id: '1',
-          name: 'Sarah Johnson',
-          role: 'Product Manager',
-          skills: ['Product Strategy', 'Agile', 'User Research'],
-          availability: 95,
-          performance: 92,
-          collaboration: 88,
-          lastActive: new Date('2024-01-20T10:00:00')
-        },
-        {
-          id: '2',
-          name: 'Mike Chen',
-          role: 'Lead Developer',
-          skills: ['React', 'Node.js', 'Architecture'],
-          availability: 90,
-          performance: 89,
-          collaboration: 85,
-          lastActive: new Date('2024-01-20T09:30:00')
+          name: 'John Doe',
+          role: 'Team Lead',
+          skills: ['React', 'TypeScript', 'Node.js'],
+          availability: 100,
+          performance: 95,
+          collaboration: 92,
+          lastActive: new Date()
         }
       ],
       projects: [
         {
           id: '1',
-          name: 'AI-Powered Dashboard',
+          name: 'AI Platform Development',
           status: 'active',
           progress: 75,
-          deadline: new Date('2024-03-15'),
+          deadline: new Date('2024-12-31'),
           priority: 'high'
-        },
-        {
-          id: '2',
-          name: 'Mobile App Redesign',
-          status: 'planning',
-          progress: 25,
-          deadline: new Date('2024-05-20'),
-          priority: 'medium'
         }
       ],
       performance: {
-        overallScore: 88,
-        collaboration: 85,
-        productivity: 90,
-        communication: 87,
-        innovation: 92,
-        lastUpdated: new Date('2024-01-20T12:00:00')
+        overallScore: 92,
+        collaboration: 90,
+        productivity: 88,
+        communication: 91,
+        innovation: 89,
+        lastUpdated: new Date()
       },
       aiAnalysis: {
         id: '1',
-        efficiency: 87,
+        efficiency: 91,
         synergy: 89,
-        recommendations: ['Increase cross-functional meetings', 'Implement knowledge sharing sessions'],
-        predictedOutcomes: ['Improved team cohesion', 'Enhanced innovation capacity']
-      }
-    },
-    {
-      id: '2',
-      name: 'Marketing Alliance Team',
-      description: 'Strategic partnership team for joint marketing initiatives',
-      type: 'alliance',
-      status: 'performing',
-      members: [
-        {
-          id: '3',
-          name: 'Lisa Rodriguez',
-          role: 'Marketing Director',
-          skills: ['Digital Marketing', 'Brand Strategy', 'Analytics'],
-          availability: 88,
-          performance: 91,
-          collaboration: 94,
-          lastActive: new Date('2024-01-20T11:00:00')
-        },
-        {
-          id: '4',
-          name: 'David Kim',
-          role: 'Partnership Manager',
-          skills: ['Relationship Management', 'Negotiation', 'Strategy'],
-          availability: 92,
-          performance: 88,
-          collaboration: 90,
-          lastActive: new Date('2024-01-20T10:45:00')
-        }
-      ],
-      projects: [
-        {
-          id: '3',
-          name: 'Joint Campaign Launch',
-          status: 'active',
-          progress: 60,
-          deadline: new Date('2024-02-28'),
-          priority: 'critical'
-        }
-      ],
-      performance: {
-        overallScore: 89,
-        collaboration: 92,
-        productivity: 87,
-        communication: 90,
-        innovation: 88,
-        lastUpdated: new Date('2024-01-20T12:00:00')
-      },
-      aiAnalysis: {
-        id: '2',
-        efficiency: 89,
-        synergy: 91,
-        recommendations: ['Enhance partner communication', 'Optimize campaign coordination'],
-        predictedOutcomes: ['Increased market reach', 'Improved brand synergy']
+        recommendations: ['Improve communication', 'Optimize workflows'],
+        predictedOutcomes: ['Improved team collaboration', 'Higher productivity']
       }
     }
-  ]
+  ])
 
-  const mockWorkspaces: Workspace[] = [
+  const mockWorkspaces = useMockArray<Workspace>(() => [
     {
       id: '1',
-      name: 'Innovation Hub',
-      type: 'hybrid',
-      teams: ['1', '2'],
-      tools: [
-        {
-          id: '1',
-          name: 'Slack',
-          category: 'communication',
-          status: 'active',
-          usage: 95,
-          effectiveness: 88
-        },
-        {
-          id: '2',
-          name: 'Notion',
-          category: 'collaboration',
-          status: 'active',
-          usage: 87,
-          effectiveness: 92
-        },
-        {
-          id: '3',
-          name: 'Figma',
-          category: 'collaboration',
-          status: 'active',
-          usage: 78,
-          effectiveness: 85
-        }
-      ],
-      performance: {
-        totalTeams: 2,
-        activeProjects: 3,
-        collaborationScore: 89,
-        productivityScore: 87,
-        lastOptimized: new Date('2024-01-19T15:00:00')
-      },
-      aiOptimization: {
-        id: '1',
-        optimizationScore: 91,
-        efficiencyGains: 15,
-        recommendations: ['Implement AI-powered scheduling', 'Enhance tool integration']
-      }
-    },
-    {
-      id: '2',
-      name: 'Remote Collaboration Center',
+      name: 'AI Development Hub',
+      description: 'Centralized workspace for AI development projects',
       type: 'virtual',
-      teams: ['1'],
-      tools: [
-        {
-          id: '4',
-          name: 'Zoom',
-          category: 'communication',
-          status: 'active',
-          usage: 92,
-          effectiveness: 85
-        },
-        {
-          id: '5',
-          name: 'Trello',
-          category: 'project-management',
-          status: 'active',
-          usage: 80,
-          effectiveness: 88
-        }
-      ],
+      teams: ['1', '2', '3'],
+      tools: [],
       performance: {
-        totalTeams: 1,
-        activeProjects: 2,
-        collaborationScore: 85,
-        productivityScore: 83,
-        lastOptimized: new Date('2024-01-18T10:00:00')
+        totalTeams: 3,
+        activeProjects: 15,
+        collaborationScore: 92,
+        productivityScore: 90,
+        lastOptimized: new Date()
       },
       aiOptimization: {
-        id: '2',
-        optimizationScore: 87,
-        efficiencyGains: 12,
-        recommendations: ['Improve virtual meeting tools', 'Enhance remote collaboration']
-      }
-    }
-  ]
-
-  const mockPartnerships: Partnership[] = [
-    {
-      id: '1',
-      name: 'Tech Innovation Alliance',
-      type: 'strategic',
-      status: 'active',
-      partners: [
-        {
-          id: '1',
-          name: 'Zion Tech Group',
-          organization: 'Zion Tech Group',
-          role: 'Lead Partner',
-          contribution: 60,
-          lastEngagement: new Date('2024-01-20T09:00:00')
-        },
-        {
-          id: '2',
-          name: 'InnovateCorp',
-          organization: 'InnovateCorp',
-          role: 'Technology Partner',
-          contribution: 40,
-          lastEngagement: new Date('2024-01-19T14:00:00')
-        }
-      ],
-      objectives: [
-        {
-          id: '1',
-          description: 'Develop AI-powered marketplace platform',
-          status: 'in-progress',
-          progress: 70,
-          deadline: new Date('2024-06-30')
-        },
-        {
-          id: '2',
-          description: 'Launch joint marketing campaign',
-          status: 'pending',
-          progress: 30,
-          deadline: new Date('2024-04-15')
-        }
-      ],
-      performance: {
-        overallScore: 87,
-        collaboration: 89,
-        valueCreation: 85,
-        riskManagement: 88,
-        lastEvaluated: new Date('2024-01-20T12:00:00')
+        id: '1',
+        optimizationScore: 88,
+        efficiencyGains: 15,
+        recommendations: ['Enhance tools', 'Improve processes']
       },
       aiAnalysis: {
         id: '1',
-        successProbability: 92,
-        valuePotential: 88,
-        recommendations: ['Enhance communication protocols', 'Implement joint innovation labs'],
-        riskFactors: ['Technology integration challenges', 'Market competition']
-      }
-    },
+        collaborationScore: 92,
+        efficiencyScore: 88,
+        productivityScore: 90,
+        recommendations: ['Enhance tools', 'Improve processes']
+      },
+    }
+  ])
+
+  const mockPartnerships = useMockArray<Partnership>(() => [
     {
-      id: '2',
-      name: 'Marketing Partnership Network',
-      type: 'marketing',
+      id: '1',
+      name: 'AI Research Partnership',
+      type: 'research',
       status: 'active',
       partners: [
         {
-          id: '3',
-          name: 'MarketPro Solutions',
-          organization: 'MarketPro Solutions',
-          role: 'Marketing Partner',
-          contribution: 50,
-          lastEngagement: new Date('2024-01-20T11:00:00')
-        },
-        {
-          id: '4',
-          name: 'Digital Growth Co.',
-          organization: 'Digital Growth Co.',
-          role: 'Growth Partner',
-          contribution: 50,
-          lastEngagement: new Date('2024-01-19T16:00:00')
+          id: '1',
+          name: 'Research Partner',
+          organization: 'Tech Corp',
+          role: 'Research Lead',
+          contribution: 80,
+          lastEngagement: new Date()
         }
       ],
       objectives: [
         {
-          id: '3',
-          description: 'Expand market reach by 200%',
+          id: '1',
+          description: 'Develop advanced AI algorithms',
           status: 'in-progress',
-          progress: 55,
-          deadline: new Date('2024-08-31')
+          progress: 75,
+          deadline: new Date('2024-12-31')
         }
       ],
       performance: {
-        overallScore: 84,
-        collaboration: 86,
-        valueCreation: 82,
-        riskManagement: 85,
-        lastEvaluated: new Date('2024-01-20T12:00:00')
+        overallScore: 96,
+        collaboration: 94,
+        valueCreation: 92,
+        riskManagement: 88,
+        lastEvaluated: new Date()
       },
       aiAnalysis: {
-        id: '2',
-        successProbability: 88,
-        valuePotential: 85,
-        recommendations: ['Optimize marketing campaigns', 'Enhance data sharing'],
-        riskFactors: ['Market volatility', 'Brand alignment challenges']
+        id: '1',
+        successProbability: 85,
+        valuePotential: 92,
+        recommendations: ['Strengthen communication', 'Expand collaboration'],
+        riskFactors: ['Resource constraints', 'Timeline pressure']
       }
     }
-  ]
+  ])
 
-  const mockAnalytics: CollaborationTeamAnalytics = {
-    totalTeams: 12,
-    activeWorkspaces: 5,
+  const mockAnalytics = useMockObject<CollaborationTeamAnalytics>(() => ({
+    totalTeams: 18,
+    activeWorkspaces: 12,
     partnershipsCount: 8,
-    averagePerformance: 87.5,
-    collaborationScore: 89,
-    aiOptimizationScore: 91,
+    averagePerformance: 92.5,
+    collaborationScore: 92.5,
+    aiOptimizationScore: 94.2,
     aiInsights: [
       {
         id: '1',
-        title: 'High Team Synergy',
-        description: 'Overall team collaboration improved by 12% with AI optimization',
+        title: 'High Team Collaboration',
+        description: 'AI-powered collaboration tools show 92.5% average collaboration score',
         impact: 'positive',
-        confidence: 0.94,
-        recommendations: ['Continue AI monitoring', 'Implement predictive collaboration']
-      },
-      {
-        id: '2',
-        title: 'Partnership Success',
-        description: 'AI analysis shows 15% improvement in partnership outcomes',
-        impact: 'positive',
-        confidence: 0.91,
-        recommendations: ['Expand partnership network', 'Enhance collaboration tools']
+        confidence: 0.95,
+        recommendations: ['Continue AI optimization', 'Expand team tools']
       }
     ]
-  }
+  }))
 
   useEffect(() => {
     setTimeout(() => {

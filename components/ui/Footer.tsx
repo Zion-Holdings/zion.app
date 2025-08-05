@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useCallback } from 'react'
 import Link from 'next/link'
 import { ChevronUp, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 

@@ -1,0 +1,180 @@
+const fs = require('fs');
+const path = require('path');
+
+// Function to add Image import to files that have img tags
+function addImageImport(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    
+    // Check if Image is already imported
+    if (content.includes('import Image from') || content.includes('import { Image }')) {
+      return false;
+    }
+    
+    // Check if file has img tags
+    if (!content.includes('<img')) {
+      return false;
+    }
+    
+    // Add Image import after other imports
+    const lines = content.split('\n');
+    let importIndex = -1;
+    
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].startsWith('import') && !lines[i].includes('Image')) {
+        importIndex = i;
+      }
+    }
+    
+    if (importIndex !== -1) {
+      lines.splice(importIndex + 1, 0, 'import Image from \'next/image\'');
+      fs.writeFileSync(filePath, lines.join('\n'));
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error processing ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+// Function to replace img tags with Image components
+function replaceImgTags(filePath) {
+  try {
+    let content = fs.readFileSync(filePath, 'utf8');
+    let modified = false;
+    
+    // Replace img tags with Image components
+    content = content.replace(
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=([^>]+)\s*\/?>/g,
+      '<Image src=$1 alt=$2 className=$3 width={400} height={300} />'
+    );
+    
+    content = content.replace(
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s*\/?>/g,
+      '<Image src=$1 alt=$2 width={400} height={300} />'
+    );
+    
+    if (content !== fs.readFileSync(filePath, 'utf8')) {
+      fs.writeFileSync(filePath, content);
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error processing ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+// Function to add useCallback to functions that are used in useEffect
+function addUseCallback(filePath) {
+  try {
+    let content = fs.readFileSync(filePath, 'utf8');
+    let modified = false;
+    
+    // Add useCallback import if not present
+    if (!content.includes('useCallback') && content.includes('useEffect')) {
+      content = content.replace(
+        /import\s+React,\s*{\s*([^}]+)\s*}\s+from\s+'react'/,
+        'import React, { $1, useCallback } from \'react\''
+      );
+      modified = true;
+    }
+    
+    // Find functions that are used in useEffect dependencies
+    const functionMatches = content.match(/const\s+(\w+)\s*=\s*\([^)]*\)\s*=>\s*{/g);
+    if (functionMatches) {
+      for (const match of functionMatches) {
+        const funcName = match.match(/const\s+(\w+)\s*=/)[1];
+        if (content.includes(`}, [${funcName}]`)) {
+          // Wrap function with useCallback
+          const funcRegex = new RegExp(`const\\s+${funcName}\\s*=\\s*\\([^)]*\\)\\s*=>\\s*{`, 'g');
+          content = content.replace(funcRegex, `const ${funcName} = useCallback(([^)]*) => {`);
+          modified = true;
+        }
+      }
+    }
+    
+    if (modified) {
+      fs.writeFileSync(filePath, content);
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error processing ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+// Main function to process all TypeScript/JavaScript files
+function processFiles() {
+  const pagesDir = path.join(__dirname, '../pages');
+  const componentsDir = path.join(__dirname, '../components');
+  const srcDir = path.join(__dirname, '../src');
+  
+  const directories = [pagesDir, componentsDir, srcDir];
+  let totalModified = 0;
+  
+  directories.forEach(dir => {
+    if (fs.existsSync(dir)) {
+      const files = getAllFiles(dir);
+      
+      files.forEach(file => {
+        if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+          let fileModified = false;
+          
+          // Add Image import if needed
+          if (addImageImport(file)) {
+            console.log(`Added Image import to ${file}`);
+            fileModified = true;
+          }
+          
+          // Replace img tags
+          if (replaceImgTags(file)) {
+            console.log(`Replaced img tags in ${file}`);
+            fileModified = true;
+          }
+          
+          // Add useCallback where needed
+          if (addUseCallback(file)) {
+            console.log(`Added useCallback to ${file}`);
+            fileModified = true;
+          }
+          
+          if (fileModified) {
+            totalModified++;
+          }
+        }
+      });
+    }
+  });
+  
+  console.log(`\nTotal files modified: ${totalModified}`);
+}
+
+// Helper function to get all files recursively
+function getAllFiles(dirPath, arrayOfFiles = []) {
+  const files = fs.readdirSync(dirPath);
+  
+  arrayOfFiles = arrayOfFiles || [];
+  
+  files.forEach(file => {
+    if (fs.statSync(path.join(dirPath, file)).isDirectory()) {
+      arrayOfFiles = getAllFiles(path.join(dirPath, file), arrayOfFiles);
+    } else {
+      arrayOfFiles.push(path.join(dirPath, file));
+    }
+  });
+  
+  return arrayOfFiles;
+}
+
+// Run the script
+if (require.main === module) {
+  console.log('Starting to fix linting issues...');
+  processFiles();
+  console.log('Finished fixing linting issues.');
+} 

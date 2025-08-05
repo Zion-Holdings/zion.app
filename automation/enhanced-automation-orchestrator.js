@@ -393,27 +393,53 @@ class EnhancedAutomationOrchestrator {
     
     let populatedContent = template;
     
-    // Add safety checks for string length
-    const MAX_STRING_LENGTH = 1000000; // 1MB limit
+    // Add safety checks for string length and prevent infinite loops
+    const MAX_STRING_LENGTH = 10000; // 10KB limit
+    const MAX_REPLACEMENTS = 100; // Prevent infinite loops
+    
+    let replacementCount = 0;
     
     Object.entries(placeholders).forEach(([placeholder, value]) => {
       try {
+        // Limit the number of replacements to prevent infinite loops
+        if (replacementCount >= MAX_REPLACEMENTS) {
+          console.warn(`⚠️ Maximum replacements reached, stopping for ${placeholder}`);
+          return;
+        }
+        
         // Check if the replacement would exceed maximum string length
         const placeholderRegex = new RegExp(placeholder, 'g');
         const matches = populatedContent.match(placeholderRegex);
-        const totalReplacementLength = (matches ? matches.length : 0) * value.length;
         
-        if (populatedContent.length + totalReplacementLength > MAX_STRING_LENGTH) {
-          console.warn(`⚠️ String length limit exceeded for placeholder ${placeholder}, truncating content`);
-          populatedContent = populatedContent.substring(0, MAX_STRING_LENGTH / 2);
+        if (matches && matches.length > 0) {
+          const totalReplacementLength = matches.length * value.length;
+          
+          if (populatedContent.length + totalReplacementLength > MAX_STRING_LENGTH) {
+            console.warn(`⚠️ String length limit exceeded for placeholder ${placeholder}, using fallback`);
+            populatedContent = `Generated content for ${strategyKey}: ${variation}`;
+            return;
+          }
+          
+          // Limit the number of replacements per placeholder
+          const maxReplacementsPerPlaceholder = 5;
+          const limitedMatches = matches.slice(0, maxReplacementsPerPlaceholder);
+          
+          limitedMatches.forEach(() => {
+            populatedContent = populatedContent.replace(placeholderRegex, value);
+            replacementCount++;
+          });
         }
-        
-        populatedContent = populatedContent.replace(placeholderRegex, value);
       } catch (error) {
         console.error(`❌ Error replacing placeholder ${placeholder}:`, error.message);
         // Continue with other replacements
       }
     });
+    
+    // Final safety check
+    if (populatedContent.length > MAX_STRING_LENGTH) {
+      console.warn(`⚠️ Final content too long, truncating`);
+      populatedContent = `Generated content for ${strategyKey}: ${variation}`;
+    }
     
     return populatedContent;
   }

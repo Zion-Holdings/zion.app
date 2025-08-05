@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Talent {
   id: string;
@@ -865,10 +866,12 @@ const TalentDirectoryPage: NextPage = () => {
               {/* Talent Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
-                  <img
+                  <Image 
                     src={talent.avatar}
                     alt={talent.name}
-                    className="w-12 h-12 rounded-full border-2 border-purple-500/30"
+                    className="w-16 h-16 rounded-full border-2 border-purple-500/30"
+                    width={64} 
+                    height={64} 
                   />
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-white">{talent.name}</h3>

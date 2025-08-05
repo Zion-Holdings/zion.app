@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
-import ResponsiveNavigation from '../components/ResponsiveNavigation'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import ResponsiveNavigation from '../components/ResponsiveNavigation';
 
 const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
   const navigationItems = [

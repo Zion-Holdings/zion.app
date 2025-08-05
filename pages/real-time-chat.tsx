@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useRef, useCallback } from 'react'
-import Link from 'next/link'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Message {
   id: string
@@ -318,10 +319,12 @@ const RealTimeChatPage: NextPage = () => {
                     >
                       <div className={`flex max-w-xs lg:max-w-md ${message.sender === 'You' ? 'flex-row-reverse' : 'flex-row'}`}>
                         <div className="flex-shrink-0">
-                          <img
-                            src={message.avatar}
+                          <Image 
+                            src={message.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=User"}
                             alt={message.sender}
-                            className="w-8 h-8 rounded-full"
+                            className="w-8 h-8 rounded-full" 
+                            width={32} 
+                            height={32} 
                           />
                         </div>
                         <div className={`ml-3 ${message.sender === 'You' ? 'mr-3' : ''}`}>
@@ -348,10 +351,12 @@ const RealTimeChatPage: NextPage = () => {
                   <div className="flex justify-start">
                     <div className="flex max-w-xs lg:max-w-md">
                       <div className="flex-shrink-0">
-                        <img
+                        <Image 
                           src="https://api.dicebear.com/7.x/bottts/svg?seed=AI"
                           alt="AI Assistant"
                           className="w-8 h-8 rounded-full"
+                          width={32} 
+                          height={32} 
                         />
                       </div>
                       <div className="ml-3">

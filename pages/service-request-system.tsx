@@ -1,8 +1,9 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface ServiceRequest {
   id: string
@@ -614,7 +615,13 @@ const ServiceRequestSystemPage: NextPage = () => {
                           {request.responses.map((response) => (
                             <div key={response.id} className="p-4 bg-white/5 rounded-lg border border-white/10">
                               <div className="flex items-center space-x-3 mb-2">
-                                <img src={response.providerAvatar} alt={response.providerName} className="w-8 h-8 rounded-full" />
+                                <Image 
+                                  src={response.providerAvatar} 
+                                  alt={response.providerName} 
+                                  className="w-8 h-8 rounded-full" 
+                                  width={32} 
+                                  height={32} 
+                                />
                                 <div>
                                   <div className="text-white font-medium">{response.providerName}</div>
                                   <div className="text-sm text-gray-400">
@@ -788,7 +795,13 @@ const ServiceRequestSystemPage: NextPage = () => {
                         {selectedRequest.responses.map((response) => (
                           <div key={response.id} className="p-4 bg-white/5 rounded-lg border border-white/10">
                             <div className="flex items-center space-x-3 mb-2">
-                              <img src={response.providerAvatar} alt={response.providerName} className="w-8 h-8 rounded-full" />
+                              <Image 
+                                src={response.providerAvatar} 
+                                alt={response.providerName} 
+                                className="w-8 h-8 rounded-full" 
+                                width={32} 
+                                height={32} 
+                              />
                               <div>
                                 <div className="text-white font-medium">{response.providerName}</div>
                                 <div className="text-sm text-gray-400">
