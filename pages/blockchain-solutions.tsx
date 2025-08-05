@@ -118,7 +118,7 @@ const BlockchainSolutions = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Comprehensive Analytics</h3>
-                <p className="text-gray-600">Get detailed insights and analytics for informed decisions</p>
+                <p className="text-high-contrast-tertiary">Get detailed insights and analytics for informed decisions</p>
               </motion.div>
               
               <motion.div
