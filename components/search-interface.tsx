@@ -30,4 +30,4 @@ const SearchInterface: React.FC<SearchInterfaceProps> = ({
     </motion.div >;  );
 };
 ''`
-export default SearchInterface;'`
+export default SearchInterface;`

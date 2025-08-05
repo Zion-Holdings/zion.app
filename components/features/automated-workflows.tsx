@@ -32,4 +32,4 @@ const AutomatedWorkflows: React.FC<AutomatedWorkflowsProps> = ({ className="'' }
     </motion.div >;  );
 };
 ''`
-export default AutomatedWorkflows;'`
+export default AutomatedWorkflows;`

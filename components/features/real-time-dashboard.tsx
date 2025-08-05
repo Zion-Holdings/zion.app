@@ -32,4 +32,4 @@ const RealTimeDashboard: React.FC<RealTimeDashboardProps> = ({ className="'' }) 
     </motion.div >;  );
 };
 ''`
-export default RealTimeDashboard;'`
+export default RealTimeDashboard;`

@@ -198,4 +198,4 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
   );
 };
 ''`
-export default FuturisticDashboard;'`
+export default FuturisticDashboard;`

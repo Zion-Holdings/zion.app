@@ -288,4 +288,4 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
   );
 };
 ''`
-export default ChatAssistant;'`
+export default ChatAssistant;`

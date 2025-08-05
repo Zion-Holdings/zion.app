@@ -30,4 +30,4 @@ const DataVisualization: React.FC<DataVisualizationProps> = ({
     </motion.div >;  );
 };
 ''`
-export default DataVisualization;'`
+export default DataVisualization;`

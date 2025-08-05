@@ -262,4 +262,4 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className="
     </div >;  );
 };
 ''`
-export default EnhancedContrastDemo;'`
+export default EnhancedContrastDemo;`

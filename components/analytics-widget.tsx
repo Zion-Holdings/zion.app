@@ -30,4 +30,4 @@ const AnalyticsWidget: React.FC<AnalyticsWidgetProps> = ({
     </motion.div >;  );
 };
 ''`
-export default AnalyticsWidget;'`
+export default AnalyticsWidget;`

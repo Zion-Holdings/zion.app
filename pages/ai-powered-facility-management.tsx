@@ -441,4 +441,4 @@ const AIPoweredFacilityManagementPage: NextPage = () => {'
                 );
 };
 ''`
-export default AIPoweredFacilityManagementPage;'`
+export default AIPoweredFacilityManagementPage;`

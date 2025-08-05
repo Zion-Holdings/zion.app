@@ -950,4 +950,4 @@ Templates: </button>'
               );
 };
 ''`
-export default WorkflowDesignerPage;'`
+export default WorkflowDesignerPage;`

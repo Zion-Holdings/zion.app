@@ -730,4 +730,4 @@ Score: {meta.score}/100: </div>
   </div>,
 ),;
 };`
-export default SEOOptimizationPage;'`
+export default SEOOptimizationPage;`

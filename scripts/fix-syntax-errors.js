@@ -1,225 +1,89 @@
 const fs = require('fs');
 const path = require('path');
 
-// List of files with syntax errors
-const filesToFix = [
-  'pages/services/data-analytics.tsx',
-  'pages/services/data-pipeline-engineering.tsx',
-  'pages/services/data-privacy-compliance.tsx',
-  'pages/services/devops-automation.tsx',
-  'pages/services/digital-transformation-services.tsx',
-  'pages/services/edge-ai-implementation.tsx',
-  'pages/services/healthcare-ml-solutions.tsx',
-  'pages/services/microservices-architecture.tsx',
-  'pages/services/performance-optimization.tsx',
-  'pages/services/quantum-computing-solutions.tsx',
-  'pages/services/security-auditing.tsx',
-  'pages/services/serverless-computing.tsx',
-  'pages/services/sustainable-technology-consulting.tsx',
-  'pages/services.tsx',
-  'pages/signup.tsx',
-  'pages/sitemap.tsx',
-  'pages/status.tsx',
-  'pages/support.tsx',
-  'pages/talent-profile.tsx',
-  'pages/talents.tsx',
-  'pages/terms-of-service.tsx',
-  'pages/terms.tsx'
-];
-
-function fixFile(filePath) {
+// Function to fix syntax errors in a file
+function fixSyntaxErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
+    let modified = false;
+
+    // Fix unterminated string constants
+    content = content.replace(/import React from "react;/g, 'import React from "react";');
+    content = content.replace(/import { NextPage } from 'next";/g, "import { NextPage } from 'next';");
+    content = content.replace(/import Head from "next/head";/g, 'import Head from "next/head";');
+    content = content.replace(/import Link from "next/link";/g, 'import Link from "next/link";');
+    content = content.replace(/import PageLayout from '\.\.\/components\/layout\/PageLayout";/g, "import PageLayout from '../components/layout/PageLayout';");
     
-    // Fix import statements
-    content = content.replace(
-      /import type \{ NextPage \} from 'next';import ModernLayout from '\.\.\/components\/layout\/ModernLayout';import Head from "next\/head";/g,
-      `import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
-import Head from "next/head";`
-    );
+    // Fix other common syntax errors
+    content = content.replace(/Zap,'/g, "Zap,");
+    content = content.replace(/id: string'/g, "id: string;");
+    content = content.replace(/status: 'available' \| 'in-transit' \| 'maintenance' \| 'charging/g, "status: 'available' | 'in-transit' | 'maintenance' | 'charging'");
+    content = content.replace(/type: 'delivery' \| 'surveillance' \| 'inspection' \| 'emergency/g, "type: 'delivery' | 'surveillance' | 'inspection' | 'emergency'");
+    content = content.replace(/type: 'passenger' \| 'cargo' \| 'emergency' \| 'delivery/g, "type: 'passenger' | 'cargo' | 'emergency' | 'delivery'");
+    content = content.replace(/status: 'active' \| 'maintenance' \| 'offline' \| 'charging/g, "status: 'active' | 'maintenance' | 'offline' | 'charging'");
     
-    // Fix component name
-    content = content.replace(
-      /const Https___ziontechgroup_netlify_app_services_[^:]+Page: NextPage: \(\) =>/g,
-      (match) => {
-        const serviceName = match.match(/services_([^:]+)/)?.[1] || 'Service';
-        return `const ${serviceName.charAt(0).toUpperCase() + serviceName.slice(1)}Page: NextPage = () =>`;
-      }
-    );
+    // Fix object syntax errors
+    content = content.replace(/efficiency: 87}}/g, "efficiency: 87}");
+    content = content.replace(/accuracy: 94\.7}/g, "accuracy: 94.7");
+    content = content.replace(/} 2000\);/g, "}, 2000);");
+    content = content.replace(/} \[\]\);/g, "}, []);");
     
-    // Fix JSX structure
-    content = content.replace(
-      /<div>\s*<\/div><div className="min-h-screen" bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900>/g,
-      '<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">'
-    );
+    // Fix interface syntax errors
+    content = content.replace(/type: 'rest' \| 'graphql' \| 'soap' \| 'grpc' \| 'websocket' \| 'webhook";/g, "type: 'rest' | 'graphql' | 'soap' | 'grpc' | 'websocket' | 'webhook';");
+    content = content.replace(/status: 'active' \| 'inactive' \| 'maintenance' \| 'deprecated' \| 'beta";/g, "status: 'active' | 'inactive' | 'maintenance' | 'deprecated' | 'beta';");
+    content = content.replace(/status: 'active' \| 'inactive' \| 'deprecated";/g, "status: 'active' | 'inactive' | 'deprecated';");
+    content = content.replace(/status: 'healthy' \| 'warning' \| 'error' \| 'down";/g, "status: 'healthy' | 'warning' | 'error' | 'down';");
+    content = content.replace(/severity: 'low' \| 'medium' \| 'high' \| 'critical";/g, "severity: 'low' | 'medium' | 'high' | 'critical';");
+    content = content.replace(/status: 'active' \| 'resolved' \| 'pending";/g, "status: 'active' | 'resolved' | 'pending';");
+    content = content.replace(/trigger: 'event' \| 'schedule' \| 'manual' \| 'condition' \| 'webhook' \| 'api";/g, "trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api';");
+    content = content.replace(/status: 'active' \| 'inactive' \| 'error' \| 'paused' \| 'testing';/g, "status: 'active' | 'inactive' | 'error' | 'paused' | 'testing';");
+    content = content.replace(/method: 'GET' \| 'POST' \| 'PUT' \| 'DELETE' \| 'PATCH";/g, "method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';");
+    content = content.replace(/status: 'connected' \| 'disconnected' \| 'error' \| 'syncing' \| 'maintenance";/g, "status: 'connected' | 'disconnected' | 'error' | 'syncing' | 'maintenance';");
+    content = content.replace(/status: 'healthy' \| 'warning' \| 'error' \| 'down' \| 'maintenance";/g, "status: 'healthy' | 'warning' | 'error' | 'down' | 'maintenance';");
+    content = content.replace(/type: 'unit' \| 'integration' \| 'load' \| 'security' \| 'performance' \| 'regression";/g, "type: 'unit' | 'integration' | 'load' | 'security' | 'performance' | 'regression';");
+    content = content.replace(/status: 'running' \| 'passed' \| 'failed' \| 'skipped' \| 'pending";/g, "status: 'running' | 'passed' | 'failed' | 'skipped' | 'pending';");
+    content = content.replace(/impact: 'positive' \| 'negative' \| 'neutral";/g, "impact: 'positive' | 'negative' | 'neutral';");
     
-    // Fix Head component
-    content = content.replace(
-      /<title>Our Services - Zion Tech Group<\/title>,/g,
-      '<title>Data Analytics - Zion Tech Group</title>'
-    );
-    
-    content = content.replace(
-      /<meta name=description content=Explore our comprehensive service offerings >,/g,
-      '<meta name="description" content="Explore our comprehensive data analytics service offerings" />'
-    );
-    
-    content = content.replace(
-      /<\/meta name=description content=Explore our comprehensive service offerings ><meta name=keywords  content=https \/\/ziontechgroup\.netlify\.app\/services\/[^>]+ >/g,
-      '<meta name="keywords" content="data analytics, Zion, AI marketplace" />'
-    );
-    
-    // Fix navigation
-    content = content.replace(
-      /<nav className=" bg-black\/20 backdrop-blur-md border-b border-white\/10 sticky top-0" z-50>/g,
-      '<nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">'
-    );
-    
-    content = content.replace(
-      /<div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>/g,
-      '<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
-    );
-    
-    content = content.replace(
-      /<div className="flex  justify-between h-16>/g,
-      '<div className="flex justify-between h-16">'
-    );
-    
-    content = content.replace(
-      /<div className="flex" items-center>/g,
-      '<div className="flex items-center">'
-    );
-    
-    content = content.replace(
-      /<div className="flex-shrink-0"">/g,
-      '<div className="flex-shrink-0">'
-    );
-    
-    content = content.replace(
-      /<h1 className=" text-2xl font-bold" text-white>/g,
-      '<h1 className="text-2xl font-bold text-white">'
-    );
-    
-    content = content.replace(
-      /<Link href=\/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 >Zion/g,
-      '<Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion'
-    );
-    
-    content = content.replace(
-      /<\/Link href=\/ className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400" ><\/Link>/g,
-      '</Link>'
-    );
-    
-    content = content.replace(
-      /<div className="hidden  md:flex: items-center space-x-8>/g,
-      '<div className="hidden md:flex items-center space-x-8">'
-    );
-    
-    // Fix Link components
-    content = content.replace(
-      /<Link href="\/marketplace" className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace/g,
-      '<Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">Marketplace'
-    );
-    
-    content = content.replace(
-      /<\/Link href= \/marketplace" className="text-gray-300 hover text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"><\/Link>/g,
-      '</Link>'
-    );
-    
-    // Fix main content
-    content = content.replace(
-      /<main className="flex-1>/g,
-      '<main className="flex-1">'
-    );
-    
-    content = content.replace(
-      /<div className="relative" overflow-hidden>/g,
-      '<div className="relative overflow-hidden">'
-    );
-    
-    content = content.replace(
-      /<div className="absolute" inset-0 bg-gradient-to-br from-purple-900\/20 via-transparent to-pink-900\/20><\/div>/g,
-      '<div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>'
-    );
-    
-    content = content.replace(
-      /<div className="relative" max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-44 lg:py-32>/g,
-      '<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">'
-    );
-    
-    content = content.replace(
-      /<div: className="text-center >/g,
-      '<div className="text-center">'
-    );
-    
-    content = content.replace(
-      /<h1 className=" text-4xl md text-6xl font-bold text-white" mb-6>/g,
-      '<h1 className="text-4xl md:text-6xl font-bold text-white mb-6">'
-    );
-    
-    content = content.replace(
-      /<span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>/g,
-      '<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">'
-    );
-    
-    content = content.replace(
-      /<p className="text-xl" text-gray-300 max-w-3xl mx-auto leading-relaxed >/g,
-      '<p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">'
-    );
-    
-    content = content.replace(
-      /<div className=" mt-12 flex flex-col sm flex-row  gap-4" justify-center>/g,
-      '<div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">'
-    );
-    
-    // Fix footer
-    content = content.replace(
-      /<footer className=" bg-black\/20 border-t" border-white\/10>/g,
-      '<footer className="bg-black/20 border-t border-white/10">'
-    );
-    
-    content = content.replace(
-      /<div className="max-w-7xl" mx-auto px-4 sm: px-6 lg:px-8: py-32>/g,
-      '<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">'
-    );
-    
-    content = content.replace(
-      /<div className="grid" grid-cols-1 md grid-cols-4 gap-8 >/g,
-      '<div className="grid grid-cols-1 md:grid-cols-4 gap-8">'
-    );
-    
-    content = content.replace(
-      /<h3 className="text-white" font-semibold mb-4>Zion<\/h3>/g,
-      '<h3 className="text-white font-semibold mb-4">Zion</h3>'
-    );
-    
-    content = content.replace(
-      /<p className="text-gray-400" text-sm">/g,
-      '<p className="text-gray-400 text-sm">'
-    );
-    
-    // Fix export
-    content = content.replace(
-      /export default Https___ziontechgroup_netlify_app_services_[^;]+;'"/g,
-      (match) => {
-        const serviceName = match.match(/services_([^;]+)/)?.[1] || 'Service';
-        return `export default ${serviceName.charAt(0).toUpperCase() + serviceName.slice(1)}Page;`;
-      }
-    );
-    
-    // Remove extra commas and fix closing tags
-    content = content.replace(/,\s*,/g, '');
-    content = content.replace(/,\s*"/g, '"');
-    content = content.replace(/,\s*>/g, '>');
-    
-    fs.writeFileSync(filePath, content);
-    console.log(`Fixed: ${filePath}`);
+    // Fix function syntax errors
+    content = content.replace(/const AIPoweredAPIIntegrationPage: NextPage = \(\) => '/g, "const AIPoweredAPIIntegrationPage: NextPage = () => {");
+    content = content.replace(/const getStatusColor = \(status: string\) => '/g, "const getStatusColor = (status: string) => {");
+    content = content.replace(/const getPriorityColor = \(priority: string\) => '/g, "const getPriorityColor = (priority: string) => {");
+
+    if (content !== fs.readFileSync(filePath, 'utf8')) {
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Fixed syntax errors in: ${filePath}`);
+      return true;
+    }
+    return false;
   } catch (error) {
-    console.error(`Error fixing ${filePath}:`, error.message);
+    console.error(`Error processing ${filePath}:`, error.message);
+    return false;
   }
 }
 
-// Fix all files
-filesToFix.forEach(fixFile);
-console.log('Syntax error fixes completed!'); 
+// Function to recursively find and fix all TypeScript files
+function fixAllFiles(dir) {
+  const files = fs.readdirSync(dir);
+  let fixedCount = 0;
+
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+
+    if (stat.isDirectory()) {
+      fixedCount += fixAllFiles(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+      if (fixSyntaxErrors(filePath)) {
+        fixedCount++;
+      }
+    }
+  }
+
+  return fixedCount;
+}
+
+// Start fixing from the pages directory
+const pagesDir = path.join(__dirname, '..', 'pages');
+console.log('Starting syntax error fixes...');
+const fixedCount = fixAllFiles(pagesDir);
+console.log(`Fixed ${fixedCount} files with syntax errors.`); 

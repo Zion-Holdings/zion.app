@@ -115,4 +115,4 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
     </Link >;  );
 };
 ''`
-export default FuturisticCard;'`
+export default FuturisticCard;`

@@ -30,4 +30,4 @@ const NotificationCenter: React.FC<NotificationCenterProps> = ({
     </motion.div >;  );
 };
 ''`
-export default NotificationCenter;'`
+export default NotificationCenter;`

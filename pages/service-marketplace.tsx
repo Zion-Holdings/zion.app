@@ -668,4 +668,4 @@ View: Details: </button>
   </div>,;
 ),;
 };`
-export default ServiceMarketplacePage;'`
+export default ServiceMarketplacePage;`

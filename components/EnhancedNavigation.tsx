@@ -141,4 +141,4 @@ const EnhancedNavigation: React.FC<EnhancedNavigationProps> = ({
     </header >;  );
 };
 ''`
-export default EnhancedNavigation;'`
+export default EnhancedNavigation;`

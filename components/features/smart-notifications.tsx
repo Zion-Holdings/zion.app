@@ -32,4 +32,4 @@ const SmartNotifications: React.FC<SmartNotificationsProps> = ({ className="'' }
     </motion.div >;  );
 };
 ''`
-export default SmartNotifications;'`
+export default SmartNotifications;`

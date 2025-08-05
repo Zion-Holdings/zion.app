@@ -32,4 +32,4 @@ const PredictiveAnalytics: React.FC<PredictiveAnalyticsProps> = ({ className="''
     </motion.div >;  );
 };
 ''`
-export default PredictiveAnalytics;'`
+export default PredictiveAnalytics;`

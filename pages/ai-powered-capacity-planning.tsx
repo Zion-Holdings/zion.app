@@ -632,4 +632,4 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {'
     );
 };
 ''`
-export default AIPoweredCapacityPlanningPage;'`
+export default AIPoweredCapacityPlanningPage;`

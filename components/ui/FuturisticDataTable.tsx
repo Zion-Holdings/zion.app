@@ -208,4 +208,4 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
  " );
 };
 ''`
-export default FuturisticDataTable;'`
+export default FuturisticDataTable;`

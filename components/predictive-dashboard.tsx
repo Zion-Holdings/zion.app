@@ -30,4 +30,4 @@ const PredictiveDashboard: React.FC<PredictiveDashboardProps> = ({
     </motion.div >;  );
 };
 ''`
-export default PredictiveDashboard;'`
+export default PredictiveDashboard;`

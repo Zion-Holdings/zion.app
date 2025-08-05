@@ -766,4 +766,4 @@ const AIHRManagement: React.FC = () => {';
         </div >;  );
 };
 ''`
-export default AIHRManagement;'`
+export default AIHRManagement;`

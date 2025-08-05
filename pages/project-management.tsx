@@ -884,4 +884,4 @@ View: Details: </button>
   </div>,;
 ),;
 };`
-export default ProjectManagementPage;'`
+export default ProjectManagementPage;`

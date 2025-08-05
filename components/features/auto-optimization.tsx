@@ -32,4 +32,4 @@ const AutoOptimization: React.FC<AutoOptimizationProps> = ({ className="'' }) =>
     </motion.div >;  );
 };
 ''`
-export default AutoOptimization;'`
+export default AutoOptimization;`

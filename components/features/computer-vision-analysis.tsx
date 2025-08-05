@@ -32,4 +32,4 @@ const ComputerVisionAnalysis: React.FC<ComputerVisionAnalysisProps> = ({ classNa
     </motion.div >;  );
 };
 ''`
-export default ComputerVisionAnalysis;'`
+export default ComputerVisionAnalysis;`

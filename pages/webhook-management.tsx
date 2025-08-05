@@ -749,4 +749,4 @@ Webhooks: ({webhooks.length}
               );
 };
 ''`
-export default WebhookManagementPage;'`
+export default WebhookManagementPage;`

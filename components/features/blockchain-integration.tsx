@@ -32,4 +32,4 @@ const BlockchainIntegration: React.FC<BlockchainIntegrationProps> = ({ className
     </motion.div >;  );
 };
 ''`
-export default BlockchainIntegration;'`
+export default BlockchainIntegration;`

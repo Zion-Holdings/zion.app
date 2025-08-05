@@ -30,4 +30,4 @@ const AiChatWidget: React.FC<AiChatWidgetProps> = ({
     </motion.div >;  );
 };
 ''`
-export default AiChatWidget;'`
+export default AiChatWidget;`

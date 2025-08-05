@@ -32,4 +32,4 @@ const MachineLearningPipeline: React.FC<MachineLearningPipelineProps> = ({ class
     </motion.div >;  );
 };
 ''`
-export default MachineLearningPipeline;'`
+export default MachineLearningPipeline;`

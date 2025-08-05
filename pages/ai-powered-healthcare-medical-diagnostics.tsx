@@ -467,4 +467,4 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {'
     </PageLayout >;  );
 };
 ''`
-export default AIPoweredHealthcareMedicalDiagnosticsPage;'`
+export default AIPoweredHealthcareMedicalDiagnosticsPage;`

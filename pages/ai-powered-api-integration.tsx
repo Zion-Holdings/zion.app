@@ -62,7 +62,7 @@ interface APISecurity {
   description: string;
   type: string;
   endpoint: string;
-  severity: 'low' | 'medium' | 'high' | 'critical";
+  severity: 'low' | 'medium' | 'high' | 'critical';
   detected: string;
   recommendation: string;
   status: 'active' | 'resolved' | 'pending';
@@ -83,10 +83,10 @@ interface WebhookOrchestration {
   id: string;
   name: string;
   description: string;
-  trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api";
+  trigger: 'event' | 'schedule' | 'manual' | 'condition' | 'webhook' | 'api';
   status: 'active' | 'inactive' | 'error' | 'paused' | 'testing';
   endpoint: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH";
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
   aiOptimization: WebhookOptimization;}
 interface WebhookOptimization {
   id: string;

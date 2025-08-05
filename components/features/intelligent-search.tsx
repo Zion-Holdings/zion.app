@@ -32,4 +32,4 @@ const IntelligentSearch: React.FC<IntelligentSearchProps> = ({ className="'' }) 
     </motion.div >;  );
 };
 ''`
-export default IntelligentSearch;'`
+export default IntelligentSearch;`

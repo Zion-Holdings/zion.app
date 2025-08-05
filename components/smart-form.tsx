@@ -30,4 +30,4 @@ const SmartForm: React.FC<SmartFormProps> = ({
     </motion.div >;  );
 };
 ''`
-export default SmartForm;'`
+export default SmartForm;`

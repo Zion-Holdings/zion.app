@@ -32,4 +32,4 @@ const NaturalLanguageInterface: React.FC<NaturalLanguageInterfaceProps> = ({ cla
     </motion.div >;  );
 };
 ''`
-export default NaturalLanguageInterface;'`
+export default NaturalLanguageInterface;`

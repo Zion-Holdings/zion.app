@@ -30,4 +30,4 @@ const InteractiveChart: React.FC<InteractiveChartProps> = ({
     </motion.div >;  );
 };
 ''`
-export default InteractiveChart;'`
+export default InteractiveChart;`

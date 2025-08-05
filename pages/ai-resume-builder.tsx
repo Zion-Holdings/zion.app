@@ -896,4 +896,4 @@ const ResumeBuilder = () => {;
     );
 };
 ''`
-export default ResumeBuilder;'`
+export default ResumeBuilder;`

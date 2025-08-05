@@ -30,4 +30,4 @@ const RealTimeMonitor: React.FC<RealTimeMonitorProps> = ({
     </motion.div >;  );
 };
 ''`
-export default RealTimeMonitor;'`
+export default RealTimeMonitor;`

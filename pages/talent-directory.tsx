@@ -877,4 +877,4 @@ Are: you a skilled professional? Join our talent directory and connect
   </div>,;
 ),;
 };`
-export default TalentDirectoryPage;'`
+export default TalentDirectoryPage;`
