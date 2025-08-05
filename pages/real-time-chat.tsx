@@ -103,7 +103,7 @@ const RealTimeChatPage: NextPage = () => {
           avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${randomSender}`
         }
         
-        setMessages(prev => [...prev, ...mockMessages])
+        setMessages(prev => [...prev, newMessage])
         
         // Update chat room last message
         setChatRooms(prev => prev.map(room => 
@@ -129,7 +129,7 @@ const RealTimeChatPage: NextPage = () => {
       avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=You'
     }
 
-    setMessages(prev => [...prev, ...mockMessages])
+    setMessages(prev => [...prev, userMessage])
     setInputMessage('')
     setIsTyping(true)
 
@@ -159,7 +159,7 @@ const RealTimeChatPage: NextPage = () => {
         avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=AI'
       }
       
-      setMessages(prev => [...prev, ...mockMessages])
+      setMessages(prev => [...prev, aiMessage])
       setIsTyping(false)
     }, 1000 + Math.random() * 2000) // Random delay between 1-3 seconds
   }, [inputMessage])

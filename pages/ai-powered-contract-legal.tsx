@@ -204,9 +204,9 @@ const AIPoweredContractLegalPage: NextPage = () => {
         id: '1',
         reviewer: 'Legal Team',
         status: 'approved',
-        comments: ['Contract looks good'],
+        comments: ['Contract approved'],
         complianceIssues: [],
-        recommendations: ['Add liability clauses'],
+        recommendations: ['Monitor performance'],
         reviewDate: new Date(),
         aiAssisted: true
       },
