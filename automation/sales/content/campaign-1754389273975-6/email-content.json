@@ -1,0 +1,31 @@
+{
+  "subject": "Transform Your Business with Intelligent business opportunity Platform",
+  "body": "Dear {customer_name},\n\nWe're excited to introduce Intelligent business opportunity Platform - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Problem-Specific Solution\n• Custom AI Algorithms\n• User-Friendly Interface\n• Comprehensive Analytics\n• Integration Capabilities\n• Scalable Architecture\n• Addresses AI business opportunity\n• Market-focused features\n• Competitive pricing\n• Expert support\n• Easy Setup\n• Affordable Pricing\n• Quick Support\n\nPricing: Basic: $79.2/month\nProfessional: $158.4/month\nEnterprise: $316.8/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team",
+  "segments": [
+    {
+      "name": "SMB Owners",
+      "criteria": "Small business owners, entrepreneurs, startup founders",
+      "content": "Dear Business Owner,\n\nIntelligent business opportunity Platform is perfect for growing businesses like yours.\n\nKey SMB Benefits:\n• Easy setup and implementation\n• Affordable pricing\n• Quick ROI\n• Flexible scaling\n\nROI: 300.0%\nPayback Period: 3.0 months\n\nReady to get started?"
+    }
+  ],
+  "automation": {
+    "welcome": {
+      "trigger": "Sign up",
+      "delay": "Immediate",
+      "subject": "Welcome to Intelligent business opportunity Platform",
+      "content": "Dear {customer_name},\n\nWe're excited to introduce Intelligent business opportunity Platform - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Problem-Specific Solution\n• Custom AI Algorithms\n• User-Friendly Interface\n• Comprehensive Analytics\n• Integration Capabilities\n• Scalable Architecture\n• Addresses AI business opportunity\n• Market-focused features\n• Competitive pricing\n• Expert support\n• Easy Setup\n• Affordable Pricing\n• Quick Support\n\nPricing: Basic: $79.2/month\nProfessional: $158.4/month\nEnterprise: $316.8/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team"
+    },
+    "nurture": {
+      "trigger": "No purchase after 3 days",
+      "delay": "3 days",
+      "subject": "Don't miss out on Intelligent business opportunity Platform",
+      "content": "Hi there,\n\nI noticed you were interested in Intelligent business opportunity Platform but haven't taken the next step yet.\n\nHere's what you might be missing:\n• High ROI potential\n• Fast payback period\n• Powerful features\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe Intelligent business opportunity Platform Team"
+    },
+    "followUp": {
+      "trigger": "Website visit",
+      "delay": "1 day",
+      "subject": "Learn more about Intelligent business opportunity Platform",
+      "content": "Hi there,\n\nThanks for visiting our website and learning about Intelligent business opportunity Platform!\n\nI wanted to share some additional resources that might help:\n• Case studies from similar businesses\n• ROI calculator\n• Free consultation\n\nWould you like to schedule a quick call to discuss how Intelligent business opportunity Platform can benefit your business?\n\nBest regards,\nThe Intelligent business opportunity Platform Team"
+    }
+  }
+}

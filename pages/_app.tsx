@@ -2,13 +2,13 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.css'
 import { ChatProvider } from '../src/contexts/ChatContext'
 import { AuthProvider } from '../src/contexts/AuthContext'
-import { HeaderProvider } from '../src/contexts/HeaderContext'
+
 import { NavigationProvider } from '../src/contexts/NavigationContext'
 import ChatAssistant from '../src/components/ChatAssistant'
 import { useChat } from '../src/contexts/ChatContext'
 import MessageChannelDebugger from '../components/MessageChannelDebugger'
 import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary'
-import Header from '../components/ui/Header'
+import Sidebar from '../components/ui/Sidebar'
 import ParticleEffect from '../components/ParticleEffect'
 import '../utils/messageChannelHandler' // Initialize the handler
 
@@ -21,19 +21,19 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MessageChannelErrorBoundary>
       <AuthProvider>
-        <HeaderProvider>
-          <NavigationProvider>
-            <ChatProvider>
-              <div className="relative min-h-screen cyber-bg">
-                <ParticleEffect />
-                <Header />
+        <NavigationProvider>
+          <ChatProvider>
+            <div className="relative min-h-screen cyber-bg flex">
+              <ParticleEffect />
+              <Sidebar />
+              <div className="flex-1 lg:ml-80">
                 <Component {...pageProps} />
                 <ChatWrapper />
                 <MessageChannelDebugger />
               </div>
-            </ChatProvider>
-          </NavigationProvider>
-        </HeaderProvider>
+            </div>
+          </ChatProvider>
+        </NavigationProvider>
       </AuthProvider>
     </MessageChannelErrorBoundary>
   )

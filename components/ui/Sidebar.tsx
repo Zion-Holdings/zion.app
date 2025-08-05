@@ -1,0 +1,349 @@
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { 
+  Menu, 
+  X, 
+  Home, 
+  ShoppingCart, 
+  Users, 
+  Settings, 
+  Bell, 
+  User, 
+  LogOut,
+  Grid,
+  BarChart3,
+  Zap,
+  Shield,
+  BookOpen,
+  MessageSquare,
+  HelpCircle,
+  Globe,
+  Search,
+  ChevronRight,
+  ChevronDown,
+  Plus,
+  Star,
+  TrendingUp,
+  Calendar,
+  FileText,
+  CreditCard,
+  Headphones,
+  Palette,
+  Database,
+  Cpu,
+  Rocket,
+  Target,
+  Lightbulb,
+  Code,
+  Server,
+  Cloud,
+  Lock,
+  Eye,
+  Heart,
+  Share2,
+  Download,
+  Upload,
+  RefreshCw,
+  Play,
+  Pause,
+  Volume2,
+  Mic,
+  Video,
+  Camera,
+  Image,
+  File,
+  Folder,
+  Archive,
+  Trash2,
+  Edit,
+  Copy,
+  Save,
+  Check,
+  X as XIcon,
+  AlertCircle,
+  Info,
+  CheckCircle,
+  Clock,
+  MapPin,
+  Phone,
+  Mail,
+  ExternalLink,
+  ArrowRight,
+  ArrowLeft,
+  ChevronUp,
+  Minus,
+  Maximize,
+  Minimize,
+  RotateCcw,
+  RotateCw,
+  ZoomIn,
+  ZoomOut,
+  Move,
+  Crop,
+  Filter,
+  Sliders,
+  Layers,
+  Grid3X3,
+  List,
+  Columns,
+  Rows,
+  Layout,
+  Sidebar as SidebarIcon,
+  PanelLeft,
+  PanelRight,
+  PanelTop,
+  PanelBottom,
+  Split,
+  Merge,
+  GitBranch,
+  GitCommit,
+  GitPullRequest,
+  GitMerge,
+  GitCompare,
+  GitFork,
+  Brain,
+  Bot,
+  Wifi,
+  Building,
+  Workflow
+} from 'lucide-react'
+
+interface SidebarItem {
+  label: string
+  href: string
+  icon?: React.ComponentType<{ className?: string }>
+  description?: string
+  badge?: string
+  children?: SidebarItem[]
+}
+
+interface SidebarSection {
+  id: string
+  title: string
+  icon: React.ComponentType<{ className?: string }>
+  items: SidebarItem[]
+}
+
+const Sidebar: React.FC = () => {
+  const router = useRouter()
+  const [isOpen, setIsOpen] = useState(false)
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const navigationSections: SidebarSection[] = [
+    {
+      id: 'main',
+      title: 'Main',
+      icon: Home,
+      items: [
+        { label: 'Dashboard', href: '/', icon: BarChart3 },
+        { label: 'Services', href: '/service-marketplace', icon: ShoppingCart },
+        { label: 'Talent', href: '/talent-directory', icon: Users },
+        { label: 'Analytics', href: '/analytics-dashboard', icon: TrendingUp },
+      ]
+    },
+    {
+      id: 'ai-services',
+      title: 'AI Services',
+      icon: Cpu,
+      items: [
+        { label: 'AI Education', href: '/ai-powered-education-training', icon: BookOpen },
+        { label: 'AI Security', href: '/ai-powered-security-cybersecurity', icon: Shield },
+        { label: 'AI Analytics', href: '/ai-powered-analytics', icon: BarChart3 },
+        { label: 'AI Machine Learning', href: '/ai-powered-machine-learning', icon: Brain },
+        { label: 'AI Quantum Computing', href: '/ai-powered-quantum-computing', icon: Zap },
+        { label: 'AI Robotics', href: '/ai-powered-robotics', icon: Bot },
+        { label: 'AI Blockchain', href: '/ai-powered-blockchain', icon: Database },
+        { label: 'AI IoT', href: '/ai-powered-iot', icon: Wifi },
+        { label: 'AI VR/AR', href: '/ai-powered-virtual-reality', icon: Eye },
+        { label: 'AI Healthcare', href: '/ai-powered-healthcare-medical-diagnostics', icon: Heart },
+      ]
+    },
+    {
+      id: 'business',
+      title: 'Business',
+      icon: Building,
+      items: [
+        { label: 'Project Management', href: '/project-management', icon: Folder },
+        { label: 'Invoice & Billing', href: '/invoice-billing', icon: CreditCard },
+        { label: 'Payment Processing', href: '/payment-processing', icon: CreditCard },
+        { label: 'Compliance', href: '/compliance-governance', icon: Shield },
+        { label: 'Help Center', href: '/help-center', icon: HelpCircle },
+        { label: 'FAQ', href: '/faq', icon: FileText },
+      ]
+    },
+    {
+      id: 'communication',
+      title: 'Communication',
+      icon: MessageSquare,
+      items: [
+        { label: 'Real-time Chat', href: '/real-time-chat', icon: MessageSquare },
+        { label: 'Notifications', href: '/notifications', icon: Bell },
+        { label: 'Inbox', href: '/inbox', icon: Mail },
+        { label: 'API Docs', href: '/api-docs', icon: Code },
+      ]
+    },
+    {
+      id: 'tools',
+      title: 'Tools',
+      icon: Settings,
+      items: [
+        { label: 'AI Contract Generator', href: '/ai-contract-generator', icon: FileText },
+        { label: 'AI Resume Builder', href: '/ai-resume-builder', icon: User },
+        { label: 'AI Invoice Generator', href: '/ai-invoice-generator', icon: CreditCard },
+        { label: 'Workflow Designer', href: '/workflow-designer', icon: Workflow },
+        { label: 'Advanced Search', href: '/advanced-search', icon: Search },
+      ]
+    }
+  ]
+
+  const toggleSection = (sectionId: string) => {
+    const newExpanded = new Set(expandedSections)
+    if (newExpanded.has(sectionId)) {
+      newExpanded.delete(sectionId)
+    } else {
+      newExpanded.add(sectionId)
+    }
+    setExpandedSections(newExpanded)
+  }
+
+  const isActive = (href: string) => {
+    return router.pathname === href
+  }
+
+  const filteredSections = navigationSections.map(section => ({
+    ...section,
+    items: section.items.filter(item => 
+      item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.href.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  })).filter(section => section.items.length > 0)
+
+  return (
+    <>
+      {/* Mobile overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div className={`
+        fixed top-0 left-0 h-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 
+        border-r border-gray-700 z-50 transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:relative lg:z-auto
+        w-80 shadow-2xl
+      `}>
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-700">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            <h1 className="text-xl font-bold text-white">Bolt.new</h1>
+          </div>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            <X className="w-5 h-5 text-gray-300" />
+          </button>
+        </div>
+
+        {/* Search */}
+        <div className="p-4 border-b border-gray-700">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="flex-1 overflow-y-auto py-4">
+          <nav className="space-y-2">
+            {filteredSections.map((section) => (
+              <div key={section.id} className="px-4">
+                <button
+                  onClick={() => toggleSection(section.id)}
+                  className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <section.icon className="w-5 h-5" />
+                    <span className="font-medium">{section.title}</span>
+                  </div>
+                  {expandedSections.has(section.id) ? (
+                    <ChevronDown className="w-4 h-4" />
+                  ) : (
+                    <ChevronRight className="w-4 h-4" />
+                  )}
+                </button>
+                
+                {expandedSections.has(section.id) && (
+                  <div className="ml-8 mt-2 space-y-1">
+                    {section.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`
+                          flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors
+                          ${isActive(item.href) 
+                            ? 'bg-blue-600 text-white' 
+                            : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                          }
+                        `}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.icon && <item.icon className="w-4 h-4" />}
+                        <span className="text-sm">{item.label}</span>
+                        {item.badge && (
+                          <span className="ml-auto px-2 py-1 text-xs bg-blue-600 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+        </div>
+
+        {/* Footer */}
+        <div className="p-4 border-t border-gray-700">
+          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
+            <User className="w-5 h-5" />
+            <span className="text-sm">Profile</span>
+          </div>
+          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
+            <Settings className="w-5 h-5" />
+            <span className="text-sm">Settings</span>
+          </div>
+          <div className="flex items-center space-x-3 p-3 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded-lg transition-colors cursor-pointer">
+            <LogOut className="w-5 h-5" />
+            <span className="text-sm">Logout</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile toggle button */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-gray-800 rounded-lg shadow-lg"
+      >
+        <Menu className="w-6 h-6 text-white" />
+      </button>
+    </>
+  )
+}
+
+export default Sidebar 
