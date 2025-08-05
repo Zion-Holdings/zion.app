@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-04T16:10:55.954Z",
+  "timestamp": "2025-08-05T00:11:48.362Z",
   "summary": {
-    "totalPages": 138,
-    "missingPages": 20,
-    "contentGaps": 137,
+    "totalPages": 18,
+    "missingPages": 19,
+    "contentGaps": 18,
     "errors": 0
   },
   "priorities": {
@@ -99,35 +99,28 @@
         "description": "Missing expected page: /admin"
       },
       {
-        "url": "https://ziontechgroup.netlify.app/post-request/",
+        "url": "https://ziontechgroup.netlify.app/search/",
         "type": "broken-link",
         "priority": "high",
         "description": "Broken link: Request failed with status code 404",
         "error": "Request failed with status code 404"
       },
       {
-        "url": "https://ziontechgroup.netlify.app/join-talent/",
+        "url": "https://ziontechgroup.netlify.app/create/",
         "type": "broken-link",
         "priority": "high",
         "description": "Broken link: Request failed with status code 404",
         "error": "Request failed with status code 404"
       },
       {
-        "url": "https://ziontechgroup.netlify.app/privacy/",
+        "url": "https://ziontechgroup.netlify.app/messages/",
         "type": "broken-link",
         "priority": "high",
         "description": "Broken link: Request failed with status code 404",
         "error": "Request failed with status code 404"
       },
       {
-        "url": "https://ziontechgroup.netlify.app/terms/",
-        "type": "broken-link",
-        "priority": "high",
-        "description": "Broken link: Request failed with status code 404",
-        "error": "Request failed with status code 404"
-      },
-      {
-        "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
+        "url": "https://ziontechgroup.netlify.app/auth/",
         "type": "broken-link",
         "priority": "high",
         "description": "Broken link: Request failed with status code 404",
@@ -234,35 +227,28 @@
           "description": "Missing expected page: /admin"
         },
         {
-          "url": "https://ziontechgroup.netlify.app/post-request/",
+          "url": "https://ziontechgroup.netlify.app/search/",
           "type": "broken-link",
           "priority": "high",
           "description": "Broken link: Request failed with status code 404",
           "error": "Request failed with status code 404"
         },
         {
-          "url": "https://ziontechgroup.netlify.app/join-talent/",
+          "url": "https://ziontechgroup.netlify.app/create/",
           "type": "broken-link",
           "priority": "high",
           "description": "Broken link: Request failed with status code 404",
           "error": "Request failed with status code 404"
         },
         {
-          "url": "https://ziontechgroup.netlify.app/privacy/",
+          "url": "https://ziontechgroup.netlify.app/messages/",
           "type": "broken-link",
           "priority": "high",
           "description": "Broken link: Request failed with status code 404",
           "error": "Request failed with status code 404"
         },
         {
-          "url": "https://ziontechgroup.netlify.app/terms/",
-          "type": "broken-link",
-          "priority": "high",
-          "description": "Broken link: Request failed with status code 404",
-          "error": "Request failed with status code 404"
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
+          "url": "https://ziontechgroup.netlify.app/auth/",
           "type": "broken-link",
           "priority": "high",
           "description": "Broken link: Request failed with status code 404",
@@ -286,7 +272,27 @@
           ]
         },
         {
-          "url": "https://ziontechgroup.netlify.app/marketplace/",
+          "url": "https://ziontechgroup.netlify.app/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/blog/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/about/",
           "gaps": [
             {
               "type": "missing-images",
@@ -294,9 +300,79 @@
               "description": "Page could benefit from visual content"
             },
             {
-              "type": "insufficient-content",
+              "type": "missing-contact-form",
               "severity": "medium",
-              "description": "Page has insufficient content for SEO"
+              "description": "Contact page lacks contact form"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/contact/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "missing-contact-form",
+              "severity": "medium",
+              "description": "Contact page lacks contact form"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/notifications/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/profile/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "missing-contact-form",
+              "severity": "medium",
+              "description": "Contact page lacks contact form"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/auth/login/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/auth/signup/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/marketplace/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
             }
           ]
         },
@@ -307,11 +383,6 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },
@@ -337,286 +408,11 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },
         {
           "url": "https://ziontechgroup.netlify.app/products/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/inbox/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/webhook-management/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/executive-dashboard/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/compliance-governance/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/workflow-designer/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/data-warehouse-etl/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/help-desk-support/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/investor-matchmaking/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-project-management/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-immersive-marketplace/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-autonomous-vehicle-transportation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-smart-city-management/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/about/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/auth/login/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/auth/signup/",
           "gaps": [
             {
               "type": "missing-images",
@@ -657,1461 +453,6 @@
         },
         {
           "url": "https://ziontechgroup.netlify.app/services/performance-optimization/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/digital-transformation-strategies/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/cybersecurity-in-the-age-of-ai/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/machine-learning-in-healthcare/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/blockchain-for-supply-chain-management/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-service-matcher/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-recommendation-engine/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-portfolio-builder/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-contract-generator/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-invoice-generator/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-resume-builder/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-business-intelligence-dashboard/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/services/business-intelligence-chat/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/services/security-auditing-chat/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/services/system-administration-chat/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/services/edge-ai-implementation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/real-time-chat/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/notifications/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/payment-processing/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/service-request-system/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/advanced-search/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/review-system/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/analytics-dashboard/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/user-profiles/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/multi-language/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/seo-optimization/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/escrow-services/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/warranty-protection/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/invoice-billing/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/dispute-resolution/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/skill-verification/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/marketplace-pricing/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/referral-affiliate/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/service-categories/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/mobile-responsive/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/service-marketplace/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/talent-directory/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/quote-requests/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/project-management/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/smart-notifications/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/contact/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/quote-request/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/admin-dashboard/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-automation/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-seo/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-multi-language/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-mobile-responsive/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-content-management/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-security/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-testing/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-customer-support/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-data-analytics/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-recommendations/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-pricing-estimation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-learning-platform/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-loyalty-rewards/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-wishlist-comparison/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-contract-legal/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-subscription-membership/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-identity-verification/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-bidding-auction/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quality-assurance/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-inventory-supply-chain/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-business-intelligence/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-workflow-orchestration/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-governance-compliance/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-collaboration-team/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-collaboration-workspace/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-virtual-reality-marketplace/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-autonomous-drone-delivery-logistics/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-dao-governance-system/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-neural-interface-bci-system/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-synthetic-biology-genetic-engineering/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-annealing-optimization/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-cryptography-secure-communication/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-machine-learning-neural-networks/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-error-correction-fault-tolerance/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-simulation-algorithm-development/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-sensing-metrology/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-communication-networking/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-memory-storage/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-development-platform/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-ai-assistant-intelligence/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-ai-superintelligence-transcendence/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-ai-cosmic-consciousness-divine-intelligence/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-ai-multiversal-intelligence-dimensional-transcendence/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/sitemap/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-analytics/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-security-cybersecurity/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-education-training/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-mixed-reality-spatial-computing/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-augmented-reality/",
-          "gaps": [
-            {
-              "type": "missing-meta-description",
-              "severity": "medium",
-              "description": "Page lacks meta description for SEO"
-            },
-            {
-              "type": "missing-headings",
-              "severity": "high",
-              "description": "Page lacks proper heading structure"
-            },
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-autonomous-vehicle-transportation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-biometric-authentication/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-computing/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-entanglement-teleportation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-space-exploration-satellite-management/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-underwater-exploration-marine-research/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-climate-change-environmental-sustainability/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-precision-agriculture-smart-farming/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-healthcare-medical-diagnostics/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-energy-management-renewable-energy/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-manufacturing-industrial-automation/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-finance-banking/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-retail-ecommerce/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-entertainment-gaming/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-social-media-community/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/ai-powered-urban-development-smart-infrastructure/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/privacy-policy/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/terms-of-service/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/accessibility/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/auth/forgot-password/",
           "gaps": [
             {
               "type": "missing-images",

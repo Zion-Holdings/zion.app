@@ -90,35 +90,28 @@
     "description": "Missing expected page: /admin"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/post-request/",
+    "url": "https://ziontechgroup.netlify.app/search/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/join-talent/",
+    "url": "https://ziontechgroup.netlify.app/create/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/privacy/",
+    "url": "https://ziontechgroup.netlify.app/messages/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/terms/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
+    "url": "https://ziontechgroup.netlify.app/auth/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
