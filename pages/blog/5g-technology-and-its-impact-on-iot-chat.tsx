@@ -36,7 +36,7 @@ const Page5gTechnologyAndItsImpactOnIotChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • expert-consultation • future-predictions</span>
+              <span>Expert Discussion • customer-focused • problem-solution</span>
             </div>
           </div>
           
