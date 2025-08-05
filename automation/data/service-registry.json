@@ -2206,7 +2206,558 @@
         },
         "updatedAt": "2025-08-05T00:09:51.069Z"
       }
+    ],
+    [
+      "28f57cd2-6f78-4a89-9260-cd29482aa9b7",
+      {
+        "id": "28f57cd2-6f78-4a89-9260-cd29482aa9b7",
+        "type": "mobile-app",
+        "name": "Enterprise MOBILE APP Service",
+        "description": "A state-of-the-art mobile application that provides seamless cross-platform functionality and intuitive user interfaces.",
+        "capabilities": [
+          "ios",
+          "android",
+          "cross-platform",
+          "native"
+        ],
+        "technologies": [
+          "react-native",
+          "flutter",
+          "swift",
+          "kotlin"
+        ],
+        "marketSegments": [
+          "consumer",
+          "enterprise",
+          "healthcare",
+          "education"
+        ],
+        "pricing": {
+          "basePrice": 25000,
+          "finalPrice": 24000,
+          "priceRange": {
+            "min": 15000,
+            "max": 40000
+          },
+          "complexityMultiplier": 0.8,
+          "timelineMultiplier": 1.2,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "6-12 weeks",
+        "features": [
+          "push-notifications",
+          "offline-support",
+          "biometric-auth",
+          "in-app-purchases"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-05T00:14:07.775Z",
+        "marketAnalysis": {
+          "marketSize": "$100B",
+          "growthRate": "15%",
+          "competition": "Low",
+          "demand": "High",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Consumers",
+            "Businesses",
+            "Developers"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - mobile-app",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - mobile-app",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "24/7 support",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/mobile-app-services",
+            "features": [
+              "push-notifications",
+              "offline-support",
+              "biometric-auth",
+              "in-app-purchases"
+            ],
+            "pricing": {
+              "basePrice": 25000,
+              "finalPrice": 24000,
+              "priceRange": {
+                "min": 15000,
+                "max": 40000
+              },
+              "complexityMultiplier": 0.8,
+              "timelineMultiplier": 1.2,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of MOBILE APP",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "mobile-app",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of MOBILE APP",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/mobile-app-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "MOBILE APP Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/mobile-app-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our mobile-app solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "mobile-app services",
+                "mobile-app development",
+                "mobile-app solutions"
+              ],
+              "adCopy": "Professional mobile-app development services. Get your free consultation today.",
+              "landingPage": "/mobile-app-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our mobile-app solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-05T00:14:07.775Z"
+      }
+    ],
+    [
+      "02011ce8-17e3-47cf-b52c-2ced970f1017",
+      {
+        "id": "02011ce8-17e3-47cf-b52c-2ced970f1017",
+        "type": "data-analytics",
+        "name": "Pro DATA ANALYTICS Solution",
+        "description": "A powerful data analytics solution that transforms complex data into actionable business insights and strategic recommendations.",
+        "capabilities": [
+          "data-processing",
+          "visualization",
+          "reporting",
+          "predictive-analytics"
+        ],
+        "technologies": [
+          "python",
+          "pandas",
+          "numpy",
+          "matplotlib",
+          "tableau"
+        ],
+        "marketSegments": [
+          "business-intelligence",
+          "marketing",
+          "finance",
+          "healthcare"
+        ],
+        "pricing": {
+          "basePrice": 28000,
+          "finalPrice": 36400,
+          "priceRange": {
+            "min": 15000,
+            "max": 45000
+          },
+          "complexityMultiplier": 1.3,
+          "timelineMultiplier": 1,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "4-10 weeks",
+        "features": [
+          "data-pipeline",
+          "dashboard",
+          "automated-reports",
+          "ml-integration"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-05T00:14:07.781Z",
+        "marketAnalysis": {
+          "marketSize": "$80B",
+          "growthRate": "14%",
+          "competition": "Medium",
+          "demand": "Stable",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Businesses",
+            "Marketing agencies",
+            "Consulting firms"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - data-analytics",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - data-analytics",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "Customizable solutions",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/data-analytics-services",
+            "features": [
+              "data-pipeline",
+              "dashboard",
+              "automated-reports",
+              "ml-integration"
+            ],
+            "pricing": {
+              "basePrice": 28000,
+              "finalPrice": 36400,
+              "priceRange": {
+                "min": 15000,
+                "max": 45000
+              },
+              "complexityMultiplier": 1.3,
+              "timelineMultiplier": 1,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of DATA ANALYTICS",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "data-analytics",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of DATA ANALYTICS",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/data-analytics-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "DATA ANALYTICS Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/data-analytics-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our data-analytics solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "data-analytics services",
+                "data-analytics development",
+                "data-analytics solutions"
+              ],
+              "adCopy": "Professional data-analytics development services. Get your free consultation today.",
+              "landingPage": "/data-analytics-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our data-analytics solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-05T00:14:07.781Z"
+      }
     ]
   ],
-  "lastUpdated": "2025-08-05T00:09:51.069Z"
+  "lastUpdated": "2025-08-05T00:14:07.781Z"
 }

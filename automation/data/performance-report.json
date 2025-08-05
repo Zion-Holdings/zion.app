@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-05T00:09:51.068Z",
-  "services": 0,
-  "agents": 13,
-  "totalRevenue": 17407,
-  "averageConversionRate": 0
+  "timestamp": "2025-08-05T00:14:07.818Z",
+  "services": 10,
+  "agents": 21,
+  "totalRevenue": 90408,
+  "averageConversionRate": 0.38095238095238093
 }
