@@ -63,7 +63,7 @@ const ResetPassword: NextPage = () => {
   }
 
   return (
-    <PageLayout>
+    <AuthLayout>
       <Head>
         <title>Reset Password - Zion</title>
         <meta name="description" content="Reset your Zion account password." />
@@ -139,7 +139,7 @@ const ResetPassword: NextPage = () => {
           </div>
         </div>
       </div>
-    </PageLayout>
+    </AuthLayout>
   )
 }
 

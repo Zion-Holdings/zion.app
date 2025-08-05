@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import PageLayout from '../../components/layout/PageLayout'
+import AuthLayout from '../../components/layout/AuthLayout'
 
 const Verify: NextPage = () => {
   const router = useRouter()
@@ -26,7 +26,7 @@ const Verify: NextPage = () => {
   }, [router.query])
 
   return (
-    <PageLayout>
+    <AuthLayout>
       <Head>
         <title>Email Verification - Zion</title>
         <meta name="description" content="Verify your email address to complete your Zion account setup." />
@@ -85,7 +85,7 @@ const Verify: NextPage = () => {
           )}
         </div>
       </div>
-    </PageLayout>
+    </AuthLayout>
   )
 }
 

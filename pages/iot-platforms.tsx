@@ -134,7 +134,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure Implementation</h3>
-                <p className="text-gray-600">Enterprise-grade security for your sensitive data</p>
+                <p className="text-high-contrast-tertiary">Enterprise-grade security for your sensitive data</p>
               </motion.div>
               
               <motion.div
@@ -150,7 +150,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
-                <p className="text-gray-600">Round-the-clock support to ensure your success</p>
+                <p className="text-high-contrast-tertiary">Round-the-clock support to ensure your success</p>
               </motion.div>
               
             </div>
@@ -168,7 +168,7 @@ const IotPlatforms = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Why Choose Our Iot Platforms
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Experience the benefits that transform your business operations
               </p>
             </motion.div>
@@ -189,7 +189,7 @@ const IotPlatforms = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Enhanced Productivity</h3>
-                  <p className="text-gray-600">Boost productivity with AI-powered tools and automation</p>
+                  <p className="text-high-contrast-tertiary">Boost productivity with AI-powered tools and automation</p>
                 </div>
               </motion.div>
               
@@ -207,7 +207,7 @@ const IotPlatforms = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Improved Accuracy</h3>
-                  <p className="text-gray-600">Reduce errors and improve accuracy with intelligent systems</p>
+                  <p className="text-high-contrast-tertiary">Reduce errors and improve accuracy with intelligent systems</p>
                 </div>
               </motion.div>
               
@@ -225,7 +225,7 @@ const IotPlatforms = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Cost Optimization</h3>
-                  <p className="text-gray-600">Lower costs while maintaining or improving performance</p>
+                  <p className="text-high-contrast-tertiary">Lower costs while maintaining or improving performance</p>
                 </div>
               </motion.div>
               
@@ -243,7 +243,7 @@ const IotPlatforms = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Competitive Advantage</h3>
-                  <p className="text-gray-600">Stay ahead of the competition with cutting-edge technology</p>
+                  <p className="text-high-contrast-tertiary">Stay ahead of the competition with cutting-edge technology</p>
                 </div>
               </motion.div>
               
