@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -595,7 +595,7 @@ return: (
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <span className="text-lg font-medium">Loading Talents...</span>
+            <span className="text-lg:font-medium">Loading Talents...</span>
           </div>
         </div>
       </div>;
@@ -613,69 +613,69 @@ return: (
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl:font-bold text-white">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
                 </h1>
               </Link>
             </div>
             
             {/* Desktop Navigation - Main Links */}
-            <div className="hidden lg  flex  items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden lg: flex  items-center space-x-6">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/equipment" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Equipment
               </Link>
-              <Link href="/products" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Products
               </Link>
             </div>
 ,
             {/* Desktop Navigation - Auth & Actions */}
-            <div className="hidden lg  flex  items-center space-x-4">
-              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden lg: flex  items-center space-x-4">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm:font-medium transition-all duration-300 shadow-lg:hover:shadow-purple-500/25">
 Join: Zion Now
               </Link>
             </div>
 ,
             {/* Tablet Navigation - Reduced Links */}
-            <div className="hidden md  flex lg hidden  items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md: flex lg:hidden  items-center space-x-4">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-3 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md:text-sm:font-medium transition-all duration-300 shadow-lg:hover:shadow-purple-500/25">
                 Join: </Link>
             </div>
 ,
             {/* Mobile menu button */}
-            <div className="md  hidden  flex items-center">
+            <div className="md: hidden  flex items-center">
               <button,
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover  text-white focus outline-none focus text-white"
+                className="text-gray-300 hover: text-white focus outline-none focus text-white"
               >
                 <svg: className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">,
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -686,24 +686,24 @@ Join: Zion Now
 
           {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md  hidden  bg-black/90 backdrop-blur-md border-t border-white/10">
-              <div className="px-4 pt-2 pb-3 space-y-1 sm px-3">,
+            <div className="md: hidden  bg-black/90 backdrop-blur-md:border-t border-white/10">
+              <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">,
                 {/* Main: Navigation */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Main</h3>
-                  <Link href="/marketplace" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/marketplace" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Marketplace
                   </Link>
-                  <Link href="/services" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/services" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Services
                   </Link>
-                  <Link href="/talents" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/talents" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Talents
                   </Link>
-                  <Link href="/equipment" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/equipment" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Equipment
                   </Link>
-                  <Link href="/products" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/products" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Products
                   </Link>
                 </div>
@@ -711,16 +711,16 @@ Join: Zion Now
                 {/* Tools & Features */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3>
-                  <Link href="/real-time-chat" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/real-time-chat" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Live Chat
                   </Link>
-                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     AI Assistant
                   </Link>
-                  <Link href="/advanced-search" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/advanced-search" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Search
                   </Link>
-                  <Link href="/analytics-dashboard" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Analytics
                   </Link>
                 </div>
@@ -728,23 +728,23 @@ Join: Zion Now
                 {/* Resources */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Resources</h3>
-                  <Link href="/blog" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/blog" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Blog
                   </Link>
-                  <Link href="/about" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/about" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     About
                   </Link>
-                  <Link href="/notifications" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/notifications" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Notifications
                   </Link>
                 </div>
 ,
                 {/* Authentication */}
                 <div className="border-t border-white/10 pt-4">
-                  <Link href="/auth/login" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/auth/login" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md:text-base font-medium">
                     Login
                   </Link>
-                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white block px-3 py-4 rounded-md:text-base font-medium">
                     Join Zion Now
                   </Link>
                 </div>
@@ -754,49 +754,49 @@ Join: Zion Now
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4">
+          <h1 className="text-4xl:md: text-5xl: font-bold text-white mb-4">
             Talent Directory
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">,
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">,
             Connect with verified professionals and experts in AI, web development, 
             mobile apps, cloud services, blockchain, and data science.
           </p>
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6 mb-8">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6 mb-8">
           {categories.map((category) => (
             <button,
               key={category.id}
               onClick={() => setSelectedCategory(selectedCategory === category.name ? 'all' : category.name)}
-              className={`p-6: rounded-xl border transition-all duration-300 ${
+              className={`p-6: rounded-xl:border transition-all duration-300 ${
                 selectedCategory === category.name
                   ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/50'
                   : 'bg-white/5 border-white/10 hover: bg-white/10',
               }`}
             >
               <div: className="text-center">
-                <div className="text-4xl mb-3">{category.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{category.name}</h3>
-                <p className="text-gray-300 text-sm mb-3">{category.description}</p>
-                <div className="text-sm text-high-contrast-tertiary">{category.talentCount} talents</div>
+                <div className="text-4xl:mb-3">{category.icon}</div>
+                <h3 className="text-lg:font-semibold text-white mb-2">{category.name}</h3>
+                <p className="text-gray-300 text-sm:mb-3">{category.description}</p>
+                <div className="text-sm:text-high-contrast-tertiary">{category.talentCount} talents</div>
               </div>
             </button>
           ))}
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 lg  grid-cols-4  gap-4">
-            <div className="lg col-span-2">
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8">
+          <div className="grid grid-cols-1 lg: grid-cols-4  gap-4">
+            <div className="lg:col-span-2">
               <input: type="text",
                 placeholder="Search talents, skills, or expertise..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
               />
             </div>
             
@@ -804,7 +804,7 @@ Join: Zion Now
               <select,
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
               >
                 <option value="relevance">Sort by Relevance</option>
                 <option value="rating">Sort by Rating</option>
@@ -821,7 +821,7 @@ Join: Zion Now
                   const [min, max] = e.target.value.split('-').map(Number);
                   setPriceRange([min, max]);
                 }}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
               >
                 <option value="0-500">All Rates</option>
                 <option value="0-50">$0 - $50/hr</option>
@@ -840,7 +840,7 @@ Join: Zion Now
                 onChange={(e) => setFilterVerified(e.target.checked)}
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500"
               />
-              <span: className="text-sm text-gray-300">Verified Only</span>
+              <span: className="text-sm:text-gray-300">Verified Only</span>
             </label>
             
             <label className="flex items-center space-x-2">
@@ -850,15 +850,15 @@ Join: Zion Now
                 onChange={(e) => setFilterAvailable(e.target.checked)}
                 className="rounded border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500"
               />
-              <span: className="text-sm text-gray-300">Available Only</span>
+              <span: className="text-sm:text-gray-300">Available Only</span>
             </label>
           </div>
         </div>
 ,
         {/* Talents Grid */}
-        <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6">
+        <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">
           {filteredTalents.map((talent) => (,
-            <div key={talent.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover from-white/10 hover to-white/20 transition-all duration-300 transform hover scale-105">,
+            <div key={talent.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">,
               {/* Talent: Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
@@ -870,7 +870,7 @@ Join: Zion Now
                     height={64} 
                    />
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white">{talent.name}</h3>
+                    <h3 className="text-lg:font-semibold text-white">{talent.name}</h3>
                     <p className="text-high-contrast-tertiary text-sm">{talent.title}</p>
                   </div>
                 </div>
@@ -890,18 +890,18 @@ Join: Zion Now
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   {renderStars(talent.rating)}
-                  <span className="text-sm text-high-contrast-tertiary">({talent.reviewCount})</span>
+                  <span className="text-sm:text-high-contrast-tertiary">({talent.reviewCount})</span>
                 </div>
                 <div className="text-right">
-                  <p className="text-lg font-bold text-green-400">${talent.hourlyRate}/hr</p>
-                  <p className="text-sm text-high-contrast-tertiary">{talent.experience} years exp.</p>
+                  <p className="text-lg:font-bold text-green-400">${talent.hourlyRate}/hr</p>
+                  <p className="text-sm:text-high-contrast-tertiary">{talent.experience} years exp.</p>
                 </div>
               </div>
 
               {/* Location and Availability */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm text-high-contrast-tertiary">📍 {talent.location}</span>
+                  <span className="text-sm:text-high-contrast-tertiary">📍 {talent.location}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span className="text-sm">{getAvailabilityIcon(talent.availability)}</span>
@@ -928,16 +928,16 @@ Join: Zion Now
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 mb-4 text-center">
                 <div>
-                  <p className="text-sm text-high-contrast-tertiary">Completion</p>
-                  <p className="text-lg font-semibold text-green-400">{talent.completionRate}%</p>
+                  <p className="text-sm:text-high-contrast-tertiary">Completion</p>
+                  <p className="text-lg:font-semibold text-green-400">{talent.completionRate}%</p>
                 </div>
                 <div>
-                  <p className="text-sm text-high-contrast-tertiary">Projects</p>
-                  <p className="text-lg font-semibold text-blue-400">{talent.totalProjects}</p>
+                  <p className="text-sm:text-high-contrast-tertiary">Projects</p>
+                  <p className="text-lg:font-semibold text-blue-400">{talent.totalProjects}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-high-contrast-tertiary">Response</p>
-                  <p className="text-lg font-semibold text-purple-400">{talent.responseTime}</p>
+                  <p className="text-sm:text-high-contrast-tertiary">Response</p>
+                  <p className="text-lg:font-semibold text-purple-400">{talent.responseTime}</p>
                 </div>
               </div>
 
@@ -945,11 +945,11 @@ Join: Zion Now
               <div className="flex space-x-3">
                 <button 
                   onClick={() => setSelectedTalent(talent)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"
                 >
 View: Profile
                 </button>
-                <button className="border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                <button className="border border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                   Contact
                 </button>
               </div>
@@ -959,19 +959,19 @@ View: Profile
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Join Our Talent Network
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Are you a skilled professional? Join our talent directory and connect 
               with clients seeking your expertise.
             </p>
-            <div className="flex flex-col sm  flex-row  gap-4 justify-center">
-              <Link href="/join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm: flex-row  gap-4 justify-center">
+              <Link href="/join-talent" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                 Join: as Talent
               </Link>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 Browse Services
               </Link>
             </div>

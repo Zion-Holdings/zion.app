@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 interface EnergyMonitoring {
@@ -438,7 +438,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -449,44 +449,44 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl:font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Space Exploration
               </Link>
-              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Underwater Exploration
               </Link>
-              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Climate Change
               </Link>
-              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Precision Agriculture
               </Link>
-              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Healthcare
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg:text-sm:font-medium hover:from-yellow-700 hover:to-orange-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -495,29 +495,29 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-6">
+          <h1 className="text-5xl:font-bold text-white mb-6">
             AI-Powered Energy Management & Renewable Energy
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
             Advanced AI-powered energy management and renewable energy platform with 
             smart grid optimization, energy analytics, and intelligent energy insights 
             for sustainable and efficient energy systems.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg:font-medium hover:from-yellow-700 hover:to-orange-700 transition-all duration-200">
               Monitor Energy
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover from-green-700 hover to-teal-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg:font-medium hover:from-green-700 hover:to-teal-700 transition-all duration-200">
               Optimize Grid
             </button>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex space-x-1 bg-black/20 rounded-lg p-1 mb-8">
+        <div className="flex space-x-1 bg-black/20 rounded-lg:p-1 mb-8">
           {[
             { id: 'overview', label: 'Overview', icon: '⚡' },
             { id: 'monitoring', label: 'Monitoring', icon: '📊' },
@@ -529,7 +529,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedView(tab.id as any)}
-              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 ${
+              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm:font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-yellow-1200 to-orange-600 text-white'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -543,10 +543,10 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {/* Content Sections */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Energy Monitoring Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Active Energy Systems</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">Active Energy Systems</h3>
               <div className="space-y-4">
                 {energyMonitoring.slice(0, 3).map((system) => (
                   <div key={system.id} className="p-4 bg-white/5 rounded-lg">
@@ -556,8 +556,8 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                         {system.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{system.location} • {system.type}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-gray-400 text-sm:mb-2">{system.location} • {system.type}</p>
+                    <div className="flex items-center space-x-4 text-sm:text-gray-400">
                       <span>Output: {system.currentOutput}%</span>
                       <span>Efficiency: {system.efficiency}%</span>
                     </div>
@@ -567,8 +567,8 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div>
 
             {/* Renewable Energy Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Renewable Energy Systems</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">Renewable Energy Systems</h3>
               <div className="space-y-4">
                 {renewableEnergy.slice(0, 2).map((system) => (
                   <div key={system.id} className="p-4 bg-white/5 rounded-lg">
@@ -578,8 +578,8 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                         {system.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{system.location}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-gray-400 text-sm:mb-2">{system.location}</p>
+                    <div className="flex items-center space-x-4 text-sm:text-gray-400">
                       <span>Output: {formatNumber(system.currentOutput)} kW</span>
                       <span>Efficiency: {system.efficiency}%</span>
                     </div>
@@ -598,7 +598,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg:text-sm:font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-yellow-1200 to-orange-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -610,16 +610,16 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div>
 
             {/* Energy Systems Grid */}
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEnergyMonitoring.map((system) => (
-                <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={system.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{system.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{system.location} • {system.type}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{system.location} • {system.type}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-400">Current Output</span>
@@ -648,23 +648,23 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'renewable' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {renewableEnergy.map((system) => (
-                <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={system.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{system.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{system.location} • {system.type}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{system.location} • {system.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{formatNumber(system.currentOutput)}</div>
+                      <div className="text-2xl:font-bold text-white">{formatNumber(system.currentOutput)}</div>
                       <div className="text-gray-400 text-sm">kW Output</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{system.efficiency}%</div>
+                      <div className="text-2xl:font-bold text-white">{system.efficiency}%</div>
                       <div className="text-gray-400 text-sm">Efficiency</div>
                     </div>
                   </div>
@@ -686,23 +686,23 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'grid' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {smartGrid.map((grid) => (
-                <div key={grid.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={grid.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{grid.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(grid.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(grid.status)} text-white`}>
                       {grid.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{grid.location} • {grid.type}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{grid.location} • {grid.type}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{formatNumber(grid.currentLoad)}</div>
+                      <div className="text-2xl:font-bold text-white">{formatNumber(grid.currentLoad)}</div>
                       <div className="text-gray-400 text-sm">kW Load</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{grid.stability}%</div>
+                      <div className="text-2xl:font-bold text-white">{grid.stability}%</div>
                       <div className="text-gray-400 text-sm">Stability</div>
                     </div>
                   </div>
@@ -724,23 +724,23 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'analytics' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {energyAnalytics.map((analytics) => (
-                <div key={analytics.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={analytics.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{analytics.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(analytics.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{analytics.type} analysis</p>
+                  <p className="text-gray-400 text-sm:mb-4">{analytics.type} analysis</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{formatNumber(analytics.metrics.totalEnergy)}</div>
+                      <div className="text-2xl:font-bold text-white">{formatNumber(analytics.metrics.totalEnergy)}</div>
                       <div className="text-gray-400 text-sm">kWh Total</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{analytics.metrics.renewablePercentage}%</div>
+                      <div className="text-2xl:font-bold text-white">{analytics.metrics.renewablePercentage}%</div>
                       <div className="text-gray-400 text-sm">Renewable</div>
                     </div>
                   </div>
@@ -763,42 +763,42 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{formatNumber(data.totalCapacity)}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{formatNumber(data.totalCapacity)}</div>
                 <div className="text-gray-400">Total Capacity (kW)</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{data.activeSystems}</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{data.activeSystems}</div>
                 <div className="text-gray-400">Active Systems</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{data.renewablePercentage}%</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{data.renewablePercentage}%</div>
                 <div className="text-gray-400">Renewable Energy</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{formatCurrency(data.costSavings)}</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{formatCurrency(data.costSavings)}</div>
                 <div className="text-gray-400">Cost Savings</div>
               </div>
             </div>
 
             {/* AI Insights */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">AI Energy Insights</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">AI Energy Insights</h3>
               <div className="space-y-4">
                 {data.aiInsights.map((insight) => (
                   <div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center space-x-3 mb-2">
                       <span className="text-2xl">{getInsightIcon(insight.impact)}</span>
-                      <h4 className={`text-lg font-medium ${getInsightColor(insight.impact)}`}>
+                      <h4 className={`text-lg:font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
-                      <span className="text-sm text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span>
+                      <span className="text-sm:text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span>
                     </div>
                     <p className="text-gray-300 mb-3">{insight.description}</p>
                     <div className="space-y-2">
                       {insight.recommendations.map((rec, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm text-gray-400">
+                        <div key={index} className="flex items-center space-x-2 text-sm:text-gray-400">
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
@@ -814,8 +814,8 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
-          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -824,35 +824,35 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Features</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover text-white">Live Streaming</Link></li>
-                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover text-white">Voice Assistant</Link></li>
-                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover text-white">Autonomous Vehicles</Link></li>
-                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover text-white">Cryptocurrency</Link></li>
-                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover text-white">Space Exploration</Link></li>
-                <li><Link href="/ai-powered-underwater-exploration-marine-research" className="hover text-white">Underwater Exploration</Link></li>
-                <li><Link href="/ai-powered-climate-change-environmental-sustainability" className="hover text-white">Climate Change</Link></li>
-                <li><Link href="/ai-powered-precision-agriculture-smart-farming" className="hover text-white">Precision Agriculture</Link></li>
-                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="hover text-white">Healthcare</Link></li>
-                <li><Link href="/ai-powered-energy-management-renewable-energy" className="hover text-white">Energy Management</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover:text-white">Live Streaming</Link></li>
+                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover:text-white">Voice Assistant</Link></li>
+                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover:text-white">Autonomous Vehicles</Link></li>
+                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover:text-white">Cryptocurrency</Link></li>
+                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover:text-white">Space Exploration</Link></li>
+                <li><Link href="/ai-powered-underwater-exploration-marine-research" className="hover:text-white">Underwater Exploration</Link></li>
+                <li><Link href="/ai-powered-climate-change-environmental-sustainability" className="hover:text-white">Climate Change</Link></li>
+                <li><Link href="/ai-powered-precision-agriculture-smart-farming" className="hover:text-white">Precision Agriculture</Link></li>
+                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="hover:text-white">Healthcare</Link></li>
+                <li><Link href="/ai-powered-energy-management-renewable-energy" className="hover:text-white">Energy Management</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/marketplace" className="hover text-white">Marketplace</Link></li>
-                <li><Link href="/services" className="hover text-white">IT Services</Link></li>
-                <li><Link href="/talents" className="hover text-white">AI Talents</Link></li>
-                <li><Link href="/equipment" className="hover text-white">Equipment</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
+                <li><Link href="/services" className="hover:text-white">IT Services</Link></li>
+                <li><Link href="/talents" className="hover:text-white">AI Talents</Link></li>
+                <li><Link href="/equipment" className="hover:text-white">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help-desk-support" className="hover text-white">Help Desk</Link></li>
-                <li><Link href="/contact" className="hover text-white">Contact</Link></li>
-                <li><Link href="/docs" className="hover text-white">Documentation</Link></li>
-                <li><Link href="/status" className="hover text-white">Status</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/help-desk-support" className="hover:text-white">Help Desk</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+                <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
+                <li><Link href="/status" className="hover:text-white">Status</Link></li>
               </ul>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -212,7 +212,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -224,15 +224,15 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg:flex items-center justify-center">
                   <span className="text-white text-xl">🔐</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">Quantum Cryptography & Secure Communication</h1>
+                  <h1 className="text-2xl:font-bold text-white">Quantum Cryptography & Secure Communication</h1>
                   <p className="text-gray-300">AI-Powered Quantum Security</p>
                 </div>
               </div>
@@ -242,7 +242,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
               <button
                 onClick={startKeyExchange}
                 disabled={isKeyExchange}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-200 ${
                   isKeyExchange 
                     ? 'bg-yellow-1200 text-white' 
                     : 'bg-blue-600 text-white hover:bg-blue-700'
@@ -257,11 +257,11 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1">
               {[
                 { id: 'dashboard', label: 'Security Dashboard', icon: '🔐' },
                 { id: 'key-distribution', label: 'Key Distribution', icon: '🔑' },
@@ -274,7 +274,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -292,15 +292,15 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             
             {/* Security Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* System Status */}
-                <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg:flex items-center justify-center">
                       <span className="text-white text-lg">🔐</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Quantum Security Status</h3>
+                      <h3 className="text-lg:font-semibold text-white">Quantum Security Status</h3>
                       <p className="text-gray-400 text-sm">Cryptography Lab</p>
                     </div>
                   </div>
@@ -326,23 +326,23 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🔑</div>
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Quick Actions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🔑</div>
                       <div className="font-semibold">Key Exchange</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🛡️</div>
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg:text-white hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🛡️</div>
                       <div className="font-semibold">Encrypt Message</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">✍️</div>
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">✍️</div>
                       <div className="font-semibold">Sign Document</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200">
-                      <div className="text-2xl mb-2">🎲</div>
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg:text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🎲</div>
                       <div className="font-semibold">Generate Random</div>
                     </button>
                   </div>
@@ -353,18 +353,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Key Distribution */}
             {activeTab === 'key-distribution' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Key Distribution</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Key Distribution</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {keyDistribution.map((qkd) => (
-                    <div key={qkd.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={qkd.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{qkd.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{qkd.protocol}</p>
+                          <h3 className="text-lg:font-semibold text-white">{qkd.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{qkd.protocol}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{qkd.keyRate}</div>
+                          <div className="text-2xl:font-bold text-white">{qkd.keyRate}</div>
                           <div className="text-gray-400 text-sm">bits/s</div>
                         </div>
                       </div>
@@ -398,18 +398,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Quantum-Resistant Cryptography */}
             {activeTab === 'resistant-cryptography' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum-Resistant Cryptography</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum-Resistant Cryptography</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {resistantCryptography.map((crypto) => (
-                    <div key={crypto.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={crypto.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{crypto.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{crypto.algorithm}</p>
+                          <h3 className="text-lg:font-semibold text-white">{crypto.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{crypto.algorithm}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{crypto.securityLevel}</div>
+                          <div className="text-2xl:font-bold text-white">{crypto.securityLevel}</div>
                           <div className="text-gray-400 text-sm">bits</div>
                         </div>
                       </div>
@@ -443,18 +443,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Secure Communication */}
             {activeTab === 'secure-communication' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Secure Communication</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Secure Communication</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {secureCommunication.map((comm) => (
-                    <div key={comm.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={comm.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{comm.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{comm.channel}</p>
+                          <h3 className="text-lg:font-semibold text-white">{comm.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{comm.channel}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{comm.throughput}</div>
+                          <div className="text-2xl:font-bold text-white">{comm.throughput}</div>
                           <div className="text-gray-400 text-sm">Mbps</div>
                         </div>
                       </div>
@@ -462,7 +462,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                       <div className="space-y-3">
                         <div className="flex justify-between">
                           <span className="text-gray-300">Encryption</span>
-                          <span className="text-white text-sm capitalize">{comm.encryption}</span>
+                          <span className="text-white text-sm:capitalize">{comm.encryption}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-300">Message Size</span>
@@ -488,18 +488,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Random Generation */}
             {activeTab === 'random-generation' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Random Number Generation</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Random Number Generation</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {randomGeneration.map((rng) => (
-                    <div key={rng.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={rng.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{rng.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{rng.source}</p>
+                          <h3 className="text-lg:font-semibold text-white">{rng.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{rng.source}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{rng.entropyRate}</div>
+                          <div className="text-2xl:font-bold text-white">{rng.entropyRate}</div>
                           <div className="text-gray-400 text-sm">bits/s</div>
                         </div>
                       </div>
@@ -533,18 +533,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Digital Signatures */}
             {activeTab === 'digital-signatures' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Digital Signatures</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Digital Signatures</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {digitalSignatures.map((sig) => (
-                    <div key={sig.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={sig.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{sig.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{sig.scheme}</p>
+                          <h3 className="text-lg:font-semibold text-white">{sig.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{sig.scheme}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{sig.securityLevel}</div>
+                          <div className="text-2xl:font-bold text-white">{sig.securityLevel}</div>
                           <div className="text-gray-400 text-sm">bits</div>
                         </div>
                       </div>
@@ -578,18 +578,18 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
             {/* Cryptographic Protocols */}
             {activeTab === 'cryptographic-protocols' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Cryptographic Protocols</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Cryptographic Protocols</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {cryptographicProtocols.map((protocol) => (
-                    <div key={protocol.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={protocol.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{protocol.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{protocol.type}</p>
+                          <h3 className="text-lg:font-semibold text-white">{protocol.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{protocol.type}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{protocol.security}%</div>
+                          <div className="text-2xl:font-bold text-white">{protocol.security}%</div>
                           <div className="text-gray-400 text-sm">Security</div>
                         </div>
                       </div>
@@ -612,7 +612,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                       </div>
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
-                        <div className="text-sm text-gray-300 mb-2">Applications:</div>
+                        <div className="text-sm:text-gray-300 mb-2">Applications:</div>
                         <div className="flex flex-wrap gap-1">
                           {protocol.applications.map((app, index) => (
                             <span key={index} className="text-xs bg-blue-600 text-white px-4 py-3 rounded">
@@ -632,12 +632,12 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Cryptography & Secure Communication | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm:mt-2">
               Advanced quantum cryptography, key distribution, and secure communication protocols
             </p>
           </div>

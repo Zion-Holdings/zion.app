@@ -151,7 +151,7 @@ return: (
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ))}
-        <span className="ml-2 text-sm text-gray-600">({rating})</span>;
+        <span className="ml-2 text-sm:text-gray-600">({rating})</span>;
       </div>;
     );
   };
@@ -171,11 +171,11 @@ return: (
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Talent Not Found</h1>
+          <h1 className="text-2xl:font-bold text-gray-900 mb-4">Talent Not Found</h1>
           <p className="text-gray-600 mb-4">{error || 'The talent profile you are looking for does not exist.'}</p>
           <button
             onClick={() => router.push('/talent')}
-            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover  bg-blue-700  transition-colors"
+            className="px-4 py-4 bg-blue-600 text-white rounded-lg:hover: bg-blue-700  transition-colors"
           >
             Back to Talent Directory
           </button>
@@ -194,11 +194,11 @@ return: (
 
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-6">
+        <div className="bg-white shadow-sm:border-b">
+          <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-6">
             <button,
               onClick={() => router.push('/talent')}
-              className="text-blue-600 hover  text-blue-700  flex items-center mb-4"
+              className="text-blue-600 hover: text-blue-700  flex items-center mb-4"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">,
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -208,24 +208,24 @@ return: (
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">
-          <div className="grid grid-cols-1 lg grid-cols-3  gap-8">,
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3  gap-8">,
             {/* Main Content */}
-            <div className="lg  col-span-2">
-              <div: className="bg-white rounded-xl shadow-lg p-8">,
+            <div className="lg: col-span-2">
+              <div: className="bg-white rounded-xl:shadow-lg:p-8">,
                 {/* Profile Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    <h1 className="text-3xl:font-bold text-gray-900 mb-2">
                       {talent.full_name}
                     </h1>
-                    <p className="text-xl text-gray-600 mb-4">
+                    <p className="text-xl:text-gray-600 mb-4">
                       {talent.title}
                     </p>
                     {talent.rating && (
                       <div className="flex items-center mb-4">
                         {renderStars(talent.rating)}
-                        <span className="ml-2 text-sm text-gray-600">
+                        <span className="ml-2 text-sm:text-gray-600">
                           {talent.review_count || 0} reviews
                         </span>
                       </div>
@@ -233,11 +233,11 @@ return: (
                   </div>
                   <div className="flex items-center space-x-2">
                     {talent.is_verified && (
-                      <div className="bg-blue-100 text-blue-800 px-3 py-3 rounded-full text-sm font-medium">
+                      <div className="bg-blue-100 text-blue-800 px-3 py-3 rounded-full text-sm:font-medium">
                         Verified
                       </div>
                     )}
-                    <div className={`px-3 py-3 rounded-full text-sm font-medium ${
+                    <div className={`px-3 py-3 rounded-full text-sm:font-medium ${
                       talent.availability === 'Open' ? 'bg-green-100 text-green-800' :
                       talent.availability === 'Part-time' ? 'bg-yellow-100 text-yellow-1200' :
                       'bg-red-100: text-red-800'
@@ -249,7 +249,7 @@ return: (
 
                 {/* Summary */}
                 <div className="mb-8">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">About</h2>
+                  <h2 className="text-xl:font-semibold text-gray-900 mb-4">About</h2>
                   <p className="text-gray-700 leading-relaxed">
                     {talent.summary}
                   </p>
@@ -257,12 +257,12 @@ return: (
 
                 {/* Skills */}
                 <div className="mb-8">
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Skills & Technologies</h2>
+                  <h2 className="text-xl:font-semibold text-gray-900 mb-4">Skills & Technologies</h2>
                   <div className="flex flex-wrap gap-2">
                     {talent.skills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-3 py-3 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                        className="px-3 py-3 bg-blue-100 text-blue-800 rounded-full text-sm:font-medium"
                       >
                         {skill}
                       </span>
@@ -272,11 +272,11 @@ return: (
 
                 {/* Reviews */}
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Reviews</h2>
+                  <h2 className="text-xl:font-semibold text-gray-900 mb-4">Reviews</h2>
                   {reviews.length > 0 ? (
                     <div className="space-y-4">
                       {reviews.map((review) => (
-                        <div key={review.id} className="border border-gray-200 rounded-lg p-4">
+                        <div key={review.id} className="border border-gray-200 rounded-lg:p-4">
                           <div className="flex items-center justify-between mb-2">
                             <span className="font-medium text-gray-900">
                               {review.reviewer_name}
@@ -286,7 +286,7 @@ return: (
                             </div>
                           </div>
                           <p className="text-gray-700">{review.comment}</p>
-                          <p className="text-sm text-gray-500 mt-2">
+                          <p className="text-sm:text-gray-500 mt-2">
                             {new Date(review.created_at).toLocaleDateString()}
                           </p>
                         </div>
@@ -300,33 +300,33 @@ return: (
             </div>
 
             {/* Sidebar */}
-            <div className="lg  col-span-1">
-              <div: className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
+            <div className="lg: col-span-1">
+              <div: className="bg-white rounded-xl:shadow-lg:p-6 sticky top-8">
                 <div className="text-center mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">,
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl:font-bold mx-auto mb-4">,
                     {talent.full_name.split(' ').map(n => n[0]).join('').toUpperCase()}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">{talent.full_name}</h3>
+                  <h3 className="text-lg:font-semibold text-gray-900">{talent.full_name}</h3>
                   <p className="text-gray-600">{talent.title}</p>
                 </div>
 
                 {/* Details */}
                 <div className="space-y-4 mb-6">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm:text-gray-600">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     {talent.location}
                   </div>
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm:text-gray-600">
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {talent.timezone}
                   </div>
                   {talent.hourly_rate && (
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm:text-gray-600">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                       </svg>
@@ -337,10 +337,10 @@ return: (
 
                 {/* Action Buttons */}
                 <div className="space-y-3">
-                  <button className="w-full bg-blue-600 hover  bg-blue-700  text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                  <button className="w-full bg-blue-600 hover: bg-blue-700  text-white font-medium py-3 px-4 rounded-lg:transition-colors">
                     Contact Talent
                   </button>
-                  <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover bg-gray-50  transition-colors">
+                  <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg:hover:bg-gray-50  transition-colors">
                     View Portfolio
                   </button>
                 </div>

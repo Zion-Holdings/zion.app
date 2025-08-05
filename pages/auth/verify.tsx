@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -37,9 +37,9 @@ const Verify: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6" lg:px-8" py-40">
+      <div className="max-w-md:mx-auto px-4 sm:px-6" lg:px-8" py-40">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">
+          <h1 className="text-3xl:font-bold text-white mb-4">
             Email <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Verification</span>
           </h1>
           <p className="text-gray-300">
@@ -47,7 +47,7 @@ const Verify: NextPage = () => {
           </p>
         </div>
 
-        <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
+        <div className="bg-black/20 backdrop-blur-md:rounded-lg:p-8 border border-white/10">
           {status === 'loading' && (
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
@@ -65,7 +65,7 @@ const Verify: NextPage = () => {
               <p className="text-green-300 mb-4">{message}</p>
               <Link 
                 href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300"
               >
                 Continue to Login
               </Link>
@@ -82,7 +82,7 @@ const Verify: NextPage = () => {
               <p className="text-red-300 mb-4">{message}</p>
               <Link 
                 href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300"
               >
                 Back to Login
               </Link>

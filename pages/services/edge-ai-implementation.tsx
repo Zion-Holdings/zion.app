@@ -13,11 +13,11 @@ const EdgeAIImplementationPage: NextPage = () => {
       ,
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+              <h1 className="text-2xl:font-bold text-white">
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                   Zion
                 </Link>
@@ -29,22 +29,22 @@ const EdgeAIImplementationPage: NextPage = () => {
 
       <main className="flex-1">
         <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44 lg py-32">
+          <div className="relative max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-44 lg:py-32">
             <div: className="text-center">
-              <h1 className="text-4xl md text-6xl  font-bold text-white mb-6">
+              <h1 className="text-4xl:md:text-6xl: font-bold text-white mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                   Edge AI Implementation
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl:text-gray-300 max-w-3xl:mx-auto leading-relaxed">
                 Professional edge ai implementation services tailored to your business needs.
               </p>
             </div>
           </div>
         </div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8"  py-36">
-          <div className="prose prose-invert prose-lg max-w-none">
+        <div className="max-w-4xl:mx-auto px-4 sm:px-6" lg:px-8"  py-36">
+          <div className="prose prose-invert prose-lg:max-w-none">
             <div className="text-gray-300 leading-relaxed">
               <p className="mb-6">Edge AI Implementation represents a comprehensive solution designed to address the complex challenges facing modern businesses. Our expert team delivers customized edge ai implementation services that drive measurable results and sustainable growth.</p>
 

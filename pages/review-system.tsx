@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -325,28 +325,28 @@ return: (
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl:font-bold text-white">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex  items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex  items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/advanced-search" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/advanced-search" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Search
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -354,55 +354,55 @@ return: (
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4">
+          <h1 className="text-4xl:md: text-5xl: font-bold text-white mb-4">
             Review System
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">
             Share your experiences and help others make informed decisions. ,
             Write reviews, browse feedback, and contribute to our trusted community.
           </p>
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md  grid-cols-4  gap-6 mb-8">
-          <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl p-6">
+        <div className="grid grid-cols-1 md: grid-cols-4  gap-6 mb-8">
+          <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-blue-300 text-sm font-medium">Total Reviews</p>,
-                <p className="text-3xl font-bold text-white">{stats.totalReviews}</p>
+                <p className="text-blue-300 text-sm:font-medium">Total Reviews</p>,
+                <p className="text-3xl:font-bold text-white">{stats.totalReviews}</p>
               </div>
               <div className="text-4xl">📝</div>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm:border border-yellow-500/30 rounded-xl:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-yellow-300 text-sm font-medium">Average Rating</p>
-                <p className="text-3xl font-bold text-white">{stats.averageRating.toFixed(1)}</p>
+                <p className="text-yellow-300 text-sm:font-medium">Average Rating</p>
+                <p className="text-3xl:font-bold text-white">{stats.averageRating.toFixed(1)}</p>
               </div>
               <div className="text-4xl">⭐</div>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-green-300 text-sm font-medium">Recent Reviews</p>
-                <p className="text-3xl font-bold text-white">{stats.recentReviews}</p>
+                <p className="text-green-300 text-sm:font-medium">Recent Reviews</p>
+                <p className="text-3xl:font-bold text-white">{stats.recentReviews}</p>
               </div>
               <div className="text-4xl">🆕</div>
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6">
+          <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm:border border-purple-500/30 rounded-xl:p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-purple-300 text-sm font-medium">Verified Reviews</p>
-                <p className="text-3xl font-bold text-white">{stats.verifiedReviews}</p>
+                <p className="text-purple-300 text-sm:font-medium">Verified Reviews</p>
+                <p className="text-3xl:font-bold text-white">{stats.verifiedReviews}</p>
               </div>
               <div className="text-4xl">✓</div>
             </div>
@@ -410,7 +410,7 @@ return: (
         </div>
 
         {/* Tabs */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
+        <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8">
           <div className="flex space-x-1 mb-6">
             {[
               { id: 'write', name: 'Write Review', icon: '✍️' },
@@ -420,7 +420,7 @@ return: (
             ].map((tab) => (
               <button: key={tab.id}
                 onClick={() => setSelectedTab(tab.id as any)}
-                className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
+                className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-lg:font-medium transition-all duration-200 ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover: text-white hover:bg-white/10',
@@ -436,17 +436,17 @@ return: (
           {selectedTab === 'write' && (
             <div className="space-y-6">
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">Write a Review</h3>
+                <h3 className="text-2xl:font-bold text-white mb-4">Write a Review</h3>
                 <p className="text-gray-300 mb-6">Share your experience and help others make informed decisions.</p>
               </div>
 
-              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6">
+              <div className="grid grid-cols-1 lg: grid-cols-2  gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Item Type</label>
+                  <label className="block text-sm:font-medium text-gray-300 mb-2">Item Type</label>
                   <select,
                     value={newReview.itemType}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemType: e.target.value: as any }))}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
                   >
                     <option value="service">Service</option>
                     <option value="talent">Talent</option>
@@ -456,35 +456,35 @@ return: (
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Item Title</label>
+                  <label className="block text-sm:font-medium text-gray-300 mb-2">Item Title</label>
                   <input
                     type="text",
                     value={newReview.itemTitle}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemTitle: e.target.value: }))}
                     placeholder="e.g., AI Model Development"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Provider/Name</label>
+                  <label className="block text-sm:font-medium text-gray-300 mb-2">Provider/Name</label>
                   <input
                     type="text",
                     value={newReview.itemProvider}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemProvider: e.target.value: }))}
                     placeholder="e.g., AI Solutions Pro"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Rating</label>
+                  <label className="block text-sm:font-medium text-gray-300 mb-2">Rating</label>
                   <div className="flex items-center space-x-2">,
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
                         key={star}
                         onClick={() => setNewReview(prev => ({ ...prev, rating: star: }))}
-                        className={`text-2xl ${star <= newReview.rating ? 'text-yellow-400' : 'text-gray-400'}`}
+                        className={`text-2xl:${star <= newReview.rating ? 'text-yellow-400' : 'text-gray-400'}`}
                       >
                         ★
                       </button>
@@ -493,30 +493,30 @@ return: (
                   </div>
                 </div>
 
-                <div className="lg  col-span-2">
-                  <label: className="block text-sm font-medium text-gray-300 mb-2">Review Title</label>
+                <div className="lg: col-span-2">
+                  <label: className="block text-sm:font-medium text-gray-300 mb-2">Review Title</label>
                   <input
                     type="text",
                     value={newReview.title}
                     onChange={(e) => setNewReview(prev => ({ ...prev, title: e.target.value: }))}
                     placeholder="Brief summary of your experience"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                   />
                 </div>
 
-                <div className="lg col-span-2">
-                  <label: className="block text-sm font-medium text-gray-300 mb-2">Detailed Review</label>
+                <div className="lg:col-span-2">
+                  <label: className="block text-sm:font-medium text-gray-300 mb-2">Detailed Review</label>
                   <textarea,
                     value={newReview.comment}
                     onChange={(e) => setNewReview(prev => ({ ...prev, comment: e.target.value: }))}
                     placeholder="Share your detailed experience..."
                     rows={4}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                   />
                 </div>
 
-                <div className="lg col-span-2">
-                  <label: className="block text-sm font-medium text-gray-300 mb-2">Pros (What you liked)</label>,
+                <div className="lg:col-span-2">
+                  <label: className="block text-sm:font-medium text-gray-300 mb-2">Pros (What you liked)</label>,
                   {newReview.pros.map((pro, index) => (
                     <div key={index} className="flex space-x-2 mb-2">
                       <input
@@ -531,7 +531,7 @@ return: (
                           setNewReview(prev => ({ ...prev, pros: newPros: }));
                         }}
                         placeholder="Add a pro..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                       />
                       {index < newReview.pros.length - 1 && (
                         <button
@@ -539,7 +539,7 @@ return: (
                             const newPros = newReview.pros.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, pros: newPros: }));
                           }}
-                          className="text-red-400 hover  text-red-300"
+                          className="text-red-400 hover: text-red-300"
                         >
                           ✕
                         </button>,
@@ -548,8 +548,8 @@ return: (
                   ))}
                 </div>
 
-                <div className="lg  col-span-2">
-                  <label: className="block text-sm font-medium text-gray-300 mb-2">Cons (What could be improved)</label>,
+                <div className="lg: col-span-2">
+                  <label: className="block text-sm:font-medium text-gray-300 mb-2">Cons (What could be improved)</label>,
                   {newReview.cons.map((con, index) => (
                     <div key={index} className="flex space-x-2 mb-2">
                       <input
@@ -564,7 +564,7 @@ return: (
                           setNewReview(prev => ({ ...prev, cons: newCons: }));
                         }}
                         placeholder="Add a con..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
                       />
                       {index < newReview.cons.length - 1 && (
                         <button
@@ -572,7 +572,7 @@ return: (
                             const newCons = newReview.cons.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, cons: newCons: }));
                           }}
-                          className="text-red-400 hover  text-red-300"
+                          className="text-red-400 hover: text-red-300"
                         >
                           ✕
                         </button>,
@@ -586,7 +586,7 @@ return: (
                 <button
                   onClick={handleSubmitReview}
                   disabled={loading}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled cursor-not-allowed text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled cursor-not-allowed text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"
                 >,
                   {loading ? 'Submitting...' : 'Submit: Review'}
                 </button>
@@ -596,16 +596,16 @@ return: (
 
           {selectedTab === 'my-reviews' && (
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">My Reviews</h3>
+              <h3 className="text-2xl:font-bold text-white mb-6">My Reviews</h3>
               <div className="space-y-4">
                 {reviews.filter(r => r.reviewerId === 'current-user' || r.reviewerName === 'You').map((review) => (
-                  <div key={review.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                  <div key={review.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <div className="text-2xl">{getTypeIcon(review.itemType)}</div>
                         <div>
-                          <h4 className="text-lg font-semibold text-white">{review.itemTitle}</h4>
-                          <p className="text-sm text-gray-400">{review.itemProvider}</p>
+                          <h4 className="text-lg:font-semibold text-white">{review.itemTitle}</h4>
+                          <p className="text-sm:text-gray-400">{review.itemProvider}</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -616,13 +616,13 @@ return: (
                       </div>
                     </div>
 
-                    <h5 className="text-lg font-semibold text-white mb-2">{review.title}</h5>
+                    <h5 className="text-lg:font-semibold text-white mb-2">{review.title}</h5>
                     <p className="text-gray-300 mb-4">{review.comment}</p>
 
                     {review.pros.length > 0 && review.pros[0] && (
                       <div className="mb-3">
-                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros: </h6>
-                        <ul: className="text-sm text-gray-300">,
+                        <h6 className="text-sm:font-medium text-green-400 mb-1">Pros: </h6>
+                        <ul: className="text-sm:text-gray-300">,
                           {review.pros.filter(p => p.trim()).map((pro, index) => (
                             <li key={index} className="flex items-center space-x-2">
                               <span className="text-green-400">✓</span>
@@ -635,8 +635,8 @@ return: (
 
                     {review.cons.length > 0 && review.cons[0] && (
                       <div className="mb-4">
-                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons: </h6>
-                        <ul: className="text-sm text-gray-300">,
+                        <h6 className="text-sm:font-medium text-red-400 mb-1">Cons: </h6>
+                        <ul: className="text-sm:text-gray-300">,
                           {review.cons.filter(c => c.trim()).map((con, index) => (
                             <li key={index} className="flex items-center space-x-2">
                               <span className="text-red-400">✗</span>
@@ -647,7 +647,7 @@ return: (
                       </div>
                     )}
 
-                    <div className="flex items-center justify-between text-sm text-gray-400">
+                    <div className="flex items-center justify-between text-sm:text-gray-400">
                       <span>{new Date(review.createdAt).toLocaleDateString()}</span>
                       <div className="flex items-center space-x-4">
                         <span>👍 {review.helpful}</span>
@@ -664,12 +664,12 @@ return: (
           {selectedTab === 'browse' && (
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-white">Browse Reviews</h3>
+                <h3 className="text-2xl:font-bold text-white">Browse Reviews</h3>
                 <div className="flex space-x-4">
                   <select
                     value={filterType}
                     onChange={(e) => setFilterType(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
                   >
                     <option value="all">All Types</option>
                     <option value="service">Services</option>
@@ -680,7 +680,7 @@ return: (
                   <select,
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
                   >
                     <option value="recent">Sort by Recent</option>
                     <option value="rating">Sort by Rating</option>
@@ -692,7 +692,7 @@ return: (
 
               <div className="space-y-4">
                 {filteredReviews.map((review) => (,
-                  <div key={review.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                  <div key={review.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <Image 
@@ -703,8 +703,8 @@ return: (
                           height={40} 
                         />
                         <div>
-                          <h4 className="text-lg font-semibold text-white">{review.reviewerName}</h4>
-                          <p className="text-sm text-gray-400">Reviewed {review.itemTitle}</p>
+                          <h4 className="text-lg:font-semibold text-white">{review.reviewerName}</h4>
+                          <p className="text-sm:text-gray-400">Reviewed {review.itemTitle}</p>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -715,13 +715,13 @@ return: (
                       </div>
                     </div>
 
-                    <h5 className="text-lg font-semibold text-white mb-2">{review.title}</h5>
+                    <h5 className="text-lg:font-semibold text-white mb-2">{review.title}</h5>
                     <p className="text-gray-300 mb-4">{review.comment}</p>
 
                     {review.pros.length > 0 && review.pros[0] && (
                       <div className="mb-3">
-                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros: </h6>
-                        <ul: className="text-sm text-gray-300">,
+                        <h6 className="text-sm:font-medium text-green-400 mb-1">Pros: </h6>
+                        <ul: className="text-sm:text-gray-300">,
                           {review.pros.filter(p => p.trim()).map((pro, index) => (
                             <li key={index} className="flex items-center space-x-2">
                               <span className="text-green-400">✓</span>
@@ -734,8 +734,8 @@ return: (
 
                     {review.cons.length > 0 && review.cons[0] && (
                       <div className="mb-4">
-                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons: </h6>
-                        <ul: className="text-sm text-gray-300">,
+                        <h6 className="text-sm:font-medium text-red-400 mb-1">Cons: </h6>
+                        <ul: className="text-sm:text-gray-300">,
                           {review.cons.filter(c => c.trim()).map((con, index) => (
                             <li key={index} className="flex items-center space-x-2">
                               <span className="text-red-400">✗</span>
@@ -747,16 +747,16 @@ return: (
                     )}
 
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-sm text-gray-400">
+                      <div className="flex items-center space-x-4 text-sm:text-gray-400">
                         <span>{new Date(review.createdAt).toLocaleDateString()}</span>
                         {review.verified && <span className="text-green-400">✓ Verified</span>}
                       </div>
                       <div className="flex items-center space-x-4">
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover  text-white  transition-colors">
+                        <button className="flex items-center space-x-1 text-sm:text-gray-400 hover: text-white  transition-colors">
                           <span>👍</span>,
                           <span>{review.helpful}</span>
                         </button>
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover  text-white  transition-colors">
+                        <button className="flex items-center space-x-1 text-sm:text-gray-400 hover: text-white  transition-colors">
                           <span>👎</span>,
                           <span>{review.notHelpful}</span>
                         </button>
@@ -770,17 +770,17 @@ return: (
 
           {selectedTab === 'analytics' && (
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Review Analytics</h3>
+              <h3 className="text-2xl:font-bold text-white mb-6">Review Analytics</h3>
               
-              <div className="grid grid-cols-1 md  grid-cols-2  gap-8">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                  <h4 className="text-lg font-semibold text-white mb-4">Rating Distribution</h4>
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-8">
+                <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
+                  <h4 className="text-lg:font-semibold text-white mb-4">Rating Distribution</h4>
                   <div className="space-y-3">,
                     {[5, 4, 3, 2, 1].map((rating) => (
                       <div key={rating} className="flex items-center space-x-3">
                         <div className="flex items-center space-x-1">
                           {[1, 2, 3, 4, 5].map((star) => (
-                            <span key={star} className={`text-sm ${star <= rating ? 'text-yellow-400' : 'text-gray-400'}`}>
+                            <span key={star} className={`text-sm:${star <= rating ? 'text-yellow-400' : 'text-gray-400'}`}>
                               ★
                             </span>
                           ))}
@@ -791,7 +791,7 @@ return: (
                             style={{ width: `${(stats.ratingDistribution[rating] || 0) / stats.totalReviews: * 100}%` }}
                           ></div>
                         </div>
-                        <span className="text-sm text-gray-300 w-12 text-right">
+                        <span className="text-sm:text-gray-300 w-12 text-right">
                           {stats.ratingDistribution[rating] || 0}
                         </span>
                       </div>
@@ -799,8 +799,8 @@ return: (
                   </div>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                  <h4 className="text-lg font-semibold text-white mb-4">Review Statistics</h4>
+                <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
+                  <h4 className="text-lg:font-semibold text-white mb-4">Review Statistics</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Total Reviews</span>
@@ -827,18 +827,18 @@ return: (
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Help Build Trust in Our Community
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Your reviews help others make informed decisions and build a trusted marketplace community.
             </p>
-            <div className="flex flex-col sm  flex-row  gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm: flex-row  gap-4 justify-center">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
 Explore: Marketplace
               </Link>
-              <Link href="/advanced-search" className="border border-white/20 text-white hover bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/advanced-search" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 Find Items to Review
               </Link>
             </div>

@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -132,7 +132,7 @@ const DataWarehouseETL: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -151,19 +151,19 @@ const DataWarehouseETL: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <header className="bg-black/20 backdrop-blur-sm:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
+              <Link href="/" className="text-2xl:font-bold text-white">
                 Zion Tech Group
               </Link>
             </div>
-            <nav className="hidden md flex space-x-8">
-              <Link href="/" className="text-gray-300 hover text-white transition-colors">
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link href="/dashboard" className="text-gray-300 hover text-white transition-colors">
+              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">
                 Dashboard
               </Link>
             </nav>
@@ -171,27 +171,27 @@ const DataWarehouseETL: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <main className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl:font-bold text-white mb-4">
             Data Warehouse & ETL Platform
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl">
+          <p className="text-xl:text-gray-300 max-w-4xl">
             Comprehensive data integration, transformation, and warehousing platform for enterprise analytics. 
             Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Data Sources</p>
-                <p className="text-2xl font-bold text-white">{dataSources.length}</p>
+                <p className="text-2xl:font-bold text-white">{dataSources.length}</p>
               </div>
               <div className="text-3xl">🔗</div>
             </div>
@@ -201,12 +201,12 @@ const DataWarehouseETL: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">ETL Pipelines</p>
-                <p className="text-2xl font-bold text-white">{etlPipelines.length}</p>
+                <p className="text-2xl:font-bold text-white">{etlPipelines.length}</p>
               </div>
               <div className="text-3xl">⚙️</div>
             </div>
@@ -216,12 +216,12 @@ const DataWarehouseETL: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Data Warehouses</p>
-                <p className="text-2xl font-bold text-white">{dataWarehouses.length}</p>
+                <p className="text-2xl:font-bold text-white">{dataWarehouses.length}</p>
               </div>
               <div className="text-3xl">🏢</div>
             </div>
@@ -231,12 +231,12 @@ const DataWarehouseETL: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Total Data Size</p>
-                <p className="text-2xl font-bold text-white">{formatBytes(dataWarehouses.reduce((acc, dw) => acc + dw.size, 0))}</p>
+                <p className="text-2xl:font-bold text-white">{formatBytes(dataWarehouses.reduce((acc, dw) => acc + dw.size, 0))}</p>
               </div>
               <div className="text-3xl">💾</div>
             </div>
@@ -253,7 +253,7 @@ const DataWarehouseETL: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-4 rounded-lg font-medium transition-all ${
+              className={`px-4 py-4 rounded-lg:font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-white/10 text-white border border-white/20'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -274,8 +274,8 @@ const DataWarehouseETL: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-8"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">Recent Activity</h3>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
+                <h3 className="text-xl:font-semibold text-white mb-4">Recent Activity</h3>
                 <div className="space-y-4">
                   {etlPipelines.map((pipeline) => (
                     <div key={pipeline.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
@@ -305,16 +305,16 @@ const DataWarehouseETL: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {dataSources.map((source) => (
                   <motion.div
                     key={source.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover bg-white/10 transition-all"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 hover:bg-white/10 transition-all"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-lg font-semibold text-white">{source.name}</h3>
+                      <h3 className="text-lg:font-semibold text-white">{source.name}</h3>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(source.status)}`}>
                         {source.status}
                       </span>
@@ -359,13 +359,13 @@ const DataWarehouseETL: NextPage = () => {
                     key={pipeline.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h4 className="text-lg font-semibold text-white">{pipeline.name}</h4>
+                        <h4 className="text-lg:font-semibold text-white">{pipeline.name}</h4>
                       </div>
-                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(pipeline.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm:font-medium ${getStatusColor(pipeline.status)}`}>
                         {pipeline.status}
                       </span>
                     </div>
@@ -404,14 +404,14 @@ const DataWarehouseETL: NextPage = () => {
                     key={warehouse.id}
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
                   >
                     <div className="flex items-center justify-between mb-6">
                       <div>
-                        <h4 className="text-xl font-semibold text-white">{warehouse.name}</h4>
+                        <h4 className="text-xl:font-semibold text-white">{warehouse.name}</h4>
                         <p className="text-gray-400 capitalize">{warehouse.type}</p>
                       </div>
-                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(warehouse.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm:font-medium ${getStatusColor(warehouse.status)}`}>
                         {warehouse.status}
                       </span>
                     </div>

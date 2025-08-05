@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -307,7 +307,7 @@ const MarketplacePricingPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -318,20 +318,20 @@ const MarketplacePricingPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl:font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/invoice-billing" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Billing
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Login
               </Link>
             </nav>
@@ -340,50 +340,50 @@ const MarketplacePricingPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl:md:text-6xl:font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Marketplace Pricing & Commission
             </span>
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
             Transparent pricing structure and commission system for marketplace participants. 
             Choose the right tier for your business needs and maximize your revenue potential.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg">
               View Pricing
             </Link>
-            <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+            <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
               Calculate Fees
             </Link>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-12">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-white mb-2">{formatCurrency(4800)}</div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center">
+            <div className="text-3xl:font-bold text-white mb-2">{formatCurrency(4800)}</div>
             <p className="text-gray-300 text-sm">Total Revenue</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-white mb-2">{formatCurrency(172)}</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center">
+            <div className="text-3xl:font-bold text-white mb-2">{formatCurrency(172)}</div>
             <p className="text-gray-300 text-sm">Commission Revenue</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-white mb-2">3</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center">
+            <div className="text-3xl:font-bold text-white mb-2">3</div>
             <p className="text-gray-300 text-sm">Active Tiers</p>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
-            <div className="text-3xl font-bold text-white mb-2">15.2%</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center">
+            <div className="text-3xl:font-bold text-white mb-2">15.2%</div>
             <p className="text-gray-300 text-sm">Growth Rate</p>
           </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" pb-12">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -395,7 +395,7 @@ const MarketplacePricingPage: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-lg:font-medium transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                   : 'bg-white/5 text-gray-300 hover:bg-white/10'
@@ -409,10 +409,10 @@ const MarketplacePricingPage: NextPage = () => {
         {/* Period Toggle */}
         {activeTab === 'pricing' && (
           <div className="flex justify-center mb-8">
-            <div className="bg-white/10 rounded-lg p-1">
+            <div className="bg-white/10 rounded-lg:p-1">
               <button
                 onClick={() => setSelectedPeriod('monthly')}
-                className={`px-4 py-4 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-4 rounded-md:text-sm:font-medium transition-colors ${
                   selectedPeriod === 'monthly'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'text-gray-300 hover:text-white'
@@ -422,7 +422,7 @@ const MarketplacePricingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setSelectedPeriod('yearly')}
-                className={`px-4 py-4 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-4 rounded-md:text-sm:font-medium transition-colors ${
                   selectedPeriod === 'yearly'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'text-gray-300 hover:text-white'
@@ -437,25 +437,25 @@ const MarketplacePricingPage: NextPage = () => {
         {/* Tab Content */}
         {activeTab === 'pricing' && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-white text-center mb-8">Choose Your Plan</h2>
+            <h2 className="text-2xl:font-bold text-white text-center mb-8">Choose Your Plan</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {pricingTiers.map((tier) => (
-                <div key={tier.id} className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8 hover:bg-white/10 transition-all duration-300 ${
+                <div key={tier.id} className={`relative bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-8 hover:bg-white/10 transition-all duration-300 ${
                   tier.popular ? 'border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-pink-500/10' : ''
                 }`}>
                   {tier.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-full text-sm font-medium">
+                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-full text-sm:font-medium">
                         Most Popular
                       </span>
                     </div>
                   )}
                   
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+                    <h3 className="text-2xl:font-bold text-white mb-2">{tier.name}</h3>
                     <div className="mb-4">
-                      <span className="text-4xl font-bold text-white">
+                      <span className="text-4xl:font-bold text-white">
                         {selectedPeriod === 'monthly' ? formatCurrency(tier.monthlyFee) : formatCurrency(tier.yearlyFee)}
                       </span>
                       <span className="text-gray-300">/{selectedPeriod === 'monthly' ? 'month' : 'year'}</span>
@@ -498,7 +498,7 @@ const MarketplacePricingPage: NextPage = () => {
                     <h4 className="text-white font-semibold">Features:</h4>
                     <ul className="space-y-2">
                       {tier.features.map((feature, index) => (
-                        <li key={index} className="text-gray-300 text-sm flex items-center">
+                        <li key={index} className="text-gray-300 text-sm:flex items-center">
                           <span className="text-green-400 mr-2">✓</span>
                           {feature}
                         </li>
@@ -506,7 +506,7 @@ const MarketplacePricingPage: NextPage = () => {
                     </ul>
                   </div>
                   
-                  <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                  <button className={`w-full py-3 px-6 rounded-lg:font-semibold transition-all duration-300 ${
                     tier.popular
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
                       : 'bg-white/10 text-white hover:bg-white/20'
@@ -521,14 +521,14 @@ const MarketplacePricingPage: NextPage = () => {
 
         {activeTab === 'commissions' && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-white">Commission Structure</h2>
+            <h2 className="text-2xl:font-bold text-white">Commission Structure</h2>
             
             <div className="space-y-8">
               {commissionStructures.map((structure) => (
-                <div key={structure.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <div key={structure.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6">
                   <div className="flex justify-between items-start mb-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{structure.category}</h3>
+                      <h3 className="text-xl:font-semibold text-white mb-2">{structure.category}</h3>
                       <p className="text-gray-300">Base Commission Rate: {formatPercentage(structure.baseRate)}</p>
                     </div>
                     <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getTierColor('premium')}`}>
@@ -536,7 +536,7 @@ const MarketplacePricingPage: NextPage = () => {
                     </span>
                   </div>
                   
-                  <div className="grid grid-cols-1 md grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-white font-semibold mb-4">Volume Discounts</h4>
                       <div className="space-y-3">
@@ -598,9 +598,9 @@ const MarketplacePricingPage: NextPage = () => {
 
         {activeTab === 'transactions' && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-white">Recent Transactions</h2>
+            <h2 className="text-2xl:font-bold text-white">Recent Transactions</h2>
             
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden">
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-white/10">
@@ -617,7 +617,7 @@ const MarketplacePricingPage: NextPage = () => {
                   </thead>
                   <tbody className="divide-y divide-white/10">
                     {transactions.map((transaction) => (
-                      <tr key={transaction.id} className="hover bg-white/5">
+                      <tr key={transaction.id} className="hover:bg-white/5">
                         <td className="text-white py-3 px-6">{transaction.id}</td>
                         <td className="text-white py-3 px-6">{formatCurrency(transaction.amount)}</td>
                         <td className="text-white py-3 px-6">{transaction.category}</td>
@@ -641,23 +641,23 @@ const MarketplacePricingPage: NextPage = () => {
 
         {activeTab === 'reports' && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-white">Revenue Reports</h2>
+            <h2 className="text-2xl:font-bold text-white">Revenue Reports</h2>
             
             <div className="space-y-6">
               {revenueReports.map((report) => (
-                <div key={report.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <div key={report.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6">
                   <div className="flex justify-between items-start mb-6">
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">{report.period}</h3>
+                      <h3 className="text-xl:font-semibold text-white mb-2">{report.period}</h3>
                       <p className="text-gray-300">Revenue Analysis Report</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-white">{formatCurrency(report.totalRevenue)}</div>
+                      <div className="text-2xl:font-bold text-white">{formatCurrency(report.totalRevenue)}</div>
                       <div className="text-green-400 text-sm">+{report.growthRate}% growth</div>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
                     <div className="text-center">
                       <div className="text-white font-semibold">{formatCurrency(report.commissionRevenue)}</div>
                       <div className="text-gray-300 text-sm">Commission Revenue</div>
@@ -702,20 +702,20 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Start Earning Today
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl:text-gray-300 mb-8">
               Choose the perfect pricing tier for your business needs and start maximizing your revenue 
               with our transparent commission structure and competitive rates.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg">
                 View Plans
               </Link>
-              <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 Start Selling
               </Link>
             </div>
@@ -725,10 +725,10 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
-          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
+              <h3 className="text-lg:font-semibold text-white mb-4">Zion Marketplace</h3>
               <p className="text-gray-300 text-sm">
                 The first free AI-powered marketplace for high-tech products, services, and innovation.
               </p>
@@ -736,28 +736,28 @@ const MarketplacePricingPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Pricing & Commissions</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace-pricing" className="text-gray-400 hover text-white transition-colors">Pricing Tiers</Link></li>
-                <li><Link href="/invoice-billing" className="text-gray-400 hover text-white transition-colors">Billing System</Link></li>
-                <li><Link href="/dispute-resolution" className="text-gray-400 hover text-white transition-colors">Dispute Resolution</Link></li>
-                <li><Link href="/skill-verification" className="text-gray-400 hover text-white transition-colors">Skill Verification</Link></li>
+                <li><Link href="/marketplace-pricing" className="text-gray-400 hover:text-white transition-colors">Pricing Tiers</Link></li>
+                <li><Link href="/invoice-billing" className="text-gray-400 hover:text-white transition-colors">Billing System</Link></li>
+                <li><Link href="/dispute-resolution" className="text-gray-400 hover:text-white transition-colors">Dispute Resolution</Link></li>
+                <li><Link href="/skill-verification" className="text-gray-400 hover:text-white transition-colors">Skill Verification</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="text-gray-400 hover text-white transition-colors">Contact Us</Link></li>
-                <li><Link href="/real-time-chat" className="text-gray-400 hover text-white transition-colors">Live Chat</Link></li>
-                <li><Link href="/notifications" className="text-gray-400 hover text-white transition-colors">Notifications</Link></li>
-                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors">Legal Support</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/real-time-chat" className="text-gray-400 hover:text-white transition-colors">Live Chat</Link></li>
+                <li><Link href="/notifications" className="text-gray-400 hover:text-white transition-colors">Notifications</Link></li>
+                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover:text-white transition-colors">Legal Support</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover text-white transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover text-white transition-colors">Blog</Link></li>
-                <li><Link href="/auth/signup" className="text-gray-400 hover text-white transition-colors">Sign Up</Link></li>
-                <li><Link href="/auth/login" className="text-gray-400 hover text-white transition-colors">Login</Link></li>
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/auth/signup" className="text-gray-400 hover:text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">Login</Link></li>
               </ul>
             </div>
           </div>

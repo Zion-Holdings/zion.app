@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -144,22 +144,22 @@ const Blog: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10">
         <div className="container-responsive">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-responsive-xl font-bold text-white">
+              <Link href="/" className="text-responsive-xl:font-bold text-white">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
               </Link>
             </div>
-            <div className="flex items-center space-x-4 lg space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
+            <div className="flex items-center space-x-4 lg:space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-responsive-sm:font-medium touch-target">
                 Marketplace
               </Link>
-              <Link href="/blog" className="text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
+              <Link href="/blog" className="text-white px-3 py-4 rounded-md:text-responsive-sm:font-medium touch-target">
                 Blog
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-responsive-sm:font-medium touch-target">
                 Login
               </Link>
             </div>
@@ -170,11 +170,11 @@ const Blog: NextPage = () => {
       {/* Hero Section */}
       <div className="container-responsive section-padding">
         <div className="text-center">
-          <h1 className="text-responsive-4xl font-bold text-white mb-6">
+          <h1 className="text-responsive-4xl:font-bold text-white mb-6">
             Zion
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Blog</span>
           </h1>
-          <p className="text-responsive-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-responsive-lg:text-gray-300 mb-8 max-w-3xl:mx-auto">
             Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation
           </p>
         </div>
@@ -182,9 +182,9 @@ const Blog: NextPage = () => {
 
       {/* Blog Posts */}
       <div className="container-responsive section-padding">
-        <div className="grid-responsive-3 gap-6 lg gap-8">
+        <div className="grid-responsive-3 gap-6 lg:gap-8">
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover border-purple-500/50 transition-all duration-300 hover-responsive">
+            <article key={post.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-responsive">
               <div className="mb-4">
                 <div className="flex items-center space-x-2 mb-3">
                   {post.tags.slice(0, 2).map((tag) => (
@@ -193,16 +193,16 @@ const Blog: NextPage = () => {
                     </span>
                   ))}
                 </div>
-                <h2 className="text-responsive-lg font-semibold text-white mb-3 line-clamp-2">{post.title}</h2>
-                <p className="text-gray-300 text-responsive-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                <h2 className="text-responsive-lg:font-semibold text-white mb-3 line-clamp-2">{post.title}</h2>
+                <p className="text-gray-300 text-responsive-sm:mb-4 line-clamp-3">{post.excerpt}</p>
               </div>
-              <div className="flex items-center justify-between text-responsive-sm text-gray-400 mb-4">
+              <div className="flex items-center justify-between text-responsive-sm:text-gray-400 mb-4">
                 <span>{post.author}</span>
                 <span>{post.readTime}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-responsive-xs text-gray-500">{new Date(post.publishDate).toLocaleDateString()}</span>
-                <Link href={`/blog/${post.id}`} className="text-purple-400 hover text-purple-300 font-medium text-responsive-sm touch-target">
+                <Link href={`/blog/${post.id}`} className="text-purple-400 hover:text-purple-300 font-medium text-responsive-sm:touch-target">
                   Read More →
                 </Link>
               </div>
@@ -212,7 +212,7 @@ const Blog: NextPage = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black/20 backdrop-blur-md border-t border-white/10 mt-16">
+      <footer className="bg-black/20 backdrop-blur-md:border-t border-white/10 mt-16">
         <div className="container-responsive section-padding-sm">
           <div className="text-center text-gray-400">
             <p className="text-responsive-sm">&copy; 2024 Zion. All rights reserved.</p>

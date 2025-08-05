@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 interface MonitoringSystem {
@@ -300,7 +300,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -313,23 +313,23 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44">
+        <div className="relative max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-44">
           <div className="text-center">
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6">
               AI-Powered Monitoring & Surveillance System
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
               Real-time monitoring, surveillance tracking, system observation, 
               performance monitoring, security monitoring, and automated alerting powered by AI.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">📡 Real-time Monitoring</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">📹 Surveillance Tracking</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">🔒 Security Monitoring</span>
               </div>
             </div>
@@ -338,7 +338,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
@@ -349,7 +349,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
             <div className="flex flex-wrap justify-center mb-8">
               <button
                 onClick={() => setActiveTab('systems')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'systems'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -359,7 +359,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('cameras')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'cameras'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -369,7 +369,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('alerts')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'alerts'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -379,7 +379,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('performance')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'performance'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -389,7 +389,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('security')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'security'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -399,7 +399,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('analytics')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -413,13 +413,13 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
             {activeTab === 'systems' && (
               <div className="space-y-8">
                 {/* Controls */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md flex-row justify-between items-center space-y-4 md space-y-0">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500"
+                        className="bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-cyan-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="performance" className="bg-slate-800">Performance</option>
@@ -430,23 +430,23 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                         <option value="user" className="bg-slate-800">User</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-6 py-4 rounded-lg:font-medium transition-all duration-300">
                       Add System
                     </button>
                   </div>
                 </div>
 
                 {/* Systems Grid */}
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {filteredSystems.map((system) => (
-                    <div key={system.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <div key={system.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white mb-2">{system.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{system.type} System</p>
+                          <h3 className="text-xl:font-semibold text-white mb-2">{system.name}</h3>
+                          <p className="text-gray-300 text-sm:capitalize">{system.type} System</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(system.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm:font-medium ${getStatusColor(system.status)}`}>
                             {system.status}
                           </span>
                           <div className="mt-2">
@@ -462,24 +462,24 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       </div>
 
                       <div className="grid grid-cols-3 gap-4 mb-4">
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Response Time</div>
-                          <div className="text-2xl font-bold text-white">{system.responseTime}ms</div>
+                        <div className="bg-white/5 rounded-lg:p-4">
+                          <div className="text-sm:text-gray-400 mb-1">Response Time</div>
+                          <div className="text-2xl:font-bold text-white">{system.responseTime}ms</div>
                         </div>
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Uptime</div>
-                          <div className="text-2xl font-bold text-white">{system.uptime}%</div>
+                        <div className="bg-white/5 rounded-lg:p-4">
+                          <div className="text-sm:text-gray-400 mb-1">Uptime</div>
+                          <div className="text-2xl:font-bold text-white">{system.uptime}%</div>
                         </div>
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Alerts</div>
-                          <div className="text-2xl font-bold text-white">{system.alerts}</div>
+                        <div className="bg-white/5 rounded-lg:p-4">
+                          <div className="text-sm:text-gray-400 mb-1">Alerts</div>
+                          <div className="text-2xl:font-bold text-white">{system.alerts}</div>
                         </div>
                       </div>
 
                       {/* AI Analysis */}
                       <div className="mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3">AI Analysis</h4>
-                        <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg p-4">
+                        <h4 className="text-lg:font-semibold text-white mb-3">AI Analysis</h4>
+                        <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg:p-4">
                           <div className="grid grid-cols-3 gap-4 text-sm">
                             <div>
                               <div className="text-gray-400 mb-1">Performance</div>
@@ -495,7 +495,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                             </div>
                           </div>
                           <div className="mt-3">
-                            <div className="text-sm font-medium text-gray-400 mb-1">Recommendations:</div>
+                            <div className="text-sm:font-medium text-gray-400 mb-1">Recommendations:</div>
                             <div className="text-xs text-gray-300">
                               {system.aiAnalysis.recommendations.join(', ')}
                             </div>
@@ -504,10 +504,10 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover from-cyan-700 hover to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300">
                           Configure
                         </button>
                       </div>
@@ -520,30 +520,30 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.totalSystems.toLocaleString()}</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.totalSystems.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Systems</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.activeCameras.toLocaleString()}</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.activeCameras.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Active Cameras</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.averageUptime}%</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.averageUptime}%</div>
                     <div className="text-gray-400 text-sm">Average Uptime</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>
                     <div className="text-gray-400 text-sm">AI Optimization Score</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-6">AI Insights</h3>
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                  <h3 className="text-xl:font-semibold text-white mb-6">AI Insights</h3>
                   <div className="space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg p-4">
+                      <div key={insight.id} className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg:p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${
@@ -554,7 +554,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm mb-3">{insight.description}</p>
+                        <p className="text-gray-300 text-sm:mb-3">{insight.description}</p>
                         <div className="text-xs text-gray-400 mb-2">
                           Confidence: {Math.round(insight.confidence * 100)}%
                         </div>
@@ -573,20 +573,20 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-36">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-36">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Ready to Monitor Everything?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Start your monitoring journey with our AI-powered surveillance system 
               and gain complete visibility into your operations.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover to-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-cyan-500/25 transform hover scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-cyan-500/25 transform hover:scale-105">
                 Start Monitoring
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn More
               </Link>
             </div>

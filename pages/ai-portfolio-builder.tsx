@@ -73,11 +73,11 @@ const PortfolioBuilder = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <div className="max-w-3xl mx-auto bg-white/10 rounded-2xl shadow-xl p-8 backdrop-blur-md">
-          <h1 className="text-3xl font-bold text-white mb-6 text-center text-responsive-lg">AI-powered Portfolio Builder</h1>
+        <div className="max-w-3xl:mx-auto bg-white/10 rounded-2xl:shadow-xl:p-8 backdrop-blur-md">
+          <h1 className="text-3xl:font-bold text-white mb-6 text-center text-responsive-lg">AI-powered Portfolio Builder</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input name="name" value={input.name} onChange={handleChange} placeholder="Your Name" className="w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg" required />
             <input name="title" value={input.title} onChange={handleChange} placeholder="Professional Title" className="w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg" required />
@@ -88,16 +88,16 @@ const PortfolioBuilder = () => {
             <textarea name="testimonials" value={input.testimonials} onChange={handleChange} placeholder="Testimonials (optional)" className="w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg" rows={2} />
             <input name="contact" value={input.contact} onChange={handleChange} placeholder="Contact Info (email, phone, etc.)" className="w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg" required />
             <input name="image" value={input.image} onChange={handleChange} placeholder="Profile Image URL (optional)" className="w-full px-4 py-4 rounded bg-white/20 text-white text-responsive-lg" />
-            <button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 rounded-lg mt-4 disabled opacity-50 text-responsive-lg" disabled={loading}>{loading ? 'Generating...' : 'Generate Portfolio'}</button>
+            <button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 rounded-lg:mt-4 disabled opacity-50 text-responsive-lg" disabled={loading}>{loading ? 'Generating...' : 'Generate Portfolio'}</button>
           </form>
           {error && <div className="text-red-400 mt-4 text-center text-responsive-lg">{error}</div>}
           {portfolio && (
-            <div className="mt-8 bg-white/10 rounded-xl p-6 text-white text-responsive-lg">
-              <h2 className="text-2xl font-bold mb-4 text-responsive-lg">Your AI-Generated Portfolio</h2>
+            <div className="mt-8 bg-white/10 rounded-xl:p-6 text-white text-responsive-lg">
+              <h2 className="text-2xl:font-bold mb-4 text-responsive-lg">Your AI-Generated Portfolio</h2>
               <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: portfolio }} />
               <div className="mt-6 flex gap-4">
-                <button onClick={() => navigator.clipboard.writeText(portfolio)} className="bg-emerald-600 hover bg-emerald-700 text-white px-4 py-4 rounded text-responsive-lg">Copy HTML</button>
-                <a href={`data:text/html,${encodeURIComponent(portfolio)}`} download="portfolio.html" className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded text-responsive-lg">Download HTML</a>
+                <button onClick={() => navigator.clipboard.writeText(portfolio)} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-4 rounded text-responsive-lg">Copy HTML</button>
+                <a href={`data:text/html,${encodeURIComponent(portfolio)}`} download="portfolio.html" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded text-responsive-lg">Download HTML</a>
               </div>
             </div>
           )}
@@ -105,7 +105,7 @@ const PortfolioBuilder = () => {
       </div>
     </>
   
-                  </div>
+                      </div>
     );
 };
 

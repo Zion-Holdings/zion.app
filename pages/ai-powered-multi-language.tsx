@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 interface Language {
@@ -503,7 +503,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -512,7 +512,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <span className="text-lg font-medium">Loading AI-Powered Multi-Language...</span>
+            <span className="text-lg:font-medium">Loading AI-Powered Multi-Language...</span>
           </div>
         </div>
       </div>
@@ -530,28 +530,28 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl:font-bold text-white">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8">
-              <Link href="/ai-powered-seo" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/ai-powered-seo" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 SEO
               </Link>
-              <Link href="/ai-powered-automation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Automation
               </Link>
-              <Link href="/ai-powered-analytics" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Analytics
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -559,13 +559,13 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4">
             AI-Powered Multi-Language
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">
             Intelligent multi-language support with AI-driven translation, cultural adaptation, 
             and automated localization for global accessibility.
           </p>
@@ -573,7 +573,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* Tab Selector */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1">
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
               { id: 'languages', name: 'Languages', icon: '🌐' },
@@ -584,7 +584,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm:font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -599,17 +599,17 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* Language Analytics Overview */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             {languageAnalytics.map((metric) => (
-              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{metric.metric}</h3>
+                  <h3 className="text-lg:font-semibold text-white">{metric.metric}</h3>
                   <span className="text-2xl">{getTrendIcon(metric.trend)}</span>
                 </div>
                 
                 <div className="mb-4">
-                  <div className="text-3xl font-bold text-white mb-2">{metric.value}%</div>
-                  <p className="text-sm text-gray-400">{metric.language}</p>
+                  <div className="text-3xl:font-bold text-white mb-2">{metric.value}%</div>
+                  <p className="text-sm:text-gray-400">{metric.language}</p>
                 </div>
                 
                 <div className="flex items-center justify-between text-sm">
@@ -625,15 +625,15 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* Search and Filters */}
         {selectedView === 'languages' && (
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 lg grid-cols-4 gap-4">
-              <div className="lg col-span-2">
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+              <div className="lg:col-span-2">
                 <input
                   type="text"
                   placeholder="Search languages..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors"
                 />
               </div>
               
@@ -641,7 +641,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="all">All Status</option>
                   <option value="active">Active</option>
@@ -654,7 +654,7 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg:px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="recent">Sort by Name</option>
                   <option value="progress">Sort by Progress</option>
@@ -668,14 +668,14 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* Languages List */}
         {selectedView === 'languages' && (
-          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredLanguages.map((language) => (
-              <div key={language.code} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={language.code} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="text-3xl">{language.flag}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{language.name}</h3>
+                      <h3 className="text-lg:font-semibold text-white">{language.name}</h3>
                       <p className="text-gray-300 text-sm">{language.nativeName}</p>
                     </div>
                   </div>
@@ -686,16 +686,16 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">Translation</p>
-                    <p className="text-lg font-semibold text-blue-400">{language.translationProgress}%</p>
+                    <p className="text-sm:text-gray-400">Translation</p>
+                    <p className="text-lg:font-semibold text-blue-400">{language.translationProgress}%</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Cultural</p>
-                    <p className="text-lg font-semibold text-green-400">{language.culturalAdaptation}%</p>
+                    <p className="text-sm:text-gray-400">Cultural</p>
+                    <p className="text-lg:font-semibold text-green-400">{language.culturalAdaptation}%</p>
                   </div>
                 </div>
 
-                <div className="space-y-2 text-sm mb-4">
+                <div className="space-y-2 text-sm:mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Users</span>
                     <span className="text-white">{language.userCount.toLocaleString()}</span>
@@ -707,10 +707,10 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     Test Translation
                   </button>
                 </div>
@@ -723,15 +723,15 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         {selectedView === 'translations' && (
           <div className="space-y-6">
             {translationJobs.map((job) => (
-              <div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={job.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
-                      <span className="text-sm text-gray-400">{job.sourceLanguage.toUpperCase()}</span>
+                      <span className="text-sm:text-gray-400">{job.sourceLanguage.toUpperCase()}</span>
                       <span className="text-purple-400">→</span>
-                      <span className="text-sm text-gray-400">{job.targetLanguage.toUpperCase()}</span>
+                      <span className="text-sm:text-gray-400">{job.targetLanguage.toUpperCase()}</span>
                     </div>
-                    <p className="text-gray-300 text-sm mb-2">{job.content}</p>
+                    <p className="text-gray-300 text-sm:mb-2">{job.content}</p>
                     {job.translatedContent && (
                       <p className="text-white text-sm">{job.translatedContent}</p>
                     )}
@@ -768,21 +768,21 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
                 {job.status === 'completed' && (
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <p className="text-sm text-gray-400">Accuracy</p>
-                      <p className="text-lg font-semibold text-green-400">{job.accuracy}%</p>
+                      <p className="text-sm:text-gray-400">Accuracy</p>
+                      <p className="text-lg:font-semibold text-green-400">{job.accuracy}%</p>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Cultural Score</p>
-                      <p className="text-lg font-semibold text-blue-400">{job.culturalScore}%</p>
+                      <p className="text-sm:text-gray-400">Cultural Score</p>
+                      <p className="text-lg:font-semibold text-blue-400">{job.culturalScore}%</p>
                     </div>
                   </div>
                 )}
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Translation
                   </button>
                 </div>
@@ -795,39 +795,39 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
         {selectedView === 'cultural' && (
           <div className="space-y-6">
             {culturalAdaptations.map((adaptation) => (
-              <div key={adaptation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={adaptation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="text-2xl">{getCategoryIcon(adaptation.category)}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">{adaptation.language}</h3>
-                      <p className="text-gray-300 text-sm capitalize">{adaptation.category.replace('-', ' ')}</p>
+                      <h3 className="text-lg:font-semibold text-white">{adaptation.language}</h3>
+                      <p className="text-gray-300 text-sm:capitalize">{adaptation.category.replace('-', ' ')}</p>
                     </div>
                   </div>
-                  <span className="text-sm text-gray-400">{adaptation.confidence}% confidence</span>
+                  <span className="text-sm:text-gray-400">{adaptation.confidence}% confidence</span>
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Context:</p>
+                  <p className="text-sm:text-gray-400 mb-2">Context:</p>
                   <p className="text-white text-sm">{adaptation.context}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">Original</p>
+                    <p className="text-sm:text-gray-400">Original</p>
                     <p className="text-white text-sm">{adaptation.originalValue}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Adapted</p>
+                    <p className="text-sm:text-gray-400">Adapted</p>
                     <p className="text-white text-sm">{adaptation.adaptedValue}</p>
                   </div>
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     Apply Adaptation
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Adaptation
                   </button>
                 </div>
@@ -838,28 +838,28 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* AI Models */}
         {selectedView === 'analytics' && (
-          <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {aiModels.map((model) => (
-              <div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={model.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{model.language}</h3>
-                  <span className="text-sm text-gray-400">v{model.version}</span>
+                  <h3 className="text-lg:font-semibold text-white">{model.language}</h3>
+                  <span className="text-sm:text-gray-400">v{model.version}</span>
                 </div>
                 
-                <p className="text-gray-300 text-sm mb-4">{model.model}</p>
+                <p className="text-gray-300 text-sm:mb-4">{model.model}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">Accuracy</p>
-                    <p className="text-lg font-semibold text-green-400">{model.accuracy}%</p>
+                    <p className="text-sm:text-gray-400">Accuracy</p>
+                    <p className="text-lg:font-semibold text-green-400">{model.accuracy}%</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Training Data</p>
-                    <p className="text-lg font-semibold text-blue-400">{model.trainingData.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">Training Data</p>
+                    <p className="text-lg:font-semibold text-blue-400">{model.trainingData.toLocaleString()}</p>
                   </div>
                 </div>
                 
-                <div className="space-y-2 text-sm mb-4">
+                <div className="space-y-2 text-sm:mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Translation Speed</span>
                     <span className="text-white">{model.performance.translationSpeed}s</span>
@@ -888,19 +888,19 @@ const AIPoweredMultiLanguagePage: NextPage = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Go Global with AI-Powered Translation
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Leverage intelligent translation and cultural adaptation to reach 
               global audiences with AI-powered multi-language support.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                 Start Translation
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>

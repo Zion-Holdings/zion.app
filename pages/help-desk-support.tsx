@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -249,7 +249,7 @@ const HelpDeskSupport: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -268,19 +268,19 @@ const HelpDeskSupport: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <header className="bg-black/20 backdrop-blur-sm:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
+              <Link href="/" className="text-2xl:font-bold text-white">
                 Zion Tech Group
               </Link>
             </div>
-            <nav className="hidden md flex space-x-8">
-              <Link href="/" className="text-gray-300 hover text-white transition-colors">
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link href="/dashboard" className="text-gray-300 hover text-white transition-colors">
+              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">
                 Dashboard
               </Link>
             </nav>
@@ -288,27 +288,27 @@ const HelpDeskSupport: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <main className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="text-4xl:font-bold text-white mb-4">
             Help Desk & Support Ticket System
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl">
+          <p className="text-xl:text-gray-300 max-w-4xl">
             Comprehensive customer support management with ticket tracking, priority management, 
             and support team coordination. Manage customer inquiries efficiently and provide excellent service.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-high-contrast-tertiary text-sm">Total Tickets</p>
-                <p className="text-2xl font-bold text-white">{tickets.length}</p>
+                <p className="text-2xl:font-bold text-white">{tickets.length}</p>
               </div>
               <div className="text-3xl">🎫</div>
             </div>
@@ -318,12 +318,12 @@ const HelpDeskSupport: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Open Tickets</p>
-                <p className="text-2xl font-bold text-white">{tickets.filter(t => t.status === 'open').length}</p>
+                <p className="text-2xl:font-bold text-white">{tickets.filter(t => t.status === 'open').length}</p>
               </div>
               <div className="text-3xl">🔓</div>
             </div>
@@ -333,12 +333,12 @@ const HelpDeskSupport: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Support Agents</p>
-                <p className="text-2xl font-bold text-white">{agents.length}</p>
+                <p className="text-2xl:font-bold text-white">{agents.length}</p>
               </div>
               <div className="text-3xl">👥</div>
             </div>
@@ -348,12 +348,12 @@ const HelpDeskSupport: NextPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
           >
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm">Avg Response Time</p>
-                <p className="text-2xl font-bold text-white">2.8h</p>
+                <p className="text-2xl:font-bold text-white">2.8h</p>
               </div>
               <div className="text-3xl">⏱️</div>
             </div>
@@ -370,7 +370,7 @@ const HelpDeskSupport: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-4 rounded-lg font-medium transition-all ${
+              className={`px-4 py-4 rounded-lg:font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-white/10 text-white border border-white/20'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -397,12 +397,12 @@ const HelpDeskSupport: NextPage = () => {
                   placeholder="Search tickets..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-white/20"
                 />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Status</option>
                   <option value="open">Open</option>
@@ -413,7 +413,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterPriority}
                   onChange={(e) => setFilterPriority(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -424,7 +424,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Categories</option>
                   <option value="technical">Technical</option>
@@ -441,12 +441,12 @@ const HelpDeskSupport: NextPage = () => {
                     key={ticket.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{ticket.title}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{ticket.title}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}>
                             {ticket.status}
                           </span>
@@ -454,8 +454,8 @@ const HelpDeskSupport: NextPage = () => {
                             {ticket.priority}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm mb-3">{ticket.description}</p>
-                        <div className="flex items-center gap-4 text-sm text-gray-400">
+                        <p className="text-gray-300 text-sm:mb-3">{ticket.description}</p>
+                        <div className="flex items-center gap-4 text-sm:text-gray-400">
                           <span>Customer: {ticket.customer.name}</span>
                           <span>Plan: {ticket.customer.plan}</span>
                           <span>Created: {ticket.createdAt.toLocaleString()}</span>
@@ -479,7 +479,7 @@ const HelpDeskSupport: NextPage = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-gray-400 text-sm">{ticket.responses.length} responses</span>
-                        <button className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover bg-white/20 transition-colors">
+                        <button className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover:bg-white/20 transition-colors">
                           View Details
                         </button>
                       </div>
@@ -498,17 +498,17 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {agents.map((agent) => (
                   <motion.div
                     key={agent.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{agent.name}</h3>
+                        <h3 className="text-lg:font-semibold text-white">{agent.name}</h3>
                         <p className="text-gray-400 text-sm">{agent.email}</p>
                       </div>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${
@@ -562,9 +562,9 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md grid-cols-2 gap-6">
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Ticket Statistics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
+                  <h3 className="text-xl:font-semibold text-white mb-4">Ticket Statistics</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Total Tickets:</span>
@@ -585,8 +585,8 @@ const HelpDeskSupport: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Performance Metrics</h3>
+                <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
+                  <h3 className="text-xl:font-semibold text-white mb-4">Performance Metrics</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Avg Response Time:</span>
@@ -618,16 +618,16 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {categories.map((category) => (
                   <motion.div
                     key={category.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                    className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl:p-6"
                   >
                     <div className="mb-4">
-                      <h3 className="text-lg font-semibold text-white">{category.name}</h3>
+                      <h3 className="text-lg:font-semibold text-white">{category.name}</h3>
                       <p className="text-gray-400 text-sm">{category.description}</p>
                     </div>
 

@@ -301,7 +301,7 @@ const AIHRManagement: React.FC = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -312,8 +312,8 @@ const AIHRManagement: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <div className="bg-black/20 backdrop-blur-sm:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-white font-bold text-xl">
@@ -321,10 +321,10 @@ const AIHRManagement: React.FC = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Home
               </Link>
-              <Link href="/sitemap" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/sitemap" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Services
               </Link>
             </div>
@@ -333,27 +333,27 @@ const AIHRManagement: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl:md:text-6xl:font-bold text-white mb-6">
             AI-Powered HR Management
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto mb-8">
             Intelligent human resources management, talent acquisition, employee performance tracking, 
             and comprehensive HR analytics powered by advanced AI.
           </p>
-          <div className="flex flex-col sm flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={generateHRInsights}
               disabled={loading}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover from-blue-700 hover to-purple-700 transition-all duration-300 disabled opacity-50"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg:font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled opacity-50"
             >
               {loading ? 'Generating Insights...' : 'Generate AI Insights'}
             </button>
             <button
               onClick={exportHRData}
-              className="border border-white/20 text-white px-8 py-3 rounded-lg font-semibold hover bg-white/10 transition-all duration-300"
+              className="border border-white/20 text-white px-8 py-3 rounded-lg:font-semibold hover:bg-white/10 transition-all duration-300"
             >
               Export HR Data
             </button>
@@ -366,7 +366,7 @@ const AIHRManagement: React.FC = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-lg:font-medium transition-all duration-300 ${
                 activeTab === tab
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -378,31 +378,31 @@ const AIHRManagement: React.FC = () => {
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+        <div className="bg-white/5 backdrop-blur-sm:rounded-2xl:p-8 border border-white/10">
           {activeTab === 'overview' && (
             <div className="space-y-8">
-              <div className="grid grid-cols-1 md grid-cols-4 gap-6">
-                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-6 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-2">156</div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-6 rounded-xl:border border-white/10">
+                  <div className="text-3xl:font-bold text-white mb-2">156</div>
                   <div className="text-gray-300">Total Employees</div>
                 </div>
-                <div className="bg-gradient-to-br from-green-500/20 to-blue-500/20 p-6 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-2">23</div>
+                <div className="bg-gradient-to-br from-green-500/20 to-blue-500/20 p-6 rounded-xl:border border-white/10">
+                  <div className="text-3xl:font-bold text-white mb-2">23</div>
                   <div className="text-gray-300">Active Candidates</div>
                 </div>
-                <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-6 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-2">8</div>
+                <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-6 rounded-xl:border border-white/10">
+                  <div className="text-3xl:font-bold text-white mb-2">8</div>
                   <div className="text-gray-300">Open Positions</div>
                 </div>
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 rounded-xl border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-2">92%</div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-6 rounded-xl:border border-white/10">
+                  <div className="text-3xl:font-bold text-white mb-2">92%</div>
                   <div className="text-gray-300">Employee Satisfaction</div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-4">Recent AI Insights</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h3 className="text-xl:font-semibold text-white mb-4">Recent AI Insights</h3>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                       <span className="text-gray-300">High retention risk detected</span>
@@ -419,18 +419,18 @@ const AIHRManagement: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-4">Quick Actions</h3>
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h3 className="text-xl:font-semibold text-white mb-4">Quick Actions</h3>
                   <div className="space-y-3">
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg hover from-blue-600/30 hover to-purple-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg:hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Schedule Performance Reviews</div>
                       <div className="text-gray-400 text-sm">12 pending reviews</div>
                     </button>
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg hover from-green-600/30 hover to-blue-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg:hover:from-green-600/30 hover:to-blue-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Review Candidate Pipeline</div>
                       <div className="text-gray-400 text-sm">8 candidates ready for interview</div>
                     </button>
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg hover from-yellow-1200/30 hover to-orange-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg:hover:from-yellow-1200/30 hover:to-orange-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Update Job Postings</div>
                       <div className="text-gray-400 text-sm">3 positions need optimization</div>
                     </button>
@@ -443,12 +443,12 @@ const AIHRManagement: React.FC = () => {
           {activeTab === 'recruitment' && (
             <div className="space-y-8">
               <div className="flex justify-between items-center">
-                <h3 className="text-2xl font-semibold text-white">Talent Acquisition</h3>
+                <h3 className="text-2xl:font-semibold text-white">Talent Acquisition</h3>
                 <div className="flex gap-4">
                   <select
                     value={selectedDepartment}
                     onChange={(e) => setSelectedDepartment(e.target.value)}
-                    className="bg-white/10 text-white border border-white/20 rounded-lg px-4 py-4"
+                    className="bg-white/10 text-white border border-white/20 rounded-lg:px-4 py-4"
                   >
                     <option value="all">All Departments</option>
                     <option value="engineering">Engineering</option>
@@ -459,12 +459,12 @@ const AIHRManagement: React.FC = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Top Candidates</h4>
+                  <h4 className="text-xl:font-semibold text-white mb-4">Top Candidates</h4>
                   <div className="space-y-4">
                     {candidates.map((candidate) => (
-                      <div key={candidate.id} className="bg-white/5 p-4 rounded-lg border border-white/10">
+                      <div key={candidate.id} className="bg-white/5 p-4 rounded-lg:border border-white/10">
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h5 className="text-white font-semibold">{candidate.name}</h5>
@@ -503,10 +503,10 @@ const AIHRManagement: React.FC = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Job Postings</h4>
+                  <h4 className="text-xl:font-semibold text-white mb-4">Job Postings</h4>
                   <div className="space-y-4">
                     {jobPostings.map((job) => (
-                      <div key={job.id} className="bg-white/5 p-4 rounded-lg border border-white/10">
+                      <div key={job.id} className="bg-white/5 p-4 rounded-lg:border border-white/10">
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h5 className="text-white font-semibold">{job.title}</h5>
@@ -535,13 +535,13 @@ const AIHRManagement: React.FC = () => {
 
           {activeTab === 'employees' && (
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-white">Employee Management</h3>
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <h3 className="text-2xl:font-semibold text-white">Employee Management</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">Employee Performance</h4>
+                  <h4 className="text-xl:font-semibold text-white mb-4">Employee Performance</h4>
                   <div className="space-y-4">
                     {employees.map((employee) => (
-                      <div key={employee.id} className="bg-white/5 p-4 rounded-lg border border-white/10">
+                      <div key={employee.id} className="bg-white/5 p-4 rounded-lg:border border-white/10">
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h5 className="text-white font-semibold">{employee.name}</h5>
@@ -549,12 +549,12 @@ const AIHRManagement: React.FC = () => {
                           </div>
                           <div className="text-right">
                             <div className="text-white font-semibold">{employee.performance.overall}%</div>
-                            <div className={`text-sm ${getRiskColor(employee.retentionRisk)}`}>
+                            <div className={`text-sm:${getRiskColor(employee.retentionRisk)}`}>
                               {employee.retentionRisk}% retention risk
                             </div>
                           </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 text-sm mb-3">
+                        <div className="grid grid-cols-2 gap-4 text-sm:mb-3">
                           <div>
                             <span className="text-gray-400">Productivity:</span>
                             <span className="text-white ml-2">{employee.performance.productivity}%</span>
@@ -586,22 +586,22 @@ const AIHRManagement: React.FC = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-xl font-semibold text-white mb-4">AI Recommendations</h4>
+                  <h4 className="text-xl:font-semibold text-white mb-4">AI Recommendations</h4>
                   <div className="space-y-4">
-                    <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-4 rounded-lg border border-white/10">
+                    <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-4 rounded-lg:border border-white/10">
                       <h5 className="text-white font-semibold mb-2">High Retention Risk</h5>
-                      <p className="text-gray-300 text-sm mb-3">3 employees showing signs of disengagement</p>
-                      <button className="text-blue-400 hover text-blue-300 text-sm">View Details →</button>
+                      <p className="text-gray-300 text-sm:mb-3">3 employees showing signs of disengagement</p>
+                      <button className="text-blue-400 hover:text-blue-300 text-sm">View Details →</button>
                     </div>
-                    <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-4 rounded-lg border border-white/10">
+                    <div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-4 rounded-lg:border border-white/10">
                       <h5 className="text-white font-semibold mb-2">Skill Development</h5>
-                      <p className="text-gray-300 text-sm mb-3">12 employees need upskilling programs</p>
-                      <button className="text-green-400 hover text-green-300 text-sm">View Details →</button>
+                      <p className="text-gray-300 text-sm:mb-3">12 employees need upskilling programs</p>
+                      <button className="text-green-400 hover:text-green-300 text-sm">View Details →</button>
                     </div>
-                    <div className="bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 p-4 rounded-lg border border-white/10">
+                    <div className="bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 p-4 rounded-lg:border border-white/10">
                       <h5 className="text-white font-semibold mb-2">Career Progression</h5>
-                      <p className="text-gray-300 text-sm mb-3">8 employees ready for promotion</p>
-                      <button className="text-yellow-400 hover text-yellow-300 text-sm">View Details →</button>
+                      <p className="text-gray-300 text-sm:mb-3">8 employees ready for promotion</p>
+                      <button className="text-yellow-400 hover:text-yellow-300 text-sm">View Details →</button>
                     </div>
                   </div>
                 </div>
@@ -611,28 +611,28 @@ const AIHRManagement: React.FC = () => {
 
           {activeTab === 'performance' && (
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-white">Performance Management</h3>
+              <h3 className="text-2xl:font-semibold text-white">Performance Management</h3>
               <div className="space-y-6">
                 {performanceReviews.map((review) => (
-                  <div key={review.id} className="bg-white/5 p-6 rounded-lg border border-white/10">
+                  <div key={review.id} className="bg-white/5 p-6 rounded-lg:border border-white/10">
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h4 className="text-white font-semibold text-lg">{review.employeeName}</h4>
                         <p className="text-gray-400">{review.period}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{review.overallRating}%</div>
+                        <div className="text-2xl:font-bold text-white">{review.overallRating}%</div>
                         <div className="text-gray-400 text-sm">Overall Rating</div>
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                       <div>
                         <h5 className="text-white font-semibold mb-3">Goals & Achievements</h5>
                         <div className="space-y-3">
                           <div>
                             <span className="text-gray-400 text-sm">Goals:</span>
-                            <ul className="text-white text-sm mt-1 space-y-1">
+                            <ul className="text-white text-sm:mt-1 space-y-1">
                               {review.goals.map((goal, index) => (
                                 <li key={index} className="flex items-start">
                                   <span className="text-blue-400 mr-2">•</span>
@@ -643,7 +643,7 @@ const AIHRManagement: React.FC = () => {
                           </div>
                           <div>
                             <span className="text-gray-400 text-sm">Achievements:</span>
-                            <ul className="text-white text-sm mt-1 space-y-1">
+                            <ul className="text-white text-sm:mt-1 space-y-1">
                               {review.achievements.map((achievement, index) => (
                                 <li key={index} className="flex items-start">
                                   <span className="text-green-400 mr-2">✓</span>
@@ -660,7 +660,7 @@ const AIHRManagement: React.FC = () => {
                         <div className="space-y-3">
                           <div>
                             <span className="text-gray-400 text-sm">Areas for Improvement:</span>
-                            <ul className="text-white text-sm mt-1 space-y-1">
+                            <ul className="text-white text-sm:mt-1 space-y-1">
                               {review.areasForImprovement.map((area, index) => (
                                 <li key={index} className="flex items-start">
                                   <span className="text-yellow-400 mr-2">⚠</span>
@@ -671,7 +671,7 @@ const AIHRManagement: React.FC = () => {
                           </div>
                           <div>
                             <span className="text-gray-400 text-sm">AI Recommendations:</span>
-                            <ul className="text-white text-sm mt-1 space-y-1">
+                            <ul className="text-white text-sm:mt-1 space-y-1">
                               {review.aiRecommendations.map((rec, index) => (
                                 <li key={index} className="flex items-start">
                                   <span className="text-purple-400 mr-2">💡</span>
@@ -691,10 +691,10 @@ const AIHRManagement: React.FC = () => {
 
           {activeTab === 'analytics' && (
             <div className="space-y-8">
-              <h3 className="text-2xl font-semibold text-white">HR Analytics Dashboard</h3>
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-xl font-semibold text-white mb-4">Recruitment Metrics</h4>
+              <h3 className="text-2xl:font-semibold text-white">HR Analytics Dashboard</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h4 className="text-xl:font-semibold text-white mb-4">Recruitment Metrics</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Time to Hire</span>
@@ -715,8 +715,8 @@ const AIHRManagement: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-xl font-semibold text-white mb-4">Employee Metrics</h4>
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h4 className="text-xl:font-semibold text-white mb-4">Employee Metrics</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-300">Employee Satisfaction</span>
@@ -737,8 +737,8 @@ const AIHRManagement: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-xl font-semibold text-white mb-4">AI Predictions</h4>
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h4 className="text-xl:font-semibold text-white mb-4">AI Predictions</h4>
                   <div className="space-y-4">
                     <div className="p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg">
                       <div className="text-white font-medium">High-Performing Employees</div>
@@ -755,8 +755,8 @@ const AIHRManagement: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                  <h4 className="text-xl font-semibold text-white mb-4">Trends & Insights</h4>
+                <div className="bg-white/5 p-6 rounded-xl:border border-white/10">
+                  <h4 className="text-xl:font-semibold text-white mb-4">Trends & Insights</h4>
                   <div className="space-y-4">
                     <div className="text-sm">
                       <div className="text-gray-300 mb-2">Employee Growth Trend</div>
@@ -783,9 +783,9 @@ const AIHRManagement: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black/20 backdrop-blur-sm border-t border-white/10 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
-          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
+      <footer className="bg-black/20 backdrop-blur-sm:border-t border-white/10 mt-20">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -795,28 +795,28 @@ const AIHRManagement: React.FC = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">AI Services</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/ai-powered-analytics" className="text-gray-400 hover text-white">Analytics</Link></li>
-                <li><Link href="/ai-powered-automation" className="text-gray-400 hover text-white">Automation</Link></li>
-                <li><Link href="/ai-powered-content-management" className="text-gray-400 hover text-white">Content Management</Link></li>
-                <li><Link href="/ai-powered-customer-support" className="text-gray-400 hover text-white">Customer Support</Link></li>
+                <li><Link href="/ai-powered-analytics" className="text-gray-400 hover:text-white">Analytics</Link></li>
+                <li><Link href="/ai-powered-automation" className="text-gray-400 hover:text-white">Automation</Link></li>
+                <li><Link href="/ai-powered-content-management" className="text-gray-400 hover:text-white">Content Management</Link></li>
+                <li><Link href="/ai-powered-customer-support" className="text-gray-400 hover:text-white">Customer Support</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Business Solutions</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/ai-powered-finance-banking" className="text-gray-400 hover text-white">Finance & Banking</Link></li>
-                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-400 hover text-white">Healthcare</Link></li>
-                <li><Link href="/ai-powered-retail-ecommerce" className="text-gray-400 hover text-white">Retail & E-commerce</Link></li>
-                <li><Link href="/ai-powered-security-cybersecurity" className="text-gray-400 hover text-white">Security</Link></li>
+                <li><Link href="/ai-powered-finance-banking" className="text-gray-400 hover:text-white">Finance & Banking</Link></li>
+                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-400 hover:text-white">Healthcare</Link></li>
+                <li><Link href="/ai-powered-retail-ecommerce" className="text-gray-400 hover:text-white">Retail & E-commerce</Link></li>
+                <li><Link href="/ai-powered-security-cybersecurity" className="text-gray-400 hover:text-white">Security</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/sitemap" className="text-gray-400 hover text-white">All Services</Link></li>
-                <li><Link href="/careers" className="text-gray-400 hover text-white">Careers</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover text-white">Contact</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover text-white">Privacy Policy</Link></li>
+                <li><Link href="/sitemap" className="text-gray-400 hover:text-white">All Services</Link></li>
+                <li><Link href="/careers" className="text-gray-400 hover:text-white">Careers</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white">Contact</Link></li>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
@@ -827,7 +827,7 @@ const AIHRManagement: React.FC = () => {
           </div>
         </div>
       </footer>
-                      </div>
+                            </div>
         </div>
     );
 };

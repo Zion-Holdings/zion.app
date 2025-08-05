@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -216,7 +216,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -228,15 +228,15 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg:flex items-center justify-center">
                   <span className="text-white text-xl">🔬</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">Quantum Sensing & Metrology</h1>
+                  <h1 className="text-2xl:font-bold text-white">Quantum Sensing & Metrology</h1>
                   <p className="text-gray-300">AI-Powered Quantum Measurement</p>
                 </div>
               </div>
@@ -246,7 +246,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <button
                 onClick={startSensing}
                 disabled={isSensing}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-200 ${
                   isSensing 
                     ? 'bg-yellow-1200 text-white' 
                     : 'bg-teal-600 text-white hover:bg-teal-700'
@@ -261,11 +261,11 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1">
               {[
                 { id: 'dashboard', label: 'Sensing Dashboard', icon: '🔬' },
                 { id: 'sensing', label: 'Quantum Sensing', icon: '📡' },
@@ -278,7 +278,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -296,15 +296,15 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             
             {/* Sensing Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* System Status */}
-                <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-lg:flex items-center justify-center">
                       <span className="text-white text-lg">🔬</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Sensing Status</h3>
+                      <h3 className="text-lg:font-semibold text-white">Sensing Status</h3>
                       <p className="text-gray-400 text-sm">Quantum Measurement Lab</p>
                     </div>
                   </div>
@@ -330,23 +330,23 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">📡</div>
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Quick Actions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg:text-white hover:from-teal-700 hover:to-teal-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">📡</div>
                       <div className="font-semibold">Start Sensing</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">📷</div>
+                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg:text-white hover:from-cyan-700 hover:to-cyan-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">📷</div>
                       <div className="font-semibold">Quantum Imaging</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">⚖️</div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">⚖️</div>
                       <div className="font-semibold">Metrology</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🎯</div>
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🎯</div>
                       <div className="font-semibold">Detection</div>
                     </button>
                   </div>
@@ -357,18 +357,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Sensing */}
             {activeTab === 'sensing' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Sensing</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Sensing</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {sensing.map((sensor) => (
-                    <div key={sensor.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={sensor.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{sensor.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{sensor.type}</p>
+                          <h3 className="text-lg:font-semibold text-white">{sensor.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{sensor.type}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{sensor.sensitivity}</div>
+                          <div className="text-2xl:font-bold text-white">{sensor.sensitivity}</div>
                           <div className="text-gray-400 text-sm">Sensitivity</div>
                         </div>
                       </div>
@@ -402,18 +402,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Imaging */}
             {activeTab === 'imaging' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Imaging</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Imaging</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {imaging.map((image) => (
-                    <div key={image.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={image.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{image.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{image.technique}</p>
+                          <h3 className="text-lg:font-semibold text-white">{image.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{image.technique}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{image.resolution} μm</div>
+                          <div className="text-2xl:font-bold text-white">{image.resolution} μm</div>
                           <div className="text-gray-400 text-sm">Resolution</div>
                         </div>
                       </div>
@@ -447,18 +447,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Metrology */}
             {activeTab === 'metrology' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Metrology</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Metrology</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {metrology.map((meter) => (
-                    <div key={meter.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={meter.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{meter.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{meter.measurement}</p>
+                          <h3 className="text-lg:font-semibold text-white">{meter.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{meter.measurement}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{meter.precision}</div>
+                          <div className="text-2xl:font-bold text-white">{meter.precision}</div>
                           <div className="text-gray-400 text-sm">Precision</div>
                         </div>
                       </div>
@@ -492,18 +492,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Detection */}
             {activeTab === 'detection' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Detection</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Detection</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {detection.map((detector) => (
-                    <div key={detector.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={detector.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{detector.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{detector.detector}</p>
+                          <h3 className="text-lg:font-semibold text-white">{detector.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{detector.detector}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{detector.efficiency}%</div>
+                          <div className="text-2xl:font-bold text-white">{detector.efficiency}%</div>
                           <div className="text-gray-400 text-sm">Efficiency</div>
                         </div>
                       </div>
@@ -537,18 +537,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Interferometry */}
             {activeTab === 'interferometry' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Interferometry</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Interferometry</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {interferometry.map((interferometer) => (
-                    <div key={interferometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={interferometer.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{interferometer.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{interferometer.interferometer}</p>
+                          <h3 className="text-lg:font-semibold text-white">{interferometer.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{interferometer.interferometer}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{interferometer.visibility}%</div>
+                          <div className="text-2xl:font-bold text-white">{interferometer.visibility}%</div>
                           <div className="text-gray-400 text-sm">Visibility</div>
                         </div>
                       </div>
@@ -582,18 +582,18 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
             {/* Quantum Spectroscopy */}
             {activeTab === 'spectroscopy' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Spectroscopy</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Spectroscopy</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {spectroscopy.map((spectrometer) => (
-                    <div key={spectrometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={spectrometer.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{spectrometer.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{spectrometer.spectroscopy}</p>
+                          <h3 className="text-lg:font-semibold text-white">{spectrometer.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{spectrometer.spectroscopy}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{spectrometer.spectralRange} nm</div>
+                          <div className="text-2xl:font-bold text-white">{spectrometer.spectralRange} nm</div>
                           <div className="text-gray-400 text-sm">Spectral Range</div>
                         </div>
                       </div>
@@ -629,12 +629,12 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Sensing & Metrology | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm:mt-2">
               Advanced quantum sensing, imaging, metrology, and detection capabilities
             </p>
           </div>

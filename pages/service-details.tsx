@@ -27,13 +27,13 @@ export default function ServiceDetails() {
             initial={{ opacity: 0, y: 20: }}
             animate={{ opacity: 1, y: 0: }}
             transition={{ duration: 0.5: }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl:mx-auto"
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-8 text-responsive-lg">
+            <h1 className="text-4xl:font-bold text-gray-900 mb-8 text-responsive-lg">
               Service-details
             </h1>
             
-            <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="bg-white rounded-lg:shadow-lg:p-8">
               <p>Content for service-details page will be implemented here.</p>
             </div>
           </motion.div>

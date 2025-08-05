@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -215,7 +215,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -227,15 +227,15 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg:flex items-center justify-center">
                   <span className="text-white text-xl">🛡️</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">Quantum Error Correction & Fault Tolerance</h1>
+                  <h1 className="text-2xl:font-bold text-white">Quantum Error Correction & Fault Tolerance</h1>
                   <p className="text-gray-300">AI-Powered Quantum Reliability</p>
                 </div>
               </div>
@@ -245,7 +245,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
               <button
                 onClick={startErrorCorrection}
                 disabled={isErrorCorrection}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-200 ${
                   isErrorCorrection 
                     ? 'bg-yellow-1200 text-white' 
                     : 'bg-red-600 text-white hover:bg-red-700'
@@ -260,11 +260,11 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1">
               {[
                 { id: 'dashboard', label: 'Error Dashboard', icon: '🛡️' },
                 { id: 'error-correction', label: 'Error Correction', icon: '🔧' },
@@ -277,7 +277,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -295,15 +295,15 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             
             {/* Error Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* System Status */}
-                <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg:flex items-center justify-center">
                       <span className="text-white text-lg">🛡️</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Error Correction Status</h3>
+                      <h3 className="text-lg:font-semibold text-white">Error Correction Status</h3>
                       <p className="text-gray-400 text-sm">Fault Tolerance Lab</p>
                     </div>
                   </div>
@@ -329,23 +329,23 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white hover from-red-700 hover to-red-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🔧</div>
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Quick Actions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg:text-white hover:from-red-700 hover:to-red-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🔧</div>
                       <div className="font-semibold">Correct Errors</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">⚡</div>
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg:text-white hover:from-orange-700 hover:to-orange-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">⚡</div>
                       <div className="font-semibold">Fault Tolerance</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover from-yellow-700 hover to-yellow-1200 transition-all duration-200">
-                      <div className="text-2xl mb-2">🌊</div>
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg:text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🌊</div>
                       <div className="font-semibold">Mitigate Decoherence</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🔄</div>
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🔄</div>
                       <div className="font-semibold">Recovery Protocol</div>
                     </button>
                   </div>
@@ -356,18 +356,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Error Correction Codes */}
             {activeTab === 'error-correction' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Error Correction Codes</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Error Correction Codes</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {errorCorrectionCodes.map((code) => (
-                    <div key={code.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={code.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{code.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{code.type}</p>
+                          <h3 className="text-lg:font-semibold text-white">{code.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{code.type}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{code.correctionRate}%</div>
+                          <div className="text-2xl:font-bold text-white">{code.correctionRate}%</div>
                           <div className="text-gray-400 text-sm">Correction Rate</div>
                         </div>
                       </div>
@@ -405,18 +405,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Fault Tolerant Operations */}
             {activeTab === 'fault-tolerance' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Fault Tolerant Operations</h2>
+                <h2 className="text-2xl:font-bold text-white">Fault Tolerant Operations</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {faultTolerantOperations.map((operation) => (
-                    <div key={operation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={operation.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{operation.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{operation.operation}</p>
+                          <h3 className="text-lg:font-semibold text-white">{operation.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{operation.operation}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{operation.fidelity}%</div>
+                          <div className="text-2xl:font-bold text-white">{operation.fidelity}%</div>
                           <div className="text-gray-400 text-sm">Fidelity</div>
                         </div>
                       </div>
@@ -450,18 +450,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Decoherence Mitigation */}
             {activeTab === 'decoherence' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Decoherence Mitigation</h2>
+                <h2 className="text-2xl:font-bold text-white">Decoherence Mitigation</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {decoherenceMitigation.map((mitigation) => (
-                    <div key={mitigation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={mitigation.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{mitigation.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{mitigation.technique}</p>
+                          <h3 className="text-lg:font-semibold text-white">{mitigation.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{mitigation.technique}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{mitigation.improvement}%</div>
+                          <div className="text-2xl:font-bold text-white">{mitigation.improvement}%</div>
                           <div className="text-gray-400 text-sm">Improvement</div>
                         </div>
                       </div>
@@ -495,18 +495,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Noise Reduction */}
             {activeTab === 'noise-reduction' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Noise Reduction</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Noise Reduction</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {noiseReduction.map((reduction) => (
-                    <div key={reduction.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={reduction.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{reduction.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{reduction.method}</p>
+                          <h3 className="text-lg:font-semibold text-white">{reduction.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{reduction.method}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{reduction.reductionFactor}x</div>
+                          <div className="text-2xl:font-bold text-white">{reduction.reductionFactor}x</div>
                           <div className="text-gray-400 text-sm">Reduction</div>
                         </div>
                       </div>
@@ -540,18 +540,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Fault Diagnosis */}
             {activeTab === 'fault-diagnosis' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Fault Diagnosis</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Fault Diagnosis</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {faultDiagnosis.map((diagnosis) => (
-                    <div key={diagnosis.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={diagnosis.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{diagnosis.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{diagnosis.diagnosis}</p>
+                          <h3 className="text-lg:font-semibold text-white">{diagnosis.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{diagnosis.diagnosis}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{diagnosis.accuracy}%</div>
+                          <div className="text-2xl:font-bold text-white">{diagnosis.accuracy}%</div>
                           <div className="text-gray-400 text-sm">Accuracy</div>
                         </div>
                       </div>
@@ -585,18 +585,18 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
             {/* Recovery Protocols */}
             {activeTab === 'recovery' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Recovery Protocols</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Recovery Protocols</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {recoveryProtocols.map((protocol) => (
-                    <div key={protocol.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={protocol.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{protocol.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{protocol.protocol}</p>
+                          <h3 className="text-lg:font-semibold text-white">{protocol.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{protocol.protocol}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{protocol.successRate}%</div>
+                          <div className="text-2xl:font-bold text-white">{protocol.successRate}%</div>
                           <div className="text-gray-400 text-sm">Success Rate</div>
                         </div>
                       </div>
@@ -632,12 +632,12 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm:mt-2">
               Advanced quantum error correction, fault tolerance, and decoherence mitigation
             </p>
           </div>

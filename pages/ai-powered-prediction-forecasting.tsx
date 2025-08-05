@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 interface Prediction {
@@ -375,7 +375,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -388,23 +388,23 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44">
+        <div className="relative max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-44">
           <div className="text-center">
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6">
               AI-Powered Prediction & Forecasting System
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
               Predictive analytics, trend forecasting, market predictions, 
               demand forecasting, risk assessment, and future insights powered by AI.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">🔮 Predictive Analytics</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">📈 Trend Forecasting</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg:px-6 py-3">
                 <span className="text-white font-semibold">📊 Market Predictions</span>
               </div>
             </div>
@@ -413,7 +413,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
@@ -424,7 +424,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
             <div className="flex flex-wrap justify-center mb-8">
               <button
                 onClick={() => setActiveTab('predictions')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'predictions'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -434,7 +434,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('forecasts')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'forecasts'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -444,7 +444,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('trends')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'trends'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -454,7 +454,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('risks')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'risks'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -464,7 +464,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('markets')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'markets'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -474,7 +474,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setActiveTab('analytics')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -488,13 +488,13 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
             {activeTab === 'predictions' && (
               <div className="space-y-8">
                 {/* Controls */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md flex-row justify-between items-center space-y-4 md space-y-0">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500"
+                        className="bg-white/10 border border-white/20 rounded-lg:px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="market" className="bg-slate-800">Market</option>
@@ -505,23 +505,23 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                         <option value="behavior" className="bg-slate-800">Behavior</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-4 rounded-lg:font-medium transition-all duration-300">
                       Create Prediction
                     </button>
                   </div>
                 </div>
 
                 {/* Predictions Grid */}
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {filteredPredictions.map((prediction) => (
-                    <div key={prediction.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    <div key={prediction.id} className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white mb-2">{prediction.title}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{prediction.type} Prediction</p>
+                          <h3 className="text-xl:font-semibold text-white mb-2">{prediction.title}</h3>
+                          <p className="text-gray-300 text-sm:capitalize">{prediction.type} Prediction</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(prediction.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm:font-medium ${getStatusColor(prediction.status)}`}>
                             {prediction.status}
                           </span>
                           <div className="mt-2">
@@ -537,20 +537,20 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Confidence</div>
-                          <div className="text-2xl font-bold text-white">{prediction.confidence}%</div>
+                        <div className="bg-white/5 rounded-lg:p-4">
+                          <div className="text-sm:text-gray-400 mb-1">Confidence</div>
+                          <div className="text-2xl:font-bold text-white">{prediction.confidence}%</div>
                         </div>
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Accuracy</div>
-                          <div className="text-2xl font-bold text-white">{prediction.accuracy}%</div>
+                        <div className="bg-white/5 rounded-lg:p-4">
+                          <div className="text-sm:text-gray-400 mb-1">Accuracy</div>
+                          <div className="text-2xl:font-bold text-white">{prediction.accuracy}%</div>
                         </div>
                       </div>
 
                       {/* AI Analysis */}
                       <div className="mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3">AI Analysis</h4>
-                        <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4">
+                        <h4 className="text-lg:font-semibold text-white mb-3">AI Analysis</h4>
+                        <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg:p-4">
                           <div className="grid grid-cols-2 gap-4 text-sm">
                             <div>
                               <div className="text-gray-400 mb-1">Confidence Score</div>
@@ -562,7 +562,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                             </div>
                           </div>
                           <div className="mt-3">
-                            <div className="text-sm font-medium text-gray-400 mb-1">Recommendations:</div>
+                            <div className="text-sm:font-medium text-gray-400 mb-1">Recommendations:</div>
                             <div className="text-xs text-gray-300">
                               {prediction.aiAnalysis.recommendations.join(', ')}
                             </div>
@@ -571,10 +571,10 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300">
                           Edit Prediction
                         </button>
                       </div>
@@ -587,30 +587,30 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.totalPredictions.toLocaleString()}</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.totalPredictions.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Predictions</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.activeForecasts.toLocaleString()}</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.activeForecasts.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Active Forecasts</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.averageAccuracy}%</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.averageAccuracy}%</div>
                     <div className="text-gray-400 text-sm">Average Accuracy</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                    <div className="text-3xl:font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>
                     <div className="text-gray-400 text-sm">AI Optimization Score</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-6">AI Insights</h3>
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
+                  <h3 className="text-xl:font-semibold text-white mb-6">AI Insights</h3>
                   <div className="space-y-4">
                     {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4">
+                      <div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg:p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${
@@ -621,7 +621,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm mb-3">{insight.description}</p>
+                        <p className="text-gray-300 text-sm:mb-3">{insight.description}</p>
                         <div className="text-xs text-gray-400 mb-2">
                           Confidence: {Math.round(insight.confidence * 100)}%
                         </div>
@@ -640,20 +640,20 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-36">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-36">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Ready to Predict the Future?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Start your prediction journey with our AI-powered forecasting system 
               and gain insights into future trends and opportunities.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover to-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-emerald-500/25 transform hover:scale-105">
                 Start Predicting
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn More
               </Link>
             </div>

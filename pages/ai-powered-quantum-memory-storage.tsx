@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -218,7 +218,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -230,15 +230,15 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg:flex items-center justify-center">
                   <span className="text-white text-xl">💾</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">Quantum Memory & Storage</h1>
+                  <h1 className="text-2xl:font-bold text-white">Quantum Memory & Storage</h1>
                   <p className="text-gray-300">AI-Powered Quantum Data Management</p>
                 </div>
               </div>
@@ -248,7 +248,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
               <button
                 onClick={startStorage}
                 disabled={isStoring}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-200 ${
                   isStoring 
                     ? 'bg-yellow-1200 text-white' 
                     : 'bg-indigo-600 text-white hover:bg-indigo-700'
@@ -263,11 +263,11 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg p-1">
+            <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1">
               {[
                 { id: 'dashboard', label: 'Storage Dashboard', icon: '💾' },
                 { id: 'memories', label: 'Quantum Memories', icon: '🧠' },
@@ -280,7 +280,7 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -298,15 +298,15 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             
             {/* Storage Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* System Status */}
-                <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg:flex items-center justify-center">
                       <span className="text-white text-lg">💾</span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white">Storage Status</h3>
+                      <h3 className="text-lg:font-semibold text-white">Storage Status</h3>
                       <p className="text-gray-400 text-sm">Quantum Data Management Hub</p>
                     </div>
                   </div>
@@ -332,23 +332,23 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover from-indigo-700 hover to-indigo-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">💾</div>
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Quick Actions</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg:text-white hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">💾</div>
                       <div className="font-semibold">Start Storage</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🗄️</div>
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🗄️</div>
                       <div className="font-semibold">Database</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">☁️</div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg:text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">☁️</div>
                       <div className="font-semibold">Cloud</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
-                      <div className="text-2xl mb-2">🔄</div>
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg:text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                      <div className="text-2xl:mb-2">🔄</div>
                       <div className="font-semibold">Backup</div>
                     </button>
                   </div>
@@ -359,18 +359,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Memories */}
             {activeTab === 'memories' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Memories</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Memories</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {memories.map((memory) => (
-                    <div key={memory.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={memory.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{memory.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{memory.type}</p>
+                          <h3 className="text-lg:font-semibold text-white">{memory.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{memory.type}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{memory.capacity} qubits</div>
+                          <div className="text-2xl:font-bold text-white">{memory.capacity} qubits</div>
                           <div className="text-gray-400 text-sm">Capacity</div>
                         </div>
                       </div>
@@ -404,18 +404,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Storage */}
             {activeTab === 'storages' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Storage</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Storage</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {storages.map((storage) => (
-                    <div key={storage.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={storage.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{storage.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{storage.storage}</p>
+                          <h3 className="text-lg:font-semibold text-white">{storage.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{storage.storage}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{storage.capacity} TB</div>
+                          <div className="text-2xl:font-bold text-white">{storage.capacity} TB</div>
                           <div className="text-gray-400 text-sm">Capacity</div>
                         </div>
                       </div>
@@ -449,18 +449,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Databases */}
             {activeTab === 'databases' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Databases</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Databases</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {databases.map((database) => (
-                    <div key={database.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={database.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{database.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{database.database}</p>
+                          <h3 className="text-lg:font-semibold text-white">{database.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{database.database}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{database.performance}%</div>
+                          <div className="text-2xl:font-bold text-white">{database.performance}%</div>
                           <div className="text-gray-400 text-sm">Performance</div>
                         </div>
                       </div>
@@ -494,18 +494,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Cloud */}
             {activeTab === 'clouds' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Cloud</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Cloud</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {clouds.map((cloud) => (
-                    <div key={cloud.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={cloud.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{cloud.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{cloud.cloud}</p>
+                          <h3 className="text-lg:font-semibold text-white">{cloud.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{cloud.cloud}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{cloud.uptime}%</div>
+                          <div className="text-2xl:font-bold text-white">{cloud.uptime}%</div>
                           <div className="text-gray-400 text-sm">Uptime</div>
                         </div>
                       </div>
@@ -539,18 +539,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Backup */}
             {activeTab === 'backups' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Backup</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Backup</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {backups.map((backup) => (
-                    <div key={backup.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={backup.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{backup.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{backup.backup}</p>
+                          <h3 className="text-lg:font-semibold text-white">{backup.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{backup.backup}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{backup.size} GB</div>
+                          <div className="text-2xl:font-bold text-white">{backup.size} GB</div>
                           <div className="text-gray-400 text-sm">Size</div>
                         </div>
                       </div>
@@ -584,18 +584,18 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
             {/* Quantum Recovery */}
             {activeTab === 'recoveries' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white">Quantum Recovery</h2>
+                <h2 className="text-2xl:font-bold text-white">Quantum Recovery</h2>
                 
-                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {recoveries.map((recovery) => (
-                    <div key={recovery.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                    <div key={recovery.id} className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-semibold text-white">{recovery.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{recovery.recovery}</p>
+                          <h3 className="text-lg:font-semibold text-white">{recovery.name}</h3>
+                          <p className="text-gray-400 text-sm:capitalize">{recovery.recovery}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-white">{recovery.progress}%</div>
+                          <div className="text-2xl:font-bold text-white">{recovery.progress}%</div>
                           <div className="text-gray-400 text-sm">Progress</div>
                         </div>
                       </div>
@@ -631,12 +631,12 @@ const AIPoweredQuantumMemoryStorage: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Memory & Storage | Zion Tech Group
             </p>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm:mt-2">
               Advanced quantum memory, storage, database, and cloud capabilities
             </p>
           </div>

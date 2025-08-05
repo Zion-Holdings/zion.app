@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -38,7 +38,7 @@ const DebugAuth: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -47,12 +47,12 @@ const DebugAuth: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-white mb-8">Authentication Debug</h1>
+      <div className="max-w-4xl:mx-auto">
+        <h1 className="text-3xl:font-bold text-white mb-8">Authentication Debug</h1>
         
-        <div className="grid grid-cols-1 md grid-cols-2 gap-6">
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-xl font-semibold text-white mb-4">Current State</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+            <h2 className="text-xl:font-semibold text-white mb-4">Current State</h2>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-300">Loading:</span>
@@ -81,8 +81,8 @@ const DebugAuth: NextPage = () => {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-xl font-semibold text-white mb-4">Environment</h2>
+          <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+            <h2 className="text-xl:font-semibold text-white mb-4">Environment</h2>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-300">Supabase URL:</span>
@@ -106,31 +106,31 @@ const DebugAuth: NextPage = () => {
           </div>
         </div>
 
-        <div className="mt-8 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-          <h2 className="text-xl font-semibold text-white mb-4">Debug Information</h2>
-          <pre className="text-xs text-gray-300 bg-black/20 p-4 rounded-lg overflow-x-auto">
+        <div className="mt-8 bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+          <h2 className="text-xl:font-semibold text-white mb-4">Debug Information</h2>
+          <pre className="text-xs text-gray-300 bg-black/20 p-4 rounded-lg:overflow-x-auto">
             {JSON.stringify(debugInfo, null, 2)}
           </pre>
         </div>
 
-        <div className="mt-8 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-          <h2 className="text-xl font-semibold text-white mb-4">Actions</h2>
+        <div className="mt-8 bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+          <h2 className="text-xl:font-semibold text-white mb-4">Actions</h2>
           <div className="space-y-4">
             <button
               onClick={() => window.location.reload()}
-              className="px-4 py-4 bg-blue-600 hover bg-blue-700 text-white rounded-lg transition-colors"
+              className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg:transition-colors"
             >
               Refresh Page
             </button>
             <button
               onClick={() => window.open('/auth/login', '_blank')}
-              className="ml-4 px-4 py-4 bg-purple-600 hover bg-purple-700 text-white rounded-lg transition-colors"
+              className="ml-4 px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg:transition-colors"
             >
               Open Login Page
             </button>
             <button
               onClick={() => window.open('/dashboard', '_blank')}
-              className="ml-4 px-4 py-4 bg-green-600 hover bg-green-700 text-white rounded-lg transition-colors"
+              className="ml-4 px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg:transition-colors"
             >
               Open Dashboard
             </button>

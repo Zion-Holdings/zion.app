@@ -137,7 +137,7 @@ return: (
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ))}
-        <span className="ml-1 text-sm text-gray-600">({rating})</span>;
+        <span className="ml-1 text-sm:text-gray-600">({rating})</span>;
       </div>;
     );
   };
@@ -163,13 +163,13 @@ return: (
 
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">
+        <div className="bg-white shadow-sm:border-b">
+          <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-8">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl:font-bold text-gray-900 mb-4">
                 IT Talents
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">,
+              <p className="text-xl:text-gray-600 max-w-3xl:mx-auto">,
                 Find the perfect talent for your project. From developers to designers, we've got you covered.
               </p>
             </div>
@@ -178,24 +178,24 @@ return: (
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-6">
-            <div className="flex flex-col lg flex-row  gap-4 items-center justify-between">,
+          <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-6">
+            <div className="flex flex-col lg:flex-row  gap-4 items-center justify-between">,
               {/* Search */}
-              <div className="w-full lg  w-96">
+              <div className="w-full lg: w-96">
                 <input: type="text",
                   placeholder="Search talents, skills, or titles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
                 />
               </div>
 ,
               {/* Sort: */}
-              <div className="w-full lg  w-48">
+              <div className="w-full lg: w-48">
                 <select,
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value: as 'rating' | 'rate' | 'experience')}
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg:focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
                 >
                   <option: value="rating">Sort by Rating</option>
                   <option value="rate">Sort by Rate</option>
@@ -211,7 +211,7 @@ return: (
                   <button
                     key={skill}
                     onClick={() => handleSkillToggle(skill)}
-                    className={`px-3 py-3 rounded-full text-sm font-medium transition-colors ${
+                    className={`px-3 py-3 rounded-full text-sm:font-medium transition-colors ${
                       selectedSkills.includes(skill)
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover: bg-gray-200',
@@ -226,7 +226,7 @@ return: (
         </div>
 
         {/* Results: */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">
@@ -235,24 +235,24 @@ return: (
           </div>
 
           {/* Talent Cards */}
-          <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6">
+          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">
             {filteredTalents.map((talent) => (
               <div,
                 key={talent.id}
-                className="bg-white rounded-lg shadow-md hover  shadow-lg  transition-shadow duration-300 overflow-hidden border border-gray-200"
+                className="bg-white rounded-lg:shadow-md:hover: shadow-lg: transition-shadow duration-300 overflow-hidden border border-gray-200"
               >,
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
                   <div className="absolute top-4 right-4">
                     <div className="bg-white bg-opacity-90 rounded-full px-3 py-3">
-                      <span className="text-sm font-semibold text-gray-800">
+                      <span className="text-sm:font-semibold text-gray-800">
                         ${talent.hourly_rate}/hr
                       </span>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-4">
-                      <span className="text-sm font-medium text-gray-800">
+                    <div className="bg-white bg-opacity-90 rounded-lg:px-3 py-4">
+                      <span className="text-sm:font-medium text-gray-800">
                         {talent.availability}
                       </span>
                     </div>
@@ -262,33 +262,33 @@ return: (
                 {/* Card Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl:font-semibold text-gray-900">
                       {talent.name}
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-gray-600 text-sm:mb-4">
                     {talent.title}
                   </p>
 
                   {/* Rating */}
                   <div className="flex items-center mb-4">
                     {renderStars(talent.rating)}
-                    <span className="text-sm text-gray-600 ml-2">
+                    <span className="text-sm:text-gray-600 ml-2">
                       {talent.review_count} reviews
                     </span>
                   </div>
 
                   {/* Details */}
                   <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm:text-gray-600">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       {talent.location}
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm:text-gray-600">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6z" />
                       </svg>
@@ -316,7 +316,7 @@ return: (
                   </div>
 
                   {/* Contact Button */}
-                  <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2">
+                  <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-4 px-4 rounded-md:transition-colors duration-200 focus:outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2">
 Contact: Talent
                   </button>
                 </div>
@@ -330,8 +330,8 @@ Contact: Talent
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">No talents found</h3>
-              <p className="mt-1 text-sm text-gray-500">
+              <h3 className="mt-2 text-sm:font-medium text-gray-900">No talents found</h3>
+              <p className="mt-1 text-sm:text-gray-500">
                 Try adjusting your search criteria or filters.
               </p>
             </div>
@@ -341,7 +341,7 @@ Contact: Talent
     </>
   ;
   </div>;
-            );
+              );
 };
 
 export default TalentPage;

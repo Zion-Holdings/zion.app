@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
@@ -446,7 +446,7 @@ const ExecutiveDashboardPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -466,24 +466,24 @@ const ExecutiveDashboardPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-white">Executive Dashboard</h1>
+              <h1 className="text-3xl:font-bold text-white">Executive Dashboard</h1>
               <p className="text-gray-300 mt-2">Strategic insights and high-level performance metrics</p>
             </div>
             <div className="flex items-center space-x-4">
               <select
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value as any)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="month">Monthly</option>
                 <option value="quarter">Quarterly</option>
                 <option value="year">Yearly</option>
               </select>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                 Export Report
               </button>
             </div>
@@ -491,16 +491,16 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Key Metrics Overview */}
-        <div className="grid grid-cols-2 md:grid-cols-3" lg grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3" lg:grid-cols-6 gap-4 mb-8">
           {metrics.slice(0, 6).map((metric, index) => (
             <motion.div
               key={metric.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-gray-400 text-sm">{metric.name}</span>
@@ -508,11 +508,11 @@ const ExecutiveDashboardPage: NextPage = () => {
                   {metric.status.replace('-', ' ')}
                 </span>
               </div>
-              <div className="text-2xl font-bold text-white mb-1">
+              <div className="text-2xl:font-bold text-white mb-1">
                 {metric.unit === 'USD' ? formatCurrency(metric.value) : `${metric.value}${metric.unit}`}
               </div>
               <div className="flex items-center space-x-1">
-                <span className={`text-sm ${getTrendColor(metric.trend)}`}>
+                <span className={`text-sm:${getTrendColor(metric.trend)}`}>
                   {getTrendIcon(metric.trend)} {formatPercent(metric.changePercent)}
                 </span>
                 <span className="text-gray-400 text-xs">vs previous</span>
@@ -522,7 +522,7 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 mb-8">
+        <div className="bg-white/5 backdrop-blur-md:rounded-xl:border border-white/10 mb-8">
           <div className="flex border-b border-white/10">
             <button
               onClick={() => setActiveTab('overview')}
@@ -588,10 +588,10 @@ const ExecutiveDashboardPage: NextPage = () => {
 
           <div className="p-6">
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Financial Summary */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Financial Summary</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Financial Summary</h3>
                   {financial && (
                     <div className="space-y-4">
                       <div className="flex justify-between">
@@ -615,8 +615,8 @@ const ExecutiveDashboardPage: NextPage = () => {
                 </div>
 
                 {/* Strategic Initiatives */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Strategic Initiatives</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Strategic Initiatives</h3>
                   <div className="space-y-3">
                     {initiatives.slice(0, 3).map((initiative) => (
                       <div key={initiative.id} className="flex items-center justify-between">
@@ -637,10 +637,10 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'financial' && financial && (
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Revenue & Profit */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Revenue & Profit</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Revenue & Profit</h3>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
@@ -653,7 +653,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                           style={{ width: `${(financial.revenue.current / financial.revenue.target) * 100}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between text-sm mt-1">
+                      <div className="flex justify-between text-sm:mt-1">
                         <span className="text-gray-400">Target: {formatCurrency(financial.revenue.target)}</span>
                         <span className="text-green-400">+{financial.revenue.growth}%</span>
                       </div>
@@ -669,7 +669,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                           style={{ width: `${(financial.profit.margin / financial.profit.target) * 100}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between text-sm mt-1">
+                      <div className="flex justify-between text-sm:mt-1">
                         <span className="text-gray-400">Margin: {financial.profit.target}%</span>
                         <span className="text-blue-400">{financial.profit.margin}%</span>
                       </div>
@@ -678,8 +678,8 @@ const ExecutiveDashboardPage: NextPage = () => {
                 </div>
 
                 {/* Cash Flow */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Cash Flow</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Cash Flow</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Operating</span>
@@ -712,12 +712,12 @@ const ExecutiveDashboardPage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{initiative.name}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{initiative.name}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
                             {initiative.priority}
                           </span>
@@ -728,7 +728,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                         <p className="text-gray-300">{initiative.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{initiative.progress}%</div>
+                        <div className="text-2xl:font-bold text-white">{initiative.progress}%</div>
                         <div className="text-gray-400 text-sm">Progress</div>
                       </div>
                     </div>
@@ -771,10 +771,10 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'operational' && operations && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Efficiency Metrics */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Efficiency</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Efficiency</h3>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
@@ -807,8 +807,8 @@ const ExecutiveDashboardPage: NextPage = () => {
                 </div>
 
                 {/* Technology Metrics */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Technology</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Technology</h3>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
@@ -841,8 +841,8 @@ const ExecutiveDashboardPage: NextPage = () => {
                 </div>
 
                 {/* People Metrics */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">People</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">People</h3>
                   <div className="space-y-4">
                     <div>
                       <div className="flex justify-between mb-2">
@@ -881,12 +881,12 @@ const ExecutiveDashboardPage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{insight.title}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.category === 'opportunity' ? 'bg-green-600' :
                             insight.category === 'threat' ? 'bg-red-600' :
@@ -902,7 +902,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                           </span>
                         </div>
                         <p className="text-gray-300 mb-3">{insight.description}</p>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <div className="flex items-center space-x-4 text-sm:text-gray-400">
                           <span>Confidence: {insight.confidence}%</span>
                           <span>Source: {insight.source}</span>
                           <span>{insight.date.toLocaleDateString()}</span>
@@ -914,7 +914,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                       <h4 className="text-white font-semibold mb-2">Recommendations</h4>
                       <ul className="space-y-1">
                         {insight.recommendations.map((rec, idx) => (
-                          <li key={idx} className="text-gray-300 text-sm flex items-start">
+                          <li key={idx} className="text-gray-300 text-sm:flex items-start">
                             <span className="text-purple-400 mr-2">•</span>
                             {rec}
                           </li>
@@ -927,41 +927,41 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'customers' && customers && (
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Customer Metrics */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Customer Metrics</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Customer Metrics</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <div className="text-2xl font-bold text-white">{customers.totalCustomers.toLocaleString()}</div>
+                      <div className="text-2xl:font-bold text-white">{customers.totalCustomers.toLocaleString()}</div>
                       <div className="text-gray-400 text-sm">Total Customers</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-green-400">+{customers.newCustomers.toLocaleString()}</div>
+                      <div className="text-2xl:font-bold text-green-400">+{customers.newCustomers.toLocaleString()}</div>
                       <div className="text-gray-400 text-sm">New Customers</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-red-400">{customers.churnRate}%</div>
+                      <div className="text-2xl:font-bold text-red-400">{customers.churnRate}%</div>
                       <div className="text-gray-400 text-sm">Churn Rate</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-blue-400">{customers.customerSatisfaction}/5</div>
+                      <div className="text-2xl:font-bold text-blue-400">{customers.customerSatisfaction}/5</div>
                       <div className="text-gray-400 text-sm">Satisfaction</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-purple-400">{formatCurrency(customers.averageRevenuePerUser)}</div>
+                      <div className="text-2xl:font-bold text-purple-400">{formatCurrency(customers.averageRevenuePerUser)}</div>
                       <div className="text-gray-400 text-sm">ARPU</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-orange-400">{formatCurrency(customers.customerLifetimeValue)}</div>
+                      <div className="text-2xl:font-bold text-orange-400">{formatCurrency(customers.customerLifetimeValue)}</div>
                       <div className="text-gray-400 text-sm">CLV</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Customer Segments */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Top Customer Segments</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Top Customer Segments</h3>
                   <div className="space-y-4">
                     {customers.topSegments.map((segment, index) => (
                       <div key={index} className="flex items-center justify-between">
@@ -980,7 +980,7 @@ const ExecutiveDashboardPage: NextPage = () => {
               </div>
             )}
           </div>
-                            </div>
+                                      </div>
         </div>
       </div>
     </div>

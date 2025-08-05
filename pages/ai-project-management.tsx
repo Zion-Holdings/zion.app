@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -333,7 +333,7 @@ const AIProjectManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -343,20 +343,20 @@ const AIProjectManagementPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl:font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Marketplace
               </Link>
-              <Link href="/investor-matchmaking" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/investor-matchmaking" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Investors
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Login
               </Link>
             </div>
@@ -364,13 +364,13 @@ const AIProjectManagementPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl:md:text-6xl:font-bold text-white mb-6">
             AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Project Management</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">
             Intelligent project management with AI-powered automation, workflow orchestration, and predictive insights
           </p>
         </div>
@@ -387,7 +387,7 @@ const AIProjectManagementPage: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setView(tab.id as any)}
-              className={`px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 mx-2 mb-2 rounded-lg:font-medium transition-all duration-300 ${
                 view === tab.id
                   ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
                   : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -408,25 +408,25 @@ const AIProjectManagementPage: NextPage = () => {
           <>
             {/* Overview */}
             {view === 'overview' && (
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">📁</div>
-                  <div className="text-2xl font-bold text-white">{projects.length}</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">📁</div>
+                  <div className="text-2xl:font-bold text-white">{projects.length}</div>
                   <div className="text-gray-400">Active Projects</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">✅</div>
-                  <div className="text-2xl font-bold text-white">{tasks.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">✅</div>
+                  <div className="text-2xl:font-bold text-white">{tasks.length}</div>
                   <div className="text-gray-400">Total Tasks</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">⚙️</div>
-                  <div className="text-2xl font-bold text-white">{workflows.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">⚙️</div>
+                  <div className="text-2xl:font-bold text-white">{workflows.length}</div>
                   <div className="text-gray-400">Automated Workflows</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">🤖</div>
-                  <div className="text-2xl font-bold text-white">{insights.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">🤖</div>
+                  <div className="text-2xl:font-bold text-white">{insights.length}</div>
                   <div className="text-gray-400">AI Insights</div>
                 </div>
               </div>
@@ -435,20 +435,20 @@ const AIProjectManagementPage: NextPage = () => {
             {/* Projects */}
             {view === 'projects' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">AI-Optimized Projects</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">AI-Optimized Projects</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {projects.map((project) => (
-                    <div key={project.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={project.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white">{project.name}</h3>
+                          <h3 className="text-xl:font-semibold text-white">{project.name}</h3>
                           <p className="text-gray-300 text-sm">{project.description}</p>
                         </div>
                         <div className="text-right">
-                          <div className={`text-sm font-medium ${getStatusColor(project.status)}`}>
+                          <div className={`text-sm:font-medium ${getStatusColor(project.status)}`}>
                             {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                           </div>
-                          <div className={`text-sm font-medium ${getPriorityColor(project.priority)}`}>
+                          <div className={`text-sm:font-medium ${getPriorityColor(project.priority)}`}>
                             {project.priority.charAt(0).toUpperCase() + project.priority.slice(1)}
                           </div>
                         </div>
@@ -496,21 +496,21 @@ const AIProjectManagementPage: NextPage = () => {
             {/* Tasks */}
             {view === 'tasks' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">AI-Optimized Tasks</h2>
+                <h2 className="text-2xl:font-bold text-white mb-6">AI-Optimized Tasks</h2>
                 <div className="space-y-4">
                   {tasks.map((task) => (
-                    <div key={task.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={task.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start">
                         <div className="flex-1">
                           <div className="flex items-center space-x-3 mb-2">
-                            <h3 className="text-lg font-semibold text-white">{task.title}</h3>
+                            <h3 className="text-lg:font-semibold text-white">{task.title}</h3>
                             {task.aiOptimized && (
                               <span className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                                 AI Optimized
                               </span>
                             )}
                           </div>
-                          <p className="text-gray-300 text-sm mb-3">{task.description}</p>
+                          <p className="text-gray-300 text-sm:mb-3">{task.description}</p>
                           <div className="flex items-center space-x-4 text-sm">
                             <span className="text-gray-400">Assignee:</span>
                             <span className="text-white">{task.assignee}</span>
@@ -521,10 +521,10 @@ const AIProjectManagementPage: NextPage = () => {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className={`text-sm font-medium ${getStatusColor(task.status)}`}>
+                          <div className={`text-sm:font-medium ${getStatusColor(task.status)}`}>
                             {task.status.replace('-', ' ').charAt(0).toUpperCase() + task.status.slice(1)}
                           </div>
-                          <div className={`text-sm font-medium ${getPriorityColor(task.priority)}`}>
+                          <div className={`text-sm:font-medium ${getPriorityColor(task.priority)}`}>
                             {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
                           </div>
                         </div>
@@ -538,18 +538,18 @@ const AIProjectManagementPage: NextPage = () => {
             {/* Workflows */}
             {view === 'workflows' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">Automated Workflows</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">Automated Workflows</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {workflows.map((workflow) => (
-                    <div key={workflow.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={workflow.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white">{workflow.name}</h3>
+                          <h3 className="text-xl:font-semibold text-white">{workflow.name}</h3>
                           <p className="text-gray-300 text-sm">{workflow.description}</p>
                         </div>
                         <div className="text-right">
-                          <div className="text-sm text-gray-400">Success Rate</div>
-                          <div className="text-lg font-bold text-green-500">{workflow.successRate}%</div>
+                          <div className="text-sm:text-gray-400">Success Rate</div>
+                          <div className="text-lg:font-bold text-green-500">{workflow.successRate}%</div>
                         </div>
                       </div>
 
@@ -567,7 +567,7 @@ const AIProjectManagementPage: NextPage = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <div className="text-sm font-medium text-gray-400 mb-2">Workflow Steps:</div>
+                        <div className="text-sm:font-medium text-gray-400 mb-2">Workflow Steps:</div>
                         {workflow.steps.map((step) => (
                           <div key={step.id} className="flex items-center space-x-3 text-sm">
                             <span className={`px-4 py-3 rounded-full text-xs ${
@@ -591,20 +591,20 @@ const AIProjectManagementPage: NextPage = () => {
             {/* AI Insights */}
             {view === 'insights' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">AI-Powered Insights</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">AI-Powered Insights</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {insights.map((insight, index) => (
-                    <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex items-start space-x-3 mb-4">
                         <div className="text-2xl">{getInsightIcon(insight.type)}</div>
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
-                            <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
+                            <h3 className="text-lg:font-semibold text-white">{insight.title}</h3>
                             <span className={`px-4 py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.impact}
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm mb-3">{insight.description}</p>
+                          <p className="text-gray-300 text-sm:mb-3">{insight.description}</p>
                           <div className="flex items-center space-x-4 text-sm">
                             <span className="text-gray-400">Confidence:</span>
                             <span className="text-white">{insight.confidence}%</span>
@@ -613,7 +613,7 @@ const AIProjectManagementPage: NextPage = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <div className="text-sm font-medium text-gray-400">Action Items:</div>
+                        <div className="text-sm:font-medium text-gray-400">Action Items:</div>
                         {insight.actionItems.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-center space-x-2 text-sm">
                             <span className="text-purple-400">•</span>

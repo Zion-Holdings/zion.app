@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -16,12 +16,12 @@ const blockchainNetworkPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl:font-bold text-white">
                   <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                     Zion
                   </Link>
@@ -29,17 +29,17 @@ const blockchainNetworkPage: NextPage = () => {
               </div>
             </div>
             
-            <div className="hidden md flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/products" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md:text-sm:font-medium transition-all duration-300 shadow-lg:hover:shadow-purple-500/25">
                 Join Zion
               </Link>
             </div>
@@ -49,71 +49,71 @@ const blockchainNetworkPage: NextPage = () => {
 
       {/* Product Content */}
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-44">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl:md:text-6xl:font-bold text-white mb-6">
               Zion Blockchain Network
             </h1>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl:text-gray-300 max-w-4xl:mx-auto leading-relaxed">
               A secure, scalable blockchain network designed specifically for AI marketplace transactions, ensuring transparency and immutability.
             </p>
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Distributed ledger technology</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Distributed ledger technology</h3>
                 <p className="text-gray-300">Advanced distributed ledger technology capabilities designed for enterprise use.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Smart contract execution</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Smart contract execution</h3>
                 <p className="text-gray-300">Advanced smart contract execution capabilities designed for enterprise use.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Real-time transaction verification</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Real-time transaction verification</h3>
                 <p className="text-gray-300">Advanced real-time transaction verification capabilities designed for enterprise use.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Privacy protection protocols</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Privacy protection protocols</h3>
                 <p className="text-gray-300">Advanced privacy protection protocols capabilities designed for enterprise use.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Cross-chain compatibility</h3>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Cross-chain compatibility</h3>
                 <p className="text-gray-300">Advanced cross-chain compatibility capabilities designed for enterprise use.</p>
               </div>
             
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Consensus mechanism</h3>
-                <p className="text-gray-300">Advanced consensus mechanism capabilities designed for enterprise use.</p>
+              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Consensus mechanism</h3>
+                <p className="text-gray-300">Advanced consensus mechanism:capabilities designed for enterprise use.</p>
               </div>
             
           </div>
 
           {/* Benefits */}
-          <div className="grid grid-cols-1 md grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">100% transaction transparency</h3>
-                <div className="text-3xl font-bold text-green-400">100%</div>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">100% transaction transparency</h3>
+                <div className="text-3xl:font-bold text-green-400">100%</div>
               </div>
             
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Zero downtime since launch</h3>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Zero downtime since launch</h3>
                 
               </div>
             
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Reduced fraud by 95%</h3>
-                <div className="text-3xl font-bold text-green-400">95%</div>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Reduced fraud by 95%</h3>
+                <div className="text-3xl:font-bold text-green-400">95%</div>
               </div>
             
-              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10">
-                <h3 className="text-xl font-bold text-white mb-4">Instant settlement times</h3>
+              <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl:border border-white/10">
+                <h3 className="text-xl:font-bold text-white mb-4">Instant settlement times</h3>
                 
               </div>
             
@@ -121,12 +121,12 @@ const blockchainNetworkPage: NextPage = () => {
 
           {/* Pricing */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-8">Pricing Plans</h2>
+            <h2 className="text-4xl:font-bold text-white mb-8">Pricing Plans</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
-                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ">
-                  <h3 className="text-2xl font-bold text-white mb-4">Basic</h3>
-                  <div className="text-4xl font-bold text-white mb-6">$49/month</div>
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 ">
+                  <h3 className="text-2xl:font-bold text-white mb-4">Basic</h3>
+                  <div className="text-4xl:font-bold text-white mb-6">$49/month</div>
                   <ul className="space-y-3 mb-8">
                     
                       <li className="text-gray-300 flex items-center">
@@ -151,14 +151,14 @@ const blockchainNetworkPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>
               
-                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 border-purple-500/50">
-                  <h3 className="text-2xl font-bold text-white mb-4">Professional</h3>
-                  <div className="text-4xl font-bold text-white mb-6">$199/month</div>
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 border-purple-500/50">
+                  <h3 className="text-2xl:font-bold text-white mb-4">Professional</h3>
+                  <div className="text-4xl:font-bold text-white mb-6">$199/month</div>
                   <ul className="space-y-3 mb-8">
                     
                       <li className="text-gray-300 flex items-center">
@@ -190,14 +190,14 @@ const blockchainNetworkPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>
               
-                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ">
-                  <h3 className="text-2xl font-bold text-white mb-4">Enterprise</h3>
-                  <div className="text-4xl font-bold text-white mb-6">Custom</div>
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl:border border-white/10 ">
+                  <h3 className="text-2xl:font-bold text-white mb-4">Enterprise</h3>
+                  <div className="text-4xl:font-bold text-white mb-6">Custom</div>
                   <ul className="space-y-3 mb-8">
                     
                       <li className="text-gray-300 flex items-center">
@@ -229,7 +229,7 @@ const blockchainNetworkPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg:font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>

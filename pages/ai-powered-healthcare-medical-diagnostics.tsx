@@ -200,7 +200,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           <div className="flex items-center space-x-4">
             <Heart className="h-12 w-12 text-red-400" />
             <div>
-              <h1 className="text-3xl font-bold text-white">AI-Powered Healthcare Diagnostics</h1>
+              <h1 className="text-3xl:font-bold text-white">AI-Powered Healthcare Diagnostics</h1>
               <p className="text-gray-300">Intelligent medical diagnostics and patient monitoring</p>
             </div>
           </div>
@@ -208,7 +208,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
             <select
               value={selectedTimeframe}
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-4 text-sm"
+              className="bg-white/10 text-white border border-white/20 rounded-lg:px-3 py-4 text-sm"
             >
               <option value="7d">Last 7 days</option>
               <option value="30d">Last 30 days</option>
@@ -228,7 +228,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm transition-colors ${
+                className={`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
                   activeTab === tab.id
                     ? 'border-red-500 text-red-400'
                     : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'
@@ -253,42 +253,42 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-300 text-sm">Active Patients</p>
-                                             <p className="text-2xl font-bold text-white">{patients.filter(p => p.status === 'active').length}</p>
+                                             <p className="text-2xl:font-bold text-white">{patients.filter(p => p.status === 'active').length}</p>
                     </div>
                     <User className="h-12 w-12 text-blue-400" />
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-300 text-sm">Diagnostics</p>
-                      <p className="text-2xl font-bold text-white">{diagnostics.length}</p>
+                      <p className="text-2xl:font-bold text-white">{diagnostics.length}</p>
                     </div>
                     <Brain className="h-12 w-12 text-green-400" />
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-300 text-sm">Accuracy Rate</p>
-                      <p className="text-2xl font-bold text-white">96%</p>
+                      <p className="text-2xl:font-bold text-white">96%</p>
                     </div>
                     <CheckCircle className="h-12 w-12 text-purple-400" />
                   </div>
                 </div>
                 
-                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-300 text-sm">Critical Alerts</p>
-                      <p className="text-2xl font-bold text-white">{monitoring.filter(m => m.status === 'critical').length}</p>
+                      <p className="text-2xl:font-bold text-white">{monitoring.filter(m => m.status === 'critical').length}</p>
                     </div>
                     <AlertTriangle className="h-12 w-12 text-red-400" />
                   </div>
@@ -296,8 +296,8 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
               </div>
 
               {/* Recent Activity */}
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-                <h3 className="text-xl font-semibold text-white mb-4">Recent Activity</h3>
+              <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
+                <h3 className="text-xl:font-semibold text-white mb-4">Recent Activity</h3>
                 <div className="space-y-4">
                   {diagnostics.slice(0, 5).map((diagnostic) => (
                     <div key={diagnostic.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
@@ -323,18 +323,18 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           {activeTab === 'diagnostics' && (
             <div className="space-y-6">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-white">Medical Diagnostics</h2>
-                <button className="bg-red-600 hover bg-red-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <h2 className="text-2xl:font-bold text-white">Medical Diagnostics</h2>
+                <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-4 rounded-lg:transition-colors">
                   + New Diagnostic
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {diagnostics.map((diagnostic) => (
-                  <div key={diagnostic.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div key={diagnostic.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{diagnostic.name}</h3>
+                        <h3 className="text-lg:font-semibold text-white">{diagnostic.name}</h3>
                         <p className="text-gray-400 text-sm">{diagnostic.type} • {diagnostic.status}</p>
                       </div>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(diagnostic.status)}`}>
@@ -377,18 +377,18 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           {activeTab === 'patients' && (
             <div className="space-y-6">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-white">Patient Management</h2>
-                <button className="bg-red-600 hover bg-red-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <h2 className="text-2xl:font-bold text-white">Patient Management</h2>
+                <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-4 rounded-lg:transition-colors">
                   + Add Patient
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {patients.map((patient) => (
-                  <div key={patient.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div key={patient.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{patient.name}</h3>
+                        <h3 className="text-lg:font-semibold text-white">{patient.name}</h3>
                         <p className="text-gray-400 text-sm">ID: {patient.id} • Age: {patient.age}</p>
                       </div>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(patient.status)}`}>
@@ -433,14 +433,14 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           {/* Monitoring Tab */}
           {activeTab === 'monitoring' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-white">Patient Monitoring</h2>
+              <h2 className="text-2xl:font-bold text-white">Patient Monitoring</h2>
               
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {monitoring.map((monitor) => (
-                  <div key={monitor.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div key={monitor.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{monitor.patientName}</h3>
+                        <h3 className="text-lg:font-semibold text-white">{monitor.patientName}</h3>
                         <p className="text-gray-400 text-sm">{monitor.type} • {monitor.status}</p>
                       </div>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(monitor.status)}`}>
@@ -482,14 +482,14 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
           {/* Analytics Tab */}
           {activeTab === 'analytics' && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-white">Healthcare Analytics</h2>
+              <h2 className="text-2xl:font-bold text-white">Healthcare Analytics</h2>
               
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {analytics.map((analytic) => (
-                  <div key={analytic.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div key={analytic.id} className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{analytic.name}</h3>
+                        <h3 className="text-lg:font-semibold text-white">{analytic.name}</h3>
                         <p className="text-gray-400 text-sm">{analytic.type} • {analytic.status}</p>
                       </div>
                       <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(analytic.status)}`}>
@@ -524,7 +524,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-              );
+                );
 };
 
 export default AIPoweredHealthcareMedicalDiagnosticsPage;

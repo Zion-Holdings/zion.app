@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
 interface SmartContract {
@@ -548,7 +548,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -557,7 +557,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <span className="text-lg font-medium">Loading AI-Powered Blockchain...</span>
+            <span className="text-lg:font-medium">Loading AI-Powered Blockchain...</span>
           </div>
         </div>
       </div>
@@ -575,25 +575,25 @@ const AIPoweredBlockchainPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
+      <nav className="bg-black/20 backdrop-blur-md:border-b border-white/10 sticky top-0 z-50">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+                <h1 className="text-2xl:font-bold text-white">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8">
-              <Link href="/ai-powered-machine-learning" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/ai-powered-machine-learning" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 ML
               </Link>
-              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Analytics
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -601,13 +601,13 @@ const AIPoweredBlockchainPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl:md:text-5xl:font-bold text-white mb-4">
             AI-Powered Blockchain
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto">
             Intelligent smart contracts, decentralized applications, blockchain analytics, 
             and AI-driven blockchain optimization with advanced blockchain capabilities.
           </p>
@@ -615,7 +615,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
         {/* Tab Selector */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-1">
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1">
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
               { id: 'contracts', name: 'Smart Contracts', icon: '📜' },
@@ -626,7 +626,7 @@ const AIPoweredBlockchainPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm:font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -643,15 +643,15 @@ const AIPoweredBlockchainPage: NextPage = () => {
         {selectedView === 'overview' && (
           <div className="grid grid-cols-1 md:grid-cols-3" gap-6 mb-8">
             {analytics.map((metric) => (
-              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">{metric.metric}</h3>
+                  <h3 className="text-lg:font-semibold text-white">{metric.metric}</h3>
                   <span className="text-2xl">{getTrendIcon(metric.trend)}</span>
                 </div>
                 
                 <div className="mb-4">
-                  <div className="text-3xl font-bold text-white mb-2">{metric.current}</div>
-                  <p className="text-sm text-gray-400">Target: {metric.target}</p>
+                  <div className="text-3xl:font-bold text-white mb-2">{metric.current}</div>
+                  <p className="text-sm:text-gray-400">Target: {metric.target}</p>
                 </div>
                 
                 <div className="flex items-center justify-between text-sm">
@@ -667,15 +667,15 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
         {/* Smart Contracts */}
         {selectedView === 'contracts' && (
-          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredContracts.map((contract) => (
-              <div key={contract.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={contract.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="text-3xl">{getTypeIcon(contract.type)}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">{contract.name}</h3>
-                      <p className="text-gray-300 text-sm capitalize">{contract.type}</p>
+                      <h3 className="text-lg:font-semibold text-white mb-1">{contract.name}</h3>
+                      <p className="text-gray-300 text-sm:capitalize">{contract.type}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -692,35 +692,35 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
                 <div className="mb-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <span className="text-sm text-gray-400">Network:</span>
+                    <span className="text-sm:text-gray-400">Network:</span>
                     <span className="text-lg">{getNetworkIcon(contract.network)}</span>
-                    <span className="text-sm text-white capitalize">{contract.network}</span>
+                    <span className="text-sm:text-white capitalize">{contract.network}</span>
                   </div>
                   <p className="text-xs text-gray-400 mb-2">Address:</p>
-                  <p className="text-sm text-purple-400 font-mono">{shortenAddress(contract.address)}</p>
+                  <p className="text-sm:text-purple-400 font-mono">{shortenAddress(contract.address)}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">Gas Used</p>
-                    <p className="text-lg font-semibold text-green-400">{contract.gasUsed.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">Gas Used</p>
+                    <p className="text-lg:font-semibold text-green-400">{contract.gasUsed.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Gas Price</p>
-                    <p className="text-lg font-semibold text-blue-400">{contract.gasPrice} Gwei</p>
+                    <p className="text-sm:text-gray-400">Gas Price</p>
+                    <p className="text-lg:font-semibold text-blue-400">{contract.gasPrice} Gwei</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Transactions</p>
-                    <p className="text-lg font-semibold text-orange-400">{contract.transactions.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">Transactions</p>
+                    <p className="text-lg:font-semibold text-orange-400">{contract.transactions.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Version</p>
-                    <p className="text-lg font-semibold text-purple-400">{contract.version}</p>
+                    <p className="text-sm:text-gray-400">Version</p>
+                    <p className="text-lg:font-semibold text-purple-400">{contract.version}</p>
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Performance Metrics:</p>
+                  <p className="text-sm:text-gray-400 mb-2">Performance Metrics:</p>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Gas Efficiency:</span>
@@ -741,16 +741,16 @@ const AIPoweredBlockchainPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4">
                   <span>Auto-Upgrade: {contract.autoUpgrade ? '✅' : '❌'}</span>
                   <span>Updated: {contract.lastUpdated.toLocaleString()}</span>
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     View Contract
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     Monitor
                   </button>
                 </div>
@@ -763,12 +763,12 @@ const AIPoweredBlockchainPage: NextPage = () => {
         {selectedView === 'transactions' && (
           <div className="space-y-6">
             {transactions.map((tx) => (
-              <div key={tx.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={tx.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
                     <div className="text-3xl">{getTransactionTypeIcon(tx.type)}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">{tx.type.toUpperCase()}</h3>
+                      <h3 className="text-lg:font-semibold text-white mb-1">{tx.type.toUpperCase()}</h3>
                       <p className="text-gray-300 text-sm">{shortenHash(tx.hash)}</p>
                     </div>
                   </div>
@@ -784,54 +784,54 @@ const AIPoweredBlockchainPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">From</p>
-                    <p className="text-sm font-semibold text-white font-mono">{shortenAddress(tx.from)}</p>
+                    <p className="text-sm:text-gray-400">From</p>
+                    <p className="text-sm:font-semibold text-white font-mono">{shortenAddress(tx.from)}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">To</p>
-                    <p className="text-sm font-semibold text-white font-mono">{shortenAddress(tx.to)}</p>
+                    <p className="text-sm:text-gray-400">To</p>
+                    <p className="text-sm:font-semibold text-white font-mono">{shortenAddress(tx.to)}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Value</p>
-                    <p className="text-lg font-semibold text-green-400">{tx.value} ETH</p>
+                    <p className="text-sm:text-gray-400">Value</p>
+                    <p className="text-lg:font-semibold text-green-400">{tx.value} ETH</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Fee</p>
-                    <p className="text-lg font-semibold text-orange-400">{tx.fee} ETH</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
-                  <div>
-                    <p className="text-sm text-gray-400">Gas Used</p>
-                    <p className="text-sm font-semibold text-blue-400">{tx.gasUsed.toLocaleString()}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Gas Price</p>
-                    <p className="text-sm font-semibold text-purple-400">{tx.gasPrice} Gwei</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Block</p>
-                    <p className="text-sm font-semibold text-gray-400">{tx.blockNumber}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Network</p>
-                    <p className="text-sm font-semibold text-white capitalize">{tx.network}</p>
+                    <p className="text-sm:text-gray-400">Fee</p>
+                    <p className="text-lg:font-semibold text-orange-400">{tx.fee} ETH</p>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                  <div>
+                    <p className="text-sm:text-gray-400">Gas Used</p>
+                    <p className="text-sm:font-semibold text-blue-400">{tx.gasUsed.toLocaleString()}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm:text-gray-400">Gas Price</p>
+                    <p className="text-sm:font-semibold text-purple-400">{tx.gasPrice} Gwei</p>
+                  </div>
+                  <div>
+                    <p className="text-sm:text-gray-400">Block</p>
+                    <p className="text-sm:font-semibold text-gray-400">{tx.blockNumber}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm:text-gray-400">Network</p>
+                    <p className="text-sm:font-semibold text-white capitalize">{tx.network}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4">
                   <span>Time: {tx.timestamp.toLocaleString()}</span>
                   <span>ID: {tx.id}</span>
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     View on Explorer
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     Copy Hash
                   </button>
                 </div>
@@ -842,14 +842,14 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
         {/* DApps */}
         {selectedView === 'dapps' && (
-          <div className="grid grid-cols-1 md grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {dapps.map((dapp) => (
-              <div key={dapp.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <div key={dapp.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{dapp.name}</h3>
+                    <h3 className="text-lg:font-semibold text-white mb-2">{dapp.name}</h3>
                     <p className="text-gray-300 text-sm">{dapp.description}</p>
-                    <p className="text-gray-400 text-sm capitalize">{dapp.category}</p>
+                    <p className="text-gray-400 text-sm:capitalize">{dapp.category}</p>
                   </div>
                   <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(dapp.status)}`}>
                     {dapp.status.toUpperCase()}
@@ -858,25 +858,25 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-sm text-gray-400">Users</p>
-                    <p className="text-lg font-semibold text-white">{dapp.users.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">Users</p>
+                    <p className="text-lg:font-semibold text-white">{dapp.users.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">TVL</p>
-                    <p className="text-lg font-semibold text-green-400">${dapp.tvl.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">TVL</p>
+                    <p className="text-lg:font-semibold text-green-400">${dapp.tvl.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Transactions</p>
-                    <p className="text-lg font-semibold text-blue-400">{dapp.transactions.toLocaleString()}</p>
+                    <p className="text-sm:text-gray-400">Transactions</p>
+                    <p className="text-lg:font-semibold text-blue-400">{dapp.transactions.toLocaleString()}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Contracts</p>
-                    <p className="text-lg font-semibold text-orange-400">{dapp.smartContracts}</p>
+                    <p className="text-sm:text-gray-400">Contracts</p>
+                    <p className="text-lg:font-semibold text-orange-400">{dapp.smartContracts}</p>
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Networks:</p>
+                  <p className="text-sm:text-gray-400 mb-2">Networks:</p>
                   <div className="flex flex-wrap gap-2">
                     {dapp.networks.map((network, index) => (
                       <span key={index} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30 capitalize">
@@ -887,11 +887,11 @@ const AIPoweredBlockchainPage: NextPage = () => {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Features:</p>
+                  <p className="text-sm:text-gray-400 mb-2">Features:</p>
                   <div className="space-y-2">
                     {dapp.features.map((feature, index) => (
                       <div key={index} className="flex items-center justify-between p-2 bg-white/5 rounded">
-                        <span className="text-sm text-white">{feature.name}</span>
+                        <span className="text-sm:text-white">{feature.name}</span>
                         <div className="flex items-center space-x-2">
                           <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusColor(feature.status)}`}>
                             {feature.status}
@@ -905,16 +905,16 @@ const AIPoweredBlockchainPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4">
                   <span>AI Generated: {dapp.aiGenerated ? '✅' : '❌'}</span>
                   <span>Updated: {dapp.lastUpdated.toLocaleString()}</span>
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                     Launch DApp
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm">
                     View Details
                   </button>
                 </div>
@@ -925,19 +925,19 @@ const AIPoweredBlockchainPage: NextPage = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8">
+            <h2 className="text-3xl:font-bold text-white mb-4">
               Build with Blockchain Intelligence
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl:text-gray-300 mb-8 max-w-2xl:mx-auto">
               Leverage intelligent blockchain technology to create smart contracts, 
               DApps, and decentralized solutions with AI-driven optimization.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
                 Deploy Contract
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg:text-lg:font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>

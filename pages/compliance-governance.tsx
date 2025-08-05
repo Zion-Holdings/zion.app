@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
@@ -465,7 +465,7 @@ const ComplianceGovernancePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -485,18 +485,18 @@ const ComplianceGovernancePage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-white">Compliance & Governance Center</h1>
+              <h1 className="text-3xl:font-bold text-white">Compliance & Governance Center</h1>
               <p className="text-gray-300 mt-2">Centralized compliance management and regulatory oversight</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                 Generate Report
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                 New Assessment
               </button>
             </div>
@@ -504,78 +504,78 @@ const ComplianceGovernancePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Key Metrics Overview */}
         {analytics && (
-          <div className="grid grid-cols-2 md grid-cols-4 lg grid-cols-7 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-white">{analytics.overallComplianceRate}%</div>
+              <div className="text-2xl:font-bold text-white">{analytics.overallComplianceRate}%</div>
               <div className="text-gray-400 text-sm">Overall Compliance</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-white">{analytics.frameworksCount}</div>
+              <div className="text-2xl:font-bold text-white">{analytics.frameworksCount}</div>
               <div className="text-gray-400 text-sm">Active Frameworks</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-red-400">{analytics.activeRisks}</div>
+              <div className="text-2xl:font-bold text-red-400">{analytics.activeRisks}</div>
               <div className="text-gray-400 text-sm">Active Risks</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-yellow-400">{analytics.pendingActions}</div>
+              <div className="text-2xl:font-bold text-yellow-400">{analytics.pendingActions}</div>
               <div className="text-gray-400 text-sm">Pending Actions</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-blue-400">{analytics.upcomingAssessments}</div>
+              <div className="text-2xl:font-bold text-blue-400">{analytics.upcomingAssessments}</div>
               <div className="text-gray-400 text-sm">Upcoming Assessments</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-orange-400">{analytics.recentViolations}</div>
+              <div className="text-2xl:font-bold text-orange-400">{analytics.recentViolations}</div>
               <div className="text-gray-400 text-sm">Recent Violations</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+              className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
             >
-              <div className="text-2xl font-bold text-green-400">↗️</div>
+              <div className="text-2xl:font-bold text-green-400">↗️</div>
               <div className="text-gray-400 text-sm">Trend</div>
             </motion.div>
           </div>
         )}
 
         {/* Tabs */}
-        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 mb-8">
+        <div className="bg-white/5 backdrop-blur-md:rounded-xl:border border-white/10 mb-8">
           <div className="flex border-b border-white/10">
             <button
               onClick={() => setActiveTab('overview')}
@@ -641,10 +641,10 @@ const ComplianceGovernancePage: NextPage = () => {
 
           <div className="p-6">
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Compliance by Category */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Compliance by Category</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Compliance by Category</h3>
                   {analytics && (
                     <div className="space-y-4">
                       {Object.entries(analytics.complianceByCategory).map(([category, rate]) => (
@@ -666,8 +666,8 @@ const ComplianceGovernancePage: NextPage = () => {
                 </div>
 
                 {/* Assessment Schedule */}
-                <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4">Assessment Schedule</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10">
+                  <h3 className="text-lg:font-semibold text-white mb-4">Assessment Schedule</h3>
                   {analytics && (
                     <div className="space-y-3">
                       {analytics.assessmentSchedule.map((assessment, index) => (
@@ -698,12 +698,12 @@ const ComplianceGovernancePage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{framework.name}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{framework.name}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(framework.status)}`}>
                             {framework.status.replace('-', ' ')}
                           </span>
@@ -711,7 +711,7 @@ const ComplianceGovernancePage: NextPage = () => {
                         <p className="text-gray-300">{framework.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{framework.complianceRate}%</div>
+                        <div className="text-2xl:font-bold text-white">{framework.complianceRate}%</div>
                         <div className="text-gray-400 text-sm">Compliance Rate</div>
                       </div>
                     </div>
@@ -738,7 +738,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       ></div>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-white font-semibold mb-2">Requirements</h4>
                         <div className="space-y-2">
@@ -779,12 +779,12 @@ const ComplianceGovernancePage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{policy.name}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{policy.name}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             policy.status === 'active' ? 'bg-green-600' :
                             policy.status === 'draft' ? 'bg-yellow-1200' : 'bg-gray-600'
@@ -795,12 +795,12 @@ const ComplianceGovernancePage: NextPage = () => {
                         <p className="text-gray-300">{policy.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{policy.complianceRate}%</div>
+                        <div className="text-2xl:font-bold text-white">{policy.complianceRate}%</div>
                         <div className="text-gray-400 text-sm">Compliance Rate</div>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Version</span>
                         <p className="text-white font-medium">{policy.version}</p>
@@ -857,12 +857,12 @@ const ComplianceGovernancePage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{risk.title}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{risk.title}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}`}>
                             {risk.severity}
                           </span>
@@ -874,14 +874,14 @@ const ComplianceGovernancePage: NextPage = () => {
                           </span>
                         </div>
                         <p className="text-gray-300 mb-3">{risk.description}</p>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <div className="flex items-center space-x-4 text-sm:text-gray-400">
                           <span>Probability: {(risk.probability * 100).toFixed(0)}%</span>
                           <span>Impact: {(risk.impact * 100).toFixed(0)}%</span>
                           <span>Risk Score: {(risk.riskScore * 100).toFixed(0)}%</span>
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{(risk.riskScore * 100).toFixed(0)}%</div>
+                        <div className="text-2xl:font-bold text-white">{(risk.riskScore * 100).toFixed(0)}%</div>
                         <div className="text-gray-400 text-sm">Risk Score</div>
                       </div>
                     </div>
@@ -913,12 +913,12 @@ const ComplianceGovernancePage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-6 border border-white/10"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
-                          <h3 className="text-lg font-semibold text-white">{action.title}</h3>
+                          <h3 className="text-lg:font-semibold text-white">{action.title}</h3>
                           <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(action.priority)}`}>
                             {action.priority}
                           </span>
@@ -933,7 +933,7 @@ const ComplianceGovernancePage: NextPage = () => {
                         <p className="text-gray-300">{action.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-white">{action.progress}%</div>
+                        <div className="text-2xl:font-bold text-white">{action.progress}%</div>
                         <div className="text-gray-400 text-sm">Progress</div>
                       </div>
                     </div>
@@ -972,7 +972,7 @@ const ComplianceGovernancePage: NextPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10"
+                    className="bg-white/5 backdrop-blur-md:rounded-lg:p-4 border border-white/10"
                   >
                     <div className="flex items-start justify-between">
                       <div>
@@ -994,7 +994,7 @@ const ComplianceGovernancePage: NextPage = () => {
                           </span>
                         </div>
                         <p className="text-gray-300 mb-2">{audit.description}</p>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <div className="flex items-center space-x-4 text-sm:text-gray-400">
                           <span>User: {audit.user}</span>
                           <span>Entity: {audit.relatedEntity}</span>
                           <span>{audit.timestamp.toLocaleString()}</span>
@@ -1006,7 +1006,7 @@ const ComplianceGovernancePage: NextPage = () => {
               </div>
             )}
           </div>
-                            </div>
+                                      </div>
         </div>
       </div>
     </div>

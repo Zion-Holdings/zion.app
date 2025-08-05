@@ -1,8 +1,8 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
-import { useState, useEffect, useMemo }  from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
 
@@ -532,7 +532,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -543,29 +543,29 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl:font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg:text-sm:font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -574,29 +574,29 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-6">
+          <h1 className="text-5xl:font-bold text-white mb-6">
             AI-Powered Space Exploration & Satellite Management
           </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl:text-gray-300 mb-8 max-w-3xl:mx-auto">
             Experience the future of space exploration with AI-powered satellite management, 
             orbital tracking, mission planning, and intelligent space analytics. Explore the 
             cosmos with cutting-edge technology.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg:font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
               Track Satellites
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover from-purple-700 hover to-pink-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg:font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
               Plan Mission
             </button>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex space-x-1 bg-black/20 rounded-lg p-1 mb-8">
+        <div className="flex space-x-1 bg-black/20 rounded-lg:p-1 mb-8">
           {[
             { id: 'overview', label: 'Overview', icon: '🌌' },
             { id: 'satellites', label: 'Satellites', icon: '🛰️' },
@@ -609,7 +609,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedView(tab.id as any)}
-              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 ${
+              className={`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm:font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                   : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -623,10 +623,10 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
         {/* Content Sections */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Satellites Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Active Satellites</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">Active Satellites</h3>
               <div className="space-y-4">
                 {satellites.slice(0, 3).map((satellite) => (
                   <div key={satellite.id} className="p-4 bg-white/5 rounded-lg">
@@ -636,8 +636,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                         {satellite.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{satellite.mission}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-gray-400 text-sm:mb-2">{satellite.mission}</p>
+                    <div className="flex items-center space-x-4 text-sm:text-gray-400">
                       <span>Altitude: {formatNumber(satellite.orbit.altitude)} km</span>
                       <span className={getRiskColor(satellite.aiAnalysis.riskLevel)}>
                         {satellite.aiAnalysis.riskLevel} risk
@@ -649,8 +649,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div>
 
             {/* Missions Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">Active Missions</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">Active Missions</h3>
               <div className="space-y-4">
                 {missions.slice(0, 2).map((mission) => (
                   <div key={mission.id} className="p-4 bg-white/5 rounded-lg">
@@ -660,8 +660,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                         {mission.status}
                       </span>
                     </div>
-                    <p className="text-gray-400 text-sm mb-2">{mission.destination}</p>
-                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <p className="text-gray-400 text-sm:mb-2">{mission.destination}</p>
+                    <div className="flex items-center space-x-4 text-sm:text-gray-400">
                       <span>Success: {Math.round(mission.aiAnalysis.successProbability * 100)}%</span>
                       <span>Budget: {formatCurrency(mission.budget)}</span>
                     </div>
@@ -680,7 +680,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg:text-sm:font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -692,16 +692,16 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div>
 
             {/* Satellites Grid */}
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredSatellites.map((satellite) => (
-                <div key={satellite.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={satellite.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{satellite.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(satellite.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(satellite.status)} text-white`}>
                       {satellite.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{satellite.mission}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{satellite.mission}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-400">Altitude</span>
@@ -734,23 +734,23 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
         {selectedView === 'missions' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {missions.map((mission) => (
-                <div key={mission.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={mission.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{mission.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(mission.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(mission.status)} text-white`}>
                       {mission.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{mission.destination}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{mission.destination}</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{mission.duration}</div>
+                      <div className="text-2xl:font-bold text-white">{mission.duration}</div>
                       <div className="text-gray-400 text-sm">Days</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{mission.crew}</div>
+                      <div className="text-2xl:font-bold text-white">{mission.crew}</div>
                       <div className="text-gray-400 text-sm">Crew</div>
                     </div>
                   </div>
@@ -772,23 +772,23 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
         {selectedView === 'trajectories' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {trajectories.map((trajectory) => (
-                <div key={trajectory.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={trajectory.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{trajectory.name}</h3>
-                    <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400">
+                    <span className="px-3 py-3 rounded-full text-sm:bg-blue-500/20 text-blue-400">
                       {trajectory.type}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">Orbital trajectory optimization</p>
+                  <p className="text-gray-400 text-sm:mb-4">Orbital trajectory optimization</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{formatNumber(trajectory.altitude)}</div>
+                      <div className="text-2xl:font-bold text-white">{formatNumber(trajectory.altitude)}</div>
                       <div className="text-gray-400 text-sm">km Altitude</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{trajectory.period}</div>
+                      <div className="text-2xl:font-bold text-white">{trajectory.period}</div>
                       <div className="text-gray-400 text-sm">min Period</div>
                     </div>
                   </div>
@@ -810,23 +810,23 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
         {selectedView === 'stations' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {stations.map((station) => (
-                <div key={station.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={station.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{station.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(station.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(station.status)} text-white`}>
                       {station.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{station.type} station</p>
+                  <p className="text-gray-400 text-sm:mb-4">{station.type} station</p>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{station.currentOccupants}/{station.capacity}</div>
+                      <div className="text-2xl:font-bold text-white">{station.currentOccupants}/{station.capacity}</div>
                       <div className="text-gray-400 text-sm">Occupants</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-white">{station.modules.length}</div>
+                      <div className="text-2xl:font-bold text-white">{station.modules.length}</div>
                       <div className="text-gray-400 text-sm">Modules</div>
                     </div>
                   </div>
@@ -848,17 +848,17 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
         {selectedView === 'explorations' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {explorations.map((exploration) => (
-                <div key={exploration.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
+                <div key={exploration.id} className="bg-black/20 rounded-lg:p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{exploration.name}</h3>
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(exploration.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm:${getStatusBgColor(exploration.status)} text-white`}>
                       {exploration.status}
                     </span>
                   </div>
-                  <p className="text-gray-400 text-sm mb-4">{exploration.target} • {exploration.type}</p>
-                  <p className="text-gray-300 text-sm mb-4">{exploration.discovery}</p>
+                  <p className="text-gray-400 text-sm:mb-4">{exploration.target} • {exploration.type}</p>
+                  <p className="text-gray-300 text-sm:mb-4">{exploration.discovery}</p>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span className="text-gray-400">Discovery Prob.</span>
@@ -878,42 +878,42 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{formatNumber(analytics.totalSatellites)}</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{formatNumber(analytics.totalSatellites)}</div>
                 <div className="text-gray-400">Total Satellites</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{analytics.activeMissions}</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{analytics.activeMissions}</div>
                 <div className="text-gray-400">Active Missions</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{formatNumber(analytics.orbitalObjects)}</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{formatNumber(analytics.orbitalObjects)}</div>
                 <div className="text-gray-400">Orbital Objects</div>
               </div>
-              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
-                <div className="text-3xl font-bold text-white">{formatNumber(analytics.spaceDebris)}</div>
+              <div className="bg-black/20 rounded-lg:p-6 border border-white/10 text-center">
+                <div className="text-3xl:font-bold text-white">{formatNumber(analytics.spaceDebris)}</div>
                 <div className="text-gray-400">Space Debris</div>
               </div>
             </div>
 
             {/* AI Insights */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className="text-xl font-semibold text-white mb-4">AI Space Insights</h3>
+            <div className="bg-black/20 rounded-lg:p-6 border border-white/10">
+              <h3 className="text-xl:font-semibold text-white mb-4">AI Space Insights</h3>
               <div className="space-y-4">
                 {analytics.aiInsights.map((insight) => (
                   <div key={insight.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center space-x-3 mb-2">
                       <span className="text-2xl">{getInsightIcon(insight.impact)}</span>
-                      <h4 className={`text-lg font-medium ${getInsightColor(insight.impact)}`}>
+                      <h4 className={`text-lg:font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
-                      <span className="text-sm text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span>
+                      <span className="text-sm:text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span>
                     </div>
                     <p className="text-gray-300 mb-3">{insight.description}</p>
                     <div className="space-y-2">
                       {insight.recommendations.map((rec, index) => (
-                        <div key={index} className="flex items-center space-x-2 text-sm text-gray-400">
+                        <div key={index} className="flex items-center space-x-2 text-sm:text-gray-400">
                           <span>•</span>
                           <span>{rec}</span>
                         </div>
@@ -929,8 +929,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
-          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -939,30 +939,30 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Features</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover text-white">Live Streaming</Link></li>
-                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover text-white">Voice Assistant</Link></li>
-                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover text-white">Autonomous Vehicles</Link></li>
-                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover text-white">Cryptocurrency</Link></li>
-                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover text-white">Space Exploration</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover:text-white">Live Streaming</Link></li>
+                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover:text-white">Voice Assistant</Link></li>
+                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover:text-white">Autonomous Vehicles</Link></li>
+                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover:text-white">Cryptocurrency</Link></li>
+                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover:text-white">Space Exploration</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/marketplace" className="hover text-white">Marketplace</Link></li>
-                <li><Link href="/services" className="hover text-white">IT Services</Link></li>
-                <li><Link href="/talents" className="hover text-white">AI Talents</Link></li>
-                <li><Link href="/equipment" className="hover text-white">Equipment</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
+                <li><Link href="/services" className="hover:text-white">IT Services</Link></li>
+                <li><Link href="/talents" className="hover:text-white">AI Talents</Link></li>
+                <li><Link href="/equipment" className="hover:text-white">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help-desk-support" className="hover text-white">Help Desk</Link></li>
-                <li><Link href="/contact" className="hover text-white">Contact</Link></li>
-                <li><Link href="/docs" className="hover text-white">Documentation</Link></li>
-                <li><Link href="/status" className="hover text-white">Status</Link></li>
+              <ul className="space-y-2 text-sm:text-gray-400">
+                <li><Link href="/help-desk-support" className="hover:text-white">Help Desk</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+                <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
+                <li><Link href="/status" className="hover:text-white">Status</Link></li>
               </ul>
             </div>
           </div>
@@ -973,17 +973,17 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

@@ -116,18 +116,18 @@ const: handleAccept = () => {;
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl:mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl:font-bold text-gray-900 mb-4">
               Service Description Generator
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg:text-gray-600">
               Input your service details and let AI generate a professional description
             </p>
           </div>
 
           {success && (
-            <div className="mb-6 bg-green-50 border border-green-200 rounded-md p-4">
+            <div className="mb-6 bg-green-50 border border-green-200 rounded-md:p-4">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
@@ -135,22 +135,22 @@ const: handleAccept = () => {;
                   </svg>
                 </div>
                 <div className="ml-3">
-                  <p className="text-sm text-green-800">{success}</p>
+                  <p className="text-sm:text-green-800">{success}</p>
                 </div>
               </div>
             </div>
           )}
 
-          <div className="grid grid-cols-1 lg  grid-cols-2  gap-8">,
+          <div className="grid grid-cols-1 lg: grid-cols-2  gap-8">,
             {/* Form Section */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white rounded-lg:shadow-lg:p-6">
+              <h2 className="text-2xl:font-semibold text-gray-900 mb-6">
                 Service Details
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="title" className="block text-sm:font-medium text-gray-700 mb-2">
                     Service Title *
                   </label>
                   <input
@@ -160,13 +160,13 @@ const: handleAccept = () => {;
                     value={formData.title}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Professional: Web Development Services"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="keyFeatures" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="keyFeatures" className="block text-sm:font-medium text-gray-700 mb-2">
                     Key Features *
                   </label>
                   <textarea
@@ -176,13 +176,13 @@ const: handleAccept = () => {;
                     onChange={handleInputChange}
                     required
                     rows={3}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Responsive: design, SEO optimization, 24 7 support"
                    />
                 </div>
 
                 <div>
-                  <label htmlFor="targetAudience" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="targetAudience" className="block text-sm:font-medium text-gray-700 mb-2">
                     Target Audience
                   </label>
                   <input
@@ -191,13 +191,13 @@ const: handleAccept = () => {;
                     name="targetAudience"
                     value={formData.targetAudience}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Small: businesses, startups, e-commerce"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="industry" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="industry" className="block text-sm:font-medium text-gray-700 mb-2">
                     Industry
                   </label>
                   <input
@@ -206,13 +206,13 @@ const: handleAccept = () => {;
                     name="industry"
                     value={formData.industry}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Technology, Healthcare, Finance"
                   />
                 </div>
 
                 <div>
-                  <label: htmlFor="pricing" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label: htmlFor="pricing" className="block text-sm:font-medium text-gray-700 mb-2">
                     Pricing Model
                   </label>
                   <input
@@ -221,13 +221,13 @@ const: handleAccept = () => {;
                     name="pricing"
                     value={formData.pricing}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Hourly: rates, project-based, subscription"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="location" className="block text-sm:font-medium text-gray-700 mb-2">
                     Service Location
                   </label>
                   <input
@@ -236,14 +236,14 @@ const: handleAccept = () => {;
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent",
                     placeholder="e.g., Remote, Local, Worldwide"
                   />
                 </div>
 
                 <button: type="submit"
                   disabled={isLoading}
-                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover: bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled opacity-50 disabled cursor-not-allowed  transition-colors"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-md:hover: bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled opacity-50 disabled cursor-not-allowed  transition-colors"
                 >
                   {isLoading ? (
                     <div className="flex items-center justify-center">
@@ -259,7 +259,7 @@ const: handleAccept = () => {;
                 </button>
 
                 {error && (
-                  <div className="text-red-600 text-sm mt-2">
+                  <div className="text-red-600 text-sm:mt-2">
                     {error}
                   </div>
                 )}
@@ -267,26 +267,26 @@ const: handleAccept = () => {;
             </div>
 
             {/* Generated Description Section */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+            <div className="bg-white rounded-lg:shadow-lg:p-6">
+              <h2 className="text-2xl:font-semibold text-gray-900 mb-6">
                 Generated Description
               </h2>
 
               {generatedDescription.content ? (
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <h3 className="text-lg font-medium text-gray-900">
+                    <h3 className="text-lg:font-medium text-gray-900">
                       Professional Service Description
                     </h3>
                     <div className="flex space-x-2">
                       <button
                         onClick={handleEditToggle}
-                        className="text-blue-600 hover  text-blue-700  text-sm font-medium"
+                        className="text-blue-600 hover: text-blue-700  text-sm:font-medium"
                       >,
                         {generatedDescription.isEditing ? 'Preview' : 'Edit'}
                       </button>
                       <button: onClick={handleAccept}
-                        className="text-green-600 hover  text-green-700  text-sm font-medium"
+                        className="text-green-600 hover: text-green-700  text-sm:font-medium"
                       >
                         Accept
                       </button>
@@ -298,7 +298,7 @@ const: handleAccept = () => {;
                       value={generatedDescription.content}
                       onChange={handleDescriptionChange}
                       rows={12}
-                      className="w-full px-3 py-4 border border-gray-300 rounded-md focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
+                      className="w-full px-3 py-4 border border-gray-300 rounded-md:focus: outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                     />
                   ) : (
                     <div: className="bg-gray-50 p-4 rounded-md">
@@ -311,7 +311,7 @@ const: handleAccept = () => {;
                   <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                     <button
                       onClick={handleCopyToClipboard}
-                      className="text-blue-600 hover  text-blue-700  text-sm font-medium"
+                      className="text-blue-600 hover: text-blue-700  text-sm:font-medium"
                     >
                       Copy to Clipboard
                     </button>
@@ -336,11 +336,11 @@ const: handleAccept = () => {;
           </div>
 
           {/* Tips Section */}
-          <div className="mt-8 bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
+          <div className="mt-8 bg-white rounded-lg:shadow-lg:p-6">
+            <h3 className="text-xl:font-semibold text-gray-900 mb-4">
               Tips for Better Results
             </h3>
-            <div className="grid grid-cols-1 md  grid-cols-2  gap-4 text-sm text-gray-600">
+            <div className="grid grid-cols-1 md: grid-cols-2  gap-4 text-sm:text-gray-600">
               <ul className="space-y-2">
                 <li>• Be specific about your key features and benefits</li>
                 <li>• Include your target audience to make it more relevant</li>

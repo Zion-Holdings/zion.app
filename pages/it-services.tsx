@@ -228,17 +228,17 @@ const ITServicesPage: React.FC = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="bg-white shadow-sm:border-b">
+          <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl:font-bold text-gray-900 mb-4">
                 IT Service Providers
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl:text-gray-600 max-w-3xl:mx-auto">
                 Find the perfect IT service provider for your business. Compare AI-matched scores, 
                 ratings, and get personalized quotes from top-rated professionals.
               </p>
@@ -248,10 +248,10 @@ const ITServicesPage: React.FC = () => {
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
-            <div className="flex flex-col lg flex-row gap-4 items-center justify-between">
+          <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
+            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
               {/* Search */}
-              <div className="w-full lg w-96">
+              <div className="w-full lg:w-96">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -263,17 +263,17 @@ const ITServicesPage: React.FC = () => {
                     placeholder="Search providers, services, or specialties..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus ring-1 focus ring-blue-500 focus border-blue-500"
+                    className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-md:leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus ring-1 focus ring-blue-500 focus border-blue-500"
                   />
                 </div>
               </div>
 
               {/* Category Filter */}
-              <div className="w-full lg w-124">
+              <div className="w-full lg:w-124">
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus outline-none focus ring-blue-500 focus border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md:shadow-sm:focus outline-none focus ring-blue-500 focus border-blue-500"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
@@ -284,11 +284,11 @@ const ITServicesPage: React.FC = () => {
               </div>
 
               {/* Sort */}
-              <div className="w-full lg w-48">
+              <div className="w-full lg:w-48">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'aiScore' | 'rating' | 'reviewCount')}
-                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus outline-none focus ring-blue-500 focus border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md:shadow-sm:focus outline-none focus ring-blue-500 focus border-blue-500"
                 >
                   <option value="aiScore">Sort by AI Score</option>
                   <option value="rating">Sort by Rating</option>
@@ -300,7 +300,7 @@ const ITServicesPage: React.FC = () => {
         </div>
 
         {/* Results */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-8">
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">
@@ -309,24 +309,24 @@ const ITServicesPage: React.FC = () => {
           </div>
 
           {/* Provider Cards */}
-          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProviders.map((provider) => (
               <div
                 key={provider.id}
-                className="bg-white rounded-lg shadow-md hover shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
+                className="bg-white rounded-lg:shadow-md:hover:shadow-lg:transition-shadow duration-300 overflow-hidden border border-gray-200"
               >
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
                   <div className="absolute top-4 right-4">
                     <div className="bg-white bg-opacity-90 rounded-full px-3 py-3">
-                      <span className="text-sm font-semibold text-gray-800">
+                      <span className="text-sm:font-semibold text-gray-800">
                         AI Score: {provider.aiScore}
                       </span>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-4">
-                      <span className="text-sm font-medium text-gray-800">
+                    <div className="bg-white bg-opacity-90 rounded-lg:px-3 py-4">
+                      <span className="text-sm:font-medium text-gray-800">
                         {provider.category}
                       </span>
                     </div>
@@ -336,12 +336,12 @@ const ITServicesPage: React.FC = () => {
                 {/* Card Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900 line-clamp-2">
+                    <h3 className="text-xl:font-semibold text-gray-900 line-clamp-2">
                       {provider.title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  <p className="text-gray-600 text-sm:mb-4 line-clamp-3">
                     {provider.description}
                   </p>
 
@@ -350,21 +350,21 @@ const ITServicesPage: React.FC = () => {
                     <div className="flex items-center mr-2">
                       {renderStars(provider.rating)}
                     </div>
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm:text-gray-600">
                       {provider.rating} ({provider.reviewCount} reviews)
                     </span>
                   </div>
 
                   {/* Details */}
                   <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm:text-gray-600">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                       {provider.location}
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
+                    <div className="flex items-center text-sm:text-gray-600">
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6z" />
                       </svg>
@@ -394,7 +394,7 @@ const ITServicesPage: React.FC = () => {
                   {/* Request Quote Button */}
                   <button
                     onClick={() => handleRequestQuote(provider.id)}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md:transition-colors duration-200 focus:outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2"
                   >
                     Request Quote
                   </button>
@@ -409,8 +409,8 @@ const ITServicesPage: React.FC = () => {
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">No providers found</h3>
-              <p className="mt-1 text-sm text-gray-500">
+              <h3 className="mt-2 text-sm:font-medium text-gray-900">No providers found</h3>
+              <p className="mt-1 text-sm:text-gray-500">
                 Try adjusting your search criteria or filters.
               </p>
             </div>
@@ -419,7 +419,7 @@ const ITServicesPage: React.FC = () => {
       </div>
     </>
   
-                  </div>
+                      </div>
     );
 };
 

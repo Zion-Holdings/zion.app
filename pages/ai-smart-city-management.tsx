@@ -1,4 +1,4 @@
-import type { NextPage }  from 'next';
+import type { NextPage } from 'next';
 import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
@@ -352,7 +352,7 @@ const AISmartCityManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -362,20 +362,20 @@ const AISmartCityManagementPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
+      <div className="bg-black/20 backdrop-blur-md:border-b border-white/10">
+        <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white">
+            <Link href="/" className="text-2xl:font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Marketplace
               </Link>
-              <Link href="/ai-autonomous-vehicle-transportation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Transport
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md:text-sm:font-medium">
                 Login
               </Link>
             </div>
@@ -383,13 +383,13 @@ const AISmartCityManagementPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
+      <div className="max-w-7xl:mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl:md:text-6xl:font-bold text-white mb-6">
             AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400">Smart City</span> Management
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl:text-gray-300 max-w-3xl:mx-auto mb-8">
             Revolutionizing urban development with AI-powered infrastructure management, intelligent planning, and sustainable city services
           </p>
         </div>
@@ -407,7 +407,7 @@ const AISmartCityManagementPage: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setSelectedView(tab.id as any)}
-              className={`px-6 py-3 mx-2 mb-2 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-6 py-3 mx-2 mb-2 rounded-lg:font-medium transition-all duration-300 ${
                 selectedView === tab.id
                   ? 'bg-gradient-to-r from-green-600 to-cyan-600 text-white shadow-lg'
                   : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -428,25 +428,25 @@ const AISmartCityManagementPage: NextPage = () => {
           <>
             {/* Overview */}
             {selectedView === 'overview' && (
-              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6 mb-8">
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">🏗️</div>
-                  <div className="text-2xl font-bold text-white">{infrastructure.length}</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">🏗️</div>
+                  <div className="text-2xl:font-bold text-white">{infrastructure.length}</div>
                   <div className="text-gray-400">Infrastructure Systems</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">🗺️</div>
-                  <div className="text-2xl font-bold text-white">{planning.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">🗺️</div>
+                  <div className="text-2xl:font-bold text-white">{planning.length}</div>
                   <div className="text-gray-400">Urban Projects</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">🏛️</div>
-                  <div className="text-2xl font-bold text-white">{services.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">🏛️</div>
+                  <div className="text-2xl:font-bold text-white">{services.length}</div>
                   <div className="text-gray-400">City Services</div>
                 </div>
-                <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-                  <div className="text-3xl mb-2">🤖</div>
-                  <div className="text-2xl font-bold text-white">{insights.length}</div>
+                <div className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
+                  <div className="text-3xl:mb-2">🤖</div>
+                  <div className="text-2xl:font-bold text-white">{insights.length}</div>
                   <div className="text-gray-400">AI Insights</div>
                 </div>
               </div>
@@ -455,18 +455,18 @@ const AISmartCityManagementPage: NextPage = () => {
             {/* Infrastructure */}
             {selectedView === 'infrastructure' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">Smart City Infrastructure</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">Smart City Infrastructure</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {infrastructure.map((item) => (
-                    <div key={item.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={item.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex items-start space-x-3 mb-4">
                         <div className="text-3xl">{getInfrastructureIcon(item.type)}</div>
                         <div className="flex-1">
-                          <h3 className="text-xl font-semibold text-white">{item.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{item.type} Infrastructure</p>
+                          <h3 className="text-xl:font-semibold text-white">{item.name}</h3>
+                          <p className="text-gray-300 text-sm:capitalize">{item.type} Infrastructure</p>
                         </div>
                         <div className="text-right">
-                          <div className={`text-sm font-medium ${getStatusColor(item.status)}`}>
+                          <div className={`text-sm:font-medium ${getStatusColor(item.status)}`}>
                             {item.status}
                           </div>
                           <div className="text-gray-400 text-sm">{item.location}</div>
@@ -489,8 +489,8 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg p-3">
-                          <div className="text-sm text-gray-400">AI Optimization</div>
+                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg:p-3">
+                          <div className="text-sm:text-gray-400">AI Optimization</div>
                           <div className="text-white font-medium">Score: {item.aiOptimization.score}/10</div>
                           <div className="text-green-400 text-sm">
                             {item.aiOptimization.recommendations.length} recommendations
@@ -499,7 +499,7 @@ const AISmartCityManagementPage: NextPage = () => {
                       </div>
 
                       <div className="space-y-2 mb-4">
-                        <div className="text-sm font-medium text-gray-400">Recommendations:</div>
+                        <div className="text-sm:font-medium text-gray-400">Recommendations:</div>
                         {item.aiOptimization.recommendations.slice(0, 2).map((rec, index) => (
                           <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400">•</span>
@@ -508,7 +508,7 @@ const AISmartCityManagementPage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover from-green-700 hover to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                         🏗️ Manage Infrastructure
                       </button>
                     </div>
@@ -520,17 +520,17 @@ const AISmartCityManagementPage: NextPage = () => {
             {/* Urban Planning */}
             {selectedView === 'planning' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">Urban Planning Projects</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">Urban Planning Projects</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {planning.map((project) => (
-                    <div key={project.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={project.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white">{project.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{project.type} Project</p>
+                          <h3 className="text-xl:font-semibold text-white">{project.name}</h3>
+                          <p className="text-gray-300 text-sm:capitalize">{project.type} Project</p>
                         </div>
                         <div className="text-right">
-                          <div className={`text-sm font-medium ${getStatusColor(project.status)}`}>
+                          <div className={`text-sm:font-medium ${getStatusColor(project.status)}`}>
                             {project.status.replace('-', ' ')}
                           </div>
                         </div>
@@ -563,15 +563,15 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg p-3">
-                          <div className="text-sm text-gray-400">Project Details</div>
+                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg:p-3">
+                          <div className="text-sm:text-gray-400">Project Details</div>
                           <div className="text-white text-sm">Budget: ${project.budget.toLocaleString()}</div>
                           <div className="text-green-400 text-sm">Timeline: {project.timeline}</div>
                         </div>
                       </div>
 
                       <div className="space-y-2 mb-4">
-                        <div className="text-sm font-medium text-gray-400">Recommendations:</div>
+                        <div className="text-sm:font-medium text-gray-400">Recommendations:</div>
                         {project.aiAnalysis.recommendations.map((rec, index) => (
                           <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400">•</span>
@@ -580,7 +580,7 @@ const AISmartCityManagementPage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover from-green-700 hover to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                         🗺️ View Project
                       </button>
                     </div>
@@ -592,17 +592,17 @@ const AISmartCityManagementPage: NextPage = () => {
             {/* City Services */}
             {selectedView === 'services' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">Smart City Services</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">Smart City Services</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {services.map((service) => (
-                    <div key={service.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={service.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white">{service.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{service.type} Service</p>
+                          <h3 className="text-xl:font-semibold text-white">{service.name}</h3>
+                          <p className="text-gray-300 text-sm:capitalize">{service.type} Service</p>
                         </div>
                         <div className="text-right">
-                          <div className={`text-sm font-medium ${getStatusColor(service.status)}`}>
+                          <div className={`text-sm:font-medium ${getStatusColor(service.status)}`}>
                             {service.status}
                           </div>
                         </div>
@@ -620,8 +620,8 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg p-3">
-                          <div className="text-sm text-gray-400">AI Optimization</div>
+                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg:p-3">
+                          <div className="text-sm:text-gray-400">AI Optimization</div>
                           <div className="text-white font-medium">Efficiency: {service.aiOptimization.efficiencyScore}/10</div>
                           <div className="text-green-400 text-sm">
                             {service.aiOptimization.costSavings}% cost savings
@@ -645,7 +645,7 @@ const AISmartCityManagementPage: NextPage = () => {
                       </div>
 
                       <div className="space-y-2 mb-4">
-                        <div className="text-sm font-medium text-gray-400">Improvements:</div>
+                        <div className="text-sm:font-medium text-gray-400">Improvements:</div>
                         {service.aiOptimization.improvements.map((improvement, index) => (
                           <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400">•</span>
@@ -654,7 +654,7 @@ const AISmartCityManagementPage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover from-green-700 hover to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg:font-medium transition-all duration-300">
                         🏛️ Manage Service
                       </button>
                     </div>
@@ -666,13 +666,13 @@ const AISmartCityManagementPage: NextPage = () => {
             {/* Environmental Monitoring */}
             {selectedView === 'environmental' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">Environmental Monitoring</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">Environmental Monitoring</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {environmental.map((monitor) => (
-                    <div key={monitor.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={monitor.id} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl font-semibold text-white">{monitor.location}</h3>
+                          <h3 className="text-xl:font-semibold text-white">{monitor.location}</h3>
                           <p className="text-gray-300 text-sm">{monitor.timestamp}</p>
                         </div>
                       </div>
@@ -697,15 +697,15 @@ const AISmartCityManagementPage: NextPage = () => {
                           </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg p-3">
-                          <div className="text-sm text-gray-400">AI Predictions</div>
+                        <div className="bg-gradient-to-r from-green-500/20 to-cyan-500/20 rounded-lg:p-3">
+                          <div className="text-sm:text-gray-400">AI Predictions</div>
                           <div className="text-white text-sm">{monitor.aiPredictions.airQualityTrend}</div>
                           <div className="text-green-400 text-sm">{monitor.aiPredictions.trafficPrediction}</div>
                         </div>
                       </div>
 
                       <div className="space-y-2 mb-4">
-                        <div className="text-sm font-medium text-gray-400">Recommendations:</div>
+                        <div className="text-sm:font-medium text-gray-400">Recommendations:</div>
                         {monitor.aiPredictions.recommendations.map((rec, index) => (
                           <div key={index} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400">•</span>
@@ -722,20 +722,20 @@ const AISmartCityManagementPage: NextPage = () => {
             {/* AI Insights */}
             {selectedView === 'insights' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6">AI-Powered Insights</h2>
-                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
+                <h2 className="text-2xl:font-bold text-white mb-6">AI-Powered Insights</h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {insights.map((insight, index) => (
-                    <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
+                    <div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl:p-6 border border-white/10">
                       <div className="flex items-start space-x-3 mb-4">
                         <div className="text-2xl">{getInsightIcon(insight.type)}</div>
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
-                            <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
+                            <h3 className="text-lg:font-semibold text-white">{insight.title}</h3>
                             <span className={`px-4 py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.type}
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm mb-3">{insight.description}</p>
+                          <p className="text-gray-300 text-sm:mb-3">{insight.description}</p>
                           <div className="flex items-center space-x-4 text-sm">
                             <span className="text-gray-400">Confidence:</span>
                             <span className="text-white">{insight.confidence}%</span>
@@ -751,7 +751,7 @@ const AISmartCityManagementPage: NextPage = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <div className="text-sm font-medium text-gray-400">Action Items:</div>
+                        <div className="text-sm:font-medium text-gray-400">Action Items:</div>
                         {insight.actionItems.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-center space-x-2 text-sm">
                             <span className="text-green-400">•</span>

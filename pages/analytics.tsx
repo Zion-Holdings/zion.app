@@ -19,9 +19,9 @@ export default function Analytics() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-white rounded-lg:shadow-lg:p-8"
           >
-            <h1 className="text-3xl font-bold mb-8 text-responsive-lg text-responsive-lg">Analytics</h1>
+            <h1 className="text-3xl:font-bold mb-8 text-responsive-lg:text-responsive-lg">Analytics</h1>
             {/* Analytics content */}
           </motion.div>
         </div>
