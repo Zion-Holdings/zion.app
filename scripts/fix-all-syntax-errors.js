@@ -1,116 +1,104 @@
 #!/usr/bin/env node
 ;
-const $1 = require('fs');
-const $1 = require('path');
+const fs = require('fs');
+const path = require('path');
 
-// Function to fix common syntax errors;
-function fixSyntaxErrors(content) {
-  let $1 = content;
+function fixAllSyntaxErrors(directory) {
+  const files = fs.readdirSync(directory, { withFileTypes: true });
   
-  // Fix unterminated string literals in imports
-  fixed = fixed.replace(/import React, { useEffect, useRef } from "react";/g, 'import React, { useEffect, useRef } from "react";');
-  fixed = fixed.replace(/import React from "react";/g, 'import React from "react";');
-  fixed = fixed.replace(/import { [^}]+ } from "react;/g, (match) => match.replace(/;$/, '";'));
-  
-  // Fix unterminated string literals in JSX
-  fixed = fixed.replace(/className="fixed inset-0 pointer-events-none z-0/g, 'className=fixed inset-0 pointer-events-none z-0"');
-  fixed = fixed.replace(/className="([^]*)$/gm, (match, className) => {
-    if (!match.endsWith('')) {
-      return "className="${className};
-    }
-    return match;
-  });
-  
-  // Fix unterminated string literals in style objects
-  fixed = fixed.replace(/style={{ background: 'transparent' }}/g, 'style={{ background: \'transparent\' }}');
-  fixed = fixed.replace(/style={{ background: ([^}]+) }}/g, (match, bg) => {
-    if (bg.includes("'") && !bg.endsWith("'")) {
-      return "style={{ background: 'transparent' }}";
-    }
-    return match;
-  });
-  
-  // Fix array syntax errors
-  fixed = fixed.replace(/\[#00d4ff', '#8b5cf6, #ec4899', '#10b981\]/g, "['#00d4ff', '#8b5cf6', '#ec4899', '#10b981']");
-  fixed = fixed.replace(/\[([^]]+)\]/g, (match, content) => {
-    if (content.includes("'") && !content.includes("'")) {
-      return "['${content.split("'")[0]}']";
-    }
-    return match;
-  });
-  
-  // Fix event listener syntax
-  fixed = fixed.replace(/addEventListener\(resi'z'e/g, "addEventListener('resize'");
-  fixed = fixed.replace(/removeEventListener\(resi'z'e/g, "removeEventListener('resize'");
-  
-  // Fix canvas context
-  fixed = fixed.replace(/getContext\('2d\)/g, "getContext('2d')");
-  
-  // Fix common JSX syntax errors
-  fixed = fixed.replace(/<([^>]+) className="([^>]+)>/g, (match, tag, className) => {
-    if (!className.startsWith('') && !className.startsWith("'")) {</div>
-      return "<${tag} className="${className}>;
-    }
-    return match;
-  });
-  
-  // Fix export statements
-  fixed = fixed.replace(/export default ([^;]+);/g, (match, component) => {
-    if (!match.endsWith(';')) {
-      return "${match};";
-    }
-    return match;
-  });
-  
-  return fixed;
-}
-
-// Function to process a file;
-function processFile(filePath) {
-  try {
-    const $1 = fs.readFileSync(filePath, 'utf8');
-    const $1 = fixSyntaxErrors(content);
+  files.forEach(file => {
+    const filePath = path.join(directory, file.name);
     
-    if (content !== fixedContent) {
-      fs.writeFileSync(filePath, fixedContent, 'utf8');
-      console.log("Fixed: ${filePath}");
-      return true;
-    }
-    return false;
-  } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
-    return false;
-  }
-}
-
-// Function to recursively find and process files;
-function processDirectory(dir) {
-  const $1 = fs.readdirSync(dir);
-  let $1 = 0;
-  
-  for (const item of items) {
-    const $1 = path.join(dir, item);
-    const $1 = fs.statSync(fullPath);
-    
-    if (stat.isDirectory()) {
-      // Skip node_modules and .git
-      if (item !== 'node_modules' && item !== '.git' && !item.startsWith('.')) {
-        fixedCount += processDirectory(fullPath);
-      }
-    } else if (item.endsWith('.tsx') || item.endsWith('.ts') || item.endsWith('.js')) {
-      if (processFile(fullPath)) {
-        fixedCount++;
+    if (file.isDirectory()) {
+      fixAllSyntaxErrors(filePath);
+    } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
+      try {
+        let content = fs.readFileSync(filePath, 'utf8');
+        let modified = false;
+        
+        // Fix unterminated string literals in imports
+        content = content.replace(/import React from 'react/g, "import React from 'react'");
+        content = content.replace(/import \{ ([^}]+) \} from 'react/g, "import { $1 } from 'react'");
+        content = content.replace(/import ([^']+) from '([^']+)/g, "import $1 from '$2'");
+        content = content.replace(/import \{ ([^}]+) \} from '([^']+)/g, "import { $1 } from '$2'");
+        content = content.replace(/import type \{ ([^}]+) \} from '([^']+)/g, "import type { $1 } from '$2'");
+        
+        // Fix missing quotes in JSX attributes
+        content = content.replace(/className=([^"']+)/g, 'className="$1"');
+        content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
+        content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
+        content = content.replace(/content=([^"']+)/g, 'content="$1"');
+        content = content.replace(/title=([^"']+)/g, 'title="$1"');
+        content = content.replace(/alt=([^"']+)/g, 'alt="$1"');
+        content = content.replace(/src=([^"']+)/g, 'src="$1"');
+        content = content.replace(/href=([^"']+)/g, 'href="$1"');
+        
+        // Fix specific JSX issues
+        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1">');
+        content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
+        content = content.replace(/<meta name="viewport" content=([^"]+)"/g, '<meta name="viewport" content="$1" />');
+        content = content.replace(/<meta name="description" content=([^"]+)"/g, '<meta name="description" content="$1" />');
+        
+        // Fix unterminated string literals in JSX
+        content = content.replace(/<title>([^<]*)<\/title>/g, (match, title) => {
+          if (!title.includes('"') && !title.includes("'")) {
+            return `<title>${title}</title>`;
+          }
+          return match;
+        });
+        
+        // Fix missing semicolons
+        content = content.replace(/([^;])\nimport/g, '$1;\nimport');
+        content = content.replace(/([^;])\nconst/g, '$1;\nconst');
+        content = content.replace(/([^;])\nlet/g, '$1;\nlet');
+        content = content.replace(/([^;])\nvar/g, '$1;\nvar');
+        
+        // Fix missing closing braces
+        content = content.replace(/\{([^}]*)$/gm, '{$1}');
+        
+        // Fix missing closing parentheses
+        content = content.replace(/\(([^)]*)$/gm, '($1)');
+        
+        // Fix missing closing brackets
+        content = content.replace(/\[([^\]]*)$/gm, '[$1]');
+        
+        // Fix missing closing quotes
+        content = content.replace(/'([^']*)$/gm, "'$1'");
+        content = content.replace(/"([^"]*)$/gm, '"$1"');
+        
+        // Fix specific common patterns
+        content = content.replace(/export default function/g, 'export default function');
+        content = content.replace(/export default const/g, 'export default const');
+        content = content.replace(/export default class/g, 'export default class');
+        
+        // Fix React component declarations
+        content = content.replace(/const ([^=]+) = \(\) => \{/g, 'const $1 = () => {');
+        content = content.replace(/const ([^=]+) = \(([^)]*)\) => \{/g, 'const $1 = ($2) => {');
+        
+        // Fix TypeScript interface declarations
+        content = content.replace(/interface ([^{]+) \{/g, 'interface $1 {');
+        
+        // Fix function declarations
+        content = content.replace(/function ([^(]+)\(([^)]*)\) \{/g, 'function $1($2) {');
+        
+        if (modified) {
+          fs.writeFileSync(filePath, content);
+          console.log(`Fixed syntax errors: ${filePath}`);
+        }
+      } catch (error) {
+        console.error(`Error processing ${filePath}:`, error.message);
       }
     }
-  }
-  
-  return fixedCount;
+  });
 }
 
-// Main execution
-console.log('Starting syntax error fixes...');
-const $1 = Date.now();
-const $1 = processDirectory('.');
-const $1 = Date.now();
+// Fix syntax errors in all relevant directories
+const directories = ['pages', 'components', 'src'];
+directories.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    console.log(`Processing directory: ${dir}`);
+    fixAllSyntaxErrors(dir);
+  }
+});
 
-console.log("\nCompleted! Fixed ${fixedCount} files in ${endTime - startTime}ms"); </div>
+console.log('All syntax error fixes completed!');

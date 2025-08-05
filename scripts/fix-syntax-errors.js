@@ -46,6 +46,15 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
     content = content.replace(/priority: 'l'ow \| 'medi'um \| 'h'igh'' \| critica'l';/g, "priority: 'low' | 'medium' | 'high' | 'critical';");
     
+    // Fix additional API patterns
+    content = content.replace(/if \(req\.method = == 'GET'\) {'/g, "if (req.method === 'GET') {");
+    content = content.replace(/const \{ data, error \} = await supabase''/g, "const { data, error } = await supabase");
+    content = content.replace(/\.from\(autonomou's'_agents\)''/g, ".from('autonomous_agents')");
+    content = content.replace(/\.select\(\*\)';'/g, ".select('*')");
+    content = content.replace(/\.order\(create'd'_at, \{ ascending: false \}\);/g, ".order('created_at', { ascending: false });");
+    content = content.replace(/type: 'technolo'gy \| 'proce'ss \| 'organizatio'nal'' \| cultura'l';/g, "type: 'technology' | 'process' | 'organizational' | 'cultural';");
+    content = content.replace(/status: 'planni'ng \| 'implementati'on \| 'monitor'ing'' \| complete'd';/g, "status: 'planning' | 'implementation' | 'monitoring' | 'completed';");
+    
     // Fix JSX syntax errors
     content = content.replace(/<meta name="description content=/g, '<meta name="description" content="');
     content = content.replace(/className="min-h-screen bg-gray-50 py-12>/g, 'className=min-h-screen bg-gray-50 py-12>');
@@ -118,7 +127,7 @@ function fixAllFiles(dir) {
 
     if (stat.isDirectory()) {
       fixedCount += fixAllFiles(filePath);
-    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
       if (fixSyntaxErrors(filePath)) {
         fixedCount++;
       }

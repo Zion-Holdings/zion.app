@@ -57,7 +57,7 @@ function fixAllRemainingErrors(filePath) {
       content = content.replace(/;/g, "");
       
       // Fix JSX structure
-      content = content.replace(/<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>/g, '<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">');
+      content = content.replace(/<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900><\/div>/g, '<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">');
       content = content.replace(/<Head>"/g, '<Head>');
       content = content.replace(/<title>Cloud Services - Zion Tech Group<\/title>"/g, '<title>Cloud Services - Zion Tech Group</title>');
       content = content.replace(/<meta name=description" content="([^"]+) \/>/g, '<meta name="description" content="$1" />');

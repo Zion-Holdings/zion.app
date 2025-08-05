@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 interface $1 {
-  id: string;'
+  id: string;
   name: string;
-  type: 'infrastructu're | 'workfor'ce | 'technol'ogy'' | financia'l';
-  status: 'dra'ft | 'acti've | 'comple'ted'' | archive'd';
-  priority: 'l'ow | 'medi'um | 'h'igh'' | critica'l';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
+  status: 'draft' | 'active' | 'completed' | 'archived';
+  priority: 'low' | 'medium' | 'high' | 'critical';
   startDate: string;
   endDate: string;
   currentCapacity: number;

@@ -1,70 +1,52 @@
-const $1 = require('fs');
-const $1 = require('path');
+const fs = require('fs');
+const path = require('path');
 
-// Function to fix common syntax errors;
-function fixSyntaxErrors(content) {
-  // Fix unterminated string literals
-  content = content.replace(/className="([^]*)$/gm, 'className=$1"');
-  content = content.replace(/title="([^"]*)$/gm, 'title="$1"');
-  content = content.replace(/alt="([^"]*)$/gm, 'alt="$1"');
-  content = content.replace(/src="([^"]*)$/gm, 'src="$1"');
-  content = content.replace(/href="([^"]*)$/gm, 'href="$1"');
+function fixSyntaxErrors(directory) {
+  const files = fs.readdirSync(directory, { withFileTypes: true });
   
-  // Fix missing closing quotes
-  content = content.replace(/className="([^]*?)/g, 'className="$1"');
-  content = content.replace(/title="([^"]*?)"/g, 'title="$1"');
-  content = content.replace(/alt="([^"]*?)"/g, 'alt="$1"');
-  content = content.replace(/src="([^"]*?)"/g, 'src="$1"');
-  content = content.replace(/href="([^"]*?)"/g, 'href="$1"');
-  
-  // Fix missing closing tags
-  content = content.replace(/(<[^>]*>)([^<]*)$/gm, '$1$2</div>');
-  
-  // Fix missing semicolons
-  content = content.replace(/([^;])\n(import|export|const|let|var|function)/g, '$1;\n$2');
-  
-  // Fix missing closing braces
-  content = content.replace(/([^}])\n(export|import)/g, '$1}\n$2');
-  
-  return content;
-}
-
-// Function to process a file;
-function processFile(filePath) {
-  try {
-    let $1 = fs.readFileSync(filePath, 'utf8');
-    const $1 = content;
+  files.forEach(file => {
+    const filePath = path.join(directory, file.name);
     
-    content = fixSyntaxErrors(content);
-    
-    if (content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log("Fixed: ${filePath}");
-      return true;
+    if (file.isDirectory()) {
+      fixSyntaxErrors(filePath);
+    } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
+      try {
+        let content = fs.readFileSync(filePath, 'utf8');
+        let modified = false;
+        
+        // Fix unterminated string literals
+        content = content.replace(/import React from 'react/g, "import React from 'react'");
+        content = content.replace(/import \{ ([^}]+) \} from 'react/g, "import { $1 } from 'react'");
+        content = content.replace(/import ([^']+) from '([^']+)/g, "import $1 from '$2'");
+        content = content.replace(/import \{ ([^}]+) \} from '([^']+)/g, "import { $1 } from '$2'");
+        
+        // Fix JSX attributes
+        content = content.replace(/className=([^"']+)/g, 'className="$1"');
+        content = content.replace(/name="description content=([^"]+)"/g, 'name="description" content="$1"');
+        content = content.replace(/name="viewport" content=([^"]+)"/g, 'name="viewport" content="$1"');
+        
+        // Fix specific syntax issues
+        content = content.replace(/<div className=([^"']+)>/g, '<div className="$1">');
+        content = content.replace(/<meta name="description content=([^"]+)"/g, '<meta name="description" content="$1" />');
+        
+        if (modified) {
+          fs.writeFileSync(filePath, content);
+          console.log(`Fixed syntax errors: ${filePath}`);
+        }
+      } catch (error) {
+        console.error(`Error processing ${filePath}:`, error.message);
+      }
     }
-  } catch (error) {
-    console.error("Error processing ${filePath}:", error.message);
-  }
-  return false;
+  });
 }
 
-// Function to recursively find and process files;
-function processDirectory(dir) {
-  const $1 = fs.readdirSync(dir);
-  
-  for (const file of files) {
-    const $1 = path.join(dir, file);
-    const $1 = fs.statSync(filePath);
-    
-    if (stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
-      processDirectory(filePath);
-    } else if (file.endsWith('.tsx') || file.endsWith('.ts') || file.endsWith('.js')) {
-      processFile(filePath);
-    }
+// Fix syntax errors in all relevant directories
+const directories = ['pages', 'components', 'src'];
+directories.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    console.log(`Processing directory: ${dir}`);
+    fixSyntaxErrors(dir);
   }
-}
+});
 
-// Main execution
-console.log('Starting comprehensive syntax fix...');
-processDirectory('.');
-console.log('Syntax fix completed!'); </div>
+console.log('Final syntax error fixes completed!');
