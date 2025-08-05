@@ -6,8 +6,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 class EnhancedContentGeneratorAgent {
   constructor() {
     this.agentId = process.env.AGENT_ID || `content-generator-${Date.now()}`;
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-key');
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+    
+    // Initialize Google AI with fallback
+    this.initializeGoogleAI();
     
     this.analytics = {
       pagesCreated: 0,
@@ -20,6 +21,55 @@ class EnhancedContentGeneratorAgent {
     this.ensureLogDirectory();
     
     this.contentTemplates = this.loadContentTemplates();
+  }
+
+  initializeGoogleAI() {
+    try {
+      const apiKey = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
+      
+      if (apiKey && apiKey !== 'placeholder-google-ai-key') {
+        this.genAI = new GoogleGenerativeAI(apiKey);
+        this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+        this.aiEnabled = true;
+        this.log('Google AI initialized successfully');
+      } else {
+        this.aiEnabled = false;
+        this.log('Google AI disabled - using fallback content generation', 'WARN');
+      }
+    } catch (error) {
+      this.aiEnabled = false;
+      this.log(`Google AI initialization failed: ${error.message}`, 'ERROR');
+    }
+  }
+
+  async generateContentWithAI(prompt) {
+    if (!this.aiEnabled) {
+      return this.generateFallbackContent(prompt);
+    }
+    
+    try {
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      return response.text();
+    } catch (error) {
+      this.log(`AI content generation failed: ${error}`, 'ERROR');
+      return this.generateFallbackContent(prompt);
+    }
+  }
+
+  generateFallbackContent(prompt) {
+    // Simple fallback content generation based on prompt keywords
+    const keywords = prompt.toLowerCase().split(' ');
+    
+    if (keywords.includes('service') || keywords.includes('solution')) {
+      return `Professional service offering with expert implementation and ongoing support. Our team provides comprehensive solutions tailored to your specific needs.`;
+    } else if (keywords.includes('product') || keywords.includes('feature')) {
+      return `Innovative product designed for modern business requirements. Features include advanced functionality, user-friendly interface, and scalable architecture.`;
+    } else if (keywords.includes('blog') || keywords.includes('article')) {
+      return `Insights and analysis on current trends and best practices. Our expert team shares valuable knowledge and industry expertise.`;
+    } else {
+      return `Comprehensive content providing detailed information and professional insights. Contact us to learn more about our services.`;
+    }
   }
 
   ensureLogDirectory() {
