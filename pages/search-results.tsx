@@ -32,7 +32,14 @@ export default function SearchResults() {
         <title>Search Results - Zion Marketplace</title>
         <meta name="description" content="Search results for Zion Marketplace" />
       </Head>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
         <section className="py-20 px-4 max-w-3xl mx-auto">
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text text-center">
             Search Results

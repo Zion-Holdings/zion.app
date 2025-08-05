@@ -4,7 +4,14 @@ import Link from 'next/link'
 
 const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
       <Head>
         <title>Page Not Found - Zion Tech Group</title>
         <meta name="description" content="The page you are looking for does not exist" />

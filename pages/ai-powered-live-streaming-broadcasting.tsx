@@ -345,7 +345,14 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
   }, [streams, selectedCategory])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
       <Head>
         <title>AI-Powered Live Streaming & Broadcasting - Zion</title>
         <meta name="description" content="Advanced AI-powered live streaming and broadcasting platform with real-time analytics, content analysis, and engagement tracking" />

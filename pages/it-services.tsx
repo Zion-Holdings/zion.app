@@ -219,7 +219,14 @@ const ITServicesPage: React.FC = () => {
         <meta name="description" content="Discover top-rated IT service providers. Compare AI-matched scores, ratings, and get quotes from the best IT consultants and managed service providers." />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

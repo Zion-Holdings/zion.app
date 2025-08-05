@@ -35,7 +35,14 @@ export default function ContributeTranslations() {
         <title>Contribute Translations - Zion Marketplace</title>
         <meta name="description" content="Help translate Zion Marketplace and make it accessible to everyone." />
       </Head>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex flex-col items-center justify-center py-16 px-4">
+      <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
         <div className="max-w-xl w-full bg-black/30 rounded-xl shadow-lg p-8 border border-white/10">
           <h1 className="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">Contribute Translations</h1>
           <p className="text-gray-300 mb-8 text-center">Join our global community and help make Zion Marketplace accessible in more languages. Submit your translation for any key below!</p>

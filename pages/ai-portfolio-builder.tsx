@@ -64,7 +64,14 @@ const PortfolioBuilder = () => {
         <title>AI Portfolio Builder | Zion</title>
         <meta name="description" content="Create a professional portfolio with AI. Input your skills, experience, and projects, and let AI generate a stunning portfolio for you." />
       </Head>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-16 px-4">
+      <div className="relative z-10 container-responsive py-8">
+        
+        {/* Background Effects */}
+        <div className="fixed inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        </div>
+      
         <div className="max-w-3xl mx-auto bg-white/10 rounded-2xl shadow-xl p-8 backdrop-blur-md">
           <h1 className="text-3xl font-bold text-white mb-6 text-center">AI-powered Portfolio Builder</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
