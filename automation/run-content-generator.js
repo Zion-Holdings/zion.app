@@ -1,33 +1,33 @@
 #!/usr/bin/env node
 ;
-const $1 = require('./content-generator-agent');
+const result = require('./content-generator-agent);
 
 async function main() {
-  console.log('📝 Content Generator Runner');
-  console.log('=' .repeat(50));
-  console.log('Startin'g' content generation process...');
-  console.log('');
+  console.log(📝 Content Generator Runner);
+  console.log(=') .repeat(50));
+  console.log('Starting content generation process...);
+  console.log('));
   
   try {
-    const $1 = new ContentGeneratorAgent();
-    const $1 = await agent.run();
+    const result = new ContentGeneratorAgent();
+    const asyncResult = await agent.run();
     
-    console.log('');
-    console.log('🎉 Content generation completed successfully!');
-    console.log('');
-    console.log('📁 Generated content:');
-    console.log('-' Service descriptions');
-    console.log('-' Talent profiles');
-    console.log('-' Blog posts');
-    console.log('-' Testimonials');
-    console.log('-' FAQs');
-    console.log('');
-    console.log('📊 Summary:');
+    console.log(');
+    console.log(🎉 Content generation completed successfully!);
+    console.log('));
+    console.log('📁 Generated content:);
+    console.log(- Service descriptions);
+    console.log(')-' Talent profiles);
+    console.log('- Blog posts);
+    console.log(-') Testimonials);
+    console.log('- FAQs);
+    console.log('));
+    console.log(📊 Summary: ');
     console.log("- Total generated: ${results.summary.totalGenerated}");
     console.log("- By type: ${JSON.stringify(results.summary.byType)}");
     
   } catch (error) {
-    console.error('❌ Content generation failed:', error);
+    console.error(❌ Content generation failed:', error);
     process.exit(1);
   }
 }

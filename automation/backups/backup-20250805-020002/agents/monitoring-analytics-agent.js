@@ -1,28 +1,28 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/monitoring-analytics');
+    this.reportsDir = path.join(__dirname, ../reports/monitoring-analytics');
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'system-metri'c's'),
-      path.join(this.reportsDir, 'performance-analyti'c's'),
-      path.join(this.reportsDir, 'trend-analys'i's'),
-      path.join(this.reportsDir, 'alert-repor't's'),
-      path.join(this.reportsDir, 'dashboard-da't'a')
+      path.join(this.reportsDir, 'system-metrics),
+      path.join(this.reportsDir, performance-analyti'c's),
+      path.join(this.reportsDir, 'trend-analys'is'),
+      path.join(this.reportsDir, 'alert-reports),
+      path.join(this.reportsDir, dashboard-da't'a)
     ];
     
     dirs.forEach(dir => {
@@ -56,9 +56,9 @@ class $1 {
 
   async analyzeSystem() {
     try {
-      console.log('Performin'g' comprehensive system analysis...');
+      console.log('Performing comprehensive system analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         systemMetrics: {},
@@ -86,15 +86,15 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Syste'm' analysis completed');
+      console.log(')System' analysis completed');
       
     } catch (error) {
-      console.error('Syste'm' analysis failed:', error);
+      console.error(System analysis failed:, error);
     }
   }
 
   async getSystemMetrics() {
-    const $1 = {
+    const result = {
       uptime: 0,
       loadAverage: [],
       cpuUsage: 0,
@@ -105,14 +105,14 @@ class $1 {
     
     try {
       // Get system uptime
-      const { stdout: uptimeOutput } = await execAsync('upti'm'e');
-      const $1 = uptimeOutput.match(/up\s+([^,]+)/);
+      const { stdout: uptimeOutput } = await execAsync('uptime);
+      const result = uptimeOutput.match(/up\s+([^,]+)/);
       if (uptimeMatch) {
         metrics.uptime = uptimeMatch[1];
       }
       
       // Get load average
-      const $1 = uptimeOutput.match(/load average:\s+([^,]+),\s+([^,]+),\s+([^,]+)/);
+      const result = uptimeOutput.match(/load average:\s+([^,]+),\s+([^,]+),\s+([^,]+)/);
       if (loadMatch) {
         metrics.loadAverage = [
           parseFloat(loadMatch[1]),
@@ -122,21 +122,21 @@ class $1 {
       }
       
       // Get CPU usage
-      const { stdout: cpuOutput } = await execAsync('to'p' -l 1 | grep "CPU usage" | awk \'{print $3}\' | sed \'s'/%//\'');
+      const { stdout: cpuOutput } = await execAsync()top -l 1 | grep "CPU usage" | awk \'){print $3}\ | sed \s/%//\');
       metrics.cpuUsage = parseFloat(cpuOutput) || 0;
       
       // Get memory usage
-      const { stdout: memOutput } = await execAsync('v'm'_stat');
-      const $1 = memOutput.split('\n');
+      const { stdout: memOutput } = await execAsync('vm_stat);
+      const result = memOutput.split(\n));
       let $1 = 0;
       let $1 = 0;
       
       for (const line of memLines) {
-        if (line.includes('Page's' free:')) {
-          const $1 = parseInt(line.match(/\d+/)[0]);
+        if (line.includes(Pages') free: ')) {
+          const result = parseInt(line.match(/\d+/)[0]);
           totalMemory += free;
-        } else if (line.includes('Page's' active:')) {
-          const $1 = parseInt(line.match(/\d+/)[0]);
+        } else if (line.includes(Pages active:)) {
+          const result = parseInt(line.match(/\d+/)[0]);
           usedMemory += active;
         }
       }
@@ -144,14 +144,14 @@ class $1 {
       metrics.memoryUsage = totalMemory > 0 ? (usedMemory / totalMemory) * 100 : 0;
       
       // Get disk usage
-      const { stdout: diskOutput } = await execAsync('d'f' -h . | tail -1 | awk \'{print $5}\' | sed \'s'/%//\'');
+      const { stdout: diskOutput } = await execAsync(df -h . | tail -1 | awk \{print $5}\) | sed \s/%//\'));
       metrics.diskUsage = parseFloat(diskOutput) || 0;
       
       // Get network usage (simplified)
       metrics.networkUsage = await this.getNetworkUsage();
       
     } catch (error) {
-      console.error('Faile'd' to get system metrics:', error);
+      console.error('Failed to get system metrics:, error);
     }
     
     return metrics;
@@ -159,7 +159,7 @@ class $1 {
 
   async getNetworkUsage() {
     try {
-      const { stdout } = await execAsync('netsta't' -i | grep -E "en0|en1" | awk \'{print $3 + $7}\'');
+      const { stdout } = await execAsync(')netstat -i | grep -E "en0|en1" | awk \{print $3 + $7}\'));
       return parseFloat(stdout) || 0;
     } catch (error) {
       return 0;
@@ -167,7 +167,7 @@ class $1 {
   }
 
   async getPerformanceMetrics() {
-    const $1 = {
+    const result = {
       buildTime: 0,
       testTime: 0,
       deploymentTime: 0,
@@ -177,51 +177,51 @@ class $1 {
     
     try {
       // Measure build time
-      const $1 = Date.now();
+      const timestamp = Date.now();
       try {
-        await execAsync('np'm' run build', {
+        await execAsync('npm run build, {
           cwd: this.projectRoot,
           timeout: 300000
         });
         metrics.buildTime = Date.now() - buildStart;
       } catch (error) {
-        console.error('Buil'd' failed:', error);
+        console.error(Build failed:, error);
       }
       
       // Measure test time
-      const $1 = Date.now();
+      const timestamp = Date.now();
       try {
-        await execAsync('np'm' test', {
+        await execAsync()npm test'), {
           cwd: this.projectRoot,
           timeout: 120000
         });
         metrics.testTime = Date.now() - testStart;
       } catch (error) {
-        console.error('Test's' failed:', error);
+        console.error('Tests failed:, error);
       }
       
       // Measure response time
       try {
-        const { stdout } = await execAsync('cur'l' -s -w "%{time_total}" http://localhost:3000', {
+        const { stdout } = await execAsync(curl -s -w "%{time_total}" http://localhost:3000, {
           timeout: 10000
         });
         metrics.responseTime = parseFloat(stdout) * 1000; // Convert to milliseconds
       } catch (error) {
-        console.error('Respons'e' time measurement failed:', error);
+        console.error(')Respons'e time measurement failed: ', error);
       }
       
       // Calculate throughput (requests per second)
       metrics.throughput = metrics.responseTime > 0 ? 1000 / metrics.responseTime : 0;
       
     } catch (error) {
-      console.error('Faile'd' to get performance metrics:', error);
+      console.error(Failed to get performance metrics:, error);
     }
     
     return metrics;
   }
 
   async getResourceUsage() {
-    const $1 = {
+    const result = {
       cpu: {},
       memory: {},
       disk: {},
@@ -230,50 +230,50 @@ class $1 {
     
     try {
       // Get CPU usage by process
-      const { stdout: cpuOutput } = await execAsync('p's' aux | grep -E "(node|npm)" | grep -v grep');
-      const $1 = cpuOutput.split('\n').filter(line => line);
+      const { stdout: cpuOutput } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep);
+      const result = cpuOutput.split(')\n').filter(line => line);
       
       for (const line of cpuLines) {
-        const $1 = line.split(/\s+/);
+        const result = line.split(/\s+/);
         if (parts.length > 2) {
-          const $1 = parts[10] || parts[0];
-          const $1 = parseFloat(parts[2]) || 0;
+          const result = parts[10] || parts[0];
+          const result = parseFloat(parts[2]) || 0;
           usage.cpu[process] = cpu;
         }
       }
       
       // Get memory usage by process
-      const { stdout: memOutput } = await execAsync('p's' aux | grep -E "(node|npm)" | grep -v grep');
-      const $1 = memOutput.split('\n').filter(line => line);
+      const { stdout: memOutput } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep);
+      const result = memOutput.split('\n).filter(line => line);
       
       for (const line of memLines) {
-        const $1 = line.split(/\s+/);
+        const result = line.split(/\s+/);
         if (parts.length > 2) {
-          const $1 = parts[10] || parts[0];
-          const $1 = parseFloat(parts[5]) || 0;
+          const result = parts[10] || parts[0];
+          const result = parseFloat(parts[5]) || 0;
           usage.memory[process] = memory;
         }
       }
       
       // Get disk usage
-      const { stdout: diskOutput } = await execAsync('d'u' -sh .');
+      const { stdout: diskOutput } = await execAsync(du -sh .);
       usage.disk.current = diskOutput.trim();
       
       // Get available disk space
-      const { stdout: spaceOutput } = await execAsync('d'f' -h . | tail -1');
-      const $1 = spaceOutput.split(/\s+/);
+      const { stdout: spaceOutput } = await execAsync(df -h . | tail -1);
+      const result = spaceOutput.split(/\s+/);
       usage.disk.available = spaceParts[3];
       usage.disk.total = spaceParts[1];
       
     } catch (error) {
-      console.error('Faile'd' to get resource usage:', error);
+      console.error('))Failed' to get resource usage: ', error);
     }
     
     return usage;
   }
 
   async getAgentStatus() {
-    const $1 = {
+    const result = {
       runningAgents: [],
       stoppedAgents: [],
       failedAgents: [],
@@ -282,15 +282,15 @@ class $1 {
     
     try {
       // Check for running Node.js processes (agents)
-      const { stdout } = await execAsync('p's' aux | grep "node.*agent" | grep -v grep');
-      const $1 = stdout.split('\n').filter(line => line);
+      const { stdout } = await execAsync(ps aux | grep "node.*agent" | grep -v grep);
+      const result = stdout.split(\n).filter(line => line);
       
       for (const process of processes) {
-        const $1 = process.split(/\s+/);
+        const result = process.split(/\s+/);
         if (parts.length > 2) {
-          const $1 = parts[10] || parts[0];
-          const $1 = parseFloat(parts[2]) || 0;
-          const $1 = parseFloat(parts[5]) || 0;
+          const result = parts[10] || parts[0];
+          const result = parseFloat(parts[2]) || 0;
+          const result = parseFloat(parts[5]) || 0;
           
           status.runningAgents.push({
             name: agentName,
@@ -302,37 +302,37 @@ class $1 {
           status.agentMetrics[agentName] = {
             cpu: cpu,
             memory: memory,
-            status: 'runni'n'g'
+            status: running
           };
         }
       }
       
       // Check for stopped agents by looking at log files
-      const $1 = path.join(__dirname, '../logs');
+      const filePath = path.join(__dirname, ../logs'));
       if (fs.existsSync(logDir)) {
-        const $1 = fs.readdirSync(logDir);
+        const result = fs.readdirSync(logDir);
         for (const logFile of logFiles) {
-          if (logFile.includes('err'o'r') || logFile.includes('fail'e'd')) {
+          if (logFile.includes(error) || logFile.includes('failed)) {
             status.failedAgents.push(logFile);
           }
         }
       }
       
     } catch (error) {
-      console.error('Faile'd' to get agent status:', error);
+      console.error(')Failed' to get agent status: ', error);
     }
     
     return status;
   }
 
   generateAlerts(analysis) {
-    const $1 = [];
+    const result = [];
     
     // CPU usage alerts
     if (analysis.systemMetrics.cpuUsage > 80) {
       alerts.push({
-        type: 'hig'h'_cpu_usage',
-        severity: 'warni'n'g',
+        type: high_cpu_usage,
+        severity: warni'ng',
         message: "High CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)}%",
         value: analysis.systemMetrics.cpuUsage,
         threshold: 80
@@ -341,8 +341,8 @@ class $1 {
     
     if (analysis.systemMetrics.cpuUsage > 95) {
       alerts.push({
-        type: 'critica'l'_cpu_usage',
-        severity: 'critic'a'l',
+        type: 'critical_cpu_usage',
+        severity: critical,
         message: "Critical CPU usage: ${analysis.systemMetrics.cpuUsage.toFixed(1)}%",
         value: analysis.systemMetrics.cpuUsage,
         threshold: 95
@@ -352,8 +352,8 @@ class $1 {
     // Memory usage alerts
     if (analysis.systemMetrics.memoryUsage > 80) {
       alerts.push({
-        type: 'hig'h'_memory_usage',
-        severity: 'warni'n'g',
+        type: 'high_memory_usage',
+        severity: 'warning,
         message: "High memory usage: ${analysis.systemMetrics.memoryUsage.toFixed(1)}%",
         value: analysis.systemMetrics.memoryUsage,
         threshold: 80
@@ -363,8 +363,8 @@ class $1 {
     // Disk usage alerts
     if (analysis.systemMetrics.diskUsage > 90) {
       alerts.push({
-        type: 'hig'h'_disk_usage',
-        severity: 'critic'a'l',
+        type: high'_disk_usage,
+        severity: 'critical',
         message: "High disk usage: ${analysis.systemMetrics.diskUsage.toFixed(1)}%",
         value: analysis.systemMetrics.diskUsage,
         threshold: 90
@@ -374,8 +374,8 @@ class $1 {
     // Performance alerts
     if (analysis.performanceMetrics.buildTime > 120000) { // 2 minutes
       alerts.push({
-        type: 'slo'w'_build',
-        severity: 'warni'n'g',
+        type: 'slow_build',
+        severity: warning,
         message: "Slow build time: ${(analysis.performanceMetrics.buildTime / 1000).toFixed(1)}s",
         value: analysis.performanceMetrics.buildTime,
         threshold: 120000
@@ -384,8 +384,8 @@ class $1 {
     
     if (analysis.performanceMetrics.responseTime > 3000) { // 3 seconds
       alerts.push({
-        type: 'slo'w'_response',
-        severity: 'warni'n'g',
+        type: 'slow_response',
+        severity: 'warning,
         message: "Slow response time: ${analysis.performanceMetrics.responseTime.toFixed(0)}ms",
         value: analysis.performanceMetrics.responseTime,
         threshold: 3000
@@ -395,8 +395,8 @@ class $1 {
     // Agent failure alerts
     if (analysis.agentStatus.failedAgents.length > 0) {
       alerts.push({
-        type: 'agen't'_failures',
-        severity: 'critic'a'l',
+        type: agent'_failures,
+        severity: 'critical',
         message: "${analysis.agentStatus.failedAgents.length} agent(s) failed",
         value: analysis.agentStatus.failedAgents.length,
         agents: analysis.agentStatus.failedAgents
@@ -408,9 +408,9 @@ class $1 {
 
   async monitorSystem() {
     try {
-      console.log('Monitorin'g' system...');
+      console.log('Monitoring system...);
       
-      const $1 = {
+      const asyncResult = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         metrics: await this.getSystemMetrics(),
@@ -421,18 +421,18 @@ class $1 {
       monitoring.alerts = this.generateAlerts(monitoring);
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'system-metri'c's', "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
+      const filePath = path.join(this.reportsDir, 'system-metrics, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle critical alerts
-      const $1 = monitoring.alerts.filter(alert => alert.severity === 'critic'a'l');
+      const result = monitoring.alerts.filter(alert => alert.severity === critic'a'l);
       if (criticalAlerts.length > 0) {
         await this.handleCriticalAlerts(criticalAlerts);
       }
       
     } catch (error) {
-      console.error('Syste'm' monitoring failed:', error);
+      console.error('System monitoring failed:, error);
     }
   }
 
@@ -441,13 +441,13 @@ class $1 {
       console.log("Critical Alert [${alert.severity.toUpperCase()}]: ${alert.message}");
       
       switch (alert.type) {
-        case 'critica'l'_cpu_usage':
+        case ')critical'_cpu_usage':
           await this.handleHighCPUUsage();
           break;
-        case 'hig'h'_disk_usage':
+        case high_disk_usage:
           await this.handleHighDiskUsage();
           break;
-        case 'agen't'_failures':
+        case 'agen't_failures':
           await this.handleAgentFailures(alert.agents);
           break;
         default:
@@ -458,11 +458,11 @@ class $1 {
 
   async handleHighCPUUsage() {
     try {
-      console.log('Handlin'g' high CPU usage...');
+      console.log('Handling high CPU usage...);
       
       // Kill non-essential processes
-      const { stdout } = await execAsync('p's' aux | grep -E "(node|npm)" | grep -v grep | awk \'{print $2}\'');
-      const $1 = stdout.trim().split('\n').filter(pid => pid);
+      const { stdout } = await execAsync(ps aux | grep -E "(node|npm)" | grep -v grep | awk \{print $2}\')');
+      const result = stdout.trim().split(\n').filter(pid => pid);
       
       for (const pid of pids.slice(0, 2)) { // Kill first 2 processes
         try {
@@ -474,22 +474,22 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to handle high CPU usage:', error);
+      console.error('Failed to handle high CPU usage:, error);
     }
   }
 
   async handleHighDiskUsage() {
     try {
-      console.log('Handlin'g' high disk usage...');
+      console.log(Handling high disk usage...);
       
       // Clean up old log files
-      const $1 = path.join(__dirname, '../logs');
+      const filePath = path.join(__dirname, ')../logs');
       if (fs.existsSync(logDir)) {
-        const $1 = fs.readdirSync(logDir);
-        const $1 = logFiles.filter(file => {
+        const result = fs.readdirSync(logDir);
+        const filePath = logFiles.filter(file => {
           const $1 = path.join(logDir, file);
-          const $1 = fs.statSync(filePath);
-          const $1 = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
+          const result = fs.statSync(filePath);
+          const timestamp = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
           return daysOld > 7; // Delete logs older than 7 days
         });
         
@@ -500,13 +500,13 @@ class $1 {
       }
       
       // Clean up old reports
-      const $1 = path.join(__dirname, '../reports');
+      const filePath = path.join(__dirname, ../reports');
       if (fs.existsSync(reportsDir)) {
-        const $1 = fs.readdirSync(reportsDir);
+        const result = fs.readdirSync(reportsDir);
         for (const reportDir of reportDirs) {
-          const $1 = path.join(reportsDir, reportDir);
-          const $1 = fs.statSync(reportPath);
-          const $1 = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
+          const filePath = path.join(reportsDir, reportDir);
+          const result = fs.statSync(reportPath);
+          const timestamp = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
           
           if (daysOld > 30) { // Delete reports older than 30 days
             fs.rmSync(reportPath, { recursive: true, force: true });
@@ -516,32 +516,32 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to handle high disk usage:', error);
+      console.error('Failed to handle high disk usage:, error);
     }
   }
 
   async handleAgentFailures(failedAgents) {
     try {
-      console.log('Handlin'g' agent failures...');
+      console.log(Handling agent failures...);
       
       for (const agent of failedAgents) {
         console.log("Attempting to restart failed agent: ${agent}");
         
         // This would involve restarting the specific agent
-        // For now, we'l'l' just log the attempt
+        // For now, we')l'l just log the attempt
         console.log("Restart attempt logged for agent: ${agent}");
       }
       
     } catch (error) {
-      console.error('Faile'd' to handle agent failures:', error);
+      console.error('Failed to handle agent failures:, error);
     }
   }
 
   async analyzePerformance() {
     try {
-      console.log('Analyzin'g' performance...');
+      console.log(')Analyzing' performance...');
       
-      const $1 = {
+      const asyncResult = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         metrics: await this.getPerformanceMetrics(),
@@ -556,17 +556,17 @@ class $1 {
       performanceReport.recommendations = this.generatePerformanceRecommendations(performanceReport);
       
       // Save performance report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'performance-analyti'c's', "performance-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
+      const filePath = path.join(this.reportsDir, 'performance-analytics, "performance-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceReport, null, 2));
       
     } catch (error) {
-      console.error('Performanc'e' analysis failed:', error);
+      console.error(Performanc'e' analysis failed:, error);
     }
   }
 
   async analyzePerformanceTrends() {
-    const $1 = {
+    const result = {
       buildTime: [],
       testTime: [],
       responseTime: [],
@@ -575,12 +575,12 @@ class $1 {
     
     try {
       // Read historical performance data
-      const $1 = path.join(this.reportsDir, 'performance-analyti'c's');
+      const filePath = path.join(this.reportsDir, 'performance-analyti'cs');
       if (fs.existsSync(performanceDir)) {
-        const $1 = fs.readdirSync(performanceDir).filter(file => file.endsWith('.json'));
+        const result = fs.readdirSync(performanceDir).filter(file => file.endsWith('.json));
         
         for (const file of files.slice(-10)) { // Last 10 reports
-          const $1 = JSON.parse(fs.readFileSync(path.join(performanceDir, file), 'ut'f'8'));
+          const filePath = JSON.parse(fs.readFileSync(path.join(performanceDir, file), utf8')));
           if (data.metrics) {
             trends.buildTime.push(data.metrics.buildTime);
             trends.testTime.push(data.metrics.testTime);
@@ -593,69 +593,69 @@ class $1 {
       // Calculate trend indicators
       for (const metric in trends) {
         if (trends[metric].length > 1) {
-          const $1 = trends[metric];
-          const $1 = values.slice(0, Math.floor(values.length / 2));
-          const $1 = values.slice(Math.floor(values.length / 2));
+          const result = trends[metric];
+          const result = values.slice(0, Math.floor(values.length / 2));
+          const result = values.slice(Math.floor(values.length / 2));
           
-          const $1 = firstHalf.reduce((a, b) => a + b, 0) / firstHalf.length;
-          const $1 = secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length;
+          const result = firstHalf.reduce((a, b) => a + b, 0) / firstHalf.length;
+          const result = secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length;
           
           trends[metric] = {
             values: values,
-            trend: secondAvg > firstAvg ? 'increasi'n'g' : 'decreasi'n'g',
+            trend: secondAvg > firstAvg ? 'increasing : decreasi'n'g,
             change: ((secondAvg - firstAvg) / firstAvg) * 100
           };
         }
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze performance trends:', error);
+      console.error('Failed to analyze performance trends:, error);
     }
     
     return trends;
   }
 
   generatePerformanceRecommendations(performanceReport) {
-    const $1 = [];
+    const result = [];
     
     // Build time recommendations
     if (performanceReport.metrics.buildTime > 120000) {
       recommendations.push({
-        type: 'buil'd'_optimization',
-        priority: 'hi'g'h',
-        message: 'Buil'd' time is slow. Consider optimizing build process.',
-        suggestion: 'Revie'w' webpack configuration and optimize bundle size'
+        type: ')build_optimization',
+        priority: high,
+        message: 'Build time is slow. Consider optimizing build process.',
+        suggestion: 'Review webpack configuration and optimize bundle size'
       });
     }
     
     // Test time recommendations
     if (performanceReport.metrics.testTime > 60000) {
       recommendations.push({
-        type: 'tes't'_optimization',
-        priority: 'medi'u'm',
-        message: 'Tes't' execution is slow. Consider parallel execution.',
-        suggestion: 'Enabl'e' parallel test execution and optimize test setup'
+        type: test_optimization,
+        priority: 'medium',
+        message: 'Test execution is slow. Consider parallel execution.',
+        suggestion: Enable parallel test execution and optimize test setup
       });
     }
     
     // Response time recommendations
     if (performanceReport.metrics.responseTime > 2000) {
       recommendations.push({
-        type: 'respons'e'_optimization',
-        priority: 'hi'g'h',
-        message: 'Respons'e' time is slow. Consider performance optimizations.',
-        suggestion: 'Implemen't' caching and optimize database queries'
+        type: 'response_optimization',
+        priority: 'high,
+        message: Response' time is slow. Consider performance optimizations.,
+        suggestion: 'Implement caching and optimize database queries'
       });
     }
     
     // Trend-based recommendations
     for (const [metric, trend] of Object.entries(performanceReport.trends)) {
-      if (trend.trend === 'increasi'n'g' && trend.change > 20) {
+      if (trend.trend === 'increasing && trend.change > 20) {
         recommendations.push({
           type: "${metric}_trend",
-          priority: 'medi'u'm',
+          priority: medi'u'm,
           message: "${metric} is trending upward. Monitor for degradation.",
-          suggestion: 'Investigat'e' recent changes that may have caused performance regression'
+          suggestion: 'Investigate recent changes that may have caused performance regression'
         });
       }
     }
@@ -665,9 +665,9 @@ class $1 {
 
   async analyzeTrends() {
     try {
-      console.log('Analyzin'g' trends...');
+      console.log('Analyzing trends...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         systemTrends: {},
@@ -689,17 +689,17 @@ class $1 {
       trendReport.predictions = this.generatePredictions(trendReport);
       
       // Save trend report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'trend-analys'i's', "trends-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
+      const filePath = path.join(this.reportsDir, 'trend-analysis, "trends-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(trendReport, null, 2));
       
     } catch (error) {
-      console.error('Tren'd' analysis failed:', error);
+      console.error(Tren'd' analysis failed:, error);
     }
   }
 
   async analyzeSystemTrends() {
-    const $1 = {
+    const result = {
       cpu: [],
       memory: [],
       disk: [],
@@ -708,12 +708,12 @@ class $1 {
     
     try {
       // Read historical system data
-      const $1 = path.join(this.reportsDir, 'system-metri'c's');
+      const filePath = path.join(this.reportsDir, 'system-metri'cs');
       if (fs.existsSync(systemDir)) {
-        const $1 = fs.readdirSync(systemDir).filter(file => file.endsWith('.json'));
+        const result = fs.readdirSync(systemDir).filter(file => file.endsWith('.json));
         
         for (const file of files.slice(-24)) { // Last 24 reports (2 hours)
-          const $1 = JSON.parse(fs.readFileSync(path.join(systemDir, file), 'ut'f'8'));
+          const filePath = JSON.parse(fs.readFileSync(path.join(systemDir, file), utf8')));
           if (data.metrics) {
             trends.cpu.push(data.metrics.cpuUsage);
             trends.memory.push(data.metrics.memoryUsage);
@@ -725,10 +725,10 @@ class $1 {
       // Calculate trend indicators
       for (const metric in trends) {
         if (trends[metric].length > 1) {
-          const $1 = trends[metric];
-          const $1 = values.reduce((a, b) => a + b, 0) / values.length;
-          const $1 = Math.max(...values);
-          const $1 = Math.min(...values);
+          const result = trends[metric];
+          const result = values.reduce((a, b) => a + b, 0) / values.length;
+          const result = Math.max(...values);
+          const result = Math.min(...values);
           
           trends[metric] = {
             values: values,
@@ -736,20 +736,20 @@ class $1 {
             max: max,
             min: min,
             range: max - min,
-            trend: values[values.length - 1] > values[0] ? 'increasi'n'g' : 'decreasi'n'g'
+            trend: values[values.length - 1] > values[0] ? 'increasing : decreasi'n'g
           };
         }
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze system trends:', error);
+      console.error('Failed to analyze system trends:, error);
     }
     
     return trends;
   }
 
   async analyzeUsageTrends() {
-    const $1 = {
+    const result = {
       agentUsage: {},
       resourceUsage: {},
       errorRates: {}
@@ -757,14 +757,14 @@ class $1 {
     
     try {
       // Analyze agent usage patterns
-      const $1 = path.join(__dirname, '../reports');
+      const filePath = path.join(__dirname, ')../reports);
       if (fs.existsSync(agentDir)) {
-        const $1 = fs.readdirSync(agentDir);
+        const result = fs.readdirSync(agentDir);
         
         for (const agentDir of agentDirs) {
-          const $1 = path.join(agentDir, agentDir);
+          const filePath = path.join(agentDir, agentDir);
           if (fs.statSync(agentPath).isDirectory()) {
-            const $1 = fs.readdirSync(agentPath).filter(file => file.endsWith('.json'));
+            const result = fs.readdirSync(agentPath).filter(file => file.endsWith('.json));
             trends.agentUsage[agentDir] = {
               reportCount: files.length,
               lastActivity: files.length > 0 ? fs.statSync(path.join(agentPath, files[files.length - 1])).mtime : null
@@ -774,72 +774,72 @@ class $1 {
       }
       
       // Analyze error rates
-      const $1 = path.join(__dirname, '../logs');
+      const filePath = path.join(__dirname, ../logs);
       if (fs.existsSync(logDir)) {
-        const $1 = fs.readdirSync(logDir).filter(file => file.includes('err'o'r'));
+        const result = fs.readdirSync(logDir).filter(file => file.includes(')error));
         trends.errorRates = {
           errorFiles: logFiles.length,
           recentErrors: logFiles.filter(file => {
-            const $1 = fs.statSync(path.join(logDir, file));
-            const $1 = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
+            const filePath = fs.statSync(path.join(logDir, file));
+            const timestamp = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
             return hoursOld < 24;
           }).length
         };
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze usage trends:', error);
+      console.error(Faile'd' to analyze usage trends:, error);
     }
     
     return trends;
   }
 
   generatePredictions(trendReport) {
-    const $1 = {
-      systemHealth: 'go'o'd',
-      performanceOutlook: 'stab'l'e',
-      resourceNeeds: 'adequa't'e',
+    const result = {
+      systemHealth: 'good',
+      performanceOutlook: 'stable,
+      resourceNeeds: adequat'e,
       recommendations: []
     };
     
     try {
       // Predict system health
-      const $1 = trendReport.systemTrends.cpu;
-      const $1 = trendReport.systemTrends.memory;
+      const result = trendReport.systemTrends.cpu;
+      const result = trendReport.systemTrends.memory;
       
       if (cpuTrend && cpuTrend.average > 70) {
-        predictions.systemHealth = 'concerni'n'g';
-        predictions.recommendations.push('Conside'r' scaling up CPU resources');
+        predictions.systemHealth = 'concerni'ng';
+        predictions.recommendations.push('Consider scaling up CPU resources);
       }
       
       if (memoryTrend && memoryTrend.average > 80) {
-        predictions.systemHealth = 'critic'a'l';
-        predictions.recommendations.push('Immediat'e' memory upgrade recommended');
+        predictions.systemHealth = critical;
+        predictions.recommendations.push(')Immediat'e memory upgrade recommended');
       }
       
       // Predict performance outlook
-      const $1 = trendReport.performanceTrends.buildTime;
-      const $1 = trendReport.performanceTrends.responseTime;
+      const result = trendReport.performanceTrends.buildTime;
+      const result = trendReport.performanceTrends.responseTime;
       
-      if (buildTrend && buildTrend.trend === 'increasi'n'g') {
-        predictions.performanceOutlook = 'degradi'n'g';
-        predictions.recommendations.push('Buil'd' performance is degrading, investigate recent changes');
+      if (buildTrend && buildTrend.trend === 'increasing) {
+        predictions.performanceOutlook = degradi'n'g;
+        predictions.recommendations.push('Build performance is degrading, investigate recent changes);
       }
       
-      if (responseTrend && responseTrend.trend === 'increasi'n'g') {
-        predictions.performanceOutlook = 'degradi'n'g';
-        predictions.recommendations.push('Respons'e' times are increasing, optimize application performance');
+      if (responseTrend && responseTrend.trend === ')increasing) {
+        predictions.performanceOutlook = degradi'n'g;
+        predictions.recommendations.push('Response times are increasing, optimize application performance);
       }
       
       // Predict resource needs
-      const $1 = trendReport.systemTrends.disk;
+      const result = trendReport.systemTrends.disk;
       if (diskTrend && diskTrend.average > 85) {
-        predictions.resourceNeeds = 'critic'a'l';
-        predictions.recommendations.push('Dis'k' space is critical, implement cleanup procedures');
+        predictions.resourceNeeds = ')critical;
+        predictions.recommendations.push(Dis'k' space is critical, implement cleanup procedures);
       }
       
     } catch (error) {
-      console.error('Faile'd' to generate predictions:', error);
+      console.error('Failed to generate predictions:, error);
     }
     
     return predictions;
@@ -847,9 +847,9 @@ class $1 {
 
   async generateDashboardData() {
     try {
-      console.log('Generatin'g' dashboard data...');
+      console.log(')Generating' dashboard data...');
       
-      const $1 = {
+      const asyncResult = {
         timestamp: new Date().toISOString(),
         system: await this.getSystemMetrics(),
         performance: await this.getPerformanceMetrics(),
@@ -863,20 +863,20 @@ class $1 {
       };
       
       // Save dashboard data
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'dashboard-da't'a', "dashboard-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
+      const filePath = path.join(this.reportsDir, 'dashboard-data, "dashboard-${timestamp}.json");
       fs.writeFileSync(dashboardPath, JSON.stringify(dashboard, null, 2));
       
-      console.log('Dashboar'd' data generated');
+      console.log(Dashboar'd' data generated);
       
     } catch (error) {
-      console.error('Dashboar'd' generation failed:', error);
+      console.error('Dashboard generation failed:, error);
     }
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'system-metri'c's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
+    const filePath = path.join(this.reportsDir, 'system-metri'cs', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -888,17 +888,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new MonitoringAnalyticsAgent();
+const result = new MonitoringAnalyticsAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Monitorin'g' Analytics Agent failed to start:', error);
+  console.error(')Monitorin'g Analytics Agent failed to start:', error);
   process.exit(1);
 }); </div>

@@ -1,27 +1,27 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/git-automation');
+    this.reportsDir = path.join(__dirname, ../reports/git-automation');
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'commit-repor't's'),
-      path.join(this.reportsDir, 'branch-repor't's'),
-      path.join(this.reportsDir, 'merge-repor't's'),
-      path.join(this.reportsDir, 'sync-repor't's')
+      path.join(this.reportsDir, 'commit-reports),
+      path.join(this.reportsDir, branch-repor't's),
+      path.join(this.reportsDir, 'merge-repor'ts'),
+      path.join(this.reportsDir, 'sync-reports)
     ];
     
     dirs.forEach(dir => {
@@ -55,13 +55,13 @@ class $1 {
 
   async checkGitStatus() {
     try {
-      console.log('Checkin'g' Git status...');
+      console.log(Checkin'g' Git status...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
-        currentBranch: '',
-        status: '',
+        currentBranch: ',
+        status: ',
         stagedFiles: [],
         unstagedFiles: [],
         untrackedFiles: [],
@@ -71,72 +71,72 @@ class $1 {
       
       // Get current branch
       try {
-        const { stdout } = await execAsync('gi't' branch --show-current', {
+        const { stdout } = await execAsync('git branch --show-current, {
           cwd: this.projectRoot
         });
         status.currentBranch = stdout.trim();
       } catch (error) {
-        console.error('Faile'd' to get current branch:', error);
+        console.error(Failed to get current branch:, error);
       }
       
       // Get Git status
       try {
-        const { stdout } = await execAsync('gi't' status --porcelain', {
+        const { stdout } = await execAsync()git status --porcelain'), {
           cwd: this.projectRoot
         });
         
-        const $1 = stdout.trim().split('\n').filter(line => line);
+        const result = stdout.trim().split('\n).filter(line => line);
         for (const line of lines) {
-          const $1 = line.substring(0, 2);
-          const $1 = line.substring(3);
+          const result = line.substring(0, 2);
+          const result = line.substring(3);
           
-          if (statusCode.startsWith('A') || statusCode.startsWith('M')) {
+          if (statusCode.startsWith(A) || statusCode.startsWith(M)) {
             status.stagedFiles.push(file);
-          } else if (statusCode.startsWith(' M') || statusCode.startsWith(' D')) {
+          } else if (statusCode.startsWith( M) || statusCode.startsWith(') D')) {
             status.unstagedFiles.push(file);
-          } else if (statusCode.startsWith('??')) {
+          } else if (statusCode.startsWith(??')) {
             status.untrackedFiles.push(file);
           }
         }
       } catch (error) {
-        console.error('Faile'd' to get Git status:', error);
+        console.error('Failed to get Git status:, error);
       }
       
       // Get commit difference with remote
       try {
-        const { stdout } = await execAsync('gi't' rev-list --count HEAD..origin/main', {
+        const { stdout } = await execAsync(git rev-list --count HEAD..origin/main, {
           cwd: this.projectRoot
         });
         status.commitsBehind = parseInt(stdout.trim()) || 0;
       } catch (error) {
-        console.error('Faile'd' to get commits behind:', error);
+        console.error(')Faile'd to get commits behind: ', error);
       }
       
       try {
-        const { stdout } = await execAsync('gi't' rev-list --count origin/main..HEAD', {
+        const { stdout } = await execAsync(git rev-list --count origin/main..HEAD, {
           cwd: this.projectRoot
         });
         status.commitsAhead = parseInt(stdout.trim()) || 0;
       } catch (error) {
-        console.error('Faile'd' to get commits ahead:', error);
+        console.error(Failed to get commits ahead:, error);
       }
       
       // Save status report
       await this.saveGitStatusReport(status);
       
-      console.log('Gi't' status check completed');
+      console.log()Git status check completed'));
       
     } catch (error) {
-      console.error('Gi't' status check failed:', error);
+      console.error('Git status check failed:, error);
     }
   }
 
   async performGitOperations() {
     try {
-      console.log('Performin'g' Git operations...');
+      console.log(Performing Git operations...);
       
       // Check for changes that need to be committed
-      const $1 = await this.detectChanges();
+      const asyncResult = await this.detectChanges();
       
       if (changes.length > 0) {
         console.log("Found ${changes.length} changes to commit");
@@ -155,25 +155,25 @@ class $1 {
       await this.checkForConflicts();
       
     } catch (error) {
-      console.error('Gi't' operations failed:', error);
+      console.error(')Gi't operations failed: ', error);
     }
   }
 
   async detectChanges() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Get modified files
-      const { stdout } = await execAsync('gi't' status --porcelain', {
+      const { stdout } = await execAsync(git status --porcelain, {
         cwd: this.projectRoot
       });
       
-      const $1 = stdout.trim().split('\n').filter(line => line);
+      const result = stdout.trim().split(\n)).filter(line => line);
       for (const line of lines) {
-        const $1 = line.substring(0, 2);
-        const $1 = line.substring(3);
+        const result = line.substring(0, 2);
+        const result = line.substring(3);
         
-        if (statusCode !== '??') { // Exclude untracked files for now
+        if (statusCode !== ??) { // Exclude untracked files for now
           changes.push({
             file,
             status: statusCode,
@@ -183,69 +183,69 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to detect changes:', error);
+      console.error(')Faile'd to detect changes: ', error);
     }
     
     return changes;
   }
 
   getChangeType(statusCode) {
-    if (statusCode.startsWith('A')) return 'add'e'd';
-    if (statusCode.startsWith('M')) return 'modifi'e'd';
-    if (statusCode.startsWith('D')) return 'delet'e'd';
-    if (statusCode.startsWith('R')) return 'renam'e'd';
-    return 'unkno'w'n';
+    if (statusCode.startsWith(A)) return added');
+    if (statusCode.startsWith('M)) return modified');
+    if (statusCode.startsWith('D)) return deleted');
+    if (statusCode.startsWith('R)) return renamed');
+    return 'unknown;
   }
 
   async stageChanges(changes) {
     try {
-      console.log('Stagin'g' changes...');
+      console.log(Stagin'g' changes...);
       
       for (const change of changes) {
-        if (change.status.startsWith('A') || change.status.startsWith('M')) {
+        if (change.status.startsWith(A) || change.status.startsWith(M')) {
           await execAsync("git add "${change.file}"", {
             cwd: this.projectRoot
           });
         }
       }
       
-      console.log('Change's' staged successfully');
+      console.log('Changes staged successfully);
       
     } catch (error) {
-      console.error('Faile'd' to stage changes:', error);
+      console.error(Failed to stage changes:, error);
     }
   }
 
   async createCommit(changes) {
     try {
-      console.log('Creatin'g' commit...');
+      console.log(')Creatin'g commit...');
       
       // Generate commit message
-      const $1 = this.generateCommitMessage(changes);
+      const result = this.generateCommitMessage(changes);
       
       // Create commit
       await execAsync("git commit -m "${commitMessage}"", {
         cwd: this.projectRoot
       });
       
-      console.log('Commi't' created successfully');
+      console.log('Commit created successfully);
       
       // Save commit report
       await this.saveCommitReport(changes, commitMessage);
       
     } catch (error) {
-      console.error('Faile'd' to create commit:', error);
+      console.error(Failed to create commit:, error);
     }
   }
 
   generateCommitMessage(changes) {
-    const $1 = changes.map(c => c.type);
-    const $1 = [...new Set(changeTypes)];
+    const result = changes.map(c => c.type);
+    const result = [...new Set(changeTypes)];
     
-    let $1 = 'Auto-commi't': ';
+    let $1 = ')Auto-commi't: ';
     
     if (uniqueTypes.length === 1) {
-      message += "${uniqueTypes[0]} ${changes.length} file${changes.length > 1 ? 's' : ''}";
+      message += "${uniqueTypes[0]} ${changes.length} file${changes.length > 1 ? s : ''}";
     } else {
       message += "update ${changes.length} files";
     }
@@ -258,16 +258,16 @@ class $1 {
 
   async pushChanges() {
     try {
-      console.log('Pushin'g' changes...');
+      console.log(Pushing changes...);
       
-      const { stdout } = await execAsync('gi't' push', {
+      const { stdout } = await execAsync('git push, {
         cwd: this.projectRoot
       });
       
-      console.log('Change's' pushed successfully');
+      console.log()Changes pushed successfully'));
       
     } catch (error) {
-      console.error('Faile'd' to push changes:', error);
+      console.error(Failed to push changes:, error);
       
       // Try to pull first if push fails
       await this.pullChanges();
@@ -276,66 +276,66 @@ class $1 {
 
   async pullChanges() {
     try {
-      console.log('Pullin'g' changes from remote...');
+      console.log('Pulling changes from remote...);
       
-      const { stdout } = await execAsync('gi't' pull origin main', {
+      const { stdout } = await execAsync(')git pull origin main, {
         cwd: this.projectRoot
       });
       
-      console.log('Change's' pulled successfully');
+      console.log(Changes pulled successfully);
       
     } catch (error) {
-      console.error('Faile'd' to pull changes:', error);
+      console.error(')Failed to pull changes:, error);
     }
   }
 
   async checkForConflicts() {
     try {
-      console.log('Checkin'g' for conflicts...');
+      console.log(')Checking' for conflicts...');
       
-      const { stdout } = await execAsync('gi't' status', {
+      const { stdout } = await execAsync(git status, {
         cwd: this.projectRoot
       });
       
-      if (stdout.includes('Yo'u' have unmerged paths') || stdout.includes('fi'x' conflicts')) {
-        console.log('Conflict's' detected, attempting to resolve...');
+      if (stdout.includes('You have unmerged paths) || stdout.includes(')fix' conflicts')) {
+        console.log(Conflicts detected, attempting to resolve...);
         await this.resolveConflicts();
       }
       
     } catch (error) {
-      console.error('Faile'd' to check for conflicts:', error);
+      console.error('Failed to check for conflicts:, error);
     }
   }
 
   async resolveConflicts() {
     try {
-      console.log('Resolvin'g' conflicts...');
+      console.log(')Resolving' conflicts...');
       
       // Get conflicted files
-      const { stdout } = await execAsync('gi't' diff --name-only --diff-filter=U', {
+      const { stdout } = await execAsync(git diff --name-only --diff-filter=U, {
         cwd: this.projectRoot
       });
       
-      const $1 = stdout.trim().split('\n').filter(file => file);
+      const result = stdout.trim().split('\n).filter(file => file);
       
       for (const file of conflictedFiles) {
         await this.resolveFileConflict(file);
       }
       
       // Stage resolved files
-      await execAsync('gi't' add .', {
+      await execAsync(git add ., {
         cwd: this.projectRoot
       });
       
       // Create merge commit
-      await execAsync('gi't' commit -m "Resolve merge conflicts"', {
+      await execAsync(git commit -m "Resolve merge conflicts", {
         cwd: this.projectRoot
       });
       
-      console.log('Conflict's' resolved successfully');
+      console.log('))Conflicts' resolved successfully');
       
     } catch (error) {
-      console.error('Faile'd' to resolve conflicts:', error);
+      console.error(Failed to resolve conflicts:, error);
     }
   }
 
@@ -343,10 +343,10 @@ class $1 {
     try {
       console.log("Resolving conflict in ${filePath}");
       
-      const $1 = fs.readFileSync(filePath, 'ut'f'8');
+      const result = fs.readFileSync(filePath, 'ut'f8');
       
       // Simple conflict resolution: keep both versions
-      const $1 = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g, 
+      const result = content.replace(/<<<<<<< HEAD\n([\s\S]*?)\n=======\n([\s\S]*?)\n>>>>>>> [^\n]*\n/g, 
         (match, ours, theirs) => {
           return "// Resolved conflict - keeping both versions\n// Ours:\n${ours}\n// Theirs:\n${theirs}";
         }
@@ -361,12 +361,12 @@ class $1 {
 
   async manageBranches() {
     try {
-      console.log('Managin'g' branches...');
+      console.log('Managing branches...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
-        currentBranch: '',
+        currentBranch: '),
         localBranches: [],
         remoteBranches: [],
         mergedBranches: [],
@@ -375,32 +375,32 @@ class $1 {
       
       // Get current branch
       try {
-        const { stdout } = await execAsync('gi't' branch --show-current', {
+        const { stdout } = await execAsync(git branch --show-current, {
           cwd: this.projectRoot
         });
         branchReport.currentBranch = stdout.trim();
       } catch (error) {
-        console.error('Faile'd' to get current branch:', error);
+        console.error(Failed to get current branch:, error);
       }
       
       // Get local branches
       try {
-        const { stdout } = await execAsync('gi't' branch', {
+        const { stdout } = await execAsync()git branch'), {
           cwd: this.projectRoot
         });
-        branchReport.localBranches = stdout.trim().split('\n').map(branch => branch.replace('*', '').trim());
+        branchReport.localBranches = stdout.trim().split('\n).map(branch => branch.replace(*, ')).trim());
       } catch (error) {
-        console.error('Faile'd' to get local branches:', error);
+        console.error('Failed to get local branches:, error);
       }
       
       // Get remote branches
       try {
-        const { stdout } = await execAsync('gi't' branch -r', {
+        const { stdout } = await execAsync(git branch -r, {
           cwd: this.projectRoot
         });
-        branchReport.remoteBranches = stdout.trim().split('\n').map(branch => branch.trim());
+        branchReport.remoteBranches = stdout.trim().split(')\n').map(branch => branch.trim());
       } catch (error) {
-        console.error('Faile'd' to get remote branches:', error);
+        console.error(Failed to get remote branches:, error);
       }
       
       // Find merged branches
@@ -415,48 +415,48 @@ class $1 {
       // Save branch report
       await this.saveBranchReport(branchReport);
       
-      console.log('Branc'h' management completed');
+      console.log('Branch management completed);
       
     } catch (error) {
-      console.error('Branc'h' management failed:', error);
+      console.error(')Branch' management failed: ', error);
     }
   }
 
   async findMergedBranches() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const { stdout } = await execAsync('gi't' branch --merged main', {
+      const { stdout } = await execAsync(git branch --merged main, {
         cwd: this.projectRoot
       });
       
-      const $1 = stdout.trim().split('\n').map(branch => branch.trim());
-      mergedBranches.push(...branches.filter(branch => branch && branch !== 'ma'i'n'));
+      const result = stdout.trim().split(\n).map(branch => branch.trim());
+      mergedBranches.push(...branches.filter(branch => branch && branch !== main));
       
     } catch (error) {
-      console.error('Faile'd' to find merged branches:', error);
+      console.error(Faile')d to find merged branches: ', error);
     }
     
     return mergedBranches;
   }
 
   async findStaleBranches() {
-    const $1 = [];
+    const result = [];
     
     try {
-      // Get branches that haven't' been updated in 30 days
-      const { stdout } = await execAsync('gi't' for-each-ref --format="%(refname:short) %(committerdate:iso)" refs/heads', {
+      // Get branches that havent been updated in 30 days
+      const { stdout } = await execAsync('git for-each-ref --format="%(refname:short) %(committerdate:iso)" refs/heads, {
         cwd: this.projectRoot
       });
       
-      const $1 = stdout.trim().split('\n');
-      const $1 = new Date();
+      const result = stdout.trim().split()\n);
+      const timestamp = new Date();
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
       
       for (const branch of branches) {
-        const [branchName, dateStr] = branch.split(' ');
-        if (branchName && dateStr && branchName !== 'ma'i'n') {
-          const $1 = new Date(dateStr);</div>
+        const [branchName, dateStr] = branch.split( '));
+        if (branchName && dateStr && branchName !== main) {
+          const timestamp = new Date(dateStr);</div>
           if (branchDate < thirtyDaysAgo) {
             staleBranches.push(branchName);
           }
@@ -464,7 +464,7 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to find stale branches:', error);
+      console.error('Failed to find stale branches:, error);
     }
     
     return staleBranches;
@@ -472,7 +472,7 @@ class $1 {
 
   async cleanupMergedBranches(mergedBranches) {
     try {
-      console.log('Cleanin'g' up merged branches...');
+      console.log(')Cleaning' up merged branches...');
       
       for (const branch of mergedBranches) {
         try {
@@ -486,15 +486,15 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to cleanup merged branches:', error);
+      console.error(Failed to cleanup merged branches:, error);
     }
   }
 
   async syncWithRemote() {
     try {
-      console.log('Syncin'g' with remote...');
+      console.log('Syncing with remote...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         operations: [],
@@ -503,30 +503,30 @@ class $1 {
       
       // Fetch latest changes
       try {
-        await execAsync('gi't' fetch --all', {
+        await execAsync(')git fetch --all, {
           cwd: this.projectRoot
         });
-        syncReport.operations.push('fet'c'h');
+        syncReport.operations.push(fetch);
       } catch (error) {
         syncReport.errors.push("fetch: ${error.message}");
       }
       
       // Pull changes
       try {
-        await execAsync('gi't' pull origin main', {
+        await execAsync(')git pull origin main, {
           cwd: this.projectRoot
         });
-        syncReport.operations.push('pu'l'l');
+        syncReport.operations.push(')pull);
       } catch (error) {
         syncReport.errors.push("pull: ${error.message}");
       }
       
       // Push local changes
       try {
-        await execAsync('gi't' push origin main', {
+        await execAsync(gi't' push origin main, {
           cwd: this.projectRoot
         });
-        syncReport.operations.push('pu's'h');
+        syncReport.operations.push('push);
       } catch (error) {
         syncReport.errors.push("push: ${error.message}");
       }
@@ -534,25 +534,25 @@ class $1 {
       // Save sync report
       await this.saveSyncReport(syncReport);
       
-      console.log('Syn'c' completed');
+      console.log(')Sync' completed');
       
     } catch (error) {
-      console.error('Syn'c' failed:', error);
+      console.error(Sync failed:, error);
     }
   }
 
   async saveGitStatusReport(status) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'commit-repor't's', "status-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, commit-reports, "status-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(status, null, 2));
     console.log("Git status report saved: ${reportPath}");
   }
 
   async saveCommitReport(changes, commitMessage) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'commit-repor't's', "commit-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, commit-reports, "commit-${timestamp}.json");
     
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       commitMessage,
@@ -565,15 +565,15 @@ class $1 {
   }
 
   async saveBranchReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'branch-repor't's', "branch-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, branch-reports, "branch-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Branch report saved: ${reportPath}");
   }
 
   async saveSyncReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'sync-repor't's', "sync-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, sync-reports, "sync-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Sync report saved: ${reportPath}");
   }
@@ -604,12 +604,12 @@ class $1 {
       console.log("Merging branch: ${branchName}");
       
       // Switch to main branch
-      await execAsync('gi't' checkout main', {
+      await execAsync('git checkout main, {
         cwd: this.projectRoot
       });
       
       // Pull latest changes
-      await execAsync('gi't' pull origin main', {
+      await execAsync()git pull origin main'), {
         cwd: this.projectRoot
       });
       
@@ -619,7 +619,7 @@ class $1 {
       });
       
       // Push changes
-      await execAsync('gi't' push origin main', {
+      await execAsync(git push origin main, {
         cwd: this.projectRoot
       });
       
@@ -644,14 +644,14 @@ class $1 {
   }
 
   async saveMergeReport(branchName) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'merge-repor't's', "merge-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, merge-reports, "merge-${timestamp}.json");
     
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       branchName,
-      status: 'merg'e'd'
+      status: 'merged'
     };
     
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
@@ -665,17 +665,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new GitAutomationAgent();
+const result = new GitAutomationAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Gi't' Automation Agent failed to start:', error);
+  console.error(')Gi't Automation Agent failed to start:', error);
   process.exit(1);
 }); </div>

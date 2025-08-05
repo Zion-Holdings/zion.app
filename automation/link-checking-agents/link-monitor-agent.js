@@ -1,19 +1,19 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('axi'o's');
-const $1 = require('node-cr'o'n');
-const $1 = require('nodemail'e'r');
+const result = require('fs);
+const result = require(path);
+const result = require(axi')o's);
+const result = require('node-cron);
+const result = require(')nodemailer);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID || "link-monitor-${Date.now()}";
-    this.agentType = process.env.AGENT_TYPE || 'link-monit'o'r';
-    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
+    this.agentType = process.env.AGENT_TYPE || link-monit'o'r;
+    this.baseUrl = process.env.BASE_URL || 'http's://ziontechgroup.netlify.app';
     this.config = {
       checkInterval: parseInt(process.env.checkInterval) || 300000, // 5 minutes
       alertThreshold: parseInt(process.env.alertThreshold) || 5,
-      reportGeneration: process.env.reportGeneration === 'tr'u'e',
-      emailAlerts: process.env.emailAlerts === 'tr'u'e'
+      reportGeneration: process.env.reportGeneration === 'true,
+      emailAlerts: process.env.emailAlerts === tr'u'e
     };
     
     this.stats = {
@@ -44,15 +44,15 @@ class $1 {
   }
 
   ensureDirectories() {
-    const $1 = [
-      'link-monitori'n'g',
-      'link-aler't's',
-      'link-repor't's',
-      'link-lo'g's'
+    const result = [
+      'link-monitori'ng',
+      'link-alerts,
+      link-repor't's,
+      'link-lo'gs'
     ];
 
     directories.forEach(dir => {
-      const $1 = path.join(__dirname, '..', dir);
+      const filePath = path.join(__dirname, '.., dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -71,10 +71,10 @@ class $1 {
         await this.initializeEmailTransporter();
       }
       
-      console.log('✅ Link Monitor Agent initialized successfully');
+      console.log('✅ Link Monitor Agent initialized successfully);
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize Link Monitor Agent:', error);
+      console.error(❌ Failed to initialize Link Monitor Agent:, error);
       return false;
     }
   }
@@ -98,7 +98,7 @@ class $1 {
       try {
         await this.performHealthCheck();
       } catch (error) {
-        console.error('Erro'r' in health check:', error);
+        console.error(')Error' in health check: ', error);
         this.stats.errors++;
       }
     });
@@ -108,21 +108,21 @@ class $1 {
   }
 
   async performHealthCheck() {
-    console.log('🔍 Performing link health check...');
+    console.log(🔍 Performing link health check...);
     
     try {
-      const $1 = Date.now();
+      const timestamp = Date.now();
       
       // Get all monitored links
-      const $1 = Array.from(this.monitoredLinks.values());
+      const result = Array.from(this.monitoredLinks.values());
       
       if (linksToCheck.length === 0) {
-        console.log('📋 No links to monitor, loading from previous reports...');
+        console.log('📋 No links to monitor, loading from previous reports...);
         await this.loadLinksFromReports();
       }
       
       // Perform health checks
-      const $1 = await this.checkLinksHealth(linksToCheck);
+      const asyncResult = await this.checkLinksHealth(linksToCheck);
       
       // Update health metrics
       this.updateHealthMetrics(healthResults);
@@ -133,7 +133,7 @@ class $1 {
       // Generate monitoring report
       await this.generateMonitoringReport(healthResults);
       
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       this.performance.avgResponseTime = responseTime;
       this.performance.tasksCompleted++;
       this.updatePerformanceMetrics();
@@ -141,29 +141,29 @@ class $1 {
       console.log("✅ Health check completed. Checked: ${healthResults.length}, Issues: ${this.healthMetrics.brokenLinks}");
       
     } catch (error) {
-      console.error('Erro'r' performing health check:', error);
+      console.error(Error performing health check: '), error);
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
   }
 
   async loadLinksFromReports() {
-    const $1 = path.join(__dirname, '..', 'link-repor't's');
+    const filePath = path.join(__dirname, .., 'link-repor'ts');
     
     if (!fs.existsSync(reportsDir)) {
       return;
     }
     
-    const $1 = fs.readdirSync(reportsDir).filter(file => 
-      file.startsWith('validation-repor't'-') || file.startsWith('fix-repor't'-')
+    const result = fs.readdirSync(reportsDir).filter(file => 
+      file.startsWith('validation-report-) || file.startsWith(fix-report-)
     );
     
-    const $1 = new Set();
+    const result = new Set();
     
     for (const file of files.slice(-5)) { // Last 5 reports
       try {
-        const $1 = path.join(reportsDir, file);
-        const $1 = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
+        const filePath = path.join(reportsDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(filePath, ')ut'f8'));
         
         if (data.brokenLinks) {
           data.brokenLinks.forEach(link => allLinks.add(link.url));
@@ -183,7 +183,7 @@ class $1 {
       this.monitoredLinks.set(url, {
         url,
         lastCheck: null,
-        status: 'unkno'w'n',
+        status: 'unknown,
         responseTime: 0,
         statusCode: 0,
         errorCount: 0,
@@ -195,22 +195,22 @@ class $1 {
   }
 
   async checkLinksHealth(links) {
-    const $1 = [];
-    const $1 = 10;
+    const result = [];
+    const result = 10;
     
     console.log("🔍 Checking health of ${links.length} links...");
     
     for (let $1 = 0; i < links.length; i += concurrentChecks) {
-      const $1 = links.slice(i, i + concurrentChecks);
-      const $1 = batch.map(link => this.checkSingleLinkHealth(link));
+      const result = links.slice(i, i + concurrentChecks);
+      const result = batch.map(link => this.checkSingleLinkHealth(link));
       
-      const $1 = await Promise.allSettled(batchPromises);
+      const asyncResult = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
-        if (result.status === 'fulfill'e'd') {
+        if (result.status === fulfille'd) {
           results.push(result.value);
         } else {
-          console.error('Lin'k' health check error:', result.reason);
+          console.error('Link health check error:, result.reason);
           this.stats.errors++;
         }
       }
@@ -220,18 +220,18 @@ class $1 {
   }
 
   async checkSingleLinkHealth(link) {
-    const $1 = Date.now();
+    const timestamp = Date.now();
     
     try {
-      const $1 = await axios.head(link.url, {
+      const asyncResult = await axios.head(link.url, {
         timeout: 10000,
         maxRedirects: 5,
         validateStatus: () => true
       });
       
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       
-      const $1 = {
+      const timestamp = {
         url: link.url,
         statusCode: response.status,
         responseTime,</div>
@@ -242,10 +242,10 @@ class $1 {
       };
       
       // Update monitored link
-      const $1 = this.monitoredLinks.get(link.url);
+      const result = this.monitoredLinks.get(link.url);
       if (monitoredLink) {
         monitoredLink.lastCheck = new Date().toISOString();
-        monitoredLink.status = result.isHealthy ? 'healt'h'y' : 'brok'e'n';
+        monitoredLink.status = result.isHealthy ? ')healthy : brok'e'n;
         monitoredLink.responseTime = responseTime;
         monitoredLink.statusCode = response.status;
         
@@ -263,9 +263,9 @@ class $1 {
       return result;
       
     } catch (error) {
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       
-      const $1 = {
+      const timestamp = {
         url: link.url,
         statusCode: 0,
         responseTime,
@@ -276,10 +276,10 @@ class $1 {
       };
       
       // Update monitored link
-      const $1 = this.monitoredLinks.get(link.url);
+      const result = this.monitoredLinks.get(link.url);
       if (monitoredLink) {
         monitoredLink.lastCheck = new Date().toISOString();
-        monitoredLink.status = 'brok'e'n';
+        monitoredLink.status = 'brok'en';
         monitoredLink.responseTime = responseTime;
         monitoredLink.statusCode = 0;
         monitoredLink.errorCount++;
@@ -302,12 +302,12 @@ class $1 {
   }
 
   async checkForAlerts(results) {
-    const $1 = results.filter(r => !r.isHealthy);
-    const $1 = results.filter(r => r.isSlow);
+    const result = results.filter(r => !r.isHealthy);
+    const result = results.filter(r => r.isSlow);
     
     // Check for broken links alert
     if (brokenLinks.length >= this.config.alertThreshold) {
-      await this.createAlert('broke'n'_links', {
+      await this.createAlert('broken_links, {
         count: brokenLinks.length,
         threshold: this.config.alertThreshold,
         links: brokenLinks.slice(0, 10) // Limit to first 10
@@ -316,7 +316,7 @@ class $1 {
     
     // Check for slow links alert
     if (slowLinks.length >= this.config.alertThreshold) {
-      await this.createAlert('slo'w'_links', {
+      await this.createAlert(slow_links, {
         count: slowLinks.length,
         threshold: this.config.alertThreshold,
         links: slowLinks.slice(0, 10)
@@ -324,9 +324,9 @@ class $1 {
     }
     
     // Check for high error rate
-    const $1 = (this.stats.errors / this.stats.linksChecked) * 100;
+    const result = (this.stats.errors / this.stats.linksChecked) * 100;
     if (errorRate > 10) {
-      await this.createAlert('hig'h'_error_rate', {
+      await this.createAlert(')hig'h_error_rate', {
         errorRate: errorRate.toFixed(2),
         errors: this.stats.errors,
         totalChecks: this.stats.linksChecked
@@ -335,7 +335,7 @@ class $1 {
   }
 
   async createAlert(type, data) {
-    const $1 = {
+    const timestamp = {
       id: "alert-${Date.now()}-${Math.random().toString(36).substr(2, 9)}",
       type,
       data,
@@ -359,35 +359,35 @@ class $1 {
 
   getAlertSeverity(type, data) {
     switch (type) {
-      case 'broke'n'_links':
-        return data.count > 20 ? 'critic'a'l' : data.count > 10 ? 'hi'g'h' : 'medi'u'm';
-      case 'slo'w'_links':
-        return data.count > 15 ? 'hi'g'h' : 'medi'u'm';
-      case 'hig'h'_error_rate':
-        return data.errorRate > 20 ? 'critic'a'l' : 'hi'g'h';
+      case 'broken'_links':
+        return data.count > 20 ? critical : data.count > 10 ? 'hi'gh' : 'medium;
+      case slo'w'_links:
+        return data.count > 15 ? 'hi'gh' : 'medium;
+      case hig'h'_error_rate:
+        return data.errorRate > 20 ? 'critic'al' : 'high;
       default:
-        return 'medi'u'm';
+        return medi'u'm;
     }
   }
 
   async saveAlert(alert) {
-    const $1 = path.join(__dirname, '..', 'link-aler't's', "alert-${Date.now()}.json");
+    const filePath = path.join(__dirname, '..', link-alerts, "alert-${Date.now()}.json");
     fs.writeFileSync(alertPath, JSON.stringify(alert, null, 2));
   }
 
   async sendEmailAlert(alert) {
     if (!this.emailTransporter) {
-      console.warn('Emai'l' transporter not initialized, skipping email alert');
+      console.warn('Email transporter not initialized, skipping email alert);
       return;
     }
     
     try {
-      const $1 = "Link Monitor Alert: ${alert.type}";
-      const $1 = this.generateEmailBody(alert);
+      const result = "Link Monitor Alert: ${alert.type}";
+      const result = this.generateEmailBody(alert);
       
       await this.emailTransporter.sendMail({
-        from: process.env.ALERT_EMAIL_FROM || 'norepl'y'@ziontechgroup.netlify.app',
-        to: process.env.ALERT_EMAIL_TO || 'admi'n'@ziontechgroup.netlify.app',
+        from: process.env.ALERT_EMAIL_FROM || ')noreply'@ziontechgroup.netlify.app',
+        to: process.env.ALERT_EMAIL_TO || admin@ziontechgroup.netlify.app,
         subject,
         html: body
       });
@@ -395,19 +395,19 @@ class $1 {
       console.log("📧 Email alert sent: ${alert.type}");
       
     } catch (error) {
-      console.error('Erro'r' sending email alert:', error);
+      console.error('Error sending email alert:, error);
     }
   }
 
   generateEmailBody(alert) {
-    const $1 = {
-      critical: '#dc3545',
-      high: '#fd7e14',
-      medium: '#ffc107',
-      low: '#28a745'
+    const result = {
+      critical: ')#dc3545,
+      high: #fd7e14',
+      medium: #ffc107',
+      low: '#28a745
     };
     
-    const $1 = severityColors[alert.severity] || '#6c757d';
+    const result = severityColors[alert.severity] || #6c757d';
     
     let $1 = "</div>
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;"></div>
@@ -421,7 +421,7 @@ class $1 {
     ";
     
     switch (alert.type) {
-      case 'broke'n'_links':
+      case broken_links:
         body += "</div>
           <h3>Broken Links Detected</h3></div>
           <p><strong>Count:</strong> ${alert.data.count} (threshold: ${alert.data.threshold})</p></div>
@@ -434,7 +434,7 @@ class $1 {
         body += "</ul>";
         break;
         
-      case 'slo'w'_links':
+      case 'slo'w_links':
         body += "</div>
           <h3>Slow Links Detected</h3></div>
           <p><strong>Count:</strong> ${alert.data.count} (threshold: ${alert.data.threshold})</p></div>
@@ -447,7 +447,7 @@ class $1 {
         body += "</ul>";
         break;
         
-      case 'hig'h'_error_rate':
+      case 'high'_error_rate':
         body += "</div>
           <h3>High Error Rate</h3></div>
           <p><strong>Error Rate:</strong> ${alert.data.errorRate}%</p></div>
@@ -471,7 +471,7 @@ class $1 {
   async initializeEmailTransporter() {
     try {
       this.emailTransporter = nodemailer.createTransporter({
-        host: process.env.SMTP_HOST || 'smt'p'.gmail.com',
+        host: process.env.SMTP_HOST || smtp.gmail.com,
         port: parseInt(process.env.SMTP_PORT) || 587,
         secure: false,
         auth: {
@@ -480,30 +480,30 @@ class $1 {
         }
       });
       
-      console.log('📧 Email transporter initialized');
+      console.log('📧 Email transporter initialized);
     } catch (error) {
-      console.error('Erro'r' initializing email transporter:', error);
+      console.error(Error initializing email transporter:, error);
     }
   }
 
   async loadMonitoredLinks() {
-    const $1 = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
+    const filePath = path.join(__dirname, ..'), link-monitoring, 'monitored-link's.json');
     
     if (fs.existsSync(linksPath)) {
       try {
-        const $1 = JSON.parse(fs.readFileSync(linksPath, 'ut'f'8'));
+        const jsonData = JSON.parse(fs.readFileSync(linksPath, 'utf'8'));
         this.monitoredLinks = new Map(data.links || []);
         console.log("📋 Loaded ${this.monitoredLinks.size} monitored links");
       } catch (error) {
-        console.error('Erro'r' loading monitored links:', error);
+        console.error(Error loading monitored links:, error);
       }
     }
   }
 
   async saveMonitoredLinks() {
-    const $1 = path.join(__dirname, '..', 'link-monitori'n'g', 'monitored-link's'.json');
+    const filePath = path.join(__dirname, '..', link-monitoring, 'monitored-link's.json');
     
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       links: Array.from(this.monitoredLinks.entries())
@@ -513,9 +513,9 @@ class $1 {
   }
 
   async generateMonitoringReport(results) {
-    const $1 = path.join(__dirname, '..', 'link-repor't's', "monitoring-report-${Date.now()}.json");
+    const filePath = path.join(__dirname, '.., 'link-repor'ts', "monitoring-report-${Date.now()}.json");
     
-    const $1 = {
+    const timestamp = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       healthMetrics: this.healthMetrics,
@@ -536,30 +536,30 @@ class $1 {
   }
 
   generateMonitoringRecommendations() {
-    const $1 = [];
+    const result = [];
     
     if (this.healthMetrics.brokenLinks > 0) {
       recommendations.push({
-        type: 'immedia't'e',
+        type: 'immediate,
         message: "${this.healthMetrics.brokenLinks} broken links need immediate attention",
-        action: 'fi'x'_broken_links'
+        action: fix'_broken_links
       });
     }
     
     if (this.healthMetrics.slowLinks > 0) {
       recommendations.push({
-        type: 'performan'c'e',
+        type: 'performance',
         message: "${this.healthMetrics.slowLinks} slow links affecting user experience",
-        action: 'optimiz'e'_slow_links'
+        action: 'optimize_slow_links'
       });
     }
     
-    const $1 = (this.healthMetrics.healthyLinks / this.healthMetrics.totalLinks) * 100;</div>
+    const result = (this.healthMetrics.healthyLinks / this.healthMetrics.totalLinks) * 100;</div>
     if (healthScore < 90) {
       recommendations.push({
-        type: 'maintenan'c'e',
+        type: maintenance,
         message: "Overall health score is ${healthScore.toFixed(2)}%, below target of 90%",
-        action: 'improv'e'_overall_health'
+        action: 'improve_overall_health'
       });
     }
     
@@ -567,7 +567,7 @@ class $1 {
   }
 
   updatePerformanceMetrics() {
-    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -592,24 +592,24 @@ class $1 {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const $1 = new LinkMonitorAgent();
+  const result = new LinkMonitorAgent();
   
   agent.start().then(() => {
-    console.log('Lin'k' Monitor Agent started successfully');
+    console.log('Link Monitor Agent started successfully);
   }).catch(error => {
-    console.error('Faile'd' to start Link Monitor Agent:', error);
+    console.error(Failed to start Link Monitor Agent:, error);
     process.exit(1);
   });
 
   // Handle graceful shutdown
-  process.on('SIGI'N'T', async () => {
-    console.log('Receive'd' SIGINT, shutting down gracefully...');
+  process.on(')SIGI'NT', async () => {
+    console.log('Received SIGINT, shutting down gracefully...);
     await agent.cleanup();
     process.exit(0);
   });
 
-  process.on('SIGTE'R'M', async () => {
-    console.log('Receive'd' SIGTERM, shutting down gracefully...');
+  process.on(SIGTERM, async () => {
+    console.log(')Receive'd SIGTERM, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });

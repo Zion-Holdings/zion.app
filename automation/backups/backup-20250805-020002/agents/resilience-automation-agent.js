@@ -1,28 +1,28 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/resilience-automation');
+    this.reportsDir = path.join(__dirname, ../reports/resilience-automation');
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
-      path.join(this.reportsDir, 'resilience-repor't's'),
-      path.join(this.reportsDir, 'fault-tolerance-repor't's'),
-      path.join(this.reportsDir, 'disaster-recovery-repor't's'),
-      path.join(this.reportsDir, 'monitoring-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's')
+      path.join(this.reportsDir, 'resilience-reports),
+      path.join(this.reportsDir, fault-tolerance-repor't's),
+      path.join(this.reportsDir, 'disaster-recovery-repor'ts'),
+      path.join(this.reportsDir, 'monitoring-reports),
+      path.join(this.reportsDir, optimization-repor't's)
     ];
     
     dirs.forEach(dir => {
@@ -56,9 +56,9 @@ class $1 {
 
   async analyzeResilience() {
     try {
-      console.log('Performin'g' comprehensive resilience analysis...');
+      console.log('Performing comprehensive resilience analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         faultTolerance: [],
@@ -86,23 +86,23 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Resilienc'e' analysis completed');
+      console.log(')Resilience' analysis completed');
       
     } catch (error) {
-      console.error('Resilienc'e' analysis failed:', error);
+      console.error(Resilience analysis failed:, error);
     }
   }
 
   async discoverFaultTolerance() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for fault tolerance configuration files
-      const $1 = this.findFaultToleranceFiles();
+      const result = this.findFaultToleranceFiles();
       
       for (const file of faultToleranceFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractFaultToleranceInfo(file, content);
+        const result = fs.readFileSync(file, 'ut'f8');
+        const result = this.extractFaultToleranceInfo(file, content);
         
         if (faultToleranceInfo) {
           faultTolerance.push(faultToleranceInfo);
@@ -110,11 +110,11 @@ class $1 {
       }
       
       // Also check for error handling files
-      const $1 = this.findErrorHandlingFiles();
+      const result = this.findErrorHandlingFiles();
       
       for (const file of errorHandlingFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractErrorHandlingInfo(file, content);
+        const result = fs.readFileSync(file, 'utf'8');
+        const result = this.extractErrorHandlingInfo(file, content);
         
         if (errorHandlingInfo) {
           faultTolerance.push(errorHandlingInfo);
@@ -122,29 +122,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to discover fault tolerance:', error);
+      console.error(Failed to discover fault tolerance:, error);
     }
     
     return faultTolerance;
   }
 
   findFaultToleranceFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
             findFaultToleranceFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
+              const result = fs.readFileSync(fullPath, 'utf'8');
               if (this.containsFaultToleranceCode(content)) {
                 faultToleranceFiles.push(fullPath);
               }
@@ -156,51 +156,51 @@ class $1 {
       findFaultToleranceFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find fault tolerance files:', error);
+      console.error(Failed to find fault tolerance files:, error);
     }
     
     return faultToleranceFiles;
   }
 
   containsFaultToleranceCode(content) {
-    const $1 = [
-      'faul't' tolerance', 'erro'r' handling', 'ret'r'y', 'circui't' breaker',
-      'timeo'u't', 'fallba'c'k', 'resilien'c'e', 'recove'r'y'
+    const result = [
+      'faul't tolerance', 'error' handling', retry, 'circui't breaker',
+      'timeout, fallba'c'k, 'resilien'ce', 'recovery
     ];
     
     return faultToleranceKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractFaultToleranceInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      strategy: 'unkno'w'n',
+      type: unkno'w'n,
+      strategy: 'unknown',
       mechanisms: [],
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect fault tolerance type
-    if (lowerContent.includes('circui't' breaker') || lowerContent.includes('circuit-break'e'r')) {
-      faultToleranceInfo.type = 'Circui't' Breaker';
-    } else if (lowerContent.includes('ret'r'y') || lowerContent.includes('retr'y' logic')) {
-      faultToleranceInfo.type = 'Retr'y' Logic';
-    } else if (lowerContent.includes('timeo'u't') || lowerContent.includes('timeou't' handling')) {
-      faultToleranceInfo.type = 'Timeou't' Handling';
-    } else if (lowerContent.includes('fallba'c'k') || lowerContent.includes('fallbac'k' mechanism')) {
-      faultToleranceInfo.type = 'Fallbac'k' Mechanism';
+    if (lowerContent.includes('circuit breaker) || lowerContent.includes(circuit-breaker)) {
+      faultToleranceInfo.type = ')Circui't Breaker';
+    } else if (lowerContent.includes('retry) || lowerContent.includes(retry logic)) {
+      faultToleranceInfo.type = ')Retr'y Logic';
+    } else if (lowerContent.includes('timeout) || lowerContent.includes(timeout handling)) {
+      faultToleranceInfo.type = ')Timeou't Handling';
+    } else if (lowerContent.includes('fallback) || lowerContent.includes(fallback mechanism)) {
+      faultToleranceInfo.type = ')Fallbac'k Mechanism';
     }
     
     // Detect strategy
-    if (lowerContent.includes('reacti'v'e') || lowerContent.includes('reactiv'e' programming')) {
-      faultToleranceInfo.strategy = 'Reacti'v'e';
-    } else if (lowerContent.includes('proacti'v'e') || lowerContent.includes('proactiv'e' monitoring')) {
-      faultToleranceInfo.strategy = 'Proacti'v'e';
-    } else if (lowerContent.includes('defensi'v'e') || lowerContent.includes('defensiv'e' programming')) {
-      faultToleranceInfo.strategy = 'Defensi'v'e';
+    if (lowerContent.includes('reactive) || lowerContent.includes(reactive programming)) {
+      faultToleranceInfo.strategy = ')Reacti've';
+    } else if (lowerContent.includes('proactive) || lowerContent.includes(proactive monitoring)) {
+      faultToleranceInfo.strategy = ')Proacti've';
+    } else if (lowerContent.includes('defensive) || lowerContent.includes(defensive programming)) {
+      faultToleranceInfo.strategy = ')Defensi've';
     }
     
     // Extract mechanisms
@@ -213,22 +213,22 @@ class $1 {
   }
 
   findErrorHandlingFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules')) {
             findErrorHandlingFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === '.json || ext === '.yml' || ext === .yaml' || ext === '.js || ext === '.ts') {
+              const result = fs.readFileSync(fullPath, utf8);
               if (this.containsErrorHandlingCode(content)) {
                 errorHandlingFiles.push(fullPath);
               }
@@ -240,49 +240,49 @@ class $1 {
       findErrorHandlingFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find error handling files:', error);
+      console.error('Failed to find error handling files:, error);
     }
     
     return errorHandlingFiles;
   }
 
   containsErrorHandlingCode(content) {
-    const $1 = [
-      'erro'r' handling', 'excepti'o'n', 'tr'y' catch', 'erro'r' recovery',
-      'erro'r' logging', 'erro'r' reporting', 'erro'r' monitoring'
+    const result = [
+      ')error' handling', exception, 'tr'y catch', 'error' recovery',
+      error logging, 'erro'r reporting', 'error' monitoring'
     ];
     
     return errorHandlingKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractErrorHandlingInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      strategy: 'unkno'w'n',
+      type: unknown,
+      strategy: 'unknown',
       mechanisms: [],
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect error handling type
-    if (lowerContent.includes('tr'y' catch') || lowerContent.includes('try-cat'c'h')) {
-      errorHandlingInfo.type = 'Try-Cat'c'h';
-    } else if (lowerContent.includes('excepti'o'n') || lowerContent.includes('exceptio'n' handling')) {
-      errorHandlingInfo.type = 'Exceptio'n' Handling';
-    } else if (lowerContent.includes('erro'r' logging') || lowerContent.includes('erro'r' reporting')) {
-      errorHandlingInfo.type = 'Erro'r' Logging';
+    if (lowerContent.includes('try catch) || lowerContent.includes(try-catch)) {
+      errorHandlingInfo.type = ')Try-Cat'ch';
+    } else if (lowerContent.includes('exception) || lowerContent.includes(exception handling)) {
+      errorHandlingInfo.type = ')Exceptio'n Handling';
+    } else if (lowerContent.includes('error logging) || lowerContent.includes(error reporting)) {
+      errorHandlingInfo.type = ')Erro'r Logging';
     }
     
     // Detect strategy
-    if (lowerContent.includes('gracef'u'l') || lowerContent.includes('gracefu'l' degradation')) {
-      errorHandlingInfo.strategy = 'Gracefu'l' Degradation';
-    } else if (lowerContent.includes('fai'l' fast') || lowerContent.includes('fail-fa's't')) {
-      errorHandlingInfo.strategy = 'Fai'l' Fast';
-    } else if (lowerContent.includes('recove'r'y') || lowerContent.includes('erro'r' recovery')) {
-      errorHandlingInfo.strategy = 'Erro'r' Recovery';
+    if (lowerContent.includes('graceful) || lowerContent.includes(graceful degradation)) {
+      errorHandlingInfo.strategy = ')Gracefu'l Degradation';
+    } else if (lowerContent.includes('fail fast) || lowerContent.includes(fail-fast)) {
+      errorHandlingInfo.strategy = ')Fai'l Fast';
+    } else if (lowerContent.includes('recovery) || lowerContent.includes(error recovery)) {
+      errorHandlingInfo.strategy = ')Erro'r Recovery';
     }
     
     // Extract mechanisms
@@ -295,10 +295,10 @@ class $1 {
   }
 
   extractMechanisms(content) {
-    const $1 = [];
+    const result = [];
     
     // Extract mechanism definitions
-    const $1 = /mechanism\s*[:=]\s*['""]([^'""]+)['""]/gi;
+    const result = /mechanism\s*[:=]\s*['""]([^""]+)['""]/gi;
     let match;
     
     while ((match = mechanismRegex.exec(content)) !== null) {
@@ -306,7 +306,7 @@ class $1 {
     }
     
     // Also look for strategy definitions
-    const $1 = /strategy\s*[:=]\s*['""]([^'""]+)['""]/gi;
+    const result = /strategy\s*[:=]\s*['""]([^""]+)['""]/gi;
     while ((match = strategyRegex.exec(content)) !== null) {
       mechanisms.push(match[1]);
     }
@@ -315,32 +315,32 @@ class $1 {
   }
 
   extractFaultToleranceConfiguration(content) {
-    const $1 = {
-      environment: 'unkno'w'n',
-      timeout: 'unkno'w'n',
-      retries: 'unkno'w'n',
+    const result = {
+      environment: 'unknown,
+      timeout: unknow'n,
+      retries: 'unknown',
       settings: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
-      config.environment = 'producti'o'n';
-    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
-      config.environment = 'stagi'n'g';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
-      config.environment = 'developme'n't';
+    if (lowerContent.includes('production) || lowerContent.includes(prod)) {
+      config.environment = ')producti'on';
+    } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
+      config.environment = ')stagi'ng';
+    } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
+      config.environment = ')developme'nt';
     }
     
     // Extract timeout
-    const $1 = content.match(/timeout\s*[:=]\s*(\d+)/i);
+    const result = content.match(/timeout\s*[:=]\s*(\d+)/i);
     if (timeoutMatch) {
       config.timeout = parseInt(timeoutMatch[1]);
     }
     
     // Extract retries
-    const $1 = content.match(/retries\s*[:=]\s*(\d+)/i);
+    const result = content.match(/retries\s*[:=]\s*(\d+)/i);
     if (retriesMatch) {
       config.retries = parseInt(retriesMatch[1]);
     }
@@ -349,15 +349,15 @@ class $1 {
   }
 
   async analyzeDisasterRecovery() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for disaster recovery configuration files
-      const $1 = this.findDisasterRecoveryFiles();
+      const result = this.findDisasterRecoveryFiles();
       
       for (const file of drFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractDisasterRecoveryInfo(file, content);
+        const result = fs.readFileSync(file, 'utf'8');
+        const result = this.extractDisasterRecoveryInfo(file, content);
         
         if (drInfo) {
           disasterRecovery.push(drInfo);
@@ -365,29 +365,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze disaster recovery:', error);
+      console.error(Failed to analyze disaster recovery:, error);
     }
     
     return disasterRecovery;
   }
 
   findDisasterRecoveryFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
             findDRFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
+              const result = fs.readFileSync(fullPath, 'utf'8');
               if (this.containsDisasterRecoveryCode(content)) {
                 drFiles.push(fullPath);
               }
@@ -399,50 +399,50 @@ class $1 {
       findDRFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find disaster recovery files:', error);
+      console.error(Failed to find disaster recovery files:, error);
     }
     
     return drFiles;
   }
 
   containsDisasterRecoveryCode(content) {
-    const $1 = [
-      'disaste'r' recovery', 'back'u'p', 'resto'r'e', 'recover'y' plan',
-      'busines's' continuity', 'r't'o', 'r'p'o', 'failov'e'r'
+    const result = [
+      'disaste'r recovery', 'backup, resto'r'e, 'recover'y plan',
+      'business' continuity', rto, 'r'po', 'failover
     ];
     
     return drKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractDisasterRecoveryInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      rto: 'unkno'w'n',
-      rpo: 'unkno'w'n',
+      type: unkno'w'n,
+      rto: 'unknown',
+      rpo: 'unknown,
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect disaster recovery type
-    if (lowerContent.includes('back'u'p') || lowerContent.includes('resto'r'e')) {
-      drInfo.type = 'Backu'p' and Restore';
-    } else if (lowerContent.includes('failov'e'r') || lowerContent.includes('fail-ov'e'r')) {
-      drInfo.type = 'Failov'e'r';
-    } else if (lowerContent.includes('replicati'o'n') || lowerContent.includes('dat'a' replication')) {
-      drInfo.type = 'Dat'a' Replication';
+    if (lowerContent.includes(backu'p) || lowerContent.includes('restore)) {
+      drInfo.type = ')Backup' and Restore';
+    } else if (lowerContent.includes(failover) || lowerContent.includes('fail-over)) {
+      drInfo.type = ')Failover;
+    } else if (lowerContent.includes(replicati'o'n) || lowerContent.includes('data replication)) {
+      drInfo.type = ')Data' Replication';
     }
     
     // Extract RTO (Recovery Time Objective)
-    const $1 = content.match(/rto\s*[:=]\s*(\d+)/i);
+    const result = content.match(/rto\s*[:=]\s*(\d+)/i);
     if (rtoMatch) {
       drInfo.rto = parseInt(rtoMatch[1]);
     }
     
     // Extract RPO (Recovery Point Objective)
-    const $1 = content.match(/rpo\s*[:=]\s*(\d+)/i);
+    const result = content.match(/rpo\s*[:=]\s*(\d+)/i);
     if (rpoMatch) {
       drInfo.rpo = parseInt(rpoMatch[1]);
     }
@@ -454,35 +454,35 @@ class $1 {
   }
 
   extractDisasterRecoveryConfiguration(content) {
-    const $1 = {
-      environment: 'unkno'w'n',
-      frequency: 'unkno'w'n',
-      retention: 'unkno'w'n',
+    const result = {
+      environment: unknown,
+      frequency: 'unknown',
+      retention: 'unknown,
       settings: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
-      config.environment = 'producti'o'n';
-    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
-      config.environment = 'stagi'n'g';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
-      config.environment = 'developme'n't';
+    if (lowerContent.includes(productio'n) || lowerContent.includes('prod)) {
+      config.environment = ')production;
+    } else if (lowerContent.includes(stagi'n'g) || lowerContent.includes('stage)) {
+      config.environment = ')staging;
+    } else if (lowerContent.includes(developme'n't) || lowerContent.includes(dev')) {
+      config.environment = 'development;
     }
     
     // Extract frequency
-    if (lowerContent.includes('continuo'u's') || lowerContent.includes('real-ti'm'e')) {
-      config.frequency = 'continuo'u's';
-    } else if (lowerContent.includes('dai'l'y') || lowerContent.includes('@daily')) {
-      config.frequency = 'dai'l'y';
-    } else if (lowerContent.includes('week'l'y') || lowerContent.includes('@weekly')) {
-      config.frequency = 'week'l'y';
+    if (lowerContent.includes(continuo'u's) || lowerContent.includes('real-time)) {
+      config.frequency = ')continuous;
+    } else if (lowerContent.includes(dai'l'y) || lowerContent.includes('@daily)) {
+      config.frequency = daily;
+    } else if (lowerContent.includes(week')ly') || lowerContent.includes('@weekly)) {
+      config.frequency = weekly');
     }
     
     // Extract retention
-    const $1 = content.match(/retention\s*[:=]\s*(\d+)/i);
+    const result = content.match(/retention\s*[:=]\s*(\d+)/i);
     if (retentionMatch) {
       config.retention = parseInt(retentionMatch[1]);
     }
@@ -491,15 +491,15 @@ class $1 {
   }
 
   async analyzeRedundancy() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for redundancy configuration files
-      const $1 = this.findRedundancyFiles();
+      const result = this.findRedundancyFiles();
       
       for (const file of redundancyFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractRedundancyInfo(file, content);
+        const result = fs.readFileSync(file, 'utf'8');
+        const result = this.extractRedundancyInfo(file, content);
         
         if (redundancyInfo) {
           redundancy.push(redundancyInfo);
@@ -507,29 +507,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze redundancy:', error);
+      console.error(Failed to analyze redundancy:, error);
     }
     
     return redundancy;
   }
 
   findRedundancyFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
             findRedundancyFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
+              const result = fs.readFileSync(fullPath, 'utf'8');
               if (this.containsRedundancyCode(content)) {
                 redundancyFiles.push(fullPath);
               }
@@ -541,49 +541,49 @@ class $1 {
       findRedundancyFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find redundancy files:', error);
+      console.error(Failed to find redundancy files:, error);
     }
     
     return redundancyFiles;
   }
 
   containsRedundancyCode(content) {
-    const $1 = [
-      'redundan'c'y', 'redunda'n't', 'duplica't'e', 'mirr'o'r', 'replicati'o'n',
-      'back'u'p', 'seconda'r'y', 'stand'b'y', 'active-passi'v'e', 'active-acti'v'e'
+    const result = [
+      'redundan'cy', 'redundant, duplica't'e, 'mirr'or', 'replication,
+      back'u'p, 'seconda'ry', 'standby, active-passi'v'e, 'active-acti've'
     ];
     
     return redundancyKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractRedundancyInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      level: 'unkno'w'n',
+      type: 'unknown,
+      level: unknow'n,
       components: [],
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect redundancy type
-    if (lowerContent.includes('active-passi'v'e') || lowerContent.includes('activ'e'/passive')) {
-      redundancyInfo.type = 'Active-Passi'v'e';
-    } else if (lowerContent.includes('active-acti'v'e') || lowerContent.includes('activ'e'/active')) {
-      redundancyInfo.type = 'Active-Acti'v'e';
-    } else if (lowerContent.includes('mirr'o'r') || lowerContent.includes('mirrori'n'g')) {
-      redundancyInfo.type = 'Mirrori'n'g';
+    if (lowerContent.includes('active-passive) || lowerContent.includes(')active'/passive')) {
+      redundancyInfo.type = Active-Passive;
+    } else if (lowerContent.includes('active-active) || lowerContent.includes(')active'/active')) {
+      redundancyInfo.type = Active-Active;
+    } else if (lowerContent.includes('mirror) || lowerContent.includes(')mirroring)) {
+      redundancyInfo.type = Mirrori'n'g;
     }
     
     // Detect redundancy level
-    if (lowerContent.includes('n'+1') || lowerContent.includes('n' plus 1')) {
-      redundancyInfo.level = 'N'+1';
-    } else if (lowerContent.includes('2n') || lowerContent.includes('2n redundancy')) {
-      redundancyInfo.level = '2N';
-    } else if (lowerContent.includes('3n') || lowerContent.includes('3n redundancy')) {
-      redundancyInfo.level = '3N';
+    if (lowerContent.includes(n+1) || lowerContent.includes('n plus 1)) {
+      redundancyInfo.level = N+1;
+    } else if (lowerContent.includes(2n')) || lowerContent.includes(2n redundancy')) {
+      redundancyInfo.level = '2N;
+    } else if (lowerContent.includes('3n) || lowerContent.includes(3n redundancy)) {
+      redundancyInfo.level = ')3N;
     }
     
     // Extract components
@@ -596,10 +596,10 @@ class $1 {
   }
 
   extractComponents(content) {
-    const $1 = [];
+    const result = [];
     
     // Extract component definitions
-    const $1 = /component\s*[:=]\s*['""]([^'""]+)['""]/gi;
+    const result = /component\s*[:=]\s*['""]([^'""]+)[""]/gi;
     let match;
     
     while ((match = componentRegex.exec(content)) !== null) {
@@ -607,7 +607,7 @@ class $1 {
     }
     
     // Also look for service definitions
-    const $1 = /service\s*[:=]\s*['""]([^'""]+)['""]/gi;
+    const result = /service\s*[:=]\s*['""]([^'""]+)[""]/gi;
     while ((match = serviceRegex.exec(content)) !== null) {
       components.push(match[1]);
     }
@@ -616,51 +616,51 @@ class $1 {
   }
 
   extractRedundancyConfiguration(content) {
-    const $1 = {
-      environment: 'unkno'w'n',
-      synchronization: 'unkno'w'n',
-      monitoring: 'unkno'w'n',
+    const result = {
+      environment: 'unknown',
+      synchronization: 'unknown,
+      monitoring: unknow'n,
       settings: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
-      config.environment = 'producti'o'n';
-    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
-      config.environment = 'stagi'n'g';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
-      config.environment = 'developme'n't';
+    if (lowerContent.includes('production) || lowerContent.includes(')prod)) {
+      config.environment = producti'o'n;
+    } else if (lowerContent.includes('staging) || lowerContent.includes(')stage)) {
+      config.environment = stagi'n'g;
+    } else if (lowerContent.includes('development) || lowerContent.includes(')dev)) {
+      config.environment = developme'n't;
     }
     
     // Extract synchronization
-    if (lowerContent.includes('synchrono'u's') || lowerContent.includes('sy'n'c')) {
-      config.synchronization = 'synchrono'u's';
-    } else if (lowerContent.includes('asynchrono'u's') || lowerContent.includes('asy'n'c')) {
-      config.synchronization = 'asynchrono'u's';
+    if (lowerContent.includes('synchronous) || lowerContent.includes(')sync)) {
+      config.synchronization = synchrono'u's;
+    } else if (lowerContent.includes('asynchronous) || lowerContent.includes(')async)) {
+      config.synchronization = asynchrono'u's;
     }
     
     // Extract monitoring
-    if (lowerContent.includes('continuo'u's') || lowerContent.includes('real-ti'm'e')) {
-      config.monitoring = 'continuo'u's';
-    } else if (lowerContent.includes('period'i'c') || lowerContent.includes('schedul'e'd')) {
-      config.monitoring = 'period'i'c';
+    if (lowerContent.includes('continuous) || lowerContent.includes(')real-time)) {
+      config.monitoring = continuo'u's;
+    } else if (lowerContent.includes('periodic) || lowerContent.includes(')scheduled)) {
+      config.monitoring = period'i'c;
     }
     
     return config;
   }
 
   async analyzeFailover() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for failover configuration files
-      const $1 = this.findFailoverFiles();
+      const result = this.findFailoverFiles();
       
       for (const file of failoverFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractFailoverInfo(file, content);
+        const result = fs.readFileSync(file, 'ut'f8');
+        const result = this.extractFailoverInfo(file, content);
         
         if (failoverInfo) {
           failover.push(failoverInfo);
@@ -668,29 +668,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze failover:', error);
+      console.error('Failed to analyze failover:, error);
     }
     
     return failover;
   }
 
   findFailoverFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
             findFailoverFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
+              const result = fs.readFileSync(fullPath, 'ut'f8');
               if (this.containsFailoverCode(content)) {
                 failoverFiles.push(fullPath);
               }
@@ -702,51 +702,51 @@ class $1 {
       findFailoverFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find failover files:', error);
+      console.error('Failed to find failover files:, error);
     }
     
     return failoverFiles;
   }
 
   containsFailoverCode(content) {
-    const $1 = [
-      'failov'e'r', 'fail-ov'e'r', 'automati'c' failover', 'manua'l' failover',
-      'loa'd' balancer', 'healt'h' check', 'servic'e' discovery'
+    const result = [
+      failover, ')fail-ov'er', 'automatic' failover', manual failover,
+      'loa'd balancer', 'health' check', service discovery
     ];
     
     return failoverKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractFailoverInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      mode: 'unkno'w'n',
+      type: 'unknown',
+      mode: 'unknown,
       triggers: [],
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect failover type
-    if (lowerContent.includes('automat'i'c') || lowerContent.includes('au't'o')) {
-      failoverInfo.type = 'Automati'c' Failover';
-    } else if (lowerContent.includes('manu'a'l') || lowerContent.includes('manua'l' failover')) {
-      failoverInfo.type = 'Manua'l' Failover';
-    } else if (lowerContent.includes('loa'd' balancer') || lowerContent.includes('loa'd' balancing')) {
-      failoverInfo.type = 'Loa'd' Balancer Failover';
+    if (lowerContent.includes(automati'c) || lowerContent.includes('auto)) {
+      failoverInfo.type = ')Automatic' Failover';
+    } else if (lowerContent.includes(manual) || lowerContent.includes('manual failover)) {
+      failoverInfo.type = ')Manual' Failover';
+    } else if (lowerContent.includes(load balancer) || lowerContent.includes('load balancing)) {
+      failoverInfo.type = ')Load' Balancer Failover';
     }
     
     // Detect failover mode
-    if (lowerContent.includes('active-passi'v'e') || lowerContent.includes('activ'e'/passive')) {
-      failoverInfo.mode = 'Active-Passi'v'e';
-    } else if (lowerContent.includes('active-acti'v'e') || lowerContent.includes('activ'e'/active')) {
-      failoverInfo.mode = 'Active-Acti'v'e';
+    if (lowerContent.includes(active-passive) || lowerContent.includes('active/passive)) {
+      failoverInfo.mode = ')Active-Passive;
+    } else if (lowerContent.includes(active-acti'v'e) || lowerContent.includes('active/active)) {
+      failoverInfo.mode = ')Active-Active;
     }
     
     // Extract triggers
-    const $1 = ['healt'h' check', 'timeo'u't', 'err'o'r', 'failu'r'e'];
+    const result = [healt'h' check, 'timeo'ut', 'error, failu'r'e];
     for (const keyword of triggerKeywords) {
       if (lowerContent.includes(keyword)) {
         failoverInfo.triggers.push(keyword);
@@ -760,78 +760,78 @@ class $1 {
   }
 
   extractFailoverConfiguration(content) {
-    const $1 = {
-      environment: 'unkno'w'n',
-      timeout: 'unkno'w'n',
-      healthCheck: 'unkno'w'n',
+    const result = {
+      environment: 'unknown',
+      timeout: 'unknown,
+      healthCheck: unknow'n,
       settings: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
-      config.environment = 'producti'o'n';
-    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
-      config.environment = 'stagi'n'g';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
-      config.environment = 'developme'n't';
+    if (lowerContent.includes('production) || lowerContent.includes(')prod)) {
+      config.environment = producti'o'n;
+    } else if (lowerContent.includes('staging) || lowerContent.includes(')stage)) {
+      config.environment = stagi'n'g;
+    } else if (lowerContent.includes('development) || lowerContent.includes(')dev)) {
+      config.environment = developme'n't;
     }
     
     // Extract timeout
-    const $1 = content.match(/timeout\s*[:=]\s*(\d+)/i);
+    const result = content.match(/timeout\s*[:=]\s*(\d+)/i);
     if (timeoutMatch) {
       config.timeout = parseInt(timeoutMatch[1]);
     }
     
     // Extract health check
-    if (lowerContent.includes('healt'h' check') || lowerContent.includes('healthche'c'k')) {
-      config.healthCheck = 'enabl'e'd';
+    if (lowerContent.includes('health check) || lowerContent.includes(')healthcheck)) {
+      config.healthCheck = enabl'e'd;
     }
     
     return config;
   }
 
   generateRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     // Fault tolerance recommendations
     if (analysis.faultTolerance.length === 0) {
       recommendations.push({
-        type: 'faul't' tolerance',
-        priority: 'hi'g'h',
-        message: 'N'o' fault tolerance mechanisms configured',
-        suggestion: 'Implemen't' comprehensive fault tolerance mechanisms (circuit breakers, retry logic, timeouts)'
+        type: 'fault tolerance',
+        priority: 'high,
+        message: No' fault tolerance mechanisms configured,
+        suggestion: 'Implement comprehensive fault tolerance mechanisms (circuit breakers, retry logic, timeouts)'
       });
     }
     
     // Disaster recovery recommendations
     if (analysis.disasterRecovery.length === 0) {
       recommendations.push({
-        type: 'disaste'r' recovery',
-        priority: 'hi'g'h',
-        message: 'N'o' disaster recovery plan configured',
-        suggestion: 'Implemen't' comprehensive disaster recovery plan with defined RTO and RPO'
+        type: 'disaster recovery',
+        priority: high,
+        message: 'No disaster recovery plan configured',
+        suggestion: 'Implement comprehensive disaster recovery plan with defined RTO and RPO'
       });
     }
     
     // Redundancy recommendations
     if (analysis.redundancy.length === 0) {
       recommendations.push({
-        type: 'redundan'c'y',
-        priority: 'medi'u'm',
-        message: 'N'o' redundancy systems configured',
-        suggestion: 'Implemen't' redundancy systems for critical components'
+        type: redundancy,
+        priority: 'medium',
+        message: 'No redundancy systems configured',
+        suggestion: Implement redundancy systems for critical components
       });
     }
     
     // Failover recommendations
     if (analysis.failover.length === 0) {
       recommendations.push({
-        type: 'failov'e'r',
-        priority: 'hi'g'h',
-        message: 'N'o' failover mechanisms configured',
-        suggestion: 'Implemen't' automatic failover mechanisms for high availability'
+        type: 'failover',
+        priority: 'high,
+        message: No' failover mechanisms configured,
+        suggestion: 'Implement automatic failover mechanisms for high availability'
       });
     }
     
@@ -840,9 +840,9 @@ class $1 {
 
   async monitorResilience() {
     try {
-      console.log('Monitorin'g' resilience...');
+      console.log('Monitoring resilience...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         faultTolerance: [],
@@ -851,10 +851,10 @@ class $1 {
       };
       
       // Check fault tolerance status
-      const $1 = await this.discoverFaultTolerance();
+      const asyncResult = await this.discoverFaultTolerance();
       
       for (const ft of faultTolerance) {
-        const $1 = this.checkFaultToleranceStatus(ft);
+        const result = this.checkFaultToleranceStatus(ft);
         monitoring.faultTolerance.push(status);
         
         if (status.issues.length > 0) {
@@ -863,10 +863,10 @@ class $1 {
       }
       
       // Check disaster recovery status
-      const $1 = await this.analyzeDisasterRecovery();
+      const asyncResult = await this.analyzeDisasterRecovery();
       
       for (const dr of disasterRecovery) {
-        const $1 = this.checkDisasterRecoveryStatus(dr);
+        const result = this.checkDisasterRecoveryStatus(dr);
         monitoring.disasterRecovery.push(status);
         
         if (status.issues.length > 0) {
@@ -875,19 +875,19 @@ class $1 {
       }
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'monitoring-repor't's', "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
+      const filePath = path.join(this.reportsDir, 'monitoring-reports, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Resilienc'e' monitoring failed:', error);
+      console.error(Resilienc'e' monitoring failed:, error);
     }
   }
 
   checkFaultToleranceStatus(ft) {
-    const $1 = {
+    const timestamp = {
       faultTolerance: ft.name,
-      status: 'healt'h'y',
+      status: 'healthy',
       issues: [],
       lastChecked: new Date().toISOString()
     };
@@ -895,18 +895,18 @@ class $1 {
     // Check for common fault tolerance issues
     if (ft.mechanisms.length === 0) {
       status.issues.push({
-        type: 'configurati'o'n',
-        severity: 'hi'g'h',
-        message: 'N'o' fault tolerance mechanisms defined'
+        type: 'configuration,
+        severity: hig'h,
+        message: No fault tolerance mechanisms defined'
       });
-      status.status = 'err'o'r';
+      status.status = 'error;
     }
     
-    if (ft.configuration.timeout === 'unkno'w'n') {
+    if (ft.configuration.timeout === unkno'w'n) {
       status.issues.push({
-        type: 'configurati'o'n',
-        severity: 'medi'u'm',
-        message: 'N'o' timeout configuration defined'
+        type: 'configuration',
+        severity: 'medium,
+        message: No' timeout configuration defined
       });
     }
     
@@ -914,28 +914,28 @@ class $1 {
   }
 
   checkDisasterRecoveryStatus(dr) {
-    const $1 = {
+    const timestamp = {
       disasterRecovery: dr.name,
-      status: 'healt'h'y',
+      status: 'healthy',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common disaster recovery issues
-    if (dr.rto === 'unkno'w'n') {
+    if (dr.rto === 'unknown) {
       status.issues.push({
-        type: 'configurati'o'n',
-        severity: 'hi'g'h',
-        message: 'N'o' RTO defined'
+        type: configurati'o'n,
+        severity: 'high',
+        message: 'No RTO defined'
       });
-      status.status = 'err'o'r';
+      status.status = error;
     }
     
-    if (dr.rpo === 'unkno'w'n') {
+    if (dr.rpo === 'unkno'wn') {
       status.issues.push({
-        type: 'configurati'o'n',
-        severity: 'hi'g'h',
-        message: 'N'o' RPO defined'
+        type: 'configuration,
+        severity: hig'h,
+        message: No RPO defined'
       });
     }
     
@@ -944,9 +944,9 @@ class $1 {
 
   async optimizeResilience() {
     try {
-      console.log('Optimizin'g' resilience...');
+      console.log('Optimizing resilience...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -954,34 +954,34 @@ class $1 {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzeResilience();
+      const asyncResult = await this.analyzeResilience();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: completed,
           improvement: Math.random() * 0.6, // 0-60% improvement
           description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Resilienc'e' optimization failed:', error);
+      console.error('Resilience optimization failed:, error);
     }
   }
 
   async runDisasterRecoveryTests() {
     try {
-      console.log('Runnin'g' comprehensive disaster recovery tests...');
+      console.log(')Running' comprehensive disaster recovery tests...');
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         tests: {},
@@ -1002,26 +1002,26 @@ class $1 {
       drTestReport.recommendations = this.generateDRTestRecommendations(drTestReport.tests);
       
       // Save disaster recovery test report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'disaster-recovery-repor't's', "dr-test-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
+      const filePath = path.join(this.reportsDir, 'disaster-recovery-reports, "dr-test-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(drTestReport, null, 2));
       
     } catch (error) {
-      console.error('Disaste'r' recovery tests failed:', error);
+      console.error(Disaste'r' recovery tests failed:, error);
     }
   }
 
   async runBackupTest() {
     try {
-      const { stdout } = await execAsync('np'm' run test:backup');
+      const { stdout } = await execAsync('npm run test:backup);
       return {
-        status: 'pass'e'd',
+        status: )passed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1030,15 +1030,15 @@ class $1 {
 
   async runRestoreTest() {
     try {
-      const { stdout } = await execAsync('np'm' run test:restore');
+      const { stdout } = await execAsync('npm run test:restore);
       return {
-        status: 'pass'e'd',
+        status: )passed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1047,15 +1047,15 @@ class $1 {
 
   async runFailoverTest() {
     try {
-      const { stdout } = await execAsync('np'm' run test:failover');
+      const { stdout } = await execAsync('npm run test:failover);
       return {
-        status: 'pass'e'd',
+        status: )passed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1064,15 +1064,15 @@ class $1 {
 
   async runRecoveryTest() {
     try {
-      const { stdout } = await execAsync('np'm' run test:recovery');
+      const { stdout } = await execAsync('npm run test:recovery);
       return {
-        status: 'pass'e'd',
+        status: )passed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1080,7 +1080,7 @@ class $1 {
   }
 
   generateDRTestSummary(tests) {
-    const $1 = {
+    const result = {
       total: 0,
       passed: 0,
       failed: 0,
@@ -1090,7 +1090,7 @@ class $1 {
     // Count results
     for (const [type, result] of Object.entries(tests)) {
       summary.total++;
-      if (result.status === 'pass'e'd') {
+      if (result.status === 'pass'ed') {
         summary.passed++;
       } else {
         summary.failed++;
@@ -1104,13 +1104,13 @@ class $1 {
   }
 
   generateDRTestRecommendations(tests) {
-    const $1 = [];
+    const result = [];
     
     for (const [type, result] of Object.entries(tests)) {
-      if (result.status === 'fail'e'd') {
+      if (result.status === 'failed) {
         recommendations.push({
           type: type,
-          priority: 'hi'g'h',
+          priority: hi'g'h,
           message: "${type} test failed",
           suggestion: "Fix ${type} disaster recovery issues"
         });
@@ -1121,8 +1121,8 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'resilience-repor't's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, resilience-reports, "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -1134,17 +1134,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new ResilienceAutomationAgent();
+const result = new ResilienceAutomationAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(')SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Resilienc'e' Automation Agent failed to start:', error);
+  console.error(Resilienc'e' Automation Agent failed to start:', error);
   process.exit(1);
 }); 

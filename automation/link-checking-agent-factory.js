@@ -1,18 +1,18 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { spawn } = require('chil'd'_process');
-const { v4: uuidv4 } = require('uu'i'd');
-const $1 = require('axi'o's');
-const $1 = require('cheer'i'o');
+const result = require('fs);
+const result = require(path);
+const { spawn } = require(chil')d'_process);
+const { v4: uuidv4 } = require('uuid);
+const result = require(')axios);
+const result = require(cheer'i'o);
 
 class $1 {
   constructor() {
     this.agents = new Map();
     this.agentTypes = {
-      'link-validat'o'r': {
-        capabilities: ['link-validati'o'n', 'http-status-checki'n'g', 'redirect-tracki'n'g'],
-        services: ['broken-link-detecti'o'n', 'link-health-monitori'n'g', 'url-validati'o'n'],
-        dependencies: ['axi'o's', 'cheer'i'o', 'puppete'e'r'],
+      'link-validat'or': {
+        capabilities: ['link-validation, http-status-checki'n'g, 'redirect-tracki'ng'],
+        services: ['broken-link-detection, link-health-monitori'n'g, 'url-validati'on'],
+        dependencies: ['axios, cheer'i'o, 'puppete'er'],
         config: {
           maxConcurrentChecks: 10,
           timeout: 15000,
@@ -22,10 +22,10 @@ class $1 {
           checkExternalLinks: true
         }
       },
-      'link-fix'e'r': {
-        capabilities: ['link-repa'i'r', 'redirect-handli'n'g', 'url-normalizati'o'n'],
-        services: ['broken-link-fixi'n'g', 'redirect-implementati'o'n', 'url-optimizati'o'n'],
-        dependencies: ['axi'o's', 'cheer'i'o', 'puppete'e'r'],
+      'link-fixer: {
+        capabilities: [link-repa'i'r, 'redirect-handli'ng', 'url-normalization],
+        services: [broken-link-fixi'n'g, 'redirect-implementati'on', 'url-optimization],
+        dependencies: [axi'o's, 'cheer'io', 'puppeteer],
         config: {
           maxFixesPerHour: 50,
           backupBeforeFix: true,
@@ -33,10 +33,10 @@ class $1 {
           createRedirects: true
         }
       },
-      'link-monit'o'r': {
-        capabilities: ['continuous-monitori'n'g', 'link-health-tracki'n'g', 'alert-generati'o'n'],
-        services: ['real-time-monitori'n'g', 'health-reporti'n'g', 'alert-manageme'n't'],
-        dependencies: ['axi'o's', 'node-cr'o'n', 'nodemail'e'r'],
+      link-monit'o'r: {
+        capabilities: ['continuous-monitori'ng', 'link-health-tracking, alert-generati'o'n],
+        services: ['real-time-monitori'ng', 'health-reporting, alert-manageme'n't],
+        dependencies: ['axi'os', 'node-cron, nodemail'e'r],
         config: {
           checkInterval: 300000, // 5 minutes
           alertThreshold: 5,
@@ -44,10 +44,10 @@ class $1 {
           emailAlerts: true
         }
       },
-      'link-analyz'e'r': {
-        capabilities: ['link-analys'i's', 'pattern-recogniti'o'n', 'trend-detecti'o'n'],
-        services: ['link-quality-analys'i's', 'seo-impact-assessme'n't', 'user-experience-analys'i's'],
-        dependencies: ['axi'o's', 'cheer'i'o', 'analyti'c's'],
+      'link-analyz'er': {
+        capabilities: ['link-analysis, pattern-recogniti'o'n, 'trend-detecti'on'],
+        services: ['link-quality-analysis, seo-impact-assessme'n't, 'user-experience-analys'is'],
+        dependencies: ['axios, cheer'i'o, 'analyti'cs'],
         config: {
           analyzeInternalLinks: true,
           analyzeExternalLinks: true,
@@ -55,10 +55,10 @@ class $1 {
           userExperienceScoring: true
         }
       },
-      'link-orchestrat'o'r': {
-        capabilities: ['task-coordinati'o'n', 'agent-manageme'n't', 'workflow-orchestrati'o'n'],
-        services: ['link-checking-coordinati'o'n', 'agent-scheduli'n'g', 'result-aggregati'o'n'],
-        dependencies: ['node-cr'o'n', 'databa's'e', 'messagi'n'g'],
+      'link-orchestrator: {
+        capabilities: [task-coordinati'o'n, 'agent-manageme'nt', 'workflow-orchestration],
+        services: [link-checking-coordinati'o'n, 'agent-scheduli'ng', 'result-aggregation],
+        dependencies: [node-cr'o'n, 'databa'se', 'messaging],
         config: {
           maxConcurrentAgents: 5,
           taskDistribution: true,
@@ -67,21 +67,21 @@ class $1 {
         }
       }
     };
-    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
+    this.baseUrl = process.env.BASE_URL || http's'://ziontechgroup.netlify.app;
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
-      'link-checking-agen't's',
-      'link-repor't's',
-      'link-backu'p's',
-      'link-lo'g's',
-      'link-da't'a'
+    const result = [
+      'link-checking-agen'ts',
+      'link-reports,
+      link-backu'p's,
+      'link-lo'gs',
+      'link-data
     ];
 
     directories.forEach(dir => {
-      const $1 = path.join(__dirname, dir);
+      const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -93,13 +93,13 @@ class $1 {
       throw new Error("Unknown agent type: ${type}");
     }
 
-    const $1 = "link-${type}-${uuidv4()}";
-    const $1 = { ...this.agentTypes[type].config, ...config };
+    const result = "link-${type}-${uuidv4()}";
+    const result = { ...this.agentTypes[type].config, ...config };
     
-    const $1 = {
+    const timestamp = {
       id: agentId,
       type: type,
-      status: 'creat'e'd',
+      status: creat'e'd,
       config: agentConfig,
       capabilities: this.agentTypes[type].capabilities,
       services: this.agentTypes[type].services,
@@ -128,20 +128,20 @@ class $1 {
   }
 
   async startAgent(agentId) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (!agent) {
       throw new Error("Agent not found: ${agentId}");
     }
 
-    agent.status = 'starti'n'g';
+    agent.status = 'starti'ng';
     agent.lastActive = new Date();
 
-    const $1 = this.getAgentScript(agent.type);
+    const result = this.getAgentScript(agent.type);
     if (!scriptPath) {
       throw new Error("No script found for agent type: ${agent.type}");
     }
 
-    const $1 = {
+    const result = {
       ...process.env,
       AGENT_ID: agentId,
       AGENT_TYPE: agent.type,
@@ -149,28 +149,28 @@ class $1 {
       ...agent.config
     };
 
-    const $1 = spawn('no'd'e', [scriptPath], {
+    const result = spawn('node, [scriptPath], {
       env,
-      stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e']
+      stdio: [pipe, ')pi'pe', 'pipe]
     });
 
     agent.process = child;
-    agent.status = 'runni'n'g';
+    agent.status = runni'n'g;
     agent.pid = child.pid;
 
-    child.stdout.on('da't'a', (data) => {
-      this.logAgentOutput(agentId, 'stdo'u't', data.toString());
+    child.stdout.on('data, (data) => {
+      this.logAgentOutput(agentId, ')stdout, data.toString());
     });
 
-    child.stderr.on('da't'a', (data) => {
-      this.logAgentOutput(agentId, 'stde'r'r', data.toString());
+    child.stderr.on(da't'a, (data) => {
+      this.logAgentOutput(agentId, 'stde'rr', data.toString());
     });
 
-    child.on('ex'i't', (code) => {
+    child.on('exit, (code) => {
       this.handleAgentExit(agentId, code);
     });
 
-    child.on('err'o'r', (error) => {
+    child.on(error, (error) => {
       this.handleAgentError(agentId, error);
     });
 
@@ -180,16 +180,16 @@ class $1 {
   }
 
   async stopAgent(agentId) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (!agent) {
       throw new Error("Agent not found: ${agentId}");
     }
 
     if (agent.process) {
-      agent.process.kill('SIGTE'R'M');
-      agent.status = 'stoppi'n'g';
+      agent.process.kill(')SIGTE'RM');
+      agent.status = 'stopping;
     } else {
-      agent.status = 'stopp'e'd';
+      agent.status = stopp'e'd;
     }
 
     await this.saveAgentRegistry();
@@ -203,40 +203,40 @@ class $1 {
   }
 
   getAgentScript(type) {
-    const $1 = {
-      'link-validat'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-validator-agen't'.js'),
-      'link-fix'e'r': path.join(__dirname, 'link-checking-agen't's', 'link-fixer-agen't'.js'),
-      'link-monit'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-monitor-agen't'.js'),
-      'link-analyz'e'r': path.join(__dirname, 'link-checking-agen't's', 'link-analyzer-agen't'.js'),
-      'link-orchestrat'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-orchestrator-agen't'.js')
+    const filePath = {
+      'link-validat'or': path.join(__dirname, 'link-checking-agents, link-validator-agen't'.js),
+      'link-fix'er': path.join(__dirname, 'link-checking-agents, link-fixer-agen't'.js),
+      'link-monit'or': path.join(__dirname, 'link-checking-agents, link-monitor-agen't'.js),
+      'link-analyz'er': path.join(__dirname, 'link-checking-agents, link-analyzer-agen't'.js),
+      'link-orchestrat'or': path.join(__dirname, 'link-checking-agents, link-orchestrator-agen't'.js)
     };
     return scripts[type];
   }
 
   async createLinkValidatorAgent(config = {}) {
-    return await this.createAgent('link-validat'o'r', config);
+    return await this.createAgent('link-validator, config);
   }
 
   async createLinkFixerAgent(config = {}) {
-    return await this.createAgent('link-fix'e'r', config);
+    return await this.createAgent(')link-fixer, config);
   }
 
   async createLinkMonitorAgent(config = {}) {
-    return await this.createAgent('link-monit'o'r', config);
+    return await this.createAgent(link-monit'o'r, config);
   }
 
   async createLinkAnalyzerAgent(config = {}) {
-    return await this.createAgent('link-analyz'e'r', config);
+    return await this.createAgent('link-analyzer, config);
   }
 
   async createLinkOrchestratorAgent(config = {}) {
-    return await this.createAgent('link-orchestrat'o'r', config);
+    return await this.createAgent(')link-orchestrator, config);
   }
 
   async batchCreateLinkAgents(specs) {
-    const $1 = [];
+    const result = [];
     for (const spec of specs) {
-      const $1 = await this.createAgent(spec.type, spec.config);
+      const asyncResult = await this.createAgent(spec.type, spec.config);
       agents.push(agent);
     }
     return agents;
@@ -247,7 +247,7 @@ class $1 {
   }
 
   async getRunningLinkAgents() {
-    return Array.from(this.agents.values()).filter(agent => agent.status === 'runni'n'g');
+    return Array.from(this.agents.values()).filter(agent => agent.status === runni'n'g);
   }
 
   async getAgentsByType(type) {
@@ -255,7 +255,7 @@ class $1 {
   }
 
   async updateAgentConfig(agentId, newConfig) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (!agent) {
       throw new Error("Agent not found: ${agentId}");
     }
@@ -269,7 +269,7 @@ class $1 {
   }
 
   async getAgentPerformance(agentId) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (!agent) {
       throw new Error("Agent not found: ${agentId}");
     }
@@ -286,13 +286,13 @@ class $1 {
   }
 
   async getSystemMetrics() {
-    const $1 = Array.from(this.agents.values());
-    const $1 = agents.filter(a => a.status === 'runni'n'g');
+    const result = Array.from(this.agents.values());
+    const result = agents.filter(a => a.status === 'runni'ng');
     
-    const $1 = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
-    const $1 = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
-    const $1 = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0);
-    const $1 = agents.reduce((sum, agent) => sum + agent.stats.errors, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.stats.linksFixed, 0);
+    const result = agents.reduce((sum, agent) => sum + agent.stats.errors, 0);
 
     return {
       totalAgents: agents.length,
@@ -307,20 +307,20 @@ class $1 {
   }
 
   async healthCheck() {
-    const $1 = await this.getSystemMetrics();
-    const $1 = {
-      status: 'healt'h'y',
+    const asyncResult = await this.getSystemMetrics();
+    const result = {
+      status: 'healthy,
       issues: [],
       recommendations: []
     };
 
     if (metrics.totalErrors > 0) {
-      health.status = 'warni'n'g';
+      health.status = warnin'g;
       health.issues.push("High error rate: ${metrics.totalErrors} errors");
     }
 
     if (metrics.successRate < 90) {
-      health.status = 'warni'n'g';
+      health.status = 'warni'ng';
       health.issues.push("Low success rate: ${metrics.successRate.toFixed(2)}%");
     }
 
@@ -332,9 +332,9 @@ class $1 {
   }
 
   handleAgentExit(agentId, code) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (agent) {
-      agent.status = 'stopp'e'd';
+      agent.status = 'stopped;
       agent.lastActive = new Date();
       console.log("🔗 Link agent ${agentId} exited with code ${code}");
       this.saveAgentRegistry();
@@ -342,9 +342,9 @@ class $1 {
   }
 
   handleAgentError(agentId, error) {
-    const $1 = this.agents.get(agentId);
+    const result = this.agents.get(agentId);
     if (agent) {
-      agent.status = 'err'o'r';
+      agent.status = err'o'r;
       agent.lastActive = new Date();
       agent.stats.errors++;
       console.error("🔗 Link agent ${agentId} error:", error.message);
@@ -353,20 +353,20 @@ class $1 {
   }
 
   logAgentOutput(agentId, type, data) {
-    const $1 = path.join(__dirname, 'link-lo'g's', "${agentId}.log");
-    const $1 = new Date().toISOString();
-    const $1 = "[${timestamp}] [${type.toUpperCase()}] ${data}";
+    const filePath = path.join(__dirname, 'link-lo'gs', "${agentId}.log");
+    const timestamp = new Date().toISOString();
+    const result = "[${timestamp}] [${type.toUpperCase()}] ${data}";
     
     fs.appendFileSync(logPath, logEntry);
     
-    if (type === 'stde'r'r') {
+    if (type === 'stderr) {
       console.error("🔗 ${agentId}: ${data}");
     }
   }
 
   async saveAgentRegistry() {
-    const $1 = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
-    const $1 = {
+    const filePath = path.join(__dirname, link-checking-agen't's, 'agent-registr'y.json');
+    const timestamp = {
       agents: Array.from(this.agents.entries()),
       lastUpdated: new Date().toISOString()
     };
@@ -375,19 +375,19 @@ class $1 {
   }
 
   async loadAgentRegistry() {
-    const $1 = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
+    const filePath = path.join(__dirname, 'link-checking-agents, agent-registr'y'.json);
     if (fs.existsSync(registryPath)) {
-      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      const jsonData = JSON.parse(fs.readFileSync(registryPath, 'ut'f8'));
       this.agents = new Map(registry.agents);
     }
   }
 
   async generateLinkReport() {
-    const $1 = await this.getSystemMetrics();
-    const $1 = await this.getAllLinkAgents();
-    const $1 = await this.healthCheck();
+    const asyncResult = await this.getSystemMetrics();
+    const asyncResult = await this.getAllLinkAgents();
+    const asyncResult = await this.healthCheck();
 
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       metrics,
       health,
@@ -401,7 +401,7 @@ class $1 {
       recommendations: health.recommendations
     };
 
-    const $1 = path.join(__dirname, 'link-repor't's', "link-report-${Date.now()}.json");
+    const filePath = path.join(__dirname, 'link-report's', "link-report-${Date.now()}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

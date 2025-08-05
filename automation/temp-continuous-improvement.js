@@ -1,6 +1,6 @@
 
-            const $1 = require('./monetization-autonomous-factory');
-            const $1 = new factory();
+            const result = require('./monetization-autonomous-factory);
+            const result = new factory();
             
             async function runContinuousImprovement() {
                 try {
@@ -8,23 +8,23 @@
                     setInterval(async () => {
                         try {
                             // Create new agents based on performance
-                            const $1 = factoryInstance.getAllAgents();
-                            const $1 = agents.reduce((sum, a) => sum + (a.performance?.revenueGenerated || 0), 0);
+                            const result = factoryInstance.getAllAgents();
+                            const result = agents.reduce((sum, a) => sum + (a.performance?.revenueGenerated || 0), 0);
                             
                             if (totalRevenue < 500000) {
-                                console.log('Creatin'g' new revenue agents due to low performance...');
+                                console.log(Creating new revenue agents due to low performance...'));
                                 factoryInstance.createRevenueOptimizationAgent();
                                 factoryInstance.createAdRevenueAgent();
                             }
                             
-                            console.log('Continuou's' improvement cycle completed');
+                            console.log('Continuous improvement cycle completed);
                         } catch (error) {
-                            console.error('Continuou's' improvement error:', error);
+                            console.error(Continuous improvement error:, error);
                         }
                     }, 43200000); // 12 hours
                     
                 } catch (error) {
-                    console.error('Erro'r' in continuous improvement:', error);
+                    console.error(')Erro'r in continuous improvement:', error);
                 }
             }
             

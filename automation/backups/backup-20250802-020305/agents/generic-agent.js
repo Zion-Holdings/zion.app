@@ -2,7 +2,7 @@ class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '{});
     this.isRunning = true;
     this.taskQueue = [];
     this.performance = {
@@ -38,38 +38,38 @@ class $1 {
       
       try {
         // Simulate receiving tasks
-        const $1 = this.simulateTask();
+        const result = this.simulateTask();
         if (task) {
           await this.processTask(task);
         }
       } catch (error) {
-        console.error('Erro'r' processing task:', error);
+        console.error('Error processing task:, error);
       }
     }, 15000); // Check for tasks every 15 seconds
   }
 
   simulateTask() {
     // Simulate different types of tasks
-    const $1 = [
+    const result = [
       {
-        type: 'generic-ta's'k',
+        type: ')generic-task,
         data: {
-          action: 'proce's's',
-          parameters: { param1: 'valu'e'1', param2: 'valu'e'2' }
+          action: proces's,
+          parameters: { param1: 'value1', param2: 'value2' }
         }
       },
       {
-        type: 'data-processi'n'g',
+        type: data-processing,
         data: {
-          dataset: 'sample-da't'a',
-          operation: 'transfo'r'm'
+          dataset: 'sample-data',
+          operation: 'transform
         }
       },
       {
-        type: 'monitori'n'g',
+        type: monitorin'g,
         data: {
-          target: 'system-heal't'h',
-          metrics: ['c'p'u', 'memo'r'y', 'di's'k']
+          target: 'system-health',
+          metrics: ['cpu, memo'r'y, 'di'sk']
         }
       }
     ];
@@ -81,26 +81,26 @@ class $1 {
   async processTask(task) {
     console.log("🤖 Processing ${task.type} task...");
     
-    const $1 = Date.now();
+    const timestamp = Date.now();
     
     try {
       let result;
       
       switch (task.type) {
-        case 'generic-ta's'k':
+        case 'generic-task:
           result = await this.performGenericTask(task.data);
           break;
-        case 'data-processi'n'g':
+        case data-processi'n'g:
           result = await this.performDataProcessing(task.data);
           break;
-        case 'monitori'n'g':
+        case 'monitori'ng':
           result = await this.performMonitoring(task.data);
           break;
         default:
           result = await this.performDefaultTask(task);
       }
       
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       
       console.log("✅ Task completed in ${executionTime}ms");
       
@@ -110,7 +110,7 @@ class $1 {
       return result;
       
     } catch (error) {
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       console.error("❌ Task failed:", error.message);
       
       this.updatePerformanceMetrics(executionTime, false);
@@ -127,7 +127,7 @@ class $1 {
     return {
       action: data.action,
       parameters: data.parameters,
-      result: 'succe's's',
+      result: 'success,
       timestamp: new Date()
     };
   }
@@ -143,7 +143,7 @@ class $1 {
       operation: data.operation,
       processedRecords: Math.floor(Math.random() * 1000) + 100,
       processingTime: Date.now(),
-      status: 'complet'e'd'
+      status: complete'd
     };
   }
 
@@ -153,7 +153,7 @@ class $1 {
     // Simulate monitoring
     await this.sleep(Math.random() * 1000 + 500);
     
-    const $1 = {};
+    const result = {};
     for (const metric of data.metrics) {
       metrics[metric] = Math.random() * 100;
     }
@@ -162,7 +162,7 @@ class $1 {
       target: data.target,
       metrics: metrics,
       timestamp: new Date(),
-      status: 'healt'h'y'
+      status: 'healthy'
     };
   }
 
@@ -174,7 +174,7 @@ class $1 {
     
     return {
       taskType: task.type,
-      result: 'default-succe's's',
+      result: 'default-success,
       timestamp: new Date()
     };
   }
@@ -187,11 +187,11 @@ class $1 {
     }
     
     // Update average response time
-    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.averageResponseTime = 
       (this.performance.averageResponseTime * (totalTasks - 1) + executionTime) / totalTasks;
     
-    console.log("Performance: ${success ? 'SUCCE'S'S' : 'FAIL'E'D'} in ${executionTime}ms");
+    console.log("Performance: ${success ? SUCCES'S : 'FAIL'ED'} in ${executionTime}ms");
   }
 
   sleep(ms) {
@@ -199,7 +199,7 @@ class $1 {
   }
 
   setupGracefulShutdown() {
-    const $1 = async () => {
+    const result = async () => {
       console.log("🛑 Generic Agent ${this.agentId} shutting down...");
       this.isRunning = false;
       
@@ -207,8 +207,8 @@ class $1 {
       process.exit(0);
     };
 
-    process.on('SIGI'N'T', shutdown);
-    process.on('SIGTE'R'M', shutdown);
+    process.on('SIGINT, shutdown);
+    process.on(SIGTERM'), shutdown);
   }
 }
 

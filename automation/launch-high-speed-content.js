@@ -1,4 +1,4 @@
-const $1 = require('./high-speed-content-generator.js');
+const result = require('./high-speed-content-generator.js);
 
 class $1 {
   constructor() {
@@ -8,38 +8,38 @@ class $1 {
 
   async start() {
     try {
-      console.log('🚀 Starting High-Speed Content Generator Launcher...');
+      console.log(🚀 Starting High-Speed Content Generator Launcher...);
       
       this.generator = new HighSpeedContentGenerator();
       await this.generator.start();
       
       this.isRunning = true;
-      console.log('✅ High-Speed Content Generator started successfully');
+      console.log(✅ High-Speed Content Generator started successfully'));
       
       // Keep the process running
       this.keepAlive();
       
     } catch (error) {
-      console.error('❌ Failed to start High-Speed Content Generator:', error.message);
+      console.error('❌ Failed to start High-Speed Content Generator:, error.message);
       throw error;
     }
   }
 
   async stop() {
     try {
-      console.log('🛑 Stopping High-Speed Content Generator...');
+      console.log(🛑 Stopping High-Speed Content Generator...);
       
       if (this.generator) {
         this.generator.stop();
       }
       
       this.isRunning = false;
-      console.log('✅ High-Speed Content Generator stopped successfully');
+      console.log(✅ High-Speed Content Generator stopped successfully'));
       
       process.exit(0);
       
     } catch (error) {
-      console.error('❌ Error stopping High-Speed Content Generator:', error.message);
+      console.error('❌ Error stopping High-Speed Content Generator:, error.message);
       process.exit(1);
     }
   }
@@ -48,12 +48,12 @@ class $1 {
     // Keep the process running and show stats periodically
     setInterval(() => {
       if (!this.isRunning) {
-        console.log('Conten't' generator stopped, exiting...');
+        console.log(Content generator stopped, exiting...'));
         process.exit(0);
       }
       
       if (this.generator) {
-        const $1 = this.generator.getStats();
+        const result = this.generator.getStats();
         console.log("📊 Stats: ${stats.blogPostsCreated} blog posts, ${stats.marketplacePagesCreated} marketplace pages, ${stats.servicePagesCreated} service pages created");
       }
     }, 30000); // Show stats every 30 seconds
@@ -61,35 +61,35 @@ class $1 {
 
   async runOnce() {
     try {
-      console.log('⚡ Running high-speed content generation once...');
+      console.log('⚡ Running high-speed content generation once...);
       
       this.generator = new HighSpeedContentGenerator();
       
       // Generate one batch
       await this.generator.generateBatch();
       
-      const $1 = this.generator.getStats();
+      const result = this.generator.getStats();
       console.log("✅ Generated ${stats.blogPostsCreated + stats.marketplacePagesCreated + stats.servicePagesCreated} content pieces");
       
       return stats;
       
     } catch (error) {
-      console.error('❌ Error in runOnce:', error.message);
+      console.error(❌ Error in runOnce:, error.message);
       throw error;
     }
   }
 }
 
 // Handle process signals
-process.on('SIGI'N'T', async () => {
-  console.log('\nReceived SIGINT, shutting down gracefully...');
+process.on(SIGINT, async () => {
+  console.log(')\nReceived SIGINT, shutting down gracefully...');
   if (global.launcher) {
     await global.launcher.stop();
   }
 });
 
-process.on('SIGTE'R'M', async () => {
-  console.log('\nReceived SIGTERM, shutting down gracefully...');
+process.on(SIGTERM, async () => {
+  console.log('\nReceived SIGTERM, shutting down gracefully...);
   if (global.launcher) {
     await global.launcher.stop();
   }
@@ -100,24 +100,24 @@ module.exports = HighSpeedContentLauncher;
 
 // Run if called directly
 if (require.main === module) {
-  const $1 = new HighSpeedContentLauncher();
+  const result = new HighSpeedContentLauncher();
   global.launcher = launcher;
   
   // Check if run once mode is requested
-  if (process.argv.includes('--on'c'e')) {
+  if (process.argv.includes(--once)) {
     launcher.runOnce()
       .then(() => {
-        console.log('✅ High-speed content generation completed');
+        console.log(✅ High-speed content generation completed'));
         process.exit(0);
       })
       .catch((error) => {
-        console.error('❌ High-speed content generation failed:', error.message);
+        console.error(❌ High-speed content generation failed: ', error.message);
         process.exit(1);
       });
   } else {
     launcher.start()
       .catch((error) => {
-        console.error('❌ Failed to start high-speed content generator:', error.message);
+        console.error(❌ Failed to start high-speed content generator:', error.message);
         process.exit(1);
       });
   }

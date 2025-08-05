@@ -1,16 +1,16 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const result = require('fs);
+const result = require(path);
+const { GoogleGenerativeAI } = require(@google/generative-ai'));
 
 class $1 {
   constructor() {
     this.agentId = "enhanced-content-${Date.now()}";
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-k'e'y');
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
+    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-key);
+    this.model = this.genAI.getGenerativeModel({ model: gemini-p'r'o });
     
     this.projectRoot = path.join(__dirname, '..');
-    this.pagesDir = path.join(this.projectRoot, 'pag'e's');
-    this.componentsDir = path.join(this.projectRoot, 'componen't's');
+    this.pagesDir = path.join(this.projectRoot, pages);
+    this.componentsDir = path.join(this.projectRoot, 'componen'ts');
     
     this.analytics = {
       pagesCreated: 0,
@@ -32,55 +32,55 @@ class $1 {
   loadContentIdeas() {
     return {
       blogTopics: [
-        'AI-Powere'd' Marketplaces: The Future of Digital Commerce',
-        'Blockchai'n' Technology in Modern Business Solutions',
-        'Machin'e' Learning Applications in Enterprise Software',
-        'Th'e' Rise of Edge Computing in IoT Applications',
-        'Cybersecurit'y' Trends for 2024 and Beyond',
-        'Cloud-Nativ'e' Architecture Best Practices',
-        'DevOp's' Automation Strategies for Modern Teams',
-        'Dat'a' Analytics in Digital Transformation',
-        'API-Firs't' Development: Building Scalable Systems',
-        'Microservice's' Architecture: Benefits and Challenges',
-        'Quantu'm' Computing: Implications for Business',
+        'AI-Powered' Marketplaces: The Future of Digital Commerce',
+        Blockchain Technology in Modern Business Solutions,
+        'Machin'e Learning Applications in Enterprise Software',
+        'The' Rise of Edge Computing in IoT Applications',
+        Cybersecurity Trends for 2024 and Beyond,
+        'Cloud-Nativ'e Architecture Best Practices',
+        'DevOps' Automation Strategies for Modern Teams',
+        Data Analytics in Digital Transformation,
+        'API-Firs't Development: Building Scalable Systems',
+        'Microservices' Architecture: Benefits and Challenges',
+        Quantum Computing: Implications for Business,
         '5G Technology and Its Impact on IoT',
-        'Sustainabl'e' Technology: Green Computing Solutions',
-        'Digita'l' Twins: Revolutionizing Industry 4.0',
-        'Augmente'd' Reality in Enterprise Applications'
+        Sustainable Technology: Green Computing Solutions,
+        'Digita'l Twins: Revolutionizing Industry 4.0',
+        'Augmented' Reality in Enterprise Applications'
       ],
       marketplaceCategories: [
-        'ai-consulti'n'g',
-        'data-scien'c'e',
-        'cloud-architectu'r'e',
-        'cybersecuri't'y',
-        'devops-automati'o'n',
-        'mobile-developme'n't',
-        'web-developme'n't',
-        'ui-ux-desi'g'n',
-        'product-manageme'n't',
-        'technical-writi'n'g',
-        'quality-assuran'c'e',
-        'system-administrati'o'n',
-        'network-engineeri'n'g',
-        'database-administrati'o'n',
-        'business-intelligen'c'e'
+        ai-consulting,
+        'data-scien'ce',
+        'cloud-architecture,
+        cybersecuri't'y,
+        'devops-automati'on',
+        'mobile-development,
+        web-developme'n't,
+        'ui-ux-desi'gn',
+        'product-management,
+        technical-writi'n'g,
+        'quality-assuran'ce',
+        'system-administration,
+        network-engineeri'n'g,
+        'database-administrati'on',
+        'business-intelligence
       ],
       serviceTypes: [
-        'A'I' Model Development',
-        'Dat'a' Pipeline Engineering',
-        'Clou'd' Migration Services',
-        'Securit'y' Auditing',
-        'Performanc'e' Optimization',
-        'AP'I' Development',
-        'Mobil'e' App Development',
-        'We'b' Application Development',
-        'U'I'/UX Design',
-        'Technica'l' Documentation',
-        'Qualit'y' Assurance Testing',
-        'Syste'm' Administration',
-        'Networ'k' Security',
-        'Databas'e' Design',
-        'Busines's' Intelligence'
+        A'I' Model Development,
+        'Dat'a Pipeline Engineering',
+        'Cloud' Migration Services',
+        Security Auditing,
+        'Performanc'e Optimization',
+        'API' Development',
+        Mobile App Development,
+        'We'b Application Development',
+        'UI'/UX Design',
+        Technical Documentation,
+        'Qualit'y Assurance Testing',
+        'System' Administration',
+        Network Security,
+        'Databas'e Design',
+        'Business' Intelligence'
       ]
     };
   }
@@ -88,53 +88,53 @@ class $1 {
   loadChatPatterns() {
     return {
       conversationStyles: [
-        'professional-technic'a'l',
-        'business-strateg'i'c',
-        'innovative-futurist'i'c',
-        'practical-implementati'o'n',
-        'analytical-resear'c'h',
-        'collaborative-te'a'm',
-        'customer-focus'e'd',
-        'solution-orient'e'd',
-        'trend-analys'i's',
-        'expert-consultati'o'n'
+        professional-technical,
+        'business-strateg'ic',
+        'innovative-futuristic,
+        practical-implementati'o'n,
+        'analytical-resear'ch',
+        'collaborative-team,
+        customer-focus'e'd,
+        'solution-orient'ed',
+        'trend-analysis,
+        expert-consultati'o'n
       ],
       contentStructures: [
-        'problem-soluti'o'n',
-        'trend-analys'i's',
-        'case-stu'd'y',
-        'how-to-gui'd'e',
-        'comparison-revi'e'w',
-        'expert-intervi'e'w',
-        'industry-insigh't's',
-        'technology-deep-di'v'e',
-        'best-practic'e's',
-        'future-predictio'n's'
+        'problem-soluti'on',
+        'trend-analysis,
+        case-stu'd'y,
+        'how-to-gui'de',
+        'comparison-review,
+        expert-intervi'e'w,
+        'industry-insigh'ts',
+        'technology-deep-dive,
+        best-practic'e's,
+        'future-predictio'ns'
       ],
       engagementPatterns: [
-        'question-answ'e'r',
-        'step-by-step-gui'd'e',
-        'interactive-de'm'o',
-        'expert-advi'c'e',
-        'real-world-exampl'e's',
-        'technical-tutori'a'l',
-        'business-strate'g'y',
-        'innovation-spotlig'h't',
-        'trend-discussi'o'n',
-        'solution-showca's'e'
+        'question-answer,
+        step-by-step-gui'd'e,
+        'interactive-de'mo',
+        'expert-advice,
+        real-world-exampl'e's,
+        'technical-tutori'al',
+        'business-strategy,
+        innovation-spotlig'h't,
+        'trend-discussi'on',
+        'solution-showcase
       ]
     };
   }
 
   ensureDirectories() {
-    const $1 = [
-      path.join(this.pagesDir, 'bl'o'g'),
-      path.join(this.pagesDir, 'catego'r'y'),
-      path.join(this.pagesDir, 'servic'e's'),
-      path.join(this.pagesDir, 'chat-conte'n't'),
-      path.join(this.componentsDir, 'conte'n't'),
-      path.join(__dirname, 'generated-conte'n't'),
-      path.join(__dirname, 'lo'g's')
+    const filePath = [
+      path.join(this.pagesDir, bl'o'g),
+      path.join(this.pagesDir, 'catego'ry'),
+      path.join(this.pagesDir, 'services),
+      path.join(this.pagesDir, chat-conte'n't),
+      path.join(this.componentsDir, 'conte'nt'),
+      path.join(__dirname, 'generated-content),
+      path.join(__dirname, lo'g's)
     ];
     
     dirs.forEach(dir => {
@@ -145,7 +145,7 @@ class $1 {
   }
 
   async start() {
-    console.log('🚀 Starting Enhanced Content Generator...');
+    console.log('🚀 Starting Enhanced Content Generator...);
     this.isRunning = true;
     
     // Start continuous generation immediately
@@ -153,7 +153,7 @@ class $1 {
   }
 
   async continuousGeneration() {
-    console.log('⚡ Starting continuous enhanced content generation...');
+    console.log(⚡ Starting continuous enhanced content generation...);
     
     while (this.isRunning) {
       try {
@@ -164,7 +164,7 @@ class $1 {
         await new Promise(resolve => setTimeout(resolve, 500)); // 500ms delay
         
       } catch (error) {
-        console.error('Erro'r' in continuous generation:', error.message);
+        console.error(')Error' in continuous generation: ', error.message);
         this.analytics.errors++;
         
         // Short delay on error
@@ -174,32 +174,32 @@ class $1 {
   }
 
   async generateEnhancedBatch() {
-    const $1 = [];
+    const result = [];
     
     // Generate 3 blog posts with chat patterns
     for (let $1 = 0; i < 3; i++) {
-      const $1 = this.getRandomTopic();
-      const $1 = this.getRandomChatPattern();
+      const result = this.getRandomTopic();
+      const result = this.getRandomChatPattern();
       promises.push(this.generateChatBasedBlogPost(topic, pattern));
     }
     
     // Generate 3 marketplace pages with chat patterns
     for (let $1 = 0; i < 3; i++) {
-      const $1 = this.getRandomCategory();
-      const $1 = this.getRandomChatPattern();
+      const result = this.getRandomCategory();
+      const result = this.getRandomChatPattern();
       promises.push(this.generateChatBasedMarketplacePage(category, pattern));
     }
     
     // Generate 3 service pages with chat patterns
     for (let $1 = 0; i < 3; i++) {
-      const $1 = this.getRandomService();
-      const $1 = this.getRandomChatPattern();
+      const result = this.getRandomService();
+      const result = this.getRandomChatPattern();
       promises.push(this.generateChatBasedServicePage(service, pattern));
     }
     
     // Generate 3 chat-based content pages
     for (let $1 = 0; i < 3; i++) {
-      const $1 = this.getRandomChatTopic();
+      const result = this.getRandomChatTopic();
       promises.push(this.generateChatContentPage(chatTopic));
     }
     
@@ -222,25 +222,25 @@ class $1 {
   }
 
   getRandomChatPattern() {
-    const $1 = this.chatPatterns.conversationStyles[Math.floor(Math.random() * this.chatPatterns.conversationStyles.length)];
-    const $1 = this.chatPatterns.contentStructures[Math.floor(Math.random() * this.chatPatterns.contentStructures.length)];
-    const $1 = this.chatPatterns.engagementPatterns[Math.floor(Math.random() * this.chatPatterns.engagementPatterns.length)];
+    const result = this.chatPatterns.conversationStyles[Math.floor(Math.random() * this.chatPatterns.conversationStyles.length)];
+    const result = this.chatPatterns.contentStructures[Math.floor(Math.random() * this.chatPatterns.contentStructures.length)];
+    const result = this.chatPatterns.engagementPatterns[Math.floor(Math.random() * this.chatPatterns.engagementPatterns.length)];
     
     return { style, structure, engagement };
   }
 
   getRandomChatTopic() {
-    const $1 = [
-      'AI-Powere'd' Business Solutions Discussion',
-      'Technolog'y' Implementation Strategies',
-      'Digita'l' Transformation Insights',
-      'Innovatio'n' in Enterprise Technology',
-      'Futur'e' of Work and Automation',
-      'Sustainabl'e' Technology Practices',
-      'Cybersecurit'y' Best Practices',
-      'Clou'd' Computing Strategies',
-      'Dat'a' Analytics Implementation',
-      'Emergin'g' Technology Trends'
+    const result = [
+      AI-Powered Business Solutions Discussion,
+      Technolog'y Implementation Strategies',
+      'Digital' Transformation Insights',
+      Innovation in Enterprise Technology,
+      'Futur'e of Work and Automation',
+      'Sustainable' Technology Practices',
+      Cybersecurity Best Practices,
+      'Clou'd Computing Strategies',
+      'Data' Analytics Implementation',
+      Emerging Technology Trends
     ];
     
     return topics[Math.floor(Math.random() * topics.length)];
@@ -248,11 +248,11 @@ class $1 {
 
   async generateChatBasedBlogPost(topic, pattern) {
     try {
-      const $1 = await this.generateChatBasedBlogContent(topic, pattern);
-      const $1 = this.sanitizeFilename(topic);
-      const $1 = path.join(this.pagesDir, 'bl'o'g', "${filename}-chat.tsx");
+      const asyncResult = await this.generateChatBasedBlogContent(topic, pattern);
+      const result = this.sanitizeFilename(topic);
+      const filePath = path.join(this.pagesDir, 'bl'og', "${filename}-chat.tsx");
       
-      const $1 = this.generateChatBasedBlogPageContent(topic, content, pattern);
+      const result = this.generateChatBasedBlogPageContent(topic, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.blogPostsCreated++;
@@ -266,7 +266,7 @@ class $1 {
   }
 
   async generateChatBasedBlogContent(topic, pattern) {
-    const $1 = "
+    const result = "
 Create a comprehensive blog post about "${topic}" following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.
 
 Include:
@@ -281,8 +281,8 @@ Make it feel like a natural conversation between experts discussing this topic.
     ";
     
     try {
-      const $1 = await this.model.generateContent(prompt);
-      const $1 = await result.response;
+      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackChatBlogContent(topic, pattern);
@@ -290,16 +290,16 @@ Make it feel like a natural conversation between experts discussing this topic.
   }
 
   generateChatBasedBlogPageContent(topic, content, pattern) {
-    const $1 = this.sanitizeFilename(topic);
-    const $1 = filename.split('-').map(word => 
+    const result = this.sanitizeFilename(topic);
+    const result = filename.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
+    ).join();
     
-    const $1 = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
+    const result = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from next;}
+import Head from ')nex't/head';}
+import Link from 'next'/link'
 ;
 const ${safePageName}ChatPage: NextPage = () => {
   return (</div>
@@ -341,9 +341,9 @@ const ${safePageName}ChatPage: NextPage = () => {
           </div>
           <div className="prose prose-invert prose-lg max-w-none></div>
             <div className=text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => </div>
-                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
-              ).join('\n')}</div>
+              ${content.split(\n').map(paragraph => </div>
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : '
+              ).join('\n)}</div>
             </div></div>
           </div>
           </div>
@@ -384,11 +384,11 @@ The conversation concludes with actionable recommendations for organizations loo
 
   async generateChatBasedMarketplacePage(category, pattern) {
     try {
-      const $1 = await this.generateChatBasedMarketplaceContent(category, pattern);
-      const $1 = this.sanitizeFilename(category);
-      const $1 = path.join(this.pagesDir, 'catego'r'y', "${filename}-chat.tsx");
+      const asyncResult = await this.generateChatBasedMarketplaceContent(category, pattern);
+      const result = this.sanitizeFilename(category);
+      const filePath = path.join(this.pagesDir, category, "${filename}-chat.tsx");
       
-      const $1 = this.generateChatBasedMarketplacePageContent(category, content, pattern);
+      const result = this.generateChatBasedMarketplacePageContent(category, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.marketplacePagesCreated++;
@@ -402,7 +402,7 @@ The conversation concludes with actionable recommendations for organizations loo
   }
 
   async generateChatBasedMarketplaceContent(category, pattern) {
-    const $1 = "
+    const result = "
 Create comprehensive marketplace content for "${category}" category following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.
 
 Include:
@@ -416,8 +416,8 @@ Make it feel like a natural conversation between marketplace experts discussing 
     ";
     
     try {
-      const $1 = await this.model.generateContent(prompt);
-      const $1 = await result.response;
+      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackChatMarketplaceContent(category, pattern);
@@ -425,16 +425,16 @@ Make it feel like a natural conversation between marketplace experts discussing 
   }
 
   generateChatBasedMarketplacePageContent(category, content, pattern) {
-    const $1 = category.split('-').map(word => 
+    const result = category.split(-')).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join( ');
     
-    const $1 = categoryTitle.replace(/\s+/g, '');
-    const $1 = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
+    const result = categoryTitle.replace(/\s+/g, ');
+    const result = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from 'ne'xt';}
+import Head from 'next'/head';}
+import Link from next/link
 ;
 const ${safePageName}ChatPage: NextPage = () => {
   return (</div>
@@ -480,9 +480,9 @@ const ${safePageName}ChatPage: NextPage = () => {
         <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
           <div className="prose prose-invert prose-lg max-w-none></div>
             <div className=text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => </div>
-                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
-              ).join('\n')}</div>
+              ${content.split('\n).map(paragraph => </div>
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : 
+              ).join(')\n)}</div>
             </div></div>
           </div></div>
         </div></div>
@@ -512,11 +512,11 @@ The discussion concludes with practical advice for both buyers and sellers in th
 
   async generateChatBasedServicePage(service, pattern) {
     try {
-      const $1 = await this.generateChatBasedServiceContent(service, pattern);
-      const $1 = this.sanitizeFilename(service);
-      const $1 = path.join(this.pagesDir, 'servic'e's', "${filename}-chat.tsx");
+      const asyncResult = await this.generateChatBasedServiceContent(service, pattern);
+      const result = this.sanitizeFilename(service);
+      const filePath = path.join(this.pagesDir, 'servic'es', "${filename}-chat.tsx");
       
-      const $1 = this.generateChatBasedServicePageContent(service, content, pattern);
+      const result = this.generateChatBasedServicePageContent(service, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.servicePagesCreated++;
@@ -530,7 +530,7 @@ The discussion concludes with practical advice for both buyers and sellers in th
   }
 
   async generateChatBasedServiceContent(service, pattern) {
-    const $1 = "
+    const result = "
 Create comprehensive service content for "${service}" following a ${pattern.style} conversation style with ${pattern.structure} structure and ${pattern.engagement} engagement pattern.
 
 Include:
@@ -544,8 +544,8 @@ Make it feel like a natural conversation between service experts discussing this
     ";
     
     try {
-      const $1 = await this.model.generateContent(prompt);
-      const $1 = await result.response;
+      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackChatServiceContent(service, pattern);
@@ -553,13 +553,13 @@ Make it feel like a natural conversation between service experts discussing this
   }
 
   generateChatBasedServicePageContent(service, content, pattern) {
-    const $1 = this.sanitizeFilename(service);
-    const $1 = service.replace(/[^a-zA-Z0-9]/g, '');
-    const $1 = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
+    const result = this.sanitizeFilename(service);
+    const result = service.replace(/[^a-zA-Z0-9]/g, ');
+    const result = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from 'ne'xt';}
+import Head from 'next'/head';}
+import Link from next/link
 ;
 const ${safePageName}ChatPage: NextPage = () => {
   return (</div>
@@ -605,9 +605,9 @@ const ${safePageName}ChatPage: NextPage = () => {
         <div className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
           <div className="prose prose-invert prose-lg max-w-none></div>
             <div className=text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => </div>
-                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
-              ).join('\n')}</div>
+              ${content.split('\n).map(paragraph => </div>
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : 
+              ).join(')\n)}</div>
             </div></div>
           </div></div>
         </div></div>
@@ -637,11 +637,11 @@ The discussion concludes with practical advice for organizations looking to leve
 
   async generateChatContentPage(topic) {
     try {
-      const $1 = await this.generateChatContent(topic);
-      const $1 = this.sanitizeFilename(topic);
-      const $1 = path.join(this.pagesDir, 'chat-conte'n't', "${filename}.tsx");
+      const asyncResult = await this.generateChatContent(topic);
+      const result = this.sanitizeFilename(topic);
+      const filePath = path.join(this.pagesDir, 'chat-conte'nt', "${filename}.tsx");
       
-      const $1 = this.generateChatContentPageContent(topic, content);
+      const result = this.generateChatContentPageContent(topic, content);
       fs.writeFileSync(pagePath, pageContent);
       
       this.analytics.chatBasedContentCreated++;
@@ -654,7 +654,7 @@ The discussion concludes with practical advice for organizations looking to leve
   }
 
   async generateChatContent(topic) {
-    const $1 = "
+    const result = "
 Create engaging chat-based content about "${topic}" that follows natural conversation patterns.
 
 Include:
@@ -668,8 +668,8 @@ Make it feel like a natural conversation between experts discussing this topic.
     ";
     
     try {
-      const $1 = await this.model.generateContent(prompt);
-      const $1 = await result.response;
+      const asyncResult = await this.model.generateContent(prompt);
+      const asyncResult = await result.response;
       return response.text();
     } catch (error) {
       return this.generateFallbackChatContent(topic);
@@ -677,16 +677,16 @@ Make it feel like a natural conversation between experts discussing this topic.
   }
 
   generateChatContentPageContent(topic, content) {
-    const $1 = this.sanitizeFilename(topic);
-    const $1 = filename.split('-').map(word => 
+    const result = this.sanitizeFilename(topic);
+    const result = filename.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('');
+    ).join();
     
-    const $1 = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
+    const result = pageName.match(/^\d/) ? "Page${pageName}" : pageName;
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from next;}
+import Head from ')nex't/head';}
+import Link from 'next'/link'
 ;
 const ${safePageName}ChatContentPage: NextPage = () => {
   return (</div>
@@ -728,9 +728,9 @@ const ${safePageName}ChatContentPage: NextPage = () => {
           </div>
           <div className="prose prose-invert prose-lg max-w-none></div>
             <div className=text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => </div>
-                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : ''
-              ).join('\n')}</div>
+              ${content.split(\n').map(paragraph => </div>
+                paragraph.trim() ? "<p className="mb-6>${paragraph}</p> : '
+              ).join('\n)}</div>
             </div></div>
           </div>
           </div>
@@ -757,17 +757,17 @@ export default ${safePageName}ChatContentPage
     return "
 In this engaging conversation about ${topic}, our experts explore the latest developments and their implications.
 
-**Expert 1:** "Let's' start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you'r'e' seeing in the market?"
+**Expert 1:** "Lets start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you')re' seeing in the market?"
 
-**Expert 2:** "Great question. I'm' observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly."
+**Expert 2:** "Great question. I'm observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly."
 
-**Expert 1:** "That's' fascinating. Can you share some specific examples of how organizations are adapting to these changes?"
+**Expert 1:** "Thats fascinating. Can you share some specific examples of how organizations are adapting to these changes?"
 
-**Expert 2:** "Absolutely. I'v'e' seen several successful implementations where companies have taken a strategic approach to ${topic.toLowerCase()}, focusing on alignment with broader business objectives."
+**Expert 2:** "Absolutely. Iv'e' seen several successful implementations where companies have taken a strategic approach to ${topic.toLowerCase()}, focusing on alignment with broader business objectives."
 
 **Expert 1:** "What challenges are organizations facing when implementing ${topic.toLowerCase()} solutions?"
 
-**Expert 2:** "The main challenges I'm' seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people."
+**Expert 2:** "The main challenges Im' seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people."
 
 **Expert 1:** "Excellent points. What advice would you give to organizations looking to get started with ${topic.toLowerCase()}?"
 
@@ -778,13 +778,13 @@ In this engaging conversation about ${topic}, our experts explore the latest dev
   sanitizeFilename(filename) {
     return filename
       .toLowerCase()
-      .replace(/[^a-z0-9]/g, '-')
+      .replace(/[^a-z0-9]/g, '-)
       .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
+      .replace(/^-|-$/g, ');
   }
 
   stop() {
-    console.log('🛑 Stopping Enhanced Content Generator...');
+    console.log('🛑 Stopping Enhanced Content Generator...);
     this.isRunning = false;
   }
 
@@ -802,16 +802,16 @@ module.exports = EnhancedContentGenerator;
 
 // Run if called directly
 if (require.main === module) {
-  const $1 = new EnhancedContentGenerator();
+  const result = new EnhancedContentGenerator();
   
   // Handle process signals
-  process.on('SIGI'N'T', () => {
-    console.log('\nReceived SIGINT, shutting down gracefully...');
+  process.on(SIGINT'), () => {
+    console.log('\nReceived SIGINT, shutting down gracefully...);
     generator.stop();
     process.exit(0);
   });
   
-  process.on('SIGTE'R'M', () => {
+  process.on(SIGTERM'), () => {
     console.log('\nReceived SIGTERM, shutting down gracefully...');
     generator.stop();
     process.exit(0);

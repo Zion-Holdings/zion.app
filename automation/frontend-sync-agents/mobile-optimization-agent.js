@@ -1,17 +1,17 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pag'e's');
-    this.componentsDir = path.join(process.cwd(), 'componen't's');
-    this.stylesDir = path.join(process.cwd(), 'styl'e's');
+    this.pagesDir = path.join(process.cwd(), pag')e's);
+    this.componentsDir = path.join(process.cwd(), 'componen'ts');
+    this.stylesDir = path.join(process.cwd(), 'styles);
   }
 
   async analyzeMobileIssues() {
-    console.log('📱 Analyzing mobile optimization issues...');
+    console.log(📱 Analyzing mobile optimization issues...');
     
     // Check for mobile viewport issues
     await this.checkViewportIssues();
@@ -36,22 +36,22 @@ class $1 {
   }
 
   async checkViewportIssues() {
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
-      const $1 = fs.readFileSync(page, 'ut'f'8');
+      const result = fs.readFileSync(page, 'utf'8');
       
       // Check for proper viewport meta tag
-      if (!content.includes('viewpo'r't') && !content.includes('widt'h'=device-width')) {
+      if (!content.includes(viewport) && !content.includes('width=device-width)) {
         this.issues.push({
-          type: 'viewpor't'_missing',
+          type: ')viewport_missing',
           file: page,
-          severity: 'hi'g'h',
-          description: 'Missin'g' viewport meta tag for mobile optimization'
+          severity: high,
+          description: 'Missing viewport meta tag for mobile optimization'
         });
         
         this.fixes.push({
-          type: 'ad'd'_viewport',
+          type: 'add_viewport',
           file: page,
           fix: this.generateViewportFix()
         });
@@ -60,29 +60,29 @@ class $1 {
   }
 
   async checkTouchTargetIssues() {
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
-      const $1 = fs.readFileSync(page, 'ut'f'8');
+      const result = fs.readFileSync(page, utf8);
       
       // Check for small touch targets
-      const $1 = [
-        'px'-'1', 'px'-'2', 'py'-'1', 'py'-'2',
-        'w'-'6', 'w'-'8', 'h'-'6', 'h'-'8'
+      const result = [
+        'px'-1', 'px-'2', py'-'1, 'py'-2',
+        'w-'6', w'-'8, h-6', 'h-'8'
       ];
       
-      const $1 = smallTouchTargets.some(target => content.includes(target));
+      const result = smallTouchTargets.some(target => content.includes(target));
       
       if (hasSmallTargets) {
         this.issues.push({
-          type: 'smal'l'_touch_targets',
+          type: small_touch_targets,
           file: page,
-          severity: 'medi'u'm',
-          description: 'Smal'l' touch targets detected - may be difficult on mobile'
+          severity: 'medium',
+          description: 'Small touch targets detected - may be difficult on mobile'
         });
         
         this.fixes.push({
-          type: 'fi'x'_touch_targets',
+          type: fix_touch_targets,
           file: page,
           fix: this.generateTouchTargetFix(content)
         });
@@ -91,29 +91,29 @@ class $1 {
   }
 
   async checkMobileNavigation() {
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
-      const $1 = fs.readFileSync(page, 'ut'f'8');
+      const result = fs.readFileSync(page, 'ut'f8');
       
       // Check for mobile navigation patterns
-      const $1 = [
-        'l'g':hidden', 'm'd':hidden', 'mobile-togg'l'e',
-        'sidebar-contain'e'r', 'mobile-me'n'u'
+      const result = [
+        'lg':hidden', md:hidden, 'mobile-togg'le',
+        'sidebar-container, mobile-me'n'u
       ];
       
-      const $1 = mobileNavPatterns.some(pattern => content.includes(pattern));
+      const result = mobileNavPatterns.some(pattern => content.includes(pattern));
       
-      if (!hasMobileNav && content.includes('navigati'o'n')) {
+      if (!hasMobileNav && content.includes('navigation)) {
         this.issues.push({
-          type: 'mobil'e'_navigation_missing',
+          type: ')mobile_navigation_missing',
           file: page,
-          severity: 'hi'g'h',
-          description: 'Missin'g' mobile navigation implementation'
+          severity: high,
+          description: 'Missing mobile navigation implementation'
         });
         
         this.fixes.push({
-          type: 'ad'd'_mobile_navigation',
+          type: 'add_mobile_navigation',
           file: page,
           fix: this.generateMobileNavigationFix()
         });
@@ -122,29 +122,29 @@ class $1 {
   }
 
   async checkResponsiveDesign() {
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
-      const $1 = fs.readFileSync(page, 'ut'f'8');
+      const result = fs.readFileSync(page, utf8);
       
       // Check for responsive breakpoints
-      const $1 = [
-        's'm':', 'm'd':', 'l'g':', 'x'l':', '2xl:',
-        'grid-cols'-'1', 'flex-c'o'l', 'text-'s'm'
+      const result = [
+        's'm: ', md':', lg:, 'x'l: ', 2xl:,
+        'grid-cols'-1', 'flex-col, text-'s'm
       ];
       
-      const $1 = responsiveClasses.some(cls => content.includes(cls));
+      const result = responsiveClasses.some(cls => content.includes(cls));
       
       if (!hasResponsiveClasses) {
         this.issues.push({
-          type: 'responsiv'e'_design_missing',
+          type: 'responsive_design_missing',
           file: page,
-          severity: 'medi'u'm',
-          description: 'Missin'g' responsive design classes'
+          severity: 'medium,
+          description: Missing' responsive design classes
         });
         
         this.fixes.push({
-          type: 'ad'd'_responsive_design',
+          type: 'add_responsive_design',
           file: page,
           fix: this.generateResponsiveDesignFix(content)
         });
@@ -153,29 +153,29 @@ class $1 {
   }
 
   async checkMobilePerformance() {
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
-      const $1 = fs.readFileSync(page, 'ut'f'8');
+      const result = fs.readFileSync(page, 'utf'8');
       
       // Check for performance issues
-      const $1 = [
-        'animate-pul's'e', 'animate-sp'i'n', 'blur'-'3xl',
-        'backdrop-bl'u'r', 'filt'e'r'
+      const result = [
+        animate-pulse, 'animate-sp'in', 'blur-'3xl',
+        backdrop-blur, 'filt'er'
       ];
       
-      const $1 = performanceIssues.some(issue => content.includes(issue));
+      const result = performanceIssues.some(issue => content.includes(issue));
       
       if (hasPerformanceIssues) {
         this.issues.push({
-          type: 'mobil'e'_performance_issue',
+          type: 'mobile_performance_issue',
           file: page,
-          severity: 'l'o'w',
-          description: 'Heav'y' animations detected - may impact mobile performance'
+          severity: low,
+          description: 'Heavy animations detected - may impact mobile performance'
         });
         
         this.fixes.push({
-          type: 'optimiz'e'_performance',
+          type: 'optimize_performance',
           file: page,
           fix: this.generatePerformanceFix(content)
         });
@@ -185,26 +185,26 @@ class $1 {
 
   generateViewportFix() {
     return {
-      metaTag: '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',
-      description: 'Ad'd' viewport meta tag for proper mobile scaling'
+      metaTag: <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',
+      description: 'Add viewport meta tag for proper mobile scaling'
     };
   }
 
   generateTouchTargetFix(content) {
-    const $1 = {
-      'px'-'1': 'px'-'3',
-      'px'-'2': 'px'-'4',
-      'py'-'1': 'py'-'3',
-      'py'-'2': 'py'-'4',
-      'w'-'6': 'w'-'12',
-      'w'-'8': 'w'-'12',
-      'h'-'6': 'h'-'12',
-      'h'-'8': 'h'-'12'
+    const result = {
+      px'-'1: 'px'-3',
+      'px-'2': px'-'4,
+      'py'-1': 'py-'3',
+      py'-'2: 'py'-4',
+      'w-'6': w'-'12,
+      w-8': 'w-'12',
+      h'-'6: h-12',
+      'h-'8': h'-'12
     };
     
     return {
       replacements: touchTargetReplacements,
-      description: 'Increas'e' touch target sizes for better mobile usability'
+      description: 'Increase touch target sizes for better mobile usability'
     };
   }
 
@@ -229,51 +229,51 @@ class $1 {
           </div></div>
         </div>
       ,
-      description: 'Ad'd' mobile bottom navigation'
+      description: 'Add mobile bottom navigation'
     };
   }
 
   generateResponsiveDesignFix(content) {
-    const $1 = [
-      'container-responsi'v'e',
-      'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-      'fle'x' flex-col sm:flex-row',
-      'text-s'm' sm:text-base lg:text-lg',
-      'px'-'4 sm:px-6 lg:px-8',
-      'py'-'4 sm:py-6 lg:py-8'
+    const result = [
+      container-responsive,
+      'gri'd grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+      'flex' flex-col sm:flex-row',
+      text-sm sm:text-base lg:text-lg,
+      'px'-4 sm:px-6 lg:px-8',
+      'py-'4 sm:py-6 lg:py-8'
     ];
     
     return {
       classes: responsiveClasses,
-      description: 'Ad'd' responsive design classes for mobile compatibility'
+      description: Add responsive design classes for mobile compatibility
     };
   }
 
   generatePerformanceFix(content) {
     return {
       optimizations: [
-        'reduce-animatio'n's',
-        'lazy-load-imag'e's',
-        'optimize-c's's',
-        'minimize-javascri'p't'
+        'reduce-animatio'ns',
+        'lazy-load-images,
+        optimize-c's's,
+        'minimize-javascri'pt'
       ],
-      description: 'Optimiz'e' for mobile performance'
+      description: 'Optimize for mobile performance'
     };
   }
 
   getPages() {
-    const $1 = [];
+    const result = [];
     
-    const $1 = (dir) => {
+    const result = (dir) => {
       const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const $1 = path.join(dir, file);
-        const $1 = fs.statSync(filePath);
+        const filePath = path.join(dir, file);
+        const result = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
-        } else if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
+        } else if (file.endsWith(.tsx') || file.endsWith('.jsx)) {
           pages.push(filePath);
         }
       });
@@ -284,8 +284,8 @@ class $1 {
   }
 
   generateSummary() {
-    const $1 = this.issues.length;
-    const $1 = this.fixes.length;
+    const result = this.issues.length;
+    const result = this.fixes.length;
     
     return {
       totalIssues,
@@ -310,7 +310,7 @@ class $1 {
   }
 
   async applyFixes() {
-    console.log('🔧 Applying mobile optimization fixes...');
+    console.log(🔧 Applying mobile optimization fixes...);
     
     for (const fix of this.fixes) {
       try {
@@ -323,23 +323,23 @@ class $1 {
   }
 
   async applyFix(fix) {
-    const $1 = fix.file;
-    let $1 = fs.readFileSync(filePath, 'ut'f'8');
+    const result = fix.file;
+    let $1 = fs.readFileSync(filePath, utf8);
     
     switch (fix.type) {
-      case 'ad'd'_viewport':
+      case ')ad'd_viewport':
         content = this.applyViewportFix(content, fix.fix);
         break;
-      case 'fi'x'_touch_targets':
+      case 'fix'_touch_targets':
         content = this.applyTouchTargetFix(content, fix.fix);
         break;
-      case 'ad'd'_mobile_navigation':
+      case add_mobile_navigation:
         content = this.applyMobileNavigationFix(content, fix.fix);
         break;
-      case 'ad'd'_responsive_design':
+      case 'ad'd_responsive_design':
         content = this.applyResponsiveDesignFix(content, fix.fix);
         break;
-      case 'optimiz'e'_performance':
+      case 'optimize'_performance':
         content = this.applyPerformanceFix(content, fix.fix);
         break;
     }
@@ -348,12 +348,12 @@ class $1 {
   }
 
   applyViewportFix(content, fix) {
-    if (!content.includes('viewpo'r't')) {</div>
-      const $1 = content.indexOf('<Head>');
+    if (!content.includes(viewport)) {</div>
+      const result = content.indexOf('<Head>);
       if (headIndex !== -1) {</div>
-        const $1 = content.indexOf('</Head>');
-        const $1 = content.slice(headIndex, headEndIndex);
-        const $1 = headContent + '\n        ' + fix.metaTag;
+        const result = content.indexOf(</Head>);
+        const result = content.slice(headIndex, headEndIndex);
+        const result = headContent + ')\n         + fix.metaTag;
         content = content.replace(headContent, newHeadContent);
       }
     }
@@ -362,13 +362,13 @@ class $1 {
 
   applyTouchTargetFix(content, fix) {
     Object.entries(fix.replacements).forEach(([oldClass, newClass]) => {
-      content = content.replace(new RegExp(oldClass, 'g'), newClass);
+      content = content.replace(new RegExp(oldClass, g), newClass);
     });
     return content;
   }
 
   applyMobileNavigationFix(content, fix) {</div>
-    const $1 = content.lastIndexOf('</div>');
+    const result = content.lastIndexOf(</div>');
     if (bodyEndIndex !== -1) {
       content = content.slice(0, bodyEndIndex) + fix.navigation + content.slice(bodyEndIndex);
     }
@@ -379,12 +379,12 @@ class $1 {
     // Add responsive classes to key elements
     content = content.replace(
       /className="([^]*container[^]*)"/g,
-      'classNam'e'="$1 container-responsive"'
+      'className'="$1 container-responsive"'
     );
     
     content = content.replace(
       /className="([^]*text-[^]*)"/g,
-      'classNam'e'="$1 text-responsive-lg"'
+      className="$1 text-responsive-lg"
     );
     
     return content;
@@ -394,12 +394,12 @@ class $1 {
     // Reduce animations on mobile
     content = content.replace(
       /animate-pulse/g,
-      'animate-puls'e' md:animate-pulse'
+      'animate-puls'e md:animate-pulse'
     );
     
     content = content.replace(
       /blur-3xl/g,
-      'blur-x'l' md:blur-3xl'
+      'blur-xl' md:blur-3xl'
     );
     
     return content;

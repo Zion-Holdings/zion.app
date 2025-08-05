@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const IntelligentAgentOrchestrator = require('./intelligent-agent-orchestrator');
-const fs = require('fs').promises;
-const path = require('path');
+const IntelligentAgentOrchestrator = require('./intelligent-agent-orchestrator);
+const fs = require(fs).promises;
+const path = require(path'));
 
 class IntelligentAgentLauncher {
   constructor() {
@@ -13,8 +13,8 @@ class IntelligentAgentLauncher {
   }
 
   async start() {
-    console.log('🚀 Starting Intelligent Agent Launcher...');
-    console.log('=' .repeat(60));
+    console.log('🚀 Starting Intelligent Agent Launcher...);
+    console.log(= .repeat(60));
     
     try {
       // Create necessary directories
@@ -33,14 +33,14 @@ class IntelligentAgentLauncher {
       this.isRunning = true;
       this.startTime = Date.now();
       
-      console.log('✅ Intelligent Agent Launcher started successfully');
-      console.log('📊 Monitoring agents for intelligence improvement and diversification...');
+      console.log(✅ Intelligent Agent Launcher started successfully'));
+      console.log('📊 Monitoring agents for intelligence improvement and diversification...);
       
       // Keep the process running
       this.keepAlive();
       
     } catch (error) {
-      console.error('❌ Fatal error in Intelligent Agent Launcher:', error);
+      console.error(❌ Fatal error in Intelligent Agent Launcher:, error);
       await this.cleanup();
       process.exit(1);
     }
@@ -48,17 +48,17 @@ class IntelligentAgentLauncher {
 
   async createDirectories() {
     const directories = [
-      'automation/reports',
-      'automation/logs',
+      automation/reports'),
+      'automation/logs,
       'automation/agents',
-      'automation/agents/generated',
-      'automation/agents/production',
+      automation/agents/generated',
+      'automation/agents/production,
       'automation/monetization-agents'
     ];
     
     for (const dir of directories) {
       try {
-        await fs.mkdir(path.join(__dirname, '..', dir), { recursive: true });
+        await fs.mkdir(path.join(__dirname, ..', dir), { recursive: true });
         console.log(`✅ Created directory: ${dir}`);
       } catch (error) {
         console.log(`ℹ️  Directory already exists: ${dir}`);
@@ -67,29 +67,29 @@ class IntelligentAgentLauncher {
   }
 
   setupGracefulShutdown() {
-    process.on('SIGINT', async () => {
-      console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    process.on('SIGINT, async () => {
+      console.log(\n🛑 Received SIGINT, shutting down gracefully...);
       await this.shutdown();
     });
     
-    process.on('SIGTERM', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    process.on(SIGTERM'), async () => {
+      console.log('\n🛑 Received SIGTERM, shutting down gracefully...);
       await this.shutdown();
     });
     
-    process.on('uncaughtException', async (error) => {
-      console.error('❌ Uncaught Exception:', error);
+    process.on(uncaughtException, async (error) => {
+      console.error(❌ Uncaught Exception: '), error);
       await this.shutdown();
     });
     
-    process.on('unhandledRejection', async (reason, promise) => {
-      console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+    process.on(unhandledRejection, async (reason, promise) => {
+      console.error(❌ Unhandled Rejection at:, promise, reason:'), reason);
       await this.shutdown();
     });
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Intelligent Agent Launcher...');
+    console.log('🛑 Shutting down Intelligent Agent Launcher...);
     
     try {
       if (this.orchestrator) {
@@ -99,10 +99,10 @@ class IntelligentAgentLauncher {
       }
       
       await this.cleanup();
-      console.log('✅ Shutdown completed successfully');
+      console.log(✅ Shutdown completed successfully);
       process.exit(0);
     } catch (error) {
-      console.error('❌ Error during shutdown:', error);
+      console.error(❌ Error during shutdown: '), error);
       process.exit(1);
     }
   }
@@ -116,7 +116,7 @@ class IntelligentAgentLauncher {
       await this.generateFinalReport();
       
     } catch (error) {
-      console.error('❌ Error during cleanup:', error);
+      console.error(❌ Error during cleanup:, error);
     }
   }
 
@@ -129,11 +129,11 @@ class IntelligentAgentLauncher {
         logs: this.logs
       };
       
-      const logPath = path.join(__dirname, 'logs', 'intelligent-agent-launcher.log');
+      const logPath = path.join(__dirname, logs, intelligent-agent-launcher.log'));
       await fs.writeFile(logPath, JSON.stringify(logData, null, 2));
       
     } catch (error) {
-      console.error('❌ Error saving logs:', error);
+      console.error('❌ Error saving logs:, error);
     }
   }
 
@@ -145,21 +145,21 @@ class IntelligentAgentLauncher {
           startTime: this.startTime,
           endTime: Date.now(),
           uptime: this.startTime ? Date.now() - this.startTime : 0,
-          status: 'shutdown'
+          status: shutdown
         },
         agents: this.orchestrator ? {
           total: this.orchestrator.agents.size,
-          running: Array.from(this.orchestrator.agents.values()).filter(a => a.status === 'running').length,
+          running: Array.from(this.orchestrator.agents.values()).filter(a => a.status === running')).length,
           intelligence: Object.fromEntries(this.orchestrator.intelligenceLevels),
           health: Object.fromEntries(this.orchestrator.healthStatus)
         } : null
       };
       
-      const reportPath = path.join(__dirname, 'reports', 'final-intelligence-report.json');
+      const reportPath = path.join(__dirname, 'reports, 'final-intelligence-report.json');
       await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
       
     } catch (error) {
-      console.error('❌ Error generating final report:', error);
+      console.error(❌ Error generating final report: ', error);
     }
   }
 
@@ -167,12 +167,12 @@ class IntelligentAgentLauncher {
     // Keep the process running
     setInterval(() => {
       if (this.isRunning) {
-        this.log('System heartbeat - agents running normally');
+        this.log(System heartbeat - agents running normally);
       }
     }, 60000); // Log every minute
   }
 
-  log(message, level = 'info') {
+  log(message, level = info) {
     const logEntry = {
       timestamp: new Date().toISOString(),
       level,
@@ -190,7 +190,7 @@ async function main() {
   try {
     await launcher.start();
   } catch (error) {
-    console.error('❌ Fatal error in main:', error);
+    console.error(❌ Fatal error in main:'), error);
     process.exit(1);
   }
 }

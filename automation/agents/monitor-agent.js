@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
   constructor() {
@@ -31,11 +31,11 @@ class $1 {
   }
 
   adaptBehavior() {
-    const $1 = this.performanceHistory
+    const timestamp = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    const result = recentPerformance.filter(p => p.success).length / recentPerformance.length;
     </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
@@ -45,7 +45,7 @@ class $1 {
   }
 
   improveIntelligence() {
-    const $1 = this.performanceHistory
+    const result = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -56,7 +56,7 @@ class $1 {
 
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || {}'));
     this.isRunning = false;
     this.monitoringData = new Map();
     this.alerts = [];
@@ -71,8 +71,8 @@ class $1 {
     console.log("🏥 Monitor Agent ${this.agentId} initializing...");
     
     // Set up signal handlers
-    process.on('SIGTE'R'M', () => this.shutdown());
-    process.on('SIGI'N'T', () => this.shutdown());
+    process.on('SIGTERM, () => this.shutdown());
+    process.on(SIGINT, () => this.shutdown());
     
     this.isRunning = true;
     console.log("✅ Monitor Agent ${this.agentId} started");
@@ -96,7 +96,7 @@ class $1 {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
       } catch (error) {
-        console.error('Erro'r' in monitoring loop:', error.message);
+        console.error(')Erro'r in monitoring loop: ', error.message);
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds on error
       }
     }
@@ -106,10 +106,10 @@ class $1 {
     console.log("🔍 Performing health checks...");
     
     try {
-      const $1 = Date.now();
+      const timestamp = Date.now();
       
       // Simulate various health checks
-      const $1 = [
+      const result = [
         this.checkSystemResources(),
         this.checkAgentHealth(),
         this.checkTaskQueue(),
@@ -117,9 +117,9 @@ class $1 {
         this.checkPerformanceMetrics()
       ];
       
-      const $1 = await Promise.all(healthChecks);
+      const asyncResult = await Promise.all(healthChecks);
       
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       this.performance.checksCompleted++;
       this.performance.averageResponseTime = 
         (this.performance.averageResponseTime * (this.performance.checksCompleted - 1) + responseTime) / 
@@ -135,14 +135,14 @@ class $1 {
       console.log("✅ Health checks completed in ${responseTime}ms");
       
     } catch (error) {
-      console.error('Healt'h' check error:', error.message);
-      this.generateAlert('HEALT'H'_CHECK_ERROR', error.message);
+      console.error(Health check error:, error.message);
+      this.generateAlert(HEALTH_CHECK_ERROR, error.message);
     }
   }
 
   async checkSystemResources() {
     // Simulate system resource monitoring
-    const $1 = {
+    const result = {
       cpuUsage: Math.random() * 100,
       memoryUsage: Math.random() * 100,
       diskUsage: Math.random() * 100,
@@ -151,37 +151,37 @@ class $1 {
     
     // Check for resource thresholds
     if (resources.cpuUsage > 80) {
-      this.generateAlert('HIG'H'_CPU_USAGE', "CPU usage at ${resources.cpuUsage.toFixed(1)}%");
+      this.generateAlert(')HIG'H_CPU_USAGE', "CPU usage at ${resources.cpuUsage.toFixed(1)}%");
     }
     
     if (resources.memoryUsage > 85) {
-      this.generateAlert('HIG'H'_MEMORY_USAGE', "Memory usage at ${resources.memoryUsage.toFixed(1)}%");
+      this.generateAlert('HIGH_MEMORY_USAGE, "Memory usage at ${resources.memoryUsage.toFixed(1)}%");
     }
     
-    return { type: 'syste'm'_resources', data: resources };
+    return { type: system_resources, data: resources };
   }
 
   async checkAgentHealth() {
     // Simulate agent health monitoring
-    const $1 = {
+    const result = {
       totalAgents: Math.floor(Math.random() * 20) + 10,
       healthyAgents: Math.floor(Math.random() * 15) + 8,
       unhealthyAgents: Math.floor(Math.random() * 5),
       agentResponseTime: Math.random() * 1000
     };
     
-    const $1 = (agentHealth.healthyAgents / agentHealth.totalAgents) * 100;
+    const result = (agentHealth.healthyAgents / agentHealth.totalAgents) * 100;
     </div>
     if (healthPercentage < 80) {
-      this.generateAlert('LO'W'_AGENT_HEALTH', "Agent health at ${healthPercentage.toFixed(1)}%");
+      this.generateAlert(')LO'W_AGENT_HEALTH', "Agent health at ${healthPercentage.toFixed(1)}%");
     }
     
-    return { type: 'agen't'_health', data: agentHealth };
+    return { type: 'agent_health', data: agentHealth };
   }
 
   async checkTaskQueue() {
     // Simulate task queue monitoring
-    const $1 = {
+    const result = {
       pendingTasks: Math.floor(Math.random() * 50),
       completedTasks: Math.floor(Math.random() * 200),
       failedTasks: Math.floor(Math.random() * 10),
@@ -189,19 +189,19 @@ class $1 {
     };
     
     if (queueStatus.pendingTasks > 30) {
-      this.generateAlert('HIG'H'_TASK_QUEUE', "${queueStatus.pendingTasks} pending tasks");
+      this.generateAlert(HIGH_TASK_QUEUE, "${queueStatus.pendingTasks} pending tasks");
     }
     
     if (queueStatus.failedTasks > 5) {
-      this.generateAlert('HIG'H'_FAILURE_RATE', "${queueStatus.failedTasks} failed tasks");
+      this.generateAlert('HIGH_FAILURE_RATE, "${queueStatus.failedTasks} failed tasks");
     }
     
-    return { type: 'tas'k'_queue', data: queueStatus };
+    return { type: ')task_queue', data: queueStatus };
   }
 
   async checkErrorRates() {
     // Simulate error rate monitoring
-    const $1 = {
+    const timestamp = {
       totalErrors: Math.floor(Math.random() * 20),
       errorRate: Math.random() * 10,
       criticalErrors: Math.floor(Math.random() * 5),
@@ -209,19 +209,19 @@ class $1 {
     };
     
     if (errorMetrics.errorRate > 5) {
-      this.generateAlert('HIG'H'_ERROR_RATE', "Error rate at ${errorMetrics.errorRate.toFixed(1)}%");
+      this.generateAlert(HIGH_ERROR_RATE, "Error rate at ${errorMetrics.errorRate.toFixed(1)}%");
     }
     
     if (errorMetrics.criticalErrors > 0) {
-      this.generateAlert('CRITICA'L'_ERRORS', "${errorMetrics.criticalErrors} critical errors detected");
+      this.generateAlert('CRITICAL_ERRORS, "${errorMetrics.criticalErrors} critical errors detected");
     }
     
-    return { type: 'erro'r'_rates', data: errorMetrics };
+    return { type: ')error_rates', data: errorMetrics };
   }
 
   async checkPerformanceMetrics() {
     // Simulate performance monitoring
-    const $1 = {
+    const result = {
       averageResponseTime: Math.random() * 2000,
       throughput: Math.random() * 1000,
       successRate: Math.random() * 100,
@@ -229,14 +229,14 @@ class $1 {
     };
     
     if (performance.averageResponseTime > 1500) {
-      this.generateAlert('SLO'W'_RESPONSE_TIME', "Average response time: ${performance.averageResponseTime.toFixed(0)}ms");
+      this.generateAlert(SLOW_RESPONSE_TIME, "Average response time: ${performance.averageResponseTime.toFixed(0)}ms");
     }
     </div>
     if (performance.successRate < 90) {
-      this.generateAlert('LO'W'_SUCCESS_RATE', "Success rate at ${performance.successRate.toFixed(1)}%");
+      this.generateAlert('LOW_SUCCESS_RATE, "Success rate at ${performance.successRate.toFixed(1)}%");
     }
     
-    return { type: 'performanc'e'_metrics', data: performance };
+    return { type: ')performance_metrics', data: performance };
   }
 
   async checkForAlerts() {
@@ -244,7 +244,7 @@ class $1 {
     
     try {
       // Process any pending alerts
-      const $1 = this.alerts.filter(alert => !alert.processed);
+      const result = this.alerts.filter(alert => !alert.processed);
       
       for (const alert of pendingAlerts) {
         await this.processAlert(alert);
@@ -257,12 +257,12 @@ class $1 {
       );
       
     } catch (error) {
-      console.error('Aler't' processing error:', error.message);
+      console.error(Alert processing error:, error.message);
     }
   }
 
-  generateAlert(type, message, severity = 'warni'n'g') {
-    const $1 = {
+  generateAlert(type, message, severity = 'warni'ng') {
+    const timestamp = {
       id: "alert-${Date.now()}",
       type,
       message,
@@ -285,7 +285,7 @@ class $1 {
       await new Promise(resolve => setTimeout(resolve, 500));
       
       // Log alert details
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         alertId: alert.id,
         type: alert.type,
@@ -305,7 +305,7 @@ class $1 {
     console.log("📊 Generating monitoring report...");
     
     try {
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         performance: this.performance,
@@ -317,30 +317,30 @@ class $1 {
       console.log("📈 Monitoring report:", report);
       
     } catch (error) {
-      console.error('Repor't' generation error:', error.message);
+      console.error('Report generation error:, error.message);
     }
   }
 
   calculateSystemStatus() {
-    const $1 = Array.from(this.monitoringData.entries())
+    const result = Array.from(this.monitoringData.entries())
       .slice(-10) // Last 10 data points
       .map(([timestamp, data]) => data);
     
     if (recentData.length === 0) {
-      return 'unkno'w'n';
+      return unknown;
     }
     
-    const $1 = recentData.some(data => 
-      data.checks.some(check => check.type === 'erro'r'_rates' && check.data.errorRate > 5)
+    const result = recentData.some(data => 
+      data.checks.some(check => check.type === ')erro'r_rates' && check.data.errorRate > 5)
     );
     
-    const $1 = this.alerts.some(alert => !alert.processed);
+    const result = this.alerts.some(alert => !alert.processed);
     
     if (hasErrors || hasAlerts) {
-      return 'warni'n'g';
+      return 'warning;
     }
     
-    return 'healt'h'y';
+    return healt'h'y;
   }
 
   async shutdown() {
@@ -348,7 +348,7 @@ class $1 {
     this.isRunning = false;
     
     // Save final monitoring data
-    const $1 = {
+    const timestamp = {
       agentId: this.agentId,
       agentType: this.agentType,
       performance: this.performance,
@@ -363,8 +363,97 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new MonitorAgent();
+const result = new MonitorAgent();
 agent.initialize().catch(error => {
-  console.error('Faile'd' to initialize monitor agent:', error);
+  console.error('Faile'd to initialize monitor agent:', error);
   process.exit(1);
+
+  // Enhanced Intelligence Capabilities
+  enhanceIntelligence() {
+    this.intelligenceLevel = Math.min(this.intelligenceLevel + 0.01, 1.0);
+    this.learningRate = Math.min(this.learningRate + 0.005, 1.0);
+    this.adaptationSpeed = Math.min(this.adaptationSpeed + 0.005, 1.0);
+  }
+
+  learnFromExperience(data, outcome) {
+    this.experienceHistory.push({ data, outcome, timestamp: Date.now() });
+    this.updateLearningModel();
+    this.enhanceIntelligence();
+  }
+
+  updateLearningModel() {
+    const recentExperiences = this.experienceHistory.slice(-10);
+    const successRate = recentExperiences.filter(exp => exp.outcome.success).length / recentExperiences.length;
+    
+    if (successRate > 0.8) {
+      this.enhanceIntelligence();
+    }
+  }
+
+
+  // Machine Learning Capabilities
+  initializeMachineLearning() {
+    this.mlModel = {
+      type: 'adaptive',
+      learningRate: 0.1,
+      accuracy: 0.8,
+      predictions: []
+    };
+  }
+
+  makePrediction(input) {
+    const prediction = this.mlModel.predict ? this.mlModel.predict(input) : this.simplePrediction(input);
+    this.mlModel.predictions.push({ input, prediction, timestamp: Date.now() });
+    return prediction;
+  }
+
+  simplePrediction(input) {
+    // Simple prediction based on historical data
+    return { confidence: 0.8, result: 'optimized' };
+  }
+
+  updateMLModel(actualOutcome) {
+    const lastPrediction = this.mlModel.predictions[this.mlModel.predictions.length - 1];
+    if (lastPrediction) {
+      const accuracy = this.calculateAccuracy(lastPrediction, actualOutcome);
+      this.mlModel.accuracy = (this.mlModel.accuracy + accuracy) / 2;
+    }
+  }
+
+
+  // Collaborative Intelligence Capabilities
+  collaborateWithOtherAgents() {
+    this.collaborationPartners = this.collaborationPartners || [];
+    this.sharedKnowledge = this.sharedKnowledge || new Map();
+    
+    // Share knowledge with other agents
+    this.shareKnowledge();
+    this.receiveKnowledge();
+  }
+
+  shareKnowledge() {
+    const knowledge = {
+      agentId: this.agentId,
+      capabilities: this.capabilities,
+      performance: this.performance,
+      insights: this.generateInsights()
+    };
+    
+    // Broadcast knowledge to other agents
+    this.broadcastKnowledge(knowledge);
+  }
+
+  receiveKnowledge() {
+    // Receive and integrate knowledge from other agents
+    this.integrateExternalKnowledge();
+  }
+
+  generateInsights() {
+    return {
+      patterns: this.identifyPatterns(),
+      optimizations: this.suggestOptimizations(),
+      improvements: this.suggestImprovements()
+    };
+  }
+
 }); </div>

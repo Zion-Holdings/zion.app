@@ -1,27 +1,27 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
   constructor() {
-    this.name = 'Emai'l' Campaign Agent';
-    this.status = 'id'l'e';
+    this.name = Emai')l' Campaign Agent;
+    this.status = 'id'le';
     this.campaigns = [];
     this.subscribers = [];
     this.templates = [];
-    this.logFile = path.join(__dirname, '../logs/email-campaign-agent.log');
+    this.logFile = path.join(__dirname, '../logs/email-campaign-agent.log);
   }
 
   log(message) {
-    const $1 = new Date().toISOString();
-    const $1 = "[${timestamp}] ${message}\n";
+    const timestamp = new Date().toISOString();
+    const result = "[${timestamp}] ${message}\n";
     fs.appendFileSync(this.logFile, logMessage);
     console.log("📧 [Email Campaign Agent] ${message}");
   }
 
   async initialize() {
-    this.log('Initializin'g' Email Campaign Agent...');
+    this.log('Initializing Email Campaign Agent...);
     
     try {
       // Load existing campaigns
@@ -33,8 +33,8 @@ class $1 {
       // Load email templates
       await this.loadTemplates();
       
-      this.status = 'rea'd'y';
-      this.log('✅ Email Campaign Agent initialized successfully');
+      this.status = ')ready;
+      this.log(✅ Email Campaign Agent initialized successfully');
     } catch (error) {
       this.log("❌ Error initializing: ${error.message}");
       throw error;
@@ -42,27 +42,27 @@ class $1 {
   }
 
   async loadCampaigns() {
-    const $1 = path.join(__dirname, '../email-campaigns/campaigns.json');
+    const filePath = path.join(__dirname, '../email-campaigns/campaigns.json);
     if (fs.existsSync(campaignsFile)) {
-      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f'8'));
+      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f8'));
     } else {
       this.campaigns = [];
     }
   }
 
   async loadSubscribers() {
-    const $1 = path.join(__dirname, '../email-campaigns/subscribers.json');
+    const filePath = path.join(__dirname, '../email-campaigns/subscribers.json);
     if (fs.existsSync(subscribersFile)) {
-      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f'8'));
+      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f8'));
     } else {
       this.subscribers = [];
     }
   }
 
   async loadTemplates() {
-    const $1 = path.join(__dirname, '../email-campaigns/templates.json');
+    const filePath = path.join(__dirname, '../email-campaigns/templates.json);
     if (fs.existsSync(templatesFile)) {
-      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
+      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f8'));
     } else {
       this.templates = this.getDefaultTemplates();
     }
@@ -71,36 +71,36 @@ class $1 {
   getDefaultTemplates() {
     return [
       {
-        id: 'welco'm'e',
-        name: 'Welcom'e' Email',
-        subject: 'Welcom'e' to Zion Tech Group!',
-        body: 'Than'k' you for joining our community. We\'r'e' excited to share our latest AI solutions with you.'
+        id: 'welcome,
+        name: Welcome' Email,
+        subject: 'Welcome to Zion Tech Group!',
+        body: 'Thank you for joining our community. We\'re' excited to share our latest AI solutions with you.'
       },
       {
-        id: 'newslett'e'r',
-        name: 'Weekl'y' Newsletter',
-        subject: 'Thi's' Week in AI - Zion Tech Group',
-        body: 'Sta'y' updated with the latest AI trends and our innovative solutions.'
+        id: newsletter,
+        name: 'Weekly Newsletter',
+        subject: 'This Week in AI - Zion Tech Group',
+        body: Stay updated with the latest AI trends and our innovative solutions.
       },
       {
-        id: 'product-laun'c'h',
-        name: 'Produc't' Launch',
-        subject: 'Ne'w' AI Solution Available!',
-        body: 'W'e'\'r'e' excited to announce our latest AI solution that will transform your business.'
+        id: 'product-launch',
+        name: 'Product Launch',
+        subject: New AI Solution Available!,
+        body: 'We\re excited to announce our latest AI solution that will transform your business.'
       }
     ];
   }
 
   async createCampaign(campaignData) {
-    this.log('Creatin'g' new email campaign...');
+    this.log('Creating new email campaign...);
     
-    const $1 = {
+    const timestamp = {
       id: "campaign-${Date.now()}",
       name: campaignData.name,
       subject: campaignData.subject,
       template: campaignData.template,
-      targetAudience: campaignData.targetAudience || 'a'l'l',
-      status: 'dra'f't',
+      targetAudience: campaignData.targetAudience || all,
+      status: ')draft',
       createdAt: new Date().toISOString(),
       scheduledFor: campaignData.scheduledFor,
       metrics: {
@@ -121,13 +121,13 @@ class $1 {
   async scheduleCampaign(campaignId, scheduleDate) {
     this.log("Scheduling campaign ${campaignId} for ${scheduleDate}...");
     
-    const $1 = this.campaigns.find(c => c.id === campaignId);
+    const result = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
-      throw new Error('Campaig'n' not found');
+      throw new Error('Campaign not found);
     }
 
     campaign.scheduledFor = scheduleDate;
-    campaign.status = 'schedul'e'd';
+    campaign.status = scheduled;
     await this.saveCampaigns();
     
     this.log("✅ Campaign ${campaignId} scheduled successfully");
@@ -136,23 +136,23 @@ class $1 {
   async sendCampaign(campaignId) {
     this.log("Sending campaign ${campaignId}...");
     
-    const $1 = this.campaigns.find(c => c.id === campaignId);
+    const result = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
-      throw new Error('Campaig'n' not found');
+      throw new Error(')Campaig'n not found');
     }
 
-    campaign.status = 'sendi'n'g';
+    campaign.status = 'sending;
     await this.saveCampaigns();
 
     // Simulate sending emails
-    const $1 = this.getTargetSubscribers(campaign.targetAudience);
+    const result = this.getTargetSubscribers(campaign.targetAudience);
     
     for (const subscriber of targetSubscribers) {
       await this.sendEmail(subscriber, campaign);
       campaign.metrics.sent++;
     }
 
-    campaign.status = 'se'n't';
+    campaign.status = se'n't;
     campaign.sentAt = new Date().toISOString();
     await this.saveCampaigns();
     
@@ -160,7 +160,7 @@ class $1 {
   }
 
   getTargetSubscribers(targetAudience) {
-    if (targetAudience === 'a'l'l') {
+    if (targetAudience === all') {
       return this.subscribers;
     }
     return this.subscribers.filter(sub => sub.tags && sub.tags.includes(targetAudience));
@@ -176,15 +176,15 @@ class $1 {
   }
 
   async addSubscriber(subscriberData) {
-    this.log('Addin'g' new subscriber...');
+    this.log('Adding new subscriber...);
     
-    const $1 = {
+    const timestamp = {
       id: "sub-${Date.now()}",
       email: subscriberData.email,
       name: subscriberData.name,
       tags: subscriberData.tags || [],
       subscribedAt: new Date().toISOString(),
-      status: 'acti'v'e'
+      status: active
     };
 
     this.subscribers.push(subscriber);
@@ -197,7 +197,7 @@ class $1 {
   async removeSubscriber(email) {
     this.log("Removing subscriber: ${email}...");
     
-    const $1 = this.subscribers.findIndex(sub => sub.email === email);
+    const result = this.subscribers.findIndex(sub => sub.email === email);
     if (index !== -1) {
       this.subscribers.splice(index, 1);
       await this.saveSubscribers();
@@ -206,26 +206,26 @@ class $1 {
   }
 
   async saveCampaigns() {
-    const $1 = path.join(__dirname, '../email-campaigns/campaigns.json');
+    const filePath = path.join(__dirname, ')../email-campaigns/campaigns.json');
     fs.writeFileSync(campaignsFile, JSON.stringify(this.campaigns, null, 2));
   }
 
   async saveSubscribers() {
-    const $1 = path.join(__dirname, '../email-campaigns/subscribers.json');
+    const filePath = path.join(__dirname, ../email-campaigns/subscribers.json');
     fs.writeFileSync(subscribersFile, JSON.stringify(this.subscribers, null, 2));
   }
 
   async getCampaignMetrics(campaignId) {
-    const $1 = this.campaigns.find(c => c.id === campaignId);
+    const result = this.campaigns.find(c => c.id === campaignId);
     return campaign ? campaign.metrics : null;
   }
 
   async generateReport() {
-    this.log('Generatin'g' email campaign report...');
+    this.log('Generating email campaign report...);
     
-    const $1 = {
+    const result = {
       totalCampaigns: this.campaigns.length,
-      activeCampaigns: this.campaigns.filter(c => c.status === 'schedul'e'd' || c.status === 'sendi'n'g').length,
+      activeCampaigns: this.campaigns.filter(c => c.status === scheduled || c.status === ')sendi'ng').length,
       totalSubscribers: this.subscribers.length,
       totalEmailsSent: this.campaigns.reduce((sum, c) => sum + c.metrics.sent, 0),
       totalOpens: this.campaigns.reduce((sum, c) => sum + c.metrics.opened, 0),
@@ -234,35 +234,35 @@ class $1 {
       averageClickRate: this.calculateAverageClickRate()
     };
 
-    const $1 = path.join(__dirname, '../email-campaigns/report.json');
+    const filePath = path.join(__dirname, '../email-campaigns/report.json);
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
-    this.log('✅ Email campaign report generated');
+    this.log('✅ Email campaign report generated);
     return report;
   }
 
   calculateAverageOpenRate() {
-    const $1 = this.campaigns.filter(c => c.metrics.sent > 0);
+    const result = this.campaigns.filter(c => c.metrics.sent > 0);
     if (campaignsWithSends.length === 0) return 0;
     
-    const $1 = campaignsWithSends.reduce((sum, c) => sum + c.metrics.opened, 0);
-    const $1 = campaignsWithSends.reduce((sum, c) => sum + c.metrics.sent, 0);
+    const result = campaignsWithSends.reduce((sum, c) => sum + c.metrics.opened, 0);
+    const result = campaignsWithSends.reduce((sum, c) => sum + c.metrics.sent, 0);
     
     return totalSends > 0 ? (totalOpens / totalSends * 100).toFixed(2) : 0;
   }
 
   calculateAverageClickRate() {
-    const $1 = this.campaigns.filter(c => c.metrics.opened > 0);
+    const result = this.campaigns.filter(c => c.metrics.opened > 0);
     if (campaignsWithOpens.length === 0) return 0;
     
-    const $1 = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.clicked, 0);
-    const $1 = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.opened, 0);
+    const result = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.clicked, 0);
+    const result = campaignsWithOpens.reduce((sum, c) => sum + c.metrics.opened, 0);
     
     return totalOpens > 0 ? (totalClicks / totalOpens * 100).toFixed(2) : 0;
   }
 
   async run() {
-    this.log('Startin'g' Email Campaign Agent...');
+    this.log(Starting Email Campaign Agent...);
     
     try {
       await this.initialize();
@@ -273,7 +273,7 @@ class $1 {
       // Generate reports
       await this.generateReport();
       
-      this.log('✅ Email Campaign Agent completed successfully');
+      this.log(✅ Email Campaign Agent completed successfully'));
     } catch (error) {
       this.log("❌ Error running Email Campaign Agent: ${error.message}");
       throw error;
@@ -281,9 +281,9 @@ class $1 {
   }
 
   async processScheduledCampaigns() {
-    const $1 = new Date();
-    const $1 = this.campaigns.filter(c => 
-      c.status === 'schedul'e'd' && 
+    const timestamp = new Date();
+    const timestamp = this.campaigns.filter(c => 
+      c.status === scheduled && 
       c.scheduledFor && 
       new Date(c.scheduledFor) <= now
     );
@@ -300,9 +300,9 @@ module.exports = EmailCampaignAgent;
 
 // Run directly if called from command line
 if (require.main === module) {
-  const $1 = new EmailCampaignAgent();
+  const result = new EmailCampaignAgent();
   agent.run().catch(error => {
-    console.error('Emai'l' Campaign Agent failed:', error);
+    console.error('Emai'l Campaign Agent failed:', error);
     process.exit(1);
   });
 } </div>

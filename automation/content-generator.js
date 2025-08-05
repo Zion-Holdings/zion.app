@@ -1,34 +1,34 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
   constructor() {
     this.projectRoot = process.cwd();
-    // Check if we'r'e' in the automation directory and adjust path accordingly
-    if (this.projectRoot.endsWith('automati'o'n')) {
+    // Check if wer')e' in the automation directory and adjust path accordingly
+    if (this.projectRoot.endsWith(automation)) {
       this.projectRoot = path.join(this.projectRoot, '..');
     }
-    this.contentPath = path.join(this.projectRoot, 'pag'e's');
+    this.contentPath = path.join(this.projectRoot, pages);
     this.chatgptMemory = this.loadChatGPTMemory();
     this.marketplaceFeatures = this.extractMarketplaceFeatures();
   }
 
   loadChatGPTMemory() {
     try {
-      const $1 = path.join(this.projectRoot, 'automati'o'n', 'chatgpt-content-memor'y'.json');
-      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
+      const filePath = path.join(this.projectRoot, 'automati'on', 'chatgpt-content-memory'.json');
+      const result = fs.readFileSync(memoryPath, utf8);
       return JSON.parse(memoryData);
     } catch (error) {
-      console.log('ChatGP'T' memory not found, using default content');
+      console.log('ChatGPT memory not found, using default content);
       return {
         memories: [
           {
-            id: 'zion-marketplace-visi'o'n',
-            content: 'Zio'n' is an AI-powered marketplace connecting businesses with IT services, AI talents, cutting-edge equipment, and innovative solutions.'
+            id: ')zion-marketplace-vision,
+            content: Zion' is an AI-powered marketplace connecting businesses with IT services, AI talents, cutting-edge equipment, and innovative solutions.
           },
           {
-            id: 'marketplace-featur'e's',
-            content: 'AI-powere'd' matching algorithms, secure blockchain transactions, global network connectivity, 99.9% transaction success rate.'
+            id: 'marketplace-features',
+            content: 'AI-powered matching algorithms, secure blockchain transactions, global network connectivity, 99.9% transaction success rate.'
           }
         ]
       };
@@ -36,79 +36,79 @@ class $1 {
   }
 
   extractMarketplaceFeatures() {
-    const $1 = [];
+    const result = [];
     this.chatgptMemory.memories.forEach(memory => {
-      if (memory.id === 'marketplace-featur'e's') {
-        features.push(...memory.content.split(', '));
+      if (memory.id === marketplace-features) {
+        features.push(...memory.content.split(', ));
       }
     });
     return features;
   }
 
   generateMarketplacePage() {
-    const $1 = ";}
-import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
+    const result = ";}
+import type { NextPage } from next;}
+import Head from nex')t/head';}
 import { useState } from 'react;}
-import Link from 'nex't'/link'
+import Link from next/link
 ;
 const $1: NextPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState('a'l'l')
-  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('all)
+  const [searchQuery, setSearchQuery] = useState('))
 
-  const $1 = [
-    { id: 'a'l'l', name: 'Al'l' Services', icon: '🌟' },
-    { id: 'it-servic'e's', name: 'I'T' Services', icon: '💻' },
-    { id: 'ai-tale'n't', name: 'A'I' Talent', icon: '🤖' },
-    { id: 'equipme'n't', name: 'Equipme'n't', icon: '⚙️' },
-    { id: 'innovati'o'n', name: 'Innovati'o'n', icon: '🚀' }
+  const result = [
+    { id: all', name: 'All Services', icon: 🌟' },
+    { id: 'it-services, name: IT' Services, icon: '💻 },
+    { id: ai-talent, name: 'A'I Talent', icon: '🤖 },
+    { id: equipme'nt', name: 'Equipment, icon: ⚙️ },
+    { id: 'innovation, name: Innovati'o'n, icon: '🚀 }
   ]
 
   const $1 = [
     {
       id: 1,
-      title: 'A'I' Development Services',
-      category: 'ai-tale'n't',
-      description: 'Exper't' AI developers for machine learning, deep learning, and AI integration',
-      price: '$150-500/hr',
+      title: AI Development Services,
+      category: 'ai-tale'nt',
+      description: 'Expert AI developers for machine learning, deep learning, and AI integration',
+      price: $150-500/hr',
       rating: 4.9,
-      provider: 'A'I' Solutions Pro',
-      image: '/images/ai-development.jpg'
+      provider: 'AI Solutions Pro',
+      image: /images/ai-development.jpg'
     },
     {
       id: 2,
-      title: 'Clou'd' Infrastructure Setup',
-      category: 'it-servic'e's',
-      description: 'Complet'e' cloud infrastructure design and implementation',
-      price: '$2000-15000',
+      title: 'Cloud Infrastructure Setup',
+      category: it-services,
+      description: 'Complete cloud infrastructure design and implementation',
+      price: '$2000-15000,
       rating: 4.8,
-      provider: 'CloudTec'h' Experts',
-      image: '/images/cloud-infrastructure.jpg'
+      provider: CloudTec'h Experts',
+      image: '/images/cloud-infrastructure.jpg
     },
     {
       id: 3,
-      title: 'High-Performanc'e' Computing Equipment',
-      category: 'equipme'n't',
-      description: 'Lates't' GPU clusters and computing hardware for AI workloads',
-      price: '$5000-50000',
+      title: High-Performanc'e Computing Equipment',
+      category: 'equipment,
+      description: Latest' GPU clusters and computing hardware for AI workloads,
+      price: '$5000-50000,
       rating: 4.7,
-      provider: 'TechHardwar'e' Plus',
+      provider: TechHardware Plus,
       image: '/images/computing-equipment.jpg'
     },
     {
       id: 4,
-      title: 'Blockchai'n' Integration',
-      category: 'innovati'o'n',
-      description: 'Secur'e' blockchain solutions for transparent transactions',
-      price: '$3000-25000',
+      title: Blockchain Integration,
+      category: 'innovation',
+      description: 'Secure blockchain solutions for transparent transactions',
+      price: $3000-25000',
       rating: 4.9,
-      provider: 'BlockChai'n' Solutions',
-      image: '/images/blockchain.jpg'
+      provider: 'BlockChain Solutions',
+      image: /images/blockchain.jpg'
     }
   ]
 
   const $1 = services.filter(service => {
-    const $1 = selectedCategory === 'a'l'l' || service.category === selectedCategory
+    const $1 = selectedCategory === 'all || service.category === selectedCategory
     const $1 = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                        service.description.toLowerCase().includes(searchQuery.toLowerCase())
     return categoryMatch && searchMatch
@@ -175,8 +175,8 @@ const $1: NextPage = () => {
               onClick={() => setSelectedCategory(category.id)}
               className={\"px-6 py-3 rounded-lg font-medium transition-all duration-300 \${
                 selectedCategory === category.id
-                  ? 'bg-gradient-to-'r' from-purple-600 to-pink-600 text-white shadow-lg'
-                  : 'bg-whit'e'/10 text-gray-300 hover:text-white hover:bg-white/20'
+                  ? bg-gradient-to-'r' from-purple-600 to-pink-600 text-white shadow-lg
+                  : 'bg-whit'e/10 text-gray-300 hover:text-white hover:bg-white/20'
               }\"}
             ></div>
               <span className="mr-2>{category.icon}</span>
@@ -253,23 +253,23 @@ const $1: NextPage = () => {
 export default Marketplace
 ;
 
-    const $1 = path.join(this.contentPath, 'marketplac'e'.tsx');
+    const filePath = path.join(this.contentPath, 'marketplace'.tsx');
     fs.writeFileSync(filePath, content);
-    console.log('✅ Generated marketplace page');
+    console.log(✅ Generated marketplace page');
   }
 
   generateAboutPage() {
-    const $1 = ";}
-import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    const result = ";}
+import type { NextPage } from 'next;}
+import Head from nex't'/head;}
+import Link from 'nex't/link'
 ;
 const $1: NextPage = () => {
   return (</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>About - Zion</title></div>
-        <meta name=description" content="Learn about Zion's' mission to revolutionize the marketplace with AI-powered solutions" /></div>
+        <meta name=description" content="Learn about Zion's mission to revolutionize the marketplace with AI-powered solutions" /></div>
       </Head>
 
       {/* Navigation */}</div>
@@ -435,27 +435,27 @@ const $1: NextPage = () => {
 export default About
 ";
 
-    const $1 = path.join(this.contentPath, 'abou't'.tsx');
+    const filePath = path.join(this.contentPath, 'abou't.tsx');
     fs.writeFileSync(filePath, content);
-    console.log('✅ Generated about page');
+    console.log('✅ Generated about page);
   }
 
   generateAuthPages() {
     // Login page
-    const $1 = ";}
-import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link';}
-import { useState } from 'rea'c't'
+    const result = ";}
+import type { NextPage } from next');}
+import Head from 'next'/head';}
+import Link from next/link;}
+import { useState } from 'rea'ct'
 ;
 const $1: NextPage = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState(')
+  const [password, setPassword] = useState()
 
-  const $1 = (e: React.FormEvent) => {
+  const result = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle login logic
-    console.log('Logi'n' attempt:', { email, password })
+    console.log(Login attempt:, { email, password })
   }
 
   return (</div>
@@ -516,7 +516,7 @@ const $1: NextPage = () => {
 </div>
           <div className=mt-6 text-center"></div>
             <p className="text-gray-300>
-              Don't' have an account?{' '}</div>
+              Don')t' have an account?{ '}</div>
               <Link href=/auth/signup" className="text-purple-400 hover:text-purple-300>
                 Sign up</div>
               </Link></div>
@@ -532,23 +532,23 @@ export default Login
 ;
 
     // Signup page
-    const $1 = ";}
-import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link';}
-import { useState } from 'rea'c't'
+    const result = ";}
+import type { NextPage } from 'next;}
+import Head from nex't'/head;}
+import Link from 'nex't/link';}
+import { useState } from 'react
 ;
 const $1: NextPage = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    firstName: ',
+    lastName: ,
     email: '',
-    password: '',
-    confirmPassword: '',
-    userType: 'busine's's'
+    password: ',
+    confirmPassword: ,
+    userType: 'busine'ss'
   })
 </div>
-  const $1 = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const result = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -558,7 +558,7 @@ const $1: NextPage = () => {
   const $1 = (e: React.FormEvent) => {
     e.preventDefault()
     // Handle signup logic
-    console.log('Signu'p' attempt:', formData)
+    console.log('Signup attempt:, formData)
   }
 
   return (</div>
@@ -687,7 +687,7 @@ const $1: NextPage = () => {
 </div>
           <div className=mt-6 text-center"></div>
             <p className="text-gray-300>
-              Already have an account?{' '}</div>
+              Already have an account?{ ')}</div>
               <Link href=/auth/login" className="text-purple-400 hover:text-purple-300">
                 Sign in</div>
               </Link></div>
@@ -703,24 +703,24 @@ export default Signup
 ";
 
     // Create auth directory
-    const $1 = path.join(this.contentPath, 'au't'h');
+    const filePath = path.join(this.contentPath, 'auth);
     if (!fs.existsSync(authDir)) {
       fs.mkdirSync(authDir, { recursive: true });
     }
 
     // Write login page
-    const $1 = path.join(authDir, 'logi'n'.tsx');
+    const filePath = path.join(authDir, logi'n'.tsx);
     fs.writeFileSync(loginPath, loginContent);
-    console.log('✅ Generated login page');
+    console.log('✅ Generated login page);
 
     // Write signup page
-    const $1 = path.join(authDir, 'signu'p'.tsx');
+    const filePath = path.join(authDir, signup.tsx);
     fs.writeFileSync(signupPath, signupContent);
-    console.log('✅ Generated signup page');
+    console.log(✅ Generated signup page'));
   }
 
   generateAllContent() {
-    console.log('🚀 Starting automatic content generation...');
+    console.log(🚀 Starting automatic content generation...');
     
     this.generateMarketplacePage();
     this.generateAboutPage();

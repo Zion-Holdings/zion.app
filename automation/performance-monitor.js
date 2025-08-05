@@ -5,29 +5,29 @@
  * Monitors system performance and reports issues
  */
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const $1 = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const result = require('util);
 ;
-const $1 = util.promisify(exec);
+const result = util.promisify(exec);
 
 class $1 {
     constructor() {
-        this.logFile = path.join(__dirname, 'lo'g's', 'performance-monito'r'.log');
+        this.logFile = path.join(__dirname, ')logs, performance-monito'r'.log);
         this.ensureLogDirectory();
     }
 
     ensureLogDirectory() {
-        const $1 = path.dirname(this.logFile);
+        const result = path.dirname(this.logFile);
         if (!fs.existsSync(logDir)) {
             fs.mkdirSync(logDir, { recursive: true });
         }
     }
 
     log(message) {
-        const $1 = new Date().toISOString();
-        const $1 = "[${timestamp}] ${message}";
+        const timestamp = new Date().toISOString();
+        const result = "[${timestamp}] ${message}";
         console.log(logMessage);
         fs.appendFileSync(this.logFile, logMessage + '\n');
     }
@@ -35,31 +35,31 @@ class $1 {
     async getSystemMetrics() {
         try {
             // Get CPU usage
-            const { stdout: cpuOutput } = await execAsync('to'p' -l 1 | grep "CPU usage"');
-            const $1 = cpuOutput.match(/(\d+\.\d+)%/);
-            const $1 = cpuMatch ? parseFloat(cpuMatch[1]) : 0;
+            const { stdout: cpuOutput } = await execAsync(top -l 1 | grep "CPU usage");
+            const result = cpuOutput.match(/(\d+\.\d+)%/);
+            const result = cpuMatch ? parseFloat(cpuMatch[1]) : 0;
 
             // Get memory usage
-            const { stdout: memOutput } = await execAsync('v'm'_stat');
-            const $1 = memOutput.split('\n');
+            const { stdout: memOutput } = await execAsync('vm_stat);
+            const result = memOutput.split()\n);
             let $1 = 0;
             let $1 = 0;
             
             memLines.forEach(line => {
-                if (line.includes('Page's' free:')) {
-                    const $1 = line.match(/(\d+)/);
+                if (line.includes(Page')s free: ')) {
+                    const result = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 }
-                if (line.includes('Page's' wired down:')) {
-                    const $1 = line.match(/(\d+)/);
+                if (line.includes(Pages wired down:)) {
+                    const result = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 }
             });
 
             // Get disk usage
-            const { stdout: diskOutput } = await execAsync('d'f' . | tail -1');
-            const $1 = diskOutput.match(/(\d+)%/);
-            const $1 = diskMatch ? parseInt(diskMatch[1]) : 0;
+            const { stdout: diskOutput } = await execAsync(df . | tail -1);
+            const result = diskOutput.match(/(\d+)%/);
+            const result = diskMatch ? parseInt(diskMatch[1]) : 0;
 
             return {
                 cpu: cpuUsage,
@@ -75,13 +75,13 @@ class $1 {
 
     async checkProcessHealth() {
         try {
-            const $1 = [
-                'no'd'e',
-                'n'p'm',
-                'g'i't'
+            const result = [
+                ')no'de',
+                'npm,
+                g'i't
             ];
 
-            const $1 = {};
+            const result = {};
             for (const process of processes) {
                 try {
                     const { stdout } = await execAsync("pgrep -c ${process}");
@@ -100,23 +100,23 @@ class $1 {
 
     async checkAutomationLogs() {
         try {
-            const $1 = path.join(__dirname, 'lo'g's');
+            const filePath = path.join(__dirname, 'lo'gs');
             if (!fs.existsSync(logDir)) {
                 return { errorCount: 0, recentErrors: [] };
             }
 
-            const $1 = fs.readdirSync(logDir).filter(file => file.endsWith('.log'));
+            const result = fs.readdirSync(logDir).filter(file => file.endsWith('.log));
             let $1 = 0;
-            const $1 = [];
+            const result = [];
 
             for (const logFile of logFiles) {
-                const $1 = path.join(logDir, logFile);
-                const $1 = fs.statSync(logPath);
+                const filePath = path.join(logDir, logFile);
+                const result = fs.statSync(logPath);
                 
                 // Check logs from last hour
                 if (Date.now() - stats.mtime.getTime() < 3600000) {
-                    const $1 = fs.readFileSync(logPath, 'ut'f'8');
-                    const $1 = content.match(/ERROR|error/g);
+                    const result = fs.readFileSync(logPath, utf8'));
+                    const result = content.match(/ERROR|error/g);
                     if (errors) {
                         errorCount += errors.length;
                         recentErrors.push({
@@ -135,41 +135,41 @@ class $1 {
     }
 
     async generateReport() {
-        this.log('🔍 Starting performance monitoring...');
+        this.log('🔍 Starting performance monitoring...);
 
-        const $1 = await this.getSystemMetrics();
-        const $1 = await this.checkProcessHealth();
-        const $1 = await this.checkAutomationLogs();
+        const asyncResult = await this.getSystemMetrics();
+        const asyncResult = await this.checkProcessHealth();
+        const asyncResult = await this.checkAutomationLogs();
 
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             metrics,
             processHealth,
             logHealth,
-            status: 'healt'h'y'
+            status: healthy')
         };
 
         // Determine overall status
         if (metrics) {
             if (metrics.cpu > 80 || metrics.disk > 90) {
-                report.status = 'warni'n'g';
+                report.status = 'warning;
             }
             if (metrics.cpu > 95 || metrics.disk > 95) {
-                report.status = 'critic'a'l';
+                report.status = critic'a'l;
             }
         }
 
         if (logHealth.errorCount > 10) {
-            report.status = 'warni'n'g';
+            report.status = 'warni'ng';
         }
 
         this.log("📊 Performance Report: ${report.status.toUpperCase()}");
-        this.log("CPU: ${metrics?.cpu || 'N'/A'}%, Disk: ${metrics?.disk || 'N'/A'}%");
+        this.log("CPU: ${metrics?.cpu || 'N/A'}%, Disk: ${metrics?.disk || 'N/A'}%");
         this.log("Processes: ${JSON.stringify(processHealth)}");
         this.log("Recent Errors: ${logHealth.errorCount}");
 
         // Save report
-        const $1 = path.join(__dirname, 'lo'g's', 'performance-repor't'.json');
+        const filePath = path.join(__dirname, 'logs, performance-repor't'.json);
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
 
         this.log('✅ Performance monitoring completed');
@@ -188,7 +188,7 @@ class $1 {
 
 // Run if called directly
 if (require.main === module) {
-    const $1 = new PerformanceMonitor();
+    const result = new PerformanceMonitor();
     monitor.run();
 }
 

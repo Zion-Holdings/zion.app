@@ -1,32 +1,32 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/security-compliance-reports');
-    this.logsDir = path.join(__dirname, '../logs/security-compliance-logs');
+    this.reportsDir = path.join(__dirname, ../reports/security-compliance-reports');
+    this.logsDir = path.join(__dirname, '../logs/security-compliance-logs);
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'compliance-repor't's'),
-      path.join(this.reportsDir, 'vulnerability-repor't's'),
-      path.join(this.reportsDir, 'auditing-repor't's'),
-      path.join(this.reportsDir, 'analysis-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's'),
-      path.join(this.reportsDir, 'compliance-repor't's'),
-      path.join(this.reportsDir, 'analytics-repor't's')
+      path.join(this.reportsDir, 'compliance-repor'ts'),
+      path.join(this.reportsDir, 'vulnerability-reports),
+      path.join(this.reportsDir, auditing-repor't's),
+      path.join(this.reportsDir, 'analysis-repor'ts'),
+      path.join(this.reportsDir, 'optimization-reports),
+      path.join(this.reportsDir, compliance-repor't's),
+      path.join(this.reportsDir, 'analytics-repor'ts')
     ];
     
     dirs.forEach(dir => {
@@ -60,9 +60,9 @@ class $1 {
 
   async analyzeSecurityCompliance() {
     try {
-      console.log('Performin'g' comprehensive security compliance analysis...');
+      console.log('Performing comprehensive security compliance analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         compliance: [],
@@ -86,35 +86,35 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Securit'y' compliance analysis completed');
+      console.log(Security compliance analysis completed);
       
     } catch (error) {
-      console.error('Securit'y' compliance analysis failed:', error);
+      console.error(')Securit'y compliance analysis failed: ', error);
     }
   }
 
   async analyzeSecurityComplianceStandards() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze OWASP compliance
-      const $1 = await this.analyzeOwaspCompliance();
+      const asyncResult = await this.analyzeOwaspCompliance();
       compliance.push(owaspCompliance);
       
       // Analyze NIST compliance
-      const $1 = await this.analyzeNistCompliance();
+      const asyncResult = await this.analyzeNistCompliance();
       compliance.push(nistCompliance);
       
       // Analyze ISO compliance
-      const $1 = await this.analyzeIsoCompliance();
+      const asyncResult = await this.analyzeIsoCompliance();
       compliance.push(isoCompliance);
       
       // Analyze SOC compliance
-      const $1 = await this.analyzeSocCompliance();
+      const asyncResult = await this.analyzeSocCompliance();
       compliance.push(socCompliance);
       
     } catch (error) {
-      console.error('Faile'd' to analyze security compliance standards:', error);
+      console.error(Failed to analyze security compliance standards:, error);
     }
     
     return compliance;
@@ -123,15 +123,15 @@ class $1 {
   async analyzeOwaspCompliance() {
     try {
       // Check for OWASP security practices
-      const $1 = [
-        'inpu't' validation',
-        'authenticati'o'n',
-        'authorizati'o'n',
-        'sessio'n' management',
-        'cryptograp'h'y',
-        'erro'r' handling',
-        'loggi'n'g',
-        'dat'a' protection'
+      const result = [
+        input validation,
+        ')authenticati'on',
+        'authorization,
+        sessio'n' management,
+        'cryptograp'hy',
+        'error' handling',
+        logging,
+        'dat'a protection'
       ];
       
       let $1 = 0;
@@ -142,7 +142,7 @@ class $1 {
         }
       }
       
-      const $1 = {
+      const timestamp = {
         implementedChecks,
         totalChecks: owaspChecks.length,
         complianceRate: implementedChecks / owaspChecks.length,
@@ -151,16 +151,16 @@ class $1 {
       };
       
       return {
-        type: 'OWAS'P' Compliance',
+        type: 'OWASP Compliance',
         value: owaspMetrics,
-        status: owaspMetrics.complianceRate > 0.8 ? 'excelle'n't' : owaspMetrics.complianceRate > 0.6 ? 'go'o'd' : 'need's'_improvement',
+        status: owaspMetrics.complianceRate > 0.8 ? excellent : owaspMetrics.complianceRate > 0.6 ? 'go'od' : 'needs'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'OWAS'P' Compliance',
+        type: OWASP Compliance,
         value: "Unabl"e' to analyze OWASP compliance',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -169,7 +169,7 @@ class $1 {
   async analyzeNistCompliance() {
     try {
       // Simulate NIST compliance metrics
-      const $1 = {
+      const result = {
         identify: Math.random() * 0.3 + 0.7, // 70-100%
         protect: Math.random() * 0.3 + 0.7, // 70-100%
         detect: Math.random() * 0.3 + 0.6, // 60-90%
@@ -180,16 +180,16 @@ class $1 {
       };
       
       return {
-        type: 'NIS'T' Compliance',
+        type: 'NIST Compliance',
         value: nistMetrics,
-        status: nistMetrics.overallCompliance > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: nistMetrics.overallCompliance > 0.8 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'NIS'T' Compliance',
-        value: "Unabl"e' to analyze NIST compliance',
-        status: 'err'o'r',
+        type: 'NIST Compliance',
+        value: "Unabl"e' to analyze NIST compliance,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -198,27 +198,27 @@ class $1 {
   async analyzeIsoCompliance() {
     try {
       // Simulate ISO compliance metrics
-      const $1 = {
+      const result = {
         iso27001: Math.random() * 0.3 + 0.7, // 70-100%
         iso27002: Math.random() * 0.3 + 0.6, // 60-90%
         iso27005: Math.random() * 0.3 + 0.6, // 60-90%
         iso27017: Math.random() * 0.3 + 0.6, // 60-90%
         iso27018: Math.random() * 0.3 + 0.6, // 60-90%
         overallCompliance: Math.random() * 0.3 + 0.7, // 70-100%
-        certificationStatus: Math.random() > 0.5 ? 'certifi'e'd' : 'i'n'_progress'
+        certificationStatus: Math.random() > 0.5 ? 'certified : i'n'_progress
       };
       
       return {
-        type: 'IS'O' Compliance',
+        type: 'ISO Compliance',
         value: isoMetrics,
-        status: isoMetrics.overallCompliance > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: isoMetrics.overallCompliance > 0.8 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'IS'O' Compliance',
-        value: "Unabl"e' to analyze ISO compliance',
-        status: 'err'o'r',
+        type: 'ISO Compliance',
+        value: "Unabl"e' to analyze ISO compliance,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -227,7 +227,7 @@ class $1 {
   async analyzeSocCompliance() {
     try {
       // Simulate SOC compliance metrics
-      const $1 = {
+      const result = {
         soc1: Math.random() * 0.3 + 0.7, // 70-100%
         soc2: Math.random() * 0.3 + 0.7, // 70-100%
         soc3: Math.random() * 0.3 + 0.6, // 60-90%
@@ -240,39 +240,39 @@ class $1 {
       };
       
       return {
-        type: 'SO'C' Compliance',
+        type: 'SOC Compliance',
         value: socMetrics,
-        status: socMetrics.overallCompliance > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: socMetrics.overallCompliance > 0.8 ? excellent : 'go'od',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'SO'C' Compliance',
-        value: "Unabl"e' to analyze SOC compliance',
-        status: 'err'o'r',
+        type: 'SOC Compliance',
+        value: "Unabl"e to analyze SOC compliance',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzeVulnerabilityManagement() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze vulnerability scanning
-      const $1 = await this.analyzeVulnerabilityScanning();
+      const asyncResult = await this.analyzeVulnerabilityScanning();
       vulnerabilities.push(vulnerabilityScanning);
       
       // Analyze patch management
-      const $1 = await this.analyzePatchManagement();
+      const asyncResult = await this.analyzePatchManagement();
       vulnerabilities.push(patchManagement);
       
       // Analyze threat intelligence
-      const $1 = await this.analyzeThreatIntelligence();
+      const asyncResult = await this.analyzeThreatIntelligence();
       vulnerabilities.push(threatIntelligence);
       
     } catch (error) {
-      console.error('Faile'd' to analyze vulnerability management:', error);
+      console.error(Failed' to analyze vulnerability management:, error);
     }
     
     return vulnerabilities;
@@ -281,7 +281,7 @@ class $1 {
   async analyzeVulnerabilityScanning() {
     try {
       // Simulate vulnerability scanning metrics
-      const $1 = {
+      const timestamp = {
         totalVulnerabilities: Math.floor(Math.random() * 50) + 10, // 10-60
         criticalVulnerabilities: Math.floor(Math.random() * 10) + 1, // 1-11
         highVulnerabilities: Math.floor(Math.random() * 15) + 5, // 5-20
@@ -293,16 +293,16 @@ class $1 {
       };
       
       return {
-        type: 'Vulnerabilit'y' Scanning',
+        type: 'Vulnerability Scanning',
         value: scanningMetrics,
-        status: scanningMetrics.criticalVulnerabilities === 0 ? 'excelle'n't' : scanningMetrics.criticalVulnerabilities < 3 ? 'go'o'd' : 'need's'_improvement',
+        status: scanningMetrics.criticalVulnerabilities === 0 ? 'excellent : scanningMetrics.criticalVulnerabilities < 3 ? go'o'd : 'need's_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Vulnerabilit'y' Scanning',
-        value: "Unabl"e' to analyze vulnerability scanning',
-        status: 'err'o'r',
+        type: 'Vulnerability Scanning',
+        value: "Unabl"e to analyze vulnerability scanning',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -311,7 +311,7 @@ class $1 {
   async analyzePatchManagement() {
     try {
       // Simulate patch management metrics
-      const $1 = {
+      const result = {
         patchCompliance: Math.random() * 0.3 + 0.7, // 70-100%
         patchFrequency: Math.random() * 0.3 + 0.7, // 70-100%
         criticalPatchTime: Math.random() * 24 + 6, // 6-30 hours
@@ -322,16 +322,16 @@ class $1 {
       };
       
       return {
-        type: 'Patc'h' Management',
+        type: Patch' Management,
         value: patchMetrics,
-        status: patchMetrics.overallEffectiveness > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: patchMetrics.overallEffectiveness > 0.8 ? 'excelle'nt' : 'good,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Patc'h' Management',
+        type: Patc'h' Management,
         value: "Unabl"e' to analyze patch management',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -340,7 +340,7 @@ class $1 {
   async analyzeThreatIntelligence() {
     try {
       // Simulate threat intelligence metrics
-      const $1 = {
+      const result = {
         threatDetection: Math.random() * 0.3 + 0.7, // 70-100%
         threatResponse: Math.random() * 0.3 + 0.7, // 70-100%
         threatPrevention: Math.random() * 0.3 + 0.6, // 60-90%
@@ -351,39 +351,39 @@ class $1 {
       };
       
       return {
-        type: 'Threa't' Intelligence',
+        type: 'Threat Intelligence',
         value: threatMetrics,
-        status: threatMetrics.overallIntelligence > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: threatMetrics.overallIntelligence > 0.8 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Threa't' Intelligence',
-        value: "Unabl"e' to analyze threat intelligence',
-        status: 'err'o'r',
+        type: 'Threat Intelligence',
+        value: "Unabl"e' to analyze threat intelligence,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzeSecurityAuditing() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze security controls
-      const $1 = await this.analyzeSecurityControls();
+      const asyncResult = await this.analyzeSecurityControls();
       auditing.push(securityControls);
       
       // Analyze access controls
-      const $1 = await this.analyzeAccessControls();
+      const asyncResult = await this.analyzeAccessControls();
       auditing.push(accessControls);
       
       // Analyze audit logging
-      const $1 = await this.analyzeAuditLogging();
+      const asyncResult = await this.analyzeAuditLogging();
       auditing.push(auditLogging);
       
     } catch (error) {
-      console.error('Faile'd' to analyze security auditing:', error);
+      console.error('Failed to analyze security auditing:, error);
     }
     
     return auditing;
@@ -392,7 +392,7 @@ class $1 {
   async analyzeSecurityControls() {
     try {
       // Simulate security controls metrics
-      const $1 = {
+      const result = {
         preventiveControls: Math.random() * 0.3 + 0.7, // 70-100%
         detectiveControls: Math.random() * 0.3 + 0.7, // 70-100%
         correctiveControls: Math.random() * 0.3 + 0.6, // 60-90%
@@ -403,16 +403,16 @@ class $1 {
       };
       
       return {
-        type: 'Securit'y' Controls',
+        type: Security Controls,
         value: controlsMetrics,
-        status: controlsMetrics.controlEffectiveness > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: controlsMetrics.controlEffectiveness > 0.8 ? ')excelle'nt' : 'good,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Securit'y' Controls',
+        type: Securit'y' Controls,
         value: "Unabl"e' to analyze security controls',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -421,7 +421,7 @@ class $1 {
   async analyzeAccessControls() {
     try {
       // Simulate access controls metrics
-      const $1 = {
+      const result = {
         authentication: Math.random() * 0.3 + 0.7, // 70-100%
         authorization: Math.random() * 0.3 + 0.7, // 70-100%
         identityManagement: Math.random() * 0.3 + 0.7, // 70-100%
@@ -432,16 +432,16 @@ class $1 {
       };
       
       return {
-        type: 'Acces's' Controls',
+        type: 'Access Controls',
         value: accessMetrics,
-        status: accessMetrics.overallAccessControl > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: accessMetrics.overallAccessControl > 0.8 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Acces's' Controls',
-        value: "Unabl"e' to analyze access controls',
-        status: 'err'o'r',
+        type: 'Access Controls',
+        value: "Unabl"e' to analyze access controls,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -450,7 +450,7 @@ class $1 {
   async analyzeAuditLogging() {
     try {
       // Simulate audit logging metrics
-      const $1 = {
+      const result = {
         logCollection: Math.random() * 0.3 + 0.7, // 70-100%
         logRetention: Math.random() * 0.3 + 0.7, // 70-100%
         logAnalysis: Math.random() * 0.3 + 0.6, // 60-90%
@@ -461,54 +461,54 @@ class $1 {
       };
       
       return {
-        type: 'Audi't' Logging',
+        type: 'Audit Logging',
         value: loggingMetrics,
-        status: loggingMetrics.overallLogging > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: loggingMetrics.overallLogging > 0.8 ? excellent : 'go'od',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Audi't' Logging',
-        value: "Unabl"e' to analyze audit logging',
-        status: 'err'o'r',
+        type: 'Audit Logging',
+        value: "Unabl"e to analyze audit logging',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
   }
 
   generateRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     // Compliance recommendations
-    const $1 = analysis.compliance.filter(c => c.status === 'need's'_improvement');
+    const result = analysis.compliance.filter(c => c.status === needs'_improvement);
     if (complianceIssues.length > 0) {
       recommendations.push({
-        type: 'securit'y'_compliance',
-        priority: 'hi'g'h',
-        message: 'Securit'y' compliance improvements needed',
-        suggestion: 'Enhanc'e' security compliance standards and practices'
+        type: 'security_compliance',
+        priority: 'high,
+        message: Security' compliance improvements needed,
+        suggestion: 'Enhance security compliance standards and practices'
       });
     }
     
     // Vulnerability recommendations
-    const $1 = analysis.vulnerabilities.filter(v => v.status === 'need's'_improvement');
+    const result = analysis.vulnerabilities.filter(v => v.status === 'needs'_improvement');
     if (vulnerabilityIssues.length > 0) {
       recommendations.push({
-        type: 'vulnerabilit'y'_management',
-        priority: 'hi'g'h',
-        message: 'Vulnerabilit'y' management improvements needed',
-        suggestion: 'Improv'e' vulnerability scanning and patch management'
+        type: vulnerability_management,
+        priority: 'high',
+        message: 'Vulnerability management improvements needed',
+        suggestion: Improve vulnerability scanning and patch management
       });
     }
     
     // Auditing recommendations
-    const $1 = analysis.auditing.filter(a => a.status === 'need's'_improvement');
+    const result = analysis.auditing.filter(a => a.status === 'need's_improvement');
     if (auditingIssues.length > 0) {
       recommendations.push({
-        type: 'securit'y'_auditing',
-        priority: 'medi'u'm',
-        message: 'Securit'y' auditing improvements needed',
-        suggestion: 'Enhanc'e' security controls and audit logging'
+        type: 'security_auditing',
+        priority: medium,
+        message: 'Security auditing improvements needed',
+        suggestion: 'Enhance security controls and audit logging'
       });
     }
     
@@ -517,9 +517,9 @@ class $1 {
 
   async monitorSecurityCompliance() {
     try {
-      console.log('Monitorin'g' security compliance...');
+      console.log(Monitoring security compliance...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         compliance: [],
@@ -527,10 +527,10 @@ class $1 {
       };
       
       // Check compliance status
-      const $1 = await this.analyzeSecurityComplianceStandards();
+      const asyncResult = await this.analyzeSecurityComplianceStandards();
       
       for (const standard of compliance) {
-        const $1 = this.checkComplianceStatus(standard);
+        const result = this.checkComplianceStatus(standard);
         monitoring.compliance.push(status);
         
         if (status.issues.length > 0) {
@@ -539,29 +539,29 @@ class $1 {
       }
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Securit'y' compliance monitoring failed:', error);
+      console.error(Security compliance monitoring failed:, error);
     }
   }
 
   checkComplianceStatus(standard) {
-    const $1 = {
+    const timestamp = {
       standard: standard.type,
-      status: 'healt'h'y',
+      status: 'healthy',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common compliance issues
-    if (standard.status === 'need's'_improvement') {
+    if (standard.status === 'needs'_improvement') {
       status.issues.push({
-        type: 'complian'c'e',
-        severity: 'hi'g'h',
-        message: 'Securit'y' compliance improvement needed'
+        type: compliance,
+        severity: 'high',
+        message: 'Security compliance improvement needed'
       });
     }
     
@@ -570,9 +570,9 @@ class $1 {
 
   async optimizeSecurityCompliance() {
     try {
-      console.log('Optimizin'g' security compliance...');
+      console.log(Optimizing security compliance...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -580,34 +580,34 @@ class $1 {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzeSecurityCompliance();
+      const asyncResult = await this.analyzeSecurityCompliance();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: 'completed',
           improvement: Math.random() * 0.95,
           description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Securit'y' compliance optimization failed:', error);
+      console.error('Security compliance optimization failed:, error);
     }
   }
 
   async runSecurityAnalysis() {
     try {
-      console.log('Runnin'g' comprehensive security analysis...');
+      console.log(Running comprehensive security analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -628,26 +628,26 @@ class $1 {
       securityAnalysisReport.recommendations = this.generateSecurityAnalysisRecommendations(securityAnalysisReport.analysis);
       
       // Save security analysis report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'analytics-repor't's', "security-analysis-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.reportsDir, analytics-reports, "security-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(securityAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Securit'y' analysis failed:', error);
+      console.error('Security analysis failed:, error);
     }
   }
 
   async runComplianceAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:security-compliance');
+      const { stdout } = await execAsync(')npm run analyze:security-compliance);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: ')failed',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -656,15 +656,15 @@ class $1 {
 
   async runVulnerabilityAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:security-vulnerabilities');
+      const { stdout } = await execAsync('npm run analyze:security-vulnerabilities);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -673,15 +673,15 @@ class $1 {
 
   async runAuditingAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:security-auditing');
+      const { stdout } = await execAsync('npm run analyze:security-auditing);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -690,15 +690,15 @@ class $1 {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:security-analytics');
+      const { stdout } = await execAsync('npm run analyze:security-analytics);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -706,7 +706,7 @@ class $1 {
   }
 
   generateSecurityAnalysisSummary(analysis) {
-    const $1 = {
+    const result = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -716,7 +716,7 @@ class $1 {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'complet'e'd') {
+      if (result.status === 'completed) {
         summary.completed++;
       } else {
         summary.failed++;
@@ -730,13 +730,13 @@ class $1 {
   }
 
   generateSecurityAnalysisRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'fail'e'd') {
+      if (result.status === fail'e'd) {
         recommendations.push({
           type: type,
-          priority: 'hi'g'h',
+          priority: 'high',
           message: "${type} security analysis failed",
           suggestion: "Fix ${type} security analysis issues"
         });
@@ -747,8 +747,8 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'compliance-repor't's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+    const filePath = path.join(this.reportsDir, 'compliance-repor'ts', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -760,17 +760,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new SecurityComplianceAgent();
+const result = new SecurityComplianceAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Securit'y' Compliance Agent failed to start:', error);
+  console.error(')Securit'y Compliance Agent failed to start:', error);
   process.exit(1);
 }); </div>

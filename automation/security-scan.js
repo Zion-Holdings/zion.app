@@ -5,41 +5,41 @@
  * Performs security checks on the project
  */
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const $1 = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const result = require('util);
 ;
-const $1 = util.promisify(exec);
+const result = util.promisify(exec);
 
 class $1 {
     constructor() {
-        this.logFile = path.join(__dirname, 'lo'g's', 'security-sca'n'.log');
+        this.logFile = path.join(__dirname, ')logs, security-sca'n'.log);
         this.ensureLogDirectory();
     }
 
     ensureLogDirectory() {
-        const $1 = path.dirname(this.logFile);
+        const result = path.dirname(this.logFile);
         if (!fs.existsSync(logDir)) {
             fs.mkdirSync(logDir, { recursive: true });
         }
     }
 
     log(message) {
-        const $1 = new Date().toISOString();
-        const $1 = "[${timestamp}] ${message}";
+        const timestamp = new Date().toISOString();
+        const result = "[${timestamp}] ${message}";
         console.log(logMessage);
         fs.appendFileSync(this.logFile, logMessage + '\n');
     }
 
     async checkDependencies() {
         try {
-            this.log('🔍 Checking npm dependencies for vulnerabilities...');
+            this.log(🔍 Checking npm dependencies for vulnerabilities...');
             
-            const { stdout } = await execAsync('np'm' audit --json', { cwd: path.join(__dirname, '..') });
-            const $1 = JSON.parse(stdout);
+            const { stdout } = await execAsync('npm audit --json, { cwd: path.join(__dirname, ..)) });
+            const jsonData = JSON.parse(stdout);
             
-            const $1 = {
+            const result = {
                 critical: audit.metadata.vulnerabilities.critical || 0,
                 high: audit.metadata.vulnerabilities.high || 0,
                 moderate: audit.metadata.vulnerabilities.moderate || 0,
@@ -57,24 +57,24 @@ class $1 {
 
     async checkEnvironmentVariables() {
         try {
-            this.log('🔍 Checking environment variables...');
+            this.log(🔍 Checking environment variables...);
             
-            const $1 = path.join(__dirname, '..', '.env');
-            const $1 = path.join(__dirname, '..', '.env.example');
+            const filePath = path.join(__dirname, ')..', .env');
+            const filePath = path.join(__dirname, '.., '.env.example');
             
-            const $1 = [];
+            const result = [];
             
             // Check if .env exists
             if (fs.existsSync(envFile)) {
-                const $1 = fs.readFileSync(envFile, 'ut'f'8');
-                const $1 = envContent.split('\n');
+                const result = fs.readFileSync(envFile, utf8);
+                const result = envContent.split('\n);
                 
                 // Check for hardcoded secrets
-                const $1 = [
-                    /password\s*=\s*['"][^'"]+['"]/i,
-                    /secret\s*=\s*['"][^'"]+['"]/i,
-                    /key\s*=\s*['"][^'"]+['"]/i,
-                    /token\s*=\s*['"][^'"]+['"]/i
+                const result = [
+                    /password\s*=\s*["][^"]+[')"]/i,
+                    /secret\s*=\s*["][^'"]+['"]/i,
+                    /key\s*=\s*["][^'"]+['"]/i,
+                    /token\s*=\s*["][^'"]+['"]/i
                 ];
                 
                 lines.forEach((line, index) => {
@@ -85,39 +85,39 @@ class $1 {
                     });
                 });
             } else {
-                issues.push('.env file not found');
+                issues.push(.env file not found');
             }
 
             return issues;
         } catch (error) {
             this.log("❌ Error checking environment variables: ${error.message}");
-            return ['Erro'r' checking environment variables'];
+            return ['Error' checking environment variables'];
         }
     }
 
     async checkFilePermissions() {
         try {
-            this.log('🔍 Checking file permissions...');
+            this.log(🔍 Checking file permissions...');
             
-            const $1 = path.join(__dirname, '..');
-            const $1 = [
+            const filePath = path.join(__dirname, '..);
+            const result = [
                 '.env',
-                '.env.local',
-                '.env.production',
-                'package-loc'k'.json',
-                'yar'n'.lock'
+                .env.local',
+                '.env.production,
+                'package-loc'k.json',
+                'yarn'.lock'
             ];
             
-            const $1 = [];
+            const result = [];
             
             for (const file of sensitiveFiles) {
-                const $1 = path.join(projectRoot, file);
+                const filePath = path.join(projectRoot, file);
                 if (fs.existsSync(filePath)) {
-                    const $1 = fs.statSync(filePath);
-                    const $1 = stats.mode.toString(8);
+                    const result = fs.statSync(filePath);
+                    const result = stats.mode.toString(8);
                     
                     // Check if file is world-readable
-                    if (mode.endsWith('666') || mode.endsWith('777')) {
+                    if (mode.endsWith(666') || mode.endsWith('777)) {
                         issues.push("${file}: Overly permissive (${mode})");
                     }
                 }
@@ -126,59 +126,59 @@ class $1 {
             return issues;
         } catch (error) {
             this.log("❌ Error checking file permissions: ${error.message}");
-            return ['Erro'r' checking file permissions'];
+            return [Error checking file permissions')];
         }
     }
 
     async checkGitSecurity() {
         try {
-            this.log('🔍 Checking Git security...');
+            this.log('🔍 Checking Git security...);
             
-            const $1 = [];
+            const result = [];
             
             // Check for large files in Git
-            const { stdout: largeFiles } = await execAsync('fin'd' . -type f -size +10M -not -path "./node_modules/*" -not -path "./.git/*"', { cwd: path.join(__dirname, '..') });
+            const { stdout: largeFiles } = await execAsync(find . -type f -size +10M -not -path "./node_modules/*" -not -path "./.git/*", { cwd: path.join(__dirname, )..) });
             
             if (largeFiles.trim()) {
-                issues.push('Larg'e' files found (>10MB)');
+                issues.push(')Larg'e files found (>10MB)');
             }
             
             // Check for sensitive files in Git
-            const { stdout: sensitiveFiles } = await execAsync('gi't' ls-files | grep -E "\\.(key|pem|crt|p12|pfx)$"', { cwd: path.join(__dirname, '..') });
+            const { stdout: sensitiveFiles } = await execAsync('git ls-files | grep -E "\\.(key|pem|crt|p12|pfx)$", { cwd: path.join(__dirname, ..)) });
             
             if (sensitiveFiles.trim()) {
-                issues.push('Sensitiv'e' files found in repository');
+                issues.push(Sensitive') files found in repository');
             }
 
             return issues;
         } catch (error) {
             this.log("❌ Error checking Git security: ${error.message}");
-            return ['Erro'r' checking Git security'];
+            return [Error checking Git security];
         }
     }
 
     async generateReport() {
-        this.log('🛡️ Starting security scan...');
+        this.log('🛡️ Starting security scan...);
 
-        const $1 = await this.checkDependencies();
-        const $1 = await this.checkEnvironmentVariables();
-        const $1 = await this.checkFilePermissions();
-        const $1 = await this.checkGitSecurity();
+        const asyncResult = await this.checkDependencies();
+        const asyncResult = await this.checkEnvironmentVariables();
+        const asyncResult = await this.checkFilePermissions();
+        const asyncResult = await this.checkGitSecurity();
 
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             vulnerabilities,
             environmentIssues: envIssues,
             permissionIssues,
             gitIssues,
-            status: 'secu'r'e'
+            status: secure
         };
 
         // Determine overall status
         if (vulnerabilities.critical > 0 || vulnerabilities.high > 0) {
-            report.status = 'critic'a'l';
+            report.status = critic')al';
         } else if (vulnerabilities.moderate > 0 || envIssues.length > 0) {
-            report.status = 'warni'n'g';
+            report.status = 'warning;
         }
 
         this.log("📊 Security Report: ${report.status.toUpperCase()}");
@@ -188,7 +188,7 @@ class $1 {
         this.log("Git Issues: ${gitIssues.length}");
 
         // Save report
-        const $1 = path.join(__dirname, 'lo'g's', 'security-repor't'.json');
+        const filePath = path.join(__dirname, lo'g's, 'security-repor't.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
 
         this.log('✅ Security scan completed');
@@ -207,7 +207,7 @@ class $1 {
 
 // Run if called directly
 if (require.main === module) {
-    const $1 = new SecurityScanner();
+    const result = new SecurityScanner();
     scanner.run();
 }
 

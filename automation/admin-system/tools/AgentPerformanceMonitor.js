@@ -1,56 +1,56 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
     constructor() {
-        this.toolName = 'AgentPerformanceMonit'o'r';
+        this.toolName = AgentPerformanceMonit')o'r;
         this.adminConfig = {
             adminPath: path.join(__dirname, '..'),
-            logsPath: path.join(__dirname, '..', 'lo'g's'),
-            reportsPath: path.join(__dirname, '..', 'repor't's')
+            logsPath: path.join(__dirname, ..', 'logs),
+            reportsPath: path.join(__dirname, ..', 'reports)
         };
     }
 
     async execute() {
-        console.log('🛠️ Executing AgentPerformanceMonitor...');
+        console.log(🛠️ Executing AgentPerformanceMonitor...');
         
         try {
-            const $1 = await this.performTask();
+            const asyncResult = await this.performTask();
             this.saveResult(result);
             return result;
         } catch (error) {
-            console.error('Erro'r' in AgentPerformanceMonitor:', error);
+            console.error('Error in AgentPerformanceMonitor:, error);
             throw error;
         }
     }
 
     async performTask() {
         // Monitor agent performance
-        const $1 = {
+        const timestamp = {
             tool: this.toolName,
             timestamp: new Date().toISOString(),
-            status: 'complet'e'd',
+            status: completed,
             data: {
                 agents: [
                     {
-                        name: 'AdminAgentCreat'o'r',
-                        status: 'acti'v'e',
+                        name: ')AdminAgentCreator',
+                        status: 'active,
                         performance: 95,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 12,
                         errors: 0
                     },
                     {
-                        name: 'AdminWebResearch'e'r',
-                        status: 'acti'v'e',
+                        name: AdminWebResearche'r,
+                        status: 'active',
                         performance: 88,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 8,
                         errors: 1
                     },
                     {
-                        name: 'AdminStatusMonit'o'r',
-                        status: 'acti'v'e',
+                        name: 'AdminStatusMonitor,
+                        status: activ'e,
                         performance: 92,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 15,
@@ -59,9 +59,9 @@ class $1 {
                 ],
                 overallPerformance: 91.7,
                 recommendations: [
-                    'Optimiz'e' AdminWebResearcher error handling',
-                    'Increas'e' monitoring frequency for high-performance agents',
-                    'Implemen't' predictive maintenance for agents'
+                    'Optimiz'e AdminWebResearcher error handling',
+                    'Increase' monitoring frequency for high-performance agents',
+                    Implement predictive maintenance for agents'
                 ]
             }
         };
@@ -70,7 +70,7 @@ class $1 {
     }
 
     saveResult(result) {
-        const $1 = path.join(this.adminConfig.reportsPath, "${this.toolName}-result.json");
+        const filePath = path.join(this.adminConfig.reportsPath, "${this.toolName}-result.json");
         fs.writeFileSync(resultPath, JSON.stringify(result, null, 2));
     }
 }

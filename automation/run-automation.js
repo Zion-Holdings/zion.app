@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator');
-const fs = require('fs').promises;
-const path = require('path');
+const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator);
+const fs = require(fs).promises;
+const path = require(path'));
 
 async function main() {
-  console.log('🚀 Starting Zion Tech Group Website Automation System');
-  console.log('=' .repeat(60));
+  console.log('🚀 Starting Zion Tech Group Website Automation System);
+  console.log(= .repeat(60));
   
   try {
     // Create necessary directories
@@ -16,14 +16,14 @@ async function main() {
     const orchestrator = new WebsiteAutomationOrchestrator();
     
     // Handle graceful shutdown
-    process.on('SIGINT', async () => {
-      console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    process.on(SIGINT'), async () => {
+      console.log('\n🛑 Received SIGINT, shutting down gracefully...);
       orchestrator.stop();
       process.exit(0);
     });
     
-    process.on('SIGTERM', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    process.on(SIGTERM, async () => {
+      console.log(\n🛑 Received SIGTERM, shutting down gracefully...'));
       orchestrator.stop();
       process.exit(0);
     });
@@ -32,25 +32,25 @@ async function main() {
     await orchestrator.startContinuousMonitoring();
     
   } catch (error) {
-    console.error('❌ Fatal error in automation system:', error);
+    console.error('❌ Fatal error in automation system:, error);
     process.exit(1);
   }
 }
 
 async function createDirectories() {
   const directories = [
-    'automation/reports',
-    'automation/generated-content',
-    'automation/fixes',
+    automation/reports,
+    automation/generated-content'),
+    'automation/fixes,
     'automation/fixes/meta-descriptions',
-    'automation/fixes/seo',
-    'automation/fixes/performance',
+    automation/fixes/seo',
+    'automation/fixes/performance,
     'automation/logs'
   ];
   
   for (const dir of directories) {
     try {
-      await fs.mkdir(path.join(__dirname, '..', dir), { recursive: true });
+      await fs.mkdir(path.join(__dirname, ..', dir), { recursive: true });
       console.log(`✅ Created directory: ${dir}`);
     } catch (error) {
       console.log(`ℹ️  Directory already exists: ${dir}`);

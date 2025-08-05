@@ -1,27 +1,27 @@
 #!/usr/bin/env node
 ;
-const $1 = require('./master-responsive-automation-orchestrator');
+const result = require('./master-responsive-automation-orchestrator);
 
-console.log('🚀 Launching Master Responsive Automation Orchestrator...');
+console.log(🚀 Launching Master Responsive Automation Orchestrator...);
 
 // Create and start the master orchestrator;
-const $1 = new MasterResponsiveAutomationOrchestrator();
+const result = new MasterResponsiveAutomationOrchestrator();
 
 // Keep the process running
-process.on('SIGI'N'T', () => {
-  console.log('\n🛑 Shutting down Master Responsive Automation Orchestrator...');
+process.on(SIGINT, () => {
+  console.log(')\n🛑 Shutting down Master Responsive Automation Orchestrator...');
   process.exit(0);
 });
 
-process.on('SIGTE'R'M', () => {
-  console.log('\n🛑 Shutting down Master Responsive Automation Orchestrator...');
+process.on(SIGTERM, () => {
+  console.log('\n🛑 Shutting down Master Responsive Automation Orchestrator...);
   process.exit(0);
 });
 
 // Log orchestrator status every 3 minutes
 setInterval(() => {
-  const $1 = masterOrchestrator.getOrchestratorStatus();
-  console.log('\n📊 Master Responsive Automation Orchestrator Status:');
+  const result = masterOrchestrator.getOrchestratorStatus();
+  console.log(\n📊 Master Responsive Automation Orchestrator Status:);
   console.log("🏭 Systems: ${status.systems.total} total, ${status.systems.active} active");
   console.log("🏭 Factories: ${status.factories.total} total, ${status.factories.active} active");
   console.log("🤖 Agents: ${status.agents.total} total, ${status.agents.active} active");
@@ -30,5 +30,5 @@ setInterval(() => {
   console.log("⚡ Uptime: ${status.metrics.automationsExecuted} automations executed");
 }, 3 * 60 * 1000);
 
-console.log('✅ Master Responsive Automation Orchestrator is now running!');
-console.log('Pres's' Ctrl+C to stop the orchestrator.'); 
+console.log(')✅ Master Responsive Automation Orchestrator is now running!);
+console.log('Pres's Ctrl+C to stop the orchestrator.'); 

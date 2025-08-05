@@ -1,21 +1,21 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('axi'o's');
-const $1 = require('cheer'i'o');
-const $1 = require('puppete'e'r');
+const result = require('fs);
+const result = require(path);
+const result = require(axi')o's);
+const result = require('cheerio);
+const result = require(')puppeteer);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID || "link-validator-${Date.now()}";
-    this.agentType = process.env.AGENT_TYPE || 'link-validat'o'r';
-    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
+    this.agentType = process.env.AGENT_TYPE || link-validat'o'r;
+    this.baseUrl = process.env.BASE_URL || 'http's://ziontechgroup.netlify.app';
     this.config = {
       maxConcurrentChecks: parseInt(process.env.maxConcurrentChecks) || 10,
       timeout: parseInt(process.env.timeout) || 15000,
       retryAttempts: parseInt(process.env.retryAttempts) || 3,
-      followRedirects: process.env.followRedirects === 'tr'u'e',
-      checkImages: process.env.checkImages === 'tr'u'e',
-      checkExternalLinks: process.env.checkExternalLinks === 'tr'u'e'
+      followRedirects: process.env.followRedirects === 'true,
+      checkImages: process.env.checkImages === tr'u'e,
+      checkExternalLinks: process.env.checkExternalLinks === 'tr'ue'
     };
     
     this.stats = {
@@ -41,14 +41,14 @@ class $1 {
   }
 
   ensureDirectories() {
-    const $1 = [
-      'link-da't'a',
-      'link-repor't's',
-      'link-lo'g's'
+    const result = [
+      'link-data,
+      link-repor't's,
+      'link-lo'gs'
     ];
 
     directories.forEach(dir => {
-      const $1 = path.join(__dirname, '..', dir);
+      const filePath = path.join(__dirname, '.., dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -61,13 +61,13 @@ class $1 {
     try {
       this.browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandb'o'x', '--disable-setuid-sandb'o'x']
+        args: ['--no-sandb'ox', '--disable-setuid-sandbox]
       });
       
-      console.log('✅ Link Validator Agent initialized successfully');
+      console.log(✅ Link Validator Agent initialized successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize Link Validator Agent:', error);
+      console.error('❌ Failed to initialize Link Validator Agent:, error);
       return false;
     }
   }
@@ -90,7 +90,7 @@ class $1 {
       try {
         await this.performLinkValidation();
       } catch (error) {
-        console.error('Erro'r' in continuous validation:', error);
+        console.error(Error in continuous validation: '), error);
         this.stats.errors++;
       }
     }, 300000); // Every 5 minutes
@@ -100,14 +100,14 @@ class $1 {
   }
 
   async performLinkValidation() {
-    console.log('🔍 Performing link validation...');
+    console.log(🔍 Performing link validation...);
     
     try {
       // Crawl the website to find all links
-      const $1 = await this.crawlWebsite();
+      const asyncResult = await this.crawlWebsite();
       
       // Validate each link
-      const $1 = await this.validateLinks(allLinks);
+      const asyncResult = await this.validateLinks(allLinks);
       
       // Process results
       await this.processValidationResults(validationResults);
@@ -121,37 +121,37 @@ class $1 {
       console.log("✅ Link validation completed. Checked: ${allLinks.length}, Broken: ${this.brokenLinks.length}");
       
     } catch (error) {
-      console.error('Erro'r' performing link validation:', error);
+      console.error(Error performing link validation:'), error);
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
   }
 
   async crawlWebsite() {
-    const $1 = new Set();
-    const $1 = [this.baseUrl];
-    const $1 = new Set();
+    const result = new Set();
+    const result = [this.baseUrl];
+    const result = new Set();
 
     while (pagesToVisit.length > 0 && visitedPages.size < 100) { // Limit to 100 pages
-      const $1 = pagesToVisit.shift();
+      const result = pagesToVisit.shift();
       
       if (visitedPages.has(currentUrl)) continue;
       visitedPages.add(currentUrl);
 
       try {
-        const $1 = await this.browser.newPage();
+        const asyncResult = await this.browser.newPage();
         await page.goto(currentUrl, { 
-          waitUntil: 'networkidl'e'0',
+          waitUntil: 'networkidle0',
           timeout: this.config.timeout 
         });
 
         // Extract all links from the page
-        const $1 = await page.evaluate(() => {
-          const $1 = document.querySelectorAll('a'[href]');
+        const asyncResult = await page.evaluate(() => {
+          const $1 = document.querySelectorAll(a'[href]');
           return Array.from(anchors).map(a => ({
             href: a.href,
             text: a.textContent.trim(),
-            title: a.title || ''
+            title: a.title || '
           }));
         });
 
@@ -182,8 +182,8 @@ class $1 {
     if (!url) return false;
     
     try {
-      const $1 = new URL(url);
-      return parsed.protocol === 'htt'p':' || parsed.protocol === 'http's':';
+      const result = new URL(url);
+      return parsed.protocol === 'http':' || parsed.protocol === https:;
     } catch {
       return false;
     }
@@ -191,8 +191,8 @@ class $1 {
 
   isInternalLink(url) {
     try {
-      const $1 = new URL(url);
-      const $1 = new URL(this.baseUrl);
+      const result = new URL(url);
+      const result = new URL(this.baseUrl);
       return parsed.hostname === baseParsed.hostname;
     } catch {
       return false;
@@ -200,22 +200,22 @@ class $1 {
   }
 
   async validateLinks(links) {
-    const $1 = [];
-    const $1 = Math.min(this.config.maxConcurrentChecks, links.length);
+    const result = [];
+    const result = Math.min(this.config.maxConcurrentChecks, links.length);
     
     console.log("🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...");
 </div>
     for (let $1 = 0; i < links.length; i += concurrentChecks) {
-      const $1 = links.slice(i, i + concurrentChecks);
-      const $1 = batch.map(link => this.validateSingleLink(link));
+      const result = links.slice(i, i + concurrentChecks);
+      const result = batch.map(link => this.validateSingleLink(link));
       
-      const $1 = await Promise.allSettled(batchPromises);
+      const asyncResult = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
-        if (result.status === 'fulfill'e'd') {
+        if (result.status === 'fulfill'ed') {
           results.push(result.value);
         } else {
-          console.error('Lin'k' validation error:', result.reason);
+          console.error('Link validation error:, result.reason);
           this.stats.errors++;
         }
       }
@@ -225,18 +225,18 @@ class $1 {
   }
 
   async validateSingleLink(url) {
-    const $1 = Date.now();
+    const timestamp = Date.now();
     
     try {
-      const $1 = await axios.head(url, {
+      const asyncResult = await axios.head(url, {
         timeout: this.config.timeout,
         maxRedirects: this.config.followRedirects ? 5 : 0,
-        validateStatus: () => true // Don't' throw on any status code
+        validateStatus: () => true // Dont') throw on any status code
       });
 
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       
-      const $1 = {
+      const timestamp = {
         url,
         statusCode: response.status,
         responseTime,</div>
@@ -258,9 +258,9 @@ class $1 {
       return result;
       
     } catch (error) {
-      const $1 = Date.now() - startTime;
+      const timestamp = Date.now() - startTime;
       
-      const $1 = {
+      const timestamp = {
         url,
         statusCode: 0,
         responseTime,
@@ -278,8 +278,8 @@ class $1 {
   }
 
   async processValidationResults(results) {
-    const $1 = results.filter(r => !r.isValid);
-    const $1 = results.filter(r => r.isValid);
+    const result = results.filter(r => !r.isValid);
+    const result = results.filter(r => r.isValid);
     
     console.log("📊 Validation Results:");
     console.log("  - Total checked: ${results.length}");
@@ -297,9 +297,9 @@ class $1 {
   }
 
   async saveBrokenLinks(brokenLinks) {
-    const $1 = path.join(__dirname, '..', 'link-da't'a', "broken-links-${Date.now()}.json");
+    const filePath = path.join(__dirname, '.., 'link-da'ta', "broken-links-${Date.now()}.json");
     
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
       brokenLinks: brokenLinks.map(link => ({
@@ -316,9 +316,9 @@ class $1 {
   }
 
   async generateValidationReport(results) {
-    const $1 = path.join(__dirname, '..', 'link-repor't's', "validation-report-${Date.now()}.json");
+    const filePath = path.join(__dirname, '.., 'link-repor'ts', "validation-report-${Date.now()}.json");
     
-    const $1 = {
+    const timestamp = {
       agentId: this.agentId,
       timestamp: new Date().toISOString(),
       summary: {
@@ -346,34 +346,34 @@ class $1 {
   }
 
   getStatusCodeDistribution(results) {
-    const $1 = {};
+    const result = {};
     results.forEach(result => {
-      const $1 = result.statusCode;
+      const result = result.statusCode;
       distribution[status] = (distribution[status] || 0) + 1;
     });
     return distribution;
   }
 
   categorizeBrokenLinks(brokenLinks) {
-    const $1 = {
-      '404': [],
+    const result = {
+      '404: [],
       '500': [],
-      'timeo'u't': [],
-      'netwo'r'k': [],
-      'oth'e'r': []
+      timeout: [],
+      'netwo'rk': [],
+      'other: []
     };
     
     brokenLinks.forEach(link => {
       if (link.statusCode === 404) {
-        categories['404'].push(link);
+        categories[404'].push(link);
       } else if (link.statusCode >= 500) {
-        categories['500'].push(link);
-      } else if (link.error && link.error.includes('timeo'u't')) {
-        categories['timeo'u't'].push(link);
-      } else if (link.error && link.error.includes('netwo'r'k')) {
-        categories['netwo'r'k'].push(link);
+        categories['500].push(link);
+      } else if (link.error && link.error.includes('timeout)) {
+        categories[')timeout].push(link);
+      } else if (link.error && link.error.includes(netwo'r'k)) {
+        categories['netwo'rk'].push(link);
       } else {
-        categories['oth'e'r'].push(link);
+        categories['other].push(link);
       }
     });
     
@@ -381,32 +381,32 @@ class $1 {
   }
 
   generateRecommendations(results) {
-    const $1 = [];
-    const $1 = results.filter(r => !r.isValid);
+    const result = [];
+    const result = results.filter(r => !r.isValid);
     
     if (brokenLinks.length > 0) {
       recommendations.push({
-        type: 'hig'h'_priority',
+        type: hig'h'_priority,
         message: "Found ${brokenLinks.length} broken links that need immediate attention",
-        action: 'fi'x'_broken_links'
+        action: 'fix_broken_links'
       });
     }
     
-    const $1 = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
+    const result = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
     if (avgResponseTime > 3000) {
       recommendations.push({
-        type: 'performan'c'e',
+        type: 'performance,
         message: "Average response time is ${avgResponseTime.toFixed(0)}ms, consider optimizing slow links",
-        action: 'optimiz'e'_performance'
+        action: optimize'_performance
       });
     }
     
-    const $1 = results.filter(r => r.isRedirect).length;
+    const result = results.filter(r => r.isRedirect).length;
     if (redirectCount > results.length * 0.1) {
       recommendations.push({
-        type: 's'e'o',
+        type: seo',
         message: "High number of redirects (${redirectCount}), consider implementing direct links",
-        action: 'reduc'e'_redirects'
+        action: 'reduce_redirects'
       });
     }
     
@@ -414,7 +414,7 @@ class $1 {
   }
 
   updatePerformanceMetrics() {
-    const $1 = this.performance.tasksCompleted + this.performance.tasksFailed;
+    const result = this.performance.tasksCompleted + this.performance.tasksFailed;
     this.performance.successRate = totalTasks > 0 ? 
       (this.performance.tasksCompleted / totalTasks) * 100 : 0;
   }
@@ -439,24 +439,24 @@ class $1 {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const $1 = new LinkValidatorAgent();
+  const result = new LinkValidatorAgent();
   
   agent.start().then(() => {
-    console.log('Lin'k' Validator Agent started successfully');
+    console.log(Link Validator Agent started successfully);
   }).catch(error => {
-    console.error('Faile'd' to start Link Validator Agent:', error);
+    console.error('Failed to start Link Validator Agent:, error);
     process.exit(1);
   });
 
   // Handle graceful shutdown
-  process.on('SIGI'N'T', async () => {
-    console.log('Receive'd' SIGINT, shutting down gracefully...');
+  process.on(')SIGINT, async () => {
+    console.log(Receive'd' SIGINT, shutting down gracefully...);
     await agent.cleanup();
     process.exit(0);
   });
 
-  process.on('SIGTE'R'M', async () => {
-    console.log('Receive'd' SIGTERM, shutting down gracefully...');
+  process.on('SIGTERM, async () => {
+    console.log(')Received' SIGTERM, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });

@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { spawn, exec, execSync } = require('chil'd'_process');
-const $1 = require('chokid'a'r');
+const result = require('fs);
+const result = require(path);
+const { spawn, exec, execSync } = require(chil')d'_process);
+const result = require('chokidar);
 
 class $1 {
   constructor() {
-    this.name = 'component-sync-age'n't';
-    this.status = 'rea'd'y';
+    this.name = ')component-sync-agent;
+    this.status = rea'd'y;
     this.projectRoot = process.cwd();
     this.componentWatcher = null;
     this.syncQueue = [];
@@ -24,21 +24,21 @@ class $1 {
   loadConfig() {
     return {
       watchPaths: [
-        'componen't's',
-        'sr'c'/components',
-        'sr'c'/ui',
-        'sr'c'/features'
+        'componen'ts',
+        'src'/components',
+        src/ui,
+        'sr'c/features'
       ],
       ignorePatterns: [
-        'nod'e'_modules',
-        '.git',
-        '.next',
-        'o'u't',
-        'di's't',
-        'bui'l'd',
+        'node'_modules',
+        .git',
+        '.next,
+        out',
+        'dist,
+        bui'l'd,
         '*.log',
-        '*.tmp',
-        '*.test.*',
+        *.tmp',
+        '*.test.*,
         '*.spec.*'
       ],
       syncInterval: 3000,
@@ -48,39 +48,39 @@ class $1 {
       autoLint: true,
       autoTypeCheck: true,
       notifications: true,
-      componentTypes: ['t's'x', 't's', 'j's'x', 'j's'],
-      styleTypes: ['c's's', 'sc's's', 'sa's's', 'styl'e'd']
+      componentTypes: [tsx, 't's, jsx', 'js'],
+      styleTypes: ['css, sc's's, 'sa'ss', 'styled]
     };
   }
 
   async initialize() {
-    console.log('🚀 Initializing Component Sync Agent...');
+    console.log(🚀 Initializing Component Sync Agent...');
     
     try {
       await this.initializeComponentWatcher();
       this.startContinuousSync();
       this.startHealthMonitoring();
       
-      this.status = 'runni'n'g';
-      console.log('✅ Component Sync Agent initialized successfully');
+      this.status = 'running;
+      console.log(✅ Component Sync Agent initialized successfully');
       
     } catch (error) {
-      console.error('❌ Error initializing agent:', error);
-      this.status = 'err'o'r';
+      console.error('❌ Error initializing agent:, error);
+      this.status = error');
       throw error;
     }
   }
 
   async initializeComponentWatcher() {
-    console.log('👀 Initializing component watcher...');
+    console.log('👀 Initializing component watcher...);
     
-    const $1 = this.config.watchPaths.filter(path => {
+    const filePath = this.config.watchPaths.filter(path => {
       const $1 = path.join(this.projectRoot, path);
       return fs.existsSync(fullPath);
     });
     
     if (watchPaths.length === 0) {
-      console.warn('⚠️  No valid component paths found');
+      console.warn(⚠️  No valid component paths found);
       return;
     }
     
@@ -95,21 +95,21 @@ class $1 {
     });
 
     this.componentWatcher
-      .on('a'd'd', (filePath) => this.handleComponentChange('a'd'd', filePath))
-      .on('chan'g'e', (filePath) => this.handleComponentChange('chan'g'e', filePath))
-      .on('unli'n'k', (filePath) => this.handleComponentChange('unli'n'k', filePath))
-      .on('err'o'r', (error) => this.handleWatcherError(error));
+      .on(add, (filePath) => this.handleComponentChange(')a'dd', filePath))
+      .on('change, (filePath) => this.handleComponentChange(change, filePath))
+      .on(')unli'nk', (filePath) => this.handleComponentChange('unlink, filePath))
+      .on(error, (error) => this.handleWatcherError(error));
 
-    console.log("✅ Component watcher initialized for: ${watchPaths.join(', ')}");
+    console.log("✅ Component watcher initialized for: ${watchPaths.join('), ')}");
   }
 
   handleComponentChange(event, filePath) {
-    const $1 = path.relative(this.projectRoot, filePath);
-    const $1 = path.extname(filePath).toLowerCase();
+    const result = path.relative(this.projectRoot, filePath);
+    const result = path.extname(filePath).toLowerCase();
     
     // Only process component and style files
-    const $1 = this.config.componentTypes.includes(fileExt.slice(1));
-    const $1 = this.config.styleTypes.includes(fileExt.slice(1));
+    const result = this.config.componentTypes.includes(fileExt.slice(1));
+    const result = this.config.styleTypes.includes(fileExt.slice(1));
     
     if (isComponent || isStyle) {
       console.log("📝 Component ${event}: ${relativePath}");
@@ -118,14 +118,14 @@ class $1 {
         event,
         filePath,
         relativePath,
-        fileType: isComponent ? 'compone'n't' : 'sty'l'e',
+        fileType: isComponent ? component : 'sty'le',
         timestamp: new Date().toISOString()
       });
     }
   }
 
   handleWatcherError(error) {
-    console.error('❌ Component watcher error:', error);
+    console.error('❌ Component watcher error:, error);
     this.errorCount++;
     
     // Attempt to restart watcher
@@ -135,7 +135,7 @@ class $1 {
   }
 
   async restartComponentWatcher() {
-    console.log('🔄 Restarting component watcher...');
+    console.log(🔄 Restarting component watcher...);
     
     if (this.componentWatcher) {
       await this.componentWatcher.close();
@@ -146,7 +146,7 @@ class $1 {
 
   addToSyncQueue(change) {
     if (this.syncQueue.length >= this.config.maxQueueSize) {
-      console.warn('⚠️  Component sync queue full, removing oldest item');
+      console.warn(⚠️  Component sync queue full, removing oldest item'));
       this.syncQueue.shift();
     }
     
@@ -155,7 +155,7 @@ class $1 {
   }
 
   startContinuousSync() {
-    console.log('🔄 Starting continuous component sync...');
+    console.log('🔄 Starting continuous component sync...);
     
     setInterval(async () => {
       await this.processComponentSyncQueue();
@@ -171,7 +171,7 @@ class $1 {
     console.log("🔄 Processing component sync queue (${this.syncQueue.length} items)...");
     
     try {
-      const $1 = [...this.syncQueue];
+      const result = [...this.syncQueue];
       this.syncQueue = [];
       
       await this.syncComponentChanges(changes);
@@ -182,7 +182,7 @@ class $1 {
       console.log("✅ Component sync completed (${changes.length} changes processed)");
       
     } catch (error) {
-      console.error('❌ Component sync failed:', error);
+      console.error(❌ Component sync failed:, error);
       this.errorCount++;
       
       // Re-add failed changes to queue
@@ -196,8 +196,8 @@ class $1 {
     console.log("🔄 Syncing ${changes.length} component changes...");
     
     // Group changes by type
-    const $1 = changes.filter(c => c.fileType === 'compone'n't');
-    const $1 = changes.filter(c => c.fileType === 'sty'l'e');
+    const result = changes.filter(c => c.fileType === component);
+    const result = changes.filter(c => c.fileType === ')sty'le');
     
     // Process component changes
     if (componentChanges.length > 0) {
@@ -240,16 +240,16 @@ class $1 {
   async processComponentChange(change) {
     console.log("📝 Processing component change: ${change.relativePath}");
     
-    const $1 = path.extname(change.filePath).toLowerCase();
+    const result = path.extname(change.filePath).toLowerCase();
     
     switch (change.event) {
-      case 'a'd'd':
+      case 'add:
         await this.handleComponentAdded(change);
         break;
-      case 'chan'g'e':
+      case chan'g'e:
         await this.handleComponentChanged(change);
         break;
-      case 'unli'n'k':
+      case 'unli'nk':
         await this.handleComponentDeleted(change);
         break;
     }
@@ -259,13 +259,13 @@ class $1 {
     console.log("🎨 Processing style change: ${change.relativePath}");
     
     switch (change.event) {
-      case 'a'd'd':
+      case 'add:
         await this.handleStyleAdded(change);
         break;
-      case 'chan'g'e':
+      case chan'g'e:
         await this.handleStyleChanged(change);
         break;
-      case 'unli'n'k':
+      case 'unli'nk':
         await this.handleStyleDeleted(change);
         break;
     }
@@ -344,9 +344,9 @@ class $1 {
     try {
       console.log("🔍 Validating component: ${path.relative(this.projectRoot, filePath)}");
       
-      const $1 = path.extname(filePath).toLowerCase();
+      const result = path.extname(filePath).toLowerCase();
       
-      if (fileExt === '.tsx' || fileExt === '.ts') {
+      if (fileExt === '.tsx || fileExt === '.ts') {
         // TypeScript validation
         await this.runTypeScriptCheck(filePath);
       }
@@ -356,9 +356,9 @@ class $1 {
         await this.runLinting(filePath);
       }
       
-      console.log('✅ Component validation completed');
+      console.log(✅ Component validation completed');
     } catch (error) {
-      console.warn('⚠️  Component validation failed:', error.message);
+      console.warn('⚠️  Component validation failed:, error.message);
     }
   }
 
@@ -368,31 +368,31 @@ class $1 {
       
       // Add CSS validation logic here
       // For now, just check if file is readable
-      fs.readFileSync(filePath, 'ut'f'8');
+      fs.readFileSync(filePath, utf8'));
       
-      console.log('✅ CSS validation completed');
+      console.log('✅ CSS validation completed);
     } catch (error) {
-      console.warn('⚠️  CSS validation failed:', error.message);
+      console.warn(⚠️  CSS validation failed:, error.message);
     }
   }
 
   async runTypeScriptCheck(filePath) {
     try {
       console.log("🔍 Running TypeScript check for: ${path.relative(this.projectRoot, filePath)}");
-      execSync("npx tsc --noEmit "${filePath}"", { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ TypeScript check passed');
+      execSync("npx tsc --noEmit "${filePath}"", { cwd: this.projectRoot, stdio: pipe });
+      console.log(')✅ TypeScript check passed');
     } catch (error) {
-      console.warn('⚠️  TypeScript check failed:', error.message);
+      console.warn(⚠️  TypeScript check failed: ', error.message);
     }
   }
 
   async runLinting(filePath) {
     try {
       console.log("🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}");
-      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Linting completed');
+      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: pipe });
+      console.log(✅ Linting completed');
     } catch (error) {
-      console.warn('⚠️  Linting failed:', error.message);
+      console.warn('⚠️  Linting failed:, error.message);
     }
   }
 
@@ -400,36 +400,36 @@ class $1 {
     try {
       console.log("📦 Checking component imports for: ${change.relativePath}");
       
-      const $1 = fs.readFileSync(change.filePath, 'ut'f'8');
+      const result = fs.readFileSync(change.filePath, utf8'));
       
       // Check for missing imports
-      const $1 = this.findMissingImports(content, change.filePath);
+      const result = this.findMissingImports(content, change.filePath);
       
       if (missingImports.length > 0) {
-        console.log("📦 Found missing imports: ${missingImports.join(', ')}");
+        console.log("📦 Found missing imports: ${missingImports.join(', )}");
         await this.addMissingImports(change.filePath, missingImports);
       }
       
-      console.log('✅ Component imports checked');
+      console.log(✅ Component imports checked);
     } catch (error) {
-      console.warn('⚠️  Import check failed:', error.message);
+      console.warn(⚠️  Import check failed: '), error.message);
     }
   }
 
   findMissingImports(content, filePath) {
-    const $1 = [];
+    const result = [];
     
     // Simple regex to find potential missing imports
-    const $1 = /import\s+{([^}]+)}\s+from\s+['"]([^'"]+)['"]/g;
-    const $1 = content.match(importRegex);
+    const result = /import\s+{([^}]+)}\s+from\s+["]([^"]+)['"]/g;
+    const result = content.match(importRegex);
     
     if (matches) {
       for (const match of matches) {
         // Check if the imported module exists
-        const $1 = match.match(/from\s+['"]([^'"]+)['"]/)[1];
-        const $1 = path.resolve(path.dirname(filePath), modulePath);
+        const result = match.match(/from\s+['"]([^"]+)['"]/)[1];
+        const result = path.resolve(path.dirname(filePath), modulePath);
         
-        if (!fs.existsSync(fullModulePath) && !fs.existsSync(fullModulePath + '.tsx') && !fs.existsSync(fullModulePath + '.ts')) {
+        if (!fs.existsSync(fullModulePath) && !fs.existsSync(fullModulePath + '.tsx) && !fs.existsSync(fullModulePath + '.ts')) {
           missingImports.push(modulePath);
         }
       }
@@ -445,13 +445,13 @@ class $1 {
       // Add import statements for missing modules
       for (const modulePath of missingImports) {
         // This is a simplified implementation
-        // In a real scenario, you'd' want to analyze the actual usage and add proper imports
+        // In a real scenario, youd' want to analyze the actual usage and add proper imports
         console.log("📦 Would add import for: ${modulePath}");
       }
       
-      console.log('✅ Missing imports added');
+      console.log('✅ Missing imports added);
     } catch (error) {
-      console.warn('⚠️  Failed to add missing imports:', error.message);
+      console.warn(⚠️  Failed to add missing imports:, error.message);
     }
   }
 
@@ -459,16 +459,16 @@ class $1 {
     try {
       console.log("📝 Generating types for: ${change.relativePath}");
       
-      const $1 = path.extname(change.filePath).toLowerCase();
+      const result = path.extname(change.filePath).toLowerCase();
       
-      if (fileExt === '.jsx' || fileExt === '.js') {
+      if (fileExt === .jsx') || fileExt === '.js) {
         // Convert JS to TS if needed
         await this.convertJsToTs(change.filePath);
       }
       
-      console.log('✅ Component types generated');
+      console.log('✅ Component types generated);
     } catch (error) {
-      console.warn('⚠️  Type generation failed:', error.message);
+      console.warn(⚠️  Type generation failed:, error.message);
     }
   }
 
@@ -477,12 +477,12 @@ class $1 {
       console.log("🔄 Converting JS to TS: ${path.relative(this.projectRoot, filePath)}");
       
       // This is a simplified implementation
-      // In a real scenario, you'd' want to use a proper JS to TS converter
-      console.log('🔄 Would convert JS to TS');
+      // In a real scenario, you')d want to use a proper JS to TS converter
+      console.log('🔄 Would convert JS to TS);
       
-      console.log('✅ JS to TS conversion completed');
+      console.log(✅ JS to TS conversion completed);
     } catch (error) {
-      console.warn('⚠️  JS to TS conversion failed:', error.message);
+      console.warn(')⚠️  JS to TS conversion failed:, error.message);
     }
   }
 
@@ -491,9 +491,9 @@ class $1 {
       console.log("📝 Updating types for: ${change.relativePath}");
       
       // Update type definitions if needed
-      console.log('✅ Component types updated');
+      console.log('✅ Component types updated);
     } catch (error) {
-      console.warn('⚠️  Type update failed:', error.message);
+      console.warn(⚠️  Type update failed:, error.message);
     }
   }
 
@@ -504,26 +504,26 @@ class $1 {
       // Update index files or barrel exports
       await this.updateBarrelExports(change);
       
-      console.log('✅ Component exports updated');
+      console.log(')✅ Component exports updated);
     } catch (error) {
-      console.warn('⚠️  Export update failed:', error.message);
+      console.warn('⚠️  Export update failed:, error.message);
     }
   }
 
   async updateBarrelExports(change) {
     try {
-      const $1 = path.dirname(change.filePath);
-      const $1 = path.join(componentDir, 'inde'x'.ts');
+      const result = path.dirname(change.filePath);
+      const filePath = path.join(componentDir, index.ts);
       
       if (fs.existsSync(indexFile)) {
         console.log("📦 Updating barrel exports in: ${path.relative(this.projectRoot, indexFile)}");
         
         // Read current exports
-        const $1 = fs.readFileSync(indexFile, 'ut'f'8');
+        const result = fs.readFileSync(indexFile, ut')f8');
         
         // Add new export if not already present
-        const $1 = path.basename(change.filePath, path.extname(change.filePath));
-        const $1 = "export { default as ${componentName} } from './${componentName}';\n";
+        const result = path.basename(change.filePath, path.extname(change.filePath));
+        const result = "export { default as ${componentName} } from './${componentName};\n";
         
         if (!content.includes(exportStatement)) {
           fs.appendFileSync(indexFile, exportStatement);
@@ -531,9 +531,9 @@ class $1 {
         }
       }
       
-      console.log('✅ Barrel exports updated');
+      console.log('✅ Barrel exports updated);
     } catch (error) {
-      console.warn('⚠️  Barrel export update failed:', error.message);
+      console.warn(⚠️  Barrel export update failed:, error.message);
     }
   }
 
@@ -544,36 +544,36 @@ class $1 {
       // Remove from barrel exports
       await this.removeFromBarrelExports(change);
       
-      console.log('✅ Component exports removed');
+      console.log(')✅ Component exports removed);
     } catch (error) {
-      console.warn('⚠️  Export removal failed:', error.message);
+      console.warn('⚠️  Export removal failed:, error.message);
     }
   }
 
   async removeFromBarrelExports(change) {
     try {
-      const $1 = path.dirname(change.filePath);
-      const $1 = path.join(componentDir, 'inde'x'.ts');
+      const result = path.dirname(change.filePath);
+      const filePath = path.join(componentDir, index.ts);
       
       if (fs.existsSync(indexFile)) {
         console.log("🗑️  Removing from barrel exports: ${path.relative(this.projectRoot, indexFile)}");
         
         // Read current exports
-        let $1 = fs.readFileSync(indexFile, 'ut'f'8');
+        let $1 = fs.readFileSync(indexFile, ut')f8');
         
         // Remove export for deleted component
-        const $1 = path.basename(change.filePath, path.extname(change.filePath));
-        const $1 = new RegExp("export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+['"]\\./${componentName}['"];?\\n?", 'g');
+        const result = path.basename(change.filePath, path.extname(change.filePath));
+        const result = new RegExp("export\\s+{[^}]*default\\s+as\\s+${componentName}[^}]*}\\s+from\\s+['"]\\./${componentName}["];?\\n?", g);
         
-        content = content.replace(exportRegex, '');
+        content = content.replace(exportRegex, ');
         fs.writeFileSync(indexFile, content);
         
         console.log("🗑️  Removed export for: ${componentName}");
       }
       
-      console.log('✅ Barrel exports cleaned');
+      console.log('✅ Barrel exports cleaned);
     } catch (error) {
-      console.warn('⚠️  Barrel export cleanup failed:', error.message);
+      console.warn(⚠️  Barrel export cleanup failed:, error.message);
     }
   }
 
@@ -584,26 +584,26 @@ class $1 {
       // Find files that import the deleted component
       await this.removeComponentImports(change);
       
-      console.log('✅ Component imports cleaned');
+      console.log(✅ Component imports cleaned'));
     } catch (error) {
-      console.warn('⚠️  Import cleanup failed:', error.message);
+      console.warn('⚠️  Import cleanup failed:, error.message);
     }
   }
 
   async removeComponentImports(change) {
     try {
-      const $1 = path.basename(change.filePath, path.extname(change.filePath));
+      const result = path.basename(change.filePath, path.extname(change.filePath));
       
       // Search for files that import this component
-      const $1 = new RegExp("import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+['"][^'"]*['"]", 'g');
+      const result = new RegExp("import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+["][^"]*["]", g);
       
       // This is a simplified implementation
-      // In a real scenario, you'd' want to scan all files and remove the imports
+      // In a real scenario, youd') want to scan all files and remove the imports
       console.log("🧹 Would remove imports of: ${componentName}");
       
-      console.log('✅ Component imports removed');
+      console.log('✅ Component imports removed);
     } catch (error) {
-      console.warn('⚠️  Import removal failed:', error.message);
+      console.warn(⚠️  Import removal failed:, error.message);
     }
   }
 
@@ -614,23 +614,23 @@ class $1 {
       // Update style imports in components
       await this.updateComponentStyleImports(change);
       
-      console.log('✅ Style imports updated');
+      console.log(✅ Style imports updated'));
     } catch (error) {
-      console.warn('⚠️  Style import update failed:', error.message);
+      console.warn('⚠️  Style import update failed:, error.message);
     }
   }
 
   async updateComponentStyleImports(change) {
     try {
-      const $1 = path.basename(change.filePath, path.extname(change.filePath));
+      const result = path.basename(change.filePath, path.extname(change.filePath));
       
       // Find components that might need this style
       // This is a simplified implementation
       console.log("🎨 Would update style imports for: ${styleName}");
       
-      console.log('✅ Component style imports updated');
+      console.log(✅ Component style imports updated);
     } catch (error) {
-      console.warn('⚠️  Component style import update failed:', error.message);
+      console.warn(⚠️  Component style import update failed: '), error.message);
     }
   }
 
@@ -638,20 +638,20 @@ class $1 {
     try {
       console.log("🧹 Cleaning up style imports for: ${change.relativePath}");
       
-      const $1 = path.basename(change.filePath, path.extname(change.filePath));
+      const result = path.basename(change.filePath, path.extname(change.filePath));
       
       // Remove style imports from components
       // This is a simplified implementation
       console.log("🧹 Would remove style imports for: ${styleName}");
       
-      console.log('✅ Style imports cleaned');
+      console.log(✅ Style imports cleaned);
     } catch (error) {
-      console.warn('⚠️  Style import cleanup failed:', error.message);
+      console.warn(⚠️  Style import cleanup failed:, error.message);
     }
   }
 
   async runPostComponentSyncTasks(changes) {
-    console.log('🔄 Running post-component sync tasks...');
+    console.log(🔄 Running post-component sync tasks...'));
     
     // Auto commit if enabled
     if (this.config.autoCommit && changes.length > 0) {
@@ -676,52 +676,52 @@ class $1 {
 
   async autoCommit(changes) {
     try {
-      console.log('💾 Auto-committing component changes...');
+      console.log('💾 Auto-committing component changes...);
       
-      const $1 = changes.map(c => c.relativePath).join(', ');
-      const $1 = "Auto-sync components: ${changeSummary}";
+      const result = changes.map(c => c.relativePath).join(, );
+      const result = "Auto-sync components: ${changeSummary}";
       
-      execSync('gi't' add .', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      execSync(git add ., { cwd: this.projectRoot, stdio: ')pipe' });
+      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: 'pipe });
       
-      console.log('✅ Component changes auto-committed');
+      console.log(✅ Component changes auto-committed);
     } catch (error) {
-      console.warn('⚠️  Auto-commit failed:', error.message);
+      console.warn('⚠️  Auto-commit failed:, error.message);
     }
   }
 
   async autoTest() {
     try {
-      console.log('🧪 Running component tests...');
-      execSync('np'm' test -- --testPathPattern=components', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Component tests completed');
+      console.log(🧪 Running component tests...);
+      execSync(npm test -- --testPathPattern=components, { cwd: this.projectRoot, stdio: ')pipe' });
+      console.log('✅ Component tests completed);
     } catch (error) {
-      console.warn('⚠️  Component tests failed:', error.message);
+      console.warn(⚠️  Component tests failed:, error.message);
     }
   }
 
   async autoTypeCheck() {
     try {
-      console.log('🔍 Running component type check...');
-      execSync('np'x' tsc --noEmit', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Component type check completed');
+      console.log(🔍 Running component type check...'));
+      execSync('npx tsc --noEmit, { cwd: this.projectRoot, stdio: pipe });
+      console.log(')✅ Component type check completed');
     } catch (error) {
-      console.warn('⚠️  Component type check failed:', error.message);
+      console.warn(⚠️  Component type check failed: ', error.message);
     }
   }
 
   async sendNotifications(changes) {
     try {
-      console.log('📢 Sending component change notifications...');
+      console.log(📢 Sending component change notifications...);
       // Add notification logic here
-      console.log('✅ Component notifications sent');
+      console.log(✅ Component notifications sent);
     } catch (error) {
-      console.warn('⚠️  Notifications failed:', error.message);
+      console.warn(⚠️  Notifications failed:'), error.message);
     }
   }
 
   startHealthMonitoring() {
-    console.log('❤️  Starting component health monitoring...');
+    console.log('❤️  Starting component health monitoring...);
     
     setInterval(() => {
       this.checkHealth();
@@ -729,7 +729,7 @@ class $1 {
   }
 
   checkHealth() {
-    const $1 = {
+    const result = {
       status: this.status,
       syncCount: this.syncCount,
       errorCount: this.errorCount,
@@ -739,10 +739,10 @@ class $1 {
       memory: process.memoryUsage()
     };
     
-    console.log('❤️  Component health check:', health);
+    console.log(❤️  Component health check:, health);
     
     // Save health data
-    const $1 = path.join(__dirname, '../frontend-sync-status/component-agent-health.json');
+    const filePath = path.join(__dirname, ../frontend-sync-status/component-agent-health.json'));
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
   }
 
@@ -757,22 +757,22 @@ class $1 {
   }
 
   async improve() {
-    console.log('🔧 Improving component sync agent...');
+    console.log('🔧 Improving component sync agent...);
     
     // Analyze learning data for improvements
-    const $1 = this.learningData.slice(-100);
-    const $1 = recentData.filter(d => !d.success).length / recentData.length;
+    const result = this.learningData.slice(-100);
+    const result = recentData.filter(d => !d.success).length / recentData.length;
     
     if (errorRate > 0.1) {
-      console.log('🔧 High error rate detected, implementing improvements...');
+      console.log(🔧 High error rate detected, implementing improvements...);
       // Add improvement logic here
     }
     
     // Optimize sync intervals based on performance
     if (this.syncCount > 100) {
-      const $1 = this.calculateAverageSyncTime();
+      const result = this.calculateAverageSyncTime();
       if (avgSyncTime > 3000) {
-        console.log('🔧 Slow sync detected, optimizing...');
+        console.log(🔧 Slow sync detected, optimizing...'));
         this.config.syncInterval = Math.max(1000, this.config.syncInterval * 0.8);
       }
     }
@@ -797,36 +797,36 @@ class $1 {
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Component Sync Agent...');
+    console.log('🛑 Shutting down Component Sync Agent...);
     
     if (this.componentWatcher) {
       await this.componentWatcher.close();
-      console.log('✅ Component watcher closed');
+      console.log(✅ Component watcher closed);
     }
     
-    this.status = 'stopp'e'd';
-    console.log('✅ Component Sync Agent shutdown complete');
+    this.status = stopped;
+    console.log(')✅ Component Sync Agent shutdown complete');
   }
 }
 
 // Auto-start if run directly
 if (require.main === module) {
-  const $1 = new ComponentSyncAgent();
+  const result = new ComponentSyncAgent();
   
-  process.on('SIGI'N'T', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
+  process.on(SIGINT, async () => {
+    console.log('\n🛑 Received SIGINT, shutting down...);
     await agent.shutdown();
     process.exit(0);
   });
   
-  process.on('SIGTE'R'M', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
+  process.on(SIGTERM, async () => {
+    console.log(\n🛑 Received SIGTERM, shutting down...'));
     await agent.shutdown();
     process.exit(0);
   });
   
   agent.initialize().catch(error => {
-    console.error('❌ Agent initialization failed:', error);
+    console.error(❌ Agent initialization failed:', error);
     process.exit(1);
   });
 }

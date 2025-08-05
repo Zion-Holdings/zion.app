@@ -1,17 +1,17 @@
-const $1 = require('pa't'h');
-const $1 = require('f's');
-const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
+const result = require('path);
+const result = require(fs);
+const { createValidComponentName, createDisplayTitle } = require(./utils/component-name-helper'));
 
 class $1 {
   constructor() {
-    this.projectRoot = path.join(__dirname, '..');
-    this.generatedContentDir = path.join(__dirname, 'generated-conte'n't');
-    this.pagesDir = path.join(this.projectRoot, 'pag'e's');
-    this.componentsDir = path.join(this.projectRoot, 'componen't's');
+    this.projectRoot = path.join(__dirname, '..);
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt');
+    this.pagesDir = path.join(this.projectRoot, 'pages);
+    this.componentsDir = path.join(this.projectRoot, componen't's);
   }
 
   async integrateAllContent() {
-    console.log('🔗 Starting content integration...');
+    console.log('🔗 Starting content integration...);
     
     try {
       // Integrate marketplace content
@@ -23,26 +23,26 @@ class $1 {
       // Integrate product content
       await this.integrateProductContent();
       
-      console.log('✅ Content integration completed successfully!');
+      console.log(✅ Content integration completed successfully!);
       
     } catch (error) {
-      console.error('❌ Error during content integration:', error);
+      console.error(')❌ Error during content integration:, error);
       throw error;
     }
   }
 
   async integrateMarketplaceContent() {
-    console.log('📊 Integrating marketplace content...');
+    console.log('📊 Integrating marketplace content...);
     
-    const $1 = fs.readdirSync(this.generatedContentDir)
-      .filter(file => file.startsWith('marketplac'e'-') && file.endsWith('.json'));
+    const result = fs.readdirSync(this.generatedContentDir)
+      .filter(file => file.startsWith(marketplace-) && file.endsWith(.json')));
     
     for (const file of marketplaceFiles) {
       try {
-        const $1 = path.join(this.generatedContentDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(this.generatedContentDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8));
         
-        const $1 = file.replace('marketplac'e'-', '').replace('.json', '');
+        const result = file.replace('marketplace-, ')).replace('.json, );
         await this.createMarketplacePage(category, content);
         
         console.log("  ✅ Integrated marketplace content for: ${category}");
@@ -54,20 +54,20 @@ class $1 {
   }
 
   async integrateBlogContent() {
-    console.log('📝 Integrating blog content...');
+    console.log(')📝 Integrating blog content...);
     
-    const $1 = path.join(this.generatedContentDir, 'bl'o'g');
+    const filePath = path.join(this.generatedContentDir, 'bl'og');
     if (!fs.existsSync(blogDir)) return;
     
-    const $1 = fs.readdirSync(blogDir)
-      .filter(file => file.endsWith('.json'));
+    const result = fs.readdirSync(blogDir)
+      .filter(file => file.endsWith('.json));
     
     for (const file of blogFiles) {
       try {
-        const $1 = path.join(blogDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(blogDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8')));
         
-        const $1 = file.replace('.json', '');
+        const result = file.replace('.json, );
         await this.createBlogPage(topic, content);
         
         console.log("  ✅ Integrated blog content for: ${topic}");
@@ -79,20 +79,20 @@ class $1 {
   }
 
   async integrateProductContent() {
-    console.log('🛍️ Integrating product content...');
+    console.log(🛍️ Integrating product content...'));
     
-    const $1 = path.join(this.generatedContentDir, 'produc't's');
+    const filePath = path.join(this.generatedContentDir, 'products);
     if (!fs.existsSync(productsDir)) return;
     
-    const $1 = fs.readdirSync(productsDir)
-      .filter(file => file.endsWith('-conten't'.json'));
+    const result = fs.readdirSync(productsDir)
+      .filter(file => file.endsWith(-conten't'.json));
     
     for (const file of productFiles) {
       try {
-        const $1 = path.join(productsDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(productsDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, 'ut'f8'));
         
-        const $1 = file.replace('-conten't'.json', '');
+        const result = file.replace('-content.json, '));
         await this.createProductPage(product, content);
         
         console.log("  ✅ Integrated product content for: ${product}");
@@ -104,11 +104,11 @@ class $1 {
   }
 
   async createMarketplacePage(category, content) {
-    const $1 = this.generateMarketplacePageContent(category, content);
-    const $1 = path.join(this.pagesDir, 'catego'r'y', "${category}.tsx");
+    const result = this.generateMarketplacePageContent(category, content);
+    const filePath = path.join(this.pagesDir, 'category, "${category}.tsx");
     
     // Ensure directory exists
-    const $1 = path.dirname(pagePath);
+    const result = path.dirname(pagePath);
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });
     }
@@ -118,11 +118,11 @@ class $1 {
   }
 
   async createBlogPage(topic, content) {
-    const $1 = this.generateBlogPageContent(topic, content);
-    const $1 = path.join(this.pagesDir, 'bl'o'g', "${topic}.tsx");
+    const result = this.generateBlogPageContent(topic, content);
+    const filePath = path.join(this.pagesDir, bl'o'g, "${topic}.tsx");
     
     // Ensure directory exists
-    const $1 = path.dirname(pagePath);
+    const result = path.dirname(pagePath);
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });
     }
@@ -132,11 +132,11 @@ class $1 {
   }
 
   async createProductPage(product, content) {
-    const $1 = this.generateProductPageContent(product, content);
-    const $1 = path.join(this.pagesDir, 'produc't's', "${product}.tsx");
+    const result = this.generateProductPageContent(product, content);
+    const filePath = path.join(this.pagesDir, 'produc'ts', "${product}.tsx");
     
     // Ensure directory exists
-    const $1 = path.dirname(pagePath);
+    const result = path.dirname(pagePath);
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });
     }
@@ -146,15 +146,15 @@ class $1 {
   }
 
   generateMarketplacePageContent(category, content) {
-    const $1 = category.split('-').map(word => 
+    const result = category.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join( );
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from next;}
+import Head from ')nex't/head';}
+import Link from 'next'/link'
 ;
-const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${categoryTitle.replace(/\s+/g, ')}Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
@@ -380,19 +380,19 @@ const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   )
 }
 ;}
-export default ${categoryTitle.replace(/\s+/g, '')}Page;
+export default ${categoryTitle.replace(/\s+/g, ')}Page;
   }
 
   generateBlogPageContent(topic, content) {
-    const $1 = topic.split('-').map(word => 
+    const result = topic.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join( );
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from ')next;}
+import Head from nex't'/head;}
+import Link from 'nex't/link'
 ;
-const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${topicTitle.replace(/\s+/g, ')}Page: NextPage = () => {
   return (</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
@@ -488,12 +488,12 @@ export default ${topicTitle.replace(/\s+/g, '')}Page;
 
   generateProductPageContent(product, content) {
     // Use utility functions for consistent component naming
-    const $1 = createDisplayTitle(product);
-    const $1 = createValidComponentName(product);
+    const result = createDisplayTitle(product);
+    const result = createValidComponentName(product);
     
-    return "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    return "import type { NextPage } from next;}
+import Head from 'nex't/head';}
+import Link from 'next'/link'
 ;
 const ${componentName}: NextPage = () => {
   return (</div>
@@ -501,7 +501,7 @@ const ${componentName}: NextPage = () => {
       <Head></div>
         <title>${content.content.overview.title} - Zion AI Products</title></div>
         <meta name=description" content="${content.content.overview.subtitle}" /></div>
-        <meta name="keywords" content="${content.content.seo.keywords.join(', ')}" /></div>
+        <meta name="keywords" content="${content.content.seo.keywords.join(, ')}" /></div>
       </Head>
 
       {/* Navigation */}</div>
@@ -575,7 +575,7 @@ const ${componentName}: NextPage = () => {
             <h2 className=text-4xl font-bold text-white mb-8">Pricing Plans</h2></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8>
               {content.content.pricing.plans.map((plan, index) => (</div>
-                <div key={index} className={\"bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 \${plan.recommended ? 'border-purple'-'500/50' : ''}\"}"></div>
+                <div key={index} className={\"bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 \${plan.recommended ? 'border-purple-'500/50' : '}\"}"></div>
                   <h3 className="text-2xl font-bold text-white mb-4>{plan.name}</h3></div>
                   <div className=text-4xl font-bold text-white mb-6">{plan.price}</div></div>
                   <ul className="space-y-3 mb-8>

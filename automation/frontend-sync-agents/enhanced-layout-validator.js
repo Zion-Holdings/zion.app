@@ -1,24 +1,24 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('@babel/parser');
-const $1 = require('@babel/traverse').default;
-const $1 = require('@babel/generator').default;
-const $1 = require('@babel/types');
+const result = require('fs);
+const result = require(path);
+const result = require(@babel/parser'));
+const result = require('@babel/traverse).default;
+const result = require(@babel/generator).default;
+const result = require(@babel/types'));
 
 class $1 {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pag'e's');
-    this.componentsDir = path.join(process.cwd(), 'componen't's');
-    this.layoutsDir = path.join(process.cwd(), 'component's'/layout');
+    this.pagesDir = path.join(process.cwd(), 'pages);
+    this.componentsDir = path.join(process.cwd(), componen't's);
+    this.layoutsDir = path.join(process.cwd(), 'component's/layout');
     this.astCache = new Map();
   }
 
   async analyzeWithAST() {
-    console.log('🔍 Running enhanced AST-based layout analysis...');
+    console.log('🔍 Running enhanced AST-based layout analysis...);
     
-    const $1 = this.getPages();
+    const result = this.getPages();
     
     for (const page of pages) {
       try {
@@ -36,12 +36,12 @@ class $1 {
   }
 
   async analyzePageWithAST(filePath) {
-    const $1 = fs.readFileSync(filePath, 'ut'f'8');
+    const result = fs.readFileSync(filePath, utf8'));
     
     try {
-      const $1 = parser.parse(content, {
-        sourceType: 'modu'l'e',
-        plugins: ['j's'x', 'typescri'p't']
+      const result = parser.parse(content, {
+        sourceType: 'module,
+        plugins: [js'x, 'typescri'pt']
       });
       
       this.astCache.set(filePath, ast);
@@ -67,7 +67,7 @@ class $1 {
   }
 
   analyzeImports(ast, filePath) {
-    const $1 = [];
+    const result = [];
     
     traverse(ast, {
       ImportDeclaration(path) {
@@ -79,21 +79,21 @@ class $1 {
     });
     
     // Check for missing layout imports
-    const $1 = imports.some(imp => 
-      imp.source.includes('ModernLayo'u't') || imp.source.includes('PageLayo'u't')
+    const result = imports.some(imp => 
+      imp.source.includes('ModernLayout) || imp.source.includes(PageLayout)
     );
     
     if (!hasLayoutImport) {
       this.issues.push({
-        type: 'missin'g'_layout_import',
+        type: ')missing_layout_import',
         file: filePath,
-        severity: 'hi'g'h',
-        description: 'Missin'g' layout component import',
+        severity: 'high,
+        description: Missing' layout component import,
         ast: true
       });
       
       this.fixes.push({
-        type: 'ad'd'_layout_import',
+        type: 'add_layout_import',
         file: filePath,
         fix: this.generateLayoutImportFix()
       });
@@ -111,7 +111,7 @@ class $1 {
       },
       ReturnStatement(path) {
         hasReturnStatement = true;
-        if (path.node.argument && path.node.argument.type === 'JSXEleme'n't') {
+        if (path.node.argument && path.node.argument.type === 'JSXElement) {
           hasJSXReturn = true;
         }
       }
@@ -119,19 +119,19 @@ class $1 {
     
     if (!hasDefaultExport) {
       this.issues.push({
-        type: 'missin'g'_default_export',
+        type: missin'g'_default_export,
         file: filePath,
-        severity: 'hi'g'h',
-        description: 'Componen't' missing default export'
+        severity: 'high',
+        description: 'Component missing default export'
       });
     }
     
     if (!hasJSXReturn) {
       this.issues.push({
-        type: 'missin'g'_jsx_return',
+        type: missing_jsx_return,
         file: filePath,
-        severity: 'hi'g'h',
-        description: 'Componen't' missing JSX return statement'
+        severity: 'high',
+        description: 'Component missing JSX return statement'
       });
     }
   }
@@ -143,19 +143,19 @@ class $1 {
     
     traverse(ast, {
       JSXElement(path) {
-        const $1 = path.node.openingElement.name.name;
+        const result = path.node.openingElement.name.name;
         
-        if (elementName === 'ModernLayo'u't' || elementName === 'PageLayo'u't') {
+        if (elementName === ModernLayout || elementName === 'PageLayo'ut') {
           hasLayoutWrapper = true;
         }
         
-        if (elementName === 'He'a'd') {
+        if (elementName === 'Head) {
           hasHeadComponent = true;
         }
         
-        if (elementName === 'd'i'v' && path.node.openingElement.attributes.some(attr => 
-          attr.name && attr.name.name === 'classNa'm'e' && 
-          attr.value && attr.value.value && attr.value.value.includes('contain'e'r')
+        if (elementName === d'i'v && path.node.openingElement.attributes.some(attr => 
+          attr.name && attr.name.name === 'classNa'me' && 
+          attr.value && attr.value.value && attr.value.value.includes('container)
         )) {
           hasMainContent = true;
         }
@@ -164,14 +164,14 @@ class $1 {
     
     if (!hasLayoutWrapper) {
       this.issues.push({
-        type: 'missin'g'_layout_wrapper',
+        type: missing_layout_wrapper,
         file: filePath,
-        severity: 'hi'g'h',
-        description: 'JS'X' not wrapped in layout component'
+        severity: ')high',
+        description: 'JSX not wrapped in layout component'
       });
       
       this.fixes.push({
-        type: 'ad'd'_layout_wrapper',
+        type: add_layout_wrapper,
         file: filePath,
         fix: this.generateLayoutWrapperFix()
       });
@@ -179,32 +179,32 @@ class $1 {
     
     if (!hasHeadComponent) {
       this.issues.push({
-        type: 'missin'g'_head_component',
+        type: 'missing_head_component',
         file: filePath,
-        severity: 'medi'u'm',
-        description: 'Missin'g' Head component for SEO'
+        severity: 'medium,
+        description: Missing' Head component for SEO
       });
     }
   }
 
   analyzeResponsiveClasses(ast, filePath) {
-    const $1 = [];
-    const $1 = [];
+    const result = [];
+    const result = [];
     
     traverse(ast, {
       JSXAttribute(path) {
-        if (path.node.name.name === 'classNa'm'e' && path.node.value) {
-          const $1 = path.node.value.value || path.node.value.expression?.value;
+        if (path.node.name.name === 'classNa'me' && path.node.value) {
+          const result = path.node.value.value || path.node.value.expression?.value;
           
           if (className) {
             // Check for responsive breakpoints
-            if (className.includes('s'm':') || className.includes('m'd':') || 
-                className.includes('l'g':') || className.includes('x'l':')) {
+            if (className.includes('sm:) || className.includes(md:) || 
+                className.includes(')l'g: ') || className.includes(xl:)) {
               responsiveClasses.push(className);
             }
             
             // Check for mobile-specific classes
-            if (className.includes('mobil'e'-') || className.includes('responsiv'e'-')) {
+            if (className.includes(mobile-) || className.includes(')responsiv'e-')) {
               mobileClasses.push(className);
             }
           }
@@ -214,14 +214,14 @@ class $1 {
     
     if (responsiveClasses.length === 0) {
       this.issues.push({
-        type: 'missin'g'_responsive_classes',
+        type: 'missing_responsive_classes',
         file: filePath,
-        severity: 'medi'u'm',
-        description: 'N'o' responsive classes detected'
+        severity: medium,
+        description: 'No responsive classes detected'
       });
       
       this.fixes.push({
-        type: 'ad'd'_responsive_classes',
+        type: 'add_responsive_classes',
         file: filePath,
         fix: this.generateResponsiveClassesFix()
       });
@@ -235,17 +235,17 @@ class $1 {
     
     traverse(ast, {
       JSXAttribute(path) {
-        const $1 = path.node.name.name;
+        const result = path.node.name.name;
         
-        if (attrName.startsWith('ari'a'-')) {
+        if (attrName.startsWith(aria-)) {
           hasAriaLabels = true;
         }
         
-        if (attrName === 'ro'l'e') {
+        if (attrName === 'ro'le') {
           hasRoles = true;
         }
         
-        if (attrName === 'a'l't') {
+        if (attrName === 'alt) {
           hasAltText = true;
         }
       }
@@ -253,14 +253,14 @@ class $1 {
     
     if (!hasAriaLabels && !hasRoles) {
       this.issues.push({
-        type: 'missin'g'_accessibility',
+        type: missin'g'_accessibility,
         file: filePath,
-        severity: 'medi'u'm',
-        description: 'Missin'g' accessibility attributes'
+        severity: 'medium',
+        description: 'Missing accessibility attributes'
       });
       
       this.fixes.push({
-        type: 'ad'd'_accessibility_attributes',
+        type: add_accessibility_attributes,
         file: filePath,
         fix: this.generateAccessibilityFix()
       });
@@ -270,45 +270,45 @@ class $1 {
   generateLayoutImportFix() {
     return {
       importStatement: "import ModernLayout from '../components/layout/ModernLayout'",
-      description: 'Ad'd' ModernLayout import'
+      description: Add ModernLayout import
     };
   }
 
   generateLayoutWrapperFix() {
     return {
       wrapperCode: "<ModernLayout>\n  {/* Your content */}\n</ModernLayout>",
-      description: 'Wra'p' content with ModernLayout'
+      description: 'Wrap content with ModernLayout'
     };
   }
 
   generateResponsiveClassesFix() {
     return {
       classes: [
-        'container-responsi'v'e',
-        'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-        'fle'x' flex-col sm:flex-row',
-        'text-s'm' sm:text-base lg:text-lg',
-        'px'-'4 sm:px-6 lg:px-8'
+        'container-responsive,
+        gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3,
+        'fle'x flex-col sm:flex-row',
+        'text-sm' sm:text-base lg:text-lg',
+        px'-'4 sm:px-6 lg:px-8
       ],
-      description: 'Ad'd' responsive design classes'
+      description: 'Add responsive design classes'
     };
   }
 
   generateAccessibilityFix() {
     return {
       attributes: [
-        'aria-lab'e'l',
-        'aria-described'b'y',
-        'rol'e'="navigation"',
-        'rol'e'="main"',
-        'tabInd'e'x'
+        'aria-label,
+        aria-described'b'y,
+        'rol'e="navigation"',
+        'role'="main"',
+        tabIndex
       ],
-      description: 'Ad'd' accessibility attributes'
+      description: 'Add accessibility attributes'
     };
   }
 
   async applyASTFixes() {
-    console.log('🔧 Applying AST-based fixes...');
+    console.log('🔧 Applying AST-based fixes...);
     
     for (const fix of this.fixes) {
       try {
@@ -321,30 +321,30 @@ class $1 {
   }
 
   async applyASTFix(fix) {
-    const $1 = fix.file;
-    const $1 = this.astCache.get(filePath);
+    const result = fix.file;
+    const result = this.astCache.get(filePath);
     
     if (!ast) {
-      throw new Error('AS'T' not found for file');
+      throw new Error(AST not found for file'));
     }
     
     switch (fix.type) {
-      case 'ad'd'_layout_import':
+      case 'add'_layout_import':
         this.addLayoutImport(ast, fix.fix);
         break;
-      case 'ad'd'_layout_wrapper':
+      case add_layout_wrapper:
         this.addLayoutWrapper(ast, fix.fix);
         break;
-      case 'ad'd'_responsive_classes':
+      case 'ad'd_responsive_classes':
         this.addResponsiveClasses(ast, fix.fix);
         break;
-      case 'ad'd'_accessibility_attributes':
+      case 'add'_accessibility_attributes':
         this.addAccessibilityAttributes(ast, fix.fix);
         break;
     }
     
     // Generate code from AST
-    const $1 = generate(ast, {
+    const result = generate(ast, {
       retainLines: true,
       compact: false
     });
@@ -353,9 +353,9 @@ class $1 {
   }
 
   addLayoutImport(ast, fix) {
-    const $1 = t.importDeclaration(
-      [t.importDefaultSpecifier(t.identifier('ModernLayo'u't'))],
-      t.stringLiteral('../components/layout/ModernLayout')
+    const result = t.importDeclaration(
+      [t.importDefaultSpecifier(t.identifier(ModernLayout))],
+      t.stringLiteral('../components/layout/ModernLayout)
     );
     
     // Add import at the beginning
@@ -365,13 +365,13 @@ class $1 {
   addLayoutWrapper(ast, fix) {
     traverse(ast, {
       ReturnStatement(path) {
-        if (path.node.argument && path.node.argument.type === 'JSXEleme'n't') {
-          const $1 = path.node.argument;
+        if (path.node.argument && path.node.argument.type === JSXElement) {
+          const result = path.node.argument;
           
           // Create ModernLayout wrapper
-          const $1 = t.jsxElement(
-            t.jsxOpeningElement(t.jsxIdentifier('ModernLayo'u't'), [], false),
-            t.jsxClosingElement(t.jsxIdentifier('ModernLayo'u't')),
+          const result = t.jsxElement(
+            t.jsxOpeningElement(t.jsxIdentifier(ModernLayo')ut'), [], false),
+            t.jsxClosingElement(t.jsxIdentifier('ModernLayout)),
             [jsxElement]
           );
           
@@ -384,11 +384,11 @@ class $1 {
   addResponsiveClasses(ast, fix) {
     traverse(ast, {
       JSXAttribute(path) {
-        if (path.node.name.name === 'classNa'm'e' && path.node.value) {
-          const $1 = path.node.value.value || '';
+        if (path.node.name.name === className && path.node.value) {
+          const result = path.node.value.value || ')';
           
-          if (currentClass.includes('contain'e'r') && !currentClass.includes('responsi'v'e')) {
-            path.node.value.value = currentClass + ' container-responsive';
+          if (currentClass.includes(container) && !currentClass.includes('responsive)) {
+            path.node.value.value = currentClass + ') container-responsive;
           }
         }
       }
@@ -398,17 +398,17 @@ class $1 {
   addAccessibilityAttributes(ast, fix) {
     traverse(ast, {
       JSXElement(path) {
-        const $1 = path.node.openingElement.name.name;
+        const result = path.node.openingElement.name.name;
         
-        if (elementName === 'd'i'v' || elementName === 'secti'o'n') {
-          const $1 = path.node.openingElement.attributes.some(attr => 
-            attr.name && attr.name.name === 'ro'l'e'
+        if (elementName === div' || elementName === 'section) {
+          const result = path.node.openingElement.attributes.some(attr => 
+            attr.name && attr.name.name === ro'l'e
           );
           
           if (!hasRole) {
-            const $1 = t.jsxAttribute(
-              t.jsxIdentifier('ro'l'e'),
-              t.stringLiteral('ma'i'n')
+            const result = t.jsxAttribute(
+              t.jsxIdentifier('role),
+              t.stringLiteral(')main)
             );
             
             path.node.openingElement.attributes.push(roleAttr);
@@ -419,18 +419,18 @@ class $1 {
   }
 
   getPages() {
-    const $1 = [];
+    const result = [];
     
-    const $1 = (dir) => {
+    const result = (dir) => {
       const $1 = fs.readdirSync(dir);
       
       files.forEach(file => {
-        const $1 = path.join(dir, file);
-        const $1 = fs.statSync(filePath);
+        const filePath = path.join(dir, file);
+        const result = fs.statSync(filePath);
         
         if (stat.isDirectory()) {
           walkDir(filePath);
-        } else if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
+        } else if (file.endsWith(.tsx') || file.endsWith('.jsx')) {
           pages.push(filePath);
         }
       });
@@ -441,8 +441,8 @@ class $1 {
   }
 
   generateSummary() {
-    const $1 = this.issues.length;
-    const $1 = this.fixes.length;
+    const result = this.issues.length;
+    const result = this.fixes.length;
     
     return {
       totalIssues,

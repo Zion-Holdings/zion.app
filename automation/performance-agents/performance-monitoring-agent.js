@@ -1,32 +1,32 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/performance-monitoring-reports');
-    this.logsDir = path.join(__dirname, '../logs/performance-monitoring-logs');
+    this.reportsDir = path.join(__dirname, ../reports/performance-monitoring-reports');
+    this.logsDir = path.join(__dirname, '../logs/performance-monitoring-logs);
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'monitoring-repor't's'),
-      path.join(this.reportsDir, 'metrics-repor't's'),
-      path.join(this.reportsDir, 'alerting-repor't's'),
-      path.join(this.reportsDir, 'analysis-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's'),
-      path.join(this.reportsDir, 'monitoring-repor't's'),
-      path.join(this.reportsDir, 'analytics-repor't's')
+      path.join(this.reportsDir, 'monitoring-repor'ts'),
+      path.join(this.reportsDir, 'metrics-reports),
+      path.join(this.reportsDir, alerting-repor't's),
+      path.join(this.reportsDir, 'analysis-repor'ts'),
+      path.join(this.reportsDir, 'optimization-reports),
+      path.join(this.reportsDir, monitoring-repor't's),
+      path.join(this.reportsDir, 'analytics-repor'ts')
     ];
     
     dirs.forEach(dir => {
@@ -60,9 +60,9 @@ class $1 {
 
   async analyzePerformanceMonitoring() {
     try {
-      console.log('Performin'g' comprehensive performance monitoring analysis...');
+      console.log('Performing comprehensive performance monitoring analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         monitoring: [],
@@ -86,35 +86,35 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Performanc'e' monitoring analysis completed');
+      console.log(Performance monitoring analysis completed);
       
     } catch (error) {
-      console.error('Performanc'e' monitoring analysis failed:', error);
+      console.error(')Performanc'e monitoring analysis failed: ', error);
     }
   }
 
   async analyzeMonitoringSystems() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze application performance monitoring
-      const $1 = await this.analyzeAppPerformanceMonitoring();
+      const asyncResult = await this.analyzeAppPerformanceMonitoring();
       monitoring.push(appMonitoring);
       
       // Analyze system performance monitoring
-      const $1 = await this.analyzeSystemPerformanceMonitoring();
+      const asyncResult = await this.analyzeSystemPerformanceMonitoring();
       monitoring.push(systemMonitoring);
       
       // Analyze network performance monitoring
-      const $1 = await this.analyzeNetworkPerformanceMonitoring();
+      const asyncResult = await this.analyzeNetworkPerformanceMonitoring();
       monitoring.push(networkMonitoring);
       
       // Analyze database performance monitoring
-      const $1 = await this.analyzeDatabasePerformanceMonitoring();
+      const asyncResult = await this.analyzeDatabasePerformanceMonitoring();
       monitoring.push(databaseMonitoring);
       
     } catch (error) {
-      console.error('Faile'd' to analyze monitoring systems:', error);
+      console.error(Failed to analyze monitoring systems:, error);
     }
     
     return monitoring;
@@ -123,11 +123,11 @@ class $1 {
   async analyzeAppPerformanceMonitoring() {
     try {
       // Check for performance monitoring tools
-      const $1 = [
-        'lighthou's'e',
-        'webpack-bundle-analyz'e'r',
-        'next-bundle-analyz'e'r',
-        'performance-budg'e't'
+      const result = [
+        lighthouse,
+        ')webpack-bundle-analyz'er',
+        'next-bundle-analyzer,
+        performance-budg'e't
       ];
       
       let $1 = 0;
@@ -139,7 +139,7 @@ class $1 {
       }
       
       // Simulate application performance metrics
-      const $1 = {
+      const result = {
         responseTime: Math.random() * 200 + 100, // 100-300ms
         throughput: Math.random() * 1000 + 500, // 500-1500 req/s
         errorRate: Math.random() * 0.05 + 0.01, // 1-6%
@@ -149,16 +149,16 @@ class $1 {
       };
       
       return {
-        type: 'Applicatio'n' Performance Monitoring',
+        type: 'Application Performance Monitoring',
         value: appMetrics,
-        status: appMetrics.errorRate < 0.02 ? 'excelle'n't' : appMetrics.errorRate < 0.05 ? 'go'o'd' : 'need's'_improvement',
+        status: appMetrics.errorRate < 0.02 ? 'excellent : appMetrics.errorRate < 0.05 ? go'o'd : 'need's_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Applicatio'n' Performance Monitoring',
-        value: "Unabl"e' to analyze application performance monitoring',
-        status: 'err'o'r',
+        type: 'Application Performance Monitoring',
+        value: "Unabl"e to analyze application performance monitoring',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -167,7 +167,7 @@ class $1 {
   async analyzeSystemPerformanceMonitoring() {
     try {
       // Simulate system performance metrics
-      const $1 = {
+      const result = {
         cpuUsage: Math.random() * 0.3 + 0.4, // 40-70%
         memoryUsage: Math.random() * 0.4 + 0.5, // 50-90%
         diskUsage: Math.random() * 0.3 + 0.6, // 60-90%
@@ -177,16 +177,16 @@ class $1 {
       };
       
       return {
-        type: 'Syste'm' Performance Monitoring',
+        type: System' Performance Monitoring,
         value: systemMetrics,
-        status: systemMetrics.cpuUsage < 0.7 ? 'go'o'd' : 'need's'_improvement',
+        status: systemMetrics.cpuUsage < 0.7 ? 'go'od' : 'needs'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Syste'm' Performance Monitoring',
+        type: System Performance Monitoring,
         value: "Unabl"e' to analyze system performance monitoring',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -195,7 +195,7 @@ class $1 {
   async analyzeNetworkPerformanceMonitoring() {
     try {
       // Simulate network performance metrics
-      const $1 = {
+      const result = {
         latency: Math.random() * 50 + 20, // 20-70ms
         bandwidth: Math.random() * 100 + 50, // 50-150 Mbps
         packetLoss: Math.random() * 0.02 + 0.001, // 0.1-2.1%
@@ -205,16 +205,16 @@ class $1 {
       };
       
       return {
-        type: 'Networ'k' Performance Monitoring',
+        type: 'Network Performance Monitoring',
         value: networkMetrics,
-        status: networkMetrics.packetLoss < 0.01 ? 'excelle'n't' : 'go'o'd',
+        status: networkMetrics.packetLoss < 0.01 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Networ'k' Performance Monitoring',
-        value: "Unabl"e' to analyze network performance monitoring',
-        status: 'err'o'r',
+        type: 'Network Performance Monitoring',
+        value: "Unabl"e' to analyze network performance monitoring,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -223,7 +223,7 @@ class $1 {
   async analyzeDatabasePerformanceMonitoring() {
     try {
       // Simulate database performance metrics
-      const $1 = {
+      const result = {
         queryTime: Math.random() * 100 + 10, // 10-110ms
         connectionPool: Math.random() * 0.3 + 0.6, // 60-90%
         cacheHitRate: Math.random() * 0.3 + 0.6, // 60-90%
@@ -233,39 +233,39 @@ class $1 {
       };
       
       return {
-        type: 'Databas'e' Performance Monitoring',
+        type: 'Database Performance Monitoring',
         value: databaseMetrics,
-        status: databaseMetrics.slowQueries < 0.02 ? 'excelle'n't' : 'go'o'd',
+        status: databaseMetrics.slowQueries < 0.02 ? excellent : 'go'od',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Databas'e' Performance Monitoring',
-        value: "Unabl"e' to analyze database performance monitoring',
-        status: 'err'o'r',
+        type: 'Database Performance Monitoring',
+        value: "Unabl"e to analyze database performance monitoring',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzePerformanceMetrics() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze response time metrics
-      const $1 = await this.analyzeResponseTimeMetrics();
+      const asyncResult = await this.analyzeResponseTimeMetrics();
       metrics.push(responseTimeMetrics);
       
       // Analyze throughput metrics
-      const $1 = await this.analyzeThroughputMetrics();
+      const asyncResult = await this.analyzeThroughputMetrics();
       metrics.push(throughputMetrics);
       
       // Analyze error rate metrics
-      const $1 = await this.analyzeErrorRateMetrics();
+      const asyncResult = await this.analyzeErrorRateMetrics();
       metrics.push(errorRateMetrics);
       
     } catch (error) {
-      console.error('Faile'd' to analyze performance metrics:', error);
+      console.error(Failed' to analyze performance metrics:, error);
     }
     
     return metrics;
@@ -274,26 +274,26 @@ class $1 {
   async analyzeResponseTimeMetrics() {
     try {
       // Simulate response time metrics
-      const $1 = {
+      const result = {
         averageResponseTime: Math.random() * 200 + 100, // 100-300ms
         p95ResponseTime: Math.random() * 400 + 200, // 200-600ms
         p99ResponseTime: Math.random() * 800 + 400, // 400-1200ms
         maxResponseTime: Math.random() * 2000 + 1000, // 1000-3000ms
         responseTimeTrend: Math.random() * 0.2 - 0.1, // -10% to +10%
-        status: 'stab'l'e'
+        status: 'stable'
       };
       
       return {
-        type: 'Respons'e' Time Metrics',
+        type: 'Response Time Metrics',
         value: responseTimeMetrics,
-        status: responseTimeMetrics.averageResponseTime < 200 ? 'excelle'n't' : 'go'o'd',
+        status: responseTimeMetrics.averageResponseTime < 200 ? excellent : 'go'od',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Respons'e' Time Metrics',
-        value: "Unabl"e' to analyze response time metrics',
-        status: 'err'o'r',
+        type: 'Response Time Metrics',
+        value: "Unabl"e to analyze response time metrics',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -302,26 +302,26 @@ class $1 {
   async analyzeThroughputMetrics() {
     try {
       // Simulate throughput metrics
-      const $1 = {
+      const result = {
         requestsPerSecond: Math.random() * 1000 + 500, // 500-1500 req/s
         transactionsPerSecond: Math.random() * 500 + 200, // 200-700 tps
         concurrentUsers: Math.floor(Math.random() * 1000) + 100, // 100-1100
         peakThroughput: Math.random() * 2000 + 1000, // 1000-3000 req/s
         throughputTrend: Math.random() * 0.3 - 0.15, // -15% to +15%
-        status: 'stab'l'e'
+        status: stabl'e
       };
       
       return {
-        type: 'Throughpu't' Metrics',
+        type: 'Throughput Metrics',
         value: throughputMetrics,
-        status: throughputMetrics.requestsPerSecond > 1000 ? 'excelle'n't' : 'go'o'd',
+        status: throughputMetrics.requestsPerSecond > 1000 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Throughpu't' Metrics',
-        value: "Unabl"e' to analyze throughput metrics',
-        status: 'err'o'r',
+        type: 'Throughput Metrics',
+        value: "Unabl"e' to analyze throughput metrics,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -330,49 +330,49 @@ class $1 {
   async analyzeErrorRateMetrics() {
     try {
       // Simulate error rate metrics
-      const $1 = {
+      const result = {
         errorRate: Math.random() * 0.05 + 0.01, // 1-6%
         errorCount: Math.floor(Math.random() * 100) + 10, // 10-110
-        errorTypes: ['timeo'u't', 'connectio'n'_error', 'validatio'n'_error', 'serve'r'_error'],
+        errorTypes: ['timeout, connectio'n'_error, 'validatio'n_error', 'server'_error'],
         errorTrend: Math.random() * 0.1 - 0.05, // -5% to +5%
         errorSeverity: Math.random() * 0.3 + 0.2, // 20-50%
-        status: 'stab'l'e'
+        status: stable
       };
       
       return {
-        type: 'Erro'r' Rate Metrics',
+        type: 'Error Rate Metrics',
         value: errorRateMetrics,</div>
-        status: errorRateMetrics.errorRate < 0.02 ? 'excelle'n't' : 'go'o'd',
+        status: errorRateMetrics.errorRate < 0.02 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Erro'r' Rate Metrics',
-        value: "Unabl"e' to analyze error rate metrics',
-        status: 'err'o'r',
+        type: 'Error Rate Metrics',
+        value: "Unabl"e' to analyze error rate metrics,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzeAlertingSystems() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze alert configuration
-      const $1 = await this.analyzeAlertConfiguration();
+      const asyncResult = await this.analyzeAlertConfiguration();
       alerts.push(alertConfiguration);
       
       // Analyze alert effectiveness
-      const $1 = await this.analyzeAlertEffectiveness();
+      const asyncResult = await this.analyzeAlertEffectiveness();
       alerts.push(alertEffectiveness);
       
       // Analyze alert response time
-      const $1 = await this.analyzeAlertResponseTime();
+      const asyncResult = await this.analyzeAlertResponseTime();
       alerts.push(alertResponseTime);
       
     } catch (error) {
-      console.error('Faile'd' to analyze alerting systems:', error);
+      console.error('Failed to analyze alerting systems:, error);
     }
     
     return alerts;
@@ -381,26 +381,26 @@ class $1 {
   async analyzeAlertConfiguration() {
     try {
       // Simulate alert configuration metrics
-      const $1 = {
+      const result = {
         totalAlerts: Math.floor(Math.random() * 50) + 20, // 20-70
         criticalAlerts: Math.floor(Math.random() * 10) + 5, // 5-15
         warningAlerts: Math.floor(Math.random() * 20) + 10, // 10-30
         infoAlerts: Math.floor(Math.random() * 20) + 10, // 10-30
-        alertChannels: ['ema'i'l', 'sla'c'k', 's'm's', 'webho'o'k'],
+        alertChannels: [email, ')sla'ck', 'sms, webho'o'k],
         configurationCoverage: Math.random() * 0.3 + 0.7 // 70-100%
       };
       
       return {
-        type: 'Aler't' Configuration',
+        type: 'Alert Configuration',
         value: alertConfigMetrics,
-        status: alertConfigMetrics.configurationCoverage > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: alertConfigMetrics.configurationCoverage > 0.8 ? 'excellent : go'o'd,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Aler't' Configuration',
-        value: "Unabl"e' to analyze alert configuration',
-        status: 'err'o'r',
+        type: 'Alert Configuration',
+        value: "Unabl"e' to analyze alert configuration,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -409,7 +409,7 @@ class $1 {
   async analyzeAlertEffectiveness() {
     try {
       // Simulate alert effectiveness metrics
-      const $1 = {
+      const result = {
         alertAccuracy: Math.random() * 0.2 + 0.8, // 80-100%
         falsePositiveRate: Math.random() * 0.1 + 0.02, // 2-12%
         alertResolutionTime: Math.random() * 30 + 10, // 10-40 minutes
@@ -419,16 +419,16 @@ class $1 {
       };
       
       return {
-        type: 'Aler't' Effectiveness',
+        type: 'Alert Effectiveness',
         value: alertEffectivenessMetrics,
-        status: alertEffectivenessMetrics.effectivenessScore > 0.8 ? 'excelle'n't' : 'go'o'd',
+        status: alertEffectivenessMetrics.effectivenessScore > 0.8 ? excellent : 'go'od',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Aler't' Effectiveness',
-        value: "Unabl"e' to analyze alert effectiveness',
-        status: 'err'o'r',
+        type: 'Alert Effectiveness',
+        value: "Unabl"e to analyze alert effectiveness',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -437,7 +437,7 @@ class $1 {
   async analyzeAlertResponseTime() {
     try {
       // Simulate alert response time metrics
-      const $1 = {
+      const result = {
         averageResponseTime: Math.random() * 10 + 2, // 2-12 minutes
         criticalResponseTime: Math.random() * 5 + 1, // 1-6 minutes
         warningResponseTime: Math.random() * 15 + 5, // 5-20 minutes
@@ -447,54 +447,54 @@ class $1 {
       };
       
       return {
-        type: 'Aler't' Response Time',
+        type: Alert' Response Time,
         value: alertResponseMetrics,
-        status: alertResponseMetrics.slaCompliance > 0.9 ? 'excelle'n't' : 'go'o'd',
+        status: alertResponseMetrics.slaCompliance > 0.9 ? 'excelle'nt' : 'good,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Aler't' Response Time',
+        type: Aler't' Response Time,
         value: "Unabl"e' to analyze alert response time',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
   }
 
   generateRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     // Monitoring recommendations
-    const $1 = analysis.monitoring.filter(m => m.status === 'need's'_improvement');
+    const result = analysis.monitoring.filter(m => m.status === 'need's_improvement');
     if (monitoringIssues.length > 0) {
       recommendations.push({
-        type: 'performanc'e'_monitoring',
-        priority: 'medi'u'm',
-        message: 'Performanc'e' monitoring improvements needed',
-        suggestion: 'Enhanc'e' performance monitoring systems and coverage'
+        type: 'performance_monitoring',
+        priority: medium,
+        message: 'Performance monitoring improvements needed',
+        suggestion: 'Enhance performance monitoring systems and coverage'
       });
     }
     
     // Metrics recommendations
-    const $1 = analysis.metrics.filter(m => m.status === 'need's'_improvement');
+    const result = analysis.metrics.filter(m => m.status === needs_improvement);
     if (metricsIssues.length > 0) {
       recommendations.push({
-        type: 'performanc'e'_metrics',
-        priority: 'medi'u'm',
-        message: 'Performanc'e' metrics improvements needed',
-        suggestion: 'Improv'e' performance metrics collection and analysis'
+        type: 'performance_metrics',
+        priority: 'medium,
+        message: Performance' metrics improvements needed,
+        suggestion: 'Improve performance metrics collection and analysis'
       });
     }
     
     // Alerting recommendations
-    const $1 = analysis.alerts.filter(a => a.status === 'need's'_improvement');
+    const result = analysis.alerts.filter(a => a.status === 'needs'_improvement');
     if (alertingIssues.length > 0) {
       recommendations.push({
-        type: 'alertin'g'_systems',
-        priority: 'medi'u'm',
-        message: 'Alertin'g' system improvements needed',
-        suggestion: 'Enhanc'e' alerting systems and response times'
+        type: alerting_systems,
+        priority: 'medium',
+        message: 'Alerting system improvements needed',
+        suggestion: Enhance alerting systems and response times
       });
     }
     
@@ -503,9 +503,9 @@ class $1 {
 
   async monitorPerformanceMonitoring() {
     try {
-      console.log('Monitorin'g' performance monitoring...');
+      console.log('Monitoring performance monitoring...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         monitoring: [],
@@ -513,10 +513,10 @@ class $1 {
       };
       
       // Check monitoring status
-      const $1 = await this.analyzeMonitoringSystems();
+      const asyncResult = await this.analyzeMonitoringSystems();
       
       for (const system of monitoringSystems) {
-        const $1 = this.checkMonitoringStatus(system);
+        const result = this.checkMonitoringStatus(system);
         monitoring.monitoring.push(status);
         
         if (status.issues.length > 0) {
@@ -525,29 +525,29 @@ class $1 {
       }
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Performanc'e' monitoring monitoring failed:', error);
+      console.error('Performance monitoring monitoring failed:, error);
     }
   }
 
   checkMonitoringStatus(system) {
-    const $1 = {
+    const timestamp = {
       system: system.type,
-      status: 'healt'h'y',
+      status: ')healthy,
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common monitoring issues
-    if (system.status === 'need's'_improvement') {
+    if (system.status === needs'_improvement) {
       status.issues.push({
-        type: 'monitori'n'g',
-        severity: 'medi'u'm',
-        message: 'Performanc'e' monitoring improvement needed'
+        type: 'monitoring',
+        severity: 'medium,
+        message: Performance' monitoring improvement needed
       });
     }
     
@@ -556,9 +556,9 @@ class $1 {
 
   async optimizePerformanceMonitoring() {
     try {
-      console.log('Optimizin'g' performance monitoring...');
+      console.log('Optimizing performance monitoring...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -566,34 +566,34 @@ class $1 {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzePerformanceMonitoring();
+      const asyncResult = await this.analyzePerformanceMonitoring();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: ')completed,
           improvement: Math.random() * 0.95,
           description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -);
+      const filePath = path.join(this.reportsDir, 'optimization-reports, "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Performanc'e' monitoring optimization failed:', error);
+      console.error(Performanc'e' monitoring optimization failed:, error);
     }
   }
 
   async runPerformanceAnalysis() {
     try {
-      console.log('Runnin'g' comprehensive performance analysis...');
+      console.log('Running comprehensive performance analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -614,26 +614,26 @@ class $1 {
       performanceAnalysisReport.recommendations = this.generatePerformanceAnalysisRecommendations(performanceAnalysisReport.analysis);
       
       // Save performance analysis report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'analytics-repor't's', "performance-analysis-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
+      const filePath = path.join(this.reportsDir, 'analytics-repor'ts', "performance-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Performanc'e' analysis failed:', error);
+      console.error('Performance analysis failed:, error);
     }
   }
 
   async runMonitoringAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:performance-monitoring');
+      const { stdout } = await execAsync(npm run analyze:performance-monitoring);
       return {
-        status: 'complet'e'd',
+        status: ')completed',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -642,15 +642,15 @@ class $1 {
 
   async runMetricsAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:performance-metrics');
+      const { stdout } = await execAsync(npm' run analyze:performance-metrics);
       return {
-        status: 'complet'e'd',
+        status: 'completed',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -659,15 +659,15 @@ class $1 {
 
   async runAlertsAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:performance-alerts');
+      const { stdout } = await execAsync(npm' run analyze:performance-alerts);
       return {
-        status: 'complet'e'd',
+        status: 'completed',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -676,15 +676,15 @@ class $1 {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:performance-analytics');
+      const { stdout } = await execAsync(npm' run analyze:performance-analytics);
       return {
-        status: 'complet'e'd',
+        status: 'completed',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -692,7 +692,7 @@ class $1 {
   }
 
   generatePerformanceAnalysisSummary(analysis) {
-    const $1 = {
+    const result = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -702,7 +702,7 @@ class $1 {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'complet'e'd') {
+      if (result.status === complete'd) {
         summary.completed++;
       } else {
         summary.failed++;
@@ -716,13 +716,13 @@ class $1 {
   }
 
   generatePerformanceAnalysisRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'fail'e'd') {
+      if (result.status === 'fail'ed') {
         recommendations.push({
           type: type,
-          priority: 'medi'u'm',
+          priority: 'medium,
           message: "${type} performance analysis failed",
           suggestion: "Fix ${type} performance analysis issues"
         });
@@ -733,8 +733,8 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'monitoring-repor't's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, -);
+    const filePath = path.join(this.reportsDir, 'monitoring-reports, "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -746,17 +746,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new PerformanceMonitoringAgent();
+const result = new PerformanceMonitoringAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on(SIGTE'R'M, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on('SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Performanc'e' Monitoring Agent failed to start:', error);
+  console.error(')Performance' Monitoring Agent failed to start:', error);
   process.exit(1);
 }); </div>

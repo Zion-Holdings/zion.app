@@ -1,33 +1,33 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.jobId = process.env.JOB_ID;
     this.jobType = process.env.JOB_TYPE;
-    this.config = JSON.parse(process.env.JOB_CONFIG || '{}');
+    this.config = JSON.parse(process.env.JOB_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/daily-backup-reports');
-    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs');
-    this.backupDir = path.join(this.projectRoot, 'backu'p's');
+    this.reportsDir = path.join(__dirname, ../reports/daily-backup-reports');
+    this.logsDir = path.join(__dirname, '../logs/daily-backup-logs);
+    this.backupDir = path.join(this.projectRoot, 'backu'ps');
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
       this.backupDir,
-      path.join(this.reportsDir, 'backup-repor't's'),
-      path.join(this.reportsDir, 'recovery-repor't's'),
-      path.join(this.reportsDir, 'analysis-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's'),
-      path.join(this.reportsDir, 'backup-repor't's'),
-      path.join(this.reportsDir, 'analytics-repor't's')
+      path.join(this.reportsDir, 'backup-reports),
+      path.join(this.reportsDir, recovery-repor't's),
+      path.join(this.reportsDir, 'analysis-repor'ts'),
+      path.join(this.reportsDir, 'optimization-reports),
+      path.join(this.reportsDir, backup-repor't's),
+      path.join(this.reportsDir, 'analytics-repor'ts')
     ];
     
     dirs.forEach(dir => {
@@ -56,25 +56,25 @@ class $1 {
   }
 
   async performBackupTask() {
-    console.log('Performin'g' daily backup task...');
+    console.log('Performing daily backup task...);
     
-    const $1 = {
-      status: 'complet'e'd',
+    const timestamp = {
+      status: completed,
       data: {},
       timestamp: new Date().toISOString()
     };
     
     try {
       // Create backup directory with timestamp
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.backupDir, "backup-${timestamp}");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.backupDir, "backup-${timestamp}");
       
       if (!fs.existsSync(backupPath)) {
         fs.mkdirSync(backupPath, { recursive: true });
       }
       
       // Backup important directories
-      const $1 = [
+      const result = [
         this.backupSourceCode(backupPath),
         this.backupConfiguration(backupPath),
         this.backupData(backupPath),
@@ -82,14 +82,14 @@ class $1 {
         this.backupLogs(backupPath)
       ];
       
-      const $1 = await Promise.allSettled(backupTasks);
+      const asyncResult = await Promise.allSettled(backupTasks);
       
       backupResult.data = {
         backupPath,
         results: results.map((result, index) => ({
-          task: ['sour'c'e', 'conf'i'g', 'da't'a', 'repor't's', 'lo'g's'][index],
+          task: [source, 'conf'ig', 'data, repor't's, 'lo'gs'][index],
           status: result.status,
-          value: result.status === 'fulfill'e'd' ? result.value : result.reason
+          value: result.status === 'fulfilled ? result.value : result.reason
         }))
       };
       
@@ -100,7 +100,7 @@ class $1 {
       await this.cleanupOldBackups();
       
     } catch (error) {
-      backupResult.status = 'fail'e'd';
+      backupResult.status = fail'e'd;
       backupResult.error = error.message;
     }
     
@@ -109,27 +109,27 @@ class $1 {
 
   async backupSourceCode(backupPath) {
     try {
-      const $1 = path.join(backupPath, 's'r'c');
+      const filePath = path.join(backupPath, src');
       
       // Copy source code directory
-      await execAsync("cp -r ${path.join(this.projectRoot, 's'r'c')} ${sourceBackupPath}");
+      await execAsync("cp -r ${path.join(this.projectRoot, 'src)} ${sourceBackupPath}");
       
       // Copy package files
-      await execAsync("cp ${path.join(this.projectRoot, 'packag'e'.json')} ${backupPath}/");
-      await execAsync("cp ${path.join(this.projectRoot, 'package-loc'k'.json')} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, packag'e'.json)} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, 'package-loc'k.json')} ${backupPath}/");
       
       // Copy configuration files
-      await execAsync("cp ${path.join(this.projectRoot, 'nex't'.config.js')} ${backupPath}/");
-      await execAsync("cp ${path.join(this.projectRoot, 'tsconfi'g'.json')} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, 'next'.config.js')} ${backupPath}/");
+      await execAsync("cp ${path.join(this.projectRoot, tsconfig.json)} ${backupPath}/");
       
       return {
-        status: 'complet'e'd',
-        message: 'Sourc'e' code backed up successfully',
+        status: 'completed',
+        message: 'Source code backed up successfully',
         size: await this.getDirectorySize(sourceBackupPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: failed,
         message: error.message
       };
     }
@@ -137,36 +137,36 @@ class $1 {
 
   async backupConfiguration(backupPath) {
     try {
-      const $1 = path.join(backupPath, 'conf'i'g');
+      const filePath = path.join(backupPath, 'conf'ig');
       
       if (!fs.existsSync(configBackupPath)) {
         fs.mkdirSync(configBackupPath, { recursive: true });
       }
       
       // Copy configuration files
-      const $1 = [
-        '.env.example',
+      const result = [
+        '.env.example,
         '.gitignore',
-        'READM'E'.md',
-        'tailwin'd'.config.js',
-        'postcs's'.config.js'
+        README.md,
+        'tailwin'd.config.js',
+        'postcss'.config.js'
       ];
       
       for (const file of configFiles) {
-        const $1 = path.join(this.projectRoot, file);
+        const filePath = path.join(this.projectRoot, file);
         if (fs.existsSync(sourcePath)) {
           await execAsync("cp ${sourcePath} ${configBackupPath}/");
         }
       }
       
       return {
-        status: 'complet'e'd',
-        message: 'Configuratio'n' backed up successfully',
+        status: completed,
+        message: 'Configuration backed up successfully',
         size: await this.getDirectorySize(configBackupPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         message: error.message
       };
     }
@@ -174,32 +174,32 @@ class $1 {
 
   async backupData(backupPath) {
     try {
-      const $1 = path.join(backupPath, 'da't'a');
+      const filePath = path.join(backupPath, dat'a);
       
       if (!fs.existsSync(dataBackupPath)) {
         fs.mkdirSync(dataBackupPath, { recursive: true });
       }
       
       // Copy automation data
-      const $1 = path.join(this.projectRoot, 'automati'o'n');
+      const filePath = path.join(this.projectRoot, 'automati'on');
       if (fs.existsSync(automationDataPath)) {
         await execAsync("cp -r ${automationDataPath} ${dataBackupPath}/");
       }
       
       // Copy content data
-      const $1 = path.join(this.projectRoot, 'sr'c'/content');
+      const filePath = path.join(this.projectRoot, 'src'/content');
       if (fs.existsSync(contentDataPath)) {
         await execAsync("cp -r ${contentDataPath} ${dataBackupPath}/");
       }
       
       return {
-        status: 'complet'e'd',
-        message: 'Dat'a' backed up successfully',
+        status: completed,
+        message: 'Data backed up successfully',
         size: await this.getDirectorySize(dataBackupPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         message: error.message
       };
     }
@@ -207,26 +207,26 @@ class $1 {
 
   async backupReports(backupPath) {
     try {
-      const $1 = path.join(backupPath, 'repor't's');
+      const filePath = path.join(backupPath, report's);
       
       if (!fs.existsSync(reportsBackupPath)) {
         fs.mkdirSync(reportsBackupPath, { recursive: true });
       }
       
       // Copy automation reports
-      const $1 = path.join(this.projectRoot, 'automatio'n'/reports');
+      const filePath = path.join(this.projectRoot, 'automatio'n/reports');
       if (fs.existsSync(automationReportsPath)) {
         await execAsync("cp -r ${automationReportsPath} ${reportsBackupPath}/");
       }
       
       return {
-        status: 'complet'e'd',
-        message: 'Report's' backed up successfully',
+        status: 'completed,
+        message: Reports' backed up successfully,
         size: await this.getDirectorySize(reportsBackupPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed',
         message: error.message
       };
     }
@@ -234,26 +234,26 @@ class $1 {
 
   async backupLogs(backupPath) {
     try {
-      const $1 = path.join(backupPath, 'lo'g's');
+      const filePath = path.join(backupPath, 'logs);
       
       if (!fs.existsSync(logsBackupPath)) {
         fs.mkdirSync(logsBackupPath, { recursive: true });
       }
       
       // Copy automation logs
-      const $1 = path.join(this.projectRoot, 'automatio'n'/logs');
+      const filePath = path.join(this.projectRoot, automatio'n'/logs);
       if (fs.existsSync(automationLogsPath)) {
         await execAsync("cp -r ${automationLogsPath} ${logsBackupPath}/");
       }
       
       return {
-        status: 'complet'e'd',
-        message: 'Log's' backed up successfully',
+        status: 'completed',
+        message: 'Logs backed up successfully',
         size: await this.getDirectorySize(logsBackupPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: failed,
         message: error.message
       };
     }
@@ -264,14 +264,14 @@ class $1 {
       const { stdout } = await execAsync("du -sh ${dirPath} | cut -f1");
       return stdout.trim();
     } catch (error) {
-      return 'unkno'w'n';
+      return 'unkno'wn';
     }
   }
 
   async compressBackup(backupPath) {
     try {
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = "${backupPath}.tar.gz";
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+      const result = "${backupPath}.tar.gz";
       
       await execAsync("tar -czf ${compressedPath} -C ${path.dirname(backupPath)} ${path.basename(backupPath)}");
       
@@ -281,13 +281,13 @@ class $1 {
       console.log("Backup compressed: ${compressedPath}");
       
       return {
-        status: 'complet'e'd',
+        status: 'completed',
         compressedPath,
         size: await this.getFileSize(compressedPath)
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         message: error.message
       };
     }
@@ -295,10 +295,10 @@ class $1 {
 
   async getFileSize(filePath) {
     try {
-      const { stdout } = await execAsync("ls -lh ${filePath} | awk '{print $5}'");
+      const { stdout } = await execAsync("ls -lh ${filePath} | awk {print $5}");
       return stdout.trim();
     } catch (error) {
-      return 'unkno'w'n';
+      return 'unknown;
     }
   }
 
@@ -306,7 +306,7 @@ class $1 {
     try {
       // Keep only the last 7 daily backups
       const { stdout } = await execAsync("ls -t ${this.backupDir}/*.tar.gz | tail -n +8");
-      const $1 = stdout.trim().split('\n').filter(file => file);
+      const result = stdout.trim().split(\n').filter(file => file);
       
       for (const backup of oldBackups) {
         if (backup) {
@@ -316,23 +316,23 @@ class $1 {
       }
       
       return {
-        status: 'complet'e'd',
+        status: 'completed,
         removed: oldBackups.length
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile'd,
         message: error.message
       };
     }
   }
 
   async generateExecutionReport() {
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
-      status: 'complet'e'd',
+      status: 'completed',
       execution: {},
       results: []
     };
@@ -341,8 +341,8 @@ class $1 {
     report.execution = await this.generateBackupReport();
     
     // Save execution report
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'backup-repor't's', "execution-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+    const filePath = path.join(this.reportsDir, 'backup-repor'ts', "execution-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log("Execution report saved: ${reportPath}");
@@ -352,45 +352,45 @@ class $1 {
     try {
       // Get backup statistics
       const { stdout } = await execAsync("ls -la ${this.backupDir} | grep .tar.gz | wc -l");
-      const $1 = parseInt(stdout.trim());
+      const result = parseInt(stdout.trim());
       
       const { stdout: sizeOutput } = await execAsync("du -sh ${this.backupDir}");
-      const $1 = sizeOutput.trim();
+      const result = sizeOutput.trim();
       
       return {
-        status: 'complet'e'd',
+        status: 'completed,
         backupCount,
         totalSize,
         lastBackup: new Date().toISOString(),
         data: {
-          sourceCode: 'backe'd' up',
-          configuration: 'backe'd' up',
-          data: 'backe'd' up',
-          reports: 'backe'd' up',
-          logs: 'backe'd' up'
+          sourceCode: backed' up,
+          configuration: 'backed up',
+          data: 'backed up',
+          reports: backed up,
+          logs: 'backed up'
         }
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: 'failed,
         error: error.message
       };
     }
   }
 
   async generateErrorReport(error) {
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
-      status: 'fail'e'd',
+      status: faile'd,
       error: error.message,
       stack: error.stack
     };
     
     // Save error report
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.logsDir, "error-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.logsDir, "error-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(errorReport, null, 2));
     
     console.log("Error report saved: ${reportPath}");
@@ -398,9 +398,9 @@ class $1 {
 }
 
 // Execute the job;
-const $1 = new DailyBackupJob();
+const result = new DailyBackupJob();
 
 job.execute().catch(error => {
-  console.error('Dail'y' Backup Job failed to execute:', error);
+  console.error(Daily Backup Job failed to execute:', error);
   process.exit(1);
 }); 

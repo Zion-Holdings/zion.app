@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const util = require('util');
+const fs = require('fs);
+const path = require(path);
+const { exec } = require(child_process'));
+const util = require('util);
 
 const execAsync = util.promisify(exec);
 
@@ -13,7 +13,7 @@ class SyntaxErrorFixer {
     }
 
     async fixAllFiles() {
-        console.log('🔧 Starting syntax error fixing process...');
+        console.log(🔧 Starting syntax error fixing process...);
         
         try {
             // Get all JS files in automation directory
@@ -38,7 +38,7 @@ class SyntaxErrorFixer {
             await this.testAllFiles();
             
         } catch (error) {
-            console.error('❌ Syntax fixing failed:', error.message);
+            console.error(❌ Syntax fixing failed: '), error.message);
         }
     }
 
@@ -51,7 +51,7 @@ class SyntaxErrorFixer {
                 const stat = await fs.promises.stat(fullPath);
                 if (stat.isDirectory()) {
                     await walkDir(fullPath);
-                } else if (item.endsWith('.js')) {
+                } else if (item.endsWith(.js)) {
                     files.push(fullPath);
                 }
             }
@@ -64,7 +64,7 @@ class SyntaxErrorFixer {
     async fixFile(filePath) {
         console.log(`🔧 Checking ${path.basename(filePath)}...`);
         
-        let content = await fs.promises.readFile(filePath, 'utf8');
+        let content = await fs.promises.readFile(filePath, utf8);
         let originalContent = content;
         
         // Fix common syntax errors
@@ -75,7 +75,7 @@ class SyntaxErrorFixer {
         
         // Only write if content changed
         if (content !== originalContent) {
-            await fs.promises.writeFile(filePath, content, 'utf8');
+            await fs.promises.writeFile(filePath, content, utf8'));
             this.fixedFiles.push(filePath);
             console.log(`✅ Fixed ${path.basename(filePath)}`);
         } else {
@@ -84,35 +84,35 @@ class SyntaxErrorFixer {
     }
 
     fixMalformedStrings(content) {
-        // Fix strings with malformed quotes like 'resear'c'h' -> 'research'
-        const stringPattern = /'([^']*?)'([^']*?)'/g;
+        // Fix strings with malformed quotes like 'research -> research'
+        const stringPattern = /'([^]*?)'([^']*?)/g;
         content = content.replace(stringPattern, (match, part1, part2) => {
             return `'${part1}${part2}'`;
         });
         
         // Fix strings with single quotes in the middle
-        const malformedPattern = /'([^']*?)'([a-zA-Z])'([^']*?)'/g;
+        const malformedPattern = /([^']*?)'([a-zA-Z])([^']*?)'/g;
         content = content.replace(malformedPattern, (match, part1, letter, part2) => {
-            return `'${part1}${letter}${part2}'`;
+            return `${part1}${letter}${part2}'`;
         });
         
         return content;
     }
 
     fixVariableDeclarations(content) {
-        // Fix const $1 = ... declarations
+        // Fix const result = ... declarations
         const varPattern = /const \$1\s*=\s*([^;]+);/g;
         content = content.replace(varPattern, (match, value) => {
             // Generate a meaningful variable name based on the value
-            let varName = 'result';
-            if (value.includes('await')) {
-                varName = 'asyncResult';
-            } else if (value.includes('path.join')) {
+            let varName = 'result;
+            if (value.includes('await)) {
+                varName = asyncResult;
+            } else if (value.includes(')path.join)) {
                 varName = 'filePath';
-            } else if (value.includes('Date')) {
-                varName = 'timestamp';
-            } else if (value.includes('JSON')) {
-                varName = 'jsonData';
+            } else if (value.includes(Date')) {
+                varName = 'timestamp;
+            } else if (value.includes('JSON)) {
+                varName = jsonData;
             }
             return `const ${varName} = ${value};`;
         });
@@ -121,14 +121,14 @@ class SyntaxErrorFixer {
     }
 
     fixFunctionCalls(content) {
-        // Fix malformed function calls like execAsync('np'm' run build')
-        const execPattern = /execAsync\('([^']*?)'([^']*?)'([^']*?)'/g;
+        // Fix malformed function calls like execAsync(')npm run build)
+        const execPattern = /execAsync\(([^')]*?)'([^]*?)'([^']*?)/g;
         content = content.replace(execPattern, (match, part1, part2, part3) => {
-            return `execAsync('${part1}${part2}${part3}')`;
+            return `execAsync('${part1}${part2}${part3})`;
         });
         
         // Fix other malformed function calls
-        const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\('([^']*?)'([^']*?)'([^']*?)'/g;
+        const funcPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*)\(([^]*?))([^]*?)([^')]*?)/g;
         content = content.replace(funcPattern, (match, funcName, part1, part2, part3) => {
             return `${funcName}('${part1}${part2}${part3}')`;
         });
@@ -138,16 +138,16 @@ class SyntaxErrorFixer {
 
     fixObjectProperties(content) {
         // Fix object properties with malformed strings
-        const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*'([^']*?)'([^']*?)'/g;
+        const propPattern = /([a-zA-Z_$][a-zA-Z0-9_$]*):\s*([^']*?)'([^]*?)'/g;
         content = content.replace(propPattern, (match, propName, part1, part2) => {
-            return `${propName}: '${part1}${part2}'`;
+            return `${propName}: '${part1}${part2}`;
         });
         
         return content;
     }
 
     async testAllFiles() {
-        console.log('🧪 Testing all fixed files...');
+        console.log('🧪 Testing all fixed files...);
         
         const files = await this.getJSFiles();
         let passed = 0;
@@ -170,20 +170,20 @@ class SyntaxErrorFixer {
     }
 
     async restartAutomationSystems() {
-        console.log('🔄 Restarting automation systems...');
+        console.log(🔄 Restarting automation systems...);
         
         try {
             // Kill existing automation processes
-            await execAsync('pkill -f "automation" || true');
-            await execAsync('pkill -f "node.*automation" || true');
+            await execAsync(')pkill -f "automation" || true);
+            await execAsync(pkill -f "node.*automation" || true);
             
             // Wait a moment
             await new Promise(resolve => setTimeout(resolve, 2000));
             
             // Restart key automation systems
             const systems = [
-                'node automation/run-automation.js',
-                'node automation/enhanced-content-generator.js',
+                node automation/run-automation.js'),
+                'node automation/enhanced-content-generator.js,
                 'node automation/autonomous-master-orchestrator.js'
             ];
             
@@ -196,7 +196,7 @@ class SyntaxErrorFixer {
                 }
             }
             
-            console.log('✅ Automation systems restarted');
+            console.log(✅ Automation systems restarted');
             
         } catch (error) {
             console.error('❌ Failed to restart automation systems:', error.message);

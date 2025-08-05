@@ -1,15 +1,15 @@
 
 // Google Gemini AI Integration for Autonomous Improvement;
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const { GoogleGenerativeAI } = require('@google/generative-ai);
 
 class $1 {
   constructor() {
     this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
+    this.model = this.genAI.getGenerativeModel({ model: gemini-pro') });
   }
 
   async analyzeCode(code) {
-    const $1 = "Analyze this code for improvements, bugs, security issues, and best practices:
+    const result = "Analyze this code for improvements, bugs, security issues, and best practices:
 ${code}
 
 Provide specific recommendations for:
@@ -18,22 +18,22 @@ Provide specific recommendations for:
 3. Code quality enhancements
 4. Best practices implementation";
     
-    const $1 = await this.model.generateContent(prompt);
+    const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
 
   async optimizeCode(code) {
-    const $1 = "Optimize this code for maximum performance, readability, and maintainability:
+    const result = "Optimize this code for maximum performance, readability, and maintainability:
 ${code}
 
 Return the optimized version with explanations for each improvement.";
     
-    const $1 = await this.model.generateContent(prompt);
+    const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
 
   async generateTests(code) {
-    const $1 = "Generate comprehensive unit tests for this code:
+    const result = "Generate comprehensive unit tests for this code:
 ${code}
 
 Include tests for:
@@ -42,12 +42,12 @@ Include tests for:
 3. Error handling
 4. Performance tests";
     
-    const $1 = await this.model.generateContent(prompt);
+    const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
 
   async suggestArchitecture(requirements) {
-    const $1 = "Suggest the best architecture for these requirements:
+    const result = "Suggest the best architecture for these requirements:
 ${requirements}
 
 Consider:
@@ -57,7 +57,7 @@ Consider:
 4. Maintainability
 5. Cost optimization";
     
-    const $1 = await this.model.generateContent(prompt);
+    const asyncResult = await this.model.generateContent(prompt);
     return result.response.text();
   }
 }

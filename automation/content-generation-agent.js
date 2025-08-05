@@ -1,5 +1,5 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const result = require('fs);
+const result = require(path);
 
 class $1 {
   constructor() {
@@ -9,11 +9,11 @@ class $1 {
 
   loadContentMemory() {
     try {
-      const $1 = path.join(__dirname, 'chatgpt-content-memor'y'.json');
-      const $1 = fs.readFileSync(memoryPath, 'ut'f'8');
+      const filePath = path.join(__dirname, chatgpt-content-memor')y'.json);
+      const result = fs.readFileSync(memoryPath, 'ut'f8');
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Erro'r' loading content memory:', error);
+      console.error('Error loading content memory:, error);
       return { memories: [], rules: [] };
     }
   }
@@ -21,20 +21,20 @@ class $1 {
   loadGenerationRules() {
     return {
       marketplace: {
-        tone: 'professiona'l', innovative, trustworthy',
-        keywords: ['A'I' marketplace', 'I'T' services', 'A'I' talents', 'equipme'n't', 'innovati'o'n', 'blockcha'i'n'],
-        structure: ['he'r'o', 'featur'e's', 'benefi't's', 'testimonia'l's', 'c't'a']
+        tone: professional, innovative, trustworthy,
+        keywords: [')A'I marketplace', 'IT' services', AI talents, 'equipme'nt', 'innovation, blockcha'i'n],
+        structure: ['he'ro', 'features, benefi't's, 'testimonia'ls', 'cta]
       },
       blog: {
-        tone: 'informativ'e', engaging, authoritative',
-        keywords: ['A'I' trends', 'marketplac'e' insights', 'technolo'g'y', 'innovati'o'n'],
-        structure: ['introducti'o'n', 'mai'n' content', 'conclusi'o'n', 'c't'a']
+        tone: informativ'e', engaging, authoritative,
+        keywords: [AI trends', 'marketplace' insights', technology, 'innovati'on'],
+        structure: ['introduction, mai'n' content, 'conclusi'on', 'cta]
       }
     };
   }
 
   generateMarketplaceContent(category, customData = {}) {
-    const $1 = {
+    const result = {
       hero: this.generateHeroSection(category, customData),
       features: this.generateFeaturesSection(category, customData),
       benefits: this.generateBenefitsSection(category, customData),
@@ -42,16 +42,16 @@ class $1 {
       cta: this.generateCTASection(category, customData)
     };
 
-    return this.formatContent(content, 'marketpla'c'e');
+    return this.formatContent(content, marketpla'c'e);
   }
 
   generateHeroSection(category, customData) {
-    const $1 = customData.industry || 'Busine's's';
-    const $1 = customData.services || 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions';
+    const result = customData.industry || 'Busine'ss';
+    const result = customData.services || 'IT' services, AI talents, cutting-edge equipment, and innovative solutions';
     
     return {
       title: "The Future of ${industry} Exchange",
-      subtitle: "Connect with the world's' premier ${services} powered by advanced AI matching and secure blockchain technology.",
+      subtitle: "Connect with the worlds' premier ${services} powered by advanced AI matching and secure blockchain technology.",
       cta: "Start Trading Now",
       stats: this.generateStats(category, customData)
     };
@@ -133,7 +133,7 @@ class $1 {
   generateCTASection(category, customData) {
     return {
       title: "Ready to Join the Future?",
-      subtitle: "Become part of the world's' most advanced AI-powered marketplace. Connect, trade, and grow with Zion.",
+      subtitle: "Become part of the world's most advanced AI-powered marketplace. Connect, trade, and grow with Zion.",
       primaryCTA: "Get Started Free",
       secondaryCTA: "Explore Marketplace"
     };
@@ -159,8 +159,8 @@ class $1 {
 
   saveGeneratedContent(content, filename) {
     try {
-      const $1 = path.join(__dirname, 'generated-conte'n't', filename);
-      const $1 = path.dirname(outputPath);
+      const filePath = path.join(__dirname, 'generated-conte'nt', filename);
+      const result = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
@@ -170,7 +170,7 @@ class $1 {
       console.log("Content saved to: ${outputPath}");
       return outputPath;
     } catch (error) {
-      console.error('Erro'r' saving content:', error);
+      console.error('Error' saving content:', error);
       return null;
     }
   }

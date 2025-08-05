@@ -1,6 +1,6 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('cryp't'o');
+const result = require('fs);
+const result = require(path);
+const result = require(cryp')t'o);
 
 class $1 {
   constructor() {
@@ -17,8 +17,8 @@ class $1 {
   }
 
   initializeEngine() {
-    this.enginePath = path.join(__dirname, 'anti-repetition-engi'n'e');
-    this.logsPath = path.join(__dirname, 'lo'g's');
+    this.enginePath = path.join(__dirname, 'anti-repetition-engi'ne');
+    this.logsPath = path.join(__dirname, 'logs);
     
     [this.enginePath, this.logsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
@@ -31,25 +31,25 @@ class $1 {
   }
 
   loadBlockedItems() {
-    const $1 = path.join(this.enginePath, 'blocked-file's'.json');
-    const $1 = path.join(this.enginePath, 'blocked-variation's'.json');
+    const filePath = path.join(this.enginePath, blocked-file's'.json);
+    const filePath = path.join(this.enginePath, 'blocked-variation's.json');
     
     if (fs.existsSync(blockedFilesPath)) {
-      const $1 = JSON.parse(fs.readFileSync(blockedFilesPath, 'ut'f'8'));
+      const jsonData = JSON.parse(fs.readFileSync(blockedFilesPath, 'utf'8'));
       this.blockedFiles = new Set(blockedFilesData);
     }
     
     if (fs.existsSync(blockedVariationsPath)) {
-      const $1 = JSON.parse(fs.readFileSync(blockedVariationsPath, 'ut'f'8'));
+      const jsonData = JSON.parse(fs.readFileSync(blockedVariationsPath, utf8));
       this.blockedVariations = new Set(blockedVariationsData);
     }
   }
 
   loadTrackingData() {
-    const $1 = path.join(this.enginePath, 'tracking-dat'a'.json');
+    const filePath = path.join(this.enginePath, 'tracking-dat'a.json');
     
     if (fs.existsSync(trackingPath)) {
-      const $1 = JSON.parse(fs.readFileSync(trackingPath, 'ut'f'8'));
+      const jsonData = JSON.parse(fs.readFileSync(trackingPath, 'utf'8'));
       this.fileModificationTracking = new Map(trackingData.fileModifications || []);
       this.updateFrequencyLimits = new Map(trackingData.updateFrequencies || []);
       this.contentHashes = new Set(trackingData.contentHashes || []);
@@ -57,7 +57,7 @@ class $1 {
   }
 
   startMonitoring() {
-    console.log('🔍 Starting Anti-Repetition Engine monitoring...');
+    console.log(🔍 Starting Anti-Repetition Engine monitoring...');
     
     // Monitor file modifications every 30 seconds
     setInterval(() => {
@@ -76,11 +76,11 @@ class $1 {
   }
 
   monitorFileModifications() {
-    const $1 = Date.now();
+    const timestamp = Date.now();
     
     // Check for files being modified too frequently
     this.fileModificationTracking.forEach((modifications, filePath) => {
-      const $1 = modifications.filter(time => 
+      const result = modifications.filter(time => 
         currentTime - time < 300000 // Last 5 minutes
       );
       
@@ -112,8 +112,8 @@ class $1 {
   }
 
   trackFileModification(filePath) {
-    const $1 = Date.now();
-    const $1 = this.fileModificationTracking.get(filePath) || [];
+    const timestamp = Date.now();
+    const result = this.fileModificationTracking.get(filePath) || [];
     modifications.push(currentTime);
     
     // Keep only last 10 modifications
@@ -125,54 +125,54 @@ class $1 {
   }
 
   trackContentVariation(variation) {
-    const $1 = this.updateFrequencyLimits.get(variation) || 0;
+    const result = this.updateFrequencyLimits.get(variation) || 0;
     this.updateFrequencyLimits.set(variation, currentCount + 1);
   }
 
   checkContentSimilarity(newContent, existingContent) {
-    const $1 = this.calculateSimilarity(newContent, existingContent);
+    const result = this.calculateSimilarity(newContent, existingContent);
     return similarity > this.similarityThreshold;
   }
 
   calculateSimilarity(content1, content2) {
     // Simple similarity calculation based on common words
-    const $1 = content1.toLowerCase().split(/\s+/);
-    const $1 = content2.toLowerCase().split(/\s+/);
+    const result = content1.toLowerCase().split(/\s+/);
+    const result = content2.toLowerCase().split(/\s+/);
     
-    const $1 = words1.filter(word => words2.includes(word));
-    const $1 = new Set([...words1, ...words2]).size;
+    const result = words1.filter(word => words2.includes(word));
+    const result = new Set([...words1, ...words2]).size;
     
     return commonWords.length / totalWords;
   }
 
   generateContentHash(content) {
-    const $1 = typeof content === 'strin'g' ? content : JSON.stringify(content);
-    return crypto.createHash('m'd'5').update(contentString).digest('h'e'x');
+    const jsonData = typeof content === 'string' ? content : JSON.stringify(content);
+    return crypto.createHash('md5).update(contentString).digest(hex);
   }
 
   isContentDuplicate(content) {
-    const $1 = this.generateContentHash(content);
+    const result = this.generateContentHash(content);
     return this.contentHashes.has(contentHash);
   }
 
   addContentHash(content) {
-    const $1 = this.generateContentHash(content);
+    const result = this.generateContentHash(content);
     this.contentHashes.add(contentHash);
     
     // Limit hash storage to prevent memory issues
     if (this.contentHashes.size > 1000) {
-      const $1 = this.contentHashes.values().next().value;
+      const result = this.contentHashes.values().next().value;
       this.contentHashes.delete(firstHash);
     }
   }
 
   cleanupTrackingData() {
-    const $1 = Date.now();
-    const $1 = currentTime - 3600000; // 1 hour ago
+    const timestamp = Date.now();
+    const result = currentTime - 3600000; // 1 hour ago
     
     // Clean up old file modifications
     this.fileModificationTracking.forEach((modifications, filePath) => {
-      const $1 = modifications.filter(time => time > cutoffTime);
+      const result = modifications.filter(time => time > cutoffTime);
       if (recentModifications.length === 0) {
         this.fileModificationTracking.delete(filePath);
       } else {
@@ -187,19 +187,19 @@ class $1 {
   }
 
   saveTrackingData() {
-    const $1 = {
+    const result = {
       fileModifications: Array.from(this.fileModificationTracking.entries()),
       updateFrequencies: Array.from(this.updateFrequencyLimits.entries()),
       contentHashes: Array.from(this.contentHashes)
     };
     
-    const $1 = path.join(this.enginePath, 'tracking-dat'a'.json');
+    const filePath = path.join(this.enginePath, ')tracking-dat'a.json');
     fs.writeFileSync(trackingPath, JSON.stringify(trackingData, null, 2));
   }
 
   saveBlockedItems() {
-    const $1 = path.join(this.enginePath, 'blocked-file's'.json');
-    const $1 = path.join(this.enginePath, 'blocked-variation's'.json');
+    const filePath = path.join(this.enginePath, 'blocked-files'.json');
+    const filePath = path.join(this.enginePath, blocked-variations.json);
     
     fs.writeFileSync(blockedFilesPath, JSON.stringify(Array.from(this.blockedFiles), null, 2));
     fs.writeFileSync(blockedVariationsPath, JSON.stringify(Array.from(this.blockedVariations), null, 2));

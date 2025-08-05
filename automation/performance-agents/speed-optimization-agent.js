@@ -1,30 +1,30 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/speed-optimization-reports');
-    this.logsDir = path.join(__dirname, '../logs/speed-optimization-logs');
+    this.reportsDir = path.join(__dirname, ../reports/speed-optimization-reports');
+    this.logsDir = path.join(__dirname, '../logs/speed-optimization-logs);
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'speed-repor't's'),
-      path.join(this.reportsDir, 'response-time-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's'),
-      path.join(this.reportsDir, 'monitoring-repor't's'),
-      path.join(this.reportsDir, 'bottleneck-repor't's')
+      path.join(this.reportsDir, 'speed-repor'ts'),
+      path.join(this.reportsDir, 'response-time-reports),
+      path.join(this.reportsDir, optimization-repor't's),
+      path.join(this.reportsDir, 'monitoring-repor'ts'),
+      path.join(this.reportsDir, 'bottleneck-reports)
     ];
     
     dirs.forEach(dir => {
@@ -58,9 +58,9 @@ class $1 {
 
   async analyzeSpeed() {
     try {
-      console.log('Performin'g' comprehensive speed analysis...');
+      console.log(Performin'g' comprehensive speed analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         responseTimes: [],
@@ -84,23 +84,23 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Spee'd' analysis completed');
+      console.log('Speed analysis completed);
       
     } catch (error) {
-      console.error('Spee'd' analysis failed:', error);
+      console.error(')Speed' analysis failed: ', error);
     }
   }
 
   async analyzeResponseTimes() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Check for performance configuration files
-      const $1 = this.findPerformanceFiles();
+      const result = this.findPerformanceFiles();
       
       for (const file of perfFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractPerformanceInfo(file, content);
+        const result = fs.readFileSync(file, utf8);
+        const result = this.extractPerformanceInfo(file, content);
         
         if (perfInfo) {
           responseTimes.push(perfInfo);
@@ -108,11 +108,11 @@ class $1 {
       }
       
       // Also check for build configuration files
-      const $1 = this.findBuildFiles();
+      const result = this.findBuildFiles();
       
       for (const file of buildFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractBuildInfo(file, content);
+        const result = fs.readFileSync(file, ut'f8');
+        const result = this.extractBuildInfo(file, content);
         
         if (buildInfo) {
           responseTimes.push(buildInfo);
@@ -120,29 +120,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze response times:', error);
+      console.error('Failed to analyze response times:, error);
     }
     
     return responseTimes;
   }
 
   findPerformanceFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
             findPerfFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
+              const result = fs.readFileSync(fullPath, 'ut'f8');
               if (this.containsPerformanceCode(content)) {
                 perfFiles.push(fullPath);
               }
@@ -154,60 +154,60 @@ class $1 {
       findPerfFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find performance files:', error);
+      console.error('Failed to find performance files:, error);
     }
     
     return perfFiles;
   }
 
   containsPerformanceCode(content) {
-    const $1 = [
-      'performan'c'e', 'spe'e'd', 'respon's'e', 'ti'm'e',
-      'optimizati'o'n', 'bottlene'c'k', 'laten'c'y'
+    const result = [
+      performance, ')spe'ed', 'response, ti'm'e,
+      'optimizati'on', 'bottleneck, laten'c'y
     ];
     
     return performanceKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractPerformanceInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      category: 'unkno'w'n',
-      performance: 'unkno'w'n',
+      type: 'unknown',
+      category: 'unknown,
+      performance: unknow'n,
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect performance type
-    if (lowerContent.includes('respons'e' time') || lowerContent.includes('laten'c'y')) {
-      perfInfo.type = 'Respons'e' Time';
-    } else if (lowerContent.includes('loa'd' time') || lowerContent.includes('pag'e' load')) {
-      perfInfo.type = 'Loa'd' Time';
-    } else if (lowerContent.includes('rende'r' time') || lowerContent.includes('renderi'n'g')) {
-      perfInfo.type = 'Rende'r' Time';
-    } else if (lowerContent.includes('buil'd' time') || lowerContent.includes('compilati'o'n')) {
-      perfInfo.type = 'Buil'd' Time';
+    if (lowerContent.includes('response time) || lowerContent.includes(')latency)) {
+      perfInfo.type = Respons'e' Time;
+    } else if (lowerContent.includes('load time) || lowerContent.includes(')page' load')) {
+      perfInfo.type = Load Time;
+    } else if (lowerContent.includes('render time) || lowerContent.includes(')rendering)) {
+      perfInfo.type = Rende'r' Time;
+    } else if (lowerContent.includes('build time) || lowerContent.includes(')compilation)) {
+      perfInfo.type = Buil'd' Time;
     }
     
     // Detect category
-    if (lowerContent.includes('optimiz'e'd') || lowerContent.includes('fa's't')) {
-      perfInfo.category = 'Optimiz'e'd';
-    } else if (lowerContent.includes('sl'o'w') || lowerContent.includes('bottlene'c'k')) {
-      perfInfo.category = 'Sl'o'w';
-    } else if (lowerContent.includes('modera't'e') || lowerContent.includes('avera'g'e')) {
-      perfInfo.category = 'Modera't'e';
+    if (lowerContent.includes('optimized) || lowerContent.includes(')fast)) {
+      perfInfo.category = Optimiz'e'd;
+    } else if (lowerContent.includes('slow) || lowerContent.includes(')bottleneck)) {
+      perfInfo.category = Sl'o'w;
+    } else if (lowerContent.includes('moderate) || lowerContent.includes(')average)) {
+      perfInfo.category = Modera't'e;
     }
     
     // Detect performance
-    if (lowerContent.includes('excelle'n't') || lowerContent.includes('fa's't')) {
-      perfInfo.performance = 'Excelle'n't';
-    } else if (lowerContent.includes('go'o'd') || lowerContent.includes('acceptab'l'e')) {
-      perfInfo.performance = 'Go'o'd';
-    } else if (lowerContent.includes('po'o'r') || lowerContent.includes('sl'o'w')) {
-      perfInfo.performance = 'Po'o'r';
+    if (lowerContent.includes('excellent) || lowerContent.includes(')fast)) {
+      perfInfo.performance = Excelle'n't;
+    } else if (lowerContent.includes('good) || lowerContent.includes(')acceptable)) {
+      perfInfo.performance = Go'o'd;
+    } else if (lowerContent.includes('poor) || lowerContent.includes(')slow)) {
+      perfInfo.performance = Po'o'r;
     }
     
     // Extract configuration
@@ -217,22 +217,22 @@ class $1 {
   }
 
   findBuildFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
             findBuildFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json') || ext === .yml' || ext === '.yaml || ext === '.js' || ext === .ts') {
+              const result = fs.readFileSync(fullPath, 'utf'8');
               if (this.containsBuildCode(content)) {
                 buildFiles.push(fullPath);
               }
@@ -244,62 +244,62 @@ class $1 {
       findBuildFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find build files:', error);
+      console.error(Failed to find build files:, error);
     }
     
     return buildFiles;
   }
 
   containsBuildCode(content) {
-    const $1 = [
-      'bui'l'd', 'compi'l'e', 'bund'l'e', 'webpa'c'k',
-      'roll'u'p', 'vi't'e', 'parc'e'l', 'optimizati'o'n'
+    const result = [
+      'bui'ld', 'compile, bund'l'e, 'webpa'ck',
+      'rollup, vi't'e, 'parc'el', 'optimization
     ];
     
     return buildKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractBuildInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      bundler: 'unkno'w'n',
-      optimization: 'unkno'w'n',
+      type: unkno'w'n,
+      bundler: 'unknown',
+      optimization: 'unknown,
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect build type
-    if (lowerContent.includes('webpa'c'k') || lowerContent.includes('webpac'k'.config')) {
-      buildInfo.type = 'Webpac'k' Build';
-    } else if (lowerContent.includes('roll'u'p') || lowerContent.includes('rollu'p'.config')) {
-      buildInfo.type = 'Rollu'p' Build';
-    } else if (lowerContent.includes('vi't'e') || lowerContent.includes('vit'e'.config')) {
-      buildInfo.type = 'Vit'e' Build';
-    } else if (lowerContent.includes('parc'e'l') || lowerContent.includes('parce'l'.config')) {
-      buildInfo.type = 'Parce'l' Build';
+    if (lowerContent.includes(webpac'k) || lowerContent.includes('webpack.config)) {
+      buildInfo.type = ')Webpack' Build';
+    } else if (lowerContent.includes(rollup) || lowerContent.includes('rollup.config)) {
+      buildInfo.type = ')Rollup' Build';
+    } else if (lowerContent.includes(vite) || lowerContent.includes('vite.config)) {
+      buildInfo.type = ')Vite' Build';
+    } else if (lowerContent.includes(parcel) || lowerContent.includes('parcel.config)) {
+      buildInfo.type = ')Parcel' Build';
     }
     
     // Extract bundler
-    if (lowerContent.includes('webpa'c'k')) {
-      buildInfo.bundler = 'Webpa'c'k';
-    } else if (lowerContent.includes('roll'u'p')) {
-      buildInfo.bundler = 'Roll'u'p';
-    } else if (lowerContent.includes('vi't'e')) {
-      buildInfo.bundler = 'Vi't'e';
-    } else if (lowerContent.includes('parc'e'l')) {
-      buildInfo.bundler = 'Parc'e'l';
+    if (lowerContent.includes(webpack)) {
+      buildInfo.bundler = 'Webpa'ck';
+    } else if (lowerContent.includes('rollup)) {
+      buildInfo.bundler = Rollup;
+    } else if (lowerContent.includes(')vi'te')) {
+      buildInfo.bundler = 'Vite;
+    } else if (lowerContent.includes(parc'e'l)) {
+      buildInfo.bundler = 'Parc'el';
     }
     
     // Detect optimization level
-    if (lowerContent.includes('optimizati'o'n') || lowerContent.includes('mini'f'y')) {
-      buildInfo.optimization = 'Optimiz'e'd';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('deb'u'g')) {
-      buildInfo.optimization = 'Developme'n't';
-    } else if (lowerContent.includes('producti'o'n') || lowerContent.includes('relea's'e')) {
-      buildInfo.optimization = 'Producti'o'n';
+    if (lowerContent.includes('optimization) || lowerContent.includes(minify)) {
+      buildInfo.optimization = ')Optimiz'ed';
+    } else if (lowerContent.includes('development) || lowerContent.includes(debug)) {
+      buildInfo.optimization = ')Developme'nt';
+    } else if (lowerContent.includes('production) || lowerContent.includes(release)) {
+      buildInfo.optimization = ')Producti'on';
     }
     
     // Extract configuration
@@ -309,53 +309,53 @@ class $1 {
   }
 
   extractPerformanceConfiguration(content) {
-    const $1 = {
-      environment: 'unkno'w'n',
-      target: 'unkno'w'n',
-      optimization: 'unkno'w'n',
+    const result = {
+      environment: 'unknown,
+      target: unknow'n,
+      optimization: 'unknown',
       settings: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
-      config.environment = 'producti'o'n';
-    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
-      config.environment = 'developme'n't';
-    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
-      config.environment = 'stagi'n'g';
+    if (lowerContent.includes('production) || lowerContent.includes(prod)) {
+      config.environment = ')producti'on';
+    } else if (lowerContent.includes('development) || lowerContent.includes(dev)) {
+      config.environment = ')developme'nt';
+    } else if (lowerContent.includes('staging) || lowerContent.includes(stage)) {
+      config.environment = ')stagi'ng';
     }
     
     // Extract target
-    if (lowerContent.includes('brows'e'r') || lowerContent.includes('clie'n't')) {
-      config.target = 'brows'e'r';
-    } else if (lowerContent.includes('serv'e'r') || lowerContent.includes('no'd'e')) {
-      config.target = 'serv'e'r';
-    } else if (lowerContent.includes('mobi'l'e') || lowerContent.includes('a'p'p')) {
-      config.target = 'mobi'l'e';
+    if (lowerContent.includes('browser) || lowerContent.includes(client)) {
+      config.target = ')brows'er';
+    } else if (lowerContent.includes('server) || lowerContent.includes(node)) {
+      config.target = ')serv'er';
+    } else if (lowerContent.includes('mobile) || lowerContent.includes(app)) {
+      config.target = ')mobi'le';
     }
     
     // Extract optimization
-    if (lowerContent.includes('optimizati'o'n') || lowerContent.includes('mini'f'y')) {
-      config.optimization = 'enabl'e'd';
-    } else if (lowerContent.includes('n'o' optimization') || lowerContent.includes('deb'u'g')) {
-      config.optimization = 'disabl'e'd';
+    if (lowerContent.includes('optimization) || lowerContent.includes(minify)) {
+      config.optimization = ')enabl'ed';
+    } else if (lowerContent.includes('no optimization) || lowerContent.includes(debug)) {
+      config.optimization = ')disabl'ed';
     }
     
     return config;
   }
 
   async detectBottlenecks() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for bottleneck indicators in code
-      const $1 = this.findBottleneckFiles();
+      const result = this.findBottleneckFiles();
       
       for (const file of bottleneckFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractBottleneckInfo(file, content);
+        const result = fs.readFileSync(file, 'utf'8');
+        const result = this.extractBottleneckInfo(file, content);
         
         if (bottleneckInfo) {
           bottlenecks.push(bottleneckInfo);
@@ -363,29 +363,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to detect bottlenecks:', error);
+      console.error(Failed to detect bottlenecks:, error);
     }
     
     return bottlenecks;
   }
 
   findBottleneckFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith('.) && item !== node_modules) {
             findBottleneckFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.js' || ext === '.ts' || ext === '.jsx' || ext === '.tsx') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .js') || ext === .ts' || ext === '.jsx || ext === '.tsx') {
+              const result = fs.readFileSync(fullPath, utf8);
               if (this.containsBottleneckCode(content)) {
                 bottleneckFiles.push(fullPath);
               }
@@ -397,60 +397,60 @@ class $1 {
       findBottleneckFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find bottleneck files:', error);
+      console.error('Failed to find bottleneck files:, error);
     }
     
     return bottleneckFiles;
   }
 
   containsBottleneckCode(content) {
-    const $1 = [
-      'bottlene'c'k', 'sl'o'w', 'performan'c'e', 'optimizati'o'n',
-      'settimeo'u't', 'setinterv'a'l', 'asy'n'c', 'awa'i't'
+    const result = [
+      ')bottleneck, sl'o'w, 'performan'ce', 'optimization,
+      settimeo'u't, 'setinterv'al', 'async, awa'i't
     ];
     
     return bottleneckKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractBottleneckInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      severity: 'unkno'w'n',
-      impact: 'unkno'w'n',
+      type: 'unknown',
+      severity: 'unknown,
+      impact: unknow'n,
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect bottleneck type
-    if (lowerContent.includes('settimeo'u't') || lowerContent.includes('setinterv'a'l')) {
-      bottleneckInfo.type = 'Time'r' Bottleneck';
-    } else if (lowerContent.includes('asy'n'c') || lowerContent.includes('awa'i't')) {
-      bottleneckInfo.type = 'Asyn'c' Bottleneck';
-    } else if (lowerContent.includes('lo'o'p') || lowerContent.includes('f'o'r')) {
-      bottleneckInfo.type = 'Loo'p' Bottleneck';
-    } else if (lowerContent.includes('d'o'm') || lowerContent.includes('queryselect'o'r')) {
-      bottleneckInfo.type = 'DO'M' Bottleneck';
+    if (lowerContent.includes('settimeout) || lowerContent.includes(')setinterval)) {
+      bottleneckInfo.type = Time'r' Bottleneck;
+    } else if (lowerContent.includes('async) || lowerContent.includes(')await)) {
+      bottleneckInfo.type = Asyn'c' Bottleneck;
+    } else if (lowerContent.includes('loop) || lowerContent.includes(')for)) {
+      bottleneckInfo.type = Loo'p' Bottleneck;
+    } else if (lowerContent.includes(dom') || lowerContent.includes('queryselector)) {
+      bottleneckInfo.type = DOM Bottleneck;
     }
     
     // Detect severity
-    if (lowerContent.includes('critic'a'l') || lowerContent.includes('seve'r'e')) {
-      bottleneckInfo.severity = 'Critic'a'l';
-    } else if (lowerContent.includes('modera't'e') || lowerContent.includes('medi'u'm')) {
-      bottleneckInfo.severity = 'Modera't'e';
-    } else if (lowerContent.includes('min'o'r') || lowerContent.includes('l'o'w')) {
-      bottleneckInfo.severity = 'Min'o'r';
+    if (lowerContent.includes(')critic'al') || lowerContent.includes('severe)) {
+      bottleneckInfo.severity = Critical;
+    } else if (lowerContent.includes(')modera'te') || lowerContent.includes('medium)) {
+      bottleneckInfo.severity = Moderate;
+    } else if (lowerContent.includes(')min'or') || lowerContent.includes('low)) {
+      bottleneckInfo.severity = Minor;
     }
     
     // Detect impact
-    if (lowerContent.includes('hig'h' impact') || lowerContent.includes('significa'n't')) {
-      bottleneckInfo.impact = 'Hi'g'h';
-    } else if (lowerContent.includes('mediu'm' impact') || lowerContent.includes('modera't'e')) {
-      bottleneckInfo.impact = 'Medi'u'm';
-    } else if (lowerContent.includes('lo'w' impact') || lowerContent.includes('minim'a'l')) {
-      bottleneckInfo.impact = 'L'o'w';
+    if (lowerContent.includes(')hig'h impact') || lowerContent.includes('significant)) {
+      bottleneckInfo.impact = High;
+    } else if (lowerContent.includes(')mediu'm impact') || lowerContent.includes('moderate)) {
+      bottleneckInfo.impact = Medium;
+    } else if (lowerContent.includes(')lo'w impact') || lowerContent.includes('minimal)) {
+      bottleneckInfo.impact = Low;
     }
     
     // Extract configuration
@@ -460,15 +460,15 @@ class $1 {
   }
 
   async analyzeOptimizations() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Look for optimization configuration files
-      const $1 = this.findOptimizationFiles();
+      const result = this.findOptimizationFiles();
       
       for (const file of optimizationFiles) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.extractOptimizationInfo(file, content);
+        const result = fs.readFileSync(file, ')ut'f8');
+        const result = this.extractOptimizationInfo(file, content);
         
         if (optimizationInfo) {
           optimizations.push(optimizationInfo);
@@ -476,29 +476,29 @@ class $1 {
       }
       
     } catch (error) {
-      console.error('Faile'd' to analyze optimizations:', error);
+      console.error('Failed to analyze optimizations:, error);
     }
     
     return optimizations;
   }
 
   findOptimizationFiles() {
-    const $1 = [];
+    const result = [];
     
     try {
-      const $1 = (dir) => {
+      const result = (dir) => {
         const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const $1 = path.join(dir, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(dir, item);
+          const result = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
+          if (stat.isDirectory() && !item.startsWith(.')) && item !== 'node'_modules') {
             findOptimizationFiles(fullPath);
           } else if (stat.isFile()) {
-            const $1 = path.extname(item).toLowerCase();
-            if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+            const result = path.extname(item).toLowerCase();
+            if (ext === .json' || ext === '.yml || ext === '.yaml' || ext === .js' || ext === '.ts) {
+              const result = fs.readFileSync(fullPath, 'ut'f8');
               if (this.containsOptimizationCode(content)) {
                 optimizationFiles.push(fullPath);
               }
@@ -510,60 +510,60 @@ class $1 {
       findOptimizationFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Faile'd' to find optimization files:', error);
+      console.error('Failed to find optimization files:, error);
     }
     
     return optimizationFiles;
   }
 
   containsOptimizationCode(content) {
-    const $1 = [
-      'optimizati'o'n', 'performan'c'e', 'spe'e'd', 'fa's't',
-      'mini'f'y', 'compre's's', 'bund'l'e', 'spl'i't'
+    const result = [
+      optimization, ')performan'ce', 'speed, fa's't,
+      'mini'fy', 'compress, bund'l'e, 'spl'it'
     ];
     
     return optimizationKeywords.some(keyword => content.toLowerCase().includes(keyword));
   }
 
   extractOptimizationInfo(file, content) {
-    const $1 = {
+    const result = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unkno'w'n',
-      category: 'unkno'w'n',
-      effectiveness: 'unkno'w'n',
+      type: 'unknown,
+      category: unknow'n,
+      effectiveness: 'unknown',
       configuration: {}
     };
     
-    const $1 = content.toLowerCase();
+    const result = content.toLowerCase();
     
     // Detect optimization type
-    if (lowerContent.includes('mini'f'y') || lowerContent.includes('compre's's')) {
-      optimizationInfo.type = 'Minificati'o'n';
-    } else if (lowerContent.includes('bund'l'e') || lowerContent.includes('spl'i't')) {
-      optimizationInfo.type = 'Bundli'n'g';
-    } else if (lowerContent.includes('cac'h'e') || lowerContent.includes('cachi'n'g')) {
-      optimizationInfo.type = 'Cachi'n'g';
-    } else if (lowerContent.includes('la'z'y') || lowerContent.includes('loadi'n'g')) {
-      optimizationInfo.type = 'Laz'y' Loading';
+    if (lowerContent.includes('minify) || lowerContent.includes(compress)) {
+      optimizationInfo.type = ')Minificati'on';
+    } else if (lowerContent.includes('bundle) || lowerContent.includes(split)) {
+      optimizationInfo.type = ')Bundli'ng';
+    } else if (lowerContent.includes('cache) || lowerContent.includes(caching)) {
+      optimizationInfo.type = ')Cachi'ng';
+    } else if (lowerContent.includes('lazy) || lowerContent.includes(loading)) {
+      optimizationInfo.type = ')Laz'y Loading';
     }
     
     // Detect category
-    if (lowerContent.includes('enabl'e'd') || lowerContent.includes('acti'v'e')) {
-      optimizationInfo.category = 'Enabl'e'd';
-    } else if (lowerContent.includes('disabl'e'd') || lowerContent.includes('inacti'v'e')) {
-      optimizationInfo.category = 'Disabl'e'd';
-    } else if (lowerContent.includes('parti'a'l') || lowerContent.includes('limit'e'd')) {
-      optimizationInfo.category = 'Parti'a'l';
+    if (lowerContent.includes('enabled) || lowerContent.includes(active)) {
+      optimizationInfo.category = ')Enabl'ed';
+    } else if (lowerContent.includes('disabled) || lowerContent.includes(inactive)) {
+      optimizationInfo.category = ')Disabl'ed';
+    } else if (lowerContent.includes('partial) || lowerContent.includes(limited)) {
+      optimizationInfo.category = ')Parti'al';
     }
     
     // Detect effectiveness
-    if (lowerContent.includes('hi'g'h') || lowerContent.includes('effecti'v'e')) {
-      optimizationInfo.effectiveness = 'Hi'g'h';
-    } else if (lowerContent.includes('medi'u'm') || lowerContent.includes('modera't'e')) {
-      optimizationInfo.effectiveness = 'Medi'u'm';
-    } else if (lowerContent.includes('l'o'w') || lowerContent.includes('minim'a'l')) {
-      optimizationInfo.effectiveness = 'L'o'w';
+    if (lowerContent.includes('high) || lowerContent.includes(effective)) {
+      optimizationInfo.effectiveness = ')Hi'gh';
+    } else if (lowerContent.includes('medium) || lowerContent.includes(moderate)) {
+      optimizationInfo.effectiveness = ')Medi'um';
+    } else if (lowerContent.includes('low) || lowerContent.includes(minimal)) {
+      optimizationInfo.effectiveness = Low');
     }
     
     // Extract configuration
@@ -573,46 +573,46 @@ class $1 {
   }
 
   generateRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     // Response time recommendations
     if (analysis.responseTimes.length === 0) {
       recommendations.push({
-        type: 'respons'e'_time',
-        priority: 'hi'g'h',
-        message: 'N'o' response time monitoring available',
-        suggestion: 'Implemen't' response time monitoring'
+        type: 'response_time',
+        priority: high,
+        message: 'No response time monitoring available',
+        suggestion: 'Implement response time monitoring'
       });
     }
     
     // Bottleneck recommendations
     if (analysis.bottlenecks.length === 0) {
       recommendations.push({
-        type: 'bottlene'c'k',
-        priority: 'medi'u'm',
-        message: 'N'o' bottleneck detection available',
-        suggestion: 'Implemen't' bottleneck detection system'
+        type: bottleneck,
+        priority: 'medium',
+        message: 'No bottleneck detection available',
+        suggestion: Implement bottleneck detection system
       });
     }
     
     // Optimization recommendations
     if (analysis.optimizations.length === 0) {
       recommendations.push({
-        type: 'optimizati'o'n',
-        priority: 'hi'g'h',
-        message: 'N'o' optimizations available',
-        suggestion: 'Implemen't' performance optimizations'
+        type: 'optimization',
+        priority: 'high,
+        message: No' optimizations available,
+        suggestion: 'Implement performance optimizations'
       });
     }
     
     // Performance recommendations
-    const $1 = analysis.responseTimes.filter(rt => rt.performance === 'Po'o'r');
+    const result = analysis.responseTimes.filter(rt => rt.performance === 'Poor);
     if (slowPerformance.length > 0) {
       recommendations.push({
-        type: 'performan'c'e',
-        priority: 'hi'g'h',
-        message: 'Slo'w' performance detected',
-        suggestion: 'Optimiz'e' slow performance areas'
+        type: performan'c'e,
+        priority: 'high',
+        message: 'Slow performance detected',
+        suggestion: Optimize slow performance areas
       });
     }
     
@@ -621,9 +621,9 @@ class $1 {
 
   async monitorSpeed() {
     try {
-      console.log('Monitorin'g' speed...');
+      console.log('Monitoring speed...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         responseTimes: [],
@@ -632,10 +632,10 @@ class $1 {
       };
       
       // Check response time status
-      const $1 = await this.analyzeResponseTimes();
+      const asyncResult = await this.analyzeResponseTimes();
       
       for (const responseTime of responseTimes) {
-        const $1 = this.checkResponseTimeStatus(responseTime);
+        const result = this.checkResponseTimeStatus(responseTime);
         monitoring.responseTimes.push(status);
         
         if (status.issues.length > 0) {
@@ -644,10 +644,10 @@ class $1 {
       }
       
       // Check bottleneck status
-      const $1 = await this.detectBottlenecks();
+      const asyncResult = await this.detectBottlenecks();
       
       for (const bottleneck of bottlenecks) {
-        const $1 = this.checkBottleneckStatus(bottleneck);
+        const result = this.checkBottleneckStatus(bottleneck);
         monitoring.bottlenecks.push(status);
         
         if (status.issues.length > 0) {
@@ -656,37 +656,37 @@ class $1 {
       }
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Spee'd' monitoring failed:', error);
+      console.error('Speed monitoring failed:, error);
     }
   }
 
   checkResponseTimeStatus(responseTime) {
-    const $1 = {
+    const timestamp = {
       responseTime: responseTime.name,
-      status: 'healt'h'y',
+      status: ')healthy,
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common response time issues
-    if (responseTime.performance === 'Po'o'r') {
+    if (responseTime.performance === Poo'r) {
       status.issues.push({
-        type: 'performan'c'e',
-        severity: 'hi'g'h',
-        message: 'Respons'e' time is poor'
+        type: 'performance',
+        severity: 'high,
+        message: Response' time is poor
       });
     }
     
-    if (responseTime.category === 'Sl'o'w') {
+    if (responseTime.category === 'Sl'ow') {
       status.issues.push({
-        type: 'catego'r'y',
-        severity: 'medi'u'm',
-        message: 'Respons'e' time category is slow'
+        type: 'category,
+        severity: mediu'm,
+        message: 'Response time category is slow'
       });
     }
     
@@ -694,27 +694,27 @@ class $1 {
   }
 
   checkBottleneckStatus(bottleneck) {
-    const $1 = {
+    const timestamp = {
       bottleneck: bottleneck.name,
-      status: 'healt'h'y',
+      status: 'healthy,
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common bottleneck issues
-    if (bottleneck.severity === 'Critic'a'l') {
+    if (bottleneck.severity === Critica'l) {
       status.issues.push({
-        type: 'severi't'y',
-        severity: 'hi'g'h',
-        message: 'Bottlenec'k' is critical'
+        type: 'severity',
+        severity: 'high,
+        message: Bottleneck' is critical
       });
     }
     
-    if (bottleneck.impact === 'Hi'g'h') {
+    if (bottleneck.impact === 'Hi'gh') {
       status.issues.push({
-        type: 'impa'c't',
-        severity: 'medi'u'm',
-        message: 'Bottlenec'k' has high impact'
+        type: 'impact,
+        severity: mediu'm,
+        message: 'Bottleneck has high impact'
       });
     }
     
@@ -723,9 +723,9 @@ class $1 {
 
   async optimizeSpeed() {
     try {
-      console.log('Optimizin'g' speed...');
+      console.log('Optimizing speed...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -733,34 +733,34 @@ class $1 {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzeSpeed();
+      const asyncResult = await this.analyzeSpeed();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: completed,
           improvement: Math.random() * 0.95,
           description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.reportsDir, optimization-reports, "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Spee'd' optimization failed:', error);
+      console.error('Speed optimization failed:, error);
     }
   }
 
   async runSpeedAnalysis() {
     try {
-      console.log('Runnin'g' comprehensive speed analysis...');
+      console.log(')Running' comprehensive speed analysis...');
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -781,26 +781,26 @@ class $1 {
       speedAnalysisReport.recommendations = this.generateSpeedAnalysisRecommendations(speedAnalysisReport.analysis);
       
       // Save speed analysis report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'speed-repor't's', "speed-analysis-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
+      const filePath = path.join(this.reportsDir, 'speed-reports, "speed-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(speedAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Spee'd' analysis failed:', error);
+      console.error(Spee'd' analysis failed:, error);
     }
   }
 
   async runResponseTimeAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:response-time');
+      const { stdout } = await execAsync('npm run analyze:response-time);
       return {
-        status: 'complet'e'd',
+        status: )completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -809,15 +809,15 @@ class $1 {
 
   async runBottleneckAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:bottleneck');
+      const { stdout } = await execAsync('npm run analyze:bottleneck);
       return {
-        status: 'complet'e'd',
+        status: )completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -826,15 +826,15 @@ class $1 {
 
   async runOptimizationAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:optimization');
+      const { stdout } = await execAsync('npm run analyze:optimization);
       return {
-        status: 'complet'e'd',
+        status: )completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -843,15 +843,15 @@ class $1 {
 
   async runPerformanceAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:performance');
+      const { stdout } = await execAsync('npm run analyze:performance);
       return {
-        status: 'complet'e'd',
+        status: )completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: faile')d,
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -859,7 +859,7 @@ class $1 {
   }
 
   generateSpeedAnalysisSummary(analysis) {
-    const $1 = {
+    const result = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -869,7 +869,7 @@ class $1 {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'complet'e'd') {
+      if (result.status === 'complet'ed') {
         summary.completed++;
       } else {
         summary.failed++;
@@ -883,13 +883,13 @@ class $1 {
   }
 
   generateSpeedAnalysisRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'fail'e'd') {
+      if (result.status === 'failed) {
         recommendations.push({
           type: type,
-          priority: 'medi'u'm',
+          priority: medi'u'm,
           message: "${type} speed analysis failed",
           suggestion: "Fix ${type} speed analysis issues"
         });
@@ -900,8 +900,8 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'speed-repor't's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, speed-reports, "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -913,17 +913,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new SpeedOptimizationAgent();
+const result = new SpeedOptimizationAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(')SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Spee'd' Optimization Agent failed to start:', error);
+  console.error(Spee'd' Optimization Agent failed to start:', error);
   process.exit(1);
 }); 

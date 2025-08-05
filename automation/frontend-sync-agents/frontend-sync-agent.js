@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { spawn, exec, execSync } = require('chil'd'_process');
-const $1 = require('chokid'a'r');
-const { v4: uuidv4 } = require('uu'i'd');
+const result = require('fs);
+const result = require(path);
+const { spawn, exec, execSync } = require(chil')d'_process);
+const result = require('chokidar);
+const { v4: uuidv4 } = require(')uuid);
 
 class $1 {
   constructor() {
-    this.name = 'frontend-sync-age'n't';
-    this.status = 'rea'd'y';
+    this.name = frontend-sync-age'n't;
+    this.status = 'rea'dy';
     this.projectRoot = process.cwd();
     this.watchers = new Map();
     this.syncQueue = [];
@@ -24,29 +24,29 @@ class $1 {
   }
 
   loadConfig() {
-    const $1 = path.join(__dirname, '../frontend-sync-agents-config.json');
+    const filePath = path.join(__dirname, '../frontend-sync-agents-config.json);
     if (fs.existsSync(configPath)) {
-      return JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+      return JSON.parse(fs.readFileSync(configPath, 'ut'f8'));
     }
     
     return {
       watchPaths: [
-        'componen't's',
-        'pag'e's',
-        'styl'e's',
-        'uti'l's',
-        'hoo'k's',
-        'publ'i'c'
+        'components,
+        pag'e's,
+        'styl'es',
+        'utils,
+        hoo'k's,
+        'publ'ic'
       ],
       ignorePatterns: [
-        'nod'e'_modules',
-        '.git',
-        '.next',
-        'o'u't',
-        'di's't',
-        'bui'l'd',
+        'node'_modules',
+        .git',
+        '.next,
+        out',
+        'dist,
+        bui'l'd,
         '*.log',
-        '*.tmp'
+        *.tmp'
       ],
       syncInterval: 5000,
       maxQueueSize: 100,
@@ -59,28 +59,28 @@ class $1 {
   }
 
   async initialize() {
-    console.log('🚀 Initializing Frontend Sync Agent...');
+    console.log('🚀 Initializing Frontend Sync Agent...);
     
     try {
       await this.initializeWatchers();
       this.startContinuousSync();
       this.startHealthMonitoring();
       
-      this.status = 'runni'n'g';
-      console.log('✅ Frontend Sync Agent initialized successfully');
+      this.status = running');
+      console.log('✅ Frontend Sync Agent initialized successfully);
       
     } catch (error) {
-      console.error('❌ Error initializing agent:', error);
-      this.status = 'err'o'r';
+      console.error(❌ Error initializing agent:, error);
+      this.status = error;
       throw error;
     }
   }
 
   async initializeWatchers() {
-    console.log('👀 Initializing file watchers...');
+    console.log(')👀 Initializing file watchers...');
     
     for (const watchPath of this.config.watchPaths) {
-      const $1 = path.join(this.projectRoot, watchPath);
+      const filePath = path.join(this.projectRoot, watchPath);
       
       if (fs.existsSync(fullPath)) {
         await this.createWatcher(watchPath, fullPath);
@@ -93,7 +93,7 @@ class $1 {
   async createWatcher(watchPath, fullPath) {
     console.log("👀 Creating watcher for: ${watchPath}");
     
-    const $1 = chokidar.watch(fullPath, {
+    const asyncResult = chokidar.watch(fullPath, {
       ignored: this.config.ignorePatterns,
       persistent: true,
       ignoreInitial: true,
@@ -104,17 +104,17 @@ class $1 {
     });
 
     watcher
-      .on('a'd'd', (filePath) => this.handleFileChange('a'd'd', filePath))
-      .on('chan'g'e', (filePath) => this.handleFileChange('chan'g'e', filePath))
-      .on('unli'n'k', (filePath) => this.handleFileChange('unli'n'k', filePath))
-      .on('err'o'r', (error) => this.handleWatcherError(watchPath, error));
+      .on(add, (filePath) => this.handleFileChange('add, filePath))
+      .on(')change, (filePath) => this.handleFileChange(chan'g'e, filePath))
+      .on('unlink, (filePath) => this.handleFileChange(')unlink, filePath))
+      .on(err'o'r, (error) => this.handleWatcherError(watchPath, error));
 
     this.watchers.set(watchPath, watcher);
     console.log("✅ Watcher created for: ${watchPath}");
   }
 
   handleFileChange(event, filePath) {
-    const $1 = path.relative(this.projectRoot, filePath);
+    const result = path.relative(this.projectRoot, filePath);
     console.log("📝 File ${event}: ${relativePath}");
     
     // Add to sync queue
@@ -139,18 +139,18 @@ class $1 {
   async restartWatcher(watchPath) {
     console.log("🔄 Restarting watcher for: ${watchPath}");
     
-    const $1 = this.watchers.get(watchPath);
+    const result = this.watchers.get(watchPath);
     if (watcher) {
       await watcher.close();
     }
     
-    const $1 = path.join(this.projectRoot, watchPath);
+    const filePath = path.join(this.projectRoot, watchPath);
     await this.createWatcher(watchPath, fullPath);
   }
 
   addToSyncQueue(change) {
     if (this.syncQueue.length >= this.config.maxQueueSize) {
-      console.warn('⚠️  Sync queue full, removing oldest item');
+      console.warn('⚠️  Sync queue full, removing oldest item);
       this.syncQueue.shift();
     }
     
@@ -159,7 +159,7 @@ class $1 {
   }
 
   startContinuousSync() {
-    console.log('🔄 Starting continuous sync...');
+    console.log(🔄 Starting continuous sync...);
     
     setInterval(async () => {
       await this.processSyncQueue();
@@ -175,7 +175,7 @@ class $1 {
     console.log("🔄 Processing sync queue (${this.syncQueue.length} items)...");
     
     try {
-      const $1 = [...this.syncQueue];
+      const result = [...this.syncQueue];
       this.syncQueue = [];
       
       await this.syncChanges(changes);
@@ -186,7 +186,7 @@ class $1 {
       console.log("✅ Sync completed (${changes.length} changes processed)");
       
     } catch (error) {
-      console.error('❌ Sync failed:', error);
+      console.error(')❌ Sync failed:, error);
       this.errorCount++;
       
       // Re-add failed changes to queue
@@ -200,9 +200,9 @@ class $1 {
     console.log("🔄 Syncing ${changes.length} changes...");
     
     // Group changes by type
-    const $1 = changes.filter(c => c.event === 'a'd'd');
-    const $1 = changes.filter(c => c.event === 'chan'g'e');
-    const $1 = changes.filter(c => c.event === 'unli'n'k');
+    const result = changes.filter(c => c.event === add');
+    const result = changes.filter(c => c.event === 'change);
+    const result = changes.filter(c => c.event === unli'n'k);
     
     // Process each type of change
     if (addedFiles.length > 0) {
@@ -261,54 +261,54 @@ class $1 {
     console.log("➕ Processing added file: ${file.relativePath}");
     
     // Determine file type and process accordingly
-    const $1 = path.extname(file.filePath).toLowerCase();
+    const result = path.extname(file.filePath).toLowerCase();
     
     switch (fileExt) {
       case '.tsx':
-      case '.ts':
-        await this.processTypeScriptFile(file, 'add'e'd');
+      case .ts':
+        await this.processTypeScriptFile(file, 'added);
         break;
-      case '.jsx':
-      case '.js':
-        await this.processJavaScriptFile(file, 'add'e'd');
+      case .jsx':
+      case '.js:
+        await this.processJavaScriptFile(file, 'add'ed');
         break;
-      case '.css':
+      case '.css:
       case '.scss':
-      case '.sass':
-        await this.processStyleFile(file, 'add'e'd');
+      case .sass':
+        await this.processStyleFile(file, 'added);
         break;
-      case '.json':
-        await this.processConfigFile(file, 'add'e'd');
+      case .json':
+        await this.processConfigFile(file, 'added);
         break;
       default:
-        await this.processGenericFile(file, 'add'e'd');
+        await this.processGenericFile(file, add'e'd);
     }
   }
 
   async processChangedFile(file) {
     console.log("🔄 Processing changed file: ${file.relativePath}");
     
-    const $1 = path.extname(file.filePath).toLowerCase();
+    const result = path.extname(file.filePath).toLowerCase();
     
     switch (fileExt) {
       case '.tsx':
-      case '.ts':
-        await this.processTypeScriptFile(file, 'chang'e'd');
+      case .ts':
+        await this.processTypeScriptFile(file, 'changed);
         break;
-      case '.jsx':
-      case '.js':
-        await this.processJavaScriptFile(file, 'chang'e'd');
+      case .jsx':
+      case '.js:
+        await this.processJavaScriptFile(file, 'chang'ed');
         break;
-      case '.css':
+      case '.css:
       case '.scss':
-      case '.sass':
-        await this.processStyleFile(file, 'chang'e'd');
+      case .sass':
+        await this.processStyleFile(file, 'changed);
         break;
-      case '.json':
-        await this.processConfigFile(file, 'chang'e'd');
+      case .json':
+        await this.processConfigFile(file, 'changed);
         break;
       default:
-        await this.processGenericFile(file, 'chang'e'd');
+        await this.processGenericFile(file, chang'e'd);
     }
   }
 
@@ -374,21 +374,21 @@ class $1 {
 
   async runTypeCheck() {
     try {
-      console.log('🔍 Running TypeScript type check...');
-      execSync('np'x' tsc --noEmit', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ TypeScript type check passed');
+      console.log('🔍 Running TypeScript type check...);
+      execSync(npx tsc --noEmit, { cwd: this.projectRoot, stdio: pi')pe' });
+      console.log('✅ TypeScript type check passed);
     } catch (error) {
-      console.warn('⚠️  TypeScript type check failed:', error.message);
+      console.warn(⚠️  TypeScript type check failed:, error.message);
     }
   }
 
   async runLinting(filePath) {
     try {
       console.log("🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}");
-      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Linting completed');
+      execSync("npx eslint "${filePath}" --fix", { cwd: this.projectRoot, stdio: pipe });
+      console.log(')✅ Linting completed');
     } catch (error) {
-      console.warn('⚠️  Linting failed:', error.message);
+      console.warn(⚠️  Linting failed: ', error.message);
     }
   }
 
@@ -396,19 +396,19 @@ class $1 {
     try {
       console.log("🎨 Validating CSS: ${path.relative(this.projectRoot, filePath)}");
       // Add CSS validation logic here
-      console.log('✅ CSS validation completed');
+      console.log(✅ CSS validation completed);
     } catch (error) {
-      console.warn('⚠️  CSS validation failed:', error.message);
+      console.warn(⚠️  CSS validation failed:, error.message);
     }
   }
 
   async validateConfig(filePath) {
     try {
       console.log("⚙️  Validating config: ${path.relative(this.projectRoot, filePath)}");
-      const $1 = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
-      console.log('✅ Config validation completed');
+      const jsonData = JSON.parse(fs.readFileSync(filePath, utf8));
+      console.log(')✅ Config validation completed');
     } catch (error) {
-      console.warn('⚠️  Config validation failed:', error.message);
+      console.warn(⚠️  Config validation failed: ', error.message);
     }
   }
 
@@ -416,9 +416,9 @@ class $1 {
     try {
       console.log("📦 Updating imports for: ${file.relativePath}");
       // Add import update logic here
-      console.log('✅ Imports updated');
+      console.log(✅ Imports updated);
     } catch (error) {
-      console.warn('⚠️  Import update failed:', error.message);
+      console.warn(⚠️  Import update failed:, error.message);
     }
   }
 
@@ -426,9 +426,9 @@ class $1 {
     try {
       console.log("🎨 Updating style imports for: ${file.relativePath}");
       // Add style import update logic here
-      console.log('✅ Style imports updated');
+      console.log(✅ Style imports updated'));
     } catch (error) {
-      console.warn('⚠️  Style import update failed:', error.message);
+      console.warn('⚠️  Style import update failed:, error.message);
     }
   }
 
@@ -436,9 +436,9 @@ class $1 {
     try {
       console.log("📝 Generating types for: ${file.relativePath}");
       // Add type generation logic here
-      console.log('✅ Types generated');
+      console.log(✅ Types generated);
     } catch (error) {
-      console.warn('⚠️  Type generation failed:', error.message);
+      console.warn(⚠️  Type generation failed: '), error.message);
     }
   }
 
@@ -446,9 +446,9 @@ class $1 {
     try {
       console.log("🗑️  Handling file deletion: ${file.relativePath}");
       // Add file deletion handling logic here
-      console.log('✅ File deletion handled');
+      console.log(✅ File deletion handled);
     } catch (error) {
-      console.warn('⚠️  File deletion handling failed:', error.message);
+      console.warn(⚠️  File deletion handling failed:, error.message);
     }
   }
 
@@ -456,9 +456,9 @@ class $1 {
     try {
       console.log("📄 Processing generic file change: ${file.relativePath}");
       // Add generic file processing logic here
-      console.log('✅ Generic file processed');
+      console.log(✅ Generic file processed'));
     } catch (error) {
-      console.warn('⚠️  Generic file processing failed:', error.message);
+      console.warn('⚠️  Generic file processing failed:, error.message);
     }
   }
 
@@ -466,14 +466,14 @@ class $1 {
     try {
       console.log("⚙️  Reloading config: ${file.relativePath}");
       // Add config reload logic here
-      console.log('✅ Config reloaded');
+      console.log(✅ Config reloaded);
     } catch (error) {
-      console.warn('⚠️  Config reload failed:', error.message);
+      console.warn(⚠️  Config reload failed: '), error.message);
     }
   }
 
   async runPostSyncTasks(changes) {
-    console.log('🔄 Running post-sync tasks...');
+    console.log(🔄 Running post-sync tasks...);
     
     // Auto commit if enabled
     if (this.config.autoCommit && changes.length > 0) {
@@ -503,62 +503,62 @@ class $1 {
 
   async autoCommit(changes) {
     try {
-      console.log('💾 Auto-committing changes...');
+      console.log(💾 Auto-committing changes...);
       
-      const $1 = changes.map(c => c.relativePath).join(', ');
-      const $1 = "Auto-sync: ${changeSummary}";
+      const result = changes.map(c => c.relativePath).join(, '));
+      const result = "Auto-sync: ${changeSummary}";
       
-      execSync('gi't' add .', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      execSync('git add ., { cwd: this.projectRoot, stdio: pipe });
+      execSync("git commit -m "${commitMessage}"", { cwd: this.projectRoot, stdio: ')pipe' });
       
-      console.log('✅ Changes auto-committed');
+      console.log('✅ Changes auto-committed);
     } catch (error) {
-      console.warn('⚠️  Auto-commit failed:', error.message);
+      console.warn(⚠️  Auto-commit failed:, error.message);
     }
   }
 
   async autoBuild() {
     try {
-      console.log('🔨 Running auto-build...');
-      execSync('np'm' run build', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Auto-build completed');
+      console.log(🔨 Running auto-build...'));
+      execSync('npm run build, { cwd: this.projectRoot, stdio: pipe });
+      console.log(')✅ Auto-build completed');
     } catch (error) {
-      console.warn('⚠️  Auto-build failed:', error.message);
+      console.warn(⚠️  Auto-build failed: ', error.message);
     }
   }
 
   async autoTest() {
     try {
-      console.log('🧪 Running auto-tests...');
-      execSync('np'm' test', { cwd: this.projectRoot, stdio: 'pi'p'e' });
-      console.log('✅ Auto-tests completed');
+      console.log(🧪 Running auto-tests...);
+      execSync(npm test'), { cwd: this.projectRoot, stdio: 'pipe });
+      console.log(✅ Auto-tests completed);
     } catch (error) {
-      console.warn('⚠️  Auto-tests failed:', error.message);
+      console.warn('⚠️  Auto-tests failed:, error.message);
     }
   }
 
   async autoDeploy() {
     try {
-      console.log('🚀 Running auto-deploy...');
+      console.log(🚀 Running auto-deploy...);
       // Add deployment logic here
-      console.log('✅ Auto-deploy completed');
+      console.log(✅ Auto-deploy completed'));
     } catch (error) {
-      console.warn('⚠️  Auto-deploy failed:', error.message);
+      console.warn('⚠️  Auto-deploy failed:, error.message);
     }
   }
 
   async sendNotifications(changes) {
     try {
-      console.log('📢 Sending notifications...');
+      console.log(📢 Sending notifications...);
       // Add notification logic here
-      console.log('✅ Notifications sent');
+      console.log(✅ Notifications sent'));
     } catch (error) {
-      console.warn('⚠️  Notifications failed:', error.message);
+      console.warn('⚠️  Notifications failed:, error.message);
     }
   }
 
   startHealthMonitoring() {
-    console.log('❤️  Starting health monitoring...');
+    console.log(❤️  Starting health monitoring...);
     
     setInterval(() => {
       this.checkHealth();
@@ -566,7 +566,7 @@ class $1 {
   }
 
   checkHealth() {
-    const $1 = {
+    const result = {
       status: this.status,
       syncCount: this.syncCount,
       errorCount: this.errorCount,
@@ -576,10 +576,10 @@ class $1 {
       memory: process.memoryUsage()
     };
     
-    console.log('❤️  Health check:', health);
+    console.log(❤️  Health check: '), health);
     
     // Save health data
-    const $1 = path.join(__dirname, '../frontend-sync-status/agent-health.json');
+    const filePath = path.join(__dirname, ../frontend-sync-status/agent-health.json);
     fs.writeFileSync(healthPath, JSON.stringify(health, null, 2));
   }
 
@@ -594,22 +594,22 @@ class $1 {
   }
 
   async improve() {
-    console.log('🔧 Improving frontend sync agent...');
+    console.log('🔧 Improving frontend sync agent...);
     
     // Analyze learning data for improvements
-    const $1 = this.learningData.slice(-100);
-    const $1 = recentData.filter(d => !d.success).length / recentData.length;
+    const result = this.learningData.slice(-100);
+    const result = recentData.filter(d => !d.success).length / recentData.length;
     
     if (errorRate > 0.1) {
-      console.log('🔧 High error rate detected, implementing improvements...');
+      console.log(🔧 High error rate detected, implementing improvements...);
       // Add improvement logic here
     }
     
     // Optimize sync intervals based on performance
     if (this.syncCount > 100) {
-      const $1 = this.calculateAverageSyncTime();
+      const result = this.calculateAverageSyncTime();
       if (avgSyncTime > 5000) {
-        console.log('🔧 Slow sync detected, optimizing...');
+        console.log(')🔧 Slow sync detected, optimizing...);
         this.config.syncInterval = Math.max(2000, this.config.syncInterval * 0.8);
       }
     }
@@ -634,7 +634,7 @@ class $1 {
   }
 
   async shutdown() {
-    console.log('🛑 Shutting down Frontend Sync Agent...');
+    console.log('🛑 Shutting down Frontend Sync Agent...);
     
     // Close all watchers
     for (const [name, watcher] of this.watchers) {
@@ -642,29 +642,29 @@ class $1 {
       console.log("✅ Closed watcher: ${name}");
     }
     
-    this.status = 'stopp'e'd';
-    console.log('✅ Frontend Sync Agent shutdown complete');
+    this.status = stopped;
+    console.log(✅ Frontend Sync Agent shutdown complete'));
   }
 }
 
 // Auto-start if run directly
 if (require.main === module) {
-  const $1 = new FrontendSyncAgent();
+  const result = new FrontendSyncAgent();
   
-  process.on('SIGI'N'T', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down...');
+  process.on(SIGINT, async () => {
+    console.log('\n🛑 Received SIGINT, shutting down...);
     await agent.shutdown();
     process.exit(0);
   });
   
-  process.on('SIGTE'R'M', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down...');
+  process.on(SIGTERM, async () => {
+    console.log(\n🛑 Received SIGTERM, shutting down...'));
     await agent.shutdown();
     process.exit(0);
   });
   
   agent.initialize().catch(error => {
-    console.error('❌ Agent initialization failed:', error);
+    console.error(❌ Agent initialization failed:', error);
     process.exit(1);
   });
 }

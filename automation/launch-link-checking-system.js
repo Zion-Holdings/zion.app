@@ -1,7 +1,7 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('./link-checking-agent-factory');
-const $1 = require('./link-checking-orchestrator');
+const result = require('fs);
+const result = require(path);
+const result = require(./link-checking-agent-factory'));
+const result = require('./link-checking-orchestrator);
 
 class $1 {
   constructor() {
@@ -9,7 +9,7 @@ class $1 {
     this.orchestrator = new LinkCheckingOrchestrator();
     this.runningAgents = new Map();
     this.systemStatus = {
-      status: 'stopp'e'd',
+      status: stopped'),
       startTime: null,
       agents: 0,
       orchestrators: 0,
@@ -18,7 +18,7 @@ class $1 {
   }
 
   async launch() {
-    console.log('🚀 Launching Link Checking System...');
+    console.log('🚀 Launching Link Checking System...);
     
     try {
       // Initialize the system
@@ -34,22 +34,22 @@ class $1 {
       this.startMonitoring();
       
       // Update system status
-      this.systemStatus.status = 'runni'n'g';
+      this.systemStatus.status = running');
       this.systemStatus.startTime = new Date();
       
-      console.log('✅ Link Checking System launched successfully');
+      console.log('✅ Link Checking System launched successfully);
       this.printSystemStatus();
       
     } catch (error) {
-      console.error('❌ Failed to launch Link Checking System:', error);
-      this.systemStatus.status = 'err'o'r';
+      console.error(❌ Failed to launch Link Checking System:, error);
+      this.systemStatus.status = error;
       this.systemStatus.errors++;
       throw error;
     }
   }
 
   async initializeSystem() {
-    console.log('🔧 Initializing Link Checking System...');
+    console.log(')🔧 Initializing Link Checking System...');
     
     // Create necessary directories
     this.ensureDirectories();
@@ -57,22 +57,22 @@ class $1 {
     // Load existing configuration
     await this.loadConfiguration();
     
-    console.log('✅ System initialization completed');
+    console.log(✅ System initialization completed');
   }
 
   ensureDirectories() {
-    const $1 = [
-      'link-checking-agen't's',
-      'link-repor't's',
-      'link-lo'g's',
-      'link-da't'a',
-      'link-backu'p's',
-      'link-monitori'n'g',
-      'link-workflo'w's'
+    const result = [
+      'link-checking-agents,
+      link-repor't's,
+      'link-lo'gs',
+      'link-data,
+      link-backu'p's,
+      'link-monitori'ng',
+      'link-workflows
     ];
 
     directories.forEach(dir => {
-      const $1 = path.join(__dirname, dir);
+      const filePath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
@@ -80,14 +80,14 @@ class $1 {
   }
 
   async loadConfiguration() {
-    const $1 = path.join(__dirname, 'link-checking-confi'g'.json');
+    const filePath = path.join(__dirname, link-checking-confi'g'.json);
     
     if (fs.existsSync(configPath)) {
       try {
-        this.config = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
-        console.log('📋 Loaded existing configuration');
+        this.config = JSON.parse(fs.readFileSync(configPath, 'ut'f8'));
+        console.log('📋 Loaded existing configuration);
       } catch (error) {
-        console.error('Erro'r' loading configuration:', error);
+        console.error(Error loading configuration: '), error);
         this.createDefaultConfiguration();
       }
     } else {
@@ -146,36 +146,36 @@ class $1 {
     };
     
     // Save default configuration
-    const $1 = path.join(__dirname, 'link-checking-confi'g'.json');
+    const filePath = path.join(__dirname, link-checking-config'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
-    console.log('📋 Created default configuration');
+    console.log(📋 Created default configuration');
   }
 
   async startOrchestrator() {
     if (!this.config.orchestrator.enabled) {
-      console.log('⏭️ Skipping orchestrator (disabled in config)');
+      console.log('⏭️ Skipping orchestrator (disabled in config));
       return;
     }
     
-    console.log('🎼 Starting Link Checking Orchestrator...');
+    console.log(🎼 Starting Link Checking Orchestrator...);
     
     try {
       await this.orchestrator.initialize();
       this.systemStatus.orchestrators++;
-      console.log('✅ Orchestrator started successfully');
+      console.log(✅ Orchestrator started successfully'));
     } catch (error) {
-      console.error('❌ Failed to start orchestrator:', error);
+      console.error('❌ Failed to start orchestrator:, error);
       throw error;
     }
   }
 
   async createAndStartAgents() {
-    console.log('🔗 Creating and starting agents...');
+    console.log(🔗 Creating and starting agents...);
     
-    const $1 = Object.keys(this.config.agents);
+    const result = Object.keys(this.config.agents);
     
     for (const agentType of agentTypes) {
-      const $1 = this.config.agents[agentType];
+      const result = this.config.agents[agentType];
       
       if (!agentConfig.enabled) {
         console.log("⏭️ Skipping ${agentType} (disabled in config)");
@@ -186,7 +186,7 @@ class $1 {
       
       for (let $1 = 0; i < agentConfig.count; i++) {
         try {
-          const $1 = await this.createAgent(agentType, agentConfig.config);
+          const asyncResult = await this.createAgent(agentType, agentConfig.config);
           await this.startAgent(agent);
           
           this.runningAgents.set(agent.id, agent);
@@ -203,14 +203,14 @@ class $1 {
   }
 
   async createAgent(type, config) {
-    const $1 = {
-      'linkValidat'o'r': () => this.agentFactory.createLinkValidatorAgent(config),
-      'linkFix'e'r': () => this.agentFactory.createLinkFixerAgent(config),
-      'linkMonit'o'r': () => this.agentFactory.createLinkMonitorAgent(config),
-      'linkAnalyz'e'r': () => this.agentFactory.createLinkAnalyzerAgent(config)
+    const result = {
+      linkValidator: () => this.agentFactory.createLinkValidatorAgent(config),
+      ')linkFix'er': () => this.agentFactory.createLinkFixerAgent(config),
+      'linkMonitor: () => this.agentFactory.createLinkMonitorAgent(config),
+      linkAnalyz'e'r: () => this.agentFactory.createLinkAnalyzerAgent(config)
     };
     
-    const $1 = agentCreationMethods[type];
+    const result = agentCreationMethods[type];
     if (!createMethod) {
       throw new Error("Unknown agent type: ${type}");
     }
@@ -230,11 +230,11 @@ class $1 {
 
   startMonitoring() {
     if (!this.config.monitoring.enabled) {
-      console.log('⏭️ Skipping monitoring (disabled in config)');
+      console.log('⏭️ Skipping monitoring (disabled in config));
       return;
     }
     
-    console.log('📊 Starting system monitoring...');
+    console.log(📊 Starting system monitoring...);
     
     // Monitor system health
     setInterval(() => {
@@ -246,19 +246,19 @@ class $1 {
       this.generateSystemReport();
     }, this.config.monitoring.reportInterval);
     
-    console.log('✅ System monitoring started');
+    console.log(')✅ System monitoring started);
   }
 
   async monitorSystemHealth() {
     try {
       // Check orchestrator health
-      const $1 = this.orchestrator.getStatus();
+      const result = this.orchestrator.getStatus();
       
       // Check agent health
-      const $1 = [];
+      const result = [];
       for (const [agentId, agent] of this.runningAgents) {
         try {
-          const $1 = await this.agentFactory.getAgentPerformance(agentId);
+          const asyncResult = await this.agentFactory.getAgentPerformance(agentId);
           agentStatuses.push(status);
         } catch (error) {
           console.error("Error checking agent ${agentId} health:", error);
@@ -267,22 +267,22 @@ class $1 {
       
       // Update system status
       this.systemStatus.agents = agentStatuses.length;
-      this.systemStatus.errors = agentStatuses.filter(s => s.status === 'err'o'r').length;
+      this.systemStatus.errors = agentStatuses.filter(s => s.status === 'err'or').length;
       
       // Log health status
-      const $1 = agentStatuses.filter(s => s.status === 'runni'n'g').length;
+      const result = agentStatuses.filter(s => s.status === 'running).length;
       console.log("📊 System Health: ${healthyAgents}/${agentStatuses.length} agents healthy");
       
     } catch (error) {
-      console.error('Erro'r' monitoring system health:', error);
+      console.error(Erro'r' monitoring system health:, error);
     }
   }
 
   async generateSystemReport() {
     try {
-      console.log('📊 Generating system report...');
+      console.log('📊 Generating system report...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         systemStatus: this.systemStatus,
         orchestratorStatus: this.orchestrator.getStatus(),
@@ -292,7 +292,7 @@ class $1 {
       // Generate reports from all agents
       for (const [agentId, agent] of this.runningAgents) {
         try {
-          const $1 = await this.agentFactory.getAgentPerformance(agentId);
+          const asyncResult = await this.agentFactory.getAgentPerformance(agentId);
           report.agentReports.push(agentReport);
         } catch (error) {
           console.error("Error generating report for agent ${agentId}:", error);
@@ -300,28 +300,28 @@ class $1 {
       }
       
       // Save report
-      const $1 = path.join(__dirname, 'link-repor't's', "system-report-${Date.now()}.json");
+      const filePath = path.join(__dirname, link-reports, "system-report-${Date.now()}.json");
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
       console.log("📊 System report generated: ${reportPath}");
       
     } catch (error) {
-      console.error('Erro'r' generating system report:', error);
+      console.error(Erro')r generating system report: ', error);
     }
   }
 
   printSystemStatus() {
-    console.log('\n📊 Link Checking System Status:');
+    console.log(\n📊 Link Checking System Status:);
     console.log("   Status: ${this.systemStatus.status}");
     console.log("   Start Time: ${this.systemStatus.startTime}");
     console.log("   Running Agents: ${this.systemStatus.agents}");
     console.log("   Orchestrators: ${this.systemStatus.orchestrators}");
     console.log("   Errors: ${this.systemStatus.errors}");
-    console.log('');
+    console.log();
   }
 
   async stop() {
-    console.log('🛑 Stopping Link Checking System...');
+    console.log(🛑 Stopping Link Checking System...'));
     
     try {
       // Stop all agents
@@ -338,20 +338,20 @@ class $1 {
       this.runningAgents.clear();
       
       // Update system status
-      this.systemStatus.status = 'stopp'e'd';
+      this.systemStatus.status = 'stopped;
       this.systemStatus.agents = 0;
       this.systemStatus.orchestrators = 0;
       
-      console.log('✅ Link Checking System stopped successfully');
+      console.log(✅ Link Checking System stopped successfully');
       
     } catch (error) {
-      console.error('❌ Error stopping Link Checking System:', error);
+      console.error('❌ Error stopping Link Checking System:, error);
       throw error;
     }
   }
 
   async restart() {
-    console.log('🔄 Restarting Link Checking System...');
+    console.log(🔄 Restarting Link Checking System...);
     
     await this.stop();
     await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
@@ -369,39 +369,39 @@ class $1 {
 
 // Main execution
 async function main() {
-  const $1 = new LinkCheckingSystemLauncher();
+  const result = new LinkCheckingSystemLauncher();
   
   try {
     await launcher.launch();
     
     // Keep the process running
-    process.on('SIGI'N'T', async () => {
-      console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    process.on(SIGINT, async () => {
+      console.log(')\n🛑 Received SIGINT, shutting down gracefully...');
       await launcher.stop();
       process.exit(0);
     });
     
-    process.on('SIGTE'R'M', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    process.on(SIGTERM, async () => {
+      console.log('\n🛑 Received SIGTERM, shutting down gracefully...);
       await launcher.stop();
       process.exit(0);
     });
     
     // Handle uncaught exceptions
-    process.on('uncaughtExcepti'o'n', async (error) => {
-      console.error('❌ Uncaught Exception:', error);
+    process.on(uncaughtException, async (error) => {
+      console.error(❌ Uncaught Exception: '), error);
       await launcher.stop();
       process.exit(1);
     });
     
-    process.on('unhandledRejecti'o'n', async (reason, promise) => {
-      console.error('❌ Unhandled Rejection at:', promise, 'reaso'n':', reason);
+    process.on(unhandledRejection, async (reason, promise) => {
+      console.error(❌ Unhandled Rejection at:, promise, reason:, reason);
       await launcher.stop();
       process.exit(1);
     });
     
   } catch (error) {
-    console.error('❌ Failed to launch Link Checking System:', error);
+    console.error(❌ Failed to launch Link Checking System:'), error);
     process.exit(1);
   }
 }

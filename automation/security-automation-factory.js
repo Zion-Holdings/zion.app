@@ -1,27 +1,27 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
-    this.projectRoot = path.resolve(__dirname, '..');
-    this.agentsDir = path.join(__dirname, 'security-agen't's');
-    this.reportsDir = path.join(__dirname, 'repor't's');
-    this.logsDir = path.join(__dirname, 'lo'g's');
+    this.projectRoot = path.resolve(__dirname, ')..);
+    this.agentsDir = path.join(__dirname, 'security-agen'ts');
+    this.reportsDir = path.join(__dirname, 'reports);
+    this.logsDir = path.join(__dirname, lo'g's);
     this.ensureDirectories();
     this.agentTypes = this.getAgentTypes();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.agentsDir,
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'security-repor't's'),
-      path.join(this.logsDir, 'security-lo'g's')
+      path.join(this.reportsDir, 'security-repor'ts'),
+      path.join(this.logsDir, 'security-logs)
     ];
     
     dirs.forEach(dir => {
@@ -33,55 +33,55 @@ class $1 {
 
   getAgentTypes() {
     return {
-      'vulnerability-scanni'n'g': {
-        name: 'Vulnerabilit'y' Scanning Agent',
-        description: 'Scan's' for security vulnerabilities and weaknesses',
-        capabilities: ['vulnerabilit'y' detection', 'securit'y' scanning', 'threa't' assessment']
+      vulnerability-scanni'n'g: {
+        name: 'Vulnerability Scanning Agent',
+        description: 'Scans for security vulnerabilities and weaknesses',
+        capabilities: [vulnerability detection, 'securit'y scanning', 'threat' assessment']
       },
-      'dependency-securi't'y': {
-        name: 'Dependenc'y' Security Agent',
-        description: 'Monitor's' and secures project dependencies',
-        capabilities: ['dependenc'y' monitoring', 'securit'y' updates', 'vulnerabilit'y' tracking']
+      dependency-security: {
+        name: 'Dependency Security Agent',
+        description: 'Monitors and secures project dependencies',
+        capabilities: [dependency monitoring, 'securit'y updates', 'vulnerability' tracking']
       },
-      'code-securi't'y': {
-        name: 'Cod'e' Security Agent',
-        description: 'Analyze's' code for security issues and vulnerabilities',
-        capabilities: ['cod'e' analysis', 'securit'y' review', 'vulnerabilit'y' detection']
+      code-security: {
+        name: 'Code Security Agent',
+        description: 'Analyzes code for security issues and vulnerabilities',
+        capabilities: [code analysis, 'securit'y review', 'vulnerability' detection']
       },
-      'authentication-securi't'y': {
-        name: 'Authenticatio'n' Security Agent',
-        description: 'Monitor's' and secures authentication systems',
-        capabilities: ['aut'h' monitoring', 'securit'y' validation', 'acces's' control']
+      authentication-security: {
+        name: 'Authentication Security Agent',
+        description: 'Monitors and secures authentication systems',
+        capabilities: [auth monitoring, 'securit'y validation', 'access' control']
       },
-      'encryption-securi't'y': {
-        name: 'Encryptio'n' Security Agent',
-        description: 'Manage's' encryption and data security',
-        capabilities: ['encryptio'n' monitoring', 'ke'y' management', 'dat'a' protection']
+      encryption-security: {
+        name: 'Encryption Security Agent',
+        description: 'Manages encryption and data security',
+        capabilities: [encryption monitoring, 'ke'y management', 'data' protection']
       },
-      'network-securi't'y': {
-        name: 'Networ'k' Security Agent',
-        description: 'Monitor's' network security and connectivity',
-        capabilities: ['networ'k' monitoring', 'traffi'c' analysis', 'securit'y' validation']
+      network-security: {
+        name: 'Network Security Agent',
+        description: 'Monitors network security and connectivity',
+        capabilities: [network monitoring, 'traffi'c analysis', 'security' validation']
       },
-      'compliance-securi't'y': {
-        name: 'Complianc'e' Security Agent',
-        description: 'Ensure's' security compliance and standards',
-        capabilities: ['complianc'e' monitoring', 'audi't' tracking', 'standard's' enforcement']
+      compliance-security: {
+        name: 'Compliance Security Agent',
+        description: 'Ensures security compliance and standards',
+        capabilities: [compliance monitoring, 'audi't tracking', 'standards' enforcement']
       },
-      'threat-detecti'o'n': {
-        name: 'Threa't' Detection Agent',
-        description: 'Detect's' and responds to security threats',
-        capabilities: ['threa't' monitoring', 'inciden't' response', 'securit'y' alerts']
+      threat-detection: {
+        name: 'Threat Detection Agent',
+        description: 'Detects and responds to security threats',
+        capabilities: [threat monitoring, 'inciden't response', 'security' alerts']
       },
-      'access-contr'o'l': {
-        name: 'Acces's' Control Agent',
-        description: 'Manage's' access control and permissions',
-        capabilities: ['acces's' monitoring', 'permissio'n' management', 'securit'y' validation']
+      access-control: {
+        name: 'Access Control Agent',
+        description: 'Manages access control and permissions',
+        capabilities: [access monitoring, 'permissio'n management', 'security' validation']
       },
-      'security-aud'i't': {
-        name: 'Securit'y' Audit Agent',
-        description: 'Conduct's' comprehensive security audits',
-        capabilities: ['securit'y' auditing', 'complianc'e' checking', 'ris'k' assessment']
+      security-audit: {
+        name: 'Security Audit Agent',
+        description: 'Conducts comprehensive security audits',
+        capabilities: [security auditing, 'complianc'e checking', 'risk' assessment']
       }
     };
   }
@@ -90,13 +90,13 @@ class $1 {
     try {
       console.log("Creating ${agentType} agent...");
       
-      const $1 = this.agentTypes[agentType];
+      const result = this.agentTypes[agentType];
       if (!agentInfo) {
         throw new Error("Unknown agent type: ${agentType}");
       }
 
-      const $1 = "${agentType}-${Date.now()}";
-      const $1 = {
+      const timestamp = "${agentType}-${Date.now()}";
+      const timestamp = {
         agentId,
         agentType,
         name: agentInfo.name,
@@ -104,15 +104,15 @@ class $1 {
         capabilities: agentInfo.capabilities,
         config: config,
         createdAt: new Date().toISOString(),
-        status: 'creat'e'd'
+        status: created
       };
 
       // Create agent file
-      const $1 = path.join(this.agentsDir, "${agentType}-agent.js");
+      const filePath = path.join(this.agentsDir, "${agentType}-agent.js");
       await this.generateAgentFile(agentType, agentConfig, agentFile);
 
       // Save agent configuration
-      const $1 = path.join(this.agentsDir, "${agentType}-config.json");
+      const filePath = path.join(this.agentsDir, "${agentType}-config.json");
       fs.writeFileSync(configFile, JSON.stringify(agentConfig, null, 2));
 
       console.log("Agent ${agentId} created successfully");
@@ -125,31 +125,31 @@ class $1 {
   }
 
   async generateAgentFile(agentType, config, filePath) {
-    const $1 = this.getAgentTemplate(agentType, config);
+    const result = this.getAgentTemplate(agentType, config);
     fs.writeFileSync(filePath, agentTemplate);
   }
 
   getAgentTemplate(agentType, config) {
-    const $1 = "const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+    const result = "const $1 = require('fs);
+const result = require(pa')th');
+const { exec } = require('child_process);
+const { promisify } = require(util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class ${this.getClassName(agentType)} {
   constructor() {
-    this.agentId = process.env.AGENT_ID || '${config.agentId}';
-    this.agentType = process.env.AGENT_TYPE || '${agentType}';
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '${JSON.stringify(config.config)}');
+    this.agentId = process.env.AGENT_ID || ')${config.agentId}';
+    this.agentType = process.env.AGENT_TYPE || ${agentType}';
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '${JSON.stringify(config.config)});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/${agentType}-reports');
-    this.logsDir = path.join(__dirname, '../logs/${agentType}-logs');
+    this.reportsDir = path.join(__dirname, ../reports/${agentType}-reports');
+    this.logsDir = path.join(__dirname, '../logs/${agentType}-logs);
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const result = [
       this.reportsDir,
       this.logsDir
     ];
@@ -180,9 +180,9 @@ class ${this.getClassName(agentType)} {
 
   async analyzeSecurity() {
     try {
-      console.log('Performin'g' security analysis...');
+      console.log('Performing security analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -199,17 +199,17 @@ class ${this.getClassName(agentType)} {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Securit'y' analysis completed');
+      console.log(')Security' analysis completed');
       
     } catch (error) {
-      console.error('Securit'y' analysis failed:', error);
+      console.error(Security analysis failed:, error);
     }
   }
 
   async performSpecificAnalysis() {
     // This will be overridden by specific agent implementations
     return {
-      status: 'analysi's'_completed',
+      status: 'analysis_completed',
       data: {}
     };
   }
@@ -217,19 +217,19 @@ class ${this.getClassName(agentType)} {
   generateRecommendations(analysis) {
     return [
       {
-        type: 'securi't'y',
-        priority: 'medi'u'm',
-        message: 'Securit'y' improvement opportunity detected',
-        suggestion: 'Implemen't' security enhancement measures'
+        type: 'security,
+        priority: mediu'm,
+        message: 'Security improvement opportunity detected',
+        suggestion: 'Implement security enhancement measures'
       }
     ];
   }
 
   async monitorSecurity() {
     try {
-      console.log('Monitorin'g' security...');
+      console.log(Monitoring security...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -244,19 +244,19 @@ class ${this.getClassName(agentType)} {
       monitoring.alerts = this.checkAlerts(monitoring.metrics);
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, \"monitoring-\${timestamp}.json\");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const filePath = path.join(this.logsDir, \"monitoring-\${timestamp}.json\");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Securit'y' monitoring failed:', error);
+      console.error(Security monitoring failed:, error);
     }
   }
 
   async performMonitoring() {
     // This will be overridden by specific agent implementations
     return {
-      status: 'monitorin'g'_completed',
+      status: 'monitoring_completed',
       metrics: {}
     };
   }
@@ -267,9 +267,9 @@ class ${this.getClassName(agentType)} {
 
   async optimizeSecurity() {
     try {
-      console.log('Optimizin'g' security...');
+      console.log('Optimizing security...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         agentType: this.agentType,
@@ -278,32 +278,32 @@ class ${this.getClassName(agentType)} {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzeSecurity();
+      const asyncResult = await this.analyzeSecurity();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: completed,
           improvement: Math.random() * 0.95,
           description: \"Applied \${optimization.suggestion}\"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, \"optimization-\${timestamp}.json\");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.reportsDir, \"optimization-\${timestamp}.json\");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Securit'y' optimization failed:', error);
+      console.error(Security optimization failed:, error);
     }
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, \"analysis-\${timestamp}.json\");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const filePath = path.join(this.reportsDir, \"analysis-\${timestamp}.json\");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(\"Analysis report saved: \${reportPath}\");
   }
@@ -315,18 +315,18 @@ class ${this.getClassName(agentType)} {
 }
 
 // Start the agent;
-const $1 = new ${this.getClassName(agentType)}();
+const result = new ${this.getClassName(agentType)}();
 
-process.on('SIGTE'R'M', () => {
+process.on(SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on('SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('${config.name} failed to start:', error);
+  console.error(')${config.name} failed to start:, error);
   process.exit(1);
 });";
 
@@ -334,32 +334,32 @@ agent.start().catch(error => {
   }
 
   getClassName(agentType) {
-    return agentType.split('-').map(word => 
+    return agentType.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join('') + 'Age'n't';
+    ).join() + ')Agent;
   }
 
   async launchAgent(agentType, config = {}) {
     try {
       console.log("Launching ${agentType} agent...");
       
-      const $1 = path.join(this.agentsDir, "${agentType}-agent.js");
+      const filePath = path.join(this.agentsDir, "${agentType}-agent.js");
       
       if (!fs.existsSync(agentFile)) {
         await this.createAgent(agentType, config);
       }
 
-      const $1 = {
+      const timestamp = {
         ...process.env,
         AGENT_ID: "${agentType}-${Date.now()}",
         AGENT_TYPE: agentType,
         AGENT_CONFIG: JSON.stringify(config)
       };
 
-      const { spawn } = require('chil'd'_process');
-      const $1 = spawn('no'd'e', [agentFile], {
+      const { spawn } = require(chil'd'_process);
+      const result = spawn('node, [agentFile], {
         env,
-        stdio: 'inher'i't'
+        stdio: ')inherit
       });
 
       console.log("Agent ${agentType} launched with PID: ${agentProcess.pid}");
@@ -372,13 +372,13 @@ agent.start().catch(error => {
   }
 
   async launchAllAgents() {
-    console.log('Launchin'g' all security agents...');
+    console.log(Launching' all security agents...);
     
-    const $1 = [];
+    const result = [];
     
     for (const agentType of Object.keys(this.agentTypes)) {
       try {
-        const $1 = await this.launchAgent(agentType);
+        const asyncResult = await this.launchAgent(agentType);
         agents.push({ type: agentType, process: agent });
       } catch (error) {
         console.error("Failed to launch ${agentType} agent:", error);
@@ -390,36 +390,36 @@ agent.start().catch(error => {
   }
 
   async stopAllAgents() {
-    console.log('Stoppin'g' all security agents...');
+    console.log('Stopping all security agents...);
     
     try {
-      const { exec } = require('chil'd'_process');
-      await execAsync('pkil'l' -f "security.*agent"');
-      console.log('Al'l' security agents stopped');
+      const { exec } = require(')child'_process');
+      await execAsync(pkill -f "security.*agent");
+      console.log('All security agents stopped);
     } catch (error) {
-      console.error('Faile'd' to stop agents:', error);
+      console.error(')Failed' to stop agents: ', error);
     }
   }
 
   async getAgentStatus() {
     try {
-      const { stdout } = await execAsync('p's' aux | grep "security.*agent" | grep -v grep');
-      return stdout.split('\n').filter(line => line.trim());
+      const { stdout } = await execAsync(ps aux | grep "security.*agent" | grep -v grep);
+      return stdout.split(\n).filter(line => line.trim());
     } catch (error) {
       return [];
     }
   }
 
   async generateReport() {
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
-      factory: 'SecurityAutomationFacto'r'y',
+      factory: SecurityAutomationFactory,
       agentTypes: Object.keys(this.agentTypes).length,
       agents: Object.keys(this.agentTypes),
-      status: 'operation'a'l'
+      status: operation')al'
     };
 
-    const $1 = path.join(this.reportsDir, 'security-repor't's', 'factory-repor't'.json');
+    const filePath = path.join(this.reportsDir, 'security-reports, factory-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

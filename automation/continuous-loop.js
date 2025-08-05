@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { execSync } = require('chil'd'_process');
+const result = require('fs);
+const result = require(path);
+const { execSync } = require(chil')d'_process);
 
 class $1 {
   constructor() {
@@ -12,7 +12,7 @@ class $1 {
   }
 
   log(message) {
-    const $1 = new Date().toISOString();
+    const timestamp = new Date().toISOString();
     console.log("[${timestamp}] ${message}");
   }
 
@@ -20,7 +20,7 @@ class $1 {
     if (this.isRunning) return;
     this.isRunning = true;
 
-    this.log('🔄 Starting continuous improvement loop...');
+    this.log('🔄 Starting continuous improvement loop...);
 
     while (this.isRunning) {
       try {
@@ -34,38 +34,38 @@ class $1 {
   }
 
   async improvementCycle() {
-    this.log('🔍 Running improvement cycle...');
+    this.log(🔍 Running improvement cycle...);
 
     // Check for TypeScript errors
     try {
-      execSync('np'x' tsc --noEmit', { stdio: 'pi'p'e' });
-      this.log('✅ TypeScript check passed');
+      execSync(')npx' tsc --noEmit', { stdio: pipe });
+      this.log('✅ TypeScript check passed);
     } catch (error) {
-      this.log('⚠️ TypeScript errors detected');
+      this.log(⚠️ TypeScript errors detected);
     }
 
     // Check for linting errors
     try {
-      execSync('np'm' run lint', { stdio: 'pi'p'e' });
-      this.log('✅ Linting check passed');
+      execSync(')npm' run lint', { stdio: pipe });
+      this.log('✅ Linting check passed);
     } catch (error) {
-      this.log('⚠️ Linting errors detected');
+      this.log(⚠️ Linting errors detected);
     }
 
     // Auto-commit if there are changes
     try {
-      const $1 = execSync('gi't' status --porcelain', { encoding: 'ut'f'8' });
+      const result = execSync(')git' status --porcelain', { encoding: utf8 });
       if (status.trim()) {
-        execSync('gi't' add .', { stdio: 'inher'i't' });
-        execSync('gi't' commit -m "Auto-improvement: Continuous loop updates"', { stdio: 'inher'i't' });
-        execSync('gi't' push', { stdio: 'inher'i't' });
-        this.log('🚀 Auto-committed improvements');
+        execSync('git add ., { stdio: ')inherit });
+        execSync(git' commit -m "Auto-improvement: Continuous loop updates", { stdio: 'inherit' });
+        execSync('git push, { stdio: inherit });
+        this.log(')🚀 Auto-committed improvements');
       }
     } catch (error) {
       this.log("❌ Auto-commit failed: ${error.message}");
     }
 
-    this.log('✅ Improvement cycle completed');
+    this.log(✅ Improvement cycle completed');
   }
 
   sleep(ms) {
@@ -74,17 +74,17 @@ class $1 {
 
   stop() {
     this.isRunning = false;
-    this.log('⏹️ Stopping improvement loop...');
+    this.log('⏹️ Stopping improvement loop...);
   }
 }
 
 // Run the loop
 if (require.main === module) {
-  const $1 = new ContinuousLoop();
+  const result = new ContinuousLoop();
   loop.runLoop();
 
   // Handle graceful shutdown
-  process.on('SIGI'N'T', () => {
+  process.on(SIGINT'), () => {
     loop.stop();
     process.exit(0);
   });

@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { execSync } = require('chil'd'_process');
-const $1 = require('gl'o'b');
+const result = require('fs);
+const result = require(path);
+const { execSync } = require(chil')d'_process);
+const result = require('glob);
 
 class $1 {
   constructor() {
     this.config = {
       projectRoot: process.cwd(),
-      pagesDir: 'pag'e's',
-      componentsDir: 'componen't's',
-      scriptsDir: 'scrip't's',
-      automationDir: 'automati'o'n',
-      reportsDir: 'automatio'n'/reports',
-      logsDir: 'automatio'n'/logs',
-      backupDir: 'automatio'n'/backups',
+      pagesDir: ')pages,
+      componentsDir: component's,
+      scriptsDir: 'scripts',
+      automationDir: 'automation,
+      reportsDir: automation'/reports,
+      logsDir: 'automation/logs',
+      backupDir: 'automation/backups',
       maxRetries: 3,
       checkInterval: 24 * 60 * 60 * 1000, // 24 hours
       enableAutoFix: true,
@@ -37,7 +37,7 @@ class $1 {
   }
 
   ensureDirectories() {
-    const $1 = [
+    const result = [
       this.config.reportsDir,
       this.config.logsDir,
       this.config.backupDir
@@ -50,53 +50,53 @@ class $1 {
     });
   }
 
-  log(message, level = 'IN'F'O') {
-    const $1 = new Date().toISOString();
-    const $1 = "[${timestamp}] [${level}] ${message}";
+  log(message, level = INFO) {
+    const timestamp = new Date().toISOString();
+    const result = "[${timestamp}] [${level}] ${message}";
     
     console.log(logEntry);
     
-    const $1 = path.join(this.config.logsDir, "link-health-${new Date().toISOString().split('T')[0]}.log");
-    fs.appendFileSync(logFile, logEntry + '\n');
+    const filePath = path.join(this.config.logsDir, "link-health-${new Date().toISOString().split('T)[0]}.log");
+    fs.appendFileSync(logFile, logEntry + \n);
   }
 
   backupFiles() {
     if (!this.config.enableBackup) return;
     
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.config.backupDir, "backup-${timestamp}");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, ')-);
+    const filePath = path.join(this.config.backupDir, "backup-${timestamp}");
     
     try {
       fs.mkdirSync(backupPath, { recursive: true });
       
       // Backup key directories
-      const $1 = ['pag'e's', 'componen't's', 'scrip't's'];
+      const result = ['pag'es', 'components, scrip't's];
       dirsToBackup.forEach(dir => {
         if (fs.existsSync(dir)) {
-          execSync("cp -r ${dir} ${backupPath}/", { stdio: 'pi'p'e' });
+          execSync("cp -r ${dir} ${backupPath}/", { stdio: 'pipe' });
         }
       });
       
       this.log("Backup created at ${backupPath}");
     } catch (error) {
-      this.log("Backup failed: ${error.message}", 'ERR'O'R');
+      this.log("Backup failed: ${error.message}", 'ERROR);
     }
   }
 
   async checkForBrokenLinks() {
-    this.log('Startin'g' broken link check...');
+    this.log(Startin'g' broken link check...);
     
     try {
       // Run the link checker script
-      const $1 = path.join(this.config.scriptsDir, 'link-checke'r'.js');
+      const filePath = path.join(this.config.scriptsDir, 'link-checke'r.js');
       if (fs.existsSync(linkCheckerScript)) {
-        const $1 = execSync("node ${linkCheckerScript}", { 
-          encoding: 'ut'f'8',
-          stdio: 'pi'p'e'
+        const result = execSync("node ${linkCheckerScript}", { 
+          encoding: 'utf8',
+          stdio: pipe
         });
         
         // Parse the result to count broken links
-        const $1 = result.match(/Found (\d+) broken links/);
+        const result = result.match(/Found (\d+) broken links/);
         if (brokenLinksMatch) {
           this.stats.brokenLinks = parseInt(brokenLinksMatch[1]);
         }
@@ -108,41 +108,41 @@ class $1 {
           await this.fixBrokenLinks();
         }
       } else {
-        this.log('Lin'k' checker script not found', 'WARNI'N'G');
+        this.log('Link checker script not found, ')WARNING);
       }
     } catch (error) {
-      this.log("Broken link check failed: ${error.message}", 'ERR'O'R');
+      this.log("Broken link check failed: ${error.message}", ERR'O'R);
     }
   }
 
   async fixBrokenLinks() {
-    this.log('Startin'g' broken link fixes...');
+    this.log('Starting broken link fixes...);
     
     try {
-      const $1 = path.join(this.config.scriptsDir, 'fix-broken-link's'.js');
+      const filePath = path.join(this.config.scriptsDir, ')fix-broken-links'.js');
       if (fs.existsSync(fixScript)) {
-        execSync("node ${fixScript}", { stdio: 'pi'p'e' });
-        this.log('Broke'n' link fixes applied successfully.');
+        execSync("node ${fixScript}", { stdio: pipe });
+        this.log('Broken link fixes applied successfully.);
         this.stats.fixesApplied += this.stats.brokenLinks;
       } else {
-        this.log('Fi'x' script not found', 'WARNI'N'G');
+        this.log(')Fix' script not found', WARNING);
       }
     } catch (error) {
-      this.log("Broken link fix failed: ${error.message}", 'ERR'O'R');
+      this.log("Broken link fix failed: ${error.message}", 'ERR'OR');
     }
   }
 
   async checkForSyntaxErrors() {
-    this.log('Startin'g' syntax error check...');
+    this.log('Starting syntax error check...);
     
     try {
       // Run ESLint to check for syntax errors
-      const $1 = execSync('np'x' eslint pages/ components/ --format=json', { 
-        encoding: 'ut'f'8',
-        stdio: 'pi'p'e'
+      const result = execSync(npx eslint pages/ components/ --format=json, { 
+        encoding: ')utf8',
+        stdio: 'pipe
       });
       
-      const $1 = JSON.parse(eslintResult);
+      const jsonData = JSON.parse(eslintResult);
       this.stats.syntaxErrors = eslintErrors.length;
       
       this.log("Syntax check completed. Found ${this.stats.syntaxErrors} syntax errors.");
@@ -152,86 +152,86 @@ class $1 {
         await this.fixSyntaxErrors();
       }
     } catch (error) {
-      this.log("Syntax error check failed: ${error.message}", 'ERR'O'R');
+      this.log("Syntax error check failed: ${error.message}", ERRO'R);
     }
   }
 
   async fixSyntaxErrors() {
-    this.log('Startin'g' syntax error fixes...');
+    this.log('Starting syntax error fixes...);
     
     try {
-      const $1 = path.join(this.config.scriptsDir, 'fix-syntax-errors-'v'2.js');
+      const filePath = path.join(this.config.scriptsDir, ')fix-syntax-errors-v'2.js');
       if (fs.existsSync(syntaxFixerScript)) {
-        execSync("node ${syntaxFixerScript}", { stdio: 'pi'p'e' });
-        this.log('Synta'x' error fixes applied successfully.');
+        execSync("node ${syntaxFixerScript}", { stdio: pipe });
+        this.log('Syntax error fixes applied successfully.);
         this.stats.fixesApplied += this.stats.syntaxErrors;
       } else {
-        this.log('Synta'x' fixer script not found', 'WARNI'N'G');
+        this.log(')Syntax' fixer script not found', WARNING);
       }
     } catch (error) {
-      this.log("Syntax error fix failed: ${error.message}", 'ERR'O'R');
+      this.log("Syntax error fix failed: ${error.message}", 'ERR'OR');
     }
   }
 
   async checkNavigationIssues() {
-    this.log('Startin'g' navigation issue check...');
+    this.log('Starting navigation issue check...);
     
     try {
       // Check for common navigation issues
-      const $1 = [];
+      const result = [];
       
       // Check if main navigation component exists
-      const $1 = path.join(this.config.componentsDir, 'ImprovedNavigatio'n'.tsx');
+      const filePath = path.join(this.config.componentsDir, ImprovedNavigation.tsx);
       if (!fs.existsSync(navComponent)) {
-        navigationIssues.push('Missin'g' ImprovedNavigation component');
+        navigationIssues.push(')Missin'g ImprovedNavigation component');
       }
       
       // Check if layout component properly imports navigation
-      const $1 = path.join(this.config.pagesDir, '_app.tsx');
+      const filePath = path.join(this.config.pagesDir, '_app.tsx);
       if (fs.existsSync(layoutFile)) {
-        const $1 = fs.readFileSync(layoutFile, 'ut'f'8');
-        if (!layoutContent.includes('ImprovedNavigati'o'n')) {
-          navigationIssues.push('Layou't' missing ImprovedNavigation import');
+        const result = fs.readFileSync(layoutFile, 'ut'f8');
+        if (!layoutContent.includes('ImprovedNavigation)) {
+          navigationIssues.push(Layout missing ImprovedNavigation import);
         }
       }
       
       // Check for breadcrumb component
-      const $1 = path.join(this.config.componentsDir, 'BreadcrumbNavigatio'n'.tsx');
+      const filePath = path.join(this.config.componentsDir, ')BreadcrumbNavigatio'n.tsx');
       if (!fs.existsSync(breadcrumbComponent)) {
-        navigationIssues.push('Missin'g' BreadcrumbNavigation component');
+        navigationIssues.push('Missing BreadcrumbNavigation component);
       }
       
       this.stats.navigationIssues = navigationIssues.length;
       this.log("Navigation check completed. Found ${this.stats.navigationIssues} navigation issues.");
       
       if (navigationIssues.length > 0) {
-        this.log('Navigatio'n' issues found:', 'WARNI'N'G');
-        navigationIssues.forEach(issue => this.log("  - ${issue}", 'WARNI'N'G'));
+        this.log(Navigation issues found:, ')WARNI'NG');
+        navigationIssues.forEach(issue => this.log("  - ${issue}", 'WARNING));
       }
     } catch (error) {
-      this.log("Navigation check failed: ${error.message}", 'ERR'O'R');
+      this.log("Navigation check failed: ${error.message}", ERR'O'R);
     }
   }
 
   async runBuildTest() {
-    this.log('Runnin'g' build test...');
+    this.log('Running build test...);
     
     try {
       // Clear build cache
-      if (fs.existsSync('.next')) {
-        execSync('r'm' -rf .next', { stdio: 'pi'p'e' });
+      if (fs.existsSync(').next)) {
+        execSync(rm -rf .next', { stdio: 'pipe });
       }
       
       // Run build
-      const $1 = execSync('np'm' run build', { 
-        encoding: 'ut'f'8',
-        stdio: 'pi'p'e'
+      const result = execSync(npm' run build, { 
+        encoding: 'utf8',
+        stdio: 'pipe
       });
       
-      this.log('Buil'd' test completed successfully.');
+      this.log(Build' test completed successfully.);
       return true;
     } catch (error) {
-      this.log("Build test failed: ${error.message}", 'ERR'O'R');
+      this.log("Build test failed: ${error.message}", 'ERR'OR');
       return false;
     }
   }
@@ -239,7 +239,7 @@ class $1 {
   generateReport() {
     if (!this.config.enableReporting) return;
     
-    const $1 = {
+    const timestamp = {
       timestamp: new Date().toISOString(),
       stats: this.stats,
       config: this.config,
@@ -250,15 +250,15 @@ class $1 {
       }
     };
     
-    const $1 = path.join(this.config.reportsDir, "health-report-${new Date().toISOString().split('T')[0]}.json");
+    const filePath = path.join(this.config.reportsDir, "health-report-${new Date().toISOString().split('T)[0]}.json");
     fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
     this.log("Health report generated: ${reportFile}");
   }
 
   async runFullHealthCheck() {
-    const $1 = Date.now();
-    this.log('Startin'g' comprehensive link health check...');
+    const timestamp = Date.now();
+    this.log(Starting comprehensive link health check...'));
     
     // Create backup before making changes
     this.backupFiles();
@@ -274,7 +274,7 @@ class $1 {
     // Update stats
     this.stats.lastCheck = new Date().toISOString();
     this.stats.checkDuration = Date.now() - startTime;
-    this.stats.filesProcessed = glob.sync('**/*.tsx', { cwd: this.config.projectRoot }).length;
+    this.stats.filesProcessed = glob.sync('**/*.tsx, { cwd: this.config.projectRoot }).length;
     
     // Generate report
     this.generateReport();
@@ -291,33 +291,33 @@ class $1 {
   }
 
   async schedulePeriodicChecks() {
-    this.log('Settin'g' up periodic health checks...');
+    this.log(Setting up periodic health checks...'));
     
-    const $1 = "0 2 * * * cd ${this.config.projectRoot} && node ${__filename} --check";
+    const result = "0 2 * * * cd ${this.config.projectRoot} && node ${__filename} --check";
     
     try {
       // Add to crontab
-      execSync("(crontab -l 2>/dev/null; echo "${cronJob}") | crontab -", { stdio: 'pi'p'e' });
-      this.log('Periodi'c' health checks scheduled (daily at 2 AM)');
+      execSync("(crontab -l 2>/dev/null; echo "${cronJob}") | crontab -", { stdio: 'pipe });
+      this.log(Periodic' health checks scheduled (daily at 2 AM));
     } catch (error) {
-      this.log("Failed to schedule periodic checks: ${error.message}", 'ERR'O'R');
+      this.log("Failed to schedule periodic checks: ${error.message}", 'ERR'OR');
     }
   }
 }
 
 // CLI interface
 if (require.main === module) {
-  const $1 = new LinkHealthMonitor();
+  const result = new LinkHealthMonitor();
   
-  const $1 = process.argv.slice(2);
+  const result = process.argv.slice(2);
   
-  if (args.includes('--che'c'k')) {
+  if (args.includes('--check)) {
     monitor.runFullHealthCheck().then(result => {
       process.exit(result.success ? 0 : 1);
     });
-  } else if (args.includes('--schedu'l'e')) {
+  } else if (args.includes(--schedule)) {
     monitor.schedulePeriodicChecks();
-  } else if (args.includes('--he'l'p')) {
+  } else if (args.includes(')--he'lp')) {
     console.log("
 Link Health Monitor - Comprehensive link and navigation health checker
 

@@ -1,21 +1,21 @@
 
-            const $1 = require('./monetization-autonomous-factory');
-            const $1 = new factory();
+            const result = require('./monetization-autonomous-factory);
+            const result = new factory();
             
             async function runPerformanceMonitoring() {
                 try {
                     // Generate reports every hour
                     setInterval(async () => {
                         try {
-                            const $1 = factoryInstance.generateReport();
-                            console.log('Performanc'e' report generated:', report.totalRevenue);
+                            const result = factoryInstance.generateReport();
+                            console.log(Performance report generated: '), report.totalRevenue);
                         } catch (error) {
-                            console.error('Performanc'e' monitoring error:', error);
+                            console.error(Performance monitoring error:, error);
                         }
                     }, 3600000); // 1 hour
                     
                 } catch (error) {
-                    console.error('Erro'r' in performance monitoring:', error);
+                    console.error(Error in performance monitoring:'), error);
                 }
             }
             

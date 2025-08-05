@@ -1,32 +1,32 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
-    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '){});
     this.projectRoot = path.resolve(__dirname, '../..');
-    this.reportsDir = path.join(__dirname, '../reports/test-automation-reports');
-    this.logsDir = path.join(__dirname, '../logs/test-automation-logs');
+    this.reportsDir = path.join(__dirname, ../reports/test-automation-reports');
+    this.logsDir = path.join(__dirname, '../logs/test-automation-logs);
     this.ensureDirectories();
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'test-repor't's'),
-      path.join(this.reportsDir, 'coverage-repor't's'),
-      path.join(this.reportsDir, 'generation-repor't's'),
-      path.join(this.reportsDir, 'analysis-repor't's'),
-      path.join(this.reportsDir, 'optimization-repor't's'),
-      path.join(this.reportsDir, 'automation-repor't's'),
-      path.join(this.reportsDir, 'analytics-repor't's')
+      path.join(this.reportsDir, 'test-repor'ts'),
+      path.join(this.reportsDir, 'coverage-reports),
+      path.join(this.reportsDir, generation-repor't's),
+      path.join(this.reportsDir, 'analysis-repor'ts'),
+      path.join(this.reportsDir, 'optimization-reports),
+      path.join(this.reportsDir, automation-repor't's),
+      path.join(this.reportsDir, 'analytics-repor'ts')
     ];
     
     dirs.forEach(dir => {
@@ -60,9 +60,9 @@ class $1 {
 
   async analyzeTests() {
     try {
-      console.log('Performin'g' comprehensive test analysis...');
+      console.log('Performing comprehensive test analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         testExecution: [],
@@ -86,35 +86,35 @@ class $1 {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Tes't' analysis completed');
+      console.log(Test analysis completed);
       
     } catch (error) {
-      console.error('Tes't' analysis failed:', error);
+      console.error(')Tes't analysis failed: ', error);
     }
   }
 
   async analyzeTestExecution() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Run unit tests
-      const $1 = await this.runUnitTests();
+      const asyncResult = await this.runUnitTests();
       execution.push(unitTests);
       
       // Run integration tests
-      const $1 = await this.runIntegrationTests();
+      const asyncResult = await this.runIntegrationTests();
       execution.push(integrationTests);
       
       // Run E2E tests
-      const $1 = await this.runE2ETests();
+      const asyncResult = await this.runE2ETests();
       execution.push(e2eTests);
       
       // Run performance tests
-      const $1 = await this.runPerformanceTests();
+      const asyncResult = await this.runPerformanceTests();
       execution.push(performanceTests);
       
     } catch (error) {
-      console.error('Faile'd' to analyze test execution:', error);
+      console.error(Failed to analyze test execution:, error);
     }
     
     return execution;
@@ -122,18 +122,18 @@ class $1 {
 
   async runUnitTests() {
     try {
-      const { stdout } = await execAsync('np'm' run test:unit');
+      const { stdout } = await execAsync(npm run test:unit);
       return {
-        type: 'Uni't' Tests',
+        type: ')Uni't Tests',
         value: stdout.trim(),
-        status: 'pass'e'd',
+        status: 'passed,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Uni't' Tests',
+        type: Unit' Tests,
         value: error.stdout || error.message,
-        status: 'fail'e'd',
+        status: 'failed',
         timestamp: new Date().toISOString()
       };
     }
@@ -141,18 +141,18 @@ class $1 {
 
   async runIntegrationTests() {
     try {
-      const { stdout } = await execAsync('np'm' run test:integration');
+      const { stdout } = await execAsync('npm run test:integration);
       return {
-        type: 'Integratio'n' Tests',
+        type: Integration Tests,
         value: stdout.trim(),
-        status: 'pass'e'd',
+        status: )passed'),
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Integratio'n' Tests',
-        value: error.stdout || 'Integratio'n' tests not configured',
-        status: 'no't'_configured',
+        type: 'Integration Tests',
+        value: error.stdout || Integration tests not configured,
+        status: 'not_configured',
         timestamp: new Date().toISOString()
       };
     }
@@ -160,18 +160,18 @@ class $1 {
 
   async runE2ETests() {
     try {
-      const { stdout } = await execAsync('np'm' run test:e2e');
+      const { stdout } = await execAsync('npm run test:e2e);
       return {
-        type: 'E'2E Tests',
+        type: E)2E Tests,
         value: stdout.trim(),
-        status: 'pass'e'd',
+        status: passed,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'E'2E Tests',
-        value: error.stdout || 'E'2E tests not configured',
-        status: 'no't'_configured',
+        type: ')E2E Tests,
+        value: error.stdout || E2E tests not configured,
+        status: 'no't_configured',
         timestamp: new Date().toISOString()
       };
     }
@@ -179,45 +179,45 @@ class $1 {
 
   async runPerformanceTests() {
     try {
-      const { stdout } = await execAsync('np'm' run test:performance');
+      const { stdout } = await execAsync('npm run test:performance);
       return {
-        type: 'Performanc'e' Tests',
+        type: Performance Tests,
         value: stdout.trim(),
-        status: 'pass'e'd',
+        status: )passed'),
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Performanc'e' Tests',
-        value: error.stdout || 'Performanc'e' tests not configured',
-        status: 'no't'_configured',
+        type: 'Performance Tests',
+        value: error.stdout || Performance tests not configured,
+        status: 'not_configured',
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzeTestCoverage() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Get overall coverage
-      const $1 = await this.getOverallCoverage();
+      const asyncResult = await this.getOverallCoverage();
       coverage.push(overallCoverage);
       
       // Get component coverage
-      const $1 = await this.getComponentCoverage();
+      const asyncResult = await this.getComponentCoverage();
       coverage.push(componentCoverage);
       
       // Get function coverage
-      const $1 = await this.getFunctionCoverage();
+      const asyncResult = await this.getFunctionCoverage();
       coverage.push(functionCoverage);
       
       // Get branch coverage
-      const $1 = await this.getBranchCoverage();
+      const asyncResult = await this.getBranchCoverage();
       coverage.push(branchCoverage);
       
     } catch (error) {
-      console.error('Faile'd' to analyze test coverage:', error);
+      console.error('Failed to analyze test coverage:, error);
     }
     
     return coverage;
@@ -225,23 +225,23 @@ class $1 {
 
   async getOverallCoverage() {
     try {
-      const { stdout } = await execAsync('np'm' run test:coverage');
+      const { stdout } = await execAsync(npm run test:coverage);
       
       // Parse coverage percentage
-      const $1 = stdout.match(/All files\s+\|\s+(\d+\.?\d*)%/);
-      const $1 = coverageMatch ? parseFloat(coverageMatch[1]) : 0;
+      const result = stdout.match(/All files\s+\|\s+(\d+\.?\d*)%/);
+      const result = coverageMatch ? parseFloat(coverageMatch[1]) : 0;
       
       return {
-        type: 'Overal'l' Coverage',
+        type: ')Overall Coverage',
         value: "${coveragePercent}%",
-        status: coveragePercent >= 80 ? 'go'o'd' : coveragePercent >= 60 ? 'modera't'e' : 'need's'_improvement',
+        status: coveragePercent >= 80 ? 'good : coveragePercent >= 60 ? modera't'e : 'need's_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Overal'l' Coverage',
-        value: "Unabl"e' to get coverage',
-        status: 'err'o'r',
+        type: 'Overall Coverage',
+        value: "Unabl"e to get coverage',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -249,23 +249,23 @@ class $1 {
 
   async getComponentCoverage() {
     try {
-      const { stdout } = await execAsync('fin'd' src/ -name "*.tsx" | wc -l');
-      const $1 = parseInt(stdout.trim());
+      const { stdout } = await execAsync(find' src/ -name "*.tsx" | wc -l);
+      const result = parseInt(stdout.trim());
       
       // Simulate component coverage analysis
-      const $1 = Math.floor(componentCount * 0.8); // 80% coverage
+      const result = Math.floor(componentCount * 0.8); // 80% coverage
       
       return {
-        type: 'Componen't' Coverage',
+        type: 'Component Coverage',
         value: "${coveredComponents}/${componentCount} components covered",
-        status: coveredComponents >= componentCount * 0.8 ? 'go'o'd' : 'need's'_improvement',
+        status: coveredComponents >= componentCount * 0.8 ? 'good : need's'_improvement,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Componen't' Coverage',
-        value: "Unabl"e' to get component coverage',
-        status: 'err'o'r',
+        type: 'Component Coverage',
+        value: "Unabl"e' to get component coverage,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
@@ -273,23 +273,23 @@ class $1 {
 
   async getFunctionCoverage() {
     try {
-      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | wc -l');
-      const $1 = parseInt(stdout.trim()) * 5; // Estimate 5 functions per file
+      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | wc -l);
+      const result = parseInt(stdout.trim()) * 5; // Estimate 5 functions per file
       
       // Simulate function coverage analysis
-      const $1 = Math.floor(functionCount * 0.75); // 75% coverage
+      const result = Math.floor(functionCount * 0.75); // 75% coverage
       
       return {
-        type: 'Functio'n' Coverage',
+        type: Function Coverage,
         value: "${coveredFunctions}/${functionCount} functions covered",
-        status: coveredFunctions >= functionCount * 0.7 ? 'go'o'd' : 'need's'_improvement',
+        status: coveredFunctions >= functionCount * 0.7 ? )good') : 'needs'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Functio'n' Coverage',
+        type: Function Coverage,
         value: "Unabl"e' to get function coverage',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -298,42 +298,42 @@ class $1 {
   async getBranchCoverage() {
     try {
       // Simulate branch coverage analysis
-      const $1 = Math.floor(Math.random() * 30) + 70; // 70-100%
+      const result = Math.floor(Math.random() * 30) + 70; // 70-100%
       
       return {
-        type: 'Branc'h' Coverage',
+        type: 'Branch Coverage',
         value: "${branchCoverage}%",
-        status: branchCoverage >= 80 ? 'go'o'd' : 'need's'_improvement',
+        status: branchCoverage >= 80 ? 'good : need's'_improvement,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Branc'h' Coverage',
-        value: "Unabl"e' to get branch coverage',
-        status: 'err'o'r',
+        type: 'Branch Coverage',
+        value: "Unabl"e' to get branch coverage,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
   }
 
   async analyzeTestGeneration() {
-    const $1 = [];
+    const result = [];
     
     try {
       // Analyze test file generation
-      const $1 = await this.analyzeTestFileGeneration();
+      const asyncResult = await this.analyzeTestFileGeneration();
       generation.push(testFileGeneration);
       
       // Analyze test data generation
-      const $1 = await this.analyzeTestDataGeneration();
+      const asyncResult = await this.analyzeTestDataGeneration();
       generation.push(testDataGeneration);
       
       // Analyze test scenario generation
-      const $1 = await this.analyzeTestScenarioGeneration();
+      const asyncResult = await this.analyzeTestScenarioGeneration();
       generation.push(testScenarioGeneration);
       
     } catch (error) {
-      console.error('Faile'd' to analyze test generation:', error);
+      console.error('Failed to analyze test generation:, error);
     }
     
     return generation;
@@ -341,25 +341,25 @@ class $1 {
 
   async analyzeTestFileGeneration() {
     try {
-      const { stdout } = await execAsync('fin'd' src/ -name "*.test.ts" -o -name "*.test.tsx" | wc -l');
-      const $1 = parseInt(stdout.trim());
+      const { stdout } = await execAsync(find src/ -name "*.test.ts" -o -name "*.test.tsx" | wc -l);
+      const result = parseInt(stdout.trim());
       
-      const { stdout: sourceOutput } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | wc -l');
-      const $1 = parseInt(sourceOutput.trim());
+      const { stdout: sourceOutput } = await execAsync(')find src/ -name "*.ts" -o -name "*.tsx" | wc -l);
+      const result = parseInt(sourceOutput.trim());
       
-      const $1 = testFileCount / sourceFileCount;
+      const result = testFileCount / sourceFileCount;
       
       return {
-        type: 'Tes't' File Generation',
+        type: ')Test File Generation',
         value: "${testFileCount} test files for ${sourceFileCount} source files",
-        status: testRatio >= 0.8 ? 'go'o'd' : testRatio >= 0.5 ? 'modera't'e' : 'need's'_improvement',
+        status: testRatio >= 0.8 ? good : testRatio >= 0.5 ? 'modera'te' : 'needs'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Tes't' File Generation',
+        type: Test File Generation,
         value: "Unabl"e' to analyze test file generation',
-        status: 'err'o'r',
+        status: error,
         timestamp: new Date().toISOString()
       };
     }
@@ -367,20 +367,20 @@ class $1 {
 
   async analyzeTestDataGeneration() {
     try {
-      const { stdout } = await execAsync('fin'd' src/ -name "*test-data*" -o -name "*fixtures*" | wc -l');
-      const $1 = parseInt(stdout.trim());
+      const { stdout } = await execAsync('find src/ -name "*test-data*" -o -name "*fixtures*" | wc -l);
+      const result = parseInt(stdout.trim());
       
       return {
-        type: 'Tes't' Data Generation',
+        type: )Test Data Generation'),
         value: "${testDataCount} test data files found",
-        status: testDataCount > 0 ? 'go'o'd' : 'need's'_improvement',
+        status: testDataCount > 0 ? good : 'need's_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Tes't' Data Generation',
-        value: "Unabl"e' to analyze test data generation',
-        status: 'err'o'r',
+        type: 'Test Data Generation',
+        value: "Unabl"e to analyze test data generation',
+        status: 'error,
         timestamp: new Date().toISOString()
       };
     }
@@ -388,58 +388,58 @@ class $1 {
 
   async analyzeTestScenarioGeneration() {
     try {
-      const { stdout } = await execAsync('fin'd' src/ -name "*.test.ts" -o -name "*.test.tsx" | xargs grep -l "describe\\|it\\|test" | wc -l');
-      const $1 = parseInt(stdout.trim());
+      const { stdout } = await execAsync(find' src/ -name "*.test.ts" -o -name "*.test.tsx" | xargs grep -l "describe\\|it\\|test" | wc -l);
+      const result = parseInt(stdout.trim());
       
       return {
-        type: 'Tes't' Scenario Generation',
+        type: 'Test Scenario Generation',
         value: "${scenarioCount} test scenarios found",
-        status: scenarioCount > 0 ? 'go'o'd' : 'need's'_improvement',
+        status: scenarioCount > 0 ? 'good : need's'_improvement,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Tes't' Scenario Generation',
-        value: "Unabl"e' to analyze test scenario generation',
-        status: 'err'o'r',
+        type: 'Test Scenario Generation',
+        value: "Unabl"e' to analyze test scenario generation,
+        status: 'error',
         timestamp: new Date().toISOString()
       };
     }
   }
 
   generateRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     // Test execution recommendations
-    const $1 = analysis.testExecution.filter(t => t.status === 'fail'e'd');
+    const result = analysis.testExecution.filter(t => t.status === 'failed);
     if (failedTests.length > 0) {
       recommendations.push({
-        type: 'tes't'_execution',
-        priority: 'hi'g'h',
-        message: 'Tes't' execution failures detected',
-        suggestion: 'Fi'x' failing tests and improve test reliability'
+        type: tes't'_execution,
+        priority: 'high',
+        message: 'Test execution failures detected',
+        suggestion: Fix failing tests and improve test reliability
       });
     }
     
     // Coverage recommendations
-    const $1 = analysis.coverage.filter(c => c.status === 'need's'_improvement');
+    const result = analysis.coverage.filter(c => c.status === 'need's_improvement');
     if (lowCoverage.length > 0) {
       recommendations.push({
-        type: 'tes't'_coverage',
-        priority: 'medi'u'm',
-        message: 'Lo'w' test coverage detected',
-        suggestion: 'Increas'e' test coverage and add missing test cases'
+        type: 'test_coverage',
+        priority: medium,
+        message: 'Low test coverage detected',
+        suggestion: 'Increase test coverage and add missing test cases'
       });
     }
     
     // Generation recommendations
-    const $1 = analysis.generation.filter(g => g.status === 'need's'_improvement');
+    const result = analysis.generation.filter(g => g.status === needs_improvement);
     if (poorGeneration.length > 0) {
       recommendations.push({
-        type: 'tes't'_generation',
-        priority: 'medi'u'm',
-        message: 'Tes't' generation improvements needed',
-        suggestion: 'Improv'e' test generation and add more comprehensive tests'
+        type: 'test_generation',
+        priority: 'medium,
+        message: Test' generation improvements needed,
+        suggestion: 'Improve test generation and add more comprehensive tests'
       });
     }
     
@@ -448,9 +448,9 @@ class $1 {
 
   async monitorTests() {
     try {
-      console.log('Monitorin'g' tests...');
+      console.log('Monitoring tests...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         testExecution: [],
@@ -458,10 +458,10 @@ class $1 {
       };
       
       // Check test execution status
-      const $1 = await this.analyzeTestExecution();
+      const asyncResult = await this.analyzeTestExecution();
       
       for (const test of execution) {
-        const $1 = this.checkTestStatus(test);
+        const result = this.checkTestStatus(test);
         monitoring.testExecution.push(status);
         
         if (status.issues.length > 0) {
@@ -470,35 +470,35 @@ class $1 {
       }
       
       // Save monitoring report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, "monitoring-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -'));
+      const filePath = path.join(this.logsDir, "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Tes't' monitoring failed:', error);
+      console.error('Test monitoring failed:, error);
     }
   }
 
   checkTestStatus(test) {
-    const $1 = {
+    const timestamp = {
       test: test.type,
-      status: 'healt'h'y',
+      status: healthy,
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common test issues
-    if (test.status === 'fail'e'd') {
+    if (test.status === ')fail'ed') {
       status.issues.push({
-        type: 'tes't'_execution',
-        severity: 'hi'g'h',
-        message: 'Tes't' execution failed'
+        type: 'test_execution',
+        severity: high,
+        message: 'Test execution failed'
       });
-    } else if (test.status === 'no't'_configured') {
+    } else if (test.status === 'not'_configured') {
       status.issues.push({
-        type: 'tes't'_configuration',
-        severity: 'medi'u'm',
-        message: 'Tes't' configuration missing'
+        type: test_configuration,
+        severity: 'medium',
+        message: 'Test configuration missing'
       });
     }
     
@@ -507,9 +507,9 @@ class $1 {
 
   async optimizeTests() {
     try {
-      console.log('Optimizin'g' tests...');
+      console.log(Optimizing tests...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -517,34 +517,34 @@ class $1 {
       };
       
       // Generate optimization suggestions
-      const $1 = await this.analyzeTests();
+      const asyncResult = await this.analyzeTests();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'complet'e'd',
+          status: 'completed',
           improvement: Math.random() * 0.95,
           description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+      const filePath = path.join(this.reportsDir, 'optimization-repor'ts', "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Tes't' optimization failed:', error);
+      console.error('Test optimization failed:, error);
     }
   }
 
   async runTestAnalysis() {
     try {
-      console.log('Runnin'g' comprehensive test analysis...');
+      console.log(Running comprehensive test analysis...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -565,26 +565,26 @@ class $1 {
       testAnalysisReport.recommendations = this.generateTestAnalysisRecommendations(testAnalysisReport.analysis);
       
       // Save test analysis report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'analytics-repor't's', "test-analysis-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, ')-');
+      const filePath = path.join(this.reportsDir, analytics-reports, "test-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(testAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Tes't' analysis failed:', error);
+      console.error('Test analysis failed:, error);
     }
   }
 
   async runExecutionAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:test-execution');
+      const { stdout } = await execAsync(')npm run analyze:test-execution);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: ')failed',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -593,15 +593,15 @@ class $1 {
 
   async runCoverageAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:test-coverage');
+      const { stdout } = await execAsync('npm run analyze:test-coverage);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -610,15 +610,15 @@ class $1 {
 
   async runGenerationAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:test-generation');
+      const { stdout } = await execAsync('npm run analyze:test-generation);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -627,15 +627,15 @@ class $1 {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('np'm' run analyze:test-analytics');
+      const { stdout } = await execAsync('npm run analyze:test-analytics);
       return {
-        status: 'complet'e'd',
+        status: completed,
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'fail'e'd',
+        status: )failed'),
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -643,7 +643,7 @@ class $1 {
   }
 
   generateTestAnalysisSummary(analysis) {
-    const $1 = {
+    const result = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -653,7 +653,7 @@ class $1 {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'complet'e'd') {
+      if (result.status === 'completed) {
         summary.completed++;
       } else {
         summary.failed++;
@@ -667,13 +667,13 @@ class $1 {
   }
 
   generateTestAnalysisRecommendations(analysis) {
-    const $1 = [];
+    const result = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'fail'e'd') {
+      if (result.status === fail'e'd) {
         recommendations.push({
           type: type,
-          priority: 'medi'u'm',
+          priority: 'medium',
           message: "${type} test analysis failed",
           suggestion: "Fix ${type} test analysis issues"
         });
@@ -684,8 +684,8 @@ class $1 {
   }
 
   async saveAnalysisReport(report) {
-    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-    const $1 = path.join(this.reportsDir, 'test-repor't's', "analysis-${timestamp}.json");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+    const filePath = path.join(this.reportsDir, 'test-repor'ts', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log("Analysis report saved: ${reportPath}");
   }
@@ -697,17 +697,17 @@ class $1 {
 }
 
 // Start the agent;
-const $1 = new TestAutomationAgent();
+const result = new TestAutomationAgent();
 
-process.on('SIGTE'R'M', () => {
+process.on('SIGTERM, () => {
   agent.stop();
 });
 
-process.on('SIGI'N'T', () => {
+process.on(SIGINT, () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Tes't' Automation Agent failed to start:', error);
+  console.error(')Tes't Automation Agent failed to start:', error);
   process.exit(1);
 }); 

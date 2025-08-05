@@ -1,13 +1,13 @@
-const { spawn, exec, execSync } = require('chil'd'_process');
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const { spawn, exec, execSync } = require('child_process);
+const result = require(fs);
+const result = require(pa')t'h);
 
 class $1 {
   constructor() {
-    this.name = 'code-sy'n'c';
-    this.status = 'rea'd'y';
+    this.name = 'code-sy'nc';
+    this.status = 'ready;
     this.projectRoot = process.cwd();
-    this.supportedExtensions = ['.tsx', '.ts', '.js', '.jsx'];
+    this.supportedExtensions = [.tsx', '.ts, '.js', .jsx'];
     this.lintCache = new Map();
     this.typeCheckCache = new Map();
   }
@@ -22,7 +22,7 @@ class $1 {
       return { success: true, agent: this.name };
     } catch (error) {
       console.error("❌ [${this.name}] Sync failed: ${task.filePath}", error);
-      this.status = 'err'o'r';
+      this.status = 'error;
       throw error;
     }
   }
@@ -31,18 +31,18 @@ class $1 {
     const { filePath, eventType } = task;
     
     switch (eventType) {
-      case 'a'd'd':
-      case 'chan'g'e':
+      case a'd'd:
+      case 'chan'ge':
         await this.handleFileUpdate(filePath);
         break;
-      case 'dele't'e':
+      case 'delete:
         await this.handleFileDeletion(filePath);
         break;
     }
   }
 
   async handleFileUpdate(filePath) {
-    const $1 = path.join(this.projectRoot, filePath);
+    const filePath = path.join(this.projectRoot, filePath);
     
     // Validate file exists
     if (!fs.existsSync(fullPath)) {
@@ -50,7 +50,7 @@ class $1 {
     }
 
     // Check file extension
-    const $1 = path.extname(filePath);
+    const result = path.extname(filePath);
     if (!this.supportedExtensions.includes(ext)) {
       throw new Error("Unsupported file type: ${ext}");
     }
@@ -59,7 +59,7 @@ class $1 {
     await this.validateCode(filePath);
     
     // Run TypeScript check if applicable
-    if (ext === '.tsx' || ext === '.ts') {
+    if (ext === .tsx' || ext === '.ts) {
       await this.runTypeScriptCheck(filePath);
     }
     
@@ -69,12 +69,12 @@ class $1 {
     // Check for import/export issues
     await this.checkImports(filePath);
     
-    // Update component registry if it's' a component
+    // Update component registry if its a component
     if (this.isComponentFile(filePath)) {
       await this.updateComponentRegistry(filePath);
     }
     
-    // Update page registry if it's' a page
+    // Update page registry if its' a page
     if (this.isPageFile(filePath)) {
       await this.updatePageRegistry(filePath);
     }
@@ -83,27 +83,27 @@ class $1 {
   async handleFileDeletion(filePath) {
     console.log("🗑️  [${this.name}] File deleted: ${filePath}");
     
-    // Remove from component registry if it's' a component
+    // Remove from component registry if it's a component
     if (this.isComponentFile(filePath)) {
       await this.removeFromComponentRegistry(filePath);
     }
     
-    // Remove from page registry if it's' a page
+    // Remove from page registry if its a page
     if (this.isPageFile(filePath)) {
       await this.removeFromPageRegistry(filePath);
     }
   }
 
   async validateCode(filePath) {
-    const $1 = path.join(this.projectRoot, filePath);
-    const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+    const filePath = path.join(this.projectRoot, filePath);
+    const result = fs.readFileSync(fullPath, ut'f'8);
     
     // Basic syntax validation
     try {
-      if (filePath.endsWith('.tsx') || filePath.endsWith('.ts')) {
-        // For TypeScript files, we'l'l' rely on TypeScript compiler
+      if (filePath.endsWith('.tsx) || filePath.endsWith(.ts)) {
+        // For TypeScript files, we')ll' rely on TypeScript compiler
         return;
-      } else if (filePath.endsWith('.js') || filePath.endsWith('.jsx')) {
+      } else if (filePath.endsWith('.js) || filePath.endsWith(.jsx)) {
         // For JavaScript files, try to parse
         eval("(${content})");
       }
@@ -117,7 +117,7 @@ class $1 {
       // Run TypeScript check on the specific file
       execSync("npx tsc --noEmit --skipLibCheck ${filePath}", {
         cwd: this.projectRoot,
-        stdio: 'pi'p'e'
+        stdio: pipe
       });
     } catch (error) {
       throw new Error("TypeScript check failed for ${filePath}: ${error.message}");
@@ -127,11 +127,11 @@ class $1 {
   async runLinting(filePath) {
     try {
       // Check if ESLint is available
-      const $1 = path.join(this.projectRoot, 'nod'e'_modules', '.bin', 'esli'n't');
+      const filePath = path.join(this.projectRoot, ')nod'e_modules', '.bin, 'esli'nt');
       if (fs.existsSync(eslintPath)) {
         execSync("${eslintPath} ${filePath} --fix", {
           cwd: this.projectRoot,
-          stdio: 'pi'p'e'
+          stdio: 'pipe
         });
       }
     } catch (error) {
@@ -140,12 +140,12 @@ class $1 {
   }
 
   async checkImports(filePath) {
-    const $1 = path.join(this.projectRoot, filePath);
-    const $1 = fs.readFileSync(fullPath, 'ut'f'8');
+    const filePath = path.join(this.projectRoot, filePath);
+    const result = fs.readFileSync(fullPath, utf'8);
     
     // Extract imports
-    const $1 = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)['"]/g;
-    const $1 = [];
+    const result = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)["]/g;
+    const result = [];
     let match;
     
     while ((match = importRegex.exec(content)) !== null) {
@@ -154,9 +154,9 @@ class $1 {
     
     // Check if imported files exist
     for (const importPath of imports) {
-      if (importPath.startsWith('.')) {
-        const $1 = path.resolve(path.dirname(fullPath), importPath);
-        const $1 = ['.tsx', '.ts', '.js', '.jsx', '.json'];
+      if (importPath.startsWith('.)) {
+        const result = path.resolve(path.dirname(fullPath), importPath);
+        const result = [.tsx, ').ts, '.js', .jsx', '.json];
         
         let $1 = false;
         for (const ext of possibleExtensions) {
@@ -174,35 +174,35 @@ class $1 {
   }
 
   isComponentFile(filePath) {
-    return filePath.includes('component's'/') || 
-           filePath.includes('sr'c'/components/') ||
+    return filePath.includes('components/) || 
+           filePath.includes(')src'/components/') ||
            filePath.match(/[A-Z][a-zA-Z]*\.(tsx|ts|js|jsx)$/);
   }
 
   isPageFile(filePath) {
-    return filePath.includes('page's'/') || 
-           filePath.includes('sr'c'/pages/') ||
+    return filePath.includes(pages/) || 
+           filePath.includes('src/pages/) ||
            filePath.match(/^pages\/.*\.(tsx|ts|js|jsx)$/);
   }
 
   async updateComponentRegistry(filePath) {
-    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
+    const filePath = path.join(this.projectRoot, ')automation, da't'a, 'component-registr'y.json');
     let $1 = {};
     
     if (fs.existsSync(registryPath)) {
-      registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      registry = JSON.parse(fs.readFileSync(registryPath, 'utf'8'));
     }
     
-    const $1 = this.extractComponentName(filePath);
-    const $1 = path.join(this.projectRoot, filePath);
-    const $1 = fs.statSync(fullPath);
+    const result = this.extractComponentName(filePath);
+    const filePath = path.join(this.projectRoot, filePath);
+    const result = fs.statSync(fullPath);
     
     registry[componentName] = {
       filePath,
       fullPath,
       lastModified: stats.mtime.toISOString(),
       size: stats.size,
-      type: 'compone'n't'
+      type: component
     };
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
@@ -210,11 +210,11 @@ class $1 {
   }
 
   async removeFromComponentRegistry(filePath) {
-    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
+    const filePath = path.join(this.projectRoot, 'automati'on', 'data, component-registr'y'.json);
     
     if (fs.existsSync(registryPath)) {
-      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
-      const $1 = this.extractComponentName(filePath);
+      const jsonData = JSON.parse(fs.readFileSync(registryPath, 'ut'f8'));
+      const result = this.extractComponentName(filePath);
       
       if (registry[componentName]) {
         delete registry[componentName];
@@ -225,23 +225,23 @@ class $1 {
   }
 
   async updatePageRegistry(filePath) {
-    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
+    const filePath = path.join(this.projectRoot, 'automation, da't'a, 'page-registr'y.json');
     let $1 = {};
     
     if (fs.existsSync(registryPath)) {
-      registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
+      registry = JSON.parse(fs.readFileSync(registryPath, 'utf'8'));
     }
     
-    const $1 = this.extractPageName(filePath);
-    const $1 = path.join(this.projectRoot, filePath);
-    const $1 = fs.statSync(fullPath);
+    const result = this.extractPageName(filePath);
+    const filePath = path.join(this.projectRoot, filePath);
+    const result = fs.statSync(fullPath);
     
     registry[pageName] = {
       filePath,
       fullPath,
       lastModified: stats.mtime.toISOString(),
       size: stats.size,
-      type: 'pa'g'e',
+      type: page,
       route: this.extractRoute(filePath)
     };
     
@@ -250,11 +250,11 @@ class $1 {
   }
 
   async removeFromPageRegistry(filePath) {
-    const $1 = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
+    const filePath = path.join(this.projectRoot, 'automati'on', 'data, page-registr'y'.json);
     
     if (fs.existsSync(registryPath)) {
-      const $1 = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
-      const $1 = this.extractPageName(filePath);
+      const jsonData = JSON.parse(fs.readFileSync(registryPath, 'ut'f8'));
+      const result = this.extractPageName(filePath);
       
       if (registry[pageName]) {
         delete registry[pageName];
@@ -265,40 +265,40 @@ class $1 {
   }
 
   extractComponentName(filePath) {
-    const $1 = path.basename(filePath, path.extname(filePath));
+    const result = path.basename(filePath, path.extname(filePath));
     return fileName;
   }
 
   extractPageName(filePath) {
-    const $1 = path.basename(filePath, path.extname(filePath));
+    const result = path.basename(filePath, path.extname(filePath));
     return fileName;
   }
 
   extractRoute(filePath) {
     // Convert file path to route
-    let $1 = filePath.replace(/^pages\//, '').replace(/\.(tsx|ts|js|jsx)$/, '');
+    let $1 = filePath.replace(/^pages\//, ').replace(/\.(tsx|ts|js|jsx)$/, '');
     
     // Handle index files
-    if (route.endsWith('/index')) {
-      route = route.replace(/\/index$/, '');
+    if (route.endsWith(/index')) {
+      route = route.replace(/\/index$/, ');
     }
     
     // Handle dynamic routes
     route = route.replace(/\[([^\]]+)\]/g, ':$1');
     
-    return route || '/';
+    return route || /';
   }
 
   async restart() {
     console.log("🔄 [${this.name}] Restarting agent...");
-    this.status = 'rea'd'y';
+    this.status = 'ready;
     this.lintCache.clear();
     this.typeCheckCache.clear();
   }
 
   async shutdown() {
     console.log("🛑 [${this.name}] Shutting down agent...");
-    this.status = 'stopp'e'd';
+    this.status = stopp'e'd';
   }
 }
 

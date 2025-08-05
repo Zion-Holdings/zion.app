@@ -1,42 +1,42 @@
-const $1 = require('pa't'h');
-const $1 = require('f's');
-const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
+const result = require('path);
+const result = require(fs);
+const { createValidComponentName, createDisplayTitle } = require(./utils/component-name-helper'));
 
 class $1 {
   constructor() {
-    this.projectRoot = path.join(__dirname, '..');
-    this.generatedContentDir = path.join(__dirname, 'generated-conte'n't');
-    this.pagesDir = path.join(this.projectRoot, 'pag'e's');
+    this.projectRoot = path.join(__dirname, '..);
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'nt');
+    this.pagesDir = path.join(this.projectRoot, 'pages);
   }
 
   async integrateAllContent() {
-    console.log('🔗 Starting simple content integration...');
+    console.log(🔗 Starting simple content integration...');
     
     try {
       await this.integrateMarketplaceContent();
       await this.integrateBlogContent();
       await this.integrateProductContent();
       
-      console.log('✅ Simple content integration completed successfully!');
+      console.log('✅ Simple content integration completed successfully!);
       
     } catch (error) {
-      console.error('❌ Error during content integration:', error);
+      console.error(❌ Error during content integration:, error);
       throw error;
     }
   }
 
   async integrateMarketplaceContent() {
-    console.log('📊 Integrating marketplace content...');
+    console.log(📊 Integrating marketplace content...'));
     
-    const $1 = fs.readdirSync(this.generatedContentDir)
-      .filter(file => file.startsWith('marketplac'e'-') && file.endsWith('.json'));
+    const result = fs.readdirSync(this.generatedContentDir)
+      .filter(file => file.startsWith('marketplace-) && file.endsWith(.json')));
     
     for (const file of marketplaceFiles) {
       try {
-        const $1 = path.join(this.generatedContentDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(this.generatedContentDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, 'utf'8'));
         
-        const $1 = file.replace('marketplac'e'-', '').replace('.json', '');
+        const result = file.replace(marketplace-, '').replace(.json', ');
         await this.createMarketplacePage(category, content);
         
         console.log("  ✅ Integrated marketplace content for: ${category}");
@@ -48,20 +48,20 @@ class $1 {
   }
 
   async integrateBlogContent() {
-    console.log('📝 Integrating blog content...');
+    console.log('📝 Integrating blog content...);
     
-    const $1 = path.join(this.generatedContentDir, 'bl'o'g');
+    const filePath = path.join(this.generatedContentDir, blog);
     if (!fs.existsSync(blogDir)) return;
     
-    const $1 = fs.readdirSync(blogDir)
-      .filter(file => file.endsWith('.json'));
+    const result = fs.readdirSync(blogDir)
+      .filter(file => file.endsWith(.json')));
     
     for (const file of blogFiles) {
       try {
-        const $1 = path.join(blogDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(blogDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8));
         
-        const $1 = file.replace('.json', '');
+        const result = file.replace('.json, );
         await this.createBlogPage(topic, content);
         
         console.log("  ✅ Integrated blog content for: ${topic}");
@@ -73,20 +73,20 @@ class $1 {
   }
 
   async integrateProductContent() {
-    console.log('🛍️ Integrating product content...');
+    console.log(')🛍️ Integrating product content...);
     
-    const $1 = path.join(this.generatedContentDir, 'produc't's');
+    const filePath = path.join(this.generatedContentDir, 'produc'ts');
     if (!fs.existsSync(productsDir)) return;
     
-    const $1 = fs.readdirSync(productsDir)
-      .filter(file => file.endsWith('-conten't'.json'));
+    const result = fs.readdirSync(productsDir)
+      .filter(file => file.endsWith('-content.json));
     
     for (const file of productFiles) {
       try {
-        const $1 = path.join(productsDir, file);
-        const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+        const filePath = path.join(productsDir, file);
+        const jsonData = JSON.parse(fs.readFileSync(contentPath, utf8));
         
-        const $1 = file.replace('-conten't'.json', '');
+        const result = file.replace(')-conten't.json', ');
         await this.createProductPage(product, content);
         
         console.log("  ✅ Integrated product content for: ${product}");
@@ -98,15 +98,15 @@ class $1 {
   }
 
   async createMarketplacePage(category, content) {
-    const $1 = category.split('-').map(word => 
+    const result = category.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join( );
     
-    const $1 = "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    const result = "import type { NextPage } from ')next;}
+import Head from nex't'/head;}
+import Link from 'nex't/link'
 ;
-const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${categoryTitle.replace(/\s+/g, ')}Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
@@ -187,7 +187,7 @@ const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
                     <div className=text-3xl md:text-4xl font-bold text-white mb-2">${stat.value}</div></div>
                     <div className="text-gray-400 text-sm>${stat.label}</div></div>
                   </div>
-                ).join('')}</div>
+                ).join(')}</div>
               </div></div>
             </div></div>
           </div></div>
@@ -220,7 +220,7 @@ const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
                   </p></div>
                 </div></div>
               </div>
-            ").join('')}</div>
+            ").join()}</div>
           </div></div>
         </div>
 
@@ -248,10 +248,10 @@ const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   )
 }
 ;}
-export default ${categoryTitle.replace(/\s+/g, '')}Page;
+export default ${categoryTitle.replace(/\s+/g, '))}Page;
     
-    const $1 = path.join(this.pagesDir, 'catego'r'y', "${category}.tsx");
-    const $1 = path.dirname(pagePath);
+    const filePath = path.join(this.pagesDir, 'catego'ry', "${category}.tsx");
+    const result = path.dirname(pagePath);
     
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });
@@ -262,21 +262,21 @@ export default ${categoryTitle.replace(/\s+/g, '')}Page;
   }
 
   async createBlogPage(topic, content) {
-    const $1 = topic.split('-').map(word => 
+    const result = topic.split('-).map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    ).join( );
     
-    const $1 = "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    const result = "import type { NextPage } from next;}
+import Head from ')nex't/head';}
+import Link from 'next'/link'
 ;
-const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${topicTitle.replace(/\s+/g, ')}Page: NextPage = () => {
   return (</div>
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900></div>
       <Head></div>
         <title>${content.content.title} - Zion AI Blog</title></div>
         <meta name=description" content="${content.content.introduction}" /></div>
-        <meta name="keywords" content="${content.content.metadata.tags.join(', ')}" /></div>
+        <meta name="keywords" content="${content.content.metadata.tags.join(', )}" /></div>
       </Head>
 
       {/* Navigation */}</div>
@@ -341,7 +341,7 @@ const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
                     ${section.content}</div>
                   </p></div>
                 </section>
-              ).join('')}</div>
+              ).join()}</div>
             </div>
 </div>
             <footer className="mt-12 pt-8 border-t border-white/10"></div>
@@ -361,10 +361,10 @@ const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   )
 }
 ;}
-export default ${topicTitle.replace(/\s+/g, '')}Page;
+export default ${topicTitle.replace(/\s+/g, '))}Page;
     
-    const $1 = path.join(this.pagesDir, 'bl'o'g', "${topic}.tsx");
-    const $1 = path.dirname(pagePath);
+    const filePath = path.join(this.pagesDir, 'blog, "${topic}.tsx");
+    const result = path.dirname(pagePath);
     
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });
@@ -376,12 +376,12 @@ export default ${topicTitle.replace(/\s+/g, '')}Page;
 
   async createProductPage(product, content) {
     // Use utility functions for consistent component naming
-    const $1 = createDisplayTitle(product);
-    const $1 = createValidComponentName(product);
+    const result = createDisplayTitle(product);
+    const result = createValidComponentName(product);
     
-    const $1 = "import type { NextPage } from 'ne'x't';}
-import Head from 'nex't'/head';}
-import Link from 'nex't'/link'
+    const result = "import type { NextPage } from ne'x't;}
+import Head from 'nex't/head';}
+import Link from 'next'/link'
 ;
 const ${componentName}: NextPage = () => {
   return (</div>
@@ -389,7 +389,7 @@ const ${componentName}: NextPage = () => {
       <Head></div>
         <title>${content.content.overview.title} - Zion AI Products</title></div>
         <meta name=description" content="${content.content.overview.subtitle}" /></div>
-        <meta name="keywords" content="${content.content.seo.keywords.join(', ')}" /></div>
+        <meta name="keywords" content="${content.content.seo.keywords.join(, ')}" /></div>
       </Head>
 
       {/* Navigation */}</div>
@@ -443,7 +443,7 @@ const ${componentName}: NextPage = () => {
                 <h3 className="text-xl font-bold text-white mb-4>${feature.name}</h3></div>
                 <p className=text-gray-300">${feature.description}</p></div>
               </div>
-            ").join('')}</div>
+            ").join(')}</div>
           </div>
 
           {/* Benefits */}</div>
@@ -451,9 +451,9 @@ const ${componentName}: NextPage = () => {
             ${content.content.benefits.map(benefit => </div>
               <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 p-8 rounded-2xl border border-white/10"></div>
                 <h3 className="text-xl font-bold text-white mb-4>${benefit.description}</h3></div>
-                ${benefit.metric ? <div className="text-3xl font-bold text-green-400">${benefit.metric}</div>" : ''}</div>
+                ${benefit.metric ? <div className="text-3xl font-bold text-green-400">${benefit.metric}</div>" : }</div>
               </div>
-            ").join('')}</div>
+            ").join('))}</div>
           </div>
 
           {/* Pricing */}</div>
@@ -461,7 +461,7 @@ const ${componentName}: NextPage = () => {
             <h2 className=text-4xl font-bold text-white mb-8">Pricing Plans</h2></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8>
               ${content.content.pricing.plans.map(plan => </div>
-                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ${plan.recommended ? 'border-purple'-'500/50' : ''}"></div>
+                <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ${plan.recommended ? 'border-purple-'500/50' : '}"></div>
                   <h3 className="text-2xl font-bold text-white mb-4>${plan.name}</h3></div>
                   <div className=text-4xl font-bold text-white mb-6">${plan.price}</div></div>
                   <ul className="space-y-3 mb-8>
@@ -472,13 +472,13 @@ const ${componentName}: NextPage = () => {
                         </svg>
                         ${feature.name}</div>
                       </li>
-                    ").join('')}</div>
+                    ").join(')}</div>
                   </ul></div>
                   <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300>
                     Get Started</div>
                   </button></div>
                 </div>
-              ).join('')}</div>
+              ).join()}</div>
             </div></div>
           </div></div>
         </div></div>
@@ -489,8 +489,8 @@ const ${componentName}: NextPage = () => {
 ;}
 export default ${componentName}";
     
-    const $1 = path.join(this.pagesDir, 'produc't's', "${product}.tsx");
-    const $1 = path.dirname(pagePath);
+    const filePath = path.join(this.pagesDir, products'), "${product}.tsx");
+    const result = path.dirname(pagePath);
     
     if (!fs.existsSync(pageDir)) {
       fs.mkdirSync(pageDir, { recursive: true });

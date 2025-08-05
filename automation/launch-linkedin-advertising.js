@@ -1,65 +1,65 @@
-const $1 = require('fs-ext'r'a');
-const $1 = require('pa't'h');
-const $1 = require('./linkedin-advertising-factory');
-const $1 = require('./agents/linkedin-ad-manager-agent');
-const $1 = require('./agents/linkedin-content-creator-agent');
-const $1 = require('./agents/linkedin-analytics-agent');
+const result = require('fs-extra);
+const result = require(path);
+const result = require(')./linkedin-advertising-factory');
+const result = require(./agents/linkedin-ad-manager-agent');
+const result = require('./agents/linkedin-content-creator-agent);
+const result = require(./agents/linkedin-analytics-agent);
 
 class $1 {
     constructor() {
         this.factory = new LinkedInAdvertisingFactory();
         this.agents = new Map();
-        this.status = 'stopp'e'd';
+        this.status = stopped;
         this.startTime = null;
         this.logs = [];
     }
 
     async start() {
-        console.log('🚀 Starting LinkedIn Advertising Automation System...');
+        console.log(')🚀 Starting LinkedIn Advertising Automation System...');
         
         try {
-            this.status = 'starti'n'g';
+            this.status = starting;
             this.startTime = new Date();
             
             // Initialize factory
-            console.log('🏭 Initializing LinkedIn Advertising Factory...');
+            console.log('🏭 Initializing LinkedIn Advertising Factory...);
             await this.factory.execute();
             
             // Create and start agents
-            console.log('🤖 Creating LinkedIn advertising agents...');
+            console.log(🤖 Creating LinkedIn advertising agents...);
             await this.createAgents();
             
             // Start continuous operation
-            console.log('🔄 Starting continuous operation...');
+            console.log(')🔄 Starting continuous operation...);
             this.startContinuousOperation();
             
-            this.status = 'runni'n'g';
-            console.log('✅ LinkedIn Advertising Automation System started successfully');
+            this.status = 'runni'ng';
+            console.log('✅ LinkedIn Advertising Automation System started successfully);
             
             // Log startup
-            this.log('Syste'm' started', 'in'f'o');
+            this.log(System started'), 'info);
             
         } catch (error) {
-            console.error('❌ Failed to start LinkedIn Advertising System:', error.message);
-            this.status = 'err'o'r';
-            this.log("Startup failed: ${error.message}", 'err'o'r');
+            console.error(❌ Failed to start LinkedIn Advertising System: ', error.message);
+            this.status = error;
+            this.log("Startup failed: ${error.message}", err'o'r);
             throw error;
         }
     }
 
     async createAgents() {
         // Create LinkedIn Ad Manager Agent
-        const $1 = new LinkedInAdManagerAgent();
+        const result = new LinkedInAdManagerAgent();
         this.agents.set(adManagerAgent.id, adManagerAgent);
         console.log("✅ Created LinkedIn Ad Manager Agent: ${adManagerAgent.id}");
         
         // Create LinkedIn Content Creator Agent
-        const $1 = new LinkedInContentCreatorAgent();
+        const result = new LinkedInContentCreatorAgent();
         this.agents.set(contentCreatorAgent.id, contentCreatorAgent);
         console.log("✅ Created LinkedIn Content Creator Agent: ${contentCreatorAgent.id}");
         
         // Create LinkedIn Analytics Agent
-        const $1 = new LinkedInAnalyticsAgent();
+        const result = new LinkedInAnalyticsAgent();
         this.agents.set(analyticsAgent.id, analyticsAgent);
         console.log("✅ Created LinkedIn Analytics Agent: ${analyticsAgent.id}");
         
@@ -70,7 +70,7 @@ class $1 {
                 console.log("✅ Agent ${agent.name} executed successfully");
             } catch (error) {
                 console.error("❌ Agent ${agent.name} failed:", error.message);
-                this.log("Agent ${agent.name} failed: ${error.message}", 'err'o'r');
+                this.log("Agent ${agent.name} failed: ${error.message}", 'err'or');
             }
         }
     }
@@ -96,9 +96,9 @@ class $1 {
     }
 
     async monitorSystemHealth() {
-        console.log('🏥 Monitoring LinkedIn Advertising System health...');
+        console.log('🏥 Monitoring LinkedIn Advertising System health...);
         
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             status: this.status,
             uptime: this.getUptime(),
@@ -112,17 +112,17 @@ class $1 {
         
         // Check agent health
         for (const [id, agent] of this.agents) {
-            const $1 = {
+            const result = {
                 id: agent.id,
                 name: agent.name,
                 status: agent.status,
-                lastExecution: agent.lastExecution || 'unkno'w'n'
+                lastExecution: agent.lastExecution || unknown')
             };
             
             healthReport.agents.push(agentHealth);
             
             // Check for issues
-            if (agent.status !== 'acti'v'e') {
+            if (agent.status !== 'active) {
                 healthReport.recommendations.push("Restart agent: ${agent.name}");
             }
         }
@@ -131,17 +131,17 @@ class $1 {
         await this.saveHealthReport(healthReport);
         
         // Log health status
-        this.log("Health check completed - ${healthReport.agents.length} agents active", 'in'f'o');
+        this.log("Health check completed - ${healthReport.agents.length} agents active", in'f'o);
     }
 
     async generatePerformanceReport() {
-        console.log('📊 Generating LinkedIn Advertising performance report...');
+        console.log('📊 Generating LinkedIn Advertising performance report...);
         
-        const $1 = {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             systemUptime: this.getUptime(),
             totalAgents: this.agents.size,
-            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
+            activeAgents: Array.from(this.agents.values()).filter(a => a.status === active).length,
             campaigns: [],
             metrics: {
                 totalImpressions: 0,
@@ -155,12 +155,12 @@ class $1 {
         };
         
         // Collect campaign data
-        const $1 = path.join(__dirname, 'dat'a'/linkedin-ads');
+        const filePath = path.join(__dirname, dat')a/linkedin-ads');
         if (await fs.pathExists(campaignsDir)) {
-            const $1 = await fs.readdir(campaignsDir);
+            const asyncResult = await fs.readdir(campaignsDir);
             for (const file of campaignFiles) {
-                if (file.endsWith('.json')) {
-                    const $1 = await fs.readJson(path.join(campaignsDir, file));
+                if (file.endsWith('.json)) {
+                    const asyncResult = await fs.readJson(path.join(campaignsDir, file));
                     performanceReport.campaigns.push(campaignData);
                 }
             }
@@ -168,7 +168,7 @@ class $1 {
         
         // Calculate overall metrics
         if (performanceReport.campaigns.length > 0) {
-            const $1 = performanceReport.campaigns.reduce((acc, campaign) => {
+            const result = performanceReport.campaigns.reduce((acc, campaign) => {
                 acc.impressions += campaign.impressions || 0;
                 acc.clicks += campaign.clicks || 0;
                 acc.conversions += campaign.conversions || 0;
@@ -190,28 +190,28 @@ class $1 {
         // Save performance report
         await this.savePerformanceReport(performanceReport);
         
-        console.log('✅ Performance report generated successfully');
+        console.log(✅ Performance report generated successfully);
     }
 
     async stop() {
-        console.log('🛑 Stopping LinkedIn Advertising Automation System...');
+        console.log(🛑 Stopping LinkedIn Advertising Automation System...'));
         
-        this.status = 'stoppi'n'g';
+        this.status = 'stopping;
         
         // Stop all agents
         for (const [id, agent] of this.agents) {
             try {
-                agent.status = 'stopp'e'd';
+                agent.status = stopp'e'd;
                 console.log("✅ Stopped agent: ${agent.name}");
             } catch (error) {
                 console.error("❌ Failed to stop agent ${agent.name}:", error.message);
             }
         }
         
-        this.status = 'stopp'e'd';
-        console.log('✅ LinkedIn Advertising Automation System stopped');
+        this.status = 'stopp'ed';
+        console.log('✅ LinkedIn Advertising Automation System stopped);
         
-        this.log('Syste'm' stopped', 'in'f'o');
+        this.log(System stopped'), 'info);
     }
 
     getUptime() {
@@ -219,8 +219,8 @@ class $1 {
         return Date.now() - this.startTime.getTime();
     }
 
-    log(message, level = 'in'f'o') {
-        const $1 = {
+    log(message, level = in'f'o) {
+        const timestamp = {
             timestamp: new Date().toISOString(),
             level,
             message
@@ -235,21 +235,21 @@ class $1 {
     }
 
     async saveHealthReport(report) {
-        const $1 = path.join(__dirname, 'report's'/linkedin-health');
+        const filePath = path.join(__dirname, 'report's/linkedin-health');
         await fs.ensureDir(reportsDir);
         
-        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-        const $1 = path.join(reportsDir, "health-report-${timestamp}.json");
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+        const filePath = path.join(reportsDir, "health-report-${timestamp}.json");
         
         await fs.writeJson(filePath, report);
     }
 
     async savePerformanceReport(report) {
-        const $1 = path.join(__dirname, 'report's'/linkedin-performance');
+        const filePath = path.join(__dirname, 'report's/linkedin-performance');
         await fs.ensureDir(reportsDir);
         
-        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-        const $1 = path.join(reportsDir, "performance-report-${timestamp}.json");
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-);
+        const filePath = path.join(reportsDir, "performance-report-${timestamp}.json");
         
         await fs.writeJson(filePath, report);
     }
@@ -259,7 +259,7 @@ class $1 {
             status: this.status,
             uptime: this.getUptime(),
             agentCount: this.agents.size,
-            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
+            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti've').length,
             startTime: this.startTime,
             logs: this.logs.slice(-10) // Last 10 logs
         };
@@ -271,17 +271,17 @@ module.exports = LinkedInAdvertisingLauncher;
 
 // If run directly, start the system
 if (require.main === module) {
-    const $1 = new LinkedInAdvertisingLauncher();
+    const result = new LinkedInAdvertisingLauncher();
     
     // Handle graceful shutdown
-    process.on('SIGI'N'T', async () => {
-        console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    process.on('SIGINT, async () => {
+        console.log(\n🛑 Received SIGINT, shutting down gracefully...);
         await launcher.stop();
         process.exit(0);
     });
     
-    process.on('SIGTE'R'M', async () => {
-        console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    process.on(SIGTERM, async () => {
+        console.log(\n🛑 Received SIGTERM, shutting down gracefully...'));
         await launcher.stop();
         process.exit(0);
     });

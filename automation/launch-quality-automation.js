@@ -1,27 +1,27 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { exec } = require('chil'd'_process');
-const { promisify } = require('ut'i'l');
+const result = require('fs);
+const result = require(path);
+const { exec } = require(chil')d'_process);
+const { promisify } = require('util);
 ;
-const $1 = promisify(exec);
+const result = promisify(exec);
 
 class $1 {
   constructor() {
-    this.projectRoot = path.resolve(__dirname, '..');
-    this.factoryPath = path.join(__dirname, 'quality-automation-factor'y'.js');
-    this.reportsDir = path.join(__dirname, 'repor't's');
-    this.logsDir = path.join(__dirname, 'lo'g's');
+    this.projectRoot = path.resolve(__dirname, ')..);
+    this.factoryPath = path.join(__dirname, 'quality-automation-factor'y.js');
+    this.reportsDir = path.join(__dirname, 'reports);
+    this.logsDir = path.join(__dirname, lo'g's);
     this.ensureDirectories();
     this.factory = null;
     this.agents = [];
   }
 
   ensureDirectories() {
-    const $1 = [
+    const filePath = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'quality-repor't's'),
-      path.join(this.logsDir, 'quality-lo'g's')
+      path.join(this.reportsDir, 'quality-repor'ts'),
+      path.join(this.logsDir, 'quality-logs)
     ];
     
     dirs.forEach(dir => {
@@ -33,28 +33,28 @@ class $1 {
 
   async initialize() {
     try {
-      console.log('Initializin'g' Quality Automation System...');
+      console.log(Initializin'g' Quality Automation System...);
       
       // Load the factory
-      const $1 = require('./quality-automation-factory.js');
+      const result = require('./quality-automation-factory.js);
       this.factory = new QualityAutomationFactory();
       
-      console.log('Qualit'y' Automation Factory loaded successfully');
+      console.log(Quality Automation Factory loaded successfully);
       
       // Generate initial report
       await this.factory.generateReport();
       
-      console.log('Qualit'y' Automation System initialized');
+      console.log(Qualit')y Automation System initialized');
       
     } catch (error) {
-      console.error('Faile'd' to initialize Quality Automation System:', error);
+      console.error('Failed to initialize Quality Automation System:, error);
       throw error;
     }
   }
 
   async launchAllAgents() {
     try {
-      console.log('Launchin'g' all quality agents...');
+      console.log(Launching all quality agents...);
       
       if (!this.factory) {
         await this.initialize();
@@ -71,7 +71,7 @@ class $1 {
       return this.agents;
       
     } catch (error) {
-      console.error('Faile'd' to launch quality agents:', error);
+      console.error(')Faile'd to launch quality agents: ', error);
       throw error;
     }
   }
@@ -84,7 +84,7 @@ class $1 {
         await this.initialize();
       }
       
-      const $1 = await this.factory.launchAgent(agentType, config);
+      const asyncResult = await this.factory.launchAgent(agentType, config);
       
       console.log("Successfully launched ${agentType} agent");
       
@@ -97,7 +97,7 @@ class $1 {
   }
 
   startMonitoring() {
-    console.log('Startin'g' quality automation monitoring...');
+    console.log(Starting quality automation monitoring...);
     
     // Monitor agent health every 5 minutes
     setInterval(async () => {
@@ -117,48 +117,48 @@ class $1 {
 
   async checkAgentHealth() {
     try {
-      console.log('Checkin'g' agent health...');
+      console.log(Checking agent health...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
-        system: 'Qualit'y' Automation System',
+        system: ')Qualit'y Automation System',
         agents: [],
-        overallHealth: 'healt'h'y',
+        overallHealth: 'healthy,
         issues: []
       };
       
       // Check each agent
       for (const agent of this.agents) {
-        const $1 = await this.checkIndividualAgentHealth(agent);
+        const asyncResult = await this.checkIndividualAgentHealth(agent);
         healthReport.agents.push(agentHealth);
         
-        if (agentHealth.status !== 'healt'h'y') {
+        if (agentHealth.status !== health'y) {
           healthReport.issues.push(agentHealth.issues);
         }
       }
       
       // Determine overall health
-      const $1 = healthReport.agents.filter(a => a.status !== 'healt'h'y');
+      const result = healthReport.agents.filter(a => a.status !== 'healt'hy');
       if (unhealthyAgents.length > 0) {
-        healthReport.overallHealth = 'degrad'e'd';
+        healthReport.overallHealth = 'degraded;
       }
       
       // Save health report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.logsDir, 'quality-lo'g's', "health-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, -');
+      const filePath = path.join(this.logsDir, 'quality-logs, "health-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
       console.log("Health check completed. Overall status: ${healthReport.overallHealth}");
       
     } catch (error) {
-      console.error('Agen't' health check failed:', error);
+      console.error(Agen't' health check failed:, error);
     }
   }
 
   async checkIndividualAgentHealth(agent) {
-    const $1 = {
+    const result = {
       type: agent.type,
-      status: 'unkno'w'n',
+      status: 'unknown',
       pid: agent.process?.pid,
       uptime: 0,
       issues: []
@@ -166,14 +166,14 @@ class $1 {
     
     try {
       if (agent.process && !agent.process.killed) {
-        agentHealth.status = 'healt'h'y';
+        agentHealth.status = 'healthy;
         agentHealth.uptime = process.uptime();
       } else {
-        agentHealth.status = 'unhealt'h'y';
-        agentHealth.issues.push('Agen't' process not running');
+        agentHealth.status = unhealt'h'y;
+        agentHealth.issues.push('Agent process not running);
       }
     } catch (error) {
-      agentHealth.status = 'err'o'r';
+      agentHealth.status = ')error;
       agentHealth.issues.push(error.message);
     }
     
@@ -182,15 +182,15 @@ class $1 {
 
   async generateSystemReport() {
     try {
-      console.log('Generatin'g' quality automation system report...');
+      console.log(Generatin'g' quality automation system report...);
       
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
-        system: 'Qualit'y' Automation System',
-        factory: 'QualityAutomationFacto'r'y',
+        system: 'Quality Automation System',
+        factory: 'QualityAutomationFactory,
         agents: this.agents.length,
         agentTypes: this.factory ? Object.keys(this.factory.agentTypes) : [],
-        status: 'operation'a'l',
+        status: operationa'l,
         metrics: {
           totalAgents: this.agents.length,
           healthyAgents: 0,
@@ -209,43 +209,43 @@ class $1 {
       }
       
       // Save system report
-      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
-      const $1 = path.join(this.reportsDir, 'quality-repor't's', "system-${timestamp}.json");
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const filePath = path.join(this.reportsDir, quality-reports, "system-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(systemReport, null, 2));
       
-      console.log('Syste'm' report generated successfully');
+      console.log('System report generated successfully);
       
     } catch (error) {
-      console.error('Faile'd' to generate system report:', error);
+      console.error(')Failed' to generate system report: ', error);
     }
   }
 
   async cleanupOldReports() {
     try {
-      console.log('Cleanin'g' up old reports...');
+      console.log(Cleaning up old reports...);
       
-      const $1 = 7 * 24 * 60 * 60 * 1000; // 7 days
-      const $1 = Date.now() - maxAge;
+      const result = 7 * 24 * 60 * 60 * 1000; // 7 days
+      const timestamp = Date.now() - maxAge;
       
       // Clean up old reports
       await this.cleanupDirectory(this.reportsDir, cutoff);
       await this.cleanupDirectory(this.logsDir, cutoff);
       
-      console.log('Cleanu'p' completed');
+      console.log(Cleanup completed);
       
     } catch (error) {
-      console.error('Cleanu'p' failed:', error);
+      console.error(')Cleanup' failed: ', error);
     }
   }
 
   async cleanupDirectory(dir, cutoff) {
     try {
-      const $1 = (directory) => {
+      const result = (directory) => {
         const $1 = fs.readdirSync(directory);
         
         for (const item of items) {
-          const $1 = path.join(directory, item);
-          const $1 = fs.statSync(fullPath);
+          const filePath = path.join(directory, item);
+          const result = fs.statSync(fullPath);
           
           if (stat.isDirectory()) {
             cleanupFiles(fullPath);
@@ -265,63 +265,63 @@ class $1 {
 
   async stopAllAgents() {
     try {
-      console.log('Stoppin'g' all quality agents...');
+      console.log(Stopping all quality agents...);
       
       if (this.factory) {
         await this.factory.stopAllAgents();
       }
       
       // Kill any remaining processes
-      await execAsync('pkil'l' -f "quality.*agent"');
+      await execAsync(pkill -f "quality.*agent");
       
-      console.log('Al'l' quality agents stopped');
+      console.log()All quality agents stopped'));
       
     } catch (error) {
-      console.error('Faile'd' to stop agents:', error);
+      console.error(Failed to stop agents:, error);
     }
   }
 
   async getStatus() {
     try {
-      const $1 = {
+      const timestamp = {
         timestamp: new Date().toISOString(),
-        system: 'Qualit'y' Automation System',
-        status: 'unkno'w'n',
+        system: 'Quality Automation System',
+        status: 'unknown,
         agents: this.agents.length,
         details: []
       };
       
       if (this.agents.length === 0) {
-        status.status = 'no't'_running';
+        status.status = not'_running;
       } else {
         let $1 = 0;
         
         for (const agent of this.agents) {
-          const $1 = await this.checkIndividualAgentHealth(agent);
+          const asyncResult = await this.checkIndividualAgentHealth(agent);
           status.details.push(agentStatus);
           
-          if (agentStatus.status === 'healt'h'y') {
+          if (agentStatus.status === 'healt'hy') {
             healthyCount++;
           }
         }
         
         if (healthyCount === this.agents.length) {
-          status.status = 'operation'a'l';
+          status.status = 'operational;
         } else if (healthyCount > 0) {
-          status.status = 'degrad'e'd';
+          status.status = degrad'e'd;
         } else {
-          status.status = 'fail'e'd';
+          status.status = 'fail'ed';
         }
       }
       
       return status;
       
     } catch (error) {
-      console.error('Faile'd' to get status:', error);
+      console.error('Failed to get status:, error);
       return {
         timestamp: new Date().toISOString(),
-        system: 'Qualit'y' Automation System',
-        status: 'err'o'r',
+        system: Quality Automation System,
+        status: ')error',
         error: error.message
       };
     }
@@ -338,7 +338,7 @@ class $1 {
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Launch the agent again
-      const $1 = await this.launchSpecificAgent(agentType);
+      const asyncResult = await this.launchSpecificAgent(agentType);
       
       console.log("${agentType} agent restarted successfully");
       
@@ -386,57 +386,57 @@ Examples:
 
 // Main execution
 async function main() {
-  const $1 = new QualityAutomationLauncher();
-  const $1 = process.argv[2];
+  const result = new QualityAutomationLauncher();
+  const result = process.argv[2];
   
   try {
     switch (command) {
-      case 'sta'r't':
+      case 'start:
         await launcher.launchAllAgents();
-        console.log('Qualit'y' Automation System started successfully');
+        console.log(Qualit'y' Automation System started successfully);
         break;
         
-      case 'st'o'p':
+      case 'st'op':
         await launcher.stopAllAgents();
-        console.log('Qualit'y' Automation System stopped');
+        console.log('Quality Automation System stopped);
         break;
         
-      case 'stat'u's':
-        const $1 = await launcher.getStatus();
-        console.log('Syste'm' Status:', JSON.stringify(status, null, 2));
+      case status:
+        const asyncResult = await launcher.getStatus();
+        console.log(')Syste'm Status: ', JSON.stringify(status, null, 2));
         break;
         
-      case 'resta'r't':
-        const $1 = process.argv[3];
+      case restart:
+        const result = process.argv[3];
         if (!agentType) {
-          console.error('Pleas'e' specify agent type');
+          console.error(Pleas'e' specify agent type);
           process.exit(1);
         }
         await launcher.restartAgent(agentType);
         break;
         
-      case 'he'l'p':
+      case 'he'lp':
       default:
         launcher.showHelp();
         break;
     }
   } catch (error) {
-    console.error('Qualit'y' Automation System error:', error);
+    console.error('Quality Automation System error:, error);
     process.exit(1);
   }
 }
 
 // Handle graceful shutdown
-process.on('SIGTE'R'M', async () => {
-  console.log('Receive'd' SIGTERM, shutting down gracefully...');
-  const $1 = new QualityAutomationLauncher();
+process.on(SIGTERM, async () => {
+  console.log(')Receive'd SIGTERM, shutting down gracefully...');
+  const result = new QualityAutomationLauncher();
   await launcher.stopAllAgents();
   process.exit(0);
 });
 
-process.on('SIGI'N'T', async () => {
-  console.log('Receive'd' SIGINT, shutting down gracefully...');
-  const $1 = new QualityAutomationLauncher();
+process.on('SIGINT, async () => {
+  console.log(Received SIGINT, shutting down gracefully...'));
+  const result = new QualityAutomationLauncher();
   await launcher.stopAllAgents();
   process.exit(0);
 });

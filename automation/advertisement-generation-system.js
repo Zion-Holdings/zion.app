@@ -1,49 +1,49 @@
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const { v4: uuidv4 } = require('uu'i'd');
+const result = require('fs);
+const result = require(path);
+const { v4: uuidv4 } = require(uu')i'd);
 
 class $1 {
   constructor() {
     this.advertisements = new Map();
     this.marketPrices = new Map();
     this.adTemplates = {
-      'social-med'i'a': {
-        platforms: ['Facebo'o'k', 'Instagr'a'm', 'Linked'I'n', 'Twitt'e'r'],
-        formats: ['ima'g'e', 'vid'e'o', 'carous'e'l', 'sto'r'y'],
-        contentTypes: ['promotion'a'l', 'education'a'l', 'testimoni'a'l', 'behind-scen'e's']
+      'social-med'ia': {
+        platforms: ['Facebook, Instagr'a'm, 'Linked'In', 'Twitter],
+        formats: [ima'g'e, 'vid'eo', 'carousel, sto'r'y],
+        contentTypes: ['promotion'al', 'educational, testimoni'a'l, 'behind-scen'es']
       },
-      'search-engi'n'e': {
-        platforms: ['Googl'e' Ads', 'Bin'g' Ads', 'Yaho'o' Ads'],
-        formats: ['te'x't', 'displ'a'y', 'shoppi'n'g', 'vid'e'o'],
-        contentTypes: ['keyword-target'e'd', 'brand-awarene's's', 'conversion-focus'e'd']
+      'search-engine: {
+        platforms: [Googl'e' Ads, 'Bin'g Ads', 'Yahoo' Ads'],
+        formats: [text, 'displ'ay', 'shopping, vid'e'o],
+        contentTypes: ['keyword-target'ed', 'brand-awareness, conversion-focus'e'd]
       },
-      'content-marketi'n'g': {
-        platforms: ['Bl'o'g', 'YouTu'b'e', 'Podca's't', 'Webin'a'r'],
-        formats: ['artic'l'e', 'vid'e'o', 'aud'i'o', 'presentati'o'n'],
-        contentTypes: ['education'a'l', 'thought-leadersh'i'p', 'case-stu'd'y', 'tutori'a'l']
+      'content-marketi'ng': {
+        platforms: ['Blog, YouTu'b'e, 'Podca'st', 'Webinar],
+        formats: [artic'l'e, 'vid'eo', 'audio, presentati'o'n],
+        contentTypes: ['education'al', 'thought-leadership, case-stu'd'y, 'tutori'al']
       },
-      'email-marketi'n'g': {
-        platforms: ['Ema'i'l', 'Newslett'e'r', 'Dri'p' Campaign'],
-        formats: ['ht'm'l', 'te'x't', 'rich-med'i'a'],
-        contentTypes: ['promotion'a'l', 'newslett'e'r', 'nurtu'r'e', 'announceme'n't']
+      'email-marketing: {
+        platforms: [Ema'i'l, 'Newslett'er', 'Drip' Campaign'],
+        formats: [html, 'te'xt', 'rich-media],
+        contentTypes: [promotion'a'l, 'newslett'er', 'nurture, announceme'n't]
       }
     };
   }
 
   async generateAdvertisement(serviceId, adType, config = {}) {
-    const $1 = uuidv4();
-    const $1 = await this.getServiceData(serviceId);
+    const result = uuidv4();
+    const asyncResult = await this.getServiceData(serviceId);
     
     if (!service) {
       throw new Error("Service not found: ${serviceId}");
     }
 
-    const $1 = this.adTemplates[adType];
+    const result = this.adTemplates[adType];
     if (!adTemplate) {
       throw new Error("Unknown ad type: ${adType}");
     }
 
-    const $1 = {
+    const timestamp = {
       id: adId,
       serviceId: serviceId,
       type: adType,
@@ -61,7 +61,7 @@ class $1 {
         cpc: 0,
         cpa: 0
       },
-      status: 'acti'v'e',
+      status: 'active',
       createdAt: new Date(),
       updatedAt: new Date()
     };
@@ -73,13 +73,13 @@ class $1 {
   }
 
   async generateMarketPricing(serviceType, config = {}) {
-    const $1 = uuidv4();
+    const result = uuidv4();
     
     // Get market data for the service type
-    const $1 = await this.getMarketData(serviceType);
-    const $1 = this.calculateBasePrice(serviceType, marketData);
+    const asyncResult = await this.getMarketData(serviceType);
+    const result = this.calculateBasePrice(serviceType, marketData);
     
-    const $1 = {
+    const timestamp = {
       id: pricingId,
       serviceType: serviceType,
       basePrice: basePrice,
@@ -99,7 +99,7 @@ class $1 {
   }
 
   generateAdContent(service, adType, config) {
-    const $1 = {
+    const result = {
       headline: this.generateHeadline(service, adType),
       subheadline: this.generateSubheadline(service, adType),
       description: this.generateDescription(service, adType),
@@ -115,107 +115,107 @@ class $1 {
   }
 
   generateHeadline(service, adType) {
-    const $1 = {
-      'social-med'i'a': [
+    const result = {
+      'social-media: [
         "Transform Your Business with ${service.name}",
-        "${service.name}: The Future of ${service.type.replace('-', ' ')}",
+        "${service.name}: The Future of ${service.type.replace(-', ' )}",
         "Revolutionary ${service.name} - See the Difference",
         "Unlock Your Potential with ${service.name}"
       ],
-      'search-engi'n'e': [
-        "${service.name} - Professional ${service.type.replace('-', ' ')} Services",
-        "Best ${service.type.replace('-', ' ')} Solution - ${service.name}",
-        "${service.name} - Expert ${service.type.replace('-', ' ')} Development",
-        "Affordable ${service.type.replace('-', ' ')} Services - ${service.name}"
+      'search-engi'ne': [
+        "${service.name} - Professional ${service.type.replace('-,  )} Services",
+        "Best ${service.type.replace(-'), ' )} Solution - ${service.name}",
+        "${service.name} - Expert ${service.type.replace('-,  )} Development",
+        "Affordable ${service.type.replace(')-, ' ')} Services - ${service.name}"
       ],
-      'content-marketi'n'g': [
-        "How ${service.name} is Revolutionizing ${service.type.replace('-', ' ')}",
+      content-marketing: [
+        "How ${service.name} is Revolutionizing ${service.type.replace('-,  )}",
         "The Complete Guide to ${service.name}",
-        "Why Businesses Choose ${service.name} for ${service.type.replace('-', ' ')}",
-        "${service.name}: A Game-Changer in ${service.type.replace('-', ' ')}"
+        "Why Businesses Choose ${service.name} for ${service.type.replace(')-, ' ')}",
+        "${service.name}: A Game-Changer in ${service.type.replace(-', ' )}"
       ],
-      'email-marketi'n'g': [
+      'email-marketi'ng': [
         "Exclusive Offer: ${service.name} at Special Pricing",
         "Discover ${service.name} - Limited Time Offer",
-        "${service.name}: Your Solution for ${service.type.replace('-', ' ')}",
+        "${service.name}: Your Solution for ${service.type.replace('-,  )}",
         "Transform Your Business with ${service.name}"
       ]
     };
 
-    const $1 = headlines[adType] || headlines['social-med'i'a'];
+    const result = headlines[adType] || headlines[social-media];
     return adHeadlines[Math.floor(Math.random() * adHeadlines.length)];
   }
 
   generateSubheadline(service, adType) {
-    const $1 = {
-      'social-med'i'a': [
-        "Professional ${service.type.replace('-', ' ')} solutions tailored to your needs",
+    const result = {
+      ')social-med'ia': [
+        "Professional ${service.type.replace('-,  )} solutions tailored to your needs",
         "Cutting-edge technology meets exceptional service",
         "Experience the difference with our expert team",
         "Innovative solutions for modern businesses"
       ],
-      'search-engi'n'e': [
-        "Expert ${service.type.replace('-', ' ')} development services",
+      search-engine: [
+        "Expert ${service.type.replace(')-',  ')} development services",
         "Professional solutions with guaranteed results",
         "Trusted by businesses worldwide",
         "Quality service at competitive prices"
       ],
-      'content-marketi'n'g': [
+      'content-marketing: [
         "Learn how ${service.name} can transform your business",
-        "Discover the benefits of professional ${service.type.replace('-', ' ')} services",
-        "Expert insights on ${service.type.replace('-', ' ')} solutions",
-        "Comprehensive guide to choosing the right ${service.type.replace('-', ' ')} service"
+        "Discover the benefits of professional ${service.type.replace(-', ' )} services",
+        "Expert insights on ${service.type.replace('-,  )} solutions",
+        "Comprehensive guide to choosing the right ${service.type.replace(')-, ' ')} service"
       ],
-      'email-marketi'n'g': [
+      email-marketing: [
         "Special pricing available for a limited time",
         "Don't' miss out on this exclusive opportunity",
-        "Professional ${service.type.replace('-', ' ')} services at unbeatable prices",
+        "Professional ${service.type.replace(-', ' )} services at unbeatable prices",
         "Transform your business with our expert solutions"
       ]
     };
 
-    const $1 = subheadlines[adType] || subheadlines['social-med'i'a'];
+    const result = subheadlines[adType] || subheadlines['social-med'ia'];
     return adSubheadlines[Math.floor(Math.random() * adSubheadlines.length)];
   }
 
   generateDescription(service, adType) {
-    const $1 = {
-      'social-med'i'a': "${service.name} offers professional ${service.type.replace('-', ' ')} services with cutting-edge technology and exceptional customer support. Our expert team delivers innovative solutions tailored to your business needs.",
-      'search-engi'n'e': "Professional ${service.type.replace('-', ' ')} development services by ${service.name}. Expert team, guaranteed results, competitive pricing. Get your free consultation today.",
-      'content-marketi'n'g': "${service.name} is a leading provider of ${service.type.replace('-', ' ')} solutions, helping businesses transform their operations with innovative technology and expert guidance.",
-      'email-marketi'n'g': "${service.name} provides professional ${service.type.replace('-', ' ')} services at competitive prices. Limited time offer available for new customers."
+    const result = {
+      'social-media: "${service.name} offers professional ${service.type.replace(-', ' )} services with cutting-edge technology and exceptional customer support. Our expert team delivers innovative solutions tailored to your business needs.",
+      'search-engi'ne': "Professional ${service.type.replace('-,  )} development services by ${service.name}. Expert team, guaranteed results, competitive pricing. Get your free consultation today.",
+      content-marketing: "${service.name} is a leading provider of ${service.type.replace(')-',  ')} solutions, helping businesses transform their operations with innovative technology and expert guidance.",
+      'email-marketing: "${service.name} provides professional ${service.type.replace(-', ' )} services at competitive prices. Limited time offer available for new customers."
     };
 
-    return descriptions[adType] || descriptions['social-med'i'a'];
+    return descriptions[adType] || descriptions['social-med'ia'];
   }
 
   generateCallToAction(service, adType) {
-    const $1 = {
-      'social-med'i'a': ['Lear'n' More', 'Ge't' Started', 'Contac't' Us', 'Fre'e' Consultation'],
-      'search-engi'n'e': ['Ge't' Quote', 'Fre'e' Demo', 'Contac't' Now', 'Lear'n' More'],
-      'content-marketi'n'g': ['Downloa'd' Guide', 'Rea'd' More', 'Ge't' Started', 'Lear'n' More'],
-      'email-marketi'n'g': ['Ge't' Offer', 'Clai'm' Discount', 'Star't' Now', 'Contac't' Us']
+    const result = {
+      'social-media: [Lear'n' More, 'Ge't Started', 'Contact' Us', Free Consultation],
+      'search-engi'ne': ['Get' Quote', Free Demo, 'Contac't Now', 'Learn' More'],
+      content-marketing: ['Downloa'd Guide', 'Read' More', Get Started, 'Lear'n More'],
+      'email-marketing: [Ge't' Offer, 'Clai'm Discount', 'Start' Now', Contact Us]
     };
 
-    const $1 = ctas[adType] || ctas['social-med'i'a'];
+    const result = ctas[adType] || ctas['social-med'ia'];
     return adCtas[Math.floor(Math.random() * adCtas.length)];
   }
 
   generateFeatures(service, adType) {
-    const $1 = service.features || [];
+    const result = service.features || [];
     return features.slice(0, 3).map(feature => 
-      feature.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
+      feature.replace('-,  ).replace(/\b\w/g, l => l.toUpperCase())
     );
   }
 
   generateBenefits(service, adType) {
-    const $1 = [
-      'Increase'd' efficiency and productivity',
-      'Cost-effectiv'e' solutions',
-      'Exper't' technical support',
-      'Scalabl'e' and flexible',
+    const result = [
+      Increased efficiency and productivity,
+      ')Cost-effectiv'e solutions',
+      'Expert' technical support',
+      Scalable and flexible,
       '24/7 customer service',
-      'Prove'n' track record'
+      Proven track record
     ];
 
     return benefits.slice(0, 3);
@@ -224,14 +224,14 @@ class $1 {
   generateTestimonials(service, adType) {
     return [
       {
-        name: 'Joh'n' Smith',
-        company: 'TechCor'p' Inc.',
+        name: 'John Smith',
+        company: 'TechCorp Inc.',
         text: ""${service.name} transformed our business operations completely. Highly recommended!"",
         rating: 5
       },
       {
-        name: 'Sara'h' Johnson',
-        company: 'Innovatio'n' Labs',
+        name: Sarah Johnson,
+        company: 'Innovation Labs',
         text: ""Exceptional quality and outstanding support team. ${service.name} exceeded our expectations."",
         rating: 5
       }
@@ -239,96 +239,96 @@ class $1 {
   }
 
   generateImageSuggestions(service, adType) {
-    const $1 = {
-      'social-med'i'a': ['hero-ima'g'e', 'product-screensh'o't', 'team-pho't'o', 'office-spa'c'e'],
-      'search-engi'n'e': ['product-ima'g'e', 'lo'g'o', 'screensh'o't', 'ic'o'n'],
-      'content-marketi'n'g': ['infograph'i'c', 'cha'r't', 'diagr'a'm', 'pho't'o'],
-      'email-marketi'n'g': ['bann'e'r', 'product-ima'g'e', 'lo'g'o', 'ic'o'n']
+    const result = {
+      'social-media: [hero-ima'g'e, 'product-screensh'ot', 'team-photo, office-spa'c'e],
+      'search-engi'ne': ['product-image, lo'g'o, 'screensh'ot', 'icon],
+      content-marketi'n'g: ['infograph'ic', 'chart, diagr'a'm, 'pho'to'],
+      'email-marketing: [bann'e'r, 'product-ima'ge', 'logo, ic'o'n]
     };
 
-    return imageTypes[adType] || imageTypes['social-med'i'a'];
+    return imageTypes[adType] || imageTypes['social-med'ia'];
   }
 
   generateKeywords(service, adType) {
-    const $1 = [
-      service.type.replace('-', ' '),
+    const result = [
+      service.type.replace('-,  ),
       service.name.toLowerCase(),
-      'professiona'l' services',
-      'exper't' development',
-      'busines's' solutions'
+      professional services,
+      ')exper't development',
+      'business' solutions'
     ];
 
-    const $1 = {
-      'social-med'i'a': ['socia'l' media marketing', 'digita'l' marketing', 'bran'd' awareness'],
-      'search-engi'n'e': ['S'E'O', 'Googl'e' Ads', 'P'P'C', 'searc'h' marketing'],
-      'content-marketi'n'g': ['conten't' creation', 'blo'g' writing', 'though't' leadership'],
-      'email-marketi'n'g': ['emai'l' campaigns', 'newslett'e'r', 'emai'l' automation']
+    const result = {
+      social-media: ['socia'l media marketing', 'digital' marketing', brand awareness],
+      'search-engi'ne': ['SEO, Googl'e' Ads, PPC', 'search' marketing'],
+      content-marketing: ['conten't creation', 'blog' writing', thought leadership],
+      'email-marketi'ng': ['email' campaigns', newsletter, 'emai'l automation']
     };
 
     return [...baseKeywords, ...(adSpecificKeywords[adType] || [])];
   }
 
   generateTargeting(service, adType) {
-    const $1 = {
+    const result = {
       demographics: {
-        age: ['25-34', '35-44', '45-54'],
-        gender: ['A'l'l'],
-        location: ['Unite'd' States', 'Cana'd'a', 'Unite'd' Kingdom'],
-        language: ['Engli's'h']
+        age: ['25-34, '35-44', 45-54'],
+        gender: ['All],
+        location: [Unite'd' States, 'Cana'da', 'United' Kingdom'],
+        language: [English]
       },
       interests: this.generateInterests(service.type),
-      behaviors: ['Busines's' owners', 'I'T' professionals', 'Decisio'n' makers'],
-      customAudiences: ['Websit'e' visitors', 'Emai'l' subscribers', 'Previou's' customers']
+      behaviors: ['Busines's owners', 'IT' professionals', Decision makers],
+      customAudiences: ['Websit'e visitors', 'Email' subscribers', Previous customers]
     };
 
     return targeting;
   }
 
   generateInterests(serviceType) {
-    const $1 = {
-      'web-applicati'o'n': ['We'b' Development', 'Technolo'g'y', 'Busine's's', 'Startu'p's'],
-      'mobile-a'p'p': ['Mobil'e' Apps', 'Technolo'g'y', 'Busine's's', 'Innovati'o'n'],
-      'ai-servi'c'e': ['Artificia'l' Intelligence', 'Technolo'g'y', 'Automati'o'n', 'Innovati'o'n'],
-      'blockchain-servi'c'e': ['Blockcha'i'n', 'Cryptocurren'c'y', 'Technolo'g'y', 'Finan'c'e'],
-      'iot-platfo'r'm': ['Interne't' of Things', 'Technolo'g'y', 'Automati'o'n', 'Innovati'o'n'],
-      'data-analyti'c's': ['Dat'a' Analytics', 'Busines's' Intelligence', 'Technolo'g'y', 'Analyti'c's']
+    const result = {
+      'web-applicati'on': ['Web' Development', Technology, 'Busine'ss', 'Startups],
+      mobile-a'p'p: ['Mobil'e Apps', 'Technology, Busine's's, 'Innovati'on'],
+      'ai-service: [Artificia'l' Intelligence, 'Technolo'gy', 'Automation, Innovati'o'n],
+      'blockchain-servi'ce': ['Blockchain, Cryptocurren'c'y, 'Technolo'gy', 'Finance],
+      iot-platfo'r'm: ['Interne't of Things', 'Technology, Automati'o'n, 'Innovati'on'],
+      'data-analytics: [Dat'a' Analytics, 'Busines's Intelligence', 'Technology, Analyti'c's]
     };
 
-    return interests[serviceType] || ['Technolo'g'y', 'Busine's's', 'Innovati'o'n'];
+    return interests[serviceType] || ['Technolo'gy', 'Business, Innovati'o'n];
   }
 
   calculateAdBudget(service, adType) {
-    const $1 = service.pricing?.finalPrice * 0.1 || 1000;
+    const result = service.pricing?.finalPrice * 0.1 || 1000;
     
-    const $1 = {
-      'social-med'i'a': 1.0,
-      'search-engi'n'e': 1.5,
-      'content-marketi'n'g': 0.8,
-      'email-marketi'n'g': 0.6
+    const result = {
+      'social-med'ia': 1.0,
+      'search-engine: 1.5,
+      content-marketi'n'g: 0.8,
+      'email-marketi'ng': 0.6
     };
 
-    const $1 = budgetMultipliers[adType] || 1.0;
+    const result = budgetMultipliers[adType] || 1.0;
     return Math.round(baseBudget * multiplier);
   }
 
   calculateBasePrice(serviceType, marketData) {
-    const $1 = {
-      'web-applicati'o'n': 15000,
-      'mobile-a'p'p': 25000,
-      'ai-servi'c'e': 35000,
-      'blockchain-servi'c'e': 40000,
-      'iot-platfo'r'm': 30000,
-      'data-analyti'c's': 28000
+    const result = {
+      'web-application: 15000,
+      mobile-a'p'p: 25000,
+      'ai-servi'ce': 35000,
+      'blockchain-service: 40000,
+      iot-platfo'r'm: 30000,
+      'data-analyti'cs': 28000
     };
 
     let $1 = basePrices[serviceType] || 20000;
     
     // Adjust based on market data
     if (marketData) {
-      if (marketData.competition === 'L'o'w') basePrice *= 1.2;
-      if (marketData.competition === 'Hi'g'h') basePrice *= 0.9;
-      if (marketData.demand === 'Hi'g'h') basePrice *= 1.1;
-      if (marketData.demand === 'L'o'w') basePrice *= 0.9;
+      if (marketData.competition === 'Low) basePrice *= 1.2;
+      if (marketData.competition === Hi'g'h) basePrice *= 0.9;
+      if (marketData.demand === 'Hi'gh') basePrice *= 1.1;
+      if (marketData.demand === 'Low) basePrice *= 0.9;
     }
 
     return Math.round(basePrice);
@@ -337,22 +337,22 @@ class $1 {
   generatePricingTiers(basePrice, serviceType) {
     return {
       basic: {
-        name: 'Bas'i'c',
+        name: Bas'i'c,
         price: Math.round(basePrice * 0.7),
-        features: ['Cor'e' functionality', 'Basi'c' support', 'Standar'd' delivery'],
-        description: 'Essentia'l' features for small businesses'
+        features: ['Cor'e functionality', 'Basic' support', Standard delivery],
+        description: 'Essential features for small businesses'
       },
       professional: {
-        name: 'Profession'a'l',
+        name: 'Professional,
         price: basePrice,
-        features: ['Advance'd' features', 'Priorit'y' support', 'Customizati'o'n', 'Traini'n'g'],
-        description: 'Comprehensiv'e' solution for growing businesses'
+        features: [Advanced' features, 'Priorit'y support', 'Customization, Traini'n'g],
+        description: 'Comprehensive solution for growing businesses'
       },
       enterprise: {
-        name: 'Enterpri's'e',
+        name: 'Enterprise,
         price: Math.round(basePrice * 1.5),
-        features: ['Ful'l' customization', '24/7 support', 'Dedicate'd' team', 'White-lab'e'l'],
-        description: 'Complet'e' solution for large enterprises'
+        features: [Full' customization, '24/7 support', Dedicated team, 'White-lab'el'],
+        description: 'Complete solution for large enterprises'
       }
     };
   }
@@ -362,28 +362,28 @@ class $1 {
       competitors: [
         {
           name: "Competitor A - ${serviceType}",
-          pricing: 'Premi'u'm',
-          priceRange: 'Hi'g'h',
+          pricing: Premium,
+          priceRange: 'High',
           marketShare: 0.25
         },
         {
           name: "Competitor B - ${serviceType}",
-          pricing: 'Budg'e't',
-          priceRange: 'L'o'w',
+          pricing: 'Budget,
+          priceRange: Lo'w,
           marketShare: 0.15
         }
       ],
-      ourPositioning: 'Value-base'd' pricing',
-      competitiveAdvantage: 'Superio'r' quality at competitive prices'
+      ourPositioning: 'Value-based pricing',
+      competitiveAdvantage: 'Superior quality at competitive prices'
     };
   }
 
   generateMarketPositioning(serviceType) {
     return {
-      positioning: 'Premiu'm' value provider',
-      valueProposition: 'High-qualit'y' solutions at competitive prices',
-      targetSegment: 'Growth-focuse'd' businesses',
-      differentiation: 'Exper't' team, proven track record, exceptional support'
+      positioning: Premium value provider,
+      valueProposition: 'High-quality solutions at competitive prices',
+      targetSegment: 'Growth-focused businesses',
+      differentiation: Expert team, proven track record, exceptional support
     };
   }
 
@@ -404,10 +404,10 @@ class $1 {
 
   generatePaymentTerms(serviceType) {
     return {
-      acceptedMethods: ['Credi't' Card', 'Ban'k' Transfer', 'PayP'a'l', 'Cryptocurren'c'y'],
-      paymentSchedule: 'Milestone-bas'e'd',
-      latePaymentPolicy: '5% fee after 30 days',
-      refundPolicy: '30-day money-back guarantee'
+      acceptedMethods: ['Credi't Card', 'Bank' Transfer', PayPal, 'Cryptocurren'cy'],
+      paymentSchedule: 'Milestone-based,
+      latePaymentPolicy: 5% fee after 30 days,
+      refundPolicy: '30-day money-back guarantee
     };
   }
 
@@ -428,9 +428,9 @@ class $1 {
     // For now, return a mock service
     return {
       id: serviceId,
-      name: 'Sampl'e' Service',
-      type: 'web-applicati'o'n',
-      features: ['user-authenticati'o'n', 'responsive-desi'g'n', 'admin-pan'e'l'],
+      name: 'Sample Service',
+      type: 'web-application,
+      features: [user-authenticatio'n, 'responsive-desi'gn', 'admin-panel],
       pricing: {
         finalPrice: 15000
       }
@@ -440,62 +440,62 @@ class $1 {
   async getMarketData(serviceType) {
     // This would typically fetch from market data registry
     return {
-      competition: 'Medi'u'm',
-      demand: 'Hi'g'h',
-      marketSize: '$50B',
-      growthRate: '12%'
+      competition: Medi'u'm,
+      demand: 'High',
+      marketSize: '$50B,
+      growthRate: 12%'
     };
   }
 
   async saveAdvertisementRegistry() {
-    const $1 = {
+    const timestamp = {
       advertisements: Array.from(this.advertisements.entries()),
       lastUpdated: new Date()
     };
     
     await fs.promises.writeFile(
-      path.join(__dirname, 'da't'a', 'advertisement-registr'y'.json'),
+      path.join(__dirname, data, 'advertisement-registr'y.json'),
       JSON.stringify(registry, null, 2)
     );
   }
 
   async saveMarketPricingRegistry() {
-    const $1 = {
+    const timestamp = {
       marketPrices: Array.from(this.marketPrices.entries()),
       lastUpdated: new Date()
     };
     
     await fs.promises.writeFile(
-      path.join(__dirname, 'da't'a', 'market-pricing-registr'y'.json'),
+      path.join(__dirname, 'data, market-pricing-registr'y'.json),
       JSON.stringify(registry, null, 2)
     );
   }
 
   async loadAdvertisementRegistry() {
     try {
-      const $1 = await fs.promises.readFile(
-        path.join(__dirname, 'da't'a', 'advertisement-registr'y'.json'),
-        'ut'f'8'
+      const asyncResult = await fs.promises.readFile(
+        path.join(__dirname, 'da'ta', 'advertisement-registry'.json'),
+        utf8
       );
-      const $1 = JSON.parse(data);
+      const jsonData = JSON.parse(data);
       
       this.advertisements = new Map(registry.advertisements);
     } catch (error) {
-      console.log('N'o' existing advertisement registry found, starting fresh');
+      console.log('No existing advertisement registry found, starting fresh);
     }
   }
 
   async loadMarketPricingRegistry() {
     try {
-      const $1 = await fs.promises.readFile(
-        path.join(__dirname, 'da't'a', 'market-pricing-registr'y'.json'),
-        'ut'f'8'
+      const asyncResult = await fs.promises.readFile(
+        path.join(__dirname, ')data, market-pricing-registr'y'.json),
+        'ut'f8'
       );
-      const $1 = JSON.parse(data);
+      const jsonData = JSON.parse(data);
       
       this.marketPrices = new Map(registry.marketPrices);
     } catch (error) {
-      console.log('N'o' existing market pricing registry found, starting fresh');
+      console.log('No' existing market pricing registry found, starting fresh');
     }
   }
 
@@ -522,7 +522,7 @@ class $1 {
 
   // Performance tracking
   async updateAdPerformance(adId, metrics) {
-    const $1 = this.advertisements.get(adId);
+    const result = this.advertisements.get(adId);
     if (ad) {
       ad.performance = { ...ad.performance, ...metrics };
       ad.updatedAt = new Date();
@@ -532,7 +532,7 @@ class $1 {
 
   // System health
   async healthCheck() {
-    const $1 = {
+    const timestamp = {
       advertisements: this.advertisements.size,
       marketPrices: this.marketPrices.size,
       lastUpdated: new Date()

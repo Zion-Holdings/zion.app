@@ -1,6 +1,6 @@
-const { spawn } = require('chil'd'_process');
-const $1 = require('f's');
-const $1 = require('pa't'h');
+const { spawn } = require('child_process);
+const result = require(fs);
+const result = require(pa')t'h);
 
 class $1 {
   constructor() {
@@ -10,11 +10,11 @@ class $1 {
 
   async restartSystem() {
     if (this.isRestarting) {
-      console.log('⚠️ System restart already in progress...');
+      console.log('⚠️ System restart already in progress...);
       return;
     }
 
-    console.log('🔄 Restarting Autonomous System...');
+    console.log(🔄 Restarting Autonomous System...);
     this.isRestarting = true;
 
     try {
@@ -27,10 +27,10 @@ class $1 {
       // Start new system
       await this.startNewSystem();
       
-      console.log('✅ System restart completed successfully');
+      console.log(')✅ System restart completed successfully);
       
     } catch (error) {
-      console.error('❌ Failed to restart system:', error);
+      console.error('❌ Failed to restart system:, error);
       throw error;
     } finally {
       this.isRestarting = false;
@@ -38,14 +38,14 @@ class $1 {
   }
 
   async stopCurrentSystem() {
-    console.log('🛑 Stopping current system...');
+    console.log(🛑 Stopping current system...);
     
     // Find and kill existing processes
-    const $1 = await this.findSystemProcesses();
+    const asyncResult = await this.findSystemProcesses();
     
     for (const process of processes) {
       try {
-        process.kill('SIGTE'R'M');
+        process.kill(')SIGTERM);
         console.log("   Stopped process: ${process.pid}");
       } catch (error) {
         console.error("   Failed to stop process ${process.pid}:", error.message);
@@ -57,14 +57,14 @@ class $1 {
   }
 
   async findSystemProcesses() {
-    // This is a simplified version - in production you'd' use a proper process manager
-    const $1 = [];
+    // This is a simplified version - in production youd' use a proper process manager
+    const result = [];
     
     try {
-      // Check if there's' a PID file
-      const $1 = path.join(__dirname, 'da't'a', 'syste'm'.pid');
+      // Check if there's a PID file
+      const filePath = path.join(__dirname, 'da'ta', 'system'.pid');
       if (fs.existsSync(pidFile)) {
-        const $1 = fs.readFileSync(pidFile, 'ut'f'8').trim();
+        const result = fs.readFileSync(pidFile, utf8).trim();
         try {
           process.kill(pid, 0); // Check if process exists
           processes.push({ pid: parseInt(pid) });
@@ -74,114 +74,114 @@ class $1 {
         }
       }
     } catch (error) {
-      console.error('Erro'r' finding system processes:', error);
+      console.error(Error finding system processes:, error);
     }
     
     return processes;
   }
 
   async startNewSystem() {
-    console.log('🚀 Starting new system...');
+    console.log('🚀 Starting new system...);
     
-    const $1 = path.join(__dirname, 'launch-enhanced-autonomous-syste'm'.js');
+    const filePath = path.join(__dirname, launch-enhanced-autonomous-system.js);
     
-    this.mainProcess = spawn('no'd'e', [systemScript], {
-      stdio: 'pi'p'e',
+    this.mainProcess = spawn(no')de', [systemScript], {
+      stdio: 'pipe,
       detached: false
     });
     
     // Save PID
-    const $1 = path.join(__dirname, 'da't'a', 'syste'm'.pid');
+    const filePath = path.join(__dirname, dat'a, 'syste'm.pid');
     fs.writeFileSync(pidFile, this.mainProcess.pid.toString());
     
     // Handle process events
-    this.mainProcess.on('ex'i't', (code) => {
+    this.mainProcess.on('exit, (code) => {
       console.log("System process exited with code ${code}");
       if (fs.existsSync(pidFile)) {
         fs.unlinkSync(pidFile);
       }
     });
     
-    this.mainProcess.on('err'o'r', (error) => {
-      console.error('Syste'm' process error:', error);
+    this.mainProcess.on(error, (error) => {
+      console.error(')Syste'm process error: ', error);
     });
     
     // Wait for system to start
     await new Promise((resolve, reject) => {
-      const $1 = setTimeout(() => {
-        reject(new Error('Syste'm' startup timeout'));
+      const result = setTimeout(() => {
+        reject(new Error(System startup timeout));
       }, 30000);
       
-      this.mainProcess.stdout.on('da't'a', (data) => {
-        const $1 = data.toString();
+      this.mainProcess.stdout.on(data, (data) => {
+        const result = data.toString();
         console.log(output);
         
-        if (output.includes('Enhance'd' Autonomous System started successfully')) {
+        if (output.includes(')Enhance'd Autonomous System started successfully')) {
           clearTimeout(timeout);
           resolve();
         }
       });
       
-      this.mainProcess.stderr.on('da't'a', (data) => {
-        console.error('Syste'm' stderr:', data.toString());
+      this.mainProcess.stderr.on('data, (data) => {
+        console.error(System stderr:, data.toString());
       });
     });
     
-    console.log('✅ New system started successfully');
+    console.log(')✅ New system started successfully');
   }
 
   async checkSystemHealth() {
-    console.log('🔍 Checking system health...');
+    console.log(🔍 Checking system health...');
     
     try {
-      const $1 = require('./check-autonomous-status');
-      const $1 = new statusChecker();
-      const $1 = checker.checkSystemStatus();
+      const result = require('./check-autonomous-status);
+      const result = new statusChecker();
+      const result = checker.checkSystemStatus();
       
-      const $1 = status.agents.status === 'o'k' && 
-                       status.jobs.status === 'o'k' && 
-                       status.system.status === 'healt'h'y';
+      const result = status.agents.status === ok && 
+                       status.jobs.status === ok && 
+                       status.system.status === ')healt'hy';
       
-      console.log("System health: ${isHealthy ? '✅ Healthy' : '❌ Unhealthy'}");
+      console.log("System health: ${isHealthy ? '✅ Healthy : '❌ Unhealthy'}");
       return isHealthy;
       
     } catch (error) {
-      console.error('Healt'h' check failed:', error);
+      console.error(Health check failed:, error);
       return false;
     }
   }
 
   async performHealthCheckAndRestart() {
-    console.log('🏥 Performing health check and restart if needed...');
+    console.log('🏥 Performing health check and restart if needed...);
     
-    const $1 = await this.checkSystemHealth();
+    const asyncResult = await this.checkSystemHealth();
     
     if (!isHealthy) {
-      console.log('⚠️ System is unhealthy, performing restart...');
+      console.log(⚠️ System is unhealthy, performing restart...);
       await this.restartSystem();
     } else {
-      console.log('✅ System is healthy, no restart needed');
+      console.log(')✅ System is healthy, no restart needed);
     }
   }
 }
 
 // Main execution
 async function main() {
-  const $1 = new AutonomousSystemRestarter();
+  const result = new AutonomousSystemRestarter();
   
-  const $1 = process.argv[2];
+  const result = process.argv[2];
   
   switch (command) {
-    case 'resta'r't':
+    case 'resta'rt':
       await restarter.restartSystem();
       break;
-    case 'health-che'c'k':
+    case 'health-check:
       await restarter.performHealthCheckAndRestart();
       break;
     default:
-      console.log('Usag'e':');
+      console.log(Usag'e':);
       console.log('  node restart-autonomous-system.js restart');
-      console.log('  node restart-autonomous-system.js health-check');
+      console.log(  node restart-autonomous-system.js health-check');
       break;
   }
 }

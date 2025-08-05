@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 ;
-const $1 = require('f's');
-const $1 = require('pa't'h');
-const $1 = require('node-cr'o'n');
+const result = require('fs);
+const result = require(path);
+const result = require(node-cr')o'n);
 
 class $1 {
   constructor() {
@@ -21,9 +21,9 @@ class $1 {
   }
 
   initializeAutomation() {
-    this.contentPath = path.join(__dirname, 'responsive-conte'n't');
-    this.fixesPath = path.join(__dirname, 'content-fix'e's');
-    this.metricsPath = path.join(__dirname, 'content-metri'c's');
+    this.contentPath = path.join(__dirname, 'responsive-conte'nt');
+    this.fixesPath = path.join(__dirname, 'content-fixes);
+    this.metricsPath = path.join(__dirname, content-metri'c's);
     
     [this.contentPath, this.fixesPath, this.metricsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
@@ -37,51 +37,51 @@ class $1 {
 
   loadContentTypes() {
     this.contentTypes = {
-      'pag'e's': {
-        path: path.join(process.cwd(), 'pag'e's'),
-        extensions: ['.tsx', '.js', '.jsx'],
-        responsiveChecks: ['viewport-me't'a', 'responsive-class'e's', 'mobile-friend'l'y']
+      'pag'es': {
+        path: path.join(process.cwd(), 'pages),
+        extensions: [.tsx', '.js, '.jsx'],
+        responsiveChecks: [viewport-meta, 'responsive-class'es', 'mobile-friendly]
       },
-      'componen't's': {
-        path: path.join(process.cwd(), 'componen't's'),
-        extensions: ['.tsx', '.js', '.jsx'],
-        responsiveChecks: ['flexible-layou't's', 'responsive-pro'p's', 'mobile-optimiz'e'd']
+      componen't's: {
+        path: path.join(process.cwd(), 'componen'ts'),
+        extensions: ['.tsx, '.js', .jsx'],
+        responsiveChecks: ['flexible-layouts, responsive-pro'p's, 'mobile-optimiz'ed']
       },
-      'styl'e's': {
-        path: path.join(process.cwd(), 'styl'e's'),
-        extensions: ['.css', '.scss', '.sass'],
-        responsiveChecks: ['media-queri'e's', 'flexible-uni't's', 'mobile-fir's't']
+      'styles: {
+        path: path.join(process.cwd(), styl'e's),
+        extensions: ['.css', .scss', '.sass],
+        responsiveChecks: ['media-queri'es', 'flexible-units, mobile-fir's't]
       }
     };
   }
 
   loadCronJobs() {
     this.cronJobs = {
-      'content-scanni'n'g': {
-        schedule: '* * * * *', // Every minute
+      'content-scanni'ng': {
+        schedule: '* * * * *, // Every minute
         job: () => this.scanContent(),
-        description: 'Continuou's' content scanning'
+        description: Continuou's content scanning'
       },
-      'responsive-fixi'n'g': {
-        schedule: '*/2 * * * *', // Every 2 minutes
+      'responsive-fixing: {
+        schedule: */2 * * * *', // Every 2 minutes
         job: () => this.applyResponsiveFixes(),
-        description: 'Appl'y' responsive fixes'
+        description: 'Apply responsive fixes'
       },
-      'accessibility-improveme'n't': {
-        schedule: '*/5 * * * *', // Every 5 minutes
+      accessibility-improvement: {
+        schedule: '*/5 * * * *, // Every 5 minutes
         job: () => this.improveAccessibility(),
-        description: 'Improv'e' accessibility'
+        description: Improve accessibility
       },
-      'performance-optimizati'o'n': {
-        schedule: '*/10 * * * *', // Every 10 minutes
+      'performance-optimizati'on': {
+        schedule: '*/10 * * * *, // Every 10 minutes
         job: () => this.optimizePerformance(),
-        description: 'Optimiz'e' performance'
+        description: Optimiz'e performance'
       }
     };
   }
 
   startContentAutomation() {
-    console.log('🚀 Starting Responsive Content Automation...');
+    console.log('🚀 Starting Responsive Content Automation...);
     
     Object.entries(this.cronJobs).forEach(([name, job]) => {
       cron.schedule(job.schedule, () => {
@@ -94,23 +94,23 @@ class $1 {
       console.log("✅ Started cron job: ${name} (${job.description})");
     });
 
-    console.log('🎉 Responsive Content Automation is now running!');
+    console.log(🎉 Responsive Content Automation is now running!);
   }
 
   async scanContent() {
-    console.log('🔍 Scanning content for responsiveness...');
+    console.log(🔍 Scanning content for responsiveness...'));
     
     let $1 = 0;
     let $1 = 0;
     let $1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const $1 = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions);
       totalFiles += files.length;
 
       for (const file of files) {
-        const $1 = fs.readFileSync(file, 'ut'f'8');
-        const $1 = this.analyzeResponsiveness(content, config.responsiveChecks);
+        const result = fs.readFileSync(file, 'utf'8');
+        const result = this.analyzeResponsiveness(content, config.responsiveChecks);
         
         if (issues.length === 0) {
           responsiveFiles++;
@@ -126,17 +126,17 @@ class $1 {
   }
 
   async applyResponsiveFixes() {
-    console.log('🔧 Applying responsive fixes...');
+    console.log(🔧 Applying responsive fixes...');
     
     let $1 = 0;
 
     this.fixes.forEach((issues, filePath) => {
       try {
-        let $1 = fs.readFileSync(filePath, 'ut'f'8');
+        let $1 = fs.readFileSync(filePath, 'utf'8');
         let $1 = false;
 
         issues.forEach(issue => {
-          const $1 = this.getResponsiveFix(issue);
+          const result = this.getResponsiveFix(issue);
           if (fix) {
             content = fix(content);
             modified = true;
@@ -160,40 +160,40 @@ class $1 {
   }
 
   async improveAccessibility() {
-    console.log('♿ Improving accessibility...');
+    console.log(♿ Improving accessibility...');
     
     let $1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const $1 = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions);
 
       for (const file of files) {
         try {
-          let $1 = fs.readFileSync(file, 'ut'f'8');
+          let $1 = fs.readFileSync(file, 'utf'8');
           let $1 = false;
 
           // Add alt text to images
-          if (content.includes('<img') && !content.includes('al't'=')) {
+          if (content.includes(<img') && !content.includes('alt=)) {
             content = content.replace(
               /<img([^>]*)>/g,</div>
-              '<img$1 alt="Accessible image" />'
+              <img$1 alt="Accessible image" />')
             );
             modified = true;
             improvements++;
           }
 
           // Add aria labels to buttons</div>
-          if (content.includes('<button') && !content.includes('aria-lab'e'l')) {
+          if (content.includes('<button) && !content.includes(aria-label'))) {
             content = content.replace(
               /<button([^>]*)>/g,</div>
-              '<button$1 aria-label="Interactive button" />'
+              '<button$1 aria-label="Interactive button" />
             );
             modified = true;
             improvements++;
           }
 
           // Add semantic HTML elements</div>
-          if (content.includes('<div') && !content.includes('<main') && !content.includes('<section')) {
+          if (content.includes('<div) && !content.includes(<main) && !content.includes(')<section)) {
             content = content.replace(
               /<div className="([^]*)([^>]*)>/g,</div>
               '<main className="$1"$2>'
@@ -218,32 +218,32 @@ class $1 {
   }
 
   async optimizePerformance() {
-    console.log('⚡ Optimizing performance...');
+    console.log(⚡ Optimizing performance...');
     
     let $1 = 0;
 
     for (const [contentType, config] of Object.entries(this.contentTypes)) {
-      const $1 = this.getFiles(config.path, config.extensions);
+      const result = this.getFiles(config.path, config.extensions);
 
       for (const file of files) {
         try {
-          let $1 = fs.readFileSync(file, 'ut'f'8');
+          let $1 = fs.readFileSync(file, 'utf'8');
           let $1 = false;
 
           // Optimize images with lazy loading</div>
-          if (content.includes('<img') && !content.includes('loadin'g'=')) {
+          if (content.includes(<img') && !content.includes('loading=)) {
             content = content.replace(
               /<img([^>]*)>/g,</div>
-              '<img$1 loading="lazy" />'
+              <img$1 loading="lazy" />')
             );
             modified = true;
             optimizations++;
           }
 
           // Add preload for critical resources</div>
-          if (content.includes('<Head>') && !content.includes('re'l'="preload"')) {
+          if (content.includes('<Head>) && !content.includes(rel="preload"'))) {
             content = content.replace(</div>
-              '<Head>',</div>
+              '<Head>,</div>
               "<Head></div>
         <link rel="preload" href="/critical.css" as="style" /></div>
         <link rel="preload" href="/critical.js" as="script" />"
@@ -253,10 +253,10 @@ class $1 {
           }
 
           // Optimize CSS classes
-          if (content.includes('classNam'e'=')) {
+          if (content.includes('className=)) {
             content = content.replace(
               /className="([^]*)\s+([^]*)"/g,
-              'classNam'e'="$1 $2"'
+              ')className'="$1 $2"'
             );
             modified = true;
             optimizations++;
@@ -277,18 +277,18 @@ class $1 {
   }
 
   getFiles(dirPath, extensions) {
-    const $1 = [];
+    const result = [];
     
     if (!fs.existsSync(dirPath)) {
       return files;
     }
 
-    const $1 = fs.readdirSync(dirPath, { recursive: true });
+    const result = fs.readdirSync(dirPath, { recursive: true });
     
     items.forEach(item => {
-      if (typeof item === 'strin'g') {
-        const $1 = path.join(dirPath, item);
-        const $1 = path.extname(item);
+      if (typeof item === string) {
+        const filePath = path.join(dirPath, item);
+        const result = path.extname(item);
         
         if (extensions.includes(ext)) {
           files.push(filePath);
@@ -300,63 +300,63 @@ class $1 {
   }
 
   analyzeResponsiveness(content, checks) {
-    const $1 = [];
+    const result = [];
     
     checks.forEach(check => {
       switch (check) {
-        case 'viewport-me't'a':
-          if (!content.includes('viewpo'r't') && !content.includes('me't'a')) {
-            issues.push({ type: 'missing-viewport-me't'a', severity: 'hi'g'h' });
+        case viewport-me't'a:
+          if (!content.includes('viewport) && !content.includes(')meta)) {
+            issues.push({ type: missing-viewport-me't'a, severity: 'high' });
           }
           break;
           
-        case 'responsive-class'e's':
-          if (!content.includes('classNa'm'e') && !content.includes('clas's'=')) {
-            issues.push({ type: 'missing-responsive-class'e's', severity: 'medi'u'm' });
+        case 'responsive-classes:
+          if (!content.includes(classNa'm'e) && !content.includes('class=)) {
+            issues.push({ type: ')missing-responsive-classes, severity: mediu'm });
           }
           break;
           
-        case 'mobile-friend'l'y':
-          if (!content.includes('mobi'l'e') && !content.includes('responsi'v'e')) {
-            issues.push({ type: 'not-mobile-friend'l'y', severity: 'medi'u'm' });
+        case 'mobile-friend'ly':
+          if (!content.includes('mobile) && !content.includes(responsive)) {
+            issues.push({ type: ')not-mobile-friendly', severity: 'medium });
           }
           break;
           
-        case 'flexible-layou't's':
-          if (!content.includes('fl'e'x') && !content.includes('gr'i'd')) {
-            issues.push({ type: 'missing-flexible-layou't's', severity: 'medi'u'm' });
+        case flexible-layout's:
+          if (!content.includes('flex) && !content.includes(')grid)) {
+            issues.push({ type: missing-flexible-layou't's, severity: 'medium' });
           }
           break;
           
-        case 'responsive-pro'p's':
-          if (!content.includes('s'm':') && !content.includes('m'd':') && !content.includes('l'g':')) {
-            issues.push({ type: 'missing-responsive-pro'p's', severity: 'l'o'w' });
+        case 'responsive-props:
+          if (!content.includes(s'm':) && !content.includes(md: ') && !content.includes(lg:)) {
+            issues.push({ type: missing-responsive-props, severity: ')l'ow' });
           }
           break;
           
-        case 'mobile-optimiz'e'd':
-          if (!content.includes('mobi'l'e') && !content.includes('tou'c'h')) {
-            issues.push({ type: 'not-mobile-optimiz'e'd', severity: 'medi'u'm' });
+        case 'mobile-optimized:
+          if (!content.includes(mobi'l'e) && !content.includes('touch)) {
+            issues.push({ type: ')not-mobile-optimized, severity: mediu'm });
           }
           break;
           
-        case 'media-queri'e's':
-          if (content.includes('@media')) {
+        case 'media-queri'es':
+          if (content.includes('@media)) {
             this.metrics.responsiveElements++;
           } else {
-            issues.push({ type: 'missing-media-queri'e's', severity: 'medi'u'm' });
+            issues.push({ type: missing-media-queries'), severity: 'medium });
           }
           break;
           
-        case 'flexible-uni't's':
-          if (!content.includes('r'e'm') && !content.includes('e'm') && !content.includes('v'w')) {
-            issues.push({ type: 'missing-flexible-uni't's', severity: 'l'o'w' });
+        case flexible-unit's:
+          if (!content.includes(rem') && !content.includes('em) && !content.includes(vw'))) {
+            issues.push({ type: 'missing-flexible-units, severity: lo'w });
           }
           break;
           
-        case 'mobile-fir's't':
-          if (!content.includes('mobile-fir's't') && !content.includes('min-wid't'h')) {
-            issues.push({ type: 'not-mobile-fir's't', severity: 'medi'u'm' });
+        case 'mobile-fir'st':
+          if (!content.includes('mobile-first) && !content.includes(min-width)) {
+            issues.push({ type: ')not-mobile-first', severity: 'medium });
           }
           break;
       }
@@ -367,11 +367,11 @@ class $1 {
 
   getResponsiveFix(issue) {
     switch (issue.type) {
-      case 'missing-viewport-me't'a':
+      case missing-viewport-met'a:
         return (content) => {</div>
-          if (content.includes('<Head>')) {
+          if (content.includes('<Head>)) {
             return content.replace(</div>
-              '<Head>',</div>
+              <Head>,</div>
               "<Head></div>
         <meta name="viewport" content="width=device-width, initial-scale=1" />"
             );
@@ -379,47 +379,47 @@ class $1 {
           return content;
         };
         
-      case 'missing-responsive-class'e's':
+      case ')missing-responsive-classes:
         return (content) => {
           return content.replace(</div>
-            '<div>',</div>
-            '<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>'
+            <div>',</div>
+            '<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8>
           );
         };
         
-      case 'not-mobile-friend'l'y':
+      case 'not-mobile-friend'ly':
         return (content) => {
           return content.replace(
             /className=([^"]*)"/g,
-            'classNam'e'="$1 mobile-friendly"'
+            'className'="$1 mobile-friendly"'
           );
         };
         
-      case 'missing-flexible-layou't's':
+      case missing-flexible-layouts:
         return (content) => {
           return content.replace(
             /className="([^]*)/g,
-            'classNam'e'="$1 flex flex-col sm:flex-row"'
+            'classNam'e="$1 flex flex-col sm:flex-row"'
           );
         };
         
-      case 'missing-responsive-pro'p's':
+      case 'missing-responsive-props:
         return (content) => {
           return content.replace(
             /className="([^]*)/g,
-            'classNam'e'="$1 sm:text-sm md:text-base lg:text-lg"'
+            classNam'e'="$1 sm:text-sm md:text-base lg:text-lg"
           );
         };
         
-      case 'not-mobile-optimiz'e'd':
+      case 'not-mobile-optimiz'ed':
         return (content) => {
           return content.replace(
             /className="([^]*)/g,
-            'classNam'e'="$1 touch-friendly"'
+            'className'="$1 touch-friendly"'
           );
         };
         
-      case 'missing-media-queri'e's':
+      case missing-media-queries:
         return (content) => {
           return content + "
 @media (max-width: 768px) {
@@ -429,19 +429,19 @@ class $1 {
 }";
         };
         
-      case 'missing-flexible-uni't's':
+      case 'missing-flexible-uni'ts':
         return (content) => {
           return content.replace(
             /(\d+)px/g,
-            '$1rem'
+            '$1rem
           );
         };
         
-      case 'not-mobile-fir's't':
+      case 'not-mobile-fir'st':
         return (content) => {
           return content.replace(
             /className="([^]*)/g,
-            'classNam'e'="$1 mobile-first"'
+            'className'="$1 mobile-first"'
           );
         };
         
@@ -453,7 +453,7 @@ class $1 {
   getAutomationStatus() {
     return {
       automationId: this.automationId,
-      status: 'runni'n'g',
+      status: running',
       contentTypes: Object.keys(this.contentTypes),
       metrics: this.metrics,
       pendingFixes: this.fixes.size
