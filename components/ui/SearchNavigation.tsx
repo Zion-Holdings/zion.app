@@ -23,8 +23,13 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
   const [selectedIndex, setSelectedIndex] = useState(-1)
+  const [isClient, setIsClient] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // Mock search results - in a real app, this would be an API call
   const mockSearchResults: SearchResult[] = React.useMemo(() => [
@@ -37,6 +42,8 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   ], [])
 
   useEffect(() => {
+    if (!isClient) return
+
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         closeSearch()
@@ -64,7 +71,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [openSearch, closeSearch])
+  }, [openSearch, closeSearch, isClient])
 
   useEffect(() => {
     if (query.trim()) {
@@ -94,6 +101,9 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
       }
     }
   }
+
+  // Don't render anything during SSR
+  if (!isClient) return null
 
   const handleResultClick = (href: string) => {
     navigateTo(href)
