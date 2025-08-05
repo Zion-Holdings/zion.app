@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useRouter } from 'next/router'
 import { 
   Search, 
@@ -27,7 +27,7 @@ const ModernNavigationShortcuts: React.FC = () => {
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [activeShortcut, setActiveShortcut] = useState<string | null>(null)
 
-  const shortcuts: Shortcut[] = [
+  const shortcuts: Shortcut[] = useMemo(() => [
     {
       key: 'g h',
       description: 'Go to Home',
@@ -76,7 +76,7 @@ const ModernNavigationShortcuts: React.FC = () => {
       action: () => router.push('/notifications'),
       icon: Bell
     }
-  ]
+  ], [router])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -120,7 +120,7 @@ const ModernNavigationShortcuts: React.FC = () => {
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [router, shortcuts])
+  }, [shortcuts])
 
   const handleShortcutClick = (shortcut: Shortcut) => {
     shortcut.action()

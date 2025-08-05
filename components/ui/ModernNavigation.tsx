@@ -207,7 +207,9 @@ const ModernNavigation: React.FC = () => {
               {navigationSections.map((section) => (
                 <div key={section.id} className="relative dropdown-container">
                   <button
-                    ref={(el) => (dropdownRefs.current[section.id] = el)}
+                    ref={(el) => {
+                      dropdownRefs.current[section.id] = el
+                    }}
                     onClick={() => toggleDropdown(section.id)}
                     className="flex items-center space-x-1 px-4 py-2 text-white hover:text-neon-blue transition-colors rounded-lg hover:bg-white/10"
                     aria-expanded={activeDropdown === section.id}
