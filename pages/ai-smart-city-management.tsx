@@ -140,7 +140,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '2,
       name: Smart Transportation Hub,
       type: development,
-      status: planning,
+      status: 'planning',
       area: 25,
       population: 15000,
       budget: 15000000,

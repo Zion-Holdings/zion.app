@@ -169,7 +169,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '3,
       name: Ocean Acidification Study,
       type: climate,
-      status: planning,
+      status: 'planning',
       location: Globa'l' Oceans,
       duration: '730,
       team: 15,
@@ -236,7 +236,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Mariana Trench Survey,
       target: Challenger Deep,
       type: trench,
-      status: planning,
+      status: 'planning',
       discovery: 'Deep sea biodiversity mapping',
       aiAnalysis: {
         discoveryProbability: 0.92,

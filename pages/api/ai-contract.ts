@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next
 interface Contract {
   id: string;
   name: string;
-  type: 'service' | 'product' | 'partnership' | 'employment
-  status: 'draft' | 'negotiation' | 'active' | 'completed' | 'terminated
+  type: 'service' | 'product' | 'partnership' | 'employment';
+  status: 'draft' | 'negotiation' | 'active' | 'completed' | 'terminated';
   value: number;
   startDate: string;
   endDate: string;

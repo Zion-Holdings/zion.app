@@ -152,7 +152,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '2,
       name: Carbon Capture Facility,
       type: carbon-capture,
-      status: planning,
+      status: 'planning',
       location: 'Norway,
       budget: '150000000,
       carbonReduction: 100000,

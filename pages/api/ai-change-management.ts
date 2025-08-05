@@ -3,8 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 interface ChangeInitiative {
   id: string;
   name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural
-  status: 'planning' | 'implementation' | 'monitoring' | 'completed
+  type: 'technology' | 'process' | 'organizational' | 'cultural';
+  status: 'planning' | 'implementation' | 'monitoring' | 'completed';
   priority: 'low' | 'medium' | 'high' | 'critical';
   startDate: string;
   endDate: string;
@@ -23,7 +23,7 @@ interface ChangeAnalytics {
   completedInitiatives: number;
   averageProgress: number;
   successRate: number;
-  riskLevel: 'low' | 'medium' | 'high
+  riskLevel: 'low' | 'medium' | 'high';
   stakeholderSatisfaction: number;
   aiOptimizationScore: number;
 }
@@ -46,10 +46,10 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     mitigation: ['Change management training', 'Phased implementation', 'Regular budget reviews']
   },
   {
-    id: 'change-2,
-    name: Process Automation Implementation,
-    type: process,
-    status: planning,
+    id: 'change-2',
+    name: 'Process Automation Implementation',
+    type: 'process',
+    status: 'planning',
     priority: 'high',
     startDate: 2024-03-01',
     endDate: '2024-08-31,

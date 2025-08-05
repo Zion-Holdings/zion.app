@@ -18,7 +18,7 @@ interface FacilityPlan {
   endDate?: Date;
   aiGenerated: boolean;
   complianceScore: number;
-  riskLevel: 'low' | 'medium' | 'high
+  riskLevel: 'low' | 'medium' | 'high';
   legalReview: 'LegalReview;
   signatures: Signature[];
   attachments: Attachment[];}

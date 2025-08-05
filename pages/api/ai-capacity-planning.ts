@@ -52,7 +52,7 @@ interface OptimizationRecommendation {
   implementationCost: number;
   expectedROI: number;
   timeframe: string;
-  status: 'pending' | 'approved' | 'implemented' | 'rejected
+  status: 'pending' | 'approved' | 'implemented' | 'rejected';
 }
 
 const mockCapacityPlans: CapacityPlan[] = [
@@ -91,8 +91,8 @@ const mockCapacityPlans: CapacityPlan[] = [
     status: 'completed',
     priority: 'medium',
     startDate: '2023-09-01',
-    endDate: 2024-03-31',
-    currentCapacity: '100,
+    endDate: '2024-03-31',
+    currentCapacity: 100,
     targetCapacity: 100,
     utilization: 78,
     cost: 300000,

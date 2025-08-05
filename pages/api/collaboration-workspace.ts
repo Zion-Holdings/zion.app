@@ -57,7 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               name: projectName,
               description: projectDescription,
               owner_id: userId,
-              status: planning,
+              status: 'planning',
               progress: 0,
               team_members: [userId]
             }]
