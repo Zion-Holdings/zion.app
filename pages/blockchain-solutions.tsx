@@ -134,7 +134,7 @@ const BlockchainSolutions = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Secure Implementation</h3>
-                <p className="text-gray-600">Enterprise-grade security for your sensitive data</p>
+                <p className="text-high-contrast-tertiary">Enterprise-grade security for your sensitive data</p>
               </motion.div>
               
               <motion.div
@@ -150,7 +150,7 @@ const BlockchainSolutions = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
-                <p className="text-gray-600">Round-the-clock support to ensure your success</p>
+                <p className="text-high-contrast-tertiary">Round-the-clock support to ensure your success</p>
               </motion.div>
               
             </div>
@@ -168,7 +168,7 @@ const BlockchainSolutions = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Why Choose Our Blockchain Solutions
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Experience the benefits that transform your business operations
               </p>
             </motion.div>
@@ -189,7 +189,7 @@ const BlockchainSolutions = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Enhanced Productivity</h3>
-                  <p className="text-gray-600">Boost productivity with AI-powered tools and automation</p>
+                  <p className="text-high-contrast-tertiary">Boost productivity with AI-powered tools and automation</p>
                 </div>
               </motion.div>
               
