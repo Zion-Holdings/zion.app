@@ -305,7 +305,7 @@ const AIPoweredNeuromorphicComputingPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockNeuromorphicComputing, mockSpikingNeuralNetworks, mockBrainInspiredAlgorithms, mockNeuromorphicChips, mockCognitiveComputing, mockNeuromorphicComputingManagement, mockAnalytics])
+  }, [])
 
   const filteredNeuromorphicDevices = useMemo(() => {
     let filtered = neuromorphicComputing

@@ -307,7 +307,7 @@ const AIPoweredEdgeComputingPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockEdgeComputing, mockFogComputing, mockDistributedComputing, mockEdgeAnalytics, mockFogOrchestration, mockEdgeComputingManagement, mockAnalytics])
+  }, [])
 
   const filteredEdgeDevices = useMemo(() => {
     let filtered = edgeComputing

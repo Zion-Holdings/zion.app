@@ -305,7 +305,7 @@ const AIPoweredHolographicDisplayPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockHolographicDisplays, mockThreeDVisualizations, mockSpatialComputing, mockHolographicProjections, mockVolumetricDisplays, mockHolographicSystemManagement, mockAnalytics])
+  }, [])
 
   const filteredDisplays = useMemo(() => {
     let filtered = holographicDisplays

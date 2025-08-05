@@ -171,7 +171,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockPolicies, mockFrameworks, mockAnalytics])
+  }, [])
 
   const filteredPolicies = useMemo(() => {
     let filtered = policies

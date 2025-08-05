@@ -479,7 +479,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockWorkflows, mockProcessOrchestrations, mockIntegrations, mockAnalytics])
+  }, [])
 
   const filteredWorkflows = useMemo(() => {
     let filtered = workflows

@@ -388,7 +388,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockArticles, mockDocumentation, mockTutorials, mockFaqs, mockWikis, mockAnalytics])
+  }, [])
 
   const filteredArticles = useMemo(() => {
     let filtered = articles

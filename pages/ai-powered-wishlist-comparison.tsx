@@ -243,7 +243,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
       setComparisons(mockComparisons)
       setIsLoading(false)
     }, 1000)
-  }, [mockWishlistItems, mockComparisons])
+  }, [])
 
   const filteredItems = useMemo(() => {
     let filtered = wishlistItems

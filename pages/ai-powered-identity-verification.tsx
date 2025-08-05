@@ -519,7 +519,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockUserVerifications, mockBackgroundChecks, mockTrustNetworks, mockAnalytics])
+  }, [])
 
   const getStatusColor = (status: string) => {
     switch (status) {

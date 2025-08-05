@@ -107,7 +107,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
       setDashboard(mockDashboard)
       setIsLoading(false)
     }, 1000)
-  }, [mockQualityTests, mockComplianceChecks, mockDashboard])
+  }, [])
 
   const getStatusColor = (status: string) => {
     switch (status) {

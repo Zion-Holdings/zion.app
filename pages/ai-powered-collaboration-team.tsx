@@ -228,14 +228,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         optimizationScore: 88,
         efficiencyGains: 15,
         recommendations: ['Enhance tools', 'Improve processes']
-      },
-      aiAnalysis: {
-        id: '1',
-        collaborationScore: 92,
-        efficiencyScore: 88,
-        productivityScore: 90,
-        recommendations: ['Enhance tools', 'Improve processes']
-      },
+      }
     }
   ])
 

@@ -60,7 +60,7 @@ const AiVirtualAssistant: NextPage = () => {
       type: 'text'
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages(prev => [...prev]);
     setInputValue('');
     setIsLoading(true);
 
@@ -93,7 +93,7 @@ const AiVirtualAssistant: NextPage = () => {
         type: 'text'
       };
 
-      setMessages(prev => [...prev, assistantMessage]);
+      setMessages(prev => [...prev]);
     } catch (error) {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
@@ -103,7 +103,7 @@ const AiVirtualAssistant: NextPage = () => {
         timestamp: new Date(),
         type: 'text'
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev]);
     } finally {
       setIsLoading(false);
     }
@@ -120,7 +120,7 @@ const AiVirtualAssistant: NextPage = () => {
       type: 'text'
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages(prev => [...prev]);
     setInputValue('');
     setIsLoading(true);
 
@@ -153,7 +153,7 @@ const AiVirtualAssistant: NextPage = () => {
         type: 'text'
       };
 
-      setMessages(prev => [...prev, assistantMessage]);
+      setMessages(prev => [...prev]);
     } catch (error) {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
@@ -163,7 +163,7 @@ const AiVirtualAssistant: NextPage = () => {
         timestamp: new Date(),
         type: 'text'
       };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev]);
     } finally {
       setIsLoading(false);
     }

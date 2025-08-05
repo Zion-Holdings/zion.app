@@ -300,7 +300,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       setCertifications(mockCertifications)
       setIsLoading(false)
     }, 1000)
-  }, [mockCourses, mockAssessments, mockLearningPaths, mockCertifications])
+  }, [])
 
   const filteredCourses = useMemo(() => {
     let filtered = courses

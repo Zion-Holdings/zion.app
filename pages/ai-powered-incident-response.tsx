@@ -309,7 +309,7 @@ const AIPoweredIncidentResponsePage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockIncidentDetections, mockResponseCoordination, mockDigitalForensics, mockBreachInvestigations, mockThreatHunting, mockIncidentManagement, mockAnalytics])
+  }, [])
 
   const filteredDetections = useMemo(() => {
     let filtered = incidentDetections

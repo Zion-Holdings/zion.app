@@ -305,7 +305,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockNanotechnology, mockMolecularEngineering, mockNanoscaleDevices, mockMolecularComputing, mockNanorobotics, mockNanotechnologyManagement, mockAnalytics])
+  }, [])
 
   const filteredNanotechnology = useMemo(() => {
     let filtered = nanotechnology

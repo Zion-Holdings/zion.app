@@ -268,7 +268,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockBackupJobs, mockRecoveryPlans, mockDisasterRecoveries, mockBackupStorages, mockSystemRestorations, mockAnalytics])
+  }, [])
 
   const filteredBackups = useMemo(() => {
     let filtered = backupJobs

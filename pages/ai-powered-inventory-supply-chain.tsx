@@ -316,7 +316,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockInventoryItems, mockSupplyChainNodes, mockLogisticsOrders, mockAnalytics])
+  }, [])
 
   const filteredItems = useMemo(() => {
     let filtered = inventoryItems

@@ -256,7 +256,7 @@ const AIPoweredDeploymentDevOpsPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockDeploymentPipelines, mockReleaseManagement, mockInfrastructureAutomations, mockAutomatedTesting, mockDevOpsMetrics, mockAnalytics])
+  }, [])
 
   const filteredPipelines = useMemo(() => {
     let filtered = deploymentPipelines

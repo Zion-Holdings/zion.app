@@ -306,7 +306,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockBiometricAuthentication, mockFacialRecognition, mockFingerprintScanning, mockVoiceRecognition, mockIrisScanning, mockBiometricSecurityManagement, mockAnalytics])
+  }, [])
 
   const filteredBiometricDevices = useMemo(() => {
     let filtered = biometricAuthentications

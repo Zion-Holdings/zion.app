@@ -524,7 +524,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockEvents, mockCalendars, mockTimelines, mockAnalytics])
+  }, [])
 
   const filteredEvents = useMemo(() => {
     let filtered = events

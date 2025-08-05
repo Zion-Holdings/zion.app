@@ -326,7 +326,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockPredictions, mockForecasts, mockTrendAnalyses, mockRiskAssessments, mockMarketPredictions, mockAnalytics])
+  }, [])
 
   const filteredPredictions = useMemo(() => {
     let filtered = predictions

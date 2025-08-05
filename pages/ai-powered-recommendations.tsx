@@ -228,7 +228,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockRecommendations, mockEngines, mockAnalytics])
+  }, [])
 
   const filteredRecommendations = useMemo(() => {
     let filtered = recommendations

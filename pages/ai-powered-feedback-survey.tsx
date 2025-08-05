@@ -256,7 +256,7 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockFeedback, mockSurveys, mockPolls, mockTestimonials, mockAnalytics])
+  }, [])
 
   const filteredFeedback = useMemo(() => {
     let filtered = feedback

@@ -1,0 +1,495 @@
+const fs = require('fs');
+const path = require('path');
+
+class SidebarIntegrationAgent {
+  constructor() {
+    this.issues = [];
+    this.fixes = [];
+    this.pagesDir = path.join(process.cwd(), 'pages');
+    this.componentsDir = path.join(process.cwd(), 'components');
+    this.layoutsDir = path.join(process.cwd(), 'components/layout');
+  }
+
+  async analyzeSidebarIssues() {
+    console.log('🔍 Analyzing sidebar integration issues...');
+    
+    // Check for sidebar loading issues
+    await this.checkSidebarLoading();
+    
+    // Check for sidebar navigation issues
+    await this.checkSidebarNavigation();
+    
+    // Check for sidebar state management
+    await this.checkSidebarStateManagement();
+    
+    // Check for sidebar mobile responsiveness
+    await this.checkSidebarMobileResponsiveness();
+    
+    // Check for sidebar accessibility
+    await this.checkSidebarAccessibility();
+    
+    return {
+      issues: this.issues,
+      fixes: this.fixes,
+      summary: this.generateSummary()
+    };
+  }
+
+  async checkSidebarLoading() {
+    const sidebarComponent = path.join(this.componentsDir, 'ui/Sidebar.tsx');
+    
+    if (fs.existsSync(sidebarComponent)) {
+      const content = fs.readFileSync(sidebarComponent, 'utf8');
+      
+      // Check for proper state initialization
+      if (!content.includes('useState') || !content.includes('isOpen')) {
+        this.issues.push({
+          type: 'sidebar_state_missing',
+          file: sidebarComponent,
+          severity: 'high',
+          description: 'Sidebar missing proper state management'
+        });
+        
+        this.fixes.push({
+          type: 'add_sidebar_state',
+          file: sidebarComponent,
+          fix: this.generateSidebarStateFix()
+        });
+      }
+      
+      // Check for proper event handlers
+      if (!content.includes('setIsOpen') || !content.includes('onClick')) {
+        this.issues.push({
+          type: 'sidebar_handlers_missing',
+          file: sidebarComponent,
+          severity: 'high',
+          description: 'Sidebar missing proper event handlers'
+        });
+        
+        this.fixes.push({
+          type: 'add_sidebar_handlers',
+          file: sidebarComponent,
+          fix: this.generateSidebarHandlersFix()
+        });
+      }
+    }
+  }
+
+  async checkSidebarNavigation() {
+    const pages = this.getPages();
+    
+    for (const page of pages) {
+      const content = fs.readFileSync(page, 'utf8');
+      
+      // Check if page uses layout with sidebar
+      if (!content.includes('ModernLayout') && !content.includes('PageLayout')) {
+        this.issues.push({
+          type: 'sidebar_layout_missing',
+          file: page,
+          severity: 'high',
+          description: 'Page not using layout with sidebar'
+        });
+        
+        this.fixes.push({
+          type: 'add_sidebar_layout',
+          file: page,
+          fix: this.generateSidebarLayoutFix()
+        });
+      }
+    }
+  }
+
+  async checkSidebarStateManagement() {
+    const sidebarComponent = path.join(this.componentsDir, 'ui/Sidebar.tsx');
+    
+    if (fs.existsSync(sidebarComponent)) {
+      const content = fs.readFileSync(sidebarComponent, 'utf8');
+      
+      // Check for proper state management patterns
+      const statePatterns = [
+        'useState', 'useEffect', 'useCallback',
+        'expandedSections', 'searchQuery'
+      ];
+      
+      const hasStateManagement = statePatterns.every(pattern => content.includes(pattern));
+      
+      if (!hasStateManagement) {
+        this.issues.push({
+          type: 'sidebar_state_management_incomplete',
+          file: sidebarComponent,
+          severity: 'medium',
+          description: 'Sidebar state management incomplete'
+        });
+        
+        this.fixes.push({
+          type: 'improve_state_management',
+          file: sidebarComponent,
+          fix: this.generateStateManagementFix()
+        });
+      }
+    }
+  }
+
+  async checkSidebarMobileResponsiveness() {
+    const sidebarComponent = path.join(this.componentsDir, 'ui/Sidebar.tsx');
+    
+    if (fs.existsSync(sidebarComponent)) {
+      const content = fs.readFileSync(sidebarComponent, 'utf8');
+      
+      // Check for mobile-specific classes
+      const mobileClasses = [
+        'lg:hidden', 'lg:translate-x-0', 'lg:relative',
+        'mobile-toggle', 'sidebar-container'
+      ];
+      
+      const hasMobileClasses = mobileClasses.every(cls => content.includes(cls));
+      
+      if (!hasMobileClasses) {
+        this.issues.push({
+          type: 'sidebar_mobile_responsiveness_missing',
+          file: sidebarComponent,
+          severity: 'medium',
+          description: 'Sidebar missing mobile responsiveness'
+        });
+        
+        this.fixes.push({
+          type: 'add_mobile_responsiveness',
+          file: sidebarComponent,
+          fix: this.generateMobileResponsivenessFix()
+        });
+      }
+    }
+  }
+
+  async checkSidebarAccessibility() {
+    const sidebarComponent = path.join(this.componentsDir, 'ui/Sidebar.tsx');
+    
+    if (fs.existsSync(sidebarComponent)) {
+      const content = fs.readFileSync(sidebarComponent, 'utf8');
+      
+      // Check for accessibility attributes
+      const accessibilityAttributes = [
+        'aria-label', 'aria-expanded', 'aria-hidden',
+        'role="navigation"', 'tabIndex'
+      ];
+      
+      const hasAccessibility = accessibilityAttributes.some(attr => content.includes(attr));
+      
+      if (!hasAccessibility) {
+        this.issues.push({
+          type: 'sidebar_accessibility_missing',
+          file: sidebarComponent,
+          severity: 'medium',
+          description: 'Sidebar missing accessibility attributes'
+        });
+        
+        this.fixes.push({
+          type: 'add_accessibility',
+          file: sidebarComponent,
+          fix: this.generateAccessibilityFix()
+        });
+      }
+    }
+  }
+
+  generateSidebarStateFix() {
+    return {
+      stateCode: `
+  const [isOpen, setIsOpen] = useState(false)
+  const [expandedSections, setExpandedSections] = useState(new Set())
+  const [searchQuery, setSearchQuery] = useState('')
+      `,
+      description: 'Add proper state management for sidebar'
+    };
+  }
+
+  generateSidebarHandlersFix() {
+    return {
+      handlersCode: `
+  const toggleSidebar = () => setIsOpen(!isOpen)
+  const closeSidebar = () => setIsOpen(false)
+  const toggleSection = (sectionId) => {
+    const newExpanded = new Set(expandedSections)
+    if (newExpanded.has(sectionId)) {
+      newExpanded.delete(sectionId)
+    } else {
+      newExpanded.add(sectionId)
+    }
+    setExpandedSections(newExpanded)
+  }
+      `,
+      description: 'Add proper event handlers for sidebar'
+    };
+  }
+
+  generateSidebarLayoutFix() {
+    return {
+      layoutCode: `
+import ModernLayout from '../components/layout/ModernLayout'
+
+// Wrap component content with ModernLayout
+return (
+  <ModernLayout>
+    {/* Your component content */}
+  </ModernLayout>
+)
+      `,
+      description: 'Add ModernLayout wrapper for sidebar integration'
+    };
+  }
+
+  generateStateManagementFix() {
+    return {
+      stateManagementCode: `
+  // Enhanced state management
+  const [isOpen, setIsOpen] = useState(false)
+  const [expandedSections, setExpandedSections] = useState(new Set())
+  const [searchQuery, setSearchQuery] = useState('')
+  const [activeSection, setActiveSection] = useState('main')
+  
+  // Persist sidebar state
+  useEffect(() => {
+    const savedState = localStorage.getItem('sidebar-state')
+    if (savedState) {
+      const { expandedSections: saved } = JSON.parse(savedState)
+      setExpandedSections(new Set(saved))
+    }
+  }, [])
+  
+  useEffect(() => {
+    localStorage.setItem('sidebar-state', JSON.stringify({
+      expandedSections: Array.from(expandedSections)
+    }))
+  }, [expandedSections])
+      `,
+      description: 'Improve state management with persistence'
+    };
+  }
+
+  generateMobileResponsivenessFix() {
+    return {
+      mobileCode: `
+  // Mobile responsiveness improvements
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(true)
+      } else {
+        setIsOpen(false)
+      }
+    }
+    
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+      `,
+      description: 'Add mobile responsiveness improvements'
+    };
+  }
+
+  generateAccessibilityFix() {
+    return {
+      accessibilityCode: `
+  // Accessibility improvements
+  const sidebarProps = {
+    'aria-label': 'Main navigation',
+    'role': 'navigation',
+    'aria-expanded': isOpen,
+    'aria-hidden': !isOpen
+  }
+  
+  const toggleProps = {
+    'aria-label': isOpen ? 'Close sidebar' : 'Open sidebar',
+    'aria-expanded': isOpen,
+    'aria-controls': 'sidebar-navigation'
+  }
+      `,
+      description: 'Add accessibility attributes to sidebar'
+    };
+  }
+
+  getPages() {
+    const pages = [];
+    
+    const walkDir = (dir) => {
+      const files = fs.readdirSync(dir);
+      
+      files.forEach(file => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        
+        if (stat.isDirectory()) {
+          walkDir(filePath);
+        } else if (file.endsWith('.tsx') || file.endsWith('.jsx')) {
+          pages.push(filePath);
+        }
+      });
+    };
+    
+    walkDir(this.pagesDir);
+    return pages;
+  }
+
+  generateSummary() {
+    const totalIssues = this.issues.length;
+    const totalFixes = this.fixes.length;
+    
+    return {
+      totalIssues,
+      totalFixes,
+      issuesByType: this.groupIssuesByType(),
+      fixesByType: this.groupFixesByType()
+    };
+  }
+
+  groupIssuesByType() {
+    return this.issues.reduce((acc, issue) => {
+      acc[issue.type] = (acc[issue.type] || 0) + 1;
+      return acc;
+    }, {});
+  }
+
+  groupFixesByType() {
+    return this.fixes.reduce((acc, fix) => {
+      acc[fix.type] = (acc[fix.type] || 0) + 1;
+      return acc;
+    }, {});
+  }
+
+  async applyFixes() {
+    console.log('🔧 Applying sidebar integration fixes...');
+    
+    for (const fix of this.fixes) {
+      try {
+        await this.applyFix(fix);
+        console.log(`✅ Applied sidebar fix to ${fix.file}`);
+      } catch (error) {
+        console.error(`❌ Failed to apply sidebar fix to ${fix.file}:`, error.message);
+      }
+    }
+  }
+
+  async applyFix(fix) {
+    const filePath = fix.file;
+    let content = fs.readFileSync(filePath, 'utf8');
+    
+    switch (fix.type) {
+      case 'add_sidebar_state':
+        content = this.applySidebarStateFix(content, fix.fix);
+        break;
+      case 'add_sidebar_handlers':
+        content = this.applySidebarHandlersFix(content, fix.fix);
+        break;
+      case 'add_sidebar_layout':
+        content = this.applySidebarLayoutFix(content, fix.fix);
+        break;
+      case 'improve_state_management':
+        content = this.applyStateManagementFix(content, fix.fix);
+        break;
+      case 'add_mobile_responsiveness':
+        content = this.applyMobileResponsivenessFix(content, fix.fix);
+        break;
+      case 'add_accessibility':
+        content = this.applyAccessibilityFix(content, fix.fix);
+        break;
+    }
+    
+    fs.writeFileSync(filePath, content);
+  }
+
+  applySidebarStateFix(content, fix) {
+    const useStateIndex = content.indexOf('useState');
+    if (useStateIndex === -1) {
+      const importIndex = content.indexOf('import');
+      const nextImportIndex = content.indexOf('\n', importIndex);
+      const newState = fix.stateCode;
+      
+      content = content.slice(0, nextImportIndex) + newState + content.slice(nextImportIndex);
+    }
+    return content;
+  }
+
+  applySidebarHandlersFix(content, fix) {
+    const componentIndex = content.indexOf('const Sidebar');
+    if (componentIndex !== -1) {
+      const handlersCode = fix.handlersCode;
+      const beforeHandlers = content.slice(0, componentIndex);
+      const afterHandlers = content.slice(componentIndex);
+      
+      content = beforeHandlers + handlersCode + afterHandlers;
+    }
+    return content;
+  }
+
+  applySidebarLayoutFix(content, fix) {
+    // Add ModernLayout import and wrapper
+    if (!content.includes('import ModernLayout')) {
+      const importIndex = content.indexOf('import');
+      const nextImportIndex = content.indexOf('\n', importIndex);
+      const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
+      
+      content = content.slice(0, nextImportIndex) + newImport + content.slice(nextImportIndex);
+    }
+    
+    // Wrap content with ModernLayout
+    const returnIndex = content.indexOf('return (');
+    const closingIndex = content.lastIndexOf(')');
+    
+    if (returnIndex !== -1 && closingIndex !== -1) {
+      const beforeReturn = content.slice(0, returnIndex);
+      const afterReturn = content.slice(returnIndex);
+      const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
+      const afterClosing = content.slice(closingIndex + 1);
+      
+      content = beforeReturn + 'return (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
+    }
+    
+    return content;
+  }
+
+  applyStateManagementFix(content, fix) {
+    const stateManagementCode = fix.stateManagementCode;
+    const componentIndex = content.indexOf('const Sidebar');
+    
+    if (componentIndex !== -1) {
+      const beforeComponent = content.slice(0, componentIndex);
+      const afterComponent = content.slice(componentIndex);
+      
+      content = beforeComponent + stateManagementCode + afterComponent;
+    }
+    
+    return content;
+  }
+
+  applyMobileResponsivenessFix(content, fix) {
+    const mobileCode = fix.mobileCode;
+    const componentIndex = content.indexOf('const Sidebar');
+    
+    if (componentIndex !== -1) {
+      const beforeComponent = content.slice(0, componentIndex);
+      const afterComponent = content.slice(componentIndex);
+      
+      content = beforeComponent + mobileCode + afterComponent;
+    }
+    
+    return content;
+  }
+
+  applyAccessibilityFix(content, fix) {
+    const accessibilityCode = fix.accessibilityCode;
+    const componentIndex = content.indexOf('const Sidebar');
+    
+    if (componentIndex !== -1) {
+      const beforeComponent = content.slice(0, componentIndex);
+      const afterComponent = content.slice(componentIndex);
+      
+      content = beforeComponent + accessibilityCode + afterComponent;
+    }
+    
+    return content;
+  }
+}
+
+module.exports = SidebarIntegrationAgent; 

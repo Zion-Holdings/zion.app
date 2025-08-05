@@ -301,7 +301,7 @@ const AIPoweredQuantumComputingPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockQuantumAlgorithms, mockQuantumOptimizations, mockQuantumSimulations, mockQuantumCryptography, mockQuantumMachineLearning, mockQuantumComputingManagement, mockAnalytics])
+  }, [])
 
   const filteredAlgorithms = useMemo(() => {
     let filtered = quantumAlgorithms

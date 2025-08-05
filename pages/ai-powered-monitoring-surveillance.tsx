@@ -261,7 +261,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockMonitoringSystems, mockSurveillanceCameras, mockSystemAlerts, mockPerformanceMetrics, mockSecurityIncidents, mockAnalytics])
+  }, [])
 
   const filteredSystems = useMemo(() => {
     let filtered = monitoringSystems

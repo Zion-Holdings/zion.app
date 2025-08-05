@@ -305,7 +305,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockDistributedLedgers, mockConsensusMechanisms, mockSmartContracts, mockBlockchainGovernance, mockDecentralizedApplications, mockDistributedLedgerManagement, mockAnalytics])
+  }, [])
 
   const filteredLedgers = useMemo(() => {
     let filtered = distributedLedgers

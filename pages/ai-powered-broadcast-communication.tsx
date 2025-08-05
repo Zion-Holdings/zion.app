@@ -296,7 +296,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockBroadcasts, mockAnnouncements, mockCampaigns, mockAutomations, mockPromotionalMessages, mockAnalytics])
+  }, [])
 
   const filteredBroadcasts = useMemo(() => {
     let filtered = broadcasts

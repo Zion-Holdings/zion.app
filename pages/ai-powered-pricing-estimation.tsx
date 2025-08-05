@@ -450,7 +450,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       setBudgetOptimizations(mockBudgetOptimizations)
       setIsLoading(false)
     }, 1000)
-  }, [mockEstimates, mockPricingModels, mockBudgetOptimizations])
+  }, [])
 
   const filteredEstimates = useMemo(() => {
     let filtered = estimates

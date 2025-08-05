@@ -426,7 +426,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       setPointsHistory(mockPointsHistory)
       setIsLoading(false)
     }, 1000)
-  }, [mockUserProfile, mockBadges, mockAchievements, mockRewards, mockLeaderboards, mockEvents, mockPointsHistory])
+  }, [])
 
   const getRarityColor = (rarity: string) => {
     switch (rarity) {

@@ -481,7 +481,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockSubscriptionTiers, mockUserMembership, mockBillingHistory, mockAnalytics])
+  }, [])
 
   const getTierColor = (type: string) => {
     switch (type) {
