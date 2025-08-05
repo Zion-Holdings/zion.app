@@ -1,8 +1,7 @@
 {
-  "timestamp": "2025-08-05T16:21:03.265Z",
+  "timestamp": "2025-08-05T16:21:03.269Z",
   "dashboardId": "monitoring-dashboard-1754410623252",
-  "status": "running",
-  "metrics": {
+  "overallMetrics": {
     "totalSystems": 3,
     "activeSystems": 1,
     "overallHealth": 0.8,
@@ -48,8 +47,7 @@
         "evolutionCycles": 1,
         "diversificationScore": 0
       },
-      "lastUpdate": "2025-08-05T16:20:33.270Z"
+      "lastUpdate": "2025-08-05T16:21:03.269Z"
     }
-  ],
-  "alerts": 12
+  ]
 }
