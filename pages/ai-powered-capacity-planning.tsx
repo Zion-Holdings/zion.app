@@ -659,8 +659,8 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-2 text-gray-300">
                 <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
-                <li><Link href="/api" className="hover:text-white">API Reference</Link></li>
-                <li><Link href="/support" className="hover:text-white">Support</Link></li>
+                <li><Link href="/api-docs" className="hover:text-white">API Reference</Link></li>
+                <li><Link href="/help-desk-support" className="hover:text-white">Support</Link></li>
               </ul>
             </div>
             <div>

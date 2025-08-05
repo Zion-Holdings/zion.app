@@ -27,7 +27,7 @@ const FutureOfWorkAndAutomationChatContentPage: NextPage = () => {
       <main className="flex-1">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="mb-8">
-            <Link href="/chat-content" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
+            <Link href="/chat-content/ai-powered-business-solutions-discussion" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
               ← Back to Chat Content
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -69,7 +69,7 @@ const FutureOfWorkAndAutomationChatContentPage: NextPage = () => {
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Explore Our Services
               </Link>
-              <Link href="/chat-content" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/chat-content/ai-powered-business-solutions-discussion" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 More Conversations
               </Link>
             </div>
