@@ -1,8 +1,8 @@
 import React from 'react'
 import ModernNavigation from '../ui/ModernNavigation'
 import ModernFooter from '../ui/ModernFooter'
-import BreadcrumbNavigation from '../ui/BreadcrumbNavigation'
-import QuickNavigation from '../ui/QuickNavigation'
+import ModernBreadcrumbNavigation from '../ui/ModernBreadcrumbNavigation'
+import ModernQuickNavigation from '../ui/ModernQuickNavigation'
 import NavigationShortcuts from '../ui/NavigationShortcuts'
 import NavigationProgress from '../ui/NavigationProgress'
 import { useHeaderTransparency } from '../../src/hooks/useHeaderTransparency'
@@ -54,7 +54,7 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({
           {/* Breadcrumb Navigation */}
           {showBreadcrumbs && (
             <div className="mb-6 pt-4">
-              <BreadcrumbNavigation />
+              <ModernBreadcrumbNavigation />
             </div>
           )}
 
@@ -66,7 +66,7 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({
       </main>
 
       {/* Quick Navigation */}
-      {showQuickNavigation && <QuickNavigation />}
+      {showQuickNavigation && <ModernQuickNavigation />}
 
       {/* Navigation Shortcuts */}
       {showNavigationShortcuts && <NavigationShortcuts />}
