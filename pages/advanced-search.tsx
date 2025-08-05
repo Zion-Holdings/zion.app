@@ -237,13 +237,7 @@ const AdvancedSearchPage: NextPage = () => {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price':
-          return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (a.price || 0) - (b.price || 0);
+          return (a.price || 0) - (b.price || 0);
         case 'rating':
           return (b.rating || 0) - (a.rating || 0);
         case 'date':
