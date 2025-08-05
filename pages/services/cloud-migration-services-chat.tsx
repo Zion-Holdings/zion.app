@@ -37,7 +37,7 @@ const CloudMigrationServicesChatPage: NextPage = () => {
                 Expert discussion about cloud migration services implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>expert-consultation • industry-insights • question-answer</span>
+                <span>professional-technical • how-to-guide • real-world-examples</span>
               </div>
             </div>
           </div>
