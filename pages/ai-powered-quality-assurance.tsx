@@ -43,7 +43,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: AI-Powered Performance Testing,
       type: ai-powered,
       status: passe'd,
-      priority: 'high,
+      priority: 'high',
       description: Comprehensive performance testing using AI to identify bottlenecks,
       coverage: 95,
       executionTime: 45,

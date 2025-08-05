@@ -74,7 +74,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Service Quality Dispute,
       description: Client claims the delivered AI solution does not meet the agreed specifications and performance benchmarks.,
       status: 'mediation,
-      priority: 'high,
+      priority: 'high',
       type: 'service',
       parties: {
         complainant: TechCorp Solutions,

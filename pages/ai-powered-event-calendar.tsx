@@ -397,7 +397,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           title: 'Strategy Document Finalization,
           description: Finalize Q1 strategy document and presentation,
           dueDate: new Date('2024-01-30),
-          priority: 'high,
+          priority: 'high',
           status: in-progress,
           assignedTo: Strategy Team}
       ],

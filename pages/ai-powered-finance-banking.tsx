@@ -210,7 +210,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: '3,
       name: Operational Risk Control,
       type: operational-risk,
-      status: monitoring,
+      status: 'monitoring',
       location: Operations Division,
       riskLevel: 8,
       exposure: 1000000,

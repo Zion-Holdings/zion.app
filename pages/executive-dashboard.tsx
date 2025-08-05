@@ -171,7 +171,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: up,
           changePercent: 0.3,
           category: technology,
-          priority: 'high,
+          priority: 'high',
           target: '99.9,
           status: on-track
         },

@@ -230,7 +230,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           status: available}
       ],
       status: processi'n'g,
-      priority: 'high,
+      priority: 'high',
       orderDate: new Date(2024-01-20T09:00:00),
       estimatedDelivery: new Date(2024-01-27T09:00:00),
       totalValue: 5000,

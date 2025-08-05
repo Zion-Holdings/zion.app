@@ -98,7 +98,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       location: Global','
       currentValue: '1.2,
       unit: °C above pre-industrial,
-      trend: increasing,
+      trend: 'increasing',
       aiAnalysis: {
         severityLevel: high,
         impactScore: 8.5,

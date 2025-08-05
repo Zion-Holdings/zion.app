@@ -42,7 +42,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Optimized touch targets, gestures, and mobile interactions for seamless user experience.,
       icon: 👆,
       status: implement'e'd,
-      priority: 'high,
+      priority: 'high',
       impact: 95,
       effort: 8}
     },
@@ -82,7 +82,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Optimized form inputs, validation, and submission for mobile devices.,
       icon: 📝,
       status: implemented,
-      priority: 'high,
+      priority: 'high',
       impact: '85,
       effort: 8
     },

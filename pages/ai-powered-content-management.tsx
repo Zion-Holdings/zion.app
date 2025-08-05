@@ -165,7 +165,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           id: 4,
           title: Cloud' Computing Solutions',
           type: 'service,
-          status: draft,
+          status: 'draft',
           author: AI Assistant,
           createdAt: new Date(2024-01-23),
           updatedAt: new Date(2024-01-23),

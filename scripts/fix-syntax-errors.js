@@ -189,6 +189,42 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/type: 'service' \| 'product' \| 'partnership' \| 'employment/g, "type: 'service' | 'product' | 'partnership' | 'employment';");
     content = content.replace(/status: 'draft' \| 'negotiation' \| 'active' \| 'completed' \| 'terminated/g, "status: 'draft' | 'negotiation' | 'active' | 'completed' | 'terminated';");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/id: plan-4,/g, "id: 'plan-4',");
+    content = content.replace(/name: Financial Capacity Planning,/g, "name: 'Financial Capacity Planning',");
+    content = content.replace(/type: financial,/g, "type: 'financial',");
+    content = content.replace(/status: draft,/g, "status: 'draft',");
+    content = content.replace(/priority: 'high,/g, "priority: 'high',");
+    content = content.replace(/startDate: 2024-03-01',/g, "startDate: '2024-03-01',");
+    content = content.replace(/endDate: '2024-08-31,/g, "endDate: '2024-08-31',");
+    content = content.replace(/description: Implement AI-powered automation across key business processes,/g, "description: 'Implement AI-powered automation across key business processes',");
+    content = content.replace(/impact: 'Medium - Expected to reduce manual work by 60%,/g, "impact: 'Medium - Expected to reduce manual work by 60%',");
+    
+    // Fix additional patterns for remaining errors
+    content = content.replace(/startDate: '2024-04-01,/g, "startDate: '2024-04-01',");
+    content = content.replace(/stakeholders: '\[Operations, IT Department],/g, "stakeholders: ['Operations', 'IT Department'],");
+    content = content.replace(/risks: \[Job displacement concerns', 'Integration challenges],/g, "risks: ['Job displacement concerns', 'Integration challenges'],");
+    content = content.replace(/mitigation: '\[Employee retraining programs, Gradual rollout strategy]/g, "mitigation: ['Employee retraining programs', 'Gradual rollout strategy']");
+    
+    // Fix additional patterns for remaining errors
+    content = content.replace(/id: forecast-1,/g, "id: 'forecast-1',");
+    content = content.replace(/period: 'Q1 2024,/g, "period: 'Q1 2024',");
+    content = content.replace(/trend: increasing,/g, "trend: 'increasing',");
+    content = content.replace(/id: change-3',/g, "id: 'change-3',");
+    content = content.replace(/'name: 'Organizational Restructuring,/g, "name: 'Organizational Restructuring',");
+    content = content.replace(/type: organizational,/g, "type: 'organizational',");
+    content = content.replace(/status: monitoring,/g, "status: 'monitoring',");
+    
+    // Fix additional patterns for remaining errors
+    content = content.replace(/factors: \[Growth in user base, 'New feature releases', Seasonal traffic],/g, "factors: ['Growth in user base', 'New feature releases', 'Seasonal traffic'],");
+    content = content.replace(/lastUpdated: '2024-01-15/g, "lastUpdated: '2024-01-15'");
+    content = content.replace(/startDate: 2023-10-01,/g, "startDate: '2023-10-01',");
+    content = content.replace(/endDate: 2024-06-30,/g, "endDate: '2024-06-30',");
+    content = content.replace(/impact: 'High - Improved communication and decision-making processes,/g, "impact: 'High - Improved communication and decision-making processes',");
+    content = content.replace(/stakeholders: \[All Departments, HR, 'Leadership'],/g, "stakeholders: ['All Departments', 'HR', 'Leadership'],");
+    content = content.replace(/budget: '300000,/g, "budget: 300000,");
+    content = content.replace(/risks: \[Employee morale impact, Knowledge loss],/g, "risks: ['Employee morale impact', 'Knowledge loss'],");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");

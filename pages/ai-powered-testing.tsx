@@ -205,7 +205,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T15:30:00),
           aiGenerated: true,
           automated: true,
-          priority: 'high,
+          priority: 'high',
           flaky: 'false,
           errorMessage: Expected error message not displayed,
           steps: [

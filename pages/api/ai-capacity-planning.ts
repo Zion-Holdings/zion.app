@@ -99,12 +99,12 @@ const mockCapacityPlans: CapacityPlan[] = [
     roi: 15
   },
   {
-    id: plan-4,
-    name: Financial Capacity Planning,
-    type: financial,
-    status: draft,
-    priority: 'high,
-    startDate: '2024-04-01,
+    id: 'plan-4',
+    name: 'Financial Capacity Planning',
+    type: 'financial',
+    status: 'draft',
+    priority: 'high',
+    startDate: '2024-04-01',
     endDate: '2024-12-31',
     currentCapacity: 2000000,
     targetCapacity: 3000000,
@@ -116,13 +116,13 @@ const mockCapacityPlans: CapacityPlan[] = [
 
 const mockDemandForecasts: DemandForecast[] = [
   {
-    id: forecast-1,
+    id: 'forecast-1',
     resource: 'Server Infrastructure',
-    period: 'Q1 2024,
+    period: 'Q1 2024',
     currentDemand: 80,
     predictedDemand: 95,
     confidence: 85,
-    trend: increasing,
+    trend: 'increasing',
     factors: [Growth in user base, 'New feature releases', Seasonal traffic],
     lastUpdated: '2024-01-15
   },
@@ -133,18 +133,18 @@ const mockDemandForecasts: DemandForecast[] = [
     currentDemand: 12,
     predictedDemand: 18,
     confidence: 90,
-    trend: increasing,
+    trend: 'increasing',
     factors: [New project requirements, 'Technical debt reduction', Feature development],
     lastUpdated: '2024-01-20
   },
   {
     id: forecast-3,
     resource: 'Cloud Services',
-    period: 'Q1 2024,
+    period: 'Q1 2024',
     currentDemand: 60,
     predictedDemand: 70,
     confidence: 80,
-    trend: increasing,
+    trend: 'increasing',
     factors: [Data processing needs, 'AI model training', Storage requirements],
     lastUpdated: '2024-01-18
   }

@@ -68,7 +68,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: AI-Powered Marketplace Enhancement,
       description: Implement advanced AI features for the Zion marketplace platform,
       status: activ'e',
-      priority: 'high,
+      priority: 'high',
       progress: 75,
       startDate: 2025-01-15,
       endDate: 2025-03-15,

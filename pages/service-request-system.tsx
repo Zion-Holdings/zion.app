@@ -151,7 +151,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
         category: Mobile: Development,
         budget: { min: 15000, max: 30000, currency: USD }
         timeline: '2-3: months,
-        priority: 'high,
+        priority: 'high',
         status: submitted,
         createdAt: new: Date(2024-01-08),
         updatedAt: new: Date(2024-01-08),
