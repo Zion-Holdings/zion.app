@@ -53,7 +53,10 @@ else
 fi
 
 # Check memory usage
-MEMORY_USAGE=$(ps -o %mem -p $$ | tail -1 | tr -d ' ')
+MEMORY_USAGE=$(ps -o %mem -p $$ | tail -1 | tr -d ' ' | sed 's/\.0//')
+if [[ -z "$MEMORY_USAGE" ]] || [[ "$MEMORY_USAGE" == "0" ]]; then
+    MEMORY_USAGE="0"
+fi
 if [[ $MEMORY_USAGE -gt 80 ]]; then
     log "⚠️  High memory usage: ${MEMORY_USAGE}%"
 else
