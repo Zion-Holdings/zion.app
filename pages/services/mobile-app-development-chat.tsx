@@ -37,7 +37,7 @@ const MobileAppDevelopmentChatPage: NextPage = () => {
                 Expert discussion about mobile app development implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>collaborative-team • future-predictions • step-by-step-guide</span>
+                <span>collaborative-team • case-study • innovation-spotlight</span>
               </div>
             </div>
           </div>
