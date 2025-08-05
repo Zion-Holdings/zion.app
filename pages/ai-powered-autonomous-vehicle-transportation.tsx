@@ -122,7 +122,7 @@ const AIPoweredAutonomousVehicleTransportation: NextPage = () => {
           estimatedTime: 12,
           status: in-progress,
           vehicleId: 1,
-          priority: medium,
+          priority: 'medium',
           passengers: 2
         },
         {

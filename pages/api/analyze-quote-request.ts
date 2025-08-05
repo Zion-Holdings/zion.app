@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({
         summary: 'Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...,
         tags: [it-services, project-request],
-        priority: medium,
+        priority: 'medium',
         estimatedComplexity: moderate
       });}"
     const $1 = 

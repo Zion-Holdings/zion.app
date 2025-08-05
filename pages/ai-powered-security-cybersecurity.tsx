@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Security Policy Management,
       type: security-policy,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalThreats: 1100,
         preventionRate: 88,

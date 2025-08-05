@@ -1,5 +1,5 @@
 import React from "react";
-import { createClient } from '@supabase/supabase-js
+import { createClient } from '@supabase/supabase-js';
 
 interface FacilityPlan {
   id: "'string;

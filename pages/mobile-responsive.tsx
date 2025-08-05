@@ -112,7 +112,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Screen reader support, voice navigation, and accessibility features for mobile.,
       icon: ♿,
       status: in-progress,
-      priority: medium,
+      priority: 'medium',
       impact: 70,
       effort: 7
     },
@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Push notifications, in-app messaging, and mobile alert systems.,
       icon: 🔔,
       status: planned,
-      priority: medium,
+      priority: 'medium',
       impact: 65,
       effort: 6}
   ];

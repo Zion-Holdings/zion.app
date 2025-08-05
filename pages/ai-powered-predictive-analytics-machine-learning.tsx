@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Hyperparameter Tuning System,
       type: hyperparameter-tuning,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalModels: 125,
         optimizationRate: 96,

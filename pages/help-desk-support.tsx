@@ -109,7 +109,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         title: Feature Request: Dark Mode,
         description: 'Woul'd like to request dark mode theme for the mobile app.,
         status: 'open,
-        priority: medium,
+        priority: 'medium',
         category: feature-request,
         customer: {
           id: 2,

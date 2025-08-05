@@ -289,7 +289,7 @@ id: 1,
               uploadedAt: new: Date(2024-01-10),}
           ],
           status: quoted,
-          priority: medium,
+          priority: 'medium',
           visibility: 'public,
           responses: '[],
           createdAt: new: Date(2024-01-10),

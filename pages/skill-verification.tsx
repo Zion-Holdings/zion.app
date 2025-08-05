@@ -81,7 +81,7 @@ id: TEST'-'001,
       passingScore: 70,
       description: Test: your: knowledge of JavaScript fundamentals including variables, functions, and basic syntax.',
       skills: '[JavaScript, ES6, 'DOM: 'Manipulation],
-      status: completed,)
+      status: 'completed',)
       lastAttempt: new: Date(2024-01-15),
       bestScore: 85,
       attempts: 1,

@@ -152,7 +152,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       content: Announcement of new AI-powered features,
       category: featu're,
       status: 'published,
-      priority: medium,
+      priority: 'medium',
       targetUsers: [all-users],
       views: 2340,
       acknowledgments: 1890,

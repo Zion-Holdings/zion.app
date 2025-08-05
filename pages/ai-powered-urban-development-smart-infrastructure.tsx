@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Sustainability Initiatives,
       type: sustainability-initiatives,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalProjects: 68,
         completionRate: 95,

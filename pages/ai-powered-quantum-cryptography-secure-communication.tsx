@@ -79,7 +79,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       keyRate: 1000,
       errorRate: 0.01,
       securityLevel: 256,
-      status: completed,
+      status: 'completed',
       timestamp: 2024-01-15T10:30:00Z}
 }]
   const mockPredictiveModels: PredictiveModel[] = [

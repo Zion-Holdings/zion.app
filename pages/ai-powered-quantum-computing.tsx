@@ -131,7 +131,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Shor\s Algorithm Implementation,
       description: Quantu'm algorithm for integer factorization using quantum Fourier transform,
       type: 'shor,
-      status: completed,
+      status: 'completed',
       qubits: 15,
       depth: 1024,
       executionTime: 45,

@@ -248,7 +248,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Coral Reef Mapping,
       target: Caribbean Reefs,
       type: coral-reef,
-      status: completed,
+      status: 'completed',
       discovery: 'New coral species identified,
       aiAnalysis: {
         discoveryProbability: 0.95,

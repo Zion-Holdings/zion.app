@@ -82,7 +82,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     name: Cultural Transformation,
     type: cultural,
     status: 'implementation',
-    priority: medium,
+    priority: 'medium',
     startDate: 2024-02-01',
     endDate: '2024-12-31',
     description: Foster innovation and collaboration culture across the organization,

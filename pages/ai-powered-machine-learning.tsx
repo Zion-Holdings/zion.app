@@ -153,7 +153,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           id: 2,
           modelName: Customer Segmentation Model,
           type: clustering,
-          status: completed,'
+          status: 'completed','
           progress: '100,
           startTime: new Date(2024-01-20T12:00:00),
           endTime: new Date(2024-01-20T13:30:00),

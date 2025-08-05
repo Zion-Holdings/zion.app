@@ -261,7 +261,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           experienceId: 2,
           sessionType: explorati'o'n,
           status: 'completed,
-          priority: medium,
+          priority: 'medium',
           startTime: new Date(2024-01-20T13:00:00),
           endTime: new Date(2024-01-20T13:30:00),
           duration: 30,

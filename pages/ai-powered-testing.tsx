@@ -144,7 +144,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T14:30:00),
           aiGenerated: true,
           coverage: 95,
-          priority: medium,
+          priority: 'medium',
           tags: [ui, components, unit-testing]
         },
     {

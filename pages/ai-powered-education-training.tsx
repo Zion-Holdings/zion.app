@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Assessment Improvement System,
       type: assessment-improvement,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalStudents: 22000,
         improvementRate: 28,

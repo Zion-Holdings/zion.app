@@ -173,7 +173,7 @@ Format each suggestion as a JSON object with:
             'type: 'general,
             title: AI Analysis Complete,
             description: response || No analysis available,
-            priority: medium,
+            priority: 'medium',
             action: Review suggestions,
             impact: Improve'd' project management
           }]

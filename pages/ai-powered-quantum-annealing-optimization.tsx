@@ -86,7 +86,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       size: 50,
       variables: 1225,
       constraints: 50,
-      status: completed,
+      status: 'completed',
       objective: Minimize total distance,
       solution: Optimal' route found,
       energy: '-2450.5,

@@ -331,7 +331,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: OSIRIS-REx,
       target: Bennu,
       'type: 'asteroid,
-      status: completed,
+      status: 'completed',
       discovery: Carbon-rich asteroid material,
       aiAnalysis: {
         discoveryProbability: 0.95,

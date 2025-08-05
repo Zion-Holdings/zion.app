@@ -50,7 +50,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       buyer: Enterprise Solutions,
       seller: BlockChain Solutions',
       amount: '25000,
-      status: completed,
+      status: 'completed',
       service: Blockchain Integration,
       createdAt: new Date(2024-01-10'),
       deadline: 'new Date(2024-02-10),

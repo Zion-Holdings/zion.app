@@ -167,6 +167,14 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/type: workforce,/g, "type: 'workforce',");
     content = content.replace(/priority: high,/g, "priority: 'high',");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/import \{ createClient \} from '@supabase\/supabase-js/g, "import { createClient } from '@supabase/supabase-js';");
+    content = content.replace(/startDate: 2024-02-01,/g, "startDate: '2024-02-01',");
+    content = content.replace(/name: 'Technology Upgrade,/g, "name: 'Technology Upgrade',");
+    content = content.replace(/status: completed,/g, "status: 'completed',");
+    content = content.replace(/priority: medium,/g, "priority: 'medium',");
+    content = content.replace(/startDate: 2023-09-01,/g, "startDate: '2023-09-01',");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");

@@ -146,7 +146,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           'name: 'Account Creation,
           type: action,
           description: Create new customer account with basic information,
-          status: completed,
+          status: 'completed',
           order: 1,
           dependencies: [],
           estimatedTime: 30,

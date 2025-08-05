@@ -52,7 +52,7 @@ interface OptimizationRecommendation {
   implementationCost: number;
   expectedROI: number;
   timeframe: string;
-  status: 'pending' | 'approved' | 'implemented' | 'rejected';
+  status: 'pending' | 'approved' | 'implemented' | 'rejected
 }
 
 const mockCapacityPlans: CapacityPlan[] = [
@@ -76,7 +76,7 @@ const mockCapacityPlans: CapacityPlan[] = [
     type: 'workforce',
     status: 'active',
     priority: 'high',
-    startDate: 2024-02-01,
+    startDate: '2024-02-01',
     endDate: '2024-12-31',
     currentCapacity: 150,
     targetCapacity: 200,
@@ -86,11 +86,11 @@ const mockCapacityPlans: CapacityPlan[] = [
   },
   {
     id: 'plan-3',
-    name: 'Technology Upgrade,
+    name: 'Technology Upgrade',
     type: 'technology',
-    status: completed,
-    priority: medium,
-    startDate: 2023-09-01,
+    status: 'completed',
+    priority: 'medium',
+    startDate: '2023-09-01',
     endDate: 2024-03-31',
     currentCapacity: '100,
     targetCapacity: 100,
@@ -223,7 +223,7 @@ const mockOptimizationRecommendations: 'OptimizationRecommendation[] = [
   {
     id: rec-3,
     type: cost,
-    priority: medium,
+    priority: 'medium',
     title: Migrate to Reserved Instances',
     description: 'Switch to reserved cloud instances for predictable workloads,
     impact: Medium - Reduces cloud costs by 20-30%,

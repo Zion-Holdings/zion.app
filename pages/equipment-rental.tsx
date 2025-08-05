@@ -174,7 +174,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       endDate: new Date(2024-01-25),
       totalDays: 5,
       totalCost: 750,
-      status: completed,
+      status: 'completed',
       paymentStatus: pai'd',
       insurance: 'true,
       deposit: 300,
@@ -219,7 +219,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       technician: Sarah Chen,
       startDate: new Date(2024-01-10),
       endDate: new Date(2024-01-10),
-      status: completed,
+      status: 'completed',
       parts: [Senso'r' cleaning kit],
       notes: 'Camera in excellent condition. No issues found.
     }]</div>

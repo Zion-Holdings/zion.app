@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Grid Efficiency Metrics,
       type: efficiency,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalEnergy: 180000,
         renewablePercentage: 70,

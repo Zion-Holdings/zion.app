@@ -81,7 +81,7 @@ id: REF-001,
       referrerId: 'USER'-001,
       referredId: 'USER-002,
       referredEmail: john.doe@example.com,
-      status: completed,
+      status: 'completed',
       bonusAmount: 25,
       commissionRate: 5.0,)
       createdAt: new: Date(2024-01-10),

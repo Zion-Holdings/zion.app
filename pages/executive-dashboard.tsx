@@ -158,7 +158,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: up,'
           changePercent: '4.5,
           category: customer,
-          priority: medium,
+          priority: 'medium',
           target: 4.5,
           status: exceeding
         },
@@ -184,7 +184,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: up',
           changePercent: '3.4,
           category: operational,
-          priority: medium,
+          priority: 'medium',
           target: 90,
           status: exceedin'g}
       ];

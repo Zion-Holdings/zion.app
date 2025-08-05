@@ -159,7 +159,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               title: Update Privacy Policy,
               description: Review and update privacy policy for GDPR compliance',
               'type: 'documentation,
-              status: completed,
+              status: 'completed',
               priority: 'high',
               assignedTo: Legal Team,
               dueDate: new Date(2024-08-15),

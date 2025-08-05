@@ -120,7 +120,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         {
           id: 2,
           type: talent,
-          priority: medium,
+          priority: 'medium',
           sender: {
             id: talent'1',
             name: 'Dr. Sarah Chen,
@@ -176,7 +176,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         {
           id: 4,
           type: marketplace,
-          priority: medium,
+          priority: 'medium',
           sender: {
             id: marketplac'e',
             name: 'Zion Marketplace,

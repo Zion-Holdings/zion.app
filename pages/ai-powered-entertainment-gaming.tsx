@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Revenue Optimization System,
       type: revenue-optimization,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalUsers: 4200000,
         engagementRate: 75,

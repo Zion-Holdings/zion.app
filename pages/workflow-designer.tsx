@@ -232,7 +232,7 @@ id: 1,
                   checkReserved: true}}
                 timeout: 15,
                 retryCount: 2,
-                priority: medium,
+                priority: 'medium',
               }
               connections: ['8],
               executionTime: '1.8,

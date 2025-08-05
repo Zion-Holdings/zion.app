@@ -76,7 +76,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       tasks: [
         { id: 1, title: Design System Implementation, description: Create and implement comprehensive design system, status: 'completed, priority: 'high, assignee: Sarah Chen, dueDate: new Date(Date.now() + 86400000), createdAt: new Date(), updatedAt: new Date() },
 { id: 2, title: A'I Integration Testing, description: 'Test and validate AI-powered features, status: in-progress, priority: urgen't, assignee: 'Alex Rodriguez, dueDate: new Date(Date.now() + 172800000), createdAt: new Date(), updatedAt: new Date() },
-    { id: 3, title: 'Performance Optimization, description: 'Optimize application performance and load times, status: todo, priority: medium, assignee: Emma Thompson', dueDate: 'new Date(Date.now() + 259200000), createdAt: new Date(), updatedAt: new Date()}
+    { id: 3, title: 'Performance Optimization, description: 'Optimize application performance and load times, status: todo, priority: 'medium', assignee: Emma Thompson', dueDate: 'new Date(Date.now() + 259200000), createdAt: new Date(), updatedAt: new Date()}
       ],
       documents: [
         { id: 1, name: Project Requirements, type: document, size: 2048576, lastModified: new Date(), createdBy: Sarah Chen, collaborators: [Ale'x Rodriguez, Emma Thompson] },

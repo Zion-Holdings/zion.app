@@ -113,7 +113,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Production CI/CD Pipeline,
       description: Automated deployment pipeline for production environment,
       type: ci-cd,
-      status: completed,
+      status: 'completed',
       environment: 'producti'on,
       duration: '15,
       startTime: new Date(2024-01-20T10:00:00),

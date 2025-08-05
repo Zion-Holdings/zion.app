@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Sentiment Analysis Engine,
       type: sentiment-analysis,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalUsers: 9500000,
         engagementRate: 75,

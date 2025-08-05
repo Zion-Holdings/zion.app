@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Interaction Design System,
       type: interaction-design,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalExperiences: 145,
         userSatisfaction: 93,

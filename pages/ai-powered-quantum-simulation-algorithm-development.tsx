@@ -79,7 +79,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       depth: 12,
       fidelity: 99.8,
       runtime: 45,
-      status: completed,
+      status: 'completed',
       timestamp: 2024-01-15T10:30:00Z}
 }]
   const mockPredictiveModels: PredictiveModel[] = [

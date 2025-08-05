@@ -126,7 +126,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Design User Interface,
       description: Create' responsive and intuitive UI components,
       status: 'completed,
-      priority: medium,
+      priority: 'medium',
       assignee: Emma Thompson,
       dueDate: 2025-02-01,
       estimatedHours: 25,

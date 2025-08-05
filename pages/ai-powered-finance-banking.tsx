@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Risk Modeling Platform,
       type: risk-modeling,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalAssets: 60000000,
         performanceGain: 15,

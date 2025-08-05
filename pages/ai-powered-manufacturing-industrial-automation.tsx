@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Predictive Maintenance Platform,
       type: predictive-maintenance,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalProduction: 48000,
         efficiencyGain: 22,

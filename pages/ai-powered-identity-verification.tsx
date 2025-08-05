@@ -347,7 +347,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 1,
       userId: user123,
       type: comprehensive,
-      status: completed,
+      status: 'completed',
       results: ['
         {
           id: '1,

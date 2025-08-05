@@ -256,7 +256,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       id: 3,
       name: Marketing Automation Platform,
       type: marketing-automation,
-      status: completed,
+      status: 'completed',
       metrics: {
         totalRevenue: 6800000,
         efficiencyGain: 25,

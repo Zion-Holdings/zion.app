@@ -277,35 +277,35 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               id: 1-1',
               'name: 'AI Content Generation,
               type: ai-generation,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
 {
               id: 1-2,
               name: SEO Optimization,
               type: seo-optimization,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
     {
               id: 1-3',
               'name: 'Human Review,
               type: human-review,
-              status: completed,
+              status: 'completed',
               aiAssisted: false
             },
 {
               id: 1-4,
               name: Publishing,
               type: publishing,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
     {
               id: 1-5',
               'name: 'Promotion,
               type: promotion,
-              status: completed,
+              status: 'completed',
               aiAssisted: true}
           ],
           status: 'active',
@@ -319,14 +319,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               id: 2-1,
               name: AI Content Generation,
               type: ai-generation,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
 {
               id: 2-2',
               name: 'Conversion Optimization,
               type: seo-optimization,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
     {
@@ -354,14 +354,14 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               id: 3-1,
               name: AI Content Generation,
               type: ai-generation,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
 {
               id: '3-2,
               'name: 'Engagement Optimization,
               type: seo-optimization,
-              status: completed,
+              status: 'completed',
               aiAssisted: true
             },
     {

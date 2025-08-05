@@ -92,7 +92,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       destination: Node B,
       qubit: Qubit A-1',
       protocol: 'standard,
-      status: completed,
+      status: 'completed',
       fidelity: 96.8,
       duration: 150,
       successRate: 94.2
