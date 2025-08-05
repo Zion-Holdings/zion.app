@@ -37,7 +37,7 @@ const MobileDevelopmentChatPage: NextPage = () => {
                 Expert discussion about mobile development services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>business-strategic • technology-deep-dive • business-strategy</span>
+                <span>trend-analysis • technology-deep-dive • real-world-examples</span>
               </div>
             </div>
           </div>
