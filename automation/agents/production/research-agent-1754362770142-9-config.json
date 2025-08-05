@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754362770142-9",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Why the AI era is forcing a redesign of the entire compute backbone",
+  "status": "Active",
+  "createdAt": "2025-08-05T02:59:30.142Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.8113887374593173,
+    "accuracy": 0.8936240774505411,
+    "reliability": 0.953436954323823,
+    "scalability": 0.8710889969759892
+  },
+  "recommendations": []
+}
