@@ -41,16 +41,16 @@ const mockFacilities: Facility[] = [
     status: 'operational',
     capacity: 500,
     utilization: 85,
-    lastInspection: 2024-01-15,
-    nextInspection: 2024-04-15,
+    lastInspection: '2024-01-15',
+    nextInspection: '2024-04-15',
     energyEfficiency: 92,
     securityScore: 95,
     aiOptimization: {
-      id: 'opt-1,
-      energyScore: '88,
+      id: 'opt-1',
+      energyScore: 88,
       securityScore: 92,
       efficiencyScore: 85,
-      recommendations: [Implement smart lighting system, Upgrade HVAC controls, Add occupancy sensors']
+      recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']
     }
   },
   {

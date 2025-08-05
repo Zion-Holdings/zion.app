@@ -216,7 +216,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: AI-powered momentum trading with real-time market analysis,
       performance: 18.5,
       riskLevel: medium',
-      aiAnalysis: '{
+      aiAnalysis: {
         accuracy: 0.78,
         profitFactor: 2.1,
         maxDrawdown: 0.12,
@@ -228,7 +228,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Automated mean reversion trading with statistical analysis,
       performance: 12.3,
       riskLevel: low',
-      aiAnalysis: '{
+      aiAnalysis: {
         accuracy: 0.72,
         profitFactor: 1.8,
         maxDrawdown: 0.08,
@@ -240,7 +240,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Cross-exchange arbitrage opportunities with AI detection,
       performance: 8.7,
       riskLevel: low',
-      aiAnalysis: '{
+      aiAnalysis: {
         accuracy: 0.85,
         profitFactor: 1.5,
         maxDrawdown: 0.05,

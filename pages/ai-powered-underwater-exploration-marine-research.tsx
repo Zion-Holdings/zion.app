@@ -200,7 +200,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       status: 'active',
       depth: 500,
       dataFrequency: Ever'y' 2 hours,
-      aiAnalysis: '{
+      aiAnalysis: {
         dataQuality: 9.1,
         coverageArea: 72,
         accuracyScore: 9.3,
@@ -238,7 +238,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       type: trench,
       status: planning,
       discovery: 'Deep sea biodiversity mapping',
-      aiAnalysis: '{
+      aiAnalysis: {
         discoveryProbability: 0.92,
         scientificValue: 9.9,
         riskAssessment: 0.4,
@@ -250,7 +250,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       type: coral-reef,
       status: completed,
       discovery: 'New coral species identified,
-      aiAnalysis: '{
+      aiAnalysis: {
         discoveryProbability: 0.95,
         scientificValue: 8.8,
         riskAssessment: 0.2,

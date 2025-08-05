@@ -210,7 +210,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       probability: 65,
       impact: high,
       mitigationStrategies: [Diversify offerings, 'Enhanc'e customer retention],
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         riskScore: 72,
         probabilityScore: 65,

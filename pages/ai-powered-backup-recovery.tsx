@@ -144,7 +144,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       status: 'active,
       rto: '60, // 60 minutes
       rpo: 15, // 15 minutes
-      priority: critical,
+      priority: 'critical',
       aiOptimization: {
         id: 1,
         optimizationScore: 94,
@@ -162,7 +162,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       severity: critical,
       impact: business_critical,
       recoverySteps: [Activat'e' backup systems, Restore from latest backup, Verif'y' data integrity],
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         riskScore: 85,
         impactScore: 92,

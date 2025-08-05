@@ -126,7 +126,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       area: 300,
       healthScore: 7.8,
       yieldPrediction: 78,'
-      aiAnalysis: '{
+      aiAnalysis: {
         growthStage: harvest,
         diseaseRisk: low,'
         nutrientDeficiency: '[],

@@ -55,13 +55,13 @@ interface OptimizationRecommendation {
   status: pending | approved | implemented | 'rejected';
 }
 
-const mockCapacityPlans: 'CapacityPlan[] = [
+const mockCapacityPlans: CapacityPlan[] = [
   {
-    id: plan-1,
-    name: Infrastructure Scaling Plan,
-    type: infrastructure,
+    id: 'plan-1',
+    name: 'Infrastructure Scaling Plan',
+    type: 'infrastructure',
     status: 'active',
-    priority: critical,
+    priority: 'critical',
     startDate: '2024-01-01',
     endDate: '2024-06-30,
     currentCapacity: 80,
@@ -77,7 +77,7 @@ const mockCapacityPlans: 'CapacityPlan[] = [
     status: 'active',
     priority: high,
     startDate: 2024-02-01,
-    endDate: 2024-12-31,
+    endDate: '2024-12-31',
     currentCapacity: 150,
     targetCapacity: 200,
     utilization: 92,
@@ -105,7 +105,7 @@ const mockCapacityPlans: 'CapacityPlan[] = [
     status: draft,
     priority: 'high,
     startDate: '2024-04-01,
-    endDate: 2024-12-31,
+    endDate: '2024-12-31',
     currentCapacity: 2000000,
     targetCapacity: 3000000,
     utilization: 75,
@@ -154,7 +154,7 @@ const mockResourceCapacities: ResourceCapacity[] = [
   {
     id: resource-1,
     'name: 'Production Servers,
-    type: infrastructure,
+    type: 'infrastructure',
     category: Computing,
     currentCapacity: 80,
     maxCapacity: 100,
@@ -199,7 +199,7 @@ const mockOptimizationRecommendations: 'OptimizationRecommendation[] = [
   {
     id: rec-1,
     type: scaling,
-    priority: critical,
+    priority: 'critical',
     title: Scale Server Infrastructure,
     description: Add 20% more server capacity to handle predicted demand increase',
     impact: 'High - Prevents service degradation during peak loads,

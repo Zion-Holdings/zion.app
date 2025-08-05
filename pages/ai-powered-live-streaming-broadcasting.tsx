@@ -100,7 +100,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       quality: 1080p,
       thumbnail: /api/placeholder/400/225',
       tags: '[AI, Machine Learning, Coding, Li've],
-      aiAnalysis: '{
+      aiAnalysis: {
         engagementScore: 8.9,
         contentQuality: 9.2,
         audienceRetention: 87,
@@ -118,7 +118,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       quality: 720p,
       thumbnail: /api/placeholder/400/225,
       tags: [Quantum Computing, Worksh'op, 'Advanced],
-      aiAnalysis: '{
+      aiAnalysis: {
         engagementScore: 7.8,
         contentQuality: 9.5,
         audienceRetention: 92,
@@ -136,7 +136,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       quality: '1080p,
       thumbnail: '/api/placeholder/400/225,
       tags: [Blockchain, Smart Contracts, DA'pp],
-      aiAnalysis: '{
+      aiAnalysis: {
         engagementScore: 0,
         contentQuality: 8.5,
         audienceRetention: 0,

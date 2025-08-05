@@ -138,7 +138,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       sentCount: 15420,
       openedCount: 12336,
       clickedCount: 3084,'
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         engagementScore: 85,
         openRate: 80,

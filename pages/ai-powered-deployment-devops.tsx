@@ -149,7 +149,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       type: scaling,
       status: 'active',
       targetEnvironment: cloud',
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         automationScore: 94,
         efficiencyScore: 89,

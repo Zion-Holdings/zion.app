@@ -149,7 +149,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Launch' event for the new AI-powered marketplace platform,
       'type: 'conference,
       status: upcoming,
-      priority: critical,
+      priority: 'critical',
       startDate: new Date(2024-02-15T10:00:00),
       endDate: new Date(2024-02-15T18:00:00),
       location: Virtual Conference Center,
@@ -191,7 +191,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         satisfactionRate: 88,
         completionRate: 95,
         lastUpdated: new Date('2024-01-20T12:00:00'}
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         successProbability: 94,
         engagementPrediction: 89,
@@ -352,7 +352,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           title: Security' Audit Completion,
           description: 'Complete security audit and compliance review,
           dueDate: new Date(2024-01-28),
-          priority: critical,
+          priority: 'critical',
           status: in-progress,
           assignedTo: Security Team
         },

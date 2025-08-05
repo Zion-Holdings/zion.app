@@ -139,7 +139,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       status: investigating,
       timestamp: new Date(2024-01-20T14:30:00),
       affectedSystems: ['Database Server, We'b Application, 'File Server],
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         threatScore: 85,
         impactScore: 78,
@@ -207,7 +207,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       status: 'active,
       hunter: 'Alex Rodriguez,
       findings: [Suspicious PowerShell activity, Unusual outbound connections, Registry modifications'],'
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         detectionScore: 91,
         accuracyScore: 88,

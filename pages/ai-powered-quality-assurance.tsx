@@ -55,7 +55,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Security Vulnerability Assessment,
       type: security,
       status: running,
-      priority: critical,
+      priority: 'critical',
       description: AI-powered security testing to identify vulnerabilities,
       coverage: 88,
       executionTime: 30,

@@ -67,7 +67,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       complianceRate: 95,
       lastUpdated: new Date(2024-01-15),
       nextReview: new Date(2024-04-15),'
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         complianceScore: 92,
         riskLevel: low,

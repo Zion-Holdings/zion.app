@@ -207,7 +207,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Automate'd' order processing with inventory check and payment processing,
       status: 'active,
       category: business,
-      priority: critical,
+      priority: 'critical',
       steps: [
         {
           id: 3,

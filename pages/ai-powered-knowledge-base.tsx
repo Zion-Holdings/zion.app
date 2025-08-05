@@ -149,7 +149,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       views: 1247,
       helpfulVotes: 89,
       lastUpdated: new Date('2024-01-20T10:00:00),
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         readabilityScore: 92,
         helpfulnessScore: 88,
@@ -237,7 +237,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         successRate: 89,
         dropoffRate: 12,
         lastUpdated: new Date(2024-01-20T12:00:00'}
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         difficultyAssessment: 85,
         engagementScore: 92,

@@ -36,7 +36,7 @@ const TheRiseOfEdgeComputingInIotApplicationsChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • professional-technical • trend-analysis</span>
+              <span>Expert Discussion • innovative-futuristic • technology-deep-dive</span>
             </div>
           </div>
           

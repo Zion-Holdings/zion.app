@@ -146,7 +146,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       language: English,
       duration: 45,
       status: complete'd,
-      aiAnalysis: '{
+      aiAnalysis: {
         accuracy: 0.94,
         languageDetection: 0.98,
         noiseReduction: 0.92,
@@ -178,7 +178,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       speed: 1.0,
       pitch: 1.0,
       status: 'completed,
-      aiAnalysis: '{
+      aiAnalysis: {
         naturalness: 0.94,
         clarity: 0.96,
         emotionDetection: 0.89,

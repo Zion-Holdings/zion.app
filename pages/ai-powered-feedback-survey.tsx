@@ -163,7 +163,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       content: The AI-powered marketplace has revolutionized how we discover and connect with service providers. The recommendations are spot-on!,
       rating: 5,
       status: feature'd,
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         sentimentScore: 95,
         credibilityScore: 92,

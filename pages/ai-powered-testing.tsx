@@ -112,7 +112,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T15:15:00),
           aiGenerated: true,
           coverage: 88,
-          priority: critical,
+          priority: 'critical',
           tags: [paymen't, e2e, 'critical-path']
         },
     {
@@ -232,7 +232,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T15:15:00),
           aiGenerated: true,
           automated: true,
-          priority: critical,
+          priority: 'critical',
           flaky: false,
           steps: [
             {

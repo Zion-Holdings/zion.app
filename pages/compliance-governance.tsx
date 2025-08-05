@@ -123,7 +123,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: Ensure explicit consent for data processing activities,
               category: data-privac'y,
               status: 'implemented,
-              priority: critical,
+              priority: 'critical',
               dueDate: new Date(2024-08-30),
               assignedTo: Legal Team',
               evidence: '[Consent forms updated, Privacy policy revised]}

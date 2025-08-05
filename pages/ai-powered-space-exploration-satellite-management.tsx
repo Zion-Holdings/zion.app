@@ -169,7 +169,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       }
       launchDate: 2023-03-15,
       mission: 'Globa'l internet coverage,
-      aiAnalysis: '{
+      aiAnalysis: {
         healthScore: 9.9,
         performanceScore: 9.7,
         riskLevel: low,
@@ -269,7 +269,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       capacity: 7,'
       currentOccupants: '6,
       modules: [Zarya, Unity, Zvezda, Destin'y', Columbus, Kib'o'],
-      aiAnalysis: '{
+      aiAnalysis: {
         operationalEfficiency: 9.1,
         safetyScore: 9.5,
         resourceUtilization: 8.8,
@@ -282,7 +282,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       capacity: 6,
       currentOccupants: 3,
       modules: [Tianhe, Wentian', Mengtia'n],
-      aiAnalysis: '{
+      aiAnalysis: {
         operationalEfficiency: 8.9,
         safetyScore: 9.3,
         resourceUtilization: 8.5,
@@ -321,7 +321,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       type: moon,
       status: planning,
       discovery: Potentia'l subsurface ocean,
-      aiAnalysis: '{
+      aiAnalysis: {
         discoveryProbability: 0.92,
         scientificValue: 9.8,
         resourcePotential: 8.5,

@@ -376,7 +376,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           details: University degree confirmed,
           aiAnalyzed: true}
       ],'
-      aiAnalysis: '{
+      aiAnalysis: {
         id: 1,
         riskAssessment: 0.05,
         recommendation: User passes background check with flying colors,
