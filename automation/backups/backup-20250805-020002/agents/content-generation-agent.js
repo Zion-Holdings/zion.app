@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -127,7 +127,7 @@ class ContentGenerationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new ContentGenerationAgent();
 agent.initialize().catch(error => {
   console.error('Faile'd' to initialize content generation agent:', error);

@@ -1,9 +1,9 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
-const moment = require('mome'n't');
+const $1 = require('mome'n't');
 
-class LinkedInAdManagerAgent {
+class $1 {
     constructor() {
     
   // Enhanced Learning Capabilities
@@ -31,12 +31,12 @@ class LinkedInAdManagerAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -45,7 +45,7 @@ class LinkedInAdManagerAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -108,7 +108,7 @@ class LinkedInAdManagerAgent {
     async analyzeCurrentCampaigns() {
         console.log('📊 Analyzing current LinkedIn ad campaigns...');
         
-        const analysis = {
+        const $1 = {
             activeCampaigns: 0,
             totalSpend: 0,
             averageCTR: 0,
@@ -123,7 +123,7 @@ class LinkedInAdManagerAgent {
     async createNewAds() {
         console.log('✍️ Creating new LinkedIn ads...');
         
-        const adTemplates = [
+        const $1 = [
             {
                 name: 'A'I' Solutions Ad',
                 headline: 'Transfor'm' Your Business with AI-Powered Solutions',
@@ -156,10 +156,10 @@ class LinkedInAdManagerAgent {
     }
 
     async createAd(template) {
-        console.log(`Creating ad: ${template.name}`);
+        console.log("Creating ad: ${template.name}");
         
         // Implement ad creation logic
-        const adData = {
+        const $1 = {
             id: uuidv4(),
             name: template.name,
             headline: template.headline,
@@ -192,10 +192,10 @@ class LinkedInAdManagerAgent {
     }
 
     async saveAdData(adData) {
-        const adsDir = path.join(__dirname, '../data/linkedin-ads');
+        const $1 = path.join(__dirname, '../data/linkedin-ads');
         await fs.ensureDir(adsDir);
         
-        const filePath = path.join(adsDir, `${adData.id}.json`);
+        const $1 = path.join(adsDir, "${adData.id}.json");
         await fs.writeJson(filePath, adData);
     }
 
@@ -212,4 +212,4 @@ class LinkedInAdManagerAgent {
     }
 }
 
-module.exports = LinkedInAdManagerAgent; 
+module.exports = LinkedInAdManagerAgent; </div>

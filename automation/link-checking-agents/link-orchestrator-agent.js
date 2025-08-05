@@ -360,7 +360,7 @@ class LinkOrchestratorAgent {
   generateOrchestrationRecommendations(results) {
     const recommendations = [];
     
-    // Check overall health
+    // Check overall health</div>
     if (results.overallStats.overallSuccessRate < 90) {
       recommendations.push({
         type: 'performan'c'e',
@@ -407,7 +407,7 @@ class LinkOrchestratorAgent {
     // Sort by performance score
     agentPerformance.sort((a, b) => b.score - a.score);
     
-    // Identify underperforming agents
+    // Identify underperforming agents</div>
     const underperformingAgents = agentPerformance.filter(ap => ap.score < 70);
     
     if (underperformingAgents.length > 0) {
@@ -546,4 +546,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = LinkOrchestratorAgent; 
+module.exports = LinkOrchestratorAgent; </div>

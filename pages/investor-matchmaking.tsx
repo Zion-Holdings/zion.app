@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
 import Link from next/link";
 
 interface Investor {
@@ -25,7 +25,7 @@ interface StartupProfile {
   teamSize: string
   fundingNeeded: string
   pitchSummary: string
-  website: string}
+  website: string};
 const InvestorMatchmakingPage: NextPage = () => {
   const [startupProfile, setStartupProfile] = useState<StartupProfile>({
     name: '',
@@ -35,10 +35,10 @@ const InvestorMatchmakingPage: NextPage = () => {
     teamSize: '',
     fundingNeeded: ,
     pitchSummary: '',
-    website: }}
+    website: }}</div>
   const [investors, setInvestors] = useState<Investor[]>([]
   const [isLoading, setIsLoading] = useState(false
-  const [showForm, setShowForm] = useState(true'
+  const [showForm, setShowForm] = useState(true'</div>
   const [selectedInvestor, setSelectedInvestor] = useState<Investor | null>(null
   const [pitchEmail, setPitchEmail] = useState(
   const $1 = [
@@ -182,288 +182,288 @@ Best regards,`
     if (score >= 80) return Great' Match
     if (score >= 70) return 'Good Match
     return 'Fai'r Match}
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive" py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive" py-8">
         "
-        {/* Background Effects */}
-        <div className=fixed" inset-0 z-0> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>Investor Matchmaking - Zion</title>
-        <meta name="description content=Connect with the right investors for your startup using AI-powered matchmaking > </meta name=description" content="Connect with the right investors for your startup using AI-powered matchmaking ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>
-          <div className=flex  justify-between items-center>
-            <Link href=/ className="text-2xl" font-bold text-white > 
-              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>
-            <div className=flex" items-center space-x-4>
-              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
-              <Link href=/services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Services
-              </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link> </div>
-          </div>
-        </div>
-      </div>
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-32>
-        {/* Hero Section */}
-        </div><div className="text-center  mb-12>
-          <h1 className=text-4xl" md text-6xlfont-bold text-white mb-6 >
-            AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span>
-          </h1>
-          <p className=text-xl" text-gray-300 max-w-3xl mx-auto">
-            Connect with the perfect investors for your startup using our intelligent matching algorithm
-          </p>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0"> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>Investor Matchmaking - Zion</title></div>
+        <meta name="description" content="Connect with the right investors for your startup using AI-powered matchmaking > </meta name=description" content="Connect with the right investors for your startup using AI-powered matchmaking ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+      {/* Header */}</div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6></div>
+          <div className="flex  justify-between items-center"></div>
+            <Link href=/ className="text-2xl" font-bold text-white > </div>
+              </Link href=/ className=" text-2xl font-bold text-white "><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+            </Link></div>
+            <div className="flex" items-center space-x-4"></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link></div>
+              <Link href=/services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Services</div>
+              </Link href=/services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link> </div></div>
+          </div></div>
+        </div>"</div>
+      </div>"</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-32">
+        {/* Hero Section */}</div>
+        </div><div className="text-center  mb-12>"</div>
+          <h1 className="text-4xl" md text-6xlfont-bold text-white mb-6 "></div>
+            AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Investor Matchmaking</span>"</div>
+          </h1>"</div>
+          <p className="text-xl" text-gray-300 max-w-3xl mx-auto"">
+            Connect with the perfect investors for your startup using our intelligent matching algorithm</div>
+          </p></div>
         </div>
 
         {showForm ? (
-          /* Startup Profile Form */
-          <div className=max-w-4xl:mx-auto>" 
-            </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>
-              <h2 className=text-2xl" font-bold text-white mb-6>Tell Us About Your Startup</h2>
-              <form onSubmit={handleProfileSubmit} className="space-y-6>
-                <div className="grid" grid-cols-1 md grid-cols-2 gap-6> 
-                  </div><div>
-                    <label className=block text-sm font-medium text-gray-300 mb-2>
-                      Startup Name *
+          /* Startup Profile Form */</div>
+          <div className="max-w-4xl:mx-auto">" </div>
+            </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>"</div>
+              <h2 className="text-2xl" font-bold text-white mb-6">Tell Us About Your Startup</h2></div>
+              <form onSubmit={handleProfileSubmit} className="space-y-6>"</div>
+                <div className="grid" grid-cols-1 md grid-cols-2 gap-6> </div>
+                  </div><div></div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Startup Name *</div>
                     </label>
                     
                       onChange={(e) => setStartupProfile({...startupProfile, name: e.target.value})}
                       className="w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
                       placeholder=Enter your startup name
-                    />
+                    /></div>
                   </div>
-
-                  <div>
-                    <label className=block text-sm font-medium text-gray-300 mb-2>
-                      Industry *
+</div>
+                  <div></div>
+                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                      Industry *</div>
                     </label> 
                       onChange={(e) => setStartupProfile({...startupProfile, industry  e.target.value})}
-                      className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500">
+                      className="w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500"></div>
                       <option value=>Select Industry</option>
-                      {industries.map(industry => (
+                      {industries.map(industry => (</div>
                         <option key={industry} value={industry}>{industry}</option>
-                      ))}
-                    </select>
+                      ))}</div>
+                    </select></div>
                   </div>
-
-                  <div>
-                    <label className=block" text-sm font-medium text-gray-300  mb-2>
-                      Development Stage *
+</div>
+                  <div></div>
+                    <label className="block" text-sm font-medium text-gray-300  mb-2">
+                      Development Stage *</div>
                     </label>"
                     
                       onChange={(e) => setStartupProfile({...startupProfile, stage  e.target.value})}
                       className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus" ring-purple-500
-                    >
+                    ></div>
                       <option value=>Select Stage</option>
-                      {stages.map(stage => (
+                      {stages.map(stage => (</div>
                         <option key={stage} value={stage}>{stage}</option>
-                      ))}
-                    </select>
+                      ))}</div>
+                    </select></div>
                   </div>
-
-                  <div">
-                    <label className=block text-sm font-medium text-gray-300  mb-2>
-                      Location
+</div>
+                  <div"></div>
+                    <label className="block text-sm font-medium text-gray-300  mb-2">
+                      Location</div>
                     </label>"
                     "
                       onChange={(e) => setStartupProfile({...startupProfile, location  e.target.value})}
                       className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
                       placeholder=City, State/Country
-                    />
+                    /></div>
                   </div>
-
-                  <div>
-                    <label className=block" text-sm font-medium text-gray-300 mb-2>
-                      Team Size
+</div>
+                  <div></div>
+                    <label className="block" text-sm font-medium text-gray-300 mb-2">
+                      Team Size</div>
                     </label>
                       onChange={(e) => setStartupProfile({...startupProfile, teamSize  e.target.value})}
                       className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500
-                    >
+                    ></div>
                       <option value=>Select Team Size</option>
-                      {teamSizes.map(size => (
+                      {teamSizes.map(size => (</div>
                         <option key={size} value={size}>{size} people</option>
-                      ))}
-                    </select>
+                      ))}</div>
+                    </select></div>
                   </div>
-
-                  <div>
+"</div>
+                  <div>"</div>
                     <label className="block" text-sm font-medium text-gray-300  mb-2>
-                      Funding Needed *
+                      Funding Needed *</div>
                     </label>
                     
                       onChange={(e) => setStartupProfile({...startupProfile, fundingNeeded  e.target.value})}
                       className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus" ring-purple-500
-                    >
+                    ></div>
                       <option value=>Select Funding Range</option>
-                      {fundingRanges.map(range => (
+                      {fundingRanges.map(range => (</div>
                         <option key={range} value={range}>{range}</option>
-                      ))}
-                    </select>
-                  </div>
+                      ))}</div>
+                    </select></div>
+                  </div></div>
                 </div>
-
-                <div>
-                  <label className=block" text-sm font-medium text-gray-300  mb-2>
-                    Website
+</div>
+                <div></div>
+                  <label className="block" text-sm font-medium text-gray-300  mb-2">
+                    Website</div>
                   </label>"
                   
                     onChange={(e) => setStartupProfile({...startupProfile, website  e.target.value})}
                     className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500
                     placeholder=https://yourstartup.com
-                  />
+                  /></div>
                 </div>
-
-                <div>
+</div>
+                <div></div>
                   <label className="block" text-sm font-medium text-gray-300 mb-2>
-                    Pitch Summary *
+                    Pitch Summary *</div>
                   </label>
                     onChange={(e) => setStartupProfile({...startupProfile, pitchSummary  e.target.value})}
                     className= w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500''
                     placeholder=Briefly describe your startup, problem youre' solving, and your unique value proposition...
-                  />
+                  /></div>
                 </div>
-
-                <div className=flex" justify-center>
+</div>
+                <div className="flex" justify-center">
                   '
                   >
-                    {isLoading ? Finding' Investors...'   Find' Investors'}
-                  </button>
-                </div>
-              </form>
-            </div>
+                    {isLoading ? Finding' Investors...'   Find' Investors'}</div>
+                  </button></div>
+                </div></div>
+              </form></div>
+            </div></div>
           </div>
         )   ( 
-          /* Investor Results */
-          <div className="space-y-8>
-            </div><div className=flex" justify-between items-center>
-              <h2 className="text-2xl font-bold text-white>Matched Investors</h2>
-                onClick={() => setShowForm(true)}
+          /* Investor Results */</div>
+          <div className="space-y-8>"</div>
+            </div><div className="flex" justify-between items-center"></div>
+              <h2 className="text-2xl font-bold text-white>Matched Investors</h2>"
+                onClick={() => setShowForm(true)}"
                 className=px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white hover:bg-white/20
               >
-                Update Profile
-              </button>
-            </div>
-            <div className="grid grid-cols-1 lg grid-cols-2 gap-6 >
-              {investors.map((investor) => (
-                </div><div key={investor.id} className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                  <div className="flex justify-between items-start mb-4> 
-                    </div><div>
-                      <h3 className=text-xl" font-semibold text-white>{investor.name}</h3>
-                      <p className="text-purple-400>{investor.company}</p>
-                    </div>`
-                    <div className=text-right>``"
+                Update Profile</div>
+              </button></div>
+            </div></div>
+            <div className="grid grid-cols-1 lg grid-cols-2 gap-6 >"
+              {investors.map((investor) => ("</div>
+                </div><div key={investor.id} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10"></div>
+                  <div className="flex justify-between items-start mb-4> "</div>
+                    </div><div>"</div>
+                      <h3 className="text-xl" font-semibold text-white">{investor.name}</h3></div>
+                      <p className="text-purple-400>{investor.company}</p>"</div>
+                    </div>`"</div>
+                    <div className="text-right">``"</div>
                       </div><div className="{`text-lg font-bold ${getMatchScoreColor(investor.matchScore)}`}>
-                        {investor.matchScore}% 
-                      </div>
-                      <div className=text-sm:text-gray-400>{getMatchScoreText(investor.matchScore)}</div>"
-                    </div>
+                        {investor.matchScore}% "</div>
+                      </div>"</div>
+                      <div className="text-sm:text-gray-400">{getMatchScoreText(investor.matchScore)}</div>"</div>
+                    </div></div>
                   </div>
-
-                  <p className="text-gray-300 mb-4 >{investor.description}</p>
-
-                  <div className=space-y-2 mb-4"> 
-                    </div><div className="flex items-center text-sm>
-                      <span className=text-gray-400" w-20>Industries:</span>
-                      <span className="text-white>{investor.industry.join(, ')}</span>
-                    </div>
-                    <div className=flex items-center" text-sm>'
-                      <span className="text-gray-400 w-20>Stages </span>
-                      <span className=text-white>{investor.investmentStage.join('," ')}</span>
-                    </div>
-                    <div className="flex items-center text-sm>
-                      <span className=text-gray-400" w-20>Investment </span>
-                      <span className="text-white>{investor.investmentRange}</span>
-                    </div>
-                    <div className=flex items-center" text-sm>
-                      <span className="text-gray-400 w-20>Location:</span>
-                      <span className=text-white>{investor.location}</span>"
-                    </div> 
-                  </div>
-                  <div className="mb-4>
-                    <p className=text-sm:text-gray-400" mb-2>Why this match </p>
-                    <p className="text-sm:text-white>{investor.reason}</p>
-                  </div>
- 
-                  <div className=flex" space-x-3>
+</div>
+                  <p className="text-gray-300 mb-4 >{investor.description}</p>"
+"</div>
+                  <div className="space-y-2 mb-4""> </div>
+                    </div><div className="flex items-center text-sm>"</div>
+                      <span className="text-gray-400" w-20">Industries:</span></div>
+                      <span className="text-white>{investor.industry.join(, ')}</span>"</div>
+                    </div>"</div>
+                    <div className="flex items-center" text-sm">'</div>
+                      <span className="text-gray-400 w-20>Stages </span>"</div>
+                      <span className="text-white">{investor.investmentStage.join('," ')}</span></div>
+                    </div></div>
+                    <div className="flex items-center text-sm>"</div>
+                      <span className="text-gray-400" w-20">Investment </span></div>
+                      <span className="text-white>{investor.investmentRange}</span>"</div>
+                    </div>"</div>
+                    <div className="flex items-center" text-sm"></div>
+                      <span className="text-gray-400 w-20>Location:</span>"</div>
+                      <span className="text-white">{investor.location}</span>"</div>
+                    </div> </div>
+                  </div></div>
+                  <div className="mb-4>"</div>
+                    <p className="text-sm:text-gray-400" mb-2">Why this match </p></div>
+                    <p className="text-sm:text-white>{investor.reason}</p></div>
+                  </div>"
+ "</div>
+                  <div className="flex" space-x-3">
                     "
                       onClick={() => generatePitchEmail(investor)}
                       className=flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover from-purple-700 hover to-pink-700
                     >
-                      Generate Pitch Email
+                      Generate Pitch Email</div>
                     </button>
                     
                     >
-                      Visit Website
-                    </Link>
-                  </div>
+                      Visit Website</div>
+                    </Link></div>
+                  </div></div>
                 </div>
-              ))}
+              ))}</div>
             </div>
-            {investors.length === 0 && (
-              <div className=" text-center" py-32>
-                <p className=text-gray-400 text-lg>No investors matched your criteria. Try updating your profile.</p>
+            {investors.length === 0 && (</div>
+              <div className=" text-center" py-32></div>
+                <p className="text-gray-400 text-lg">No investors matched your criteria. Try updating your profile.</p></div>
               </div>
-            )}
+            )}</div>
           </div>
         )}
         {/* Pitch Email Modal */},"
-{selectedInvestor && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > 
-            </div><div className=bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh]" overflow-y-auto>
-              <div className="flex justify-between items-center mb-4>
-                <h3 className=text-xl" font-semibold text-white>
-                  Pitch Email to {selectedInvestor.name}
+{selectedInvestor && (</div>
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50 > "</div>
+            </div><div className="bg-white/10 backdrop-blur-md rounded-xl p-6 max-w-2xl w-full max-h-[80vh]" overflow-y-auto"></div>
+              <div className="flex justify-between items-center mb-4>"</div>
+                <h3 className="text-xl" font-semibold text-white">
+                  Pitch Email to {selectedInvestor.name}</div>
                 </h3>
                 
                   onClick={() => setSelectedInvestor(null)}
                   className="text-gray-400 hover text-white 
                 >
-                  ✕
-                </button>
+                  ✕</div>
+                </button></div>
               </div>
-                onChange={(e) => setPitchEmail(e.target.value)}
-                rows={15}
+                onChange={(e) => setPitchEmail(e.target.value)}"
+                rows={15}"
                 className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500" mb-4
               />
-              
-              <div className= flex" space-x-3>
+              </div>
+              <div className=" flex" space-x-3">
                   onClick={() => {
                     navigator.clipboard.writeText(pitchEmail"
                     alert(Emai'l' copied to clipboard!
                   }}
                   className=px-4" py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg:hover:from-purple-700 hover:to-pink-700
                 >
-                  Copy to Clipboard
+                  Copy to Clipboard</div>
                 </button>
                 
                 >
-                  Open in Email Client
+                  Open in Email Client</div>
                 </Link>
                 
                   onClick={() => setSelectedInvestor(null)}
                   className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg:hover bg-white/20 >
-                  Close
-                </button>
-              </div>
-            </div>
+                  Close</div>
+                </button></div>
+              </div></div>
+            </div></div>
           </div>
-        )}
-      </div>
+        )}</div>
+      </div></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
-};
-'`
-export default InvestorMatchmakingPage ))))))))))))))))))))"'"'`
+};"
+'`";}
+export default InvestorMatchmakingPage ))))))))))))))))))))"'"'`</div>

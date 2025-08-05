@@ -618,7 +618,7 @@ class IntelligentEvolutionTracker {
     
     Object.entries(this.evolutionTracks).forEach(([trackKey, track]) => {
       const progress = this.calculateTrackProgress(track);
-      
+      </div>
       if (progress < 25) {
         recommendations.push(`Accelerate ${trackKey} evolution through enhanced metrics collection`);
       } else if (progress < 50) {

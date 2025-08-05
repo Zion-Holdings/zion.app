@@ -202,11 +202,11 @@ Generate a complete Next.js page that represents the next evolution in web conte
   generateFallbackEvolvedContent(pageData, variation) {
     const pageType = this.determineEvolvedPageType(pageData.url);
     
-    return `
-import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `;}
+import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import { useState, useEffect } from 'rea'c't'
-
+;
 const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState(null);
@@ -217,48 +217,48 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Zion Tech Group</title>
-        <meta name="description" content="Evolved ${pageType} page with innovative features" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Zion Tech Group</title></div>
+        <meta name="description" content="Evolved ${pageType} page with innovative features" /></div>
       </Head>
-
-      <main className="relative">
+</div>
+      <main className="relative"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24"></div>
+          <div className="text-center"></div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-              </span>
+                ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</div>
+              </span></div>
             </h1>
-            
-            <div className="mt-8">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
+            </div>
+            <div className="mt-8"></div>
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20"></div>
                 <h2 className="text-2xl font-semibold text-white mb-4">
-                  ${variation.style ? variation.style.charAt(0).toUpperCase() + variation.style.slice(1) : 'Innovati'v'e'} ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                </h2>
+                  ${variation.style ? variation.style.charAt(0).toUpperCase() + variation.style.slice(1) : 'Innovati'v'e'} ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</div>
+                </h2></div>
                 <p className="text-gray-300 text-lg">
-                  This is an evolved page with ${variation.features || 'advanc'e'd'} features and ${variation.layout || 'mode'r'n'} layout.
+                  This is an evolved page with ${variation.features || 'advanc'e'd'} features and ${variation.layout || 'mode'r'n'} layout.</div>
                 </p>
                 
-                {isLoaded && data && (
-                  <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30">
+                {isLoaded && data && (</div>
+                  <div className="mt-6 p-4 bg-green-500/20 rounded-lg border border-green-500/30"></div>
                     <p className="text-green-400 font-medium">
-                      ✓ Evolved content loaded successfully
-                    </p>
+                      ✓ Evolved content loaded successfully</div>
+                    </p></div>
                   </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+                )}</div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
     `;
   }
@@ -372,4 +372,4 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
   }
 }
 
-module.exports = EvolvedContentGenerator; 
+module.exports = EvolvedContentGenerator; </div>

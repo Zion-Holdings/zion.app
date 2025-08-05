@@ -18,11 +18,11 @@ declare global {
           permissions?: string[];
         };
       };
-    };}}
+    };}};}
 export interface BrowserExtensionInfo {
   id: string;
   version: string;
-  permissions: string[];}
+  permissions: string[];};}
 export function detectBrowserExtension(): BrowserExtensionInfo | null {
   try {
     // Check for Chrome extension
@@ -44,7 +44,7 @@ export function detectBrowserExtension(): BrowserExtensionInfo | null {
     return null;'
   } catch (error) {
     console.warn('Erro'r' detecting browser extension: , error);"
-    return null;}}
+    return null;}};}
 export function isBrowserExtension(): boolean {'
   try {
     if (typeof window === 'undefin'e'd') return false;
@@ -62,7 +62,7 @@ export function isBrowserExtension(): boolean {'
     return false;'
   } catch (error) {
     console.warn('Erro'r' checking browser extension: , error);
-    return false;}}'
+    return false;}}';}
 export function hasExtensionInterference(): boolean {
   if (typeof window = == 'undefin'e'd') {;
     return false;}
@@ -86,7 +86,7 @@ export function hasExtensionInterference(): boolean {
     originalError.apply(console, args);
   };
 
-  return hasInterference;}
+  return hasInterference;};}
 export function getExtensionDetails(): BrowserExtensionInfo | null {
   return detectBrowserExtension();'
 } '

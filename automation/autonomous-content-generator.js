@@ -1,8 +1,8 @@
-const ContentGenerator = require('./content-generator');
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('./content-generator');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AutonomousContentGenerator {
+class $1 {
   constructor() {
     this.projectRoot = process.cwd();
     // Check if we'r'e' in the automation directory and adjust path accordingly
@@ -16,9 +16,9 @@ class AutonomousContentGenerator {
 
   getLastGenerationTime() {
     try {
-      const timeFile = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
       if (fs.existsSync(timeFile)) {
-        const data = JSON.parse(fs.readFileSync(timeFile, 'ut'f'8'));
+        const $1 = JSON.parse(fs.readFileSync(timeFile, 'ut'f'8'));
         return new Date(data.lastGeneration);
       }
     } catch (error) {
@@ -28,8 +28,8 @@ class AutonomousContentGenerator {
   }
 
   updateLastGenerationTime() {
-    const timeFile = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
-    const data = {
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
+    const $1 = {
       lastGeneration: new Date().toISOString(),
       version: '1.0.0'
     };
@@ -37,8 +37,8 @@ class AutonomousContentGenerator {
   }
 
   shouldGenerateContent() {
-    const now = new Date();
-    const timeSinceLastGeneration = now.getTime() - this.lastGenerationTime.getTime();
+    const $1 = new Date();
+    const $1 = now.getTime() - this.lastGenerationTime.getTime();
     return timeSinceLastGeneration >= this.generationInterval;
   }
 
@@ -58,7 +58,7 @@ class AutonomousContentGenerator {
   }
 
   async generateDynamicMarketplaceContent() {
-    const marketplaceData = {
+    const $1 = {
       services: [
         {
           id: 'ai-development'-'001',
@@ -145,35 +145,35 @@ class AutonomousContentGenerator {
       ]
     };
 
-    const contentPath = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
+    const $1 = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
     if (!fs.existsSync(contentPath)) {
       fs.mkdirSync(contentPath, { recursive: true });
     }
 
     // Generate marketplace API endpoint
-    const apiContent = `
+    const $1 = ";}
 export default function handler(req, res) {
   if (req.method === 'G'E'T') {
     res.status(200).json(${JSON.stringify(marketplaceData, null, 2)});
   } else {
     res.setHeader('All'o'w', ['G'E'T']);
-    res.status(405).end(\`Method \${req.method} Not Allowed\`);
+    res.status(405).end(\"Method \${req.method} Not Allowed\");
   }
 }
-`;
+";
 
-    const apiFile = path.join(contentPath, 'marketplac'e'.js');
+    const $1 = path.join(contentPath, 'marketplac'e'.js');
     fs.writeFileSync(apiFile, apiContent);
     console.log('✅ Generated dynamic marketplace API');
   }
 
   async generateDynamicBlogContent() {
-    const blogPosts = [
+    const $1 = [
       {
         id: 'ai-marketplace-futu'r'e',
         title: 'Th'e' Future of AI-Powered Marketplaces',
         excerpt: 'Discove'r' how AI is revolutionizing the way businesses connect with service providers and access cutting-edge technology solutions.',
-        content: `
+        content: "
 # The Future of AI-Powered Marketplaces
 
 The landscape of digital marketplaces is undergoing a revolutionary transformation, driven by artificial intelligence and advanced matching algorithms. Zion is at the forefront of this evolution, creating a platform that not only connects businesses with service providers but does so with unprecedented precision and efficiency.
@@ -215,7 +215,7 @@ As we continue to evolve, Zion will introduce:
 - **Mobile Optimization**: Seamless experience across all devices
 
 The future of AI-powered marketplaces is here, and Zion is leading the charge toward a more connected, efficient, and secure digital economy.
-        `,
+        ",
         author: 'Zio'n' Team',
         publishDate: '2025-01-27',
         tags: ['A'I', 'Marketpla'c'e', 'Technolo'g'y', 'Innovati'o'n'],
@@ -225,7 +225,7 @@ The future of AI-powered marketplaces is here, and Zion is leading the charge to
         id: 'blockchain-transactio'n's',
         title: 'Secur'e' Blockchain Transactions in Modern Marketplaces',
         excerpt: 'Lear'n' how blockchain technology is ensuring secure, transparent, and efficient transactions in the digital marketplace.',
-        content: `
+        content: "
 # Secure Blockchain Transactions in Modern Marketplaces
 
 In today's' digital economy, security and transparency are paramount. Zion leverages blockchain technology to create a marketplace where every transaction is secure, verifiable, and efficient.
@@ -284,7 +284,7 @@ Zion is continuously improving its blockchain implementation:
 - **NFT Marketplaces**: Digital asset trading and ownership verification
 
 The combination of AI-powered matching and blockchain security creates a marketplace that is not only efficient but also trustworthy and secure.
-        `,
+        ",
         author: 'Zio'n' Team',
         publishDate: '2025-01-26',
         tags: ['Blockcha'i'n', 'Securi't'y', 'Transactio'n's', 'Technolo'g'y'],
@@ -292,190 +292,190 @@ The combination of AI-powered matching and blockchain security creates a marketp
       }
     ];
 
-    const blogPath = path.join(this.projectRoot, 'pag'e's', 'bl'o'g');
+    const $1 = path.join(this.projectRoot, 'pag'e's', 'bl'o'g');
     if (!fs.existsSync(blogPath)) {
       fs.mkdirSync(blogPath, { recursive: true });
     }
 
     // Generate blog index page
-    const blogIndexContent = `
-import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    const $1 = ";}
+import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
+;
+const $1: NextPage = () => {
+  const $1 = ${JSON.stringify(blogPosts, null, 2)};
 
-const Blog: NextPage = () => {
-  const posts = ${JSON.stringify(blogPosts, null, 2)};
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>Blog - Zion</title>
-        <meta name="description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>Blog - Zion</title></div>
+        <meta name="description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </Link>
-            </div>
-            <div className="flex items-center space-x-8">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white"></div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+              </Link></div>
+            </div></div>
+            <div className="flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium">
-                Blog
-              </Link>
+                Blog</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Login
-              </Link>
-            </div>
-          </div>
-        </div>
+                Login</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center">
+      {/* Hero Section */}</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <div className="text-center"></div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Zion
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Blog</span>
-          </h1>
+            Zion</div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Blog</span></div>
+          </h1></div>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation
-          </p>
-        </div>
+            Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation</div>
+          </p></div>
+        </div></div>
       </div>
 
-      {/* Blog Posts */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Blog Posts */}</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {posts.map((post) => (
-            <article key={post.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
-              <div className="mb-4">
+          {posts.map((post) => (</div>
+            <article key={post.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"></div>
+              <div className="mb-4"></div>
                 <div className="flex items-center space-x-2 mb-2">
-                  {post.tags.map((tag) => (
+                  {post.tags.map((tag) => (</div>
                     <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
-                      {tag}
+                      {tag}</div>
                     </span>
-                  ))}
-                </div>
-                <h2 className="text-xl font-semibold text-white mb-2">{post.title}</h2>
-                <p className="text-gray-300 text-sm mb-4">{post.excerpt}</p>
-              </div>
-              <div className="flex items-center justify-between text-sm text-gray-400">
-                <span>{post.author}</span>
-                <span>{post.readTime}</span>
-              </div>
-              <Link href={\`/blog/\${post.id}\`} className="mt-4 inline-block text-purple-400 hover:text-purple-300">
-                Read More →
-              </Link>
+                  ))}</div>
+                </div></div>
+                <h2 className="text-xl font-semibold text-white mb-2">{post.title}</h2></div>
+                <p className="text-gray-300 text-sm mb-4">{post.excerpt}</p></div>
+              </div></div>
+              <div className="flex items-center justify-between text-sm text-gray-400"></div>
+                <span>{post.author}</span></div>
+                <span>{post.readTime}</span></div>
+              </div></div>
+              <Link href={\"/blog/\${post.id}\"} className="mt-4 inline-block text-purple-400 hover:text-purple-300">
+                Read More →</div>
+              </Link></div>
             </article>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </div>
   )
 }
-
+;}
 export default Blog
-`;
+";
 
-    const blogIndexFile = path.join(blogPath, 'inde'x'.tsx');
+    const $1 = path.join(blogPath, 'inde'x'.tsx');
     fs.writeFileSync(blogIndexFile, blogIndexContent);
     console.log('✅ Generated blog index page');
 
     // Generate individual blog post pages
     blogPosts.forEach(post => {
-      const postContent = `
-import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+      const $1 = ";}
+import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
+;
+const $1: NextPage = () => {
+  const $1 = ${JSON.stringify(post, null, 2)};
 
-const BlogPost: NextPage = () => {
-  const post = ${JSON.stringify(post, null, 2)};
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>{post.title} - Zion Blog</title>
-        <meta name="description" content={post.excerpt} />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>{post.title} - Zion Blog</title></div>
+        <meta name="description" content={post.excerpt} /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </Link>
-            </div>
-            <div className="flex items-center space-x-8">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white"></div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+              </Link></div>
+            </div></div>
+            <div className="flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/blog" className="text-white px-3 py-2 rounded-md text-sm font-medium">
-                Blog
-              </Link>
+                Blog</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Login
-              </Link>
-            </div>
-          </div>
-        </div>
+                Login</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Article */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <article className="prose prose-invert prose-lg max-w-none">
-          <div className="mb-8">
+      {/* Article */}</div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <article className="prose prose-invert prose-lg max-w-none"></div>
+          <div className="mb-8"></div>
             <div className="flex items-center space-x-2 mb-4">
-              {post.tags.map((tag) => (
+              {post.tags.map((tag) => (</div>
                 <span key={tag} className="px-3 py-1 bg-purple-500/20 text-purple-300 text-sm rounded-full">
-                  {tag}
+                  {tag}</div>
                 </span>
-              ))}
-            </div>
-            <h1 className="text-4xl font-bold text-white mb-4">{post.title}</h1>
-            <div className="flex items-center space-x-4 text-gray-400 text-sm">
-              <span>{post.author}</span>
-              <span>•</span>
-              <span>{post.publishDate}</span>
-              <span>•</span>
-              <span>{post.readTime}</span>
-            </div>
+              ))}</div>
+            </div></div>
+            <h1 className="text-4xl font-bold text-white mb-4">{post.title}</h1></div>
+            <div className="flex items-center space-x-4 text-gray-400 text-sm"></div>
+              <span>{post.author}</span></div>
+              <span>•</span></div>
+              <span>{post.publishDate}</span></div>
+              <span>•</span></div>
+              <span>{post.readTime}</span></div>
+            </div></div>
           </div>
-          
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10">
+          </div>
+          <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10"></div>
             <div className="prose prose-invert prose-lg max-w-none">
-              {post.content.split('\\n').map((paragraph, index) => (
+              {post.content.split('\\n').map((paragraph, index) => (</div>
                 <p key={index} className="text-gray-300 mb-4">
-                  {paragraph}
+                  {paragraph}</div>
                 </p>
-              ))}
-            </div>
-          </div>
-        </article>
-      </div>
+              ))}</div>
+            </div></div>
+          </div></div>
+        </article></div>
+      </div></div>
     </div>
   )
 }
-
+;}
 export default BlogPost
-`;
+";
 
-      const postFile = path.join(blogPath, `${post.id}.tsx`);
+      const $1 = path.join(blogPath, "${post.id}.tsx");
       fs.writeFileSync(postFile, postContent);
     });
     console.log('✅ Generated individual blog post pages');
   }
 
   async generateDynamicServiceContent() {
-    const serviceCategories = [
+    const $1 = [
       {
         id: 'ai-developme'n't',
         name: 'A'I' Development',
@@ -530,94 +530,94 @@ export default BlogPost
       }
     ];
 
-    const servicesPath = path.join(this.projectRoot, 'pag'e's', 'servic'e's');
+    const $1 = path.join(this.projectRoot, 'pag'e's', 'servic'e's');
     if (!fs.existsSync(servicesPath)) {
       fs.mkdirSync(servicesPath, { recursive: true });
     }
 
     // Generate services index page
-    const servicesIndexContent = `
-import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    const $1 = ";}
+import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
+;
+const $1: NextPage = () => {
+  const $1 = ${JSON.stringify(serviceCategories, null, 2)};
 
-const Services: NextPage = () => {
-  const categories = ${JSON.stringify(serviceCategories, null, 2)};
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>Services - Zion</title>
-        <meta name="description" content="Comprehensive IT services, AI development, cloud solutions, and blockchain technology" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>Services - Zion</title></div>
+        <meta name="description" content="Comprehensive IT services, AI development, cloud solutions, and blockchain technology" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </Link>
-            </div>
-            <div className="flex items-center space-x-8">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <Link href="/" className="text-2xl font-bold text-white"></div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+              </Link></div>
+            </div></div>
+            <div className="flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/services" className="text-white px-3 py-2 rounded-md text-sm font-medium">
-                Services
-              </Link>
+                Services</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Login
-              </Link>
-            </div>
-          </div>
-        </div>
+                Login</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center">
+      {/* Hero Section */}</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+        <div className="text-center"></div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Our
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Services</span>
-          </h1>
+            Our</div>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Services</span></div>
+          </h1></div>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Comprehensive IT solutions powered by cutting-edge technology and expert teams
-          </p>
-        </div>
+            Comprehensive IT solutions powered by cutting-edge technology and expert teams</div>
+          </p></div>
+        </div></div>
       </div>
 
-      {/* Service Categories */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Service Categories */}</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {categories.map((category) => (
-            <div key={category.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-white mb-4">{category.name}</h3>
-              <p className="text-gray-300 mb-6">{category.description}</p>
+          {categories.map((category) => (</div>
+            <div key={category.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:border-purple-500/50 transition-all duration-300"></div>
+              <h3 className="text-2xl font-semibold text-white mb-4">{category.name}</h3></div>
+              <p className="text-gray-300 mb-6">{category.description}</p></div>
               <div className="space-y-2">
-                {category.services.map((service, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                    <span className="text-gray-300">{service}</span>
+                {category.services.map((service, index) => (</div>
+                  <div key={index} className="flex items-center"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div></div>
+                    <span className="text-gray-300">{service}</span></div>
                   </div>
-                ))}
-              </div>
-              <Link href={\`/services/\${category.id}\`} className="mt-6 inline-block text-purple-400 hover:text-purple-300">
-                Learn More →
-              </Link>
+                ))}</div>
+              </div></div>
+              <Link href={\"/services/\${category.id}\"} className="mt-6 inline-block text-purple-400 hover:text-purple-300">
+                Learn More →</div>
+              </Link></div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </div>
   )
 }
-
+;}
 export default Services
-`;
+";
 
-    const servicesIndexFile = path.join(servicesPath, 'inde'x'.tsx');
+    const $1 = path.join(servicesPath, 'inde'x'.tsx');
     fs.writeFileSync(servicesIndexFile, servicesIndexContent);
     console.log('✅ Generated services index page');
   }
@@ -631,4 +631,4 @@ export default Services
   }
 }
 
-module.exports = AutonomousContentGenerator; 
+module.exports = AutonomousContentGenerator; </div>

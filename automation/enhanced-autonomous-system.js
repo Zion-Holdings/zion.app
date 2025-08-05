@@ -294,7 +294,7 @@ class EnhancedAutonomousSystem {
   }
 
   getAgentScriptTemplate(agent) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -386,7 +386,7 @@ class ${agent.name.replace(/\s+/g, '')}Agent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
 agent.initialize().catch(console.error);
 
@@ -499,7 +499,7 @@ module.exports = agent;
 
     const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e');
     const avgWorkload = activeAgents.reduce((sum, a) => sum + a.workload, 0) / activeAgents.length || 0;
-
+</div>
     if (avgWorkload > 80 && this.agents.size < this.config.maxAgents) {
       console.log('📈 High workload detected, creating new agent...');
       this.createAgent({
@@ -510,7 +510,7 @@ module.exports = agent;
       });
     } else if (avgWorkload < 20 && this.agents.size > 5) {
       console.log('📉 Low workload detected, stopping idle agents...');
-      const idleAgents = Array.from(this.agents.values())
+      const idleAgents = Array.from(this.agents.values())</div>
         .filter(a => a.status === 'acti'v'e' && a.workload < 10)
         .slice(0, 1);
       
@@ -574,7 +574,7 @@ module.exports = agent;
     console.log('⚡ Optimizing system performance...');
     
     // Analyze agent performance and optimize
-    Array.from(this.agents.values()).forEach(agent => {
+    Array.from(this.agents.values()).forEach(agent => {</div>
       if (agent.performance.successRate < 80) {
         console.log(`🔧 Optimizing agent: ${agent.name}`);
         // Implement optimization logic
@@ -637,4 +637,4 @@ module.exports = EnhancedAutonomousSystem;
 if (require.main === module) {
   const system = new EnhancedAutonomousSystem();
   system.initialize().catch(console.error);
-} 
+} </div>

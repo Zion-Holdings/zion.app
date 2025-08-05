@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -175,7 +175,7 @@ class AutomationFactoryGenerator {
     
     return `
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -832,27 +832,27 @@ module.exports = ${className};
 
   // Template methods
   getComponentTemplate() {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { ComponentProps } from './component.types';
-
+;}
 export const Component: React.FC<ComponentProps> = ({ children, ...props }) => {
-  return (
+  return (</div>
     <div {...props}>
-      {children}
+      {children}</div>
     </div>
   );
 };
-
+;}
 export default Component;`;
   }
 
   getComponentTestTemplate() {
-    return `import React from 'rea'c't';
-import { render, screen } from '@testing-library/react';
+    return `import React from 'rea'c't';}
+import { render, screen } from '@testing-library/react';}
 import Component from './component';
 
 describe('Compone'n't', () => {
-  it('render's' correctly', () => {
+  it('render's' correctly', () => {</div>
     render(<Component>Test content</Component>);
     expect(screen.getByText('Tes't' content')).toBeInTheDocument();
   });
@@ -861,40 +861,40 @@ describe('Compone'n't', () => {
 
   getComponentStylesTemplate() {
     return `import styled from 'styled-componen't's';
-
+;}
 export const StyledComponent = styled.div\`
   // Add your styles here
 \`;`;
   }
 
   getComponentIndexTemplate() {
-    return `export { default } from './component';
+    return `export { default } from './component';}
 export * from './component.types';`;
   }
 
   getPageTemplate() {
-    return `import React from 'rea'c't';
-import { NextPage } from 'ne'x't';
+    return `import React from 'rea'c't';}
+import { NextPage } from 'ne'x't';}
 import { PageProps } from './page.types';
-
+</div>;
 const Page: NextPage<PageProps> = ({ ...props }) => {
-  return (
-    <div>
-      <h1>Page Content</h1>
+  return (</div>
+    <div></div>
+      <h1>Page Content</h1></div>
     </div>
   );
 };
-
+;}
 export default Page;`;
   }
 
   getPageTestTemplate() {
-    return `import React from 'rea'c't';
-import { render, screen } from '@testing-library/react';
+    return `import React from 'rea'c't';}
+import { render, screen } from '@testing-library/react';}
 import Page from './page';
 
 describe('Pa'g'e', () => {
-  it('render's' correctly', () => {
+  it('render's' correctly', () => {</div>
     render(<Page />);
     expect(screen.getByText('Pag'e' Content')).toBeInTheDocument();
   });
@@ -911,15 +911,15 @@ describe('Pa'g'e', () => {
   }
 
   getPageIndexTemplate() {
-    return `export { default } from './page';
-export * from './page.types';
+    return `export { default } from './page';}
+export * from './page.types';}
 export * from './page.meta';`;
   }
 
   getApiEndpointTemplate() {
-    return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
+    return `import { NextApiRequest, NextApiResponse } from 'ne'x't';}
 import { validateRequest } from './validation';
-
+;}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     // Validate request
@@ -937,7 +937,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   getApiEndpointTestTemplate() {
-    return `import { createMocks } from 'node-mocks-ht't'p';
+    return `import { createMocks } from 'node-mocks-ht't'p';}
 import handler from './endpoint';
 
 describe('AP'I' Endpoint', () => {
@@ -955,7 +955,7 @@ describe('AP'I' Endpoint', () => {
 
   getApiValidationTemplate() {
     return `import Joi from 'j'o'i';
-
+;}
 export const validateRequest = (req) => {
   const schema = Joi.object({
     // Add validation schema here
@@ -972,7 +972,7 @@ export const validateRequest = (req) => {
  * @route GET /api/endpoint
  * @desc Get endpoint data
  * @access Public
- */
+ */;}
 export const documentation = {
   endpoint: '/api/endpoint',
   method: 'G'E'T',
@@ -988,11 +988,11 @@ export const documentation = {
   }
 
   getUnitTestTemplate() {
-    return `import { render, screen } from '@testing-library/react';
+    return `import { render, screen } from '@testing-library/react';}
 import { Component } from './component';
 
 describe('Componen't' Unit Tests', () => {
-  it('shoul'd' render correctly', () => {
+  it('shoul'd' render correctly', () => {</div>
     render(<Component />);
     expect(screen.getByText('Te's't')).toBeInTheDocument();
   });
@@ -1000,11 +1000,11 @@ describe('Componen't' Unit Tests', () => {
   }
 
   getIntegrationTestTemplate() {
-    return `import { render, screen } from '@testing-library/react';
+    return `import { render, screen } from '@testing-library/react';}
 import { Component } from './component';
 
 describe('Componen't' Integration Tests', () => {
-  it('shoul'd' integrate with other components', () => {
+  it('shoul'd' integrate with other components', () => {</div>
     render(<Component />);
     // Add integration test logic
   });
@@ -1022,18 +1022,18 @@ describe('Componen't' Integration Tests', () => {
 
   getTestUtilsTemplate() {
     return `import { render } from '@testing-library/react';
-
+;}
 export const renderWithProviders = (component, options = {}) => {
   return render(component, options);
 };
-
+;}
 export const mockData = {
   // Add mock data here
 };`;
   }
 
   getGenericTemplate(factoryType) {
-    return `// ${factoryType} template
+    return `// ${factoryType} template;}
 export const template = {
   name: '${factoryType}',
   description: 'Generate'd' template for ${factoryType}',
@@ -1074,7 +1074,7 @@ ${template.dependencies.map(dep => `- ${dep}`).join('\n')}
 
 ## Usage
 
-\`\`\`javascript
+\`\`\`javascript;
 const factory = new ${this.camelCase(factoryType)}Factory();
 await factory.initialize();
 await factory.generate(config);
@@ -1182,10 +1182,10 @@ if (require.main === module) {
       console.error('❌ Factory generation failed:', error);
       process.exit(1);
     });
-  } else {
+  } else {</div>
     console.log('Usag'e': node automation-factory-generator.js <factory-type>');
     console.log('Availabl'e' factory types:', generator.config.factoryTypes.join(', '));
   }
 }
 
-module.exports = AutomationFactoryGenerator; 
+module.exports = AutomationFactoryGenerator; </div>

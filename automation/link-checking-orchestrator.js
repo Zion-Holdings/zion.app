@@ -484,7 +484,7 @@ class LinkCheckingOrchestrator {
 
   async optimizeSystem() {
     const metrics = await this.agentFactory.getSystemMetrics();
-    
+    </div>
     if (metrics.successRate < 90) {
       console.log('🔧 Optimizing system for better success rate...');
       await this.optimizeAgentAllocation();
@@ -511,7 +511,7 @@ class LinkCheckingOrchestrator {
     // Reassign tasks from low-performing agents to high-performing ones
     const sortedAgents = Array.from(performanceMap.entries())
       .sort((a, b) => b[1].performance.successRate - a[1].performance.successRate);
-    
+    </div>
     for (let i = 0; i < sortedAgents.length - 1; i++) {
       const [lowPerformingId, lowPerforming] = sortedAgents[sortedAgents.length - 1 - i];
       const [highPerformingId, highPerforming] = sortedAgents[i];
@@ -543,7 +543,7 @@ class LinkCheckingOrchestrator {
       await this.scaleUp();
     }
     
-    // Scale down if possible
+    // Scale down if possible</div>
     if (metrics.totalBrokenLinks < runningAgents.length * 2 && runningAgents.length > 2) {
       console.log('📉 Scaling down link checking agents...');
       await this.scaleDown();
@@ -648,4 +648,4 @@ class LinkCheckingOrchestrator {
   }
 }
 
-module.exports = LinkCheckingOrchestrator; 
+module.exports = LinkCheckingOrchestrator; </div>

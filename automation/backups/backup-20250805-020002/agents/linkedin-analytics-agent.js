@@ -354,4 +354,4 @@ class LinkedInAnalyticsAgent {
     }
 }
 
-module.exports = LinkedInAnalyticsAgent; 
+module.exports = LinkedInAnalyticsAgent; </div>

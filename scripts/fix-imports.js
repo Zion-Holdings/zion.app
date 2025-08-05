@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+;
 function fixImports(directory) {
   const files = fs.readdirSync(directory, { withFileTypes: true });
   
@@ -63,7 +63,7 @@ function fixImports(directory) {
   });
 }
 
-// Fix imports in all relevant directories
+// Fix imports in all relevant directories;
 const directories = ['pages', 'components', 'src'];
 directories.forEach(dir => {
   if (fs.existsSync(dir)) {

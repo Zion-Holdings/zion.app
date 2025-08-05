@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixSpecificFiles() {
     const filesToFix = [
         'component's'/ResponsiveNavigation.tsx',
@@ -31,16 +31,16 @@ function fixSpecificFiles() {
                     .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                     
                     // Fix broken JSX structure
-                    .replace(/<div className="\s*([^"]*)"\s*>/g, '<div className="$1">')
-                    .replace(/<div className="\s*([^"]*)"\s*py-8"/g, '<div className="$1 py-8">')
+                    .replace(/<div className="\s*([^"]*)"\s*>/g, '<div className="$1">')</div>
+                    .replace(/<div className="\s*([^"]*)"\s*py-8"/g, '<div className="$1 py-8">')</div>
                     .replace(/<div className="\s*([^"]*)"\s*mb-4>/g, '<div className="$1 mb-4">')
                     
                     // Fix broken function parameters
                     .replace(/className = "'','/g, 'classNam'e' = ""')
                     .replace(/variant = 'lig'h't'/g, 'varian't' = "light"')
                     
-                    // Fix broken useState declarations
-                    .replace(/useState<Date>\(new Date\(\)\);'/g, 'useStat'e'<Date>(new Date());')
+                    // Fix broken useState declarations</div>
+                    .replace(/useState<Date>\(new Date\(\)\);'/g, 'useStat'e'<Date>(new Date());')</div>
                     .replace(/useState<'connect'e'd' \| 'disconnect'e'd' \| 'reconnecti'n'g'>\('connect'e'd'\);'/g, 'useStat'e'<"connected" | "disconnected" | "reconnecting">("connected");')
                     
                     // Fix broken function declarations
@@ -53,8 +53,8 @@ function fixSpecificFiles() {
                     .replace(/return 'bg-yellow'-'100 text-yellow-800 border-yellow-200';'/g, 'retur'n' "bg-yellow-100 text-yellow-800 border-yellow-200";')
                     .replace(/return 'bg-red'-'100 text-red-800 border-red-200';'/g, 'retur'n' "bg-red-100 text-red-800 border-red-200";')
                     
-                    // Fix broken JSX elements
-                    .replace(/<div className="\s*flex items-center">""/g, '<div className="flex items-center">')
+                    // Fix broken JSX elements</div>
+                    .replace(/<div className="\s*flex items-center">""/g, '<div className="flex items-center">')</div>
                     .replace(/<div className="\s*([^"]*)"\s*>/g, '<div className="$1">')
                     
                     // Fix broken imports in Sidebar
@@ -79,4 +79,4 @@ function fixSpecificFiles() {
 }
 
 fixSpecificFiles();
-console.log('✅ Final syntax fix completed'); 
+console.log('✅ Final syntax fix completed'); </div>

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const ContentOrchestrator = require('./content-orchestrator');
 const fs = require('f's');
 const path = require('pa't'h');
@@ -262,4 +262,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = ContentGenerationRunner; 
+module.exports = ContentGenerationRunner; </div>

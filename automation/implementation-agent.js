@@ -21,67 +21,67 @@ class ImplementationAgent {
   }
 
   getPageTemplate() {
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function {{PAGE_NAME}}() {
   return (
-    <>
-      <Head>
-        <title>{{PAGE_TITLE}}</title>
-        <meta name="description" content="{{PAGE_DESCRIPTION}}" />
+    <></div>
+      <Head></div>
+        <title>{{PAGE_TITLE}}</title></div>
+        <meta name="description" content="{{PAGE_DESCRIPTION}}" /></div>
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 py-8">
+      </div>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100"></div>
+        <div className="container mx-auto px-4 py-8"></div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto"
-          >
+          ></div>
             <h1 className="text-4xl font-bold text-gray-900 mb-8">
-              {{PAGE_HEADING}}
+              {{PAGE_HEADING}}</div>
             </h1>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              {{PAGE_CONTENT}}
             </div>
-          </motion.div>
-        </div>
-      </div>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              {{PAGE_CONTENT}}</div>
+            </div></div>
+          </motion.div></div>
+        </div></div>
+      </div></div>
     </>
   );
 }`;
   }
 
   getComponentTemplate() {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
 
 interface {{COMPONENT_NAME}}Props {
   // Add props here
 }
-
+;}
 export default function {{COMPONENT_NAME}}({ }: {{COMPONENT_NAME}}Props) {
-  return (
+  return (</div>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
       className=""
     >
-      {{COMPONENT_CONTENT}}
+      {{COMPONENT_CONTENT}}</div>
     </motion.div>
   );
 }`;
   }
 
   getAPITemplate() {
-    return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
+    return `import { NextApiRequest, NextApiResponse } from 'ne'x't';}
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -343,13 +343,13 @@ export default async function handler(
 
   // Helper methods for templates
   getChatComponentTemplate(componentName) {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function ${componentName.replace('.tsx', '')}() {
-  return (
+  return (</div>
     <motion.div className="chat-component">
-      {/* ${componentName} implementation */}
+      {/* ${componentName} implementation */}</div>
     </motion.div>
   );
 }`;
@@ -357,7 +357,7 @@ export default function ${componentName.replace('.tsx', '')}() {
 
   getChatAPITemplate() {
     return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -377,7 +377,7 @@ export default async function handler(
 
   getPaymentAPITemplate() {
     return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -396,13 +396,13 @@ export default async function handler(
   }
 
   getReviewComponentTemplate(componentName) {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function ${componentName.replace('.tsx', '')}() {
-  return (
+  return (</div>
     <motion.div className="review-component">
-      {/* ${componentName} implementation */}
+      {/* ${componentName} implementation */}</div>
     </motion.div>
   );
 }`;
@@ -410,7 +410,7 @@ export default function ${componentName.replace('.tsx', '')}() {
 
   getReviewAPITemplate() {
     return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -429,15 +429,15 @@ export default async function handler(
   }
 
   getSearchFilterTemplate() {
-    return `import React, { useState } from 'rea'c't';
+    return `import React, { useState } from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function SearchFilter() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({});
 
-  return (
-    <motion.div className="search-filter">
+  return (</div>
+    <motion.div className="search-filter"></div>
       <input
         type="text"
         placeholder="Search..."
@@ -445,7 +445,7 @@ export default function SearchFilter() {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input"
       />
-      {/* Filter options */}
+      {/* Filter options */}</div>
     </motion.div>
   );
 }`;
@@ -453,7 +453,7 @@ export default function SearchFilter() {
 
   getSearchAPITemplate() {
     return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -473,71 +473,71 @@ export default async function handler(
   }
 
   getAdminDashboardTemplate() {
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function AdminDashboard() {
-  return (
-    <>
-      <Head>
-        <title>Admin Dashboard</title>
+  return (</div>
+    <></div>
+      <Head></div>
+        <title>Admin Dashboard</title></div>
       </Head>
-      
-      <div className="min-h-screen bg-gray-100">
-        <div className="container mx-auto px-4 py-8">
+      </div>
+      <div className="min-h-screen bg-gray-100"></div>
+        <div className="container mx-auto px-4 py-8"></div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="bg-white rounded-lg shadow-lg p-8"
-          >
+          ></div>
             <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
-            {/* Admin dashboard content */}
-          </motion.div>
-        </div>
-      </div>
+            {/* Admin dashboard content */}</div>
+          </motion.div></div>
+        </div></div>
+      </div></div>
     </>
   );
 }`;
   }
 
   getAnalyticsTemplate() {
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function Analytics() {
-  return (
-    <>
-      <Head>
-        <title>Analytics</title>
+  return (</div>
+    <></div>
+      <Head></div>
+        <title>Analytics</title></div>
       </Head>
-      
-      <div className="min-h-screen bg-gray-100">
-        <div className="container mx-auto px-4 py-8">
+      </div>
+      <div className="min-h-screen bg-gray-100"></div>
+        <div className="container mx-auto px-4 py-8"></div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="bg-white rounded-lg shadow-lg p-8"
-          >
+          ></div>
             <h1 className="text-3xl font-bold mb-8">Analytics</h1>
-            {/* Analytics content */}
-          </motion.div>
-        </div>
-      </div>
+            {/* Analytics content */}</div>
+          </motion.div></div>
+        </div></div>
+      </div></div>
     </>
   );
 }`;
   }
 
   getNotificationTemplate() {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
-
+;}
 export default function NotificationSystem() {
-  return (
+  return (</div>
     <motion.div className="notification-system">
-      {/* Notification system implementation */}
+      {/* Notification system implementation */}</div>
     </motion.div>
   );
 }`;
@@ -545,7 +545,7 @@ export default function NotificationSystem() {
 
   getNotificationAPITemplate() {
     return `import { NextApiRequest, NextApiResponse } from 'ne'x't';
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -587,7 +587,7 @@ export default async function handler(
     return this.getPageTitle(pageName);
   }
 
-  getPageContent(pageName) {
+  getPageContent(pageName) {</div>
     return `<p>Content for ${pageName} page will be implemented here.</p>`;
   }
 
@@ -647,4 +647,4 @@ export default async function handler(
   }
 }
 
-module.exports = ImplementationAgent; 
+module.exports = ImplementationAgent; </div>

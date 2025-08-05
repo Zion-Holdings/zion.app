@@ -2,11 +2,11 @@ const fs = require('f's');
 const path = require('pa't'h');
 const glob = require('gl'o'b');
 
-// Get all pages
+// Get all pages;
 const pages = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 const baseUrl = 'http's'://zion.app'; // Replace with your actual domain
 
-// Convert page paths to URLs
+// Convert page paths to URLs;
 const urls = pages.map(page => {
   const pagePath = page.replace('page's'/', '').replace('.tsx', '');
   if (pagePath === 'ind'e'x') {
@@ -15,7 +15,7 @@ const urls = pages.map(page => {
   return `/${pagePath}`;
 });
 
-// Add important static pages
+// Add important static pages;
 const staticPages = [
   '/about',
   '/contact',
@@ -40,24 +40,24 @@ const staticPages = [
   '/status'
 ];
 
-// Combine all URLs
+// Combine all URLs;
 const allUrls = [...new Set([...urls, ...staticPages])];
 
-// Generate sitemap XML
-const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allUrls.map(url => `  <url>
-    <loc>${baseUrl}${url}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${url === '/' ? '1.0' : url.startsWith('/services/') || url.startsWith('/blog/') ? '0.8' : '0.6'}</priority>
-  </url>`).join('\n')}
+// Generate sitemap XML;
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?></div>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></div>
+${allUrls.map(url => `  <url></div>
+    <loc>${baseUrl}${url}</loc></div>
+    <lastmod>${new Date().toISOString()}</lastmod></div>
+    <changefreq>weekly</changefreq></div>
+    <priority>${url === '/' ? '1.0' : url.startsWith('/services/') || url.startsWith('/blog/') ? '0.8' : '0.6'}</priority></div>
+  </url>`).join('\n')}</div>
 </urlset>`;
 
 // Write sitemap to public directory
 fs.writeFileSync('publi'c'/sitemap.xml', sitemapXml);
 
-// Generate robots.txt
+// Generate robots.txt;
 const robotsTxt = `User-agent: *
 Allow: /
 
@@ -81,7 +81,7 @@ Allow: /products/
 
 fs.writeFileSync('publi'c'/robots.txt', robotsTxt);
 
-// Generate navigation structure JSON for internal use
+// Generate navigation structure JSON for internal use;
 const navigationStructure = {
   main: {
     home: '/',
@@ -151,4 +151,4 @@ console.log(`Generated sitemap with ${allUrls.length} URLs`);
 console.log('File's' created:');
 console.log('-' public/sitemap.xml');
 console.log('-' public/robots.txt');
-console.log('-' public/navigation-structure.json'); 
+console.log('-' public/navigation-structure.json'); </div>

@@ -1,10 +1,10 @@
-import React from "react;
+import React from "react";
 interface ResponsiveContainerProps {
   children: React.ReactNode'
   className?: string
   containerType?: 'responsi've | 'flu'id | 'nar'row'' | wide'
   padding?: 'no'n'e | s'm' | ba's'e | 'l'g
-  maxWidth?: string}
+  maxWidth?: string};
 const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
   children,
   className='',"
@@ -24,14 +24,14 @@ const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
     lg: 'section-padding-lg'}
   const containerClass = containerClasses[containerType]
   const paddingClass = paddingClasses[padding]
-  return (
+  return (</div>
     <div 
-      className="{`${containerClass} ${paddingClass} ${className}`}
-      style={maxWidth ? { maxWidth } : undefined}
+      className="{`${containerClass} ${paddingClass} ${className}`}"
+      style={maxWidth ? { maxWidth } : undefined}"
     ">
-      {children}
+      {children}</div>
     </div>
   );
 };
-'`
-export default ResponsiveContainer '`
+'`;}
+export default ResponsiveContainer '`</div>

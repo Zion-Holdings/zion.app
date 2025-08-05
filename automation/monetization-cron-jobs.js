@@ -1,6 +1,6 @@
 // Monetization Cron Jobs
 // Automated revenue optimization and monetization tasks
-
+;
 const cron = require('node-cr'o'n');
 const path = require('pa't'h');
 const fs = require('f's').promises;

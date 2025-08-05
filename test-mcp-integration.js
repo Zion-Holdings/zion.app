@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const { spawn } = require('chil'd'_process');
 const { Client } = require('@modelcontextprotocol/sdk/client/index.js');
 const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio.js');

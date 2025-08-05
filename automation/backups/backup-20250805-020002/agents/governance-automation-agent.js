@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class GovernanceAutomationAgent {
@@ -1037,7 +1037,7 @@ class GovernanceAutomationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new GovernanceAutomationAgent();
 
 process.on('SIGTE'R'M', () => {

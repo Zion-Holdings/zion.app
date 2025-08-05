@@ -1,7 +1,7 @@
-const fs = require('fs-ext'r'a');
-const path = require('pa't'h');
+const $1 = require('fs-ext'r'a');
+const $1 = require('pa't'h');
 
-class AutonomousSalesAgent {
+class $1 {
     constructor() {
         this.salesChannels = {
             website: {
@@ -51,7 +51,7 @@ class AutonomousSalesAgent {
             },
             emailMarketing: {
                 subject: 'Transfor'm' Your Business with {solution_name}',
-                body: `Dear {customer_name},
+                body: "Dear {customer_name},
 
 We'r'e' excited to introduce {solution_name} - a revolutionary AI-powered solution designed to {solution_benefit}.
 
@@ -63,7 +63,7 @@ Pricing: {solution_pricing}
 Ready to get started? Click here to learn more.
 
 Best regards,
-The AI Solutions Team`
+The AI Solutions Team"
             }
         };
         
@@ -83,7 +83,7 @@ The AI Solutions Team`
         console.log('🤖 Starting Autonomous Sales Agent...');
         
         try {
-            const campaigns = await this.createSalesCampaigns(solutions);
+            const $1 = await this.createSalesCampaigns(solutions);
             await this.generateMarketingContent(campaigns);
             await this.optimizeCampaigns(campaigns);
             await this.generateSalesReports(campaigns);
@@ -99,11 +99,11 @@ The AI Solutions Team`
     async createSalesCampaigns(solutions) {
         console.log('📢 Creating sales campaigns...');
         
-        const campaigns = [];
+        const $1 = [];
         
         solutions.forEach((solution, index) => {
-            const campaign = {
-                id: `campaign-${Date.now()}-${index}`,
+            const $1 = {
+                id: "campaign-${Date.now()}-${index}",
                 solutionId: solution.id,
                 solutionName: solution.name,
                 targetMarket: solution.targetMarket,
@@ -123,7 +123,7 @@ The AI Solutions Team`
     }
 
     selectChannels(solution) {
-        const selectedChannels = [];
+        const $1 = [];
         
         // Always include website for all solutions
         selectedChannels.push({
@@ -172,7 +172,7 @@ The AI Solutions Team`
     }
 
     generateCampaignContent(solution) {
-        const content = {};
+        const $1 = {};
         
         // Website content
         content.website = {
@@ -211,12 +211,12 @@ The AI Solutions Team`
     }
 
     generateSocialMediaPosts(solution) {
-        const posts = [];
+        const $1 = [];
         
         // Main announcement post
         posts.push({
             type: 'announceme'n't',
-            content: `🚀 Introducing ${solution.name}! Transform your business with intelligent automation. ${solution.description} #AI #Innovation #Business`,
+            content: "🚀 Introducing ${solution.name}! Transform your business with intelligent automation. ${solution.description} #AI #Innovation #Business",
             platform: 'a'l'l',
             priority: 'Hi'g'h'
         });
@@ -225,7 +225,7 @@ The AI Solutions Team`
         solution.features.slice(0, 3).forEach(feature => {
             posts.push({
                 type: 'featu'r'e',
-                content: `✨ ${feature} - Just one of the powerful features in ${solution.name}. See how it can benefit your business! #AI #Technology`,
+                content: "✨ ${feature} - Just one of the powerful features in ${solution.name}. See how it can benefit your business! #AI #Technology",
                 platform: 'a'l'l',
                 priority: 'Medi'u'm'
             });
@@ -234,7 +234,7 @@ The AI Solutions Team`
         // ROI post
         posts.push({
             type: 'r'o'i',
-            content: `💰 ${solution.name} delivers ${solution.roi.roi} ROI with a payback period of ${solution.roi.paybackPeriod}. Smart investment for smart businesses! #ROI #Business`,
+            content: "💰 ${solution.name} delivers ${solution.roi.roi} ROI with a payback period of ${solution.roi.paybackPeriod}. Smart investment for smart businesses! #ROI #Business",
             platform: 'a'l'l',
             priority: 'Hi'g'h'
         });
@@ -243,7 +243,7 @@ The AI Solutions Team`
     }
 
     generateEmailContent(solution) {
-        const emailBody = this.marketingTemplates.emailMarketing.body
+        const $1 = this.marketingTemplates.emailMarketing.body
             .replace(/{solution_name}/g, solution.name)
             .replace(/{solution_benefit}/g, this.extractBenefit(solution.description))
             .replace(/{solution_features}/g, this.formatFeaturesForEmail(solution.features))
@@ -253,7 +253,7 @@ The AI Solutions Team`
     }
 
     generateEmailSegments(solution) {
-        const segments = [];
+        const $1 = [];
         
         if (solution.targetMarket === 'Enterpri's'e') {
             segments.push({
@@ -279,28 +279,28 @@ The AI Solutions Team`
     }
 
     generateBlogPostIdeas(solution) {
-        const ideas = [
-            `How ${solution.name} is Revolutionizing Business Automation`,
-            `5 Ways ${solution.name} Can Transform Your Business`,
-            `The ROI of Implementing ${solution.name} in Your Organization`,
-            `Case Study: Success Stories with ${solution.name}`,
-            `Future of AI: What ${solution.name} Means for Your Industry`
+        const $1 = [
+            "How ${solution.name} is Revolutionizing Business Automation",
+            "5 Ways ${solution.name} Can Transform Your Business",
+            "The ROI of Implementing ${solution.name} in Your Organization",
+            "Case Study: Success Stories with ${solution.name}",
+            "Future of AI: What ${solution.name} Means for Your Industry"
         ];
         
         return ideas.map(idea => ({
             title: idea,
             estimatedReadTime: '5-7 minutes',
             targetKeywords: this.extractKeywords(solution.name + ' ' + solution.description),
-            callToAction: `Learn more about ${solution.name}`
+            callToAction: "Learn more about ${solution.name}"
         }));
     }
 
     generateWhitepaperIdeas(solution) {
-        const ideas = [
-            `The Complete Guide to ${solution.name} Implementation`,
-            `${solution.name}: A Comprehensive ROI Analysis`,
-            `Industry Trends and ${solution.name}: What You Need to Know`,
-            `Security and Compliance in ${solution.name} Solutions`
+        const $1 = [
+            "The Complete Guide to ${solution.name} Implementation",
+            "${solution.name}: A Comprehensive ROI Analysis",
+            "Industry Trends and ${solution.name}: What You Need to Know",
+            "Security and Compliance in ${solution.name} Solutions"
         ];
         
         return ideas.map(idea => ({
@@ -312,11 +312,11 @@ The AI Solutions Team`
     }
 
     generateCaseStudyIdeas(solution) {
-        const ideas = [
-            `How Company X Increased Efficiency by 300% with ${solution.name}`,
-            `${solution.name} Success Story: From Startup to Enterprise`,
-            `ROI Case Study: ${solution.name} in the Manufacturing Industry`,
-            `Customer Spotlight: ${solution.name} in Healthcare`
+        const $1 = [
+            "How Company X Increased Efficiency by 300% with ${solution.name}",
+            "${solution.name} Success Story: From Startup to Enterprise",
+            "ROI Case Study: ${solution.name} in the Manufacturing Industry",
+            "Customer Spotlight: ${solution.name} in Healthcare"
         ];
         
         return ideas.map(idea => ({
@@ -328,9 +328,9 @@ The AI Solutions Team`
     }
 
     calculateBudget(solution) {
-        const baseBudget = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
-        const marketMultiplier = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
-        const roiMultiplier = parseFloat(solution.roi.roi.replace('%', '')) > 200 ? 1.3 : 1.0;
+        const $1 = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
+        const $1 = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
+        const $1 = parseFloat(solution.roi.roi.replace('%', '')) > 200 ? 1.3 : 1.0;
         
         return {
             total: Math.round(baseBudget * marketMultiplier * roiMultiplier),
@@ -345,7 +345,7 @@ The AI Solutions Team`
     }
 
     calculateChannelBudget(solution, channel) {
-        const channelBudgets = {
+        const $1 = {
             website: 0.3,
             socialMedia: 0.25,
             emailMarketing: 0.2,
@@ -353,14 +353,14 @@ The AI Solutions Team`
             partnerships: 0.1
         };
         
-        const baseBudget = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
-        const marketMultiplier = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
+        const $1 = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
+        const $1 = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
         
         return Math.round(baseBudget * channelBudgets[channel] * marketMultiplier);
     }
 
     calculateTimeline(solution) {
-        const baseTimeline = {
+        const $1 = {
             preparation: '1-2 weeks',
             launch: '1 week',
             optimization: '2-4 weeks',
@@ -403,7 +403,7 @@ The AI Solutions Team`
         console.log('📝 Generating marketing content...');
         
         for (const campaign of campaigns) {
-            const contentDir = path.join(this.outputDir, 'conte'n't', campaign.id);
+            const $1 = path.join(this.outputDir, 'conte'n't', campaign.id);
             await fs.ensureDir(contentDir);
             
             // Generate website content
@@ -421,7 +421,7 @@ The AI Solutions Team`
     }
 
     async generateWebsiteContent(campaign, contentDir) {
-        const websiteContent = {
+        const $1 = {
             pageTitle: campaign.content.website.title,
             metaDescription: campaign.content.website.description.substring(0, 160),
             heroSection: {
@@ -441,8 +441,8 @@ The AI Solutions Team`
                 title: 'Wh'y' Choose Us',
                 benefits: [
                     campaign.content.website.competitiveAdvantage,
-                    `ROI: ${campaign.content.website.roi.roi}`,
-                    `Payback Period: ${campaign.content.website.roi.paybackPeriod}`
+                    "ROI: ${campaign.content.website.roi.roi}",
+                    "Payback Period: ${campaign.content.website.roi.paybackPeriod}"
                 ]
             }
         };
@@ -451,7 +451,7 @@ The AI Solutions Team`
     }
 
     async generateSocialMediaContent(campaign, contentDir) {
-        const socialContent = {
+        const $1 = {
             posts: campaign.content.socialMedia.posts,
             hashtags: campaign.content.socialMedia.hashtags,
             images: campaign.content.socialMedia.images,
@@ -462,9 +462,9 @@ The AI Solutions Team`
     }
 
     async generateEmailContentFile(campaign, contentDir) {
-        const emailBody = this.generateEmailBody(campaign);
-        const emailContent = {
-            subject: campaign.content?.emailMarketing?.subject || `Learn about ${campaign.solutionName}`,
+        const $1 = this.generateEmailBody(campaign);
+        const $1 = {
+            subject: campaign.content?.emailMarketing?.subject || "Learn about ${campaign.solutionName}",
             body: campaign.content?.emailMarketing?.body || emailBody,
             segments: campaign.content?.emailMarketing?.segments || [],
             automation: this.generateEmailAutomation(campaign)
@@ -474,7 +474,7 @@ The AI Solutions Team`
     }
 
     async generateContentMarketingMaterials(campaign, contentDir) {
-        const contentMaterials = {
+        const $1 = {
             blogPosts: campaign.content?.contentMarketing?.blogPosts || [],
             whitepapers: campaign.content?.contentMarketing?.whitepapers || [],
             caseStudies: campaign.content?.contentMarketing?.caseStudies || [],
@@ -485,12 +485,12 @@ The AI Solutions Team`
     }
 
     generatePostingSchedule(campaign) {
-        const schedule = [];
-        const posts = campaign.content?.socialMedia?.posts || [];
+        const $1 = [];
+        const $1 = campaign.content?.socialMedia?.posts || [];
         
         posts.forEach((post, index) => {
-            const day = Math.floor(index / 2) + 1;
-            const time = index % 2 === 0 ? '09:00' : '15:00';
+            const $1 = Math.floor(index / 2) + 1;
+            const $1 = index % 2 === 0 ? '09:00' : '15:00';
             
             schedule.push({
                 day: day,
@@ -504,41 +504,41 @@ The AI Solutions Team`
     }
 
     generateEmailAutomation(campaign) {
-        const emailBody = this.generateEmailBody(campaign);
+        const $1 = this.generateEmailBody(campaign);
         return {
             welcome: {
                 trigger: 'Sig'n' up',
                 delay: 'Immedia't'e',
-                subject: `Welcome to ${campaign.solutionName}`,
+                subject: "Welcome to ${campaign.solutionName}",
                 content: campaign.content?.emailMarketing?.body || emailBody
             },
             nurture: {
                 trigger: 'N'o' purchase after 3 days',
                 delay: '3 days',
-                subject: `Don't' miss out on ${campaign.solutionName}`,
+                subject: "Don't' miss out on ${campaign.solutionName}",
                 content: this.generateNurtureEmail(campaign)
             },
             followUp: {
                 trigger: 'Websit'e' visit',
                 delay: '1 day',
-                subject: `Learn more about ${campaign.solutionName}`,
+                subject: "Learn more about ${campaign.solutionName}",
                 content: this.generateFollowUpEmail(campaign)
             }
         };
     }
 
     generateContentCalendar(campaign) {
-        const calendar = [];
-        const blogPosts = campaign.content?.contentMarketing?.blogPosts || [];
-        const whitepapers = campaign.content?.contentMarketing?.whitepapers || [];
-        const caseStudies = campaign.content?.contentMarketing?.caseStudies || [];
+        const $1 = [];
+        const $1 = campaign.content?.contentMarketing?.blogPosts || [];
+        const $1 = campaign.content?.contentMarketing?.whitepapers || [];
+        const $1 = campaign.content?.contentMarketing?.caseStudies || [];
         
         // Schedule blog posts
         blogPosts.forEach((post, index) => {
             calendar.push({
                 type: 'bl'o'g',
                 title: post.title,
-                publishDate: `Week ${index + 1}`,
+                publishDate: "Week ${index + 1}",
                 status: 'Dra'f't'
             });
         });
@@ -548,7 +548,7 @@ The AI Solutions Team`
             calendar.push({
                 type: 'whitepap'e'r',
                 title: whitepaper.title,
-                publishDate: `Week ${(index + 1) * 2}`,
+                publishDate: "Week ${(index + 1) * 2}",
                 status: 'I'n' Progress'
             });
         });
@@ -558,7 +558,7 @@ The AI Solutions Team`
             calendar.push({
                 type: 'cas'e' study',
                 title: caseStudy.title,
-                publishDate: `Week ${(index + 1) * 3}`,
+                publishDate: "Week ${(index + 1) * 3}",
                 status: 'Plann'e'd'
             });
         });
@@ -585,7 +585,7 @@ The AI Solutions Team`
     }
 
     optimizeBudget(campaign) {
-        const optimizedBudget = { ...campaign.budget };
+        const $1 = { ...campaign.budget };
         
         // Adjust based on target market
         if (campaign.targetMarket === 'Enterpri's'e') {
@@ -603,14 +603,14 @@ The AI Solutions Team`
     }
 
     optimizeContent(campaign) {
-        const optimizedContent = { ...campaign.content };
+        const $1 = { ...campaign.content };
         
         // Optimize for target market
         if (campaign.targetMarket === 'Enterpri's'e') {
             optimizedContent.website.title += ' - Enterprise Solution';
             optimizedContent.socialMedia.posts.push({
                 type: 'enterpri's'e',
-                content: `🏢 Enterprise-grade ${campaign.solutionName} with advanced security and compliance features. #Enterprise #Security`,
+                content: "🏢 Enterprise-grade ${campaign.solutionName} with advanced security and compliance features. #Enterprise #Security",
                 platform: 'Linked'I'n',
                 priority: 'Hi'g'h'
             });
@@ -618,7 +618,7 @@ The AI Solutions Team`
             optimizedContent.website.title += ' - Affordable Solution';
             optimizedContent.socialMedia.posts.push({
                 type: 'affordab'l'e',
-                content: `💰 ${campaign.solutionName} - Powerful AI solution at an affordable price for small businesses! #SMB #Affordable`,
+                content: "💰 ${campaign.solutionName} - Powerful AI solution at an affordable price for small businesses! #SMB #Affordable",
                 platform: 'Facebo'o'k',
                 priority: 'Hi'g'h'
             });
@@ -628,9 +628,9 @@ The AI Solutions Team`
     }
 
     calculateExpectedROI(campaign) {
-        const baseROI = 300; // 300% base ROI
-        const marketMultiplier = campaign.targetMarket === 'Enterpri's'e' ? 1.2 : 1.0;
-        const budgetMultiplier = campaign.budget.total > 10000 ? 1.1 : 1.0;
+        const $1 = 300; // 300% base ROI
+        const $1 = campaign.targetMarket === 'Enterpri's'e' ? 1.2 : 1.0;
+        const $1 = campaign.budget.total > 10000 ? 1.1 : 1.0;
         
         return {
             percentage: Math.round(baseROI * marketMultiplier * budgetMultiplier),
@@ -640,27 +640,27 @@ The AI Solutions Team`
     }
 
     calculateExpectedRevenue(campaign) {
-        const baseRevenue = campaign.targetMarket === 'Enterpri's'e' ? 500000 : 200000;
-        const budgetMultiplier = campaign.budget.total / 10000;
+        const $1 = campaign.targetMarket === 'Enterpri's'e' ? 500000 : 200000;
+        const $1 = campaign.budget.total / 10000;
         
         return baseRevenue * budgetMultiplier;
     }
 
     calculatePaybackPeriod(campaign) {
-        const expectedRevenue = this.calculateExpectedRevenue(campaign);
-        const budget = campaign.budget.total;
+        const $1 = this.calculateExpectedRevenue(campaign);
+        const $1 = campaign.budget.total;
         
         return Math.round((budget / expectedRevenue) * 12);
     }
 
     generateABTests(campaign) {
-        const tests = [];
+        const $1 = [];
         
         // Test different headlines
         tests.push({
             name: 'Headlin'e' Test',
             variantA: campaign.content.website.title,
-            variantB: `${campaign.content.website.title} - Transform Your Business Today`,
+            variantB: "${campaign.content.website.title} - Transform Your Business Today",
             metric: 'Click-throug'h' rate'
         });
         
@@ -686,7 +686,7 @@ The AI Solutions Team`
     async generateSalesReports(campaigns) {
         console.log('📊 Generating sales reports...');
         
-        const report = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             summary: {
                 totalCampaigns: campaigns.length,
@@ -698,21 +698,21 @@ The AI Solutions Team`
             recommendations: this.generateSalesRecommendations(campaigns)
         };
         
-        const reportPath = path.join(this.outputDir, 'repor't's', `sales-report-${Date.now()}.json`);
+        const $1 = path.join(this.outputDir, 'repor't's', "sales-report-${Date.now()}.json");
         await fs.writeJson(reportPath, report, { spaces: 2 });
         
-        console.log(`📊 Sales report saved to: ${reportPath}`);
+        console.log("📊 Sales report saved to: ${reportPath}");
         return report;
     }
 
     calculateAverageROI(campaigns) {
-        const rois = campaigns.map(c => c.expectedROI.percentage);
-        const average = rois.reduce((a, b) => a + b, 0) / rois.length;
+        const $1 = campaigns.map(c => c.expectedROI.percentage);
+        const $1 = rois.reduce((a, b) => a + b, 0) / rois.length;
         return average.toFixed(0) + '%';
     }
 
     groupByTargetMarket(campaigns) {
-        const markets = {};
+        const $1 = {};
         campaigns.forEach(campaign => {
             markets[campaign.targetMarket] = (markets[campaign.targetMarket] || 0) + 1;
         });
@@ -720,27 +720,27 @@ The AI Solutions Team`
     }
 
     generateSalesRecommendations(campaigns) {
-        const recommendations = [];
+        const $1 = [];
         
         // High ROI campaigns
-        const highROICampaigns = campaigns.filter(c => c.expectedROI.percentage > 400);
+        const $1 = campaigns.filter(c => c.expectedROI.percentage > 400);
         if (highROICampaigns.length > 0) {
             recommendations.push({
                 type: 'high-r'o'i',
                 action: 'Increas'e' budget for high ROI campaigns',
                 campaigns: highROICampaigns.map(c => c.solutionName),
-                reasoning: `${highROICampaigns.length} campaigns with >400% expected ROI`
+                reasoning: "${highROICampaigns.length} campaigns with >400% expected ROI"
             });
         }
         
         // Enterprise campaigns
-        const enterpriseCampaigns = campaigns.filter(c => c.targetMarket === 'Enterpri's'e');
+        const $1 = campaigns.filter(c => c.targetMarket === 'Enterpri's'e');
         if (enterpriseCampaigns.length > 0) {
             recommendations.push({
                 type: 'enterprise-foc'u's',
                 action: 'Focu's' on enterprise partnerships and content marketing',
                 campaigns: enterpriseCampaigns.map(c => c.solutionName),
-                reasoning: `${enterpriseCampaigns.length} enterprise campaigns identified`
+                reasoning: "${enterpriseCampaigns.length} enterprise campaigns identified"
             });
         }
         
@@ -751,7 +751,7 @@ The AI Solutions Team`
     formatFeatures(features) {
         return features.map(feature => ({
             name: feature,
-            description: `Advanced ${feature.toLowerCase()} capabilities`,
+            description: "Advanced ${feature.toLowerCase()} capabilities",
             icon: '✨'
         }));
     }
@@ -765,7 +765,7 @@ The AI Solutions Team`
     }
 
     getTierFeatures(tier) {
-        const tierFeatures = {
+        const $1 = {
             basic: ['Cor'e' features', 'Emai'l' support', 'Basi'c' analytics'],
             professional: ['Al'l' basic features', 'Priorit'y' support', 'Advance'd' analytics', 'AP'I' access'],
             enterprise: ['Al'l' professional features', '24/7 support', 'Custo'm' integrations', 'Dedicate'd' account manager']
@@ -775,17 +775,17 @@ The AI Solutions Team`
     }
 
     formatFeaturesForEmail(features) {
-        return features.map(feature => `• ${feature}`).join('\n');
+        return features.map(feature => "• ${feature}").join('\n');
     }
 
     formatPricingForEmail(pricing) {
         return Object.entries(pricing)
-            .map(([tier, price]) => `${tier.charAt(0).toUpperCase() + tier.slice(1)}: ${price}`)
+            .map(([tier, price]) => "${tier.charAt(0).toUpperCase() + tier.slice(1)}: ${price}")
             .join('\n');
     }
 
     extractBenefit(description) {
-        const benefits = [
+        const $1 = [
             'increas'e' efficiency',
             'reduc'e' costs',
             'improv'e' productivity',
@@ -803,7 +803,7 @@ The AI Solutions Team`
     }
 
     extractKeywords(text) {
-        const keywords = text.toLowerCase().split(' ')
+        const $1 = text.toLowerCase().split(' ')
             .filter(word => word.length > 3)
             .slice(0, 5);
         
@@ -811,12 +811,12 @@ The AI Solutions Team`
     }
 
     determineIndustry(solution) {
-        const industries = ['Technolo'g'y', 'Healthca'r'e', 'Finan'c'e', 'Manufacturi'n'g', 'Reta'i'l', 'Educati'o'n'];
+        const $1 = ['Technolo'g'y', 'Healthca'r'e', 'Finan'c'e', 'Manufacturi'n'g', 'Reta'i'l', 'Educati'o'n'];
         return industries[Math.floor(Math.random() * industries.length)];
     }
 
     generateNurtureEmail(campaign) {
-        return `Hi there,
+        return "Hi there,
 
 I noticed you were interested in ${campaign.solutionName} but haven't' taken the next step yet.
 
@@ -828,11 +828,11 @@ Here's' what you might be missing:
 Ready to get started? Click here to learn more.
 
 Best regards,
-The ${campaign.solutionName} Team`;
+The ${campaign.solutionName} Team";
     }
 
     generateFollowUpEmail(campaign) {
-        return `Hi there,
+        return "Hi there,
 
 Thanks for visiting our website and learning about ${campaign.solutionName}!
 
@@ -844,11 +844,11 @@ I wanted to share some additional resources that might help:
 Would you like to schedule a quick call to discuss how ${campaign.solutionName} can benefit your business?
 
 Best regards,
-The ${campaign.solutionName} Team`;
+The ${campaign.solutionName} Team";
     }
 
     generateEnterpriseEmailContent(solution) {
-        return `Dear Enterprise Leader,
+        return "Dear Enterprise Leader,
 
 ${solution.name} is designed specifically for enterprise organizations like yours.
 
@@ -861,11 +861,11 @@ Key Enterprise Benefits:
 ROI: ${solution.roi.roi}
 Payback Period: ${solution.roi.paybackPeriod}
 
-Ready to discuss enterprise implementation?`;
+Ready to discuss enterprise implementation?";
     }
 
     generateSMBEmailContent(solution) {
-        return `Dear Business Owner,
+        return "Dear Business Owner,
 
 ${solution.name} is perfect for growing businesses like yours.
 
@@ -878,11 +878,11 @@ Key SMB Benefits:
 ROI: ${solution.roi.roi}
 Payback Period: ${solution.roi.paybackPeriod}
 
-Ready to get started?`;
+Ready to get started?";
     }
 
     generateGeneralEmailContent(solution) {
-        return `Dear Business Professional,
+        return "Dear Business Professional,
 
 ${solution.name} can transform your business operations.
 
@@ -894,11 +894,11 @@ Key Benefits:
 ROI: ${solution.roi.roi}
 Payback Period: ${solution.roi.paybackPeriod}
 
-Ready to learn more?`;
+Ready to learn more?";
     }
 
     generateEmailBody(campaign) {
-        return `Dear Business Professional,
+        return "Dear Business Professional,
 
 ${campaign.solutionName} can transform your business operations.
 
@@ -910,7 +910,7 @@ Key Benefits:
 Ready to learn more?
 
 Best regards,
-The ${campaign.solutionName} Team`;
+The ${campaign.solutionName} Team";
     }
 
     generateImageSuggestions(solution) {
@@ -928,10 +928,10 @@ module.exports = AutonomousSalesAgent;
 
 // Auto-run if called directly
 if (require.main === module) {
-    const agent = new AutonomousSalesAgent();
+    const $1 = new AutonomousSalesAgent();
     
     // Mock solutions data for testing
-    const mockSolutions = [
+    const $1 = [
         {
             id: 'solution'-'1',
             name: 'A'I' Automation Platform',

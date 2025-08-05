@@ -1,7 +1,7 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
-import Link from next/link";
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
+import Link from next/link";}
 import { Home, Search, User }  from "lucide-react;
 
 interface Satellite {
@@ -94,15 +94,15 @@ interface SpaceInsight {
   description: string
   impact: 'positi've | 'negati've | 'neut'ral'
   confidence: number
-  recommendations: string[]}
+  recommendations: string[]};
 const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
-  const [satellites, setSatellites] = useState<Satellite[]>([]
-  const [missions, setMissions] = useState<SpaceMission[]>([]
-  const [trajectories, setTrajectories] = useState<OrbitalTrajectory[]>([]
-  const [stations, setStations] = useState<SpaceStation[]>([]
-  const [explorations, setExplorations] = useState<SpaceExploration[]>([]
-  const [analytics, setAnalytics] = useState<SpaceAnalytics | null>(null
-  const [selectedView, setSelectedView] = useState<'overvi'e'w | satellit'e's | missi'o'ns' | 'trajectori'e's | statio'n's | explorati'o'ns' | 'analytics'>('overview
+  const [satellites, setSatellites] = useState<Satellite[]>([]</div>
+  const [missions, setMissions] = useState<SpaceMission[]>([]</div>
+  const [trajectories, setTrajectories] = useState<OrbitalTrajectory[]>([]</div>
+  const [stations, setStations] = useState<SpaceStation[]>([]</div>
+  const [explorations, setExplorations] = useState<SpaceExploration[]>([]</div>
+  const [analytics, setAnalytics] = useState<SpaceAnalytics | null>(null</div>
+  const [selectedView, setSelectedView] = useState<'overvi'e'w | satellit'e's | missi'o'ns' | 'trajectori'e's | statio'n's | explorati'o'ns' | 'analytics'>('overview</div>
   const [selectedType, setSelectedType] = useState<string>('al'l
   const [isLoading, setIsLoading] = useState(false
   // Mock data
@@ -433,64 +433,64 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
       const typeMatch = selectedType === a'l'l || satellite.type === selectedType
       return typeMatch}
   } [satellites, selectedType]
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive" py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive" py-8">
         "
-        {/* Background Effects */}
-        <div className=fixed" inset-0 z-0> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Space Exploration & Satellite Management - Zion</title>
-        <meta name="description content=Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics > </meta name=description" content="Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics ><meta name="keywords content=space exploration, satellite management, orbital tracking, space missions, AI space, Zion > </meta" name=keywords content="space exploration, satellite management, orbital tracking, space missions, AI space," Zion ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> 
-        </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>
-          <div className="flex  justify-between items-center>
-            <Link href=/ className=text-2xl" font-bold text-white > 
-              </Link href=/" className= text-2xl font-bold text-white ><span className=text-transparent" bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>Zion</span>
-            </Link>
-            <div className="flex items-center space-x-4>
-              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link>
-              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
-              </Link href=/ai-powered-voice-assistant-speech-recognition className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
-              <Link href=/ai-powered-autonomous-vehicle-transportation className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Autonomous Vehicles
-              </Link href=/ai-powered-autonomous-vehicle-transportation  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/ai-powered-cryptocurrency-digital-asset-management className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Cryptocurrency
-              </Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
-              <Link href=/auth/signup className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200 >Get Started
-              </Link href=/auth/signup className=bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200 ></Link>
-            </div> </div>
-        </div>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0"> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered Space Exploration & Satellite Management - Zion</title></div>
+        <meta name="description" content="Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics > </meta name=description" content="Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics ><meta name="keywords content=space exploration, satellite management, orbital tracking, space missions, AI space, Zion > </meta" name=keywords content="space exploration, satellite management, orbital tracking, space missions, AI space," Zion ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+      {/* Header */}</div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> "</div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6"></div>
+          <div className="flex  justify-between items-center>"</div>
+            <Link href=/ className="text-2xl" font-bold text-white "> </div>
+              </Link href=/" className=" text-2xl font-bold text-white "><span className="text-transparent" bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span></div>
+            </Link></div>
+            <div className="flex items-center space-x-4>"</div>
+              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Streaming"</div>
+              </Link href=/ai-powered-live-streaming-broadcasting  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium""></Link></div>
+              <Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant"</div>
+              </Link href=/ai-powered-voice-assistant-speech-recognition className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/ai-powered-autonomous-vehicle-transportation className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Autonomous Vehicles</div>
+              </Link href=/ai-powered-autonomous-vehicle-transportation  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+              <Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Cryptocurrency</div>
+              </Link href=/ai-powered-cryptocurrency-digital-asset-management className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>"</div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/signup className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200 >Get Started"</div>
+              </Link href=/auth/signup className="bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200 "></Link></div>
+            </div> </div></div>
+        </div></div>
       </div>
-      {/* Main Content */}
+      {/* Main Content */}</div>
       <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>
-        {/* Hero Section */}
-        </div><div className= text-center mb-12>
+        {/* Hero Section */}"</div>
+        </div><div className=" text-center mb-12">"</div>
           <h1 className="text-5xl font-bold text-white mb-6> 
-            AI-Powered Space Exploration & Satellite Management
-          </h1>
+            AI-Powered Space Exploration & Satellite Management"</div>
+          </h1>"</div>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
             Experience the future of space exploration with AI-powered satellite management, 
             orbital tracking, mission planning, and intelligent space analytics. Explore the  
-            cosmos with cutting-edge technology.
-          </p>
-          <div className=flex justify-center space-x-4 >
+            cosmos with cutting-edge technology.</div>
+          </p>"</div>
+          <div className="flex justify-center space-x-4 ">"</div>
             <button className="px-8" py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200>
-              Track Satellites
-            </button>
-            <button className=px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover from-purple-700 hover to-pink-700 transition-all duration-200 >
-              Plan Mission
-            </button>
-          </div>
+              Track Satellites</div>
+            </button></div>
+            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover from-purple-700 hover to-pink-700 transition-all duration-200 ">
+              Plan Mission</div>
+            </button></div>
+          </div></div>
         </div>
 "
-        {/* Navigation Tabs */}
+        {/* Navigation Tabs */}</div>
         <div className="flex space-x-1 bg-black/20 rounded-lg:p-1 mb-8>
           {[
             { id: 'overvi'ew, label: 'Overvi'ew, icon: '🌌' },
@@ -500,74 +500,74 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
     { id: 'statio'ns, label: 'Spac'e Stations, icon: '🏗️' },
 { id: exploration's', label: Exploration's', icon: 🔍 },
     { id: 'analyti'cs, label: 'Analyti'cs, icon: '📊'}
-          ].map((tab) => (
-              onClick={() => setSelectedView(tab.id as any)}
+          ].map((tab) => ("
+              onClick={() => setSelectedView(tab.id as any)}"
               className={`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-md:text-sm font-medium transition-all duration-200 ${
                 selectedView === tab.id
                   ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white`
                   : text-gray'-'300 hover:text-white hover:bg-white/10``
               }`}
-            >
-              <span>{tab.icon}</span>
-              <span>{tab.label}</span>
+            ></div>
+              <span>{tab.icon}</span></div>
+              <span>{tab.label}</span></div>
             </button>
-          ))}
+          ))}</div>
         </div>
  
         {/* Content Sections */},
-{selectedView === 'overvi'ew && ("
-          <div className= grid grid-cols-1 lg grid-cols-2 gap-8>
-            {/* Satellites Overview */}
-            </div><div className= bg-black/20 rounded-lg p-6 border" border-white/10>
-              <h3 className="text-xl font-semibold text-white mb-4>Active Satellites</h3>
-              <div className=space-y-4>"
-                {satellites.slice(0, 3).map((satellite) => (
-                  </div><div key={satellite.id} className="p-4 bg-white/5 rounded-lg>
-                    <div className= flex items-center justify-between" mb-2>`
-                      <h4 className="text-white font-medium>{satellite.name}</h4>``
-                      <span className={`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(satellite.status)} text-white`}>
-                        {satellite.status}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-2>{satellite.mission}</p>
-                    <div className=flex" items-center space-x-4 text-sm:text-gray-400>
-                      <span>Altitude  {formatNumber(satellite.orbit.altitude)} km</span>
+{selectedView === 'overvi'ew && ("</div>
+          <div className=" grid grid-cols-1 lg grid-cols-2 gap-8">
+            {/* Satellites Overview */}</div>
+            </div><div className=" bg-black/20 rounded-lg p-6 border" border-white/10"></div>
+              <h3 className="text-xl font-semibold text-white mb-4>Active Satellites</h3>"</div>
+              <div className="space-y-4">"
+                {satellites.slice(0, 3).map((satellite) => (</div>
+                  </div><div key={satellite.id} className="p-4 bg-white/5 rounded-lg>"</div>
+                    <div className=" flex items-center justify-between" mb-2">`</div>
+                      <h4 className="text-white font-medium>{satellite.name}</h4>``"</div>
+                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(satellite.status)} text-white`}">
+                        {satellite.status}</div>
+                      </span></div>
+                    </div></div>
+                    <p className="text-gray-400 text-sm mb-2>{satellite.mission}</p>"</div>
+                    <div className="flex" items-center space-x-4 text-sm:text-gray-400"></div>
+                      <span>Altitude  {formatNumber(satellite.orbit.altitude)} km</span></div>
                       <span className="{getRiskColor(satellite.aiAnalysis.riskLevel)}>
-                        {satellite.aiAnalysis.riskLevel} risk
-                      </span>
-                    </div>
+                        {satellite.aiAnalysis.riskLevel} risk</div>
+                      </span></div>
+                    </div></div>
                   </div>
-                ))}
-              </div>
+                ))}</div>
+              </div></div>
             </div>
-
-            {/* Missions Overview */}
-            <div className="bg-black/20 rounded-lg p-6 border border-white/10">
-              <h3 className=text-xl font-semibold text-white mb-4>Active Missions</h3>
+"
+            {/* Missions Overview */}"</div>
+            <div className="bg-black/20 rounded-lg p-6 border border-white/10"></div>
+              <h3 className="text-xl font-semibold text-white mb-4">Active Missions</h3></div>
               <div className="space-y-4>"
-                {missions.slice(0, 2).map((mission) => (
-                  </div><div key={mission.id} className= p-4 bg-white/5 rounded-lg>
-                    <div className="flex"  items-center justify-between mb-2>`
-                      <h4 className=text-white font-medium>{mission.name}</h4>``
+                {missions.slice(0, 2).map((mission) => (</div>
+                  </div><div key={mission.id} className=" p-4 bg-white/5 rounded-lg"></div>
+                    <div className="flex"  items-center justify-between mb-2>`</div>
+                      <h4 className="text-white font-medium">{mission.name}</h4>``</div>
                       <span className="{`px-4" py-3 rounded text-xs font-medium ${getStatusBgColor(mission.status)} text-white`}>
-                        {mission.status}
-                      </span>
-                    </div>
-                    <p className=text-gray-400 text-sm:mb-2>{mission.destination}</p>
-                    <div className="flex" items-center space-x-4 text-sm text-gray-400 >
-                      <span>Success: {Math.round(mission.aiAnalysis.successProbability * 100)}%</span>
-                      <span>Budget: {formatCurrency(mission.budget)}</span>
-                    </div>
+                        {mission.status}</div>
+                      </span></div>
+                    </div></div>
+                    <p className="text-gray-400 text-sm:mb-2">{mission.destination}</p></div>
+                    <div className="flex" items-center space-x-4 text-sm text-gray-400 ></div>
+                      <span>Success: {Math.round(mission.aiAnalysis.successProbability * 100)}%</span></div>
+                      <span>Budget: {formatCurrency(mission.budget)}</span></div>
+                    </div></div>
                   </div>
-                ))}
-              </div>
-            </div>
+                ))}</div>
+              </div></div>
+            </div></div>
           </div>
         )} '
 '
-        {selectedView === satellit'e's && (
-          <div className= space-y-6>
-            {/* Satellite Type Filter */}
+        {selectedView === satellit'e's && (</div>
+          <div className=" space-y-6">
+            {/* Satellite Type Filter */}</div>
             </div><div className=" flex space-x-2 overflow-x-auto" pb-2>
               {['a'll, 'communicati'on, 'navigati'on, 'weath'er, 'scientif'ic, 'milita'ry, 'commerci'al].map((type) => (
                 `
@@ -578,310 +578,310 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                       : 'bg-white/10 text-gray-300 hover:text-white'``
                   }`}
                 >
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                  {type.charAt(0).toUpperCase() + type.slice(1)}</div>
                 </button>
-              ))}
+              ))}</div>
             </div>
 
-            {/* Satellites Grid */}
-            <div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
-              {filteredSatellites.map((satellite) => (
-                </div><div key={satellite.id} className="bg-black/20 rounded-lg p-6 border border-white/10>
-                  <div className=flex items-center justify-between mb-4">`
-                    <h3 className="text-white font-semibold>{satellite.name}</h3>``
-                    <span className={`px-3" py-3 rounded-full text-sm:${getStatusBgColor(satellite.status)} text-white`}>
-                      {satellite.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4>{satellite.mission}</p>
-                  <div className=space-y-2 mb-4">
-                    </div><div className="flex justify-between text-sm>
-                      <span className=text-gray-400>Altitude</span>"
-                      <span className="text-white>{formatNumber(satellite.orbit.altitude)} km</span> 
-                    </div>
-                    <div className=flex justify-between" text-sm>
-                      <span className="text-gray-400>Inclination</span>
-                      <span className=text-white>{satellite.orbit.inclination}°</span>"
-                    </div>
-                    <div className=" flex justify-between text-sm>
-                      <span className=text-gray-400>Period</span">
-                      <span className="text-white>{satellite.orbit.period} min</span>
-                    </div>
-                  </div>
-                  <div className=space-y-2> 
-                    </div><div className="flex justify-between" text-sm>
-                      <span className=text-gray-400>Health</span>
-                      <span className="text-white>{satellite.aiAnalysis.healthScore}/10</span">
-                    </div>
-                    <div className=flex justify-between text-sm">
-                      <span className="text-gray-400>Performance</span>
-                      <span className=text-white>{satellite.aiAnalysis.performanceScore}/10</span>"
-                    </div>
-                  </div>
+            {/* Satellites Grid */}</div>
+            <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 "> 
+              {filteredSatellites.map((satellite) => (</div>
+                </div><div key={satellite.id} className="bg-black/20 rounded-lg p-6 border border-white/10>"</div>
+                  <div className="flex items-center justify-between mb-4"">`</div>
+                    <h3 className="text-white font-semibold>{satellite.name}</h3>``"</div>
+                    <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(satellite.status)} text-white`}">
+                      {satellite.status}</div>
+                    </span></div>
+                  </div></div>
+                  <p className="text-gray-400 text-sm mb-4>{satellite.mission}</p>"</div>
+                  <div className="space-y-2 mb-4""></div>
+                    </div><div className="flex justify-between text-sm>"</div>
+                      <span className="text-gray-400">Altitude</span>"</div>
+                      <span className="text-white>{formatNumber(satellite.orbit.altitude)} km</span> "</div>
+                    </div>"</div>
+                    <div className="flex justify-between" text-sm"></div>
+                      <span className="text-gray-400>Inclination</span>"</div>
+                      <span className="text-white">{satellite.orbit.inclination}°</span>"</div>
+                    </div></div>
+                    <div className=" flex justify-between text-sm>"</div>
+                      <span className="text-gray-400">Period</span"></div>
+                      <span className="text-white>{satellite.orbit.period} min</span></div>
+                    </div></div>
+                  </div>"</div>
+                  <div className="space-y-2"> "</div>
+                    </div><div className="flex justify-between" text-sm></div>
+                      <span className="text-gray-400">Health</span></div>
+                      <span className="text-white>{satellite.aiAnalysis.healthScore}/10</span"></div>
+                    </div></div>
+                    <div className="flex justify-between text-sm""></div>
+                      <span className="text-gray-400>Performance</span>"</div>
+                      <span className="text-white">{satellite.aiAnalysis.performanceScore}/10</span>"</div>
+                    </div></div>
+                  </div></div>
                 </div >
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
 "'
-        {selectedView === mission's' && (
-          <div className= space-y-6>
+        {selectedView === mission's' && (</div>
+          <div className=" space-y-6"></div>
             </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
-              {missions.map((mission) => (
-                <div key={mission.id} className=bg-black/20 rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between mb-4">`
-                    <h3 className=text-white font-semibold>{mission.name}</h3>``
+              {missions.map((mission) => (</div>
+                <div key={mission.id} className="bg-black/20 rounded-lg p-6 border border-white/10"> </div>
+                  </div><div className="flex items-center justify-between mb-4">`</div>
+                    <h3 className="text-white font-semibold">{mission.name}</h3>``</div>
                     <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(mission.status)} text-white`}>
-                      {mission.status}
-                    </span>
-                  </div>
-                  <p className=text-gray-400 text-sm mb-4>{mission.destination}</p>
-                  <div className="grid" grid-cols-2 gap-4 mb-4>
-                    </div><div className=text-center>
-                      <div className="text-2xl" font-bold text-white >{mission.duration}</div>
-                      <div className=text-gray-400 text-sm>Days</div> 
-                    </div>
-                    <div className="text-center>
-                      </div><div className="text-2xl font-bold text-white>{mission.crew}</div>
-                      <div className=text-gray-400" text-sm>Crew</div>
-                    </div>
-                  </div>
-                  <div className="space-y-2> 
-                    </div><div className=flex justify-between" text-sm>
-                      <span className="text-gray-400>Success Rate</span>
-                      <span className=text-white>{Math.round(mission.aiAnalysis.successProbability" * 100)}%</span>
-                    </div>
-                    <div className=" flex justify-between text-sm>
-                      <span className= text-gray-400>Risk Level</span>
-                      <span className="text-white>{Math.round(mission.aiAnalysis.riskAssessment" * 100)}%</span>
-                    </div>
-                  </div>
+                      {mission.status}</div>
+                    </span></div>
+                  </div></div>
+                  <p className="text-gray-400 text-sm mb-4">{mission.destination}</p></div>
+                  <div className="grid" grid-cols-2 gap-4 mb-4></div>
+                    </div><div className="text-center"></div>
+                      <div className="text-2xl" font-bold text-white >{mission.duration}</div></div>
+                      <div className="text-gray-400 text-sm">Days</div> </div>
+                    </div></div>
+                    <div className="text-center>"</div>
+                      </div><div className="text-2xl font-bold text-white>{mission.crew}</div>"</div>
+                      <div className="text-gray-400" text-sm">Crew</div></div>
+                    </div></div>
+                  </div></div>
+                  <div className="space-y-2> "</div>
+                    </div><div className="flex justify-between" text-sm"></div>
+                      <span className="text-gray-400>Success Rate</span>"</div>
+                      <span className="text-white">{Math.round(mission.aiAnalysis.successProbability" * 100)}%</span></div>
+                    </div></div>
+                    <div className=" flex justify-between text-sm>"</div>
+                      <span className=" text-gray-400">Risk Level</span>"</div>
+                      <span className="text-white>{Math.round(mission.aiAnalysis.riskAssessment" * 100)}%</span></div>
+                    </div></div>
+                  </div></div>
                 </div >
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
 
-        {selectedView === trajectori'e's && (
-          <div className=space-y-6> 
+        {selectedView === trajectori'e's && (</div>
+          <div className="space-y-6"> </div>
             </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
-              {trajectories.map((trajectory) => (
-                <div key={trajectory.id} className=bg-black/20" rounded-lg p-6 border border-white/10> 
-                  </div><div className="flex items-center justify-between mb-4>
-                    <h3 className=text-white" font-semibold >{trajectory.name}</h3>
+              {trajectories.map((trajectory) => (</div>
+                <div key={trajectory.id} className="bg-black/20" rounded-lg p-6 border border-white/10"> </div>
+                  </div><div className="flex items-center justify-between mb-4>"</div>
+                    <h3 className="text-white" font-semibold ">{trajectory.name}</h3></div>
                     <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400>
-                      {trajectory.type}
-                    </span>
-                  </div>
-                  <p className=text-gray-400" text-sm mb-4>Orbital trajectory optimization</p>
-                  <div className="grid grid-cols-2 gap-4 mb-4> 
-                    </div><div className=text-center>"
-                      <div className="text-2xl font-bold text-white>{formatNumber(trajectory.altitude)}</div>
-                      <div className=text-gray-400" text-sm>km Altitude</div>
-                    </div>
-                    <div className="text-center>
-                      </div><div className=text-2xl" font-bold text-white >{trajectory.period}</div>
-                      <div className="text-gray-400 text-sm>min Period</div>
-                    </div>
-                  </div>
-                  <div className=space-y-2">
-                    </div><div className=" flex justify-between text-sm>
-                      <span className=text-gray-400>Efficiency</span>"
-                      <span className="text-white>{trajectory.aiAnalysis.efficiencyScore}/10</span> 
-                    </div>
-                    <div className=flex justify-between" text-sm>
-                      <span className="text-gray-400>Fuel Usage</span>
-                      <span className=text-white>{trajectory.aiAnalysis.fuelConsumption}" units</span>
-                    </div>
-                  </div>
+                      {trajectory.type}</div>
+                    </span>"</div>
+                  </div>"</div>
+                  <p className="text-gray-400" text-sm mb-4">Orbital trajectory optimization</p></div>
+                  <div className="grid grid-cols-2 gap-4 mb-4> "</div>
+                    </div><div className="text-center">"</div>
+                      <div className="text-2xl font-bold text-white>{formatNumber(trajectory.altitude)}</div>"</div>
+                      <div className="text-gray-400" text-sm">km Altitude</div></div>
+                    </div></div>
+                    <div className="text-center>"</div>
+                      </div><div className="text-2xl" font-bold text-white ">{trajectory.period}</div></div>
+                      <div className="text-gray-400 text-sm>min Period</div></div>
+                    </div>"</div>
+                  </div>"</div>
+                  <div className="space-y-2""></div>
+                    </div><div className=" flex justify-between text-sm>"</div>
+                      <span className="text-gray-400">Efficiency</span>"</div>
+                      <span className="text-white>{trajectory.aiAnalysis.efficiencyScore}/10</span> "</div>
+                    </div>"</div>
+                    <div className="flex justify-between" text-sm"></div>
+                      <span className="text-gray-400>Fuel Usage</span>"</div>
+                      <span className="text-white">{trajectory.aiAnalysis.fuelConsumption}" units</span></div>
+                    </div></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
 "'
-        {selectedView === 'stations' && (
-          <div className=space-y-6> 
+        {selectedView === 'stations' && (</div>
+          <div className="space-y-6"> </div>
             </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
-              {stations.map((station) => (
-                <div key={station.id} className=bg-black/20 rounded-lg:p-6 border border-white/10> 
-                  </div><div className="flex" items-center justify-between mb-4 >`
-                    <h3 className=text-white font-semibold>{station.name}</h3">``"
-                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(station.status)}  text-white`}>
-                      {station.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-400" text-sm:mb-4>{station.type} station</p>
-                  <div className=grid grid-cols-2 gap-4 mb-4 > 
-                    </div><div className="text-center">
-                      <div className=text-2xl font-bold text-white>{station.currentOccupants}/{station.capacity}</div>
-                      <div className="text-gray-400" text-sm>Occupants</div>
-                    </div>
-                    <div className=text-center>
-                      </div><div className="text-2xl" font-bold text-white>{station.modules.length}</div>
-                      <div className=text-gray-400 text-sm>Modules</div>
-                    </div>
-                  </div>
-                  <div className="space-y-2>" 
-                    </div><div className=flex justify-between text-sm>
-                      <span className="text-gray-400>Efficiency</span>"
-                      <span className=text-white>{Math.round(station.aiAnalysis.operationalEfficiency * 100)}%</span>
-                    </div>
-                    <div className=" flex justify-between" text-sm>
-                      <span className=text-gray-400>Safety</span>
-                      <span className="text-white>{Math.round(station.aiAnalysis.safetyScore" * 100)}%</span>
-                    </div>
-                  </div>
+              {stations.map((station) => (</div>
+                <div key={station.id} className="bg-black/20 rounded-lg:p-6 border border-white/10"> </div>
+                  </div><div className="flex" items-center justify-between mb-4 >`</div>
+                    <h3 className="text-white font-semibold">{station.name}</h3">``"</div>
+                    <span className="{`px-3 py-3 rounded-full text-sm ${getStatusBgColor(station.status)}  text-white`}">
+                      {station.status}</div>
+                    </span></div>
+                  </div></div>
+                  <p className="text-gray-400" text-sm:mb-4>{station.type} station</p></div>
+                  <div className="grid grid-cols-2 gap-4 mb-4 "> </div>
+                    </div><div className="text-center"></div>
+                      <div className="text-2xl font-bold text-white">{station.currentOccupants}/{station.capacity}</div></div>
+                      <div className="text-gray-400" text-sm>Occupants</div></div>
+                    </div></div>
+                    <div className="text-center"></div>
+                      </div><div className="text-2xl" font-bold text-white>{station.modules.length}</div></div>
+                      <div className="text-gray-400 text-sm">Modules</div></div>
+                    </div></div>
+                  </div></div>
+                  <div className="space-y-2>" </div>
+                    </div><div className="flex justify-between text-sm"></div>
+                      <span className="text-gray-400>Efficiency</span>"</div>
+                      <span className="text-white">{Math.round(station.aiAnalysis.operationalEfficiency * 100)}%</span></div>
+                    </div></div>
+                    <div className=" flex justify-between" text-sm></div>
+                      <span className="text-gray-400">Safety</span></div>
+                      <span className="text-white>{Math.round(station.aiAnalysis.safetyScore" * 100)}%</span></div>
+                    </div></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
  '
-        {selectedView === exploratio'n's && (
-          <div className=space-y-6>
-            </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6>
-              {explorations.map((exploration) => (
-                <div key={exploration.id} className="bg-black/20  rounded-lg:p-6 border border-white/10>
-                  </div><div className=flex items-center justify-between mb-4">`
-                    <h3 className="text-white font-semibold>{exploration.name}</h3>``
-                    <span className={`px-3" py-3 rounded-full text-sm:${getStatusBgColor(exploration.status)} text-white`}>
-                      {exploration.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-4 >{exploration.target} • {exploration.type}</p>
-                  <p className=text-gray-300" text-sm mb-4>{exploration.discovery}</p>
-                  <div className="space-y-2>
-                    </div><div className= flex justify-between" text-sm>
-                      <span className="text-gray-400>Discovery Prob.</span>
-                      <span className=text-white>{Math.round(exploration.aiAnalysis.discoveryProbability" * 100)}%</span> 
-                    </div>
-                    <div className="flex justify-between text-sm>
-                      <span className=text-gray-400>Scientific" Value</span>
-                      <span className="text-white>{exploration.aiAnalysis.scientificValue}/10</span>
-                    </div>
-                  </div>
+        {selectedView === exploratio'n's && (</div>
+          <div className="space-y-6"></div>
+            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3" gap-6">
+              {explorations.map((exploration) => (</div>
+                <div key={exploration.id} className="bg-black/20  rounded-lg:p-6 border border-white/10>"</div>
+                  </div><div className="flex items-center justify-between mb-4"">`</div>
+                    <h3 className="text-white font-semibold>{exploration.name}</h3>``"</div>
+                    <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(exploration.status)} text-white`}">
+                      {exploration.status}</div>
+                    </span></div>
+                  </div></div>
+                  <p className="text-gray-400 text-sm mb-4 >{exploration.target} • {exploration.type}</p>"</div>
+                  <p className="text-gray-300" text-sm mb-4">{exploration.discovery}</p></div>
+                  <div className="space-y-2>"</div>
+                    </div><div className=" flex justify-between" text-sm"></div>
+                      <span className="text-gray-400>Discovery Prob.</span>"</div>
+                      <span className="text-white">{Math.round(exploration.aiAnalysis.discoveryProbability" * 100)}%</span> </div>
+                    </div></div>
+                    <div className="flex justify-between text-sm>"</div>
+                      <span className="text-gray-400">Scientific" Value</span></div>
+                      <span className="text-white>{exploration.aiAnalysis.scientificValue}/10</span></div>
+                    </div></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
-        )}
-''
-        {selectedView === analytic's' && analytics && ("
+        )}"
+''"
+        {selectedView === analytic's' && analytics && ("</div>
           <div className=" space-y-6>
-            {/* Analytics Overview */}
-            </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>
-              <div className="bg-black/20" rounded-lg:p-6 border border-white/10 text-center>
-                </div><div className=text-3xl font-bold text-white >{formatNumber(analytics.totalSatellites)}</div>
-                <div className="text-gray-400>Total" Satellites</div>
-              </div>
-              <div className= bg-black/20 rounded-lg p-6 border border-white/10 text-center>
-                </div><div className="text-3xl" font-bold text-white>{analytics.activeMissions}</div>
-                <div className=text-gray-400>Active Missions</div>
-              </div>
-              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center>
-                </div><div className=text-3xl font-bold text-white>{formatNumber(analytics.orbitalObjects)}</div>
-                <div className="text-gray-400>Orbital" Objects</div>
-              </div>
-              <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center >
-                </div><div className="text-3xl" font-bold text-white>{formatNumber(analytics.spaceDebris)}</div>
-                <div className=text-gray-400>Space Debris</div >
-              </div>
+            {/* Analytics Overview */}"</div>
+            </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">"</div>
+              <div className="bg-black/20" rounded-lg:p-6 border border-white/10 text-center></div>
+                </div><div className="text-3xl font-bold text-white ">{formatNumber(analytics.totalSatellites)}</div></div>
+                <div className="text-gray-400>Total" Satellites</div></div>
+              </div></div>
+              <div className=" bg-black/20 rounded-lg p-6 border border-white/10 text-center"></div>
+                </div><div className="text-3xl" font-bold text-white>{analytics.activeMissions}</div></div>
+                <div className="text-gray-400">Active Missions</div></div>
+              </div></div>
+              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center></div>
+                </div><div className="text-3xl font-bold text-white">{formatNumber(analytics.orbitalObjects)}</div></div>
+                <div className="text-gray-400>Orbital" Objects</div></div>
+              </div></div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center "></div>
+                </div><div className="text-3xl" font-bold text-white>{formatNumber(analytics.spaceDebris)}</div></div>
+                <div className="text-gray-400">Space Debris</div ></div>
+              </div></div>
             </div>
 
-            {/* AI Insights */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10>
-              <h3 className=text-xl" font-semibold text-white mb-4>AI Space Insights</h3>
-              <div className="space-y-4>
-                {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className= p-4 bg-white/5" rounded-lg>
-                    <div className="flex items-center space-x-3 mb-2>`
-                      <span className=text-2xl>{getInsightIcon(insight.impact)}</span>``"
+            {/* AI Insights */}"</div>
+            <div className=" bg-black/20 rounded-lg p-6 border border-white/10>"</div>
+              <h3 className="text-xl" font-semibold text-white mb-4">AI Space Insights</h3></div>
+              <div className="space-y-4>"
+                {analytics.aiInsights.map((insight) => ("</div>
+                  </div><div key={insight.id} className=" p-4 bg-white/5" rounded-lg"></div>
+                    <div className="flex items-center space-x-3 mb-2>`"</div>
+                      <span className="text-2xl">{getInsightIcon(insight.impact)}</span>``"</div>
                       <h4 className="{`text-lg font-medium ${getInsightColor(insight.impact)}`}>
-                        {insight.title} 
-                      </h4>
-                      <span className=text-sm text-gray-400>{Math.round(insight.confidence * 100)}% confidence</span>
-                    </div>
-                    <p className="text-gray-300" mb-3>{insight.description}</p>
-                    <div className=space-y-2>
-                      {insight.recommendations.map((rec, index) => (
-                        </div><div key={index} className="flex" items-center space-x-2 text-sm text-gray-400>
-                          <span>•</span>
-                          <span>{rec}</span>
+                        {insight.title} </div>
+                      </h4>"</div>
+                      <span className="text-sm text-gray-400">{Math.round(insight.confidence * 100)}% confidence</span></div>
+                    </div>"</div>
+                    <p className="text-gray-300" mb-3>{insight.description}</p></div>
+                    <div className="space-y-2">
+                      {insight.recommendations.map((rec, index) => (</div>
+                        </div><div key={index} className="flex" items-center space-x-2 text-sm text-gray-400></div>
+                          <span>•</span></div>
+                          <span>{rec}</span></div>
                         </div>
-                      ))}
-                    </div>
+                      ))}</div>
+                    </div></div>
                   </div>
-                ))}
-              </div>
-            </div>
+                ))}</div>
+              </div></div>
+            </div></div>
           </div>
-        )}
+        )}</div>
       </div>
-      {/* Footer */}
-      <div className=bg-black/20" border-t border-white/10 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
-          <div className=grid" grid-cols-1 md grid-cols-4 gap-8 >
-            </div><div>
-              <h3 className="text-white font-semibold mb-4>Zion</h3>
-              <p className=text-gray-400" text-sm>
-                The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4>Features</h4>
-              <ul className=space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting className=hover text-white >Live Streaming</Link href= /ai-powered-live-streaming-broadcasting" className="hover text-white></Link></li>
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition className=hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white ></Link></li>
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className=hover" text-white" ></Link></li>
-                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className=hover text-white >Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white ></Link></li>
-                <li><Link href=/ai-powered-space-exploration-satellite-management className="hover" text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className=hover text-white ></Link></li> </ul>
-            </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Services</h4>
-              <ul className=space-y-2  text-sm:text-gray-400>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace className=hover text-white"></Link></li>
-                <li><Link href=/services className="hover text-white >IT Services</Link href=/services className=hover" text-white" ></Link></li>
-                <li><Link href=/talents className=hover" text-white >AI Talents</Link href=/talents  className="hover text-white ></Link></li>
-                <li><Link href=/equipment className="hover" text-white >Equipment</Link href=/equipment className=hover text-white" ></Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4>Support</h4>
-              <ul className=space-y-2" text-sm" text-gray-400>
-                <li><Link href=/help-desk-support className=hover text-white >Help Desk</Link href=/help-desk-support className="hover" text-white ></Link></li>
-                <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact  className=hover text-white" ></Link></li>
-                <li><Link href=/docs className="hover text-white >Documentation</Link href=/docs className=hover" text-white" ></Link></li>
-                <li><Link href=/status className=hover" text-white >Status</Link href=/status  className="hover text-white ></Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className=border-t" border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm>;
-            <p>&copy; 2025 Zion Tech Group. All rights reserved.</p> </div>
-        </div>
+      {/* Footer */}</div>
+      <div className="bg-black/20" border-t border-white/10 mt-16"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>"</div>
+          <div className="grid" grid-cols-1 md grid-cols-4 gap-8 "></div>
+            </div><div></div>
+              <h3 className="text-white font-semibold mb-4>Zion</h3>"</div>
+              <p className="text-gray-400" text-sm">
+                The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4>Features</h4>"</div>
+              <ul className="space-y-2 text-sm text-gray-400""></div>
+                <li><Link href="/ai-powered-live-streaming-broadcasting className="hover text-white ">Live Streaming</Link href= /ai-powered-live-streaming-broadcasting" className="hover text-white></Link></li>"</div>
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white ">Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition className="hover text-white ></Link></li>"</div>
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white" "></Link></li></div>
+                <li><Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover text-white ">Cryptocurrency</Link href=/ai-powered-cryptocurrency-digital-asset-management className="hover" text-white ></Link></li></div>
+                <li><Link href=/ai-powered-space-exploration-satellite-management className="hover" text-white >Space Exploration</Link href=/ai-powered-space-exploration-satellite-management  className="hover text-white "></Link></li> </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white" font-semibold mb-4>Services</h4></div>
+              <ul className="space-y-2  text-sm:text-gray-400"></div>
+                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace className="hover text-white""></Link></li></div>
+                <li><Link href=/services className="hover text-white >IT Services</Link href=/services className="hover" text-white" "></Link></li></div>
+                <li><Link href=/talents className="hover" text-white ">AI Talents</Link href=/talents  className="hover text-white ></Link></li>"</div>
+                <li><Link href=/equipment className="hover" text-white >Equipment</Link href=/equipment className="hover text-white" "></Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4>Support</h4>"</div>
+              <ul className="space-y-2" text-sm" text-gray-400"></div>
+                <li><Link href=/help-desk-support className="hover text-white ">Help Desk</Link href=/help-desk-support className="hover" text-white ></Link></li></div>
+                <li><Link href=/contact className="hover" text-white >Contact</Link href=/contact  className="hover text-white" "></Link></li></div>
+                <li><Link href=/docs className="hover text-white >Documentation</Link href=/docs className="hover" text-white" "></Link></li></div>
+                <li><Link href=/status className="hover" text-white ">Status</Link href=/status  className="hover text-white ></Link></li></div>
+              </ul></div>
+            </div>"</div>
+          </div>"</div>
+          <div className="border-t" border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">;</div>
+            <p>&copy; 2025 Zion Tech Group. All rights reserved.</p> </div></div>
+        </div></div>
       </div>
-        {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> 
-          </div><div className=flex justify-around items-center py-2">
-            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white>
-              <Home className= w-5 h-5 >
-              </Home className=" w-5 h-5 ><span className="text-xs>Home</span>
-            </button>
-            <button className=flex flex-col items-center p-2 text-gray-400 hover text-white">
-              <Search className="w-5 h-5 > 
-              </Search className=w-5 h-5 ><span" className="text-xs>Search</span> 
-            </button>
-            <button className=flex" flex-col items-center p-2 text-gray-400 hover" text-white>
-              <User className=w-5 h-5 > </User className="w-5"  h-5 ><span className=text-xs>Profile</span>"
-            </button>
-          </div>
-        </div>
+        {/* Mobile Navigation */}</div>
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50> "</div>
+          </div><div className="flex justify-around items-center py-2""></div>
+            <button className=" flex flex-col items-center p-2 text-gray-400 hover text-white>"</div>
+              <Home className=" w-5 h-5 ">"</div>
+              </Home className=" w-5 h-5 ><span className="text-xs>Home</span>"</div>
+            </button>"</div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white""></div>
+              <Search className="w-5 h-5 > "</div>
+              </Search className="w-5 h-5 "><span" className="text-xs>Search</span> "</div>
+            </button>"</div>
+            <button className="flex" flex-col items-center p-2 text-gray-400 hover" text-white"></div>
+              <User className="w-5 h-5 "> </User className="w-5"  h-5 ><span className="text-xs">Profile</span>"</div>
+            </button></div>
+          </div></div>
+        </div></div>
       </div>
-  
   </div>
-
-  </div >
+  </div>
+</div>
+  </div ></div>
   </div> ;
 };
-`
-export default AIPoweredSpaceExplorationSatelliteManagementPage )))))))))))))))))))))"'"'`
+`;}
+export default AIPoweredSpaceExplorationSatelliteManagementPage )))))))))))))))))))))"'"'`</div>

@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Files with known syntax errors
+// Files with known syntax errors;
 const filesToFix = [
   'page's'/ai-powered-autonomous-vehicle-transportation.tsx',
   'page's'/ai-powered-backup-recovery.tsx',
@@ -11,7 +11,7 @@ const filesToFix = [
   'page's'/ai-powered-biometric-authentication.tsx',
   'page's'/ai-powered-blockchain.tsx'
 ];
-
+;
 function fixFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -25,7 +25,7 @@ function fixFile(filePath) {
     }
     
     // Fix 2: Fix JSX fragment syntax
-    content = content.replace(/<>([\s\S]*?)<\/>/g, (match, innerContent) => {
+    content = content.replace(/<>([\s\S]*?)<\/>/g, (match, innerContent) => {</div>
       return `<div>${innerContent}</div>`;
     });
     
@@ -60,7 +60,7 @@ function fixFile(filePath) {
     return 0;
   }
 }
-
+;
 function fixAllFiles() {
   console.log('Startin'g' quick syntax fix...');
   
@@ -78,4 +78,4 @@ function fixAllFiles() {
 }
 
 // Run the fix
-fixAllFiles(); 
+fixAllFiles(); </div>

@@ -221,7 +221,7 @@ if (require.main === module) {
       
     case 'create-servi'c'e':
       const type = process.argv[3];
-      if (!type) {
+      if (!type) {</div>
         console.error('Usag'e': node service-generation-launcher.js create-service <type>');
         process.exit(1);
       }
@@ -257,7 +257,7 @@ if (require.main === module) {
       console.log('Usag'e':');
       console.log('  node service-generation-launcher.js start     - Start the factory');
       console.log('  node service-generation-launcher.js stop      - Stop the factory');
-      console.log('  node service-generation-launcher.js status    - Show status');
+      console.log('  node service-generation-launcher.js status    - Show status');</div>
       console.log('  node service-generation-launcher.js create-service <type> - Create a service');
       console.log('  node service-generation-launcher.js analytics - Show analytics');
       console.log('');
@@ -268,4 +268,4 @@ if (require.main === module) {
   }
 }
 
-module.exports = ServiceGenerationLauncher; 
+module.exports = ServiceGenerationLauncher; </div>

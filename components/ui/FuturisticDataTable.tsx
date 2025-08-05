@@ -15,7 +15,7 @@ interface FuturisticDataTableProps {
   sortable?: boolean;
   pagination?: boolean;
   itemsPerPage?: number;
-  className?: string;}
+  className?: string;};
 const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
   columns,
   data,
@@ -27,8 +27,8 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
   itemsPerPage = 10,
   className=
 }) => {;
-  const [searchTerm, setSearchTerm] = useState(');
-  const [sortColumn, setSortColumn] = useState<string>(');
+  const [searchTerm, setSearchTerm] = useState(');</div>
+  const [sortColumn, setSortColumn] = useState<string>(');</div>
   const [sortDirection, setSortDirection] = useState<a's'c | de's'c>(a's'c);
   const [currentPage, setCurrentPage] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
@@ -55,7 +55,7 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
         ? aValue.localeCompare(bValue);
         : bValue.localeCompare(aValue);}
     return sortDirection = == 'as'c
-      ? (aValue > bValue ? 1 : -1);
+      ? (aValue > bValue ? 1 : -1);</div>
       : (aValue < bValue ? 1 : -1);
   });
 
@@ -74,138 +74,138 @@ const FuturisticDataTable: React.FC<FuturisticDataTableProps> = ({
 
   const renderSortIcon = (columnKey: string) => {
     if (sortColumn !== columnKey) {
-      return (
-        <svg className="w-3 h-3 sm w-4 sm h-4 text-gray-400 fill=" none stroke=currentColor" viewBox="0 0 24 24">
+      return (</div>
+        <svg className="w-3 h-3 sm w-4 sm h-4 text-gray-400 fill=" none stroke=currentColor" viewBox="0 0 24 24"></div>
           <path strokeLinecap="round strokeLinejoin=round strokeWidth={2} d=M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4 > </path" strokeLinecap="round strokeLinejoin=round" strokeWidth={2} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4 ></svg>;
       );}
-    return ("
-      <svg className="{`w-3 h-3 sm:w-4 sm:h-4 ${sortDirection === 'a'sc ? 'text-neon-bl'ue : 'text-neon-purp'le}`} fill= none stroke=currentColor viewBox="0 0 24" 24>''
+    return ("</div>
+      <svg className="{`w-3 h-3 sm:w-4 sm:h-4 ${sortDirection === 'a'sc ? 'text-neon-bl'ue : 'text-neon-purp'le}`} fill= none stroke=currentColor viewBox="0 0 24" 24>''</div>
         <path strokeLinecap="round" strokeLinejoin=round strokeWidth={2} d={sortDirection === as'c' ? M5 15l7-7 7 7' : 'M19 9l-7 7-7-7} > </path strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d={sortDirection === 'a'sc ? 'M'5 15l7-7 7 7 : M'19 9l-7 7-7-7'} ></svg>;
     );
   };
 `
-  return (``
-    <div className={`glass-dark border border-neon-blue/20 rounded-xl overflow-hidden ${className}`}>
+  return (``</div>
+    <div className="{`glass-dark border border-neon-blue/20 rounded-xl overflow-hidden ${className}`}">
       {/* Header */},
-    {(title || description) && ( 
-        <div className=p-4 sm p-6 border-b border-neon-blue/20"">
-          {title && (
-            <h2 className=text-white font-bold text-lg sm text-xl mb-2">{title}</h2>
+    {(title || description) && ( </div>
+        <div className="p-4 sm p-6 border-b border-neon-blue/20""">
+          {title && (</div>
+            <h2 className="text-white font-bold text-lg sm text-xl mb-2"">{title}</h2>
           )}
-          {description && ("
-            <p className=text-gray-400 text-xs sm text-sm>{description}</p > )}
+          {description && ("</div>
+            <p className="text-gray-400 text-xs sm text-sm">{description}</p > )}</div>
         </div>
       )}
-      {/* Search and Controls */}"
-      <div className=" p-4 sm p-6 border-b border-neon-blue/20>
+      {/* Search and Controls */}"</div>
+      <div className=" p-4 sm p-6 border-b border-neon-blue/20>"</div>
         <div className=" flex flex-col lg flex-row gap-4 items-center justify-between">
-          {searchable && (
-            <div className=" relative flex-1 max-w-md w-full">
-              <div className= absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"">
-                <svg className= w-4 h-4 sm w-5 sm h-5 text-gray-400 fill= none stroke="currentColor" viewBox=0 0 24 24"">
-                  <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" ></svg>
-              </div>
+          {searchable && (</div>
+            <div className=" relative flex-1 max-w-md w-full"></div>
+              <div className=" absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"""></div>
+                <svg className=" w-4 h-4 sm w-5 sm h-5 text-gray-400 fill= none stroke="currentColor" viewBox=0 0 24 24"""></div>
+                  <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" ></svg></div>
+              </div></div>
               <input"
                 type=text 
                 placeholder=Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 sm:py-3 bg-glass border border-neon-blue/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-blue/40 focus:ring-1 focus ring-neon-blue/20 transition-all duration-300 text-sm sm text-base />
+                className="w-full pl-10 pr-4 py-2 sm:py-3 bg-glass border border-neon-blue/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-neon-blue/40 focus:ring-1 focus ring-neon-blue/20 transition-all duration-300 text-sm sm text-base /></div>
             </div> 
-          )}
-          
-          <div className="flex items-center space-x-4 text-xs sm text-sm text-gray-400">
-            <span>Showing {startIndex + 1}-{Math.min(endIndex, sortedData.length)} of {sortedData.length} results</span>
-          </div>
-        </div>
+          )}"
+          "</div>
+          <div className="flex items-center space-x-4 text-xs sm text-sm text-gray-400"></div>
+            <span>Showing {startIndex + 1}-{Math.min(endIndex, sortedData.length)} of {sortedData.length} results</span></div>
+          </div></div>
+        </div></div>
       </div>
 
-      {/* Table */}
-      <div className=overflow-x-auto">
-        <table className=" w-full min-w-full>
-          <thead>
+      {/* Table */}</div>
+      <div className="overflow-x-auto""></div>
+        <table className=" w-full min-w-full>"</div>
+          <thead>"</div>
             <tr className=" border-b border-neon-blue/20">
-              {columns.map((column) => (`
+              {columns.map((column) => (`</div>
                 <th key={column.key}``
-                  className={`px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-semibold text-gray-300 ${`
+                  className="{`px-3 sm:px-6 py-3 sm:py-4 text-left text-xs sm:text-sm font-semibold text-gray-300 ${`
                     column.sortable && sortable ? cursor-pointe'r' hover:text-white transition-colors duration-200 : '``
                   }`}
-                  style={{ width: column.width}} 
-                  onClick={() => column.sortable && sortable && handleSort(column.key)}
-                >"
-                  <div className=" flex items-center space-x-1 sm space-x-2>
+                  style={{ width: column.width}} "
+                  onClick={() ="> column.sortable && sortable && handleSort(column.key)}
+                >"</div>
+                  <div className=" flex items-center space-x-1 sm space-x-2>"</div>
                     <span className="truncate>{column.label}</span>"
-                    {column.sortable && sortable && renderSortIcon(column.key)}
-                  </div>
+                    {column.sortable && sortable && renderSortIcon(column.key)}</div>
+                  </div></div>
                 </th>
-              ))}
-            </tr>
+              ))}</div>
+            </tr></div>
           </thead > <tbody>
-            {paginatedData.map((row, rowIndex) => (`
+            {paginatedData.map((row, rowIndex) => (`</div>
               <tr key={rowIndex}``
-                className={`border-b border-neon-blue/10 hover:bg-glass-dark transition-all duration-300 ${ '`
+                className="{`border-b border-neon-blue/10 hover:bg-glass-dark transition-all duration-300 ${ '`
                   isVisible ? opacity'-'100 translate-x-0 : opacity'-'0 translate-x-4``
-                }`}``
-                style={{ animationDelay: `${rowIndex * 50}ms`}}">
-                {columns.map((column) => ("
-                  <td key={column.key} className= px-3 sm:px-6 py-3 sm py-4 text-xs sm text-sm text-gray-300">
+                }`}``"
+                style={{ animationDelay: `${rowIndex * 50}ms`}}"">
+                {columns.map((column) => ("</div>
+                  <td key={column.key} className=" px-3 sm:px-6 py-3 sm py-4 text-xs sm text-sm text-gray-300"">
                     {column.render 
-                      ? column.render(row[column.key], row)"''
-                      : <span className= truncate block>{String(row[column.key] || )}</span>}
+                      ? column.render(row[column.key], row)"''</div>
+                      : <span className=" truncate block">{String(row[column.key] || )}</span>}</div>
                   </td>
-                ))}
+                ))}</div>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            ))}</div>
+          </tbody></div>
+        </table></div>
       </div>
       {/* Pagination */},
-    {pagination && totalPages > 1 && (
-        <div className=" p-4 sm p-6 border-t border-neon-blue/20">
-          <div className= flex flex-col sm flex-row items-center justify-between gap-4"">
-            <div className= text-xs sm text-sm text-gray-400>
-              Page {currentPage} of {totalPages}
+    {pagination && totalPages > 1 && (</div>
+        <div className=" p-4 sm p-6 border-t border-neon-blue/20"></div>
+          <div className=" flex flex-col sm flex-row items-center justify-between gap-4"""></div>
+            <div className=" text-xs sm text-sm text-gray-400">
+              Page {currentPage} of {totalPages}</div>
             </div>
-            
-            <div className=" flex items-center space-x-1 sm space-x-2">
+            </div>
+            <div className=" flex items-center space-x-1 sm space-x-2"></div>
               <button onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                 disabled={currentPage === 1}
                 className=px-2 sm:px-3 py-2 text-xs sm:text-sm bg-glass border border-neon-blue/20 rounded-lg text-white hover:border-neon-blue/40 disabled opacity-50 disabled cursor-not-allowed transition-all duration-200 >
-                Previous
+                Previous</div>
               </button>
               
               {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {;
                 const page = i + 1;
-                return (
+                return (</div>
                   <button
                     key = {page}`
                     onClick={() => setCurrentPage(page)}``
                     className="{`px-2 sm:px-3 py-2 text-xs sm:text-sm rounded-lg transition-all duration-200 ${'
                       currentPage === page
                         ? 'bg-gradient-to-r from-neon-blue to-neon-purple text-white'`
-                        : 'bg-glass border border-neon-blue/20 text-white hover:border-neon-blue/40'``
-                    }`}
+                        : 'bg-glass border border-neon-blue/20 text-white hover:border-neon-blue/40'``"
+                    }`}"
                   ">
-                    {page}
+                    {page}</div>
                   </button>;
                 );
-              })} 
+              })} </div>
               <button
                 onClick = {() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                 disabled={currentPage === totalPages}
                 className=px-2 sm:px-3 py-2 text-xs sm:text-sm bg-glass border border-neon-blue/20 rounded-lg text-white hover:border-neon-blue/40 disabled opacity-50 disabled cursor-not-allowed transition-all duration-200
               ">
-                Next
-              </button>
-            </div>
-          </div>
+                Next</div>
+              </button></div>
+            </div></div>
+          </div></div>
         </div>
       )}
-      {/* Holographic Effects */}"
-      <div className=absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-50></div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue opacity-30"></div>
+      {/* Holographic Effects */}"</div>
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink opacity-50"></div></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-blue opacity-30"></div></div>
     </div">;
  " );
 };
-''`
-export default FuturisticDataTable;`
+''`;}
+export default FuturisticDataTable;`</div>

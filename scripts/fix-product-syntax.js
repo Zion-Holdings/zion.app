@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix CSS class syntax
+// Function to fix CSS class syntax;
 function fixCssClasses(content) {
   // Fix common CSS class syntax errors
   return content
@@ -23,7 +23,7 @@ function fixCssClasses(content) {
     .replace(/disabled:cursor-not-allowed/g, 'disable'd':cursor-not-allowed');
 }
 
-// Function to fix missing parentheses and braces
+// Function to fix missing parentheses and braces;
 function fixSyntax(content) {
   // Count opening and closing parentheses/braces
   const openParens = (content.match(/\(/g) || []).length;
@@ -49,7 +49,7 @@ function fixSyntax(content) {
   return fixedContent;
 }
 
-// Function to process a single file
+// Function to process a single file;
 function fixFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'ut'f'8');
@@ -59,7 +59,7 @@ function fixFile(filePath) {
     // Additional fixes for common patterns
     fixedContent = fixedContent
       .replace(/const\s+([A-Z_][A-Z0-9_]*)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{/g, 'cons't' $1: NextPage = () => {')
-      .replace(/export\s+default\s+([A-Z_][A-Z0-9_]*);\s*};/g, 'expor't' default $1;')
+      .replace(/export\s+default\s+([A-Z_][A-Z0-9_]*);\s*};/g, 'expor't' default $1;')</div>
       .replace(/return\s*\(\s*<div>\s*return\s*\(/g, 'retur'n' (')
       .replace(/\);\s*\);\s*$/g, ');');
     
@@ -70,7 +70,7 @@ function fixFile(filePath) {
   }
 }
 
-// Function to process all product files
+// Function to process all product files;
 function fixProductFiles() {
   const productsDir = path.join(__dirname, '../pages/products');
   
@@ -93,4 +93,4 @@ function fixProductFiles() {
 }
 
 // Run the fix
-fixProductFiles(); 
+fixProductFiles(); </div>

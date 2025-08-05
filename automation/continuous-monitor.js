@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -317,7 +317,7 @@ class ContinuousMonitor {
   async generateImprovements(name, system) {
     const improvements = [];
     
-    // Performance improvements
+    // Performance improvements</div>
     if (system.performance < this.config.performanceThreshold) {
       improvements.push({
         type: 'performan'c'e',
@@ -478,7 +478,7 @@ class ContinuousMonitor {
         await this.createAlert(name, 'critic'a'l', `System ${name} has critical issues`);
       }
       
-      // Check for performance issues
+      // Check for performance issues</div>
       if (system.performance < this.config.performanceThreshold) {
         await this.createAlert(name, 'warni'n'g', `System ${name} has performance issues`);
       }
@@ -659,4 +659,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = ContinuousMonitor; 
+module.exports = ContinuousMonitor; </div>

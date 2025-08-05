@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class QualityAutomationLauncher {
@@ -446,4 +446,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = QualityAutomationLauncher; 
+module.exports = QualityAutomationLauncher; </div>

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix specific parsing errors
+// Function to fix specific parsing errors;
 function fixSpecificParsingErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -26,7 +26,7 @@ function fixSpecificParsingErrors(filePath) {
     // Fix "Expression expected" errors
     content = content.replace(/(\w+):\s*([^,}]*)$/gm, '$1: $2');
     
-    // Fix "Unexpected token" errors
+    // Fix "Unexpected token" errors</div>
     content = content.replace(/<([^>]+)\s*\/\s*([^>]*)\s*\/>/g, '<$1 $2 />');
 
     if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
@@ -42,7 +42,7 @@ function fixSpecificParsingErrors(filePath) {
   }
 }
 
-// Function to fix all product files with parsing errors
+// Function to fix all product files with parsing errors;
 function fixAllProductFiles() {
   const productsDir = path.join(__dirname, '..', 'pag'e's', 'produc't's');
   let totalFixed = 0;
@@ -62,7 +62,7 @@ function fixAllProductFiles() {
   return totalFixed;
 }
 
-// Function to fix all service files with parsing errors
+// Function to fix all service files with parsing errors;
 function fixAllServiceFiles() {
   const servicesDir = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
   let totalFixed = 0;
@@ -82,7 +82,7 @@ function fixAllServiceFiles() {
   return totalFixed;
 }
 
-// Function to fix specific files with known parsing issues
+// Function to fix specific files with known parsing issues;
 function fixSpecificFiles() {
   const specificFiles = [
     'page's'/products.tsx',
@@ -137,7 +137,7 @@ function fixSpecificFiles() {
   return totalFixed;
 }
 
-// Process all files
+// Process all files;
 function processFiles() {
   let totalFixed = 0;
 
@@ -156,4 +156,4 @@ function processFiles() {
   console.log(`\n🎉 Fixed parsing errors in ${totalFixed} files`);
 }
 
-processFiles(); 
+processFiles(); </div>

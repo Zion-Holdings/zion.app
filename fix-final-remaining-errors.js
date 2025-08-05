@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to completely reconstruct problematic files
+// Function to completely reconstruct problematic files;
 function fixFinalRemainingErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -16,43 +16,43 @@ function fixFinalRemainingErrors(filePath) {
         .join('');
 
       // Create a basic React component structure
-      const newContent = `import React from 'rea'c't';
-import type { NextPage } from 'ne'x't';
-import Head from 'nex't'/head';
-import { Home, Search, User } from 'lucide-rea'c't';
+      const newContent = `import React from 'rea'c't';}
+import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
+import { Home, Search, User } from 'lucide-rea'c't';}
 import ModernLayout from '../../components/layout/ModernLayout';
-
+;
 const ${componentName}: NextPage = () => {
   return (
-    <ModernLayout>
-      <div className="relative z-10 container-responsive py-8" role="main">
-        <Head>
-          <title>${componentName} - Zion</title>
-          <meta name="description" content="${componentName} page for Zion marketplace." />
+    <ModernLayout></div>
+      <div className="relative z-10 container-responsive py-8" role="main"></div>
+        <Head></div>
+          <title>${componentName} - Zion</title></div>
+          <meta name="description" content="${componentName} page for Zion marketplace." /></div>
         </Head>
         
-        {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        {/* Background Effects */}</div>
+        <div className="fixed inset-0 z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div></div>
         </div>
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+        {/* Main Content */}</div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="text-center"></div>
             <h1 className="text-4xl font-bold text-white mb-8">
-              ${componentName}
-            </h1>
+              ${componentName}</div>
+            </h1></div>
             <p className="text-xl text-gray-300 mb-8">
-              Welcome to the ${componentName} page.
-            </p>
-          </div>
-        </div>
-      </div>
+              Welcome to the ${componentName} page.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </ModernLayout>
   );
 };
-
+;}
 export default ${componentName};`;
 
       fs.writeFileSync(filePath, newContent, 'ut'f'8');
@@ -67,7 +67,7 @@ export default ${componentName};`;
   }
 }
 
-// Function to recursively find TypeScript files
+// Function to recursively find TypeScript files;
 function findTsxFiles(dir) {
   const files = [];
   const items = fs.readdirSync(dir);
@@ -86,12 +86,12 @@ function findTsxFiles(dir) {
   return files;
 }
 
-// Main execution
+// Main execution;
 const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);
-
+;
 let fixedCount = 0;
 for (const file of files) {
   if (fixFinalRemainingErrors(file)) {
@@ -99,4 +99,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Fixed ${fixedCount} files.`); 
+console.log(`Fixed ${fixedCount} files.`); </div>

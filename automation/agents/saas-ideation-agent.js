@@ -1,8 +1,8 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
 
-class SaaSIdeationAgent {
+class $1 {
   constructor(agentId) {
     this.agentId = agentId;
     this.ideas = [];
@@ -49,7 +49,7 @@ class SaaSIdeationAgent {
   }
 
   async start() {
-    console.log(`SaaS Ideation Agent ${this.agentId} started`);
+    console.log("SaaS Ideation Agent ${this.agentId} started");
     
     // Load existing data
     await this.loadData();
@@ -66,28 +66,28 @@ class SaaSIdeationAgent {
         await this.updateMarketData();
         await this.saveData();
         
-        console.log(`[${this.agentId}] Generated ${this.ideas.length} ideas, ${this.opportunities.length} opportunities`);
+        console.log("[${this.agentId}] Generated ${this.ideas.length} ideas, ${this.opportunities.length} opportunities");
       } catch (error) {
-        console.error(`[${this.agentId}] Error in ideation loop:`, error);
+        console.error("[${this.agentId}] Error in ideation loop:", error);
       }
     }, 300000); // Run every 5 minutes
   }
 
   async generateNewIdeas() {
-    const serviceTypes = Object.keys(this.ideaTemplates);
+    const $1 = Object.keys(this.ideaTemplates);
     
     for (const serviceType of serviceTypes) {
-      const templates = this.ideaTemplates[serviceType];
-      const categories = this.categories[serviceType];
+      const $1 = this.ideaTemplates[serviceType];
+      const $1 = this.categories[serviceType];
       
       // Generate 3-5 ideas per service type
-      const numIdeas = Math.floor(Math.random() * 3) + 3;
+      const $1 = Math.floor(Math.random() * 3) + 3;
       
-      for (let i = 0; i < numIdeas; i++) {
-        const template = templates[Math.floor(Math.random() * templates.length)];
-        const category = categories[Math.floor(Math.random() * categories.length)];
+      for (let $1 = 0; i < numIdeas; i++) {
+        const $1 = templates[Math.floor(Math.random() * templates.length)];
+        const $1 = categories[Math.floor(Math.random() * categories.length)];
         
-        const idea = {
+        const $1 = {
           id: uuidv4(),
           name: template.replace('{category}', category),
           serviceType,
@@ -111,32 +111,32 @@ class SaaSIdeationAgent {
   }
 
   generateDescription(template, category, serviceType) {
-    const descriptions = {
-      'b'2b-saas': `A comprehensive ${category} solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.`,
-      'b'2c-saas': `Transform your daily ${category} experience with our user-friendly app. Designed for individuals and families, our platform makes ${category} easier and more enjoyable.`,
-      'ai-sa'a's': `Leverage the power of artificial intelligence to revolutionize ${category}. Our AI-powered platform delivers intelligent insights and automation for better results.`
+    const $1 = {
+      'b'2b-saas': "A comprehensive ${category} solution designed for modern businesses. Streamline operations, improve efficiency, and drive growth with our innovative platform.",
+      'b'2c-saas': "Transform your daily ${category} experience with our user-friendly app. Designed for individuals and families, our platform makes ${category} easier and more enjoyable.",
+      'ai-sa'a's': "Leverage the power of artificial intelligence to revolutionize ${category}. Our AI-powered platform delivers intelligent insights and automation for better results."
     };
     
-    return descriptions[serviceType] || `Innovative ${category} solution for modern needs.`;
+    return descriptions[serviceType] || "Innovative ${category} solution for modern needs.";
   }
 
   estimateMarketSize(serviceType, category) {
-    const sizeRanges = {
+    const $1 = {
       'b'2b-saas': ['$1M-$10M', '$10M-$50M', '$50M-$100M', '$100M-$500M'],
       'b'2c-saas': ['$500K-$5M', '$5M-$20M', '$20M-$50M', '$50M-$200M'],
       'ai-sa'a's': ['$5M-$25M', '$25M-$100M', '$100M-$500M', '$500M+']
     };
     
-    const ranges = sizeRanges[serviceType] || sizeRanges['b'2b-saas'];
+    const $1 = sizeRanges[serviceType] || sizeRanges['b'2b-saas'];
     return ranges[Math.floor(Math.random() * ranges.length)];
   }
 
   assessCompetition(serviceType, category) {
-    const levels = ['L'o'w', 'Medi'u'm', 'Hi'g'h', 'Ver'y' High'];
-    const weights = [0.2, 0.3, 0.3, 0.2]; // Bias towards medium-high competition
+    const $1 = ['L'o'w', 'Medi'u'm', 'Hi'g'h', 'Ver'y' High'];
+    const $1 = [0.2, 0.3, 0.3, 0.2]; // Bias towards medium-high competition
     
-    let random = Math.random();
-    for (let i = 0; i < weights.length; i++) {
+    let $1 = Math.random();
+    for (let $1 = 0; i < weights.length; i++) {
       random -= weights[i];
       if (random <= 0) return levels[i];
     }
@@ -144,24 +144,24 @@ class SaaSIdeationAgent {
   }
 
   calculateRevenuePotential(serviceType, category) {
-    const baseRevenue = {
+    const $1 = {
       'b'2b-saas': 5000,
       'b'2c-saas': 2000,
       'ai-sa'a's': 12000
     };
     
-    const base = baseRevenue[serviceType] || 5000;
-    const multiplier = 0.5 + Math.random() * 1.5; // 0.5x to 2x
+    const $1 = baseRevenue[serviceType] || 5000;
+    const $1 = 0.5 + Math.random() * 1.5; // 0.5x to 2x
     
     return Math.round(base * multiplier);
   }
 
   assessDevelopmentComplexity(serviceType, category) {
-    const complexities = ['L'o'w', 'Medi'u'm', 'Hi'g'h', 'Ver'y' High'];
-    const weights = [0.3, 0.4, 0.2, 0.1]; // Bias towards low-medium complexity
+    const $1 = ['L'o'w', 'Medi'u'm', 'Hi'g'h', 'Ver'y' High'];
+    const $1 = [0.3, 0.4, 0.2, 0.1]; // Bias towards low-medium complexity
     
-    let random = Math.random();
-    for (let i = 0; i < weights.length; i++) {
+    let $1 = Math.random();
+    for (let $1 = 0; i < weights.length; i++) {
       random -= weights[i];
       if (random <= 0) return complexities[i];
     }
@@ -169,44 +169,44 @@ class SaaSIdeationAgent {
   }
 
   estimateTimeToMarket(serviceType, category) {
-    const timeRanges = {
+    const $1 = {
       'b'2b-saas': ['2-4 months', '4-6 months', '6-8 months', '8-12 months'],
       'b'2c-saas': ['1-3 months', '3-5 months', '5-7 months', '7-10 months'],
       'ai-sa'a's': ['3-6 months', '6-9 months', '9-12 months', '12-18 months']
     };
     
-    const ranges = timeRanges[serviceType] || timeRanges['b'2b-saas'];
+    const $1 = timeRanges[serviceType] || timeRanges['b'2b-saas'];
     return ranges[Math.floor(Math.random() * ranges.length)];
   }
 
   calculateOpportunityScore(idea) {
-    let score = 0;
+    let $1 = 0;
     
     // Market size scoring
-    const marketSizeScore = this.scoreMarketSize(idea.marketSize);
+    const $1 = this.scoreMarketSize(idea.marketSize);
     score += marketSizeScore * 0.25;
     
     // Competition scoring (lower competition = higher score)
-    const competitionScore = this.scoreCompetition(idea.competitionLevel);
+    const $1 = this.scoreCompetition(idea.competitionLevel);
     score += competitionScore * 0.25;
     
     // Revenue potential scoring
-    const revenueScore = this.scoreRevenuePotential(idea.revenuePotential);
+    const $1 = this.scoreRevenuePotential(idea.revenuePotential);
     score += revenueScore * 0.25;
     
     // Development complexity scoring (lower complexity = higher score)
-    const complexityScore = this.scoreDevelopmentComplexity(idea.developmentComplexity);
+    const $1 = this.scoreDevelopmentComplexity(idea.developmentComplexity);
     score += complexityScore * 0.15;
     
     // Time to market scoring (faster = higher score)
-    const timeScore = this.scoreTimeToMarket(idea.timeToMarket);
+    const $1 = this.scoreTimeToMarket(idea.timeToMarket);
     score += timeScore * 0.10;
     
     return Math.round(score * 100) / 100; // Round to 2 decimal places
   }
 
   scoreMarketSize(marketSize) {
-    const scores = {
+    const $1 = {
       '$500K-$5M': 0.3,
       '$1M-$10M': 0.5,
       '$5M-$20M': 0.7,
@@ -221,7 +221,7 @@ class SaaSIdeationAgent {
   }
 
   scoreCompetition(competitionLevel) {
-    const scores = {
+    const $1 = {
       'L'o'w': 1.0,
       'Medi'u'm': 0.7,
       'Hi'g'h': 0.4,
@@ -239,7 +239,7 @@ class SaaSIdeationAgent {
   }
 
   scoreDevelopmentComplexity(complexity) {
-    const scores = {
+    const $1 = {
       'L'o'w': 1.0,
       'Medi'u'm': 0.8,
       'Hi'g'h': 0.5,
@@ -258,11 +258,11 @@ class SaaSIdeationAgent {
 
   async validateOpportunities() {
     // Filter ideas with high scores as opportunities
-    const highScoreIdeas = this.ideas.filter(idea => idea.score >= 0.7);
+    const $1 = this.ideas.filter(idea => idea.score >= 0.7);
     
     for (const idea of highScoreIdeas) {
       if (!this.opportunities.find(opp => opp.id === idea.id)) {
-        const opportunity = {
+        const $1 = {
           ...idea,
           validationStatus: 'validat'e'd',
           validationDate: new Date().toISOString(),
@@ -277,7 +277,7 @@ class SaaSIdeationAgent {
   }
 
   generateNextSteps(idea) {
-    const steps = [
+    const $1 = [
       'Conduc't' detailed market research',
       'Creat'e' MVP prototype',
       'Develo'p' business plan',
@@ -289,7 +289,7 @@ class SaaSIdeationAgent {
     ];
     
     // Return 3-5 random steps
-    const shuffled = [...steps].sort(() => 0.5 - Math.random());
+    const $1 = [...steps].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, Math.floor(Math.random() * 3) + 3);
   }
 
@@ -312,27 +312,27 @@ class SaaSIdeationAgent {
   }
 
   identifyTargetAudience(idea) {
-    const audiences = {
+    const $1 = {
       'b'2b-saas': ['Smal'l' businesses', 'Mediu'm' enterprises', 'Larg'e' corporations', 'Startu'p's'],
       'b'2c-saas': ['Individua'l' users', 'Famili'e's', 'Studen't's', 'Professiona'l's'],
       'ai-sa'a's': ['Develope'r's', 'Business'e's', 'Conten't' creators', 'Researche'r's']
     };
     
-    const audienceList = audiences[idea.serviceType] || audiences['b'2b-saas'];
+    const $1 = audiences[idea.serviceType] || audiences['b'2b-saas'];
     return audienceList.slice(0, Math.floor(Math.random() * 2) + 2);
   }
 
   identifyMarketTrends(idea) {
-    const trends = Object.keys(this.marketTrends);
+    const $1 = Object.keys(this.marketTrends);
     return trends.slice(0, Math.floor(Math.random() * 3) + 2);
   }
 
   assessGrowthPotential(idea) {
-    const potentials = ['Hi'g'h', 'Medi'u'm', 'L'o'w'];
-    const weights = [0.6, 0.3, 0.1]; // Bias towards high growth
+    const $1 = ['Hi'g'h', 'Medi'u'm', 'L'o'w'];
+    const $1 = [0.6, 0.3, 0.1]; // Bias towards high growth
     
-    let random = Math.random();
-    for (let i = 0; i < weights.length; i++) {
+    let $1 = Math.random();</div>
+    for (let $1 = 0; i < weights.length; i++) {
       random -= weights[i];
       if (random <= 0) return potentials[i];
     }
@@ -340,23 +340,23 @@ class SaaSIdeationAgent {
   }
 
   identifyBarriersToEntry(idea) {
-    const barriers = ['Hig'h' development costs', 'Regulator'y' compliance', 'Networ'k' effects', 'Bran'd' recognition', 'Technica'l' complexity'];
+    const $1 = ['Hig'h' development costs', 'Regulator'y' compliance', 'Networ'k' effects', 'Bran'd' recognition', 'Technica'l' complexity'];
     return barriers.slice(0, Math.floor(Math.random() * 2) + 1);
   }
 
   identifyDirectCompetitors(idea) {
-    const competitorNames = [
-      `${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Pro`,
-      `${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Hub`,
-      `${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Suite`,
-      `${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Manager`
+    const $1 = [
+      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Pro",
+      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Hub",
+      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Suite",
+      "${idea.category.charAt(0).toUpperCase() + idea.category.slice(1)}Manager"
     ];
     
     return competitorNames.slice(0, Math.floor(Math.random() * 2) + 2);
   }
 
   identifyIndirectCompetitors(idea) {
-    const indirectCompetitors = [
+    const $1 = [
       'Manua'l' processes',
       'Spreadshee't's',
       'Generi'c' tools',
@@ -367,7 +367,7 @@ class SaaSIdeationAgent {
   }
 
   identifyCompetitiveAdvantages(idea) {
-    const advantages = [
+    const $1 = [
       'AI-powere'd' automation',
       'Superio'r' user experience',
       'Lowe'r' cost',
@@ -380,7 +380,7 @@ class SaaSIdeationAgent {
   }
 
   generateDifferentiationStrategy(idea) {
-    const strategies = [
+    const $1 = [
       'Focu's' on underserved market segment',
       'Leverag'e' AI for competitive advantage',
       'Provid'e' superior customer support',
@@ -394,10 +394,10 @@ class SaaSIdeationAgent {
 
   async updateMarketData() {
     // Update market trends and data
-    const currentTrends = Object.keys(this.marketTrends);
+    const $1 = Object.keys(this.marketTrends);
     
     for (const trend of currentTrends) {
-      const impact = Math.random() > 0.5 ? 'positi'v'e' : 'neutr'a'l';
+      const $1 = Math.random() > 0.5 ? 'positi'v'e' : 'neutr'a'l';
       this.marketData.set(trend, {
         impact,
         strength: Math.random(),
@@ -408,38 +408,38 @@ class SaaSIdeationAgent {
 
   async loadData() {
     try {
-      const dataDir = path.join(__dirname, '..', 'da't'a');
-      const ideasFile = path.join(dataDir, `saas-ideas-${this.agentId}.json`);
-      const opportunitiesFile = path.join(dataDir, `saas-opportunities-${this.agentId}.json`);
+      const $1 = path.join(__dirname, '..', 'da't'a');
+      const $1 = path.join(dataDir, "saas-ideas-${this.agentId}.json");
+      const $1 = path.join(dataDir, "saas-opportunities-${this.agentId}.json");
       
       if (fs.existsSync(ideasFile)) {
-        const ideasData = JSON.parse(fs.readFileSync(ideasFile, 'ut'f'8'));
+        const $1 = JSON.parse(fs.readFileSync(ideasFile, 'ut'f'8'));
         this.ideas = ideasData;
       }
       
       if (fs.existsSync(opportunitiesFile)) {
-        const opportunitiesData = JSON.parse(fs.readFileSync(opportunitiesFile, 'ut'f'8'));
+        const $1 = JSON.parse(fs.readFileSync(opportunitiesFile, 'ut'f'8'));
         this.opportunities = opportunitiesData;
       }
     } catch (error) {
-      console.error(`[${this.agentId}] Error loading data:`, error);
+      console.error("[${this.agentId}] Error loading data:", error);
     }
   }
 
   async saveData() {
     try {
-      const dataDir = path.join(__dirname, '..', 'da't'a');
+      const $1 = path.join(__dirname, '..', 'da't'a');
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
       
-      const ideasFile = path.join(dataDir, `saas-ideas-${this.agentId}.json`);
-      const opportunitiesFile = path.join(dataDir, `saas-opportunities-${this.agentId}.json`);
+      const $1 = path.join(dataDir, "saas-ideas-${this.agentId}.json");
+      const $1 = path.join(dataDir, "saas-opportunities-${this.agentId}.json");
       
       fs.writeFileSync(ideasFile, JSON.stringify(this.ideas, null, 2));
       fs.writeFileSync(opportunitiesFile, JSON.stringify(this.opportunities, null, 2));
     } catch (error) {
-      console.error(`[${this.agentId}] Error saving data:`, error);
+      console.error("[${this.agentId}] Error saving data:", error);
     }
   }
 
@@ -460,9 +460,9 @@ class SaaSIdeationAgent {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agentId = process.argv[2] || 'default-ideation-age'n't';
-  const agent = new SaaSIdeationAgent(agentId);
+  const $1 = process.argv[2] || 'default-ideation-age'n't';
+  const $1 = new SaaSIdeationAgent(agentId);
   agent.start().catch(console.error);
 }
 
-module.exports = SaaSIdeationAgent; 
+module.exports = SaaSIdeationAgent; </div>

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix import statement errors
+// Function to fix import statement errors;
 function fixImportStatementErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -30,7 +30,7 @@ function fixImportStatementErrors(filePath) {
 
     // Fix malformed JSX structure
     const malformedJSXPattern = /<div className="min-h-screen bg-gray-50">\s*<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\s+py-32">/g;
-    if (malformedJSXPattern.test(content)) {
+    if (malformedJSXPattern.test(content)) {</div>
       content = content.replace(malformedJSXPattern, '<div className="min-h-screen bg-gray-50">\n      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">');
       modified = true;
     }
@@ -49,9 +49,9 @@ function fixImportStatementErrors(filePath) {
       modified = true;
     }
 
-    // Fix missing closing tags
+    // Fix missing closing tags</div>
     const missingClosingPattern = /;\s*<\/ModernLayout>;\s*\)\s*;\s*,/g;
-    if (missingClosingPattern.test(content)) {
+    if (missingClosingPattern.test(content)) {</div>
       content = content.replace(missingClosingPattern, '    </ModernLayout>\n  );\n};\n');
       modified = true;
     }
@@ -68,7 +68,7 @@ function fixImportStatementErrors(filePath) {
   }
 }
 
-// Function to recursively find TypeScript files
+// Function to recursively find TypeScript files;
 function findTsxFiles(dir) {
   const files = [];
   const items = fs.readdirSync(dir);
@@ -87,12 +87,12 @@ function findTsxFiles(dir) {
   return files;
 }
 
-// Main execution
+// Main execution;
 const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);
-
+;
 let fixedCount = 0;
 for (const file of files) {
   if (fixImportStatementErrors(file)) {
@@ -100,4 +100,4 @@ for (const file of files) {
   }
 }
 
-console.log(`Fixed ${fixedCount} files.`); 
+console.log(`Fixed ${fixedCount} files.`); </div>

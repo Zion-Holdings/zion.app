@@ -244,7 +244,7 @@ class RealTimeMonitor {
         const afterReturn = content.slice(returnIndex);
         const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
         const afterClosing = content.slice(closingIndex + 1);
-        
+        </div>
         content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
       }
     }
@@ -276,14 +276,14 @@ class RealTimeMonitor {
 
   applyAccessibilityFix(content) {
     // Add aria-labels to buttons
-    content = content.replace(
-      /<button([^>]*)>/g,
+    content = content.replace(</div>
+      /<button([^>]*)>/g,</div>
       '<button$1 aria-label="Button">'
     );
     
     // Add roles to main containers
-    content = content.replace(
-      /<div([^>]*className="[^"]*container[^"]*"[^>]*)>/g,
+    content = content.replace(</div>
+      /<div([^>]*className="[^"]*container[^"]*"[^>]*)>/g,</div>
       '<div$1 role="main">'
     );
     
@@ -306,13 +306,13 @@ class RealTimeMonitor {
   }
 
   applySEOFix(content) {
-    // Add Head component if missing
+    // Add Head component if missing</div>
     if (!content.includes('<Head>') && content.includes('retur'n' (')) {
-      const headComponent = `
-        <Head>
-          <title>Page Title</title>
-          <meta name="description" content="Page description" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      const headComponent = `</div>
+        <Head></div>
+          <title>Page Title</title></div>
+          <meta name="description" content="Page description" /></div>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" /></div>
         </Head>
       `;
       
@@ -407,4 +407,4 @@ class RealTimeMonitor {
   }
 }
 
-module.exports = RealTimeMonitor; 
+module.exports = RealTimeMonitor; </div>

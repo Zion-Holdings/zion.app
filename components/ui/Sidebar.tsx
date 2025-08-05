@@ -1,5 +1,5 @@
-import React, { useState } from 'react;
-import Link from next/link';
+import React, { useState } from 'react';}
+import Link from 'next/link';}
 import { useRouter } from 'next/router;
 
 interface SidebarItem {
@@ -11,7 +11,7 @@ interface SidebarItem {
 interface SidebarProps {
   items?: SidebarItem[];
 }
-
+</div>;
 const Sidebar: React.FC<SidebarProps> = ({ items = [] }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -26,31 +26,31 @@ const Sidebar: React.FC<SidebarProps> = ({ items = [] }) => {
 
   const sidebarItems = items.length > 0 ? items : defaultItems;
 
-  return (
-    <aside className="bg-white shadow-lg w-64 min-h-screen>
-      <div className=p-4">
-        <h2 className="text-xl font-bold text-gray-800 mb-4>Navigation</h2>
-        <nav>
-          <ul className=space-y-2">
-            {sidebarItems.map((item) => (
-              <li key={item.href}>
+  return (</div>
+    <aside className="bg-white shadow-lg w-64 min-h-screen>"</div>
+      <div className="p-4""></div>
+        <h2 className="text-xl font-bold text-gray-800 mb-4>Navigation</h2>"</div>
+        <nav>"</div>
+          <ul className="space-y-2"">
+            {sidebarItems.map((item) => (</div>
+              <li key={item.href}></div>
                 <Link
                   href={item.href}
-                  className={`block px-4 py-2 rounded-md transition-colors ${
+                  className="{`block px-4 py-2 rounded-md transition-colors ${
                     router.pathname === item.href
                       ? 'bg-blue-100 text-blue-700'
                       : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                  }`}"
+                ">
+                  {item.label}</div>
+                </Link></div>
               </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+            ))}</div>
+          </ul></div>
+        </nav></div>
+      </div></div>
     </aside>
   );
 };
-
-export default Sidebar;
+;}
+export default Sidebar;</div>

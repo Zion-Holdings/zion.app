@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix className syntax errors
+// Function to fix className syntax errors;
 function fixClassNameErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -40,7 +40,7 @@ function fixClassNameErrors(filePath) {
   }
 }
 
-// Function to recursively find and fix TypeScript/JSX files
+// Function to recursively find and fix TypeScript/JSX files;
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);
   

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -305,7 +305,7 @@ class AutonomousSystemLauncher {
     };
     
     const healthScore = this.calculateHealthScore(health);
-    
+    </div>
     if (healthScore < 0.8) {
       console.log('⚠️  System health degraded, initiating recovery...');
       this.initiateSystemRecovery();
@@ -670,7 +670,7 @@ class AutonomousSystemLauncher {
   }
 }
 
-// Start the autonomous system
+// Start the autonomous system;
 const autonomousSystem = new AutonomousSystemLauncher();
 
 // Export for potential external access
@@ -687,4 +687,4 @@ process.on('SIGTE'R'M', () => {
   process.exit(0);
 });
 
-console.log('🚀 Autonomous System Launcher ready!'); 
+console.log('🚀 Autonomous System Launcher ready!'); </div>

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix duplicate dependencies in useEffect hooks
+// Function to fix duplicate dependencies in useEffect hooks;
 function fixDuplicateDependencies(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -49,7 +49,7 @@ function fixDuplicateDependencies(filePath) {
   }
 }
 
-// Function to process all TypeScript/JavaScript files
+// Function to process all TypeScript/JavaScript files;
 function processFiles() {
   const pagesDir = path.join(__dirname, '..', 'pag'e's');
   const srcDir = path.join(__dirname, '..', 's'r'c');

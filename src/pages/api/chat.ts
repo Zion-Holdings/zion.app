@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
-
+;
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 });
 
-// Zion AI Marketplace knowledge base
+// Zion AI Marketplace knowledge base;
 const ZION_KNOWLEDGE = `
 Zion AI Marketplace is a comprehensive platform for AI tools and services. Here are the key features and information:
 
@@ -32,7 +32,7 @@ PLATFORM POLICIES:
 - Regular updates and new tools are added frequently`
 - Customer support is available 24/7;``
 `;
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'

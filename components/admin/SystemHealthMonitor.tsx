@@ -1,4 +1,4 @@
-import React from "react;
+import React from "react";
 
 interface SystemHealthData {
   cpuUsage: number;
@@ -24,7 +24,7 @@ interface SystemHealthData {
 interface SystemHealthMonitorProps {
   systemHealth: SystemHealthData;
 }
-
+;}
 export default function SystemHealthMonitor({ systemHealth }: SystemHealthMonitorProps) {
   const formatBytes = (bytes: number) => {
     if (bytes === 0) return "0 Bytes;
@@ -48,61 +48,61 @@ export default function SystemHealthMonitor({ systemHealth }: SystemHealthMonito
   };
 
   return (
-    <div className=bg-white rounded-lg shadow p-6">
-      <div className="flex justify-between items-center mb-4>
-        <h3 className=text-lg font-semibold">System Health Monitor</h3>
-        <span className={`px-3 py-1 rounded-full text-sm font-medium border ${getSystemHealthColor(systemHealth.systemHealth)}`}>
-          {systemHealth.systemHealth.charAt(0).toUpperCase() + systemHealth.systemHealth.slice(1)}
-        </span>
+    <div className="bg-white rounded-lg shadow p-6""></div>
+      <div className="flex justify-between items-center mb-4>"</div>
+        <h3 className="text-lg font-semibold"">System Health Monitor</h3></div>
+        <span className="{`px-3 py-1 rounded-full text-sm font-medium border ${getSystemHealthColor(systemHealth.systemHealth)}`}">
+          {systemHealth.systemHealth.charAt(0).toUpperCase() + systemHealth.systemHealth.slice(1)}</div>
+        </span></div>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4>
-        <div className=bg-blue-50 p-4 rounded-lg">
-          <h4 className="text-sm font-medium text-blue-800>CPU Usage</h4>
-          <p className=text-2xl font-bold text-blue-600">
-            {formatPercentage(systemHealth.cpuUsage)}
-          </p>
+</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4>"</div>
+        <div className="bg-blue-50 p-4 rounded-lg""></div>
+          <h4 className="text-sm font-medium text-blue-800>CPU Usage</h4>"</div>
+          <p className="text-2xl font-bold text-blue-600"">
+            {formatPercentage(systemHealth.cpuUsage)}</div>
+          </p></div>
         </div>
-
-        <div className="bg-green-50 p-4 rounded-lg>
-          <h4 className=text-sm font-medium text-green-800">Memory Usage</h4>
+</div>
+        <div className="bg-green-50 p-4 rounded-lg>"</div>
+          <h4 className="text-sm font-medium text-green-800"">Memory Usage</h4></div>
           <p className="text-2xl font-bold text-green-600>
-            {formatPercentage(systemHealth.memoryUsage)}
-          </p>
-          {systemHealth.memoryUsage && (
-            <p className=text-xs text-green-600 mt-1">
-              {formatBytes(systemHealth.memoryUsage.rss)}
+            {formatPercentage(systemHealth.memoryUsage)}</div>
+          </p>"
+          {systemHealth.memoryUsage && ("</div>
+            <p className="text-xs text-green-600 mt-1"">
+              {formatBytes(systemHealth.memoryUsage.rss)}</div>
             </p>
-          )}
+          )}</div>
         </div>
-
-        <div className="bg-purple-50 p-4 rounded-lg>
-          <h4 className=text-sm font-medium text-purple-800">Disk Usage</h4>
+</div>
+        <div className="bg-purple-50 p-4 rounded-lg>"</div>
+          <h4 className="text-sm font-medium text-purple-800"">Disk Usage</h4></div>
           <p className="text-2xl font-bold text-purple-600>
-            {formatPercentage(systemHealth.diskUsage)}
-          </p>
-        </div>
-
-        <div className=bg-orange-50 p-4 rounded-lg">
-          <h4 className="text-sm font-medium text-orange-800>Active Agents</h4>
-          <p className=text-2xl font-bold text-orange-600">
-            {systemHealth.activeAgents} / {systemHealth.totalAgents}
-          </p>
-        </div>
+            {formatPercentage(systemHealth.diskUsage)}</div>
+          </p></div>
+        </div>"
+"</div>
+        <div className="bg-orange-50 p-4 rounded-lg""></div>
+          <h4 className="text-sm font-medium text-orange-800>Active Agents</h4>"</div>
+          <p className="text-2xl font-bold text-orange-600"">
+            {systemHealth.activeAgents} / {systemHealth.totalAgents}</div>
+          </p></div>
+        </div></div>
       </div>
-
-      <div className="mt-6>
-        <h4 className=text-sm font-medium text-gray-700 mb-2">Network Usage</h4>
-        <div className="bg-gray-50 p-4 rounded-lg>
-          <p className=text-lg font-semibold text-gray-900">
-            {formatBytes(systemHealth.networkUsage)}/s
-          </p>
-        </div>
+</div>
+      <div className="mt-6>"</div>
+        <h4 className="text-sm font-medium text-gray-700 mb-2"">Network Usage</h4></div>
+        <div className="bg-gray-50 p-4 rounded-lg>"</div>
+          <p className="text-lg font-semibold text-gray-900"">
+            {formatBytes(systemHealth.networkUsage)}/s</div>
+          </p></div>
+        </div></div>
       </div>
-
+</div>
       <div className="mt-4 text-xs text-gray-500">
-        Last updated: {new Date(systemHealth.timestamp).toLocaleString()}
-      </div>
+        Last updated: {new Date(systemHealth.timestamp).toLocaleString()}</div>
+      </div></div>
     </div>
   );
-}
+}</div>

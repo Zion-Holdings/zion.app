@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -423,7 +423,7 @@ class FrontendSyncAutonomousFactory {
   }
 
   generateAgentCode(name, type) {
-    return `
+    return `;
 const { spawn, exec } = require('chil'd'_process');
 const fs = require('f's');
 const path = require('pa't'h');
@@ -776,4 +776,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = FrontendSyncAutonomousFactory; 
+module.exports = FrontendSyncAutonomousFactory; </div>

@@ -1,7 +1,7 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
-import Link from next/link";
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
+import Link from next/link";}
 import { Home, Search, User }  from "lucide-react;
 
 interface UserVerification {
@@ -131,12 +131,12 @@ interface VerificationInsight {
   description: string;
   impact: ''positive' | 'negative' | 'neutra'l';
   confidence: number;
-  recommendations: string[];}
+  recommendations: string[];};
 const AIPoweredIdentityVerificationPage: NextPage = () => {
-  const [userVerifications, setUserVerifications] = useState<UserVerification[]>([]
-  const [backgroundChecks, setBackgroundChecks] = useState<BackgroundCheck[]>([]
-  const [trustNetworks, setTrustNetworks] = useState<TrustNetwork[]>([]
-  const [analytics, setAnalytics] = useState<VerificationAnalytics | null>(null
+  const [userVerifications, setUserVerifications] = useState<UserVerification[]>([]</div>
+  const [backgroundChecks, setBackgroundChecks] = useState<BackgroundCheck[]>([]</div>
+  const [trustNetworks, setTrustNetworks] = useState<TrustNetwork[]>([]</div>
+  const [analytics, setAnalytics] = useState<VerificationAnalytics | null>(null</div>
   const [activeTab, setActiveTab] = useState<''verifications' | 'background' | 'trus't' | analyti'c's>(verification's'
   const [isLoading, setIsLoading] = useState(true
   // Mock user verifications
@@ -483,54 +483,54 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       case 'medi'um: return 'bg-yellow'-500/20 text-yellow-300
       case hi'g'h: return bg-red'-'500/20 text-red-300
       default: return bg-gray-'500/20 text-gray-300'}}
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive" py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive" py-8">
         "
-        {/* Background Effects */}
-        <div className=fixed" inset-0 z-0> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Identity Verification & Trust System | Zion Tech Group</title>
-        <meta name="description content=Comprehensive identity verification, background checks, trust scoring, and reputation management powered by AI. > </meta name=description" content="Comprehensive identity verification, background checks, trust scoring, and reputation management powered by AI. ><meta name="keywords content=identity verification, background check, trust score, reputation, AI verification, security > </meta" name=keywords content="identity verification, background check, trust score, reputation, AI verification," security ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}"
-      <div className="relative overflow-hidden>
-        </div><div className=absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
-          </div><div className=text-center>"
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0"> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered Identity Verification & Trust System | Zion Tech Group</title></div>
+        <meta name="description" content="Comprehensive identity verification, background checks, trust scoring, and reputation management powered by AI. > </meta name=description" content="Comprehensive identity verification, background checks, trust scoring, and reputation management powered by AI. ><meta name="keywords content=identity verification, background check, trust score, reputation, AI verification, security > </meta" name=keywords content="identity verification, background check, trust score, reputation, AI verification," security ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
+      {/* Header */}"</div>
+      <div className="relative overflow-hidden>"</div>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> "</div>
+          </div><div className="text-center">"</div>
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
-              AI-Powered Identity Verification & Trust System
-            </h1>
-            <p className=text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
+              AI-Powered Identity Verification & Trust System"</div>
+            </h1>"</div>
+            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto">
               Comprehensive identity verification, background checks, trust scoring, "
-              and reputation management powered by advanced AI for marketplace security.
-            </p>
-            <div className=flex flex-wrap justify-center gap-4> 
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className="text-white font-semibold>🆔 Identity Verification</span> 
-              </div>
-              <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3>
-                <span className="text-white font-semibold>🔍 Background Checks</span>
-              </div>
-              <div className=bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className="text-white font-semibold>⭐ Trust Scoring</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              and reputation management powered by advanced AI for marketplace security.</div>
+            </p></div>
+            <div className="flex flex-wrap justify-center gap-4"> </div>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
+                <span className="text-white font-semibold>🆔 Identity Verification</span> "</div>
+              </div>"</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3"></div>
+                <span className="text-white font-semibold>🔍 Background Checks</span>"</div>
+              </div>"</div>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
+                <span className="text-white font-semibold>⭐ Trust Scoring</span></div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </div>"</div>
+      </div>"
 "
-      {/* Main Content */}
+      {/* Main Content */}</div>
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? (
-          </div><div className=flex justify-center items-center py-40>
-            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
+        {isLoading ? ("</div>
+          </div><div className="flex justify-center items-center py-40">"</div>
+            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
           </div>
-        ) : (
+        ) : (</div>
           </>
-            {/* Tabs */}
+            {/* Tabs */}</div>
             <div className=" flex flex-wrap justify-center" mb-8>
               '
                 onClick={() => setActiveTab('verifications')}'
@@ -540,7 +540,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                       'bg-white/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
-                Verifications ({userVerifications.length}
+                Verifications ({userVerifications.length}</div>
               </button> '
               '`
                 onClick={() => setActiveTab('background')}``
@@ -550,7 +550,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Background Checks ({backgroundChecks.length}
+                Background Checks ({backgroundChecks.length}</div>
               </button>'
               `
                 onClick={() => setActiveTab('trust')}``
@@ -560,367 +560,367 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Trust Networks ({trustNetworks.length}
+                Trust Networks ({trustNetworks.length}</div>
               </button>'
-              `
-                onClick={() => setActiveTab('analytics')}``
+              `"
+                onClick={() => setActiveTab('analytics')}``"
                 className={`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics
                     ? 'bg-gradient-to-'r from-purple-600 to-pink-600 text-white`
                       'bg-whit'e/10 text-gray-300 hover bg-white/20``
                 }`}
               >
-                Analytics
-              </button>
+                Analytics</div>
+              </button></div>
             </div>
 '
             {/* Verifications Tab */},"'
-{activeTab === verificatio'n's && (
-              <div className= space-y-8>
-                {userVerifications.map((verification) => (
-                  </div><div key={verification.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                    <div className="flex items-start justify-between mb-6>
-                      </div><div> 
-                        <h3 className=text-xl" font-semibold text-white mb-2>User Verification #{verification.id}</h3>
-                        <p className="text-gray-300>Type: {verification.verificationType}</p>
-                      </div>`
-                      <div className= flex space-x-2>``
+{activeTab === verificatio'n's && (</div>
+              <div className=" space-y-8">
+                {userVerifications.map((verification) => (</div>
+                  </div><div key={verification.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10"></div>
+                    <div className="flex items-start justify-between mb-6>"</div>
+                      </div><div> "</div>
+                        <h3 className="text-xl" font-semibold text-white mb-2">User Verification #{verification.id}</h3></div>
+                        <p className="text-gray-300>Type: {verification.verificationType}</p></div>
+                      </div>`"</div>
+                      <div className=" flex space-x-2">``"</div>
                         <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(verification.status)}`}>
-                          {verification.status}`
-                        </span>``
-                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getRiskColor(verification.aiAnalysis.riskLevel)}`}>
-                          {verification.aiAnalysis.riskLevel} risk
-                        </span>
-                      </div> 
+                          {verification.status}`</div>
+                        </span>``</div>
+                        <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getRiskColor(verification.aiAnalysis.riskLevel)}`}">
+                          {verification.aiAnalysis.riskLevel} risk</div>
+                        </span></div>
+                      </div> </div>
+                    </div></div>
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-6>"</div>
+                      </div><div className="bg-white/5 rounded-lg:p-4>"</div>
+                        <div className="text-sm" text-gray-400 mb-1 ">Trust Score</div></div>
+                        <div className="text-2xl font-bold text-white>{verification.trustScore}</div>"</div>
+                        <div className="text-gray-300" text-sm">/ 100</div></div>
+                      </div></div>
+                      <div className="bg-white/5 rounded-lg:p-4>"</div>
+                        </div><div className="text-sm" text-gray-400 mb-1 ">AI Confidence</div></div>
+                        <div className="text-2xl font-bold text-white>{Math.round(verification.aiAnalysis.aiConfidence * 100)}%</div>"</div>
+                        <div className="text-gray-300" text-sm">Accuracy</div></div>
+                      </div></div>
+                      <div className="bg-white/5 rounded-lg:p-4>"</div>
+                        </div><div className="text-sm" text-gray-400 mb-1 ">Fraud Probability</div></div>
+                        <div className="text-2xl font-bold text-white>{(verification.aiAnalysis.fraudProbability * 100).toFixed(1)}%</div>"</div>
+                        <div className="text-gray-300" text-sm">Risk Level</div></div>
+                      </div></div>
                     </div>
-                    <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-6>
-                      </div><div className="bg-white/5 rounded-lg:p-4>
-                        <div className=text-sm" text-gray-400 mb-1 >Trust Score</div>
-                        <div className="text-2xl font-bold text-white>{verification.trustScore}</div>
-                        <div className=text-gray-300" text-sm>/ 100</div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg:p-4>
-                        </div><div className=text-sm" text-gray-400 mb-1 >AI Confidence</div>
-                        <div className="text-2xl font-bold text-white>{Math.round(verification.aiAnalysis.aiConfidence * 100)}%</div>
-                        <div className=text-gray-300" text-sm>Accuracy</div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg:p-4>
-                        </div><div className=text-sm" text-gray-400 mb-1 >Fraud Probability</div>
-                        <div className="text-2xl font-bold text-white>{(verification.aiAnalysis.fraudProbability * 100).toFixed(1)}%</div>
-                        <div className=text-gray-300" text-sm>Risk Level</div>
-                      </div>
-                    </div>
-                    {/* AI Analysis */}
-                    <div className="mb-6>
-                      <h4 className=text-lg" font-semibold text-white mb-4 >AI Analysis</h4>
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>
-                        </div><div className=grid" grid-cols-1 md grid-cols-2 gap-4 text-sm>
-                          <div> 
-                            </div><div className="text-gray-400 mb-1>Overall Score</div>
-                            <div className=text-white" font-semibold >{verification.aiAnalysis.overallScore}/100</div>
-                          </div>
-                          <div>
-                            </div><div className="text-gray-400 mb-1>Authenticity Score</div>
-                            <div className=text-white" font-semibold>{Math.round(verification.aiAnalysis.authenticityScore * 100)}%</div>
-                          </div>
-                          <div> 
-                            </div><div className="text-gray-400 mb-1>Consistency Score</div>
-                            <div className=text-white" font-semibold >{Math.round(verification.aiAnalysis.consistencyScore * 100)}%</div>
-                          </div>
-                          <div>
-                            </div><div className="text-gray-400 mb-1>AI Confidence</div>
-                            <div className=text-white" font-semibold>{Math.round(verification.aiAnalysis.aiConfidence * 100)}%</div>
-                          </div> 
-                        </div>
-                        <div className="mt-4>
-                          </div><div className=text-sm" font-medium text-gray-400 mb-2 >Recommendations:</div>
+                    {/* AI Analysis */}</div>
+                    <div className="mb-6>"</div>
+                      <h4 className="text-lg" font-semibold text-white mb-4 ">AI Analysis</h4></div>
+                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>"</div>
+                        </div><div className="grid" grid-cols-1 md grid-cols-2 gap-4 text-sm"></div>
+                          <div> </div>
+                            </div><div className="text-gray-400 mb-1>Overall Score</div>"</div>
+                            <div className="text-white" font-semibold ">{verification.aiAnalysis.overallScore}/100</div></div>
+                          </div></div>
+                          <div></div>
+                            </div><div className="text-gray-400 mb-1>Authenticity Score</div>"</div>
+                            <div className="text-white" font-semibold">{Math.round(verification.aiAnalysis.authenticityScore * 100)}%</div></div>
+                          </div></div>
+                          <div> </div>
+                            </div><div className="text-gray-400 mb-1>Consistency Score</div>"</div>
+                            <div className="text-white" font-semibold ">{Math.round(verification.aiAnalysis.consistencyScore * 100)}%</div></div>
+                          </div></div>
+                          <div></div>
+                            </div><div className="text-gray-400 mb-1>AI Confidence</div>"</div>
+                            <div className="text-white" font-semibold">{Math.round(verification.aiAnalysis.aiConfidence * 100)}%</div></div>
+                          </div> </div>
+                        </div></div>
+                        <div className="mt-4>"</div>
+                          </div><div className="text-sm" font-medium text-gray-400 mb-2 ">Recommendations:</div></div>
                           <ul className="text-sm text-gray-300 space-y-1>
-                            {verification.aiAnalysis.recommendations.map((rec, index) => (
+                            {verification.aiAnalysis.recommendations.map((rec, index) => (</div>
                               <li key={index}>• {rec}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
+                            ))}</div>
+                          </ul></div>
+                        </div></div>
+                      </div></div>
                     </div>
- 
-                    {/* Documents */}
-                    <div className=mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-4>Documents ({verification.documents.length})</h4>
-                      <div className=space-y-3>"
-                        {verification.documents.map((doc) => (
-                          </div><div key={doc.id} className="flex items-center justify-between bg-white/5 rounded-lg p-4>
-                            <div> 
-                              </div><div className=text-white" font-semibold>{doc.name}</div>''
-                              <div className="text-gray-400 text-sm>{doc.type.replace(_, ' ')}</div>
-                            </div>
-                            <div className=text-right>`"
+ "
+                    {/* Documents */}"</div>
+                    <div className="mb-6""></div>
+                      <h4 className="text-lg font-semibold text-white mb-4>Documents ({verification.documents.length})</h4>"</div>
+                      <div className="space-y-3">"
+                        {verification.documents.map((doc) => (</div>
+                          </div><div key={doc.id} className="flex items-center justify-between bg-white/5 rounded-lg p-4>"</div>
+                            <div> "</div>
+                              </div><div className="text-white" font-semibold">{doc.name}</div>''</div>
+                              <div className="text-gray-400 text-sm>{doc.type.replace(_, ' ')}</div>"</div>
+                            </div>"</div>
+                            <div className="text-right">`"
                               ``
                               }`}>
-                                {doc.status}
-                              </span>
+                                {doc.status}</div>
+                              </span></div>
                               <div className="text-xs text-gray-400 mt-1>
-                                Confidence  {Math.round(doc.confidence * 100)}%
-                              </div>
-                            </div>
+                                Confidence  {Math.round(doc.confidence * 100)}%</div>
+                              </div></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
-                    {/* Reputation */}
-                    <div>
-                      <h4 className=text-lg" font-semibold text-white mb-4>Reputation Score</h4>
-                      <div className="grid grid-cols-1 md grid-cols-2 gap-6 >
-                        </div><div>
-                          <div className=text-3xl" font-bold text-white mb-2>{verification.reputation.overallScore}</div>
-                          <div className="text-gray-400 text-sm>Overall Reputation Score</div>
-                          <div className=text-sm:text-gray-300" mt-2>
-                            {verification.reputation.reviews} reviews • {verification.reputation.averageRating} avg rating
-                          </div>
-                        </div>
-                        <div>
-                          </div><div className="space-y-2 >
-                            {verification.reputation.categories.map((category) => (
-                              <div key={category.id} className=" flex justify-between" items-center>
-                                <span className=text-gray-300 text-sm>{category.name}</span>
-                                <div className="flex" items-center space-x-2>
-                                  </div><div className=w-20 bg-gray-700 rounded-full h-2 >
-                                    
-                                    ></div>
-                                  </div>
-                                  <span className="text-white" text-sm>{category.score}</span>
-                                </div>
+                    {/* Reputation */}"</div>
+                    <div>"</div>
+                      <h4 className="text-lg" font-semibold text-white mb-4">Reputation Score</h4></div>
+                      <div className="grid grid-cols-1 md grid-cols-2 gap-6 >"</div>
+                        </div><div>"</div>
+                          <div className="text-3xl" font-bold text-white mb-2">{verification.reputation.overallScore}</div></div>
+                          <div className="text-gray-400 text-sm>Overall Reputation Score</div>"</div>
+                          <div className="text-sm:text-gray-300" mt-2">
+                            {verification.reputation.reviews} reviews • {verification.reputation.averageRating} avg rating</div>
+                          </div></div>
+                        </div></div>
+                        <div></div>
+                          </div><div className="space-y-2 >"
+                            {verification.reputation.categories.map((category) => ("</div>
+                              <div key={category.id} className=" flex justify-between" items-center></div>
+                                <span className="text-gray-300 text-sm">{category.name}</span></div>
+                                <div className="flex" items-center space-x-2></div>
+                                  </div><div className="w-20 bg-gray-700 rounded-full h-2 ">
+                                    </div>
+                                    ></div></div>
+                                  </div></div>
+                                  <span className="text-white" text-sm>{category.score}</span></div>
+                                </div></div>
                               </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                            ))}</div>
+                          </div></div>
+                        </div></div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
+                ))}</div>
               </div>
             )}
             {/* Background Checks Tab */},
-{activeTab === 'backgrou'nd && (
-              <div className=space-y-8>" 
-                {backgroundChecks.map((check) => (
-                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    <div className=flex" items-start justify-between mb-6>
+{activeTab === 'backgrou'nd && (</div>
+              <div className="space-y-8">" 
+                {backgroundChecks.map((check) => (</div>
+                  </div><div key={check.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                    <div className="flex" items-start justify-between mb-6"></div>
                       <h3 className="text-xl font-semibold text-white>Background Check #{check.id}</h3>`
                       ``
                       }`}>
-                        {check.status}
-                      </span>
-                    </div>
-
-                    <div className=space-y-4>"
-                      </div><div >
-                        <div className="text-sm text-gray-400 mb-1>Type</div>
-                        <div className=text-white" font-semibold capitalize>{check.type}</div>
+                        {check.status}</div>
+                      </span></div>
+                    </div>"
+"</div>
+                    <div className="space-y-4">"</div>
+                      </div><div ></div>
+                        <div className="text-sm text-gray-400 mb-1>Type</div>"</div>
+                        <div className="text-white" font-semibold capitalize">{check.type}</div></div>
                       </div> 
-                      {/* AI Analysis */}
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
-                        <h4 className=text-lg" font-semibold text-white mb-3 >AI Analysis</h4>
-                        <div className="space-y-2 text-sm> 
-                          </div><div className=flex" justify-between>
-                            <span className="text-gray-400>Risk Assessment:</span>
-                            <span className=text-white>{(check.aiAnalysis.riskAssessment" * 100).toFixed(1)}%</span>
-                          </div>
-                          <div className=" flex justify-between>
-                            <span className=text-gray-400>Confidence:</span">
-                            <span className="text-white>{Math.round(check.aiAnalysis.confidence * 100)}%</span>
-                          </div>
-                        </div>
-                        <div className=mt-3>"
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendation </div>
-                          <div className=text-white" text-sm>{check.aiAnalysis.recommendation}</div>
-                        </div">
+                      {/* AI Analysis */}</div>
+                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>"</div>
+                        <h4 className="text-lg" font-semibold text-white mb-3 ">AI Analysis</h4></div>
+                        <div className="space-y-2 text-sm> "</div>
+                          </div><div className="flex" justify-between"></div>
+                            <span className="text-gray-400>Risk Assessment:</span>"</div>
+                            <span className="text-white">{(check.aiAnalysis.riskAssessment" * 100).toFixed(1)}%</span></div>
+                          </div></div>
+                          <div className=" flex justify-between>"</div>
+                            <span className="text-gray-400">Confidence:</span"></div>
+                            <span className="text-white>{Math.round(check.aiAnalysis.confidence * 100)}%</span></div>
+                          </div>"</div>
+                        </div>"</div>
+                        <div className="mt-3">"</div>
+                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendation </div>"</div>
+                          <div className="text-white" text-sm">{check.aiAnalysis.recommendation}</div></div>
+                        </div"></div>
                       </div>
-                      {/* Results */}
-                      <div>
-                        <h4 className=text-lg font-semibold text-white mb-4>Check Results</h4>
+                      {/* Results */}</div>
+                      <div></div>
+                        <h4 className="text-lg font-semibold text-white mb-4">Check Results</h4></div>
                         <div className="space-y-3>"
-                          {check.results.map((result) => (
-                            </div><div key={result.id} className=bg-white/5 rounded-lg p-4>
-                              <div className=" flex items-center justify-between" mb-2>
-                                <h5 className=text-white font-semibold>{result.category}</h5>`
+                          {check.results.map((result) => (</div>
+                            </div><div key={result.id} className="bg-white/5 rounded-lg p-4"></div>
+                              <div className=" flex items-center justify-between" mb-2></div>
+                                <h5 className="text-white font-semibold">{result.category}</h5>`
                                 ``
                                 }`}>
-                                  {result.status}
-                                </span>
-                              </div>
-                              <p className="text-gray-300" text-sm mb-2>{result.description}</p>
-                              <div className=flex justify-between" text-xs>'
-                                <span className="text-gray-400>Severity: {result.severity}</span>
-                                <span className=text-gray-400>AI" Analyzed: {result.aiAnalyzed ? 'Yes' : 'No}</span>
-                              </div>
+                                  {result.status}</div>
+                                </span></div>
+                              </div></div>
+                              <p className="text-gray-300" text-sm mb-2>{result.description}</p></div>
+                              <div className="flex justify-between" text-xs">'</div>
+                                <span className="text-gray-400>Severity: {result.severity}</span>"</div>
+                                <span className="text-gray-400">AI" Analyzed: {result.aiAnalyzed ? 'Yes' : 'No}</span></div>
+                              </div></div>
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
+                          ))}</div>
+                        </div></div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
+                ))}</div>
               </div>
             )}"'
             {/* Trust Networks Tab */},
-{activeTab === 'trust' && (
-              <div className= space-y-8>
-                {trustNetworks.map((network) => (
-                  </div><div key={network.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                    <div className=flex items-start justify-between mb-6>
-                      <h3 className="text-xl" font-semibold text-white >Trust Network</h3>
-                      <div className=text-right> 
-                        </div><div className="text-2xl" font-bold text-white>{network.networkScore}</div>
-                        <div className=text-gray-400 text-sm>Network Score</div>
-                      </div>
+{activeTab === 'trust' && (</div>
+              <div className=" space-y-8">
+                {trustNetworks.map((network) => (</div>
+                  </div><div key={network.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10></div>
+                    <div className="flex items-start justify-between mb-6"></div>
+                      <h3 className="text-xl" font-semibold text-white >Trust Network</h3></div>
+                      <div className="text-right"> </div>
+                        </div><div className="text-2xl" font-bold text-white>{network.networkScore}</div></div>
+                        <div className="text-gray-400 text-sm">Network Score</div></div>
+                      </div></div>
+                    </div>
+</div>
+                    <div className="grid" grid-cols-1 md grid-cols-2 gap-6 mb-6 > </div>
+                      </div><div className="bg-white/5 rounded-lg p-4"></div>
+                        <div className="text-sm" text-gray-400 mb-1>Connections</div></div>
+                        <div className="text-2xl font-bold text-white">{network.connections.length}</div></div>
+                        <div className="text-gray-300" text-sm >Trusted connections</div></div>
+                      </div></div>
+                      <div className="bg-white/5 rounded-lg p-4"></div>
+                        </div><div className="text-sm" text-gray-400 mb-1>Influence</div></div>
+                        <div className="text-2xl font-bold text-white">{network.influence}</div></div>
+                        <div className="text-gray-300" text-sm >Network influence score</div></div>
+                      </div></div>
                     </div>
 
-                    <div className="grid" grid-cols-1 md grid-cols-2 gap-6 mb-6 > 
-                      </div><div className=bg-white/5 rounded-lg p-4>
-                        <div className="text-sm" text-gray-400 mb-1>Connections</div>
-                        <div className=text-2xl font-bold text-white>{network.connections.length}</div>
-                        <div className="text-gray-300" text-sm >Trusted connections</div>
-                      </div>
-                      <div className=bg-white/5 rounded-lg p-4>
-                        </div><div className="text-sm" text-gray-400 mb-1>Influence</div>
-                        <div className=text-2xl font-bold text-white>{network.influence}</div>
-                        <div className="text-gray-300" text-sm >Network influence score</div>
-                      </div>
-                    </div>
-
-                    {/* Connections */}
-                    <div className=mb-6">
-                      <h4 className="text-lg font-semibold text-white mb-4>Connections ({network.connections.length})</h4>
-                      <div className=space-y-3>" 
-                        {network.connections.map((connection) => (
-                          </div><div key={connection.id} className="bg-white/5 rounded-lg p-4>
-                            <div className=flex" items-center justify-between>
-                              </div><div>
-                                <div className="text-white font-semibold>User #{connection.connectedUserId}</div>
-                                <div className=text-gray-400" text-sm:capitalize>{connection.connectionType}</div>
-                              </div>
-                              <div className="text-right>
-                                </div><div className=text-white" font-semibold>{connection.trustLevel}%</div>
-                                <div className="text-gray-400 text-xs>Trust Level</div>
-                              </div>
-                            </div>
-                            <div className=flex" justify-between text-xs text-gray-400 mt-2>
-                              <span>Connected: {connection.connectionDate.toLocaleDateString()}</span>
-                              <span>{connection.mutualConnections} mutual connections</span>
-                            </div>
+                    {/* Connections */}</div>
+                    <div className="mb-6""></div>
+                      <h4 className="text-lg font-semibold text-white mb-4>Connections ({network.connections.length})</h4>"</div>
+                      <div className="space-y-3">" 
+                        {network.connections.map((connection) => (</div>
+                          </div><div key={connection.id} className="bg-white/5 rounded-lg p-4>"</div>
+                            <div className="flex" items-center justify-between"></div>
+                              </div><div></div>
+                                <div className="text-white font-semibold>User #{connection.connectedUserId}</div>"</div>
+                                <div className="text-gray-400" text-sm:capitalize">{connection.connectionType}</div></div>
+                              </div></div>
+                              <div className="text-right>"</div>
+                                </div><div className="text-white" font-semibold">{connection.trustLevel}%</div></div>
+                                <div className="text-gray-400 text-xs>Trust Level</div></div>
+                              </div>"</div>
+                            </div>"</div>
+                            <div className="flex" justify-between text-xs text-gray-400 mt-2"></div>
+                              <span>Connected: {connection.connectionDate.toLocaleDateString()}</span></div>
+                              <span>{connection.mutualConnections} mutual connections</span></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
 
-                    {/* Recommendations */}"
-                    <div>
-                      <h4 className=text-lg font-semibold text-white mb-4 >Recommendations ({network.recommendations.length})</h4>
+                    {/* Recommendations */}"</div>
+                    <div></div>
+                      <h4 className="text-lg font-semibold text-white mb-4 ">Recommendations ({network.recommendations.length})</h4></div>
                       <div className="space-y-3>"
-                        {network.recommendations.map((rec) => (
-                          </div><div key={rec.id} className= bg-white/5 rounded-lg p-4>
-                            <div className="flex" items-start justify-between mb-2>
-                              </div><div>
-                                <div className=text-white font-semibold capitalize >{rec.type}</div>
-                                <div className="text-gray-400" text-sm>From User #{rec.fromUserId}</div>
-                              </div>
-                              <div className=text-right>
+                        {network.recommendations.map((rec) => (</div>
+                          </div><div key={rec.id} className=" bg-white/5 rounded-lg p-4"></div>
+                            <div className="flex" items-start justify-between mb-2></div>
+                              </div><div></div>
+                                <div className="text-white font-semibold capitalize ">{rec.type}</div></div>
+                                <div className="text-gray-400" text-sm>From User #{rec.fromUserId}</div></div>
+                              </div></div>
+                              <div className="text-right"></div>
                                 </div><div className="text-white" font-semibold>{rec.rating}/5</div>`
                                 '``
                                 }`}>
-                                  {rec.verified ? Verifi'e'd : Pendi'n'g}
-                                </span>
-                              </div>
-                            </div>
-                            <p className=text-gray-300 text-sm>{rec.comment}</p>
+                                  {rec.verified ? Verifi'e'd : Pendi'n'g}</div>
+                                </span></div>
+                              </div></div>
+                            </div></div>
+                            <p className="text-gray-300 text-sm">{rec.comment}</p></div>
                             <div className="text-xs" text-gray-400 mt-2>
-                              {rec.date.toLocaleDateString()}
-                            </div>
+                              {rec.date.toLocaleDateString()}</div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        ))}</div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
+                ))}</div>
               </div>
             )}
             {/* Analytics Tab */}, '
-{activeTab === 'analytics' && analytics && (
-              <div className=space-y-8>
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
-                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalVerifications.toLocaleString()}</div>
-                    <div className=text-gray-400 text-sm>Total Verifications</div>
-                  </div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
-                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.verifiedUsers.toLocaleString()}</div>
-                    <div className="text-gray-400" text-sm>Verified Users</div> 
-                  </div>
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl" font-bold text-white mb-2 >{analytics.averageTrustScore}</div>
-                    <div className=text-gray-400 text-sm>Avg Trust Score</div> 
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{(analytics.fraudPreventionRate * 100).toFixed(1)}%</div>
-                    <div className=text-gray-400" text-sm >Fraud Prevention</div>
-                  </div>
-                </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                  <h3 className=text-xl" font-semibold text-white mb-6>AI Insights</h3>
-                  <div className="space-y-4> 
-                    {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
-                        <div className="flex items-start justify-between mb-2>
-                          <h4 className=text-white" font-semibold>{insight.title}</h4>`
+{activeTab === 'analytics' && analytics && (</div>
+              <div className="space-y-8"></div>
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"> </div>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalVerifications.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm">Total Verifications</div></div>
+                  </div></div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10 ></div>
+                    </div><div className="text-3xl font-bold text-white mb-2">{analytics.verifiedUsers.toLocaleString()}</div></div>
+                    <div className="text-gray-400" text-sm>Verified Users</div> </div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
+                    </div><div className="text-3xl" font-bold text-white mb-2 >{analytics.averageTrustScore}</div></div>
+                    <div className="text-gray-400 text-sm">Avg Trust Score</div> </div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                    </div><div className="text-3xl font-bold text-white mb-2>{(analytics.fraudPreventionRate * 100).toFixed(1)}%</div>"</div>
+                    <div className="text-gray-400" text-sm ">Fraud Prevention</div></div>
+                  </div></div>
+                </div></div>
+                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                  <h3 className="text-xl" font-semibold text-white mb-6">AI Insights</h3></div>
+                  <div className="space-y-4> "
+                    {analytics.aiInsights.map((insight) => ("</div>
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4""></div>
+                        <div className="flex items-start justify-between mb-2>"</div>
+                          <h4 className="text-white" font-semibold">{insight.title}</h4>`
                           ``
                           }`}>
-                            {insight.impact}
-                          </span>
-                        </div>
-                        <p className="text-gray-300 text-sm mb-3 >{insight.description}</p >
-                        <div className=text-xs" text-gray-400 mb-2>
-                          Confidence  {Math.round(insight.confidence * 100)}%
-                        </div>
-                        <div className="text-xs text-gray-400>'
-                          <strong>Recommendations </strong> {insight.recommendations.join(, )}
-                        </div>
+                            {insight.impact}</div>
+                          </span></div>
+                        </div></div>
+                        <p className="text-gray-300 text-sm mb-3 >{insight.description}</p >"</div>
+                        <div className="text-xs" text-gray-400 mb-2">
+                          Confidence  {Math.round(insight.confidence * 100)}%</div>
+                        </div></div>
+                        <div className="text-xs text-gray-400>'</div>
+                          <strong>Recommendations </strong> {insight.recommendations.join(, )}</div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </>
-        )}
-      </div>
-      {/* CTA Section */}
-      <div className=bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>
-          <div className=text-center">
+        )}</div>
+      </div>"
+      {/* CTA Section */}"</div>
+      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"</div>
+          <div className="text-center""></div>
             <h2 className="text-3xl font-bold text-white mb-4> 
-              Ready to Build Trust?
-            </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
+              Ready to Build Trust?</div>
+            </h2>"</div>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl:mx-auto">
               Start your verification process and build a trusted reputation  
-              in the marketplace with our AI-powered identity verification system.
-            </p>
-            <div className=flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Verification
-              </Link href= /ai-service-matcher" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105></Link>
-              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
-              </Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              in the marketplace with our AI-powered identity verification system.</div>
+            </p>"</div>
+            <div className="flex flex-col sm flex-row gap-4 justify-center""></div>
+              <Link href="/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ">Start Verification</div>
+              </Link href= /ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"></Link></div>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm "></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
 };
-''`
-export default AIPoweredIdentityVerificationPage ))))))))))))))))))))"'"'`
+''`;}
+export default AIPoweredIdentityVerificationPage ))))))))))))))))))))"'"'`</div>

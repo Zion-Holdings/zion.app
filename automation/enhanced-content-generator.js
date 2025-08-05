@@ -297,72 +297,72 @@ Make it feel like a natural conversation between experts discussing this topic.
     
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}ChatPage: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${topic} - Expert Discussion - Zion Tech Blog</title>
-        <meta name="description" content="Expert conversation about ${topic.toLowerCase()} with insights and analysis." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${topic} - Expert Discussion - Zion Tech Blog</title></div>
+        <meta name="description" content="Expert conversation about ${topic.toLowerCase()} with insights and analysis." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-8">
+</div>
+      <main className="flex-1"></div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="mb-8"></div>
             <Link href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-              ← Back to Blog
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              ← Back to Blog</div>
+            </Link></div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6"></div>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                ${topic}
-              </span>
-            </h1>
-            <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • ${pattern.style} • ${pattern.structure}</span>
-            </div>
+                ${topic}</div>
+              </span></div>
+            </h1></div>
+            <div className="flex items-center text-gray-400 text-sm mb-8"></div>
+              <span>Expert Discussion • ${pattern.style} • ${pattern.structure}</span></div>
+            </div></div>
           </div>
-          
-          <div className="prose prose-invert prose-lg max-w-none">
+          </div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
+              ${content.split('\n').map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
+              ).join('\n')}</div>
+            </div></div>
           </div>
-          
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row gap-4">
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/10"></div>
+            <div className="flex flex-col sm:flex-row gap-4"></div>
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Explore Our Services
-              </Link>
+                Explore Our Services</div>
+              </Link></div>
               <Link href="/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                Read More Articles
-              </Link>
-            </div>
-          </div>
-        </article>
-      </main>
+                Read More Articles</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </article></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}ChatPage`
   }
 
@@ -432,65 +432,65 @@ Make it feel like a natural conversation between marketplace experts discussing 
     const pageName = categoryTitle.replace(/\s+/g, '');
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}ChatPage: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${categoryTitle} - Expert Discussion - Zion AI Marketplace</title>
-        <meta name="description" content="Expert conversation about ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${categoryTitle} - Expert Discussion - Zion AI Marketplace</title></div>
+        <meta name="description" content="Expert conversation about ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  ${categoryTitle}
-                </span>
-              </h1>
+                  ${categoryTitle}</div>
+                </span></div>
+              </h1></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Expert discussion about ${categoryTitle.toLowerCase()} services and opportunities
-              </p>
-              <div className="mt-4 text-gray-400 text-sm">
-                <span>${pattern.style} • ${pattern.structure} • ${pattern.engagement}</span>
-              </div>
-            </div>
-          </div>
+                Expert discussion about ${categoryTitle.toLowerCase()} services and opportunities</div>
+              </p></div>
+              <div className="mt-4 text-gray-400 text-sm"></div>
+                <span>${pattern.style} • ${pattern.structure} • ${pattern.engagement}</span></div>
+              </div></div>
+            </div></div>
+          </div></div>
         </div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
+              ${content.split('\n').map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
-      </main>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}ChatPage`
   }
 
@@ -557,65 +557,65 @@ Make it feel like a natural conversation between service experts discussing this
     const pageName = service.replace(/[^a-zA-Z0-9]/g, '');
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}ChatPage: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${service} - Expert Discussion - Zion Tech Group</title>
-        <meta name="description" content="Expert conversation about ${service.toLowerCase()} services and implementation strategies." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${service} - Expert Discussion - Zion Tech Group</title></div>
+        <meta name="description" content="Expert conversation about ${service.toLowerCase()} services and implementation strategies." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  ${service}
-                </span>
-              </h1>
+                  ${service}</div>
+                </span></div>
+              </h1></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Expert discussion about ${service.toLowerCase()} implementation and best practices
-              </p>
-              <div className="mt-4 text-gray-400 text-sm">
-                <span>${pattern.style} • ${pattern.structure} • ${pattern.engagement}</span>
-              </div>
-            </div>
-          </div>
+                Expert discussion about ${service.toLowerCase()} implementation and best practices</div>
+              </p></div>
+              <div className="mt-4 text-gray-400 text-sm"></div>
+                <span>${pattern.style} • ${pattern.structure} • ${pattern.engagement}</span></div>
+              </div></div>
+            </div></div>
+          </div></div>
         </div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
+              ${content.split('\n').map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
-      </main>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}ChatPage`
   }
 
@@ -684,72 +684,72 @@ Make it feel like a natural conversation between experts discussing this topic.
     
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}ChatContentPage: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${topic} - Expert Conversation - Zion Tech</title>
-        <meta name="description" content="Expert conversation about ${topic.toLowerCase()} with insights and analysis." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${topic} - Expert Conversation - Zion Tech</title></div>
+        <meta name="description" content="Expert conversation about ${topic.toLowerCase()} with insights and analysis." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-8">
+</div>
+      <main className="flex-1"></div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="mb-8"></div>
             <Link href="/chat-content" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-              ← Back to Chat Content
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              ← Back to Chat Content</div>
+            </Link></div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6"></div>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                ${topic}
-              </span>
-            </h1>
-            <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Conversation • Interactive Discussion</span>
-            </div>
+                ${topic}</div>
+              </span></div>
+            </h1></div>
+            <div className="flex items-center text-gray-400 text-sm mb-8"></div>
+              <span>Expert Conversation • Interactive Discussion</span></div>
+            </div></div>
           </div>
-          
-          <div className="prose prose-invert prose-lg max-w-none">
+          </div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
+              ${content.split('\n').map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
+              ).join('\n')}</div>
+            </div></div>
           </div>
-          
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row gap-4">
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/10"></div>
+            <div className="flex flex-col sm:flex-row gap-4"></div>
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Explore Our Services
-              </Link>
+                Explore Our Services</div>
+              </Link></div>
               <Link href="/chat-content" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                More Conversations
-              </Link>
-            </div>
-          </div>
-        </article>
-      </main>
+                More Conversations</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </article></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}ChatContentPage`
   }
 
@@ -818,4 +818,4 @@ if (require.main === module) {
   });
   
   generator.start().catch(console.error);
-} 
+} </div>

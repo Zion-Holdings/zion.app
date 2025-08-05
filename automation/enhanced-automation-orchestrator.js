@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const AntiRepetitionEngine = require('./anti-repetition-engine');
@@ -705,7 +705,7 @@ class EnhancedAutomationOrchestrator {
     // Implement priority adjustment logic based on performance
     Object.entries(this.strategies).forEach(([strategyKey, strategy]) => {
       const performance = this.calculateStrategyPerformance(strategyKey);
-      
+      </div>
       if (performance < 0.5) {
         strategy.priority = 'l'o'w';
       } else if (performance > 0.8) {
@@ -823,4 +823,4 @@ module.exports = EnhancedAutomationOrchestrator;
 if (require.main === module) {
   const orchestrator = new EnhancedAutomationOrchestrator();
   console.log('🚀 Enhanced Automation Orchestrator started successfully!');
-} 
+} </div>

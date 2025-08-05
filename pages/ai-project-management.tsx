@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
 import Link from next/link";
 
 interface Project {
@@ -51,13 +51,13 @@ interface AIInsight {
   description: string
   impact: 'l'ow | 'medi'um | 'h'igh'
   confidence: number
-  actionItems: string[]}
+  actionItems: string[]};
 const AIProjectManagementPage: NextPage = () => {
-  const [projects, setProjects] = useState<Project[]>([]
-  const [tasks, setTasks] = useState<Task[]>([]
-  const [workflows, setWorkflows] = useState<Workflow[]>([]
-  const [insights, setInsights] = useState<AIInsight[]>([]
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null
+  const [projects, setProjects] = useState<Project[]>([]</div>
+  const [tasks, setTasks] = useState<Task[]>([]</div>
+  const [workflows, setWorkflows] = useState<Workflow[]>([]</div>
+  const [insights, setInsights] = useState<AIInsight[]>([]</div>
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null</div>
   const [view, setView] = useState<'overvi'e'w | projec't's | ta's'ks' | 'workflows' | 'insights'>('overview
   const [isLoading, setIsLoading] = useState(false
   // Mock data
@@ -287,52 +287,52 @@ const AIProjectManagementPage: NextPage = () => {
       case opportunit'y': return 🎯
       case predicti'o'n: return 🔮
       default: return '💡'}}
-  return (
-    <div>
-      </div><div className=" relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}"
-        <div className="fixed inset-0 z-0> 
-          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI Project Management - Zion</title>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8>"
+        "
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0> "</div>
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> "</div>
+        <title>AI Project Management - Zion</title>"</div>
         <meta name=description content=Intelligent project management with AI-powered automation and workflow orchestration > </meta" name="description content=Intelligent project management with AI-powered automation and workflow" orchestration" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className="bg-black/20" backdrop-blur-md border-b border-white/10> 
-        </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
-          <div className="flex  justify-between items-center>
-            <Link href=/" className=text-2xl font-bold text-white > 
-              </Link href=/" className=" text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>
-            <div className="flex" items-center space-x-4>
-              <Link href=/marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
-              </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium></Link>
-              <Link href=/investor-matchmaking className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Investors
-              </Link href=/investor-matchmaking className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" ></Link>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link> </div>
-          </div>
-        </div>
-      </div>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {/* Hero Section */}
-        </div><div className=text-center"  mb-12>
-          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >
-            AI-Powered <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Project Management</span>
-          </h1>
+      {/* Header */}</div>
+      <div className="bg-black/20" backdrop-blur-md border-b border-white/10> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          <div className="flex  justify-between items-center>"</div>
+            <Link href=/" className="text-2xl font-bold text-white "> </div>
+              </Link href=/" className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+            </Link>"</div>
+            <div className="flex" items-center space-x-4></div>
+              <Link href=/marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium"></Link></div>
+              <Link href=/investor-matchmaking className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Investors</div>
+              </Link href=/investor-matchmaking className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login"</div>
+              </Link href=/auth/login  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium "></Link> </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>"
+        {/* Hero Section */}"</div>
+        </div><div className="text-center"  mb-12"></div>
+          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >"</div>
+            AI-Powered <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Project Management</span></div>
+          </h1></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto>
-            Intelligent project management with AI-powered automation, workflow orchestration, and predictive insights
-          </p>
-        </div>
-        {/* Navigation Tabs */}
+            Intelligent project management with AI-powered automation, workflow orchestration, and predictive insights</div>
+          </p></div>
+        </div>"
+        {/* Navigation Tabs */}"</div>
         <div className="flex  flex-wrap justify-center mb-8>
           {[
             { id: overvi'e'w, label: Overvi'e'w, icon: 📊' },
 { id: 'projects', label: 'Projects', icon: '📁 },
-    { id: tas'k's, label: Tas'k's, icon: ✅' },
-{ id: 'workflows', label: 'Workflows', icon: '⚙️ },
+    { id: tas'k's, label: Tas'k's, icon: ✅' },"
+{ id: 'workflows', label: 'Workflows', icon: '⚙️ },"
     { id: insigh't's, label: A'I' Insights, icon: 🤖'}"
           ].map((tab) => (
               onClick={() => setView(tab.id as any)}
@@ -341,234 +341,234 @@ const AIProjectManagementPage: NextPage = () => {
                   ? bg-gradient-to-r' from-purple-600 to-pink-600 text-white shadow-lg'`
                   : bg-white'/10 text-gray-300 hover:bg-white/20'``
               }`}
-            >
+            ></div>
               <span className="mr-2>{tab.icon}</span>
-              {tab.label}
+              {tab.label}</div>
             </button>
-          ))}
-        </div>
-        {isLoading ? (
-          <div className="text-center" py-32> 
-            </div><div className=animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto></div>
-            <p className="text-gray-400" mt-4 >Loading AI insights...</p>
+          ))}</div>
+        </div>"
+        {isLoading ? ("</div>
+          <div className="text-center" py-32> </div>
+            </div><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div></div>
+            <p className="text-gray-400" mt-4 >Loading AI insights...</p></div>
           </div>
-        ) : (
+        ) : (</div>
           </>
             {/* Overview */},
-{view === overvie'w' && (
-              <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 mb-8> 
-                </div><div className=bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                  <div className="text-3xl:mb-2>📁</div>"
-                  <div className=text-2xl font-bold text-white >{projects.length}</div>
-                  <div className="text-gray-400>Active" Projects</div>
-                </div>
-                <div className= bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                  </div><div className="text-3xl:mb-2>✅</div>"
-                  <div className=text-2xl font-bold text-white >{tasks.length}</div>
-                  <div className="text-gray-400>Total" Tasks</div>
-                </div>
-                <div className= bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                  </div><div className="text-3xl:mb-2>⚙️</div>"
-                  <div className=text-2xl font-bold text-white >{workflows.length}</div>
-                  <div className="text-gray-400>Automated" Workflows</div>
-                </div>
-                <div className= bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                  </div><div className="text-3xl:mb-2>🤖</div>"
-                  <div className=text-2xl font-bold text-white >{insights.length}</div>
-                  <div className="text-gray-400>AI" Insights</div>
-                </div>
+{view === overvie'w' && (</div>
+              <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 mb-8> </div>
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"></div>
+                  <div className="text-3xl:mb-2>📁</div>"</div>
+                  <div className="text-2xl font-bold text-white ">{projects.length}</div></div>
+                  <div className="text-gray-400>Active" Projects</div></div>
+                </div></div>
+                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"></div>
+                  </div><div className="text-3xl:mb-2>✅</div>"</div>
+                  <div className="text-2xl font-bold text-white ">{tasks.length}</div></div>
+                  <div className="text-gray-400>Total" Tasks</div></div>
+                </div></div>
+                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"></div>
+                  </div><div className="text-3xl:mb-2>⚙️</div>"</div>
+                  <div className="text-2xl font-bold text-white ">{workflows.length}</div></div>
+                  <div className="text-gray-400>Automated" Workflows</div></div>
+                </div></div>
+                <div className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"></div>
+                  </div><div className="text-3xl:mb-2>🤖</div>"</div>
+                  <div className="text-2xl font-bold text-white ">{insights.length}</div></div>
+                  <div className="text-gray-400>AI" Insights</div></div>
+                </div></div>
               </div>
             )}
             {/* Projects */},
-{view === 'projec'ts && (
-              <div className=space-y-6">
-                <h2 className="text-2xl font-bold text-white mb-6>AI-Optimized Projects</h2>
-                <div className=grid"  grid-cols-1 lg:grid-cols-2 gap-6>
-                  {projects.map((project) => (
-                    </div><div key={project.id} className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                      <div className=flex" justify-between items-start mb-4> 
-                        </div><div>
-                          <h3 className="text-xl font-semibold text-white>{project.name}</h3>
-                          <p className=text-gray-300" text-sm >{project.description}</p>
-                        </div>`
-                        <div className="text-right>``
-                          </div><div className={`text-sm" font-medium ${getStatusColor(project.status)}`}>
-                            {project.status.charAt(0).toUpperCase() + project.status.slice(1)} `
-                          </div>``
+{view === 'projec'ts && (</div>
+              <div className="space-y-6""></div>
+                <h2 className="text-2xl font-bold text-white mb-6>AI-Optimized Projects</h2>"</div>
+                <div className="grid"  grid-cols-1 lg:grid-cols-2 gap-6">
+                  {projects.map((project) => (</div>
+                    </div><div key={project.id} className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>"</div>
+                      <div className="flex" justify-between items-start mb-4"> </div>
+                        </div><div></div>
+                          <h3 className="text-xl font-semibold text-white>{project.name}</h3>"</div>
+                          <p className="text-gray-300" text-sm ">{project.description}</p></div>
+                        </div>`</div>
+                        <div className="text-right>``"</div>
+                          </div><div className="{`text-sm" font-medium ${getStatusColor(project.status)}`}">
+                            {project.status.charAt(0).toUpperCase() + project.status.slice(1)} `</div>
+                          </div>``</div>
                           <div className="{`text-sm font-medium ${getPriorityColor(project.priority)}`}>
-                            {project.priority.charAt(0).toUpperCase() + project.priority.slice(1)}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className=space-y-3" mb-4 > 
-                        </div><div className="flex justify-between text-sm>`
-                          <span className=text-gray-400>Progress</span">``"
-                          <span className={`font-medium  ${getProgressColor(project.progress)}`}>
-                            {project.progress}%
-                          </span>
-                        </div>
-                        <div className="w-full" bg-gray-700 rounded-full h-2>
-                          </div>
-                          ></div>
-                        </div>
-                      </div>
-                      <div className=grid grid-cols-2 gap-4 text-sm>
-                        </div><div>
-                          <span className="text-gray-400>AI" Score:</span>
-                          <span className=text-white ml-2 >{project.aiScore}%</span>
-                        </div>
-                        <div>
-                          <span className="text-gray-400>Automation" </span>
-                          <span className=text-white ml-2>{project.automationLevel}%</span>
-                        </div>
-                        <div>
-                          <span className="text-gray-400>Budget:</span>"
-                          <span className=text-white ml-2 >${project.budget.toLocaleString()}</span>
-                        </div>
-                        <div>
-                          <span className="text-gray-400>Team" </span>
-                          <span className=text-white ml-2>{project.team.length} members</span>
-                        </div>
-                      </div>
+                            {project.priority.charAt(0).toUpperCase() + project.priority.slice(1)}</div>
+                          </div></div>
+                        </div></div>
+                      </div>"
+"</div>
+                      <div className="space-y-3" mb-4 "> </div>
+                        </div><div className="flex justify-between text-sm>`"</div>
+                          <span className="text-gray-400">Progress</span">``"</div>
+                          <span className="{`font-medium  ${getProgressColor(project.progress)}`}">
+                            {project.progress}%</div>
+                          </span></div>
+                        </div></div>
+                        <div className="w-full" bg-gray-700 rounded-full h-2></div>
+                          </div></div>
+                          ></div></div>
+                        </div></div>
+                      </div></div>
+                      <div className="grid grid-cols-2 gap-4 text-sm"></div>
+                        </div><div></div>
+                          <span className="text-gray-400>AI" Score:</span></div>
+                          <span className="text-white ml-2 ">{project.aiScore}%</span></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-400>Automation" </span></div>
+                          <span className="text-white ml-2">{project.automationLevel}%</span></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-400>Budget:</span>"</div>
+                          <span className="text-white ml-2 ">${project.budget.toLocaleString()}</span></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-400>Team" </span></div>
+                          <span className="text-white ml-2">{project.team.length} members</span></div>
+                        </div></div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}
             {/* Tasks */}, ''
-{view === task's' && (
-              <div className="space-y-6">
-                <h2 className=text-2xl" font-bold text-white mb-6 >AI-Optimized Tasks</h2>
-                <div className="space-y-4>
-                  {tasks.map((task) => (
-                    </div><div key={task.id} className= bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10>
-                      <div className="flex justify-between items-start> 
-                        </div><div className=flex-1"">
-                          <div className= flex items-center space-x-3 mb-2>
+{view === task's' && (</div>
+              <div className="space-y-6"></div>
+                <h2 className="text-2xl" font-bold text-white mb-6 ">AI-Optimized Tasks</h2></div>
+                <div className="space-y-4>"
+                  {tasks.map((task) => ("</div>
+                    </div><div key={task.id} className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border" border-white/10"></div>
+                      <div className="flex justify-between items-start> "</div>
+                        </div><div className="flex-1"""></div>
+                          <div className=" flex items-center space-x-3 mb-2"></div>
                             <h3 className="text-lg" font-semibold text-white>{task.title}</h3>
-                            {task.aiOptimized && (
-                              <span className=px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full>
-                                AI Optimized
+                            {task.aiOptimized && (</div>
+                              <span className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full">
+                                AI Optimized</div>
                               </span>
-                            )}
-                          </div>
-                          <p className="text-gray-300" text-sm mb-3 >{task.description}</p>
-                          <div className=flex items-center space-x-4 text-sm>
-                            <span className="text-gray-400>Assignee:</span">
-                            <span className=text-white>{task.assignee}</span">
-                            <span className="text-gray-400>Due:</span> 
-                            <span className=text-white>{new" Date(task.dueDate).toLocaleDateString()}</span>
-                            <span className="text-gray-400>Hours:</span>
-                            <span className="text-white>{task.actualHours}/{task.estimatedHours}</span">
-                          </div>
-                        </div>`
-                        <div className=text-right>``
+                            )}</div>
+                          </div></div>
+                          <p className="text-gray-300" text-sm mb-3 >{task.description}</p></div>
+                          <div className="flex items-center space-x-4 text-sm"></div>
+                            <span className="text-gray-400>Assignee:</span"></div>
+                            <span className="text-white">{task.assignee}</span"></div>
+                            <span className="text-gray-400>Due:</span> "</div>
+                            <span className="text-white">{new" Date(task.dueDate).toLocaleDateString()}</span></div>
+                            <span className="text-gray-400>Hours:</span>"</div>
+                            <span className="text-white>{task.actualHours}/{task.estimatedHours}</span"></div>
+                          </div></div>
+                        </div>`</div>
+                        <div className="text-right">``</div>
                           </div><div className="{`text-sm" font-medium ${getStatusColor(task.status)}`}>
-                            {task.status.replace('-',  ).charAt(0).toUpperCase() + task.status.slice(1)}`
-                          </div>``
-                          <div className={`text-sm font-medium ${getPriorityColor(task.priority)}`}>
-                            {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
-                          </div>
-                        </div>
-                      </div>
+                            {task.status.replace('-',  ).charAt(0).toUpperCase() + task.status.slice(1)}`</div>
+                          </div>``</div>
+                          <div className="{`text-sm font-medium ${getPriorityColor(task.priority)}`}">
+                            {task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}</div>
+                          </div></div>
+                        </div></div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div> 
             )}
             {/* Workflows */},"''
-{view === workflow's' && (
-              <div className="space-y-6>
-                <h2 className=text-2xl" font-bold text-white mb-6 >Automated Workflows</h2>
+{view === workflow's' && (</div>
+              <div className="space-y-6>"</div>
+                <h2 className="text-2xl" font-bold text-white mb-6 ">Automated Workflows</h2></div>
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
-                  {workflows.map((workflow) => (
-                    </div><div key={workflow.id} className= bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10>
-                      <div className="flex" justify-between items-start mb-4>
-                        </div><div>
-                          <h3 className=text-xl font-semibold text-white >{workflow.name}</h3>
-                          <p className="text-gray-300" text-sm>{workflow.description}</p>
-                        </div>
-                        <div className=text-right>
-                          </div><div className="text-sm" text-gray-400>Success Rate</div>
-                          <div className=text-lg font-bold text-green-500 >{workflow.successRate}%</div >
-                        </div>
+                  {workflows.map((workflow) => ("</div>
+                    </div><div key={workflow.id} className=" bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">"</div>
+                      <div className="flex" justify-between items-start mb-4></div>
+                        </div><div></div>
+                          <h3 className="text-xl font-semibold text-white ">{workflow.name}</h3></div>
+                          <p className="text-gray-300" text-sm>{workflow.description}</p></div>
+                        </div></div>
+                        <div className="text-right"></div>
+                          </div><div className="text-sm" text-gray-400>Success Rate</div></div>
+                          <div className="text-lg font-bold text-green-500 ">{workflow.successRate}%</div ></div>
+                        </div></div>
                       </div>
-
-                      <div className="space-y-3 mb-4"> 
-                        </div><div className=flex justify-between text-sm>
-                          <span className="text-gray-400>Automation" Level</span>
-                          <span className=text-white>{workflow.automationLevel}%</span>
-                        </div>
-                        <div className="w-full" bg-gray-700 rounded-full h-2>
-                          </div>
-                          ></div>
-                        </div>
-                      </div>
-                      <div className=space-y-2>
+</div>
+                      <div className="space-y-3 mb-4"> </div>
+                        </div><div className="flex justify-between text-sm"></div>
+                          <span className="text-gray-400>Automation" Level</span></div>
+                          <span className="text-white">{workflow.automationLevel}%</span></div>
+                        </div></div>
+                        <div className="w-full" bg-gray-700 rounded-full h-2></div>
+                          </div></div>
+                          ></div></div>
+                        </div></div>
+                      </div></div>
+                      <div className="space-y-2"></div>
                         </div><div className="text-sm" font-medium text-gray-400 mb-2 >Workflow Steps:</div>
-                        {workflow.steps.map((step) => (
-                          <div key={step.id} className=flex items-center space-x-3 text-sm>`
+                        {workflow.steps.map((step) => (</div>
+                          <div key={step.id} className="flex items-center space-x-3 text-sm">`
                             ``
                             }`}>
-                              {step.type}
-                            </span>
-                            <span className="text-white>{step.name}</span>"
-                            <span className=text-gray-400>({step.estimatedTime}h)</span>
+                              {step.type}</div>
+                            </span></div>
+                            <span className="text-white>{step.name}</span>"</div>
+                            <span className="text-gray-400">({step.estimatedTime}h)</span></div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}"
             {/* AI Insights */},
-{view === insigh't's && ("
-              <div className=space-y-6>
-                <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2>
-                <div className=grid grid-cols-1 lg:grid-cols-2 gap-6> 
-                  {insights.map((insight, index) => (
-                    </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10">
-                      <div className=flex items-start space-x-3 mb-4> 
-                        </div><div className="text-2xl>{getInsightIcon(insight.type)}</div">
-                        <div className= flex-1>
-                          </div><div className="flex items-center space-x-2 mb-2">`
-                            <h3 className=text-lg font-semibold text-white>{insight.title}</h3>''``
+{view === insigh't's && ("</div>
+              <div className="space-y-6"></div>
+                <h2 className="text-2xl" font-bold text-white mb-6>AI-Powered Insights</h2></div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6"> 
+                  {insights.map((insight, index) => (</div>
+                    </div><div key={index} className="bg-white/5 backdrop-blur-md:rounded-xl p-6 border border-white/10"></div>
+                      <div className="flex items-start space-x-3 mb-4"> </div>
+                        </div><div className="text-2xl>{getInsightIcon(insight.type)}</div"></div>
+                        <div className=" flex-1"></div>
+                          </div><div className="flex items-center space-x-2 mb-2">`</div>
+                            <h3 className="text-lg font-semibold text-white">{insight.title}</h3>''``</div>
                             <span className="{`px-4" py-3 rounded-full text-xs ${getInsightColor(insight.type).replace(text'-', bg'-')} ${getInsightColor(insight.type)}`}>
-                              {insight.impact}
-                            </span>
-                          </div>
-                          <p className=text-gray-300 text-sm:mb-3>{insight.description}</p>
-                          <div className="flex items-center space-x-4 text-sm">
-                            <span className=text-gray-400>Confidence </span>
-                            <span className="text-white>{insight.confidence}%</span">
-                          </div>
-                        </div>
-                      </div> 
-                      <div className=space-y-2>
+                              {insight.impact}</div>
+                            </span></div>
+                          </div></div>
+                          <p className="text-gray-300 text-sm:mb-3">{insight.description}</p></div>
+                          <div className="flex items-center space-x-4 text-sm"></div>
+                            <span className="text-gray-400">Confidence </span></div>
+                            <span className="text-white>{insight.confidence}%</span"></div>
+                          </div></div>
+                        </div></div>
+                      </div> </div>
+                      <div className="space-y-2"></div>
                         </div><div className="text-sm" font-medium text-gray-400 >Action Items:</div>
-                        {insight.actionItems.map((item, itemIndex) => (
-                          <div key={itemIndex} className= flex items-center space-x-2" text-sm>
-                            <span className="text-purple-400>•</span>
-                            <span className=text-gray-300>{item}</span>"
+                        {insight.actionItems.map((item, itemIndex) => (</div>
+                          <div key={itemIndex} className=" flex items-center space-x-2" text-sm"></div>
+                            <span className="text-purple-400>•</span>"</div>
+                            <span className="text-gray-300">{item}</span>"</div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </>
-        )}
-      </div>
+        )}</div>
+      </div></div>
     </div>
-  
   </div>
-
-  </div >
+  </div>
+</div>
+  </div ></div>
   </div> ;
 };
-`
-export default AIProjectManagementPage ))))))))))))))))"'"'`
+`;}
+export default AIProjectManagementPage ))))))))))))))))"'"'`</div>

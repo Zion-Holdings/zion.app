@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
 interface DistributedLedger {
@@ -113,16 +113,16 @@ interface DistributedLedgerInsight {
   description: string;
   impact: 'positi've | 'negati've | 'neut'ral'';
   confidence: number;
-  recommendations: string[];}
+  recommendations: string[];};
 const AIPoweredDistributedLedgerPage: NextPage = () => {
-  const [distributedLedgers, setDistributedLedgers] = useState<DistributedLedger[]>([]
-  const [consensusMechanisms, setConsensusMechanisms] = useState<ConsensusMechanism[]>([]
-  const [smartContracts, setSmartContracts] = useState<SmartContract[]>([]
-  const [blockchainGovernance, setBlockchainGovernance] = useState<BlockchainGovernance[]>([]
-  const [decentralizedApplications, setDecentralizedApplications] = useState<DecentralizedApplication[]>([]
-  const [distributedLedgerManagement, setDistributedLedgerManagement] = useState<DistributedLedgerManagement[]>([]
-  const [analytics, setAnalytics] = useState<DistributedLedgerAnalytics | null>(null
-  const [activeTab, setActiveTab] = useState<'ledge'rs | 'consens'us | 'contra'cts'' | 'governan'ce | 'dap'ps | 'managem'ent'' | overvie'w'>(ledgers'
+  const [distributedLedgers, setDistributedLedgers] = useState<DistributedLedger[]>([]</div>
+  const [consensusMechanisms, setConsensusMechanisms] = useState<ConsensusMechanism[]>([]</div>
+  const [smartContracts, setSmartContracts] = useState<SmartContract[]>([]</div>
+  const [blockchainGovernance, setBlockchainGovernance] = useState<BlockchainGovernance[]>([]</div>
+  const [decentralizedApplications, setDecentralizedApplications] = useState<DecentralizedApplication[]>([]</div>
+  const [distributedLedgerManagement, setDistributedLedgerManagement] = useState<DistributedLedgerManagement[]>([]</div>
+  const [analytics, setAnalytics] = useState<DistributedLedgerAnalytics | null>(null</div>
+  const [activeTab, setActiveTab] = useState<'ledge'rs | 'consens'us | 'contra'cts'' | 'governan'ce | 'dap'ps | 'managem'ent'' | overvie'w'>(ledgers'</div>
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
   // Mock data
@@ -309,55 +309,55 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
       case 'identit'y_application: return 'bg-red'-500/20 text-red-300
       case suppl'y'_chain_application: return bg-yellow'-'500/20 text-yellow-300
       default: return bg-gray-'500/20 text-gray-300'}}
-  return (
-    <div>
-      </div><div className=" relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}"
-        <div className="fixed inset-0 z-0> 
-          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Distributed Ledger & Consensus System | Zion Tech Group</title>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8>"
+        "
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0> "</div>
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> "</div>
+        <title>AI-Powered Distributed Ledger & Consensus System | Zion Tech Group</title>"</div>
         <meta name=description content=Distributed ledger technology, consensus mechanisms, smart contracts, blockchain governance, decentralized applications, and automated distributed ledger management powered by AI. > </meta" name="description content=Distributed ledger technology, consensus mechanisms, smart contracts, blockchain governance, decentralized applications, and automated distributed ledger management powered by" AI." ><meta name=keywords content=distributed ledger, consensus mechanisms, smart contracts, blockchain governance, decentralized applications, AI blockchain > </meta name="keywords" content=distributed ledger, consensus mechanisms, smart contracts, blockchain governance, decentralized applications, AI blockchain" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}
-      <div className=relative" overflow-hidden>
-        </div><div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20></div>
-        <div className=relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
-          </div><div className="text-center>
-            <h1 className=text-5xl" md text-6xl font-bold text-white mb-6>
-              AI-Powered Distributed Ledger & Consensus System
-            </h1>
+      {/* Header */}</div>
+      <div className="relative" overflow-hidden"></div>
+        </div><div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20></div>"</div>
+        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44"> </div>
+          </div><div className="text-center>"</div>
+            <h1 className="text-5xl" md text-6xl font-bold text-white mb-6">
+              AI-Powered Distributed Ledger & Consensus System</div>
+            </h1></div>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Distributed ledger technology, consensus mechanisms, smart contracts, 
-              blockchain governance, decentralized applications, and automated distributed ledger management powered by AI.
-            </p>
-            <div className="flex" flex-wrap justify-center gap-4> 
-              </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white" font-semibold>🔗 Distributed Ledger</span> 
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>
-                <span className=text-white" font-semibold>⚡ Consensus Mechanisms</span>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white" font-semibold>📜 Smart Contracts</span>
-              </div>
-            </div">
-          </div>
-        </div>
+              blockchain governance, decentralized applications, and automated distributed ledger management powered by AI."</div>
+            </p>"</div>
+            <div className="flex" flex-wrap justify-center gap-4> </div>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
+                <span className="text-white" font-semibold">🔗 Distributed Ledger</span> </div>
+              </div></div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"</div>
+                <span className="text-white" font-semibold">⚡ Consensus Mechanisms</span></div>
+              </div></div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
+                <span className="text-white" font-semibold">📜 Smart Contracts</span></div>
+              </div></div>
+            </div"></div>
+          </div></div>
+        </div></div>
       </div>
 
-      {/* Main Content */}
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? (
-          </div><div className="flex" justify-center items-center py-40>
-            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500 ></div>
+      {/* Main Content */}</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        {isLoading ? (</div>
+          </div><div className="flex" justify-center items-center py-40></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500 "></div></div>
           </div>
-        ) : ("
+        ) : ("</div>
           </>
-            {/* Tabs */}"
-            <div className= flex flex-wrap justify-center mb-8>
+            {/* Tabs */}"</div>
+            <div className=" flex flex-wrap justify-center mb-8">
               "'
                 onClick={() => setActiveTab('ledgers')}"'
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -366,7 +366,7 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                       'bg-white/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
-                Distributed Ledgers ({distributedLedgers.length}
+                Distributed Ledgers ({distributedLedgers.length}</div>
               </button> '
               "'`
                 onClick={() => setActiveTab('consensus')}``
@@ -376,17 +376,17 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Consensus Mechanisms ({consensusMechanisms.length}
+                Consensus Mechanisms ({consensusMechanisms.length}</div>
               </button>'
-              `
-                onClick={() => setActiveTab('contracts')}``
+              `"
+                onClick={() => setActiveTab('contracts')}``"
                 className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'contracts
                     ? 'bg-gradient-to-'r from-indigo-600 to-purple-600 text-white`
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Smart Contracts ({smartContracts.length}
+                Smart Contracts ({smartContracts.length}</div>
               </button>'
               `
                 onClick={() => setActiveTab('governance')}``
@@ -396,9 +396,9 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                       'bg-whit'e/10 text-gray-300 hover bg-white/20``
                 }`}
               >
-                Blockchain Governance ({blockchainGovernance.length}
-              </button>'
-              '`
+                Blockchain Governance ({blockchainGovernance.length}</div>
+              </button>'"
+              '`"
                 onClick={() => setActiveTab('dap'ps)}"''``
                 className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === dapps'
@@ -406,17 +406,17 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                       'bg-white/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
-                Decentralized Apps ({decentralizedApplications.length}
+                Decentralized Apps ({decentralizedApplications.length}</div>
               </button> '
-              '`
-                onClick={() => setActiveTab('management')}``
+              '`"
+                onClick={() => setActiveTab('management')}``"
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'management
                     ? 'bg-gradient-to-'r from-indigo-600 to-purple-600 text-white`
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Management ({distributedLedgerManagement.length}
+                Management ({distributedLedgerManagement.length}</div>
               </button>'
               `
                 onClick={() => setActiveTab('overview')}``
@@ -426,188 +426,188 @@ const AIPoweredDistributedLedgerPage: NextPage = () => {
                     : 'bg-whit'e/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Overview
-              </button>
+                Overview</div>
+              </button></div>
             </div>
 "'
             {/* Distributed Ledgers Tab */},
-{activeTab === 'ledgers' && ("
-              <div className= space-y-8>
-                {/* Controls */}
-                </div><div className= bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className=flex items-center space-x-4">
+{activeTab === 'ledgers' && ("</div>
+              <div className=" space-y-8">
+                {/* Controls */}</div>
+                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6"></div>
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> "</div>
+                    </div><div className="flex items-center space-x-4"">
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className= bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-indigo-500"
-                      >
-                        <option value=all className="bg-slate-800>All Types</option>
-                        <option value=blockchain className=bg-slate-800>Blockchain</option>"
-                        <option value=hashgraph className="bg-slate-800>Hashgraph</option>
-                        <option value=dag className=bg-slate-800>DAG</option>"
-                        <option value=tangle className="bg-slate-800>Tangle</option>
-                        <option value=holochain className=bg-slate-800>Holochain</option>"
-                        <option value=tempo className="bg-slate-800>Tempo</option>
-                      </select>
-                    </div>
-                    <button className=bg-gradient-to-r" from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
-                      Create Distributed Ledger
-                    </button> </div>
+                      ></div>
+                        <option value=all className="bg-slate-800>All Types</option>"</div>
+                        <option value=blockchain className="bg-slate-800">Blockchain</option>"</div>
+                        <option value=hashgraph className="bg-slate-800>Hashgraph</option>"</div>
+                        <option value=dag className="bg-slate-800">DAG</option>"</div>
+                        <option value=tangle className="bg-slate-800>Tangle</option>"</div>
+                        <option value=holochain className="bg-slate-800">Holochain</option>"</div>
+                        <option value=tempo className="bg-slate-800>Tempo</option></div>
+                      </select>"</div>
+                    </div>"</div>
+                    <button className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 ">
+                      Create Distributed Ledger</div>
+                    </button> </div></div>
                 </div>
 
-                {/* Distributed Ledgers Grid */}"
-                <div className= grid grid-cols-1 lg grid-cols-2 gap-6>
-                  {filteredLedgers.map((ledger) => (
-                    </div><div key={ledger.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                      <div className="flex items-start justify-between mb-4>
-                        </div><div>'
-                          <h3 className=text-xl" font-semibold text-white mb-2 >{ledger.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize>{ledger.type.replace(_, ' ')} Ledger</p>
-                        </div>`
-                        <div className=text-right">``
+                {/* Distributed Ledgers Grid */}"</div>
+                <div className=" grid grid-cols-1 lg grid-cols-2 gap-6">
+                  {filteredLedgers.map((ledger) => (</div>
+                    </div><div key={ledger.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10"></div>
+                      <div className="flex items-start justify-between mb-4>"</div>
+                        </div><div>'"</div>
+                          <h3 className="text-xl" font-semibold text-white mb-2 ">{ledger.name}</h3></div>
+                          <p className="text-gray-300 text-sm capitalize>{ledger.type.replace(_, ' ')} Ledger</p>"</div>
+                        </div>`"</div>
+                        <div className="text-right"">``</div>
                           <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(ledger.status)}`}>
-                            {ledger.status} 
-                          </span>`
-                          <div className=mt-2"">``
-                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(ledger.type)}`}>
-                              {ledger.nodes} nodes
-                            </span>
-                          </div>
-                        </div> 
-                      </div>
-                      <div className="mb-4>
-                        <p className="text-gray-300 text-sm>{ledger.description}</p> 
-                      </div>
-                      <div className=grid" grid-cols-3 gap-4 mb-4>
-                        </div><div className=" bg-white/5 rounded-lg p-4>
-                          <div className=text-sm" text-gray-400 mb-1>Transactions</div>
-                          <div className="text-2xl font-bold text-white>{ledger.transactions.toLocaleString()}</div>
-                        </div>
-                        <div className=bg-white/5" rounded-lg p-4 >
-                          </div><div className="text-sm text-gray-400 mb-1>Block Time</div>
-                          <div className=text-2xl" font-bold text-white>{ledger.blockTime}s</div>
-                        </div>
-                        <div className="bg-white/5 rounded-lg:p-4>
-                          </div><div className=text-sm" text-gray-400 mb-1 >Nodes</div>
-                          <div className="text-2xl font-bold text-white>{ledger.nodes}</div>
-                        </div>
-                      </div>
-                      {/* AI Analysis */}
-                      <div className=mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>
-                        <div className=bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 rounded-lg:p-4>
-                          </div><div className="grid grid-cols-3 gap-4 text-sm>
-                            <div> 
-                              </div><div className=text-gray-400" mb-1>Performance</div>
-                              <div className="text-white font-semibold>{ledger.aiAnalysis.performanceScore}%</div>
-                            </div>
-                            <div>
-                              </div><div className=text-gray-400" mb-1 >Security</div>
-                              <div className="text-white font-semibold>{ledger.aiAnalysis.securityScore}%</div>
-                            </div>
-                            <div> 
-                              </div><div className=text-gray-400" mb-1>Scalability</div>
-                              <div className="text-white font-semibold>{ledger.aiAnalysis.scalabilityScore}%</div>
-                            </div>
-                          </div>
-                          <div className=mt-3>"
-                            </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>
-                            <div className=text-xs" text-gray-300>
-                              {ledger.aiAnalysis.recommendations.join(, ')}
-                            </div>
-                          </div>
-                        </div> 
-                      </div>
-                      <div className="flex space-x-2>
-                        <button className=flex-1" bg-gradient-to-r from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >
-                          View Details
-                        </button>
+                            {ledger.status} "</div>
+                          </span>`"</div>
+                          <div className="mt-2""">``</div>
+                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(ledger.type)}`}">
+                              {ledger.nodes} nodes</div>
+                            </span></div>
+                          </div></div>
+                        </div> </div>
+                      </div></div>
+                      <div className="mb-4>"</div>
+                        <p className="text-gray-300 text-sm>{ledger.description}</p> "</div>
+                      </div>"</div>
+                      <div className="grid" grid-cols-3 gap-4 mb-4"></div>
+                        </div><div className=" bg-white/5 rounded-lg p-4>"</div>
+                          <div className="text-sm" text-gray-400 mb-1">Transactions</div></div>
+                          <div className="text-2xl font-bold text-white>{ledger.transactions.toLocaleString()}</div>"</div>
+                        </div>"</div>
+                        <div className="bg-white/5" rounded-lg p-4 "></div>
+                          </div><div className="text-sm text-gray-400 mb-1>Block Time</div>"</div>
+                          <div className="text-2xl" font-bold text-white">{ledger.blockTime}s</div></div>
+                        </div></div>
+                        <div className="bg-white/5 rounded-lg:p-4>"</div>
+                          </div><div className="text-sm" text-gray-400 mb-1 ">Nodes</div></div>
+                          <div className="text-2xl font-bold text-white>{ledger.nodes}</div></div>
+                        </div></div>
+                      </div>"
+                      {/* AI Analysis */}"</div>
+                      <div className="mb-4""></div>
+                        <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"</div>
+                        <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 rounded-lg:p-4"></div>
+                          </div><div className="grid grid-cols-3 gap-4 text-sm>"</div>
+                            <div> "</div>
+                              </div><div className="text-gray-400" mb-1">Performance</div></div>
+                              <div className="text-white font-semibold>{ledger.aiAnalysis.performanceScore}%</div></div>
+                            </div>"</div>
+                            <div>"</div>
+                              </div><div className="text-gray-400" mb-1 ">Security</div></div>
+                              <div className="text-white font-semibold>{ledger.aiAnalysis.securityScore}%</div></div>
+                            </div>"</div>
+                            <div> "</div>
+                              </div><div className="text-gray-400" mb-1">Scalability</div></div>
+                              <div className="text-white font-semibold>{ledger.aiAnalysis.scalabilityScore}%</div></div>
+                            </div>"</div>
+                          </div>"</div>
+                          <div className="mt-3">"</div>
+                            </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"</div>
+                            <div className="text-xs" text-gray-300">
+                              {ledger.aiAnalysis.recommendations.join(, ')}</div>
+                            </div></div>
+                          </div></div>
+                        </div> </div>
+                      </div></div>
+                      <div className="flex space-x-2>"</div>
+                        <button className="flex-1" bg-gradient-to-r from-indigo-600 to-purple-600 hover from-indigo-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 ">
+                          View Details</div>
+                        </button></div>
                         <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
-                          Configure
-                        </button>
-                      </div>
+                          Configure</div>
+                        </button></div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}
-            {/* Overview Tab */},'
-{activeTab === overvi'e'w && analytics && (
-              <div className=" space-y-8>
-                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>
-                  <div className=bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalLedgers.toLocaleString()}</div>
-                    <div className=text-gray-400" text-sm>Total Distributed Ledgers</div> 
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className=text-3xl" font-bold text-white mb-2 >{analytics.averageBlockTime.toLocaleString()}s</div>
-                    <div className="text-gray-400 text-sm>Avg Block Time</div> 
-                  </div>
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.smartContracts.toLocaleString()}</div>
-                    <div className=text-gray-400 text-sm >Smart Contracts</div>
-                  </div>
-                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
-                    <div className="text-gray-400" text-sm>AI Optimization Score</div>
-                  </div>
-                </div>
-                <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
-                  <div className=space-y-4>
-                    {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className=" bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg" p-4>
-                        <div className=flex  items-start justify-between mb-2>
+            {/* Overview Tab */},'"
+{activeTab === overvi'e'w && analytics && ("</div>
+              <div className=" space-y-8>"</div>
+                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalLedgers.toLocaleString()}</div>"</div>
+                    <div className="text-gray-400" text-sm">Total Distributed Ledgers</div> </div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2 ">{analytics.averageBlockTime.toLocaleString()}s</div></div>
+                    <div className="text-gray-400 text-sm>Avg Block Time</div> </div>
+                  </div>"</div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">"</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.smartContracts.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm ">Smart Contracts</div></div>
+                  </div></div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10></div>
+                    </div><div className="text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div></div>
+                    <div className="text-gray-400" text-sm>AI Optimization Score</div></div>
+                  </div></div>
+                </div></div>
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3></div>
+                  <div className="space-y-4">
+                    {analytics.aiInsights.map((insight) => (</div>
+                      </div><div key={insight.id} className=" bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg" p-4></div>
+                        <div className="flex  items-start justify-between mb-2"></div>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
                           }`}>
-                            {insight.impact}
-                          </span>
-                        </div>
-                        <p className="text-gray-300" text-sm:mb-3>{insight.description}</p>
-                        <div className=text-xs text-gray-400 mb-2 >
-                          Confidence: {Math.round(insight.confidence * 100)}%
-                        </div>
-                        <div className="text-xs" text-gray-400>
-                          <strong>Recommendations </strong> {insight.recommendations.join(', ')}
-                        </div>
+                            {insight.impact}</div>
+                          </span></div>
+                        </div></div>
+                        <p className="text-gray-300" text-sm:mb-3>{insight.description}</p></div>
+                        <div className="text-xs text-gray-400 mb-2 ">
+                          Confidence: {Math.round(insight.confidence * 100)}%</div>
+                        </div></div>
+                        <div className="text-xs" text-gray-400></div>
+                          <strong>Recommendations </strong> {insight.recommendations.join(', ')}</div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </>
-        )}
+        )}</div>
       </div> 
-      {/* CTA Section */}
-      <div className=bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>
-          <div className="text-center>"
-            <h2 className=text-3xl font-bold text-white mb-4>
-              Ready to Build on Distributed Ledger Technology?
-            </h2>
+      {/* CTA Section */}</div>
+      <div className="bg-gradient-to-r" from-indigo-600/20 to-purple-600/20 mt-16"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36>"</div>
+          <div className="text-center>"</div>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Build on Distributed Ledger Technology?</div>
+            </h2></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your distributed ledger journey with our AI-powered system  
-              and ensure comprehensive distributed ledger management.
-            </p>
-            <div className=flex  flex-col sm:flex-row gap-4 justify-center>
-              <Link href=/ai-service-matcher className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105 >Start Building
-              </Link href=/ai-service-matcher  className=bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105></Link>
-              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
-              </Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              and ensure comprehensive distributed ledger management.</div>
+            </p></div>
+            <div className="flex  flex-col sm:flex-row gap-4 justify-center"></div>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r" from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105 >Start Building</div>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-indigo-500/25 transform hover scale-105"></Link></div>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More</div>
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm "></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
 };
-`
-export default AIPoweredDistributedLedgerPage )))))))))))))))))))))))))))))"'"'`
+`;}
+export default AIPoweredDistributedLedgerPage )))))))))))))))))))))))))))))"'"'`</div>

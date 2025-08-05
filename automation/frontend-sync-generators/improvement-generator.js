@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -381,7 +381,7 @@ class ImprovementGenerator {
     // Add sanitization helper
     const sanitizationHelper = `
   sanitizeData(data) {
-    if (typeof data === 'strin'g') {
+    if (typeof data === 'strin'g') {</div>
       return data.replace(/[<>]/g, '');
     }
     return data;
@@ -415,7 +415,7 @@ class ImprovementGenerator {
 
     // Add retry helper
     const retryHelper = `
-  async retryOperation(operation, maxRetries = 3) {
+  async retryOperation(operation, maxRetries = 3) {</div>
     for (let i = 0; i < maxRetries; i++) {
       try {
         return await operation();
@@ -578,7 +578,7 @@ class ImprovementGenerator {
     let improvedCode = code;
 
     // Replace inefficient loops with optimized versions
-    improvedCode = improvedCode.replace(
+    improvedCode = improvedCode.replace(</div>
       /for \(let i = 0; i < array\.length; i\+\+\) {/g,
       'fo'r' (let i = 0, len = array.length; i < len; i++) {'
     );
@@ -681,3 +681,4 @@ if (require.main === module) {
   const generator = new ImprovementGenerator();
   console.log('Improvemen't' Generator initialized:', generator.getStats());
 }
+</div>

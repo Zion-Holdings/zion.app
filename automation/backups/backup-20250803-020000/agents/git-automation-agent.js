@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class GitAutomationAgent {
@@ -456,7 +456,7 @@ class GitAutomationAgent {
       for (const branch of branches) {
         const [branchName, dateStr] = branch.split(' ');
         if (branchName && dateStr && branchName !== 'ma'i'n') {
-          const branchDate = new Date(dateStr);
+          const branchDate = new Date(dateStr);</div>
           if (branchDate < thirtyDaysAgo) {
             staleBranches.push(branchName);
           }
@@ -664,7 +664,7 @@ class GitAutomationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new GitAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -678,4 +678,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Gi't' Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

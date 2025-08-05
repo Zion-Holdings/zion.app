@@ -245,7 +245,7 @@ class QuantumAIResearchFactory {
   }
 
   generateQuantumComputingAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -330,7 +330,7 @@ module.exports = QuantumComputingAgent;
   }
 
   generateQuantumAlgorithmAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -415,7 +415,7 @@ module.exports = QuantumAlgorithmAgent;
   }
 
   generateQuantumSimulationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -500,7 +500,7 @@ module.exports = QuantumSimulationAgent;
   }
 
   generateAGIResearchAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -585,7 +585,7 @@ module.exports = AGIResearchAgent;
   }
 
   generateNeuromorphicAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -670,7 +670,7 @@ module.exports = NeuromorphicAgent;
   }
 
   generateFederatedLearningAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -755,7 +755,7 @@ module.exports = FederatedLearningAgent;
   }
 
   generateResearchPaperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -840,7 +840,7 @@ module.exports = ResearchPaperAgent;
   }
 
   generatePatentAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -925,7 +925,7 @@ module.exports = PatentAgent;
   }
 
   generateAIEthicsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1010,7 +1010,7 @@ module.exports = AIEthicsAgent;
   }
 
   generateExplainableAIAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1095,7 +1095,7 @@ module.exports = ExplainableAIAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

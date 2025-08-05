@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
 '
-// Check if OpenAI API key is available
+// Check if OpenAI API key is available;
 const hasOpenAIKey = process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY.trim() !== ;
-
+;
 const openai = hasOpenAIKey ? new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 }) : null;
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'

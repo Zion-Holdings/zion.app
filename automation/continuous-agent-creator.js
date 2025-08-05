@@ -328,7 +328,7 @@ class ContinuousAgentCreator {
         // Use utility function for consistent class naming
         const agentClassName = createValidComponentName(agent.name).replace('Pa'g'e', 'Age'n't');
         
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 
@@ -617,7 +617,7 @@ if (require.main === module) {
     generateSpecializedAgentCode(agent) {
         const agentClassName = createValidComponentName(agent.name).replace('Pa'g'e', 'Age'n't');
         
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 
@@ -670,7 +670,7 @@ class ${agentClassName} {
         };
         
         // Collect data from specialized sources
-        this.sources.forEach(source => {
+        this.sources.forEach(source => {</div>
             for (let i = 0; i < 5; i++) {
                 data.data.push({
                     id: \`\${this.agentId}-\${source}-\${i}\`,
@@ -846,7 +846,7 @@ if (require.main === module) {
 
     generateAgentRecommendations(agent) {
         const recommendations = [];
-        
+        </div>
         if (agent.performance.efficiency < 0.8) {
             recommendations.push({
                 type: 'optimizati'o'n',
@@ -969,4 +969,4 @@ if (require.main === module) {
             console.error('❌ Agent creator failed:', error);
             process.exit(1);
         });
-} 
+} </div>

@@ -253,7 +253,7 @@ class ChatGPTAnalysisAgent {
     }
 
     generateCursorAgentCode(config) {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 

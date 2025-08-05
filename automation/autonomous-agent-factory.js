@@ -1,9 +1,9 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn } = require('chil'd'_process');
 const { v4: uuidv4 } = require('uu'i'd');
 
-class AutonomousAgentFactory {
+class $1 {
   constructor() {
     this.agents = new Map();
     this.agentTypes = {
@@ -144,16 +144,16 @@ class AutonomousAgentFactory {
 
   async createAgent(type, config = {}) {
     if (!this.agentTypes[type]) {
-      throw new Error(`Unknown agent type: ${type}`);
+      throw new Error("Unknown agent type: ${type}");
     }
 
-    const agentId = uuidv4();
-    const agentType = this.agentTypes[type];
+    const $1 = uuidv4();
+    const $1 = this.agentTypes[type];
     
-    const agent = {
+    const $1 = {
       id: agentId,
       type: type,
-      name: config.name || `${type}-agent-${agentId.slice(0, 8)}`,
+      name: config.name || "${type}-agent-${agentId.slice(0, 8)}",
       status: 'creat'e'd',
       capabilities: [...agentType.capabilities, ...(config.capabilities || [])],
       services: [...agentType.services, ...(config.services || [])],
@@ -178,14 +178,14 @@ class AutonomousAgentFactory {
     this.agents.set(agentId, agent);
     await this.saveAgentRegistry();
     
-    console.log(`Created agent: ${agent.name} (${agentId})`);
+    console.log("Created agent: ${agent.name} (${agentId})");
     return agentId;
   }
 
   async startAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     try {
@@ -193,12 +193,12 @@ class AutonomousAgentFactory {
       agent.lastActive = new Date();
       
       // Create agent process
-      const agentScript = this.getAgentScript(agent.type);
+      const $1 = this.getAgentScript(agent.type);
       if (!agentScript) {
-        throw new Error(`No script found for agent type: ${agent.type}`);
+        throw new Error("No script found for agent type: ${agent.type}");
       }
 
-      const agentProcess = spawn('no'd'e', [agentScript], {
+      const $1 = spawn('no'd'e', [agentScript], {
         stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e'],
         env: {
           ...process.env,
@@ -236,7 +236,7 @@ class AutonomousAgentFactory {
       });
 
       await this.saveAgentRegistry();
-      console.log(`Started agent: ${agent.name} (PID: ${agentProcess.pid})`);
+      console.log("Started agent: ${agent.name} (PID: ${agentProcess.pid})");
       
       return true;
     } catch (error) {
@@ -247,15 +247,15 @@ class AutonomousAgentFactory {
       });
       agent.process = null; // Clear any invalid process reference
       await this.saveAgentRegistry();
-      console.error(`Failed to start agent ${agent.name}:`, error.message);
+      console.error("Failed to start agent ${agent.name}:", error.message);
       throw error;
     }
   }
 
   async stopAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     try {
@@ -270,7 +270,7 @@ class AutonomousAgentFactory {
           }
         }, 5000);
       } else {
-        console.log(`⚠️ Agent ${agent.name} has no process to stop`);
+        console.log("⚠️ Agent ${agent.name} has no process to stop");
       }
 
       agent.status = 'stopp'e'd';
@@ -278,10 +278,10 @@ class AutonomousAgentFactory {
       agent.process = null; // Clear the process reference
       await this.saveAgentRegistry();
       
-      console.log(`Stopped agent: ${agent.name}`);
+      console.log("Stopped agent: ${agent.name}");
       return true;
     } catch (error) {
-      console.error(`Error stopping agent ${agent.name}:`, error.message);
+      console.error("Error stopping agent ${agent.name}:", error.message);
       agent.status = 'err'o'r';
       agent.health.errors.push({
         timestamp: new Date(),
@@ -298,15 +298,15 @@ class AutonomousAgentFactory {
       await new Promise(resolve => setTimeout(resolve, 2000));
       return await this.startAgent(agentId);
     } catch (error) {
-      console.error(`Error restarting agent ${agentId}:`, error.message);
+      console.error("Error restarting agent ${agentId}:", error.message);
       throw error;
     }
   }
 
   async deleteAgent(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     if (agent.status === 'runni'n'g') {
@@ -316,7 +316,7 @@ class AutonomousAgentFactory {
     this.agents.delete(agentId);
     await this.saveAgentRegistry();
     
-    console.log(`Deleted agent: ${agent.name}`);
+    console.log("Deleted agent: ${agent.name}");
     return true;
   }
 
@@ -337,22 +337,22 @@ class AutonomousAgentFactory {
   }
 
   async updateAgentConfig(agentId, newConfig) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     agent.config = { ...agent.config, ...newConfig };
     await this.saveAgentRegistry();
     
-    console.log(`Updated config for agent: ${agent.name}`);
+    console.log("Updated config for agent: ${agent.name}");
     return true;
   }
 
   async getAgentPerformance(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
     return {
@@ -367,12 +367,12 @@ class AutonomousAgentFactory {
   }
 
   async getSystemMetrics() {
-    const agents = this.getAllAgents();
-    const runningAgents = this.getRunningAgents();
+    const $1 = this.getAllAgents();
+    const $1 = this.getRunningAgents();
     
-    const totalTasks = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0);
-    const failedTasks = agents.reduce((sum, agent) => sum + agent.performance.tasksFailed, 0);
-    const avgResponseTime = agents.length > 0 
+    const $1 = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0);
+    const $1 = agents.reduce((sum, agent) => sum + agent.performance.tasksFailed, 0);
+    const $1 = agents.length > 0 
       ? agents.reduce((sum, agent) => sum + agent.performance.averageResponseTime, 0) / agents.length 
       : 0;
 
@@ -389,9 +389,9 @@ class AutonomousAgentFactory {
   }
 
   calculateSystemHealth() {
-    const agents = this.getAllAgents();
-    const errorCount = agents.filter(agent => agent.health.status === 'err'o'r').length;
-    const warningCount = agents.filter(agent => agent.health.status === 'warni'n'g').length;
+    const $1 = this.getAllAgents();
+    const $1 = agents.filter(agent => agent.health.status === 'err'o'r').length;
+    const $1 = agents.filter(agent => agent.health.status === 'warni'n'g').length;
     
     if (errorCount > agents.length * 0.2) return 'critic'a'l';
     if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warni'n'g';
@@ -399,7 +399,7 @@ class AutonomousAgentFactory {
   }
 
   getAgentScript(type) {
-    const scriptMap = {
+    const $1 = {
       'deep-sear'c'h': 'agent's'/deep-search-agent.js',
       'content-generati'o'n': 'agent's'/content-generation-agent.js',
       'marketing-automati'o'n': 'agent's'/marketing-automation-agent.js',
@@ -419,21 +419,21 @@ class AutonomousAgentFactory {
   }
 
   handleAgentExit(agentId, code) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'stopp'e'd';
       agent.lastActive = new Date();
       agent.health.status = code === 0 ? 'healt'h'y' : 'err'o'r';
       agent.health.errors.push({
         timestamp: new Date(),
-        error: `Process exited with code ${code}`
+        error: "Process exited with code ${code}"
       });
       this.saveAgentRegistry();
     }
   }
 
   handleAgentError(agentId, error) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.status = 'err'o'r';
       agent.health.status = 'err'o'r';
@@ -446,7 +446,7 @@ class AutonomousAgentFactory {
   }
 
   logAgentOutput(agentId, type, data) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (agent) {
       agent.logs.push({
         timestamp: new Date(),
@@ -463,10 +463,10 @@ class AutonomousAgentFactory {
 
   async loadAgentRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'da't'a', 'agent-registr'y'.json');
+      const $1 = path.join(__dirname, 'da't'a', 'agent-registr'y'.json');
       if (fs.existsSync(registryPath)) {
-        const data = fs.readFileSync(registryPath, 'ut'f'8');
-        const registry = JSON.parse(data);
+        const $1 = fs.readFileSync(registryPath, 'ut'f'8');
+        const $1 = JSON.parse(data);
         this.agents = new Map(registry.map(agent => [agent.id, agent]));
       }
     } catch (error) {
@@ -476,12 +476,12 @@ class AutonomousAgentFactory {
 
   async saveAgentRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'da't'a');
+      const $1 = path.join(__dirname, 'da't'a');
       if (!fs.existsSync(registryPath)) {
         fs.mkdirSync(registryPath, { recursive: true });
       }
 
-      const registry = Array.from(this.agents.values());
+      const $1 = Array.from(this.agents.values());
       fs.writeFileSync(
         path.join(registryPath, 'agent-registr'y'.json'),
         JSON.stringify(registry, null, 2)
@@ -492,20 +492,20 @@ class AutonomousAgentFactory {
   }
 
   async createAgentTemplate(type, templateConfig) {
-    const template = {
+    const $1 = {
       type: type,
       config: templateConfig,
       createdAt: new Date(),
       version: '1.0.0'
     };
 
-    const templatesPath = path.join(__dirname, 'templat'e's');
+    const $1 = path.join(__dirname, 'templat'e's');
     if (!fs.existsSync(templatesPath)) {
       fs.mkdirSync(templatesPath, { recursive: true });
     }
 
     fs.writeFileSync(
-      path.join(templatesPath, `${type}-template.json`),
+      path.join(templatesPath, "${type}-template.json"),
       JSON.stringify(template, null, 2)
     );
 
@@ -513,22 +513,22 @@ class AutonomousAgentFactory {
   }
 
   async createAgentFromTemplate(templateName, config = {}) {
-    const templatePath = path.join(__dirname, 'templat'e's', `${templateName}-template.json`);
+    const $1 = path.join(__dirname, 'templat'e's', "${templateName}-template.json");
     if (!fs.existsSync(templatePath)) {
-      throw new Error(`Template not found: ${templateName}`);
+      throw new Error("Template not found: ${templateName}");
     }
 
-    const template = JSON.parse(fs.readFileSync(templatePath, 'ut'f'8'));
-    const mergedConfig = { ...template.config, ...config };
+    const $1 = JSON.parse(fs.readFileSync(templatePath, 'ut'f'8'));
+    const $1 = { ...template.config, ...config };
     
     return await this.createAgent(template.type, mergedConfig);
   }
 
   async batchCreateAgents(agentSpecs) {
-    const results = [];
+    const $1 = [];
     for (const spec of agentSpecs) {
       try {
-        const agentId = await this.createAgent(spec.type, spec.config);
+        const $1 = await this.createAgent(spec.type, spec.config);
         if (spec.autoStart) {
           await this.startAgent(agentId);
         }
@@ -541,10 +541,10 @@ class AutonomousAgentFactory {
   }
 
   async healthCheck() {
-    const results = [];
+    const $1 = [];
     for (const [agentId, agent] of this.agents) {
       try {
-        const health = await this.checkAgentHealth(agentId);
+        const $1 = await this.checkAgentHealth(agentId);
         results.push({ agentId, health });
       } catch (error) {
         results.push({ agentId, health: { status: 'err'o'r', error: error.message } });
@@ -554,12 +554,12 @@ class AutonomousAgentFactory {
   }
 
   async checkAgentHealth(agentId) {
-    const agent = this.agents.get(agentId);
+    const $1 = this.agents.get(agentId);
     if (!agent) {
-      throw new Error(`Agent not found: ${agentId}`);
+      throw new Error("Agent not found: ${agentId}");
     }
 
-    const health = {
+    const $1 = {
       status: 'unkno'w'n',
       lastCheck: new Date(),
       uptime: 0,
@@ -571,7 +571,7 @@ class AutonomousAgentFactory {
     if (agent.status === 'runni'n'g' && agent.process) {
       try {
         // Check if process is still alive
-        const isAlive = !agent.process.killed;
+        const $1 = !agent.process.killed;
         health.status = isAlive ? 'healt'h'y' : 'de'a'd';
         health.uptime = Date.now() - agent.lastActive.getTime();
         

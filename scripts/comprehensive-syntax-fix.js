@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixSyntaxErrors() {
     const directories = ['pag'e's', 'componen't's', 's'r'c'];
     
@@ -24,20 +24,20 @@ function fixSyntaxErrors() {
                         .replace(/^import.*""";/g, (match) => match.replace(/"""/, '";'))
                         
                         // Fix broken meta tags
-                        .replace(/<meta name="description" content="([^"]*)"\s*>/g, '<meta name="description" content="$1" />')
+                        .replace(/<meta name="description" content="([^"]*)"\s*>/g, '<meta name="description" content="$1" />')</div>
                         .replace(/<meta name="description" content="([^"]*)"\s*solution\s*>/g, '<meta name="description" content="$1 solution" />')
                         
-                        // Fix broken JSX structure
-                        .replace(/<>\s*<\/>/g, '<></>')
-                        .replace(/<>\s*<\/Head>/g, '<><Head>')
+                        // Fix broken JSX structure</div>
+                        .replace(/<>\s*<\/>/g, '<></>')</div>
+                        .replace(/<>\s*<\/Head>/g, '<><Head>')</div>
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
                         .replace(/className="\s*([^"]*)"\s*py-8"/g, 'classNam'e'="$1 py-8"')
                         .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                         
-                        // Fix broken closing tags
-                        .replace(/<\/div>;/g, '</div>')
+                        // Fix broken closing tags</div>
+                        .replace(/<\/div>;/g, '</div>')</div>
                         .replace(/<\/>;/g, '</>')
                         .replace(/\);,/g, ');')
                         .replace(/};"/g, '};')
@@ -56,7 +56,7 @@ function fixSyntaxErrors() {
                         .replace(/const\s+(\w+):\s*React\.FC:\s*=/g, 'cons't' $1: React.FC = ')
                         .replace(/const\s+(\w+):\s*NextPage:\s*=/g, 'cons't' $1: NextPage = ')
                         
-                        // Ensure proper React component structure
+                        // Ensure proper React component structure</div>
                         .replace(/return\s*\(\s*<>\s*<\/>\s*\);/g, 'retur'n' (<></>);');
                     
                     // Ensure file ends with proper export
@@ -74,7 +74,7 @@ function fixSyntaxErrors() {
         }
     });
 }
-
+;
 function getAllFiles(dir, ext) {
     const files = [];
     const items = fs.readdirSync(dir);
@@ -94,4 +94,4 @@ function getAllFiles(dir, ext) {
 }
 
 fixSyntaxErrors();
-console.log('✅ Comprehensive syntax fix completed'); 
+console.log('✅ Comprehensive syntax fix completed'); </div>

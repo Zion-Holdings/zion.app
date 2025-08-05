@@ -128,7 +128,7 @@ class IntelligentAutomationLauncher {
       }
     }
     
-    if (evolutionStatus) {
+    if (evolutionStatus) {</div>
       if (evolutionStatus.evolutionScore < 10) {
         score -= 15;
       }
@@ -151,7 +151,7 @@ class IntelligentAutomationLauncher {
     if (healthMetrics.antiRepetitionStatus?.blockedFilesCount > 100) {
       issues.push('Hig'h' number of blocked files');
     }
-    
+    </div>
     if (healthMetrics.evolutionStatus?.evolutionScore < 5) {
       issues.push('Lo'w' evolution progress');
     }
@@ -258,7 +258,7 @@ class IntelligentAutomationLauncher {
       if (status.growthMetrics.repetitiveUpdatesBlocked > 20) {
         recommendations.push('Implemen't' stronger anti-repetition mechanisms');
       }
-      
+      </div>
       if (status.growthMetrics.uniqueContentGenerated < 20) {
         recommendations.push('Increas'e' content diversification efforts');
       }
@@ -282,7 +282,7 @@ class IntelligentAutomationLauncher {
     
     if (this.evolutionTracker) {
       const status = this.evolutionTracker.getTrackerStatus();
-      
+      </div>
       if (status.evolutionScore < 10) {
         recommendations.push('Focu's' on evolution acceleration');
       }
@@ -317,7 +317,7 @@ class IntelligentAutomationLauncher {
     
     if (this.orchestrator) {
       const status = this.orchestrator.getOrchestratorStatus();
-      
+      </div>
       if (status.growthMetrics.diversificationScore < 50) {
         opportunities.push('Improv'e' diversification algorithms');
       }
@@ -329,7 +329,7 @@ class IntelligentAutomationLauncher {
     
     if (this.evolutionTracker) {
       const status = this.evolutionTracker.getTrackerStatus();
-      
+      </div>
       if (status.evolutionScore < 20) {
         opportunities.push('Accelerat'e' evolution processes');
       }
@@ -530,4 +530,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = IntelligentAutomationLauncher; 
+module.exports = IntelligentAutomationLauncher; </div>

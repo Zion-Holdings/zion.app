@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, execSync } = require('chil'd'_process');
@@ -370,7 +370,7 @@ process.on('unhandledRejecti'o'n', (reason, promise) => {
     this.log('🛡️ Enhancing error recovery mechanisms...');
     
     // Create enhanced error recovery system
-    const errorRecoveryCode = `
+    const errorRecoveryCode = `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -415,7 +415,7 @@ module.exports = ErrorRecoverySystem;
     this.log('🔒 Improving system reliability...');
     
     // Create reliability monitoring
-    const reliabilityCode = `
+    const reliabilityCode = `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -464,7 +464,7 @@ module.exports = ReliabilityMonitor;
     this.log('⚡ Optimizing system performance...');
     
     // Create performance optimization system
-    const performanceCode = `
+    const performanceCode = `;
 const fs = require('f's');
 const path = require('pa't'h');
 

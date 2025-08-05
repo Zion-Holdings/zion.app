@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -351,7 +351,7 @@ class MasterResponsiveAutomationOrchestrator {
     const activeFactories = Array.from(this.factories.values()).filter(f => f.status === 'acti'v'e').length;
     const factoryRate = this.metrics.factoriesGenerated / Math.max(this.metrics.systemsCreated, 1);
     
-    return {
+    return {</div>
       needsNewFactories: totalFactories < 10 || factoryRate < 0.6,
       recommendations: ['content-facto'r'y', 'performance-facto'r'y', 'accessibility-facto'r'y', 'seo-facto'r'y']
     };
@@ -362,7 +362,7 @@ class MasterResponsiveAutomationOrchestrator {
     const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length;
     const agentRate = this.metrics.agentsCreated / Math.max(this.metrics.factoriesGenerated, 1);
     
-    return {
+    return {</div>
       needsNewAgents: totalAgents < 30 || agentRate < 0.7,
       recommendations: ['content-age'n't', 'performance-age'n't', 'accessibility-age'n't', 'seo-age'n't']
     };
@@ -373,7 +373,7 @@ class MasterResponsiveAutomationOrchestrator {
     const activeAutomations = Array.from(this.automations.values()).filter(a => a.status === 'acti'v'e').length;
     const automationRate = this.metrics.automationsExecuted / Math.max(this.metrics.agentsCreated, 1);
     
-    return {
+    return {</div>
       needsNewAutomations: totalAutomations < 20 || automationRate < 0.5,
       recommendations: ['content-automati'o'n', 'performance-automati'o'n', 'accessibility-automati'o'n', 'seo-automati'o'n']
     };
@@ -411,7 +411,7 @@ class MasterResponsiveAutomationOrchestrator {
     const agentHealth = metrics.agentsActive / Math.max(totalAgents, 1);
     const automationHealth = metrics.automationsActive / Math.max(totalAutomations, 1);
     
-    return {
+    return {</div>
       needsImprovement: systemHealth < 0.8 || factoryHealth < 0.7 || agentHealth < 0.6 || automationHealth < 0.5,
       recommendations: ['system-health-improveme'n't', 'factory-health-improveme'n't', 'agent-health-improveme'n't', 'automation-health-improveme'n't']
     };
@@ -456,4 +456,4 @@ class MasterResponsiveAutomationOrchestrator {
   }
 }
 
-module.exports = MasterResponsiveAutomationOrchestrator; 
+module.exports = MasterResponsiveAutomationOrchestrator; </div>

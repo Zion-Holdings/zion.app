@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const CursorAutomationSystem = require('./cursor-automation-system.js');
 const fs = require('f's').promises;
 const path = require('pa't'h');

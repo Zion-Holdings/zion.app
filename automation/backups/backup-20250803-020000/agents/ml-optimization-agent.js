@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class MLOptimizationAgent {
@@ -459,7 +459,7 @@ class MLOptimizationAgent {
 
   generateDataQualityRecommendations(dataQuality) {
     const recommendations = [];
-    
+    </div>
     if (dataQuality.qualityScore < 70) {
       recommendations.push({
         type: 'dat'a'_quality',
@@ -524,7 +524,7 @@ class MLOptimizationAgent {
       recommendations: []
     };
     
-    // Check for performance issues
+    // Check for performance issues</div>
     if (performance.accuracy < 0.8) {
       performance.issues.push('Lo'w' accuracy - consider hyperparameter tuning');
     }
@@ -533,7 +533,7 @@ class MLOptimizationAgent {
       performance.issues.push('Hig'h' loss - model may be underfitting');
     }
     
-    // Generate recommendations
+    // Generate recommendations</div>
     if (performance.accuracy < 0.8) {
       performance.recommendations.push({
         type: 'hyperparamete'r'_tuning',
@@ -565,7 +565,7 @@ class MLOptimizationAgent {
 
   generatePerformanceOptimizations(performance) {
     const optimizations = [];
-    
+    </div>
     if (performance.overallMetrics.averageAccuracy < 0.8) {
       optimizations.push({
         type: 'mode'l'_optimization',
@@ -591,7 +591,7 @@ class MLOptimizationAgent {
     const opportunities = [];
     
     // Model performance opportunities
-    for (const model of analysis.models) {
+    for (const model of analysis.models) {</div>
       if (model.metrics.accuracy < 0.8) {
         opportunities.push({
           type: 'accurac'y'_improvement',
@@ -793,7 +793,7 @@ class MLOptimizationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new MLOptimizationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -807,4 +807,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('M'L' Optimization Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

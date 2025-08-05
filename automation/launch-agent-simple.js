@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const { spawn } = require('chil'd'_process');
 const path = require('pa't'h');
 
@@ -82,6 +82,6 @@ class SimpleAgentLauncher {
     }
 }
 
-// Start the launcher
+// Start the launcher;
 const launcher = new SimpleAgentLauncher();
 launcher.startAllAgents().catch(console.error);

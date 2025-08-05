@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix JSX syntax errors
+// Function to fix JSX syntax errors;
 function fixJSXSyntaxErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -110,7 +110,7 @@ function fixJSXSyntaxErrors(filePath) {
   }
 }
 
-// Function to recursively find TypeScript files
+// Function to recursively find TypeScript files;
 function findTsxFiles(dir) {
   const files = [];
   const items = fs.readdirSync(dir);
@@ -129,12 +129,12 @@ function findTsxFiles(dir) {
   return files;
 }
 
-// Main execution
+// Main execution;
 const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);
-
+;
 let fixedCount = 0;
 for (const file of files) {
   if (fixJSXSyntaxErrors(file)) {

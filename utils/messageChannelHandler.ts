@@ -1,7 +1,7 @@
 // Message Channel Error Handler
 // This utility handles message channel errors that can occur from browser extensions
 // or external scripts that use message passing
-
+;}
 import { detectBrowserExtension, isBrowserExtension } from './browserExtensionDetector';
 '
 interface MessageChannelError {
@@ -114,5 +114,5 @@ class MessageChannelHandler {
       console.log('[MessageChannelHandler] Browser extension detected');}}}'
 // Initialize the handler when the module is loaded
 if (typeof window !== 'undefin'e'd') {
-  MessageChannelHandler.getInstance();}'
+  MessageChannelHandler.getInstance();}';}
 export default MessageChannelHandler; '

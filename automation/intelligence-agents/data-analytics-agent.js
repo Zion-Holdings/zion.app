@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DataAnalyticsAgent {
@@ -707,7 +707,7 @@ class DataAnalyticsAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new DataAnalyticsAgent();
 
 process.on('SIGTE'R'M', () => {

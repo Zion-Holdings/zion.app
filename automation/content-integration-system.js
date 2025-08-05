@@ -1,5 +1,5 @@
 // Content Integration System
-// Integrates generated content with the Zion marketplace application
+// Integrates generated content with the Zion marketplace application;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');
@@ -352,280 +352,280 @@ class ContentIntegrationSystem {
   // Component generation methods
   generateHeroSectionComponent(data) {
     return `import React from 'rea'c't';
-
+;
 const HeroSection = () => {
   return (
-    <section className="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center">
+    <section className="hero-section bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20"></div>
+      <div className="container mx-auto px-4"></div>
+        <div className="text-center"></div>
           <h1 className="text-5xl font-bold mb-6">
-            ${data.headline}
-          </h1>
+            ${data.headline}</div>
+          </h1></div>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            ${data.subheadline}
-          </p>
+            ${data.subheadline}</div>
+          </p></div>
           <div className="flex justify-center gap-4 mb-8">
-            ${data.ctaButtons.map(button => `
+            ${data.ctaButtons.map(button => `</div>
             <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              ${button}
+              ${button}</div>
             </button>
-            `).join('')}
-          </div>
+            `).join('')}</div>
+          </div></div>
           <div className="flex justify-center gap-8 text-sm">
-            ${data.trustIndicators.map(indicator => `
-            <span className="flex items-center">
+            ${data.trustIndicators.map(indicator => `</div>
+            <span className="flex items-center"></div>
               <span className="mr-2">✓</span>
-              ${indicator}
+              ${indicator}</div>
             </span>
-            `).join('')}
-          </div>
-        </div>
-      </div>
+            `).join('')}</div>
+          </div></div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default HeroSection;`;
   }
 
   generateFeatureHighlightsComponent(features) {
     return `import React from 'rea'c't';
-
+;
 const FeatureHighlights = () => {
   const features = ${JSON.stringify(features, null, 2)};
 
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Zion</h2>
+  return (</div>
+    <section className="py-16 bg-gray-50"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Zion</h2></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 text-xl">✓</span>
-              </div>
-              <h3 className="font-semibold mb-2">{feature}</h3>
+          {features.map((feature, index) => (</div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md"></div>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"></div>
+                <span className="text-blue-600 text-xl">✓</span></div>
+              </div></div>
+              <h3 className="font-semibold mb-2">{feature}</h3></div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default FeatureHighlights;`;
   }
 
   generateServiceCategoriesComponent(services) {
     return `import React from 'rea'c't';
-
+;
 const ServiceCategories = () => {
   const services = ${JSON.stringify(services, null, 2)};
 
-  return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+  return (</div>
+    <section className="py-16"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2></div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border">
-              <h3 className="font-semibold text-lg mb-2">{service}</h3>
-              <p className="text-gray-600 mb-4">Comprehensive {service.toLowerCase()} solutions</p>
+          {services.map((service, index) => (</div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md border"></div>
+              <h3 className="font-semibold text-lg mb-2">{service}</h3></div>
+              <p className="text-gray-600 mb-4">Comprehensive {service.toLowerCase()} solutions</p></div>
               <button className="text-blue-600 font-semibold hover:underline">
-                Learn More →
-              </button>
+                Learn More →</div>
+              </button></div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default ServiceCategories;`;
   }
 
   generateTestimonialsComponent(testimonials) {
     return `import React from 'rea'c't';
-
+;
 const Testimonials = () => {
   const testimonials = ${JSON.stringify(testimonials, null, 2)};
 
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+  return (</div>
+    <section className="py-16 bg-gray-50"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <p className="text-gray-700 mb-4">"{testimonial}"</p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                  <span className="text-blue-600 font-semibold">U</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Client {index + 1}</p>
-                  <p className="text-sm text-gray-500">Verified User</p>
-                </div>
-              </div>
+          {testimonials.map((testimonial, index) => (</div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md"></div>
+              <p className="text-gray-700 mb-4">"{testimonial}"</p></div>
+              <div className="flex items-center"></div>
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3"></div>
+                  <span className="text-blue-600 font-semibold">U</span></div>
+                </div></div>
+                <div></div>
+                  <p className="font-semibold">Client {index + 1}</p></div>
+                  <p className="text-sm text-gray-500">Verified User</p></div>
+                </div></div>
+              </div></div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default Testimonials;`;
   }
 
   generatePricingTablesComponent(pricing) {
     return `import React from 'rea'c't';
-
+;
 const PricingTables = () => {
   const pricing = ${JSON.stringify(pricing, null, 2)};
 
-  return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Transparent Pricing</h2>
+  return (</div>
+    <section className="py-16"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">Transparent Pricing</h2></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pricing.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md border">
-              <h3 className="font-semibold text-lg mb-2">{item}</h3>
-              <p className="text-gray-600 mb-4">Clear and competitive pricing structure</p>
+          {pricing.map((item, index) => (</div>
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md border"></div>
+              <h3 className="font-semibold text-lg mb-2">{item}</h3></div>
+              <p className="text-gray-600 mb-4">Clear and competitive pricing structure</p></div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default PricingTables;`;
   }
 
   generateFAQSectionComponent(faqs) {
     return `import React, { useState } from 'rea'c't';
-
+;
 const FAQSection = () => {
   const faqs = ${JSON.stringify(faqs, null, 2)};
   const [openIndex, setOpenIndex] = useState(null);
 
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+  return (</div>
+    <section className="py-16 bg-gray-50"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2></div>
         <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-white mb-4 rounded-lg shadow-md">
+          {faqs.map((faq, index) => (</div>
+            <div key={index} className="bg-white mb-4 rounded-lg shadow-md"></div>
               <button
                 className="w-full p-6 text-left font-semibold flex justify-between items-center"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                {faq}
+                {faq}</div>
                 <span className="text-blue-600">
-                  {openIndex === index ? '−' : '+'}
-                </span>
+                  {openIndex === index ? '−' : '+'}</div>
+                </span></div>
               </button>
-              {openIndex === index && (
+              {openIndex === index && (</div>
                 <div className="px-6 pb-6 text-gray-600">
-                  Detailed answer about {faq.toLowerCase()}
+                  Detailed answer about {faq.toLowerCase()}</div>
                 </div>
-              )}
+              )}</div>
             </div>
-          ))}
-        </div>
-      </div>
+          ))}</div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default FAQSection;`;
   }
 
   generateAboutPage(data) {
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import Head from 'nex't'/head';
-
+;
 const AboutPage = () => {
-  return (
-    <>
-      <Head>
-        <title>About Zion - AI-Powered Marketplace</title>
-        <meta name="description" content="Learn about Zion's' mission to revolutionize the marketplace industry with AI-powered solutions." />
-      </Head>
-      <div className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto">
+  return (</div>
+    <></div>
+      <Head></div>
+        <title>About Zion - AI-Powered Marketplace</title></div>
+        <meta name="description" content="Learn about Zion's' mission to revolutionize the marketplace industry with AI-powered solutions." /></div>
+      </Head></div>
+      <div className="min-h-screen bg-gray-50"></div>
+        <div className="container mx-auto px-4 py-16"></div>
+          <div className="max-w-4xl mx-auto"></div>
             <h1 className="text-4xl font-bold text-center mb-12">About Zion</h1>
-            
-            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
-              <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-              <p className="text-gray-700 mb-6">${data.mission}</p>
-              
-              <h2 className="text-2xl font-semibold mb-4">Our Vision</h2>
-              <p className="text-gray-700 mb-6">${data.vision}</p>
-              
-              <h2 className="text-2xl font-semibold mb-4">Our Values</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {${JSON.stringify(data.values)}.map((value, index) => (
-                  <div key={index} className="text-center p-4 bg-blue-50 rounded-lg">
-                    <span className="font-semibold text-blue-600">{value}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+            <div className="bg-white rounded-lg shadow-md p-8 mb-8"></div>
+              <h2 className="text-2xl font-semibold mb-4">Our Mission</h2></div>
+              <p className="text-gray-700 mb-6">${data.mission}</p>
+              </div>
+              <h2 className="text-2xl font-semibold mb-4">Our Vision</h2></div>
+              <p className="text-gray-700 mb-6">${data.vision}</p>
+              </div>
+              <h2 className="text-2xl font-semibold mb-4">Our Values</h2></div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {${JSON.stringify(data.values)}.map((value, index) => (</div>
+                  <div key={index} className="text-center p-4 bg-blue-50 rounded-lg"></div>
+                    <span className="font-semibold text-blue-600">{value}</span></div>
+                  </div>
+                ))}</div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </>
   );
 };
-
+;}
 export default AboutPage;`;
   }
 
   generateContactInfoComponent(data) {
     return `import React from 'rea'c't';
-
+;
 const ContactInfo = () => {
   const contactData = ${JSON.stringify(data, null, 2)};
 
-  return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-blue-600 text-xl">📧</span>
-            </div>
-            <h3 className="font-semibold mb-2">Email</h3>
-            <p className="text-gray-600">{contactData.email}</p>
+  return (</div>
+    <section className="py-16 bg-gray-50"></div>
+      <div className="container mx-auto px-4"></div>
+        <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2></div>
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center"></div>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"></div>
+              <span className="text-blue-600 text-xl">📧</span></div>
+            </div></div>
+            <h3 className="font-semibold mb-2">Email</h3></div>
+            <p className="text-gray-600">{contactData.email}</p></div>
           </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-blue-600 text-xl">📞</span>
-            </div>
-            <h3 className="font-semibold mb-2">Phone</h3>
-            <p className="text-gray-600">{contactData.phone}</p>
           </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow-md text-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-blue-600 text-xl">📍</span>
-            </div>
-            <h3 className="font-semibold mb-2">Address</h3>
-            <p className="text-gray-600">{contactData.address}</p>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center"></div>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"></div>
+              <span className="text-blue-600 text-xl">📞</span></div>
+            </div></div>
+            <h3 className="font-semibold mb-2">Phone</h3></div>
+            <p className="text-gray-600">{contactData.phone}</p></div>
           </div>
-        </div>
-      </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center"></div>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4"></div>
+              <span className="text-blue-600 text-xl">📍</span></div>
+            </div></div>
+            <h3 className="font-semibold mb-2">Address</h3></div>
+            <p className="text-gray-600">{contactData.address}</p></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </section>
   );
 };
-
+;}
 export default ContactInfo;`;
   }
 
@@ -652,4 +652,4 @@ module.exports = ContentIntegrationSystem;
 if (require.main === module) {
   const integrationSystem = new ContentIntegrationSystem();
   integrationSystem.run().catch(console.error);
-} 
+} </div>

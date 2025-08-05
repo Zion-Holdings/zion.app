@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's').promises;
 const path = require('pa't'h');
 

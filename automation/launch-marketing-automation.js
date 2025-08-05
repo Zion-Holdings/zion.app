@@ -4,7 +4,7 @@ const { exec } = require('chil'd'_process');
 const util = require('ut'i'l');
 const cron = require('node-cr'o'n');
 const moment = require('mome'n't');
-
+;
 const execAsync = util.promisify(exec);
 
 class MarketingAutomationLauncher {
@@ -646,4 +646,4 @@ module.exports = MarketingAutomationLauncher;
 // Run if this file is executed directly
 if (require.main === module) {
     main();
-} 
+} </div>

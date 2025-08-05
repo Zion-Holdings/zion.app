@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
+;
+const $1 = promisify(exec);
 
-const execAsync = promisify(exec);
-
-class CodeReviewAutomationAgent {
+class $1 {
   constructor() {
     this.agentId = process.env.AGENT_ID;
     this.agentType = process.env.AGENT_TYPE;
@@ -16,7 +16,7 @@ class CodeReviewAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'review-repor't's'),
       path.join(this.reportsDir, 'quality-repor't's'),
@@ -32,7 +32,7 @@ class CodeReviewAutomationAgent {
   }
 
   async start() {
-    console.log(`Code Review Automation Agent ${this.agentId} started`);
+    console.log("Code Review Automation Agent ${this.agentId} started");
     
     // Initial code review
     await this.performCodeReview();
@@ -57,7 +57,7 @@ class CodeReviewAutomationAgent {
     try {
       console.log('Performin'g' comprehensive code review...');
       
-      const review = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         codeQuality: {},
@@ -93,7 +93,7 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzeCodeQuality() {
-    const quality = {
+    const $1 = {
       complexity: {},
       maintainability: {},
       readability: {},
@@ -127,7 +127,7 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzeComplexity() {
-    const complexity = {
+    const $1 = {
       cyclomaticComplexity: {},
       cognitiveComplexity: {},
       nestingDepth: {},
@@ -135,26 +135,26 @@ class CodeReviewAutomationAgent {
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const lines = content.split('\n');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = content.split('\n');
         
         // Calculate cyclomatic complexity
-        const complexityScore = this.calculateCyclomaticComplexity(content);
+        const $1 = this.calculateCyclomaticComplexity(content);
         complexity.cyclomaticComplexity[file] = complexityScore;
         
         // Calculate cognitive complexity
-        const cognitiveScore = this.calculateCognitiveComplexity(content);
+        const $1 = this.calculateCognitiveComplexity(content);
         complexity.cognitiveComplexity[file] = cognitiveScore;
         
         // Calculate nesting depth
-        const nestingDepth = this.calculateNestingDepth(content);
+        const $1 = this.calculateNestingDepth(content);
         complexity.nestingDepth[file] = nestingDepth;
         
         // Calculate function length
-        const functionLength = this.calculateFunctionLength(content);
+        const $1 = this.calculateFunctionLength(content);
         complexity.functionLength[file] = functionLength;
       }
       
@@ -166,10 +166,10 @@ class CodeReviewAutomationAgent {
   }
 
   calculateCyclomaticComplexity(content) {
-    let complexity = 1; // Base complexity
+    let $1 = 1; // Base complexity
     
     // Count decision points
-    const decisionPatterns = [
+    const $1 = [
       /if\s*\(/g,
       /else\s*if\s*\(/g,
       /else\s*{/g,
@@ -185,7 +185,7 @@ class CodeReviewAutomationAgent {
     ];
     
     for (const pattern of decisionPatterns) {
-      const matches = content.match(pattern);
+      const $1 = content.match(pattern);
       if (matches) {
         complexity += matches.length;
       }
@@ -195,10 +195,10 @@ class CodeReviewAutomationAgent {
   }
 
   calculateCognitiveComplexity(content) {
-    let complexity = 0;
+    let $1 = 0;
     
     // Count cognitive complexity factors
-    const cognitivePatterns = [
+    const $1 = [
       /if\s*\(/g,
       /else\s*if\s*\(/g,
       /for\s*\(/g,
@@ -213,7 +213,7 @@ class CodeReviewAutomationAgent {
     ];
     
     for (const pattern of cognitivePatterns) {
-      const matches = content.match(pattern);
+      const $1 = content.match(pattern);
       if (matches) {
         complexity += matches.length;
       }
@@ -223,8 +223,8 @@ class CodeReviewAutomationAgent {
   }
 
   calculateNestingDepth(content) {
-    let maxDepth = 0;
-    let currentDepth = 0;
+    let $1 = 0;
+    let $1 = 0;
     
     for (const char of content) {
       if (char === '{') {
@@ -239,13 +239,13 @@ class CodeReviewAutomationAgent {
   }
 
   calculateFunctionLength(content) {
-    const functions = [];
-    const functionPattern = /function\s+(\w+)\s*\([^)]*\)\s*{([^}]*(?:{[^}]*}[^}]*)*)}/g;
+    const $1 = [];
+    const $1 = /function\s+(\w+)\s*\([^)]*\)\s*{([^}]*(?:{[^}]*}[^}]*)*)}/g;
     
     let match;
     while ((match = functionPattern.exec(content)) !== null) {
-      const functionBody = match[2];
-      const lines = functionBody.split('\n').length;
+      const $1 = match[2];
+      const $1 = functionBody.split('\n').length;
       functions.push({
         name: match[1],
         lines: lines
@@ -256,7 +256,7 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzeMaintainability() {
-    const maintainability = {
+    const $1 = {
       codeDuplication: {},
       magicNumbers: {},
       hardcodedStrings: {},
@@ -265,10 +265,10 @@ class CodeReviewAutomationAgent {
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Check for code duplication
         maintainability.codeDuplication[file] = this.detectCodeDuplication(content);
@@ -294,13 +294,13 @@ class CodeReviewAutomationAgent {
   }
 
   detectCodeDuplication(content) {
-    const lines = content.split('\n');
-    const duplicates = [];
+    const $1 = content.split('\n');
+    const $1 = [];
     
     // Simple duplication detection
-    const lineCounts = {};
+    const $1 = {};
     for (const line of lines) {
-      const trimmed = line.trim();
+      const $1 = line.trim();
       if (trimmed.length > 10) { // Ignore short lines
         lineCounts[trimmed] = (lineCounts[trimmed] || 0) + 1;
       }
@@ -316,12 +316,12 @@ class CodeReviewAutomationAgent {
   }
 
   findMagicNumbers(content) {
-    const magicNumbers = [];
-    const numberPattern = /\b\d{2,}\b/g;
+    const $1 = [];
+    const $1 = /\b\d{2,}\b/g;
     
     let match;
     while ((match = numberPattern.exec(content)) !== null) {
-      const number = parseInt(match[0]);
+      const $1 = parseInt(match[0]);
       if (number > 10) { // Consider numbers > 10 as potential magic numbers
         magicNumbers.push({
           number,
@@ -334,8 +334,8 @@ class CodeReviewAutomationAgent {
   }
 
   findHardcodedStrings(content) {
-    const hardcodedStrings = [];
-    const stringPattern = /['"`]([^'"`]{10,})['"`]/g;
+    const $1 = [];
+    const $1 = /['""]([^'""]{10,})['""]/g;
     
     let match;
     while ((match = stringPattern.exec(content)) !== null) {
@@ -349,13 +349,13 @@ class CodeReviewAutomationAgent {
   }
 
   findLongFunctions(content) {
-    const longFunctions = [];
-    const functionPattern = /function\s+(\w+)\s*\(/g;
+    const $1 = [];
+    const $1 = /function\s+(\w+)\s*\(/g;
     
     let match;
     while ((match = functionPattern.exec(content)) !== null) {
-      const functionBody = match[2];
-      const lines = functionBody.split('\n').length;
+      const $1 = match[2];
+      const $1 = functionBody.split('\n').length;
       
       if (lines > 20) { // Functions longer than 20 lines
         longFunctions.push({
@@ -369,13 +369,13 @@ class CodeReviewAutomationAgent {
   }
 
   findLargeClasses(content) {
-    const largeClasses = [];
-    const classPattern = /class\s+(\w+)\s*{([^}]*(?:{[^}]*}[^}]*)*)}/g;
+    const $1 = [];
+    const $1 = /class\s+(\w+)\s*{([^}]*(?:{[^}]*}[^}]*)*)}/g;
     
     let match;
     while ((match = classPattern.exec(content)) !== null) {
-      const classBody = match[2];
-      const lines = classBody.split('\n').length;
+      const $1 = match[2];
+      const $1 = classBody.split('\n').length;
       
       if (lines > 100) { // Classes longer than 100 lines
         largeClasses.push({
@@ -389,7 +389,7 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzeReadability() {
-    const readability = {
+    const $1 = {
       namingConventions: {},
       comments: {},
       formatting: {},
@@ -397,10 +397,10 @@ class CodeReviewAutomationAgent {
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Check naming conventions
         readability.namingConventions[file] = this.checkNamingConventions(content);
@@ -423,13 +423,13 @@ class CodeReviewAutomationAgent {
   }
 
   checkNamingConventions(content) {
-    const issues = [];
+    const $1 = [];
     
     // Check for camelCase variables
-    const variablePattern = /(?:const|let|var)\s+([a-z][a-zA-Z0-9]*)/g;
+    const $1 = /(?:const|let|var)\s+([a-z][a-zA-Z0-9]*)/g;
     let match;
     while ((match = variablePattern.exec(content)) !== null) {
-      const variableName = match[1];
+      const $1 = match[1];
       if (!/^[a-z][a-zA-Z0-9]*$/.test(variableName)) {
         issues.push({
           type: 'namin'g'_convention',
@@ -440,9 +440,9 @@ class CodeReviewAutomationAgent {
     }
     
     // Check for PascalCase classes
-    const classPattern = /class\s+([A-Z][a-zA-Z0-9]*)/g;
+    const $1 = /class\s+([A-Z][a-zA-Z0-9]*)/g;
     while ((match = classPattern.exec(content)) !== null) {
-      const className = match[1];
+      const $1 = match[1];
       if (!/^[A-Z][a-zA-Z0-9]*$/.test(className)) {
         issues.push({
           type: 'namin'g'_convention',
@@ -456,7 +456,7 @@ class CodeReviewAutomationAgent {
   }
 
   analyzeComments(content) {
-    const analysis = {
+    const $1 = {
       totalComments: 0,
       documentationComments: 0,
       todoComments: 0,
@@ -464,10 +464,10 @@ class CodeReviewAutomationAgent {
       missingComments: []
     };
     
-    const lines = content.split('\n');
+    const $1 = content.split('\n');
     
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
+    for (let $1 = 0; i < lines.length; i++) {
+      const $1 = lines[i];
       
       if (line.includes('//') || line.includes('/*')) {
         analysis.totalComments++;
@@ -487,13 +487,13 @@ class CodeReviewAutomationAgent {
     }
     
     // Check for functions without comments
-    const functionPattern = /function\s+(\w+)\s*\(/g;
+    const $1 = /function\s+(\w+)\s*\(/g;
     let match;
     while ((match = functionPattern.exec(content)) !== null) {
-      const functionName = match[1];
-      const functionIndex = content.indexOf(match[0]);
-      const beforeFunction = content.substring(0, functionIndex);
-      const lastComment = beforeFunction.lastIndexOf('//');
+      const $1 = match[1];
+      const $1 = content.indexOf(match[0]);
+      const $1 = content.substring(0, functionIndex);
+      const $1 = beforeFunction.lastIndexOf('//');
       
       if (lastComment === -1 || beforeFunction.substring(lastComment).includes('\n')) {
         analysis.missingComments.push(functionName);
@@ -504,12 +504,12 @@ class CodeReviewAutomationAgent {
   }
 
   checkFormatting(content) {
-    const issues = [];
+    const $1 = [];
     
-    const lines = content.split('\n');
+    const $1 = content.split('\n');
     
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
+    for (let $1 = 0; i < lines.length; i++) {
+      const $1 = lines[i];
       
       // Check for long lines
       if (line.length > 100) {
@@ -522,7 +522,7 @@ class CodeReviewAutomationAgent {
       }
       
       // Check for inconsistent indentation
-      const leadingSpaces = line.match(/^\s*/)[0].length;
+      const $1 = line.match(/^\s*/)[0].length;
       if (leadingSpaces % 2 !== 0 && leadingSpaces > 0) {
         issues.push({
           type: 'inconsisten't'_indentation',
@@ -537,7 +537,7 @@ class CodeReviewAutomationAgent {
   }
 
   analyzeStructure(content) {
-    const structure = {
+    const $1 = {
       imports: [],
       exports: [],
       functions: [],
@@ -546,26 +546,26 @@ class CodeReviewAutomationAgent {
     };
     
     // Extract imports
-    const importPattern = /import\s+(?:{[^}]*}|\*\s+as\s+\w+|\w+)\s+from\s+['"`]([^'"`]+)['"`]/g;
+    const $1 = /import\s+(?:{[^}]*}|\*\s+as\s+\w+|\w+)\s+from\s+['""]([^'""]+)['""]/g;
     let match;
     while ((match = importPattern.exec(content)) !== null) {
       structure.imports.push(match[1]);
     }
     
     // Extract exports
-    const exportPattern = /export\s+(?:default\s+)?(?:function|class|const|let|var)\s+(\w+)/g;
+    const $1 = /export\s+(?:default\s+)?(?:function|class|const|let|var)\s+(\w+)/g;
     while ((match = exportPattern.exec(content)) !== null) {
       structure.exports.push(match[1]);
     }
     
     // Extract functions
-    const functionPattern = /function\s+(\w+)\s*\(/g;
+    const $1 = /function\s+(\w+)\s*\(/g;
     while ((match = functionPattern.exec(content)) !== null) {
       structure.functions.push(match[1]);
     }
     
     // Extract classes
-    const classPattern = /class\s+(\w+)/g;
+    const $1 = /class\s+(\w+)/g;
     while ((match = classPattern.exec(content)) !== null) {
       structure.classes.push(match[1]);
     }
@@ -574,7 +574,7 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzeTestability() {
-    const testability = {
+    const $1 = {
       testCoverage: {},
       mockability: {},
       isolation: {},
@@ -582,10 +582,10 @@ class CodeReviewAutomationAgent {
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Check test coverage
         testability.testCoverage[file] = await this.checkTestCoverage(file);
@@ -608,7 +608,7 @@ class CodeReviewAutomationAgent {
   }
 
   async checkTestCoverage(filePath) {
-    const coverage = {
+    const $1 = {
       hasTests: false,
       testFile: null,
       coveragePercentage: 0
@@ -616,7 +616,7 @@ class CodeReviewAutomationAgent {
     
     try {
       // Check if test file exists
-      const testFile = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
+      const $1 = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
       if (fs.existsSync(testFile)) {
         coverage.hasTests = true;
         coverage.testFile = testFile;
@@ -624,9 +624,9 @@ class CodeReviewAutomationAgent {
       
       // Check coverage percentage (this would require actual test execution)
       // For now, we'l'l' estimate based on file structure
-      const content = fs.readFileSync(filePath, 'ut'f'8');
-      const functions = content.match(/function\s+\w+\s*\(/g) || [];
-      const classes = content.match(/class\s+\w+/g) || [];
+      const $1 = fs.readFileSync(filePath, 'ut'f'8');
+      const $1 = content.match(/function\s+\w+\s*\(/g) || [];
+      const $1 = content.match(/class\s+\w+/g) || [];
       
       coverage.coveragePercentage = Math.min(100, (functions.length + classes.length) * 10);
       
@@ -638,7 +638,7 @@ class CodeReviewAutomationAgent {
   }
 
   analyzeMockability(content) {
-    const mockability = {
+    const $1 = {
       externalDependencies: [],
       sideEffects: [],
       pureFunctions: [],
@@ -646,7 +646,7 @@ class CodeReviewAutomationAgent {
     };
     
     // Check for external dependencies
-    const importPattern = /import\s+.*\s+from\s+['"`]([^'"`]+)['"`]/g;
+    const $1 = /import\s+.*\s+from\s+['""]([^'""]+)['""]/g;
     let match;
     while ((match = importPattern.exec(content)) !== null) {
       if (!match[1].startsWith('.')) {
@@ -655,7 +655,7 @@ class CodeReviewAutomationAgent {
     }
     
     // Check for side effects
-    const sideEffectPatterns = [
+    const $1 = [
       /console\./g,
       /localStorage\./g,
       /sessionStorage\./g,
@@ -673,21 +673,21 @@ class CodeReviewAutomationAgent {
   }
 
   analyzeIsolation(content) {
-    const isolation = {
+    const $1 = {
       globalVariables: [],
       sharedState: [],
       tightCoupling: []
     };
     
     // Check for global variables
-    const globalPattern = /(?:var|let|const)\s+(\w+)\s*=/g;
+    const $1 = /(?:var|let|const)\s+(\w+)\s*=/g;
     let match;
     while ((match = globalPattern.exec(content)) !== null) {
       isolation.globalVariables.push(match[1]);
     }
     
     // Check for shared state
-    const sharedStatePatterns = [
+    const $1 = [
       /this\./g,
       /state\./g,
       /props\./g
@@ -703,27 +703,27 @@ class CodeReviewAutomationAgent {
   }
 
   analyzeDependencies(content) {
-    const dependencies = {
+    const $1 = {
       imports: [],
       requires: [],
       dynamicImports: []
     };
     
     // Extract static imports
-    const importPattern = /import\s+.*\s+from\s+['"`]([^'"`]+)['"`]/g;
+    const $1 = /import\s+.*\s+from\s+['""]([^'""]+)['""]/g;
     let match;
     while ((match = importPattern.exec(content)) !== null) {
       dependencies.imports.push(match[1]);
     }
     
     // Extract requires
-    const requirePattern = /require\s*\(\s*['"`]([^'"`]+)['"`]\s*\)/g;
+    const $1 = /require\s*\(\s*['""]([^'""]+)['""]\s*\)/g;
     while ((match = requirePattern.exec(content)) !== null) {
       dependencies.requires.push(match[1]);
     }
     
     // Extract dynamic imports
-    const dynamicImportPattern = /import\s*\(\s*['"`]([^'"`]+)['"`]\s*\)/g;
+    const $1 = /import\s*\(\s*['""]([^'""]+)['""]\s*\)/g;
     while ((match = dynamicImportPattern.exec(content)) !== null) {
       dependencies.dynamicImports.push(match[1]);
     }
@@ -732,17 +732,17 @@ class CodeReviewAutomationAgent {
   }
 
   async analyzePerformance() {
-    const performance = {
+    const $1 = {
       inefficientPatterns: [],
       memoryLeaks: [],
       optimizationOpportunities: []
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Check for inefficient patterns
         performance.inefficientPatterns.push(...this.findInefficientPatterns(content, file));
@@ -762,10 +762,10 @@ class CodeReviewAutomationAgent {
   }
 
   findInefficientPatterns(content, filePath) {
-    const patterns = [];
+    const $1 = [];
     
     // Check for nested loops
-    const nestedLoopPattern = /for\s*\([^)]*\)\s*{[^}]*for\s*\([^)]*\)/g;
+    const $1 = /for\s*\([^)]*\)\s*{[^}]*for\s*\([^)]*\)/g;
     if (nestedLoopPattern.test(content)) {
       patterns.push({
         type: 'neste'd'_loops',
@@ -775,7 +775,7 @@ class CodeReviewAutomationAgent {
     }
     
     // Check for unnecessary re-renders
-    const reRenderPattern = /useEffect\s*\(\s*\(\)\s*=>\s*{[^}]*}\s*,\s*\[\s*\]\s*\)/g;
+    const $1 = /useEffect\s*\(\s*\(\)\s*=>\s*{[^}]*}\s*,\s*\[\s*\]\s*\)/g;
     if (reRenderPattern.test(content)) {
       patterns.push({
         type: 'unnecessar'y'_re_render',
@@ -788,12 +788,12 @@ class CodeReviewAutomationAgent {
   }
 
   findMemoryLeaks(content, filePath) {
-    const leaks = [];
+    const $1 = [];
     
     // Check for event listeners without cleanup
-    const eventListenerPattern = /addEventListener\s*\([^)]*\)/g;
+    const $1 = /addEventListener\s*\([^)]*\)/g;
     if (eventListenerPattern.test(content)) {
-      const removeListenerPattern = /removeEventListener\s*\([^)]*\)/g;
+      const $1 = /removeEventListener\s*\([^)]*\)/g;
       if (!removeListenerPattern.test(content)) {
         leaks.push({
           type: 'even't'_listener_leak',
@@ -804,9 +804,9 @@ class CodeReviewAutomationAgent {
     }
     
     // Check for intervals without cleanup
-    const intervalPattern = /setInterval\s*\([^)]*\)/g;
+    const $1 = /setInterval\s*\([^)]*\)/g;
     if (intervalPattern.test(content)) {
-      const clearIntervalPattern = /clearInterval\s*\([^)]*\)/g;
+      const $1 = /clearInterval\s*\([^)]*\)/g;
       if (!clearIntervalPattern.test(content)) {
         leaks.push({
           type: 'interva'l'_leak',
@@ -820,10 +820,10 @@ class CodeReviewAutomationAgent {
   }
 
   findOptimizationOpportunities(content, filePath) {
-    const opportunities = [];
+    const $1 = [];
     
     // Check for expensive operations in render
-    const expensivePatterns = [
+    const $1 = [
       /\.map\s*\([^)]*\)\s*\.filter\s*\([^)]*\)/g,
       /\.filter\s*\([^)]*\)\s*\.map\s*\([^)]*\)/g,
       /JSON\.parse\s*\([^)]*\)/g,
@@ -844,13 +844,13 @@ class CodeReviewAutomationAgent {
   }
 
   async generateSuggestions() {
-    const suggestions = [];
+    const $1 = [];
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Generate refactoring suggestions
         suggestions.push(...this.generateRefactoringSuggestions(content, file));
@@ -870,30 +870,30 @@ class CodeReviewAutomationAgent {
   }
 
   generateRefactoringSuggestions(content, filePath) {
-    const suggestions = [];
+    const $1 = [];
     
     // Check for long functions
-    const longFunctions = this.findLongFunctions(content);
+    const $1 = this.findLongFunctions(content);
     for (const func of longFunctions) {
       suggestions.push({
         type: 'refacto'r'_long_function',
         priority: 'medi'u'm',
         file: filePath,
         function: func.name,
-        message: `Function ${func.name} is ${func.lines} lines long. Consider breaking it into smaller functions.`,
+        message: "Function ${func.name} is ${func.lines} lines long. Consider breaking it into smaller functions.",
         suggestion: 'Extrac't' smaller functions for better readability and testability'
       });
     }
     
     // Check for large classes
-    const largeClasses = this.findLargeClasses(content);
+    const $1 = this.findLargeClasses(content);
     for (const cls of largeClasses) {
       suggestions.push({
         type: 'refacto'r'_large_class',
         priority: 'medi'u'm',
         file: filePath,
         class: cls.name,
-        message: `Class ${cls.name} is ${cls.lines} lines long. Consider breaking it into smaller classes.`,
+        message: "Class ${cls.name} is ${cls.lines} lines long. Consider breaking it into smaller classes.",
         suggestion: 'Extrac't' smaller classes or use composition'
       });
     }
@@ -902,10 +902,10 @@ class CodeReviewAutomationAgent {
   }
 
   generatePerformanceSuggestions(content, filePath) {
-    const suggestions = [];
+    const $1 = [];
     
     // Check for inefficient patterns
-    const inefficientPatterns = this.findInefficientPatterns(content, filePath);
+    const $1 = this.findInefficientPatterns(content, filePath);
     for (const pattern of inefficientPatterns) {
       suggestions.push({
         type: 'performanc'e'_optimization',
@@ -920,16 +920,16 @@ class CodeReviewAutomationAgent {
   }
 
   generateTestingSuggestions(content, filePath) {
-    const suggestions = [];
+    const $1 = [];
     
     // Check if test file exists
-    const testFile = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
+    const $1 = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
     if (!fs.existsSync(testFile)) {
       suggestions.push({
         type: 'ad'd'_tests',
         priority: 'medi'u'm',
         file: filePath,
-        message: `No test file found for ${path.basename(filePath)}`,
+        message: "No test file found for ${path.basename(filePath)}",
         suggestion: 'Creat'e' comprehensive tests for this file'
       });
     }
@@ -938,13 +938,13 @@ class CodeReviewAutomationAgent {
   }
 
   async identifyIssues() {
-    const issues = [];
+    const $1 = [];
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
         
         // Identify critical issues
         issues.push(...this.identifyCriticalIssues(content, file));
@@ -964,10 +964,10 @@ class CodeReviewAutomationAgent {
   }
 
   identifyCriticalIssues(content, filePath) {
-    const issues = [];
+    const $1 = [];
     
     // Check for security vulnerabilities
-    const securityPatterns = [
+    const $1 = [
       /eval\s*\(/g,
       /innerHTML\s*=/g,
       /document\.write\s*\(/g,
@@ -990,10 +990,10 @@ class CodeReviewAutomationAgent {
   }
 
   identifyWarningIssues(content, filePath) {
-    const issues = [];
+    const $1 = [];
     
     // Check for code smells
-    const codeSmellPatterns = [
+    const $1 = [
       /TODO/g,
       /FIXME/g,
       /HACK/g,
@@ -1016,10 +1016,10 @@ class CodeReviewAutomationAgent {
   }
 
   identifyInfoIssues(content, filePath) {
-    const issues = [];
+    const $1 = [];
     
     // Check for style issues
-    const stylePatterns = [
+    const $1 = [
       /console\.log/g,
       /debugger/g
     ];
@@ -1040,7 +1040,7 @@ class CodeReviewAutomationAgent {
   }
 
   async checkCodingStandards() {
-    const standards = {
+    const $1 = {
       eslint: {},
       prettier: {},
       typescript: {},
@@ -1089,7 +1089,7 @@ class CodeReviewAutomationAgent {
   }
 
   async calculateMetrics() {
-    const metrics = {
+    const $1 = {
       linesOfCode: 0,
       functions: 0,
       classes: 0,
@@ -1099,21 +1099,21 @@ class CodeReviewAutomationAgent {
     };
     
     try {
-      const sourceFiles = await this.findSourceFiles();
+      const $1 = await this.findSourceFiles();
       metrics.files = sourceFiles.length;
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const lines = content.split('\n');
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = content.split('\n');
         
         metrics.linesOfCode += lines.length;
         
         // Count functions
-        const functionMatches = content.match(/function\s+\w+\s*\(/g) || [];
+        const $1 = content.match(/function\s+\w+\s*\(/g) || [];
         metrics.functions += functionMatches.length;
         
         // Count classes
-        const classMatches = content.match(/class\s+\w+/g) || [];
+        const $1 = content.match(/class\s+\w+/g) || [];
         metrics.classes += classMatches.length;
         
         // Calculate complexity
@@ -1131,8 +1131,8 @@ class CodeReviewAutomationAgent {
   }
 
   async findSourceFiles() {
-    const files = [];
-    const patterns = [
+    const $1 = [];
+    const $1 = [
       'sr'c'/**/*.{js,ts,jsx,tsx}',
       'page's'/**/*.{js,ts,jsx,tsx}',
       'component's'/**/*.{js,ts,jsx,tsx}',
@@ -1141,16 +1141,16 @@ class CodeReviewAutomationAgent {
     
     for (const pattern of patterns) {
       try {
-        const { stdout } = await execAsync(`find ${this.projectRoot} -name "${pattern}" -type f`);
-        const foundFiles = stdout.trim().split('\n').filter(file => file);
+        const { stdout } = await execAsync("find ${this.projectRoot} -name "${pattern}" -type f");
+        const $1 = stdout.trim().split('\n').filter(file => file);
         files.push(...foundFiles);
       } catch (error) {
-        console.error(`Error finding files with pattern ${pattern}:`, error);
+        console.error("Error finding files with pattern ${pattern}:", error);
       }
     }
     
     return files.filter(file => {
-      const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
+      const $1 = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
       return !excludePatterns.some(exclude => file.includes(exclude));
     });
   }
@@ -1160,10 +1160,10 @@ class CodeReviewAutomationAgent {
       console.log('Reviewin'g' code changes...');
       
       // Check for recent changes
-      const changedFiles = await this.detectChangedFiles();
+      const $1 = await this.detectChangedFiles();
       
       if (changedFiles.length > 0) {
-        console.log(`Found ${changedFiles.length} changed files, reviewing...`);
+        console.log("Found ${changedFiles.length} changed files, reviewing...");
         
         for (const file of changedFiles) {
           await this.reviewFile(file);
@@ -1176,7 +1176,7 @@ class CodeReviewAutomationAgent {
   }
 
   async detectChangedFiles() {
-    const changedFiles = [];
+    const $1 = [];
     
     try {
       // Check for files modified in the last hour
@@ -1195,12 +1195,12 @@ class CodeReviewAutomationAgent {
 
   async reviewFile(filePath) {
     try {
-      console.log(`Reviewing file: ${filePath}`);
+      console.log("Reviewing file: ${filePath}");
       
-      const content = fs.readFileSync(filePath, 'ut'f'8');
+      const $1 = fs.readFileSync(filePath, 'ut'f'8');
       
       // Perform quick review
-      const review = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         file: filePath,
         issues: [],
@@ -1216,12 +1216,12 @@ class CodeReviewAutomationAgent {
       review.suggestions.push(...this.generatePerformanceSuggestions(content, filePath));
       
       // Save review
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reviewPath = path.join(this.reportsDir, 'review-repor't's', `review-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'review-repor't's', "review-${timestamp}.json");
       fs.writeFileSync(reviewPath, JSON.stringify(review, null, 2));
       
     } catch (error) {
-      console.error(`Failed to review file ${filePath}:`, error);
+      console.error("Failed to review file ${filePath}:", error);
     }
   }
 
@@ -1229,7 +1229,7 @@ class CodeReviewAutomationAgent {
     try {
       console.log('Performin'g' quality checks...');
       
-      const qualityReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         quality: await this.analyzeCodeQuality(),
@@ -1238,8 +1238,8 @@ class CodeReviewAutomationAgent {
       };
       
       // Save quality report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'quality-repor't's', `quality-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'quality-repor't's', "quality-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(qualityReport, null, 2));
       
     } catch (error) {
@@ -1251,7 +1251,7 @@ class CodeReviewAutomationAgent {
     try {
       console.log('Enforcin'g' coding standards...');
       
-      const standardsReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         standards: await this.checkCodingStandards(),
@@ -1281,8 +1281,8 @@ class CodeReviewAutomationAgent {
       }
       
       // Save standards report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'standards-repor't's', `standards-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'standards-repor't's', "standards-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(standardsReport, null, 2));
       
     } catch (error) {
@@ -1291,20 +1291,20 @@ class CodeReviewAutomationAgent {
   }
 
   async saveReviewReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'review-repor't's', `review-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'review-repor't's', "review-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Code review report saved: ${reportPath}`);
+    console.log("Code review report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`Code Review Automation Agent ${this.agentId} stopping...`);
+    console.log("Code Review Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new CodeReviewAutomationAgent();
+// Start the agent;
+const $1 = new CodeReviewAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -1317,4 +1317,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Cod'e' Review Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

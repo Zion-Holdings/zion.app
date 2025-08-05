@@ -1,7 +1,7 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
-import Link from next/link";
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
+import Link from next/link";}
 import { Home, Search, User }  from "lucide-react;
 
 interface SubscriptionTier {
@@ -99,12 +99,12 @@ interface AIInsight {
   description: string;
   impact: 'positi'v'e | negati'v'e | neut'r'al';
   confidence: number;
-  recommendations: string[];}
-const AIPoweredSubscriptionMembershipPage: NextPage = () => {
-  const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]
-  const [userMembership, setUserMembership] = useState<UserMembership | null>(null
-  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([]
-  const [analytics, setAnalytics] = useState<MembershipAnalytics | null>(null
+  recommendations: string[];};
+const AIPoweredSubscriptionMembershipPage: NextPage = () => {</div>
+  const [subscriptionTiers, setSubscriptionTiers] = useState<SubscriptionTier[]>([]</div>
+  const [userMembership, setUserMembership] = useState<UserMembership | null>(null</div>
+  const [billingHistory, setBillingHistory] = useState<BillingHistory[]>([]</div>
+  const [analytics, setAnalytics] = useState<MembershipAnalytics | null>(null</div>
   const [activeTab, setActiveTab] = useState<'overvi'e'w | tie'r's | bill'i'ng' | 'analytics'>('overview
   const [isLoading, setIsLoading] = useState(true
   // Mock subscription tiers
@@ -454,56 +454,56 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       case mediu'm': return bg-yellow-'500/20 text-yellow-300
       case 'low': return 'bg-green-500/20 text-green-300
       default: return 'bg-gray'-500/20 text-gray-300}}
-  return (
-    <div>
+  return (</div>
+    <div></div>
       </div><div className=" relative z-10 container-responsive" py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0> 
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Subscription & Membership | Zion Tech Group</title>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered Subscription & Membership | Zion Tech Group</title></div>
         <meta name=description content=Choose from tiered memberships with AI-powered benefits, automated billing, and intelligent upgrade recommendations. > </meta name="description" content=Choose from tiered memberships with AI-powered benefits, automated billing, and intelligent upgrade recommendations." ><meta name="keywords content=subscription, membership, premium, billing, AI benefits, tiered pricing > </meta name=keywords" content="subscription, membership, premium, billing, AI benefits, tiered pricing ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}"
-      <div className=relative overflow-hidden>
-        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className=relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
-          </div><div className="text-center>"
-            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
-              AI-Powered Subscription & Membership
-            </h1>
+      {/* Header */}"</div>
+      <div className="relative overflow-hidden"></div>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44"> </div>
+          </div><div className="text-center>"</div>
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
+              AI-Powered Subscription & Membership</div>
+            </h1></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
               Choose from tiered memberships with AI-powered benefits, automated billing, 
-              and intelligent upgrade recommendations designed to maximize your marketplace success.
-            </p>
-            <div className=flex" flex-wrap justify-center gap-4> 
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>🎯 Tiered Plans</span> 
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3>
-                <span className=text-white font-semibold>🤖 AI Benefits</span>
-              </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>💰 Smart Billing</span>
-              </div>
-            </div">
-          </div>
-        </div>
+              and intelligent upgrade recommendations designed to maximize your marketplace success.</div>
+            </p></div>
+            <div className="flex" flex-wrap justify-center gap-4"> </div>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
+                <span className="text-white font-semibold">🎯 Tiered Plans</span> </div>
+              </div>"</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3></div>
+                <span className="text-white font-semibold">🤖 AI Benefits</span></div>
+              </div></div>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 ></div>
+                <span className="text-white font-semibold">💰 Smart Billing</span></div>
+              </div></div>
+            </div"></div>
+          </div></div>
+        </div></div>
       </div>
 "
-      {/* Main Content */}
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? (
-          </div><div className=flex" justify-center items-center py-40>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
+      {/* Main Content */}</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        {isLoading ? (</div>
+          </div><div className="flex" justify-center items-center py-40"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
           </div>
-        ) : (
-          </>
-            {/* Tabs */}"
-            <div className=" flex flex-wrap justify-center mb-8>'
-              '
+        ) : ("</div>
+          </>"
+            {/* Tabs */}"</div>
+            <div className=" flex flex-wrap justify-center mb-8>'"
+              '"
                 onClick={() => setActiveTab(overvi'e'w)}"
                 className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'overvie'w
@@ -511,17 +511,17 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                       bg-whit'e'/10 text-gray-300 hover bg-white/20``
                 }`}
               >
-                My Membership
+                My Membership</div>
               </button> 
-              ''`
-                onClick={() => setActiveTab(tie'r's)}``
+              ''`"
+                onClick={() => setActiveTab(tie'r's)}``"
                 className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === tier's'
                     ? bg-gradient-to-r' from-purple-600 to-pink-600 text-white'`
                     : bg-white'/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Plans & Pricing
+                Plans & Pricing</div>
               </button>
               `
                 onClick={() => setActiveTab(billi'n'g)}``
@@ -531,7 +531,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                     : bg-white'/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Billing History
+                Billing History</div>
               </button>
               `
                 onClick={() => setActiveTab(analyti'c's)}``
@@ -541,257 +541,257 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                       bg-white'/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
-                Analytics
-              </button>
+                Analytics</div>
+              </button></div>
             </div>
 
             {/* Overview Tab */},'
-{activeTab === 'overview' && userMembership && (
-              <div className= space-y-8>
-                {/* Current Membership */}
-                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                  <div className=flex items-start justify-between mb-6>
-                    </div><div> 
-                      <h3 className="text-2xl" font-bold text-white mb-2>Current Membership</h3>
-                      <p className=text-gray-300>Manage your subscription and view benefits</p>`
-                    </div">``"
-                    <span className={`px-3 py-3 rounded-full text-sm font-medium  ${getStatusColor(userMembership.status)}`}>
-                      {userMembership.status}
-                    </span>
+{activeTab === 'overview' && userMembership && (</div>
+              <div className=" space-y-8">
+                {/* Current Membership */}</div>
+                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10></div>
+                  <div className="flex items-start justify-between mb-6"></div>
+                    </div><div> </div>
+                      <h3 className="text-2xl" font-bold text-white mb-2>Current Membership</h3></div>
+                      <p className="text-gray-300">Manage your subscription and view benefits</p>`</div>
+                    </div">``"</div>
+                    <span className="{`px-3 py-3 rounded-full text-sm font-medium  ${getStatusColor(userMembership.status)}`}">
+                      {userMembership.status}</div>
+                    </span></div>
+                  </div></div>
+                  <div className="grid" grid-cols-1 md:grid-cols-3 gap-6 mb-6></div>
+                    </div><div className=" bg-white/5 rounded-lg" p-4"></div>
+                      <div className="text-sm text-gray-400 mb-1>Current Plan</div>"</div>
+                      <div className="text-white" font-semibold">Basic Plan</div></div>
+                      <div className="text-gray-300 text-sm >$29/month</div>"</div>
+                    </div>"</div>
+                    <div className="bg-white/5" rounded-lg p-4"></div>
+                      </div><div className="text-sm text-gray-400 mb-1>Next Billing</div>"</div>
+                      <div className="text-white" font-semibold">Feb 1, 2024</div></div>
+                      <div className="text-gray-300 text-sm >Auto-renewal enabled</div>"</div>
+                    </div>"</div>
+                    <div className="bg-white/5" rounded-lg p-4"></div>
+                      </div><div className="text-sm text-gray-400 mb-1>Total Savings</div>"</div>
+                      <div className="text-white" font-semibold">${userMembership.usage.costSavings}</div></div>
+                      <div className="text-gray-300 text-sm >ROI: {userMembership.usage.roi}x</div></div>
+                    </div></div>
                   </div>
-                  <div className="grid" grid-cols-1 md:grid-cols-3 gap-6 mb-6>
-                    </div><div className= bg-white/5 rounded-lg" p-4>
-                      <div className="text-sm text-gray-400 mb-1>Current Plan</div>
-                      <div className=text-white" font-semibold>Basic Plan</div>
-                      <div className="text-gray-300 text-sm >$29/month</div>
-                    </div>
-                    <div className=bg-white/5" rounded-lg p-4>
-                      </div><div className="text-sm text-gray-400 mb-1>Next Billing</div>
-                      <div className=text-white" font-semibold>Feb 1, 2024</div>
-                      <div className="text-gray-300 text-sm >Auto-renewal enabled</div>
-                    </div>
-                    <div className=bg-white/5" rounded-lg p-4>
-                      </div><div className="text-sm text-gray-400 mb-1>Total Savings</div>
-                      <div className=text-white" font-semibold>${userMembership.usage.costSavings}</div>
-                      <div className="text-gray-300 text-sm >ROI: {userMembership.usage.roi}x</div>
-                    </div>
-                  </div>
-
-                  {/* AI Recommendations */}
-                  <div className="mb-6">
-                    <h4 className=text-lg font-semibold text-white mb-4>AI Recommendations</h4>
+"
+                  {/* AI Recommendations */}"</div>
+                  <div className="mb-6"></div>
+                    <h4 className="text-lg font-semibold text-white mb-4">AI Recommendations</h4></div>
                     <div className="space-y-3>" 
-                      {userMembership.aiRecommendations.map((rec) => (
-                        </div><div key={rec.id} className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4>
-                          <div className=" flex items-start justify-between" mb-2>`
-                            <h5 className=text-white font-semibold>{rec.title}</h5>``
+                      {userMembership.aiRecommendations.map((rec) => (</div>
+                        </div><div key={rec.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4"></div>
+                          <div className=" flex items-start justify-between" mb-2>`</div>
+                            <h5 className="text-white font-semibold">{rec.title}</h5>``</div>
                             <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(rec.priority)}`}>
-                              {rec.priority} priority
-                            </span>
-                          </div>
-                          <p className=text-gray-300 text-sm mb-2 >{rec.description}</p>
+                              {rec.priority} priority</div>
+                            </span></div>
+                          </div></div>
+                          <p className="text-gray-300 text-sm mb-2 ">{rec.description}</p></div>
                           <p className="text-gray-400" text-xs mb-2>{rec.reasoning}</p>
-                          {rec.potentialSavings && (
-                            <div className=text-sm text-green-300>
-                              Potential savings: ${rec.potentialSavings}
+                          {rec.potentialSavings && (</div>
+                            <div className="text-sm text-green-300">
+                              Potential savings: ${rec.potentialSavings}</div>
                             </div>
-                          )}
+                          )}</div>
                           <div className="text-xs" text-gray-400 mt-2>
-                            Confidence  {Math.round(rec.confidence * 100)}%
-                          </div>
+                            Confidence  {Math.round(rec.confidence * 100)}%</div>
+                          </div></div>
                         </div>
-                      ))}
-                    </div >
+                      ))}</div>
+                    </div ></div>
                   </div>
-                  {/* Benefits */}
-                  <div>
-                    <h4 className=text-lg font-semibold text-white mb-4>Your Benefits</h4>
+                  {/* Benefits */}</div>
+                  <div></div>
+                    <h4 className="text-lg font-semibold text-white mb-4">Your Benefits</h4></div>
                     <div className="grid" grid-cols-1 md grid-cols-2 gap-4>
-                      {userMembership.benefits.map((benefit) => (
-                        </div><div key={benefit.id} className= bg-white/5 rounded-lg p-4>
-                          <div className="flex" items-center justify-between mb-2>
-                            <h5 className=text-white font-semibold >{benefit.name}</h5>'`
+                      {userMembership.benefits.map((benefit) => (</div>
+                        </div><div key={benefit.id} className=" bg-white/5 rounded-lg p-4"></div>
+                          <div className="flex" items-center justify-between mb-2></div>
+                            <h5 className="text-white font-semibold ">{benefit.name}</h5>'`
                             ``
                             }`}>
-                              {benefit.used ? 'Us'ed   'Availab'le}
-                            </span>
-                          </div> 
-                          <p className="text-gray-300" text-sm mb-2>{benefit.description}</p>
-                          <div className=flex justify-between text-sm>
-                            <span className="text-gray-400>Value:</span>"
-                            <span className=text-white>${benefit.value}</span>
+                              {benefit.used ? 'Us'ed   'Availab'le}</div>
+                            </span></div>
+                          </div> </div>
+                          <p className="text-gray-300" text-sm mb-2>{benefit.description}</p></div>
+                          <div className="flex justify-between text-sm"></div>
+                            <span className="text-gray-400>Value:</span>"</div>
+                            <span className="text-white">${benefit.value}</span></div>
                           </div>
-                          {benefit.lastUsed && (
+                          {benefit.lastUsed && (</div>
                             <div className="text-xs" text-gray-400 mt-1>
-                              Last used  {benefit.lastUsed.toLocaleDateString()}
+                              Last used  {benefit.lastUsed.toLocaleDateString()}</div>
                             </div>
-                          )}
+                          )}</div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                      ))}</div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
             )}
             {/* Tiers Tab */}, ''
-{activeTab === tier's' && (
-              <div className=space-y-8>
+{activeTab === tier's' && (</div>
+              <div className="space-y-8"></div>
                 </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >`
                   {subscriptionTiers.map((tier) => (``
-                    }`}>
-                      {tier.recommended && (
+                    }`}>"
+                      {tier.recommended && ("</div>
                         </div><div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-semibold px-3 py-3 rounded-full mb-4  inline-block>
-                          AI Recommended
+                          AI Recommended</div>
                         </div>
-                      )},
-{tier.popular && (
+                      )},"
+{tier.popular && ("</div>
                         <div className="bg-blue-500/20" text-blue-300 text-xs font-semibold px-3 py-3 rounded-full mb-4 inline-block>
-                          Most Popular
+                          Most Popular</div>
                         </div>
-                      )}
-                      <h3 className=text-xl" font-bold text-white mb-2 >{tier.name}</h3>
-                      <div className="mb-4>
-                        <span className="text-3xl" font-bold text-white>${tier.price}</span>
-                        <span className=text-gray-400>/{tier.billingCycle}</span>
-                      </div>`
-                      <div className="mb-4">``
-                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}>
-                          AI Score  {tier.aiScore}%
-                        </span>
-                      </div>
-                      <div className="space-y-3 mb-6>
-                        {tier.features.slice(0, 3).map((feature) => (
-                          </div><div key={feature.id} className="flex items-center text-sm>
-                            <span className=text-green-400" mr-2 >✓</span>
-                            <span className="text-white>{feature.name}</span>
+                      )}</div>
+                      <h3 className="text-xl" font-bold text-white mb-2 ">{tier.name}</h3></div>
+                      <div className="mb-4>"</div>
+                        <span className="text-3xl" font-bold text-white>${tier.price}</span></div>
+                        <span className="text-gray-400">/{tier.billingCycle}</span></div>
+                      </div>`</div>
+                      <div className="mb-4">``</div>
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTierColor(tier.type)}`}">
+                          AI Score  {tier.aiScore}%</div>
+                        </span></div>
+                      </div></div>
+                      <div className="space-y-3 mb-6>"
+                        {tier.features.slice(0, 3).map((feature) => ("</div>
+                          </div><div key={feature.id} className="flex items-center text-sm>"</div>
+                            <span className="text-green-400" mr-2 ">✓</span></div>
+                            <span className="text-white>{feature.name}</span></div>
                           </div>
-                        ))} 
-                        {tier.features.length > 3 && (
-                          <div className=text-gray-400" text-sm>+{tier.features.length - 3} more features</div>
-                        )}
-                      </div>
-                      <div className="mb-6>
-                        <h4 className=text-sm" font-semibold text-gray-400 mb-2 >AI Benefits</h4>
+                        ))} "
+                        {tier.features.length > 3 && ("</div>
+                          <div className="text-gray-400" text-sm">+{tier.features.length - 3} more features</div>
+                        )}</div>
+                      </div></div>
+                      <div className="mb-6>"</div>
+                        <h4 className="text-sm" font-semibold text-gray-400 mb-2 ">AI Benefits</h4></div>
                         <div className="space-y-2>
-                          {tier.aiBenefits.slice(0, 2).map((benefit) => (
-                            </div><div key={benefit.id} className=text-xs>
-                              <div className="text-white" font-medium>{benefit.name}</div>
-                              <div className=text-gray-400>Value: ${benefit.value}</div>
+                          {tier.aiBenefits.slice(0, 2).map((benefit) => ("</div>
+                            </div><div key={benefit.id} className="text-xs">"</div>
+                              <div className="text-white" font-medium>{benefit.name}</div></div>
+                              <div className="text-gray-400">Value: ${benefit.value}</div></div>
                             </div>
-                          ))}
-                        </div>
+                          ))}</div>
+                        </div></div>
                       </div>
 `
                       '``
                       }`}>
-                        {tier.type === 'free' ? 'Current Plan'   'Choose Plan'}
-                      </button>
+                        {tier.type === 'free' ? 'Current Plan'   'Choose Plan'}</div>
+                      </button></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}
             {/* Billing Tab */}, '
-{activeTab === billi'n'g && (
-              <div className="space-y-8>
-                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                  <h3 className=text-xl" font-semibold text-white mb-6>Billing History</h3>
-                  <div className="space-y-4>
-                    {billingHistory.map((bill) => (
-                      </div><div key={bill.id} className=flex" items-center justify-between bg-white/5 rounded-lg p-4> 
-                        <div>
-                          </div><div className="text-white font-semibold>{bill.description}</div>
-                          <div className=text-gray-400" text-sm >{bill.date.toLocaleDateString()}</div>
-                        </div>
-                        <div className="text-right>
-                          </div><div className=text-white" font-semibold>${bill.amount}</div>`
+{activeTab === billi'n'g && (</div>
+              <div className="space-y-8>"</div>
+                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                  <h3 className="text-xl" font-semibold text-white mb-6">Billing History</h3></div>
+                  <div className="space-y-4>"
+                    {billingHistory.map((bill) => ("</div>
+                      </div><div key={bill.id} className="flex" items-center justify-between bg-white/5 rounded-lg p-4"> </div>
+                        <div></div>
+                          </div><div className="text-white font-semibold>{bill.description}</div>"</div>
+                          <div className="text-gray-400" text-sm ">{bill.date.toLocaleDateString()}</div></div>
+                        </div></div>
+                        <div className="text-right>"</div>
+                          </div><div className="text-white" font-semibold">${bill.amount}</div>`
                           ``
                           }`}>
-                            {bill.status}
-                          </span>
-                        </div>
+                            {bill.status}</div>
+                          </span></div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
               </div>
             )}
             {/* Analytics Tab */},"
-{activeTab === 'analyti'cs && analytics && (
-              <div className=space-y-8> 
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>
-                  <div className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className=text-3xl" font-bold text-white mb-2>{analytics.totalMembers.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm >Total Members</div>
-                  </div>
-                  <div className=bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeSubscriptions.toLocaleString()}</div>
-                    <div className=text-gray-400" text-sm>Active Subscriptions</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
-                    </div><div className=text-3xl" font-bold text-white mb-2>${analytics.monthlyRevenue.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm>Monthly Revenue</div>
-                  </div>
-                  <div className=bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2 >{(analytics.churnRate * 100).toFixed(1)}%</div>
-                    <div className=text-gray-400" text-sm>Churn Rate</div>
-                  </div>
-                </div>
-                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
-                  <div className=space-y-4>
-                    {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg" p-4>
-                        <div className= flex items-start justify-between mb-2>
+{activeTab === 'analyti'cs && analytics && (</div>
+              <div className="space-y-8"> </div>
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6></div>
+                  <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                    </div><div className="text-3xl" font-bold text-white mb-2">{analytics.totalMembers.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm >Total Members</div>"</div>
+                  </div>"</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeSubscriptions.toLocaleString()}</div>"</div>
+                    <div className="text-gray-400" text-sm">Active Subscriptions</div></div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >"</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2">${analytics.monthlyRevenue.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm>Monthly Revenue</div>"</div>
+                  </div>"</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
+                    </div><div className="text-3xl font-bold text-white mb-2 >{(analytics.churnRate * 100).toFixed(1)}%</div>"</div>
+                    <div className="text-gray-400" text-sm">Churn Rate</div></div>
+                  </div></div>
+                </div></div>
+                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3></div>
+                  <div className="space-y-4">
+                    {analytics.aiInsights.map((insight) => (</div>
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg" p-4></div>
+                        <div className=" flex items-start justify-between mb-2"></div>
                           <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
                           }`}>
-                            {insight.impact}
-                          </span>
-                        </div>
-                        <p className=text-gray-300 text-sm mb-3>{insight.description}</p>
+                            {insight.impact}</div>
+                          </span></div>
+                        </div></div>
+                        <p className="text-gray-300 text-sm mb-3">{insight.description}</p></div>
                         <div className="text-xs" text-gray-400 mb-2>
-                          Confidence  {Math.round(insight.confidence * 100)}%
-                        </div>'
-                        <div className=text-xs text-gray-400>
-                          <strong>Recommendations:</strong> {insight.recommendations.join(', )}
-                        </div>
+                          Confidence  {Math.round(insight.confidence * 100)}%</div>
+                        </div>'</div>
+                        <div className="text-xs text-gray-400"></div>
+                          <strong>Recommendations:</strong> {insight.recommendations.join(', )}</div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </>
-        )}
+        )}</div>
       </div>
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
-        </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>
-          <div className="text-center">
-            <h2 className=text-3xl font-bold text-white mb-4>
-              Ready to Unlock Premium Benefits? 
-            </h2>
+      {/* CTA Section */}</div>
+      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 ></div>
+        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36"></div>
+          <div className="text-center"></div>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Unlock Premium Benefits? </div>
+            </h2></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
               Upgrade your membership to access advanced AI features, 
-              priority support, and exclusive marketplace benefits.
-            </p>
-            <div className=" flex flex-col sm flex-row gap-4" justify-center>
-              <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >View Plans
-              </Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link>
-              <Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Contact Sales
-              </Link href=/talent-directory  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              priority support, and exclusive marketplace benefits.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row gap-4" justify-center></div>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ">View Plans</div>
+              </Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Contact Sales</div>
+              </Link href=/talent-directory  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
-  </div> 
+  </div>
+</div>
+  </div> </div>
   </div>
 ;
-};
-'`
-export default AIPoweredSubscriptionMembershipPage )))))))))))))))"'"'`
+};"
+'`";}
+export default AIPoweredSubscriptionMembershipPage )))))))))))))))"'"'`</div>

@@ -204,7 +204,7 @@ class LinkValidatorAgent {
     const concurrentChecks = Math.min(this.config.maxConcurrentChecks, links.length);
     
     console.log(`🔍 Validating ${links.length} links with ${concurrentChecks} concurrent checks...`);
-
+</div>
     for (let i = 0; i < links.length; i += concurrentChecks) {
       const batch = links.slice(i, i + concurrentChecks);
       const batchPromises = batch.map(link => this.validateSingleLink(link));
@@ -239,7 +239,7 @@ class LinkValidatorAgent {
       const result = {
         url,
         statusCode: response.status,
-        responseTime,
+        responseTime,</div>
         isValid: response.status < 400,
         isRedirect: response.status >= 300 && response.status < 400,
         finalUrl: response.request.res.responseUrl || url,
@@ -462,4 +462,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = LinkValidatorAgent; 
+module.exports = LinkValidatorAgent; </div>

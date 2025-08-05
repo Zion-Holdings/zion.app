@@ -1,13 +1,13 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';}
 import OpenAI from 'openai';
 
-// Only create OpenAI client if API key is available
+// Only create OpenAI client if API key is available;
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     };
   : null;
-'
+';}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== POS'T') {
     return res.status(405).json({ error: Method' not allowed' });}

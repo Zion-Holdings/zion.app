@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixStringLiterals(content) {
   // Fix unterminated string literals
   let fixed = content;
@@ -15,7 +15,7 @@ function fixStringLiterals(content) {
   
   return fixed;
 }
-
+;
 function fixJsxStructure(content) {
   let fixed = content;
   
@@ -27,7 +27,7 @@ function fixJsxStructure(content) {
   
   return fixed;
 }
-
+;
 function processFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'ut'f'8');
@@ -40,7 +40,7 @@ function processFile(filePath) {
     console.error(`Error processing ${filePath}:`, error.message);
   }
 }
-
+;
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);
   
@@ -55,10 +55,10 @@ function processDirectory(dir) {
     }
   }
 }
-
+;
 const pagesDir = path.join(__dirname, 'pag'e's');
 if (fs.existsSync(pagesDir)) {
   console.log('Fixin'g' remaining syntax errors...');
   processDirectory(pagesDir);
   console.log('Synta'x' fixes completed!');
-} 
+} </div>

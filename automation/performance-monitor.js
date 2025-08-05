@@ -4,12 +4,12 @@
  * Performance Monitor Script
  * Monitors system performance and reports issues
  */
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const util = require('ut'i'l');
-
+;
 const execAsync = util.promisify(exec);
 
 class PerformanceMonitor {
@@ -192,4 +192,4 @@ if (require.main === module) {
     monitor.run();
 }
 
-module.exports = PerformanceMonitor; 
+module.exports = PerformanceMonitor; </div>

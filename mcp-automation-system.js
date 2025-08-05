@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-
+;
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
 const fs = require('f's').promises;
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class MCPAutomationSystem {
@@ -363,7 +363,7 @@ class MCPAutomationSystem {
       if (report.inactiveAutomations > 0) {
         report.recommendations.push('Conside'r' activating inactive automations for better coverage');
       }
-
+</div>
       if (report.activeAutomations < 3) {
         report.recommendations.push('Conside'r' adding more automation components');
       }
@@ -921,4 +921,4 @@ if (require.main === module) {
   server.run().catch(console.error);
 }
 
-module.exports = MCPAutomationSystem; 
+module.exports = MCPAutomationSystem; </div>

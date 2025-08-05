@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react;
-import type { NextPage } from ne'x't;
-import Head from next/head';
-import Link from 'next/link;
+import React, { useState, useEffect, useMemo } from 'react';}
+import type { NextPage } from ne'x't;}
+import Head from next/head';}
+import Link from 'next/link;}
 import { Home, Search, User } from lucide-rea'c't;
 
 interface SearchResult {
@@ -28,20 +28,20 @@ interface FilterOptions {
   location: string[];
   verified: boolean;
 }
-
+;
 const AdvancedSearchPage: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState(');
-  const [selectedType, setSelectedType] = useState<'a'l'l | servi'c'e | tal'e'nt' | 'equipment' | 'product'>('all');
+  const [selectedType, setSelectedType] = useState<'a'l'l | servi'c'e | tal'e'nt' | 'equipment' | 'product'>('all');</div>
   const [filters, setFilters] = useState<FilterOptions>({
     category: [],
     priceRange: [0, 10000],
     rating: 0,
     location: [],
     verified: false
-  });
+  });</div>
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [sortBy, setSortBy] = useState<'relevan'c'e | pri'c'e | rat'i'ng' | 'date'>('relevance');
+  const [loading, setLoading] = useState(false);</div>
+  const [sortBy, setSortBy] = useState<'relevan'c'e | pri'c'e | rat'i'ng' | 'date'>('relevance');</div>
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   const $1 = {
@@ -93,101 +93,101 @@ const AdvancedSearchPage: NextPage = () => {
     });
   }, [searchTerm, selectedType]);
 
-  return (
-    <>
-      <Head>
-        <title>Advanced Search - Zion App</title>
-        <meta name="description content=Advanced search functionality for finding services, talent, and equipment" />
+  return (</div>
+    <></div>
+      <Head></div>
+        <title>Advanced Search - Zion App</title></div>
+        <meta name="description" content="Advanced search functionality for finding services, talent, and equipment" /></div>
       </Head>
-      
-      <div className="min-h-screen bg-gray-50>
-        <div className=max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="mb-8>
-            <h1 className=text-3xl font-bold text-gray-900 mb-4">Advanced Search</h1>
-            <p className="text-gray-600>Find the perfect services, talent, and equipment for your needs</p>
+      </div>
+      <div className="min-h-screen bg-gray-50>"</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8""></div>
+          <div className="mb-8>"</div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4"">Advanced Search</h1></div>
+            <p className="text-gray-600>Find the perfect services, talent, and equipment for your needs</p></div>
           </div>
-
-          {/* Search Bar */}
-          <div className=bg-white rounded-lg shadow-sm p-6 mb-8">
-            <div className="flex flex-col md:flex-row gap-4>
-              <div className=flex-1">
-                <div className="relative>
-                  <Search className=absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+"
+          {/* Search Bar */}"</div>
+          <div className="bg-white rounded-lg shadow-sm p-6 mb-8""></div>
+            <div className="flex flex-col md:flex-row gap-4>"</div>
+              <div className="flex-1""></div>
+                <div className="relative>"</div>
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" /"></div>
                   <input
                     type="text
                     placeholder=Search for services, talent, or equipment..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                  />
-                </div>
-              </div>
-              <div className=flex gap-2">
+                  /></div>
+                </div>"</div>
+              </div>"</div>
+              <div className="flex gap-2""></div>
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value as any)}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                >
-                  <option value=all">All Types</option>
-                  <option value="service>Services</option>
-                  <option value=talent">Talent</option>
-                  <option value="equipment>Equipment</option>
-                  <option value=product">Products</option>
-                </select>
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >"</div>
+                  <option value=all">All Types</option></div>
+                  <option value="service>Services</option></div>
+                  <option value=talent">Talent</option></div>
+                  <option value="equipment>Equipment</option></div>
+                  <option value=product">Products</option></div>
+                </select></div>
                 <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors>
-                  Search
-                </button>
-              </div>
-            </div>
+                  Search</div>
+                </button></div>
+              </div></div>
+            </div></div>
           </div>
-
-          {/* Results */}
-          <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredResults.map((result) => (
-              <div key={result.id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow>
-                <div className=flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2>{result.title}</h3>
-                    <p className=text-gray-600 text-sm mb-2">{result.description}</p>
-                    <div className="flex items-center gap-2>
-                      <span className=text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                        {result.type}
+"
+          {/* Results */}"</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"">
+            {filteredResults.map((result) => (</div>
+              <div key={result.id} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow>"</div>
+                <div className="flex items-start justify-between mb-4""></div>
+                  <div></div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2>{result.title}</h3>"</div>
+                    <p className="text-gray-600 text-sm mb-2"">{result.description}</p></div>
+                    <div className="flex items-center gap-2>"</div>
+                      <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full"">
+                        {result.type}</div>
                       </span>
-                      {result.verified && (
+                      {result.verified && (</div>
                         <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full>
-                          Verified
+                          Verified</div>
                         </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className=flex items-center justify-between">
+                      )}</div>
+                    </div></div>
+                  </div></div>
+                </div>"
+                "</div>
+                <div className="flex items-center justify-between""></div>
                   <div className="text-sm text-gray-500>
-                    {result.price && `$${result.price}`}
-                  </div>
-                  <Link
-                    href={result.url}
-                    className=text-blue-600 hover:text-blue-700 text-sm font-medium"
-                  >
-                    View Details →
-                  </Link>
-                </div>
+                    {result.price && `$${result.price}`}</div>
+                  </div></div>
+                  <Link"
+                    href={result.url}"
+                    className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                  ">
+                    View Details →</div>
+                  </Link></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
 
-          {filteredResults.length === 0 && (
-            <div className="text-center py-12>
-              <Search className=mx-auto h-12 w-12 text-gray-400 mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2>No results found</h3>
-              <p className=text-gray-600">Try adjusting your search terms or filters</p>
+          {filteredResults.length === 0 && (</div>
+            <div className="text-center py-12>"</div>
+              <Search className="mx-auto h-12 w-12 text-gray-400 mb-4" /"></div>
+              <h3 className="text-lg font-medium text-gray-900 mb-2>No results found</h3>"</div>
+              <p className="text-gray-600"">Try adjusting your search terms or filters</p></div>
             </div>
-          )}
-        </div>
-      </div>
+          )}</div>
+        </div></div>
+      </div></div>
     </>
   );
 };
-
-export default AdvancedSearchPage;
+;}
+export default AdvancedSearchPage;</div>

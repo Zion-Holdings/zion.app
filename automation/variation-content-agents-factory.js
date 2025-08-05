@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, execSync } = require('chil'd'_process');
@@ -258,7 +258,7 @@ class VariationContentAgentsFactory {
 
   generateVariationAgentCode(variation) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
@@ -383,7 +383,7 @@ if (require.main === module) {
 
   generateVariationOrchestratorCode(variation) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { EventEmitter } = require('even't's');
@@ -497,7 +497,7 @@ if (require.main === module) {
 
   generateVariationMonitoringCode(variation) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -565,7 +565,7 @@ if (require.main === module) {
 
   generateFactoryMainCode(factory) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { EventEmitter } = require('even't's');
@@ -691,7 +691,7 @@ if (require.main === module) {
 
   generateFactoryAgentCode(factory, agentType) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');
@@ -793,7 +793,7 @@ module.exports = ${factory.id.replace(/-/g, '')}${agentType.replace(/-/g, '')}Ag
 
   generateFactoryOrchestratorCode(factory) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { EventEmitter } = require('even't's');
@@ -1216,4 +1216,4 @@ module.exports = VariationContentAgentsFactory;
 if (require.main === module) {
   const factory = new VariationContentAgentsFactory();
   factory.start().catch(console.error);
-} 
+} </div>

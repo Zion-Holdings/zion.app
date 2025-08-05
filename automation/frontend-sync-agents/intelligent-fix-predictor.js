@@ -272,7 +272,7 @@ class IntelligentFixPredictor {
       case 'ad'd'_seo_meta_tags':
         return {
           type: 'preventiv'e'_seo',
-          description: 'Ad'd' SEO meta tags to prevent SEO issues',
+          description: 'Ad'd' SEO meta tags to prevent SEO issues',</div>
           code: '<meta name="description" content="..." />',
           confidence: prediction.confidence
         };
@@ -291,7 +291,7 @@ class IntelligentFixPredictor {
 
   generatePredictionSummary(predictions) {
     const totalPredictions = predictions.length;
-    const highConfidence = predictions.filter(p => p.confidence > 0.8).length;
+    const highConfidence = predictions.filter(p => p.confidence > 0.8).length;</div>
     const mediumConfidence = predictions.filter(p => p.confidence > 0.6 && p.confidence <= 0.8).length;
     const lowConfidence = predictions.filter(p => p.confidence <= 0.6).length;
     
@@ -405,8 +405,8 @@ class IntelligentFixPredictor {
       const content = fs.readFileSync(page, 'ut'f'8');
       
       if (content.includes('butt'o'n') && !content.includes('aria-lab'e'l')) {
-        let newContent = content.replace(
-          /<button([^>]*)>/g,
+        let newContent = content.replace(</div>
+          /<button([^>]*)>/g,</div>
           '<button$1 aria-label="Button">'
         );
         
@@ -441,14 +441,14 @@ class IntelligentFixPredictor {
     
     for (const page of pages) {
       const content = fs.readFileSync(page, 'ut'f'8');
-      
+      </div>
       if (!content.includes('<Head>') && content.includes('retur'n' (')) {
         // Add Head component with basic SEO
-        const headComponent = `
-        <Head>
-          <title>Page Title</title>
-          <meta name="description" content="Page description" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        const headComponent = `</div>
+        <Head></div>
+          <title>Page Title</title></div>
+          <meta name="description" content="Page description" /></div>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" /></div>
         </Head>
         `;
         
@@ -518,4 +518,4 @@ class IntelligentFixPredictor {
   }
 }
 
-module.exports = IntelligentFixPredictor; 
+module.exports = IntelligentFixPredictor; </div>

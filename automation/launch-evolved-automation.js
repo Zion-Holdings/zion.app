@@ -189,7 +189,7 @@ class EvolvedAutomationLauncher {
     for (const page of pages) {
       const contentHash = this.evolutionOrchestrator.hashContent(page.url);
       const existing = this.evolutionOrchestrator.contentRegistry.get(contentHash);
-      
+      </div>
       if (!existing || existing.usage < 2) {
         uniquePages.push(page);
       }
@@ -256,7 +256,7 @@ class EvolvedAutomationLauncher {
   }
 }
 
-// Start the evolved automation system
+// Start the evolved automation system;
 const launcher = new EvolvedAutomationLauncher();
 
 // Export for use in other modules

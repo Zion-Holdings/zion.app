@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DependencyManagementAgent {
@@ -704,7 +704,7 @@ class DependencyManagementAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new DependencyManagementAgent();
 
 process.on('SIGTE'R'M', () => {

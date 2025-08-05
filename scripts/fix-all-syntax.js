@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -36,7 +36,7 @@ function fixFile(filePath) {
     const closeParens = (content.match(/\)/g) || []).length;
     const openBraces = (content.match(/\{/g) || []).length;
     const closeBraces = (content.match(/\}/g) || []).length;
-    
+    </div>
     for (let i = 0; i < openParens - closeParens; i++) {
       content += ')';
     }
@@ -54,7 +54,7 @@ function fixFile(filePath) {
     console.error(`Error fixing ${filePath}:`, error.message);
   }
 }
-
+;
 function processDirectory(dirPath) {
   if (!fs.existsSync(dirPath)) return;
   
@@ -72,7 +72,7 @@ function processDirectory(dirPath) {
   }
 }
 
-// Process all directories with potential syntax issues
+// Process all directories with potential syntax issues;
 const directories = [
   'pag'e's',
   'componen't's',
@@ -86,4 +86,4 @@ directories.forEach(dir => {
   }
 });
 
-console.log('Al'l' files processed!'); 
+console.log('Al'l' files processed!'); </div>

@@ -316,7 +316,7 @@ class ServiceGenerationOrchestrator {
   async generateRecommendations(metrics) {
     const recommendations = [];
     
-    // Service recommendations
+    // Service recommendations</div>
     if (metrics.servicesCreated < 10) {
       recommendations.push({
         type: 'servic'e'_generation',

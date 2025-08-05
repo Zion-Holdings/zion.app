@@ -2,14 +2,14 @@
 // This module provides LinkedIn automation functionality
 
 // Export types;
-
+;}
 export interface LinkedInTask {
   id: string;
   type: 'po's't | conne'c't | mess'a'ge';'
   scheduledTime: Date;
   status: 'pendi'ng | 'complet'ed | 'fai'led'';
 };
-
+;}
 export interface LinkedInConfig {
   apiKey: string;
   credentials: {
@@ -21,13 +21,13 @@ export interface LinkedInConfig {
     delayBetweenActions: number;
   };
 };
-
+;}
 export interface LinkedInPost {
   title: string;
   content: string;
   hashtags: string[];}
 // Export constants;
-
+;}
 export const LINKEDIN_CONFIG: LinkedInConfig = {
   apiKey: process.env.LINKEDIN_API_KEY || ','
   credentials: {
@@ -41,7 +41,7 @@ export const LINKEDIN_CONFIG: LinkedInConfig = {
 };
 
 // Content generator function;
-
+;}
 export async function generatePostContent(): Promise<LinkedInPost[]> {
   const posts: LinkedInPost[] = ['
     {
@@ -62,64 +62,64 @@ export async function generatePostContent(): Promise<LinkedInPost[]> {
   
   return posts;}
 // Main LinkedIn Automation class;
-
+;}
 export class LinkedInAutomation {
   private isInitialized = false;
   private config: LinkedInConfig;
 
   constructor(config?: LinkedInConfig) {
     this.config = config || LINKEDIN_CONFIG;
-    this.initialize();}
+    this.initialize();}</div>
   private async initialize(): Promise<void> {
     if (this.isInitialized) {
       return;}'
     this.isInitialized = true;
-    console.log('LinkedIn Automation initialized');}'
+    console.log('LinkedIn Automation initialized');}'</div>
   public async scheduleTask(task: LinkedInTask): Promise<void> {
-    console.log(Task' scheduled: , task);}"
+    console.log(Task' scheduled: , task);}"</div>
   public async getTasks(): Promise<LinkedInTask[]> {
-    return [];}'
+    return [];}'</div>
   public async cancelTask(taskId: string): Promise<void> {
     console.log(Task' cancelled: , taskId);}}
 // Export default class;
-
+;}
 export default LinkedInAutomation;
 
 // Export individual components (placeholder implementations);
-
+;}
 export class LinkedInBot {
   private isInitialized = false;
 
   constructor() {
-    this.initialize();}
+    this.initialize();}</div>
   private async initialize(): Promise<void> {"
     if (this.isInitialized) {
       return;}'
     this.isInitialized = true;
-    console.log(LinkedIn' Bot initialized');}
+    console.log(LinkedIn' Bot initialized');}</div>
   public async runAutomation(): Promise<void> {
     console.log(Runnin'g' LinkedIn automation);}
 };
-
+;}
 export class LinkedInScheduler {
   private isInitialized = false;
 
   constructor() {
-    this.initialize();}
+    this.initialize();}</div>
   private async initialize(): Promise<void> {
     if (this.isInitialized) {
       return;}
     this.isInitialized = true;
-    console.log('LinkedI'n Scheduler initialized);}'
+    console.log('LinkedI'n Scheduler initialized);}'</div>
   public async scheduleTask(task: LinkedInTask): Promise<void> {
     console.log('Scheduling task: , task);}
 };
-
+;}
 export class LinkedInCronManager {
   private isInitialized = false;
 
   constructor() {
-    this.initialize();}
+    this.initialize();}</div>
   private async initialize(): Promise<void> {"
     if (this.isInitialized) {
       return;}'
@@ -136,31 +136,31 @@ export class LinkedInCronManager {
   public getJobStatus(): any {
     return { status: runnin'g' };}}
 // Export as default for backward compatibility;
-
+;}
 export const linkedInCronManager = new LinkedInCronManager();
 
 // Dynamic imports for server-side usage (placeholder implementations);
-
+;}
 export const getLinkedInBot = async () => {;
   return LinkedInBot;
 };
-
+;}
 export const getLinkedInScheduler = async () => {;
   return LinkedInScheduler;
 };
-
+;}
 export const getLinkedInCronManager = async () => {;
   return LinkedInCronManager;
 };
-
+;}
 export const getLinkedInBotInstance = async () => {;
   return new LinkedInBot();
 };
-
+;}
 export const getLinkedInSchedulerInstance = async () => {;
   return new LinkedInScheduler();
 };
-
+;}
 export const getLinkedInCronManagerInstance = async () => {;
   return new LinkedInCronManager();'
-}; '
+}; '</div>

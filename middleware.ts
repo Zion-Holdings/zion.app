@@ -1,12 +1,12 @@
-import { updateSession } from './utils/supabase/middleware
-import { NextResponse } from 'nex't'/server
+import { updateSession } from './utils/supabase/middleware;}
+import { NextResponse } from 'nex't'/server;}
 import type { NextRequest } from 'nex't'/server
-// Force Node.js runtime to avoid Edge Runtime compatibility issues
-export const runtime = 'nodej's'
+// Force Node.js runtime to avoid Edge Runtime compatibility issues;}
+export const runtime = 'nodej's';}
 export async function middleware(request: NextRequest) {
   return await updateSession(request)
 }
-
+;}
 export const config = {
   matcher: [
     /*

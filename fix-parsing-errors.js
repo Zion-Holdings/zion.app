@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix common parsing errors
+// Function to fix common parsing errors;
 function fixParsingErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -9,26 +9,26 @@ function fixParsingErrors(filePath) {
 
     // Fix multiple return statements in JSX
     const returnPattern = /return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<ModernLayout>\s*return\s*\(\s*/g;
-    if (returnPattern.test(content)) {
+    if (returnPattern.test(content)) {</div>
       content = content.replace(returnPattern, 'retur'n' (\n    <ModernLayout>\n      ');
       modified = true;
     }
 
-    // Fix malformed useEffect with return statement
+    // Fix malformed useEffect with return statement</div>
     const useEffectPattern = /useEffect\s*\(\s*\(\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>/g;
-    if (useEffectPattern.test(content)) {
+    if (useEffectPattern.test(content)) {</div>
       content = content.replace(useEffectPattern, 'useEffec't'(() => {\n    return (\n      <ModernLayout>');
       modified = true;
     }
 
-    // Fix missing closing tags
+    // Fix missing closing tags</div>
     const closingTagPattern = /<\/ModernLayout>\s*<\/ModernLayout>\s*<\/ModernLayout>\s*\)\s*;\s*\}\s*;\s*$/g;
-    if (closingTagPattern.test(content)) {
+    if (closingTagPattern.test(content)) {</div>
       content = content.replace(closingTagPattern, '    </ModernLayout>\n  );\n};\n');
       modified = true;
     }
 
-    // Fix missing icon imports
+    // Fix missing icon imports</div>
     const iconUsagePattern = /<Home\s*\/>|<Search\s*\/>|<User\s*\/>/g;
     if (iconUsagePattern.test(content)) {
       const hasIconImport = /import.*\{.*Home.*Search.*User.*\}.*from.*lucide-react/g.test(content);
@@ -53,7 +53,7 @@ function fixParsingErrors(filePath) {
       }
     }
 
-    // Fix malformed JSX structure
+    // Fix malformed JSX structure</div>
     const malformedJSXPattern = /return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<div/g;
     if (malformedJSXPattern.test(content)) {
       content = content.replace(malformedJSXPattern, 'retur'n' (\n    <ModernLayout>\n      <div');
@@ -79,7 +79,7 @@ function fixParsingErrors(filePath) {
   }
 }
 
-// Function to recursively find TypeScript files
+// Function to recursively find TypeScript files;
 function findTsxFiles(dir) {
   const files = [];
   const items = fs.readdirSync(dir);
@@ -98,12 +98,12 @@ function findTsxFiles(dir) {
   return files;
 }
 
-// Main execution
+// Main execution;
 const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);
-
+;
 let fixedCount = 0;
 for (const file of files) {
   if (fixParsingErrors(file)) {

@@ -1,7 +1,7 @@
-const EventEmitter = require('even't's');
+const $1 = require('even't's');
 const { v4: uuidv4 } = require('uu'i'd');
 
-class AgentOrchestrator extends EventEmitter {
+class $1 extends EventEmitter {
   constructor(agentFactory) {
     super();
     this.agentFactory = agentFactory;
@@ -26,8 +26,8 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   async submitTask(task) {
-    const taskId = uuidv4();
-    const enrichedTask = {
+    const $1 = uuidv4();
+    const $1 = {
       id: taskId,
       ...task,
       status: 'queu'e'd',
@@ -41,7 +41,7 @@ class AgentOrchestrator extends EventEmitter {
     this.taskQueue.push(enrichedTask);
     this.performanceMetrics.totalTasks++;
     
-    console.log(`Task submitted: ${taskId} - ${task.type}`);
+    console.log("Task submitted: ${taskId} - ${task.type}");
     this.emit('taskSubmitt'e'd', enrichedTask);
     
     // Process queue
@@ -51,19 +51,19 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   async processTaskQueue() {
-    const availableAgents = this.getAvailableAgents();
-    const runningTaskCount = this.runningTasks.size;
+    const $1 = this.getAvailableAgents();
+    const $1 = this.runningTasks.size;
     
     if (runningTaskCount >= this.loadBalancingConfig.maxConcurrentTasks) {
       return; // At capacity
     }
 
-    const tasksToProcess = this.taskQueue
+    const $1 = this.taskQueue
       .filter(task => task.status === 'queu'e'd')
       .slice(0, this.loadBalancingConfig.maxConcurrentTasks - runningTaskCount);
 
     for (const task of tasksToProcess) {
-      const bestAgent = this.selectBestAgent(task, availableAgents);
+      const $1 = this.selectBestAgent(task, availableAgents);
       if (bestAgent) {
         await this.assignTaskToAgent(task, bestAgent);
       }
@@ -72,7 +72,7 @@ class AgentOrchestrator extends EventEmitter {
 
   selectBestAgent(task, availableAgents) {
     // Filter agents by capability
-    const capableAgents = availableAgents.filter(agent => 
+    const $1 = availableAgents.filter(agent => 
       agent.capabilities.includes(task.type) || 
       agent.services.includes(task.service)
     );
@@ -82,8 +82,8 @@ class AgentOrchestrator extends EventEmitter {
     }
 
     // Score agents based on performance and workload
-    const scoredAgents = capableAgents.map(agent => {
-      const score = this.calculateAgentScore(agent, task);
+    const $1 = capableAgents.map(agent => {
+      const $1 = this.calculateAgentScore(agent, task);
       return { agent, score };
     });
 
@@ -92,25 +92,25 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   calculateAgentScore(agent, task) {
-    let score = 0;
+    let $1 = 0;
 
     // Performance score (0-40 points)
-    const successRate = agent.performance.tasksCompleted / 
+    const $1 = agent.performance.tasksCompleted / 
       Math.max(agent.performance.tasksCompleted + agent.performance.tasksFailed, 1);
     score += successRate * 40;
 
     // Response time score (0-30 points)
-    const avgResponseTime = agent.performance.averageResponseTime;
-    const responseScore = Math.max(0, 30 - (avgResponseTime / 1000)); // Penalize slow agents
+    const $1 = agent.performance.averageResponseTime;
+    const $1 = Math.max(0, 30 - (avgResponseTime / 1000)); // Penalize slow agents
     score += responseScore;
 
     // Workload score (0-20 points)
-    const currentWorkload = this.getAgentWorkload(agent.id);
-    const workloadScore = Math.max(0, 20 - (currentWorkload * 10)); // Penalize busy agents
+    const $1 = this.getAgentWorkload(agent.id);
+    const $1 = Math.max(0, 20 - (currentWorkload * 10)); // Penalize busy agents
     score += workloadScore;
 
     // Health score (0-10 points)
-    const healthScore = agent.health.status === 'healt'h'y' ? 10 : 
+    const $1 = agent.health.status === 'healt'h'y' ? 10 : 
                        agent.health.status === 'warni'n'g' ? 5 : 0;
     score += healthScore;
 
@@ -130,11 +130,11 @@ class AgentOrchestrator extends EventEmitter {
     this.runningTasks.set(task.id, task);
     this.taskQueue = this.taskQueue.filter(t => t.id !== task.id);
 
-    console.log(`Task ${task.id} assigned to agent ${agent.name}`);
+    console.log("Task ${task.id} assigned to agent ${agent.name}");
 
     try {
       // Simulate task execution (in real implementation, this would communicate with the agent)
-      const result = await this.executeTask(task, agent);
+      const $1 = await this.executeTask(task, agent);
       
       task.status = 'complet'e'd';
       task.completedAt = new Date();
@@ -143,7 +143,7 @@ class AgentOrchestrator extends EventEmitter {
       this.performanceMetrics.completedTasks++;
       this.updatePerformanceMetrics();
       
-      console.log(`Task ${task.id} completed successfully`);
+      console.log("Task ${task.id} completed successfully");
       this.emit('taskComplet'e'd', task);
       
     } catch (error) {
@@ -158,9 +158,9 @@ class AgentOrchestrator extends EventEmitter {
         task.status = 'queu'e'd';
         task.assignedAgent = null;
         this.taskQueue.push(task);
-        console.log(`Retrying task ${task.id} (attempt ${task.attempts})`);
+        console.log("Retrying task ${task.id} (attempt ${task.attempts})");
       } else {
-        console.log(`Task ${task.id} failed after ${task.attempts} attempts`);
+        console.log("Task ${task.id} failed after ${task.attempts} attempts");
         this.emit('taskFail'e'd', task);
       }
     } finally {
@@ -176,7 +176,7 @@ class AgentOrchestrator extends EventEmitter {
 
   async executeTask(task, agent) {
     // Simulate task execution time
-    const executionTime = Math.random() * 5000 + 1000; // 1-6 seconds
+    const $1 = Math.random() * 5000 + 1000; // 1-6 seconds
     await new Promise(resolve => setTimeout(resolve, executionTime));
     
     // Simulate different task types
@@ -196,7 +196,7 @@ class AgentOrchestrator extends EventEmitter {
 
   async executeDeepSearch(task, agent) {
     // Simulate deep search execution
-    const searchResults = {
+    const $1 = {
       query: task.data.query,
       results: [
         { url: 'http's'://example1.com', title: 'Searc'h' Result 1', relevance: 0.9 },
@@ -215,9 +215,9 @@ class AgentOrchestrator extends EventEmitter {
 
   async executeContentGeneration(task, agent) {
     // Simulate content generation
-    const content = {
-      title: `Generated Content for ${task.data.topic}`,
-      body: `This is automatically generated content about ${task.data.topic}. It includes relevant information and is optimized for SEO.`,
+    const $1 = {
+      title: "Generated Content for ${task.data.topic}",
+      body: "This is automatically generated content about ${task.data.topic}. It includes relevant information and is optimized for SEO.",
       metadata: {
         wordCount: 150,
         seoScore: 85,
@@ -230,7 +230,7 @@ class AgentOrchestrator extends EventEmitter {
 
   async executeDataAnalysis(task, agent) {
     // Simulate data analysis
-    const analysis = {
+    const $1 = {
       dataset: task.data.dataset,
       insights: [
         { type: 'tre'n'd', description: 'Upwar'd' trend detected', confidence: 0.85 },
@@ -249,7 +249,7 @@ class AgentOrchestrator extends EventEmitter {
 
   async executeWebScraping(task, agent) {
     // Simulate web scraping
-    const scrapedData = {
+    const $1 = {
       url: task.data.url,
       title: 'Scrape'd' Page Title',
       content: 'Extracte'd' content from the webpage...',
@@ -275,7 +275,7 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   updatePerformanceMetrics() {
-    const totalTasks = this.performanceMetrics.completedTasks + this.performanceMetrics.failedTasks;
+    const $1 = this.performanceMetrics.completedTasks + this.performanceMetrics.failedTasks;
     if (totalTasks > 0) {
       this.performanceMetrics.averageTaskTime = 
         this.taskHistory.reduce((sum, task) => {
@@ -291,7 +291,7 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   getTaskStatus(taskId) {
-    const task = this.runningTasks.get(taskId) || 
+    const $1 = this.runningTasks.get(taskId) || 
                  this.taskQueue.find(t => t.id === taskId) ||
                  this.taskHistory.find(t => t.id === taskId);
     
@@ -308,7 +308,7 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   getSystemMetrics() {
-    const metrics = {
+    const $1 = {
       ...this.performanceMetrics,
       queueLength: this.taskQueue.length,
       runningTasks: this.runningTasks.size,
@@ -324,9 +324,9 @@ class AgentOrchestrator extends EventEmitter {
     console.log('Startin'g' system optimization...');
     
     // Check system performance
-    const metrics = this.getSystemMetrics();
-    const efficiency = metrics.systemEfficiency;
-    
+    const $1 = this.getSystemMetrics();
+    const $1 = metrics.systemEfficiency;
+    </div>
     if (efficiency < this.loadBalancingConfig.performanceThreshold) {
       console.log('Syste'm' performance below threshold, initiating optimization...');
       
@@ -348,20 +348,20 @@ class AgentOrchestrator extends EventEmitter {
   async scaleUp() {
     console.log('Scalin'g' up system...');
     
-    const agentTypes = ['deep-sear'c'h', 'content-generati'o'n', 'data-process'o'r'];
-    const scalingResults = [];
+    const $1 = ['deep-sear'c'h', 'content-generati'o'n', 'data-process'o'r'];
+    const $1 = [];
     
     for (const type of agentTypes) {
       try {
-        const agentId = await this.agentFactory.createAgent(type, {
-          name: `auto-scaled-${type}-${Date.now()}`,
+        const $1 = await this.agentFactory.createAgent(type, {
+          name: "auto-scaled-${type}-${Date.now()}",
           config: { autoScaling: true }
         });
         
         await this.agentFactory.startAgent(agentId);
         scalingResults.push({ type, success: true, agentId });
         
-        console.log(`Scaled up ${type} agent: ${agentId}`);
+        console.log("Scaled up ${type} agent: ${agentId}");
       } catch (error) {
         scalingResults.push({ type, success: false, error: error.message });
       }
@@ -371,54 +371,54 @@ class AgentOrchestrator extends EventEmitter {
   }
 
   async restartProblematicAgents() {
-    const agents = this.agentFactory.getAllAgents();
-    const problematicAgents = agents.filter(agent => 
+    const $1 = this.agentFactory.getAllAgents();
+    const $1 = agents.filter(agent => 
       agent.health.status === 'err'o'r' || 
       agent.performance.tasksFailed > agent.performance.tasksCompleted * 0.3
     );
     
     for (const agent of problematicAgents) {
       try {
-        console.log(`Restarting problematic agent: ${agent.name}`);
+        console.log("Restarting problematic agent: ${agent.name}");
         await this.agentFactory.restartAgent(agent.id);
       } catch (error) {
-        console.error(`Failed to restart agent ${agent.name}:`, error.message);
+        console.error("Failed to restart agent ${agent.name}:", error.message);
       }
     }
   }
 
   async optimizeTaskDistribution() {
     // Rebalance tasks if needed
-    const runningTasks = Array.from(this.runningTasks.values());
-    const agentWorkloads = new Map();
+    const $1 = Array.from(this.runningTasks.values());
+    const $1 = new Map();
     
     // Calculate current workloads
     for (const task of runningTasks) {
-      const current = agentWorkloads.get(task.assignedAgent) || 0;
+      const $1 = agentWorkloads.get(task.assignedAgent) || 0;
       agentWorkloads.set(task.assignedAgent, current + 1);
     }
     
     // Find overloaded agents
-    const avgWorkload = runningTasks.length / Math.max(agentWorkloads.size, 1);
-    const overloadedAgents = Array.from(agentWorkloads.entries())
+    const $1 = runningTasks.length / Math.max(agentWorkloads.size, 1);
+    const $1 = Array.from(agentWorkloads.entries())
       .filter(([agentId, workload]) => workload > avgWorkload * 1.5);
     
     // Redistribute tasks from overloaded agents
     for (const [agentId, workload] of overloadedAgents) {
-      const tasksToRedistribute = runningTasks
+      const $1 = runningTasks
         .filter(task => task.assignedAgent === agentId)
         .slice(0, Math.floor(workload - avgWorkload));
       
       for (const task of tasksToRedistribute) {
         // Find better agent
-        const availableAgents = this.getAvailableAgents()
+        const $1 = this.getAvailableAgents()
           .filter(agent => agent.id !== agentId);
         
-        const bestAgent = this.selectBestAgent(task, availableAgents);
+        const $1 = this.selectBestAgent(task, availableAgents);
         if (bestAgent) {
           // Reassign task
           task.assignedAgent = bestAgent.id;
-          console.log(`Reassigned task ${task.id} from ${agentId} to ${bestAgent.id}`);
+          console.log("Reassigned task ${task.id} from ${agentId} to ${bestAgent.id}");
         }
       }
     }
@@ -436,7 +436,7 @@ class AgentOrchestrator extends EventEmitter {
 
     // Clean up old task history every hour
     setInterval(() => {
-      const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+      const $1 = new Date(Date.now() - 24 * 60 * 60 * 1000);
       this.taskHistory = this.taskHistory.filter(task => 
         task.createdAt > oneDayAgo
       );
@@ -447,11 +447,11 @@ class AgentOrchestrator extends EventEmitter {
     console.log('Shuttin'g' down orchestrator...');
     
     // Wait for running tasks to complete
-    const runningTasks = Array.from(this.runningTasks.values());
+    const $1 = Array.from(this.runningTasks.values());
     if (runningTasks.length > 0) {
-      console.log(`Waiting for ${runningTasks.length} tasks to complete...`);
+      console.log("Waiting for ${runningTasks.length} tasks to complete...");
       await new Promise(resolve => {
-        const checkInterval = setInterval(() => {
+        const $1 = setInterval(() => {
           if (this.runningTasks.size === 0) {
             clearInterval(checkInterval);
             resolve();
@@ -464,4 +464,4 @@ class AgentOrchestrator extends EventEmitter {
   }
 }
 
-module.exports = AgentOrchestrator; 
+module.exports = AgentOrchestrator; </div>

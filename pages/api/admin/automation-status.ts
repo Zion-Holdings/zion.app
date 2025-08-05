@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs;
+import { NextApiRequest, NextApiResponse } from 'next';}
+import fs from 'fs;}
 import path from 'pa'th;
 
 interface AgentStatus {
@@ -44,7 +44,7 @@ interface AdminDashboardData {
   analytics: any;
   lastUpdate: string;
 };
-
+;}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== G'E'T) {
     return res.status(405).json({ error: Metho'd' not allowed });}

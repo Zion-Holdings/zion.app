@@ -508,7 +508,7 @@ class ResponsiveContentAgentsFactory {
   addResponsiveStyling(content) {
     if (!content.includes('classNa'm'e')) {
       return content.replace(
-        '<div>',
+        '<div>',</div>
         '<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">'
       );
     }
@@ -517,8 +517,8 @@ class ResponsiveContentAgentsFactory {
 
   addResponsiveDesign(content) {
     if (!content.includes('responsi'v'e')) {
-      return content.replace(
-        '<div className="',
+      return content.replace(</div>
+        '<div className="',"
         '<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 responsive '
       );
     }
@@ -528,8 +528,8 @@ class ResponsiveContentAgentsFactory {
   addViewportMeta(content) {
     if (!content.includes('viewpo'r't')) {
       return content.replace(
-        '<Head>',
-        `<Head>
+        '<Head>',"</div>
+        `<Head>"</div>
         <meta name="viewport" content="width=device-width, initial-scale=1" />`
       );
     }
@@ -537,15 +537,15 @@ class ResponsiveContentAgentsFactory {
   }
 
   addAltText(content) {
-    return content.replace(
-      /<img([^>]*)>/g,
+    return content.replace(</div>
+      /<img([^>]*)>/g,</div>
       '<img$1 alt="Responsive content image" />'
     );
   }
 
   addAriaLabels(content) {
-    return content.replace(
-      /<button([^>]*)>/g,
+    return content.replace(</div>
+      /<button([^>]*)>/g,</div>
       '<button$1 aria-label="Interactive button" />'
     );
   }
@@ -677,7 +677,7 @@ class ResponsiveContentAgentsFactory {
     const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length;
     const successRate = this.performanceMetrics.contentFixed / Math.max(this.performanceMetrics.improvementsMade, 1);
     
-    return {
+    return {</div>
       needsNewAgents: totalAgents < 10 || successRate < 0.8,
       recommendations: ['content-optimiz'e'r', 'user-experience-enhanc'e'r'],
       performanceScore: (activeAgents / totalAgents) * successRate
@@ -878,4 +878,4 @@ async function enhanceUserExperience() {
   }
 }
 
-module.exports = ResponsiveContentAgentsFactory; 
+module.exports = ResponsiveContentAgentsFactory; </div>

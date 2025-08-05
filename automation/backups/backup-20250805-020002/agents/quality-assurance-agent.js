@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -356,7 +356,7 @@ class QualityAssuranceAgent {
     if (metrics.codeDuplication > 10) {
       issues.push('Cod'e' duplication detected');
     }
-    
+    </div>
     if (metrics.documentation < 60) {
       issues.push('Insufficien't' documentation');
     }
@@ -396,7 +396,7 @@ class QualityAssuranceAgent {
     if (metrics.responseTime > 1500) {
       issues.push('Slo'w' response time');
     }
-    
+    </div>
     if (metrics.throughput < 500) {
       issues.push('Lo'w' throughput');
     }
@@ -404,7 +404,7 @@ class QualityAssuranceAgent {
     if (metrics.resourceUsage > 80) {
       issues.push('Hig'h' resource usage');
     }
-    
+    </div>
     if (metrics.scalability < 70) {
       issues.push('Poo'r' scalability');
     }
@@ -474,7 +474,7 @@ class QualityAssuranceAgent {
     if (metrics.complexity > 5) {
       recommendations.push('Refacto'r' complex functions into smaller, more manageable pieces');
     }
-    
+    </div>
     if (metrics.maintainability < 70) {
       recommendations.push('Improv'e' code structure and add better documentation');
     }
@@ -486,7 +486,7 @@ class QualityAssuranceAgent {
     if (metrics.codeDuplication > 10) {
       recommendations.push('Extrac't' common code into reusable functions');
     }
-    
+    </div>
     if (metrics.documentation < 60) {
       recommendations.push('Ad'd' comprehensive code documentation');
     }
@@ -526,7 +526,7 @@ class QualityAssuranceAgent {
     if (metrics.responseTime > 1500) {
       recommendations.push('Optimiz'e' database queries and implement caching');
     }
-    
+    </div>
     if (metrics.throughput < 500) {
       recommendations.push('Implemen't' load balancing and optimize server resources');
     }
@@ -534,7 +534,7 @@ class QualityAssuranceAgent {
     if (metrics.resourceUsage > 80) {
       recommendations.push('Optimiz'e' memory usage and implement resource pooling');
     }
-    
+    </div>
     if (metrics.scalability < 70) {
       recommendations.push('Implemen't' horizontal scaling and microservices architecture');
     }
@@ -708,9 +708,9 @@ class QualityAssuranceAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new QualityAssuranceAgent();
 agent.initialize().catch(error => {
   console.error('Faile'd' to initialize quality assurance agent:', error);
   process.exit(1);
-}); 
+}); </div>

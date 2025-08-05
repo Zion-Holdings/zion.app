@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to fix syntax errors in a file
+// Function to fix syntax errors in a file;
 function fixSyntaxErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
@@ -17,8 +17,30 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/import \{ useRouter \} from 'nex't'\/router';/g, "import { useRouter } from 'next/router';");
     content = content.replace(/import React, \{ useState, useEffect, useCallback \} from 'rea'c't';/g, "import React, { useState, useEffect, useCallback } from 'react';");
     
+    // Fix additional malformed import patterns
+    content = content.replace(/import type \{ AppProps \} from 'next\/app;/g, "import type { AppProps } from 'next/app';");
+    content = content.replace(/import React from 'react;/g, "import React from 'react';");
+    content = content.replace(/import \{ NextPage \} from next';/g, "import { NextPage } from 'next';");
+    content = content.replace(/import Head from 'next\/head;/g, "import Head from 'next/head';");
+    content = content.replace(/import Link from next\/link';/g, "import Link from 'next/link';");
+    content = content.replace(/import \{ useRouter \} from next\/router';/g, "import { useRouter } from 'next/router';");
+    content = content.replace(/import React, \{ useState, useEffect, useCallback \} from 'react;/g, "import React, { useState, useEffect, useCallback } from 'react';");
+    content = content.replace(/import \.\.\/styles\/globals\.css';/g, "import '../styles/globals.css';");
+    content = content.replace(/import \{ ChatProvider \} from '\.\.\/src\/contexts\/ChatContext;/g, "import { ChatProvider } from '../src/contexts/ChatContext';");
+    content = content.replace(/import \{ AuthProvider \} from \.\.\/src\/contexts\/AuthContext';/g, "import { AuthProvider } from '../src/contexts/AuthContext';");
+    content = content.replace(/import \{ NavigationProvider \} from '\.\.\/src\/contexts\/NavigationContext;/g, "import { NavigationProvider } from '../src/contexts/NavigationContext';");
+    content = content.replace(/import \{ useAuth \} from '\.\.\/src\/contexts\/AuthContext;/g, "import { useAuth } from '../src/contexts/AuthContext';");
+    content = content.replace(/import ModernLayout from '\.\.\/components\/layout\/ModernLayout;/g, "import ModernLayout from '../components/layout/ModernLayout';");
+    
+    // Fix JSX syntax errors
+    content = content.replace(/<meta name="description content=/g, '<meta name="description" content="');
+    content = content.replace(/className="min-h-screen bg-gray-50 py-12>/g, 'className="min-h-screen bg-gray-50 py-12">');
+    content = content.replace(/className=max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"/g, 'className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"');</div>
+    content = content.replace(/className="text-3xl font-bold text-gray-900 mb-8>Admin Panel<\/h1>/g, 'className="text-3xl font-bold text-gray-900 mb-8">Admin Panel</h1>');
+    content = content.replace(/className=bg-white shadow rounded-lg p-6"/g, 'className="bg-white shadow rounded-lg p-6"');
+    
     // Fix unterminated string constants
-    content = content.replace(/import React from "react;/g, 'import React from "react";');
+    content = content.replace(/import React from "react";/g, 'import React from "react";');
     content = content.replace(/import { NextPage } from 'next";/g, "import { NextPage } from 'next';");
     content = content.replace(/import Head from "next\/head";/g, 'import Head from "next/head";');
     content = content.replace(/import Link from "next\/link";/g, 'import Link from "next/link";');
@@ -71,7 +93,7 @@ function fixSyntaxErrors(filePath) {
   }
 }
 
-// Function to recursively find and fix all TypeScript files
+// Function to recursively find and fix all TypeScript files;
 function fixAllFiles(dir) {
   const files = fs.readdirSync(dir);
   let fixedCount = 0;
@@ -92,8 +114,8 @@ function fixAllFiles(dir) {
   return fixedCount;
 }
 
-// Start fixing from the pages directory
+// Start fixing from the pages directory;
 const pagesDir = path.join(__dirname, '..', 'pages');
 console.log('Starting syntax error fixes...');
 const fixedCount = fixAllFiles(pagesDir);
-console.log(`Fixed ${fixedCount} files with syntax errors.`); 
+console.log(`Fixed ${fixedCount} files with syntax errors.`); </div>

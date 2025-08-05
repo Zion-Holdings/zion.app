@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DeploymentAutomationAgent {
@@ -839,7 +839,7 @@ class DeploymentAutomationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new DeploymentAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -853,4 +853,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Deploymen't' Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

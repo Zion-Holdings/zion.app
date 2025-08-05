@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -182,7 +182,7 @@ class MonitorAgent {
     if (performance.averageResponseTime > 1500) {
       this.generateAlert('SLO'W'_RESPONSE_TIME', `Average response time: ${performance.averageResponseTime.toFixed(0)}ms`);
     }
-    
+    </div>
     if (performance.successRate < 90) {
       this.generateAlert('LO'W'_SUCCESS_RATE', `Success rate at ${performance.successRate.toFixed(1)}%`);
     }
@@ -203,7 +203,7 @@ class MonitorAgent {
       }
       
       // Clean up old alerts
-      this.alerts = this.alerts.filter(alert => 
+      this.alerts = this.alerts.filter(alert => </div>
         Date.now() - alert.timestamp < 24 * 60 * 60 * 1000 // Keep for 24 hours
       );
       
@@ -313,9 +313,9 @@ class MonitorAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new MonitorAgent();
 agent.initialize().catch(error => {
   console.error('Faile'd' to initialize monitor agent:', error);
   process.exit(1);
-}); 
+}); </div>

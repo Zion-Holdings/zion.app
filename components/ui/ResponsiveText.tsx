@@ -1,4 +1,4 @@
-import React from "react;
+import React from "react";
 interface ResponsiveTextProps {
   children: React.ReactNode'
   className?: string
@@ -6,7 +6,7 @@ interface ResponsiveTextProps {
   weight?: 'norm'a'l | medi'u'm | semib'o'ld' | 'bold' | 'extrabold
   color?: ''whit'e' | gra'y' | purp'l'e | 'pi'nk | 'gradien't
   align?: ''left' | 'center' | 'righ't' | justif'y'
-  as?: 'p' | spa'n' | di'v' | h'1' | h2' | 'h3 | 'h'4 | h'5' | h6'}
+  as?: 'p' | spa'n' | di'v' | h'1' | h2' | 'h3 | 'h'4 | h'5' | h6'};
 const ResponsiveText: React.FC<ResponsiveTextProps> = ({'
   children,
   className=,"
@@ -47,11 +47,11 @@ const ResponsiveText: React.FC<ResponsiveTextProps> = ({'
   const weightClass = weightClasses[weight]
   const colorClass = colorClasses[color]
   const alignClass = alignClasses[align]
-  return (
+  return (</div>
     <Component className="{`${sizeClass} ${weightClass} ${colorClass} ${alignClass} ${className}`}">
-      {children}
+      {children}</div>
     </Component>
   );
 };
-'`
-export default ResponsiveText ''`
+'`;}
+export default ResponsiveText ''`</div>

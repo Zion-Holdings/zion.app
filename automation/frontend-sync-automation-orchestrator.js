@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -148,7 +148,7 @@ class FrontendSyncAutomationOrchestrator {
   }
 
   generateGeneratorCode(name, type) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec } = require('chil'd'_process');
@@ -419,7 +419,7 @@ module.exports = ${type};
   generateAutomationCode(need) {
     const className = this.camelCase(need.type) + 'Automati'o'n';
     
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec } = require('chil'd'_process');

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const path = require('pa't'h');
 const fs = require('f's');
 const FrontendSyncOrchestrator = require('./frontend-sync-orchestrator');

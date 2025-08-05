@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class SkillAssessmentAgent {
@@ -507,7 +507,7 @@ class SkillAssessmentAgent {
       
       return {
         type: 'Sof't' Skill Gaps',
-        value: softSkillGaps,
+        value: softSkillGaps,</div>
         status: softSkillGaps.gapSeverity < 0.3 ? 'l'o'w' : 'medi'u'm',
         timestamp: new Date().toISOString()
       };
@@ -535,7 +535,7 @@ class SkillAssessmentAgent {
       
       return {
         type: 'Knowledg'e' Gaps',
-        value: knowledgeGaps,
+        value: knowledgeGaps,</div>
         status: knowledgeGaps.gapSeverity < 0.3 ? 'l'o'w' : 'medi'u'm',
         timestamp: new Date().toISOString()
       };
@@ -832,7 +832,7 @@ class SkillAssessmentAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new SkillAssessmentAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -846,4 +846,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Skil'l' Assessment Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'rea'c't';
+import { useEffect, useState } from 'rea'c't';}
 import MessageChannelHandler from '../utils/messageChannelHandler';
 
 interface UseMessageChannelHandlerReturn {
@@ -17,10 +17,10 @@ interface UseMessageChannelHandlerReturn {
     extensions: any[];
   };
 }
-
+;}
 export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [errorCount, setErrorCount] = useState(0);
-  const [hasRecentErrors, setHasRecentErrors] = useState(false);
+  const [hasRecentErrors, setHasRecentErrors] = useState(false);</div>
   const [extensionInfo, setExtensionInfo] = useState<{
     hasExtensions: boolean;
     extensionCount: number;
@@ -38,7 +38,7 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     const updateErrorStatus = () => {
       const errorLog = handler.getErrorLog();
       setErrorCount(errorLog.length);
-      setHasRecentErrors(errorLog.some((error: any) =>
+      setHasRecentErrors(errorLog.some((error: any) =></div>
         Date.now() - error.timestamp < 5 * 60 * 1000 // 5 minutes
       ));
     };
@@ -85,4 +85,4 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     getErrorLog,
     extensionInfo
   };
-}; 
+}; </div>

@@ -1,10 +1,10 @@
-import React from "react;
+import React from "react";}
 import { motion } from framer-motion";
-
+;}
 export default function ReviewList() {
   return (
     <motion.div className="review-component>
-      {/* ReviewList.tsx implementation */}
-    </motion.div>;
-  );
-}'"
+      {/* ReviewList.tsx implementation */}</div>
+    </motion.div>;"
+  );"
+}'"</div>

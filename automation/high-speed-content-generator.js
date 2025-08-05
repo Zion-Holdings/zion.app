@@ -202,53 +202,53 @@ class HighSpeedContentGenerator {
     // Ensure component name doesn't' start with a number
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${topic} - Zion Tech Blog</title>
-        <meta name="description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${topic} - Zion Tech Blog</title></div>
+        <meta name="description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+</div>
+      <main className="flex-1"></div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6"></div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              ${topic}
-            </span>
+              ${topic}</div>
+            </span></div>
           </h1>
-          
-          <div className="prose prose-invert prose-lg max-w-none">
-            <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
-                paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
           </div>
-        </article>
-      </main>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
+            <div className="text-gray-300 leading-relaxed">
+              ${content.split('\n').map(paragraph => </div>
+                paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </article></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}Page`
   }
 
@@ -308,62 +308,62 @@ In conclusion, ${topic.toLowerCase()} represents not just a technological advanc
     // Ensure component name doesn't' start with a number
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${categoryTitle} - Zion AI Marketplace</title>
-        <meta name="description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${categoryTitle} - Zion AI Marketplace</title></div>
+        <meta name="description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  ${categoryTitle}
-                </span>
-              </h1>
+                  ${categoryTitle}</div>
+                </span></div>
+              </h1></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                ${content.split('\n')[0] || 'Discove'r' top professionals and services in the ' + categoryTitle.toLowerCase() + ' space.'}
-              </p>
-            </div>
-          </div>
+                ${content.split('\n')[0] || 'Discove'r' top professionals and services in the ' + categoryTitle.toLowerCase() + ' space.'}</div>
+              </p></div>
+            </div></div>
+          </div></div>
         </div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').slice(1).map(paragraph => 
+              ${content.split('\n').slice(1).map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
-      </main>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}Page`
   }
 
@@ -423,62 +423,62 @@ Join thousands of satisfied clients who have found their ideal ${category} solut
     // Ensure component name doesn't' start with a number
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${safePageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${service} - Zion Tech Group</title>
-        <meta name="description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${service} - Zion Tech Group</title></div>
+        <meta name="description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>
       </Head>
-
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-white">
+</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <h1 className="text-2xl font-bold text-white"></div>
                 <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  Zion
-                </Link>
-              </h1>
-            </div>
-          </div>
-        </div>
+                  Zion</div>
+                </Link></div>
+              </h1></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
-
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                  ${service}
-                </span>
-              </h1>
+                  ${service}</div>
+                </span></div>
+              </h1></div>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                ${content.split('\n')[0] || 'Professiona'l' ' + service.toLowerCase() + ' services tailored to your business needs.'}
-              </p>
-            </div>
-          </div>
+                ${content.split('\n')[0] || 'Professiona'l' ' + service.toLowerCase() + ' services tailored to your business needs.'}</div>
+              </p></div>
+            </div></div>
+          </div></div>
         </div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').slice(1).map(paragraph => 
+              ${content.split('\n').slice(1).map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
-      </main>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </main></div>
     </div>
   )
 }
-
+;}
 export default ${safePageName}Page`
   }
 
@@ -541,4 +541,4 @@ if (require.main === module) {
   });
   
   generator.start().catch(console.error);
-} 
+} </div>

@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node
-
-import LinkedInBot from '../src/utils/linkedin-automation/linkedin-bot';
+;}
+import LinkedInBot from '../src/utils/linkedin-automation/linkedin-bot';}
 import LinkedInCronManager from '../src/utils/linkedin-automation/cron-manager';
 
 async function main() {

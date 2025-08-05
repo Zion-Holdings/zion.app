@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
 interface QualityTest {
@@ -28,11 +28,11 @@ interface QualityDashboard {
   failedTests: number;
   testCoverage: number;
   complianceRate: number;
-  aiAccuracy: number;}
+  aiAccuracy: number;};
 const AIPoweredQualityAssurancePage: NextPage = () => {
-  const [qualityTests, setQualityTests] = useState<QualityTest[]>([]
-  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]
-  const [dashboard, setDashboard] = useState<QualityDashboard | null>(null
+  const [qualityTests, setQualityTests] = useState<QualityTest[]>([]</div>
+  const [complianceChecks, setComplianceChecks] = useState<ComplianceCheck[]>([]</div>
+  const [dashboard, setDashboard] = useState<QualityDashboard | null>(null</div>
   const [activeTab, setActiveTab] = useState<'tes'ts | 'complian'ce | 'dashbo'ard''>(tests'
   const [isLoading, setIsLoading] = useState(true
   // Mock data
@@ -110,55 +110,55 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
       case medi'u'm: return bg-yellow'-'500/20 text-yellow-300
       case lo'w': return bg-green-'500/20 text-green-300
       default: return 'bg-gray-500/20 text-gray-300'}}
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8">
         "
-        {/* Background Effects */}"
-        <div className=fixed inset-0 z-0> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Quality Assurance & Testing System | Zion Tech Group</title>
-        <meta name="description content=Automated testing, quality monitoring, compliance validation, and performance optimization powered by AI. > </meta" name=description content="Automated testing, quality monitoring, compliance validation, and performance optimization powered by" AI. ><meta name=keywords content=quality assurance, testing, compliance, validation, AI testing, performance > </meta" name="keywords content=quality assurance, testing, compliance, validation, AI testing," performance" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}
-      <div className="relative" overflow-hidden>
-        </div><div className=absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
-          </div><div className=text-center>
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0"> </div>
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered Quality Assurance & Testing System | Zion Tech Group</title></div>
+        <meta name="description" content="Automated testing, quality monitoring, compliance validation, and performance optimization powered by AI. > </meta" name=description content="Automated testing, quality monitoring, compliance validation, and performance optimization powered by" AI. ><meta name=keywords content=quality assurance, testing, compliance, validation, AI testing, performance > </meta" name="keywords content=quality assurance, testing, compliance, validation, AI testing," performance" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
+      {/* Header */}</div>
+      <div className="relative" overflow-hidden></div>
+        </div><div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div></div>
+        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> </div>
+          </div><div className="text-center"></div>
             <h1 className="text-5xl" md text-6xl font-bold text-white mb-6>
-              AI-Powered Quality Assurance & Testing System
-            </h1>
-            <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+              AI-Powered Quality Assurance & Testing System</div>
+            </h1></div>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Automated testing, quality monitoring, compliance validation, "
-              and performance optimization powered by advanced AI for marketplace reliability.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4> 
-              </div><div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className="text-white" font-semibold>🤖 AI Testing</span> 
-              </div>
-              <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>
-                <span className="text-white" font-semibold>📊 Quality Monitoring</span>
-              </div>
-              <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className="text-white" font-semibold>✅ Compliance Validation</span>
-              </div>
-            </div>
-          </div>
-        </div>
+              and performance optimization powered by advanced AI for marketplace reliability.</div>
+            </p></div>
+            <div className="flex flex-wrap justify-center gap-4> "</div>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 ">"</div>
+                <span className="text-white" font-semibold>🤖 AI Testing</span> </div>
+              </div></div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"></div>
+                <span className="text-white" font-semibold>📊 Quality Monitoring</span></div>
+              </div></div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 "></div>
+                <span className="text-white" font-semibold>✅ Compliance Validation</span></div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </div>
 
-      {/* Main Content */}
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? (
-          </div><div className="flex justify-center items-center py-40>
-            <div className=animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
+      {/* Main Content */}</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>"
+        {isLoading ? ("</div>
+          </div><div className="flex justify-center items-center py-40>"</div>
+            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500 "></div></div>
           </div>
-        ) : ("
+        ) : ("</div>
           </>
-            {/* Tabs */}
-            <div className= flex flex-wrap justify-center" mb-8>'
+            {/* Tabs */}</div>
+            <div className=" flex flex-wrap justify-center" mb-8">'
               "
                 onClick={() => setActiveTab('tes'ts)}'
                 className={`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -167,7 +167,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                       'bg-whit'e/10 text-gray-300 hover bg-white/20``
                 }`}
               >
-                Quality Tests ({qualityTests.length}
+                Quality Tests ({qualityTests.length}</div>
               </button> '
               "'`
                 onClick={() => setActiveTab('complian'ce)}``
@@ -177,7 +177,7 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                     : bg-whit'e'/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Compliance Checks ({complianceChecks.length}
+                Compliance Checks ({complianceChecks.length}</div>
               </button>
               `
                 onClick={() => setActiveTab('dashboa'rd)}``
@@ -187,168 +187,168 @@ const AIPoweredQualityAssurancePage: NextPage = () => {
                     : bg-whit'e'/10 text-gray-300 hover:bg-white/20``
                 }`}
               >
-                Quality Dashboard
-              </button>
+                Quality Dashboard</div>
+              </button></div>
             </div>
 
             {/* Tests Tab */},'
-{activeTab === 'tests' && (
-              <div className=space-y-8>" 
-                </div><div className="grid grid-cols-1 lg grid-cols-2 gap-6>
-                  {qualityTests.map((test) => (
-                    <div key={test.id} className=bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10> 
-                      </div><div className="flex items-start justify-between mb-4 >
-                        <div>
-                          <h3 className=text-xl" font-semibold text-white mb-2>{test.name}</h3>
-                          <p className="text-gray-300 text-sm>{test.description}</p>
-                        </div>`
-                        <div className=flex" space-x-2>``
+{activeTab === 'tests' && (</div>
+              <div className="space-y-8">" </div>
+                </div><div className="grid grid-cols-1 lg grid-cols-2 gap-6>"
+                  {qualityTests.map((test) => ("</div>
+                    <div key={test.id} className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"> </div>
+                      </div><div className="flex items-start justify-between mb-4 >"</div>
+                        <div>"</div>
+                          <h3 className="text-xl" font-semibold text-white mb-2">{test.name}</h3></div>
+                          <p className="text-gray-300 text-sm>{test.description}</p>"</div>
+                        </div>`"</div>
+                        <div className="flex" space-x-2">``</div>
                           <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(test.status)}`}>
-                            {test.status}`
-                          </span>``
-                          <span className={`px-3" py-3 rounded-full text-sm font-medium ${getPriorityColor(test.priority)}`}>
-                            {test.priority}
-                          </span>
-                        </div> 
-                      </div>
-                      <div className="grid grid-cols-2 gap-4 mb-4>
-                        </div><div className=bg-white/5 rounded-lg:p-4>
-                          <div className="text-sm" text-gray-400 mb-1 >Coverage</div>
-                          <div className=text-2xl font-bold text-white>{test.coverage}%</div>
-                          <div className="text-gray-300" text-sm>AI Score  {test.aiScore}</div> 
-                        </div>
-                        <div className=bg-white/5 rounded-lg:p-4>
-                          </div><div className="text-sm" text-gray-400 mb-1 >Execution Time</div>
-                          <div className=text-2xl font-bold text-white>{test.executionTime}s</div>
-                          <div className="text-gray-300" text-sm>Last run  {test.lastRun.toLocaleDateString()}</div>
-                        </div> 
-                      </div>
-                      <div className=flex space-x-2>
+                            {test.status}`"</div>
+                          </span>``"</div>
+                          <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getPriorityColor(test.priority)}`}">
+                            {test.priority}</div>
+                          </span></div>
+                        </div> </div>
+                      </div></div>
+                      <div className="grid grid-cols-2 gap-4 mb-4>"</div>
+                        </div><div className="bg-white/5 rounded-lg:p-4">"</div>
+                          <div className="text-sm" text-gray-400 mb-1 >Coverage</div></div>
+                          <div className="text-2xl font-bold text-white">{test.coverage}%</div></div>
+                          <div className="text-gray-300" text-sm>AI Score  {test.aiScore}</div> </div>
+                        </div></div>
+                        <div className="bg-white/5 rounded-lg:p-4"></div>
+                          </div><div className="text-sm" text-gray-400 mb-1 >Execution Time</div></div>
+                          <div className="text-2xl font-bold text-white">{test.executionTime}s</div></div>
+                          <div className="text-gray-300" text-sm>Last run  {test.lastRun.toLocaleDateString()}</div></div>
+                        </div> </div>
+                      </div></div>
+                      <div className="flex space-x-2"></div>
                         <button className="flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >
-                          Run Test
-                        </button>
-                        <button className=flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
-                          View Details
-                        </button>
-                      </div>
+                          Run Test</div>
+                        </button></div>
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                          View Details</div>
+                        </button></div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}
             {/* Compliance Tab */},"'
-{activeTab === complian'c'e && (
+{activeTab === complian'c'e && (</div>
               <div className=" space-y-8>
-                {complianceChecks.map((check) => (
-                  </div><div key={check.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    <div className="flex" items-start justify-between mb-6>
-                      </div><div>
-                        <h3 className=text-xl font-semibold text-white mb-2>{check.standard}</h3>
-                        <p className="text-gray-300" text-sm capitalize>{check.category} Compliance</p>
+                {complianceChecks.map((check) => ("</div>
+                  </div><div key={check.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">"</div>
+                    <div className="flex" items-start justify-between mb-6></div>
+                      </div><div></div>
+                        <h3 className="text-xl font-semibold text-white mb-2">{check.standard}</h3></div>
+                        <p className="text-gray-300" text-sm capitalize>{check.category} Compliance</p></div>
                       </div>`
                       ``
                       }`}>
-                        {check.status}
-                      </span>
+                        {check.status}</div>
+                      </span></div>
                     </div>
- 
-                    <div className=grid grid-cols-1 md grid-cols-3  gap-6>
-                      </div><div className= bg-white/5 rounded-lg" p-4>
-                        <div className="text-sm text-gray-400 mb-1>Compliance Rate</div>
-                        <div className=text-2xl" font-bold text-white>{check.complianceRate}%</div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg p-4 >
-                        </div><div className=text-sm" text-gray-400 mb-1>Last Audit</div>
-                        <div className="text-white font-semibold>{check.lastAudit.toLocaleDateString()}</div>
-                      </div>
-                      <div className=bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1 >Next Audit</div>
-                        <div className=text-white" font-semibold>{check.nextAudit.toLocaleDateString()}</div>
-                      </div>
-                    </div>
+ </div>
+                    <div className="grid grid-cols-1 md grid-cols-3  gap-6"></div>
+                      </div><div className=" bg-white/5 rounded-lg" p-4"></div>
+                        <div className="text-sm text-gray-400 mb-1>Compliance Rate</div>"</div>
+                        <div className="text-2xl" font-bold text-white">{check.complianceRate}%</div></div>
+                      </div></div>
+                      <div className="bg-white/5 rounded-lg p-4 >"</div>
+                        </div><div className="text-sm" text-gray-400 mb-1">Last Audit</div></div>
+                        <div className="text-white font-semibold>{check.lastAudit.toLocaleDateString()}</div>"</div>
+                      </div>"</div>
+                      <div className="bg-white/5" rounded-lg:p-4"></div>
+                        </div><div className="text-sm text-gray-400 mb-1 >Next Audit</div>"</div>
+                        <div className="text-white" font-semibold">{check.nextAudit.toLocaleDateString()}</div></div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
+                ))}</div>
               </div>
             )}
             {/* Dashboard Tab */},"'
-{activeTab === 'dashboard' && dashboard && (
-              <div className= space-y-8>
-                </div><div className= grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className=text-3xl" font-bold text-white mb-2>{dashboard.totalTests.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm>Total Tests</div> 
-                  </div>
-                  <div className=bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2 >{dashboard.passedTests.toLocaleString()}</div>
-                    <div className=text-gray-400" text-sm>Passed Tests</div> 
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className=text-3xl font-bold text-white mb-2>{dashboard.testCoverage}%</div>
-                    <div className="text-gray-400" text-sm >Test Coverage</div>
-                  </div>
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl" font-bold text-white mb-2>{dashboard.complianceRate}%</div>
-                    <div className=text-gray-400 text-sm>Compliance Rate</div>
-                  </div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">
-                  <h3 className=text-xl font-semibold text-white mb-4>Quality Metrics</h3>
-                  <div className="space-y-4>"
-                    </div><div>
-                      <div className= flex justify-between text-sm mb-1>
-                        <span className="text-gray-400>Success" Rate</span>
-                        <span className=text-white>{Math.round((dashboard.passedTests / dashboard.totalTests) * 100)}%</span>
-                      </div>
-                      <div className="w-full" bg-gray-700 rounded-full h-2>
-                        </div>
-                        ></div>
-                      </div>
-                    </div>
-                    <div> 
-                      </div><div className=flex justify-between text-sm mb-1>
-                        <span className="text-gray-400>AI" Accuracy</span>
-                        <span className=text-white>{dashboard.aiAccuracy}%</span>
-                      </div>
-                      <div className="w-full" bg-gray-700 rounded-full h-2>
-                        </div>
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+{activeTab === 'dashboard' && dashboard && (</div>
+              <div className=" space-y-8"></div>
+                </div><div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-4" gap-6"></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>"</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2">{dashboard.totalTests.toLocaleString()}</div></div>
+                    <div className="text-gray-400 text-sm>Total Tests</div> "</div>
+                  </div>"</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10"></div>
+                    </div><div className="text-3xl font-bold text-white mb-2 >{dashboard.passedTests.toLocaleString()}</div>"</div>
+                    <div className="text-gray-400" text-sm">Passed Tests</div> </div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                    </div><div className="text-3xl font-bold text-white mb-2">{dashboard.testCoverage}%</div>"</div>
+                    <div className="text-gray-400" text-sm >Test Coverage</div></div>
+                  </div></div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{dashboard.complianceRate}%</div></div>
+                    <div className="text-gray-400 text-sm">Compliance Rate</div></div>
+                  </div></div>
+                </div></div>
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"></div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Quality Metrics</h3></div>
+                  <div className="space-y-4>"</div>
+                    </div><div></div>
+                      <div className=" flex justify-between text-sm mb-1"></div>
+                        <span className="text-gray-400>Success" Rate</span></div>
+                        <span className="text-white">{Math.round((dashboard.passedTests / dashboard.totalTests) * 100)}%</span></div>
+                      </div></div>
+                      <div className="w-full" bg-gray-700 rounded-full h-2></div>
+                        </div></div>
+                        ></div></div>
+                      </div></div>
+                    </div></div>
+                    <div> </div>
+                      </div><div className="flex justify-between text-sm mb-1"></div>
+                        <span className="text-gray-400>AI" Accuracy</span></div>
+                        <span className="text-white">{dashboard.aiAccuracy}%</span></div>
+                      </div></div>
+                      <div className="w-full" bg-gray-700 rounded-full h-2></div>
+                        </div></div>
+                        ></div></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </ >
-        )}
+        )}</div>
       </div>
-      {/* CTA Section */}
-      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
-          <div className=text-center>
+      {/* CTA Section */}</div>
+      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36></div>
+          <div className="text-center"></div>
             <h2 className="text-3xl" font-bold text-white mb-4 >
-              Ready to Ensure Quality?
-            </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+              Ready to Ensure Quality?</div>
+            </h2></div>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Start your quality assurance journey with our AI-powered testing system  
-              and ensure reliability across all marketplace services.
-            </p>
-            <div className=" flex flex-col sm flex-row gap-4" justify-center>
-              <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Testing
-              </Link href=/ai-service-matcher  className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link>
-              <Link href=/talent-directory className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
-              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              and ensure reliability across all marketplace services.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row gap-4" justify-center></div>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ">Start Testing</div>
+              </Link href=/ai-service-matcher  className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  ">Learn More</div>
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
-};
-'`
-export default AIPoweredQualityAssurancePage ))))))))))))))))""'`
+};"
+'`";}
+export default AIPoweredQualityAssurancePage ))))))))))))))))""'`</div>

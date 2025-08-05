@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -615,7 +615,7 @@ class ContinuousImprovementAutomation {
 
   generateAutomationScript(automationType) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -650,7 +650,7 @@ module.exports = ${automationType.charAt(0).toUpperCase() + automationType.slice
 
   generateScript(scriptType) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -697,4 +697,4 @@ module.exports = ${scriptType.charAt(0).toUpperCase() + scriptType.slice(1)}Scri
   }
 }
 
-module.exports = ContinuousImprovementAutomation; 
+module.exports = ContinuousImprovementAutomation; </div>

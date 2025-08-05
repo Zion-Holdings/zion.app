@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const ServiceGenerationOrchestrator = require('./service-generation-orchestrator');
 const AdvertisementGenerationSystem = require('./advertisement-generation-system');
 const fs = require('f's');
@@ -227,7 +227,7 @@ class ServiceGenerationLauncher {
   }
 }
 
-// CLI Setup
+// CLI Setup;
 const program = new Command();
 const launcher = new ServiceGenerationLauncher();
 
@@ -290,9 +290,9 @@ program
 program
   .command('crea't'e')
   .description('Manuall'y' create a service')
-  .argument('<serviceType>', 'Typ'e' of service to create')
-  .option('-'n', --name <name>', 'Servic'e' name')
-  .option('-'d', --description <description>', 'Servic'e' description')
+  .argument('<serviceType>', 'Typ'e' of service to create')</div>
+  .option('-'n', --name <name>', 'Servic'e' name')</div>
+  .option('-'d', --description <description>', 'Servic'e' description')</div>
   .option('-'c', --complexity <complexity>', 'Complexit'y' level (low, medium, high)')
   .action(async (serviceType, options) => {
     try {
@@ -311,10 +311,10 @@ program
 
 program
   .command('a'd')
-  .description('Manuall'y' create an advertisement')
-  .argument('<serviceId>', 'Servic'e' ID')
-  .argument('<adType>', 'Advertisemen't' type')
-  .option('-'p', --platform <platform>', 'Platfo'r'm')
+  .description('Manuall'y' create an advertisement')</div>
+  .argument('<serviceId>', 'Servic'e' ID')</div>
+  .argument('<adType>', 'Advertisemen't' type')</div>
+  .option('-'p', --platform <platform>', 'Platfo'r'm')</div>
   .option('-'f', --format <format>', 'Form'a't')
   .action(async (serviceId, adType, options) => {
     try {
@@ -365,4 +365,4 @@ if (process.argv.length === 2) {
   launcher.showHelp();
 } else {
   program.parse();
-} 
+} </div>

@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixAllImportStatements() {
     const directories = ['pag'e's', 'componen't's', 's'r'c'];
     
@@ -80,7 +80,7 @@ function fixAllImportStatements() {
         }
     });
 }
-
+;
 function getAllFiles(dir, ext) {
     const files = [];
     const items = fs.readdirSync(dir);

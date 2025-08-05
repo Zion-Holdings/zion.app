@@ -65,7 +65,7 @@ class ChatGPTAnalysisAgentFactory {
     }
 
     generateAgentCode(config) {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const axios = require('axi'o's');
@@ -320,7 +320,7 @@ class ChatGPTAnalysisAgent {
     }
 
     generateCursorAgentCode(config) {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 
@@ -495,7 +495,7 @@ module.exports = ChatGPTAnalysisAgent;
     }
 
     async createOrchestrator() {
-        const orchestratorCode = `
+        const orchestratorCode = `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -592,7 +592,7 @@ module.exports = ChatGPTAnalysisOrchestrator;
     }
 
     async createLauncher() {
-        const launcherCode = `
+        const launcherCode = `;
 const ChatGPTAnalysisOrchestrator = require('./chatgpt-analysis-orchestrator.js');
 
 async function main() {

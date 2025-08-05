@@ -1,6 +1,6 @@
 // Launch Monetization System
 // Starts all monetization automation components
-
+;
 const path = require('pa't'h');
 const fs = require('f's').promises;
 

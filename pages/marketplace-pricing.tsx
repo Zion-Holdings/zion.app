@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
 import Link from next/link";
 
 interface PricingTier {
@@ -63,7 +63,7 @@ interface CategoryRevenue {
   category: string;
   revenue: number;
   transactionCount: number;
-  averageCommission: number;}
+  averageCommission: number;};
 const MarketplacePricingPage: NextPage = () => {
   const [activeTab, setActiveTab] = useState(pricin'g'
   const [selectedPeriod, setSelectedPeriod] = useState(monthl'y'
@@ -133,7 +133,7 @@ const MarketplacePricingPage: NextPage = () => {
         storageGB: 500,'
         apiCalls: 100000,
         supportLevel: Dedicate'd'}
-}]
+}]</div>
   const [commissionStructures, setCommissionStructures] = useState<CommissionStructure[]>([
     {
       id: COMM'-'001,
@@ -175,7 +175,7 @@ const MarketplacePricingPage: NextPage = () => {
       ],
       specialRates: [],
       minimumThreshold: 50
-    }]
+    }]</div>
   const [transactions, setTransactions] = useState<Transaction[]>([
     {
       id: TXN'-'001,
@@ -215,7 +215,7 @@ const MarketplacePricingPage: NextPage = () => {
       netAmount: 462.5,
       date: new Date('2024-01-17),
       status: pendin'g'
-    }]
+    }]</div>
   const [revenueReports, setRevenueReports] = useState<RevenueReport[]>([
     {
       id: REPORT'-'001,
@@ -255,80 +255,80 @@ const MarketplacePricingPage: NextPage = () => {
   const calculateSavings = (monthlyFee: number, yearlyFee: number) => {
     const monthlyTotal = monthlyFee * 12
     return monthlyTotal - yearlyFee}
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8">
         "
-        {/* Background Effects */}"
-        <div className=fixed inset-0 z-0> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>Marketplace Pricing & Commission System - Zion Marketplace</title>
-        <meta name="description content=Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants. > </meta" name=description content="Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace" participants. ><meta name=keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees > </meta" name="keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace" fees" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className="bg-black/20" backdrop-blur-md border-b border-white/10> 
-        </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
-          <div className="flex  justify-between items-center>
-            <Link href=/" className=text-2xl font-bold text-white > 
-              </Link href=/" className=" text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>
-            <nav className="flex" items-center space-x-6>
-              <Link href=/marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>
-              <Link href=/invoice-billing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Billing
-              </Link href=/invoice-billing className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-            </nav> </div>
-        </div>
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0"> </div>
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>Marketplace Pricing & Commission System - Zion Marketplace</title></div>
+        <meta name="description" content="Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants. > </meta" name=description content="Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace" participants. ><meta name=keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees > </meta" name="keywords content=marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace" fees" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+      {/* Header */}</div>
+      <div className="bg-black/20" backdrop-blur-md border-b border-white/10> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6"></div>
+          <div className="flex  justify-between items-center>"</div>
+            <Link href=/" className="text-2xl font-bold text-white "> </div>
+              </Link href=/" className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+            </Link>"</div>
+            <nav className="flex" items-center space-x-6></div>
+              <Link href=/marketplace className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
+              <Link href=/invoice-billing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Billing</div>
+              </Link href=/invoice-billing className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login"</div>
+              </Link href=/auth/login  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium "></Link></div>
+            </nav> </div></div>
+        </div></div>
       </div>
-      {/* Hero Section */}"
-      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32> 
-        </div><div className="text-center" mb-12>
-          <h1 className=text-4xl" md text-6xlfont-bold text-white mb-6 >
+      {/* Hero Section */}"</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32"> </div>
+        </div><div className="text-center" mb-12></div>
+          <h1 className="text-4xl" md text-6xlfont-bold text-white mb-6 "></div>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
-              Marketplace Pricing & Commission
-            </span>
-          </h1 >
-          <p className=text-xl" text-gray-300 mb-8 max-w-3xl" mx-auto>
+              Marketplace Pricing & Commission</div>
+            </span>"</div>
+          </h1 >"</div>
+          <p className="text-xl" text-gray-300 mb-8 max-w-3xl" mx-auto">
             Transparent pricing structure and commission system for marketplace participants. 
-            Choose the right tier for your business needs and maximize your revenue potential.
-          </p>
-          <div className=flex  flex-wrap justify-center gap-4>
-            <Link href=#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Pricing
-            </Link href=#pricing  className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
-            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Calculate Fees
-            </Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" ></Link>
-          </div>
+            Choose the right tier for your business needs and maximize your revenue potential.</div>
+          </p></div>
+          <div className="flex  flex-wrap justify-center gap-4"></div>
+            <Link href=#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Pricing"</div>
+            </Link href=#pricing  className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg""></Link></div>
+            <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Calculate Fees"</div>
+            </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm" "></Link></div>
+          </div></div>
         </div>
 
-        {/* Stats */}
-        <div className=grid"  grid-cols-1 md:grid-cols-4 gap-6 mb-12>
-          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>
-            <div className=text-3xl" font-bold text-white mb-2>{formatCurrency(4800)}</div>
-            <p className="text-gray-300 text-sm>Total Revenue</p>
-          </div>
-          <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >
-            </div><div className="text-3xl font-bold text-white mb-2>{formatCurrency(172)}</div>
-            <p className=text-gray-300" text-sm>Commission Revenue</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            </div><div className=text-3xl" font-bold text-white mb-2 >3</div>
-            <p className="text-gray-300 text-sm>Active Tiers</p>
-          </div>
-          <div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>
-            </div><div className="text-3xl font-bold text-white mb-2>15.2%</div>
-            <p className=text-gray-300" text-sm >Growth Rate</p>
-          </div>
-        </div>
+        {/* Stats */}</div>
+        <div className="grid"  grid-cols-1 md:grid-cols-4 gap-6 mb-12"></div>
+          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"</div>
+            <div className="text-3xl" font-bold text-white mb-2">{formatCurrency(4800)}</div></div>
+            <p className="text-gray-300 text-sm>Total Revenue</p>"</div>
+          </div>"</div>
+          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center "></div>
+            </div><div className="text-3xl font-bold text-white mb-2>{formatCurrency(172)}</div>"</div>
+            <p className="text-gray-300" text-sm">Commission Revenue</p></div>
+          </div></div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>"</div>
+            </div><div className="text-3xl" font-bold text-white mb-2 ">3</div></div>
+            <p className="text-gray-300 text-sm>Active Tiers</p>"</div>
+          </div>"</div>
+          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center"></div>
+            </div><div className="text-3xl font-bold text-white mb-2>15.2%</div>"</div>
+            <p className="text-gray-300" text-sm ">Growth Rate</p></div>
+          </div></div>
+        </div></div>
       </div>
 
-      {/* Main Content */}"
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12>
-        {/* Tabs */}
-        </div><div className= flex flex-wrap gap-2" mb-8>"
+      {/* Main Content */}"</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12">
+        {/* Tabs */}</div>
+        </div><div className=" flex flex-wrap gap-2" mb-8">"
           {[
             { id: prici'n'g, label: Pricin'g' Tiers },
 { id: commissio'n's, label: Commissio'n' Structure },
@@ -343,15 +343,15 @@ const MarketplacePricingPage: NextPage = () => {
                   : 'bg-whit'e/5 text-gray-300 hover:bg-white/10``
               }`}
             >
-              {tab.label}
+              {tab.label}</div>
             </button>
-          ))}
+          ))}</div>
         </div>
 '
-        {/* Period Toggle */},'
-{activeTab === pricin'g' && (
-          <div className="flex" justify-center mb-8 > 
-            </div><div className=bg-white/10 rounded-lg p-1>
+        {/* Period Toggle */},'"
+{activeTab === pricin'g' && ("</div>
+          <div className="flex" justify-center mb-8 > </div>
+            </div><div className="bg-white/10 rounded-lg p-1">
               "''`
                 onClick={() => setSelectedPeriod(monthl'y')}"``
                 className={`px-4 py-4 rounded-md text-sm font-medium transition-colors ${
@@ -360,7 +360,7 @@ const MarketplacePricingPage: NextPage = () => {
                       text-gray'-'300 hover text-white``
                 }`}
               >
-                Monthly
+                Monthly</div>
               </button> 
               "''`
                 onClick={() => setSelectedPeriod(year'l'y)}``
@@ -370,333 +370,333 @@ const MarketplacePricingPage: NextPage = () => {
                     : text-gray-'300 hover:text-white'``
                 }`}
               >
-                Yearly
-              </button>
-            </div>
+                Yearly</div>
+              </button></div>
+            </div></div>
           </div>
-        )}
-        {/* Tab Content */},
-{activeTab === prici'n'g && ("
-          <div className="space-y-6>
-            <h2 className=text-2xl" font-bold text-white text-center mb-8>Choose Your Plan</h2>
+        )}"
+        {/* Tab Content */},"
+{activeTab === prici'n'g && ("</div>
+          <div className="space-y-6>"</div>
+            <h2 className="text-2xl" font-bold text-white text-center mb-8">Choose Your Plan</h2></div>
             <div className="grid grid-cols-1 md grid-cols-3 gap-8>
-              {pricingTiers.map((tier) => (`
+              {pricingTiers.map((tier) => (`</div>
                 </div>``
-                }`}>
-                  {tier.popular && (
-                    <div className=" absolute -top-4 left-1/2 transform -translate-x-1/2 >
+                }`}>"
+                  {tier.popular && ("</div>
+                    <div className=" absolute -top-4 left-1/2 transform -translate-x-1/2 >"</div>
                       <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-full text-sm font-medium>
-                        Most Popular
-                      </span>
-                    </div>
+                        Most Popular</div>
+                      </span>"</div>
+                    </div>"
                   )}"
-                  
-                  <div className=" text-center mb-6>
-                    <h3 className=text-2xl" font-bold text-white mb-2>{tier.name}</h3>
-                    <div className="mb-4>
-                      <span className="text-4xl:font-bold text-white>' '
-                        {selectedPeriod === monthl'y' ? formatCurrency(tier.monthlyFee)   formatCurrency(tier.yearlyFee)}
-                      </span>
-                      <span className=" text-gray-300>/{selectedPeriod === 'month'ly ? 'mon'th : 'ye'ar}</span>'
-                    </div>
-                    {selectedPeriod === 'yearly' && tier.monthlyFee > 0 && (
-                      <p className=text-green-400 text-sm>
-                        Save {formatCurrency(calculateSavings(tier.monthlyFee, tier.yearlyFee))} yearly
-                      </p>
-                    )} 
                   </div>
-                  <div className="space-y-4" mb-6>
-                    </div><div className= flex justify-between>
-                      <span className=" text-gray-300>Transaction Fee:</span>
-                      <span className="text-white font-semibold>{formatPercentage(tier.transactionFee)}</span> 
+                  <div className=" text-center mb-6>"</div>
+                    <h3 className="text-2xl" font-bold text-white mb-2">{tier.name}</h3></div>
+                    <div className="mb-4>"</div>
+                      <span className="text-4xl:font-bold text-white>' '
+                        {selectedPeriod === monthl'y' ? formatCurrency(tier.monthlyFee)   formatCurrency(tier.yearlyFee)}"</div>
+                      </span>"</div>
+                      <span className=" text-gray-300>/{selectedPeriod === 'month'ly ? 'mon'th : 'ye'ar}</span>'</div>
                     </div>
-                    <div className=flex"" justify-between>
-                      <span className=text-gray-300>Commission Rate </span>
-                      <span className="text-white" font-semibold>{formatPercentage(tier.commissionRate)}</span> 
-                    </div>
-                    <div className=flex justify-between>
-                      <span className="text-gray-300>Monthly" Transactions:</span>
-                      <span className=text-white>{tier.limits.monthlyTransactions.toLocaleString()}</span>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=text-gray-300>Storage:</span>"
-                      <span className="text-white>{tier.limits.storageGB} GB</span>
-                    </div>
-                    <div className= flex" justify-between>
-                      <span className=" text-gray-300>API Calls:</span>
-                      <span className=text-white>{tier.limits.apiCalls.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className=text-gray-300>Support </span>
-                      <span className="text-white>{tier.limits.supportLevel}</span">
-                    </div>
-                  </div> 
-                  <div className= space-y-3 mb-6>
-                    <h4 className="text-white" font-semibold>Features:</h4>
-                    <ul className=space-y-2">
-                      {tier.features.map((feature, index) => (
-                        <li key={index} className=" text-gray-300 text-sm flex items-center>
-                          <span className=text-green-400" mr-2>✓</span>
-                          {feature}
+                    {selectedPeriod === 'yearly' && tier.monthlyFee > 0 && ("</div>
+                      <p className="text-green-400 text-sm">
+                        Save {formatCurrency(calculateSavings(tier.monthlyFee, tier.yearlyFee))} yearly</div>
+                      </p>
+                    )} </div>
+                  </div>"</div>
+                  <div className="space-y-4" mb-6></div>
+                    </div><div className=" flex justify-between"></div>
+                      <span className=" text-gray-300>Transaction Fee:</span>"</div>
+                      <span className="text-white font-semibold>{formatPercentage(tier.transactionFee)}</span> "</div>
+                    </div>"</div>
+                    <div className="flex"" justify-between"></div>
+                      <span className="text-gray-300">Commission Rate </span></div>
+                      <span className="text-white" font-semibold>{formatPercentage(tier.commissionRate)}</span> </div>
+                    </div></div>
+                    <div className="flex justify-between"></div>
+                      <span className="text-gray-300>Monthly" Transactions:</span></div>
+                      <span className="text-white">{tier.limits.monthlyTransactions.toLocaleString()}</span></div>
+                    </div></div>
+                    <div className=" flex" justify-between></div>
+                      <span className="text-gray-300">Storage:</span>"</div>
+                      <span className="text-white>{tier.limits.storageGB} GB</span>"</div>
+                    </div>"</div>
+                    <div className=" flex" justify-between"></div>
+                      <span className=" text-gray-300>API Calls:</span>"</div>
+                      <span className="text-white">{tier.limits.apiCalls.toLocaleString()}</span></div>
+                    </div>"</div>
+                    <div className="flex justify-between"></div>
+                      <span className="text-gray-300">Support </span></div>
+                      <span className="text-white>{tier.limits.supportLevel}</span"></div>
+                    </div></div>
+                  </div> </div>
+                  <div className=" space-y-3 mb-6"></div>
+                    <h4 className="text-white" font-semibold>Features:</h4></div>
+                    <ul className="space-y-2"">
+                      {tier.features.map((feature, index) => (</div>
+                        <li key={index} className=" text-gray-300 text-sm flex items-center>"</div>
+                          <span className="text-green-400" mr-2">✓</span>
+                          {feature}</div>
                         </li>
-                      ))}
-                    </ul>
+                      ))}</div>
+                    </ul></div>
                   </div>
                   '`
                   ``
                   }`}>
-                    {tier.type === 'bas'ic ? 'Ge't Started Free : 'Choos'e Plan}
-                  </button>
+                    {tier.type === 'bas'ic ? 'Ge't Started Free : 'Choos'e Plan}</div>
+                  </button></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}"'
 '
-        {activeTab === commissio'n's && (
-          <div className=space-y-6">
-            <h2 className="text-2xl font-bold text-white>Commission Structure</h2>
-            <div className=space-y-8>" 
-              {commissionStructures.map((structure) => (
-                </div><div key={structure.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>
-                  <div className=flex" justify-between items-start mb-6>
-                    </div><div>
-                      <h3 className="text-xl font-semibold text-white mb-2>{structure.category}</h3>
-                      <p className=text-gray-300>Base" Commission Rate: {formatPercentage(structure.baseRate)}</p>'`
-                    </div>``
+        {activeTab === commissio'n's && (</div>
+          <div className="space-y-6""></div>
+            <h2 className="text-2xl font-bold text-white>Commission Structure</h2>"</div>
+            <div className="space-y-8">" 
+              {commissionStructures.map((structure) => (</div>
+                </div><div key={structure.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"</div>
+                  <div className="flex" justify-between items-start mb-6"></div>
+                    </div><div></div>
+                      <h3 className="text-xl font-semibold text-white mb-2>{structure.category}</h3>"</div>
+                      <p className="text-gray-300">Base" Commission Rate: {formatPercentage(structure.baseRate)}</p>'`</div>
+                    </div>``</div>
                     <span className="{`px-3 py-3 rounded-full text-xs font-medium border ${getTierColor('premium')}`}>
-                      Active
-                    </span>
-                  </div>
-                  
-                  <div className=grid" grid-cols-1 md grid-cols-2 gap-6>
-                    </div><div>
-                      <h4 className="text-white font-semibold mb-4>Volume Discounts</h4>
-                      <div className=space-y-3>"
-                        {structure.volumeDiscounts.map((discount, index) => (
-                          </div><div key={index} className="flex justify-between items-center p-3 bg-white/5 rounded >
-                            <div>
-                              </div><div className=text-white" font-medium>{discount.tier}</div>
-                              <div className="text-gray-300 text-sm>${discount.monthlyVolume.toLocaleString()}/month</div>
-                            </div>
-                            <div className=text-right>"
-                              </div><div className="text-white font-semibold >{formatPercentage(discount.effectiveRate)}</div>
-                              <div className=text-green-400" text-sm>-{formatPercentage(discount.discountRate)}</div>
-                            </div>
+                      Active</div>
+                    </span></div>
+                  </div>"
+                  "</div>
+                  <div className="grid" grid-cols-1 md grid-cols-2 gap-6"></div>
+                    </div><div></div>
+                      <h4 className="text-white font-semibold mb-4>Volume Discounts</h4>"</div>
+                      <div className="space-y-3">"
+                        {structure.volumeDiscounts.map((discount, index) => (</div>
+                          </div><div key={index} className="flex justify-between items-center p-3 bg-white/5 rounded >"</div>
+                            <div>"</div>
+                              </div><div className="text-white" font-medium">{discount.tier}</div></div>
+                              <div className="text-gray-300 text-sm>${discount.monthlyVolume.toLocaleString()}/month</div>"</div>
+                            </div>"</div>
+                            <div className="text-right">"</div>
+                              </div><div className="text-white font-semibold >{formatPercentage(discount.effectiveRate)}</div>"</div>
+                              <div className="text-green-400" text-sm">-{formatPercentage(discount.discountRate)}</div></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-white font-semibold mb-4>Special Rates</h4>
-                      {structure.specialRates.length > 0 ? (
-                        <div className=space-y-3>" 
-                          {structure.specialRates.map((rate) => (
-                            </div><div key={rate.id} className="p-3 bg-white/5 rounded>
-                              <div className=flex" justify-between items-start mb-2> 
-                                </div><div className="text-white font-medium>{rate.category}</div>
-                                <div className=text-green-400" font-semibold>{formatPercentage(rate.rate)}</div>
-                              </div>
+                        ))}</div>
+                      </div></div>
+                    </div></div>
+                    <div></div>
+                      <h4 className="text-white font-semibold mb-4>Special Rates</h4>"
+                      {structure.specialRates.length > 0 ? ("</div>
+                        <div className="space-y-3">" 
+                          {structure.specialRates.map((rate) => (</div>
+                            </div><div key={rate.id} className="p-3 bg-white/5 rounded>"</div>
+                              <div className="flex" justify-between items-start mb-2"> </div>
+                                </div><div className="text-white font-medium>{rate.category}</div>"</div>
+                                <div className="text-green-400" font-semibold">{formatPercentage(rate.rate)}</div></div>
+                              </div></div>
                               <div className="text-gray-300 text-sm >
-                                {rate.conditions.map((condition, index) => (
+                                {rate.conditions.map((condition, index) => (</div>
                                   </div><div key={index}>• {condition}</div>
-                                ))}
-                              </div>
-                              {rate.validUntil && (
-                                <div className=text-gray-400" text-xs mt-2>
-                                  Valid until {rate.validUntil.toLocaleDateString()}
+                                ))}</div>
+                              </div>"
+                              {rate.validUntil && ("</div>
+                                <div className="text-gray-400" text-xs mt-2">
+                                  Valid until {rate.validUntil.toLocaleDateString()}</div>
                                 </div>
-                              )}
+                              )}</div>
                             </div>
-                          ))} 
+                          ))} </div>
                         </div>
-                      )   (
+                      )   (</div>
                         <p className="text-gray-300 text-sm>No special rates available</p>
-                      )}
-                    </div>
-                  </div>
-                  <div className=mt-6" pt-6 border-t border-white/10>
-                    </div><div className="flex justify-between items-center >
-                      <span className=text-gray-300>Minimum" Transaction Threshold </span>
-                      <span className="text-white font-semibold>{formatCurrency(structure.minimumThreshold)}</span>
-                    </div>
-                  </div>
+                      )}</div>
+                    </div>"</div>
+                  </div>"</div>
+                  <div className="mt-6" pt-6 border-t border-white/10"></div>
+                    </div><div className="flex justify-between items-center >"</div>
+                      <span className="text-gray-300">Minimum" Transaction Threshold </span></div>
+                      <span className="text-white font-semibold>{formatCurrency(structure.minimumThreshold)}</span></div>
+                    </div></div>
+                  </div></div>
                 </div >
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
-'
-        {activeTab === transactio'n's && (
-          <div className="space-y-6>"
-            <h2 className=text-2xl font-bold text-white >Recent Transactions</h2>
-            
-            <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg overflow-hidden> 
-              </div><div className=overflow-x-auto>
-                <table className="w-full">
-                  <thead className=bg-white/10>
-                    <tr>
-                      <th className="text-left" text-gray-300 py-3 px-6>Transaction ID</th> 
-                      <th className=text-left text-gray-300 py-3 px-6>Amount</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Category</th>
-                      <th className=text-left text-gray-300 py-3 px-6 >Commission</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Platform Fee</th> 
-                      <th className=text-left text-gray-300 py-3 px-6>Net Amount</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Status</th>
-                      <th className=text-left text-gray-300 py-3 px-6 >Date</th>
-                    </tr> 
-                  </thead>
-                  <tbody className="divide-y" divide-white/10>
-                    {transactions.map((transaction) => (
-                      <tr key={transaction.id} className= hover bg-white/5">
-                        <td className="text-white py-3 px-6>{transaction.id}</td>
-                        <td className=text-white" py-3 px-6>{formatCurrency(transaction.amount)}</td>
-                        <td className="text-white py-3 px-6>{transaction.category}</td> 
-                        <td className=text-white" py-3 px-6>{formatCurrency(transaction.commission)}</td>
-                        <td className="text-white py-3 px-6>{formatCurrency(transaction.platformFee)}</td>
-                        <td className=text-white" py-3 px-6 >{formatCurrency(transaction.netAmount)}</td>`
-                        <td className="py-3 px-6>``"
-                          <span className="{`px-3 py-3 rounded-full text-xs font-medium border  ${getStatusColor(transaction.status)}`}>
-                            {transaction.status.toUpperCase()}
-                          </span>
-                        </td>
-                        <td className=text-white" py-3 px-6>{transaction.date.toLocaleDateString()}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+'"
+        {activeTab === transactio'n's && ("</div>
+          <div className="space-y-6>"</div>
+            <h2 className="text-2xl font-bold text-white ">Recent Transactions</h2>
             </div>
+            <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg overflow-hidden> </div>
+              </div><div className="overflow-x-auto"></div>
+                <table className="w-full"></div>
+                  <thead className="bg-white/10"></div>
+                    <tr></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Transaction ID</th> </div>
+                      <th className="text-left text-gray-300 py-3 px-6">Amount</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Category</th></div>
+                      <th className="text-left text-gray-300 py-3 px-6 ">Commission</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Platform Fee</th> </div>
+                      <th className="text-left text-gray-300 py-3 px-6">Net Amount</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Status</th></div>
+                      <th className="text-left text-gray-300 py-3 px-6 ">Date</th></div>
+                    </tr> </div>
+                  </thead></div>
+                  <tbody className="divide-y" divide-white/10>
+                    {transactions.map((transaction) => (</div>
+                      <tr key={transaction.id} className=" hover bg-white/5""></div>
+                        <td className="text-white py-3 px-6>{transaction.id}</td>"</div>
+                        <td className="text-white" py-3 px-6">{formatCurrency(transaction.amount)}</td></div>
+                        <td className="text-white py-3 px-6>{transaction.category}</td> "</div>
+                        <td className="text-white" py-3 px-6">{formatCurrency(transaction.commission)}</td></div>
+                        <td className="text-white py-3 px-6>{formatCurrency(transaction.platformFee)}</td>"</div>
+                        <td className="text-white" py-3 px-6 ">{formatCurrency(transaction.netAmount)}</td>`</div>
+                        <td className="py-3 px-6>``"</div>
+                          <span className="{`px-3 py-3 rounded-full text-xs font-medium border  ${getStatusColor(transaction.status)}`}>
+                            {transaction.status.toUpperCase()}</div>
+                          </span>"</div>
+                        </td>"</div>
+                        <td className="text-white" py-3 px-6">{transaction.date.toLocaleDateString()}</td></div>
+                      </tr>
+                    ))}</div>
+                  </tbody></div>
+                </table></div>
+              </div></div>
+            </div></div>
           </div>
         )}"
 ''
-        {activeTab === report's' && (
-          <div className=space-y-6">
-            <h2 className="text-2xl font-bold text-white>Revenue Reports</h2>
-            <div className=space-y-6>
-              {revenueReports.map((report) => (
-                </div><div key={report.id} className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                  <div className=flex justify-between items-start mb-6>
-                    </div><div> 
-                      <h3 className="text-xl" font-semibold text-white mb-2>{report.period}</h3>
-                      <p className=text-gray-300>Revenue Analysis Report</p>
-                    </div>
-                    <div className=text-right>"
-                      </div><div className="text-2xl font-bold text-white >{formatCurrency(report.totalRevenue)}</div>
-                      <div className=text-green-400" text-sm>+{report.growthRate}% growth</div>
-                    </div>
+        {activeTab === report's' && (</div>
+          <div className="space-y-6""></div>
+            <h2 className="text-2xl font-bold text-white>Revenue Reports</h2>"</div>
+            <div className="space-y-6">
+              {revenueReports.map((report) => ("</div>
+                </div><div key={report.id} className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>
+                  <div className="flex justify-between items-start mb-6"></div>
+                    </div><div> </div>
+                      <h3 className="text-xl" font-semibold text-white mb-2>{report.period}</h3></div>
+                      <p className="text-gray-300">Revenue Analysis Report</p></div>
+                    </div></div>
+                    <div className="text-right">"</div>
+                      </div><div className="text-2xl font-bold text-white >{formatCurrency(report.totalRevenue)}</div>"</div>
+                      <div className="text-green-400" text-sm">+{report.growthRate}% growth</div></div>
+                    </div></div>
+                  </div></div>
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6>"</div>
+                    </div><div className="text-center">"</div>
+                      <div className="text-white" font-semibold >{formatCurrency(report.commissionRevenue)}</div></div>
+                      <div className="text-gray-300 text-sm">Commission Revenue</div> </div>
+                    </div></div>
+                    <div className="text-center>"</div>
+                      </div><div className="text-white font-semibold>{formatCurrency(report.platformFees)}</div>"</div>
+                      <div className="text-gray-300" text-sm">Platform Fees</div></div>
+                    </div></div>
+                    <div className="text-center> "</div>
+                      </div><div className="text-white" font-semibold">{report.transactionCount}</div></div>
+                      <div className="text-gray-300 text-sm>Transactions</div>"</div>
+                    </div>"</div>
+                    <div className="text-center">"</div>
+                      </div><div className="text-white font-semibold>{formatCurrency(report.averageTransactionValue)}</div>"</div>
+                      <div className="text-gray-300" text-sm">Avg Transaction</div></div>
+                    </div></div>
                   </div>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6>
-                    </div><div className=text-center>
-                      <div className="text-white" font-semibold >{formatCurrency(report.commissionRevenue)}</div>
-                      <div className=text-gray-300 text-sm>Commission Revenue</div> 
-                    </div>
-                    <div className="text-center>
-                      </div><div className="text-white font-semibold>{formatCurrency(report.platformFees)}</div>
-                      <div className=text-gray-300" text-sm>Platform Fees</div>
-                    </div>
-                    <div className="text-center> 
-                      </div><div className=text-white" font-semibold>{report.transactionCount}</div>
-                      <div className="text-gray-300 text-sm>Transactions</div>
-                    </div>
-                    <div className=text-center>"
-                      </div><div className="text-white font-semibold>{formatCurrency(report.averageTransactionValue)}</div>
-                      <div className=text-gray-300" text-sm>Avg Transaction</div>
-                    </div>
                   </div>
-                  
-                  <div>
-                    <h4 className="text-white font-semibold mb-4>Top Categories</h4>
-                    <div className=space-y-3>"
-                      {report.topCategories.map((category, index) => (
-                        </div><div key={index} className="flex justify-between items-center p-3 bg-white/5 rounded>
-                          <div>
-                            </div><div className=text-white" font-medium>{category.category}</div>
-                            <div className="text-gray-300 text-sm>{category.transactionCount} transactions</div>
-                          </div>
-                          <div className=text-right>"
-                            </div><div className="text-white font-semibold>{formatCurrency(category.revenue)}</div>
-                            <div className=text-gray-300" text-sm>Avg  {formatCurrency(category.averageCommission)}</div>
-                          </div>
+                  <div></div>
+                    <h4 className="text-white font-semibold mb-4>Top Categories</h4>"</div>
+                    <div className="space-y-3">"
+                      {report.topCategories.map((category, index) => (</div>
+                        </div><div key={index} className="flex justify-between items-center p-3 bg-white/5 rounded>"</div>
+                          <div>"</div>
+                            </div><div className="text-white" font-medium">{category.category}</div></div>
+                            <div className="text-gray-300 text-sm>{category.transactionCount} transactions</div>"</div>
+                          </div>"</div>
+                          <div className="text-right">"</div>
+                            </div><div className="text-white font-semibold>{formatCurrency(category.revenue)}</div>"</div>
+                            <div className="text-gray-300" text-sm">Avg  {formatCurrency(category.averageCommission)}</div></div>
+                          </div></div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      ))}</div>
+                    </div></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
-        )}
+        )}</div>
       </div> 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> 
-        </div><div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
-          <div className="text-center>
-            <h2 className=text-3xl font-bold text-white mb-4> 
-              Start Earning Today
-            </h2>
+      {/* CTA Section */}</div>
+      <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10> "</div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32""></div>
+          <div className="text-center>"</div>
+            <h2 className="text-3xl font-bold text-white mb-4"> 
+              Start Earning Today</div>
+            </h2>"</div>
             <p className="text-xl text-gray-300 mb-8>
               Choose the perfect pricing tier for your business needs and start maximizing your revenue  
-              with our transparent commission structure and competitive rates.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4>
-              <Link href=#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans
-              </Link href= #pricing className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
-              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Start Selling
-              </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div> </div>
-        </div>
+              with our transparent commission structure and competitive rates."</div>
+            </p>"</div>
+            <div className="flex flex-wrap justify-center gap-4>"</div>
+              <Link href=#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Plans"</div>
+              </Link href= #pricing className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>
+              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Start Selling</div>
+              </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            </div> </div></div>
+        </div></div>
       </div>
-      {/* Footer */}
-      <footer className=bg-black/20  border-t border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8> 
-          </div><div className=grid grid-cols-1 md grid-cols-4" gap-8>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>
-              <p className=text-gray-300" text-sm >
-                The first free AI-powered marketplace for high-tech products, services, and innovation.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4>Pricing & Commissions</h4>
-              <ul className=space-y-2"" text-sm>
-                <li><Link href=/marketplace-pricing className=text-gray-400" hover text-white transition-colors >Pricing Tiers</Link href=/marketplace-pricing  className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/invoice-billing className="text-gray-400" hover text-white transition-colors >Billing System</Link href=/invoice-billing className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/dispute-resolution" className=text-gray-400 hover text-white transition-colors >Dispute Resolution</Link href=/dispute-resolution  className="text-gray-400" hover text-white transition-colors ></Link></li>
-                <li><Link href=/skill-verification className=text-gray-400" hover text-white transition-colors >Skill Verification</Link href=/skill-verification className="text-gray-400 hover text-white transition-colors ></Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Support</h4>
-              <ul className=space-y-2" text-sm>
-                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400" hover text-white transition-colors" ></Link></li>
-                <li><Link href=/real-time-chat className=text-gray-400" hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/notifications className="text-gray-400" hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/ai-powered-contract-legal" className=text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
-            </div>
-            <div>
-              <h4 className=text-white font-semibold mb-4>Connect</h4>
-              <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className=text-gray-400 hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors></Link></li>
-                <li><Link href=/blog className=text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400" hover text-white transition-colors" ></Link></li>
-                <li><Link href=/auth/login className=text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors ></Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className=border-t  border-white/10 mt-8 pt-8 text-center">
+      {/* Footer */}</div>
+      <footer className="bg-black/20  border-t border-white/10">"</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8> "</div>
+          </div><div className="grid grid-cols-1 md grid-cols-4" gap-8"></div>
+            <div></div>
+              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>"</div>
+              <p className="text-gray-300" text-sm ">
+                The first free AI-powered marketplace for high-tech products, services, and innovation.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4>Pricing & Commissions</h4>"</div>
+              <ul className="space-y-2"" text-sm"></div>
+                <li><Link href=/marketplace-pricing className="text-gray-400" hover text-white transition-colors ">Pricing Tiers</Link href=/marketplace-pricing  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/invoice-billing className="text-gray-400" hover text-white transition-colors >Billing System</Link href=/invoice-billing className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/dispute-resolution" className="text-gray-400 hover text-white transition-colors ">Dispute Resolution</Link href=/dispute-resolution  className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/skill-verification className="text-gray-400" hover text-white transition-colors ">Skill Verification</Link href=/skill-verification className="text-gray-400 hover text-white transition-colors ></Link></li></div>
+              </ul></div>
+            </div>"</div>
+            <div>"</div>
+              <h4 className="text-white" font-semibold mb-4>Support</h4></div>
+              <ul className="space-y-2" text-sm"></div>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/real-time-chat className="text-gray-400" hover text-white transition-colors ">Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/notifications className="text-gray-400" hover text-white transition-colors >Notifications</Link href=/notifications className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors ">Legal Support</Link href=/ai-powered-contract-legal  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Connect</h4></div>
+              <ul className="space-y-2"  text-sm></div>
+                <li><Link href=/about className="text-gray-400 hover text-white transition-colors ">About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors></Link></li>"</div>
+                <li><Link href=/blog className="text-gray-400" hover text-white transition-colors ">Blog</Link href=/blog className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors ">Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="border-t  border-white/10 mt-8 pt-8 text-center""></div>
             <p className="text-gray-400 text-sm>
-              © 2024 Zion Tech Group. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion Tech Group. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
-  
   </div>
-
-  </div >
+  </div>
+</div>
+  </div ></div>
   </div> ;
-};
-`
-export default MarketplacePricingPage )))))))))'"'`
+};"
+`";}
+export default MarketplacePricingPage )))))))))'"'`</div>

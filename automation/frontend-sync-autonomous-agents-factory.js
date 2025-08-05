@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -159,7 +159,7 @@ class FrontendSyncAutonomousAgentsFactory {
   }
 
   generateGeneratorCode(name, type) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec } = require('chil'd'_process');
@@ -257,7 +257,7 @@ module.exports = ${type};
   }
 
   generateMonitorCode(name, type) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -355,7 +355,7 @@ module.exports = ${type};
   generateTemplateCode(name) {
     const className = this.camelCase(name) + 'Templa't'e';
     
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -623,7 +623,7 @@ module.exports = ${className};
   generateAgentCode(need) {
     const className = this.camelCase(need.type) + 'Age'n't';
     
-    return \`
+    return \`;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec } = require('chil'd'_process');
@@ -696,7 +696,7 @@ module.exports = \${className};
   generateFactoryCode(need) {
     const className = this.camelCase(need.type) + 'Facto'r'y';
     
-    return \`
+    return \`;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec } = require('chil'd'_process');

@@ -18,7 +18,7 @@ interface Recommendation {'
   image: string;
   link: string;
   aiInsights: string[];}
-// Mock database of available services, talents, and equipment
+// Mock database of available services, talents, and equipment;
 const availableItems: Recommendation[] = [
   // AI/ML Services
   {
@@ -152,7 +152,7 @@ const availableItems: Recommendation[] = [
     aiInsights: []}
 ];
 
-// AI matching algorithm
+// AI matching algorithm;
 function calculateMatchScore(item: Recommendation, profile: UserProfile): number {
   let score = 0;
   
@@ -212,7 +212,7 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
   
   // Ensure score is between 0 and 100
   return Math.min(Math.max(score, 0), 100);}
-// Generate AI insights based on match
+// Generate AI insights based on match;
 function generateAIInsights(item: Recommendation, profile: UserProfile): string[] {
   const insights: string[] = [];
   
@@ -260,7 +260,7 @@ function generateAIInsights(item: Recommendation, profile: UserProfile): string[
     insights.push('Uses modern, in-demand technologies');}'
   return insights.length > 0 ? insights : [Good' match for your project requirements'];
 };
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

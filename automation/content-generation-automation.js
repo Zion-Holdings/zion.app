@@ -1,5 +1,5 @@
 // Content Generation Automation System
-// Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d
+// Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
 const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');

@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class SpeedOptimizationAgent {
@@ -912,7 +912,7 @@ class SpeedOptimizationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new SpeedOptimizationAgent();
 
 process.on('SIGTE'R'M', () => {

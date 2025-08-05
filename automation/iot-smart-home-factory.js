@@ -237,7 +237,7 @@ class IoTSmartHomeFactory {
   }
 
   generateDeviceManagementAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -322,7 +322,7 @@ module.exports = DeviceManagementAgent;
   }
 
   generateDeviceMonitoringAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -407,7 +407,7 @@ module.exports = DeviceMonitoringAgent;
   }
 
   generateDeviceAutomationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -492,7 +492,7 @@ module.exports = DeviceAutomationAgent;
   }
 
   generateEnergyOptimizationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -577,7 +577,7 @@ module.exports = EnergyOptimizationAgent;
   }
 
   generatePredictiveMaintenanceAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -662,7 +662,7 @@ module.exports = PredictiveMaintenanceAgent;
   }
 
   generateSecurityMonitoringAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -747,7 +747,7 @@ module.exports = SecurityMonitoringAgent;
   }
 
   generateDataPrivacyAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -832,7 +832,7 @@ module.exports = DataPrivacyAgent;
   }
 
   generateIoTAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -917,7 +917,7 @@ module.exports = IoTAnalyticsAgent;
   }
 
   generateUserBehaviorAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1002,7 +1002,7 @@ module.exports = UserBehaviorAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

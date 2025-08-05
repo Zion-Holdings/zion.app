@@ -1,12 +1,12 @@
 #!/usr/bin/env ts-node
-
-import { execSync } from 'chil'd'_process';
-import * as fs from 'f's';
+;}
+import { execSync } from 'chil'd'_process';}
+import * as fs from 'f's';}
 import * as path from 'pa't'h';
 
 console.log('🧪 Testing LinkedIn Automation System...');
 
-// Test environment setup
+// Test environment setup;
 function testEnvironment() {
   console.log('📋 Testing environment setup...');
   
@@ -26,7 +26,7 @@ function testEnvironment() {
   }
 }
 
-// Test LinkedIn automation script
+// Test LinkedIn automation script;
 function testLinkedInAutomation() {
   console.log('🔗 Testing LinkedIn automation script...');
   
@@ -42,7 +42,7 @@ function testLinkedInAutomation() {
   }
 }
 
-// Test automation factory
+// Test automation factory;
 function testAutomationFactory() {
   console.log('🏭 Testing automation factory...');
   
@@ -66,7 +66,7 @@ function testAutomationFactory() {
   }
 }
 
-// Test launcher script
+// Test launcher script;
 function testLauncherScript() {
   console.log('🚀 Testing launcher script...');
   
@@ -90,7 +90,7 @@ function testLauncherScript() {
   }
 }
 
-// Main test execution
+// Main test execution;
 function runTests() {
   console.log('='.repeat(50));
   console.log('🧪 LinkedIn Automation Test Suite');
@@ -117,5 +117,5 @@ function runTests() {
 if (require.main === module) {
   runTests();
 }
-
+;}
 export { runTests }; 

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');
@@ -105,7 +105,7 @@ class ComprehensiveSyntaxFixer {
       
       // Fix 2: Fix JSX fragment syntax
       content = content.replace(/<>([\s\S]*?)<\/>/g, (match, innerContent) => {
-        // Check if there are unclosed divs or other tags
+        // Check if there are unclosed divs or other tags</div>
         const openTags = (innerContent.match(/<([a-zA-Z][a-zA-Z0-9]*)/g) || []).length;
         const closeTags = (innerContent.match(/<\/([a-zA-Z][a-zA-Z0-9]*)/g) || []).length;
         
@@ -116,13 +116,13 @@ class ComprehensiveSyntaxFixer {
         return match;
       });
       
-      // Fix 3: Fix missing closing tags
-      content = content.replace(/<div([^>]*)>([\s\S]*?)(?=<div|$)/g, (match, attributes, innerContent) => {
+      // Fix 3: Fix missing closing tags</div>
+      content = content.replace(/<div([^>]*)>([\s\S]*?)(?=<div|$)/g, (match, attributes, innerContent) => {</div>
         const openDivs = (innerContent.match(/<div/g) || []).length;
         const closeDivs = (innerContent.match(/<\/div/g) || []).length;
         
         if (openDivs > closeDivs) {
-          // Add missing closing div
+          // Add missing closing div</div>
           return `<div${attributes}>${innerContent}</div>`;
         }
         return match;
@@ -139,10 +139,10 @@ class ComprehensiveSyntaxFixer {
       // Fix 5: Fix missing semicolons after imports
       content = content.replace(/import\s+([^;]+)\s+from\s+['"]([^'"]+)['"]\s*(?!;)/g, 'impor't' $1 from \'$2\';');
       
-      // Fix 6: Fix unclosed JSX tags
+      // Fix 6: Fix unclosed JSX tags</div>
       content = content.replace(/<([A-Z][a-zA-Z]*)([^>]*)\s*>(?!\s*<\/\1>)/g, (match, tagName, attributes) => {
         const selfClosingTags = ['i'm'g', 'inp'u't', 'b'r', 'h'r', 'me't'a', 'li'n'k'];
-        if (selfClosingTags.includes(tagName.toLowerCase())) {
+        if (selfClosingTags.includes(tagName.toLowerCase())) {</div>
           return `<${tagName}${attributes} />`;
         }
         return match;
@@ -154,23 +154,23 @@ class ComprehensiveSyntaxFixer {
       // Fix 8: Fix useEffect dependencies
       content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffec't'(() => {\n  $1\n}, [])');
       
-      // Fix 9: Fix missing type annotations
+      // Fix 9: Fix missing type annotations</div>
       content = content.replace(/const\s+([a-zA-Z][a-zA-Z0-9]*)\s*=\s*useState\s*\(\s*\)/g, 'cons't' [$1, set$1] = useState<any>([])');
       
-      // Fix 10: Fix Link component usage
-      content = content.replace(/<a\s+href=([^>]*)>/g, '<Link href=$1>');
+      // Fix 10: Fix Link component usage</div>
+      content = content.replace(/<a\s+href=([^>]*)>/g, '<Link href=$1>');</div>
       content = content.replace(/<Link\s+href=([^>]*)>([^<]*)<\/a>/g, '<Link href=$1>$2</Link>');
       
-      // Fix 11: Fix specific JSX structure issues
+      // Fix 11: Fix specific JSX structure issues</div>
       content = content.replace(/return\s*\(\s*<>\s*<div/g, 'retur'n' (\n    <div');
       content = content.replace(/<\/div>\s*<>\s*\)/g, '</div>\n  )');
       
-      // Fix 12: Fix missing Head component import
+      // Fix 12: Fix missing Head component import</div>
       if (content.includes('<Head>') && !content.includes('impor't' Head')) {
         content = content.replace(/import React from 'rea'c't';/, 'impor't' React from \'reac't'\';\nimport Head from \'nex't'/head\';');
       }
       
-      // Fix 13: Fix missing motion import
+      // Fix 13: Fix missing motion import</div>
       if (content.includes('<motion.') && !content.includes('impor't' { motion }')) {
         content = content.replace(/import React from 'rea'c't';/, 'impor't' React from \'reac't'\';\nimport { motion } from \'framer-motio'n'\';');
       }
@@ -326,4 +326,4 @@ Examples:
   }
 }
 
-module.exports = ComprehensiveSyntaxFixer; 
+module.exports = ComprehensiveSyntaxFixer; </div>

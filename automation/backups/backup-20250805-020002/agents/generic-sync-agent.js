@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');
@@ -450,7 +450,7 @@ class GenericSyncAgent {
         `interface ${content.match(/export default function ([^{]+)/)?.[1] || 'Compone'n't'}State {
   // Add your state types here
 }
-
+;
 const [state, setState] = useState<${content.match(/export default function ([^{]+)/)?.[1] || 'Compone'n't'}State>(`
       );
     }
@@ -489,15 +489,15 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     let improved = content;
     
     if (!improved.includes('classNa'm'e') && improved.includes('d'i'v')) {
-      improved = improved.replace(
-        /<div>/g,
+      improved = improved.replace(</div>
+        /<div>/g,</div>
         `<div className="w-full">`
       );
     }
     
     if (!improved.includes('aria-lab'e'l') && improved.includes('butt'o'n')) {
-      improved = improved.replace(
-        /<button>/g,
+      improved = improved.replace(</div>
+        /<button>/g,</div>
         `<button aria-label="Button">`
       );
     }
@@ -596,4 +596,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = GenericSyncAgent; 
+module.exports = GenericSyncAgent; </div>

@@ -1,15 +1,15 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
-const execAsync = promisify(exec);
+;
+const $1 = promisify(exec);
 
 class Governance-automationAutomationAgent {
   
   // Enhanced Intelligent Analysis
   async performIntelligentAnalysis(data) {
-    const analysis = {
+    const $1 = {
       patterns: this.identifyPatterns(data),
       trends: this.analyzeTrends(data),
       opportunities: this.identifyOpportunities(data),
@@ -74,12 +74,12 @@ class Governance-automationAutomationAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -88,7 +88,7 @@ class Governance-automationAutomationAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -106,7 +106,7 @@ class Governance-automationAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'governance-repor't's'),
       path.join(this.reportsDir, 'policy-management-repor't's'),
@@ -123,7 +123,7 @@ class Governance-automationAutomationAgent {
   }
 
   async start() {
-    console.log(`Governance Automation Agent ${this.agentId} started`);
+    console.log("Governance Automation Agent ${this.agentId} started");
     
     // Initial governance analysis
     await this.analyzeGovernance();
@@ -148,7 +148,7 @@ class Governance-automationAutomationAgent {
     try {
       console.log('Performin'g' comprehensive governance analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         governanceFramework: [],
@@ -184,15 +184,15 @@ class Governance-automationAutomationAgent {
   }
 
   async discoverGovernanceFramework() {
-    const governanceFramework = [];
+    const $1 = [];
     
     try {
       // Look for governance framework configuration files
-      const governanceFiles = this.findGovernanceFiles();
+      const $1 = this.findGovernanceFiles();
       
       for (const file of governanceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const governanceInfo = this.extractGovernanceInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractGovernanceInfo(file, content);
         
         if (governanceInfo) {
           governanceFramework.push(governanceInfo);
@@ -200,11 +200,11 @@ class Governance-automationAutomationAgent {
       }
       
       // Also check for framework files
-      const frameworkFiles = this.findFrameworkFiles();
+      const $1 = this.findFrameworkFiles();
       
       for (const file of frameworkFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const frameworkInfo = this.extractFrameworkInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractFrameworkInfo(file, content);
         
         if (frameworkInfo) {
           governanceFramework.push(frameworkInfo);
@@ -219,22 +219,22 @@ class Governance-automationAutomationAgent {
   }
 
   findGovernanceFiles() {
-    const governanceFiles = [];
+    const $1 = [];
     
     try {
-      const findGovernanceFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findGovernanceFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsGovernanceCode(content)) {
                 governanceFiles.push(fullPath);
               }
@@ -253,7 +253,7 @@ class Governance-automationAutomationAgent {
   }
 
   containsGovernanceCode(content) {
-    const governanceKeywords = [
+    const $1 = [
       'governan'c'e', 'framewo'r'k', 'poli'c'y', 'regulati'o'n',
       'complian'c'e', 'ri's'k', 'contr'o'l', 'aud'i't'
     ];
@@ -262,7 +262,7 @@ class Governance-automationAutomationAgent {
   }
 
   extractGovernanceInfo(file, content) {
-    const governanceInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -271,7 +271,7 @@ class Governance-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect governance type
     if (lowerContent.includes('i't' governance') || lowerContent.includes('informatio'n' technology governance')) {
@@ -309,22 +309,22 @@ class Governance-automationAutomationAgent {
   }
 
   findFrameworkFiles() {
-    const frameworkFiles = [];
+    const $1 = [];
     
     try {
-      const findFrameworkFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findFrameworkFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsFrameworkCode(content)) {
                 frameworkFiles.push(fullPath);
               }
@@ -343,7 +343,7 @@ class Governance-automationAutomationAgent {
   }
 
   containsFrameworkCode(content) {
-    const frameworkKeywords = [
+    const $1 = [
       'framewo'r'k', 'mod'e'l', 'standa'r'd', 'guideli'n'e',
       'cob'i't', 'it'i'l', 'i's'o', 'ni's't'
     ];
@@ -352,7 +352,7 @@ class Governance-automationAutomationAgent {
   }
 
   extractFrameworkInfo(file, content) {
-    const frameworkInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -361,7 +361,7 @@ class Governance-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect framework type
     if (lowerContent.includes('cob'i't') || lowerContent.includes('contro'l' objectives')) {
@@ -375,7 +375,7 @@ class Governance-automationAutomationAgent {
     }
     
     // Extract version
-    const versionMatch = content.match(/version\s*[:=]\s*['"`]([^'"`]+)['"`]/i);
+    const $1 = content.match(/version\s*[:=]\s*['""]([^'""]+)['""]/i);
     if (versionMatch) {
       frameworkInfo.version = versionMatch[1];
     }
@@ -390,10 +390,10 @@ class Governance-automationAutomationAgent {
   }
 
   extractComponents(content) {
-    const components = [];
+    const $1 = [];
     
     // Extract component definitions
-    const componentRegex = /component\s*[:=]\s*['"`]([^'"`]+)['"`]/gi;
+    const $1 = /component\s*[:=]\s*['""]([^'""]+)['""]/gi;
     let match;
     
     while ((match = componentRegex.exec(content)) !== null) {
@@ -401,7 +401,7 @@ class Governance-automationAutomationAgent {
     }
     
     // Also look for process definitions
-    const processRegex = /process\s*[:=]\s*['"`]([^'"`]+)['"`]/gi;
+    const $1 = /process\s*[:=]\s*['""]([^'""]+)['""]/gi;
     while ((match = processRegex.exec(content)) !== null) {
       components.push(match[1]);
     }
@@ -410,14 +410,14 @@ class Governance-automationAutomationAgent {
   }
 
   extractGovernanceConfiguration(content) {
-    const config = {
+    const $1 = {
       environment: 'unkno'w'n',
       scope: 'unkno'w'n',
       priority: 'unkno'w'n',
       settings: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Extract environment
     if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
@@ -450,15 +450,15 @@ class Governance-automationAutomationAgent {
   }
 
   async analyzePolicyManagement() {
-    const policyManagement = [];
+    const $1 = [];
     
     try {
       // Look for policy management configuration files
-      const policyFiles = this.findPolicyFiles();
+      const $1 = this.findPolicyFiles();
       
       for (const file of policyFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const policyInfo = this.extractPolicyInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractPolicyInfo(file, content);
         
         if (policyInfo) {
           policyManagement.push(policyInfo);
@@ -473,22 +473,22 @@ class Governance-automationAutomationAgent {
   }
 
   findPolicyFiles() {
-    const policyFiles = [];
+    const $1 = [];
     
     try {
-      const findPolicyFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findPolicyFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsPolicyCode(content)) {
                 policyFiles.push(fullPath);
               }
@@ -507,7 +507,7 @@ class Governance-automationAutomationAgent {
   }
 
   containsPolicyCode(content) {
-    const policyKeywords = [
+    const $1 = [
       'poli'c'y', 'procedu'r'e', 'guideli'n'e', 'standa'r'd',
       'ru'l'e', 'regulati'o'n', 'complian'c'e', 'requireme'n't'
     ];
@@ -516,7 +516,7 @@ class Governance-automationAutomationAgent {
   }
 
   extractPolicyInfo(file, content) {
-    const policyInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -525,7 +525,7 @@ class Governance-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect policy type
     if (lowerContent.includes('securit'y' policy') || lowerContent.includes('cybersecurit'y' policy')) {
@@ -563,15 +563,15 @@ class Governance-automationAutomationAgent {
   }
 
   async analyzeRegulatoryCompliance() {
-    const regulatoryCompliance = [];
+    const $1 = [];
     
     try {
       // Look for regulatory compliance configuration files
-      const complianceFiles = this.findComplianceFiles();
+      const $1 = this.findComplianceFiles();
       
       for (const file of complianceFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const complianceInfo = this.extractComplianceInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractComplianceInfo(file, content);
         
         if (complianceInfo) {
           regulatoryCompliance.push(complianceInfo);
@@ -586,22 +586,22 @@ class Governance-automationAutomationAgent {
   }
 
   findComplianceFiles() {
-    const complianceFiles = [];
+    const $1 = [];
     
     try {
-      const findComplianceFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findComplianceFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsComplianceCode(content)) {
                 complianceFiles.push(fullPath);
               }
@@ -620,7 +620,7 @@ class Governance-automationAutomationAgent {
   }
 
   containsComplianceCode(content) {
-    const complianceKeywords = [
+    const $1 = [
       'complian'c'e', 'regulati'o'n', 'gd'p'r', 'hip'a'a', 's'o'x',
       'p'c'i', 'i's'o', 'certificati'o'n', 'aud'i't'
     ];
@@ -629,7 +629,7 @@ class Governance-automationAutomationAgent {
   }
 
   extractComplianceInfo(file, content) {
-    const complianceInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -638,7 +638,7 @@ class Governance-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect compliance type
     if (lowerContent.includes('gd'p'r') || lowerContent.includes('genera'l' data protection regulation')) {
@@ -676,15 +676,15 @@ class Governance-automationAutomationAgent {
   }
 
   async analyzeRiskManagement() {
-    const riskManagement = [];
+    const $1 = [];
     
     try {
       // Look for risk management configuration files
-      const riskFiles = this.findRiskFiles();
+      const $1 = this.findRiskFiles();
       
       for (const file of riskFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const riskInfo = this.extractRiskInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractRiskInfo(file, content);
         
         if (riskInfo) {
           riskManagement.push(riskInfo);
@@ -699,22 +699,22 @@ class Governance-automationAutomationAgent {
   }
 
   findRiskFiles() {
-    const riskFiles = [];
+    const $1 = [];
     
     try {
-      const findRiskFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findRiskFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsRiskCode(content)) {
                 riskFiles.push(fullPath);
               }
@@ -733,7 +733,7 @@ class Governance-automationAutomationAgent {
   }
 
   containsRiskCode(content) {
-    const riskKeywords = [
+    const $1 = [
       'ri's'k', 'thre'a't', 'vulnerabili't'y', 'assessme'n't',
       'mitigati'o'n', 'contr'o'l', 'monitori'n'g', 'analys'i's'
     ];
@@ -742,7 +742,7 @@ class Governance-automationAutomationAgent {
   }
 
   extractRiskInfo(file, content) {
-    const riskInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -751,7 +751,7 @@ class Governance-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect risk type
     if (lowerContent.includes('securit'y' risk') || lowerContent.includes('cybersecurit'y' risk')) {
@@ -789,7 +789,7 @@ class Governance-automationAutomationAgent {
   }
 
   generateRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
     // Governance framework recommendations
     if (analysis.governanceFramework.length === 0) {
@@ -838,7 +838,7 @@ class Governance-automationAutomationAgent {
     try {
       console.log('Monitorin'g' governance...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         governanceFramework: [],
@@ -847,10 +847,10 @@ class Governance-automationAutomationAgent {
       };
       
       // Check governance framework status
-      const governanceFramework = await this.discoverGovernanceFramework();
+      const $1 = await this.discoverGovernanceFramework();
       
       for (const framework of governanceFramework) {
-        const status = this.checkGovernanceFrameworkStatus(framework);
+        const $1 = this.checkGovernanceFrameworkStatus(framework);
         monitoring.governanceFramework.push(status);
         
         if (status.issues.length > 0) {
@@ -859,10 +859,10 @@ class Governance-automationAutomationAgent {
       }
       
       // Check policy management status
-      const policyManagement = await this.analyzePolicyManagement();
+      const $1 = await this.analyzePolicyManagement();
       
       for (const policy of policyManagement) {
-        const status = this.checkPolicyManagementStatus(policy);
+        const $1 = this.checkPolicyManagementStatus(policy);
         monitoring.policyManagement.push(status);
         
         if (status.issues.length > 0) {
@@ -871,8 +871,8 @@ class Governance-automationAutomationAgent {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'monitoring-repor't's', `monitoring-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'monitoring-repor't's', "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -881,7 +881,7 @@ class Governance-automationAutomationAgent {
   }
 
   checkGovernanceFrameworkStatus(framework) {
-    const status = {
+    const $1 = {
       framework: framework.name,
       status: 'healt'h'y',
       issues: [],
@@ -909,7 +909,7 @@ class Governance-automationAutomationAgent {
   }
 
   checkPolicyManagementStatus(policy) {
-    const status = {
+    const $1 = {
       policy: policy.name,
       status: 'healt'h'y',
       issues: [],
@@ -940,7 +940,7 @@ class Governance-automationAutomationAgent {
     try {
       console.log('Optimizin'g' governance...');
       
-      const optimizationReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -948,7 +948,7 @@ class Governance-automationAutomationAgent {
       };
       
       // Generate optimization suggestions
-      const analysis = await this.analyzeGovernance();
+      const $1 = await this.analyzeGovernance();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
@@ -957,13 +957,13 @@ class Governance-automationAutomationAgent {
           type: optimization.type,
           status: 'complet'e'd',
           improvement: Math.random() * 0.95, // 0-95% improvement
-          description: `Applied ${optimization.suggestion}`
+          description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -975,7 +975,7 @@ class Governance-automationAutomationAgent {
     try {
       console.log('Runnin'g' comprehensive policy management analysis...');
       
-      const policyAnalysisReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -996,8 +996,8 @@ class Governance-automationAutomationAgent {
       policyAnalysisReport.recommendations = this.generatePolicyAnalysisRecommendations(policyAnalysisReport.analysis);
       
       // Save policy management analysis report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'policy-management-repor't's', `policy-analysis-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'policy-management-repor't's', "policy-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(policyAnalysisReport, null, 2));
       
     } catch (error) {
@@ -1074,7 +1074,7 @@ class Governance-automationAutomationAgent {
   }
 
   generatePolicyAnalysisSummary(analysis) {
-    const summary = {
+    const $1 = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -1098,15 +1098,15 @@ class Governance-automationAutomationAgent {
   }
 
   generatePolicyAnalysisRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
           priority: 'medi'u'm',
-          message: `${type} policy analysis failed`,
-          suggestion: `Fix ${type} policy analysis issues`
+          message: "${type} policy analysis failed",
+          suggestion: "Fix ${type} policy analysis issues"
         });
       }
     }
@@ -1115,20 +1115,20 @@ class Governance-automationAutomationAgent {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'governance-repor't's', `analysis-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'governance-repor't's', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Analysis report saved: ${reportPath}`);
+    console.log("Analysis report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`Governance Automation Agent ${this.agentId} stopping...`);
+    console.log("Governance Automation Agent ${this.agentId} stopping...`);
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new GovernanceAutomationAgent();
+// Start the agent;
+const $1 = new GovernanceAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -1141,4 +1141,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Governanc'e' Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

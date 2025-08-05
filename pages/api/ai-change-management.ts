@@ -41,7 +41,7 @@ interface ChangeMetric {
   targetValue: number;
   unit: string;
   trend: ''increasing' | 'decreasing' | 'stabl'e';
-  lastUpdated: string;}
+  lastUpdated: string;};
 const mockChangeInitiatives: ChangeInitiative[] = [
   {
     id: 'initiative'-1,
@@ -265,7 +265,7 @@ const mockChangeMetrics: ChangeMetric[] = [
     trend: 'increasing',
     lastUpdated: '2024-01-12}
 ];
-
+;}
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'PO'ST) {
     return res.status(405).json({ error: 'Metho'd not allowed });}
@@ -305,7 +305,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   } catch (error) {
     console.error('A'I Change Management API Error: , error);
-    res.status(500).json({ error: Interna'l' server error });}}
+    res.status(500).json({ error: Interna'l' server error });}};
 function generateAIInsights(timeframe: string): any {
   const insights = {
     predictions: [

@@ -1,6 +1,6 @@
 // Master Content Automation System
 // Orchestrates content generation and integration following ChatGPT instructions
-// Source: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d
+// Source: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');

@@ -46,7 +46,7 @@ interface OptimizationRecommendation {'
   implementationCost: number;
   expectedROI: number;'
   timeframe: string;
-  status: 'pendi'ng | 'approv'ed | 'implemen'ted'' | rejecte'd';}
+  status: 'pendi'ng | 'approv'ed | 'implemen'ted'' | rejecte'd';};
 const mockCapacityPlans: CapacityPlan[] = [
   {
     id: plan'-'1,
@@ -294,7 +294,7 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
     timeframe: 90 days,
     status: 'pendi'ng}
 ];
-'
+';}
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });}
@@ -333,7 +333,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   } catch (error) {
     console.error('A'I Capacity Planning API Error: , error);
-    res.status(500).json({ error: Interna'l' server error });}}
+    res.status(500).json({ error: Interna'l' server error });}};
 function generateAIInsights(timeframe: string): any {
   const insights = {
     predictions: [

@@ -1,14 +1,14 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';}
 import { createClient } from '@supabase/supabase-js;
 
-// Only create Supabase client if environment variables are available
+// Only create Supabase client if environment variables are available;
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     ;
   : null;
-
+;}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method = == 'PO'ST) {
     try {;

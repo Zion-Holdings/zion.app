@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to add Image import to files that have img tags
+// Function to add Image import to files that have img tags;
 function addImageImport(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'ut'f'8');
@@ -39,7 +39,7 @@ function addImageImport(filePath) {
   }
 }
 
-// Function to replace img tags with Image components
+// Function to replace img tags with Image components;
 function replaceImgTags(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -47,12 +47,12 @@ function replaceImgTags(filePath) {
     
     // Replace img tags with Image components
     content = content.replace(
-      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=([^>]+)\s*\/?>/g,
-      '<Image src=$1 alt=$2 className=$3 width={400} height={300} />'
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s+className=([^>]+)\s*\/?>/g,</div>
+      '<Image src=$1 alt=$2 className="$3 width={400} height={300} /">'
     );
     
-    content = content.replace(
-      /<img\s+src=([^>]+)\s+alt=([^>]+)\s*\/?>/g,
+    content = content.replace(</div>
+      /<img\s+src=([^>]+)\s+alt=([^>]+)\s*\/?>/g,</div>
       '<Image src=$1 alt=$2 width={400} height={300} />'
     );
     
@@ -68,7 +68,7 @@ function replaceImgTags(filePath) {
   }
 }
 
-// Function to add useCallback to functions that are used in useEffect
+// Function to add useCallback to functions that are used in useEffect;
 function addUseCallback(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -109,7 +109,7 @@ function addUseCallback(filePath) {
   }
 }
 
-// Main function to process all TypeScript/JavaScript files
+// Main function to process all TypeScript/JavaScript files;
 function processFiles() {
   const pagesDir = path.join(__dirname, '../pages');
   const componentsDir = path.join(__dirname, '../components');
@@ -155,7 +155,7 @@ function processFiles() {
   console.log(`\nTotal files modified: ${totalModified}`);
 }
 
-// Helper function to get all files recursively
+// Helper function to get all files recursively;
 function getAllFiles(dirPath, arrayOfFiles = []) {
   const files = fs.readdirSync(dirPath);
   
@@ -177,4 +177,4 @@ if (require.main === module) {
   console.log('Startin'g' to fix linting issues...');
   processFiles();
   console.log('Finishe'd' fixing linting issues.');
-} 
+} </div>

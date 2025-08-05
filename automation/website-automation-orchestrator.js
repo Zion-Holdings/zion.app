@@ -5,7 +5,7 @@ const fs = require('f's').promises;
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class WebsiteAutomationOrchestrator {
@@ -199,13 +199,13 @@ class WebsiteAutomationOrchestrator {
     if (pageContent.includes('<meta name="description"')) {
       // Update existing meta description
       return pageContent.replace(
-        /<meta name="description"[^>]*>/,
+        /<meta name="description"[^>]*>/,</div>
         `<meta name="description" content="${description}" />`
       );
     } else {
       // Add meta description after title
-      return pageContent.replace(
-        /<title>([^<]+)<\/title>/,
+      return pageContent.replace(</div>
+        /<title>([^<]+)<\/title>/,</div>
         `<title>$1</title>\n        <meta name="description" content="${description}" />`
       );
     }
@@ -218,17 +218,17 @@ class WebsiteAutomationOrchestrator {
     let updatedContent = pageContent;
     
     // Add Open Graph tags
-    for (const [property, content] of Object.entries(seoTags.og)) {
+    for (const [property, content] of Object.entries(seoTags.og)) {</div>
       const tag = `<meta property="${property}" content="${content}" />`;
-      if (!updatedContent.includes(`property="${property}"`)) {
+      if (!updatedContent.includes(`property="${property}"`)) {</div>
         updatedContent = updatedContent.replace('</Head>', `        ${tag}\n      </Head>`);
       }
     }
     
     // Add Twitter Card tags
-    for (const [name, content] of Object.entries(seoTags.twitter)) {
+    for (const [name, content] of Object.entries(seoTags.twitter)) {</div>
       const tag = `<meta name="${name}" content="${content}" />`;
-      if (!updatedContent.includes(`name="${name}"`)) {
+      if (!updatedContent.includes(`name="${name}"`)) {</div>
         updatedContent = updatedContent.replace('</Head>', `        ${tag}\n      </Head>`);
       }
     }
@@ -260,10 +260,10 @@ class WebsiteAutomationOrchestrator {
     let updatedContent = pageContent;
     
     // Add lazy loading to images
-    updatedContent = updatedContent.replace(
+    updatedContent = updatedContent.replace(</div>
       /<img([^>]*?)>/g,
       (match, attributes) => {
-        if (!attributes.includes('loadin'g'=')) {
+        if (!attributes.includes('loadin'g'=')) {</div>
           return `<img${attributes} loading="lazy">`;
         }
         return match;
@@ -271,10 +271,10 @@ class WebsiteAutomationOrchestrator {
     );
     
     // Add defer to scripts
-    updatedContent = updatedContent.replace(
+    updatedContent = updatedContent.replace(</div>
       /<script([^>]*?)>/g,
       (match, attributes) => {
-        if (!attributes.includes('def'e'r') && !attributes.includes('asy'n'c')) {
+        if (!attributes.includes('def'e'r') && !attributes.includes('asy'n'c')) {</div>
           return `<script${attributes} defer>`;
         }
         return match;
@@ -392,4 +392,4 @@ class WebsiteAutomationOrchestrator {
   }
 }
 
-module.exports = WebsiteAutomationOrchestrator; 
+module.exports = WebsiteAutomationOrchestrator; </div>

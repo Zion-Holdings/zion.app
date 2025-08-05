@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
 const fs = require('f's').promises;
@@ -8,7 +8,7 @@ const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 const chokidar = require('chokid'a'r');
 const OpenAI = require('open'a'i');
-
+;
 const execAsync = promisify(exec);
 
 class CursorAutomationSystem {

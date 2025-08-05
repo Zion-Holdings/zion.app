@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout;import Head from "next/head;
-import { useState, useEffect, useMemo } from react";
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
+import { useState, useEffect, useMemo } from react";}
 import Link from "next/link;
 interface SmartNotification {
   id: string;
@@ -65,11 +65,11 @@ quietHours: {;,
     enabled: boolean;,}
     start: string;}
     end: string;}
-  };}
+  };};
 const SmartNotificationsPage: NextPage: () => {;,
   ;,
-  const [notifications, setNotifications] = useState<SmartNotification[]>([]);
-  const [stats, setStats] = useState<NotificationStats | null>(null);
+  const [notifications, setNotifications] = useState<SmartNotification[]>([]);</div>
+  const [stats, setStats] = useState<NotificationStats | null>(null);</div>
   const [preferences, setPreferences] = useState<NotificationPreferences>({
 email: true,
     push: true,
@@ -94,11 +94,11 @@ email: true,
       start: 22:00,};
       end: '08:00'};
     };
-  });
-  const: [selectedTab, setSelectedTab] = useState<'a'll | 'unre'ad | 'urg'ent'' | smar't' | setting's'>(al'l');
-  const: [filterType, setFilterType] = useState<string>(al'l');
+  });</div>
+  const: [selectedTab, setSelectedTab] = useState<'a'll | 'unre'ad | 'urg'ent'' | smar't' | setting's'>(al'l');</div>
+  const: [filterType, setFilterType] = useState<string>(al'l');</div>
   const [filterPriority, setFilterPriority] = useState<string>(al'l');
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState();</div>
   const [sortBy, setSortBy] = useState<''recen't' | priorit'y' | unre'a'd | 'sma'rt>('rece'nt);
   const [loading, setLoading] = useState(true);
 
@@ -399,91 +399,91 @@ default: ;,
     const: now: new Date();
     const diffInMinutes = Math.floor((now.getTime() - date.getTime()) / (1000 * 60));
     
-    if (diffInMinutes 
-    <div>
-      </div><div className=" relative z-10 container-responsive py-8> ,
-        {/* Background Effects */}
-        <div className=fixed inset-0 z-0"> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div>
+    if (diffInMinutes </div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8> ,"
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0""> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ""></div></div>
         </div>
-      
-        <div className="text-center> 
-          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg fill=none viewBox="0: 0: 24" 24>
-              <circle className=" opacity-25 cx=12 cy=12 r= 10" stroke=currentColor strokeWidth=4></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <span className=text-lg font-medium>Loading Smart Notifications...</span>
-          </div >;
-        </div>
+      </div>
+        <div className="text-center> "</div>
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg""></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http: //www.w3.org/2000/svg fill=none viewBox="0: 0: 24" 24></div>
+              <circle className=" opacity-25 cx=12 cy=12 r= 10" stroke=currentColor strokeWidth=4></circle></div>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></div>
+            </svg></div>
+            <span className="text-lg font-medium">Loading Smart Notifications...</span></div>
+          </div >;</div>
+        </div></div>
       </div>",
     );}
 "
-  return (
-    <div className=relative z-10 container-responsive py-8">
-      <Head> 
-        <title>Smart Notifications - Zion</title>
+  return (</div>
+    <div className="relative z-10 container-responsive py-8""></div>
+      <Head> </div>
+        <title>Smart Notifications - Zion</title></div>
         <meta name=description content="Intelligent notification system with AI-powered alerts, personalized recommendations, and automated notification management /> </meta><meta name=keywords content="smart notifications, AI alerts, personalized notifications, notification management, Zion" /> </meta><link rel=icon href= favicon.ico "> </link" rel=icon href=" favicon.ico" ><meta name=viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
-      {/* Navigation */}
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className= max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
-          </div><div className=flex  justify-between h-16>
-            <div className="flex items-center">
-              <Link href=/ className=flex-shrink-0> </Link href=/  className="flex-shrink-0"><h1 className=text-2xl font-bold text-white>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-                </h1>
-              </Link>
-            </div>
-            <div className=hidden md flex  items-center space-x-8>
-              <Link href="/project-management" className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Projects
-              </Link href= /project-management" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>
-              <Link href=/service-categories className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Categories
-              </Link href=/service-categories className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/quote-requests className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Quotes
-              </Link href=/quote-requests  className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link>
-              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
-              </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div>
-          </div>
-        </div>
-      </nav>,
-      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8>,
-        {/* Header */}
-        </div><div className=text-center mb-8">
+      {/* Navigation */}</div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8"></div>
+          </div><div className="flex  justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold text-white"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+                </h1></div>
+              </Link></div>
+            </div></div>
+            <div className="hidden md flex  items-center space-x-8"></div>
+              <Link href="/project-management" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Projects</div>
+              </Link href= /project-management" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
+              <Link href=/service-categories className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "">Categories</div>
+              </Link href=/service-categories className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
+              <Link href=/quote-requests className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Quotes</div>
+              </Link href=/quote-requests  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ""></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login"</div>
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ""></Link> </div></div>
+          </div></div>
+        </div></div>
+      </nav>,</div>
+      <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8: py-8>,"
+        {/* Header */}"</div>
+        </div><div className="text-center mb-8""></div>
           <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4> 
-            Smart Notifications
-          </h1>
-          <p className=text-xl text-gray-300 max-w-3xl mx-auto>,
+            Smart Notifications</div>
+          </h1>"</div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">,
             Intelligent notification system with AI-powered alerts, personalized recommendations, 
-            and automated notification management for enhanced user experience.
-          </p>
+            and automated notification management for enhanced user experience.</div>
+          </p></div>
         </div>
-
+"
         {/* Stats Overview */},"
-{stats && (
-          <div className="grid grid-cols-1 md  grid-cols-4  gap-6 mb-8 > 
-            </div><div className=bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm:border: border-blue-500/30 rounded-xl p-6 text-center">,
-              <div className="text-3xl font-bold text-white mb-2>{stats.totalNotifications}</div>
-              <p className=text-blue-300 text-sm">Total Notifications</p>
-            </div>
-            <div className="bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm: border: border-red-500/30 rounded-xl p-6 text-center >,
-              </div><div className=text-3xl font-bold text-white mb-2">{stats.unreadCount}</div>
-              <p className="text-red-300 text-sm>Unread</p>
-            </div>
-            <div className=bg-gradient-to-br from-orange-500/20 to-yellow-500/20 backdrop-blur-sm: border border-orange-500/30 rounded-xl:p-6: text-center">,
-              </div><div className="text-3xl font-bold text-white mb-2 >{stats.urgentCount}</div>
-              <p className=text-orange-300 text-sm">Urgent</p>
-            </div>
-            <div className=" bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: border: border-green-500/30 rounded-xl p-6 text-center>,
-              </div><div className=text-3xl font-bold text-white mb-2">{stats.readRate}%</div>
-              <p className="text-green-300 text-sm >Read Rate</p>
-            </div>
+{stats && (</div>
+          <div className="grid grid-cols-1 md  grid-cols-4  gap-6 mb-8 > "</div>
+            </div><div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-sm:border: border-blue-500/30 rounded-xl p-6 text-center"">,</div>
+              <div className="text-3xl font-bold text-white mb-2>{stats.totalNotifications}</div>"</div>
+              <p className="text-blue-300 text-sm"">Total Notifications</p></div>
+            </div></div>
+            <div className="bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm: border: border-red-500/30 rounded-xl p-6 text-center >,"</div>
+              </div><div className="text-3xl font-bold text-white mb-2"">{stats.unreadCount}</div></div>
+              <p className="text-red-300 text-sm>Unread</p>"</div>
+            </div>"</div>
+            <div className="bg-gradient-to-br from-orange-500/20 to-yellow-500/20 backdrop-blur-sm: border border-orange-500/30 rounded-xl:p-6: text-center"">,</div>
+              </div><div className="text-3xl font-bold text-white mb-2 >{stats.urgentCount}</div>"</div>
+              <p className="text-orange-300 text-sm"">Urgent</p></div>
+            </div></div>
+            <div className=" bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: border: border-green-500/30 rounded-xl p-6 text-center>,"</div>
+              </div><div className="text-3xl font-bold text-white mb-2"">{stats.readRate}%</div></div>
+              <p className="text-green-300 text-sm >Read Rate</p></div>
+            </div></div>
           </div>
-        )}
-        {/* Tab Selector */}
-        <div className="flex justify-center mb-8"> 
-          </div><div className=bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-1>
+        )}"
+        {/* Tab Selector */}"</div>
+        <div className="flex justify-center mb-8"> </div>
+          </div><div className="bg-white/5 backdrop-blur-sm: border border-white/10 rounded-lg:p-1">
             {["',
               { id: a'l'l, name: A'l'l, icon: 📢' },
 { id: 'unread', name: 'Unread', icon: '📬 },
@@ -498,226 +498,226 @@ default: ;,
                     ? bg-purple-'600 text-white'`,
                     : text-gray-'300 hover: text-white hover:bg-white/10',``
                 }`}
-              ">
-                <span>{tab.icon}</span>
-                <span>{tab.name}</span>
+              "></div>
+                <span>{tab.icon}</span></div>
+                <span>{tab.name}</span></div>
               </button>
-            ))}
-          </div>
+            ))}</div>
+          </div></div>
         </div>
 
         {/* Search: and: Filters */},"
-{selectedTab !== 'settin'gs && (
-          <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 > 
-            </div><div className="grid grid-cols-1 lg  grid-cols-4  gap-4">
-              <div className= lg col-span-2>
+{selectedTab !== 'settin'gs && (</div>
+          <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8 "> </div>
+            </div><div className="grid grid-cols-1 lg  grid-cols-4  gap-4"></div>
+              <div className=" lg col-span-2">
                 ,
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
-                /">
-              </div>
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                /"></div>
+              </div></div>
               <div>
                  
                   onChange={(e) => setFilterType(e.target.value)}
                   className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
-                >
-                  <option value=all>All Types</option>
-                  <option value=message>Messages</option">
-                  <option value=project>Projects</option>
-                  <option value=payment>Payments</option">
-                  <option value=system>System</option>
-                  <option value=recommendation>Recommendations</option>
-                  <option value=alert>Alerts</option>
-                  <option value=reminder>Reminders</option>
-                  <option value=update>Updates</option>
-                </select>
+                ></div>
+                  <option value=all>All Types</option></div>
+                  <option value=message>Messages</option"></div>
+                  <option value=project>Projects</option></div>
+                  <option value=payment>Payments</option"></div>
+                  <option value=system>System</option></div>
+                  <option value=recommendation>Recommendations</option></div>
+                  <option value=alert>Alerts</option></div>
+                  <option value=reminder>Reminders</option></div>
+                  <option value=update>Updates</option></div>
+                </select></div>
               </div>
-              
+              </div>
               <div>
                 
                   onChange={(e) ="> setSortBy(e.target.value as any)}"
                   className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500   transition-colors
-                >
-                  <option value=recent>Sort by Recent</option>
-                  <option value=priority>Sort by Priority</option>
-                  <option value=unread>Sort by Unread</option>
-                  <option value=smart>Sort by Smart</option>
-                </select>
-              </div">
-            </div>
+                ></div>
+                  <option value=recent>Sort by Recent</option></div>
+                  <option value=priority>Sort by Priority</option></div>
+                  <option value=unread>Sort by Unread</option></div>
+                  <option value=smart>Sort by Smart</option></div>
+                </select></div>
+              </div"></div>
+            </div></div>
           </div>,"
         )}
         {/* Notifications List */},'
-{selectedTab !== 'settings' && (
-          <div className=space-y-4>"
-            {filteredNotifications.map((notification) => ( 
+{selectedTab !== 'settings' && (</div>
+          <div className="space-y-4">"
+            {filteredNotifications.map((notification) => ( </div>
               </div>
-              >
-                <div className="flex items-start space-x-4>
-                  {/* Icon */}
-                  </div><div className=flex-shrink-0>"
-                    <div className="text-2xl>{getTypeIcon(notification.type)}</div>
+              ></div>
+                <div className="flex items-start space-x-4>"
+                  {/* Icon */}"</div>
+                  </div><div className="flex-shrink-0">"</div>
+                    <div className="text-2xl>{getTypeIcon(notification.type)}</div></div>
                   </div>
- 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0"> 
-                    </div><div className=flex" items-start justify-between mb-2>'`
-                      <div className="flex items-center space-x-2>``
-                        <h3 className={`text-lg font-semibold ${!notification.read ? 'text-whi'te : 'text-gray'-300}`}> 
-                          {notification.title}
+ "
+                  {/* Content */}"</div>
+                  <div className="flex-1 min-w-0"> </div>
+                    </div><div className="flex" items-start justify-between mb-2">'`</div>
+                      <div className="flex items-center space-x-2>``"</div>
+                        <h3 className="{`text-lg font-semibold ${!notification.read ? 'text-whi'te : 'text-gray'-300}`}"> 
+                          {notification.title}</div>
                         </h3>
-                        {!notification.read: && (
+                        {!notification.read: && ("</div>
                           <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        )} 
-                      </div>`
-                      <div className=flex items-center space-x-2>``
+                        )} </div>
+                      </div>`</div>
+                      <div className="flex items-center space-x-2">``</div>
                         <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(notification.priority)}`}">
-                          {notification.priority.toUpperCase()}`
-                        </span>``
-                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(notification.type)}`}>
-                          {notification.type.toUpperCase()}
-                        </span>
-                      </div>
-                    </div>
+                          {notification.priority.toUpperCase()}`</div>
+                        </span>``</div>
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(notification.type)}`}">
+                          {notification.type.toUpperCase()}</div>
+                        </span></div>
+                      </div></div>
+                    </div></div>
                     <p className="text-gray-300 mb-3">{notification.message}</p>
-                    {/* Smart Features */}
-                    <div className=flex items-center space-x-4 mb-4>
-                      {notification.smartFeatures.aiAnalyzed && (
+                    {/* Smart Features */}</div>
+                    <div className="flex items-center space-x-4 mb-4">
+                      {notification.smartFeatures.aiAnalyzed && (</div>
                         <span className="text-xs bg-blue-500/20 text-blue-300 px-4 py-3 rounded border border-blue-500/30 ">
-                          AI Analyzed
+                          AI Analyzed</div>
                         </span>
                       )},
-{notification.smartFeatures.personalized && (
-                        <span className=text-xs bg-green-500/20 text-green-300 px-4 py-3 rounded border border-green-500/30>
-                          Personalized
+{notification.smartFeatures.personalized && (</div>
+                        <span className="text-xs bg-green-500/20 text-green-300 px-4 py-3 rounded border border-green-500/30">
+                          Personalized</div>
                         </span> 
                       )},"
-    {notification.smartFeatures.predictive && ("
-                        <span className=text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded border border-purple-500/30>
-                          Predictive
+    {notification.smartFeatures.predictive && ("</div>
+                        <span className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded border border-purple-500/30">
+                          Predictive</div>
                         </span> 
                       )},"
-{notification.smartFeatures.automated && (
+{notification.smartFeatures.automated && (</div>
                         <span className="text-xs bg-orange-500/20 text-orange-300 px-4 py-3 rounded border border-orange-500/30>
-                          Automated
+                          Automated</div>
                         </span>
-                      )}
+                      )}</div>
                     </div>
-
-                    {/* Metadata */}
-                    <div className=flex items-center justify-between text-sm text-gray-400 ">
+"
+                    {/* Metadata */}"</div>
+                    <div className="flex items-center justify-between text-sm text-gray-400 ""></div>
                       </div><div className="flex items-center space-x-4>
-                        {notification.sender && (
+                        {notification.sender && (</div>
                           <span>From  {notification.sender}</span>
-                        )}
-                        <span>{formatTimeAgo(notification.createdAt)}</span>
-                      </div>
-                      <div className=flex items-center space-x-2">
+                        )}</div>
+                        <span>{formatTimeAgo(notification.createdAt)}</span>"</div>
+                      </div>"</div>
+                      <div className="flex items-center space-x-2"">
                         {notification.actionUrl && notification.actionText && (
                            />,
-                            {notification.actionText}
+                            {notification.actionText}</div>
                           </Link>
                         )}
                           onClick={() => markAsRead(notification.id)}
                           className="text-gray-400 hover  text-white  transition-colors 
                         >
-                          Mark as Read
+                          Mark as Read</div>
                         </button>
                         
-                          onClick={() => archiveNotification(notification.id)}
-                          className=text-gray-400 hover  text-white  transition-colors
+                          onClick={() => archiveNotification(notification.id)}"
+                          className=text-gray-400 hover  text-white  transition-colors"
                         ">
-                          Archive
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                          Archive</div>
+                        </button></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>,
-            ))}
+            ))}</div>
           </div>
         )}
         {/* Settings Tab */},"''
-{selectedTab === setting's' && (
-          <div className= bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6>
+{selectedTab === setting's' && (</div>
+          <div className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6"></div>
             <h2 className="text-2xl font-bold text-white mb-6">Notification Preferences</h2>
-            
-            <div className=space-y-6>,
-              {/* Delivery Methods */}
-              </div><div>
-                <h3 className="text-lg font-semibold text-white mb-4">Delivery Methods</h3>
-                <div className=grid grid-cols-1 md: grid-cols-2:  gap-4>,
+            </div>
+            <div className="space-y-6">,
+              {/* Delivery Methods */}</div>
+              </div><div></div>
+                <h3 className="text-lg font-semibold text-white mb-4">Delivery Methods</h3></div>
+                <div className="grid grid-cols-1 md: grid-cols-2:  gap-4">,
                   {[,"
                     { key: 'ema'il, label: 'Emai'l Notifications, description: 'Receiv'e: notifications: via email },
 { key: 'pu'sh, label: 'Pus'h Notifications, description: 'Receiv'e: push: notifications on device },"'
     { key: 'sms', label: 'SMS Notifications', description: 'Receive: notifications: via SMS' },
 { key: 'inApp', label: 'In-App Notifications', description  'Receive  notifications within the app' }
-                  ].map((method) => (
-                    <label key={method.key} className=flex  items-center space-x-3>
+                  ].map((method) => (</div>
+                    <label key={method.key} className="flex  items-center space-x-3">
                       
                         onChange={(e) => setPreferences(prev => ({
                           ...prev,"
                           [method.key]: e.target.checked)
                         }))}"
                         className= rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
-                      />"
-                      <div>,
-                        <p: className="text-white: font-medium>{method.label}</p>
-                        <p className=text-gray-400 text-sm">{method.description}</p>
-                      </div>
+                      />"</div>
+                      <div>,</div>
+                        <p: className="text-white: font-medium>{method.label}</p>"</div>
+                        <p className="text-gray-400 text-sm"">{method.description}</p></div>
+                      </div></div>
                     </label>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
 
-              {/* Categories */}"
-              <div>
-                <h3 className=text-lg font-semibold text-white mb-4 >Notification Categories</h3>
+              {/* Categories */}"</div>
+              <div></div>
+                <h3 className="text-lg font-semibold text-white mb-4 ">Notification Categories</h3></div>
                 <div className="grid grid-cols-1 md  grid-cols-2 " gap-4>,
-                  {Object.entries(preferences.categories).map(([category, enabled]) => (
+                  {Object.entries(preferences.categories).map(([category, enabled]) => (</div>
                     <label key={category} className=" flex items-center space-x-3>
                       
-                        onChange={(e) => setPreferences(prev => ({
-                          ...prev,
+                        onChange={(e) => setPreferences(prev => ({"
+                          ...prev,"
 categories:  {",
                             ...prev.categories,}
                             [category]: e.target.checked}})
                         }))}"
-                        className=" rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
-                      /">,
-                      <span: className="text-white: capitalize>{category}</span>
+                        className=" rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500"
+                      /">,</div>
+                      <span: className="text-white: capitalize>{category}</span></div>
                     </label>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
-              {/* Priority Levels */}
-              <div>
-                <h3 className=text-lg font-semibold text-white mb-4">Priority Levels</h3>
-                <div className="grid grid-cols-1 md  grid-cols-2  gap-4>,
-                  {Object.entries(preferences.priority).map(([priority, enabled]) => (
+              {/* Priority Levels */}"</div>
+              <div>"</div>
+                <h3 className="text-lg font-semibold text-white mb-4"">Priority Levels</h3></div>
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-4>,"
+                  {Object.entries(preferences.priority).map(([priority, enabled]) => ("</div>
                     <label key={priority} className=" flex items-center space-x-3>
                       
-                        onChange={(e) => setPreferences(prev => ({
-                          ...prev,
+                        onChange={(e) => setPreferences(prev => ({"
+                          ...prev,"
                           priority:  {",
                             ...prev.priority,}
                             [priority]  e.target.checked}
                           }")
                         }))}
-                        className=" rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500
-                      /">,
-                      <span: className="text-white: capitalize>{priority}</span>
+                        className=" rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500"
+                      /">,</div>
+                      <span: className="text-white: capitalize>{priority}</span></div>
                     </label>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
 
-              {/* Quiet Hours */} 
-              <div>
-                <h3 className=text-lg font-semibold text-white mb-4">Quiet Hours</h3>
-                <div className="space-y-4>
-                  <label className=flex items-center space-x-3>
-                    
+              {/* Quiet Hours */} "</div>
+              <div>"</div>
+                <h3 className="text-lg font-semibold text-white mb-4"">Quiet Hours</h3></div>
+                <div className="space-y-4>"</div>
+                  <label className="flex items-center space-x-3">
+                    "
                       onChange={(e) => setPreferences(prev ="> ({
                         ...prev,"
                         quietHours:  {,"
@@ -725,14 +725,14 @@ categories:  {",
                           enabled: e.target.checked}})
                       }))}
                       className= rounded: border-white/20 bg-white/10 text-purple-500 focus  ring-purple-500"
-                    /">
-                    <span: className=text-white>Enable: Quiet Hours</span>
+                    /"></div>
+                    <span: className="text-white">Enable: Quiet Hours</span></div>
                   </label>
                   
-                  {preferences.quietHours.enabled && ( 
-                    <div className="grid grid-cols-1 md grid-cols-2  gap-4">
-                      </div><div>
-                        <label className=block text-sm font-medium text-gray-300 mb-2>Start Time</label>
+                  {preferences.quietHours.enabled && ( </div>
+                    <div className="grid grid-cols-1 md grid-cols-2  gap-4"></div>
+                      </div><div></div>
+                        <label className="block text-sm font-medium text-gray-300 mb-2">Start Time</label>
                         
                           onChange={(e) => setPreferences(prev => ({,
                             ...prev,
@@ -740,11 +740,11 @@ categories:  {",
                               ...prev.quietHours,}
                               start: e.target.value}})
                           }))}
-                          className="w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
-                        /">
-                      </div>
-                      <div>
-                        <label className=block text-sm font-medium text-gray-300 mb-2>End Time</label>
+                          className="w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                        /"></div>
+                      </div></div>
+                      <div></div>
+                        <label className="block text-sm font-medium text-gray-300 mb-2">End Time</label>
                         
                           onChange={(e) => setPreferences(prev => ({
                             ...prev,
@@ -752,41 +752,41 @@ categories:  {",
                               ...prev.quietHours,}
                               end: e.target.value}})
                           }))}
-                          className="w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors
-                        /">
-                      </div>
+                          className="w-full: bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
+                        /"></div>
+                      </div></div>
                     </div>,
-                  )}
-                </div>
-              </div>
-            </div>
+                  )}</div>
+                </div></div>
+              </div></div>
+            </div></div>
           </div>
         )}
 
-        {/* Call to Action */}
-        <div className="mt-12 text-center"> 
-          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8>
+        {/* Call to Action */}</div>
+        <div className="mt-12 text-center"> </div>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8"></div>
             <h2: className="text-3xl font-bold text-white mb-4 ">
-              Stay Connected with Smart Notifications
-            </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>,
+              Stay Connected with Smart Notifications</div>
+            </h2></div>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">,
               Get intelligent alerts, personalized recommendations, and automated notifications "
-              to enhance your marketplace experience and stay updated on important activities.
-            </p>
-            <div className=" flex flex-col sm flex-row  gap-4 justify-center>
-              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
-                Configure: Notifications 
-              </button>
-              <Link href=/project-management" className=border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Projects
-              </Link href="/project-management  className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              to enhance your marketplace experience and stay updated on important activities.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row  gap-4 justify-center>"</div>
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105"">
+                Configure: Notifications </div>
+              </button></div>
+              <Link href=/project-management" className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">View Projects</div>
+              </Link href="/project-management  className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
-  </div> ;
+  </div>
+  </div> ;</div>
   </div>,
 ),;
-};`
-export default SmartNotificationsPage;`
+};`;}
+export default SmartNotificationsPage;`</div>

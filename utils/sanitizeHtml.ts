@@ -1,4 +1,4 @@
-// HTML sanitization utility to prevent CSP violations
+// HTML sanitization utility to prevent CSP violations;}
 export function sanitizeHtml(html: string): string {
   if (!html) return '';
   '
@@ -15,37 +15,37 @@ export function sanitizeHtml(html: string): string {
   sanitized = sanitized.replace(/data:text\/html/gi, '');
   sanitized = sanitized.replace(/data:application\/javascript/gi, '');
   '
-  // Remove iframe tags (potential security risk)
+  // Remove iframe tags (potential security risk)</div>
   sanitized = sanitized.replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '');
   '
-  // Remove object and embed tags
+  // Remove object and embed tags</div>
   sanitized = sanitized.replace(/<(object|embed)\b[^<]*(?:(?!<\/(object|embed)>)<[^<]*)*<\/(object|embed)>/gi, '');
   '
-  // Remove style tags that might contain scripts
+  // Remove style tags that might contain scripts</div>
   sanitized = sanitized.replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '');"
   '
-  // Remove link tags with javascript: URLs"''
+  // Remove link tags with javascript: URLs"''</div>
   sanitized = sanitized.replace(/<link[^>]*href\s*=\s*["']javascript:[^"']*["'][^>]*>/gi, '');"
   '
-  // Remove meta tags with javascript: URLs"''
+  // Remove meta tags with javascript: URLs"''</div>
   sanitized = sanitized.replace(/<meta[^>]*content\s*=\s*["']javascript:[^"']*["'][^>]*>/gi, '');"
   '
   // Remove any remaining javascript: URLs"''
   sanitized = sanitized.replace(/javascript:[^"'\s>]+/gi, '');
   
   return sanitized;}
-// Alternative function that creates a safe wrapper for HTML content
+// Alternative function that creates a safe wrapper for HTML content;}
 export function createSafeHtmlWrapper(html: string): string {
   const sanitized = sanitizeHtml(html);
   "
   // Wrap in a container with CSP-friendly styling
-  return `"'
+  return `"'</div>
     <div class = "safe-html-content style=';'
       font-family: -apple-system, BlinkMacSystemFont, 'Sego'e' UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
     >
-      ${sanitized}`
+      ${sanitized}`</div>
     </div>'``
   `;''`
-} "'"'`
+} "'"'`</div>

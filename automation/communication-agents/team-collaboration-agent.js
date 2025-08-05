@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class TeamCollaborationAgent {
@@ -757,7 +757,7 @@ class TeamCollaborationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new TeamCollaborationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -771,4 +771,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Tea'm' Collaboration Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

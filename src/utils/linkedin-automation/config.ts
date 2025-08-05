@@ -1,12 +1,12 @@
 import { LinkedInConfig } from './types;
-
+;}
 export const LINKEDIN_CONFIG: LinkedInConfig = {
   apiKey: process.env.LINKEDIN_API_KEY || '',
   advertising: {
     preferredTimes: [09:00', '12:00, 17:00']
   };
 };
-'
+';}
 export const LINKEDIN_ENDPOINTS = {
   BASE_URL: https'://api.linkedin.com/v2',
   AUTH_URL: https'://www.linkedin.com/oauth/v2/authorization',
@@ -17,7 +17,7 @@ export const LINKEDIN_ENDPOINTS = {
   MESSAGES: '/messages',
   ANALYTICS: /analytics;
 };
-'
+';}
 export const LINKEDIN_DEFAULTS = {
   POST_VISIBILITY: 'public',
   MAX_POST_LENGTH: 3000,
@@ -26,7 +26,7 @@ export const LINKEDIN_DEFAULTS = {
   SCHEDULE_BUFFER_MINUTES: 5,
   ENGAGEMENT_DELAY_MINUTES: 30;
 };
-'
+';}
 export const LINKEDIN_ERROR_CODES = {
   RATE_LIMIT_EXCEEDED: RATE'_LIMIT_EXCEEDED',
   INVALID_TOKEN: INVALID'_TOKEN',
@@ -35,7 +35,7 @@ export const LINKEDIN_ERROR_CODES = {
   VALIDATION_ERROR: VALIDATION'_ERROR',
   INTERNAL_ERROR: INTERNAL'_ERROR';
 };
-
+;}
 export const LINKEDIN_STATUS_CODES = {
   SUCCESS: 200,
   CREATED: 201,

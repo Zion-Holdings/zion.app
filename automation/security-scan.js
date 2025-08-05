@@ -4,12 +4,12 @@
  * Security Scan Script
  * Performs security checks on the project
  */
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const util = require('ut'i'l');
-
+;
 const execAsync = util.promisify(exec);
 
 class SecurityScanner {

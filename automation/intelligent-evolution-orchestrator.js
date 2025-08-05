@@ -353,7 +353,7 @@ class IntelligentEvolutionOrchestrator {
       
       isDiverse: (content) => {
         const hash = this.hashContent(content);
-        const existing = this.contentRegistry.get(hash);
+        const existing = this.contentRegistry.get(hash);</div>
         return !existing || existing.usage < 2;
       },
       
@@ -373,7 +373,7 @@ class IntelligentEvolutionOrchestrator {
 
   hashContent(content) {
     // Simple hash function
-    let hash = 0;
+    let hash = 0;</div>
     for (let i = 0; i < content.length; i++) {
       const char = content.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
@@ -474,7 +474,7 @@ class IntelligentEvolutionOrchestrator {
     // Analyze current state
     const analysis = await this.analyzeCurrentState();
     
-    // Evolve system if needed
+    // Evolve system if needed</div>
     if (analysis.systemHealth.status !== 'healt'h'y' || analysis.contentDiversity.diversityScore < 0.7) {
       await this.evolveSystem();
     }
@@ -532,4 +532,4 @@ class IntelligentEvolutionOrchestrator {
   }
 }
 
-module.exports = IntelligentEvolutionOrchestrator; 
+module.exports = IntelligentEvolutionOrchestrator; </div>

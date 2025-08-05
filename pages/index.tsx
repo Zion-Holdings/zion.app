@@ -1,10 +1,10 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
-import Link from next/link";
-import FuturisticHero from ../components/ui/FuturisticHero";
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
+import Link from next/link";}
+import FuturisticHero from ../components/ui/FuturisticHero";}
 import FuturisticCard from '../components/ui/FuturisticCard;
-
+;
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false
   useEffect(() => {
@@ -146,140 +146,140 @@ const Home: NextPage = () => {
       color: 'pi'nk as const
     }]
   return (
-    <div>
-      </div><div>
-      <Head>
-        <title>Zion - The First Free AI-Powered Marketplace</title>
+    <div></div>
+      </div><div></div>
+      <Head></div>
+        <title>Zion - The First Free AI-Powered Marketplace</title></div>
         <meta name=description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products. > </meta" name="description content=Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative" products." ><meta name=viewport content=width=device-width, initial-scale=1 > </meta name="viewport" content=width=device-width, initial-scale=1" ><link rel="icon href=/favicon.ico > </link rel=icon" href="/favicon.ico ></Head>
-
+"</div>
       <main className=" relative>
-        {/* Hero Section */}
-        <FuturisticHero >{/* Marketplace Categories */}
-        </FuturisticHero ><section className=" relative py-40 lg py-32>
-          <div className=container-responsive>" 
-            </div><div className="text-center mb-16>
-              <h2 className=text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6">
+        {/* Hero Section */}"</div>
+        <FuturisticHero >{/* Marketplace Categories */}"</div>
+        </FuturisticHero ><section className=" relative py-40 lg py-32>"</div>
+          <div className="container-responsive">" </div>
+            </div><div className="text-center mb-16>"</div>
+              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6""></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue  to-neon-purple>
-                  Marketplace Categories
-                </span>
-              </h2>
-              <p className=text-responsive-lg:text-high-contrast-secondary" max-w-2xl:mx-auto>
-                Explore our comprehensive marketplace featuring cutting-edge technology solutions
-              </p>
+                  Marketplace Categories</div>
+                </span>"</div>
+              </h2>"</div>
+              <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl:mx-auto">
+                Explore our comprehensive marketplace featuring cutting-edge technology solutions</div>
+              </p></div>
             </div>
-
+</div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >
               {marketplaceCategories.map((category, index) => (
                 />
-              ))}
-            </div>
-          </div>
+              ))}</div>
+            </div></div>
+          </div></div>
         </section>
-
-        {/* Featured Services */}
-        <section className=" relative py-40 lg" py-32>
-          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50></div>
-          <div className="container-responsive" relative z-10> 
-            </div><div className=text-center mb-16>
-              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6">
-                <span className=text-transparent bg-clip-text bg-gradient-to-r from-neon-purple  to-neon-pink>
-                  Featured IT Services
-                </span>
-              </h2>
+"
+        {/* Featured Services */}"</div>
+        <section className=" relative py-40 lg" py-32></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div></div>
+          <div className="container-responsive" relative z-10> </div>
+            </div><div className="text-center mb-16"></div>
+              <h2 className="text-responsive-3xl lg text-responsive-4xl font-bold text-high-contrast mb-6"></div>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple  to-neon-pink">
+                  Featured IT Services</div>
+                </span></div>
+              </h2></div>
               <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl:mx-auto>
-                Professional IT services delivered by certified experts
-              </p>
+                Professional IT services delivered by certified experts</div>
+              </p></div>
             </div>
-
-            <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >
+</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 ">
               {featuredServices.map((service, index) => (
                 />
-              ))}
-            </div>
-          </div>
+              ))}</div>
+            </div></div>
+          </div></div>
         </section>
 
-        {/* Top AI Talents */}"
-        <section className=" relative py-40 lg py-32>
-          <div className= container-responsive>
-            </div><div className=" text-center" mb-16>
-              <h2 className=text-responsive-3xl:lg:text-responsive-4xl:font-bold  text-high-contrast mb-6>
+        {/* Top AI Talents */}"</div>
+        <section className=" relative py-40 lg py-32>"</div>
+          <div className=" container-responsive">"</div>
+            </div><div className=" text-center" mb-16></div>
+              <h2 className="text-responsive-3xl:lg:text-responsive-4xl:font-bold  text-high-contrast mb-6"></div>
                 <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-green to-neon-blue>
-                  Top AI Talents
-                </span>
-              </h2>
-              <p className=text-responsive-lg:text-high-contrast-secondary max-w-2xl mx-auto>
-                Connect with world-class AI experts and developers
-              </p>
-            </div>
+                  Top AI Talents</div>
+                </span></div>
+              </h2></div>
+              <p className="text-responsive-lg:text-high-contrast-secondary max-w-2xl mx-auto">
+                Connect with world-class AI experts and developers</div>
+              </p></div>
+            </div></div>
             <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
               {topTalents.map((talent, index) => (
                 />
-              ))}
-            </div>
-          </div>
+              ))}</div>
+            </div></div>
+          </div></div>
         </section>
 
-        {/* Premium Equipment */}
-        <section className=relative py-40 lg py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div>
-          <div className=container-responsive" relative z-10>
-            </div><div className="text-center  mb-16>
-              <h2 className=text-responsive-3xl" lg text-responsive-4xl font-bold text-high-contrast mb-6 >
+        {/* Premium Equipment */}</div>
+        <section className="relative py-40 lg py-32""></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50></div>"</div>
+          <div className="container-responsive" relative z-10"></div>
+            </div><div className="text-center  mb-16>"</div>
+              <h2 className="text-responsive-3xl" lg text-responsive-4xl font-bold text-high-contrast mb-6 "></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink to-neon-purple>
-                  Premium Equipment
-                </span>
-              </h2>
+                  Premium Equipment</div>
+                </span>"</div>
+              </h2>"</div>
               <p className="text-responsive-lg:text-high-contrast-secondary" max-w-2xl  mx-auto>
-                High-performance computing hardware and advanced technology solutions
-              </p>
-            </div>
-            <div className=grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6>
+                High-performance computing hardware and advanced technology solutions</div>
+              </p></div>
+            </div></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {premiumEquipment.map((equipment, index) => (
                 />
-              ))}
-            </div>
-          </div>
+              ))}</div>
+            </div></div>
+          </div></div>
         </section>
 
-        {/* CTA Section */}"
-        <section className="relative py-40 lg py-32>
-          <div className=container-responsive>" 
-            </div><div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center>
-              <h2 className=text-responsive-3xl:lg:text-responsive-4xl:font-bold" text-high-contrast mb-6>
+        {/* CTA Section */}"</div>
+        <section className="relative py-40 lg py-32>"</div>
+          <div className="container-responsive">" </div>
+            </div><div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center>"</div>
+              <h2 className="text-responsive-3xl:lg:text-responsive-4xl:font-bold" text-high-contrast mb-6"></div>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >
-                  Ready to Start Trading?
-                </span>
-              </h2>
-              <p className=text-responsive-lg:text-high-contrast-secondary" mb-8 max-w-2xl mx-auto>
-                Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.
-              </p>
+                  Ready to Start Trading?</div>
+                </span>"</div>
+              </h2>"</div>
+              <p className="text-responsive-lg:text-high-contrast-secondary" mb-8 max-w-2xl mx-auto">
+                Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.</div>
+              </p></div>
               <div className="flex flex-col sm flex-row gap-4 justify-center>
                 
                  />
-                  Get Started Now
+                  Get Started Now</div>
                 </Link>
                 
                  />
-                  Explore Marketplace
-                </Link>
-                
+                  Explore Marketplace</div>
+                </Link>"
+                "
                   className=px-8" py-4 glass border border-neon-green/30 rounded-lg:text-white font-semibold text-lg hover border-neon-green/60 transition-all duration-300 transform hover scale-105 />
-                  Start AI Chat
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+                  Start AI Chat</div>
+                </Link></div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </section></div>
+      </main></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
 };
-'
-export default Home "))))"'"
+';}
+export default Home "))))"'"</div>

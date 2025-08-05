@@ -1,10 +1,10 @@
-const fs = require('f's');
-const path = require('pa't'h');
-const crypto = require('cryp't'o');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('cryp't'o');
 
-class AntiRepetitionEngine {
+class $1 {
   constructor() {
-    this.engineId = `anti-repetition-${Date.now()}`;
+    this.engineId = "anti-repetition-${Date.now()}";
     this.blockedFiles = new Set();
     this.blockedVariations = new Set();
     this.contentHashes = new Set();
@@ -31,25 +31,25 @@ class AntiRepetitionEngine {
   }
 
   loadBlockedItems() {
-    const blockedFilesPath = path.join(this.enginePath, 'blocked-file's'.json');
-    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variation's'.json');
+    const $1 = path.join(this.enginePath, 'blocked-file's'.json');
+    const $1 = path.join(this.enginePath, 'blocked-variation's'.json');
     
     if (fs.existsSync(blockedFilesPath)) {
-      const blockedFilesData = JSON.parse(fs.readFileSync(blockedFilesPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(blockedFilesPath, 'ut'f'8'));
       this.blockedFiles = new Set(blockedFilesData);
     }
     
     if (fs.existsSync(blockedVariationsPath)) {
-      const blockedVariationsData = JSON.parse(fs.readFileSync(blockedVariationsPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(blockedVariationsPath, 'ut'f'8'));
       this.blockedVariations = new Set(blockedVariationsData);
     }
   }
 
   loadTrackingData() {
-    const trackingPath = path.join(this.enginePath, 'tracking-dat'a'.json');
+    const $1 = path.join(this.enginePath, 'tracking-dat'a'.json');
     
     if (fs.existsSync(trackingPath)) {
-      const trackingData = JSON.parse(fs.readFileSync(trackingPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(trackingPath, 'ut'f'8'));
       this.fileModificationTracking = new Map(trackingData.fileModifications || []);
       this.updateFrequencyLimits = new Map(trackingData.updateFrequencies || []);
       this.contentHashes = new Set(trackingData.contentHashes || []);
@@ -76,29 +76,29 @@ class AntiRepetitionEngine {
   }
 
   monitorFileModifications() {
-    const currentTime = Date.now();
+    const $1 = Date.now();
     
     // Check for files being modified too frequently
     this.fileModificationTracking.forEach((modifications, filePath) => {
-      const recentModifications = modifications.filter(time => 
+      const $1 = modifications.filter(time => 
         currentTime - time < 300000 // Last 5 minutes
       );
       
       if (recentModifications.length > 3) {
-        console.log(`⚠️ Detected frequent modifications to: ${filePath}`);
+        console.log("⚠️ Detected frequent modifications to: ${filePath}");
         this.blockFile(filePath);
       }
     });
   }
 
   blockFile(filePath) {
-    console.log(`🚫 Blocking file: ${filePath}`);
+    console.log("🚫 Blocking file: ${filePath}");
     this.blockedFiles.add(filePath);
     this.saveBlockedItems();
   }
 
   blockVariation(variation) {
-    console.log(`🚫 Blocking variation: ${variation}`);
+    console.log("🚫 Blocking variation: ${variation}");
     this.blockedVariations.add(variation);
     this.saveBlockedItems();
   }
@@ -112,8 +112,8 @@ class AntiRepetitionEngine {
   }
 
   trackFileModification(filePath) {
-    const currentTime = Date.now();
-    const modifications = this.fileModificationTracking.get(filePath) || [];
+    const $1 = Date.now();
+    const $1 = this.fileModificationTracking.get(filePath) || [];
     modifications.push(currentTime);
     
     // Keep only last 10 modifications
@@ -125,54 +125,54 @@ class AntiRepetitionEngine {
   }
 
   trackContentVariation(variation) {
-    const currentCount = this.updateFrequencyLimits.get(variation) || 0;
+    const $1 = this.updateFrequencyLimits.get(variation) || 0;
     this.updateFrequencyLimits.set(variation, currentCount + 1);
   }
 
   checkContentSimilarity(newContent, existingContent) {
-    const similarity = this.calculateSimilarity(newContent, existingContent);
+    const $1 = this.calculateSimilarity(newContent, existingContent);
     return similarity > this.similarityThreshold;
   }
 
   calculateSimilarity(content1, content2) {
     // Simple similarity calculation based on common words
-    const words1 = content1.toLowerCase().split(/\s+/);
-    const words2 = content2.toLowerCase().split(/\s+/);
+    const $1 = content1.toLowerCase().split(/\s+/);
+    const $1 = content2.toLowerCase().split(/\s+/);
     
-    const commonWords = words1.filter(word => words2.includes(word));
-    const totalWords = new Set([...words1, ...words2]).size;
+    const $1 = words1.filter(word => words2.includes(word));
+    const $1 = new Set([...words1, ...words2]).size;
     
     return commonWords.length / totalWords;
   }
 
   generateContentHash(content) {
-    const contentString = typeof content === 'strin'g' ? content : JSON.stringify(content);
+    const $1 = typeof content === 'strin'g' ? content : JSON.stringify(content);
     return crypto.createHash('m'd'5').update(contentString).digest('h'e'x');
   }
 
   isContentDuplicate(content) {
-    const contentHash = this.generateContentHash(content);
+    const $1 = this.generateContentHash(content);
     return this.contentHashes.has(contentHash);
   }
 
   addContentHash(content) {
-    const contentHash = this.generateContentHash(content);
+    const $1 = this.generateContentHash(content);
     this.contentHashes.add(contentHash);
     
     // Limit hash storage to prevent memory issues
     if (this.contentHashes.size > 1000) {
-      const firstHash = this.contentHashes.values().next().value;
+      const $1 = this.contentHashes.values().next().value;
       this.contentHashes.delete(firstHash);
     }
   }
 
   cleanupTrackingData() {
-    const currentTime = Date.now();
-    const cutoffTime = currentTime - 3600000; // 1 hour ago
+    const $1 = Date.now();
+    const $1 = currentTime - 3600000; // 1 hour ago
     
     // Clean up old file modifications
     this.fileModificationTracking.forEach((modifications, filePath) => {
-      const recentModifications = modifications.filter(time => time > cutoffTime);
+      const $1 = modifications.filter(time => time > cutoffTime);
       if (recentModifications.length === 0) {
         this.fileModificationTracking.delete(filePath);
       } else {
@@ -180,26 +180,26 @@ class AntiRepetitionEngine {
       }
     });
     
-    // Reset update frequency limits periodically
+    // Reset update frequency limits periodically</div>
     if (Math.random() < 0.1) { // 10% chance each cleanup
       this.updateFrequencyLimits.clear();
     }
   }
 
   saveTrackingData() {
-    const trackingData = {
+    const $1 = {
       fileModifications: Array.from(this.fileModificationTracking.entries()),
       updateFrequencies: Array.from(this.updateFrequencyLimits.entries()),
       contentHashes: Array.from(this.contentHashes)
     };
     
-    const trackingPath = path.join(this.enginePath, 'tracking-dat'a'.json');
+    const $1 = path.join(this.enginePath, 'tracking-dat'a'.json');
     fs.writeFileSync(trackingPath, JSON.stringify(trackingData, null, 2));
   }
 
   saveBlockedItems() {
-    const blockedFilesPath = path.join(this.enginePath, 'blocked-file's'.json');
-    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variation's'.json');
+    const $1 = path.join(this.enginePath, 'blocked-file's'.json');
+    const $1 = path.join(this.enginePath, 'blocked-variation's'.json');
     
     fs.writeFileSync(blockedFilesPath, JSON.stringify(Array.from(this.blockedFiles), null, 2));
     fs.writeFileSync(blockedVariationsPath, JSON.stringify(Array.from(this.blockedVariations), null, 2));
@@ -217,13 +217,13 @@ class AntiRepetitionEngine {
   }
 
   unblockFile(filePath) {
-    console.log(`✅ Unblocking file: ${filePath}`);
+    console.log("✅ Unblocking file: ${filePath}");
     this.blockedFiles.delete(filePath);
     this.saveBlockedItems();
   }
 
   unblockVariation(variation) {
-    console.log(`✅ Unblocking variation: ${variation}`);
+    console.log("✅ Unblocking variation: ${variation}");
     this.blockedVariations.delete(variation);
     this.saveBlockedItems();
   }

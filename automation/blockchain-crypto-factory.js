@@ -237,7 +237,7 @@ class BlockchainCryptoFactory {
   }
 
   generateSmartContractDeveloperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -322,7 +322,7 @@ module.exports = SmartContractDeveloperAgent;
   }
 
   generateBlockchainIntegrationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -407,7 +407,7 @@ module.exports = BlockchainIntegrationAgent;
   }
 
   generateDeFiProtocolAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -492,7 +492,7 @@ module.exports = DeFiProtocolAgent;
   }
 
   generateCryptoTradingAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -577,7 +577,7 @@ module.exports = CryptoTradingAgent;
   }
 
   generateYieldFarmingAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -662,7 +662,7 @@ module.exports = YieldFarmingAgent;
   }
 
   generateBlockchainSecurityAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -747,7 +747,7 @@ module.exports = BlockchainSecurityAgent;
   }
 
   generateKYCComplianceAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -832,7 +832,7 @@ module.exports = KYCComplianceAgent;
   }
 
   generateBlockchainAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -917,7 +917,7 @@ module.exports = BlockchainAnalyticsAgent;
   }
 
   generateDeFiAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1002,7 +1002,7 @@ module.exports = DeFiAnalyticsAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

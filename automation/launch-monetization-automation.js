@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn } = require('chil'd'_process');
@@ -537,4 +537,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = MonetizationAutomationLauncher; 
+module.exports = MonetizationAutomationLauncher; </div>

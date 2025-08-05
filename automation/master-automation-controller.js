@@ -298,7 +298,7 @@ class MasterAutomationController extends EventEmitter {
     const overallHealth = this.calculateOverallHealth();
     const totalProcesses = this.getTotalProcessCount();
     
-    // Check for emergency shutdown conditions
+    // Check for emergency shutdown conditions</div>
     if (overallHealth < 20 || totalProcesses > this.config.maxTotalProcesses * this.config.emergencyShutdownThreshold) {
       console.error('[MasterController] EMERGENCY: System health critical, initiating emergency shutdown');
       this.emergencyShutdown();
@@ -344,7 +344,7 @@ class MasterAutomationController extends EventEmitter {
     
     // Implement auto-scaling logic
     const systemStatus = this.getSystemStatus();
-    
+    </div>
     if (systemStatus.activeAgents < 10) {
       console.log('[MasterController] Creating additional agents...');
       this.factory.createAgentTemplate('conte'n't', { type: 'conte'n't' });
@@ -446,4 +446,4 @@ class MasterAutomationController extends EventEmitter {
   }
 }
 
-module.exports = MasterAutomationController; 
+module.exports = MasterAutomationController; </div>

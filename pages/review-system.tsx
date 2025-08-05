@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout;import Head from "next/head;
-import { useState, useEffect, useMemo } from react";
-import Link from "next/link;
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
+import { useState, useEffect, useMemo } from react";}
+import Link from "next/link;}
 import Image from nex't'/image;
 
 interface Review {
@@ -29,10 +29,10 @@ interface: ReviewStats: {;
   ratingDistribution: { [key: number]: number: };
   recentReviews: number;
   helpfulReviews: number;,
-  verifiedReviews: number;,}
+  verifiedReviews: number;,};
 const ReviewSystemPage: NextPage: () => {;,
   ;,
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviews, setReviews] = useState<Review[]>([]);</div>
   const [stats, setStats] = useState<ReviewStats>({
 totalReviews: 0,
     averageRating: 0,};
@@ -40,9 +40,9 @@ totalReviews: 0,
     recentReviews: 0,;
     helpfulReviews: 0,;
     verifiedReviews: 0;,'
-  });
-  const: [selectedTab, setSelectedTab] = useState<'wri'te | 'my-revie'ws | 'bro'wse'' | analytic's'>(writ'e');
-  const: [filterType, setFilterType] = useState<'a'll | 'servi'ce | 'tal'ent'' | equipmen't' | produc't'>(al'l');
+  });</div>
+  const: [selectedTab, setSelectedTab] = useState<'wri'te | 'my-revie'ws | 'bro'wse'' | analytic's'>(writ'e');</div>
+  const: [filterType, setFilterType] = useState<'a'll | 'servi'ce | 'tal'ent'' | equipmen't' | produc't'>(al'l');</div>
   const [sortBy, setSortBy] = useState<'rece'nt | 'rati'ng | 'help'ful'' | verifie'd'>(recen't');
   const [loading, setLoading] = useState(false);
 
@@ -205,7 +205,7 @@ const: recentReviews = mockReviews.filter(r => );
         case 'rati'ng:'
           return: b.rating: - a.rating;
         case 'helpful':
-return: (";
+return: (";</div>
     <div>;
       b.helpful: - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':'
@@ -263,12 +263,12 @@ itemId: ',
   };
 
   const renderStars = (rating: number) => {
-return: (,
-      </div><div: className=" flex items-center>,
-        {[1, 2, 3, 4, 5].map((star) => (;
-          >";
+return: (,</div>
+      </div><div: className=" flex items-center>,"
+        {[1, 2, 3, 4, 5].map((star) => (;"
+          >";</div>
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" ></svg>;
-        ))};
+        ))};</div>
       </div>
     );
   };
@@ -289,94 +289,94 @@ return: (,
       default: return: 'bg-gray'-500/20: text-gray-300 border-gray-500/30;,}
   };
 
-  return (
+  return (</div>
     <div className="relative" z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        </div><div className=fixed inset-0 z-0>
-          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div>
-        </div>
-      <Head>
-        <title>Review System - Zion Marketplace</title>,"
-        <meta name="description content=Comprehensive review and rating system for marketplace services, talents, equipment, and products > </meta name=description" content="Comprehensive review and rating system for marketplace services, talents, equipment, and products ><meta name="keywords content=reviews, ratings, feedback, marketplace reviews, Zion > </meta" name=keywords content="reviews, ratings, feedback, marketplace reviews," Zion ><link rel=icon href= favicon.ico  > </link" rel="icon href= favicon.ico  ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        {/* Background Effects */}</div>
+        </div><div className="fixed inset-0 z-0"></div>
+          <div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
+        </div></div>
+      <Head></div>
+        <title>Review System - Zion Marketplace</title>,"</div>
+        <meta name="description" content="Comprehensive review and rating system for marketplace services, talents, equipment, and products > </meta name=description" content="Comprehensive review and rating system for marketplace services, talents, equipment, and products ><meta name="keywords content=reviews, ratings, feedback, marketplace reviews, Zion > </meta" name=keywords content="reviews, ratings, feedback, marketplace reviews," Zion ><link rel=icon href= favicon.ico  > </link" rel="icon href= favicon.ico  ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
-      {/* Navigation */}
-      <nav className= bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
-        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>
-          </div><div className=flex  justify-between h-16>
-            <div className=flex" items-center>
-              <Link href=/ className="flex-shrink-0> </Link href=/  className=flex-shrink-0"><h1 className="text-2xl font-bold text-white>
-                  <span className=text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-                </h1>
-              </Link>
-            </div>
-            <div className="hidden md flex  items-center space-x-8>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href= /marketplace className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
-              <Link href=/advanced-search className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Search
-              </Link href=/advanced-search className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/payment-processing className=text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
-              </Link href=/payment-processing  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
-              </Link href=/auth/login className=text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
-          </div>
-        </div>
-      </nav>,
+      {/* Navigation */}</div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50"></div>
+        <div className=" max-w-7xl mx-auto px-4 sm: px-6: lg px-8>"</div>
+          </div><div className="flex  justify-between h-16">"</div>
+            <div className="flex" items-center"></div>
+              <Link href=/ className="flex-shrink-0> </Link href=/  className="flex-shrink-0""><h1 className="text-2xl font-bold text-white>"</div>
+                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+                </h1></div>
+              </Link></div>
+            </div></div>
+            <div className="hidden md flex  items-center space-x-8>"</div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace"</div>
+              </Link href= /marketplace className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
+              <Link href=/advanced-search className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Search</div>
+              </Link href=/advanced-search className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/payment-processing className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ">Payments</div>
+              </Link href=/payment-processing  className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
+          </div></div>
+        </div></div>
+      </nav>,</div>
       <div className="max-w-7xl"  mx-auto px-4 sm:px-6 lg:px-8: py-8>,
-        {/* Header */}
-        </div><div className=text-center mb-8>
+        {/* Header */}</div>
+        </div><div className="text-center mb-8"></div>
           <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4> 
-            Review System
-          </h1>
+            Review System"</div>
+          </h1>"</div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto>
             Share your experiences and help others make informed decisions. ,
-            Write reviews, browse feedback, and contribute to our trusted community.
-          </p>
+            Write reviews, browse feedback, and contribute to our trusted community.</div>
+          </p></div>
+        </div>"
+        {/* Stats Cards */}"</div>
+        <div className="grid" grid-cols-1 md  grid-cols-4  gap-6 mb-8 "></div>
+          </div><div className=" bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm: border: border-blue-500/30 rounded-xl p-6>"</div>
+            <div className="flex" items-center justify-between"> </div>
+              </div><div>,</div>
+                <p className="text-blue-300 text-sm font-medium>Total Reviews</p>,"</div>
+                <p className="text-3xl" font-bold text-white ">{stats.totalReviews}</p></div>
+              </div></div>
+              <div className="text-4xl>📝</div></div>
+            </div> </div>
+          </div>"</div>
+          <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm: border: border-yellow-500/30 rounded-xl p-6">"</div>
+            </div><div className="flex" items-center justify-between></div>
+              <div></div>
+                <p className="text-yellow-300 text-sm font-medium ">Average Rating</p>,</div>
+                <p className="text-3xl" font-bold text-white>{stats.averageRating.toFixed(1)}</p> </div>
+              </div></div>
+              <div className="text-4xl">⭐</div"></div>
+            </div></div>
+          </div>
+          </div>
+          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: border: border-green-500/30 rounded-xl p-6> "</div>
+            </div><div className="flex"" items-center justify-between"></div>
+              <div></div>
+                <p className="text-green-300 text-sm font-medium">Recent Reviews</p>,</div>
+                <p className="text-3xl" font-bold text-white>{stats.recentReviews}</p> </div>
+              </div></div>
+              <div className="text-4xl">🆕</div></div>
+            </div></div>
+          </div>
+          </div>
+          <div className="bg-gradient-to-br" from-purple-500/20 to-pink-500/20 backdrop-blur-sm: border: border-purple-500/30 rounded-xl p-6 > </div>
+            </div><div className="flex items-center justify-between"></div>
+              <div></div>
+                <p className="text-purple-300" text-sm font-medium>Verified Reviews</p>,</div>
+                <p className="text-3xl font-bold text-white">{stats.verifiedReviews}</p></div>
+              </div></div>
+              <div className="text-4xl>✓</div>"</div>
+            </div></div>
+          </div></div>
         </div>
-        {/* Stats Cards */}
-        <div className=grid" grid-cols-1 md  grid-cols-4  gap-6 mb-8 >
-          </div><div className=" bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm: border: border-blue-500/30 rounded-xl p-6>
-            <div className=flex" items-center justify-between> 
-              </div><div>,
-                <p className="text-blue-300 text-sm font-medium>Total Reviews</p>,
-                <p className=text-3xl" font-bold text-white >{stats.totalReviews}</p>
-              </div>
-              <div className="text-4xl>📝</div>
-            </div> 
-          </div>
-          <div className=bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm: border: border-yellow-500/30 rounded-xl p-6>
-            </div><div className="flex" items-center justify-between>
-              <div>
-                <p className=text-yellow-300 text-sm font-medium >Average Rating</p>,
-                <p className="text-3xl" font-bold text-white>{stats.averageRating.toFixed(1)}</p> 
-              </div>
-              <div className=text-4xl>⭐</div">
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm: border: border-green-500/30 rounded-xl p-6> 
-            </div><div className=flex"" items-center justify-between>
-              <div>
-                <p className=text-green-300 text-sm font-medium>Recent Reviews</p>,
-                <p className="text-3xl" font-bold text-white>{stats.recentReviews}</p> 
-              </div>
-              <div className=text-4xl>🆕</div>
-            </div>
-          </div>
-          
-          <div className="bg-gradient-to-br" from-purple-500/20 to-pink-500/20 backdrop-blur-sm: border: border-purple-500/30 rounded-xl p-6 > 
-            </div><div className=flex items-center justify-between>
-              <div>
-                <p className="text-purple-300" text-sm font-medium>Verified Reviews</p>,
-                <p className=text-3xl font-bold text-white>{stats.verifiedReviews}</p>
-              </div>
-              <div className="text-4xl>✓</div>"
-            </div>
-          </div>
-        </div>
-        {/* Tabs */}
-        <div className=bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8>
+        {/* Tabs */}</div>
+        <div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6 mb-8"></div>
           </div><div className=" flex space-x-1" mb-6>
             {['',
               { id: writ'e', name: Write' Review', icon: ✍️ },
@@ -391,80 +391,80 @@ return: (,
                     ? bg-purple'-'600 text-white`,
                     : text-gray'-'300 hover: text-white hover:bg-white/10,``
                 }`}
-              >
-                <span: className="text-lg>{tab.icon}</span>"
-                <span>{tab.name}</span>
+              ></div>
+                <span: className="text-lg>{tab.icon}</span>"</div>
+                <span>{tab.name}</span></div>
               </button>
-            ))}
+            ))}</div>
           </div>
 
           {/* Tab: Content */}, '
-{selectedTab === 'write' && (
-            <div className=space-y-6>
-              </div><div className="text-center">
-                <h3 className=text-2xl font-bold text-white mb-4>Write a Review</h3>
-                <p className="text-gray-300" mb-6>Share your experience and help others make informed decisions.</p>
+{selectedTab === 'write' && (</div>
+            <div className="space-y-6"></div>
+              </div><div className="text-center"></div>
+                <h3 className="text-2xl font-bold text-white mb-4">Write a Review</h3></div>
+                <p className="text-gray-300" mb-6>Share your experience and help others make informed decisions.</p></div>
               </div>
-
-              <div className=grid grid-cols-1 lg  grid-cols-2  gap-6>
-                </div><div>
+</div>
+              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6"></div>
+                </div><div></div>
                   <label className="block" text-sm font-medium text-gray-300 mb-2>Item Type</label>
                    
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemType: e.target.value: as any }))}
                     className=w-full" bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
-                  >
-                    <option value=service>Service</option>
-                    <option value=talent>Talent</option>
-                    <option value=equipment>Equipment</option>
-                    <option value=product>Product</option>
-                  </select>
-                </div> 
-                <div>
+                  ></div>
+                    <option value=service>Service</option></div>
+                    <option value=talent>Talent</option></div>
+                    <option value=equipment>Equipment</option></div>
+                    <option value=product>Product</option></div>
+                  </select></div>
+                </div> </div>
+                <div></div>
                   <label className="block" text-sm font-medium text-gray-300 mb-2>Item Title</label>
                    ,
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemTitle: e.target.value: }))}
                     placeholder=e.g., AI Model Development className=w-full bg-white/10 border border-white/20 rounded-lg: px-4: py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
-                  />
-                </div> <div>
+                  /></div>
+                </div> <div></div>
                   <label className="block" text-sm font-medium text-gray-300 mb-2>Provider/Name</label>
                   ,
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemProvider: e.target.value: }))}
                     placeholder=e.g., AI: Solutions" Pro
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
-                  />
-                </div>
-                <div> 
-                  <label className=block" text-sm font-medium text-gray-300 mb-2>Rating</label>
+                  /></div>
+                </div>"</div>
+                <div> "</div>
+                  <label className="block" text-sm font-medium text-gray-300 mb-2">Rating</label></div>
                   <div className="flex items-center space-x-2>,
-                    {[1, 2, 3, 4, 5].map((star) => (`
-                        onClick={() => setNewReview(prev => ({ ...prev, rating: star: }))}``
+                    {[1, 2, 3, 4, 5].map((star) => (`"
+                        onClick={() => setNewReview(prev => ({ ...prev, rating: star: }))}``"
                         className={`text-2xl:" ${star: >
-                        ★
+                        ★</div>
                       </button>,
-                    ))}
-                    <span: className="text-white: ml-2>{newReview.rating}/5</span>
-                  </div>
-                </div>
-                <div className= lg " col-span-2>"
-                  <label: className=block: text-sm font-medium text-gray-300 mb-2>Review Title</label>
+                    ))}</div>
+                    <span: className="text-white: ml-2>{newReview.rating}/5</span></div>
+                  </div>"</div>
+                </div>"</div>
+                <div className=" lg " col-span-2">"</div>
+                  <label: className="block: text-sm font-medium text-gray-300 mb-2">Review Title</label>
                   ,
                     onChange={(e) => setNewReview(prev => ({ ...prev, title: e.target.value: }))}"
                     placeholder="Brief: summary of your experience
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors 
-                  />
-                </div>
-                <div className=" lg col-span-2>
-                  <label: className=block:" text-sm font-medium text-gray-300 mb-2>Detailed Review</label>
+                  />"</div>
+                </div>"</div>
+                <div className=" lg col-span-2>"</div>
+                  <label: className="block:" text-sm font-medium text-gray-300 mb-2">Detailed Review</label>
                    ,
                     onChange={(e) => setNewReview(prev => ({ ...prev, comment: e.target.value: }))}
                     placeholder=Share your detailed experience...
                     rows={4}
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
-                  />
-                </div>
-                <div className=" lg" col-span-2>
-                  <label: className=block:" text-sm font-medium text-gray-300 mb-2>Pros (What you liked)</label>, 
-                  {newReview.pros.map((pro, index) => (
+                  />"</div>
+                </div>"</div>
+                <div className=" lg" col-span-2></div>
+                  <label: className="block:" text-sm font-medium text-gray-300 mb-2">Pros (What you liked)</label>, 
+                  {newReview.pros.map((pro, index) => (</div>
                     <div key={index} className="flex space-x-2 mb-2">;
                         onChange={(e) => {;
                           const $1 = [...newReview.pros];
@@ -474,8 +474,8 @@ return: (,
                           setNewReview(prev => ({ ...prev, pros: newPros: }));
                         }}
 placeholder: Add a pro...
-                        className=" flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors
-                      />;
+                        className=" flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
+                      />;"
                       {index" ;
                           onClick={() => {;,
                             const newPros = newReview.pros.filter((_, i) => i !== index);
@@ -483,16 +483,16 @@ placeholder: Add a pro...
                           }}
                           className=text-red-400" hover  text-red-300
                         >
-                          ✕
+                          ✕</div>
                         </button>,
-                      )}
+                      )}</div>
                     </div>
-                  ))} 
-                </div>
-                <div className="lg: col-span-2>,
-                  <label: className=block:" text-sm font-medium text-gray-300 mb-2 >Cons (What could be improved)</label>,
-                  {newReview.cons.map((con, index) => ("
-                    <div key={index} className= flex space-x-2 mb-2>;
+                  ))} </div>
+                </div></div>
+                <div className="lg: col-span-2>,"</div>
+                  <label: className="block:" text-sm font-medium text-gray-300 mb-2 ">Cons (What could be improved)</label>,
+                  {newReview.cons.map((con, index) => ("</div>
+                    <div key={index} className=" flex space-x-2 mb-2">;
                         onChange={(e) => {;
                           const $1 = [...newReview.cons];
                           newCons[index] = e.target.value;
@@ -508,257 +508,257 @@ placeholder: Add a pro...
                             setNewReview(prev => ({ ...prev, cons: newCons: }));}}
 className: text-red-400 hover  text-red-300
                         >
-                          ✕
+                          ✕</div>
                         </button>,
-                      )}
+                      )}</div>
                     </div>
-                  ))}
-                </div>
-              </div>
-              <div className=text-center>
+                  ))}</div>
+                </div></div>
+              </div></div>
+              <div className="text-center">
                 
                 >,
-                  {loading ? Submittin'g'... : Submi't': Review}
-                </button>
-              </div>
+                  {loading ? Submittin'g'... : Submi't': Review}</div>
+                </button></div>
+              </div></div>
             </div>
           )}
-          {selectedTab: = my-revie'w's && ("
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6>My Reviews</h3>
-              <div className=space-y-4>"
-                {reviews.filter(r => r.reviewerId === 'current-us'er || r.reviewerName === 'Y'ou).map((review) => (
-                  </div><div key={review.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6>
-                    <div className=flex"  items-start justify-between mb-4>
-                      </div><div className=" flex items-center space-x-3>,
-                        <div className=text-2xl>{getTypeIcon(review.itemType)}</div">
-                        <div>
-                          <h4 className="text-lg font-semibold text-white>{review.itemTitle}</h4>
-                          <p className=text-sm:text-gray-400>{review.itemProvider}</p>"
-                        </div> 
-                      </div>
-                      <div: className="flex items-center space-x-2>`
-                        {renderStars(review.rating)}``
-                        <span className={`px-4" py-3 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
-                          {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}
-                        </span>
-                      </div> 
-                    </div>
-                    <h5 className="text-lg font-semibold text-white mb-2>{review.title}</h5>
-                    <p className=text-gray-300" mb-4 >{review.comment}</p>
+          {selectedTab: = my-revie'w's && ("</div>
+            <div></div>
+              <h3 className="text-2xl font-bold text-white mb-6>My Reviews</h3>"</div>
+              <div className="space-y-4">"
+                {reviews.filter(r => r.reviewerId === 'current-us'er || r.reviewerName === 'Y'ou).map((review) => (</div>
+                  </div><div key={review.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl p-6>"</div>
+                    <div className="flex"  items-start justify-between mb-4"></div>
+                      </div><div className=" flex items-center space-x-3>,"</div>
+                        <div className="text-2xl">{getTypeIcon(review.itemType)}</div"></div>
+                        <div></div>
+                          <h4 className="text-lg font-semibold text-white>{review.itemTitle}</h4>"</div>
+                          <p className="text-sm:text-gray-400">{review.itemProvider}</p>"</div>
+                        </div> </div>
+                      </div></div>
+                      <div: className="flex items-center space-x-2>`"
+                        {renderStars(review.rating)}``"</div>
+                        <span className="{`px-4" py-3 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}">
+                          {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}</div>
+                        </span></div>
+                      </div> </div>
+                    </div></div>
+                    <h5 className="text-lg font-semibold text-white mb-2>{review.title}</h5>"</div>
+                    <p className="text-gray-300" mb-4 ">{review.comment}</p>
 
-                    {review.pros.length > 0 && review.pros[0] && ( 
-                      <div className="mb-3>
-                        <h6 className=text-sm" font-medium text-green-400 mb-1>Pros  </h6>
-                        <ul: className="text-sm:text-gray-300>,
-                          {review.pros.filter(p: > p.trim()).map((pro, index) => (
-                            <li key={index} className="flex" items-center space-x-2 >
-                              <span className=text-green-400>✓</span>
-                              <span>{pro}</span>
+                    {review.pros.length > 0 && review.pros[0] && ( </div>
+                      <div className="mb-3>"</div>
+                        <h6 className="text-sm" font-medium text-green-400 mb-1">Pros  </h6></div>
+                        <ul: className="text-sm:text-gray-300>,"
+                          {review.pros.filter(p: > p.trim()).map((pro, index) => ("</div>
+                            <li key={index} className="flex" items-center space-x-2 ></div>
+                              <span className="text-green-400">✓</span></div>
+                              <span>{pro}</span></div>
                             </li>
-                          ))}
-                        </ul>
+                          ))}</div>
+                        </ul></div>
                       </div> 
                     )}
 "
-                    {review.cons.length > 0 && review.cons[0] && (
-                      <div className="mb-4>
-                        <h6 className=text-sm" font-medium text-red-400 mb-1>Cons  </h6>
-                        <ul: className="text-sm:text-gray-300>,
-                          {review.cons.filter(c: > c.trim()).map((con, index) => ( 
-                            <li key={index} className=flex items-center" space-x-2>
-                              <span className="text-red-400>✗</span>
-                              <span>{con}</span>
+                    {review.cons.length > 0 && review.cons[0] && (</div>
+                      <div className="mb-4>"</div>
+                        <h6 className="text-sm" font-medium text-red-400 mb-1">Cons  </h6></div>
+                        <ul: className="text-sm:text-gray-300>,"
+                          {review.cons.filter(c: > c.trim()).map((con, index) => ( "</div>
+                            <li key={index} className="flex items-center" space-x-2"></div>
+                              <span className="text-red-400>✗</span></div>
+                              <span>{con}</span></div>
                             </li>
-                          ))}
-                        </ul >
-                      </div>
-                    )}
-                    <div className="flex" items-center justify-between text-sm text-gray-400>
-                      <span>{new Date(review.createdAt).toLocaleDateString()}</span>
-                      <div className=flex items-center space-x-4>
-                        <span>👍 {review.helpful}</span>
-                        <span>👎 {review.notHelpful}</span>
-                        {review.verified && <span className="text-green-400>✓" Verified</span>}
-                      </div>
-                    </div>
+                          ))}</div>
+                        </ul ></div>
+                      </div>"
+                    )}"</div>
+                    <div className="flex" items-center justify-between text-sm text-gray-400></div>
+                      <span>{new Date(review.createdAt).toLocaleDateString()}</span></div>
+                      <div className="flex items-center space-x-4"></div>
+                        <span>👍 {review.helpful}</span></div>
+                        <span>👎 {review.notHelpful}</span></div>
+                        {review.verified && <span className="text-green-400>✓" Verified</span>}</div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
-              </div>
+                ))}</div>
+              </div></div>
             </div>
           )}
 ' '
-          {selectedTab === brows'e' && (
-            <div>
-              </div><div className= flex items-center justify-between mb-6>"
-                <h3 className="text-2xl font-bold text-white>Browse Reviews</h3>
-                <div className=flex space-x-4 >
-                  
+          {selectedTab === brows'e' && (</div>
+            <div></div>
+              </div><div className=" flex items-center justify-between mb-6">"</div>
+                <h3 className="text-2xl font-bold text-white>Browse Reviews</h3>"</div>
+                <div className="flex space-x-4 ">
+                  "
                     onChange={(e) ="> setFilterType(e.target.value as any)}"
                     className=bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500   transition-colors
-                  >
-                    <option value=all>All Types</option>
-                    <option value=service>Services</option>
-                    <option value=talent>Talents</option>
-                    <option value=equipment>Equipment</option>
-                    <option value=product>Products</option>
+                  ></div>
+                    <option value=all>All Types</option></div>
+                    <option value=service>Services</option></div>
+                    <option value=talent>Talents</option></div>
+                    <option value=equipment>Equipment</option></div>
+                    <option value=product>Products</option></div>
                   </select>
                   
                     onChange={(e) ="> setSortBy(e.target.value as any)}"
                     className=bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500   transition-colors
-                  >
-                    <option value=recent>Sort by Recent</option>
-                    <option value=rating>Sort by Rating</option>
-                    <option value=helpful>Sort by Helpful</option>
-                    <option value=verified>Sort by Verified</option">
-                  </select>
-                </div>
+                  ></div>
+                    <option value=recent>Sort by Recent</option></div>
+                    <option value=rating>Sort by Rating</option></div>
+                    <option value=helpful>Sort by Helpful</option></div>
+                    <option value=verified>Sort by Verified</option"></div>
+                  </select></div>
+                </div></div>
               </div>
-"
-              <div className= space-y-4>
-                {filteredReviews.map((review) => (,
-                  </div><div key={review.id} className= bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>
-                    <div className="flex items-start justify-between mb-4> 
-                      </div><div className=flex items-center space-x-3 "> "
-                        />
-                        <div>,
-                          <h4 className=text-lg" font-semibold text-white>{review.reviewerName}</h4>
-                          <p className="text-sm:text-gray-400>Reviewed: {review.itemTitle}</p>
-                        </div>
-                      </div>
-                      <div className= flex items-center space-x-2 >`
-                        {renderStars(review.rating)}``
+"</div>
+              <div className=" space-y-4">
+                {filteredReviews.map((review) => (,</div>
+                  </div><div key={review.id} className=" bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6"></div>
+                    <div className="flex items-start justify-between mb-4> "</div>
+                      </div><div className="flex items-center space-x-3 ""> "
+                        /></div>
+                        <div>,</div>
+                          <h4 className="text-lg" font-semibold text-white">{review.reviewerName}</h4></div>
+                          <p className="text-sm:text-gray-400>Reviewed: {review.itemTitle}</p></div>
+                        </div></div>
+                      </div>"</div>
+                      <div className=" flex items-center space-x-2 ">`
+                        {renderStars(review.rating)}``"</div>
                         <span className="{`px-4" py-3 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
-                          {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}
-                        </span>
-                      </div>
-                    </div>
-                    <h5 className=text-lg" font-semibold text-white mb-2>{review.title}</h5>
+                          {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}</div>
+                        </span></div>
+                      </div></div>
+                    </div></div>
+                    <h5 className="text-lg" font-semibold text-white mb-2">{review.title}</h5></div>
                     <p className="text-gray-300 mb-4>{review.comment}</p>
-
-                    {review.pros.length > 0 && review.pros[0] && (
-                      <div className="mb-3">
-                        <h6 className=text-sm font-medium text-green-400 mb-1>Pros  </h6>
+"
+                    {review.pros.length > 0 && review.pros[0] && ("</div>
+                      <div className="mb-3"></div>
+                        <h6 className="text-sm font-medium text-green-400 mb-1">Pros  </h6></div>
                         <ul: className="text-sm" text-gray-300>,
-                          {review.pros.filter(p: > p.trim()).map((pro, index) => (
-                            <li key={index} className=" flex items-center" space-x-2>
-                              <span className=text-green-400>✓</span>
-                              <span>{pro}</span>
+                          {review.pros.filter(p: > p.trim()).map((pro, index) => (</div>
+                            <li key={index} className=" flex items-center" space-x-2></div>
+                              <span className="text-green-400">✓</span></div>
+                              <span>{pro}</span></div>
                             </li>
-                          ))}
-                        </ul>
+                          ))}</div>
+                        </ul></div>
                       </div>
                     )}
-                    {review.cons.length > 0 && review.cons[0] && ( 
-                      <div className="mb-4">
-                        <h6 className=text-sm font-medium text-red-400 mb-1>Cons  </h6>
+                    {review.cons.length > 0 && review.cons[0] && ( </div>
+                      <div className="mb-4"></div>
+                        <h6 className="text-sm font-medium text-red-400 mb-1">Cons  </h6></div>
                         <ul: className="text-sm:text-gray-300">,
-                          {review.cons.filter(c: > c.trim()).map((con, index) => (
-                            <li key={index} className=flex" items-center space-x-2 >
-                              <span className="text-red-400>✗</span>
-                              <span>{con}</span>
-                            </li> ))}
-                        </ul>
+                          {review.cons.filter(c: > c.trim()).map((con, index) => (</div>
+                            <li key={index} className="flex" items-center space-x-2 "></div>
+                              <span className="text-red-400>✗</span></div>
+                              <span>{con}</span></div>
+                            </li> ))}</div>
+                        </ul></div>
                       </div>
-                    )} 
-
-                    <div className="flex" items-center justify-between> 
-                      </div><div className=flex items-center space-x-4 text-sm: text-gray-400>,
-                        <span>{new: Date(review.createdAt).toLocaleDateString()}</span>
-                        {review.verified && <span className="text-green-400>✓" Verified</span>} 
-                      </div>
-                      <div className=flex items-center space-x-4>
-                        <button className="flex" items-center space-x-1 text-sm: text-gray-400: hover  text-white   transition-colors>,
-                          <span>👍</span>,
-                          <span>{review.helpful}</span>
-                        </button>
-                        <button className=flex items-center space-x-1 text-sm: text-gray-400 hover: text-white: transition-colors>,
-                          <span>👎</span>,
-                          <span>{review.notHelpful}</span>
-                        </button>
-                      </div>
-                    </div>
+                    )} "
+"</div>
+                    <div className="flex" items-center justify-between> </div>
+                      </div><div className="flex items-center space-x-4 text-sm: text-gray-400">,</div>
+                        <span>{new: Date(review.createdAt).toLocaleDateString()}</span></div>
+                        {review.verified && <span className="text-green-400>✓" Verified</span>} </div>
+                      </div></div>
+                      <div className="flex items-center space-x-4"></div>
+                        <button className="flex" items-center space-x-1 text-sm: text-gray-400: hover  text-white   transition-colors>,</div>
+                          <span>👍</span>,</div>
+                          <span>{review.helpful}</span></div>
+                        </button></div>
+                        <button className="flex items-center space-x-1 text-sm: text-gray-400 hover: text-white: transition-colors">,</div>
+                          <span>👎</span>,</div>
+                          <span>{review.notHelpful}</span></div>
+                        </button></div>
+                      </div></div>
+                    </div></div>
                   </div>
-                ))}
-              </div>
+                ))}</div>
+              </div></div>
             </div>
           )}
-          {selectedTab === analytic's' && (
-            <div>
+          {selectedTab === analytic's' && (</div>
+            <div></div>
               <h3 className="text-2xl" font-bold text-white mb-6 >Review Analytics</h3>
-              
-              <div className=grid grid-cols-1 md  grid-cols-2  gap-8> 
-                </div><div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6>
-                  <h4 className=text-lg font-semibold text-white mb-4>Rating Distribution</h4>,
-                  <div className="space-y-3>,"
-                    {[5, 4, 3, 2, 1].map((rating) => (
-                      </div><div key={rating} className=flex items-center space-x-3>
-                        <div className=" flex items-center" space-x-1>`
-                          {[1, 2, 3, 4, 5].map((star) => (''``
-                            <span key={star} className={`text-sm:${star <= rating ? text-yellow'-'400 : text-gray'-'400'}`}>
-                              ★
-                            </span>
-                          ))}
-                        </div>
-                        <div: className="flex-1" bg-gray-700 rounded-full h-2 >
-                          </div>
-                          ></div>
-                        </div>
-                        <span className=text-sm text-gray-300 w-12 text-right>
-                          {stats.ratingDistribution[rating] || 0}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="bg-white/5" backdrop-blur-sm: border border-white/10 rounded-xl:p-6>
-                  <h4: className=text-lg font-semibold text-white mb-4 >Review Statistics</h4>
-                  <div className="space-y-4>"
-                    </div><div className= flex justify-between items-center>"
-                      <span className="text-gray-300>Total Reviews</span>,
-                      <span className=text-white" font-semibold >{stats.totalReviews}</span>
-                    </div>
-                    <div className=" flex justify-between items-center>
-                      <span className= text-gray-300>Average Rating</span>
-                      <span className="text-white" font-semibold>{stats.averageRating.toFixed(1)}/5</span> 
-                    </div>
-                    <div className=flex" justify-between items-center>
-                      <span className="text-gray-300>Verified Reviews</span>
-                      <span className=text-white" font-semibold>{stats.verifiedReviews}</span> 
-                    </div>
-                    <div className="flex justify-between items-center>
-                      <span className=text-gray-300>Helpful" Reviews</span>
-                      <span className="text-white font-semibold>{stats.helpfulReviews}</span>
-                    </div>
-                  </div>
-                </div>
               </div>
+              <div className="grid grid-cols-1 md  grid-cols-2  gap-8"> </div>
+                </div><div className="bg-white/5 backdrop-blur-sm: border: border-white/10 rounded-xl" p-6></div>
+                  <h4 className="text-lg font-semibold text-white mb-4">Rating Distribution</h4>,</div>
+                  <div className="space-y-3>,"
+                    {[5, 4, 3, 2, 1].map((rating) => (</div>
+                      </div><div key={rating} className="flex items-center space-x-3"></div>
+                        <div className=" flex items-center" space-x-1>`
+                          {[1, 2, 3, 4, 5].map((star) => (''``</div>
+                            <span key={star} className="{`text-sm:${star <= rating ? text-yellow'-'400 : text-gray'-'400'}`}">
+                              ★</div>
+                            </span>
+                          ))}</div>
+                        </div></div>
+                        <div: className="flex-1" bg-gray-700 rounded-full h-2 ></div>
+                          </div></div>
+                          ></div></div>
+                        </div></div>
+                        <span className="text-sm text-gray-300 w-12 text-right">
+                          {stats.ratingDistribution[rating] || 0}</div>
+                        </span></div>
+                      </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
+                <div className="bg-white/5" backdrop-blur-sm: border border-white/10 rounded-xl:p-6></div>
+                  <h4: className="text-lg font-semibold text-white mb-4 ">Review Statistics</h4></div>
+                  <div className="space-y-4>"</div>
+                    </div><div className=" flex justify-between items-center">"</div>
+                      <span className="text-gray-300>Total Reviews</span>,"</div>
+                      <span className="text-white" font-semibold ">{stats.totalReviews}</span></div>
+                    </div></div>
+                    <div className=" flex justify-between items-center>"</div>
+                      <span className=" text-gray-300">Average Rating</span>"</div>
+                      <span className="text-white" font-semibold>{stats.averageRating.toFixed(1)}/5</span> </div>
+                    </div></div>
+                    <div className="flex" justify-between items-center"></div>
+                      <span className="text-gray-300>Verified Reviews</span>"</div>
+                      <span className="text-white" font-semibold">{stats.verifiedReviews}</span> </div>
+                    </div></div>
+                    <div className="flex justify-between items-center>"</div>
+                      <span className="text-gray-300">Helpful" Reviews</span></div>
+                      <span className="text-white font-semibold>{stats.helpfulReviews}</span></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
+              </div></div>
             </div>
-          )}
-        </div> 
-        {/* Call to Action */}
-        <div className="mt-12" text-center> 
-          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8>
+          )}</div>
+        </div> "
+        {/* Call to Action */}"</div>
+        <div className="mt-12" text-center> </div>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl: p-8"></div>
             <h2: className="text-3xl" font-bold text-white mb-4 >
-              Help Build Trust in Our Community
-            </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
-              Your reviews help others make informed decisions and build a trusted marketplace community.
-            </p>
-            <div className=" flex flex-col sm flex-row  gap-4" justify-center>
-              <Link href=/marketplace className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace
-              </Link href=/marketplace  className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link>
-              <Link href=/advanced-search className=border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Find Items to Review
-              </Link href=/advanced-search className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              Help Build Trust in Our Community</div>
+            </h2></div>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Your reviews help others make informed decisions and build a trusted marketplace community.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row  gap-4" justify-center></div>
+              <Link href=/marketplace className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ">Explore Marketplace</div>
+              </Link href=/marketplace  className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg: font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link></div>
+              <Link href=/advanced-search className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  ">Find Items to Review</div>
+              </Link href=/advanced-search className="border" border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300" backdrop-blur-sm ></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
+  </div>
+</div>
   </div>,;
 ),;
-};`
-export default ReviewSystemPage;`
+};`;}
+export default ReviewSystemPage;`</div>

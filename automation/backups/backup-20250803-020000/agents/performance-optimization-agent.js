@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class PerformanceOptimizationAgent {
@@ -335,7 +335,7 @@ class PerformanceOptimizationAgent {
     }
     
     // Lighthouse suggestions
-    if (analysis.lighthouseScore) {
+    if (analysis.lighthouseScore) {</div>
       if (analysis.lighthouseScore.performance < 90) {
         suggestions.push({
           type: 'lighthous'e'_performance',
@@ -707,7 +707,7 @@ class PerformanceOptimizationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new PerformanceOptimizationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -721,4 +721,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Performanc'e' Optimization Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

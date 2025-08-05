@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-
-const fs = require('f's');
-const path = require('pa't'h');
+;
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { execSync } = require('chil'd'_process');
 
-class ContentSyncAgent {
+class $1 {
   constructor(agentId, type, config) {
     this.agentId = agentId;
     this.type = type;
@@ -26,7 +26,7 @@ class ContentSyncAgent {
   }
 
   async start() {
-    console.log(`🚀 Starting Content Sync Agent ${this.agentId}`);
+    console.log("🚀 Starting Content Sync Agent ${this.agentId}");
     this.isRunning = true;
     
     // Ensure directories exist
@@ -45,9 +45,9 @@ class ContentSyncAgent {
   }
 
   startSyncLoop() {
-    console.log(`🔄 Content Sync Agent ${this.agentId} starting sync loop...`);
+    console.log("🔄 Content Sync Agent ${this.agentId} starting sync loop...");
     
-    const syncLoop = async () => {
+    const $1 = async () => {
       if (!this.isRunning) return;
       
       try {
@@ -55,7 +55,7 @@ class ContentSyncAgent {
         await this.sleep(this.syncInterval);
         syncLoop();
       } catch (error) {
-        console.error(`❌ Content Sync Agent ${this.agentId} error:`, error);
+        console.error("❌ Content Sync Agent ${this.agentId} error:", error);
         this.metrics.errors++;
         await this.sleep(5000); // Wait 5 seconds on error
         syncLoop();
@@ -66,18 +66,18 @@ class ContentSyncAgent {
   }
 
   async performContentSync() {
-    console.log(`📝 Content Sync Agent ${this.agentId} performing sync...`);
+    console.log("📝 Content Sync Agent ${this.agentId} performing sync...");
     
     try {
       // Detect new content
-      const newContent = await this.detectNewContent();
+      const $1 = await this.detectNewContent();
       
       if (newContent.length === 0) {
-        console.log(`📝 Content Sync Agent ${this.agentId}: No new content to sync`);
+        console.log("📝 Content Sync Agent ${this.agentId}: No new content to sync");
         return;
       }
       
-      console.log(`📝 Content Sync Agent ${this.agentId} found ${newContent.length} new content items`);
+      console.log("📝 Content Sync Agent ${this.agentId} found ${newContent.length} new content items");
       
       // Sync each content item
       for (const content of newContent) {
@@ -88,26 +88,26 @@ class ContentSyncAgent {
       this.metrics.contentSynced += newContent.length;
       this.metrics.lastSync = new Date().toISOString();
       
-      console.log(`✅ Content Sync Agent ${this.agentId} synced ${newContent.length} content items`);
+      console.log("✅ Content Sync Agent ${this.agentId} synced ${newContent.length} content items");
       
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} sync error:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} sync error:", error);
       this.metrics.errors++;
       throw error;
     }
   }
 
   async detectNewContent() {
-    const newContent = [];
+    const $1 = [];
     
     try {
       for (const contentDir of this.contentDirs) {
         if (fs.existsSync(contentDir)) {
-          const files = this.getAllFiles(contentDir);
+          const $1 = this.getAllFiles(contentDir);
           for (const file of files) {
             if (file.endsWith('.tsx') || file.endsWith('.jsx') || file.endsWith('.md') || file.endsWith('.json')) {
-              const lastModified = fs.statSync(file).mtime;
-              const timeSinceModified = Date.now() - lastModified.getTime();
+              const $1 = fs.statSync(file).mtime;
+              const $1 = Date.now() - lastModified.getTime();
               
               // Check if content has been updated recently (within 5 minutes)
               if (timeSinceModified < 300000) {
@@ -124,23 +124,23 @@ class ContentSyncAgent {
       }
       
       // Check for dynamic content from content generation
-      const dynamicContent = await this.detectDynamicContent();
+      const $1 = await this.detectDynamicContent();
       newContent.push(...dynamicContent);
       
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} error detecting content:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} error detecting content:", error);
     }
     
     return newContent;
   }
 
   getAllFiles(dir) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+    const $1 = [];
+    const $1 = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const $1 = path.join(dir, item);
+      const $1 = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...this.getAllFiles(fullPath));
@@ -153,20 +153,20 @@ class ContentSyncAgent {
   }
 
   async detectDynamicContent() {
-    const dynamicContent = [];
+    const $1 = [];
     
     try {
       // Check generated content directory for dynamic content
-      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
+      const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
       if (fs.existsSync(generatedContentDir)) {
-        const files = fs.readdirSync(generatedContentDir);
+        const $1 = fs.readdirSync(generatedContentDir);
         for (const file of files) {
           if (file.endsWith('.json')) {
-            const contentPath = path.join(generatedContentDir, file);
-            const content = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
+            const $1 = path.join(generatedContentDir, file);
+            const $1 = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
             
             if (content.type === 'conte'n't' && content.status === 'pendi'n'g') {
-              const processedContent = this.processDynamicContent(content);
+              const $1 = this.processDynamicContent(content);
               dynamicContent.push({
                 content: processedContent,
                 metadata: content,
@@ -178,7 +178,7 @@ class ContentSyncAgent {
         }
       }
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} error detecting dynamic content:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} error detecting dynamic content:", error);
     }
     
     return dynamicContent;
@@ -204,63 +204,63 @@ class ContentSyncAgent {
   generateBlogPostContent(data) {
     const { title, content, author, publishDate, tags = [] } = data;
     
-    return `---
+    return "---
 title: "${title}"
 author: "${author}"
 date: "${publishDate}"
-tags: [${tags.map(tag => `"${tag}"`).join(', ')}]
+tags: [${tags.map(tag => ""${tag}"").join(', ')}]
 ---
 
 ${content}
-`;
+";
   }
 
   generateProductDescriptionContent(data) {
     const { title, description, features = [], price, category } = data;
     
-    return `# ${title}
+    return "# ${title}
 
 ${description}
 
 ## Features
-${features.map(feature => `- ${feature}`).join('\n')}
+${features.map(feature => "- ${feature}").join('\n')}
 
 ## Pricing
 ${price}
 
 ## Category
 ${category}
-`;
+";
   }
 
   generateServiceDescriptionContent(data) {
     const { title, description, benefits = [], process = [] } = data;
     
-    return `# ${title}
+    return "# ${title}
 
 ${description}
 
 ## Benefits
-${benefits.map(benefit => `- ${benefit}`).join('\n')}
+${benefits.map(benefit => "- ${benefit}").join('\n')}
 
 ## Process
-${process.map((step, index) => `${index + 1}. ${step}`).join('\n')}
-`;
+${process.map((step, index) => "${index + 1}. ${step}").join('\n')}
+";
   }
 
   generateMarketingCopyContent(data) {
     const { title, headline, description, cta, benefits = [] } = data;
     
-    return `# ${title}
+    return "# ${title}
 
 ## ${headline}
 
 ${description}
 
-${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
+${benefits.map(benefit => "✅ ${benefit}").join('\n')}
 
 **${cta}**
-`;
+";
   }
 
   getTargetPath(contentData) {
@@ -268,34 +268,34 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
     
     switch (type) {
       case 'blog-po's't':
-        return path.join(process.cwd(), 'pag'e's', 'bl'o'g', `${slug}.md`);
+        return path.join(process.cwd(), 'pag'e's', 'bl'o'g', "${slug}.md");
       case 'product-descripti'o'n':
-        return path.join(process.cwd(), 'conte'n't', 'produc't's', `${slug}.md`);
+        return path.join(process.cwd(), 'conte'n't', 'produc't's', "${slug}.md");
       case 'service-descripti'o'n':
-        return path.join(process.cwd(), 'conte'n't', 'servic'e's', `${slug}.md`);
+        return path.join(process.cwd(), 'conte'n't', 'servic'e's', "${slug}.md");
       case 'marketing-co'p'y':
-        return path.join(process.cwd(), 'conte'n't', 'marketi'n'g', `${name}.md`);
+        return path.join(process.cwd(), 'conte'n't', 'marketi'n'g', "${name}.md");
       default:
-        return path.join(process.cwd(), 'conte'n't', `${slug}.md`);
+        return path.join(process.cwd(), 'conte'n't', "${slug}.md");
     }
   }
 
   async syncContent(content) {
     try {
-      console.log(`📝 Content Sync Agent ${this.agentId} syncing content: ${path.basename(content.path || content.targetPath)}`);
+      console.log("📝 Content Sync Agent ${this.agentId} syncing content: ${path.basename(content.path || content.targetPath)}");
       
       if (content.type === 'updat'e'd') {
         // Content was updated, ensure it's' properly formatted
         await this.updateContentFile(content);
       } else if (content.type === 'dynam'i'c') {
         // Write generated content to target
-        const targetDir = path.dirname(content.targetPath);
+        const $1 = path.dirname(content.targetPath);
         if (!fs.existsSync(targetDir)) {
           fs.mkdirSync(targetDir, { recursive: true });
         }
         
         fs.writeFileSync(content.targetPath, content.content);
-        console.log(`✅ Content Sync Agent ${this.agentId} generated content: ${path.basename(content.targetPath)}`);
+        console.log("✅ Content Sync Agent ${this.agentId} generated content: ${path.basename(content.targetPath)}");
         
         // Update metadata status
         if (content.metadata) {
@@ -309,7 +309,7 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
       }
       
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} failed to sync content:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} failed to sync content:", error);
       throw error;
     }
   }
@@ -317,24 +317,24 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
   async updateContentFile(content) {
     try {
       // Read current content
-      const currentContent = fs.readFileSync(content.path, 'ut'f'8');
+      const $1 = fs.readFileSync(content.path, 'ut'f'8');
       
       // Apply any content improvements or formatting
-      const improvedContent = this.improveContent(currentContent);
+      const $1 = this.improveContent(currentContent);
       
       // Write back if changed
       if (improvedContent !== currentContent) {
         fs.writeFileSync(content.path, improvedContent);
-        console.log(`✅ Content Sync Agent ${this.agentId} improved content: ${path.basename(content.path)}`);
+        console.log("✅ Content Sync Agent ${this.agentId} improved content: ${path.basename(content.path)}");
       }
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} error updating content file:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} error updating content file:", error);
     }
   }
 
   improveContent(content) {
     // Apply content improvements
-    let improved = content;
+    let $1 = content;
     
     // Ensure proper markdown formatting
     improved = improved.replace(/\n{3,}/g, '\n\n');
@@ -350,10 +350,10 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
 
   async updateContentStatus(contentData, status) {
     try {
-      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
-      const metadataFile = path.join(generatedContentDir, `${contentData.slug || contentData.name}-metadata.json`);
+      const $1 = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
+      const $1 = path.join(generatedContentDir, "${contentData.slug || contentData.name}-metadata.json");
       
-      const updatedData = {
+      const $1 = {
         ...contentData,
         status: status,
         syncedAt: new Date().toISOString()
@@ -361,23 +361,23 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
       
       fs.writeFileSync(metadataFile, JSON.stringify(updatedData, null, 2));
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} error updating content status:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} error updating content status:", error);
     }
   }
 
   async commitContentSync(contentName) {
     try {
       execSync('gi't' add .', { stdio: 'pi'p'e' });
-      execSync(`git commit -m "Auto-sync content: ${contentName}"`, { stdio: 'pi'p'e' });
+      execSync("git commit -m "Auto-sync content: ${contentName}"", { stdio: 'pi'p'e' });
       execSync('gi't' push', { stdio: 'pi'p'e' });
-      console.log(`🚀 Content Sync Agent ${this.agentId} committed content sync: ${contentName}`);
+      console.log("🚀 Content Sync Agent ${this.agentId} committed content sync: ${contentName}");
     } catch (error) {
-      console.error(`❌ Content Sync Agent ${this.agentId} commit error:`, error);
+      console.error("❌ Content Sync Agent ${this.agentId} commit error:", error);
     }
   }
 
   async stop() {
-    console.log(`🛑 Stopping Content Sync Agent ${this.agentId}`);
+    console.log("🛑 Stopping Content Sync Agent ${this.agentId}");
     this.isRunning = false;
   }
 
@@ -398,31 +398,31 @@ ${benefits.map(benefit => `✅ ${benefit}`).join('\n')}
 
 // CLI interface
 if (require.main === module) {
-  const args = process.argv.slice(2);
-  const agentId = args[args.indexOf('--agent-'i'd') + 1];
-  const type = args[args.indexOf('--ty'p'e') + 1];
-  const configArg = args[args.indexOf('--conf'i'g') + 1];
-  const config = JSON.parse(configArg || '{}');
+  const $1 = process.argv.slice(2);
+  const $1 = args[args.indexOf('--agent-'i'd') + 1];
+  const $1 = args[args.indexOf('--ty'p'e') + 1];
+  const $1 = args[args.indexOf('--conf'i'g') + 1];
+  const $1 = JSON.parse(configArg || '{}');
 
-  const agent = new ContentSyncAgent(agentId, type, config);
+  const $1 = new ContentSyncAgent(agentId, type, config);
   
   // Handle graceful shutdown
   process.on('SIGTE'R'M', async () => {
-    console.log(`🛑 Content Sync Agent ${agentId} received SIGTERM`);
+    console.log("🛑 Content Sync Agent ${agentId} received SIGTERM");
     await agent.stop();
     process.exit(0);
   });
 
   process.on('SIGI'N'T', async () => {
-    console.log(`🛑 Content Sync Agent ${agentId} received SIGINT`);
+    console.log("🛑 Content Sync Agent ${agentId} received SIGINT");
     await agent.stop();
     process.exit(0);
   });
 
   agent.start().catch(error => {
-    console.error(`❌ Content Sync Agent ${agentId} failed to start:`, error);
+    console.error("❌ Content Sync Agent ${agentId} failed to start:", error);
     process.exit(1);
   });
 }
 
-module.exports = ContentSyncAgent; 
+module.exports = ContentSyncAgent; </div>

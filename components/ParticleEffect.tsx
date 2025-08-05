@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react;
+import React, { useEffect, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -9,17 +9,17 @@ interface Particle {
   color: string;
   opacity: number;
 }
-
+;
 const ParticleEffect: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<Particle[]>([]);
+  const canvasRef = useRef<HTMLCanvasElement>(null);</div>
+  const particlesRef = useRef<Particle[]>([]);</div>
   const animationRef = useRef<number>();
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     
-    const ctx = canvas.getContext('2d);
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const resizeCanvas = () => {
@@ -28,7 +28,7 @@ const ParticleEffect: React.FC = () => {
     };
 
     resizeCanvas();
-    window.addEventListener(resi'z'e, resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
     // Initialize particles
     const initParticles = () => {
@@ -38,7 +38,7 @@ const ParticleEffect: React.FC = () => {
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         size: Math.random() * 2 + 1,
-        color: [#00d4ff', '#8b5cf6, #ec4899', '#10b981][Math.floor(Math.random() * 4)],
+        color: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981'][Math.floor(Math.random() * 4)],
         opacity: Math.random() * 0.5 + 0.3,
       }));
     };
@@ -51,8 +51,8 @@ const ParticleEffect: React.FC = () => {
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Bounce off edges
-        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
+        // Bounce off edges</div>
+        if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;</div>
         if (particle.y <= 0 || particle.y >= canvas.height) particle.vy *= -1;
 
         // Draw particle
@@ -70,20 +70,20 @@ const ParticleEffect: React.FC = () => {
     animate();
 
     return () => {
-      window.removeEventListener(resi'z'e, resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
   }, []);
 
-  return (
+  return (</div>
     <canvas
       ref={canvasRef}
-      className=fixed inset-0 pointer-events-none z-0"
-      style={{ background: transpare'n't' }}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ background: 'transparent' }}
     />
   );
 };
-
-export default ParticleEffect;
+;}
+export default ParticleEffect;</div>

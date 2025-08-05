@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
+;
+const $1 = promisify(exec);
 
-const execAsync = promisify(exec);
-
-class APITestingValidationAgent {
+class $1 {
   constructor() {
     
   // Enhanced Learning Capabilities
@@ -33,12 +33,12 @@ class APITestingValidationAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -47,7 +47,7 @@ class APITestingValidationAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -65,7 +65,7 @@ class APITestingValidationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'test-resul't's'),
       path.join(this.reportsDir, 'validation-repor't's'),
@@ -82,7 +82,7 @@ class APITestingValidationAgent {
   }
 
   async start() {
-    console.log(`API Testing Validation Agent ${this.agentId} started`);
+    console.log("API Testing Validation Agent ${this.agentId} started");
     
     // Initial API analysis
     await this.analyzeAPIs();
@@ -107,7 +107,7 @@ class APITestingValidationAgent {
     try {
       console.log('Performin'g' comprehensive API analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         apiEndpoints: [],
@@ -147,15 +147,15 @@ class APITestingValidationAgent {
   }
 
   async discoverAPIEndpoints() {
-    const endpoints = [];
+    const $1 = [];
     
     try {
       // Look for API route files
-      const apiFiles = this.findAPIFiles();
+      const $1 = this.findAPIFiles();
       
       for (const file of apiFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const discoveredEndpoints = this.extractEndpoints(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractEndpoints(content);
         
         for (const endpoint of discoveredEndpoints) {
           endpoints.push({
@@ -169,13 +169,13 @@ class APITestingValidationAgent {
       }
       
       // Also check for Next.js API routes
-      const nextApiDir = path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i');
+      const $1 = path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i');
       if (fs.existsSync(nextApiDir)) {
-        const nextApiFiles = this.findNextAPIFiles(nextApiDir);
+        const $1 = this.findNextAPIFiles(nextApiDir);
         
         for (const file of nextApiFiles) {
-          const content = fs.readFileSync(file, 'ut'f'8');
-          const nextEndpoints = this.extractNextEndpoints(file, content);
+          const $1 = fs.readFileSync(file, 'ut'f'8');
+          const $1 = this.extractNextEndpoints(file, content);
           
           for (const endpoint of nextEndpoints) {
             endpoints.push({
@@ -197,23 +197,23 @@ class APITestingValidationAgent {
   }
 
   findAPIFiles() {
-    const apiFiles = [];
-    const apiExtensions = ['.js', '.ts'];
+    const $1 = [];
+    const $1 = ['.js', '.ts'];
     
     try {
-      const findAPIFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findAPIFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (apiExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsAPIEndpoints(content)) {
                 apiFiles.push(fullPath);
               }
@@ -232,7 +232,7 @@ class APITestingValidationAgent {
   }
 
   containsAPIEndpoints(content) {
-    const apiKeywords = [
+    const $1 = [
       'ap'p'.get', 'ap'p'.post', 'ap'p'.put', 'ap'p'.delete', 'ap'p'.patch',
       'route'r'.get', 'route'r'.post', 'route'r'.put', 'route'r'.delete', 'route'r'.patch',
       'expres's'.Router', 'ap'p'.use', 'route'r'.use'
@@ -242,8 +242,8 @@ class APITestingValidationAgent {
   }
 
   extractEndpoints(content) {
-    const endpoints = [];
-    const endpointRegex = /(app|router)\.(get|post|put|delete|patch)\s*\(\s*['"`]([^'"`]+)['"`]/g;
+    const $1 = [];
+    const $1 = /(app|router)\.(get|post|put|delete|patch)\s*\(\s*['""]([^'""]+)['""]/g;
     
     let match;
     while ((match = endpointRegex.exec(content)) !== null) {
@@ -259,20 +259,20 @@ class APITestingValidationAgent {
   }
 
   findNextAPIFiles(apiDir) {
-    const apiFiles = [];
+    const $1 = [];
     
     try {
-      const findNextAPIFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory()) {
             findNextAPIFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.js' || ext === '.ts') {
               apiFiles.push(fullPath);
             }
@@ -290,17 +290,17 @@ class APITestingValidationAgent {
   }
 
   extractNextEndpoints(file, content) {
-    const endpoints = [];
-    const relativePath = path.relative(path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i'), file);
-    const routePath = '/' + relativePath.replace(/\.(js|ts)$/, '');
+    const $1 = [];
+    const $1 = path.relative(path.join(this.projectRoot, 's'r'c', 'pag'e's', 'a'p'i'), file);
+    const $1 = '/' + relativePath.replace(/\.(js|ts)$/, '');
     
     // Check for HTTP methods in the file
-    const methods = ['G'E'T', 'PO'S'T', 'P'U'T', 'DELE'T'E', 'PAT'C'H'];
+    const $1 = ['G'E'T', 'PO'S'T', 'P'U'T', 'DELE'T'E', 'PAT'C'H'];
     
     for (const method of methods) {
-      if (content.includes(`export default function ${method.toLowerCase()}`) || 
-          content.includes(`export async function ${method.toLowerCase()}`) ||
-          content.includes(`case '${method}':`)) {
+      if (content.includes("export default function ${method.toLowerCase()}") || 
+          content.includes("export async function ${method.toLowerCase()}") ||
+          content.includes("case '${method}':")) {
         endpoints.push({
           method: method,
           path: routePath,
@@ -315,8 +315,8 @@ class APITestingValidationAgent {
 
   extractEndpointDescription(content, index) {
     // Look for comments above the endpoint
-    const beforeContent = content.substring(Math.max(0, index - 200), index);
-    const commentMatch = beforeContent.match(/\/\*\*([^*]|\*(?!\/))*\*\//s);
+    const $1 = content.substring(Math.max(0, index - 200), index);
+    const $1 = beforeContent.match(/\/\*\*([^*]|\*(?!\/))*\*\//s);
     
     if (commentMatch) {
       return commentMatch[0].replace(/\/\*\*|\*\//g, '').trim();
@@ -326,10 +326,10 @@ class APITestingValidationAgent {
   }
 
   extractParameters(content, index) {
-    const parameters = [];
+    const $1 = [];
     
     // Look for parameter definitions
-    const paramRegex = /req\.(body|query|params)\.(\w+)/g;
+    const $1 = /req\.(body|query|params)\.(\w+)/g;
     let match;
     
     while ((match = paramRegex.exec(content)) !== null) {
@@ -343,7 +343,7 @@ class APITestingValidationAgent {
   }
 
   async analyzeTestCoverage() {
-    const coverage = {
+    const $1 = {
       totalEndpoints: 0,
       testedEndpoints: 0,
       coveragePercentage: 0,
@@ -353,20 +353,20 @@ class APITestingValidationAgent {
     
     try {
       // Find test files
-      const testFiles = this.findTestFiles();
+      const $1 = this.findTestFiles();
       coverage.testFiles = testFiles;
       
       // Count total endpoints
-      const apiFiles = this.findAPIFiles();
+      const $1 = this.findAPIFiles();
       for (const file of apiFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const endpoints = this.extractEndpoints(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractEndpoints(content);
         coverage.totalEndpoints += endpoints.length;
       }
       
       // Check for test coverage
       for (const testFile of testFiles) {
-        const content = fs.readFileSync(testFile, 'ut'f'8');
+        const $1 = fs.readFileSync(testFile, 'ut'f'8');
         if (this.containsAPITests(content)) {
           coverage.testedEndpoints += 1;
         }
@@ -386,15 +386,15 @@ class APITestingValidationAgent {
   }
 
   findTestFiles() {
-    const testFiles = [];
+    const $1 = [];
     
     try {
-      const findTestFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findTestFiles(fullPath);
@@ -416,7 +416,7 @@ class APITestingValidationAgent {
   }
 
   containsAPITests(content) {
-    const testKeywords = [
+    const $1 = [
       'superte's't', 'reques't'(', 'ap'p'.listen', 'describ'e'(', 'i't'(',
       'G'E'T', 'PO'S'T', 'P'U'T', 'DELE'T'E', 'PAT'C'H'
     ];
@@ -425,10 +425,10 @@ class APITestingValidationAgent {
   }
 
   identifyMissingTests(coverage) {
-    const missingTests = [];
+    const $1 = [];
     
     // This would compare discovered endpoints with existing tests
-    // For now, return a simplified list
+    // For now, return a simplified list</div>
     if (coverage.coveragePercentage < 100) {
       missingTests.push({
         endpoint: '/api/example',
@@ -441,21 +441,21 @@ class APITestingValidationAgent {
   }
 
   async validateAPIEndpoints() {
-    const validation = {
+    const $1 = {
       validEndpoints: [],
       invalidEndpoints: [],
       validationErrors: []
     };
     
     try {
-      const apiFiles = this.findAPIFiles();
+      const $1 = this.findAPIFiles();
       
       for (const file of apiFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const endpoints = this.extractEndpoints(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractEndpoints(content);
         
         for (const endpoint of endpoints) {
-          const validationResult = this.validateEndpoint(endpoint, content);
+          const $1 = this.validateEndpoint(endpoint, content);
           
           if (validationResult.isValid) {
             validation.validEndpoints.push(endpoint);
@@ -474,7 +474,7 @@ class APITestingValidationAgent {
   }
 
   validateEndpoint(endpoint, content) {
-    const result = {
+    const $1 = {
       isValid: true,
       errors: []
     };
@@ -501,7 +501,7 @@ class APITestingValidationAgent {
   }
 
   async analyzePerformance() {
-    const performance = {
+    const $1 = {
       responseTimes: [],
       throughput: 0,
       errorRates: [],
@@ -535,14 +535,14 @@ class APITestingValidationAgent {
   }
 
   async checkSecurityIssues() {
-    const securityIssues = [];
+    const $1 = [];
     
     try {
-      const apiFiles = this.findAPIFiles();
+      const $1 = this.findAPIFiles();
       
       for (const file of apiFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const issues = this.identifySecurityIssues(content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.identifySecurityIssues(content);
         
         for (const issue of issues) {
           securityIssues.push({
@@ -562,7 +562,7 @@ class APITestingValidationAgent {
   }
 
   identifySecurityIssues(content) {
-    const issues = [];
+    const $1 = [];
     
     // Check for SQL injection
     if (content.includes('quer'y'(') && content.includes('${')) {
@@ -595,14 +595,14 @@ class APITestingValidationAgent {
   }
 
   generateRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
-    // Test coverage recommendations
+    // Test coverage recommendations</div>
     if (analysis.testCoverage.coveragePercentage < 80) {
       recommendations.push({
         type: 'tes't'_coverage',
         priority: 'hi'g'h',
-        message: `Low test coverage: ${analysis.testCoverage.coveragePercentage.toFixed(1)}%`,
+        message: "Low test coverage: ${analysis.testCoverage.coveragePercentage.toFixed(1)}%",
         suggestion: 'Ad'd' more comprehensive API tests'
       });
     }
@@ -612,7 +612,7 @@ class APITestingValidationAgent {
       recommendations.push({
         type: 'performan'c'e',
         priority: 'medi'u'm',
-        message: `Slow endpoint: ${slowEndpoint.endpoint}`,
+        message: "Slow endpoint: ${slowEndpoint.endpoint}",
         suggestion: slowEndpoint.recommendation
       });
     }
@@ -622,8 +622,8 @@ class APITestingValidationAgent {
       recommendations.push({
         type: 'securi't'y',
         priority: issue.severity === 'hi'g'h' ? 'critic'a'l' : 'medi'u'm',
-        message: `Security issue: ${issue.issue}`,
-        suggestion: `Fix ${issue.issue.toLowerCase()} in ${issue.file}`
+        message: "Security issue: ${issue.issue}",
+        suggestion: "Fix ${issue.issue.toLowerCase()} in ${issue.file}"
       });
     }
     
@@ -634,7 +634,7 @@ class APITestingValidationAgent {
     try {
       console.log('Runnin'g' API tests...');
       
-      const testResults = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         tests: [],
@@ -662,8 +662,8 @@ class APITestingValidationAgent {
       }
       
       // Save test results
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'test-resul't's', `api-tests-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'test-resul't's', "api-tests-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(testResults, null, 2));
       
     } catch (error) {
@@ -672,7 +672,7 @@ class APITestingValidationAgent {
   }
 
   parseTestResults(output) {
-    const summary = {
+    const $1 = {
       total: 0,
       passed: 0,
       failed: 0,
@@ -680,9 +680,9 @@ class APITestingValidationAgent {
     };
     
     // Parse Jest output
-    const totalMatch = output.match(/(\d+) tests?/);
-    const passedMatch = output.match(/(\d+) passed/);
-    const failedMatch = output.match(/(\d+) failed/);
+    const $1 = output.match(/(\d+) tests?/);
+    const $1 = output.match(/(\d+) passed/);
+    const $1 = output.match(/(\d+) failed/);
     
     if (totalMatch) summary.total = parseInt(totalMatch[1]);
     if (passedMatch) summary.passed = parseInt(passedMatch[1]);
@@ -692,10 +692,10 @@ class APITestingValidationAgent {
   }
 
   extractTestDetails(output) {
-    const tests = [];
+    const $1 = [];
     
     // Extract individual test results
-    const testLines = output.split('\n').filter(line => 
+    const $1 = output.split('\n').filter(line => 
       line.includes('✓') || line.includes('✗') || line.includes('●')
     );
     
@@ -720,7 +720,7 @@ class APITestingValidationAgent {
     try {
       console.log('Validatin'g' APIs...');
       
-      const validationReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         validations: [],
@@ -728,11 +728,11 @@ class APITestingValidationAgent {
       };
       
       // Validate API endpoints
-      const apiFiles = this.findAPIFiles();
+      const $1 = this.findAPIFiles();
       
       for (const file of apiFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const validation = this.validateAPIFile(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.validateAPIFile(file, content);
         
         validationReport.validations.push(validation);
         
@@ -742,8 +742,8 @@ class APITestingValidationAgent {
       }
       
       // Save validation report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'validation-repor't's', `validation-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'validation-repor't's', "validation-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(validationReport, null, 2));
       
     } catch (error) {
@@ -752,7 +752,7 @@ class APITestingValidationAgent {
   }
 
   validateAPIFile(file, content) {
-    const validation = {
+    const $1 = {
       file: file,
       isValid: true,
       issues: []
@@ -783,7 +783,7 @@ class APITestingValidationAgent {
     try {
       console.log('Runnin'g' performance tests...');
       
-      const performanceReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         endpoints: [],
@@ -795,11 +795,11 @@ class APITestingValidationAgent {
       };
       
       // Simulate performance testing
-      const endpoints = await this.discoverAPIEndpoints();
+      const $1 = await this.discoverAPIEndpoints();
       performanceReport.summary.totalEndpoints = endpoints.length;
       
       for (const endpoint of endpoints) {
-        const responseTime = Math.random() * 2000; // Simulate response time
+        const $1 = Math.random() * 2000; // Simulate response time
         
         performanceReport.endpoints.push({
           endpoint: endpoint.path,
@@ -818,8 +818,8 @@ class APITestingValidationAgent {
         performanceReport.endpoints.length;
       
       // Save performance report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'performance-tes't's', `performance-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'performance-tes't's', "performance-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(performanceReport, null, 2));
       
     } catch (error) {
@@ -828,20 +828,20 @@ class APITestingValidationAgent {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'coverage-repor't's', `analysis-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'coverage-repor't's', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Analysis report saved: ${reportPath}`);
+    console.log("Analysis report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`API Testing Validation Agent ${this.agentId} stopping...`);
+    console.log("API Testing Validation Agent ${this.agentId} stopping...`);
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new APITestingValidationAgent();
+// Start the agent;
+const $1 = new APITestingValidationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -854,4 +854,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('AP'I' Testing Validation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

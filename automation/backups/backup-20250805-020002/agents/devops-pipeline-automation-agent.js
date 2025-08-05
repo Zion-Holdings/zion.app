@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DevOpsPipelineAutomationAgent {
@@ -861,7 +861,7 @@ class DevOpsPipelineAutomationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new DevOpsPipelineAutomationAgent();
 
 process.on('SIGTE'R'M', () => {

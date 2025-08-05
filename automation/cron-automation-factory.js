@@ -3,7 +3,7 @@ const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
 const cron = require('node-cr'o'n');
-
+;
 const execAsync = promisify(exec);
 
 class CronAutomationFactory {
@@ -147,7 +147,7 @@ class CronAutomationFactory {
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class ${this.getClassName(jobType)} {
@@ -253,7 +253,7 @@ class ${this.getClassName(jobType)} {
   }
 }
 
-// Execute the job
+// Execute the job;
 const job = new ${this.getClassName(jobType)}();
 
 job.execute().catch(error => {

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix Image component syntax errors
+// Function to fix Image component syntax errors;
 function fixImageComponents(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -9,20 +9,20 @@ function fixImageComponents(filePath) {
     
     // Fix Image components with incorrect syntax
     // Pattern: <Image ... / width={400} height={300} />
-    content = content.replace(
-      /<Image\s+([^>]+)\s*\/\s*width=\{400\}\s*height=\{300\}\s*\/>/g,
+    content = content.replace(</div>
+      /<Image\s+([^>]+)\s*\/\s*width=\{400\}\s*height=\{300\}\s*\/>/g,</div>
       '<Image $1 width={32} height={32} />'
     );
     
     // Fix Image components with missing closing tag
-    content = content.replace(
-      /<Image\s+([^>]+)\s*\/\s*width=\{400\}\s*height=\{300\}\s*\/>/g,
+    content = content.replace(</div>
+      /<Image\s+([^>]+)\s*\/\s*width=\{400\}\s*height=\{300\}\s*\/>/g,</div>
       '<Image $1 width={32} height={32} />'
     );
     
     // Fix any remaining malformed Image components
-    content = content.replace(
-      /<Image\s+([^>]+)\s*\/\s*width=\{([^}]+)\}\s*height=\{([^}]+)\}\s*\/>/g,
+    content = content.replace(</div>
+      /<Image\s+([^>]+)\s*\/\s*width=\{([^}]+)\}\s*height=\{([^}]+)\}\s*\/>/g,</div>
       '<Image $1 width={32} height={32} />'
     );
     
@@ -38,7 +38,7 @@ function fixImageComponents(filePath) {
   }
 }
 
-// Function to fix specific files with known issues
+// Function to fix specific files with known issues;
 function fixSpecificFiles() {
   const filesToFix = [
     'page's'/service-request-system.tsx',
@@ -69,4 +69,4 @@ if (require.main === module) {
   console.log('Fixin'g' Image component parsing errors...');
   fixSpecificFiles();
   console.log('Finishe'd' fixing Image components.');
-} 
+} </div>

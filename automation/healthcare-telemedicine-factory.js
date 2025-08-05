@@ -237,7 +237,7 @@ class HealthcareTelemedicineFactory {
   }
 
   generatePatientCareAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -322,7 +322,7 @@ module.exports = PatientCareAgent;
   }
 
   generateTelemedicineAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -407,7 +407,7 @@ module.exports = TelemedicineAgent;
   }
 
   generateHealthMonitoringAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -492,7 +492,7 @@ module.exports = HealthMonitoringAgent;
   }
 
   generatePharmacyAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -577,7 +577,7 @@ module.exports = PharmacyAgent;
   }
 
   generateMentalHealthAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -662,7 +662,7 @@ module.exports = MentalHealthAgent;
   }
 
   generatePreventiveCareAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -747,7 +747,7 @@ module.exports = PreventiveCareAgent;
   }
 
   generateHIPAAComplianceAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -832,7 +832,7 @@ module.exports = HIPAAComplianceAgent;
   }
 
   generateMedicalRecordsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -917,7 +917,7 @@ module.exports = MedicalRecordsAgent;
   }
 
   generateHealthAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1002,7 +1002,7 @@ module.exports = HealthAnalyticsAgent;
   }
 
   generateClinicalDecisionAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1087,7 +1087,7 @@ module.exports = ClinicalDecisionAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

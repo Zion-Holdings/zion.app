@@ -271,9 +271,9 @@ class SaaSDevelopmentAgent {
 
   async generateComponentCode(component, featureType, techStack) {
     const templates = {
-      'login-fo'r'm': `
+      'login-fo'r'm': `;}
 import React, { useState } from 'rea'c't';
-
+;
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -287,33 +287,33 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
+    <form onSubmit={handleSubmit} className="login-form"></div>
       <input
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         required
-      />
+      /></div>
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
         required
-      />
+      /></div>
       <button type="submit" disabled={loading}>
-        {loading ? 'Signin'g' in...' : 'Sig'n' In'}
-      </button>
+        {loading ? 'Signin'g' in...' : 'Sig'n' In'}</div>
+      </button></div>
     </form>
   );
 };
-
+;}
 export default LoginForm;
 `,
-      'dashboa'r'd': `
+      'dashboa'r'd': `;}
 import React, { useState, useEffect } from 'rea'c't';
-
+;
 const Dashboard = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -322,19 +322,19 @@ const Dashboard = () => {
     // Fetch dashboard data
     setLoading(false);
   }, []);
-
+</div>
   if (loading) return <div>Loading...</div>;
 
-  return (
-    <div className="dashboard">
-      <h1>Dashboard</h1>
+  return (</div>
+    <div className="dashboard"></div>
+      <h1>Dashboard</h1></div>
       <div className="dashboard-grid">
-        {/* Dashboard widgets */}
-      </div>
+        {/* Dashboard widgets */}</div>
+      </div></div>
     </div>
   );
 };
-
+;}
 export default Dashboard;
 `
     };
@@ -344,9 +344,9 @@ export default Dashboard;
 
   async generateBackendCode(endpoint, featureType, techStack) {
     const templates = {
-      'auth-middlewa'r'e': `
+      'auth-middlewa'r'e': `;
 const jwt = require('jsonwebtok'e'n');
-
+;
 const authMiddleware = (req, res, next) => {
   const token = req.header('Authorizati'o'n')?.replace('Beare'r' ', '');
   
@@ -365,7 +365,7 @@ const authMiddleware = (req, res, next) => {
 
 module.exports = authMiddleware;
 `,
-      'api-rout'e's': `
+      'api-rout'e's': `;
 const express = require('expre's's');
 const router = express.Router();
 
@@ -411,17 +411,17 @@ CREATE TABLE sessions (
   }
 
   async generateTestCode(feature) {
-    return `
-import { render, screen, fireEvent } from '@testing-library/react';
+    return `;}
+import { render, screen, fireEvent } from '@testing-library/react';}
 import ${feature.name} from './${feature.name}';
 
 describe('${feature.name}', () => {
-  test('render's' correctly', () => {
+  test('render's' correctly', () => {</div>
     render(<${feature.name} />);
     // Test implementation
   });
 
-  test('handle's' user interactions', () => {
+  test('handle's' user interactions', () => {</div>
     render(<${feature.name} />);
     // Test user interactions
   });
@@ -472,7 +472,7 @@ describe('${feature.name}', () => {
       .filter(project => project.status === 'acti'v'e');
     
     for (const project of projects) {
-      // Randomly add new features to active projects
+      // Randomly add new features to active projects</div>
       if (Math.random() < 0.3) { // 30% chance
         const featureTypes = Object.keys(this.featureTemplates);
         const randomFeatureType = featureTypes[Math.floor(Math.random() * featureTypes.length)];
@@ -599,4 +599,4 @@ if (require.main === module) {
   agent.start().catch(console.error);
 }
 
-module.exports = SaaSDevelopmentAgent; 
+module.exports = SaaSDevelopmentAgent; </div>

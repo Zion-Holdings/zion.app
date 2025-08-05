@@ -6,7 +6,7 @@ import { useMemo } from 'react';
  * @param deps Dependencies for the factory function
  * @returns Stable mock data
  */;
-
+;}
 export function useMockData<T>(factory: () => T, deps: any[] = []): T {
   return useMemo(factory, [factory, ...deps]);}
 /**
@@ -14,7 +14,7 @@ export function useMockData<T>(factory: () => T, deps: any[] = []): T {
  * @param analyticsData The analytics data object
  * @returns Stable analytics data
  */;
-
+;}
 export function useMockAnalytics(analyticsData: any) {
   return useMemo(() => analyticsData, [analyticsData]);}
 /**
@@ -23,7 +23,7 @@ export function useMockAnalytics(analyticsData: any) {
  * @param deps Dependencies for the factory function
  * @returns Stable array
  */;
-
+</div>;}
 export function useMockArray<T>(arrayFactory: () => T[], deps: any[] = []): T[] {
   return useMemo(arrayFactory, [arrayFactory, ...deps]);}
 /**
@@ -32,7 +32,7 @@ export function useMockArray<T>(arrayFactory: () => T[], deps: any[] = []): T[] 
  * @param deps Dependencies for the factory function
  * @returns Stable object
  */;
-
+</div>;}
 export function useMockObject<T>(objectFactory: () => T, deps: any[] = []): T {
   return useMemo(objectFactory, [objectFactory, ...deps]);}'
 /**
@@ -40,7 +40,7 @@ export function useMockObject<T>(objectFactory: () => T, deps: any[] = []): T {
  * @param data The array data
  * @returns Stable array data
  */;
-
+</div>;}
 export function useStableMockArray<T>(data: T[]): T[] {
   return useMemo(() => data, []);}
 /**
@@ -48,7 +48,7 @@ export function useStableMockArray<T>(data: T[]): T[] {
  * @param data The object data
  * @returns Stable object data
  */;
-
+</div>;}
 export function useStableMockObject<T>(data: T): T {
   return useMemo(() => data, []);}
 /**
@@ -57,7 +57,7 @@ export function useStableMockObject<T>(data: T): T {
  * @param deps Dependencies array
  * @returns Stable data
  */;
-
+</div>;}
 export function useStableMockData<T>(data: T, deps: any[] = []): T {
   return useMemo(() => data, deps);'
-} '
+} '</div>

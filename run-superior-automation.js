@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const SuperiorAutomationRunner = require('./automation/frontend-sync-agents/superior-automation-runner');
 
 async function main() {

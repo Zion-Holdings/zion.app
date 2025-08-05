@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix unterminated string literals
+// Function to fix unterminated string literals;
 function fixStringLiterals(content) {
   // Fix common patterns of unterminated string literals
   let fixed = content;
@@ -48,7 +48,7 @@ function fixStringLiterals(content) {
   return fixed;
 }
 
-// Function to process a file
+// Function to process a file;
 function processFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'ut'f'8');
@@ -66,7 +66,7 @@ function processFile(filePath) {
   }
 }
 
-// Function to recursively find all TypeScript/JavaScript files
+// Function to recursively find all TypeScript/JavaScript files;
 function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
   const files = [];
   
@@ -92,12 +92,12 @@ function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
   return files;
 }
 
-// Main execution
+// Main execution;
 const projectRoot = process.cwd();
 const files = findFiles(projectRoot);
 
 console.log(`Found ${files.length} files to process...`);
-
+;
 let fixedCount = 0;
 for (const file of files) {
   if (processFile(file)) {

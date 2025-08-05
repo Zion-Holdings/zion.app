@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -53,6 +53,7 @@ class AgentMonitor {
         this.checkAgentStatus();
     }
 }
-
+;
 const monitor = new AgentMonitor();
 monitor.startMonitoring();
+</div>

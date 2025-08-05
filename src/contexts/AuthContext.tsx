@@ -1,24 +1,24 @@
-import React, { createContext, useContext, useEffect, useState , useCallback } from 'react
-import { User, Session, Provider } from '@supabase/supabase-js
+import React, { createContext, useContext, useEffect, useState , useCallback } from 'react;}
+import { User, Session, Provider } from '@supabase/supabase-js;}
 import { supabase } from '../../utils/supabase/client
 interface AuthContextType {
   user: User | null
   session: Session | null
   loading: boolean
   error: string | null
-  signIn: (email: string, password: string) => Promise<{ error: any }>
-  signUp: (email: string, password: string) => Promise<{ error: any }>
-  signOut: () => Promise<void>
-  resetPassword: (email: string) => Promise<{ error: any }>
-  updatePassword: (password: string) => Promise<{ error: any }>
+  signIn: (email: string, password: string) => Promise<{ error: any }></div>
+  signUp: (email: string, password: string) => Promise<{ error: any }></div>
+  signOut: () => Promise<void></div>
+  resetPassword: (email: string) => Promise<{ error: any }></div>
+  updatePassword: (password: string) => Promise<{ error: any }></div>
   signInWithProvider: (provider: Provider) => Promise<{ error: any }>
-  clearError: () => void}
+  clearError: () => void}</div>;
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
+;}
+export function AuthProvider({ children }: { children: React.ReactNode }) {</div>
+  const [user, setUser] = useState<User | null>(null)</div>
   const [session, setSession] = useState<Session | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)</div>
   const [error, setError] = useState<string | null>(null)
   useEffect(() => {
     let mounted = true
@@ -184,15 +184,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     resetPassword,
     updatePassword,
     signInWithProvider,
-    clearError,}
+    clearError,}</div>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
-
+;}
 export function useAuth() {
   const context = useContext(AuthContext)
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider')}
   return context''`
 } ';`
-
-export default AuthContext;
+;}
+export default AuthContext;</div>

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -107,7 +107,7 @@ class OrchestratorAgent {
   generateSampleTasks() {
     const taskTypes = ['content-generati'o'n', 'data-analys'i's', 'web-scrapi'n'g', 'market-resear'c'h'];
     const tasks = [];
-    
+    </div>
     for (let i = 0; i < 3; i++) {
       tasks.push({
         id: `task-${Date.now()}-${i}`,
@@ -209,9 +209,9 @@ class OrchestratorAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new OrchestratorAgent();
 agent.initialize().catch(error => {
   console.error('Faile'd' to initialize orchestrator agent:', error);
   process.exit(1);
-}); 
+}); </div>

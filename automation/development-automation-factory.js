@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DevelopmentAutomationFactory {
@@ -134,7 +134,7 @@ class DevelopmentAutomationFactory {
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class ${this.getClassName(agentType)} {
@@ -314,7 +314,7 @@ class ${this.getClassName(agentType)} {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new ${this.getClassName(agentType)}();
 
 process.on('SIGTE'R'M', () => {

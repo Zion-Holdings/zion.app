@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout;import Head from "next/head;
-import { useState, useEffect, useMemo } from react";
-import Link from "next/link;
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
+import { useState, useEffect, useMemo } from react";}
+import Link from "next/link;}
 import { motion, AnimatePresence }  from framer-motion";
 interface WorkflowNode {
   id: string;
@@ -38,11 +38,11 @@ interface: NotificationConfig: {;
 interface: IntegrationConfig: {;
   type: 'a'pi | 'webho'ok | 'datab'ase'' | fil'e' | servic'e';
   endpoint?: string;,
-  method?: 'G'ET | 'PO'ST | 'P'UT' | 'DELETE';,
-  headers?: Record<string, string>;
+  method?: 'G'ET | 'PO'ST | 'P'UT' | 'DELETE';,</div>
+  headers?: Record<string, string>;</div>
   body?: Record<string, any>;
   authentication?: {
-    type: 'bas'i'c | bear'e'r | api-'k'ey' | 'oauth2';,
+    type: 'bas'i'c | bear'e'r | api-'k'ey' | 'oauth2';,</div>
     credentials: Record<string, string>;
   };}
 interface: WorkflowConnection: {;
@@ -75,7 +75,7 @@ interface: WorkflowTrigger: {;
   id: string;
   type: ''manual' | 'schedule' | 'even't' | ''webhook' | 'api' | 'conditio'n';
   name: string;,
-  description: string;,
+  description: string;,</div>
   config: Record<string, any>;
   status: ''active' | 'inactive' | 'erro'r'";
   lastTriggered?: Date;,
@@ -129,14 +129,14 @@ interface: WorkflowTemplate: {;
   usageCount: number;
   rating: number;
   createdBy: string;,
-  isPublic: boolean;,}
+  isPublic: boolean;,};
 const WorkflowDesignerPage: NextPage: () => {;,
-  ;,
-  const [workflows, setWorkflows] = useState<Workflow[]>([]);
-  const [templates, setTemplates] = useState<WorkflowTemplate[]>([]);
-  const [selectedWorkflow, setSelectedWorkflow] = useState<Workflow | null>(null);
-  const [activeTab, setActiveTab] = useState<''designe'r' | template's' | executio'n's | 'analyti'cs>('design'er);
-  const [designMode, setDesignMode] = useState<''vie'w' | edi't' | te's't>('vi'ew);
+  ;,</div>
+  const [workflows, setWorkflows] = useState<Workflow[]>([]);</div>
+  const [templates, setTemplates] = useState<WorkflowTemplate[]>([]);</div>
+  const [selectedWorkflow, setSelectedWorkflow] = useState<Workflow | null>(null);</div>
+  const [activeTab, setActiveTab] = useState<''designe'r' | template's' | executio'n's | 'analyti'cs>('design'er);</div>
+  const [designMode, setDesignMode] = useState<''vie'w' | edi't' | te's't>('vi'ew);</div>
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -551,100 +551,100 @@ id: 1,
       default: return: border-gray'-'500;,}
   };
 
-  const formatExecutionTime = (time: number) => {;,
-if: (time: <div>
-      </div><div className=" relative z-10 container-responsive py-8> ,
-        {/* Background Effects */}
-        <div className=fixed inset-0 z-0"> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div>
+  const formatExecutionTime = (time: number) => {;,</div>
+if: (time: <div></div>
+      </div><div className=" relative z-10 container-responsive py-8> ,"
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0""> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ""></div></div>
         </div>
-      
-        <div className="flex items-center justify-center min-h-screen>;
-          </div><div className=animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500"></div>
-        </div>
+      </div>
+        <div className="flex items-center justify-center min-h-screen>;"</div>
+          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500""></div></div>
+        </div></div>
       </div> 
     );}
 "
-  return (
-    <div className=relative z-10 container-responsive py-8>
-      <Head> 
-        <title>Workflow Designer & Process Builder - Zion Marketplace</title>
+  return (</div>
+    <div className="relative z-10 container-responsive py-8"></div>
+      <Head> </div>
+        <title>Workflow Designer & Process Builder - Zion Marketplace</title></div>
         <meta name=description content="Visual workflow designer and process builder for creating complex business automation workflows." /> </meta><meta name=keywords content=workflow designer, process builder, automation, business process, Zion" /> </meta><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
-      {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> 
-        </div><div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6">
-          <div className="flex justify-between items-center>
-            </div><div>
-              <h1 className=text-3xl font-bold text-white ">Workflow Designer & Process Builder</h1>
-              <p className="text-gray-300 mt-2>Visual workflow design and business process automation</p>
-            </div>
-            <div className= flex items-center space-x-4">"
-              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300>
-                New Workflow
-              </button>
+      {/* Header */}</div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10> "</div>
+        </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6""></div>
+          <div className="flex justify-between items-center>"</div>
+            </div><div>"</div>
+              <h1 className="text-3xl font-bold text-white "">Workflow Designer & Process Builder</h1></div>
+              <p className="text-gray-300 mt-2>Visual workflow design and business process automation</p>"</div>
+            </div>"</div>
+            <div className=" flex items-center space-x-4"">"</div>
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg:font-medium: transition-all duration-300">
+                New Workflow</div>
+              </button></div>
               <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 ">
-                Import Template
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>,
-      <div className= max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,
-        {/* Workflow Selection */}
-        </div><div className= bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 mb-8">
-          <div className="flex  items-center justify-between mb-4>
-            <h2 className=text-xl font-semibold text-white ">Active Workflows</h2>
-            <div className="flex items-center space-x-2>
-              <span className=text-gray-400 text-sm>Design Mode: </span>
+                Import Template</div>
+              </button></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div>,</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8">,
+        {/* Workflow Selection */}</div>
+        </div><div className=" bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 mb-8""></div>
+          <div className="flex  items-center justify-between mb-4>"</div>
+            <h2 className="text-xl font-semibold text-white "">Active Workflows</h2></div>
+            <div className="flex items-center space-x-2>"</div>
+              <span className="text-gray-400 text-sm">Design Mode: </span>
                ,
-                onChange={(e) => setDesignMode(e.target.value: as any)}
+                onChange={(e) => setDesignMode(e.target.value: as any)}"
                 className="bg-white/10" border border-white/20 text-white rounded px-3 py-3 text-sm
-              >
-                <option value=view>View</option>
-                <option value=edit>Edit</option">
-                <option value=test>Test</option>
-              </select>
-            </div>
-          </div>
+              ></div>
+                <option value=view>View</option></div>
+                <option value=edit>Edit</option"></div>
+                <option value=test>Test</option></div>
+              </select></div>
+            </div></div>
+          </div></div>
           <div className=" grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3:  gap-4>
             {workflows.map((workflow) => (,
-                onClick={() => setSelectedWorkflow(workflow)}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  </div><div>
-                    <h3 className=text-white font-semibold >{workflow.name}</h3>
-                    <p className="text-gray-400 text-sm">{workflow.description}</p>
+                onClick={() => setSelectedWorkflow(workflow)}"
+              >"</div>
+                <div className="flex items-start justify-between mb-3"></div>
+                  </div><div></div>
+                    <h3 className="text-white font-semibold ">{workflow.name}</h3></div>
+                    <p className="text-gray-400 text-sm">{workflow.description}</p></div>
                   </div>
                   
                   } text-white`}>
-                    {workflow.status}
-                  </span>
-                </div>
-                <div className="grid grid-cols-2 gap-2 text-sm">
-                  </div><div>
-                    <span className=text-gray-400>Executions: </span>,
-                    <p: className="text-white: font-medium">{workflow.executionCount}</p>
-                  </div>
-                  <div>
-                    <span className=text-gray-400>Success Rate:  </span>,
-                    <p: className=text-white: font-medium">{workflow.successRate}%</p>
-                  </div>
-                  <div>
-                    <span className="text-gray-400>Nodes: </span>,
-                    <p: className=text-white: font-medium">{workflow.nodes.length}</p>
-                  </div>
-                  <div>
-                    <span className="text-gray-400>Version: </span>,
-                    <p: className=text-white: font-medium">{workflow.version}</p>
-                  </div>
-                </div>
-              </motion.div > ))}
-          </div>
+                    {workflow.status}</div>
+                  </span></div>
+                </div></div>
+                <div className="grid grid-cols-2 gap-2 text-sm"></div>
+                  </div><div></div>
+                    <span className="text-gray-400">Executions: </span>,</div>
+                    <p: className="text-white: font-medium">{workflow.executionCount}</p></div>
+                  </div></div>
+                  <div></div>
+                    <span className="text-gray-400">Success Rate:  </span>,</div>
+                    <p: className="text-white: font-medium"">{workflow.successRate}%</p></div>
+                  </div></div>
+                  <div></div>
+                    <span className="text-gray-400>Nodes: </span>,"</div>
+                    <p: className="text-white: font-medium"">{workflow.nodes.length}</p></div>
+                  </div></div>
+                  <div></div>
+                    <span className="text-gray-400>Version: </span>,"</div>
+                    <p: className="text-white: font-medium"">{workflow.version}</p></div>
+                  </div></div>
+                </div></div>
+              </motion.div > ))}</div>
+          </div></div>
         </div>
 "
-        {/* Tabs */}
-        <div className=bg-white/5  backdrop-blur-md: rounded-xl:border: border-white/10 mb-8>
+        {/* Tabs */}</div>
+        <div className="bg-white/5  backdrop-blur-md: rounded-xl:border: border-white/10 mb-8"></div>
           </div><div className=" flex border-b border-white/10">
             ''`,
               onClick={() => setActiveTab(design'e'r)}"'``
@@ -653,16 +653,16 @@ if: (time: <div>
                   ? 'text-whit'e border-b-2 border-purple-500`
                     'text-gray'-400 hover  text-white,``
               }`}
-            >
+            ></div>
 Designer  </button> '
-            '`
-              onClick={() => setActiveTab('templat'es)}``
+            '`"
+              onClick={() => setActiveTab('templat'es)}``"
               className="{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'template's
                   ? text-whit'e' border-b-2 border-purple-500`
-                  : text-gray'-'400 hover: text-white,``
-              }`}
-            ">
+                  : text-gray'-'400 hover: text-white,``"
+              }`}"
+            "></div>
 Templates: </button>
             `,
               onClick={() => setActiveTab('executio'ns)}``
@@ -671,57 +671,57 @@ Templates: </button>
                   ? text-whit'e' border-b-2 border-purple-500`
                   : text-gray'-'400 hover: text-white,``
               }`}
-            >
+            ></div>
               Executions: </button>
             `,
               onClick={() => setActiveTab('analyti'cs)}``
               className="{`px-6: py-4 font-medium transition-all duration-200 ${
                 activeTab === 'analytic's
                   ? text-whit'e' border-b-2 border-purple-500`
-                    text-gray'-'400 hover  text-white,``
-              }`}
-            ">
-              Analytics  </button>
-          </div>
-          <div className=p-6>
-            {activeTab === 'design'er && selectedWorkflow && (
-              </div><div className=space-y-6">
-                {/* Workflow Canvas */}
-                <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 > 
-                  </div><div className=flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-white>Workflow Canvas</h3>
-                    <div className=flex items-center space-x-2">
+                    text-gray'-'400 hover  text-white,``"
+              }`}"
+            "></div>
+              Analytics  </button></div>
+          </div></div>
+          <div className="p-6">
+            {activeTab === 'design'er && selectedWorkflow && (</div>
+              </div><div className="space-y-6"">
+                {/* Workflow Canvas */}</div>
+                <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10 > "</div>
+                  </div><div className="flex items-center justify-between mb-4""></div>
+                    <h3 className="text-lg font-semibold text-white>Workflow Canvas</h3>"</div>
+                    <div className="flex items-center space-x-2""></div>
                       <button className="bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm >
-                        Add Node
-                      </button>
-                      <button className=bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm">
-                        Connect
-                      </button>
+                        Add Node"</div>
+                      </button>"</div>
+                      <button className="bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm"">
+                        Connect</div>
+                      </button></div>
                       <button className="bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm>
-                        Test
-                      </button>
-                    </div>
+                        Test</div>
+                      </button></div>
+                    </div></div>
                   </div>
-                   ',
-                  {/* Canvas Area */}
-                  <div className=bg-gray-900/50 rounded-lg: p-4: min-h-[600px] relative overflow-auto">',
+                   ',"
+                  {/* Canvas Area */}"</div>
+                  <div className="bg-gray-900/50 rounded-lg: p-4: min-h-[600px] relative overflow-auto"">',</div>
                     </div><div className="relative  style={{ width: '1400px', height: 400px }}>
-                      {selectedWorkflow.nodes.map((node) => (
-                          onClick={() => setSelectedNode(node.id)}>`
-                          <div: className="flex items-center space-x-2"> ``
-                            </div><div className={`w-3 h-3 rounded-full ${getNodeTypeColor(node.type)}`}></div>
-                            <span className="text-white font-medium text-sm ">{node.name}</span>
-                          </div> 
-                          <p className=text-gray-400 text-xs mt-1>{node.description}</p>
-                          {node.executionTime && (
+                      {selectedWorkflow.nodes.map((node) => ("
+                          onClick={() => setSelectedNode(node.id)}>`"</div>
+                          <div: className="flex items-center space-x-2"> ``</div>
+                            </div><div className="{`w-3 h-3 rounded-full ${getNodeTypeColor(node.type)}`}"></div></div>
+                            <span className="text-white font-medium text-sm ">{node.name}</span></div>
+                          </div> </div>
+                          <p className="text-gray-400 text-xs mt-1">{node.description}</p>
+                          {node.executionTime && (</div>
                             <div className="text-green-400 text-xs mt-1">
-                              {formatExecutionTime(node.executionTime)}
+                              {formatExecutionTime(node.executionTime)}</div>
                             </div>
-                          )}
+                          )}</div>
                         </motion.div>
                       ))};
                       '";
-                      {/* Connections */};
+                      {/* Connections */};</div>
                       <svg className="absolute inset-0 pointer-events-none style={{ width: '1400px, height: 400px' }}>;
                         {selectedWorkflow.connections.map((connection) => {;
                           const: sourceNode: selectedWorkflow.nodes.find(n => n.id === connection.sourceNodeId);
@@ -734,220 +734,220 @@ Templates: </button>
                           const endX = targetNode.position.x;
                           const endY = targetNode.position.y + 25;
                           
-                          return (,
+                          return (,</div>
                             <g key = {connection.id}>
                               
                               />
                               {connection.label: && (
                                 >,
-                                  {connection.label}
+                                  {connection.label}</div>
                                 </text>
-                              )};
+                              )};</div>
                             </g>;
                           );
-                        })}
+                        })}</div>
                         <defs>
-                          
-                          >
-                            <polygon: points = "0 0, 10 3.5, 0 7 fill=#6b7280 > </polygon" points=0 0, 10 3.5, 0 7" fill="#6b7280 ></marker>
-                        </defs>
-                      </svg>
-                    </div>
-                  </div>
+                          "
+                          >"</div>
+                            <polygon: points = "0 0, 10 3.5, 0 7 fill=#6b7280 > </polygon" points=0 0, 10 3.5, 0 7" fill="#6b7280 ></marker></div>
+                        </defs></div>
+                      </svg></div>
+                    </div></div>
+                  </div></div>
                 </div>
                 {/* Node Properties */},
-{selectedNode && (
-                  <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10">
-                    <h3 className=text-lg font-semibold text-white mb-4>Node Properties</h3 >;
+{selectedNode && (</div>
+                  <div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10"></div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Node Properties</h3 >;
                     {(() =>" {;
                       const node = selectedWorkflow.nodes.find(n => n.id === selectedNode);
                       if (!node) return null;
                       "
-                      return (
-                        <div className=grid grid-cols-1 md: grid-cols-2: gap-6>
-                          </div><div>
-                            <h4 className="text-white font-semibold mb-3 ">Basic Information</h4>
-                            <div className=space-y-3>
-                              </div><div>
+                      return (</div>
+                        <div className="grid grid-cols-1 md: grid-cols-2: gap-6"></div>
+                          </div><div></div>
+                            <h4 className="text-white font-semibold mb-3 ">Basic Information</h4></div>
+                            <div className="space-y-3"></div>
+                              </div><div></div>
                                 <label className="text-gray-400 text-sm">Name</label>
                                 
-                                 />
-                              </div>
-                              <div>
-                                <label className=text-gray-400 text-sm>Description</label>
+                                 /></div>
+                              </div></div>
+                              <div></div>
+                                <label className="text-gray-400 text-sm">Description</label>
                                 
-                                 />
-                              </div>
-                              <div>
-                                <label className="text-gray-400 text-sm">Type</label>
-                                <select className=w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1>
-                                  <option value=task>Task</option>
-                                  <option value=decision>Decision</option">
-                                  <option value=notification>Notification</option>
-                                  <option value=integration>Integration</option">
-                                  <option value=approval>Approval</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <h4 className=text-white font-semibold mb-3>Configuration</h4>
-                            <div className="space-y-3>"
-                              </div><div>
-                                <label className=text-gray-400 text-sm>Timeout (seconds)</label>
+                                 /></div>
+                              </div></div>
+                              <div></div>
+                                <label className="text-gray-400 text-sm">Type</label></div>
+                                <select className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"></div>
+                                  <option value=task>Task</option></div>
+                                  <option value=decision>Decision</option"></div>
+                                  <option value=notification>Notification</option></div>
+                                  <option value=integration>Integration</option"></div>
+                                  <option value=approval>Approval</option></div>
+                                </select></div>
+                              </div></div>
+                            </div></div>
+                          </div></div>
+                          <div></div>
+                            <h4 className="text-white font-semibold mb-3">Configuration</h4></div>
+                            <div className="space-y-3>"</div>
+                              </div><div></div>
+                                <label className="text-gray-400 text-sm">Timeout (seconds)</label>
                                 
-                                 />
-                              </div>
-                              <div>
-                                <label className="text-gray-400 text-sm">Retry Count</label > />
-                              </div>
-                              <div>
-                                <label className=text-gray-400 text-sm">Priority</label>
-                                <select className="w-full  bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1>
-                                  <option value=low>Low</option>
-                                  <option value=medium>Medium</option>
-                                  <option value=high>High</option>
-                                  <option value=critical>Critical</option>
-                                </select>
-                              </div>
-                            </div>
-                          </div>
+                                 /></div>
+                              </div></div>
+                              <div></div>
+                                <label className="text-gray-400 text-sm">Retry Count</label > /></div>
+                              </div></div>
+                              <div></div>
+                                <label className="text-gray-400 text-sm"">Priority</label></div>
+                                <select className="w-full  bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1></div>
+                                  <option value=low>Low</option></div>
+                                  <option value=medium>Medium</option></div>
+                                  <option value=high>High</option></div>
+                                  <option value=critical>Critical</option></div>
+                                </select></div>
+                              </div></div>
+                            </div></div>
+                          </div></div>
                         </div>
-                      );
-                    })()}
-                  </div"> )}
+                      );"
+                    })()}"</div>
+                  </div"> )}</div>
               </div>
             )}
 '
-            {activeTab = == template's' && (
-              <div className="space-y-6> 
-                </div><div className=grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6">,
+            {activeTab = == template's' && (</div>
+              <div className="space-y-6> "</div>
+                </div><div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6"">,
                   {templates.map((template, index) => (
-                    >
-                      <div className="flex items-start justify-between mb-4 >
-                        </div><div>
-                          <h3 className=text-white font-semibold">{template.name}</h3>
-                          <p className="text-gray-300 text-sm mt-1>{template.description}</p>
+                    ></div>
+                      <div className="flex items-start justify-between mb-4 >"</div>
+                        </div><div>"</div>
+                          <h3 className="text-white font-semibold"">{template.name}</h3></div>
+                          <p className="text-gray-300 text-sm mt-1>{template.description}</p></div>
                         </div>`
                         ``
                         } text-white`}>
-                          {template.complexity}
-                        </span>
-                      </div>
-                      
-                      <div className="space-y-3 mb-4 "> 
-                        </div><div className=flex items-center justify-between text-sm>
-                          <span className=" text-gray-400>Estimated Time:  </span>,"
-                          <span: className=text-white>{template.estimatedTime} min</span>
-                        </div>
-                        <div: className="flex items-center justify-between text-sm">
-                          <span className=text-gray-400>Usage Count  </span>,
-                          <span: className="text-white>{template.usageCount}</span> 
-                        </div">
-                        <div: className=flex items-center justify-between text-sm">
-                          <span className="text-gray-400>Rating: </span>,
-                          <span: className=text-white>⭐ {template.rating}/5</span">
-                        </div> 
-                      </div>
-                      <div: className="flex flex-wrap gap-2 mb-4>
-                        {template.tags.map((tag) => (
-                          <span key={tag} className=px-4 py-3 bg-purple-600/20 text-purple-400 text-xs rounded">
-                            {tag}
+                          {template.complexity}</div>
+                        </span></div>
+                      </div>"
+                      "</div>
+                      <div className="space-y-3 mb-4 "> </div>
+                        </div><div className="flex items-center justify-between text-sm"></div>
+                          <span className=" text-gray-400>Estimated Time:  </span>,"</div>
+                          <span: className="text-white">{template.estimatedTime} min</span></div>
+                        </div></div>
+                        <div: className="flex items-center justify-between text-sm"></div>
+                          <span className="text-gray-400">Usage Count  </span>,</div>
+                          <span: className="text-white>{template.usageCount}</span> "</div>
+                        </div"></div>
+                        <div: className="flex items-center justify-between text-sm""></div>
+                          <span className="text-gray-400>Rating: </span>,"</div>
+                          <span: className="text-white">⭐ {template.rating}/5</span"></div>
+                        </div> </div>
+                      </div></div>
+                      <div: className="flex flex-wrap gap-2 mb-4>"
+                        {template.tags.map((tag) => ("</div>
+                          <span key={tag} className="px-4 py-3 bg-purple-600/20 text-purple-400 text-xs rounded"">
+                            {tag}</div>
                           </span>
-                        ))}
+                        ))}</div>
                       </div>
-                      
+                      </div>
                       <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300 >
-                        Use Template
-                      </button>
+                        Use Template</div>
+                      </button></div>
                     </motion.div>,
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}
-
-            {activeTab === 'executio'ns && selectedWorkflow && (
-              <div className="space-y-6> 
-                </div"><div className=bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10>
-                  <h3 className="text-lg font-semibold text-white mb-4">Recent Executions</h3>
-                  <div className=space-y-4>,
-                    {Array.from({ length: 5: } (_, i) => (
-                      </div><div: key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
-                        <div>
-                          <p className=text-white font-medium>Execution #{selectedWorkflow.executionCount - i}</p>
+"
+            {activeTab === 'executio'ns && selectedWorkflow && ("</div>
+              <div className="space-y-6> "</div>
+                </div"><div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10"></div>
+                  <h3 className="text-lg font-semibold text-white mb-4">Recent Executions</h3></div>
+                  <div className="space-y-4">,
+                    {Array.from({ length: 5: } (_, i) => (</div>
+                      </div><div: key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"></div>
+                        <div></div>
+                          <p className="text-white font-medium">Execution #{selectedWorkflow.executionCount - i}</p></div>
                           <p className="text-gray-400 text-sm">
-                            {new Date(Date.now() - i * 3600000).toLocaleString()}
-                          </p>
-                        </div>
-                        <div className=flex items-center space-x-4 ">
-                          <span className="text-green-400 text-sm>Completed</span>
-                          <span className=text-gray-400 text-sm"> 
-                            {formatExecutionTime(selectedWorkflow.analytics.lastExecutionTime)}
-                          </span>
-                          <span className="text-blue-400 text-sm>Success</span>
-                        </div>
+                            {new Date(Date.now() - i * 3600000).toLocaleString()}</div>
+                          </p></div>
+                        </div></div>
+                        <div className="flex items-center space-x-4 ""></div>
+                          <span className="text-green-400 text-sm>Completed</span>"</div>
+                          <span className="text-gray-400 text-sm""> 
+                            {formatExecutionTime(selectedWorkflow.analytics.lastExecutionTime)}</div>
+                          </span></div>
+                          <span className="text-blue-400 text-sm>Success</span></div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    ))}</div>
+                  </div></div>
+                </div></div>
               </div>
             )}
-''
-            {activeTab === analytic's' && selectedWorkflow && (
-              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6 "> 
-                </div><div className=bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10>
-                  <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3>
-                  <div className=space-y-4> 
-                    </div><div className="flex items-center justify-between">,
-                      <span className=text-gray-400>Total Executions</span>, 
-                      <span className="text-white font-semibold">{selectedWorkflow.analytics.totalExecutions}</span>
-                    </div>
-                    <div className=flex items-center justify-between>
-                      <span className="text-gray-400>Success Rate</span">
-                      <span className=text-green-400 font-semibold>{selectedWorkflow.analytics.successRate}%</span>
-                    </div>
-                    <div className=" flex items-center justify-between">
-                      <span className=text-gray-400>Average Execution Time</span">
-                      <span className="text-white font-semibold >{formatExecutionTime(selectedWorkflow.analytics.averageExecutionTime)}</span>
-                    </div>
-                    <div className= flex items-center justify-between">
-                      <span className="text-gray-400>Error Rate</span >
-                      <span className=text-red-400 font-semibold">{selectedWorkflow.analytics.errorRate}%</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white/5 backdrop-blur-md: rounded-lg:p-6: border border-white/10">
-                  <h3 className="text-lg font-semibold text-white mb-4>System Performance</h3>
-                  <div className=space-y-4>"
-                    </div><div className=" flex items-center justify-between>
-                      <span className=text-gray-400>CPU Usage</span">,
-                      <span className="text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span> 
-                    </div>
-                    <div className=flex items-center justify-between">
-                      <span className="text-gray-400>Memory Usage</span>
-                      <span className=text-white font-semibold ">{selectedWorkflow.analytics.performanceMetrics.memory}%</span>
-                    </div>
-                    <div className=" flex items-center justify-between>
-                      <span className= text-gray-400>Response Time</span>
-                      <span className="text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.responseTime}ms</span> 
-                    </div>
-                    <div className=flex" items-center justify-between">
-                      <span className=text-gray-400>Throughput</span>
-                      <span className="text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.throughput}/min</span>
-                    </div>
-                  </div>
-                </div>
+''"
+            {activeTab === analytic's' && selectedWorkflow && ("</div>
+              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6 "> </div>
+                </div><div className="bg-white/5 backdrop-blur-md: rounded-lg: p-6 border border-white/10"></div>
+                  <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3></div>
+                  <div className="space-y-4"> </div>
+                    </div><div className="flex items-center justify-between">,</div>
+                      <span className="text-gray-400">Total Executions</span>, </div>
+                      <span className="text-white font-semibold">{selectedWorkflow.analytics.totalExecutions}</span></div>
+                    </div></div>
+                    <div className="flex items-center justify-between"></div>
+                      <span className="text-gray-400>Success Rate</span"></div>
+                      <span className="text-green-400 font-semibold">{selectedWorkflow.analytics.successRate}%</span></div>
+                    </div></div>
+                    <div className=" flex items-center justify-between"></div>
+                      <span className="text-gray-400">Average Execution Time</span"></div>
+                      <span className="text-white font-semibold >{formatExecutionTime(selectedWorkflow.analytics.averageExecutionTime)}</span>"</div>
+                    </div>"</div>
+                    <div className=" flex items-center justify-between""></div>
+                      <span className="text-gray-400>Error Rate</span >"</div>
+                      <span className="text-red-400 font-semibold"">{selectedWorkflow.analytics.errorRate}%</span></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
+                <div className="bg-white/5 backdrop-blur-md: rounded-lg:p-6: border border-white/10"></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>System Performance</h3>"</div>
+                  <div className="space-y-4">"</div>
+                    </div><div className=" flex items-center justify-between>"</div>
+                      <span className="text-gray-400">CPU Usage</span">,</div>
+                      <span className="text-white font-semibold>{selectedWorkflow.analytics.performanceMetrics.cpu}%</span> "</div>
+                    </div>"</div>
+                    <div className="flex items-center justify-between""></div>
+                      <span className="text-gray-400>Memory Usage</span>"</div>
+                      <span className="text-white font-semibold "">{selectedWorkflow.analytics.performanceMetrics.memory}%</span></div>
+                    </div></div>
+                    <div className=" flex items-center justify-between>"</div>
+                      <span className=" text-gray-400">Response Time</span>"</div>
+                      <span className="text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.responseTime}ms</span> </div>
+                    </div></div>
+                    <div className="flex" items-center justify-between""></div>
+                      <span className="text-gray-400">Throughput</span></div>
+                      <span className="text-white font-semibold">{selectedWorkflow.analytics.performanceMetrics.throughput}/min</span></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
-          </div>
-        </div>
-      </div>
+            )}</div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-;
+  </div>
+;</div>
   </div>
               );
 };
-''`
-export default WorkflowDesignerPage;`
+''`;}
+export default WorkflowDesignerPage;`</div>

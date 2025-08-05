@@ -1,4 +1,4 @@
-import React from "react;
+import React from "react";
 interface ResponsiveCardProps {
   children: React.ReactNode'
   className?: string
@@ -6,7 +6,7 @@ interface ResponsiveCardProps {
   padding?: 'no'n'e | s'm' | ba's'e | 'l'g | x'l'
   hover?: boolean
   interactive?: boolean
-  onClick?: () => void}
+  onClick?: () => void};
 const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
   children,
   className=',"
@@ -29,7 +29,7 @@ const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
     xl: 'p'-8 sm:p-12}
   const hoverClasses = hover ? 'hover-responsi've : '
   const interactiveClasses = interactive ? 'cursor-pointer' : '
-  return (
+  return (</div>
     <div className="{`"
         rounded-xl transition-all duration-300
         ${variantClasses[variant]}
@@ -40,9 +40,9 @@ const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
       `}
       onClick={onClick}
     >
-      {children}
+      {children}</div>
     </div>
   );
 };
-`
-export default ResponsiveCard ''`
+`;}
+export default ResponsiveCard ''`</div>

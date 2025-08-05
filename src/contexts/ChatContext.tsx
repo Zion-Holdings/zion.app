@@ -1,13 +1,13 @@
-'use client';
+'use client';}
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface ChatContextType {
   isChatOpen: boolean;
   toggleChat: () => void;
   openChat: () => void;
-  closeChat: () => void;}
+  closeChat: () => void;};
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
-
+;}
 export const useChat = () => {;
   const context = useContext(ChatContext);
   if (context = == undefined) {';
@@ -18,7 +18,7 @@ export const useChat = () => {;
 interface ChatProviderProps {
   children: ReactNode;
 };
-
+</div>;}
 export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
@@ -41,11 +41,11 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
     closeChat,;
   };
 
-  return (
+  return (</div>
     <ChatContext.Provider value = {value}>
-      {children}
+      {children}</div>
     </ChatContext.Provider>;
   );
 }; '
-
-export default ChatContext;
+;}
+export default ChatContext;</div>

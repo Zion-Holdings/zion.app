@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const ContentGeneratorAgent = require('./content-generator-agent');
 
 async function main() {

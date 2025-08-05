@@ -331,7 +331,7 @@ class SaaSIdeationAgent {
     const potentials = ['Hi'g'h', 'Medi'u'm', 'L'o'w'];
     const weights = [0.6, 0.3, 0.1]; // Bias towards high growth
     
-    let random = Math.random();
+    let random = Math.random();</div>
     for (let i = 0; i < weights.length; i++) {
       random -= weights[i];
       if (random <= 0) return potentials[i];
@@ -465,4 +465,4 @@ if (require.main === module) {
   agent.start().catch(console.error);
 }
 
-module.exports = SaaSIdeationAgent; 
+module.exports = SaaSIdeationAgent; </div>

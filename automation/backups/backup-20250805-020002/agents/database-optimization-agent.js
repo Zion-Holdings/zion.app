@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class DatabaseOptimizationAgent {
@@ -606,7 +606,7 @@ class DatabaseOptimizationAgent {
         threshold: 500
       });
     }
-    
+    </div>
     if (monitoring.metrics.cacheHitRate < 70) {
       alerts.push({
         type: 'lo'w'_cache_hit_rate',
@@ -791,7 +791,7 @@ class DatabaseOptimizationAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new DatabaseOptimizationAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -805,4 +805,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Databas'e' Optimization Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

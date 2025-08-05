@@ -307,140 +307,140 @@ Make it informative, engaging, and valuable for technology professionals and bus
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join('');
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${pageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${topic} - Zion Tech Blog</title>
-        <meta name="description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." />
-        <meta name="keywords" content="${topic.toLowerCase()}, AI, technology, business, Zion" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${topic} - Zion Tech Blog</title></div>
+        <meta name="description" content="Learn about ${topic.toLowerCase()} and its impact on modern business technology." /></div>
+        <meta name="keywords" content="${topic.toLowerCase()}, AI, technology, business, Zion" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <div className="flex-shrink-0"></div>
+                <h1 className="text-2xl font-bold text-white"></div>
                   <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    Zion
-                  </Link>
-                </h1>
-              </div>
+                    Zion</div>
+                  </Link></div>
+                </h1></div>
+              </div></div>
             </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
+            </div>
+            <div className="hidden md:flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Blog
-              </Link>
+                Blog</div>
+              </Link></div>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </Link>
+                About</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Login
-              </Link>
+                Login</div>
+              </Link></div>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
-              </Link>
-            </div>
-          </div>
-        </div>
+                Join Zion</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Blog Content */}
-      <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="mb-8">
+      {/* Blog Content */}</div>
+      <main className="flex-1"></div>
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="mb-8"></div>
             <Link href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
-              ← Back to Blog
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              ← Back to Blog</div>
+            </Link></div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6"></div>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                ${topic}
-              </span>
-            </h1>
-            <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Published on {new Date().toLocaleDateString()}</span>
-              <span className="mx-2">•</span>
-              <span>Zion Tech Group</span>
-            </div>
+                ${topic}</div>
+              </span></div>
+            </h1></div>
+            <div className="flex items-center text-gray-400 text-sm mb-8"></div>
+              <span>Published on {new Date().toLocaleDateString()}</span></div>
+              <span className="mx-2">•</span></div>
+              <span>Zion Tech Group</span></div>
+            </div></div>
           </div>
-          
-          <div className="prose prose-invert prose-lg max-w-none">
+          </div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').map(paragraph => 
+              ${content.split('\n').map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
+              ).join('\n')}</div>
+            </div></div>
           </div>
-          
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row gap-4">
+          </div>
+          <div className="mt-12 pt-8 border-t border-white/10"></div>
+            <div className="flex flex-col sm:flex-row gap-4"></div>
               <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Explore Our Services
-              </Link>
+                Explore Our Services</div>
+              </Link></div>
               <Link href="/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                Read More Articles
-              </Link>
-            </div>
-          </div>
-        </article>
+                Read More Articles</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </article></div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3>
+      {/* Footer */}</div>
+      <footer className="bg-black/20 border-t border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+            <div></div>
+              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
               <p className="text-gray-400 text-sm">
-                The future of AI-powered marketplace technology.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+                The future of AI-powered marketplace technology.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
+                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
+                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
+                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
             <p className="text-gray-400 text-sm">
-              © 2024 Zion. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
   )
 }
-
+;}
 export default ${pageName}Page`
   }
 
@@ -511,139 +511,139 @@ Make it engaging and informative for potential buyers and sellers in the ${categ
     const filename = this.sanitizeFilename(category);
     const pageName = categoryTitle.replace(/\s+/g, '');
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${pageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${categoryTitle} - Zion AI Marketplace</title>
-        <meta name="description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." />
-        <meta name="keywords" content="${category}, AI marketplace, IT services, Zion" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${categoryTitle} - Zion AI Marketplace</title></div>
+        <meta name="description" content="Find top ${categoryTitle.toLowerCase()} services and professionals on Zion AI Marketplace." /></div>
+        <meta name="keywords" content="${category}, AI marketplace, IT services, Zion" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <div className="flex-shrink-0"></div>
+                <h1 className="text-2xl font-bold text-white"></div>
                   <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    Zion
-                  </Link>
-                </h1>
-              </div>
+                    Zion</div>
+                  </Link></div>
+                </h1></div>
+              </div></div>
             </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
+            </div>
+            <div className="hidden md:flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </Link>
+                About</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Login
-              </Link>
+                Login</div>
+              </Link></div>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
-              </Link>
-            </div>
-          </div>
-        </div>
+                Join Zion</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Hero Section */}
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
+      {/* Hero Section */}</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <div className="mb-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    ${categoryTitle}
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  ${content.split('\n')[0] || 'Discove'r' top professionals and services in the ' + categoryTitle.toLowerCase() + ' space.'}
-                </p>
-              </div>
-              
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                  Browse Services
-                </Link>
-                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
-                  Join as Provider
-                </Link>
-              </div>
-            </div>
           </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <div className="mb-8"></div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    ${categoryTitle}</div>
+                  </span></div>
+                </h1></div>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  ${content.split('\n')[0] || 'Discove'r' top professionals and services in the ' + categoryTitle.toLowerCase() + ' space.'}</div>
+                </p></div>
+              </div>
+              </div>
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"></div>
+                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  Browse Services</div>
+                </Link></div>
+                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                  Join as Provider</div>
+                </Link></div>
+              </div></div>
+            </div></div>
+          </div></div>
         </div>
         
-        {/* Content Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        {/* Content Section */}</div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').slice(1).map(paragraph => 
+              ${content.split('\n').slice(1).map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3>
+      {/* Footer */}</div>
+      <footer className="bg-black/20 border-t border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+            <div></div>
+              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
               <p className="text-gray-400 text-sm">
-                The future of AI-powered marketplace technology.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+                The future of AI-powered marketplace technology.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
+                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
+                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
+                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
             <p className="text-gray-400 text-sm">
-              © 2024 Zion. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
   )
 }
-
+;}
 export default ${pageName}Page`
   }
 
@@ -713,142 +713,142 @@ Make it compelling and informative for potential clients seeking ${service.toLow
     const filename = this.sanitizeFilename(service);
     const pageName = service.replace(/\s+/g, '');
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${pageName}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${service} - Zion Tech Group</title>
-        <meta name="description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." />
-        <meta name="keywords" content="${service.toLowerCase()}, IT services, technology solutions, Zion" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${service} - Zion Tech Group</title></div>
+        <meta name="description" content="Professional ${service.toLowerCase()} services from Zion Tech Group. Expert solutions for your business needs." /></div>
+        <meta name="keywords" content="${service.toLowerCase()}, IT services, technology solutions, Zion" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <div className="flex-shrink-0"></div>
+                <h1 className="text-2xl font-bold text-white"></div>
                   <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    Zion
-                  </Link>
-                </h1>
-              </div>
+                    Zion</div>
+                  </Link></div>
+                </h1></div>
+              </div></div>
             </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
+            </div>
+            <div className="hidden md:flex items-center space-x-8"></div>
               <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Services
-              </Link>
+                Services</div>
+              </Link></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </Link>
+                About</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Login
-              </Link>
+                Login</div>
+              </Link></div>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
-              </Link>
-            </div>
-          </div>
-        </div>
+                Join Zion</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Hero Section */}
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
+      {/* Hero Section */}</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <div className="mb-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    ${service}
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  ${content.split('\n')[0] || 'Professiona'l' ' + service.toLowerCase() + ' services tailored to your business needs.'}
-                </p>
-              </div>
-              
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                  Get Started
-                </Link>
-                <Link href="/marketplace" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
-                  Explore Marketplace
-                </Link>
-              </div>
-            </div>
           </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <div className="mb-8"></div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    ${service}</div>
+                  </span></div>
+                </h1></div>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  ${content.split('\n')[0] || 'Professiona'l' ' + service.toLowerCase() + ' services tailored to your business needs.'}</div>
+                </p></div>
+              </div>
+              </div>
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"></div>
+                <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  Get Started</div>
+                </Link></div>
+                <Link href="/marketplace" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                  Explore Marketplace</div>
+                </Link></div>
+              </div></div>
+            </div></div>
+          </div></div>
         </div>
         
-        {/* Content Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="prose prose-invert prose-lg max-w-none">
+        {/* Content Section */}</div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16"></div>
+          <div className="prose prose-invert prose-lg max-w-none"></div>
             <div className="text-gray-300 leading-relaxed">
-              ${content.split('\n').slice(1).map(paragraph => 
+              ${content.split('\n').slice(1).map(paragraph => </div>
                 paragraph.trim() ? `<p className="mb-6">${paragraph}</p>` : ''
-              ).join('\n')}
-            </div>
-          </div>
-        </div>
+              ).join('\n')}</div>
+            </div></div>
+          </div></div>
+        </div></div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3>
+      {/* Footer */}</div>
+      <footer className="bg-black/20 border-t border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+            <div></div>
+              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
               <p className="text-gray-400 text-sm">
-                The future of AI-powered marketplace technology.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+                The future of AI-powered marketplace technology.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
+                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
+                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
+                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
             <p className="text-gray-400 text-sm">
-              © 2024 Zion. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
   )
 }
-
+;}
 export default ${pageName}Page`
   }
 
@@ -895,4 +895,4 @@ module.exports = ContinuousContentGenerator;
 if (require.main === module) {
   const generator = new ContinuousContentGenerator();
   generator.initialize().catch(console.error);
-} 
+} </div>

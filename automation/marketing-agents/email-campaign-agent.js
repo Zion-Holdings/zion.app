@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -305,4 +305,4 @@ if (require.main === module) {
     console.error('Emai'l' Campaign Agent failed:', error);
     process.exit(1);
   });
-} 
+} </div>

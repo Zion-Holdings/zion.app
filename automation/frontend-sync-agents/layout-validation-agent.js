@@ -266,7 +266,7 @@ class LayoutValidationAgent {
       const afterReturn = content.slice(returnIndex);
       const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
       const afterClosing = content.slice(closingIndex + 1);
-      
+      </div>
       content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
     
@@ -293,4 +293,4 @@ class LayoutValidationAgent {
   }
 }
 
-module.exports = LayoutValidationAgent; 
+module.exports = LayoutValidationAgent; </div>

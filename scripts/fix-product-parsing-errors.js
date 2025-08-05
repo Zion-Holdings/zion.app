@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix parsing errors in product files
+// Function to fix parsing errors in product files;
 function fixProductParsingErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -33,7 +33,7 @@ function fixProductParsingErrors(filePath) {
   }
 }
 
-// Function to fix all product files with parsing errors
+// Function to fix all product files with parsing errors;
 function fixAllProductFiles() {
   const productsDir = path.join(__dirname, '..', 'pag'e's', 'produc't's');
   let totalFixed = 0;
@@ -53,7 +53,7 @@ function fixAllProductFiles() {
   return totalFixed;
 }
 
-// Function to fix all service files with parsing errors
+// Function to fix all service files with parsing errors;
 function fixAllServiceFiles() {
   const servicesDir = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
   let totalFixed = 0;
@@ -73,7 +73,7 @@ function fixAllServiceFiles() {
   return totalFixed;
 }
 
-// Process all files
+// Process all files;
 function processFiles() {
   let totalFixed = 0;
 

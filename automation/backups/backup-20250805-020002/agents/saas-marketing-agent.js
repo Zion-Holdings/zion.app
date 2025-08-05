@@ -427,7 +427,7 @@ class SaaSMarketingAgent {
       // Update campaign performance
       await this.updateCampaignPerformance(campaign);
       
-      // Optimize campaign based on performance
+      // Optimize campaign based on performance</div>
       if (campaign.performance.conversionRate < 0.02) {
         await this.optimizeCampaign(campaign);
       }
@@ -625,4 +625,4 @@ if (require.main === module) {
   agent.start().catch(console.error);
 }
 
-module.exports = SaaSMarketingAgent; 
+module.exports = SaaSMarketingAgent; </div>

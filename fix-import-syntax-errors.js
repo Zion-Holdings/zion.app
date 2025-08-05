@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix import syntax errors
+// Function to fix import syntax errors;
 function fixImportSyntax(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -55,7 +55,7 @@ function fixImportSyntax(filePath) {
   }
 }
 
-// Function to recursively find and fix TypeScript/TSX files
+// Function to recursively find and fix TypeScript/TSX files;
 function fixFilesInDirectory(directory) {
   const files = fs.readdirSync(directory);
   let fixedCount = 0;
@@ -81,7 +81,7 @@ console.log('Startin'g' import syntax fixes...');
 const pagesDir = './pages';
 const componentsDir = './components';
 const srcDir = './src';
-
+;
 let totalFixed = 0;
 
 if (fs.existsSync(pagesDir)) {

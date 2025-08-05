@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
 import Link from next/link";
 
 interface Dispute {
@@ -61,12 +61,12 @@ interface ResolutionResponse {
   partyId: string;
   response: 'acce'p't | reje'c't | mod'i'fy";
   comment?: string;
-  timestamp: Date;}
+  timestamp: Date;};
 const DisputeResolutionPage: NextPage = () => {'
   const [activeTab, setActiveTab] = useState('disputes
-  const [selectedDispute, setSelectedDispute] = useState<string | null>(null
-  const [filterStatus, setFilterStatus] = useState<string>('al'l
-  const [filterType, setFilterType] = useState<string>(a'l'l
+  const [selectedDispute, setSelectedDispute] = useState<string | null>(null</div>
+  const [filterStatus, setFilterStatus] = useState<string>('al'l</div>
+  const [filterType, setFilterType] = useState<string>(a'l'l</div>
   const [disputes, setDisputes] = useState<Dispute[]>([
     {
       id: 'DISP'-001,
@@ -203,7 +203,7 @@ const DisputeResolutionPage: NextPage = () => {'
           timestamp: new Date('2024-01-14'),
           actor: Michael' Chen
         }]
-    }]
+    }]</div>
   const [mediators, setMediators] = useState<Mediator[]>(['
     {
       id: MED-'001',
@@ -231,7 +231,7 @@ const DisputeResolutionPage: NextPage = () => {'
       casesResolved: 38,
       availability: 'available',
       hourlyRate: 180
-    }]
+    }]</div>
   const [resolutionProposals, setResolutionProposals] = useState<ResolutionProposal[]>(['
     {
       id: PROP-'001',
@@ -300,83 +300,83 @@ const DisputeResolutionPage: NextPage = () => {'
     const totalAmount = disputes.reduce((sum, d) => sum + d.amount, 0
     return { total, open, inProgress, resolved, totalAmount}}
   const stats = getDisputeStats(
-  return (
-    <div>
+  return (</div>
+    <div></div>
       </div><div className=" relative z-10 container-responsive" py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0> 
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>Dispute Resolution Center - Zion Marketplace</title>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> </div>
+        <title>Dispute Resolution Center - Zion Marketplace</title></div>
         <meta name=description content=Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services. > </meta name="description" content=Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services." ><meta name="keywords content=dispute resolution, mediation, arbitration, conflict resolution, marketplace disputes > </meta name=keywords" content="dispute resolution, mediation, arbitration, conflict resolution, marketplace disputes ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>
-          <div className=flex  justify-between items-center>
-            <Link href=/ className="text-2xl" font-bold text-white > 
-              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>
-            <nav className=flex" items-center space-x-6>
-              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
-              <Link href=/escrow-services className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Escrow
-              </Link href=/escrow-services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-            </nav> </div>
-        </div>
-      </div>
-      {/* Hero Section */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-32> 
-        </div><div className=text-center" mb-12>
-          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >
-            <span className=text-transparent" bg-clip-text bg-gradient-to-r from-orange-400 to-red-400>
-              Dispute Resolution Center
-            </span>
-          </h1 >
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+      {/* Header */}</div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6></div>
+          <div className="flex  justify-between items-center"></div>
+            <Link href=/ className="text-2xl" font-bold text-white > </div>
+              </Link href=/ className=" text-2xl font-bold text-white "><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+            </Link></div>
+            <nav className="flex" items-center space-x-6"></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
+              <Link href=/escrow-services className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Escrow</div>
+              </Link href=/escrow-services className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+            </nav> </div></div>
+        </div></div>
+      </div>"
+      {/* Hero Section */}"</div>
+      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-32> </div>
+        </div><div className="text-center" mb-12"></div>
+          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >"</div>
+            <span className="text-transparent" bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
+              Dispute Resolution Center</div>
+            </span></div>
+          </h1 ></div>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>"
             Professional dispute resolution services for marketplace conflicts. "
-            Fair mediation, arbitration, and conflict resolution to ensure all parties reach satisfactory outcomes.
-          </p>
-          <div className="flex  flex-wrap justify-center gap-4>
-            <Link href=#disputes className=bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Disputes
-            </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link>
-            <Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >File Dispute
-            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-          </div>
-        </div>
+            Fair mediation, arbitration, and conflict resolution to ensure all parties reach satisfactory outcomes.</div>
+          </p></div>
+          <div className="flex  flex-wrap justify-center gap-4>"</div>
+            <Link href=#disputes className="bg-gradient-to-r" from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ">View Disputes</div>
+            </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link>"</div>
+            <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">File Dispute</div>
+            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+          </div>"</div>
+        </div>"
 "
-        {/* Stats */}
-        <div className="grid  grid-cols-1 md:grid-cols-5 gap-6 mb-12>
-          </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>
-            <div className="text-3xl font-bold text-white mb-2>{stats.total}</div>
-            <p className=text-gray-300" text-sm>Total Disputes</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >
-            </div><div className=text-3xl" font-bold text-white mb-2>{stats.open}</div>
-            <p className="text-gray-300 text-sm>Open Cases</p>
-          </div>
-          <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            </div><div className="text-3xl font-bold text-white mb-2 >{stats.inProgress}</div>
-            <p className=text-gray-300" text-sm>In Progress</p>
-          </div>
-          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>
-            </div><div className=text-3xl" font-bold text-white mb-2>{stats.resolved}</div>
-            <p className="text-gray-300 text-sm >Resolved</p>
-          </div>
-          <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>
-            </div><div className="text-3xl font-bold text-white mb-2>{formatCurrency(stats.totalAmount)}</div>
-            <p className=text-gray-300" text-sm>Total Value</p>
-          </div>
-        </div>
+        {/* Stats */}</div>
+        <div className="grid  grid-cols-1 md:grid-cols-5 gap-6 mb-12>"</div>
+          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center"></div>
+            <div className="text-3xl font-bold text-white mb-2>{stats.total}</div>"</div>
+            <p className="text-gray-300" text-sm">Total Disputes</p></div>
+          </div></div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >"</div>
+            </div><div className="text-3xl" font-bold text-white mb-2">{stats.open}</div></div>
+            <p className="text-gray-300 text-sm>Open Cases</p>"</div>
+          </div>"</div>
+          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center"></div>
+            </div><div className="text-3xl font-bold text-white mb-2 >{stats.inProgress}</div>"</div>
+            <p className="text-gray-300" text-sm">In Progress</p></div>
+          </div></div>
+          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"</div>
+            </div><div className="text-3xl" font-bold text-white mb-2">{stats.resolved}</div></div>
+            <p className="text-gray-300 text-sm >Resolved</p>"</div>
+          </div>"</div>
+          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center"></div>
+            </div><div className="text-3xl font-bold text-white mb-2>{formatCurrency(stats.totalAmount)}</div>"</div>
+            <p className="text-gray-300" text-sm">Total Value</p></div>
+          </div></div>
+        </div></div>
       </div>
 
-      {/* Main Content */}"
-      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12 > 
-        {/* Tabs */}
+      {/* Main Content */}"</div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12 "> 
+        {/* Tabs */}</div>
         </div><div className="flex flex-wrap gap-2" mb-8>
           {['
             { id: 'disputes', label: 'Disputes' },
@@ -392,357 +392,357 @@ const DisputeResolutionPage: NextPage = () => {'
                     bg-white'/5 text-gray-300 hover bg-white/10'``
               }`}
             >
-              {tab.label}
+              {tab.label}</div>
             </button>
-          ))}
+          ))}</div>
         </div>
 
-        {/* Filters */}, '
-{activeTab === 'disputes' && (
-          <div className=flex"" flex-wrap gap-4 mb-8>
+        {/* Filters */}, '"
+{activeTab === 'disputes' && ("</div>
+          <div className="flex"" flex-wrap gap-4 mb-8">
             
               onChange={(e) => setFilterStatus(e.target.value)}
-              className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-orange-500 ">"
-              <option value=all>All Status</option>
-              <option value=open>Open</option>
-              <option value=mediation>Mediation</option>
-              <option value=arbitration>Arbitration</option">
-              <option value=resolved>Resolved</option>
-              <option value=closed>Closed</option>
+              className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-orange-500 ">"</div>
+              <option value=all>All Status</option></div>
+              <option value=open>Open</option></div>
+              <option value=mediation>Mediation</option></div>
+              <option value=arbitration>Arbitration</option"></div>
+              <option value=resolved>Resolved</option></div>
+              <option value=closed>Closed</option></div>
             </select>
             
               onChange={(e) ="> setFilterType(e.target.value)}
               className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus  ring-orange-500
-            >
-              <option value=all>All Types</option>
-              <option value=payment>Payment</option>
-              <option value=service>Service</option">
-              <option value=quality>Quality</option>
-              <option value=delivery>Delivery</option">
-              <option value=communication>Communication</option>
-            </select>
+            ></div>
+              <option value=all>All Types</option></div>
+              <option value=payment>Payment</option></div>
+              <option value=service>Service</option"></div>
+              <option value=quality>Quality</option></div>
+              <option value=delivery>Delivery</option"></div>
+              <option value=communication>Communication</option></div>
+            </select></div>
           </div>
         )}
         {/* Tab Content */},
-{activeTab === 'disputes' && (
-          <div className=space-y-6> 
-            </div><div className="flex justify-between" items-center>
-              <h2 className=text-2xl font-bold text-white>Disputes</h2>
-              <Link href=/marketplace" className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >File New Dispute
-              </Link href=/marketplace  className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"></Link>
-            </div>
+{activeTab === 'disputes' && (</div>
+          <div className="space-y-6"> </div>
+            </div><div className="flex justify-between" items-center></div>
+              <h2 className="text-2xl font-bold text-white">Disputes</h2></div>
+              <Link href=/marketplace" className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >File New Dispute"</div>
+              </Link href=/marketplace  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300""></Link></div>
+            </div></div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-              {filteredDisputes.map((dispute) => (
-                </div><div key={dispute.id} className=bg-white/5  backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300>
-                  <div className="flex" justify-between items-start mb-4 > 
-                    </div><div className=flex items-center gap-2>
-                      <span className="text-2xl>{getTypeIcon(dispute.type)}</span">
-                      <div>
-                        <h3 className=text-lg font-semibold text-white>{dispute.title}</h3>
-                        <p className="text-gray-300" text-sm>{dispute.id}</p>
-                      </div> 
-                    </div>`
-                    <div className=flex flex-col gap-2>``"
+              {filteredDisputes.map((dispute) => ("</div>
+                </div><div key={dispute.id} className="bg-white/5  backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300">"</div>
+                  <div className="flex" justify-between items-start mb-4 > </div>
+                    </div><div className="flex items-center gap-2"></div>
+                      <span className="text-2xl>{getTypeIcon(dispute.type)}</span"></div>
+                      <div></div>
+                        <h3 className="text-lg font-semibold text-white">{dispute.title}</h3></div>
+                        <p className="text-gray-300" text-sm>{dispute.id}</p></div>
+                      </div> </div>
+                    </div>`</div>
+                    <div className="flex flex-col gap-2">``"</div>
                       <span className="{`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(dispute.status)}`}>
-                        {dispute.status.toUpperCase()} `
-                      </span>``
-                      <span className={`px-3" py-3 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}`}>
-                        {dispute.priority.toUpperCase()}
-                      </span>
+                        {dispute.status.toUpperCase()} `"</div>
+                      </span>``"</div>
+                      <span className="{`px-3" py-3 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}`}">
+                        {dispute.priority.toUpperCase()}</div>
+                      </span></div>
+                    </div></div>
+                  </div></div>
+                  <div className="space-y-3 mb-4>"</div>
+                    <p className="text-gray-300" text-sm line-clamp-2">{dispute.description}</p></div>
+                    <div className="flex justify-between>"</div>
+                      <span className="text-gray-300>Amount:</span>"</div>
+                      <span className="text-white font-semibold ">{formatCurrency(dispute.amount)}</span></div>
+                    </div></div>
+                    <div className=" flex" justify-between></div>
+                      <span className="text-gray-300">Parties:</span></div>
+                      <span className="text-white" text-sm>{dispute.parties.complainant} vs {dispute.parties.respondent}</span></div>
+                    </div></div>
+                    <div className="flex  justify-between"></div>
+                      <span className="text-gray-300>Created" </span></div>
+                      <span className="text-white">{dispute.createdAt.toLocaleDateString()}</span></div>
                     </div>
-                  </div>
-                  <div className="space-y-3 mb-4>
-                    <p className=text-gray-300" text-sm line-clamp-2>{dispute.description}</p>
-                    <div className="flex justify-between>
-                      <span className="text-gray-300>Amount:</span>"
-                      <span className=text-white font-semibold >{formatCurrency(dispute.amount)}</span>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=text-gray-300>Parties:</span>
-                      <span className="text-white" text-sm>{dispute.parties.complainant} vs {dispute.parties.respondent}</span>
-                    </div>
-                    <div className=flex  justify-between>
-                      <span className="text-gray-300>Created" </span>
-                      <span className=text-white>{dispute.createdAt.toLocaleDateString()}</span>
-                    </div>
-                    {dispute.assignedMediator && ("
-                      <div className=" flex justify-between>
-                        <span className=text-gray-300>Mediator:</span>"
-                        <span className="text-white>{dispute.assignedMediator}</span>
+                    {dispute.assignedMediator && ("</div>
+                      <div className=" flex justify-between>"</div>
+                        <span className="text-gray-300">Mediator:</span>"</div>
+                        <span className="text-white>{dispute.assignedMediator}</span></div>
                       </div>
-                    )} 
-                  </div>
-                  <div className=flex" gap-2>
+                    )} "</div>
+                  </div>"</div>
+                  <div className="flex" gap-2"></div>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm:transition-colors>
-                      View Details
-                    </button>
-                    <button className=flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors >
-                      Update Status
-                    </button>
-                  </div>
+                      View Details"</div>
+                    </button>"</div>
+                    <button className="flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors ">
+                      Update Status</div>
+                    </button></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}"'
 
-        {activeTab === 'mediato'rs && (
-          <div className=space-y-6">
-            <h2 className="text-2xl font-bold text-white>Professional Mediators</h2>
-            <div className=grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
-              {mediators.map((mediator) => (
-                </div><div key={mediator.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>
-                  <div className=flex" justify-between items-start mb-4>
-                    </div><div>
-                      <h3 className="text-lg font-semibold text-white>{mediator.name}</h3>
-                      <p className=text-gray-300" text-sm>Professional Mediator</p>
+        {activeTab === 'mediato'rs && (</div>
+          <div className="space-y-6""></div>
+            <h2 className="text-2xl font-bold text-white>Professional Mediators</h2>"</div>
+            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+              {mediators.map((mediator) => (</div>
+                </div><div key={mediator.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"</div>
+                  <div className="flex" justify-between items-start mb-4"></div>
+                    </div><div></div>
+                      <h3 className="text-lg font-semibold text-white>{mediator.name}</h3>"</div>
+                      <p className="text-gray-300" text-sm">Professional Mediator</p></div>
                     </div>`
                     ``
                     }`}>
-                      {mediator.availability.toUpperCase()}
-                    </span>
+                      {mediator.availability.toUpperCase()}</div>
+                    </span></div>
                   </div>
-                  
-                  <div className="space-y-3 mb-4>
-                    </div><div className= flex" justify-between>"
-                      <span className=text-gray-300>Rating:</span>
-                      <span className="text-white>⭐" {mediator.rating}/5.0</span>
-                    </div>
-                    <div className= flex justify-between>
-                      <span className=" text-gray-300>Cases Resolved:</span>
-                      <span className="text-white>{mediator.casesResolved}</span>
-                    </div>
-                    <div className=flex justify-between">
-                      <span className="text-gray-300>Hourly Rate </span>
-                      <span className=text-white>{formatCurrency(mediator.hourlyRate)}</span">
-                    </div>
-                    <div>
-                      <span className="text-gray-300 text-sm>Specializations </span>
-                      <div className=flex"  flex-wrap gap-1 mt-1>
-                        {mediator.specialization.map((spec, index) => (
+                  </div>
+                  <div className="space-y-3 mb-4>"</div>
+                    </div><div className=" flex" justify-between">"</div>
+                      <span className="text-gray-300">Rating:</span></div>
+                      <span className="text-white>⭐" {mediator.rating}/5.0</span></div>
+                    </div></div>
+                    <div className=" flex justify-between"></div>
+                      <span className=" text-gray-300>Cases Resolved:</span>"</div>
+                      <span className="text-white>{mediator.casesResolved}</span>"</div>
+                    </div>"</div>
+                    <div className="flex justify-between""></div>
+                      <span className="text-gray-300>Hourly Rate </span>"</div>
+                      <span className="text-white">{formatCurrency(mediator.hourlyRate)}</span"></div>
+                    </div></div>
+                    <div></div>
+                      <span className="text-gray-300 text-sm>Specializations </span>"</div>
+                      <div className="flex"  flex-wrap gap-1 mt-1">
+                        {mediator.specialization.map((spec, index) => (</div>
                           <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white>
-                            {spec}
+                            {spec}</div>
                           </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className= flex" gap-2>"
-                    <button className=flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm:transition-colors>
-                      View Profile
-                    </button>
+                        ))}</div>
+                      </div></div>
+                    </div>"</div>
+                  </div>"</div>
+                  <div className=" flex" gap-2">"</div>
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm:transition-colors">
+                      View Profile</div>
+                    </button></div>
                     <button className="flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors >
-                      Request Assignment
-                    </button>
-                  </div>
+                      Request Assignment</div>
+                    </button></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}'
 '
-        {activeTab === proposa'l's && (
-          <div className="space-y-6">
-            <h2 className=text-2xl font-bold text-white>Resolution Proposals</h2>
+        {activeTab === proposa'l's && (</div>
+          <div className="space-y-6"></div>
+            <h2 className="text-2xl font-bold text-white">Resolution Proposals</h2></div>
             <div className="space-y-6>" 
-              {resolutionProposals.map((proposal) => (
-                </div><div key={proposal.id} className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>
-                  <div className="flex" justify-between items-start mb-4>
-                    </div><div>
-                      <h3 className=text-lg font-semibold text-white>Resolution Proposal</h3>
-                      <p className="text-gray-300" text-sm>Dispute: {proposal.disputeId}</p>
+              {resolutionProposals.map((proposal) => (</div>
+                </div><div key={proposal.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6"></div>
+                  <div className="flex" justify-between items-start mb-4></div>
+                    </div><div></div>
+                      <h3 className="text-lg font-semibold text-white">Resolution Proposal</h3></div>
+                      <p className="text-gray-300" text-sm>Dispute: {proposal.disputeId}</p></div>
                     </div>`
                     ``
                     }`}>
-                      {proposal.status.toUpperCase()}
-                    </span>
+                      {proposal.status.toUpperCase()}</div>
+                    </span></div>
                   </div>
-                  
-                  <div className=space-y-3 mb-4>
-                    </div><div className=" flex" justify-between>
-                      <span className=text-gray-300>Proposed" By:</span>
-                      <span className="text-white>{proposal.proposedBy}</span>
+                  </div>
+                  <div className="space-y-3 mb-4"></div>
+                    </div><div className=" flex" justify-between></div>
+                      <span className="text-gray-300">Proposed" By:</span></div>
+                      <span className="text-white>{proposal.proposedBy}</span>"</div>
+                    </div>"</div>
+                    <div className=" flex" justify-between"></div>
+                      <span className="text-gray-300>Type:</span>"</div>
+                      <span className="text-white" capitalize">{proposal.type.replace('_',  )}</span></div>
                     </div>
-                    <div className= flex" justify-between>
-                      <span className="text-gray-300>Type:</span>
-                      <span className=text-white" capitalize>{proposal.type.replace('_',  )}</span>
-                    </div>
-                    {proposal.amount && (
-                      <div className="flex justify-between>
-                        <span className="text-gray-300>Amount" </span>
-                        <span className=text-white font-semibold>{formatCurrency(proposal.amount)}</span>
+                    {proposal.amount && (</div>
+                      <div className="flex justify-between>"</div>
+                        <span className="text-gray-300>Amount" </span></div>
+                        <span className="text-white font-semibold">{formatCurrency(proposal.amount)}</span></div>
                       </div>
-                    )}
-                    <div>
-                      <span className="text-gray-300>Description:</span>"
-                      <p className=text-white mt-1 >{proposal.description}</p>
-                    </div>
-                    <div className=" flex" justify-between>
-                      <span className=text-gray-300>Created:</span>
-                      <span className="text-white>{proposal.createdAt.toLocaleDateString()}</span">
-                    </div>
+                    )}</div>
+                    <div></div>
+                      <span className="text-gray-300>Description:</span>"</div>
+                      <p className="text-white mt-1 ">{proposal.description}</p></div>
+                    </div></div>
+                    <div className=" flex" justify-between></div>
+                      <span className="text-gray-300">Created:</span></div>
+                      <span className="text-white>{proposal.createdAt.toLocaleDateString()}</span"></div>
+                    </div></div>
                   </div>
-                  
-                  <div className="space-y-3">
-                    <h4 className=text-white font-semibold>Responses </h4>
-                    {proposal.responses.map((response) => ("
-                      <div key={response.id} className="bg-white/5 rounded p-3> 
-                        </div><div className=flex" justify-between items-center mb-2>
+                  </div>
+                  <div className="space-y-3"></div>
+                    <h4 className="text-white font-semibold">Responses </h4>
+                    {proposal.responses.map((response) => ("</div>
+                      <div key={response.id} className="bg-white/5 rounded p-3> "</div>
+                        </div><div className="flex" justify-between items-center mb-2"></div>
                           <span className="text-white font-medium >{response.partyId}</span>`
                           ``
                           }`}>
-                            {response.response.toUpperCase()}
-                          </span>
-                        </div>
-                        {response.comment && (
-                          <p className=text-gray-300" text-sm>{response.comment}</p>
-                        )}
-                        <p className="text-gray-400 text-xs mt-1>{response.timestamp.toLocaleDateString()}</p>
+                            {response.response.toUpperCase()}</div>
+                          </span></div>
+                        </div>"
+                        {response.comment && ("</div>
+                          <p className="text-gray-300" text-sm">{response.comment}</p>
+                        )}</div>
+                        <p className="text-gray-400 text-xs mt-1>{response.timestamp.toLocaleDateString()}</p></div>
                       </div>
-                    ))}
-                  </div> 
-                  <div className=flex" gap-2 mt-4 >
+                    ))}"</div>
+                  </div> "</div>
+                  <div className="flex" gap-2 mt-4 "></div>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors>
-                      View Details
-                    </button>
-                    <button className=flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors>
-                      Respond
-                    </button>
-                  </div>
+                      View Details"</div>
+                    </button>"</div>
+                    <button className="flex-1" bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                      Respond</div>
+                    </button></div>
+                  </div></div>
                 </div >
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}
 "''
-        {activeTab === resource's' && (
-          <div className=space-y-8>
+        {activeTab === resource's' && (</div>
+          <div className="space-y-8"></div>
             <h2 className="text-2xl" font-bold text-white >Dispute Resolution Resources</h2>
-            
-            <div className=grid grid-cols-1 md grid-cols-2 gap-8> 
-              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                <h3 className=text-lg font-semibold text-white mb-4>How to File a Dispute</h3>
-                <div className="space-y-3" text-gray-300 >
-                  <p>1. Gather all relevant documentation and evidence</p>
-                  <p>2. Contact the other party to attempt direct resolution</p>
-                  <p>3. If unresolved, submit a formal dispute through our platform</p>
-                  <p>4. Provide detailed description and supporting evidence</p>
-                  <p>5. Choose your preferred resolution method</p>
-                </div>
-                <button className=w-full mt-4 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-4 py-4 rounded text-sm transition-colors>
-                  File Dispute
-                </button>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                <h3 className=text-lg font-semibold text-white mb-4>Resolution Methods</h3>
-                <div className="space-y-3" text-gray-300 >
-                  <p><strong>Mediation:</strong> Neutral third-party facilitates discussion</p>
-                  <p><strong>Arbitration:</strong> Binding decision by neutral arbitrator</p>
-                  <p><strong>Negotiation:</strong> Direct discussion between parties</p>
-                  <p><strong>Expert Review:</strong> Technical assessment by specialists</p>
-                </div>
-                <button className=w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors>
-                  Learn More
-                </button>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                <h3 className=text-lg font-semibold text-white mb-4>Evidence Guidelines</h3>
-                <div className="space-y-3" text-gray-300 >
-                  <p>• Contracts and agreements</p>
-                  <p>• Communication records</p>
-                  <p>• Payment receipts and invoices</p>
-                  <p>• Screenshots and documentation</p>
-                  <p>• Witness statements</p>
-                </div>
-                <button className=w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors>
-                  View Guidelines
-                </button>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                <h3 className=text-lg font-semibold text-white mb-4>Success Stories</h3>
-                <div className="space-y-3" text-gray-300 >
-                  <p>• 85% resolution rate through mediation</p>
-                  <p>• Average resolution time: 14 days</p>
-                  <p>• 92% satisfaction rate from parties</p>
-                  <p>• $2.3M in disputes resolved this year</p>
-                </div>
-                <button className=w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors>
-                  Read Stories
-                </button>
-              </div>
             </div>
+            <div className="grid grid-cols-1 md grid-cols-2 gap-8"> </div>
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>
+                <h3 className="text-lg font-semibold text-white mb-4">How to File a Dispute</h3></div>
+                <div className="space-y-3" text-gray-300 ></div>
+                  <p>1. Gather all relevant documentation and evidence</p></div>
+                  <p>2. Contact the other party to attempt direct resolution</p></div>
+                  <p>3. If unresolved, submit a formal dispute through our platform</p></div>
+                  <p>4. Provide detailed description and supporting evidence</p></div>
+                  <p>5. Choose your preferred resolution method</p></div>
+                </div></div>
+                <button className="w-full mt-4 bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-4 py-4 rounded text-sm transition-colors">
+                  File Dispute</div>
+                </button></div>
+              </div></div>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>
+                <h3 className="text-lg font-semibold text-white mb-4">Resolution Methods</h3></div>
+                <div className="space-y-3" text-gray-300 ></div>
+                  <p><strong>Mediation:</strong> Neutral third-party facilitates discussion</p></div>
+                  <p><strong>Arbitration:</strong> Binding decision by neutral arbitrator</p></div>
+                  <p><strong>Negotiation:</strong> Direct discussion between parties</p></div>
+                  <p><strong>Expert Review:</strong> Technical assessment by specialists</p></div>
+                </div></div>
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
+                  Learn More</div>
+                </button></div>
+              </div></div>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>
+                <h3 className="text-lg font-semibold text-white mb-4">Evidence Guidelines</h3></div>
+                <div className="space-y-3" text-gray-300 ></div>
+                  <p>• Contracts and agreements</p></div>
+                  <p>• Communication records</p></div>
+                  <p>• Payment receipts and invoices</p></div>
+                  <p>• Screenshots and documentation</p></div>
+                  <p>• Witness statements</p></div>
+                </div></div>
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
+                  View Guidelines</div>
+                </button></div>
+              </div></div>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6></div>
+                <h3 className="text-lg font-semibold text-white mb-4">Success Stories</h3></div>
+                <div className="space-y-3" text-gray-300 ></div>
+                  <p>• 85% resolution rate through mediation</p></div>
+                  <p>• Average resolution time: 14 days</p></div>
+                  <p>• 92% satisfaction rate from parties</p></div>
+                  <p>• $2.3M in disputes resolved this year</p></div>
+                </div></div>
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
+                  Read Stories</div>
+                </button></div>
+              </div></div>
+            </div></div>
           </div>
-        )}
+        )}</div>
       </div> 
-      {/* CTA Section */}"
-      <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10> 
-        </div><div className=max-w-7xl"" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-          <div className=text-center>
+      {/* CTA Section */}"</div>
+      <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10> "</div>
+        </div><div className="max-w-7xl"" mx-auto px-4 sm:px-6 lg:px-8 py-32"></div>
+          <div className="text-center"></div>
             <h2 className="text-3xl" font-bold text-white mb-4>
-              Fair Resolution for All
-            </h2>
-            <p className=text-xl text-gray-300 mb-8>
+              Fair Resolution for All</div>
+            </h2></div>
+            <p className="text-xl text-gray-300 mb-8">
               Professional dispute resolution services ensure fair outcomes for all marketplace participants.  
-              Our experienced mediators and comprehensive processes help resolve conflicts efficiently and fairly.
-            </p>
-            <div className="flex  flex-wrap justify-center gap-4>
-              <Link href=#disputes" className=bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started
-              </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
-              <Link href=/marketplace className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
-              </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div> </div>
-        </div>
+              Our experienced mediators and comprehensive processes help resolve conflicts efficiently and fairly.</div>
+            </p></div>
+            <div className="flex  flex-wrap justify-center gap-4>"</div>
+              <Link href=#disputes" className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ">Get Started</div>
+              </Link href=#disputes  className="bg-gradient-to-r from-orange-600 to-red-600 hover from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link></div>
+              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Learn More</div>
+              </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            </div> </div></div>
+        </div></div>
       </div>
-      {/* Footer */}
-      <footer className=bg-black/20  border-t border-white/10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8> 
-          </div><div className=grid grid-cols-1 md grid-cols-4" gap-8>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>
-              <p className=text-gray-300" text-sm >
-                The first free AI-powered marketplace for high-tech products, services, and innovation.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4>Dispute Resolution</h4>
-              <ul className=space-y-2"" text-sm>
-                <li><Link href=/dispute-resolution className=text-gray-400" hover text-white transition-colors >Dispute Center</Link href=/dispute-resolution  className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/escrow-services className="text-gray-400" hover text-white transition-colors >Escrow Services</Link href=/escrow-services className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/warranty-protection" className=text-gray-400 hover text-white transition-colors >Warranty Protection</Link href=/warranty-protection  className="text-gray-400" hover text-white transition-colors ></Link></li>
-                <li><Link href=/invoice-billing className=text-gray-400" hover text-white transition-colors >Invoice & Billing</Link href=/invoice-billing className="text-gray-400 hover text-white transition-colors ></Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Support</h4>
-              <ul className=space-y-2" text-sm>
-                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400" hover text-white transition-colors" ></Link></li>
-                <li><Link href=/real-time-chat className=text-gray-400" hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/notifications className="text-gray-400" hover text-white transition-colors >Notifications</Link href=/notifications className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/ai-powered-contract-legal" className=text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul>
-            </div>
-            <div>
-              <h4 className=text-white font-semibold mb-4>Connect</h4>
-              <ul className="space-y-2"  text-sm>
-                <li><Link href=/about className=text-gray-400 hover text-white transition-colors >About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors></Link></li>
-                <li><Link href=/blog className=text-gray-400" hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400" hover text-white transition-colors" ></Link></li>
-                <li><Link href=/auth/login className=text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors ></Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className=border-t  border-white/10 mt-8 pt-8 text-center">
+      {/* Footer */}</div>
+      <footer className="bg-black/20  border-t border-white/10">"</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8> "</div>
+          </div><div className="grid grid-cols-1 md grid-cols-4" gap-8"></div>
+            <div></div>
+              <h3 className="text-lg font-semibold text-white mb-4>Zion Marketplace</h3>"</div>
+              <p className="text-gray-300" text-sm ">
+                The first free AI-powered marketplace for high-tech products, services, and innovation.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4>Dispute Resolution</h4>"</div>
+              <ul className="space-y-2"" text-sm"></div>
+                <li><Link href=/dispute-resolution className="text-gray-400" hover text-white transition-colors ">Dispute Center</Link href=/dispute-resolution  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/escrow-services className="text-gray-400" hover text-white transition-colors >Escrow Services</Link href=/escrow-services className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/warranty-protection" className="text-gray-400 hover text-white transition-colors ">Warranty Protection</Link href=/warranty-protection  className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/invoice-billing className="text-gray-400" hover text-white transition-colors ">Invoice & Billing</Link href=/invoice-billing className="text-gray-400 hover text-white transition-colors ></Link></li></div>
+              </ul></div>
+            </div>"</div>
+            <div>"</div>
+              <h4 className="text-white" font-semibold mb-4>Support</h4></div>
+              <ul className="space-y-2" text-sm"></div>
+                <li><Link href=/contact className="text-gray-400 hover text-white transition-colors >Contact Us</Link href=/contact className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/real-time-chat className="text-gray-400" hover text-white transition-colors ">Live Chat</Link href=/real-time-chat  className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/notifications className="text-gray-400" hover text-white transition-colors >Notifications</Link href=/notifications className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors ">Legal Support</Link href=/ai-powered-contract-legal  className="text-gray-400" hover text-white transition-colors ></Link></li> </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Connect</h4></div>
+              <ul className="space-y-2"  text-sm></div>
+                <li><Link href=/about className="text-gray-400 hover text-white transition-colors ">About Us</Link href=/about" className="text-gray-400 hover text-white transition-colors></Link></li>"</div>
+                <li><Link href=/blog className="text-gray-400" hover text-white transition-colors ">Blog</Link href=/blog className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/auth/signup" className="text-gray-400 hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors ">Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="border-t  border-white/10 mt-8 pt-8 text-center""></div>
             <p className="text-gray-400 text-sm>
-              © 2024 Zion Tech Group. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion Tech Group. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
-  
   </div>
-
-  </div >
+  </div>
+</div>
+  </div ></div>
   </div> ;
-};
-`
-export default DisputeResolutionPage ))))))))))))))'"'`
+};"
+`";}
+export default DisputeResolutionPage ))))))))))))))'"'`</div>

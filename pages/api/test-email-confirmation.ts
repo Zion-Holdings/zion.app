@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next
+import { NextApiRequest, NextApiResponse } from 'next;}
 import { createClient } from '@supabase/supabase-js'
-
+;
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-k'e'y;
 );
-
+;}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'PO'ST) {
     return res.status(405).json({ error: 'Metho'd not allowed}}

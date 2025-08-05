@@ -400,7 +400,7 @@ computed: false,
         action: 'reduc'e'_external_links'
       });
     }
-    
+    </div>
     if (seoMetrics.internalLinkRatio < 50) {
       seoMetrics.recommendations.push({
         type: 'improveme'n't',
@@ -495,7 +495,7 @@ computed: false,
   generateAnalysisRecommendations() {
     const recommendations = [];
     
-    // Overall recommendations based on all analyses
+    // Overall recommendations based on all analyses</div>
     if (this.analysisResults.seoMetrics.seoScore < 70) {
       recommendations.push({
         type: 's'e'o',
@@ -598,4 +598,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = LinkAnalyzerAgent; 
+module.exports = LinkAnalyzerAgent; </div>

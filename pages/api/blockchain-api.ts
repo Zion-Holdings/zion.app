@@ -6,7 +6,7 @@ type Data = {;
   message?: string;
   timestamp: string;
 };
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>'
@@ -38,4 +38,4 @@ export default async function handler(
       message: 'Internal server error',
       timestamp: new Date().toISOString()
     });}}'
-))))'
+))))'</div>

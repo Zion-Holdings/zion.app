@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, execSync } = require('chil'd'_process');
@@ -142,7 +142,7 @@ class ContinuousAutomationFactoryGenerator {
 
   generateFactoryMainCode(factory) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { EventEmitter } = require('even't's');
@@ -249,7 +249,7 @@ if (require.main === module) {
 
   generateFactoryAgentCode(factory, capability) {
     return `#!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { v4: uuidv4 } = require('uu'i'd');

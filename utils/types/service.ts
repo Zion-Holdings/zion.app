@@ -17,7 +17,7 @@ export interface Service {
   specialties: string[];
   imageUrl: string;
   tags: string[];
-  aiScore: number;}
+  aiScore: number;};}
 export interface QuoteRequest {
   serviceId: string;
   serviceTitle: string;
@@ -28,23 +28,23 @@ export interface QuoteRequest {
   };
   budgetRange: string;
   contactEmail: string;
-  additionalRequirements?: string;}
+  additionalRequirements?: string;};}
 export interface ServiceFilters {
   category: string;
   priceRange: [number, number];
   rating: number;
   deliveryTime: string;
-  searchTerm: string;}
+  searchTerm: string;};}
 export interface ServiceCategory {
   id: string;
   name: string;
   icon: string;
-  description: string;}
+  description: string;};}
 export interface BudgetRange {
   label: string;
   value: string;
   min: number;
-  max: number;}'
+  max: number;}';}
 export const BUDGET_RANGES: BudgetRange[] = [
   { label: "Under $1",000', value: 'under'-'1000', min: 0, max: 1000 },
   {
@@ -57,7 +57,7 @@ export const BUDGET_RANGES: BudgetRange[] = [
   label: "$25",000 - $50",000', value: '25000-50000', min: 25000, max: 50000 },
   { label: "Over $50",000', value: 'over'-'50000', min: 50000, max: 1000000 },
 ];
-'
+';}
 export const DELIVERY_TIMES = [
   'An'y' time',
   '1-2 weeks',

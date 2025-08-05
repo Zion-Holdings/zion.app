@@ -1,15 +1,15 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
-const execAsync = promisify(exec);
+;
+const $1 = promisify(exec);
 
 class Deployment-automationAutomationAgent {
   
   // Enhanced Intelligent Analysis
   async performIntelligentAnalysis(data) {
-    const analysis = {
+    const $1 = {
       patterns: this.identifyPatterns(data),
       trends: this.analyzeTrends(data),
       opportunities: this.identifyOpportunities(data),
@@ -74,12 +74,12 @@ class Deployment-automationAutomationAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -88,7 +88,7 @@ class Deployment-automationAutomationAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -107,7 +107,7 @@ class Deployment-automationAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       this.deploymentsDir,
       path.join(this.reportsDir, 'build-lo'g's'),
@@ -124,7 +124,7 @@ class Deployment-automationAutomationAgent {
   }
 
   async start() {
-    console.log(`Deployment Automation Agent ${this.agentId} started`);
+    console.log("Deployment Automation Agent ${this.agentId} started");
     
     // Initial deployment check
     await this.checkDeploymentStatus();
@@ -149,7 +149,7 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Checkin'g' deployment status...');
       
-      const status = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         environment: process.env.NODE_ENV || 'developme'n't',
@@ -158,21 +158,21 @@ class Deployment-automationAutomationAgent {
       };
       
       // Check current deployment status
-      const deploymentInfo = await this.getCurrentDeploymentInfo();
+      const $1 = await this.getCurrentDeploymentInfo();
       status.deployments.push(deploymentInfo);
       
       // Check build status
-      const buildStatus = await this.checkBuildStatus();
+      const $1 = await this.checkBuildStatus();
       status.build = buildStatus;
       
       // Check deployment health
-      const health = await this.checkDeploymentHealth();
+      const $1 = await this.checkDeploymentHealth();
       status.health = health;
       
       // Save status report
       await this.saveDeploymentStatus(status);
       
-      console.log(`Deployment status: ${status.health}`);
+      console.log("Deployment status: ${status.health}");
       
     } catch (error) {
       console.error('Faile'd' to check deployment status:', error);
@@ -216,7 +216,7 @@ class Deployment-automationAutomationAgent {
         timeout: 30000
       });
       
-      const status = JSON.parse(stdout);
+      const $1 = JSON.parse(stdout);
       return {
         platform: 'netli'f'y',
         status: status.status,
@@ -241,8 +241,8 @@ class Deployment-automationAutomationAgent {
         timeout: 30000
       });
       
-      const deployments = JSON.parse(stdout);
-      const latest = deployments[0];
+      const $1 = JSON.parse(stdout);
+      const $1 = deployments[0];
       
       return {
         platform: 'verc'e'l',
@@ -263,7 +263,7 @@ class Deployment-automationAutomationAgent {
 
   async checkBuildStatus() {
     try {
-      const buildStatus = {
+      const $1 = {
         status: 'unkno'w'n',
         lastBuild: null,
         buildTime: 0,
@@ -272,7 +272,7 @@ class Deployment-automationAutomationAgent {
       };
       
       // Check if build directory exists
-      const buildDir = path.join(this.projectRoot, '.next');
+      const $1 = path.join(this.projectRoot, '.next');
       if (fs.existsSync(buildDir)) {
         buildStatus.status = 'bui'l't';
         buildStatus.lastBuild = fs.statSync(buildDir).mtime;
@@ -282,7 +282,7 @@ class Deployment-automationAutomationAgent {
       }
       
       // Check for build errors in logs
-      const buildLogs = await this.checkBuildLogs();
+      const $1 = await this.checkBuildLogs();
       buildStatus.errors = buildLogs.errors;
       
       return buildStatus;
@@ -297,12 +297,12 @@ class Deployment-automationAutomationAgent {
   }
 
   calculateDirectorySize(dirPath) {
-    let totalSize = 0;
+    let $1 = 0;
     
-    const calculateSize = (path) => {
-      const stats = fs.statSync(path);
+    const $1 = (path) => {
+      const $1 = fs.statSync(path);
       if (stats.isDirectory()) {
-        const files = fs.readdirSync(path);
+        const $1 = fs.readdirSync(path);
         files.forEach(file => {
           calculateSize(path.join(path, file));
         });
@@ -321,22 +321,22 @@ class Deployment-automationAutomationAgent {
   }
 
   async checkBuildLogs() {
-    const logs = {
+    const $1 = {
       errors: [],
       warnings: []
     };
     
     try {
       // Check for common build error patterns
-      const logFiles = [
+      const $1 = [
         path.join(this.projectRoot, 'npm-debu'g'.log'),
         path.join(this.projectRoot, 'yarn-erro'r'.log')
       ];
       
       for (const logFile of logFiles) {
         if (fs.existsSync(logFile)) {
-          const content = fs.readFileSync(logFile, 'ut'f'8');
-          const errorLines = content.split('\n').filter(line => 
+          const $1 = fs.readFileSync(logFile, 'ut'f'8');
+          const $1 = content.split('\n').filter(line => 
             line.includes('ERR'O'R') || line.includes('err'o'r') || line.includes('Err'o'r')
           );
           
@@ -353,16 +353,16 @@ class Deployment-automationAutomationAgent {
 
   async checkDeploymentHealth() {
     try {
-      const healthChecks = [
+      const $1 = [
         { name: 'bui'l'd', url: 'htt'p'://localhost:3000', timeout: 5000 },
         { name: 'a'p'i', url: 'htt'p'://localhost:3000/api/health', timeout: 5000 }
       ];
       
-      const results = [];
+      const $1 = [];
       
       for (const check of healthChecks) {
         try {
-          const { stdout } = await execAsync(`curl -s -o /dev/null -w "%{http_code}" ${check.url}`, {
+          const { stdout } = await execAsync("curl -s -o /dev/null -w "%{http_code}" ${check.url}", {
             timeout: check.timeout
           });
           
@@ -381,8 +381,8 @@ class Deployment-automationAutomationAgent {
       }
       
       // Determine overall health
-      const healthyChecks = results.filter(r => r.status === 'healt'h'y').length;
-      const totalChecks = results.length;
+      const $1 = results.filter(r => r.status === 'healt'h'y').length;
+      const $1 = results.length;
       
       if (healthyChecks === totalChecks) return 'healt'h'y';
       if (healthyChecks > 0) return 'degrad'e'd';
@@ -398,7 +398,7 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Monitorin'g' deployments...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         deployments: [],
@@ -406,16 +406,16 @@ class Deployment-automationAutomationAgent {
       };
       
       // Check for new deployments
-      const deploymentInfo = await this.getCurrentDeploymentInfo();
+      const $1 = await this.getCurrentDeploymentInfo();
       monitoring.deployments.push(deploymentInfo);
       
       // Check for deployment alerts
-      const alerts = await this.checkDeploymentAlerts();
+      const $1 = await this.checkDeploymentAlerts();
       monitoring.alerts = alerts;
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'deployment-lo'g's', `monitoring-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'deployment-lo'g's', "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle alerts
@@ -429,34 +429,34 @@ class Deployment-automationAutomationAgent {
   }
 
   async checkDeploymentAlerts() {
-    const alerts = [];
+    const $1 = [];
     
     try {
       // Check for failed deployments
-      const deploymentInfo = await this.getCurrentDeploymentInfo();
+      const $1 = await this.getCurrentDeploymentInfo();
       if (deploymentInfo.status === 'err'o'r' || deploymentInfo.status === 'fail'e'd') {
         alerts.push({
           type: 'deploymen't'_failed',
           severity: 'hi'g'h',
-          message: `Deployment failed: ${deploymentInfo.error || 'Unknow'n' error'}`,
+          message: "Deployment failed: ${deploymentInfo.error || 'Unknow'n' error'}",
           timestamp: new Date().toISOString()
         });
       }
       
       // Check for build errors
-      const buildStatus = await this.checkBuildStatus();
+      const $1 = await this.checkBuildStatus();
       if (buildStatus.errors.length > 0) {
         alerts.push({
           type: 'buil'd'_errors',
           severity: 'medi'u'm',
-          message: `Build has ${buildStatus.errors.length} errors`,
+          message: "Build has ${buildStatus.errors.length} errors",
           errors: buildStatus.errors.slice(-5), // Last 5 errors
           timestamp: new Date().toISOString()
         });
       }
       
       // Check for performance issues
-      const health = await this.checkDeploymentHealth();
+      const $1 = await this.checkDeploymentHealth();
       if (health === 'unhealt'h'y') {
         alerts.push({
           type: 'healt'h'_check_failed',
@@ -475,7 +475,7 @@ class Deployment-automationAutomationAgent {
 
   async handleDeploymentAlerts(alerts) {
     for (const alert of alerts) {
-      console.log(`Deployment Alert [${alert.severity.toUpperCase()}]: ${alert.message}`);
+      console.log("Deployment Alert [${alert.severity.toUpperCase()}]: ${alert.message}");
       
       // Handle high severity alerts
       if (alert.severity === 'hi'g'h') {
@@ -518,7 +518,7 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Performin'g' deployment rollback...');
       
-      const rollback = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         action: 'rollba'c'k',
@@ -526,12 +526,12 @@ class Deployment-automationAutomationAgent {
       };
       
       // Save rollback record
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const rollbackPath = path.join(this.reportsDir, 'rollbac'k's', `rollback-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'rollbac'k's', "rollback-${timestamp}.json");
       fs.writeFileSync(rollbackPath, JSON.stringify(rollback, null, 2));
       
       // Perform rollback based on platform
-      const deploymentInfo = await this.getCurrentDeploymentInfo();
+      const $1 = await this.getCurrentDeploymentInfo();
       
       if (deploymentInfo.platform === 'netli'f'y') {
         await this.performNetlifyRollback();
@@ -595,7 +595,7 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Restartin'g' deployment...');
       
-      const deploymentInfo = await this.getCurrentDeploymentInfo();
+      const $1 = await this.getCurrentDeploymentInfo();
       
       if (deploymentInfo.platform === 'netli'f'y') {
         await execAsync('netlif'y' deploy --prod', {
@@ -678,14 +678,14 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Performin'g' health checks...');
       
-      const healthReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         checks: []
       };
       
       // Perform various health checks
-      const checks = [
+      const $1 = [
         { name: 'bui'l'd', check: () => this.checkBuildHealth() },
         { name: 'deployme'n't', check: () => this.checkDeploymentHealth() },
         { name: 'performan'c'e', check: () => this.checkPerformanceHealth() },
@@ -694,7 +694,7 @@ class Deployment-automationAutomationAgent {
       
       for (const check of checks) {
         try {
-          const result = await check.check();
+          const $1 = await check.check();
           healthReport.checks.push({
             name: check.name,
             status: result.status,
@@ -710,8 +710,8 @@ class Deployment-automationAutomationAgent {
       }
       
       // Save health report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'health-chec'k's', `health-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'health-chec'k's', "health-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
       console.log('Healt'h' checks completed');
@@ -722,8 +722,8 @@ class Deployment-automationAutomationAgent {
   }
 
   async checkBuildHealth() {
-    const buildDir = path.join(this.projectRoot, '.next');
-    const exists = fs.existsSync(buildDir);
+    const $1 = path.join(this.projectRoot, '.next');
+    const $1 = fs.existsSync(buildDir);
     
     return {
       status: exists ? 'healt'h'y' : 'unhealt'h'y',
@@ -740,9 +740,9 @@ class Deployment-automationAutomationAgent {
         timeout: 10000
       });
       
-      const responseTime = parseFloat(stdout);
+      const $1 = parseFloat(stdout);
       
-      return {
+      return {</div>
         status: responseTime < 2 ? 'healt'h'y' : 'degrad'e'd',
         details: {
           responseTime,
@@ -767,8 +767,8 @@ class Deployment-automationAutomationAgent {
         timeout: 60000
       });
       
-      const audit = JSON.parse(stdout);
-      const vulnerabilities = audit.metadata.vulnerabilities;
+      const $1 = JSON.parse(stdout);
+      const $1 = audit.metadata.vulnerabilities;
       
       return {
         status: vulnerabilities.high === 0 && vulnerabilities.critical === 0 ? 'healt'h'y' : 'unhealt'h'y',
@@ -791,14 +791,14 @@ class Deployment-automationAutomationAgent {
     try {
       console.log('Optimizin'g' builds...');
       
-      const optimization = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: []
       };
       
       // Check for build optimizations
-      const optimizations = await this.findBuildOptimizations();
+      const $1 = await this.findBuildOptimizations();
       optimization.optimizations = optimizations;
       
       // Apply optimizations
@@ -809,8 +809,8 @@ class Deployment-automationAutomationAgent {
       }
       
       // Save optimization report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'build-lo'g's', `optimization-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'build-lo'g's', "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimization, null, 2));
       
     } catch (error) {
@@ -819,11 +819,11 @@ class Deployment-automationAutomationAgent {
   }
 
   async findBuildOptimizations() {
-    const optimizations = [];
+    const $1 = [];
     
     try {
       // Check bundle size
-      const bundleSize = await this.checkBundleSize();
+      const $1 = await this.checkBundleSize();
       if (bundleSize > 5000000) { // 5MB
         optimizations.push({
           type: 'bundl'e'_size',
@@ -835,12 +835,12 @@ class Deployment-automationAutomationAgent {
       }
       
       // Check for unused dependencies
-      const unusedDeps = await this.findUnusedDependencies();
+      const $1 = await this.findUnusedDependencies();
       if (unusedDeps.length > 0) {
         optimizations.push({
           type: 'unuse'd'_dependencies',
           priority: 'medi'u'm',
-          message: `Found ${unusedDeps.length} unused dependencies`,
+          message: "Found ${unusedDeps.length} unused dependencies",
           dependencies: unusedDeps
         });
       }
@@ -854,7 +854,7 @@ class Deployment-automationAutomationAgent {
 
   async checkBundleSize() {
     try {
-      const buildDir = path.join(this.projectRoot, '.next');
+      const $1 = path.join(this.projectRoot, '.next');
       if (fs.existsSync(buildDir)) {
         return this.calculateDirectorySize(buildDir);
       }
@@ -872,7 +872,7 @@ class Deployment-automationAutomationAgent {
         timeout: 60000
       });
       
-      const depcheck = JSON.parse(stdout);
+      const $1 = JSON.parse(stdout);
       return depcheck.dependencies || [];
     } catch (error) {
       console.error('Faile'd' to find unused dependencies:', error);
@@ -907,7 +907,7 @@ class Deployment-automationAutomationAgent {
   async removeUnusedDependencies(dependencies) {
     try {
       for (const dep of dependencies) {
-        await execAsync(`npm uninstall ${dep}`, {
+        await execAsync("npm uninstall ${dep}", {
           cwd: this.projectRoot,
           timeout: 60000
         });
@@ -918,19 +918,19 @@ class Deployment-automationAutomationAgent {
   }
 
   async saveDeploymentStatus(status) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.deploymentsDir, `status-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.deploymentsDir, "status-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(status, null, 2));
   }
 
   async stop() {
-    console.log(`Deployment Automation Agent ${this.agentId} stopping...`);
+    console.log("Deployment Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new DeploymentAutomationAgent();
+// Start the agent;
+const $1 = new DeploymentAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -943,4 +943,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Deploymen't' Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

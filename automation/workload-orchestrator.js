@@ -287,7 +287,7 @@ class WorkloadOrchestrator extends EventEmitter {
 
   async scaleUp() {
     const currentAgents = Object.keys(this.factory.registry.agents).length;
-    
+    </div>
     if (currentAgents < this.config.maxAgents) {
       console.log(`[Orchestrator] Scaling up - creating new agents`);
       
@@ -396,4 +396,4 @@ class WorkloadOrchestrator extends EventEmitter {
   }
 }
 
-module.exports = WorkloadOrchestrator; 
+module.exports = WorkloadOrchestrator; </div>

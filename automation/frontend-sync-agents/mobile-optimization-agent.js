@@ -211,22 +211,22 @@ class MobileOptimizationAgent {
   generateMobileNavigationFix() {
     return {
       navigation: `
-        {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
-          <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
-              <Home className="w-5 h-5" />
-              <span className="text-xs">Home</span>
-            </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
-              <Search className="w-5 h-5" />
-              <span className="text-xs">Search</span>
-            </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
-              <User className="w-5 h-5" />
-              <span className="text-xs">Profile</span>
-            </button>
-          </div>
+        {/* Mobile Navigation */}</div>
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50"></div>
+          <div className="flex justify-around items-center py-2"></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+              <Home className="w-5 h-5" /></div>
+              <span className="text-xs">Home</span></div>
+            </button></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+              <Search className="w-5 h-5" /></div>
+              <span className="text-xs">Search</span></div>
+            </button></div>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white"></div>
+              <User className="w-5 h-5" /></div>
+              <span className="text-xs">Profile</span></div>
+            </button></div>
+          </div></div>
         </div>
       `,
       description: 'Ad'd' mobile bottom navigation'
@@ -348,9 +348,9 @@ class MobileOptimizationAgent {
   }
 
   applyViewportFix(content, fix) {
-    if (!content.includes('viewpo'r't')) {
+    if (!content.includes('viewpo'r't')) {</div>
       const headIndex = content.indexOf('<Head>');
-      if (headIndex !== -1) {
+      if (headIndex !== -1) {</div>
         const headEndIndex = content.indexOf('</Head>');
         const headContent = content.slice(headIndex, headEndIndex);
         const newHeadContent = headContent + '\n        ' + fix.metaTag;
@@ -367,7 +367,7 @@ class MobileOptimizationAgent {
     return content;
   }
 
-  applyMobileNavigationFix(content, fix) {
+  applyMobileNavigationFix(content, fix) {</div>
     const bodyEndIndex = content.lastIndexOf('</div>');
     if (bodyEndIndex !== -1) {
       content = content.slice(0, bodyEndIndex) + fix.navigation + content.slice(bodyEndIndex);
@@ -406,4 +406,4 @@ class MobileOptimizationAgent {
   }
 }
 
-module.exports = MobileOptimizationAgent; 
+module.exports = MobileOptimizationAgent; </div>

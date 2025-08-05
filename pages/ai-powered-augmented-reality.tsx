@@ -1,18 +1,19 @@
 import React from "react";
-import type { NextPage } from next";
-import Head from "next/head;
-import { motion } from framer-motion";
+import type { NextPage } from "next";
+import Head from "next/head";
+import { motion } from "framer-motion";
 
 const AiPoweredAugmentedReality: NextPage = () => {
-  ;
-  const [loading, setLoading] = useState(true);
-  const [arData, setArData] = useState(null);
+  const [loading, setLoading] = React.useState(true);
+  const [analytics, setAnalytics] = React.useState({
+    sessions: 0,
+    engagement: 0,
+    accuracy: 0
+  });
 
-  useEffect(() => {
-    // Simulate loading AR data
+  React.useEffect(() => {
     setTimeout(() => {
-      setArData({
-        activeUsers: 12500,
+      setAnalytics({
         sessions: 45000,
         engagement: 85.3,
         accuracy: 94.7
@@ -21,157 +22,102 @@ const AiPoweredAugmentedReality: NextPage = () => {
     }, 2000);
   }, []);
 
-  if (loading) {
-    return (
-      <div>
-        </div><div className=" relative z-10 container-responsive py-8> 
-          {/* Background Effects */}
-          <div className=fixed" inset-0 z-0> '
-            </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
-            <div className=absolute" inset-0 bg-[url(/grid-pattern.svg)] opacity-10 ></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent></div>
-          </div>
- 
-          {/* Loading State */}
-          <div className="text-center" py-12> 
-            </div><div className=text-6xl mb-4>🥽</div>
-            <h3 className="text-xl" font-semibold text-high-contrast mb-2 >
-              Loading AR Experience
-            </h3>
-            <p className=text-high-contrast-secondary>
-              Initializing augmented reality components...
-            </p>
-          </div>
-        </div>
-      </div>
-    );}
   return (
-    <div>
+    <>
       <Head>
-        <title>AI-Powered Augmented Reality - Zion App</title>
-        <meta name = description content=Advanced AI-powered augmented reality experiences and applications > 
-        </meta name=description content=Advanced AI-powered augmented reality experiences and applications ><meta name=viewport content=width=device-width, initial-scale=1 > </meta" name=viewport" content=width=device-width, initial-scale=1" ><link rel="icon href=/favicon.ico > </link rel=icon" href="/favicon.ico ></Head>
+        <title>AI-Powered Augmented Reality - Bolt.new</title>
+        <meta name="description" content="Advanced AI-powered augmented reality solutions for immersive experiences." />
+      </Head>
 
-      <div className=" relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}
-        </div><div className=" fixed inset-0 z-0>'
-          <div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue></div>
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10 ></div>
-          <div className=absolute" inset-0 bg-gradient-to-t from-black/50 to-transparent></div>
-        </div>
-        {/* Header */}
-        "
-        >
-          <h1 className=text-responsive-4xl lg:text-responsive-5xl font-bold text-high-contrast mb-4>
-            <span className="text-transparent" bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple >
-              AI-Powered Augmented Reality
-            </span>
-          </h1>
-          <p className=text-responsive-lg text-high-contrast-secondary max-w-2xl mx-auto>
-            Advanced AI-powered augmented reality experiences and applications
-          </p>
-        </motion.div>
- 
-        {/* AR Dashboard */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8>
-          
-          >
-            <div className="flex items-center justify-between  >
-              </div><div>
-                <p className=text-high-contrast-secondary" text-sm>Active Users</p>
-                <p className="text-2xl font-bold text-high-contrast>{arData.activeUsers.toLocaleString()}</p>
-              </div>
-              <div className=text-3xl>👥</div>"
-            </div>
-          </motion.div>
-
-          
-          >
-            <div className="flex items-center justify-between>
-              </div><div> 
-                <p className=text-high-contrast-secondary" text-sm>AR Sessions</p>
-                <p className="text-2xl font-bold text-high-contrast>{arData.sessions.toLocaleString()}</p>
-              </div>
-              <div className=text-3xl>🥽</div>"
-            </div>
-          </motion.div>
-
-           
-          >
-            <div className="flex items-center justify-between>
-              </div><div>
-                <p className=text-high-contrast-secondary" text-sm>Engagement</p>
-                <p className="text-2xl font-bold text-neon-green >{arData.engagement}%</p>
-              </div>
-              <div className=text-3xl>🎯</div>"
-            </div>
-          </motion.div>
-
-           
-          >
-            <div className="flex items-center justify-between>
-              </div><div>
-                <p className=text-high-contrast-secondary" text-sm >Accuracy</p>
-                <p className="text-2xl font-bold text-high-contrast>{arData.accuracy}%</p> 
-              </div>
-              <div className=text-3xl>🎯</div>"
-            </div">
-          </motion.div>
-        </div>
-
-        {/* AR Features */}
-        <div className= glass-dark border border-neon-blue/30 rounded-2xl" p-8>
-          <h2 className="text-2xl font-bold text-high-contrast mb-6>AR Features</h2>
-          
-          <div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6> 
-            </div><div className="glass border border-neon-blue/20 rounded-xl p-6>
-              <div className=text-3xl mb-4">🥽</div>
-              <h3 className="text-lg font-semibold text-high-contrast mb-2 >AR Visualization</h3>
-              <p className=text-high-contrast-secondary" text-sm>
-                Immersive AR visualizations with real-time data overlay
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className=text-3xl mb-4>🤖</div>
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >AI Recognition</h3>
-              <p className=text-high-contrast-secondary text-sm>
-                Advanced AI-powered object and scene recognition
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl mb-4>📱</div>
-              <h3 className=text-lg" font-semibold text-high-contrast mb-2 >Mobile AR</h3>
-              <p className="text-high-contrast-secondary text-sm>
-                Cross-platform mobile AR experiences
-              </p>
-            </div>
-            <div className=glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className="text-3xl mb-4">🎮</div>
-              <h3 className=text-lg font-semibold text-high-contrast mb-2 >Interactive AR</h3>
-              <p className="text-high-contrast-secondary" text-sm>
-                Interactive AR experiences with gesture controls
-              </p>
-            </div>
-            <div className=glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className=text-3xl mb-4">🌍</div>
-              <h3 className="text-lg font-semibold text-high-contrast mb-2 >Spatial Mapping</h3>
-              <p className=text-high-contrast-secondary" text-sm>
-                Advanced spatial mapping and environment understanding
-              </p>
-            </div>
-            <div className="glass border border-neon-blue/20 rounded-xl p-6>
-              </div><div className=text-3xl mb-4>⚡</div>
-              <h3 className="text-lg" font-semibold text-high-contrast mb-2 >Real-time Processing</h3>
-              <p className=text-high-contrast-secondary text-sm>
-                Real-time AR processing and rendering
-              </p>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-100">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
+              >
+                AI-Powered Augmented Reality
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              >
+                Transform your world with intelligent augmented reality experiences powered by cutting-edge AI technology.
+              </motion.p>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+              >
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Experience AR
+                </button>
+                <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Learn More
+                </button>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Analytics Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="bg-white p-6 rounded-lg shadow-sm"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {loading ? "..." : analytics.sessions.toLocaleString()}
+                  </h3>
+                  <p className="text-gray-600">AR Sessions</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="bg-white p-6 rounded-lg shadow-sm"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {loading ? "..." : `${analytics.engagement}%`}
+                  </h3>
+                  <p className="text-gray-600">User Engagement</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="bg-white p-6 rounded-lg shadow-sm"
+              >
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {loading ? "..." : `${analytics.accuracy}%`}
+                  </h3>
+                  <p className="text-gray-600">Recognition Accuracy</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div">;
- " );
+    </>
+  );
 };
-'
+
 export default AiPoweredAugmentedReality;

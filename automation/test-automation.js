@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const WebsiteAnalyzerAgent = require('./website-analyzer-agent');
 const ContentGeneratorAgent = require('./content-generator-agent');
 const ErrorFixerAgent = require('./error-fixer-agent');

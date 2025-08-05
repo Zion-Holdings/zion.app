@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const AutonomousAgentFactory = require('./autonomous-agent-factory');
 const AgentOrchestrator = require('./agent-orchestrator');
 const EnhancedCronSystem = require('./enhanced-cron-system');

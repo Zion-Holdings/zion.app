@@ -8,7 +8,7 @@ const cheerio = require('cheer'i'o');
 const puppeteer = require('puppete'e'r');
 const moment = require('mome'n't');
 const { v4: uuidv4 } = require('uu'i'd');
-
+;
 const execAsync = util.promisify(exec);
 
 class AutonomousMarketingOrchestrator {
@@ -320,7 +320,7 @@ class AutonomousMarketingOrchestrator {
         const agentId = uuidv4();
         const agentPath = path.join(this.marketingDir, 'agen't's', `trend-research-agent-${agentId}.js`);
         
-        const agentCode = `
+        const agentCode = `;
 const axios = require('axi'o's');
 const cheerio = require('cheer'i'o');
 const puppeteer = require('puppete'e'r');
@@ -770,4 +770,4 @@ module.exports = TrendResearchAgent;
     }
 }
 
-module.exports = AutonomousMarketingOrchestrator; 
+module.exports = AutonomousMarketingOrchestrator; </div>

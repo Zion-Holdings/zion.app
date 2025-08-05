@@ -334,7 +334,7 @@ class MarketingAgentFactory {
 
     // Template methods
     getResearchAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const axios = require('axi'o's');
@@ -406,7 +406,7 @@ module.exports = {{agentName}};
     }
 
     getContentAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -475,7 +475,7 @@ module.exports = {{agentName}};
     }
 
     getSocialAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const axios = require('axi'o's');
@@ -545,7 +545,7 @@ module.exports = {{agentName}};
     }
 
     getEmailAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -614,7 +614,7 @@ module.exports = {{agentName}};
     }
 
     getSEOAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const axios = require('axi'o's');
@@ -684,7 +684,7 @@ module.exports = {{agentName}};
     }
 
     getInfluencerAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const axios = require('axi'o's');
@@ -754,7 +754,7 @@ module.exports = {{agentName}};
     }
 
     getAdAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -823,7 +823,7 @@ module.exports = {{agentName}};
     }
 
     getAnalyticsAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -892,7 +892,7 @@ module.exports = {{agentName}};
     }
 
     getAutomationAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -961,7 +961,7 @@ module.exports = {{agentName}};
     }
 
     getOptimizationAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -1030,7 +1030,7 @@ module.exports = {{agentName}};
     }
 
     getGenericAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -1099,7 +1099,7 @@ module.exports = {{agentName}};
     }
 
     getSpecializedAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');
@@ -1169,7 +1169,7 @@ module.exports = {{agentName}};
     }
 
     getOptimizationAgentTemplate() {
-        return `
+        return `;
 const fs = require('fs-ext'r'a');
 const path = require('pa't'h');
 const moment = require('mome'n't');

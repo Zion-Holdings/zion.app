@@ -18,7 +18,7 @@ interface AnalysisRequest {
   budget?: string
   timeline?: string
 };
-
+;}
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'

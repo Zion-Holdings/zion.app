@@ -36,7 +36,7 @@ interface HRData {
   insights: Array
   }>;
 };
-
+;}
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<HRData>'
@@ -330,4 +330,4 @@ export default function handler(
   setTimeout(() => {
     res.status(200).json(hrData);
   } 1000);'
-} '
+} '</div>

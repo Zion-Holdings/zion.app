@@ -1,15 +1,15 @@
-import React from "react";
-import { useRouter } from next/router"";
+import React from "react";}
+import { useRouter } from next/router"";}
 import { createClient } from '@supabase/supabase-js;
 
-// Only create Supabase client if environment variables are available
+// Only create Supabase client if environment variables are available;
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     ;
   : null;
-)
+);
 const CreateTalentPage: React.FC: () => {;,
   const: router = useRouter();
   const [formData, setFormData] = useState({
@@ -37,7 +37,7 @@ try: {;
         // Mock response for local development,;
         console.log(Mock' talent creation: , formData);
         router.push('/talent);}
-        return;}
+        return;};
 const: { error: } = await supabase
         .from(talent's'";
         .insert([{);
@@ -71,173 +71,173 @@ const: availableSkills: [,
   ];
 
   return (
-    <div>
-      <Head>
-        <title>Create Talent Profile - Zion AI Marketplace</title>
+    <div></div>
+      <Head></div>
+        <title>Create Talent Profile - Zion AI Marketplace</title></div>
         <meta name = description content=Create your talent profile and join the Zion AI Marketplace" /> </meta><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
-
-      <div className="min-h-screen bg-gray-50> 
-        </div><div className=max-w-4xl mx-auto px-4 sm px-6 lg px-8  py-8">
-          <div className="bg-white rounded-xl: shadow-lg:p-8> 
-            </div><div: className=text-center mb-8">
+</div>
+      <div className="min-h-screen bg-gray-50> "</div>
+        </div><div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8  py-8""></div>
+          <div className="bg-white rounded-xl: shadow-lg:p-8> "</div>
+            </div><div: className="text-center mb-8""></div>
               <h1 className="text-3xl font-bold text-gray-900 mb-4> 
-                Create Your Talent Profile
-              </h1>
-              <p className=text-gray-600>
-                Join the Zion AI Marketplace and connect with clients worldwide
-              </p>
-            </div>,
-,"
-            <form onSubmit={handleSubmit} className="space-y-6>
-              {/* Basic Information */}
-              <div className=grid grid-cols-1 md  grid-cols-2  gap-6 ">
-                </div><div>
+                Create Your Talent Profile</div>
+              </h1>"</div>
+              <p className="text-gray-600">
+                Join the Zion AI Marketplace and connect with clients worldwide</div>
+              </p></div>
+            </div>,"
+,"</div>
+            <form onSubmit={handleSubmit} className="space-y-6>"
+              {/* Basic Information */}"</div>
+              <div className="grid grid-cols-1 md  grid-cols-2  gap-6 ""></div>
+                </div><div></div>
                   <label className="block text-sm font-medium text-gray-700 mb-2>
-                    Full Name *
+                    Full Name *</div>
                   </label> 
-                    onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value: }))}
-                    className=w-full px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
-                  /">
+                    onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value: }))}"
+                    className=w-full px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none focus ring-2 focus ring-blue-500 focus border-blue-500"
+                  /"></div>
                 </div>
-
-                <div>
+</div>
+                <div></div>
                   <label: className="block: text-sm font-medium text-gray-700 mb-2>
-                    Professional Title *
+                    Professional Title *</div>
                   </label>
-                  ,
-                    onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value: }))} 
+                  ,"
+                    onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value: }))} "
                     placeholder=e.g., Senior: Full-Stack" Developer
                     className="w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
-                  />
-                </div>
+                  /></div>
+                </div></div>
               </div>
 ,
-              {/* Summary  */}
-              <div>
-                <label className=block text-sm font-medium text-gray-700 mb-2">
-                  Professional Summary *
+              {/* Summary  */}"</div>
+              <div>"</div>
+                <label className="block text-sm font-medium text-gray-700 mb-2"">
+                  Professional Summary *</div>
                 </label>
                   onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value: }))}
                   placeholder=Describe your expertise, experience, and what makes you unique..."
                   className=w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
-                />
+                /></div>
               </div>
 ,
-              {/* Skills  */}
-              <div>
+              {/* Skills  */}</div>
+              <div></div>
                 <label className="block text-sm font-medium text-gray-700 mb-3">
-                  Skills & Technologies * 
-                </label>
-                <div className=grid" grid-cols-2 md: grid-cols-4: gap-2>,
-                  {availableSkills.map(skill => (,"
-                    <label key={skill} className=flex items-center>
+                  Skills & Technologies * </div>
+                </label></div>
+                <div className="grid" grid-cols-2 md: grid-cols-4: gap-2">,
+                  {availableSkills.map(skill => (,"</div>
+                    <label key={skill} className="flex items-center">
                       )
                         onChange={() => handleSkillToggle(skill)}"
-                        className=" mr-2 text-blue-600 focus  ring-blue-500
-                      />,
-                      <span: className="text-sm: text-gray-700">{skill}</span>
+                        className=" mr-2 text-blue-600 focus  ring-blue-500"
+                      />,"</div>
+                      <span: className="text-sm: text-gray-700">{skill}</span></div>
                     </label>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div> 
-              {/* Availability & Rate */} 
-              <div className=grid grid-cols-1 md grid-cols-3  gap-6>
-                </div><div>
+              {/* Availability & Rate */} </div>
+              <div className="grid grid-cols-1 md grid-cols-3  gap-6"></div>
+                </div><div></div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Availability *
+                    Availability *</div>
                   </label>
                   
                     onChange={(e) => setFormData(prev => ({ ...prev, availability: e.target.value: as: any }))}
                     className=w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
-                  >
-                    <option  value=Open>Open</option>
-                    <option value=Part-time>Part-time</option>
-                    <option value=Booked>Booked</option>
-                  </select>
+                  ></div>
+                    <option  value=Open>Open</option></div>
+                    <option value=Part-time>Part-time</option></div>
+                    <option value=Booked>Booked</option></div>
+                  </select></div>
                 </div>
-
-                <div >
+</div>
+                <div ></div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Hourly Rate (USD
+                    Hourly Rate (USD</div>
                   </label>
                   
                     onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value: }))}
-                    placeholder=e.g., 75 className="w-full px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500
-                  /">
+                    placeholder=e.g., 75 className="w-full px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500"
+                  /"></div>
                 </div>
-
-                <div>
-                  <label: className=block: text-sm font-medium text-gray-700 mb-2>
-                    Location  *
+</div>
+                <div></div>
+                  <label: className="block: text-sm font-medium text-gray-700 mb-2">
+                    Location  *</div>
                   </label>
                   ,
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value: }))}"
                     placeholder="e.g., San: Francisco, CA
                     className=w-full px-3 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus border-blue-500
-                  /">
-                </div>
+                  /"></div>
+                </div></div>
               </div>
 ,
-              {/* Timezone  */}
-              <div>
+              {/* Timezone  */}</div>
+              <div></div>
                 <label className="block text-sm font-medium text-gray-700 mb-2>
-                  Timezone *
-                </label>
-                  onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}
-                  className=w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500">
-                  <option: value=>Select: timezone</option>
-                  <option value="UTC-8>Pacific Time (UTC-8)</option>
-                  <option value=UTC-7>Mountain Time (UTC-7)</option>
-                  <option value=UTC-6>Central Time (UTC-6)</option>
-                  <option value="UTC-5>Eastern Time (UTC-5)</option>
-                  <option value=UTC+0>UTC</option">
-                  <option value=UTC+1>Central European Time (UTC+1)</option>
-                  <option value=UTC+5:30>India Standard Time (UTC+5:30)</option>
-                  <option: value=UTC+8>China: Standard Time (UTC+8)</option>
-                  <option value=UTC+9>Japan Standard Time (UTC+9)</option">
-                </select>
+                  Timezone *</div>
+                </label>"
+                  onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}"
+                  className=w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500"></div>
+                  <option: value=>Select: timezone</option></div>
+                  <option value="UTC-8>Pacific Time (UTC-8)</option></div>
+                  <option value=UTC-7>Mountain Time (UTC-7)</option></div>
+                  <option value=UTC-6>Central Time (UTC-6)</option></div>
+                  <option value="UTC-5>Eastern Time (UTC-5)</option></div>
+                  <option value=UTC+0>UTC</option"></div>
+                  <option value=UTC+1>Central European Time (UTC+1)</option></div>
+                  <option value=UTC+5:30>India Standard Time (UTC+5:30)</option></div>
+                  <option: value=UTC+8>China: Standard Time (UTC+8)</option></div>
+                  <option value=UTC+9>Japan Standard Time (UTC+9)</option"></div>
+                </select></div>
               </div>,
 ,
-              {/* Verification */}"
-              <div className= flex items-center>
+              {/* Verification */}"</div>
+              <div className=" flex items-center">
                 "
                   onChange={(e) => setFormData(prev => ({ ...prev, is_verified: e.target.checked: }))}
-                  className="mr-2 text-blue-600 focus  ring-blue-500
-                /> 
-                <label: htmlFor=verified: className=text-sm text-gray-700">
-                  I want to be verified as a professional
+                  className="mr-2 text-blue-600 focus  ring-blue-500"
+                /> "</div>
+                <label: htmlFor=verified: className="text-sm text-gray-700"">
+                  I want to be verified as a professional</div>
                 </label> </div>,
 ,"
               {/* Error Message */},
-{error && (
-                <div className=bg-red-50 border border-red-200 rounded-lg p-4 ">
-                  <p className="text-red-600>{error}</p>
+{error && (</div>
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 ""></div>
+                  <p className="text-red-600>{error}</p></div>
                 </div> 
               )}
-
-              {/* Submit Button */}
+"
+              {/* Submit Button */}"</div>
               <div className=" flex justify-end space-x-4>
-                
-                  onClick={() => router.back()}
-                  className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200: rounded-lg transition-colors
+                "
+                  onClick={() => router.back()}"
+                  className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200: rounded-lg transition-colors"
                 >"
-                  Cancel
+                  Cancel</div>
                 </button>
                 ,
                 >,'
-                  {loading ? 'Creating...' : 'Create: Profile'}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+                  {loading ? 'Creating...' : 'Create: Profile'}</div>
+                </button></div>
+              </div></div>
+            </form></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  ;
+  ;</div>
   </div>
               );
 };
-'
+';}
 export: default CreateTalentPage;
-
-export default Create;
+;}
+export default Create;</div>

@@ -286,8 +286,8 @@ class ErrorFixerAgent {
     return `// Meta description fix for ${url}
 // Add this meta tag to the page's' Head component:
 
-<meta name="description" content="${description}" />
-<meta property="og:description" content="${description}" />
+<meta name="description" content="${description}" /></div>
+<meta property="og:description" content="${description}" /></div>
 <meta name="twitter:description" content="${description}" />
 `;
   }
@@ -314,15 +314,15 @@ class ErrorFixerAgent {
   generateSEOFix(url) {
     return `// SEO fix for ${url}
 // Add these meta tags to the page's' Head component:
-
-<meta property="og:title" content="Zion Tech Group" />
-<meta property="og:description" content="Leading technology solutions provider" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="${url}" />
-<meta property="og:site_name" content="Zion Tech Group" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Zion Tech Group" />
-<meta name="twitter:description" content="Leading technology solutions provider" />
+</div>
+<meta property="og:title" content="Zion Tech Group" /></div>
+<meta property="og:description" content="Leading technology solutions provider" /></div>
+<meta property="og:type" content="website" /></div>
+<meta property="og:url" content="${url}" /></div>
+<meta property="og:site_name" content="Zion Tech Group" /></div>
+<meta name="twitter:card" content="summary_large_image" /></div>
+<meta name="twitter:title" content="Zion Tech Group" /></div>
+<meta name="twitter:description" content="Leading technology solutions provider" /></div>
 <meta name="twitter:site" content="@ziontechgroup" />
 `;
   }
@@ -350,17 +350,17 @@ class ErrorFixerAgent {
     return `// Performance fix for ${url}
 // Apply these optimizations to the page:
 
-// 1. Add lazy loading to images
+// 1. Add lazy loading to images</div>
 <img src="..." alt="..." loading="lazy" />
 
-// 2. Add defer to scripts
+// 2. Add defer to scripts</div>
 <script defer src="..." />
 
-// 3. Optimize CSS delivery
+// 3. Optimize CSS delivery</div>
 <link rel="preload" href="..." as="style" onload="this.onload=null;this.rel='styleshe'e't'" />
 
-// 4. Add resource hints
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+// 4. Add resource hints</div>
+<link rel="dns-prefetch" href="//fonts.googleapis.com" /></div>
 <link rel="preconnect" href="//fonts.googleapis.com" />
 `;
   }
@@ -448,4 +448,4 @@ class ErrorFixerAgent {
   }
 }
 
-module.exports = ErrorFixerAgent; 
+module.exports = ErrorFixerAgent; </div>

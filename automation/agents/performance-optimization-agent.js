@@ -1,11 +1,11 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
+;
+const $1 = promisify(exec);
 
-const execAsync = promisify(exec);
-
-class PerformanceOptimizationAgent {
+class $1 {
   constructor() {
     
   // Enhanced Learning Capabilities
@@ -33,12 +33,12 @@ class PerformanceOptimizationAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -47,7 +47,7 @@ class PerformanceOptimizationAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -65,7 +65,7 @@ class PerformanceOptimizationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'performance-repor't's'),
       path.join(this.reportsDir, 'bundle-analys'i's'),
@@ -81,7 +81,7 @@ class PerformanceOptimizationAgent {
   }
 
   async start() {
-    console.log(`Performance Optimization Agent ${this.agentId} started`);
+    console.log("Performance Optimization Agent ${this.agentId} started");
     
     // Initial performance analysis
     await this.performPerformanceAnalysis();
@@ -106,7 +106,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Performin'g' comprehensive performance analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         bundleAnalysis: {},
@@ -141,7 +141,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Analyzin'g' bundle size...');
       
-      const bundleAnalysis = {
+      const $1 = {
         totalSize: 0,
         chunkSizes: {},
         largestChunks: [],
@@ -149,23 +149,23 @@ class PerformanceOptimizationAgent {
       };
       
       // Check if build directory exists
-      const buildDir = path.join(this.projectRoot, '.next');
+      const $1 = path.join(this.projectRoot, '.next');
       if (fs.existsSync(buildDir)) {
         bundleAnalysis.totalSize = this.calculateDirectorySize(buildDir);
         
         // Analyze individual chunks
-        const staticDir = path.join(buildDir, 'stat'i'c');
+        const $1 = path.join(buildDir, 'stat'i'c');
         if (fs.existsSync(staticDir)) {
-          const chunks = fs.readdirSync(staticDir);
+          const $1 = fs.readdirSync(staticDir);
           for (const chunk of chunks) {
-            const chunkPath = path.join(staticDir, chunk);
-            const chunkSize = this.calculateDirectorySize(chunkPath);
+            const $1 = path.join(staticDir, chunk);
+            const $1 = this.calculateDirectorySize(chunkPath);
             bundleAnalysis.chunkSizes[chunk] = chunkSize;
           }
         }
         
         // Find largest chunks
-        const sortedChunks = Object.entries(bundleAnalysis.chunkSizes)
+        const $1 = Object.entries(bundleAnalysis.chunkSizes)
           .sort(([,a], [,b]) => b - a)
           .slice(0, 5);
         
@@ -188,7 +188,7 @@ class PerformanceOptimizationAgent {
             bundleAnalysis.optimizationOpportunities.push({
               type: 'larg'e'_chunk',
               priority: 'medi'u'm',
-              message: `Chunk ${chunk} is large (${(size / 1024 / 1024).toFixed(2)}MB). Consider splitting.`,
+              message: "Chunk ${chunk} is large (${(size / 1024 / 1024).toFixed(2)}MB). Consider splitting.",
               chunk,
               size
             });
@@ -205,12 +205,12 @@ class PerformanceOptimizationAgent {
   }
 
   calculateDirectorySize(dirPath) {
-    let totalSize = 0;
+    let $1 = 0;
     
-    const calculateSize = (path) => {
-      const stats = fs.statSync(path);
+    const $1 = (path) => {
+      const $1 = fs.statSync(path);
       if (stats.isDirectory()) {
-        const files = fs.readdirSync(path);
+        const $1 = fs.readdirSync(path);
         files.forEach(file => {
           calculateSize(path.join(path, file));
         });
@@ -232,7 +232,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Gettin'g' performance metrics...');
       
-      const metrics = {
+      const $1 = {
         buildTime: 0,
         buildSize: 0,
         memoryUsage: 0,
@@ -241,7 +241,7 @@ class PerformanceOptimizationAgent {
       };
       
       // Measure build time
-      const buildStart = Date.now();
+      const $1 = Date.now();
       try {
         await execAsync('np'm' run build', {
           cwd: this.projectRoot,
@@ -253,13 +253,13 @@ class PerformanceOptimizationAgent {
       }
       
       // Get build size
-      const buildDir = path.join(this.projectRoot, '.next');
+      const $1 = path.join(this.projectRoot, '.next');
       if (fs.existsSync(buildDir)) {
         metrics.buildSize = this.calculateDirectorySize(buildDir);
       }
       
       // Get memory usage
-      const memUsage = process.memoryUsage();
+      const $1 = process.memoryUsage();
       metrics.memoryUsage = memUsage.heapUsed / 1024 / 1024; // MB
       
       // Get CPU usage
@@ -292,7 +292,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Runnin'g' Lighthouse audit...');
       
-      const lighthouseReport = {
+      const $1 = {
         performance: 0,
         accessibility: 0,
         bestPractices: 0,
@@ -307,7 +307,7 @@ class PerformanceOptimizationAgent {
           timeout: 120000
         });
         
-        const lighthouse = JSON.parse(stdout);
+        const $1 = JSON.parse(stdout);
         
         lighthouseReport.performance = Math.round(lighthouse.categories.performance.score * 100);
         lighthouseReport.accessibility = Math.round(lighthouse.categories.accessibility.score * 100);
@@ -316,7 +316,7 @@ class PerformanceOptimizationAgent {
         
         // Extract suggestions
         if (lighthouse.audits) {
-          for (const [key, audit] of Object.entries(lighthouse.audits)) {
+          for (const [key, audit] of Object.entries(lighthouse.audits)) {</div>
             if (audit.score !== null && audit.score < 1) {
               lighthouseReport.suggestions.push({
                 id: key,
@@ -343,7 +343,7 @@ class PerformanceOptimizationAgent {
   }
 
   generateOptimizationSuggestions(analysis) {
-    const suggestions = [];
+    const $1 = [];
     
     // Bundle size suggestions
     if (analysis.bundleAnalysis.optimizationOpportunities) {
@@ -384,12 +384,12 @@ class PerformanceOptimizationAgent {
     }
     
     // Lighthouse suggestions
-    if (analysis.lighthouseScore) {
+    if (analysis.lighthouseScore) {</div>
       if (analysis.lighthouseScore.performance < 90) {
         suggestions.push({
           type: 'lighthous'e'_performance',
           priority: 'hi'g'h',
-          message: `Lighthouse performance score is ${analysis.lighthouseScore.performance}. Aim for 90+.`,
+          message: "Lighthouse performance score is ${analysis.lighthouseScore.performance}. Aim for 90+.",
           currentScore: analysis.lighthouseScore.performance,
           targetScore: 90
         });
@@ -417,7 +417,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Monitorin'g' performance...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         metrics: await this.getPerformanceMetrics(),
@@ -444,8 +444,8 @@ class PerformanceOptimizationAgent {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'performance-repor't's', `monitoring-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'performance-repor't's', "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle alerts
@@ -460,7 +460,7 @@ class PerformanceOptimizationAgent {
 
   async handlePerformanceAlerts(alerts) {
     for (const alert of alerts) {
-      console.log(`Performance Alert [${alert.severity.toUpperCase()}]: ${alert.message}`);
+      console.log("Performance Alert [${alert.severity.toUpperCase()}]: ${alert.message}");
       
       if (alert.severity === 'hi'g'h') {
         await this.optimizePerformance();
@@ -510,7 +510,7 @@ class PerformanceOptimizationAgent {
       console.log('Applyin'g' code splitting optimizations...');
       
       // Find large components and suggest dynamic imports
-      const sourceFiles = await this.findLargeComponents();
+      const $1 = await this.findLargeComponents();
       
       for (const file of sourceFiles) {
         await this.suggestDynamicImport(file);
@@ -522,18 +522,18 @@ class PerformanceOptimizationAgent {
   }
 
   async findLargeComponents() {
-    const largeComponents = [];
+    const $1 = [];
     
     try {
-      const { stdout } = await execAsync(`find ${this.projectRoot} -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx"`, {
+      const { stdout } = await execAsync("find ${this.projectRoot} -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx"", {
         cwd: this.projectRoot
       });
       
-      const files = stdout.trim().split('\n');
+      const $1 = stdout.trim().split('\n');
       
       for (const file of files) {
         if (fs.existsSync(file)) {
-          const stats = fs.statSync(file);
+          const $1 = fs.statSync(file);
           if (stats.size > 10000) { // 10KB
             largeComponents.push(file);
           }
@@ -549,13 +549,13 @@ class PerformanceOptimizationAgent {
 
   async suggestDynamicImport(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'ut'f'8');
+      const $1 = fs.readFileSync(filePath, 'ut'f'8');
       
       // Look for large imports that could be dynamic
-      const importMatches = content.match(/import\s+.*\s+from\s+['"]([^'"]+)['"]/g);
+      const $1 = content.match(/import\s+.*\s+from\s+['"]([^'"]+)['"]/g);
       
       if (importMatches && importMatches.length > 5) {
-        const suggestion = {
+        const $1 = {
           file: filePath,
           type: 'dynami'c'_import',
           message: 'Conside'r' using dynamic imports for better code splitting',
@@ -563,8 +563,8 @@ class PerformanceOptimizationAgent {
         };
         
         // Save suggestion
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `suggestion-${timestamp}.json`);
+        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+        const $1 = path.join(this.reportsDir, 'optimization-suggestio'n's', "suggestion-${timestamp}.json");
         fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       }
       
@@ -578,7 +578,7 @@ class PerformanceOptimizationAgent {
       console.log('Optimizin'g' images...');
       
       // Check for unoptimized images
-      const imageFiles = await this.findUnoptimizedImages();
+      const $1 = await this.findUnoptimizedImages();
       
       for (const image of imageFiles) {
         await this.optimizeImage(image);
@@ -590,18 +590,18 @@ class PerformanceOptimizationAgent {
   }
 
   async findUnoptimizedImages() {
-    const unoptimizedImages = [];
+    const $1 = [];
     
     try {
-      const { stdout } = await execAsync(`find ${this.projectRoot} -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif"`, {
+      const { stdout } = await execAsync("find ${this.projectRoot} -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif"", {
         cwd: this.projectRoot
       });
       
-      const images = stdout.trim().split('\n');
+      const $1 = stdout.trim().split('\n');
       
       for (const image of images) {
         if (fs.existsSync(image)) {
-          const stats = fs.statSync(image);
+          const $1 = fs.statSync(image);
           if (stats.size > 500000) { // 500KB
             unoptimizedImages.push(image);
           }
@@ -618,18 +618,18 @@ class PerformanceOptimizationAgent {
   async optimizeImage(imagePath) {
     try {
       // This would involve using tools like imagemin
-      console.log(`Optimizing image: ${imagePath}`);
+      console.log("Optimizing image: ${imagePath}");
       
       // For now, just log the suggestion
-      const suggestion = {
+      const $1 = {
         type: 'imag'e'_optimization',
         priority: 'medi'u'm',
-        message: `Consider optimizing image: ${path.basename(imagePath)}`,
+        message: "Consider optimizing image: ${path.basename(imagePath)}",
         file: imagePath
       };
       
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `image-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'optimization-suggestio'n's', "image-${timestamp}.json");
       fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       
     } catch (error) {
@@ -642,7 +642,7 @@ class PerformanceOptimizationAgent {
       console.log('Optimizin'g' CSS...');
       
       // Check for CSS optimizations
-      const cssFiles = await this.findCSSFiles();
+      const $1 = await this.findCSSFiles();
       
       for (const cssFile of cssFiles) {
         await this.analyzeCSS(cssFile);
@@ -654,10 +654,10 @@ class PerformanceOptimizationAgent {
   }
 
   async findCSSFiles() {
-    const cssFiles = [];
+    const $1 = [];
     
     try {
-      const { stdout } = await execAsync(`find ${this.projectRoot} -name "*.css"`, {
+      const { stdout } = await execAsync("find ${this.projectRoot} -name "*.css"", {
         cwd: this.projectRoot
       });
       
@@ -672,22 +672,22 @@ class PerformanceOptimizationAgent {
 
   async analyzeCSS(cssFile) {
     try {
-      const content = fs.readFileSync(cssFile, 'ut'f'8');
+      const $1 = fs.readFileSync(cssFile, 'ut'f'8');
       
       // Check for unused CSS
-      const unusedCSS = this.findUnusedCSS(content);
+      const $1 = this.findUnusedCSS(content);
       
       if (unusedCSS.length > 0) {
-        const suggestion = {
+        const $1 = {
           type: 'unuse'd'_css',
           priority: 'l'o'w',
-          message: `Found ${unusedCSS.length} potentially unused CSS rules`,
+          message: "Found ${unusedCSS.length} potentially unused CSS rules",
           file: cssFile,
           rules: unusedCSS.slice(0, 10)
         };
         
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `css-${timestamp}.json`);
+        const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+        const $1 = path.join(this.reportsDir, 'optimization-suggestio'n's', "css-${timestamp}.json");
         fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       }
       
@@ -698,10 +698,10 @@ class PerformanceOptimizationAgent {
 
   findUnusedCSS(content) {
     // Basic CSS analysis - this would be enhanced with actual CSS parsing
-    const unusedRules = [];
+    const $1 = [];
     
     // Look for potentially unused selectors
-    const selectors = content.match(/[.#][a-zA-Z0-9_-]+\s*{/g);
+    const $1 = content.match(/[.#][a-zA-Z0-9_-]+\s*{/g);
     
     if (selectors) {
       for (const selector of selectors) {
@@ -719,7 +719,7 @@ class PerformanceOptimizationAgent {
     try {
       console.log('Analyzin'g' bundle...');
       
-      const bundleReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: await this.analyzeBundleSize(),
@@ -732,8 +732,8 @@ class PerformanceOptimizationAgent {
       }
       
       // Save bundle analysis
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'bundle-analys'i's', `bundle-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'bundle-analys'i's', "bundle-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(bundleReport, null, 2));
       
       console.log('Bundl'e' analysis completed');
@@ -744,20 +744,20 @@ class PerformanceOptimizationAgent {
   }
 
   async savePerformanceReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'performance-repor't's', `performance-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'performance-repor't's', "performance-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Performance report saved: ${reportPath}`);
+    console.log("Performance report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`Performance Optimization Agent ${this.agentId} stopping...`);
+    console.log("Performance Optimization Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new PerformanceOptimizationAgent();
+// Start the agent;
+const $1 = new PerformanceOptimizationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -770,4 +770,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Performanc'e' Optimization Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

@@ -291,32 +291,32 @@ Please generate the complete HTML page with all necessary content, styling consi
 
   generateFallbackContent(page, template) {
     return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${template.title} - Zion Tech Group</title>
-    <meta name="description" content="${template.description}">
-    <meta name="keywords" content="technology, services, solutions, ${template.title.toLowerCase()}">
-</head>
-<body>
-    <header>
-        <h1>${template.title}</h1>
-    </header>
-    <main>
-        <section class="hero">
-            <h2>Welcome to ${template.title}</h2>
-            <p>${template.description}</p>
-        </section>
-        <section class="content">
-            <p>Content for ${template.title} page is being generated. Please check back soon for complete information.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Zion Tech Group. All rights reserved.</p>
-    </footer>
-</body>
+<!DOCTYPE html></div>
+<html lang="en"></div>
+<head></div>
+    <meta charset="UTF-8"></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></div>
+    <title>${template.title} - Zion Tech Group</title></div>
+    <meta name="description" content="${template.description}"></div>
+    <meta name="keywords" content="technology, services, solutions, ${template.title.toLowerCase()}"></div>
+</head></div>
+<body></div>
+    <header></div>
+        <h1>${template.title}</h1></div>
+    </header></div>
+    <main></div>
+        <section class="hero"></div>
+            <h2>Welcome to ${template.title}</h2></div>
+            <p>${template.description}</p></div>
+        </section></div>
+        <section class="content"></div>
+            <p>Content for ${template.title} page is being generated. Please check back soon for complete information.</p></div>
+        </section></div>
+    </main></div>
+    <footer></div>
+        <p>&copy; 2024 Zion Tech Group. All rights reserved.</p></div>
+    </footer></div>
+</body></div>
 </html>
     `;
   }
@@ -352,128 +352,128 @@ Please generate the complete HTML page with all necessary content, styling consi
     const pageDescription = this.extractDescription(content);
     const pageName = this.sanitizeFilename(page.url.replace(/^\//, '').replace(/\/$/, '') || 'ind'e'x');
     
-    return `import type { NextPage } from 'ne'x't'
-import Head from 'nex't'/head'
+    return `import type { NextPage } from 'ne'x't';}
+import Head from 'nex't'/head';}
 import Link from 'nex't'/link'
-
+;
 const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: NextPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>${pageTitle}</title>
-        <meta name="description" content="${pageDescription}" />
-        <meta name="keywords" content="${page.url}, Zion, AI marketplace" />
+  return (</div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"></div>
+      <Head></div>
+        <title>${pageTitle}</title></div>
+        <meta name="description" content="${pageDescription}" /></div>
+        <meta name="keywords" content="${page.url}, Zion, AI marketplace" /></div>
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
+      {/* Navigation */}</div>
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
+          <div className="flex justify-between h-16"></div>
+            <div className="flex items-center"></div>
+              <div className="flex-shrink-0"></div>
+                <h1 className="text-2xl font-bold text-white"></div>
                   <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    Zion
-                  </Link>
-                </h1>
-              </div>
+                    Zion</div>
+                  </Link></div>
+                </h1></div>
+              </div></div>
             </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
+            </div>
+            <div className="hidden md:flex items-center space-x-8"></div>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
-              </Link>
+                Marketplace</div>
+              </Link></div>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </Link>
+                About</div>
+              </Link></div>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Login
-              </Link>
+                Login</div>
+              </Link></div>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
-              </Link>
-            </div>
-          </div>
-        </div>
+                Join Zion</div>
+              </Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </nav>
 
-      {/* Main Content */}
-      <main className="flex-1">
-        <div className="relative overflow-hidden">
+      {/* Main Content */}</div>
+      <main className="flex-1"></div>
+        <div className="relative overflow-hidden"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-            <div className="text-center">
-              <div className="mb-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    ${pageTitle}
-                  </span>
-                </h1>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                  ${pageDescription}
-                </p>
-              </div>
-              
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                  Explore Marketplace
-                </Link>
-                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
-                  Get Started
-                </Link>
-              </div>
-            </div>
           </div>
-        </div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32"></div>
+            <div className="text-center"></div>
+              <div className="mb-8"></div>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6"></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    ${pageTitle}</div>
+                  </span></div>
+                </h1></div>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  ${pageDescription}</div>
+                </p></div>
+              </div>
+              </div>
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"></div>
+                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  Explore Marketplace</div>
+                </Link></div>
+                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                  Get Started</div>
+                </Link></div>
+              </div></div>
+            </div></div>
+          </div></div>
+        </div></div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-white font-semibold mb-4">Zion</h3>
+      {/* Footer */}</div>
+      <footer className="bg-black/20 border-t border-white/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8"></div>
+            <div></div>
+              <h3 className="text-white font-semibold mb-4">Zion</h3></div>
               <p className="text-gray-400 text-sm">
-                The future of AI-powered marketplace technology.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Marketplace</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+                The future of AI-powered marketplace technology.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Marketplace</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li></div>
+                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li></div>
+                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Company</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li></div>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li></div>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm"></div>
+                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li></div>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li></div>
+                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center"></div>
             <p className="text-gray-400 text-sm">
-              © 2024 Zion. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
   )
 }
-
+;}
 export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
   }
 
@@ -485,12 +485,12 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
     return path.join(__dirname, '..', 'pag'e's', `${filename}.tsx`);
   }
 
-  extractTitle(content) {
+  extractTitle(content) {</div>
     const titleMatch = content.match(/<title>(.*?)<\/title>/i);
     return titleMatch ? titleMatch[1] : 'Generate'd' Page';
   }
 
-  extractDescription(content) {
+  extractDescription(content) {</div>
     const descMatch = content.match(/<meta name="description" content="(.*?)"/i);
     return descMatch ? descMatch[1] : 'Generate'd' page content';
   }
@@ -598,17 +598,17 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
       { url: '/blog', priority: '0.8', changefreq: 'dai'l'y' }
     ];
     
-    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';</div>
     sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
     
-    for (const page of pages) {
-      sitemap += `  <url>\n`;
-      sitemap += `    <loc>https://ziontechgroup.netlify.app${page.url}</loc>\n`;
-      sitemap += `    <priority>${page.priority}</priority>\n`;
-      sitemap += `    <changefreq>${page.changefreq}</changefreq>\n`;
+    for (const page of pages) {</div>
+      sitemap += `  <url>\n`;</div>
+      sitemap += `    <loc>https://ziontechgroup.netlify.app${page.url}</loc>\n`;</div>
+      sitemap += `    <priority>${page.priority}</priority>\n`;</div>
+      sitemap += `    <changefreq>${page.changefreq}</changefreq>\n`;</div>
       sitemap += `  </url>\n`;
     }
-    
+    </div>
     sitemap += '</urlset>';
     
     return sitemap;
@@ -704,7 +704,7 @@ Format the response as JSON with the following structure:
     return {
       title: topic,
       slug: this.sanitizeFilename(topic).toLowerCase(),
-      excerpt: `Comprehensive guide on ${topic.toLowerCase()} for modern businesses.`,
+      excerpt: `Comprehensive guide on ${topic.toLowerCase()} for modern businesses.`,</div>
       content: `<h1>${topic}</h1><p>Content about ${topic} is being generated. Please check back soon for the complete article.</p>`,
       metaDescription: `Learn about ${topic.toLowerCase()} and how it can benefit your business.`,
       keywords: [topic.toLowerCase(), 'technolo'g'y', 'busine's's'],
@@ -857,4 +857,4 @@ if (require.main === module) {
     console.error('Faile'd' to initialize agent:', error);
     process.exit(1);
   });
-} 
+} </div>

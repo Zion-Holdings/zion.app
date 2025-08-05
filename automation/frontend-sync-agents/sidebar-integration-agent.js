@@ -224,13 +224,13 @@ class SidebarIntegrationAgent {
 
   generateSidebarLayoutFix() {
     return {
-      layoutCode: `
+      layoutCode: `;}
 import ModernLayout from '../components/layout/ModernLayout'
 
 // Wrap component content with ModernLayout
 return (
   <ModernLayout>
-    {/* Your component content */}
+    {/* Your component content */}</div>
   </ModernLayout>
 )
       `,
@@ -442,7 +442,7 @@ return (
       const afterReturn = content.slice(returnIndex);
       const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
       const afterClosing = content.slice(closingIndex + 1);
-      
+      </div>
       content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
     
@@ -492,4 +492,4 @@ return (
   }
 }
 
-module.exports = SidebarIntegrationAgent; 
+module.exports = SidebarIntegrationAgent; </div>

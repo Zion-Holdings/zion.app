@@ -30,7 +30,7 @@ interface MaintenanceTask {
   status: ''schedule'd' | in-progres's' | complet'e'd;
   scheduledDate: string;
   estimatedDuration: string;
-  assignedTo: string;}
+  assignedTo: string;};
 const mockFacilities: Facility[] = ['
   {
     id: 'facility-1',
@@ -215,7 +215,7 @@ const mockMaintenanceTasks: MaintenanceTask[] = ['
     estimatedDuration: '2 hours',
     assignedTo: Lisa' Brown'}
 ];
-
+;}
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== PO'S'T) {
     return res.status(405).json({ error: Metho'd' not allowed });}
@@ -252,7 +252,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 '
   } catch (error) {
     console.error(AI' Facility Management API Error: , error);
-    res.status(500).json({ error: 'Internal server error' });}}
+    res.status(500).json({ error: 'Internal server error' });}};
 function generateAIInsights(timeframe: string): any {
   const insights = {
     predictions: ['

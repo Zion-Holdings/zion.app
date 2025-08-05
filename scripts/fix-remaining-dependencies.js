@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix remaining React Hook dependency warnings
+// Function to fix remaining React Hook dependency warnings;
 function fixRemainingDependencies(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -49,7 +49,7 @@ function fixRemainingDependencies(filePath) {
   }
 }
 
-// Process all TypeScript and JavaScript files
+// Process all TypeScript and JavaScript files;
 function processFiles() {
   const pagesDir = path.join(__dirname, '..', 'pag'e's');
   const srcDir = path.join(__dirname, '..', 's'r'c');

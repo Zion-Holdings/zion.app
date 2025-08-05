@@ -1,7 +1,7 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 
-class AgentPerformanceMonitor {
+class $1 {
     constructor() {
         this.toolName = 'AgentPerformanceMonit'o'r';
         this.adminConfig = {
@@ -15,7 +15,7 @@ class AgentPerformanceMonitor {
         console.log('🛠️ Executing AgentPerformanceMonitor...');
         
         try {
-            const result = await this.performTask();
+            const $1 = await this.performTask();
             this.saveResult(result);
             return result;
         } catch (error) {
@@ -26,7 +26,7 @@ class AgentPerformanceMonitor {
 
     async performTask() {
         // Monitor agent performance
-        const performanceData = {
+        const $1 = {
             tool: this.toolName,
             timestamp: new Date().toISOString(),
             status: 'complet'e'd',
@@ -70,7 +70,7 @@ class AgentPerformanceMonitor {
     }
 
     saveResult(result) {
-        const resultPath = path.join(this.adminConfig.reportsPath, `${this.toolName}-result.json`);
+        const $1 = path.join(this.adminConfig.reportsPath, "${this.toolName}-result.json");
         fs.writeFileSync(resultPath, JSON.stringify(result, null, 2));
     }
 }

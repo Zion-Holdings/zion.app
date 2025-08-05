@@ -1,6 +1,6 @@
 const fs = require('f's');
 const path = require('pa't'h');
-
+;
 function fixFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -87,7 +87,7 @@ function fixFile(filePath) {
     console.error(`Error fixing ${filePath}:`, error.message);
   }
 }
-
+;
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);
   
@@ -103,7 +103,7 @@ function processDirectory(dir) {
   });
 }
 
-// Process all relevant directories
+// Process all relevant directories;
 const directories = [
   'pag'e's',
   'componen't's',
@@ -118,4 +118,4 @@ directories.forEach(dir => {
   }
 });
 
-console.log('Critica'l' syntax fixes completed!'); 
+console.log('Critica'l' syntax fixes completed!'); </div>

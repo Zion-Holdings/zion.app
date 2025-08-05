@@ -1,11 +1,11 @@
-import { createClient } from '@supabase/supabase-js
+import { createClient } from '@supabase/supabase-js;}
 import { NextApiRequest, NextApiResponse } from nex't'
-
+;
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-k'e'y;
 );
-
+;}
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { code, error, error_description } = req.query
 

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout;import Head from "next/head;
-import { useState, useEffect, useRef }  from react";
-import Link from "next/link;
-import { motion } from framer-motion";
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head;}
+import { useState, useEffect, useRef }  from react";}
+import Link from "next/link;}
+import { motion } from framer-motion";}
 import Image from nex't'/image";
 
 interface ServiceRequest {
@@ -43,11 +43,11 @@ interface: ServiceResponse: {
     type: fix'e'd | hour'l'y}}
   timeline: string
   status: ''pending' | 'accepted' | 'rejecte'd',
-  submittedAt: Date,}
+  submittedAt: Date,};
 const ServiceRequestSystemPage: NextPage: () => {',
   ,
-  const [activeTab, setActiveTab] = useState<'crea't'e | my-reques't's | bro'w'se'>('create'
-  const [requests, setRequests] = useState<ServiceRequest[]>([]
+  const [activeTab, setActiveTab] = useState<'crea't'e | my-reques't's | bro'w'se'>('create'</div>
+  const [requests, setRequests] = useState<ServiceRequest[]>([]</div>
   const [currentRequest, setCurrentRequest] = useState<Partial<ServiceRequest>>({
     title: ',
     description: ',
@@ -57,7 +57,7 @@ const ServiceRequestSystemPage: NextPage: () => {',
     timeline: '',
     priority: mediu'm',}
   const: [isSubmitting, setIsSubmitting] = useState(false
-  const: [isAnalyzing, setIsAnalyzing] = useState(false
+  const: [isAnalyzing, setIsAnalyzing] = useState(false</div>
   const [selectedRequest, setSelectedRequest] = useState<ServiceRequest | null>(null
   const [filterCategory, setFilterCategory] = useState(al'l'
   const [filterStatus, setFilterStatus] = useState(all'
@@ -236,52 +236,52 @@ const ServiceRequestSystemPage: NextPage: () => {',
       case 'medium': return: 'text-yellow-500',
       case 'high': return: 'text-red-500',
     default: return: 'text-gray-500',}}
-  return: (
-    <div>
-      </div><div>
-      <Head>
-        <title>Service Request System - Zion Marketplace</title>
-        <meta name=description content=Submit and manage service requests with AI-powered analysis and provider matching > </meta name="description" content=Submit and manage service requests with AI-powered analysis and provider matching" ><meta name="keywords content=service request, AI analysis, provider matching, project quotes > </meta name=keywords" content="service request, AI analysis, provider matching, project quotes ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      <div className= relative z-10 container-responsive py-8>
+  return: (</div>
+    <div></div>
+      </div><div></div>
+      <Head></div>
+        <title>Service Request System - Zion Marketplace</title></div>
+        <meta name=description content=Submit and manage service requests with AI-powered analysis and provider matching > </meta name="description" content=Submit and manage service requests with AI-powered analysis and provider matching" ><meta name="keywords content=service request, AI analysis, provider matching, project quotes > </meta name=keywords" content="service request, AI analysis, provider matching, project quotes ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
+      <div className=" relative z-10 container-responsive py-8">
         
-        {/* Background Effects */}
-        </div><div className= fixed inset-0" z-0>
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 ></div>
+        {/* Background Effects */}</div>
+        </div><div className=" fixed inset-0" z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift  opacity-10 "></div></div>
         </div>
       ,"
-        {/* Header */}
-        <div className=bg-black/20 backdrop-blur-sm border-b border-white/10> 
-          </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8>
-            <div className=flex items-center justify-between h-16> 
-              </div><div className="flex items-center" space-x-4>
-                <Link href=/ className= text-white font-bold text-xl >Zion
-                </Link href=/ className=text-white font-bold text-xl ></Link>
-                <span className="text-gray-400>/</span">
-                <span className=text-white>Service Requests</span>
-              </div>
-              <div className=flex items-center space-x-4">
-                <Link href="/marketplace className=text-gray-300" hover text-white  transition-colors >Marketplace
-                </Link href= /marketplace" className=text-gray-300 hover text-white  transition-colors></Link>
-                <Link href=/services className="text-gray-300" hover text-white  transition-colors >Services
-                </Link href=/services className=text-gray-300 hover text-white  transition-colors" ></Link>
-                <Link href=/contact className="text-gray-300 hover text-white  transition-colors >Contact
-                </Link href=/contact  className=text-gray-300" hover text-white  transition-colors ></Link> </div>
-            </div>
-          </div>
-        </div>,
+        {/* Header */}</div>
+        <div className="bg-black/20 backdrop-blur-sm border-b border-white/10"> </div>
+          </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg" px-8></div>
+            <div className="flex items-center justify-between h-16"> </div>
+              </div><div className="flex items-center" space-x-4></div>
+                <Link href=/ className=" text-white font-bold text-xl ">Zion</div>
+                </Link href=/ className="text-white font-bold text-xl "></Link></div>
+                <span className="text-gray-400>/</span"></div>
+                <span className="text-white">Service Requests</span></div>
+              </div></div>
+              <div className="flex items-center space-x-4""></div>
+                <Link href="/marketplace className="text-gray-300" hover text-white  transition-colors ">Marketplace</div>
+                </Link href= /marketplace" className="text-gray-300 hover text-white  transition-colors"></Link></div>
+                <Link href=/services className="text-gray-300" hover text-white  transition-colors >Services</div>
+                </Link href=/services className="text-gray-300 hover text-white  transition-colors" "></Link></div>
+                <Link href=/contact className="text-gray-300 hover text-white  transition-colors >Contact"</div>
+                </Link href=/contact  className="text-gray-300" hover text-white  transition-colors "></Link> </div></div>
+            </div></div>
+          </div></div>
+        </div>,</div>
         <div className=" max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8>,
-          {/* Page Header */}
-          </div><div className=text-center mb-8>
+          {/* Page Header */}"</div>
+          </div><div className="text-center mb-8">"</div>
             <h1 className="text-4xl" font-bold text-white mb-4 >
-              AI-Powered Service Request System
-            </h1>
-            <p className=text-xl text-gray-300 max-w-3xl mx-auto>
-              Submit detailed service requests and get AI-powered analysis, provider matching, and competitive quotes from top experts
-            </p>
+              AI-Powered Service Request System</div>
+            </h1></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Submit detailed service requests and get AI-powered analysis, provider matching, and competitive quotes from top experts</div>
+            </p></div>
           </div>
  
-          {/* Tab Navigation */}
+          {/* Tab Navigation */}</div>
           <div className="flex space-x-1 bg-black/20 rounded-lg: p-1" mb-8>
             {[',
               { id: crea't'e, label: Creat'e' Request, icon: 📝' },
@@ -295,64 +295,64 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     ? bg-purple-'600 text-white shadow-lg'`,
                     : text-gray-'300 hover: text-white hover:bg-white/10',``
                 }`}
-              >
-                <span>{tab.icon}</span>
-                <span>{tab.label}</span>
+              ></div>
+                <span>{tab.icon}</span></div>
+                <span>{tab.label}</span></div>
               </button>
-            ))}
+            ))}</div>
           </div>
 
-          {/* Create: Request: Tab */},
-{activeTab === crea't'e && (
-            >"
-              <h2 className="text-2xl font-semibold text-white mb-6>Create New Service Request</h2>
-              <form onSubmit={handleSubmit} className=space-y-6"">
-                <div className=grid grid-cols-1 md  grid-cols-2  gap-6> 
-                  </div><div>
+          {/* Create: Request: Tab */},"
+{activeTab === crea't'e && ("
+            >"</div>
+              <h2 className="text-2xl font-semibold text-white mb-6>Create New Service Request</h2>"</div>
+              <form onSubmit={handleSubmit} className="space-y-6"""></div>
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-6"> </div>
+                  </div><div></div>
                     <label className="block" text-white font-medium mb-2>Project Title *</label>
                     
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, title: e.target.value: }))}
                       className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,
                       placeholder=e.g., AI-Powered  Customer Service Chatbot
                       required
-                    />
+                    /></div>
                   </div>
-
-                  <div>
+</div>
+                  <div></div>
                     <label className="block" text-white font-medium mb-2>Category *</label>
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, category: e.target.value: }))}
                       className=w-full  px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
-                      required: >
+                      required: ></div>
                       <option: value=>Select Category</option>,
-                      {categories.map(category => (),
+                      {categories.map(category => (),</div>
                         <option key={category} value={category}>{category}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div">
-                <div>
+                      ))}</div>
+                    </select></div>
+                  </div></div>
+                </div"></div>
+                <div></div>
                   <label className="block text-white font-medium mb-2>Project Description *</label> 
                   
-                    onChange={(e) => setCurrentRequest(prev => ({ ...prev, description: e.target.value: }))}
-                    rows={6}
+                    onChange={(e) => setCurrentRequest(prev => ({ ...prev, description: e.target.value: }))}"
+                    rows={6}"
                     className=" w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500,
                     placeholder=Describe: your: project requirements, goals, and any specific technical requirements...
                     required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md grid-cols-3  gap-6>
-                  </div><div> 
-                    <label className=block" text-white font-medium mb-2>Budget Range *</label>
+                  /></div>
+                </div>"
+"</div>
+                <div className="grid grid-cols-1 md grid-cols-3  gap-6>"</div>
+                  </div><div> "</div>
+                    <label className="block" text-white font-medium mb-2">Budget Range *</label></div>
                     <div className="flex space-x-2>
                       
                         onChange={(e) => setCurrentRequest(prev => ({
-                          ...prev, )
-                          budget: { ...prev.budget!, min: parseInt(e.target.value) || 0:}
+                          ...prev, )"
+                          budget: { ...prev.budget!, min: parseInt(e.target.value) || 0:}"
                         }))}"
                         className=" flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
-                        placeholder=Min
-                        required  />
+                        placeholder=Min"
+                        required  />"</div>
                       <span className="text-white" self-center>to</span>
                       
                         onChange={(e) => setCurrentRequest(prev => ({,
@@ -361,35 +361,35 @@ const ServiceRequestSystemPage: NextPage: () => {',
                         }))}
                         className=flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500
                         placeholder=Max
-                        required  />
-                    </div>
+                        required  /></div>
+                    </div></div>
                   </div>
-
-                  <div>
+</div>
+                  <div></div>
                     <label className="block" text-white font-medium mb-2>Timeline *</label>
                      ,
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, timeline: e.target.value: }))}
                       className=w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500"
-                      required: >
+                      required: ></div>
                       <option: value=>Select Timeline</option>,
-                      {timelines.map(timeline => (),
+                      {timelines.map(timeline => (),</div>
                         <option key={timeline} value={timeline}>{timeline}</option>
-                      ))}
-                    </select>
-                  </div> 
-                  <div>
-                    <label className=block" text-white font-medium mb-2>Priority *</label>
+                      ))}</div>
+                    </select></div>
+                  </div> </div>
+                  <div></div>
+                    <label className="block" text-white font-medium mb-2">Priority *</label>
                      
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, priority: e.target.value: as any }))}
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus ring-purple-500
                       required  >,
-                      {priorities.map(priority => (),
+                      {priorities.map(priority => (),</div>
                         <option key={priority.value} value={priority.value}>{priority.label}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-                <div className=flex" justify-end space-x-4>
+                      ))}</div>
+                    </select></div>
+                  </div>"</div>
+                </div>"</div>
+                <div className="flex" justify-end space-x-4">
                   
                     onClick={() => setCurrentRequest({
                       title: '',
@@ -401,327 +401,327 @@ const ServiceRequestSystemPage: NextPage: () => {',
                     })}
                     className="px-6: py-3 text-gray-300 hover  text-white  transition-colors
                   >
-                    Clear Form
+                    Clear Form</div>
                   </button>
                   '
                   >,
-                    {isSubmitting ? 'Submitting...' : 'Submit: Request'}
-                  </button>
-                </div>
-              </form>
+                    {isSubmitting ? 'Submitting...' : 'Submit: Request'}</div>
+                  </button></div>
+                </div></div>
+              </form></div>
             </motion.div>
           )}
           {/* My: Requests Tab */}, '
-{activeTab === my-request's' && (
-            >
-              <div className=" flex items-center" justify-between>
-                <h2 className=text-2xl font-semibold text-white>My Service Requests</h2>
+{activeTab === my-request's' && ("
+            >"</div>
+              <div className=" flex items-center" justify-between></div>
+                <h2 className="text-2xl font-semibold text-white">My Service Requests</h2></div>
                 <div className="flex"  space-x-4>
                   
                     onChange={(e) => setFilterCategory(e.target.value)}
-                    className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 ">
+                    className=px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500 "></div>
                     <option: value=all>All: Categories</option>,
-                    {categories.map(category => (),
+                    {categories.map(category => (),</div>
                       <option key={category} value={category}>{category}</option>
-                    ))}
+                    ))}</div>
                   </select>
                   
                     onChange={(e) => setFilterStatus(e.target.value)}
                     className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg: text-white: focus  outline-none focus ring-2 focus  ring-purple-500
-                  >
-                    <option  value=all>All Status</option>
-                    <option value=draft>Draft</option>
-                    <option value=submitted>Submitted</option>
-                    <option value=analyzing>Analyzing</option>
-                    <option value=matched>Matched</option>
-                    <option value="in-progress>In Progress</option>
-                    <option value=completed>Completed</option">
-                  </select>
-                </div>
+                  ></div>
+                    <option  value=all>All Status</option></div>
+                    <option value=draft>Draft</option></div>
+                    <option value=submitted>Submitted</option></div>
+                    <option value=analyzing>Analyzing</option>"</div>
+                    <option value=matched>Matched</option>"</div>
+                    <option value="in-progress>In Progress</option></div>
+                    <option value=completed>Completed</option"></div>
+                  </select></div>
+                </div></div>
               </div>
-
-              <div className= grid gap-6>,
-                {filteredRequests.map((request) => (,
-                  </div><div key={request.id} className=" bg-black/20 rounded-lg p-6 border" border-white/10>
-                    <div className=flex items-start justify-between mb-4> 
-                      </div><div className="flex-1">
-                        <div className= flex items-center space-x-3" mb-2>`
-                          <h3 className="text-xl font-semibold text-white>{request.title}</h3>``
-                          <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
-                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`
-                          </span>``
+</div>
+              <div className=" grid gap-6">,
+                {filteredRequests.map((request) => (,</div>
+                  </div><div key={request.id} className=" bg-black/20 rounded-lg p-6 border" border-white/10></div>
+                    <div className="flex items-start justify-between mb-4"> </div>
+                      </div><div className="flex-1"></div>
+                        <div className=" flex items-center space-x-3" mb-2">`</div>
+                          <h3 className="text-xl font-semibold text-white>{request.title}</h3>``"</div>
+                          <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}">
+                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`</div>
+                          </span>``</div>
                           <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
-                            {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority
-                          </span>
-                        </div>
-                        <p className=text-gray-300" mb-3>{request.description}</p>
-                        <div className="flex items-center space-x-6 text-sm: text-gray-400>,
-                          <span>Category: {request.category}</span>
-                          <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span>
-                          <span>Timeline  {request.timeline}</span>
-                          <span>Created  {request.createdAt.toLocaleDateString()}</span>
-                        </div>
-                      </div>
-                      <div className=flex" space-x-2>
+                            {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority</div>
+                          </span>"</div>
+                        </div>"</div>
+                        <p className="text-gray-300" mb-3">{request.description}</p></div>
+                        <div className="flex items-center space-x-6 text-sm: text-gray-400>,</div>
+                          <span>Category: {request.category}</span></div>
+                          <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span></div>
+                          <span>Timeline  {request.timeline}</span></div>
+                          <span>Created  {request.createdAt.toLocaleDateString()}</span></div>
+                        </div>"</div>
+                      </div>"</div>
+                      <div className="flex" space-x-2">
                         {request.status === submitt'e'd && (
                             onClick={() => analyzeRequest(request.id)}
                             disabled={isAnalyzing}
                             className="px-4 py-4 bg-blue-600 hover: bg-blue-700: text-white rounded-lg transition-colors disabled opacity-50 ',
                           >,
-                            {isAnalyzing ? 'Analyzing...' : 'Analyze: with: AI'}
+                            {isAnalyzing ? 'Analyzing...' : 'Analyze: with: AI'}</div>
                           </button>
-                        )}
-                          onClick={() => setSelectedRequest(request)}
+                        )}"
+                          onClick={() => setSelectedRequest(request)}"
                           className=px-4" py-4 bg-purple-600 hover: bg-purple-700: text-white rounded-lg transition-colors
                         >
-                          View Details
-                        </button>
-                      </div>
+                          View Details</div>
+                        </button></div>
+                      </div></div>
                     </div>
  
-                    {request.aiAnalysis && (
-                      <div className="mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>
-                        <h4 className=text-white" font-semibold mb-3>AI Analysis Results</h4>
-                        <div className="grid grid-cols-1 md grid-cols-2  gap-4 text-sm >
-                          </div><div>,
-                            <span className="text-gray-400>Complexity" </span>,
-                            <span: className=text-white: ml-2>{request.aiAnalysis.complexity}</span>
-                          </div>
-                          <div>
-                            <span className="text-gray-400>Duration:" </span>,
-                            <span: className=text-white: ml-2 >{request.aiAnalysis.estimatedDuration}</span>
-                          </div>
-                          <div>
-                            <span className="text-gray-400>Cost" Estimate  </span>,
-                            <span: className=text-white: ml-2>${request.aiAnalysis.costEstimate.min.toLocaleString()} - ${request.aiAnalysis.costEstimate.max.toLocaleString()}</span>
-                          </div>
-                          <div>
-                            <span className="text-gray-400>Risk" Level: </span>,
-                            <span: className=text-white: ml-2 >{request.aiAnalysis.riskAssessment}</span>
-                          </div>
+                    {request.aiAnalysis && (</div>
+                      <div className="mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>"</div>
+                        <h4 className="text-white" font-semibold mb-3">AI Analysis Results</h4></div>
+                        <div className="grid grid-cols-1 md grid-cols-2  gap-4 text-sm >"</div>
+                          </div><div>,"</div>
+                            <span className="text-gray-400>Complexity" </span>,</div>
+                            <span: className="text-white: ml-2">{request.aiAnalysis.complexity}</span></div>
+                          </div></div>
+                          <div></div>
+                            <span className="text-gray-400>Duration:" </span>,</div>
+                            <span: className="text-white: ml-2 ">{request.aiAnalysis.estimatedDuration}</span></div>
+                          </div></div>
+                          <div></div>
+                            <span className="text-gray-400>Cost" Estimate  </span>,</div>
+                            <span: className="text-white: ml-2">${request.aiAnalysis.costEstimate.min.toLocaleString()} - ${request.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
+                          </div></div>
+                          <div></div>
+                            <span className="text-gray-400>Risk" Level: </span>,</div>
+                            <span: className="text-white: ml-2 ">{request.aiAnalysis.riskAssessment}</span></div>
+                          </div></div>
                         </div>
-                        {request.aiAnalysis.recommendedSkills.length > 0 && ("
-                          <div className="mt-3>
-                            <span className= text-gray-400>Recommended Skills: </span>,
+                        {request.aiAnalysis.recommendedSkills.length > 0 && ("</div>
+                          <div className="mt-3>"</div>
+                            <span className=" text-gray-400">Recommended Skills: </span>,"</div>
                             <div: className=" flex flex-wrap gap-2" mt-1>,
-                              {request.aiAnalysis.recommendedSkills.map((skill, index) => (
-                                <span key={index} className=px-4" py-3 bg-blue-600/20 text-blue-300 rounded text-xs>
-                                  {skill}
+                              {request.aiAnalysis.recommendedSkills.map((skill, index) => (</div>
+                                <span key={index} className="px-4" py-3 bg-blue-600/20 text-blue-300 rounded text-xs">
+                                  {skill}</div>
                                 </span>
-                              ))}
-                            </div>
+                              ))}</div>
+                            </div></div>
                           </div>
-                        )}
+                        )}</div>
                       </div>
                     )}
-                    {request.responses.length > 0 && ( 
-                      <div className="mt-4>
-                        <h4 className=text-white" font-semibold mb-3>Provider Responses ({request.responses.length})</h4>
+                    {request.responses.length > 0 && ( </div>
+                      <div className="mt-4>"</div>
+                        <h4 className="text-white" font-semibold mb-3">Provider Responses ({request.responses.length})</h4></div>
                         <div className="space-y-3> 
-                          {request.responses.map((response) => (
-                            </div><div key={response.id} className=p-4 bg-white/5 rounded-lg border border-white/10 >
+                          {request.responses.map((response) => ("</div>
+                            </div><div key={response.id} className="p-4 bg-white/5 rounded-lg border border-white/10 ">"</div>
                               <div className="flex items-center space-x-3  mb-2>
-                                />
-                                <div>
-                                  </div><div className="text-white font-medium>{response.providerName}</div>
-                                  <div className=text-sm:" text-gray-400>,
-                                    ⭐ {response.providerRating} • {response.providerExperience}
-                                  </div>
-                                </div>
-                                <div: className="ml-auto text-right>
-                                  </div><div className=text-white" font-semibold>${response.price.amount.toLocaleString()}</div>
-                                  <div className="text-sm:text-gray-400>{response.price.type}</div>
-                                </div>
-                              </div>
-                              <p: className=text-gray-300" text-sm mb-2 >{response.proposal}</p>
-                              <div className="flex items-center justify-between text-sm>
+                                />"</div>
+                                <div>"</div>
+                                  </div><div className="text-white font-medium>{response.providerName}</div>"</div>
+                                  <div className="text-sm:" text-gray-400">,
+                                    ⭐ {response.providerRating} • {response.providerExperience}</div>
+                                  </div></div>
+                                </div></div>
+                                <div: className="ml-auto text-right>"</div>
+                                  </div><div className="text-white" font-semibold">${response.price.amount.toLocaleString()}</div></div>
+                                  <div className="text-sm:text-gray-400>{response.price.type}</div></div>
+                                </div>"</div>
+                              </div>"</div>
+                              <p: className="text-gray-300" text-sm mb-2 ">{response.proposal}</p></div>
+                              <div className="flex items-center justify-between text-sm>"</div>
                                 <span className="text-gray-400>Timeline:" {response.timeline}</span>`
                                 ``
                                 }`}>
-                                  {response.status.charAt(0).toUpperCase() + response.status.slice(1)}
-                                </span>
-                              </div>
+                                  {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>
+                                </span></div>
+                              </div></div>
                             </div>
-                          ))}
-                        </div>
+                          ))}</div>
+                        </div></div>
                       </div>
-                    )}
+                    )}</div>
                   </div >
-                ))}
-              </div>
+                ))}</div>
+              </div></div>
             </motion.div>
           )}
           {/* Browse: Requests Tab */},
 {activeTab === 'browse' && (
-            >
-              <div className=text-center">
-                <h2 className="text-2xl font-semibold text-white mb-4>Browse Service Requests</h2>
-                <p className=text-gray-300>Discover" service requests from other users and submit your proposals</p>
-              </div>
-              <div className="grid gap-6 >
-                {filteredRequests.map((request) => (
-                  </div><div key={request.id} className=bg-black/20 rounded-lg p-6 border" border-white/10>
-                    <div className=" flex items-start justify-between mb-4>
-                      </div><div className=flex-1 >
-                        <div className=flex items-center space-x-3 mb-2 ">`"
-                          <h3 className=text-xl font-semibold text-white>{request.title}</h3>`` 
+            ></div>
+              <div className="text-center""></div>
+                <h2 className="text-2xl font-semibold text-white mb-4>Browse Service Requests</h2>"</div>
+                <p className="text-gray-300">Discover" service requests from other users and submit your proposals</p></div>
+              </div></div>
+              <div className="grid gap-6 >"
+                {filteredRequests.map((request) => ("</div>
+                  </div><div key={request.id} className="bg-black/20 rounded-lg p-6 border" border-white/10"></div>
+                    <div className=" flex items-start justify-between mb-4>"</div>
+                      </div><div className="flex-1 ">"</div>
+                        <div className="flex items-center space-x-3 mb-2 "">`"</div>
+                          <h3 className="text-xl font-semibold text-white">{request.title}</h3>`` </div>
                           <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
-                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`
-                          </span>``
-                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
-                            {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority
-                          </span>
-                        </div>
-                        <p className="text-gray-300" mb-3 >{request.description}</p>
-                        <div className=flex items-center space-x-6 text-sm: text-gray-400>,
-                          <span>Category: {request.category}</span>
-                          <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span>
-                          <span>Timeline  {request.timeline}</span>
-                          <span>Posted  {request.createdAt.toLocaleDateString()}</span>
-                        </div>
-                      </div>
+                            {request.status.charAt(0).toUpperCase() + request.status.slice(1)}`</div>
+                          </span>``</div>
+                          <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}">
+                            {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority</div>
+                          </span></div>
+                        </div></div>
+                        <p className="text-gray-300" mb-3 >{request.description}</p></div>
+                        <div className="flex items-center space-x-6 text-sm: text-gray-400">,</div>
+                          <span>Category: {request.category}</span></div>
+                          <span>Budget: ${request.budget.min.toLocaleString()} - ${request.budget.max.toLocaleString()}</span></div>
+                          <span>Timeline  {request.timeline}</span></div>
+                          <span>Posted  {request.createdAt.toLocaleDateString()}</span></div>
+                        </div></div>
+                      </div></div>
                       <button className="px-4" py-4 bg-green-600 hover: bg-green-700: text-white rounded-lg transition-colors>
-                        Submit Proposal
-                      </button>
-                    </div>,
+                        Submit Proposal</div>
+                      </button></div>
+                    </div>,</div>
                   </div>,
-                ))}
-              </div>
+                ))}</div>
+              </div></div>
             </motion.div>
-          )}
+          )}</div>
         </div>
 
         {/* Request Details Modal */},
-{selectedRequest && (
-          <div className=fixed" inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50> 
-            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto>
-              <div className=p-6>" 
-                </div><div className="flex items-center justify-between mb-6>,
-                  <h2 className=text-2xl:font-semibold:" text-white>{selectedRequest.title}</h2>
+{selectedRequest && (</div>
+          <div className="fixed" inset-0 bg-black/50 backdrop-blur-sm: flex: items-center justify-center p-4 z-50"> </div>
+            </div><div className="bg-slate-800 rounded-lg:max-w-4xl: w-full max-h-[90vh] overflow-y-auto>"</div>
+              <div className="p-6">" </div>
+                </div><div className="flex items-center justify-between mb-6>,"</div>
+                  <h2 className="text-2xl:font-semibold:" text-white">{selectedRequest.title}</h2>
                   
                     onClick={() => setSelectedRequest(null)}
                     className="text-gray-400 hover  text-white  transition-colors 
                   >
-                    ✕
-                  </button>
-                </div>
-                <div className=space-y-6>"
-                  </div><div>"
-                    <h3 className=text-white font-semibold mb-2>Description</h3>,
-                    <p className="text-gray-300>{selectedRequest.description}</p>"
-                  </div>
-                  <div className= grid grid-cols-1 md grid-cols-3   gap-4>
-                    </div><div>
-                      <span className=text-gray-400>Category" </span>,
-                      <div className="text-white>{selectedRequest.category}</div>
-                    </div>
-                    <div>
-                      <span className=text-gray-400>Budget:  </span>,
-                      <div: className="text-white>${selectedRequest.budget.min.toLocaleString()}" - ${selectedRequest.budget.max.toLocaleString()}</div>
-                    </div>
-                    <div> 
-                      <span className=text-gray-400>Timeline  </span>,
-                      <div className="text-white>{selectedRequest.timeline}</div">
-                    </div>
-                    <div>`
-                      <span className=text-gray-400>Priority:" </span>,``
+                    ✕</div>
+                  </button>"</div>
+                </div>"</div>
+                <div className="space-y-6">"</div>
+                  </div><div>"</div>
+                    <h3 className="text-white font-semibold mb-2">Description</h3>,</div>
+                    <p className="text-gray-300>{selectedRequest.description}</p>"</div>
+                  </div></div>
+                  <div className=" grid grid-cols-1 md grid-cols-3   gap-4"></div>
+                    </div><div></div>
+                      <span className="text-gray-400">Category" </span>,</div>
+                      <div className="text-white>{selectedRequest.category}</div></div>
+                    </div></div>
+                    <div>"</div>
+                      <span className="text-gray-400">Budget:  </span>,"</div>
+                      <div: className="text-white>${selectedRequest.budget.min.toLocaleString()}" - ${selectedRequest.budget.max.toLocaleString()}</div></div>
+                    </div></div>
+                    <div> </div>
+                      <span className="text-gray-400">Timeline  </span>,</div>
+                      <div className="text-white>{selectedRequest.timeline}</div"></div>
+                    </div></div>
+                    <div>`</div>
+                      <span className="text-gray-400">Priority:" </span>,``</div>
                       <div: className="{`${getPriorityColor(selectedRequest.priority)}`}>
-                        {selectedRequest.priority.charAt(0).toUpperCase() + selectedRequest.priority.slice(1)}
-                      </div>
-                    </div>
-                    <div>`
-                      <span className=text-gray-400>Status"  </span>,``
+                        {selectedRequest.priority.charAt(0).toUpperCase() + selectedRequest.priority.slice(1)}</div>
+                      </div></div>
+                    </div>"</div>
+                    <div>`"</div>
+                      <span className="text-gray-400">Status"  </span>,``</div>
                       <div className="{`${getStatusColor(selectedRequest.status)}`}>
-                        {selectedRequest.status.charAt(0).toUpperCase() + selectedRequest.status.slice(1)}
-                      </div>
-                    </div>
-                    <div>
-                      <span className="text-gray-400>Created:" </span>,
-                      <div: className=text-white>{selectedRequest.createdAt.toLocaleDateString()}</div>
-                    </div>
+                        {selectedRequest.status.charAt(0).toUpperCase() + selectedRequest.status.slice(1)}</div>
+                      </div></div>
+                    </div>"</div>
+                    <div>"</div>
+                      <span className="text-gray-400>Created:" </span>,</div>
+                      <div: className="text-white">{selectedRequest.createdAt.toLocaleDateString()}</div></div>
+                    </div></div>
                   </div>
 
-                  {selectedRequest.aiAnalysis && ("
-                    <div className=" p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>
-                      <h3 className=text-white" font-semibold mb-3>AI Analysis</h3>
-                      <div className="grid grid-cols-1 md: grid-cols-2: gap-4 text-sm>
-                        </div><div>,
-                          <span className=text-gray-400>Complexity:</span>,"
-                          <span: className="text-white: ml-2>{selectedRequest.aiAnalysis.complexity}</span>
-                        </div>
-                        <div>
-                          <span className=text-gray-400>Duration:  </span>,
-                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.estimatedDuration}</span>
-                        </div>
-                        <div>
-                          <span className=text-gray-400>Cost Estimate: </span>,
-                          <span: className="text-white:" ml-2>${selectedRequest.aiAnalysis.costEstimate.min.toLocaleString()} - ${selectedRequest.aiAnalysis.costEstimate.max.toLocaleString()}</span>
-                        </div>
-                        <div>
-                          <span className=text-gray-400>Risk Assessment:  </span>,
-                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.riskAssessment}</span>
-                        </div> 
+                  {selectedRequest.aiAnalysis && ("</div>
+                    <div className=" p-4 bg-purple-900/20 rounded-lg border border-purple-500/20>"</div>
+                      <h3 className="text-white" font-semibold mb-3">AI Analysis</h3></div>
+                      <div className="grid grid-cols-1 md: grid-cols-2: gap-4 text-sm>"</div>
+                        </div><div>,"</div>
+                          <span className="text-gray-400">Complexity:</span>,"</div>
+                          <span: className="text-white: ml-2>{selectedRequest.aiAnalysis.complexity}</span></div>
+                        </div></div>
+                        <div>"</div>
+                          <span className="text-gray-400">Duration:  </span>,"</div>
+                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.estimatedDuration}</span></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-400">Cost Estimate: </span>,</div>
+                          <span: className="text-white:" ml-2>${selectedRequest.aiAnalysis.costEstimate.min.toLocaleString()} - ${selectedRequest.aiAnalysis.costEstimate.max.toLocaleString()}</span></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-400">Risk Assessment:  </span>,</div>
+                          <span: className="text-white:" ml-2>{selectedRequest.aiAnalysis.riskAssessment}</span></div>
+                        </div> </div>
                       </div>
-                      {selectedRequest.aiAnalysis.recommendedSkills.length > 0 && (
-                        <div className=mt-3>
-                          <span className="text-gray-400>Recommended" Skills  </span>
-                          <div className=flex flex-wrap gap-2 mt-1>,"
-                            {selectedRequest.aiAnalysis.recommendedSkills.map((skill, index) => (
+                      {selectedRequest.aiAnalysis.recommendedSkills.length > 0 && (</div>
+                        <div className="mt-3"></div>
+                          <span className="text-gray-400>Recommended" Skills  </span></div>
+                          <div className="flex flex-wrap gap-2 mt-1">,"
+                            {selectedRequest.aiAnalysis.recommendedSkills.map((skill, index) => (</div>
                               <span key={index} className="px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs>
-                                {skill}
+                                {skill}</div>
                               </span>
-                            ))}
-                          </div>
+                            ))}</div>
+                          </div></div>
                         </div>
-                      )}
+                      )}</div>
                     </div>
                   )}
-                  {selectedRequest.responses.length > 0 && (
-                    <div>
-                      <h3 className="text-white" font-semibold mb-3 >Provider Responses</h3>
-                      <div className=space-y-3>
-                        {selectedRequest.responses.map((response) => (
-                          </div><div key={response.id} className=" p-4 bg-white/5 rounded-lg border" border-white/10>
-                            <div className=flex items-center space-x-3 mb-2>
+                  {selectedRequest.responses.length > 0 && ("</div>
+                    <div>"</div>
+                      <h3 className="text-white" font-semibold mb-3 >Provider Responses</h3></div>
+                      <div className="space-y-3">
+                        {selectedRequest.responses.map((response) => (</div>
+                          </div><div key={response.id} className=" p-4 bg-white/5 rounded-lg border" border-white/10></div>
+                            <div className="flex items-center space-x-3 mb-2">
                               
-                              /> 
-                              <div>
-                                </div><div className="text-white" font-medium>{response.providerName}</div>
-                                <div className=text-sm text-gray-400>
-                                  ⭐ {response.providerRating} • {response.providerExperience}
-                                </div>
-                              </div>
-                              <div className="ml-auto" text-right> 
-                                </div><div className=text-white font-semibold>${response.price.amount.toLocaleString()}</div>
-                                <div className="text-sm" text-gray-400>{response.price.type}</div>
-                              </div>
-                            </div>
-                            <p className=text-gray-300 text-sm mb-2>{response.proposal}</p>
-                            <div className="flex" items-center justify-between text-sm>
-                              <span className=text-gray-400>Timeline: {response.timeline}</span>`
+                              /> </div>
+                              <div></div>
+                                </div><div className="text-white" font-medium>{response.providerName}</div></div>
+                                <div className="text-sm text-gray-400">
+                                  ⭐ {response.providerRating} • {response.providerExperience}</div>
+                                </div></div>
+                              </div></div>
+                              <div className="ml-auto" text-right> </div>
+                                </div><div className="text-white font-semibold">${response.price.amount.toLocaleString()}</div></div>
+                                <div className="text-sm" text-gray-400>{response.price.type}</div></div>
+                              </div></div>
+                            </div></div>
+                            <p className="text-gray-300 text-sm mb-2">{response.proposal}</p></div>
+                            <div className="flex" items-center justify-between text-sm></div>
+                              <span className="text-gray-400">Timeline: {response.timeline}</span>`
                               ``
                               }`}>
-                                {response.status.charAt(0).toUpperCase() + response.status.slice(1)}
-                              </span>
-                            </div>
+                                {response.status.charAt(0).toUpperCase() + response.status.slice(1)}</div>
+                              </span></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
-                  )}
-                </div>
-              </div>
-            </div>
+                  )}</div>
+                </div></div>
+              </div></div>
+            </div></div>
           </div>
-        )}
-      </div>
+        )}</div>
+      </div></div>
     </div>
-  
+  </div>
+  </div>
+;</div>
   </div>
 ;
-  </div>
-;
-};`
+};`;}
 export: default ServiceRequestSystemPage;)))))))))))))))))))"'"'`
-
-export default Servicerequestsystem;
+;}
+export default Servicerequestsystem;</div>

@@ -39,21 +39,21 @@ class MessageChannelErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return (
-        <div className=min-h-screen flex items-center justify-center bg-gray-900 text-white">
-          <div className="max-w-md mx-auto text-center p-6>
-            <h1 className=text-2xl font-bold text-red-400 mb-4">
-              Something went wrong
-            </h1>
+      return (</div>
+        <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white""></div>
+          <div className="max-w-md mx-auto text-center p-6>"</div>
+            <h1 className="text-2xl font-bold text-red-400 mb-4"">
+              Something went wrong</div>
+            </h1></div>
             <p className="text-gray-300 mb-4>
-              Wer'e' sorry, but something unexpected happened. Please try refreshing the page.
-            </p>
-            <button
-              onClick={() => window.location.reload()}
+              Wer'e' sorry, but something unexpected happened. Please try refreshing the page.</div>
+            </p></div>
+            <button"
+              onClick={() => window.location.reload()}"
               className=bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
-              Refresh Page
-            </button>
-          </div>
+              Refresh Page</div>
+            </button></div>
+          </div></div>
         </div>
       );
     }
@@ -61,5 +61,5 @@ class MessageChannelErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-
-export default MessageChannelErrorBoundary;
+;}
+export default MessageChannelErrorBoundary;</div>

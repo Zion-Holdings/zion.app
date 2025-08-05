@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect }  from "react;}
 import Link from next/link";
 
 interface Invoice {
@@ -40,10 +40,10 @@ interface Payment {
   method: string;
   date: Date;
   status: 'pendi'n'g | complet'e'd | fai'l'ed' | 'refunded;
-  transactionId: string;}
+  transactionId: string;};
 const InvoiceBillingPage: NextPage = () => {'
   const [activeTab, setActiveTab] = useState('invoices
-  const [selectedInvoice, setSelectedInvoice] = useState<string | null>(null
+  const [selectedInvoice, setSelectedInvoice] = useState<string | null>(null</div>
   const [invoices, setInvoices] = useState<Invoice[]>(['
     {
       id: 'INV-001',
@@ -93,7 +93,7 @@ const InvoiceBillingPage: NextPage = () => {'
       tax: 320,
       total: 3520,
       currency: 'US'D
-    }]
+    }]</div>
   const [billingCycles, setBillingCycles] = useState<BillingCycle[]>([
     {
       id: 'CYCLE'-001,
@@ -116,7 +116,7 @@ const InvoiceBillingPage: NextPage = () => {'
       totalAmount: 38000,
       paidAmount: 38000,
       outstandingAmount: 0
-    }]
+    }]</div>
   const [payments, setPayments] = useState<Payment[]>([
     {
       id: PAY'-'001,
@@ -164,80 +164,80 @@ const InvoiceBillingPage: NextPage = () => {'
     return invoices
       .filter(inv => inv.status === paid'
       .reduce((sum, inv) => sum + inv.total, 0}
-  return (
-    <div>
+  return (</div>
+    <div></div>
       </div><div className=" relative z-10 container-responsive" py-8>
         
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0> 
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>Invoice & Billing Management - Zion Marketplace</title>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> </div>
+        <title>Invoice & Billing Management - Zion Marketplace</title></div>
         <meta name=description content=Comprehensive invoice and billing management system for marketplace transactions. Generate invoices, track payments, and manage billing cycles. > </meta name="description" content=Comprehensive invoice and billing management system for marketplace transactions. Generate invoices, track payments, and manage billing cycles." ><meta name="keywords content=invoice billing, payment tracking, billing cycles, financial management, marketplace billing > </meta name=keywords" content="invoice billing, payment tracking, billing cycles, financial management, marketplace billing ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
-      {/* Header */}
-      <div className=bg-black/20 backdrop-blur-md border-b border-white/10> 
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>
-          <div className=flex  justify-between items-center>
-            <Link href=/ className="text-2xl" font-bold text-white > 
-              </Link href=/ className= text-2xl font-bold text-white ><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>
-            <nav className=flex" items-center space-x-6>
-              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
-              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
-              <Link href=/payment-processing className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
-              </Link href=/payment-processing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/auth/login className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
-              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-            </nav> </div>
-        </div>
-      </div>
-      {/* Hero Section */}
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-32> 
-        </div><div className=text-center" mb-12>
-          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >
-            <span className=text-transparent" bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400>
-              Invoice & Billing
-            </span>
-          </h1 >
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+      {/* Header */}</div>
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10"> </div>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6></div>
+          <div className="flex  justify-between items-center"></div>
+            <Link href=/ className="text-2xl" font-bold text-white > </div>
+              </Link href=/ className=" text-2xl font-bold text-white "><span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+            </Link></div>
+            <nav className="flex" items-center space-x-6"></div>
+              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Marketplace</div>
+              </Link href=/marketplace  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link></div>
+              <Link href=/payment-processing className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Payments</div>
+              </Link href=/payment-processing className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link></div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium ">Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link></div>
+            </nav> </div></div>
+        </div></div>
+      </div>"
+      {/* Hero Section */}"</div>
+      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-32> </div>
+        </div><div className="text-center" mb-12"></div>
+          <h1 className="text-4xl md text-6xlfont-bold text-white mb-6 >"</div>
+            <span className="text-transparent" bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
+              Invoice & Billing</div>
+            </span></div>
+          </h1 ></div>
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>"
             Comprehensive invoice and billing management system for marketplace transactions. "
-            Generate professional invoices, track payments, and manage billing cycles with ease.
-          </p>
-          <div className="flex  flex-wrap justify-center gap-4>
-            <Link href=#invoices className=bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >View Invoices
-            </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link>
-            <Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Create Invoice
-            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-          </div>
-        </div>
+            Generate professional invoices, track payments, and manage billing cycles with ease.</div>
+          </p></div>
+          <div className="flex  flex-wrap justify-center gap-4>"</div>
+            <Link href=#invoices className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg ">View Invoices</div>
+            </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg></Link>"</div>
+            <Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Create Invoice</div>
+            </Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+          </div>"</div>
+        </div>"
 "
-        {/* Stats */}
-        <div className="grid  grid-cols-1 md:grid-cols-4 gap-6 mb-12>
-          </div><div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center>
-            <div className="text-3xl font-bold text-white mb-2>{invoices.length}</div>
-            <p className=text-gray-300" text-sm>Total Invoices</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >
-            </div><div className=text-3xl" font-bold text-white mb-2>{formatCurrency(calculateOutstandingAmount())}</div>
-            <p className="text-gray-300 text-sm>Outstanding Amount</p>
-          </div>
-          <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center>
-            </div><div className="text-3xl font-bold text-white mb-2 >{formatCurrency(calculateTotalPaid())}</div>
-            <p className=text-gray-300" text-sm>Total Paid</p>
-          </div>'
-          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>
-            </div><div className=text-3xl" font-bold text-white mb-2>{invoices.filter(inv => inv.status === 'overd'ue).length}</div>
-            <p className="text-gray-300 text-sm >Overdue Invoices</p>
-          </div>
-        </div>
+        {/* Stats */}</div>
+        <div className="grid  grid-cols-1 md:grid-cols-4 gap-6 mb-12>"</div>
+          </div><div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6" text-center"></div>
+            <div className="text-3xl font-bold text-white mb-2>{invoices.length}</div>"</div>
+            <p className="text-gray-300" text-sm">Total Invoices</p></div>
+          </div></div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center >"</div>
+            </div><div className="text-3xl" font-bold text-white mb-2">{formatCurrency(calculateOutstandingAmount())}</div></div>
+            <p className="text-gray-300 text-sm>Outstanding Amount</p>"</div>
+          </div>"</div>
+          <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6 text-center"></div>
+            </div><div className="text-3xl font-bold text-white mb-2 >{formatCurrency(calculateTotalPaid())}</div>"</div>
+            <p className="text-gray-300" text-sm">Total Paid</p></div>
+          </div>'</div>
+          <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6 text-center>"</div>
+            </div><div className="text-3xl" font-bold text-white mb-2">{invoices.filter(inv => inv.status === 'overd'ue).length}</div></div>
+            <p className="text-gray-300 text-sm >Overdue Invoices</p></div>
+          </div></div>
+        </div></div>
       </div>
-
-      {/* Main Content */}
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12>
-        {/* Tabs */}
-        </div><div className=" flex flex-wrap gap-2 mb-8>
+"
+      {/* Main Content */}"</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12>"
+        {/* Tabs */}"</div>
+        </div><div className=" flex flex-wrap gap-2 mb-8>"
           {["'
             { id: 'invoices', label: 'Invoices' },
 { id: 'billing', label: 'Billing Cycles' },
@@ -252,322 +252,322 @@ const InvoiceBillingPage: NextPage = () => {'
                   : bg-white'/5 text-gray-300 hover:bg-white/10'``
               }`}
             >
-              {tab.label}
+              {tab.label}</div>
             </button>
-          ))}
+          ))}</div>
         </div>
 
         {/* Tab Content */},"
-{activeTab === 'invoic'es && (
-          <div className=space-y-6> 
-            </div><div className="flex justify-between" items-center>
-              <h2 className=text-2xl font-bold text-white>Invoices</h2>
-              <Link href=/marketplace className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Create New Invoice
-              </Link href=/marketplace  className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" ></Link>
-            </div>
+{activeTab === 'invoic'es && (</div>
+          <div className="space-y-6"> </div>
+            </div><div className="flex justify-between" items-center></div>
+              <h2 className="text-2xl font-bold text-white">Invoices</h2></div>
+              <Link href=/marketplace className="bg-gradient-to-r" from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 >Create New Invoice</div>
+              </Link href=/marketplace  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300" "></Link></div>
+            </div></div>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-              {invoices.map((invoice) => (
-                </div><div key={invoice.id} className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300>
-                  <div className="flex" justify-between items-start mb-4 >
-                    </div><div>
-                      <h3 className=text-lg font-semibold text-white>{invoice.invoiceNumber}</h3>
-                      <p className="text-gray-300" text-sm>{invoice.client}</p> `
-                    </div>``
-                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(invoice.status)}`}>
-                      {invoice.status.toUpperCase()}
-                    </span>
+              {invoices.map((invoice) => ("</div>
+                </div><div key={invoice.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6 hover:bg-white/10 transition-all duration-300">"</div>
+                  <div className="flex" justify-between items-start mb-4 ></div>
+                    </div><div></div>
+                      <h3 className="text-lg font-semibold text-white">{invoice.invoiceNumber}</h3></div>
+                      <p className="text-gray-300" text-sm>{invoice.client}</p> `</div>
+                    </div>``</div>
+                    <span className="{`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(invoice.status)}`}">
+                      {invoice.status.toUpperCase()}</div>
+                    </span></div>
                   </div>
-                  
-                  <div className="space-y-3" mb-4 > 
-                    </div><div className=flex justify-between>
-                      <span className="text-gray-300>Amount:</span">
-                      <span className=text-white font-semibold>{formatCurrency(invoice.total)}</span>
+                  </div>
+                  <div className="space-y-3" mb-4 > </div>
+                    </div><div className="flex justify-between"></div>
+                      <span className="text-gray-300>Amount:</span"></div>
+                      <span className="text-white font-semibold">{formatCurrency(invoice.total)}</span></div>
+                    </div></div>
+                    <div className="flex  justify-between"></div>
+                      <span className="text-gray-300">Issue Date </span></div>
+                      <span className="text-white>{invoice.issueDate.toLocaleDateString()}</span"></div>
+                    </div></div>
+                    <div className="flex justify-between"></div>
+                      <span className="text-gray-300>Due" Date:</span></div>
+                      <span className="text-white">{invoice.dueDate.toLocaleDateString()}</span> </div>
                     </div>
-                    <div className="flex  justify-between">
-                      <span className=text-gray-300>Issue Date </span>
-                      <span className="text-white>{invoice.issueDate.toLocaleDateString()}</span">
-                    </div>
-                    <div className=flex justify-between>
-                      <span className="text-gray-300>Due" Date:</span>
-                      <span className=text-white>{invoice.dueDate.toLocaleDateString()}</span> 
-                    </div>
-                    {invoice.paymentMethod && (
-                      <div className="flex" justify-between>
-                        <span className=text-gray-300>Payment Method:</span>
-                        <span className="text-white>{invoice.paymentMethod}</span>"
+                    {invoice.paymentMethod && (</div>
+                      <div className="flex" justify-between></div>
+                        <span className="text-gray-300">Payment Method:</span></div>
+                        <span className="text-white>{invoice.paymentMethod}</span>"</div>
                       </div>
-                    )}
-                  </div> 
-                  <div className= flex gap-2>
+                    )}</div>
+                  </div> </div>
+                  <div className=" flex gap-2"></div>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors> 
-                      View Details
-                    </button>
+                      View Details"</div>
+                    </button>"</div>
                     <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-3 py-4 rounded text-sm:transition-colors>
-                      Download PDF
-                    </button>
-                  </div>
+                      Download PDF</div>
+                    </button></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
-        )}'
-'
-        {activeTab === billi'n'g && ("
-          <div className="space-y-6>
-            <h2 className=text-2xl" font-bold text-white>Billing Cycles</h2>
+        )}'"
+'"
+        {activeTab === billi'n'g && ("</div>
+          <div className="space-y-6>"</div>
+            <h2 className="text-2xl" font-bold text-white">Billing Cycles</h2></div>
             <div className="grid grid-cols-1 md grid-cols-2 gap-6>
-              {billingCycles.map((cycle) => (
-                </div><div key={cycle.id} className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
-                  <div className="flex" justify-between items-start mb-4 >
-                    </div><div>
-                      <h3 className=text-lg font-semibold text-white>{cycle.name}</h3>
-                      <p className="text-gray-300" text-sm capitalize>{cycle.type} Cycle</p> 
-                    </div>
-                    <span className=px-3 py-3 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30>
-                      Active
-                    </span>
+              {billingCycles.map((cycle) => ("</div>
+                </div><div key={cycle.id} className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-6">"</div>
+                  <div className="flex" justify-between items-start mb-4 ></div>
+                    </div><div></div>
+                      <h3 className="text-lg font-semibold text-white">{cycle.name}</h3></div>
+                      <p className="text-gray-300" text-sm capitalize>{cycle.type} Cycle</p> </div>
+                    </div></div>
+                    <span className="px-3 py-3 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
+                      Active</div>
+                    </span></div>
                   </div>
-                  
-                  <div className="space-y-3" mb-4 > 
-                    </div><div className=flex justify-between>
-                      <span className="text-gray-300>Period:</span">
-                      <span className=text-white>
-                        {cycle.startDate.toLocaleDateString()} - {cycle.endDate.toLocaleDateString()}
-                      </span>
-                    </div>
-                    <div className=flex justify-between">
-                      <span className="text-gray-300>Total Invoices </span>
-                      <span className=text-white>{cycle.totalInvoices}</span">
-                    </div>
-                    <div className="flex justify-between>
-                      <span className=text-gray-300>Total" Amount:</span>
-                      <span className="text-white font-semibold>{formatCurrency(cycle.totalAmount)}</span> 
-                    </div>
-                    <div className=flex" justify-between>
-                      <span className="text-gray-300>Paid Amount:</span>
-                      <span className=text-white>{formatCurrency(cycle.paidAmount)}</span>"
-                    </div>
-                    <div className=" flex justify-between>
-                      <span className=text-gray-300>Outstanding:</span">
-                      <span className="text-white>{formatCurrency(cycle.outstandingAmount)}</span>
-                    </div>
                   </div>
-                  <div className="w-full" bg-gray-700 rounded-full h-2 mb-4  >
-                    </div>
-                    ></div>
-                  </div>
-                  <div className= flex gap-2>"
+                  <div className="space-y-3" mb-4 > </div>
+                    </div><div className="flex justify-between"></div>
+                      <span className="text-gray-300>Period:</span"></div>
+                      <span className="text-white">
+                        {cycle.startDate.toLocaleDateString()} - {cycle.endDate.toLocaleDateString()}</div>
+                      </span></div>
+                    </div></div>
+                    <div className="flex justify-between""></div>
+                      <span className="text-gray-300>Total Invoices </span>"</div>
+                      <span className="text-white">{cycle.totalInvoices}</span"></div>
+                    </div></div>
+                    <div className="flex justify-between>"</div>
+                      <span className="text-gray-300">Total" Amount:</span></div>
+                      <span className="text-white font-semibold>{formatCurrency(cycle.totalAmount)}</span> "</div>
+                    </div>"</div>
+                    <div className="flex" justify-between"></div>
+                      <span className="text-gray-300>Paid Amount:</span>"</div>
+                      <span className="text-white">{formatCurrency(cycle.paidAmount)}</span>"</div>
+                    </div></div>
+                    <div className=" flex justify-between>"</div>
+                      <span className="text-gray-300">Outstanding:</span"></div>
+                      <span className="text-white>{formatCurrency(cycle.outstandingAmount)}</span></div>
+                    </div>"</div>
+                  </div>"</div>
+                  <div className="w-full" bg-gray-700 rounded-full h-2 mb-4  ></div>
+                    </div></div>
+                    ></div></div>
+                  </div></div>
+                  <div className=" flex gap-2">"</div>
                     <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm:transition-colors>
-                      View Details
-                    </button>
-                    <button className=flex-1" bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-3 py-4 rounded text-sm transition-colors >
-                      Generate Report
-                    </button>
-                  </div>
+                      View Details"</div>
+                    </button>"</div>
+                    <button className="flex-1" bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-3 py-4 rounded text-sm transition-colors ">
+                      Generate Report</div>
+                    </button></div>
+                  </div></div>
                 </div>
-              ))}
-            </div>
+              ))}</div>
+            </div></div>
           </div>
         )}"
 ''
-        {activeTab === payment's' && (
-          <div className=space-y-6">
-            <h2 className="text-2xl font-bold text-white>Payment History</h2>
-            <div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:overflow-hidden> 
-              </div><div className="overflow-x-auto>
-                <table className="w-full">
-                  <thead className=bg-white/10>
-                    <tr>
-                      <th className="text-left" text-gray-300 py-3 px-6>Payment ID</th>
-                      <th className=text-left text-gray-300 py-3 px-6>Invoice</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Amount</th> 
-                      <th className=text-left text-gray-300 py-3 px-6>Method</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Date</th>
-                      <th className=text-left text-gray-300 py-3 px-6 >Status</th>
-                      <th className="text-left" text-gray-300 py-3 px-6>Actions</th>
-                    </tr> 
-                  </thead>
-                  <tbody className=divide-y divide-white/10>
-                    {payments.map((payment) => (
-                      <tr key={payment.id} className="hover:bg-white/5>"
-                        <td className=text-white py-3 px-6 >{payment.id}</td>
-                        <td className="text-white" py-3 px-6>{payment.invoiceId}</td> 
-                        <td className=text-white py-3 px-6>{formatCurrency(payment.amount)}</td>
-                        <td className="text-white" py-3 px-6>{payment.method}</td>
-                        <td className=text-white py-3 px-6 >{payment.date.toLocaleDateString()}</td>`
-                        <td className="py-3" px-6>``
+        {activeTab === payment's' && (</div>
+          <div className="space-y-6""></div>
+            <h2 className="text-2xl font-bold text-white>Payment History</h2>"</div>
+            <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:overflow-hidden"> </div>
+              </div><div className="overflow-x-auto>"</div>
+                <table className="w-full"></div>
+                  <thead className="bg-white/10"></div>
+                    <tr></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Payment ID</th></div>
+                      <th className="text-left text-gray-300 py-3 px-6">Invoice</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Amount</th> </div>
+                      <th className="text-left text-gray-300 py-3 px-6">Method</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Date</th></div>
+                      <th className="text-left text-gray-300 py-3 px-6 ">Status</th></div>
+                      <th className="text-left" text-gray-300 py-3 px-6>Actions</th></div>
+                    </tr> </div>
+                  </thead></div>
+                  <tbody className="divide-y divide-white/10">
+                    {payments.map((payment) => (</div>
+                      <tr key={payment.id} className="hover:bg-white/5>"</div>
+                        <td className="text-white py-3 px-6 ">{payment.id}</td></div>
+                        <td className="text-white" py-3 px-6>{payment.invoiceId}</td> </div>
+                        <td className="text-white py-3 px-6">{formatCurrency(payment.amount)}</td></div>
+                        <td className="text-white" py-3 px-6>{payment.method}</td></div>
+                        <td className="text-white py-3 px-6 ">{payment.date.toLocaleDateString()}</td>`</div>
+                        <td className="py-3" px-6>``</div>
                           <span className="{`px-3" py-3 rounded-full text-xs font-medium border  ${getPaymentStatusColor(payment.status)}`}>
-                            {payment.status.toUpperCase()}
-                          </span>
-                        </td>
-                        <td className=text-white py-3 px-6>
+                            {payment.status.toUpperCase()}</div>
+                          </span></div>
+                        </td></div>
+                        <td className="text-white py-3 px-6"></div>
                           <button className="text-green-400" hover text-green-300 text-sm >
-                            View Details
-                          </button>
-                        </td>
+                            View Details</div>
+                          </button></div>
+                        </td></div>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                    ))}</div>
+                  </tbody></div>
+                </table></div>
+              </div></div>
+            </div></div>
           </div>
         )}
 '
-        {activeTab === 'reports' && (
-          <div className="space-y-8">
-            <h2 className=text-2xl font-bold text-white>Financial Reports</h2>
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> 
-              </div><div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>
-                <h3 className="text-lg" font-semibold text-white mb-4>Revenue Summary</h3>
-                <div className=space-y-3>
-                  </div><div className=" flex" justify-between>
-                    <span className=text-gray-300>Total Revenue:</span>
-                    <span className="text-white" font-semibold>{formatCurrency(calculateTotalPaid())}</span> 
-                  </div>
-                  <div className=flex justify-between>
-                    <span className="text-gray-300>This" Month:</span>
-                    <span className=text-white>{formatCurrency(12000)}</span>
-                  </div>
-                  <div className=" flex" justify-between>
-                    <span className= text-gray-300>Last Month:</span>
-                    <span className=text-white>{formatCurrency(9800)}</span>"
-                  </div>
-                </div>
+        {activeTab === 'reports' && (</div>
+          <div className="space-y-8"></div>
+            <h2 className="text-2xl font-bold text-white">Financial Reports</h2></div>
+            <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6> </div>
+              </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6"></div>
+                <h3 className="text-lg" font-semibold text-white mb-4>Revenue Summary</h3></div>
+                <div className="space-y-3"></div>
+                  </div><div className=" flex" justify-between></div>
+                    <span className="text-gray-300">Total Revenue:</span></div>
+                    <span className="text-white" font-semibold>{formatCurrency(calculateTotalPaid())}</span> </div>
+                  </div></div>
+                  <div className="flex justify-between"></div>
+                    <span className="text-gray-300>This" Month:</span></div>
+                    <span className="text-white">{formatCurrency(12000)}</span></div>
+                  </div></div>
+                  <div className=" flex" justify-between></div>
+                    <span className=" text-gray-300">Last Month:</span></div>
+                    <span className="text-white">{formatCurrency(9800)}</span>"</div>
+                  </div></div>
+                </div></div>
                 <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors  >
-                  Download Report
-                </button>
-              </div>
-              <div className= bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6>
-                <h3 className="text-lg font-semibold text-white mb-4>Payment Methods</h3>
-                <div className=space-y-3>" 
-                  </div><div className="flex justify-between>
-                    <span className=text-gray-300>Credit" Card </span>
-                    <span className="text-white>65%</span>
-                  </div>
-                  <div className=flex" justify-between>
-                    <span className="text-gray-300>Bank Transfer:</span>
-                    <span className=text-white>25%</span>" 
-                  </div>
-                  <div className="flex justify-between>
-                    <span className=text-gray-300>Digital" Wallet:</span>
-                    <span className="text-white>10%</span>
-                  </div>
-                </div>
-                <button className=w-full" mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors>
-                  View Details
-                </button>
-              </div>
-              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>
-                <h3 className=text-lg" font-semibold text-white mb-4>Outstanding Invoices</h3>
-                <div className="space-y-3> 
-                  </div><div className=flex" justify-between>
-                    <span className=" text-gray-300>Total Outstanding:</span>
-                    <span className=text-white font-semibold>{formatCurrency(calculateOutstandingAmount())}</span> 
-                  </div>
-                  <div className="flex" justify-between>
-                    <span className="text-gray-300>Overdue" </span>
-                    <span className=text-red-400>{formatCurrency(1980)}</span>
-                  </div>
-                  <div className="flex" justify-between>
-                    <span className=text-gray-300>Due This Week:</span>
-                    <span className="text-yellow-400>{formatCurrency(3520)}</span>"
-                  </div>
-                </div>
-                <button className=w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors>
-                  Send Reminders
-                </button>
-              </div> 
-            </div>
-            <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6>
-              <h3 className=text-lg" font-semibold text-white mb-4 >Quick Actions</h3>
-              <div className="grid grid-cols-1 md grid-cols-4 gap-4>
+                  Download Report</div>
+                </button>"</div>
+              </div>"</div>
+              <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg" p-6"></div>
+                <h3 className="text-lg font-semibold text-white mb-4>Payment Methods</h3>"</div>
+                <div className="space-y-3">" </div>
+                  </div><div className="flex justify-between>"</div>
+                    <span className="text-gray-300">Credit" Card </span></div>
+                    <span className="text-white>65%</span>"</div>
+                  </div>"</div>
+                  <div className="flex" justify-between"></div>
+                    <span className="text-gray-300>Bank Transfer:</span>"</div>
+                    <span className="text-white">25%</span>" </div>
+                  </div></div>
+                  <div className="flex justify-between>"</div>
+                    <span className="text-gray-300">Digital" Wallet:</span></div>
+                    <span className="text-white>10%</span></div>
+                  </div>"</div>
+                </div>"</div>
+                <button className="w-full" mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors">
+                  View Details</div>
+                </button></div>
+              </div></div>
+              <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-6>"</div>
+                <h3 className="text-lg" font-semibold text-white mb-4">Outstanding Invoices</h3></div>
+                <div className="space-y-3> "</div>
+                  </div><div className="flex" justify-between"></div>
+                    <span className=" text-gray-300>Total Outstanding:</span>"</div>
+                    <span className="text-white font-semibold">{formatCurrency(calculateOutstandingAmount())}</span> </div>
+                  </div>"</div>
+                  <div className="flex" justify-between></div>
+                    <span className="text-gray-300>Overdue" </span></div>
+                    <span className="text-red-400">{formatCurrency(1980)}</span></div>
+                  </div></div>
+                  <div className="flex" justify-between></div>
+                    <span className="text-gray-300">Due This Week:</span></div>
+                    <span className="text-yellow-400>{formatCurrency(3520)}</span>"</div>
+                  </div></div>
+                </div></div>
+                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors">
+                  Send Reminders</div>
+                </button></div>
+              </div> </div>
+            </div></div>
+            <div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-6></div>
+              <h3 className="text-lg" font-semibold text-white mb-4 ">Quick Actions</h3></div>
+              <div className="grid grid-cols-1 md grid-cols-4 gap-4>"</div>
                 <button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-3 rounded-lg text-sm transition-colors> 
-                  Generate Invoice
-                </button>
+                  Generate Invoice"</div>
+                </button>"</div>
                 <button className="bg-white/10 text-white hover:bg-white/20 px-4 py-3 rounded-lg:text-sm:transition-colors>
-                  Send Reminders
-                </button>
-                <button className=bg-white/10" text-white hover bg-white/20 px-4 py-3 rounded-lg text-sm transition-colors >
-                  Export Data
-                </button>
+                  Send Reminders"</div>
+                </button>"</div>
+                <button className="bg-white/10" text-white hover bg-white/20 px-4 py-3 rounded-lg text-sm transition-colors ">
+                  Export Data</div>
+                </button></div>
                 <button className="bg-white/10 text-white hover bg-white/20 px-4 py-3 rounded-lg text-sm transition-colors>
-                  Generate Report
-                </button>
-              </div>
-            </div>
+                  Generate Report</div>
+                </button></div>
+              </div></div>
+            </div></div>
           </div>
-        )}
-      </div> 
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r" from-green-900/50 to-emerald-900/50 border-t border-white/10> 
-        </div><div className=max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
-          <div className="text-center>
-            <h2 className=text-3xl" font-bold text-white mb-4>
-              Streamline Your Billing
-            </h2>
+        )}</div>
+      </div> "
+      {/* CTA Section */}"</div>
+      <div className="bg-gradient-to-r" from-green-900/50 to-emerald-900/50 border-t border-white/10> </div>
+        </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32"></div>
+          <div className="text-center>"</div>
+            <h2 className="text-3xl" font-bold text-white mb-4">
+              Streamline Your Billing</div>
+            </h2></div>
             <p className="text-xl text-gray-300 mb-8>
               Professional invoice generation, automated payment tracking, and comprehensive financial reporting  
-              to help you manage your marketplace transactions efficiently.
-            </p>
-            <div className=flex  flex-wrap justify-center gap-4>
-              <Link href=#invoices" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started
-              </Link href=#invoices  className=bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg"></Link>
-              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Explore Marketplace
-              </Link href=/marketplace className=border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div> </div>
-        </div>
+              to help you manage your marketplace transactions efficiently.</div>
+            </p>"</div>
+            <div className="flex  flex-wrap justify-center gap-4">"</div>
+              <Link href=#invoices" className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg >Get Started"</div>
+              </Link href=#invoices  className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg""></Link></div>
+              <Link href=/marketplace className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Explore Marketplace"</div>
+              </Link href=/marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm "></Link></div>
+            </div> </div></div>
+        </div></div>
       </div>
-      {/* Footer */}
-      <footer className="bg-black/20  border-t border-white/10>
-        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8> 
-          </div><div className=grid grid-cols-1 md grid-cols-4 gap-8>
-            <div>
-              <h3 className="text-lg" font-semibold text-white mb-4>Zion Marketplace</h3>
-              <p className=text-gray-300 text-sm >
-                The first free AI-powered marketplace for high-tech products, services, and innovation.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white" font-semibold mb-4>Financial</h4>
-              <ul className=space-y-2" text-sm>
-                <li><Link href=/invoice-billing" className=text-gray-400 hover text-white transition-colors >Invoice & Billing</Link href=/invoice-billing  className="text-gray-400" hover text-white transition-colors ></Link></li>
-                <li><Link href=/payment-processing className=text-gray-400" hover text-white transition-colors >Payment Processing</Link href=/payment-processing className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/escrow-services" className="text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services  className=text-gray-400" hover text-white transition-colors" ></Link></li>
-                <li><Link href=/warranty-protection className=text-gray-400 hover text-white transition-colors >Warranty Protection</Link href=/warranty-protection className="text-gray-400" hover text-white transition-colors ></Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className=text-white" font-semibold mb-4>Support</h4>
-              <ul className="space-y-2 text-sm>
-                <li><Link href=/contact className="text-gray-400" hover text-white transition-colors >Contact Us</Link href=/contact className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/real-time-chat" className=text-gray-400 hover text-white transition-colors >Live Chat</Link href=/real-time-chat  className="text-gray-400" hover text-white transition-colors ></Link></li>
-                <li><Link href=/notifications className=text-gray-400" hover text-white transition-colors >Notifications</Link href=/notifications className="text-gray-400 hover text-white transition-colors ></Link></li>
-                <li><Link href=/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className=text-gray-400" hover text-white transition-colors ></Link></li> </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4>Connect</h4>
-              <ul className=space-y-2"  text-sm>
-                <li><Link href=/about className="text-gray-400 hover text-white transition-colors >About Us</Link href=/about className="text-gray-400 hover text-white transition-colors"></Link></li>
-                <li><Link href=/blog className=text-gray-400 hover text-white transition-colors >Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors ></Link></li>
-                <li><Link href=/auth/signup className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className=text-gray-400 hover text-white transition-colors" ></Link></li>
-                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className=text-gray-400" hover text-white transition-colors" ></Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className=border-t  border-white/10 mt-8 pt-8 text-center>
+      {/* Footer */}</div>
+      <footer className="bg-black/20  border-t border-white/10>"</div>
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8> </div>
+          </div><div className="grid grid-cols-1 md grid-cols-4 gap-8"></div>
+            <div></div>
+              <h3 className="text-lg" font-semibold text-white mb-4>Zion Marketplace</h3></div>
+              <p className="text-gray-300 text-sm ">
+                The first free AI-powered marketplace for high-tech products, services, and innovation.</div>
+              </p></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white" font-semibold mb-4>Financial</h4></div>
+              <ul className="space-y-2" text-sm"></div>
+                <li><Link href=/invoice-billing" className="text-gray-400 hover text-white transition-colors ">Invoice & Billing</Link href=/invoice-billing  className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/payment-processing className="text-gray-400" hover text-white transition-colors ">Payment Processing</Link href=/payment-processing className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/escrow-services" className="text-gray-400 hover text-white transition-colors >Escrow Services</Link href=/escrow-services  className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/warranty-protection className="text-gray-400 hover text-white transition-colors ">Warranty Protection</Link href=/warranty-protection className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+              </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white" font-semibold mb-4">Support</h4></div>
+              <ul className="space-y-2 text-sm>"</div>
+                <li><Link href=/contact className="text-gray-400" hover text-white transition-colors >Contact Us</Link href=/contact className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/real-time-chat" className="text-gray-400 hover text-white transition-colors ">Live Chat</Link href=/real-time-chat  className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/notifications className="text-gray-400" hover text-white transition-colors ">Notifications</Link href=/notifications className="text-gray-400 hover text-white transition-colors ></Link></li>"</div>
+                <li><Link href=/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors >Legal Support</Link href=/ai-powered-contract-legal  className="text-gray-400" hover text-white transition-colors "></Link></li> </ul></div>
+            </div></div>
+            <div></div>
+              <h4 className="text-white font-semibold mb-4>Connect</h4>"</div>
+              <ul className="space-y-2"  text-sm"></div>
+                <li><Link href=/about className="text-gray-400 hover text-white transition-colors >About Us</Link href=/about className="text-gray-400 hover text-white transition-colors"></Link></li></div>
+                <li><Link href=/blog className="text-gray-400 hover text-white transition-colors ">Blog</Link href=/blog className="text-gray-400" hover text-white transition-colors ></Link></li></div>
+                <li><Link href=/auth/signup className="text-gray-400" hover text-white transition-colors >Sign Up</Link href=/auth/signup  className="text-gray-400 hover text-white transition-colors" "></Link></li></div>
+                <li><Link href=/auth/login className="text-gray-400 hover text-white transition-colors >Login</Link href=/auth/login className="text-gray-400" hover text-white transition-colors" "></Link></li></div>
+              </ul></div>
+            </div></div>
+          </div></div>
+          <div className="border-t  border-white/10 mt-8 pt-8 text-center"></div>
             <p className="text-gray-400" text-sm>
-              © 2024 Zion Tech Group. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+              © 2024 Zion Tech Group. All rights reserved.</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
-  
   </div>
-
-  </div >
+  </div>
+</div>
+  </div ></div>
   </div> ;
 };
-'`
-export default InvoiceBillingPage ))))))))))))""'`
+'`;}
+export default InvoiceBillingPage ))))))))))))""'`</div>

@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
 interface VRExperience {
@@ -74,17 +74,17 @@ interface VRAnalytics {
   target: number;
   improvement: number;
   trend: 'u'p' | dow'n' | stab'l'e";
-  period: string;}
+  period: string;};
 const AIPoweredVirtualRealityPage: NextPage = () => {
   ;
-  const [experiences, setExperiences] = useState<VRExperience[]>([]);
-  const [sessions, setSessions] = useState<VRSession[]>([]);
-  const [automations, setAutomations] = useState<VRAutomation[]>([]);
-  const [analytics, setAnalytics] = useState<VRAnalytics[]>([]);
-  const [selectedView, setSelectedView] = useState<''overview' | 'experiences' | 'session's' | automatio'n's | analyti'c's>(overvi'e'w);
-  const [filterType, setFilterType] = useState<string>(a'l'l);
+  const [experiences, setExperiences] = useState<VRExperience[]>([]);</div>
+  const [sessions, setSessions] = useState<VRSession[]>([]);</div>
+  const [automations, setAutomations] = useState<VRAutomation[]>([]);</div>
+  const [analytics, setAnalytics] = useState<VRAnalytics[]>([]);</div>
+  const [selectedView, setSelectedView] = useState<''overview' | 'experiences' | 'session's' | automatio'n's | analyti'c's>(overvi'e'w);</div>
+  const [filterType, setFilterType] = useState<string>(a'l'l);</div>
   const [filterStatus, setFilterStatus] = useState<string>(a'l'l);
-  const [searchTerm, setSearchTerm] = useState(');
+  const [searchTerm, setSearchTerm] = useState(');</div>
   const [sortBy, setSortBy] = useState<'rece'n't | use'r's | performa'n'ce' | 'status'>('recent');
   const [loading, setLoading] = useState(true);
 
@@ -538,67 +538,67 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
   };
 
   if (loading) {
-    return (
-    <div>
-      </div><div className= relative z-10 container-responsive py-8> 
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0> 
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
+    return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8"> 
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
         </div>
-      
-        <div className=text-center> 
-          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg>
-            <svg className=animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill="none" viewBox=0 0 24 24">
-              <circle className=" opacity-25 cx=12 cy=12 r= 10 stroke="currentColor strokeWidth=4></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
-            </svg>
-            <span className=text-lg" font-medium>Loading AI-Powered Virtual Reality...</span>
-          </div >
-        </div>
+      </div>
+        <div className="text-center"> </div>
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300" shadow-lg></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg fill="none" viewBox=0 0 24 24""></div>
+              <circle className=" opacity-25 cx=12 cy=12 r= 10 stroke="currentColor strokeWidth=4></circle></div>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>"</div>
+            </svg>"</div>
+            <span className="text-lg" font-medium">Loading AI-Powered Virtual Reality...</span></div>
+          </div ></div>
+        </div></div>
       </div>"
     );}
 
-  return (
-    <div className="relative" z-10 container-responsive py-8>
-      <Head> 
-        <title>AI-Powered Virtual Reality - Zion</title>
+  return (</div>
+    <div className="relative" z-10 container-responsive py-8></div>
+      <Head> </div>
+        <title>AI-Powered Virtual Reality - Zion</title></div>
         <meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR optimization > </meta name=description content=Intelligent VR experiences, immersive environments, virtual worlds, and AI-driven VR" optimization" ><meta name=keywords content=AI VR, virtual reality, immersive environments, virtual worlds, Zion > </meta name="keywords" content=AI VR, virtual reality, immersive environments, virtual worlds, Zion" ><link rel="icon href=/favicon.ico > </link rel=icon" href="/favicon.ico ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
-      {/* Navigation */}"
-      <nav className= bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
-          </div><div className="flex  justify-between h-16>
-            <div className=flex items-center>
-              <Link href=/ className="flex-shrink-0"> </Link href=/  className=flex-shrink-0><h1 className="text-2xl font-bold" text-white>
-                  <span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-                </h1>
-              </Link>
-            </div>
-            <div className="hidden md flex items-center space-x-8">
-              <Link href=/ai-powered-augmented-reality className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AR
-              </Link href= /ai-powered-augmented-reality className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors"></Link>
-              <Link href=/ai-powered-robotics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Robotics
-              </Link href=/ai-powered-robotics className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" ></Link>
-              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
-              </Link href=/auth/login  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
-          </div>
-        </div>
-      </nav>
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
-        {/* Header */}
-        </div><div className="text-center" mb-8>
-          <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
-            AI-Powered Virtual Reality
-          </h1>
+      {/* Navigation */}"</div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50"></div>
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"</div>
+          </div><div className="flex  justify-between h-16>"</div>
+            <div className="flex items-center">"</div>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold" text-white></div>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span></div>
+                </h1></div>
+              </Link></div>
+            </div></div>
+            <div className="hidden md flex items-center space-x-8"></div>
+              <Link href=/ai-powered-augmented-reality className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >AR</div>
+              </Link href= /ai-powered-augmented-reality className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors""></Link></div>
+              <Link href=/ai-powered-robotics className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Robotics"</div>
+              </Link href=/ai-powered-robotics className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors" "></Link></div>
+              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Login</div>
+              </Link href=/auth/login  className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div></div>
+          </div></div>
+        </div></div>
+      </nav></div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        {/* Header */}</div>
+        </div><div className="text-center" mb-8></div>
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4 ">
+            AI-Powered Virtual Reality</div>
+          </h1></div>
           <p className="text-xl" text-gray-300 max-w-3xl mx-auto>
             Intelligent VR experiences, immersive environments, virtual worlds, 
-            and AI-driven VR optimization with advanced VR capabilities.
-          </p>
+            and AI-driven VR optimization with advanced VR capabilities.</div>
+          </p></div>
         </div>
  
-        {/* Tab Selector */}
-        <div className=flex" justify-center mb-8> 
+        {/* Tab Selector */}</div>
+        <div className="flex" justify-center mb-8"> </div>
           </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>'
             {[
               { id: overvie'w', name: Overvie'w', icon: 📊 },
@@ -606,326 +606,326 @@ const AIPoweredVirtualRealityPage: NextPage = () => {
     { id: session's', name: Session's', icon: 🎮 },
 { id: 'automatio'ns, name: 'Automatio'ns, icon: '🔗' },
     { id: analytic's', name: Analytic's', icon: 📈}
-            ].map((tab) => (
-                onClick={() => setSelectedView(tab.id as any)}
+            ].map((tab) => ("
+                onClick={() => setSelectedView(tab.id as any)}"
                 className={`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${'
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'`
                     : 'text-gray-300 hover:text-white hover:bg-white/10'``
                 }`}
-              >
-                <span>{tab.icon}</span>
-                <span>{tab.name}</span>
+              ></div>
+                <span>{tab.icon}</span></div>
+                <span>{tab.name}</span></div>
               </button>
-            ))}
-          </div>
+            ))}</div>
+          </div></div>
         </div>
 "'
         {/* Analytics Overview */},
-{selectedView === overvie'w' && (
-          <div className= grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => (
-              </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
-                <div className=flex items-center justify-between mb-4>
-                  <h3 className="text-lg" font-semibold text-white >{metric.metric}</h3>
-                  <span className=text-2xl>{getTrendIcon(metric.trend)}</span>
+{selectedView === overvie'w' && (</div>
+          <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
+            {analytics.map((metric) => (</div>
+              </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
+                <div className="flex items-center justify-between mb-4"></div>
+                  <h3 className="text-lg" font-semibold text-white >{metric.metric}</h3></div>
+                  <span className="text-2xl">{getTrendIcon(metric.trend)}</span></div>
+                </div></div>
+                <div className=" mb-4>"</div>
+                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"</div>
+                  <p className="text-sm:text-gray-400">Target:" {metric.target}</p></div>
                 </div>
-                <div className=" mb-4>
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>
-                  <p className=text-sm:text-gray-400>Target:" {metric.target}</p>
-                </div>
-                 `
-                <div className="flex items-center justify-between text-sm>'``
-                  <span className={`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                 `</div>
+                <div className="flex items-center justify-between text-sm>'``"</div>
+                  <span className="{`${metric.improvement "> 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.improvement > 0 ? '+   '}, 
-{metric.improvement.toFixed(1)}%
-                  </span>
-                  <span className="text-gray-400>{metric.period}</span>"
-                </div>
+{metric.improvement.toFixed(1)}%</div>
+                  </span>"</div>
+                  <span className="text-gray-400>{metric.period}</span>"</div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}
         {/* VR Experiences */},
-{selectedView === 'experiences' && (
-          <div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 > 
-            {filteredExperiences.map((experience) => (
-              </div><div key={experience.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
-                <div className= flex items-start justify-between mb-4>
-                  </div><div className="flex" items-center space-x-3>
-                    <div className=text-3xl>{getTypeIcon(experience.type)}</div>
-                    <div>'
-                      <h3 className="text-lg" font-semibold text-white mb-1>{experience.name}</h3>
-                      <p className=text-gray-300 text-sm capitalize>{experience.type.replace(-, ' ')}</p>
-                    </div> 
-                  </div>`
-                  <div className="text-right">``
-                    <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(experience.status)}`}>
-                      {experience.status.toUpperCase()} 
-                    </span>`
-                    <div className="mt-2>'``
-                      <span className={`px-4 py-3 rounded text-xs font-medium ${experience.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {experience.aiEnabled ? 'AI ENABLED'   'AI DISABLED'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="mb-4>" 
-                  </div><div className=flex items-center justify-between mb-2>
-                    <span className="text-sm:text-gray-400>Location" </span>
-                    <span className=text-sm text-white>{experience.location}</span>
-                  </div>
-                  <div className="flex items-center justify-between" mb-2>
-                    <span className=text-sm:text-gray-400>Users:</span>
+{selectedView === 'experiences' && (</div>
+          <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 "> 
+            {filteredExperiences.map((experience) => (</div>
+              </div><div key={experience.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"</div>
+                <div className=" flex items-start justify-between mb-4">"</div>
+                  </div><div className="flex" items-center space-x-3></div>
+                    <div className="text-3xl">{getTypeIcon(experience.type)}</div></div>
+                    <div>'</div>
+                      <h3 className="text-lg" font-semibold text-white mb-1>{experience.name}</h3></div>
+                      <p className="text-gray-300 text-sm capitalize">{experience.type.replace(-, ' ')}</p></div>
+                    </div> </div>
+                  </div>`</div>
+                  <div className="text-right">``</div>
+                    <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(experience.status)}`}">
+                      {experience.status.toUpperCase()} </div>
+                    </span>`</div>
+                    <div className="mt-2>'``"</div>
+                      <span className="{`px-4 py-3 rounded text-xs font-medium ${experience.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}">
+                        {experience.aiEnabled ? 'AI ENABLED'   'AI DISABLED'}</div>
+                      </span></div>
+                    </div></div>
+                  </div></div>
+                </div>"</div>
+                <div className="mb-4>" </div>
+                  </div><div className="flex items-center justify-between mb-2"></div>
+                    <span className="text-sm:text-gray-400>Location" </span></div>
+                    <span className="text-sm text-white">{experience.location}</span></div>
+                  </div></div>
+                  <div className="flex items-center justify-between" mb-2></div>
+                    <span className="text-sm:text-gray-400">Users:</span></div>
                     <span className="text-sm" font-semibold text-purple-400>
-                      {experience.userCount.toLocaleString()}
-                    </span>
-                  </div>
-                </div>
-                <div className=grid grid-cols-2 gap-4 mb-4> 
-                  </div><div>`
-                    <p className="text-sm:text-gray-400>Frame" Rate</p>``
-                    <p className={`text-lg font-semibold ${getPerformanceColor(experience.performance.frameRate)}`}>
-                      {experience.performance.frameRate} FPS
-                    </p>
-                  </div>
-                  <div>`
-                    <p className="text-sm" text-gray-400>Latency</p>``
-                    <p className={`text-lg font-semibold ${getPerformanceColor(100 - experience.performance.latency)}`}>
-                      {experience.performance.latency}ms
-                    </p>
-                  </div>
-                  <div>`
-                    <p className="text-sm:text-gray-400>Immersion</p>``"
-                    <p className={`text-lg font-semibold ${getPerformanceColor(experience.performance.immersion)}`}>
-                      {experience.performance.immersion}%
-                    </p>
-                  </div>
-                  <div>`
-                    <p className="text-sm" text-gray-400>Satisfaction</p>``
-                    <p className={`text-lg font-semibold ${getPerformanceColor(experience.performance.userSatisfaction)}`}>
-                      {experience.performance.userSatisfaction}%
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <p className=text-sm text-gray-400 mb-2 >Features:</p>
-                  <div className="space-y-1>
-                    {experience.features.map((feature, index) => ('
-                      </div><div key={index} className=" flex items-center justify-between text-xs>'`
-                        <span className=text-gray-300>{feature.type.replace('_,"  ')}</span>``
+                      {experience.userCount.toLocaleString()}</div>
+                    </span></div>
+                  </div></div>
+                </div></div>
+                <div className="grid grid-cols-2 gap-4 mb-4"> </div>
+                  </div><div>`</div>
+                    <p className="text-sm:text-gray-400>Frame" Rate</p>``</div>
+                    <p className="{`text-lg font-semibold ${getPerformanceColor(experience.performance.frameRate)}`}">
+                      {experience.performance.frameRate} FPS</div>
+                    </p></div>
+                  </div></div>
+                  <div>`</div>
+                    <p className="text-sm" text-gray-400>Latency</p>``</div>
+                    <p className="{`text-lg font-semibold ${getPerformanceColor(100 - experience.performance.latency)}`}">
+                      {experience.performance.latency}ms</div>
+                    </p></div>
+                  </div></div>
+                  <div>`</div>
+                    <p className="text-sm:text-gray-400>Immersion</p>``"</div>
+                    <p className="{`text-lg font-semibold ${getPerformanceColor(experience.performance.immersion)}`}">
+                      {experience.performance.immersion}%</div>
+                    </p></div>
+                  </div></div>
+                  <div>`</div>
+                    <p className="text-sm" text-gray-400>Satisfaction</p>``</div>
+                    <p className="{`text-lg font-semibold ${getPerformanceColor(experience.performance.userSatisfaction)}`}">
+                      {experience.performance.userSatisfaction}%</div>
+                    </p></div>
+                  </div></div>
+                </div></div>
+                <div className="mb-4"></div>
+                  <p className="text-sm text-gray-400 mb-2 ">Features:</p></div>
+                  <div className="space-y-1>"
+                    {experience.features.map((feature, index) => ('"</div>
+                      </div><div key={index} className=" flex items-center justify-between text-xs>'`"</div>
+                        <span className="text-gray-300">{feature.type.replace('_,"  ')}</span>``</div>
                         <span className="{`px-4 py-3 rounded text-xs ${feature.status === 'active' ? 'text-green-400 bg-green-500/20' : feature.status === 'error' ? 'text-red-400 bg-red-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
-                          {feature.status}
-                        </span>
+                          {feature.status}</div>
+                        </span></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-'
-                <div className=flex" items-center justify-between text-sm:text-gray-400 mb-4>
-                  <span>Auto-Optimize  {experience.autoOptimize ? ✅   '❌'}</span>
-                  <span>Last Updated  {experience.lastUpdated.toLocaleString()}</span>
-                </div>
-                <div className=" flex space-x-3>
+                    ))}</div>
+                  </div></div>
+                </div>"
+'"</div>
+                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4"></div>
+                  <span>Auto-Optimize  {experience.autoOptimize ? ✅   '❌'}</span></div>
+                  <span>Last Updated  {experience.lastUpdated.toLocaleString()}</span></div>
+                </div></div>
+                <div className=" flex space-x-3>"</div>
                   <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
-                    Launch Experience
-                  </button>
-                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
-                    Configure
-                  </button>
-                </div>
+                    Launch Experience</div>
+                  </button></div>
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm ">
+                    Configure</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}"
         {/* VR Sessions */},
-{selectedView === sessio'n's && ("
-          <div className= space-y-6>
-            {sessions.map((session) => (
-              </div><div key={session.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
-                <div className="flex items-start justify-between mb-4> 
-                  </div><div className=flex items-center space-x-3 >
-                    <div className="text-3xl>{getSessionTypeIcon(session.sessionType)}</div>" 
-                    <div>
-                      <h3 className=text-lg font-semibold text-white mb-1>{session.sessionType.toUpperCase()}</h3>
-                      <p className="text-gray-300" text-sm>Experience ID: {session.experienceId}</p>
-                    </div>
-                  </div>`
-                  <div className=text-right >``
-                    <span className={`px-3" py-3 rounded-full text-xs font-medium ${getSessionStatusColor(session.status)}`}>
-                      {session.status.toUpperCase()}
-                    </span>'`
-                    <div className="mt-2>``
-                      <span className={`px-4" py-3 rounded text-xs font-medium ${session.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {session.aiAssisted ? 'AI ASSISTED'   'MANUAL'}
-                      </span>
-                    </div>
-                  </div>
+{selectedView === sessio'n's && ("</div>
+          <div className=" space-y-6">
+            {sessions.map((session) => (</div>
+              </div><div key={session.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6"></div>
+                <div className="flex items-start justify-between mb-4> "</div>
+                  </div><div className="flex items-center space-x-3 ">"</div>
+                    <div className="text-3xl>{getSessionTypeIcon(session.sessionType)}</div>" </div>
+                    <div></div>
+                      <h3 className="text-lg font-semibold text-white mb-1">{session.sessionType.toUpperCase()}</h3></div>
+                      <p className="text-gray-300" text-sm>Experience ID: {session.experienceId}</p></div>
+                    </div></div>
+                  </div>`</div>
+                  <div className="text-right ">``</div>
+                    <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getSessionStatusColor(session.status)}`}">
+                      {session.status.toUpperCase()}</div>
+                    </span>'`</div>
+                    <div className="mt-2>``"</div>
+                      <span className="{`px-4" py-3 rounded text-xs font-medium ${session.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}">
+                        {session.aiAssisted ? 'AI ASSISTED'   'MANUAL'}</div>
+                      </span></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4>"</div>
+                  </div><div>"</div>
+                    <p className="text-sm" text-gray-400">Target</p></div>
+                    <p className="text-lg font-semibold text-white>{session.parameters.target}</p></div>
+                  </div>"</div>
+                  <div>"</div>
+                    <p className="text-sm:text-gray-400">Quality</p>"</div>
+                    <p className="text-lg font-semibold text-green-400 >{session.parameters.quality}%</p></div>
+                  </div>"</div>
+                  <div>"</div>
+                    <p className="text-sm" text-gray-400">Immersion</p></div>
+                    <p className="text-lg font-semibold text-blue-400>{session.parameters.immersion}%</p></div>
+                  </div>"</div>
+                  <div>'"</div>
+                    <p className="text-sm:text-gray-400">Interactivity</p>"</div>
+                    <p className="text-lg font-semibold text-orange-400 >{session.parameters.interactivity ? ✅ : '❌'}</p></div>
+                  </div></div>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4>
-                  </div><div>
-                    <p className=text-sm" text-gray-400>Target</p>
-                    <p className="text-lg font-semibold text-white>{session.parameters.target}</p>
-                  </div>
-                  <div>
-                    <p className=text-sm:text-gray-400>Quality</p>"
-                    <p className="text-lg font-semibold text-green-400 >{session.parameters.quality}%</p>
-                  </div>
-                  <div>
-                    <p className=text-sm" text-gray-400>Immersion</p>
-                    <p className="text-lg font-semibold text-blue-400>{session.parameters.immersion}%</p>
-                  </div>
-                  <div>'
-                    <p className=text-sm:text-gray-400>Interactivity</p>"
-                    <p className="text-lg font-semibold text-orange-400 >{session.parameters.interactivity ? ✅ : '❌'}</p>
-                  </div>
-                </div>
-'
-                {session.status === 'active' || session.status === 'completed' ? ( 
-                  <div className=mb-4">
-                    <p className="text-sm:text-gray-400 mb-2>Session Metrics </p>
-                    <div className=grid" grid-cols-4 gap-4 text-sm>
-                      </div><div>
-                        <p className="text-gray-400>Completion</p>
-                        <p className=text-green-400" font-semibold>{session.metrics.completionRate}%</p>
-                      </div>
-                      <div>
-                        <p className="text-gray-400>Immersion</p>
-                        <p className="text-blue-400" font-semibold>{session.metrics.immersion}%</p>
-                      </div> 
-                      <div>
-                        <p className=text-gray-400>Engagement</p>
-                        <p className="text-orange-400" font-semibold>{session.metrics.engagement}%</p>
-                      </div>
-                      <div>
-                        <p className=text-gray-400>Satisfaction</p>
-                        <p className="text-purple-400" font-semibold>{session.metrics.satisfactionScore}%</p>
-                      </div>
-                    </div>
+'"
+                {session.status === 'active' || session.status === 'completed' ? ( "</div>
+                  <div className="mb-4""></div>
+                    <p className="text-sm:text-gray-400 mb-2>Session Metrics </p>"</div>
+                    <div className="grid" grid-cols-4 gap-4 text-sm"></div>
+                      </div><div></div>
+                        <p className="text-gray-400>Completion</p>"</div>
+                        <p className="text-green-400" font-semibold">{session.metrics.completionRate}%</p></div>
+                      </div></div>
+                      <div></div>
+                        <p className="text-gray-400>Immersion</p>"</div>
+                        <p className="text-blue-400" font-semibold>{session.metrics.immersion}%</p></div>
+                      </div> </div>
+                      <div></div>
+                        <p className="text-gray-400">Engagement</p></div>
+                        <p className="text-orange-400" font-semibold>{session.metrics.engagement}%</p></div>
+                      </div></div>
+                      <div></div>
+                        <p className="text-gray-400">Satisfaction</p></div>
+                        <p className="text-purple-400" font-semibold>{session.metrics.satisfactionScore}%</p></div>
+                      </div></div>
+                    </div></div>
                   </div>
                 )   null}
-
-                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4>
+</div>
+                <div className="flex" items-center justify-between text-sm:text-gray-400 mb-4></div>
                   <span>Started: {session.startTime.toLocaleString()}</span>
-                  {session.endTime && (
+                  {session.endTime && (</div>
                     <span>Completed: {session.endTime.toLocaleString()}</span>
-                  )}
-                </div>
-                <div className= flex space-x-3>
+                  )}</div>
+                </div></div>
+                <div className=" flex space-x-3"></div>
                   <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> 
-                    View Details
-                  </button>'
+                    View Details"</div>
+                  </button>'"</div>
                   <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
-                    {session.status === activ'e' ? Paus'e' : Star't'}
-                  </button>
-                </div>
+                    {session.status === activ'e' ? Paus'e' : Star't'}</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}
-        {/* VR Automations */},
-{selectedView === automation's' && (
+        {/* VR Automations */},"
+{selectedView === automation's' && ("</div>
           <div className="space-y-6>" 
-            {automations.map((automation) => (
-              </div><div key={automation.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
-                <div className="flex" items-start justify-between mb-4> 
-                  </div><div>
-                    <h3 className=text-lg font-semibold text-white mb-2>{automation.name}</h3>
-                    <p className="text-gray-300" text-sm >{automation.description}</p> 
-                  </div>`
-                  <div className=text-right>``"
+            {automations.map((automation) => (</div>
+              </div><div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6"></div>
+                <div className="flex" items-start justify-between mb-4> </div>
+                  </div><div></div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{automation.name}</h3></div>
+                    <p className="text-gray-300" text-sm >{automation.description}</p> </div>
+                  </div>`</div>
+                  <div className="text-right">``"</div>
                     <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
-                      {automation.status.toUpperCase()} 
-                    </span>`
-                    <div className=mt-2>``"
+                      {automation.status.toUpperCase()} "</div>
+                    </span>`"</div>
+                    <div className="mt-2">``"</div>
                       <span className="{`px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green'-400 bg-green-500/20 : 'text-red'-400 bg-red-500/20}`}>
-                        {automation.aiOptimized ? 'A'I OPTIMIZED : 'MANU'AL}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className=grid" grid-cols-2 gap-4 mb-4>
-                  </div><div>
-                    <p className="text-sm text-gray-400>Executions</p>
-                    <p className=text-lg" font-semibold text-white>{automation.executionCount.toLocaleString()}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm:text-gray-400>Success Rate</p>
-                    <p className=text-lg" font-semibold text-green-400>{automation.successRate}%</p>
-                  </div> 
-                </div>
-                <div className="mb-4>
-                  <p className=text-sm:text-gray-400" mb-2>Triggers </p>
-                  <div className="space-y-2>
-                    {automation.triggers.map((trigger, index) => (
-                      </div><div key={index} className= bg-white/5 rounded" p-2>
-                        <div className=" flex items-center justify-between>
-                          <span className=text-sm:text-white>{trigger.condition}</span>"
-                          <span className="text-xs text-gray-400 >Sensor: {trigger.sensor}</span>
-                        </div>
-                        <p className=text-xs" text-gray-400>Threshold  {trigger.threshold}</p>
+                        {automation.aiOptimized ? 'A'I OPTIMIZED : 'MANU'AL}</div>
+                      </span></div>
+                    </div></div>
+                  </div>"</div>
+                </div>"</div>
+                <div className="grid" grid-cols-2 gap-4 mb-4"></div>
+                  </div><div></div>
+                    <p className="text-sm text-gray-400>Executions</p>"</div>
+                    <p className="text-lg" font-semibold text-white">{automation.executionCount.toLocaleString()}</p></div>
+                  </div></div>
+                  <div></div>
+                    <p className="text-sm:text-gray-400>Success Rate</p>"</div>
+                    <p className="text-lg" font-semibold text-green-400">{automation.successRate}%</p></div>
+                  </div> </div>
+                </div></div>
+                <div className="mb-4>"</div>
+                  <p className="text-sm:text-gray-400" mb-2">Triggers </p></div>
+                  <div className="space-y-2>"
+                    {automation.triggers.map((trigger, index) => ("</div>
+                      </div><div key={index} className=" bg-white/5 rounded" p-2"></div>
+                        <div className=" flex items-center justify-between>"</div>
+                          <span className="text-sm:text-white">{trigger.condition}</span>"</div>
+                          <span className="text-xs text-gray-400 >Sensor: {trigger.sensor}</span>"</div>
+                        </div>"</div>
+                        <p className="text-xs" text-gray-400">Threshold  {trigger.threshold}</p></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="mb-4>
-                  <p className=text-sm:text-gray-400" mb-2>Actions </p>
-                  <div className="space-y-2>
-                    {automation.actions.map((action, index) => (
-                      </div><div key={index} className= bg-white/5 rounded" p-2>
-                        <div className=" flex items-center justify-between>
-                          <span className=text-sm:text-white>{action.experience}</span>"
-                          <span className="text-xs text-gray-400 >{action.action}</span>
-                        </div>
-                        <p className=text-xs" text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p>
+                    ))}</div>
+                  </div></div>
+                </div></div>
+                <div className="mb-4>"</div>
+                  <p className="text-sm:text-gray-400" mb-2">Actions </p></div>
+                  <div className="space-y-2>"
+                    {automation.actions.map((action, index) => ("</div>
+                      </div><div key={index} className=" bg-white/5 rounded" p-2"></div>
+                        <div className=" flex items-center justify-between>"</div>
+                          <span className="text-sm:text-white">{action.experience}</span>"</div>
+                          <span className="text-xs text-gray-400 >{action.action}</span>"</div>
+                        </div>"</div>
+                        <p className="text-xs" text-gray-400">Parameters  {JSON.stringify(action.parameters)}</p></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4>
-                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span>
-                  <span>Experience ID  {automation.experienceId}</span>
-                </div>
-                <div className=flex" space-x-3>
+                    ))}</div>
+                  </div></div>
+                </div></div>
+                <div className="flex items-center justify-between text-sm text-gray-400 mb-4></div>
+                  <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span></div>
+                  <span>Experience ID  {automation.experienceId}</span>"</div>
+                </div>"</div>
+                <div className="flex" space-x-3"></div>
                   <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
-                    View Logs
-                  </button>
-                  <button className=border" border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
-                    Edit Automation
-                  </button>
-                </div>
+                    View Logs"</div>
+                  </button>"</div>
+                  <button className="border" border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                    Edit Automation</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}
  
-        {/* Call to Action */}"
-        <div className=mt-12 text-center> 
-          </div><div className="bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className=text-3xl font-bold text-white mb-4 >
-              Immerse with VR Intelligence
-            </h2>
+        {/* Call to Action */}"</div>
+        <div className="mt-12 text-center"> </div>
+          </div><div className="bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8></div>
+            <h2 className="text-3xl font-bold text-white mb-4 ">
+              Immerse with VR Intelligence</div>
+            </h2></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent virtual reality technology to create immersive experiences, 
-              virtual worlds, and AI-driven VR optimization.
-            </p>
-            <div className= flex flex-col sm flex-row gap-4" justify-center>
+              virtual worlds, and AI-driven VR optimization.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row gap-4" justify-center"></div>
               <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
-                Create Experience 
-              </button>
-              <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
-              </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+                Create Experience "</div>
+              </button>"</div>
+              <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
+              </Link href=/service-marketplace  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm "></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
-  </div> 
+  </div>
+</div>
+  </div> </div>
   </div>
 ;
 };
-''`
-export default AIPoweredVirtualRealityPage )"'"'`
+''`;}
+export default AIPoweredVirtualRealityPage )"'"'`</div>

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-
-const fs = require('f's');
-const path = require('pa't'h');
+;
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { spawn, execSync } = require('chil'd'_process');
 const { EventEmitter } = require('even't's');
 
-class AutomationOrchestrator extends EventEmitter {
+class $1 extends EventEmitter {
   constructor() {
     super();
     this.projectRoot = process.cwd();
@@ -30,20 +30,20 @@ class AutomationOrchestrator extends EventEmitter {
   }
 
   log(message) {
-    const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] 🎼 ORCHESTRATOR: ${message}`);
+    const $1 = new Date().toISOString();
+    console.log("[${timestamp}] 🎼 ORCHESTRATOR: ${message}");
   }
 
   loadConfiguration() {
-    const configPath = path.join(__dirname, 'da't'a', 'orchestrator-confi'g'.json');
+    const $1 = path.join(__dirname, 'da't'a', 'orchestrator-confi'g'.json');
     if (fs.existsSync(configPath)) {
-      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+      const $1 = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
       this.config = { ...this.config, ...savedConfig };
     }
   }
 
   saveConfiguration() {
-    const configPath = path.join(__dirname, 'da't'a', 'orchestrator-confi'g'.json');
+    const $1 = path.join(__dirname, 'da't'a', 'orchestrator-confi'g'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
   }
 
@@ -65,13 +65,13 @@ class AutomationOrchestrator extends EventEmitter {
       
       this.log('Automatio'n' orchestrator initialized successfully');
     } catch (error) {
-      this.log(`Error initializing system: ${error.message}`);
+      this.log("Error initializing system: ${error.message}");
       throw error;
     }
   }
 
   createDirectories() {
-    const dirs = [
+    const $1 = [
       'automatio'n'/factories',
       'automatio'n'/variations',
       'automatio'n'/data',
@@ -81,7 +81,7 @@ class AutomationOrchestrator extends EventEmitter {
     ];
     
     for (const dir of dirs) {
-      const fullPath = path.join(this.projectRoot, dir);
+      const $1 = path.join(this.projectRoot, dir);
       if (!fs.existsSync(fullPath)) {
         fs.mkdirSync(fullPath, { recursive: true });
       }
@@ -89,22 +89,22 @@ class AutomationOrchestrator extends EventEmitter {
   }
 
   async loadFactories() {
-    const factoriesDir = path.join(this.projectRoot, 'automati'o'n', 'factori'e's');
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'factori'e's');
     if (!fs.existsSync(factoriesDir)) {
       return;
     }
     
-    const factoryDirs = fs.readdirSync(factoriesDir).filter(dir => {
+    const $1 = fs.readdirSync(factoriesDir).filter(dir => {
       return fs.statSync(path.join(factoriesDir, dir)).isDirectory();
     });
     
     for (const factoryDir of factoryDirs) {
-      const factoryId = factoryDir;
-      const configPath = path.join(factoriesDir, factoryDir, `${factoryId}-config.json`);
+      const $1 = factoryDir;
+      const $1 = path.join(factoriesDir, factoryDir, "${factoryId}-config.json");
       
       if (fs.existsSync(configPath)) {
         try {
-          const config = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
+          const $1 = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
           this.factories.set(factoryId, {
             id: factoryId,
             config: config,
@@ -114,38 +114,38 @@ class AutomationOrchestrator extends EventEmitter {
             lastStarted: null
           });
         } catch (error) {
-          this.log(`Error loading factory ${factoryId}: ${error.message}`);
+          this.log("Error loading factory ${factoryId}: ${error.message}");
         }
       }
     }
     
     this.health.totalFactories = this.factories.size;
-    this.log(`Loaded ${this.factories.size} factories`);
+    this.log("Loaded ${this.factories.size} factories");
   }
 
   async startFactory(factoryId) {
-    const factory = this.factories.get(factoryId);
+    const $1 = this.factories.get(factoryId);
     if (!factory) {
-      throw new Error(`Factory ${factoryId} not found`);
+      throw new Error("Factory ${factoryId} not found");
     }
     
     if (factory.status === 'runni'n'g') {
-      this.log(`Factory ${factoryId} is already running`);
+      this.log("Factory ${factoryId} is already running");
       return;
     }
     
-    this.log(`Starting factory ${factoryId}...`);
+    this.log("Starting factory ${factoryId}...");
     
     try {
-      const factoryDir = path.join(this.projectRoot, 'automati'o'n', 'factori'e's', factoryId);
-      const mainFile = path.join(factoryDir, `${factoryId}-main.js`);
+      const $1 = path.join(this.projectRoot, 'automati'o'n', 'factori'e's', factoryId);
+      const $1 = path.join(factoryDir, "${factoryId}-main.js");
       
       if (!fs.existsSync(mainFile)) {
-        throw new Error(`Main file not found: ${mainFile}`);
+        throw new Error("Main file not found: ${mainFile}");
       }
       
       // Start factory process
-      const process = spawn('no'd'e', [mainFile], {
+      const $1 = spawn('no'd'e', [mainFile], {
         cwd: factoryDir,
         stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e']
       });
@@ -169,7 +169,7 @@ class AutomationOrchestrator extends EventEmitter {
       
       this.health.activeFactories++;
       
-      this.log(`Factory ${factoryId} started successfully`);
+      this.log("Factory ${factoryId} started successfully");
       
     } catch (error) {
       this.handleFactoryError(factoryId, error);
@@ -177,14 +177,14 @@ class AutomationOrchestrator extends EventEmitter {
   }
 
   async stopFactory(factoryId) {
-    const factory = this.factories.get(factoryId);
+    const $1 = this.factories.get(factoryId);
     if (!factory) {
       return;
     }
     
-    const process = this.processes.get(factoryId);
+    const $1 = this.processes.get(factoryId);
     if (process) {
-      this.log(`Stopping factory ${factoryId}...`);
+      this.log("Stopping factory ${factoryId}...");
       
       try {
         process.kill('SIGTE'R'M');
@@ -201,15 +201,15 @@ class AutomationOrchestrator extends EventEmitter {
         
         this.processes.delete(factoryId);
         
-        this.log(`Factory ${factoryId} stopped`);
+        this.log("Factory ${factoryId} stopped");
       } catch (error) {
-        this.log(`Error stopping factory ${factoryId}: ${error.message}`);
+        this.log("Error stopping factory ${factoryId}: ${error.message}");
       }
     }
   }
 
   async restartFactory(factoryId) {
-    this.log(`Restarting factory ${factoryId}...`);
+    this.log("Restarting factory ${factoryId}...");
     
     await this.stopFactory(factoryId);
     await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds
@@ -217,14 +217,14 @@ class AutomationOrchestrator extends EventEmitter {
   }
 
   handleFactoryError(factoryId, error) {
-    const factory = this.factories.get(factoryId);
+    const $1 = this.factories.get(factoryId);
     if (factory) {
       factory.failures++;
       factory.status = 'fail'e'd';
       this.health.failedFactories++;
       this.health.activeFactories--;
       
-      this.log(`Factory ${factoryId} error: ${error.message}`);
+      this.log("Factory ${factoryId} error: ${error.message}");
       
       // Auto-restart if within threshold
       if (factory.failures <= this.config.restartThreshold && factory.restarts < this.config.maxRestarts) {
@@ -237,12 +237,12 @@ class AutomationOrchestrator extends EventEmitter {
   }
 
   handleFactoryExit(factoryId, code) {
-    const factory = this.factories.get(factoryId);
+    const $1 = this.factories.get(factoryId);
     if (factory) {
       factory.status = 'stopp'e'd';
       this.health.activeFactories--;
       
-      this.log(`Factory ${factoryId} exited with code: ${code}`);
+      this.log("Factory ${factoryId} exited with code: ${code}");
       
       // Remove process reference
       this.processes.delete(factoryId);
@@ -260,14 +260,14 @@ class AutomationOrchestrator extends EventEmitter {
   async performHealthCheck() {
     this.log('Performin'g' health check...');
     
-    let healthyCount = 0;
-    let totalCount = 0;
+    let $1 = 0;
+    let $1 = 0;
     
     for (const [factoryId, factory] of this.factories) {
       totalCount++;
       
       if (factory.status === 'runni'n'g') {
-        const process = this.processes.get(factoryId);
+        const $1 = this.processes.get(factoryId);
         if (process && !process.killed) {
           healthyCount++;
         } else {
@@ -278,17 +278,17 @@ class AutomationOrchestrator extends EventEmitter {
       }
     }
     
-    const healthPercentage = totalCount > 0 ? (healthyCount / totalCount) * 100 : 0;
+    const $1 = totalCount > 0 ? (healthyCount / totalCount) * 100 : 0;
     
-    this.log(`Health check: ${healthyCount}/${totalCount} factories healthy (${healthPercentage.toFixed(1)}%)`);
+    this.log("Health check: ${healthyCount}/${totalCount} factories healthy (${healthPercentage.toFixed(1)}%)");
     
     // Save health report
     this.saveHealthReport(healthyCount, totalCount, healthPercentage);
   }
 
   saveHealthReport(healthyCount, totalCount, healthPercentage) {
-    const reportPath = path.join(this.projectRoot, 'automati'o'n', 'repor't's', 'health-repor't'.json');
-    const report = {
+    const $1 = path.join(this.projectRoot, 'automati'o'n', 'repor't's', 'health-repor't'.json');
+    const $1 = {
       timestamp: new Date().toISOString(),
       health: {
         healthyCount,
@@ -316,21 +316,21 @@ class AutomationOrchestrator extends EventEmitter {
     this.log('Generatin'g' new automation factories...');
     
     try {
-      // Check if we need more factories
+      // Check if we need more factories</div>
       if (this.factories.size < this.config.maxFactories) {
-        const factoryTypes = [
+        const $1 = [
           'content-automation-facto'r'y',
           'marketing-automation-facto'r'y',
           'development-automation-facto'r'y'
         ];
         
-        const randomType = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
+        const $1 = factoryTypes[Math.floor(Math.random() * factoryTypes.length)];
         
         // Generate new factory
-        const factoryGenerator = require('./continuous-automation-factory-generator.js');
-        const generator = new factoryGenerator();
+        const $1 = require('./continuous-automation-factory-generator.js');
+        const $1 = new factoryGenerator();
         
-        const factoryId = await generator.generateAutomationFactory(randomType, {
+        const $1 = await generator.generateAutomationFactory(randomType, {
           maxOutputs: Math.floor(Math.random() * 1000) + 100,
           qualityThreshold: Math.random() * 0.5 + 0.5,
           autoImprove: true,
@@ -338,7 +338,7 @@ class AutomationOrchestrator extends EventEmitter {
         });
         
         // Add to orchestrator
-        const factory = {
+        const $1 = {
           id: factoryId,
           config: {
             type: randomType,
@@ -356,10 +356,10 @@ class AutomationOrchestrator extends EventEmitter {
         // Start the new factory
         await this.startFactory(factoryId);
         
-        this.log(`Generated and started new factory: ${factoryId}`);
+        this.log("Generated and started new factory: ${factoryId}");
       }
     } catch (error) {
-      this.log(`Error generating new factories: ${error.message}`);
+      this.log("Error generating new factories: ${error.message}");
     }
   }
 
@@ -423,7 +423,7 @@ class AutomationOrchestrator extends EventEmitter {
       });
       
     } catch (error) {
-      this.log(`Error starting orchestrator: ${error.message}`);
+      this.log("Error starting orchestrator: ${error.message}");
       throw error;
     }
   }
@@ -433,6 +433,6 @@ module.exports = AutomationOrchestrator;
 
 // Auto-start if run directly
 if (require.main === module) {
-  const orchestrator = new AutomationOrchestrator();
+  const $1 = new AutomationOrchestrator();
   orchestrator.start().catch(console.error);
-} 
+} </div>

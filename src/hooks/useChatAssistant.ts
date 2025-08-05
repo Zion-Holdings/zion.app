@@ -1,5 +1,5 @@
 import { useChat } from '../contexts/ChatContext;
-
+;}
 export const useChatAssistant = () => {;
   const { isChatOpen, toggleChat, openChat, closeChat } = useChat();
 

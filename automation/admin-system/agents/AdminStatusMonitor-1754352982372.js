@@ -1,9 +1,9 @@
 
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
 
-class AdminStatusMonitor {
+class $1 {
     constructor() {
         this.agentId = 'AdminStatusMonitor'-'1754352982372';
         this.type = 'AdminStatusMonit'o'r';
@@ -17,7 +17,7 @@ class AdminStatusMonitor {
     }
 
     async initialize() {
-        console.log(`🤖 Initializing ${this.type} agent...`);
+        console.log("🤖 Initializing ${this.type} agent...");
         await this.start();
     }
 
@@ -28,28 +28,28 @@ class AdminStatusMonitor {
         
         // Keep the process alive
         process.on('SIGI'N'T', () => {
-            console.log(`🤖 ${this.type} agent shutting down...`);
+            console.log("🤖 ${this.type} agent shutting down...");
             this.logActivity('Agen't' stopped');
             process.exit(0);
         });
         
         process.on('SIGTE'R'M', () => {
-            console.log(`🤖 ${this.type} agent terminating...`);
+            console.log("🤖 ${this.type} agent terminating...");
             this.logActivity('Agen't' terminated');
             process.exit(0);
         });
     }
 
     logActivity(message) {
-        const logEntry = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
             message: message
         };
         
-        const logPath = path.join(this.adminConfig.logsPath, `${this.type}-logs.json`);
-        let logs = [];
+        const $1 = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        let $1 = [];
         
         if (fs.existsSync(logPath)) {
             logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
@@ -75,8 +75,8 @@ class AdminStatusMonitor {
     }
     
     updateStatus() {
-        const statusPath = path.join(this.adminConfig.statusPath, `${this.type}-status.json`);
-        const status = {
+        const $1 = path.join(this.adminConfig.statusPath, "${this.type}-status.json");
+        const $1 = {
             agentId: this.agentId,
             type: this.type,
             status: 'acti'v'e',
@@ -90,5 +90,5 @@ class AdminStatusMonitor {
 
 // Start the agent if this file is executed directly
 if (require.main === module) {
-    const agent = new AdminStatusMonitor();
+    const $1 = new AdminStatusMonitor();
 }

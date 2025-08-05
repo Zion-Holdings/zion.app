@@ -1,15 +1,15 @@
-const fs = require('f's');
-const path = require('pa't'h');
+const $1 = require('f's');
+const $1 = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
-const execAsync = promisify(exec);
+;
+const $1 = promisify(exec);
 
 class Research-automationAutomationAgent {
   
   // Enhanced Intelligent Analysis
   async performIntelligentAnalysis(data) {
-    const analysis = {
+    const $1 = {
       patterns: this.identifyPatterns(data),
       trends: this.analyzeTrends(data),
       opportunities: this.identifyOpportunities(data),
@@ -74,12 +74,12 @@ class Research-automationAutomationAgent {
   }
 
   adaptBehavior() {
-    const recentPerformance = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-10)
       .filter(p => Date.now() - p.timestamp < 3600000);
     
-    const successRate = recentPerformance.filter(p => p.success).length / recentPerformance.length;
-    
+    const $1 = recentPerformance.filter(p => p.success).length / recentPerformance.length;
+    </div>
     if (successRate < 0.7) {
       this.adaptationRate *= 1.1;
     } else if (successRate > 0.9) {
@@ -88,7 +88,7 @@ class Research-automationAutomationAgent {
   }
 
   improveIntelligence() {
-    const recentSuccess = this.performanceHistory
+    const $1 = this.performanceHistory
       .slice(-20)
       .filter(p => p.success).length / 20;
     
@@ -106,7 +106,7 @@ class Research-automationAutomationAgent {
   }
 
   ensureDirectories() {
-    const dirs = [
+    const $1 = [
       this.reportsDir,
       path.join(this.reportsDir, 'research-repor't's'),
       path.join(this.reportsDir, 'market-analysis-repor't's'),
@@ -123,7 +123,7 @@ class Research-automationAutomationAgent {
   }
 
   async start() {
-    console.log(`Research Automation Agent ${this.agentId} started`);
+    console.log("Research Automation Agent ${this.agentId} started");
     
     // Initial research analysis
     await this.analyzeResearch();
@@ -148,7 +148,7 @@ class Research-automationAutomationAgent {
     try {
       console.log('Performin'g' comprehensive research analysis...');
       
-      const analysis = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         marketResearch: [],
@@ -184,15 +184,15 @@ class Research-automationAutomationAgent {
   }
 
   async discoverMarketResearch() {
-    const marketResearch = [];
+    const $1 = [];
     
     try {
       // Look for market research configuration files
-      const researchFiles = this.findResearchFiles();
+      const $1 = this.findResearchFiles();
       
       for (const file of researchFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const researchInfo = this.extractResearchInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractResearchInfo(file, content);
         
         if (researchInfo) {
           marketResearch.push(researchInfo);
@@ -200,11 +200,11 @@ class Research-automationAutomationAgent {
       }
       
       // Also check for market data files
-      const marketDataFiles = this.findMarketDataFiles();
+      const $1 = this.findMarketDataFiles();
       
       for (const file of marketDataFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const marketDataInfo = this.extractMarketDataInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractMarketDataInfo(file, content);
         
         if (marketDataInfo) {
           marketResearch.push(marketDataInfo);
@@ -219,22 +219,22 @@ class Research-automationAutomationAgent {
   }
 
   findResearchFiles() {
-    const researchFiles = [];
+    const $1 = [];
     
     try {
-      const findResearchFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findResearchFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsResearchCode(content)) {
                 researchFiles.push(fullPath);
               }
@@ -253,7 +253,7 @@ class Research-automationAutomationAgent {
   }
 
   containsResearchCode(content) {
-    const researchKeywords = [
+    const $1 = [
       'resear'c'h', 'mark'e't', 'analys'i's', 'surv'e'y', 'stu'd'y',
       'da't'a', 'insigh't's', 'findin'g's', 'repo'r't', 'analys'i's'
     ];
@@ -262,7 +262,7 @@ class Research-automationAutomationAgent {
   }
 
   extractResearchInfo(file, content) {
-    const researchInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -271,7 +271,7 @@ class Research-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect research type
     if (lowerContent.includes('marke't' research') || lowerContent.includes('marke't' analysis')) {
@@ -309,22 +309,22 @@ class Research-automationAutomationAgent {
   }
 
   findMarketDataFiles() {
-    const marketDataFiles = [];
+    const $1 = [];
     
     try {
-      const findMarketDataFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findMarketDataFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsMarketDataCode(content)) {
                 marketDataFiles.push(fullPath);
               }
@@ -343,7 +343,7 @@ class Research-automationAutomationAgent {
   }
 
   containsMarketDataCode(content) {
-    const marketDataKeywords = [
+    const $1 = [
       'marke't' data', 'marke't' size', 'marke't' share', 'marke't' growth',
       'reven'u'e', 'sal'e's', 'demographi'c's', 'segmentati'o'n'
     ];
@@ -352,7 +352,7 @@ class Research-automationAutomationAgent {
   }
 
   extractMarketDataInfo(file, content) {
-    const marketDataInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -361,7 +361,7 @@ class Research-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect market data type
     if (lowerContent.includes('marke't' size') || lowerContent.includes('marke't' value')) {
@@ -391,10 +391,10 @@ class Research-automationAutomationAgent {
   }
 
   extractMetrics(content) {
-    const metrics = [];
+    const $1 = [];
     
     // Extract metric definitions
-    const metricRegex = /metric\s*[:=]\s*['"`]([^'"`]+)['"`]/gi;
+    const $1 = /metric\s*[:=]\s*['""]([^'""]+)['""]/gi;
     let match;
     
     while ((match = metricRegex.exec(content)) !== null) {
@@ -402,7 +402,7 @@ class Research-automationAutomationAgent {
     }
     
     // Also look for KPI definitions
-    const kpiRegex = /kpi\s*[:=]\s*['"`]([^'"`]+)['"`]/gi;
+    const $1 = /kpi\s*[:=]\s*['""]([^'""]+)['""]/gi;
     while ((match = kpiRegex.exec(content)) !== null) {
       metrics.push(match[1]);
     }
@@ -411,14 +411,14 @@ class Research-automationAutomationAgent {
   }
 
   extractResearchConfiguration(content) {
-    const config = {
+    const $1 = {
       environment: 'unkno'w'n',
       frequency: 'unkno'w'n',
       scope: 'unkno'w'n',
       settings: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Extract environment
     if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
@@ -451,15 +451,15 @@ class Research-automationAutomationAgent {
   }
 
   async analyzeCompetitiveIntelligence() {
-    const competitiveAnalysis = [];
+    const $1 = [];
     
     try {
       // Look for competitive intelligence configuration files
-      const competitiveFiles = this.findCompetitiveFiles();
+      const $1 = this.findCompetitiveFiles();
       
       for (const file of competitiveFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const competitiveInfo = this.extractCompetitiveInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractCompetitiveInfo(file, content);
         
         if (competitiveInfo) {
           competitiveAnalysis.push(competitiveInfo);
@@ -474,22 +474,22 @@ class Research-automationAutomationAgent {
   }
 
   findCompetitiveFiles() {
-    const competitiveFiles = [];
+    const $1 = [];
     
     try {
-      const findCompetitiveFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findCompetitiveFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsCompetitiveCode(content)) {
                 competitiveFiles.push(fullPath);
               }
@@ -508,7 +508,7 @@ class Research-automationAutomationAgent {
   }
 
   containsCompetitiveCode(content) {
-    const competitiveKeywords = [
+    const $1 = [
       'competiti'v'e', 'competit'o'r', 'riv'a'l', 'oppone'n't',
       'benchma'r'k', 'comparis'o'n', 'analys'i's', 'intelligen'c'e'
     ];
@@ -517,7 +517,7 @@ class Research-automationAutomationAgent {
   }
 
   extractCompetitiveInfo(file, content) {
-    const competitiveInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -526,7 +526,7 @@ class Research-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect competitive analysis type
     if (lowerContent.includes('sw'o't') || lowerContent.includes('strengt'h' weakness')) {
@@ -556,15 +556,15 @@ class Research-automationAutomationAgent {
   }
 
   async analyzeIndustryTrends() {
-    const industryTrends = [];
+    const $1 = [];
     
     try {
       // Look for industry trend configuration files
-      const trendFiles = this.findIndustryTrendFiles();
+      const $1 = this.findIndustryTrendFiles();
       
       for (const file of trendFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const trendInfo = this.extractIndustryTrendInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractIndustryTrendInfo(file, content);
         
         if (trendInfo) {
           industryTrends.push(trendInfo);
@@ -579,22 +579,22 @@ class Research-automationAutomationAgent {
   }
 
   findIndustryTrendFiles() {
-    const trendFiles = [];
+    const $1 = [];
     
     try {
-      const findTrendFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findTrendFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsIndustryTrendCode(content)) {
                 trendFiles.push(fullPath);
               }
@@ -613,7 +613,7 @@ class Research-automationAutomationAgent {
   }
 
   containsIndustryTrendCode(content) {
-    const trendKeywords = [
+    const $1 = [
       'industr'y' trend', 'secto'r' trend', 'marke't' trend',
       'technolog'y' trend', 'busines's' trend', 'economi'c' trend'
     ];
@@ -622,7 +622,7 @@ class Research-automationAutomationAgent {
   }
 
   extractIndustryTrendInfo(file, content) {
-    const trendInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -631,7 +631,7 @@ class Research-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect trend type
     if (lowerContent.includes('technolo'g'y') || lowerContent.includes('te'c'h')) {
@@ -667,15 +667,15 @@ class Research-automationAutomationAgent {
   }
 
   async analyzeOpportunities() {
-    const opportunities = [];
+    const $1 = [];
     
     try {
       // Look for opportunity configuration files
-      const opportunityFiles = this.findOpportunityFiles();
+      const $1 = this.findOpportunityFiles();
       
       for (const file of opportunityFiles) {
-        const content = fs.readFileSync(file, 'ut'f'8');
-        const opportunityInfo = this.extractOpportunityInfo(file, content);
+        const $1 = fs.readFileSync(file, 'ut'f'8');
+        const $1 = this.extractOpportunityInfo(file, content);
         
         if (opportunityInfo) {
           opportunities.push(opportunityInfo);
@@ -690,22 +690,22 @@ class Research-automationAutomationAgent {
   }
 
   findOpportunityFiles() {
-    const opportunityFiles = [];
+    const $1 = [];
     
     try {
-      const findOpportunityFiles = (dir) => {
-        const items = fs.readdirSync(dir);
+      const $1 = (dir) => {
+        const $1 = fs.readdirSync(dir);
         
         for (const item of items) {
-          const fullPath = path.join(dir, item);
-          const stat = fs.statSync(fullPath);
+          const $1 = path.join(dir, item);
+          const $1 = fs.statSync(fullPath);
           
           if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findOpportunityFiles(fullPath);
           } else if (stat.isFile()) {
-            const ext = path.extname(item).toLowerCase();
+            const $1 = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'ut'f'8');
+              const $1 = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsOpportunityCode(content)) {
                 opportunityFiles.push(fullPath);
               }
@@ -724,7 +724,7 @@ class Research-automationAutomationAgent {
   }
 
   containsOpportunityCode(content) {
-    const opportunityKeywords = [
+    const $1 = [
       'opportuni't'y', 'potenti'a'l', 'possibili't'y', 'chan'c'e',
       'advanta'g'e', 'benef'i't', 'improveme'n't', 'enhanceme'n't'
     ];
@@ -733,7 +733,7 @@ class Research-automationAutomationAgent {
   }
 
   extractOpportunityInfo(file, content) {
-    const opportunityInfo = {
+    const $1 = {
       file: file,
       name: path.basename(file, path.extname(file)),
       type: 'unkno'w'n',
@@ -742,7 +742,7 @@ class Research-automationAutomationAgent {
       configuration: {}
     };
     
-    const lowerContent = content.toLowerCase();
+    const $1 = content.toLowerCase();
     
     // Detect opportunity type
     if (lowerContent.includes('mark'e't') || lowerContent.includes('busine's's')) {
@@ -778,7 +778,7 @@ class Research-automationAutomationAgent {
   }
 
   generateRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
     // Market research recommendations
     if (analysis.marketResearch.length === 0) {
@@ -827,7 +827,7 @@ class Research-automationAutomationAgent {
     try {
       console.log('Monitorin'g' research...');
       
-      const monitoring = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         marketResearch: [],
@@ -836,10 +836,10 @@ class Research-automationAutomationAgent {
       };
       
       // Check market research status
-      const marketResearch = await this.discoverMarketResearch();
+      const $1 = await this.discoverMarketResearch();
       
       for (const research of marketResearch) {
-        const status = this.checkResearchStatus(research);
+        const $1 = this.checkResearchStatus(research);
         monitoring.marketResearch.push(status);
         
         if (status.issues.length > 0) {
@@ -848,10 +848,10 @@ class Research-automationAutomationAgent {
       }
       
       // Check competitive analysis status
-      const competitiveAnalysis = await this.analyzeCompetitiveIntelligence();
+      const $1 = await this.analyzeCompetitiveIntelligence();
       
       for (const analysis of competitiveAnalysis) {
-        const status = this.checkCompetitiveStatus(analysis);
+        const $1 = this.checkCompetitiveStatus(analysis);
         monitoring.competitiveAnalysis.push(status);
         
         if (status.issues.length > 0) {
@@ -860,8 +860,8 @@ class Research-automationAutomationAgent {
       }
       
       // Save monitoring report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'monitoring-repor't's', `monitoring-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'monitoring-repor't's', "monitoring-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
@@ -870,7 +870,7 @@ class Research-automationAutomationAgent {
   }
 
   checkResearchStatus(research) {
-    const status = {
+    const $1 = {
       research: research.name,
       status: 'healt'h'y',
       issues: [],
@@ -898,7 +898,7 @@ class Research-automationAutomationAgent {
   }
 
   checkCompetitiveStatus(analysis) {
-    const status = {
+    const $1 = {
       analysis: analysis.name,
       status: 'healt'h'y',
       issues: [],
@@ -929,7 +929,7 @@ class Research-automationAutomationAgent {
     try {
       console.log('Optimizin'g' research...');
       
-      const optimizationReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         optimizations: [],
@@ -937,7 +937,7 @@ class Research-automationAutomationAgent {
       };
       
       // Generate optimization suggestions
-      const analysis = await this.analyzeResearch();
+      const $1 = await this.analyzeResearch();
       optimizationReport.optimizations = analysis.recommendations;
       
       // Simulate optimization results
@@ -946,13 +946,13 @@ class Research-automationAutomationAgent {
           type: optimization.type,
           status: 'complet'e'd',
           improvement: Math.random() * 0.8, // 0-80% improvement
-          description: `Applied ${optimization.suggestion}`
+          description: "Applied ${optimization.suggestion}"
         });
       }
       
       // Save optimization report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'optimization-repor't's', "optimization-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
@@ -964,7 +964,7 @@ class Research-automationAutomationAgent {
     try {
       console.log('Runnin'g' comprehensive market analysis...');
       
-      const marketAnalysisReport = {
+      const $1 = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         analysis: {},
@@ -985,8 +985,8 @@ class Research-automationAutomationAgent {
       marketAnalysisReport.recommendations = this.generateMarketAnalysisRecommendations(marketAnalysisReport.analysis);
       
       // Save market analysis report
-      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'market-analysis-repor't's', `market-analysis-${timestamp}.json`);
+      const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+      const $1 = path.join(this.reportsDir, 'market-analysis-repor't's', "market-analysis-${timestamp}.json");
       fs.writeFileSync(reportPath, JSON.stringify(marketAnalysisReport, null, 2));
       
     } catch (error) {
@@ -1063,7 +1063,7 @@ class Research-automationAutomationAgent {
   }
 
   generateMarketAnalysisSummary(analysis) {
-    const summary = {
+    const $1 = {
       total: 0,
       completed: 0,
       failed: 0,
@@ -1087,15 +1087,15 @@ class Research-automationAutomationAgent {
   }
 
   generateMarketAnalysisRecommendations(analysis) {
-    const recommendations = [];
+    const $1 = [];
     
     for (const [type, result] of Object.entries(analysis)) {
       if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
           priority: 'medi'u'm',
-          message: `${type} analysis failed`,
-          suggestion: `Fix ${type} analysis issues`
+          message: "${type} analysis failed",
+          suggestion: "Fix ${type} analysis issues"
         });
       }
     }
@@ -1104,20 +1104,20 @@ class Research-automationAutomationAgent {
   }
 
   async saveAnalysisReport(report) {
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'research-repor't's', `analysis-${timestamp}.json`);
+    const $1 = new Date().toISOString().replace(/[:.]/g, '-');
+    const $1 = path.join(this.reportsDir, 'research-repor't's', "analysis-${timestamp}.json");
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    console.log(`Analysis report saved: ${reportPath}`);
+    console.log("Analysis report saved: ${reportPath}");
   }
 
   async stop() {
-    console.log(`Research Automation Agent ${this.agentId} stopping...`);
+    console.log("Research Automation Agent ${this.agentId} stopping...");
     process.exit(0);
   }
 }
 
-// Start the agent
-const agent = new ResearchAutomationAgent();
+// Start the agent;
+const $1 = new ResearchAutomationAgent();
 
 process.on('SIGTE'R'M', () => {
   agent.stop();
@@ -1130,4 +1130,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Researc'h' Automation Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

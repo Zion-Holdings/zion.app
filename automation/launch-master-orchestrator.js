@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-
+;
 const MasterResponsiveAutomationOrchestrator = require('./master-responsive-automation-orchestrator');
 
 console.log('🚀 Launching Master Responsive Automation Orchestrator...');
 
-// Create and start the master orchestrator
+// Create and start the master orchestrator;
 const masterOrchestrator = new MasterResponsiveAutomationOrchestrator();
 
 // Keep the process running

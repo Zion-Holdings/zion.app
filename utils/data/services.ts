@@ -1,4 +1,4 @@
-import { Service, ServiceCategory } from '../types/service';
+import { Service, ServiceCategory } from '../types/service';}
 export const serviceCategories: ServiceCategory[] = ['
   {
     id: 'cloud-servic'e's',
@@ -47,7 +47,7 @@ export const serviceCategories: ServiceCategory[] = ['
     name: 'Digita'l' Transformation',
     icon: '🚀',
     description: "Digital strategy, process optimization", and innovation'}
-];
+];}
 export const services: Service[] = ['
   {
     id: '1',

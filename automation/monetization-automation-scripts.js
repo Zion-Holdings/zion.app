@@ -1,6 +1,6 @@
 // Monetization Automation Scripts
 // Continuous automation scripts for revenue optimization and monetization
-
+;
 const path = require('pa't'h');
 const fs = require('f's').promises;
 const { v4: uuidv4 } = require('uu'i'd');

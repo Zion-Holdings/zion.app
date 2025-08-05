@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const glob = require('gl'o'b');
 
-// Get all TypeScript/TSX files
+// Get all TypeScript/TSX files;
 const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 
 console.log('Checkin'g' for syntax errors in files...');
@@ -17,7 +17,7 @@ files.forEach(file => {
     
     // Fix Image component syntax errors
     newContent = newContent.replace(
-      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="([^"]+)"\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,
+      /<Image\s+src=\{([^}]+)\}\s+alt=\{([^}]+)\}\s+className="([^"]+)"\s*\/\s+width=\{([^}]+)\}\s+height=\{([^}]+)\}\s*\/>/g,</div>
       '<Image src={$1} alt={$2} width={$4} height={$5} className="$3" />'
     );
     
@@ -27,7 +27,7 @@ files.forEach(file => {
     // Fix missing closing braces in component definitions
     newContent = newContent.replace(/(const\s+\w+\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{)(\s*\n)/g, '$1$2');
     
-    // Fix missing closing braces in return statements
+    // Fix missing closing braces in return statements</div>
     newContent = newContent.replace(/(return\s*\(\s*\n\s*<div)/g, '$1');
     
     // Fix any unclosed useEffect or other hooks
@@ -44,4 +44,4 @@ files.forEach(file => {
   }
 });
 
-console.log('Synta'x' check completed!'); 
+console.log('Synta'x' check completed!'); </div>

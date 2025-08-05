@@ -418,10 +418,10 @@ class DevelopmentAutomationLauncher {
   }
 }
 
-// Handle command line arguments
+// Handle command line arguments;
 const args = process.argv.slice(2);
 const command = args[0];
-
+;
 const launcher = new DevelopmentAutomationLauncher();
 
 async function main() {
@@ -482,4 +482,4 @@ if (!command) {
   launcher.start();
 } else {
   main();
-} 
+} </div>

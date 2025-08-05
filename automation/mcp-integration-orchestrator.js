@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-
+;
 const MCPClientIntegration = require('../mcp-client-integration.js');
 const fs = require('f's').promises;
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class MCPIntegrationOrchestrator {
@@ -423,4 +423,4 @@ if (require.main === module) {
   main().catch(console.error);
 }
 
-module.exports = MCPIntegrationOrchestrator; 
+module.exports = MCPIntegrationOrchestrator; </div>

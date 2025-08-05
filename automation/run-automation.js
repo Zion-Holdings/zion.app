@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator');
 const fs = require('f's').promises;
 const path = require('pa't'h');

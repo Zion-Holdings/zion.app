@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 interface WishlistItem {
   id: string;
@@ -43,8 +43,8 @@ interface AIComparisonAnalysis {
     min: number;
     max: number;
     average: number;
-  };
-  featureComparison: Record<string, string[]>;
+  };</div>
+  featureComparison: Record<string, string[]>;</div>
   prosCons: Record<string, { pros: string[]; cons: string[] }>;
   recommendation: string;
   confidence: number;}
@@ -60,14 +60,14 @@ interface WishlistCategory {
   name: string;
   icon: string;
   count: number;
-  items: WishlistItem[];}
-const AIPoweredWishlistComparisonPage: NextPage = () => {
-  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]
-  const [comparisons, setComparisons] = useState<ComparisonItem[]>([]
-  const [selectedCategory, setSelectedCategory] = useState<string>(all'
-  const [sortBy, setSortBy] = useState<'da't'e | pri'c'e | rat'i'ng' | 'aiScore'>('date
-  const [viewMode, setViewMode] = useState<'gr'id | 'li'st>('gri'd
-  const [selectedItems, setSelectedItems] = useState<string[]>([]
+  items: WishlistItem[];};
+const AIPoweredWishlistComparisonPage: NextPage = () => {</div>
+  const [wishlistItems, setWishlistItems] = useState<WishlistItem[]>([]</div>
+  const [comparisons, setComparisons] = useState<ComparisonItem[]>([]</div>
+  const [selectedCategory, setSelectedCategory] = useState<string>(all'</div>
+  const [sortBy, setSortBy] = useState<'da't'e | pri'c'e | rat'i'ng' | 'aiScore'>('date</div>
+  const [viewMode, setViewMode] = useState<'gr'id | 'li'st>('gri'd</div>
+  const [selectedItems, setSelectedItems] = useState<string[]>([]</div>
   const [activeTab, setActiveTab] = useState<''wishlist' | 'comparisons' | 'recommendation's'>(wishlis't'
   const [isLoading, setIsLoading] = useState(true
   // Mock wishlist items
@@ -262,54 +262,54 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
       const comparisonItems = wishlistItems.filter(item => selectedItems.includes(item.id)
       // Create new comparison
       console.log('Creating comparison with: , comparisonItems}}
-  return (
-    <div>
-      </div><div className=" relative z-10 container-responsive py-8>
-        {/* Background Effects */}
-        <div className="fixed" inset-0 z-0> 
-          </div><div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered Wishlist & Comparison | Zion Tech Group</title>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8>"
+        {/* Background Effects */}"</div>
+        <div className="fixed" inset-0 z-0> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered Wishlist & Comparison | Zion Tech Group</title></div>
         <meta name=description content=Save items to your wishlist, compare them with AI analysis, and get intelligent recommendations for the best choices. > </meta name="description" content=Save items to your wishlist, compare them with AI analysis, and get intelligent recommendations for the best choices." ><meta name="keywords content=wishlist, comparison, AI recommendations, marketplace, save items, compare services > </meta name=keywords" content="wishlist, comparison, AI recommendations, marketplace, save items, compare services ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      {/* Header */}"
-      <div className=relative overflow-hidden>
-        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
-        <div className=relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
-          </div><div className="text-center>"
-            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
-              AI-Powered Wishlist & Comparison
-            </h1>
+      {/* Header */}"</div>
+      <div className="relative overflow-hidden"></div>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44"> </div>
+          </div><div className="text-center>"</div>
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
+              AI-Powered Wishlist & Comparison</div>
+            </h1></div>
             <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
               Save items to your wishlist, compare them with intelligent AI analysis, 
-              and get personalized recommendations to make the best decisions for your projects.
-            </p>
-            <div className=flex" flex-wrap justify-center gap-4> 
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>💾 Save Items</span> 
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3>
-                <span className=text-white font-semibold>🔍 Compare</span>
-              </div>
-              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>🤖 AI Analysis</span>
-              </div>
-            </div">
-          </div>
-        </div>
+              and get personalized recommendations to make the best decisions for your projects.</div>
+            </p></div>
+            <div className="flex" flex-wrap justify-center gap-4"> </div>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >"</div>
+                <span className="text-white font-semibold">💾 Save Items</span> </div>
+              </div>"</div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3></div>
+                <span className="text-white font-semibold">🔍 Compare</span></div>
+              </div></div>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 ></div>
+                <span className="text-white font-semibold">🤖 AI Analysis</span></div>
+              </div></div>
+            </div"></div>
+          </div></div>
+        </div></div>
       </div>
 "
-      {/* Main Content */}
-      <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? (
-          </div><div className=flex" justify-center items-center py-40>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
+      {/* Main Content */}</div>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        {isLoading ? (</div>
+          </div><div className="flex" justify-center items-center py-40"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div></div>
           </div>
-        ) : ( 
-          <div>
-            {/* Tabs */}
-            </div><div className= flex flex-wrap justify-center" mb-8>"'
+        ) : ( </div>
+          <div>"
+            {/* Tabs */}"</div>
+            </div><div className=" flex flex-wrap justify-center" mb-8">"'
               '
                 onClick={() => setActiveTab(wishli's't)}
                 className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -318,7 +318,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       bg-whit'e'/10 text-gray-300 hover bg-white/20``
                 }`}
               >
-                Wishlist ({wishlistItems.length}
+                Wishlist ({wishlistItems.length}</div>
               </button> 
               ''`
                 onClick={() => setActiveTab(compariso'n's)}``
@@ -328,7 +328,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     : bg-white'/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Comparisons ({comparisons.length}
+                Comparisons ({comparisons.length}</div>
               </button>
               `
                 onClick={() => setActiveTab(recommendatio'n's)}``
@@ -338,37 +338,37 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                     : bg-white'/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                AI Recommendations
-              </button>
+                AI Recommendations</div>
+              </button></div>
             </div>
-
-            {/* Wishlist Tab */},
-{activeTab === wishli's't && ("
+"
+            {/* Wishlist Tab */},"
+{activeTab === wishli's't && ("</div>
               <div className=" space-y-8>
-                {/* Controls */}
-                </div><div className= bg-white/10 backdrop-blur-sm:rounded-xl p-6>
-                  <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> 
-                    </div><div className=flex items-center space-x-4>
+                {/* Controls */}"</div>
+                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6">"</div>
+                  <div className="flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0> </div>
+                    </div><div className="flex items-center space-x-4">
                       
                         onChange={(e) => setSelectedCategory(e.target.value)}"
                         className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500
-                      >
-                        {categories.map(category => (
+                      >"
+                        {categories.map(category => ("</div>
                           <option key={category} value={category} className="bg-slate-800>"
-                            {category === 'a'll ? 'Al'l Categories : category}
+                            {category === 'a'll ? 'Al'l Categories : category}</div>
                           </option>
-                        ))}
+                        ))}</div>
                       </select>
                         onChange={(e) => setSortBy(e.target.value as any)} 
                         className=bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-purple-500"
-                      >
-                        <option value=date" className=bg-slate-800>Date Added</option>
-                        <option value=price className="bg-slate-800>Price</option>"
-                        <option value=rating className=bg-slate-800>Rating</option>
-                        <option value=aiScore className="bg-slate-800>AI" Score</option>
-                      </select>
-                    </div>
-                    <div className=flex items-center space-x-4>"
+                      ></div>
+                        <option value=date" className="bg-slate-800">Date Added</option></div>
+                        <option value=price className="bg-slate-800>Price</option>"</div>
+                        <option value=rating className="bg-slate-800">Rating</option></div>
+                        <option value=aiScore className="bg-slate-800>AI" Score</option></div>
+                      </select></div>
+                    </div></div>
+                    <div className="flex items-center space-x-4">"
                       "''`
                         onClick={() => setViewMode(gri'd')}``
                         className={`p-2 rounded-lg transition-all duration-300 ${
@@ -377,7 +377,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                               'bg-white/10 text-gray-300 hover bg-white/20'``
                         }`}
                       >
-                        Grid
+                        Grid</div>
                       </button> '
                       "'`
                         onClick={() => setViewMode('list')}``
@@ -387,298 +387,298 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                               'bg-whit'e/10 text-gray-300 hover bg-white/20``
                         }`}
                       >
-                        List
+                        List</div>
                       </button>
                       {selectedItems.length > 0 && (
                         >
-                          Compare ({selectedItems.length}
+                          Compare ({selectedItems.length}</div>
                         </button>
-                      )}
-                    </div>
-                  </div>
+                      )}</div>
+                    </div></div>
+                  </div></div>
                 </div>
 '
-                {/* Items Grid/List */},
-{viewMode === 'grid' ? ( 
-                  <div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 >
-                    {filteredItems.map((item) => (
-                      </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                        <div className= flex items-start justify-between mb-4>
-                          </div><div className="flex  items-center space-x-2>
-                            
+                {/* Items Grid/List */},"
+{viewMode === 'grid' ? ( "</div>
+                  <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 ">
+                    {filteredItems.map((item) => (</div>
+                      </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                        <div className=" flex items-start justify-between mb-4">"</div>
+                          </div><div className="flex  items-center space-x-2>"
+                            "
                               onChange={() => handleItemSelect(item.id)}"
                               className= w-4 h-4 text-purple-600 bg-white/10 border-white/20 rounded focus ring-purple-500"`
-                            />"``
-                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(item.type)}`}>
-                              {item.type}
-                            </span>
-                          </div>
-                          <div className="text-right>"
-                            </div><div className=text-2xl font-bold text-white >
-                              ${item.price.toLocaleString()}
+                            />"``</div>
+                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(item.type)}`}">
+                              {item.type}</div>
+                            </span></div>
+                          </div></div>
+                          <div className="text-right>"</div>
+                            </div><div className="text-2xl font-bold text-white ">
+                              ${item.price.toLocaleString()}</div>
                             </div>
-                            {item.originalPrice && (
+                            {item.originalPrice && (</div>
                               <div className="text-sm" text-gray-400 line-through>
-                                ${item.originalPrice.toLocaleString()}
+                                ${item.originalPrice.toLocaleString()}</div>
                               </div>
-                            )}
-                          </div>
-                        </div>
-                        <h3 className=text-lg font-semibold text-white mb-2>{item.title}</h3>
+                            )}</div>
+                          </div></div>
+                        </div></div>
+                        <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3></div>
                         <p className="text-gray-300" text-sm:mb-4>{item.description}</p>
-                        {/* Provider */}
-                        <div className=flex items-center space-x-3 mb-4 >
-                          </div><div className=" w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center" justify-center>
-                            <span className=text-white font-semibold text-xs>'
-                              {item.provider.name.split( ).map(n => n[0]).join('')}
-                            </span>
-                          </div> 
-                          <div>
-                            </div><div className="text-white" font-semibold text-sm>{item.provider.name}</div>
-                            <div className=flex items-center space-x-1 >
-                              <span className="text-yellow-400" text-xs>★</span>
-                              <span className=text-white text-xs>{item.provider.rating}</span">
-                            </div>
-                          </div>
+                        {/* Provider */}</div>
+                        <div className="flex items-center space-x-3 mb-4 "></div>
+                          </div><div className=" w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center" justify-center></div>
+                            <span className="text-white font-semibold text-xs">'
+                              {item.provider.name.split( ).map(n => n[0]).join('')}</div>
+                            </span></div>
+                          </div> </div>
+                          <div></div>
+                            </div><div className="text-white" font-semibold text-sm>{item.provider.name}</div></div>
+                            <div className="flex items-center space-x-1 "></div>
+                              <span className="text-yellow-400" text-xs>★</span></div>
+                              <span className="text-white text-xs">{item.provider.rating}</span"></div>
+                            </div></div>
+                          </div></div>
                         </div>
 "
-                        {/* Stats */}
-                        <div className=grid grid-cols-3 gap-4 mb-4 text-center>
-                          </div><div>
-                            <div className="text-white" font-semibold >{item.rating}</div>
-                            <div className=text-gray-400 text-xs>Rating</div>
-                          </div>
-                          <div>
-                            </div><div className="text-white" font-semibold>{item.aiScore}</div>
-                            <div className=text-gray-400 text-xs>AI Score</div>
-                          </div>
-                          <div>
-                            </div><div className="text-white" font-semibold >{item.reviewCount}</div>
-                            <div className=text-gray-400 text-xs>Reviews</div>
-                          </div>
+                        {/* Stats */}</div>
+                        <div className="grid grid-cols-3 gap-4 mb-4 text-center"></div>
+                          </div><div></div>
+                            <div className="text-white" font-semibold >{item.rating}</div></div>
+                            <div className="text-gray-400 text-xs">Rating</div></div>
+                          </div></div>
+                          <div></div>
+                            </div><div className="text-white" font-semibold>{item.aiScore}</div></div>
+                            <div className="text-gray-400 text-xs">AI Score</div></div>
+                          </div></div>
+                          <div></div>
+                            </div><div className="text-white" font-semibold >{item.reviewCount}</div></div>
+                            <div className="text-gray-400 text-xs">Reviews</div></div>
+                          </div></div>
                         </div>
-                        {/* Tags */}
+                        {/* Tags */}</div>
                         <div className="flex flex-wrap gap-1 mb-4">
-                          {item.tags.slice(0, 3).map((tag, index) => (
-                            <span key={index} className=px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300>
-                              {tag}
+                          {item.tags.slice(0, 3).map((tag, index) => (</div>
+                            <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300">
+                              {tag}</div>
                             </span>
-                          ))}
+                          ))}</div>
                         </div>
 
-                        {/* AI Recommendation */}
-                        <div className="mb-4>"
-                          </div><div className=text-sm font-medium text-gray-400 mb-1>AI Insight </div>
-                          <div className="text-xs" text-gray-300>{item.aiRecommendation}</div>
+                        {/* AI Recommendation */}</div>
+                        <div className="mb-4>"</div>
+                          </div><div className="text-sm font-medium text-gray-400 mb-1">AI Insight </div></div>
+                          <div className="text-xs" text-gray-300>{item.aiRecommendation}</div></div>
                         </div>
-                        {/* Action Buttons */}
-                        <div className=flex space-x-2>
+                        {/* Action Buttons */}</div>
+                        <div className="flex space-x-2"></div>
                           <button className="flex-1" bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 >
-                            View Details
-                          </button>
-                          <button className=flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
-                            Remove
-                          </button>
-                        </div>
+                            View Details</div>
+                          </button></div>
+                          <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                            Remove</div>
+                          </button></div>
+                        </div></div>
                       </div>
-                    ))} 
+                    ))} </div>
                   </div>
-                )   (
-                  <div className="space-y-4>
-                    {filteredItems.map((item) => (
-                      </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                        <div className=flex  items-center space-x-4">
+                )   (</div>
+                  <div className="space-y-4>"
+                    {filteredItems.map((item) => ("</div>
+                      </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"</div>
+                        <div className="flex  items-center space-x-4"">
                           
                             onChange={() => handleItemSelect(item.id)}"
                             className= w-4 h-4 text-purple-600 bg-white/10 border-white/20 rounded focus ring-purple-500"
-                          />
-                          <div className=" flex-1>
-                            </div><div className= flex items-center justify-between mb-2>
-                              <h3 className="text-lg" font-semibold text-white>{item.title}</h3>
-                              <div className=text-right>
+                          /></div>
+                          <div className=" flex-1>"</div>
+                            </div><div className=" flex items-center justify-between mb-2">"</div>
+                              <h3 className="text-lg" font-semibold text-white>{item.title}</h3></div>
+                              <div className="text-right"></div>
                                 </div><div className="text-xl" font-bold text-white>
-                                  ${item.price.toLocaleString()} 
+                                  ${item.price.toLocaleString()} </div>
                                 </div>
-                                {item.originalPrice && (
-                                  <div className=text-sm:text-gray-400 line-through>
-                                    ${item.originalPrice.toLocaleString()}
+                                {item.originalPrice && (</div>
+                                  <div className="text-sm:text-gray-400 line-through">
+                                    ${item.originalPrice.toLocaleString()}</div>
                                   </div>
-                                )}
-                              </div>
-                            </div>
-                            <p className="text-gray-300" text-sm mb-2 >{item.description}</p>
-                            <div className=flex items-center space-x-4" text-sm>
-                              <span className=" text-gray-400>Provider: {item.provider.name}</span>
-                              <span className=text-gray-400>Rating: {item.rating}</span>`
-                              <span className="text-gray-400>AI" Score: {item.aiScore}</span>``
-                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getAvailabilityColor(item.availability)}`}>
-                                {item.availability}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                                )}</div>
+                              </div></div>
+                            </div></div>
+                            <p className="text-gray-300" text-sm mb-2 >{item.description}</p></div>
+                            <div className="flex items-center space-x-4" text-sm"></div>
+                              <span className=" text-gray-400>Provider: {item.provider.name}</span>"</div>
+                              <span className="text-gray-400">Rating: {item.rating}</span>`"</div>
+                              <span className="text-gray-400>AI" Score: {item.aiScore}</span>``</div>
+                              <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getAvailabilityColor(item.availability)}`}">
+                                {item.availability}</div>
+                              </span></div>
+                            </div></div>
+                          </div></div>
+                        </div></div>
                       </div>
-                    ))}
-                  </div > )}
+                    ))}</div>
+                  </div > )}</div>
               </div>
             )}
             {/* Comparisons Tab */},"
-{activeTab === 'compariso'ns && (
+{activeTab === 'compariso'ns && (</div>
               <div className=" space-y-6>
-                {comparisons.map((comparison) => (
-                  </div><div key={comparison.id} className= bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
-                    <div className="flex  items-center justify-between mb-6">
-                      <h3 className=text-xl font-semibold text-white>Comparison #{comparison.id}</h3>
+                {comparisons.map((comparison) => ("</div>
+                  </div><div key={comparison.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10">"</div>
+                    <div className="flex  items-center justify-between mb-6"></div>
+                      <h3 className="text-xl font-semibold text-white">Comparison #{comparison.id}</h3></div>
                       <div className="text-sm" text-gray-400>
-                        {comparison.comparisonDate.toLocaleDateString()}
-                      </div>
+                        {comparison.comparisonDate.toLocaleDateString()}</div>
+                      </div></div>
                     </div>
 
-                    {/* AI Analysis Summary */}
-                    <div className="mb-6>"
-                      <h4 className=text-lg font-semibold text-white mb-3 >AI Analysis Summary</h4>
-                      <div className="grid" grid-cols-1 md grid-cols-3 gap-4>
-                        </div><div className= bg-white/5 rounded-lg p-4>"
-                          <div className="text-sm:text-gray-400 mb-1>Best Value</div >
-                          <div className=text-white" font-semibold >{comparison.aiAnalysis.bestValue}</div>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-4>
-                          </div><div className=text-sm" text-gray-400 mb-1>Best Quality</div>
-                          <div className="text-white font-semibold>{comparison.aiAnalysis.bestQuality}</div>
-                        </div>
-                        <div className=bg-white/5" rounded-lg p-4 >
-                          </div><div className="text-sm text-gray-400 mb-1>Best Features</div>
-                          <div className=text-white" font-semibold>{comparison.aiAnalysis.bestFeatures}</div>
-                        </div>
-                      </div>
+                    {/* AI Analysis Summary */}</div>
+                    <div className="mb-6>"</div>
+                      <h4 className="text-lg font-semibold text-white mb-3 ">AI Analysis Summary</h4></div>
+                      <div className="grid" grid-cols-1 md grid-cols-3 gap-4></div>
+                        </div><div className=" bg-white/5 rounded-lg p-4">"</div>
+                          <div className="text-sm:text-gray-400 mb-1>Best Value</div >"</div>
+                          <div className="text-white" font-semibold ">{comparison.aiAnalysis.bestValue}</div></div>
+                        </div></div>
+                        <div className="bg-white/5 rounded-lg p-4>"</div>
+                          </div><div className="text-sm" text-gray-400 mb-1">Best Quality</div></div>
+                          <div className="text-white font-semibold>{comparison.aiAnalysis.bestQuality}</div>"</div>
+                        </div>"</div>
+                        <div className="bg-white/5" rounded-lg p-4 "></div>
+                          </div><div className="text-sm text-gray-400 mb-1>Best Features</div>"</div>
+                          <div className="text-white" font-semibold">{comparison.aiAnalysis.bestFeatures}</div></div>
+                        </div></div>
+                      </div></div>
                     </div>
-                    {/* Items Comparison */}
-                    <div className="mb-6>
-                      <h4 className=text-lg" font-semibold text-white mb-3 >Items Comparison</h4>
+                    {/* Items Comparison */}</div>
+                    <div className="mb-6>"</div>
+                      <h4 className="text-lg" font-semibold text-white mb-3 ">Items Comparison</h4></div>
                       <div className="grid grid-cols-1 md grid-cols-2 gap-4>
-                        {comparison.items.map((item) => (
-                          </div><div key={item.id} className= bg-white/5 rounded-lg p-4>
-                            <h5 className="text-white" font-semibold mb-2>{item.title}</h5>
-                            <div className=space-y-2 text-sm > 
-                              </div><div className="flex" justify-between>
-                                <span className=text-gray-400>Price:</span>
-                                <span className="text-white>${item.price.toLocaleString()}</span">
-                              </div>
-                              <div className=flex justify-between">
-                                <span className="text-gray-400>Rating </span>
-                                <span className=text-white>{item.rating}</span">
-                              </div>
-                              <div className="flex justify-between>
-                                <span className=text-gray-400>AI" Score:</span>
-                                <span className="text-white>{item.aiScore}</span> 
-                              </div>
-                              <div className=flex" justify-between>
-                                <span className="text-gray-400>Provider:</span>
-                                <span className=text-white>{item.provider.name}</span>"
-                              </div>
-                            </div>
+                        {comparison.items.map((item) => ("</div>
+                          </div><div key={item.id} className=" bg-white/5 rounded-lg p-4">"</div>
+                            <h5 className="text-white" font-semibold mb-2>{item.title}</h5></div>
+                            <div className="space-y-2 text-sm "> </div>
+                              </div><div className="flex" justify-between></div>
+                                <span className="text-gray-400">Price:</span></div>
+                                <span className="text-white>${item.price.toLocaleString()}</span"></div>
+                              </div></div>
+                              <div className="flex justify-between""></div>
+                                <span className="text-gray-400>Rating </span>"</div>
+                                <span className="text-white">{item.rating}</span"></div>
+                              </div></div>
+                              <div className="flex justify-between>"</div>
+                                <span className="text-gray-400">AI" Score:</span></div>
+                                <span className="text-white>{item.aiScore}</span> "</div>
+                              </div>"</div>
+                              <div className="flex" justify-between"></div>
+                                <span className="text-gray-400>Provider:</span>"</div>
+                                <span className="text-white">{item.provider.name}</span>"</div>
+                              </div></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
+                        ))}</div>
+                      </div></div>
                     </div>
 
-                    {/* AI Recommendation */}"
-                    <div className=mb-6>
-                      <h4 className="text-lg" font-semibold text-white mb-3>AI Recommendation</h4>
-                      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
-                        <p className="text-white" mb-2 >{comparison.aiAnalysis.recommendation}</p>
-                        <div className=text-sm:text-gray-300>
-                          Confidence  {Math.round(comparison.aiAnalysis.confidence * 100)}%
-                        </div>
-                      </div>
+                    {/* AI Recommendation */}"</div>
+                    <div className="mb-6"></div>
+                      <h4 className="text-lg" font-semibold text-white mb-3>AI Recommendation</h4></div>
+                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4"></div>
+                        <p className="text-white" mb-2 >{comparison.aiAnalysis.recommendation}</p></div>
+                        <div className="text-sm:text-gray-300">
+                          Confidence  {Math.round(comparison.aiAnalysis.confidence * 100)}%</div>
+                        </div></div>
+                      </div></div>
                     </div>
 
-                    {/* Detailed Recommendations */} 
-                    <div>
-                      <h4 className="text-lg" font-semibold text-white mb-3>Detailed Recommendations</h4>
-                      <div className=space-y-3>
-                        {comparison.recommendations.map((rec) => (
-                          </div><div key={rec.id} className="bg-white/5 rounded-lg p-4">
-                            <div className=flex items-start justify-between mb-2>
+                    {/* Detailed Recommendations */} </div>
+                    <div></div>
+                      <h4 className="text-lg" font-semibold text-white mb-3>Detailed Recommendations</h4></div>
+                      <div className="space-y-3">
+                        {comparison.recommendations.map((rec) => (</div>
+                          </div><div key={rec.id} className="bg-white/5 rounded-lg p-4"></div>
+                            <div className="flex items-start justify-between mb-2"></div>
                               <h5 className="text-white" font-semibold>{rec.title}</h5>`
                               ``
                               }`}>
-                                {rec.category}
-                              </span>
-                            </div>
-                            <p className=text-gray-300 text-sm mb-2 >{rec.description}</p>
-                            <p className="text-gray-400" text-xs>{rec.reasoning}</p>
-                            <div className=text-xs text-gray-400 mt-2>
-                              Confidence  {Math.round(rec.confidence * 100)}%
-                            </div>
+                                {rec.category}</div>
+                              </span></div>
+                            </div></div>
+                            <p className="text-gray-300 text-sm mb-2 ">{rec.description}</p></div>
+                            <p className="text-gray-400" text-xs>{rec.reasoning}</p></div>
+                            <div className="text-xs text-gray-400 mt-2">
+                              Confidence  {Math.round(rec.confidence * 100)}%</div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div > ))}
+                        ))}</div>
+                      </div></div>
+                    </div></div>
+                  </div > ))}</div>
               </div>
             )}
             {/* AI Recommendations Tab */},"''
-{activeTab === recommendation's' && (
-              <div className="space-y-6> 
-                </div><div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 ">
-                  <h3 className="text-xl font-semibold text-white mb-4>AI-Powered Recommendations</h3>
-                  <p className=text-gray-300" mb-6> 
-                    Based on your wishlist items and preferences, here are our AI-powered recommendations 
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6> 
-                    </div><div className=bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg p-4 ">
-                      <h4 className="text-white font-semibold mb-2>🎯 Best Value Recommendation</h4>
-                      <p className=text-gray-300" text-sm mb-2> 
-                        Consider the AI-Powered Web Development service for the best value proposition.
-                      </p>
-                      <div className="text-xs text-gray-400>
-                        • Complete solution with AI integration<br>• Good price-to-feature ratio</br><br>• Strong provider reputation
-                      </br></div>
-                    </div>
-                    <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ">
-                      <h4 className="text-white font-semibold mb-2>🚀 Quick Start Recommendation</h4>
-                      <p className=text-gray-300" text-sm mb-2> 
-                        Start with the Senior AI Engineer for immediate project needs.
-                      </p>
-                      <div className="text-xs text-gray-400>
-                        • Immediate availability<br>• Flexible engagement model</br><br>• Proven expertise
-                      </br></div>
-                    </div>
-                  </div>
-                </div>
+{activeTab === recommendation's' && (</div>
+              <div className="space-y-6> "</div>
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 ""></div>
+                  <h3 className="text-xl font-semibold text-white mb-4>AI-Powered Recommendations</h3>"</div>
+                  <p className="text-gray-300" mb-6"> 
+                    Based on your wishlist items and preferences, here are our AI-powered recommendations </div>
+                  </p></div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6> "</div>
+                    </div><div className="bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg p-4 ""></div>
+                      <h4 className="text-white font-semibold mb-2>🎯 Best Value Recommendation</h4>"</div>
+                      <p className="text-gray-300" text-sm mb-2"> 
+                        Consider the AI-Powered Web Development service for the best value proposition.</div>
+                      </p></div>
+                      <div className="text-xs text-gray-400></div>
+                        • Complete solution with AI integration<br>• Good price-to-feature ratio</br><br>• Strong provider reputation</div>
+                      </br></div>"</div>
+                    </div>"</div>
+                    <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 ""></div>
+                      <h4 className="text-white font-semibold mb-2>🚀 Quick Start Recommendation</h4>"</div>
+                      <p className="text-gray-300" text-sm mb-2"> 
+                        Start with the Senior AI Engineer for immediate project needs.</div>
+                      </p></div>
+                      <div className="text-xs text-gray-400></div>
+                        • Immediate availability<br>• Flexible engagement model</br><br>• Proven expertise</div>
+                      </br></div></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
+            )}</div>
           </div>
-        )}
-      </div>
-      {/* CTA Section */}
-      <div className=bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
-        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>
-          <div className=text-center">
+        )}</div>
+      </div>"
+      {/* CTA Section */}"</div>
+      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 "></div>
+        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36>"</div>
+          <div className="text-center""></div>
             <h2 className="text-3xl font-bold text-white mb-4>
-              Ready to Make Smart Decisions? 
-            </h2>
-            <p className=text-xl"" text-gray-300 mb-8 max-w-2xl:mx-auto>
+              Ready to Make Smart Decisions? "</div>
+            </h2>"</div>
+            <p className="text-xl"" text-gray-300 mb-8 max-w-2xl:mx-auto">
               Start building your wishlist, compare items with AI analysis, 
-              and get intelligent recommendations to make the best choices for your projects.
-            </p>
-            <div className= flex flex-col sm flex-row gap-4" justify-center>
-              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Services
-              </Link href=/ai-service-matcher className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
-              <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Find Talent
-              </Link href=/talent-directory  className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              and get intelligent recommendations to make the best choices for your projects.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row gap-4" justify-center"></div>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Services"</div>
+              </Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" "></Link></div>
+              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ">Find Talent</div>
+              </Link href=/talent-directory  className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
-  </div> 
+  </div>
+</div>
+  </div> </div>
   </div>
 ;
 };
-`
-export default AIPoweredWishlistComparisonPage ))))))))))))))))))))))))))))'"'`
+`;}
+export default AIPoweredWishlistComparisonPage ))))))))))))))))))))))))))))'"'`</div>

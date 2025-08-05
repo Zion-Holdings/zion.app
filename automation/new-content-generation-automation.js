@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, execSync } = require('chil'd'_process');
@@ -276,158 +276,158 @@ class NewContentGenerationAutomation {
     const features = this.generateFeatures(variation);
     const benefits = this.generateBenefits(variation);
     
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
-import Layout from '../components/Layout';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
+import Layout from '../components/Layout';}
 import { motion } from 'framer-moti'o'n';
-
+;
 const ${this.formatComponentName(variation)} = () => {
   return (
-    <Layout>
-      <Head>
-        <title>${title} - Zion App</title>
-        <meta name="description" content="${description}" />
-        <meta name="keywords" content="${variation}, AI, automation, technology, solutions" />
+    <Layout></div>
+      <Head></div>
+        <title>${title} - Zion App</title></div>
+        <meta name="description" content="${description}" /></div>
+        <meta name="keywords" content="${variation}, AI, automation, technology, solutions" /></div>
       </Head>
-      
+      </div>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}</div>
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8"></div>
+          <div className="max-w-7xl mx-auto"></div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"
-            >
+            ></div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                ${title}
-              </h1>
+                ${title}</div>
+              </h1></div>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                ${description}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                ${description}</div>
+              </p></div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center"></div>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Get Started
-                </button>
+                  Get Started</div>
+                </button></div>
                 <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
-          </div>
+                  Learn More</div>
+                </button></div>
+              </div></div>
+            </motion.div></div>
+          </div></div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
+        {/* Features Section */}</div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white"></div>
+          <div className="max-w-7xl mx-auto"></div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
-            >
+            ></div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Key Features
-              </h2>
+                Key Features</div>
+              </h2></div>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Discover the powerful capabilities that make our ${variation} solution stand out
-              </p>
+                Discover the powerful capabilities that make our ${variation} solution stand out</div>
+              </p></div>
             </motion.div>
-            
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              ${features.map((feature, index) => `
+              ${features.map((feature, index) => `</div>
               <motion.div
                 key="${index}"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: ${index * 0.1} }}
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">${feature.title}</h3>
-                <p className="text-gray-600">${feature.description}</p>
+              ></div>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"></div>
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"></div>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></div>
+                  </svg></div>
+                </div></div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">${feature.title}</h3></div>
+                <p className="text-gray-600">${feature.description}</p></div>
               </motion.div>
-              `).join('')}
-            </div>
-          </div>
+              `).join('')}</div>
+            </div></div>
+          </div></div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-          <div className="max-w-7xl mx-auto">
+        {/* Benefits Section */}</div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50"></div>
+          <div className="max-w-7xl mx-auto"></div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
-            >
+            ></div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Our ${title}
-              </h2>
+                Why Choose Our ${title}</div>
+              </h2></div>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Experience the benefits that transform your business operations
-              </p>
+                Experience the benefits that transform your business operations</div>
+              </p></div>
             </motion.div>
-            
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              ${benefits.map((benefit, index) => `
+              ${benefits.map((benefit, index) => `</div>
               <motion.div
                 key="${index}"
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: ${index * 0.1} }}
                 className="flex items-start space-x-4"
-              >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">${benefit.title}</h3>
-                  <p className="text-gray-600">${benefit.description}</p>
-                </div>
+              ></div>
+                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center"></div>
+                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"></div>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></div>
+                  </svg></div>
+                </div></div>
+                <div></div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">${benefit.title}</h3></div>
+                  <p className="text-gray-600">${benefit.description}</p></div>
+                </div></div>
               </motion.div>
-              `).join('')}
-            </div>
-          </div>
+              `).join('')}</div>
+            </div></div>
+          </div></div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
-          <div className="max-w-4xl mx-auto text-center">
+        {/* CTA Section */}</div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600"></div>
+          <div className="max-w-4xl mx-auto text-center"></div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-            >
+            ></div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
-              </h2>
+                Ready to Transform Your Business?</div>
+              </h2></div>
               <p className="text-xl text-blue-100 mb-8">
-                Start your journey with our ${title} solution today
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                Start your journey with our ${title} solution today</div>
+              </p></div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center"></div>
                 <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Start Free Trial
-                </button>
+                  Start Free Trial</div>
+                </button></div>
                 <button className="border border-white text-white hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Schedule Demo
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
+                  Schedule Demo</div>
+                </button></div>
+              </div></div>
+            </motion.div></div>
+          </div></div>
+        </section></div>
+      </div></div>
     </Layout>
   );
 };
-
+;}
 export default ${this.formatComponentName(variation)};
 `;
   }
@@ -583,128 +583,128 @@ export default ${this.formatComponentName(variation)};
 
   generateFeatureComponent(featureType) {
     const title = this.formatTitle(featureType);
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
 
 interface ${this.formatComponentName(featureType)}Props {
   className?: string;
 }
-
+</div>;
 const ${this.formatComponentName(featureType)}: React.FC<${this.formatComponentName(featureType)}Props> = ({ className = '' }) => {
-  return (
+  return (</div>
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className={\`bg-white rounded-lg shadow-lg p-6 \${className}\`}
-    >
-      <div className="flex items-center mb-4">
-        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
-        <h3 className="text-xl font-semibold text-gray-900">${title}</h3>
-      </div>
+      className="{\`bg-white rounded-lg shadow-lg p-6 \${className}\`}"
+    "></div>
+      <div className="flex items-center mb-4"></div>
+        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4"></div>
+          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"></div>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></div>
+          </svg></div>
+        </div></div>
+        <h3 className="text-xl font-semibold text-gray-900">${title}</h3></div>
+      </div></div>
       <p className="text-gray-600 mb-4">
-        Advanced ${title.toLowerCase()} capabilities that enhance your business operations and drive growth.
-      </p>
-      <div className="flex space-x-2">
+        Advanced ${title.toLowerCase()} capabilities that enhance your business operations and drive growth.</div>
+      </p></div>
+      <div className="flex space-x-2"></div>
         <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
-          Learn More
-        </button>
+          Learn More</div>
+        </button></div>
         <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors">
-          Demo
-        </button>
-      </div>
+          Demo</div>
+        </button></div>
+      </div></div>
     </motion.div>
   );
 };
-
+;}
 export default ${this.formatComponentName(featureType)};
 `;
   }
 
   generateServicePage(serviceType) {
     const title = this.formatTitle(serviceType);
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
 import Layout from '../../components/Layout';
-
+;
 const ${this.formatComponentName(serviceType)} = () => {
-  return (
-    <Layout>
-      <Head>
-        <title>${title} Services - Zion App</title>
-        <meta name="description" content="Professional ${title.toLowerCase()} services to transform your business." />
+  return (</div>
+    <Layout></div>
+      <Head></div>
+        <title>${title} Services - Zion App</title></div>
+        <meta name="description" content="Professional ${title.toLowerCase()} services to transform your business." /></div>
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              ${title} Services
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Professional ${title.toLowerCase()} services designed to accelerate your business growth and success.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Get Started
-              </button>
-              <button className="border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Contact Us
-              </button>
-            </div>
-          </div>
-        </section>
       </div>
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100"></div>
+        <section className="py-20 px-4 sm:px-6 lg:px-8"></div>
+          <div className="max-w-7xl mx-auto text-center"></div>
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              ${title} Services</div>
+            </h1></div>
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              Professional ${title.toLowerCase()} services designed to accelerate your business growth and success.</div>
+            </p></div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center"></div>
+              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                Get Started</div>
+              </button></div>
+              <button className="border border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors">
+                Contact Us</div>
+              </button></div>
+            </div></div>
+          </div></div>
+        </section></div>
+      </div></div>
     </Layout>
   );
 };
-
+;}
 export default ${this.formatComponentName(serviceType)};
 `;
   }
 
   generateComponent(componentType) {
     const title = this.formatTitle(componentType);
-    return `import React from 'rea'c't';
+    return `import React from 'rea'c't';}
 import { motion } from 'framer-moti'o'n';
 
 interface ${this.formatComponentName(componentType)}Props {
   className?: string;
   data?: any;
 }
-
+</div>;
 const ${this.formatComponentName(componentType)}: React.FC<${this.formatComponentName(componentType)}Props> = ({ 
   className = '', 
   data 
 }) => {
-  return (
+  return (</div>
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className={\`bg-white rounded-lg shadow-md p-6 \${className}\`}
-    >
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-900">${title}</h3>
-        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-          </svg>
-        </div>
-      </div>
-      <div className="space-y-3">
-        <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
-        <div className="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div>
-      </div>
+      className="{\`bg-white rounded-lg shadow-md p-6 \${className}\`}"
+    "></div>
+      <div className="flex items-center justify-between mb-4"></div>
+        <h3 className="text-lg font-semibold text-gray-900">${title}</h3></div>
+        <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center"></div>
+          <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"></div>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></div>
+          </svg></div>
+        </div></div>
+      </div></div>
+      <div className="space-y-3"></div>
+        <div className="h-4 bg-gray-200 rounded animate-pulse"></div></div>
+        <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div></div>
+        <div className="h-4 bg-gray-200 rounded animate-pulse w-1/2"></div></div>
+      </div></div>
     </motion.div>
   );
 };
-
+;}
 export default ${this.formatComponentName(componentType)};
 `;
   }
@@ -719,9 +719,9 @@ type Data = {
   message?: string;
   timestamp: string;
 };
-
+;}
 export default async function handler(
-  req: NextApiRequest,
+  req: NextApiRequest,</div>
   res: NextApiResponse<Data>
 ) {
   if (req.method !== 'G'E'T' && req.method !== 'PO'S'T') {
@@ -795,10 +795,10 @@ npm install @zion-app/${docType}
 
 ### Basic Usage
 
-\`\`\`javascript
+\`\`\`javascript;}
 import { ${this.formatComponentName(docType)} } from '@zion-app/${docType}';
 
-// Initialize the ${docType}
+// Initialize the ${docType};
 const ${docType} = new ${this.formatComponentName(docType)}();
 
 // Use the functionality
@@ -821,7 +821,7 @@ ${docType}.initialize();
 Initializes the ${docType} system.
 
 **Parameters:** None
-
+</div>
 **Returns:** Promise<void>
 
 #### \`process(data)\`
@@ -830,19 +830,19 @@ Processes data using ${docType} algorithms.
 
 **Parameters:**
 - \`data\` (Object): Input data to process
-
+</div>
 **Returns:** Promise<Object>
 
 ## Examples
 
 ### Basic Example
 
-\`\`\`javascript
+\`\`\`javascript;}
 import { ${this.formatComponentName(docType)} } from '@zion-app/${docType}';
-
+;
 const ${docType} = new ${this.formatComponentName(docType)}();
 await ${docType}.initialize();
-
+;
 const result = await ${docType}.process({
   input: 'sampl'e' data'
 });
@@ -939,4 +939,4 @@ if (require.main === module) {
   automation.start();
 }
 
-module.exports = NewContentGenerationAutomation; 
+module.exports = NewContentGenerationAutomation; </div>

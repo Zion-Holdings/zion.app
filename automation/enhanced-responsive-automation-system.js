@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -285,7 +285,7 @@ class EnhancedResponsiveAutomationSystem {
     const totalAgents = this.agents.size;
     const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length;
     
-    return {
+    return {</div>
       needsNewAgents: totalAgents < 20 || (activeAgents / totalAgents) < 0.8,
       recommendations: ['content-validat'o'r', 'performance-monit'o'r', 'accessibility-check'e'r'],
       targetFactory: Array.from(this.factories.keys())[0] || 'content-responsive-facto'r'y'
@@ -379,8 +379,8 @@ class EnhancedResponsiveAutomationSystem {
 
   addResponsiveStyling(content) {
     if (!content.includes('classNa'm'e')) {
-      return content.replace(
-        '<div>',
+      return content.replace(</div>
+        '<div>',</div>
         '<div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">'
       );
     }
@@ -389,8 +389,8 @@ class EnhancedResponsiveAutomationSystem {
 
   addResponsiveDesign(content) {
     if (!content.includes('responsi'v'e')) {
-      return content.replace(
-        '<div className="',
+      return content.replace(</div>
+        '<div className="',"
         '<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 responsive '
       );
     }
@@ -400,8 +400,8 @@ class EnhancedResponsiveAutomationSystem {
   addViewportMeta(content) {
     if (!content.includes('viewpo'r't')) {
       return content.replace(
-        '<Head>',
-        `<Head>
+        '<Head>',"</div>
+        `<Head>"</div>
         <meta name="viewport" content="width=device-width, initial-scale=1" />`
       );
     }
@@ -413,7 +413,7 @@ class EnhancedResponsiveAutomationSystem {
     const activeFactories = Array.from(this.factories.values()).filter(f => f.status === 'acti'v'e').length;
     const successRate = this.performanceMetrics.improvementsMade / Math.max(this.performanceMetrics.automationsExecuted, 1);
     
-    return {
+    return {</div>
       needsNewScripts: totalFactories < 10 || successRate < 0.7,
       needsNewTemplates: totalFactories < 8,
       recommendations: ['content-optimizati'o'n', 'performance-enhanceme'n't', 'accessibility-improveme'n't'],
@@ -479,3 +479,4 @@ class EnhancedResponsiveAutomationSystem {
 }
 
 module.exports = EnhancedResponsiveAutomationSystem;
+</div>

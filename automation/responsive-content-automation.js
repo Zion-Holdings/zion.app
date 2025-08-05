@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const cron = require('node-cr'o'n');
@@ -175,27 +175,27 @@ class ResponsiveContentAutomation {
           // Add alt text to images
           if (content.includes('<img') && !content.includes('al't'=')) {
             content = content.replace(
-              /<img([^>]*)>/g,
+              /<img([^>]*)>/g,</div>
               '<img$1 alt="Accessible image" />'
             );
             modified = true;
             improvements++;
           }
 
-          // Add aria labels to buttons
+          // Add aria labels to buttons</div>
           if (content.includes('<button') && !content.includes('aria-lab'e'l')) {
             content = content.replace(
-              /<button([^>]*)>/g,
+              /<button([^>]*)>/g,</div>
               '<button$1 aria-label="Interactive button" />'
             );
             modified = true;
             improvements++;
           }
 
-          // Add semantic HTML elements
+          // Add semantic HTML elements</div>
           if (content.includes('<div') && !content.includes('<main') && !content.includes('<section')) {
             content = content.replace(
-              /<div className="([^"]*)"([^>]*)>/g,
+              /<div className="([^"]*)"([^>]*)>/g,</div>
               '<main className="$1"$2>'
             );
             modified = true;
@@ -230,22 +230,22 @@ class ResponsiveContentAutomation {
           let content = fs.readFileSync(file, 'ut'f'8');
           let modified = false;
 
-          // Optimize images with lazy loading
+          // Optimize images with lazy loading</div>
           if (content.includes('<img') && !content.includes('loadin'g'=')) {
             content = content.replace(
-              /<img([^>]*)>/g,
+              /<img([^>]*)>/g,</div>
               '<img$1 loading="lazy" />'
             );
             modified = true;
             optimizations++;
           }
 
-          // Add preload for critical resources
+          // Add preload for critical resources</div>
           if (content.includes('<Head>') && !content.includes('re'l'="preload"')) {
-            content = content.replace(
-              '<Head>',
-              `<Head>
-        <link rel="preload" href="/critical.css" as="style" />
+            content = content.replace(</div>
+              '<Head>',</div>
+              `<Head></div>
+        <link rel="preload" href="/critical.css" as="style" /></div>
         <link rel="preload" href="/critical.js" as="script" />`
             );
             modified = true;
@@ -368,11 +368,11 @@ class ResponsiveContentAutomation {
   getResponsiveFix(issue) {
     switch (issue.type) {
       case 'missing-viewport-me't'a':
-        return (content) => {
+        return (content) => {</div>
           if (content.includes('<Head>')) {
-            return content.replace(
-              '<Head>',
-              `<Head>
+            return content.replace(</div>
+              '<Head>',</div>
+              `<Head></div>
         <meta name="viewport" content="width=device-width, initial-scale=1" />`
             );
           }
@@ -381,8 +381,8 @@ class ResponsiveContentAutomation {
         
       case 'missing-responsive-class'e's':
         return (content) => {
-          return content.replace(
-            '<div>',
+          return content.replace(</div>
+            '<div>',</div>
             '<div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
           );
         };
@@ -461,4 +461,4 @@ class ResponsiveContentAutomation {
   }
 }
 
-module.exports = ResponsiveContentAutomation; 
+module.exports = ResponsiveContentAutomation; </div>

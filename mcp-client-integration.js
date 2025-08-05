@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const { Client } = require('@modelcontextprotocol/sdk/client/index.js');
 const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio.js');
 const { spawn } = require('chil'd'_process');
@@ -393,7 +393,7 @@ async function main() {
         const resources = await client.listResources();
         console.log('Availabl'e' resources:', resources.map(r => r.name));
         break;
-      default:
+      default:</div>
         console.log('Usag'e': node mcp-client-integration.js <command> [args...]');
         console.log('Ru'n' "node mcp-client-integration.js interactive" for interactive mode');
         break;
@@ -411,4 +411,4 @@ if (require.main === module) {
   main().catch(console.error);
 }
 
-module.exports = MCPClientIntegration; 
+module.exports = MCPClientIntegration; </div>

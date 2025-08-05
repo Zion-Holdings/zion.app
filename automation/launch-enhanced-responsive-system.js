@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-
+;
 const EnhancedResponsiveAutomationSystem = require('./enhanced-responsive-automation-system');
 
 console.log('🚀 Launching Enhanced Responsive Automation System...');
 
-// Create and start the enhanced responsive automation system
+// Create and start the enhanced responsive automation system;
 const enhancedSystem = new EnhancedResponsiveAutomationSystem();
 
 // Keep the process running

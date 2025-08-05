@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');
@@ -186,15 +186,15 @@ class ComponentSyncAgent {
     return `import React from 'rea'c't';
 
 ${propsInterface}
-
+;
 const ${name}: React.FC<${name}Props> = (${propsDestructuring}${childrenDestructuring}) => {
-  return (
+  return (</div>
     <div className="${className}" style={${JSON.stringify(style || {})}}>
-      ${children || ''}
+      ${children || ''}</div>
     </div>
   );
 };
-
+;}
 export default ${name};
 `;
   }
@@ -306,4 +306,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = ComponentSyncAgent; 
+module.exports = ComponentSyncAgent; </div>

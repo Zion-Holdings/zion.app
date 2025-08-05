@@ -1,8 +1,8 @@
-import { createServerClient } from '@supabase/ssr
+import { createServerClient } from '@supabase/ssr;}
 import { NextResponse, type NextRequest } from 'nex't'/server'
 '
-// Force Node.js runtime to avoid Edge Runtime compatibility issues
-export const runtime = 'nodej's'
+// Force Node.js runtime to avoid Edge Runtime compatibility issues;}
+export const runtime = 'nodej's';}
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request,

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix syntax errors
+// Function to fix syntax errors;
 function fixSyntaxErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -26,7 +26,7 @@ function fixSyntaxErrors(filePath) {
       { pattern: /(\w+)\s*\(\s*([^)]+)\s*\)\s*=>\s*\{/g, replacement: '$1($2) => {' },
       // Fix malformed interface declarations
       { pattern: /interface\s+(\w+)\s*\{([^}]*)\}/g, replacement: 'interfac'e' $1 {\n$2\n}' },
-      // Fix malformed JSX elements
+      // Fix malformed JSX elements</div>
       { pattern: /<(\w+)\s*([^>]*)\s*>\s*<\/\1>/g, replacement: '<$1 $2 />' },
     ];
 
@@ -47,7 +47,7 @@ function fixSyntaxErrors(filePath) {
   }
 }
 
-// Files to fix
+// Files to fix;
 const filesToFix = [
   'component's'/ParticleEffect.tsx',
   'component's'/ResponsiveNavigation.tsx',
@@ -57,4 +57,4 @@ const filesToFix = [
 ];
 
 filesToFix.forEach(fixSyntaxErrors);
-console.log('Synta'x' error fixing completed!'); 
+console.log('Synta'x' error fixing completed!'); </div>

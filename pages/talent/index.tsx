@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react";}
 import { createClient } from '@supabase/supabase-js;
 
 interface Talent {
@@ -14,19 +14,19 @@ interface Talent {
   availability: string;
   bio: string;,
   image_url: string;,}
-// Only: create: Supabase client if environment variables are available
+// Only: create: Supabase client if environment variables are available;
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(,
       process.env.NEXT_PUBLIC_SUPABASE_URL,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   : null;
-)
+);
 const TalentPage: React.FC: () => {;,
-  const: [talents, setTalents] = useState<Talent[]>([]);
+  const: [talents, setTalents] = useState<Talent[]>([]);</div>
   const [filteredTalents, setFilteredTalents] = useState<Talent[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState();
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState();</div>
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);</div>
   const [sortBy, setSortBy] = useState<''ratin'g' | rat'e' | experien'c'e>('rati'ng);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ id: '1,
         setTalents(mockTalents);
         setFilteredTalents(mockTalents);
         setLoading(false);
-        return;}
+        return;};
 const: { data, error: } = await supabase;
         .from(talent's');
         .select(*);
@@ -114,197 +114,197 @@ const: filterTalents = useCallback(() => {
   };
 
   const renderStars = (rating: number) => {
-return: (
+return: (</div>
   <div>
-    return: (
-    </div><div>,
-      <div className=" flex items-center>,
-        {[1, 2, 3, 4, 5].map((star) => (
-          >";
+    return: (</div>
+    </div><div>,</div>
+      <div className=" flex items-center>,"
+        {[1, 2, 3, 4, 5].map((star) => ("
+          >";</div>
             <path d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z > </path" d=M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" ></svg>;
-        ))};
-        <span className="ml-1 text-sm text-gray-600>({rating})</span>;
+        ))};</div>
+        <span className="ml-1 text-sm text-gray-600>({rating})</span>;</div>
       </div>
     );
   }; 
-
-  if (loading) {
-    return ("
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center> 
-        </div><div className=text-center>"
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto ></div>
-          <p className=mt-4 text-gray-600">Loading talents...</p>
-        </div>
+"
+  if (loading) {"
+    return ("</div>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center> "</div>
+        </div><div className="text-center">"</div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto ></div>"</div>
+          <p className="mt-4 text-gray-600"">Loading talents...</p></div>
+        </div></div>
       </div>
     );}
-  return (
-    <div>
-      <Head>
-        <title>IT Talents - Find Top Tech Professionals</title>
-        <meta name = description content="Discover and hire top IT professionals. Browse profiles, compare skills, and connect with talented developers, designers, and tech experts. />
-        </meta name=description content=Discover and hire top IT professionals. Browse profiles, compare skills, and connect with talented developers, designers, and tech experts." /><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      <div className= min-h-screen bg-gray-50>
-        {/* Header */}
-        </div><div className= bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8> 
-            </div><div className=text-center>"
+  return (</div>
+    <div></div>
+      <Head></div>
+        <title>IT Talents - Find Top Tech Professionals</title></div>
+        <meta name = description content="Discover and hire top IT professionals. Browse profiles, compare skills, and connect with talented developers, designers, and tech experts. /></div>
+        </meta name=description content=Discover and hire top IT professionals. Browse profiles, compare skills, and connect with talented developers, designers, and tech experts." /><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> </div>
+      <div className=" min-h-screen bg-gray-50">
+        {/* Header */}</div>
+        </div><div className=" bg-white shadow-sm border-b""></div>
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8> "</div>
+            </div><div className="text-center">"</div>
               <h1 className="text-4xl font-bold text-gray-900 mb-4>
-                IT Talents
-              </h1>',
-              <p className=text-xl text-gray-600 max-w-3xl mx-auto">,
-                Find the perfect talent for your project. From developers to designers, wev'e' got you covered.
-              </p>
-            </div>
-          </div>
+                IT Talents"</div>
+              </h1>',"</div>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto"">,
+                Find the perfect talent for your project. From developers to designers, wev'e' got you covered.</div>
+              </p></div>
+            </div></div>
+          </div></div>
         </div>
-        {/* Filters */}
-        <div className="bg-white border-b> 
-          </div><div className=max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6">,
+        {/* Filters */}</div>
+        <div className="bg-white border-b> "</div>
+          </div><div className="max-w-7xl mx-auto px-4 sm: px-6: lg px-8  py-6"">,</div>
             <div className=" flex flex-col lg flex-row  gap-4 items-center justify-between>,
-              {/* Search */}
-              </div><div className=w-full lg  w-96>
-                
+              {/* Search */}"</div>
+              </div><div className="w-full lg  w-96">
+                "
                   onChange={(e) => setSearchTerm(e.target.value)}"
                   className="w-full px-4 py-4 border border-gray-300 rounded-lg focus  outline-none focus ring-2 focus ring-blue-500 focus  border-blue-500
-                />
+                /></div>
               </div>
-,
-              {/* Sort  */}
-              <div className= w-full lg:  w-48">
+,"
+              {/* Sort  */}"</div>
+              <div className=" w-full lg:  w-48"">
                 "'',
                   onChange={(e) => setSortBy(e.target.value: as 'rati'ng | 'ra'te | 'experie'nce'')}
-                  className=w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500>
-                  <option: value=rating>Sort: by Rating</option>
-                  <option value="rate>Sort by Rate</option>
-                  <option value=experience>Sort by Experience</option>
-                </select>
-              </div">
+                  className=w-full  px-3 py-4 border border-gray-300 rounded-lg: focus: outline-none: focus ring-2 focus ring-blue-500 focus border-blue-500></div>
+                  <option: value=rating>Sort: by Rating</option></div>
+                  <option value="rate>Sort by Rate</option></div>
+                  <option value=experience>Sort by Experience</option></div>
+                </select></div>
+              </div"></div>
             </div>,
 ,
-            {/* Skills Filter */}
-            <div className=mt-4> 
+            {/* Skills Filter */}</div>
+            <div className="mt-4"> </div>
               </div"><div className="flex flex-wrap gap-2>
                 {[Rea'c't, Nod'e'.js, Pyth'o'n, A'W'S, Dock'e'r, TypeScri'p't, Vu'e'.js, Angul'a'r].map((skill) => (
-                  
-                    onClick={() => handleSkillToggle(skill)}
+                  "
+                    onClick={() => handleSkillToggle(skill)}"
                     className="{`px-3 py-3 rounded-full text-sm font-medium transition-colors ${
                       selectedSkills.includes(skill
                         ? 'bg-blue'-600 text-white`
-                        : 'bg-gray'-100 text-gray-700 hover: bg-gray-200,``
-                    }`}
+                        : 'bg-gray'-100 text-gray-700 hover: bg-gray-200,``"
+                    }`}"
                   ">
-                    {skill}
+                    {skill}</div>
                   </button>)
-                ))}
-              </div>
-            </div>
-          </div>
+                ))}</div>
+              </div></div>
+            </div></div>
+          </div></div>
         </div>
 
-        {/* Results: */}
-        <div className=max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8 ">,
-          {/* Results count */}
-          </div><div className="mb-6>
+        {/* Results: */}</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6: lg px-8  py-8 "">,
+          {/* Results count */}</div>
+          </div><div className="mb-6>"</div>
             <p className="text-gray-600>"
-              Showing {filteredTalents.length} of {talents.length} talents
-            </p>
+              Showing {filteredTalents.length} of {talents.length} talents</div>
+            </p></div>
           </div>
 
-          {/* Talent Cards */}
-          <div className=grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6>
-            {filteredTalents.map((talent) = > (
+          {/* Talent Cards */}</div>
+          <div className="grid grid-cols-1 md: grid-cols-2: lg grid-cols-3  gap-6">
+            {filteredTalents.map((talent) = > (</div>
               </div>,
               >,"
-                {/* Card Header */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600> 
-                  </div><div className=absolute top-4 right-4">
-                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-3>
-                      <span className=text-sm font-semibold text-gray-800 ">
-                        ${talent.hourly_rate}/hr
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4> 
-                    </div><div className=bg-white bg-opacity-90 rounded-lg px-3 py-4">
+                {/* Card Header */}</div>
+                <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600> "</div>
+                  </div><div className="absolute top-4 right-4""></div>
+                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-3>"</div>
+                      <span className="text-sm font-semibold text-gray-800 "">
+                        ${talent.hourly_rate}/hr</div>
+                      </span></div>
+                    </div></div>
+                  </div></div>
+                  <div className="absolute bottom-4 left-4> "</div>
+                    </div><div className="bg-white bg-opacity-90 rounded-lg px-3 py-4""></div>
                       <span className="text-sm font-medium text-gray-800>
-                        {talent.availability}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* Card Content */}
-                <div className=p-6>"
-                  </div><div className="flex items-start justify-between mb-3>
-                    <h3 className=text-xl font-semibold  text-gray-900">
-                      {talent.name}
-                    </h3>
-                  </div>
+                        {talent.availability}</div>
+                      </span></div>
+                    </div></div>
+                  </div></div>
+                </div>"
+                {/* Card Content */}"</div>
+                <div className="p-6">"</div>
+                  </div><div className="flex items-start justify-between mb-3>"</div>
+                    <h3 className="text-xl font-semibold  text-gray-900"">
+                      {talent.name}</div>
+                    </h3></div>
+                  </div></div>
                   <p className="text-gray-600 text-sm: mb-4>,
-                    {talent.title}
+                    {talent.title}</div>
                   </p>
-
-                  {/* Rating: */}
-                  <div className=" flex items-center mb-4 >
-                    {renderStars(talent.rating)}
+"
+                  {/* Rating: */}"</div>
+                  <div className=" flex items-center mb-4 >"
+                    {renderStars(talent.rating)}"</div>
                     <span className="text-sm text-gray-600 ml-2>
-                      {talent.review_count} reviews
-                    </span>
-                  </div>
-                  {/* Details */}"
-                  <div className="space-y-2 mb-4> 
-                    </div><div className=flex"" items-center text-sm: text-gray-600>
-                      <svg: className= w-4 h-4 mr-2  fill=none" stroke="currentColor viewBox=0 0 24" 24">,
+                      {talent.review_count} reviews</div>
+                    </span>"</div>
+                  </div>"
+                  {/* Details */}"</div>
+                  <div className="space-y-2 mb-4> "</div>
+                    </div><div className="flex"" items-center text-sm: text-gray-600"></div>
+                      <svg: className=" w-4 h-4 mr-2  fill=none" stroke="currentColor viewBox=0 0 24" 24"">,</div>
                         <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314" 0z" ><path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M15 11a3 3 0 11-6 0 3 3 0 016 0z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M15 11a3 3 0 11-6 0 3 3 0 016 0z" ></svg>
-                      {talent.location}
-                    </div>
-                    <div className=" flex items-center text-sm text-gray-600>
-                      <svg className= w-4 h-4 mr-2 fill=none  stroke="currentColor" viewBox=0 0 24 24"">
+                      {talent.location}</div>
+                    </div></div>
+                    <div className=" flex items-center text-sm text-gray-600>"</div>
+                      <svg className=" w-4 h-4 mr-2 fill=none  stroke="currentColor" viewBox=0 0 24 24"""></div>
                         <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6z" ></svg>
-                      {talent.experience} experience
-                    </div>
+                      {talent.experience} experience</div>
+                    </div></div>
                   </div>
 
-                  {/* Skills */}
-                  <div className="mb-4>
-                    </div><div className=flex flex-wrap gap-1">
+                  {/* Skills */}</div>
+                  <div className="mb-4>"</div>
+                    </div><div className="flex flex-wrap gap-1"">
                       {talent.skills.slice(0, 4).map((skill, index) => (
                         >
-                          {skill}
+                          {skill}</div>
                         </span>
                       ))}
-                      {talent.skills.length > 4 && (
+                      {talent.skills.length > 4 && (</div>
                         <span className="inline-block bg-gray-100 text-gray-600 text-xs px-4 py-3 rounded-full >
-                          +{talent.skills.length - 4} more
+                          +{talent.skills.length - 4} more</div>
                         </span>
-                      )}
-                    </div>
+                      )}</div>
+                    </div></div>
                   </div>
-
-                  {/* Contact Button */}
-                  <button className=w-full bg-blue-600 hover: bg-blue-700: text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2">
-Contact  Talent
-                  </button>
+"
+                  {/* Contact Button */}"</div>
+                  <button className="w-full bg-blue-600 hover: bg-blue-700: text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2"">
+Contact  Talent</div>
+                  </button></div>
                 </div></div>
-            ))}
+            ))}</div>
           </div>
 
           {/* No Results */}, 
-{filteredTalents.length === 0 && (
-            <div className="text-center py-32>
-              <svg className=mx-auto  h-12 w-12 text-gray-400 fill=none stroke="currentColor" viewBox=0 0 24 24"">
-                <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" ></svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900>No talents found</h3>
-              <p className=mt-1 text-sm text-gray-500">
-                Try adjusting your search criteria or filters.
-              </p>
+{filteredTalents.length === 0 && (</div>
+            <div className="text-center py-32>"</div>
+              <svg className="mx-auto  h-12 w-12 text-gray-400 fill=none stroke="currentColor" viewBox=0 0 24 24"""></div>
+                <path strokeLinecap=round strokeLinejoin="round strokeWidth={2} d=M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z > </path" strokeLinecap=round strokeLinejoin="round" strokeWidth={2} d=M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" ></svg></div>
+              <h3 className="mt-2 text-sm font-medium text-gray-900>No talents found</h3>"</div>
+              <p className="mt-1 text-sm text-gray-500"">
+                Try adjusting your search criteria or filters.</div>
+              </p></div>
             </div>
-          )}
-        </div>
-      </div>
+          )}</div>
+        </div></div>
+      </div></div>
     </div>
-  ;
+  ;</div>
   </div>
               );
 };
-''`
-export default TalentPage;)))))"'"'`
+''`;}
+export default TalentPage;)))))"'"'`</div>

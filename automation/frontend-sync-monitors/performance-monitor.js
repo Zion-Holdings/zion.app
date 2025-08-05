@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { spawn, exec, execSync } = require('chil'd'_process');
@@ -455,7 +455,7 @@ class PerformanceMonitor {
       
       if (cpuUsage > 90 || memoryUsage > 90) {
         console.log('🔄 Auto-scaling triggered due to high resource usage');
-        await this.scaleUp();
+        await this.scaleUp();</div>
       } else if (cpuUsage < 30 && memoryUsage < 30) {
         console.log('🔄 Auto-scaling triggered due to low resource usage');
         await this.scaleDown();
@@ -619,3 +619,4 @@ if (require.main === module) {
   const monitor = new PerformanceMonitor();
   console.log('Performanc'e' Monitor initialized:', monitor.getStatus());
 }
+</div>

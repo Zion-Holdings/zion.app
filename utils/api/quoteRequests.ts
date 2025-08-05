@@ -1,5 +1,5 @@
 import { QuoteRequest } from '../types/service';
-
+;}
 export interface QuoteRequestResponse {
   success: boolean;
   message: string;
@@ -9,7 +9,7 @@ export interface QuoteRequestResponse {
     tags: string[];
     priority: '''l'o'w' | 'medi'u'm' | 'h'i'g'h'';
     estimatedComplexity: '''simp'l'e' | 'modera't'e' | 'comp'l'e'x'';
-  };}
+  };};}
 export const submitQuoteRequest = async (quoteRequest: QuoteRequest): Promise<QuoteRequestResponse> => {
   try {
     // First, send to OpenAI for analysis;
@@ -84,7 +84,7 @@ const saveQuoteRequestToDatabase = async (quoteRequestWithAnalysis: QuoteRequest
       createdAt: new Date().toISOString()
     };}
 };"
-
+;}
 export const getQuoteRequests = async (email?: string) => {''`
   try {';''``
     const url = email ? `/api/quote-requests?email=${encodeURIComponent(email)}` : '/api/quote-requests';
@@ -96,4 +96,4 @@ export const getQuoteRequests = async (email?: string) => {''`
   } catch (error) {
     console.error('Erro'r' fetching quote requests: , error);
     return [];}''`
-}; ''`
+}; ''`</div>

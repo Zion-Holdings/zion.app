@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react;}
 import { useRouter } from "next/router"
 interface NavigationState {
   isSearchOpen: boolean
@@ -17,14 +17,14 @@ interface NavigationContextType {
   removeFromFavorites: (path: string) => void
   navigateTo: (path: string) => void
   goBack: () => void
-  goForward: () => void}
+  goForward: () => void};
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
 interface NavigationProviderProps {
   children: React.ReactNode;
 };
-
+</div>;}
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children }) => {
-  const router = useRouter()
+  const router = useRouter()</div>
   const [state, setState] = useState<NavigationState>({
     isSearchOpen: false,
     isMobileMenuOpen: false,
@@ -111,7 +111,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
       if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowRig'ht) {
         event.preventDefault()
         goForward()}
-      // Cmd/Ctrl + 1-9: Quick navigation to favorites
+      // Cmd/Ctrl + 1-9: Quick navigation to favorites</div>
       if (event.key >= '1' && event.key <= 9 && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
         const index = parseInt(event.key) - 1
@@ -132,18 +132,18 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     navigateTo,
     goBack,
     goForward}
-  return (
+  return (</div>
     <NavigationContext.Provider value={value}>
-      {children}
+      {children}</div>
     </NavigationContext.Provider>
   );
 };
-
+;}
 export const useNavigation = (): NavigationContextType => {
   const context = useContext(NavigationContext)
   if (context === undefined) {
     throw new Error('useNavigatio'n must be used within a NavigationProvider)}
   return context'
 } ";
-
-export default NavigationContext;
+;}
+export default NavigationContext;</div>

@@ -266,7 +266,7 @@ class MobileAppDevelopmentFactory {
   }
 
   generateIOSDeveloperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -351,7 +351,7 @@ module.exports = IOSDeveloperAgent;
   }
 
   generateAndroidDeveloperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -436,7 +436,7 @@ module.exports = AndroidDeveloperAgent;
   }
 
   generateReactNativeDeveloperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -521,7 +521,7 @@ module.exports = ReactNativeDeveloperAgent;
   }
 
   generateFlutterDeveloperAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -606,7 +606,7 @@ module.exports = FlutterDeveloperAgent;
   }
 
   generatePushNotificationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -691,7 +691,7 @@ module.exports = PushNotificationAgent;
   }
 
   generateOfflineCapabilityAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -776,7 +776,7 @@ module.exports = OfflineCapabilityAgent;
   }
 
   generateBiometricAuthAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -861,7 +861,7 @@ module.exports = BiometricAuthAgent;
   }
 
   generateMobileTestingAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -946,7 +946,7 @@ module.exports = MobileTestingAgent;
   }
 
   generatePerformanceOptimizationAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1031,7 +1031,7 @@ module.exports = PerformanceOptimizationAgent;
   }
 
   generateAppStoreDeploymentAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1116,7 +1116,7 @@ module.exports = AppStoreDeploymentAgent;
   }
 
   generateGooglePlayDeploymentAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1201,7 +1201,7 @@ module.exports = GooglePlayDeploymentAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

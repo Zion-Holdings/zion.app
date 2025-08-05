@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useRef }  from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useRef }  from "react;}
 import Link from next/link";
 
 interface DAOProposal {
@@ -78,15 +78,15 @@ interface DAOGovernance {
   timelock: number
   emergencyThreshold: number
   proposalThreshold: number
-  minVotingPower: number}
+  minVotingPower: number};
 const AIPoweredDAOGovernanceSystem: NextPage = () => {'
   const [activeTab, setActiveTab] = useState(overview'
   const [selectedProposal, setSelectedProposal] = useState<string | null>(null
   const [isLoading, setIsLoading] = useState(false
   const [userVotingPower, setUserVotingPower] = useState(0
   const [userTokens, setUserTokens] = useState(0
-  const [isConnected, setIsConnected] = useState(false
-  const [daoMetrics, setDaoMetrics] = useState<any>(null
+  const [isConnected, setIsConnected] = useState(false</div>
+  const [daoMetrics, setDaoMetrics] = useState<any>(null</div>
   const chartRef = useRef<HTMLDivElement>(null
   // Mock data for demonstration
   const $1: $2[] = [
@@ -230,7 +230,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
       } finally {
         setIsLoading(false}}
     connectWallet(
-  } []"
+  } []"</div>
   const createProposal = async (proposal: Partial<DAOProposal>) => {
     setIsLoading(true
     try {
@@ -277,35 +277,35 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
       case 'partnership': return 'bg-orange-500
       case 'emergen'cy: return 'bg-red'-500
       default: return bg-gray'-'500}}
-  return (
-    <div>
-      </div><div className= relative z-10 container-responsive" py-8>
+  return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive" py-8">
         "
-        {/* Background Effects */}
-        <div className=fixed" inset-0 z-0> 
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      <Head> 
-        <title>AI-Powered DAO Governance System | Zion Tech</title>
-        <meta name="description content=Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution. > </meta name=description" content="Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution. ><meta name="keywords content=DAO governance, decentralized autonomous organization, blockchain voting, smart contracts, community governance, AI governance > </meta" name=keywords content="DAO governance, decentralized autonomous organization, blockchain voting, smart contracts, community governance, AI" governance ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        {/* Background Effects */}</div>
+        <div className="fixed" inset-0 z-0"> </div>
+          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"</div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
+        </div></div>
+      <Head> </div>
+        <title>AI-Powered DAO Governance System | Zion Tech</title></div>
+        <meta name="description" content="Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution. > </meta name=description" content="Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution. ><meta name="keywords content=DAO governance, decentralized autonomous organization, blockchain voting, smart contracts, community governance, AI governance > </meta" name=keywords content="DAO governance, decentralized autonomous organization, blockchain voting, smart contracts, community governance, AI" governance ><meta name=viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
-      {/* Header */}"
-      <header className= relative z-10>
-        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
-          </div><div className="flex  items-center justify-between>
-            <div className=flex" items-center space-x-4 > 
-              </div><div className="flex items-center space-x-3>
-                <div className= w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center" justify-center>
-                  <span className="text-white text-xl>🏛️</span>
-                </div>
-                <div>
-                  <h1 className=text-2xl" font-bold text-white >DAO Governance System</h1>
-                  <p className="text-gray-300>Decentralized Autonomous Organization</p>
-                </div>
-              </div>
-            </div>
-            <div className= flex items-center" space-x-4>
+      {/* Header */}"</div>
+      <header className=" relative z-10"></div>
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"</div>
+          </div><div className="flex  items-center justify-between>"</div>
+            <div className="flex" items-center space-x-4 "> </div>
+              </div><div className="flex items-center space-x-3>"</div>
+                <div className=" w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center" justify-center"></div>
+                  <span className="text-white text-xl>🏛️</span></div>
+                </div>"</div>
+                <div>"</div>
+                  <h1 className="text-2xl" font-bold text-white ">DAO Governance System</h1></div>
+                  <p className="text-gray-300>Decentralized Autonomous Organization</p></div>
+                </div></div>
+              </div>"</div>
+            </div>"</div>
+            <div className=" flex items-center" space-x-4">
               
                 onClick={() => setIsConnected(!isConnected)}"`
                 disabled={isLoading}``
@@ -315,25 +315,25 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                     : 'bg-gray'-600 text-white hover:bg-gray-700'``
                 } disabled:opacity-50`}
               >
-                {isLoading ? 'Connecting...' : isConnected ? 'Connected' : 'Connect Wallet'}
+                {isLoading ? 'Connecting...' : isConnected ? 'Connected' : 'Connect Wallet'}</div>
               </button>
               
-              {isConnected && (
-                <div className="text-right>"
-                  </div><div className=text-white font-semibold>{userTokens.toLocaleString()} ZION</div>
-                  <div className="text-gray-400" text-sm>{userVotingPower.toLocaleString()} voting power</div>
+              {isConnected && (</div>
+                <div className="text-right>"</div>
+                  </div><div className="text-white font-semibold">{userTokens.toLocaleString()} ZION</div></div>
+                  <div className="text-gray-400" text-sm>{userVotingPower.toLocaleString()} voting power</div></div>
                 </div>
-              )}
-            </div>
-          </div>
-        </div>
+              )}</div>
+            </div></div>
+          </div></div>
+        </div></div>
       </header>
-      {/* Main Content */}
-      <main className=relative  z-10>
+      {/* Main Content */}</div>
+      <main className="relative  z-10"></div>
         <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 >
           
-          {/* Tab Navigation */}
-          </div><div className=mb-8>
+          {/* Tab Navigation */}</div>
+          </div><div className="mb-8"></div>
             <nav className=" flex space-x-1 bg-gray-800/50" rounded-lg:p-1>
               {['
                 { id: overvie'w', label: DAO' Overview', icon: 📊 },
@@ -350,411 +350,411 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {'
                       ? bg-gradient-to-'r' from-purple-600 to-pink-600 text-white`
                       : text-gray'-'300 hover:text-white hover:bg-gray-700/50``
                   }`}
-                >
-                  <span>{tab.icon}</span>
-                  <span>{tab.label}</span>
+                ></div>
+                  <span>{tab.icon}</span></div>
+                  <span>{tab.label}</span></div>
                 </button>
-              ))}
-            </nav>
+              ))}</div>
+            </nav></div>
           </div>
-
-          {/* Tab Content */}
-          <div className=space-y-8>"
+"
+          {/* Tab Content */}"</div>
+          <div className="space-y-8">"
             
             {/* DAO Overview */},
-{activeTab === 'overvi'ew && (
-              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6>
-                {/* Token Info */}
-                <div className="bg-gray-800/50" rounded-xl p-6 border border-gray-700> 
-                  </div><div className=flex" items-center space-x-3 mb-4>
-                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center >
-                      <span className=text-white" text-lg>🪙</span>
-                    </div> 
-                    <div>
-                      <h3 className="text-lg font-semibold text-white>{mockToken.symbol} Token</h3>
-                      <p className=text-gray-400" text-sm>{mockToken.name}</p>
-                    </div>
+{activeTab === 'overvi'ew && (</div>
+              </div><div className=" grid grid-cols-1 lg grid-cols-3 gap-6>"
+                {/* Token Info */}"</div>
+                <div className="bg-gray-800/50" rounded-xl p-6 border border-gray-700> </div>
+                  </div><div className="flex" items-center space-x-3 mb-4"></div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center >"</div>
+                      <span className="text-white" text-lg">🪙</span></div>
+                    </div> </div>
+                    <div></div>
+                      <h3 className="text-lg font-semibold text-white>{mockToken.symbol} Token</h3>"</div>
+                      <p className="text-gray-400" text-sm">{mockToken.name}</p></div>
+                    </div></div>
                   </div>
-                  
-                  <div className="space-y-3> 
-                    </div><div className=flex" justify-between>
-                      <span className="text-gray-300>Price</span>
-                      <span className=text-white>${mockToken.price}</span"">
-                    </div>
-                    <div className=flex justify-between>
-                      <span className="text-gray-300>Market" Cap</span>
-                      <span className=text-white>${mockToken.marketCap.toLocaleString()}</span>
-                    </div>
-                    <div className="flex" justify-between>
-                      <span className=text-gray-300>Holders</span>
-                      <span className="text-white>{mockToken.holders.toLocaleString()}</span>" 
-                    </div>
-                    <div className=flex justify-between>
-                      <span className="text-gray-300>Treasury</span>"
-                      <span className=text-green-400>{mockToken.treasuryBalance.toLocaleString()} ZION</span>
-                    </div>
                   </div>
+                  <div className="space-y-3> "</div>
+                    </div><div className="flex" justify-between"></div>
+                      <span className="text-gray-300>Price</span>"</div>
+                      <span className="text-white">${mockToken.price}</span""></div>
+                    </div></div>
+                    <div className="flex justify-between"></div>
+                      <span className="text-gray-300>Market" Cap</span></div>
+                      <span className="text-white">${mockToken.marketCap.toLocaleString()}</span></div>
+                    </div></div>
+                    <div className="flex" justify-between></div>
+                      <span className="text-gray-300">Holders</span></div>
+                      <span className="text-white>{mockToken.holders.toLocaleString()}</span>" </div>
+                    </div></div>
+                    <div className="flex justify-between"></div>
+                      <span className="text-gray-300>Treasury</span>"</div>
+                      <span className="text-green-400">{mockToken.treasuryBalance.toLocaleString()} ZION</span></div>
+                    </div></div>
+                  </div></div>
                 </div>
 
-                {/* Governance Stats */}"
-                <div className=" lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                  <h3 className=text-lg" font-semibold text-white mb-4>Governance Statistics</h3>
-                  {daoMetrics && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4> 
-                      </div><div className=text-center>"
-                        <div className="text-2xl font-bold text-white>{daoMetrics.totalProposals}</div>
-                        <div className=text-gray-400" text-sm>Total Proposals</div>
-                      </div>
-                      <div className="text-center>
-                        </div><div className=text-2xl" font-bold text-blue-400 >{daoMetrics.activeProposals}</div>
-                        <div className="text-gray-400 text-sm>Active</div>
-                      </div>
-                      <div className= text-center>
-                        </div><div className="text-2xl" font-bold text-green-400>{daoMetrics.passedProposals}</div>
-                        <div className=text-gray-400 text-sm>Passed</div>
-                      </div>
-                      <div className="text-center>" 
-                        </div><div className=text-2xl font-bold text-purple-400>{daoMetrics.totalVoters}</div>
-                        <div className="text-gray-400" text-sm>Voters</div>
-                      </div>
+                {/* Governance Stats */}"</div>
+                <div className=" lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
+                  <h3 className="text-lg" font-semibold text-white mb-4">Governance Statistics</h3>
+                  {daoMetrics && (</div>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4> "</div>
+                      </div><div className="text-center">"</div>
+                        <div className="text-2xl font-bold text-white>{daoMetrics.totalProposals}</div>"</div>
+                        <div className="text-gray-400" text-sm">Total Proposals</div></div>
+                      </div></div>
+                      <div className="text-center>"</div>
+                        </div><div className="text-2xl" font-bold text-blue-400 ">{daoMetrics.activeProposals}</div></div>
+                        <div className="text-gray-400 text-sm>Active</div></div>
+                      </div>"</div>
+                      <div className=" text-center">"</div>
+                        </div><div className="text-2xl" font-bold text-green-400>{daoMetrics.passedProposals}</div></div>
+                        <div className="text-gray-400 text-sm">Passed</div></div>
+                      </div></div>
+                      <div className="text-center>" </div>
+                        </div><div className="text-2xl font-bold text-purple-400">{daoMetrics.totalVoters}</div></div>
+                        <div className="text-gray-400" text-sm>Voters</div></div>
+                      </div></div>
                     </div>
-                  )}
+                  )}</div>
                 </div>
 
-                {/* Quick Actions */}
-                <div className=lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className=grid" grid-cols-1 md grid-cols-4" gap-4>
-                    <button className=p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200>
-                      <div className="text-2xl:mb-2>📝</div>"
-                      <div className=font-semibold>Create Proposal</div> 
-                    </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all" duration-200>
-                      <div className=text-2xl:mb-2>🗳️</div>
-                      <div className="font-semibold>Vote</div>"
-                    </button>
-                    <button className= p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>
-                      <div className="text-2xl" mb-2>💰</div>
-                      <div className=font-semibold>Treasury</div">
-                    </button>
-                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>
-                      <div className=text-2xl" mb-2>👥</div>
-                      <div className="font-semibold>Members</div>
-                    </button>
-                  </div >
-                </div>
+                {/* Quick Actions */}</div>
+                <div className="lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700""></div>
+                  <h3 className="text-lg font-semibold text-white mb-4>Quick Actions</h3>"</div>
+                  <div className="grid" grid-cols-1 md grid-cols-4" gap-4"></div>
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg:text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200"></div>
+                      <div className="text-2xl:mb-2>📝</div>"</div>
+                      <div className="font-semibold">Create Proposal</div> </div>
+                    </button></div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all" duration-200></div>
+                      <div className="text-2xl:mb-2">🗳️</div></div>
+                      <div className="font-semibold>Vote</div>"</div>
+                    </button></div>
+                    <button className=" p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200"></div>
+                      <div className="text-2xl" mb-2>💰</div></div>
+                      <div className="font-semibold">Treasury</div"></div>
+                    </button></div>
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200>"</div>
+                      <div className="text-2xl" mb-2">👥</div></div>
+                      <div className="font-semibold>Members</div></div>
+                    </button></div>
+                  </div ></div>
+                </div></div>
               </div>
-            )}
-            {/* Proposals */},'
-{activeTab === 'proposals' && ("
-              <div className=" space-y-6>
-                </div><div className=flex items-center justify-between >
-                  <h2 className="text-2xl" font-bold text-white>DAO Proposals</h2 >
-                  <button className=px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover from-purple-700 hover to-pink-700 transition-all duration-200>
-                    Create Proposal
-                  </button>
-                </div>
+            )}"
+            {/* Proposals */},'"
+{activeTab === 'proposals' && ("</div>
+              <div className=" space-y-6>"</div>
+                </div><div className="flex items-center justify-between ">"</div>
+                  <h2 className="text-2xl" font-bold text-white>DAO Proposals</h2 ></div>
+                  <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover from-purple-700 hover to-pink-700 transition-all duration-200">
+                    Create Proposal</div>
+                  </button></div>
+                </div></div>
                 <div className="space-y-4>" 
-                  {mockProposals.map((proposal) => (
-                    </div><div key={proposal.id} className=bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                      <div className="flex" items-center justify-between mb-4> `
-                        </div><div className=flex items-center space-x-3>``
-                          <div className="{`w-10" h-10 rounded-lg:flex items-center justify-center ${getCategoryColor(proposal.category)}`}>
-                            <span className=text-white text-lg >📋</span>
-                          </div>
-                          <div>
-                            <h3 className="text-lg" font-semibold text-white>{proposal.title}</h3>
-                            <p className=text-gray-400 text-sm>By {proposal.creator}</p>
-                          </div> 
-                        </div>`
-                        <div className="flex" items-center space-x-3>``
-                          </div><div className={`px-3 py-3 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}`}>
-                            {proposal.status}`
-                          </div>``
+                  {mockProposals.map((proposal) => (</div>
+                    </div><div key={proposal.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                      <div className="flex" items-center justify-between mb-4> `</div>
+                        </div><div className="flex items-center space-x-3">``</div>
+                          <div className="{`w-10" h-10 rounded-lg:flex items-center justify-center ${getCategoryColor(proposal.category)}`}></div>
+                            <span className="text-white text-lg ">📋</span></div>
+                          </div></div>
+                          <div></div>
+                            <h3 className="text-lg" font-semibold text-white>{proposal.title}</h3></div>
+                            <p className="text-gray-400 text-sm">By {proposal.creator}</p></div>
+                          </div> </div>
+                        </div>`</div>
+                        <div className="flex" items-center space-x-3>``</div>
+                          </div><div className="{`px-3 py-3 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}`}">
+                            {proposal.status}`</div>
+                          </div>``</div>
                           <div className="{`px-3" py-3 rounded-full text-xs font-medium ${getCategoryColor(proposal.category)} text-white`}>
-                            {proposal.category}
-                          </div>
-                        </div>
-                      </div> 
-                      <p className=text-gray-300 mb-4>{proposal.description}</p>
-                      <div className="grid" grid-cols-1 md:grid-cols-4 gap-4 mb-4>
-                        </div><div>
-                          <span className=text-gray-300 text-sm >Votes For</span>
-                          <p className="text-green-400" font-semibold>{proposal.votesFor.toLocaleString()}</p>
-                        </div>
-                        <div> 
-                          <span className=text-gray-300 text-sm>Votes Against</span>
-                          <p className="text-red-400" font-semibold>{proposal.votesAgainst.toLocaleString()}</p>
-                        </div>
-                        <div>
-                          <span className=text-gray-300 text-sm >Quorum</span>
-                          <p className="text-blue-400" font-semibold>{proposal.quorum.toLocaleString()}/{proposal.requiredQuorum.toLocaleString()}</p>
-                        </div>
-                        <div> 
-                          <span className=text-gray-300 text-sm>End Date</span>
-                          <p className="text-white" font-semibold>{new Date(proposal.endDate).toLocaleDateString()}</p>
-                        </div>
-                      </div>
-                      <div className=flex space-x-2>"
+                            {proposal.category}</div>
+                          </div></div>
+                        </div></div>
+                      </div> </div>
+                      <p className="text-gray-300 mb-4">{proposal.description}</p></div>
+                      <div className="grid" grid-cols-1 md:grid-cols-4 gap-4 mb-4></div>
+                        </div><div></div>
+                          <span className="text-gray-300 text-sm ">Votes For</span></div>
+                          <p className="text-green-400" font-semibold>{proposal.votesFor.toLocaleString()}</p></div>
+                        </div></div>
+                        <div> </div>
+                          <span className="text-gray-300 text-sm">Votes Against</span></div>
+                          <p className="text-red-400" font-semibold>{proposal.votesAgainst.toLocaleString()}</p></div>
+                        </div></div>
+                        <div></div>
+                          <span className="text-gray-300 text-sm ">Quorum</span></div>
+                          <p className="text-blue-400" font-semibold>{proposal.quorum.toLocaleString()}/{proposal.requiredQuorum.toLocaleString()}</p></div>
+                        </div></div>
+                        <div> </div>
+                          <span className="text-gray-300 text-sm">End Date</span></div>
+                          <p className="text-white" font-semibold>{new Date(proposal.endDate).toLocaleDateString()}</p></div>
+                        </div></div>
+                      </div></div>
+                      <div className="flex space-x-2">"
                         '
                           onClick={() => voteOnProposal(proposal.id, fo'r')}
                           disabled={isLoading || proposal.status !== activ'e'}
                           className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors disabled opacity-50
                         >
-                          Vote For
+                          Vote For</div>
                         </button>
                         '
-                          onClick={() => voteOnProposal(proposal.id, 'against')} '
-                          disabled={isLoading || proposal.status !== acti'v'e}
+                          onClick={() => voteOnProposal(proposal.id, 'against')} '"
+                          disabled={isLoading || proposal.status !== acti'v'e}"
                           className=flex-1" px-3 py-4 bg-red-600 text-white rounded-lg text-sm hover bg-red-700 transition-colors disabled opacity-50
                         >
-                          Vote Against
+                          Vote Against</div>
                         </button>'"'
                         {proposal.status === passe'd' && (
                             onClick={() => executeProposal(proposal.id)}
                             disabled={isLoading}
                             className=flex-1" px-3 py-4 bg-purple-600 text-white rounded-lg:text-sm:hover:bg-purple-700 transition-colors disabled opacity-50
                           >
-                            Execute
+                            Execute</div>
                           </button>
-                        )}
-                      </div>
+                        )}</div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
             )}"
             {/* Treasury */},
-{activeTab === treasu'r'y && (
-              <div className=space-y-6">
-                <h2 className="text-2xl font-bold text-white>DAO Treasury</h2>
-                <div className=grid grid-cols-1 lg grid-cols-3 gap-6>
-                  {/* Treasury Overview */}
-                  </div><div className="lg:col-span-2" bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                    <h3 className=text-lg font-semibold text-white mb-4 >Treasury Overview</h3>
-                    <div className="space-y-4>" 
-                      </div><div className=flex justify-between items-center>
-                        <span className="text-gray-300>Total" Balance</span>
-                        <span className=text-2xl font-bold text-white >${mockTreasury.totalBalance.toLocaleString()}</span>
-                      </div>
+{activeTab === treasu'r'y && (</div>
+              <div className="space-y-6""></div>
+                <h2 className="text-2xl font-bold text-white>DAO Treasury</h2>"</div>
+                <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
+                  {/* Treasury Overview */}"</div>
+                  </div><div className="lg:col-span-2" bg-gray-800/50 rounded-xl:p-6 border border-gray-700></div>
+                    <h3 className="text-lg font-semibold text-white mb-4 ">Treasury Overview</h3></div>
+                    <div className="space-y-4>" </div>
+                      </div><div className="flex justify-between items-center"></div>
+                        <span className="text-gray-300>Total" Balance</span></div>
+                        <span className="text-2xl font-bold text-white ">${mockTreasury.totalBalance.toLocaleString()}</span></div>
+                      </div></div>
                       <div className="space-y-3">
-                        {mockTreasury.tokens.map((token) => (
-                          </div><div key={token.symbol} className= flex justify-between items-center p-3 bg-gray-700/50 rounded-lg>
-                            <div className="flex" items-center space-x-3>
-                              <span className=text-lg>{token.symbol === 'ZI'ON ? '🪙' : token.symbol === ET'H' ? 🔷 : '💵'}</span>
-                              <span className="text-white" font-medium>{token.symbol}</span> 
-                            </div>
-                            <div className=text-right>
-                              </div><div className=text-white" font-semibold>{token.balance.toLocaleString()}</div>
-                              <div className="text-gray-400 text-sm>${token.value.toLocaleString()}</div>
-                            </div>
+                        {mockTreasury.tokens.map((token) => (</div>
+                          </div><div key={token.symbol} className=" flex justify-between items-center p-3 bg-gray-700/50 rounded-lg"></div>
+                            <div className="flex" items-center space-x-3></div>
+                              <span className="text-lg">{token.symbol === 'ZI'ON ? '🪙' : token.symbol === ET'H' ? 🔷 : '💵'}</span></div>
+                              <span className="text-white" font-medium>{token.symbol}</span> </div>
+                            </div></div>
+                            <div className="text-right"></div>
+                              </div><div className="text-white" font-semibold">{token.balance.toLocaleString()}</div></div>
+                              <div className="text-gray-400 text-sm>${token.value.toLocaleString()}</div></div>
+                            </div></div>
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        ))}</div>
+                      </div></div>
+                    </div></div>
                   </div>
-
-                  {/* Allocations */} 
-                  <div className=bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
-                    <h3 className="text-lg font-semibold text-white mb-4>Allocations</h3>
-                    <div className=space-y-3>" 
-                      {mockTreasury.allocations.map((allocation) => (
-                        </div><div key={allocation.category} className="space-y-2>
-                          <div className=" flex" justify-between>
-                            <span className=text-gray-300 text-sm>{allocation.category}</span>
-                            <span className="text-white" text-sm>{allocation.percentage}%</span>
-                          </div>
-                          <div className=w-full bg-gray-700 rounded-full h-2 >
-                            </div>
-                            ></div>
-                          </div>
-                          <p className="text-gray-400" text-xs>{allocation.description}</p>
+"
+                  {/* Allocations */} "</div>
+                  <div className="bg-gray-800/50 rounded-xl p-6 border" border-gray-700"></div>
+                    <h3 className="text-lg font-semibold text-white mb-4>Allocations</h3>"</div>
+                    <div className="space-y-3">" 
+                      {mockTreasury.allocations.map((allocation) => (</div>
+                        </div><div key={allocation.category} className="space-y-2>"</div>
+                          <div className=" flex" justify-between></div>
+                            <span className="text-gray-300 text-sm">{allocation.category}</span></div>
+                            <span className="text-white" text-sm>{allocation.percentage}%</span></div>
+                          </div></div>
+                          <div className="w-full bg-gray-700 rounded-full h-2 "></div>
+                            </div></div>
+                            ></div></div>
+                          </div></div>
+                          <p className="text-gray-400" text-xs>{allocation.description}</p></div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                      ))}</div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
             )}
             {/* Members */},
-{activeTab === 'membe'rs && (
-              <div className=space-y-6>"
+{activeTab === 'membe'rs && (</div>
+              <div className="space-y-6">"</div>
                 <h2 className="text-2xl font-bold text-white >DAO Members</h2>
-                 
-                <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {mockMembers.map((member) => (
-                    </div><div key={member.address} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700>
-                      <div className=flex items-center space-x-3 mb-4> 
-                        </div><div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center ">
-                          <span className=text-white text-xl>{member.avatar}</span>
-                        </div> 
-                        <div>
-                          <h3 className="text-lg" font-semibold text-white>{member.username}</h3>
-                          <p className=text-gray-400 text-sm>{member.address}</p>
-                        </div>
+                 "</div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                  {mockMembers.map((member) => ("</div>
+                    </div><div key={member.address} className=" bg-gray-800/50 rounded-xl p-6 border" border-gray-700></div>
+                      <div className="flex items-center space-x-3 mb-4"> </div>
+                        </div><div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center "></div>
+                          <span className="text-white text-xl">{member.avatar}</span></div>
+                        </div> </div>
+                        <div></div>
+                          <h3 className="text-lg" font-semibold text-white>{member.username}</h3></div>
+                          <p className="text-gray-400 text-sm">{member.address}</p></div>
+                        </div></div>
                       </div>
-                      
-                      <div className="space-y-3>" 
-                        </div><div className=flex justify-between>
-                          <span className="text-gray-300>Tokens</span">
-                          <span className=text-white>{member.tokens.toLocaleString()} ZION</span>
-                        </div>
-                        <div className=flex justify-between">
-                          <span className="text-gray-300>Voting Power</span>
-                          <span className=text-purple-400>{member.votingPower.toLocaleString()}</span">
-                        </div>
-                        <div className="flex justify-between>
-                          <span className=text-gray-300>Reputation</span>"
-                          <span className="text-green-400>{member.reputation}/100</span> 
-                        </div>
-                        <div className=flex" justify-between>
-                          <span className="text-gray-300>Proposals</span>
-                          <span className=text-white>{member.proposalsCreated}" created, {member.proposalsPassed} passed</span>
-                        </div>
                       </div>
-                      
-                      <div className="mt-4 pt-4 border-t border-gray-700>
-                        </div><div className= flex flex-wrap" gap-2>
-                          {member.badges.map((badge) => (
+                      <div className="space-y-3>" </div>
+                        </div><div className="flex justify-between"></div>
+                          <span className="text-gray-300>Tokens</span"></div>
+                          <span className="text-white">{member.tokens.toLocaleString()} ZION</span></div>
+                        </div></div>
+                        <div className="flex justify-between""></div>
+                          <span className="text-gray-300>Voting Power</span>"</div>
+                          <span className="text-purple-400">{member.votingPower.toLocaleString()}</span"></div>
+                        </div></div>
+                        <div className="flex justify-between>"</div>
+                          <span className="text-gray-300">Reputation</span>"</div>
+                          <span className="text-green-400>{member.reputation}/100</span> "</div>
+                        </div>"</div>
+                        <div className="flex" justify-between"></div>
+                          <span className="text-gray-300>Proposals</span>"</div>
+                          <span className="text-white">{member.proposalsCreated}" created, {member.proposalsPassed} passed</span></div>
+                        </div></div>
+                      </div>
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-gray-700>"</div>
+                        </div><div className=" flex flex-wrap" gap-2">
+                          {member.badges.map((badge) => (</div>
                             <span key={badge} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full>
-                              {badge}
+                              {badge}</div>
                             </span>
-                          ))}
-                        </div>
-                      </div>
+                          ))}</div>
+                        </div></div>
+                      </div></div>
                     </div>
-                  ))}
-                </div>
+                  ))}</div>
+                </div></div>
               </div>
-            )}'
-            {/* Governance */},
-{activeTab === 'governance' && ("
-              <div className="space-y-6>
-                <h2 className=text-2xl" font-bold text-white>Governance Parameters</h2>
-                <div className="grid grid-cols-1 md grid-cols-2 gap-6>
-                  </div><div className=bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
-                    <h3 className="text-lg" font-semibold text-white mb-4 >Voting Parameters</h3>
-                    <div className=space-y-3> 
-                      </div><div className="flex" justify-between>
-                        <span className=text-gray-300>Voting Period</span>
-                        <span className="text-white>{mockGovernance.votingPeriod" / 86400} days</span>
-                      </div>
-                      <div className= flex justify-between>
-                        <span className=" text-gray-300>Execution Delay</span>
-                        <span className=" text-white>{mockGovernance.executionDelay / 86400} days</span>
-                      </div>
-                      <div className=flex justify-between>
-                        <span className="text-gray-300>Quorum</span>"
-                        <span className=text-white>{mockGovernance.quorum.toLocaleString()} ZION</span>
-                      </div>
-                      <div className=" flex" justify-between>
-                        <span className=text-gray-300>Threshold</span>
-                        <span className="text-white>{mockGovernance.threshold}%</span>"
-                      </div>
-                    </div> 
-                  </div>
-                  <div className=bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                    <h3 className="text-lg" font-semibold text-white mb-4>Proposal Requirements</h3>
-                    <div className=space-y-3> 
-                      </div><div className="flex" justify-between>
-                        <span className= text-gray-300>Proposal Threshold</span>
-                        <span className= text-white>{mockGovernance.proposalThreshold.toLocaleString()} ZION</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className=text-gray-300>Min Voting Power</span>
-                        <span className="text-white>{mockGovernance.minVotingPower.toLocaleString()}" ZION</span>
-                      </div>
-                      <div className= flex justify-between>
-                        <span className="text-gray-300>Emergency" Threshold</span>
-                        <span className=text-white>{mockGovernance.emergencyThreshold}%</span> 
-                      </div>
-                      <div className="flex" justify-between>
-                        <span className=text-gray-300>Timelock</span>
-                        <span className="text-white>{mockGovernance.timelock" / 3600} hours</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            )}'"
+            {/* Governance */},"
+{activeTab === 'governance' && ("</div>
+              <div className="space-y-6>"</div>
+                <h2 className="text-2xl" font-bold text-white">Governance Parameters</h2></div>
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6>"</div>
+                  </div><div className="bg-gray-800/50 rounded-xl:p-6 border border-gray-700">"</div>
+                    <h3 className="text-lg" font-semibold text-white mb-4 >Voting Parameters</h3></div>
+                    <div className="space-y-3"> </div>
+                      </div><div className="flex" justify-between></div>
+                        <span className="text-gray-300">Voting Period</span></div>
+                        <span className="text-white>{mockGovernance.votingPeriod" / 86400} days</span></div>
+                      </div></div>
+                      <div className=" flex justify-between"></div>
+                        <span className=" text-gray-300>Execution Delay</span>"</div>
+                        <span className=" text-white>{mockGovernance.executionDelay / 86400} days</span></div>
+                      </div>"</div>
+                      <div className="flex justify-between">"</div>
+                        <span className="text-gray-300>Quorum</span>"</div>
+                        <span className="text-white">{mockGovernance.quorum.toLocaleString()} ZION</span></div>
+                      </div></div>
+                      <div className=" flex" justify-between></div>
+                        <span className="text-gray-300">Threshold</span></div>
+                        <span className="text-white>{mockGovernance.threshold}%</span>"</div>
+                      </div></div>
+                    </div> </div>
+                  </div></div>
+                  <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                    <h3 className="text-lg" font-semibold text-white mb-4>Proposal Requirements</h3></div>
+                    <div className="space-y-3"> </div>
+                      </div><div className="flex" justify-between></div>
+                        <span className=" text-gray-300">Proposal Threshold</span></div>
+                        <span className=" text-white">{mockGovernance.proposalThreshold.toLocaleString()} ZION</span></div>
+                      </div></div>
+                      <div className="flex justify-between"></div>
+                        <span className="text-gray-300">Min Voting Power</span></div>
+                        <span className="text-white>{mockGovernance.minVotingPower.toLocaleString()}" ZION</span></div>
+                      </div></div>
+                      <div className=" flex justify-between"></div>
+                        <span className="text-gray-300>Emergency" Threshold</span></div>
+                        <span className="text-white">{mockGovernance.emergencyThreshold}%</span> </div>
+                      </div></div>
+                      <div className="flex" justify-between></div>
+                        <span className="text-gray-300">Timelock</span></div>
+                        <span className="text-white>{mockGovernance.timelock" / 3600} hours</span></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
             )}'
             {/* Analytics */},
-{activeTab === analytic's' && (
-              <div className="space-y-6">
-                <h2 className=text-2xl font-bold text-white>DAO Analytics</h2>
-                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6> 
-                  </div><div className=bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                    <div className="flex" items-center space-x-3> 
-                      </div><div className=w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center>
-                        <span className="text-white" text-lg>📈</span>
-                      </div>
-                      <div>
-                        <p className=text-gray-300 text-sm >Participation Rate</p>
-                        <p className="text-white" text-2xl font-bold>{daoMetrics?.averageParticipation}%</p>
-                      </div>
-                    </div>
+{activeTab === analytic's' && (</div>
+              <div className="space-y-6"></div>
+                <h2 className="text-2xl font-bold text-white">DAO Analytics</h2></div>
+                <div className="grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6> </div>
+                  </div><div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                    <div className="flex" items-center space-x-3> </div>
+                      </div><div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center"></div>
+                        <span className="text-white" text-lg>📈</span></div>
+                      </div></div>
+                      <div></div>
+                        <p className="text-gray-300 text-sm ">Participation Rate</p></div>
+                        <p className="text-white" text-2xl font-bold>{daoMetrics?.averageParticipation}%</p></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                  <div className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700"></div>
+                    </div><div className="flex  items-center space-x-3>"</div>
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center >"</div>
+                        <span className="text-white" text-lg">💰</span></div>
+                      </div> </div>
+                      <div></div>
+                        <p className="text-gray-300 text-sm>Treasury Growth</p>"</div>
+                        <p className="text-white" text-2xl font-bold">+{daoMetrics?.treasuryGrowth}%</p></div>
+                      </div></div>
+                    </div></div>
                   </div>
-                  <div className= bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                    </div><div className="flex  items-center space-x-3>
-                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center >
-                        <span className=text-white" text-lg>💰</span>
-                      </div> 
-                      <div>
-                        <p className="text-gray-300 text-sm>Treasury Growth</p>
-                        <p className=text-white" text-2xl font-bold>+{daoMetrics?.treasuryGrowth}%</p>
-                      </div>
-                    </div>
                   </div>
-                  
-                  <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 > 
-                    </div><div className=flex items-center" space-x-3>
-                      <div className=" w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center>
-                        <span className=text-white" text-lg>👥</span>
-                      </div>
-                      <div>
-                        <p className="text-gray-300 text-sm >Community Growth</p>
-                        <p className=text-white" text-2xl font-bold>+{daoMetrics?.communityGrowth}%</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700>
-                    </div><div className=flex  items-center space-x-3>
-                      <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center ">
-                        <span className=text-white text-lg>⚡</span>
-                      </div> 
-                      <div>
-                        <p className="text-gray-300" text-sm>Active Voters</p>
-                        <p className=text-white text-2xl font-bold>{daoMetrics?.totalVoters}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 > "</div>
+                    </div><div className="flex items-center" space-x-3"></div>
+                      <div className=" w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center>"</div>
+                        <span className="text-white" text-lg">👥</span></div>
+                      </div></div>
+                      <div></div>
+                        <p className="text-gray-300 text-sm >Community Growth</p>"</div>
+                        <p className="text-white" text-2xl font-bold">+{daoMetrics?.communityGrowth}%</p></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                  <div className=" bg-gray-800/50 rounded-xl p-6 border border-gray-700>"</div>
+                    </div><div className="flex  items-center space-x-3">"</div>
+                      <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center "></div>
+                        <span className="text-white text-lg">⚡</span></div>
+                      </div> </div>
+                      <div></div>
+                        <p className="text-gray-300" text-sm>Active Voters</p></div>
+                        <p className="text-white text-2xl font-bold">{daoMetrics?.totalVoters}</p></div>
+                      </div></div>
+                    </div></div>
+                  </div></div>
+                </div></div>
               </div>
-            )}
-          </div>
-        </div>
+            )}</div>
+          </div></div>
+        </div></div>
       </main>
 
-      {/* Footer */}"
-      <footer className="relative z-10 mt-16>
-        <div className=max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8> 
-          </div><div className="text-center>
-            <p className=text-gray-400">
-              AI-Powered DAO Governance System | Zion Tech Group
-            </p>
+      {/* Footer */}"</div>
+      <footer className="relative z-10 mt-16>"</div>
+        <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8"> </div>
+          </div><div className="text-center>"</div>
+            <p className="text-gray-400"">
+              AI-Powered DAO Governance System | Zion Tech Group</div>
+            </p></div>
             <p className=" text-gray-500 text-sm mt-2>
-              Decentralized decision-making, transparent voting, and community-driven governance
-            </p>
-          </div>
-        </div>
-      </footer>
+              Decentralized decision-making, transparent voting, and community-driven governance</div>
+            </p></div>
+          </div></div>
+        </div></div>
+      </footer></div>
     </div>
-  
   </div>
-
   </div>
-
+</div>
+  </div>
+</div>
   </div>
 ;
-};
-`
-export default AIPoweredDAOGovernanceSystem )))))))))))))))))))))))))))))))))))))"'"'`
+};"
+`";}
+export default AIPoweredDAOGovernanceSystem )))))))))))))))))))))))))))))))))))))"'"'`</div>

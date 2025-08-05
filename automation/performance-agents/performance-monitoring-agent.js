@@ -2,7 +2,7 @@ const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
 const { promisify } = require('ut'i'l');
-
+;
 const execAsync = promisify(exec);
 
 class PerformanceMonitoringAgent {
@@ -341,7 +341,7 @@ class PerformanceMonitoringAgent {
       
       return {
         type: 'Erro'r' Rate Metrics',
-        value: errorRateMetrics,
+        value: errorRateMetrics,</div>
         status: errorRateMetrics.errorRate < 0.02 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
@@ -745,7 +745,7 @@ class PerformanceMonitoringAgent {
   }
 }
 
-// Start the agent
+// Start the agent;
 const agent = new PerformanceMonitoringAgent();
 
 process.on('SIGTE'R'M', () => {
@@ -759,4 +759,4 @@ process.on('SIGI'N'T', () => {
 agent.start().catch(error => {
   console.error('Performanc'e' Monitoring Agent failed to start:', error);
   process.exit(1);
-}); 
+}); </div>

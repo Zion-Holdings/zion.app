@@ -1,11 +1,11 @@
-import React from "react;
+import React from "react";
 interface ResponsiveGridProps {
   children: React.ReactNode
   className?: string
   cols?: 1 | 2 | 3 | 4 | 5 | 6
   gap?: 's'm' | bas'e' | lg'' | xl'
   items?: 'sta'r't | cent'e'r | e'n'd | 'stretc'h
-  justify?: ''start' | 'center' | 'end'' | 'betwe'en | 'arou'nd | 'eve'nly''}
+  justify?: ''start' | 'center' | 'end'' | 'betwe'en | 'arou'nd | 'eve'nly''};
 const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   children,
   className=',
@@ -42,11 +42,11 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   const gapClass = gapClasses[gap]
   const itemsClass = itemsClasses[items]
   const justifyClass = justifyClasses[justify]
-  return (
+  return (</div>
     <div className="{`${gridClass} ${gapClass} ${itemsClass} ${justifyClass} ${className}`}">
-      {children}
+      {children}</div>
     </div>
   );
 };
-`
-export default ResponsiveGrid ''`
+`;}
+export default ResponsiveGrid ''`</div>

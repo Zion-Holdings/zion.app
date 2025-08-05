@@ -8,7 +8,7 @@ interface ResponsiveState {
   screenHeight: number
   orientation: 'portra'i't' | 'landscap'e'
 }
-
+;}
 export const useResponsive = (): ResponsiveState => {
   const [responsiveState, setResponsiveState] = useState<ResponsiveState>({
     isMobile: false,
@@ -25,7 +25,7 @@ export const useResponsive = (): ResponsiveState => {
       const width = window.innerWidth
       const height = window.innerHeight
       
-      setResponsiveState({
+      setResponsiveState({</div>
         isMobile: width < 768,
         isTablet: width >= 768 && width < 1024,
         isDesktop: width >= 1024 && width < 1536,
@@ -52,12 +52,12 @@ export const useResponsive = (): ResponsiveState => {
 
   return responsiveState
 }
-
+;}
 export const useIsMobile = (breakpoint: number = 768): boolean => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkMobile = () => {</div>
       setIsMobile(window.innerWidth < breakpoint)
     }
 
@@ -69,13 +69,13 @@ export const useIsMobile = (breakpoint: number = 768): boolean => {
 
   return isMobile
 }
-
+;}
 export const useIsTablet = (): boolean => {
   const [isTablet, setIsTablet] = useState(false)
 
   useEffect(() => {
     const checkTablet = () => {
-      const width = window.innerWidth
+      const width = window.innerWidth</div>
       setIsTablet(width >= 768 && width < 1024)
     }
 
@@ -87,7 +87,7 @@ export const useIsTablet = (): boolean => {
 
   return isTablet
 }
-
+;}
 export const useIsDesktop = (): boolean => {
   const [isDesktop, setIsDesktop] = useState(false)
 
@@ -104,8 +104,8 @@ export const useIsDesktop = (): boolean => {
 
   return isDesktop
 }
-
-export const useOrientation = (): 'portra'i't' | 'landsca'p'e' => {
+;}
+export const useOrientation = (): 'portra'i't' | 'landsca'p'e' => {</div>
   const [orientation, setOrientation] = useState<'portra'i't' | 'landsca'p'e'>('portra'i't')
 
   useEffect(() => {
@@ -124,4 +124,4 @@ export const useOrientation = (): 'portra'i't' | 'landsca'p'e' => {
   }, [])
 
   return orientation
-} 
+} </div>

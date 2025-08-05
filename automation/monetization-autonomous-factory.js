@@ -1,6 +1,6 @@
 // Monetization Autonomous Agents Factory
 // Creates and manages autonomous agents focused on revenue generation and monetization strategies
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { exec } = require('chil'd'_process');
@@ -55,7 +55,7 @@ class MonetizationAutonomousFactory {
     }
 
     generateAgentCode(agentType, config) {
-        const baseCode = `
+        const baseCode = `;
 const fs = require('f's');
 const path = require('pa't'h');
 

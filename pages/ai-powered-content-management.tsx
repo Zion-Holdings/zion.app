@@ -1,6 +1,6 @@
-import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
-import { useState, useEffect, useMemo } from "react;
+import type { NextPage } from "next;}
+import ModernLayout from '../components/layout/ModernLayout';import Head from next/head";}
+import { useState, useEffect, useMemo } from "react";}
 import Link from next/link";
 
 interface ContentItem {
@@ -61,17 +61,17 @@ interface ContentAnalytics {
   target: number;
   improvement: number;
   trend: 'u'p | do'w'n | sta'b'le;
-  period: string;}
+  period: string;};
 const AIPoweredContentManagementPage: NextPage = () => {
   ;
-  const [contentItems, setContentItems] = useState<ContentItem[]>([]);
-  const [templates, setTemplates] = useState<ContentTemplate[]>([]);
-  const [workflows, setWorkflows] = useState<ContentWorkflow[]>([]);
-  const [analytics, setAnalytics] = useState<ContentAnalytics[]>([]);
-  const [selectedView, setSelectedView] = useState<''overvie'w' | conten't' | templat'e's | 'workflo'ws | 'analyti'cs>('overvi'ew);
-  const [filterType, setFilterType] = useState<string>('a'll);
+  const [contentItems, setContentItems] = useState<ContentItem[]>([]);</div>
+  const [templates, setTemplates] = useState<ContentTemplate[]>([]);</div>
+  const [workflows, setWorkflows] = useState<ContentWorkflow[]>([]);</div>
+  const [analytics, setAnalytics] = useState<ContentAnalytics[]>([]);</div>
+  const [selectedView, setSelectedView] = useState<''overvie'w' | conten't' | templat'e's | 'workflo'ws | 'analyti'cs>('overvi'ew);</div>
+  const [filterType, setFilterType] = useState<string>('a'll);</div>
   const [filterStatus, setFilterStatus] = useState<string>('a'll);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');</div>
   const [sortBy, setSortBy] = useState<'rece'nt | 'popul'ar | 'ai-sc'ore'' | engagemen't'>(recen't');
   const [loading, setLoading] = useState(true);
 
@@ -510,68 +510,68 @@ const AIPoweredContentManagementPage: NextPage = () => {
   };
 
   if (loading) {
-    return (
-    <div>
-      </div><div className=" relative z-10 container-responsive py-8> 
-        {/* Background Effects */}"
-        <div className=fixed inset-0 z-0> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
-        </div>
-      
-        <div className="text-center>" 
-          </div><div className=inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>
-            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill=none viewBox="0 0 24" 24>
-              <circle className= opacity-25 cx=12 cy=12 r=" 10" stroke=currentColor strokeWidth=4></circle>
-              <path className=opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
-            </svg>
-            <span className="text-lg font-medium>Loading AI-Powered Content Management...</span>
-          </div >
+    return (</div>
+    <div></div>
+      </div><div className=" relative z-10 container-responsive py-8> "
+        {/* Background Effects */}"</div>
+        <div className="fixed inset-0 z-0"> </div>
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 "></div></div>
         </div>
       </div>
-    );}
+        <div className="text-center>" </div>
+          </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg"></div>
+            <svg className="animate-spin  -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill=none viewBox="0 0 24" 24></div>
+              <circle className=" opacity-25 cx=12 cy=12 r=" 10" stroke=currentColor strokeWidth=4"></circle></div>
+              <path className="opacity-75" fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></div>
+            </svg></div>
+            <span className="text-lg font-medium>Loading AI-Powered Content Management...</span></div>
+          </div ></div>
+        </div></div>
+      </div>"
+    );}"
 "
-  return ("
-    <div className=relative z-10 container-responsive py-8>
-      <Head> 
-        <title>AI-Powered Content Management - Zion</title>
+  return ("</div>
+    <div className="relative z-10 container-responsive py-8"></div>
+      <Head> </div>
+        <title>AI-Powered Content Management - Zion</title></div>
         <meta name=description content=Intelligent content creation, optimization, scheduling, and analytics with AI-driven content management > </meta" name=description content="Intelligent content creation, optimization, scheduling, and analytics with AI-driven content management ><meta name="keywords content=AI content management, content creation, content optimization, content scheduling, Zion > </meta" name=keywords content="AI content management, content creation, content optimization, content scheduling," Zion ><link rel=icon href=/favicon.ico > </link" rel="icon href=/favicon.ico" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
-      {/* Navigation */}
-      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50>
-        <div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
-          </div><div className=flex  justify-between h-16>
-            <div className="flex" items-center>
-              <Link href=/ className=flex-shrink-0> </Link href=/  className="flex-shrink-0"><h1 className=text-2xl font-bold text-white>
-                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-                </h1>
-              </Link>
-            </div>
-            <div className=hidden md flex items-center space-x-8>
-              <Link href="/ai-powered-mobile-responsive" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
-              </Link href= /ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>
-              <Link href=/ai-powered-multi-language className=text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
-              </Link href=/ai-powered-multi-language className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
-              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
-              </Link href=/auth/login  className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link> </div>
-          </div>
-        </div>
-      </nav>
+      {/* Navigation */}</div>
+      <nav className=" bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0" z-50></div>
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8"></div>
+          </div><div className="flex  justify-between h-16"></div>
+            <div className="flex" items-center></div>
+              <Link href=/ className="flex-shrink-0"> </Link href=/  className="flex-shrink-0"><h1 className="text-2xl font-bold text-white"></div>
+                  <span className="text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span></div>
+                </h1></div>
+              </Link></div>
+            </div></div>
+            <div className="hidden md flex items-center space-x-8"></div>
+              <Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Mobile</div>
+              </Link href= /ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors></Link>"</div>
+              <Link href=/ai-powered-multi-language className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ">Languages</div>
+              </Link href=/ai-powered-multi-language className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>"</div>
+              <Link href=/auth/login className="text-gray-300" hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login</div>
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors "></Link> </div></div>
+          </div></div>
+        </div></div>
+      </nav></div>
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-8>
-        {/* Header */}
-        </div><div className=text-center mb-8>
+        {/* Header */}</div>
+        </div><div className="text-center mb-8"></div>
           <h1 className="text-4xl" md text-5xl font-bold text-white mb-4 >
-            AI-Powered Content Management
-          </h1>
-          <p className=text-xl text-gray-300 max-w-3xl mx-auto>
+            AI-Powered Content Management</div>
+          </h1></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Intelligent content creation, optimization, scheduling, and analytics 
-            with AI-driven content management and automated workflows.
-          </p>
+            with AI-driven content management and automated workflows.</div>
+          </p></div>
         </div>
  
-        {/* Tab Selector */}"
-        <div className="flex justify-center mb-8> 
-          </div><div className=bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>'
+        {/* Tab Selector */}"</div>
+        <div className="flex justify-center mb-8> "</div>
+          </div><div className="bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1">'
             {[
               { id: 'overview', name: 'Overview', icon: '📊 },
 { id: conte'n't, name: Conte'n't, icon: 📝' },
@@ -585,270 +585,270 @@ const AIPoweredContentManagementPage: NextPage = () => {
                     ? 'bg-purple'-600 text-white`
                     : 'text-gray'-300 hover:text-white hover:bg-white/10``
                 }`}
-              >
-                <span>{tab.icon}</span>
-                <span>{tab.name}</span>
+              ></div>
+                <span>{tab.icon}</span></div>
+                <span>{tab.name}</span></div>
               </button>
-            ))}
-          </div>
+            ))}</div>
+          </div></div>
         </div>
-'
-        {/* Analytics Overview */},
-{selectedView === 'overview' && ("
+'"
+        {/* Analytics Overview */},"
+{selectedView === 'overview' && ("</div>
           <div className=" grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => (
-              </div><div key={metric.id} className= bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
-                <div className="flex" items-center justify-between mb-4>
-                  <h3 className=text-lg font-semibold text-white >{metric.metric}</h3>
-                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>"
-                </div>
-                <div className= mb-4>
-                  </div><div className=text-3xl" font-bold text-white mb-2>{metric.current}</div>
-                  <p className="text-sm:text-gray-400>Target: {metric.target}</p>
-                </div>
-                 '`
-                <div className=flex items-center justify-between" text-sm>``
+            {analytics.map((metric) => ("</div>
+              </div><div key={metric.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">"</div>
+                <div className="flex" items-center justify-between mb-4></div>
+                  <h3 className="text-lg font-semibold text-white ">{metric.metric}</h3></div>
+                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>"</div>
+                </div></div>
+                <div className=" mb-4"></div>
+                  </div><div className="text-3xl" font-bold text-white mb-2">{metric.current}</div></div>
+                  <p className="text-sm:text-gray-400>Target: {metric.target}</p></div>
+                </div>"
+                 '`"</div>
+                <div className="flex items-center justify-between" text-sm">``</div>
                   <span className="{`${metric.improvement > 0 ? 'text-green'-400 : 'text-red'-400}`}>
                     {metric.improvement > 0 ? '+'   }, 
-{metric.improvement.toFixed(1)}%
-                  </span>
-                  <span className=text-gray-400>{metric.period}</span>
-                </div>
+{metric.improvement.toFixed(1)}%</div>
+                  </span>"</div>
+                  <span className="text-gray-400">{metric.period}</span></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
-        )}
+        )}"
         {/* Search and Filters */},"'
-{selectedView === 'content' && (
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 > 
-            </div><div className=grid grid-cols-1 lg grid-cols-4" gap-4>
+{selectedView === 'content' && (</div>
+          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 > "</div>
+            </div><div className="grid grid-cols-1 lg grid-cols-4" gap-4"></div>
               <div className=" lg col-span-2>
-                
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                "
+                  onChange={(e) => setSearchTerm(e.target.value)}"
                   className=w-full" bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
-                />
-              </div>
+                /></div>
+              </div></div>
               <div>
                  
                   onChange={(e) => setFilterType(e.target.value)}
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
-                >
-                  <option value=all>All Types</option>
-                  <option value=blog>Blog Posts</option>
-                  <option value=service>Services</option">
-                  <option value=product>Products</option">
-                  <option value=landing>Landing Pages</option>
-                  <option value=social>Social Media</option>
-                  <option value=email>Email</option>
-                </select>
+                ></div>
+                  <option value=all>All Types</option>"</div>
+                  <option value=blog>Blog Posts</option>"</div>
+                  <option value=service>Services</option"></div>
+                  <option value=product>Products</option"></div>
+                  <option value=landing>Landing Pages</option></div>
+                  <option value=social>Social Media</option></div>
+                  <option value=email>Email</option></div>
+                </select></div>
               </div>
-              
+              </div>
               <div>
                 
                   onChange={(e) ="> setSortBy(e.target.value as any)}"
                   className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500  transition-colors
-                >
-                  <option value=recent>Sort by Recent</option>
-                  <option value=popular>Sort by Popular</option>
-                  <option value=ai-score>Sort by AI Score</option>
-                  <option value=engagement>Sort by Engagement</option>
-                </select>
-              </div">
-            </div>
+                ></div>
+                  <option value=recent>Sort by Recent</option></div>
+                  <option value=popular>Sort by Popular</option></div>
+                  <option value=ai-score>Sort by AI Score</option></div>
+                  <option value=engagement>Sort by Engagement</option></div>
+                </select></div>
+              </div"></div>
+            </div></div>
           </div>
         )}
         {/* Content List */},"'
-{selectedView === conten't' && (
-          <div className= space-y-6>
-            {filteredContent.map((item) => (
-              </div><div key={item.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
-                <div className=flex items-start justify-between mb-4> 
-                  </div><div className="flex items-center space-x-3 >
-                    <div className="text-3xl>{getTypeIcon(item.type)}</div> 
-                    <div>
-                      <h3 className=text-xl" font-semibold text-white mb-1>{item.title}</h3>
-                      <p className="text-gray-300 text-sm>by {item.author}</p>
-                    </div>`
-                  </div>``
-                  <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(item.status)}`}>
-                    {item.status.toUpperCase()}
-                  </span>
-                </div>
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4> 
-                  </div><div>`
-                    <p className=text-sm text-gray-400>AI Score</p>``
-                    <p className="{`text-lg" font-semibold ${getScoreColor(item.aiScore)}`}>{item.aiScore}%</p>
-                  </div>
-                  <div>`
-                    <p className=text-sm:text-gray-400>SEO Score</p>``
-                    <p className="{`text-lg" font-semibold ${getScoreColor(item.seoScore)}`}>{item.seoScore}%</p>
-                  </div>
-                  <div>`
-                    <p className=text-sm text-gray-400>Engagement</p>``
-                    <p className="{`text-lg" font-semibold ${getScoreColor(item.engagementScore)}`}>{item.engagementScore}%</p>
-                  </div>
-                  <div>
-                    <p className=text-sm:text-gray-400>Views</p>
-                    <p className="text-lg" font-semibold text-white>{item.analytics.views.toLocaleString()}</p>
-                  </div>
-                </div>
-                <div className=mb-4>
-                  <p className="text-sm:text-gray-400" mb-2>Tags </p>
-                  <div className=flex  flex-wrap gap-2>
-                    {item.tags.map((tag, index) => (
+{selectedView === conten't' && (</div>
+          <div className=" space-y-6">
+            {filteredContent.map((item) => (</div>
+              </div><div key={item.id} className=" bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl" p-6></div>
+                <div className="flex items-start justify-between mb-4"> </div>
+                  </div><div className="flex items-center space-x-3 >"</div>
+                    <div className="text-3xl>{getTypeIcon(item.type)}</div> "</div>
+                    <div>"</div>
+                      <h3 className="text-xl" font-semibold text-white mb-1">{item.title}</h3></div>
+                      <p className="text-gray-300 text-sm>by {item.author}</p></div>
+                    </div>`"</div>
+                  </div>``"</div>
+                  <span className="{`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(item.status)}`}">
+                    {item.status.toUpperCase()}</div>
+                  </span></div>
+                </div></div>
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4> </div>
+                  </div><div>`"</div>
+                    <p className="text-sm text-gray-400">AI Score</p>``"</div>
+                    <p className="{`text-lg" font-semibold ${getScoreColor(item.aiScore)}`}>{item.aiScore}%</p></div>
+                  </div></div>
+                  <div>`</div>
+                    <p className="text-sm:text-gray-400">SEO Score</p>``</div>
+                    <p className="{`text-lg" font-semibold ${getScoreColor(item.seoScore)}`}>{item.seoScore}%</p></div>
+                  </div></div>
+                  <div>`</div>
+                    <p className="text-sm text-gray-400">Engagement</p>``</div>
+                    <p className="{`text-lg" font-semibold ${getScoreColor(item.engagementScore)}`}>{item.engagementScore}%</p></div>
+                  </div></div>
+                  <div></div>
+                    <p className="text-sm:text-gray-400">Views</p></div>
+                    <p className="text-lg" font-semibold text-white>{item.analytics.views.toLocaleString()}</p></div>
+                  </div></div>
+                </div></div>
+                <div className="mb-4"></div>
+                  <p className="text-sm:text-gray-400" mb-2>Tags </p></div>
+                  <div className="flex  flex-wrap gap-2">
+                    {item.tags.map((tag, index) => (</div>
                       <span key={index} className="px-4" py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30>
-                        {tag}
+                        {tag}</div>
                       </span>
-                    ))}
-                  </div>
-                </div>
-                <div className=mb-4>
-                  <p className="text-sm:text-gray-400" mb-2>AI Features </p>
-                  <div className=grid grid-cols-2 md:grid-cols-5 gap-2 text-xs>
-                    </div><div className="flex" items-center space-x-1> '
-                      <span>{item.aiFeatures.autoGenerated ? '✅   ❌'}</span>
-                      <span className=text-gray-300>Auto Generated</span>
-                    </div>
-                    <div className=flex" items-center space-x-1> '
-                      <span>{item.aiFeatures.seoOptimized ? ✅   '❌'}</span>
-                      <span className="text-gray-300>SEO Optimized</span>
-                    </div>
-                    <div className=flex" items-center space-x-1>'
-                      <span>{item.aiFeatures.sentimentAnalyzed ? '✅   ❌'}</span>
-                      <span className=" text-gray-300>Sentiment Analyzed</span>
-                    </div>
-                    <div className=flex items-center space-x-1> '
-                      <span>{item.aiFeatures.keywordOptimized ? ✅   '❌'}</span>
-                      <span className="text-gray-300>Keyword" Optimized</span>
-                    </div>
-                    <div className=flex items-center space-x-1>'
-                      <span>{item.aiFeatures.readabilityOptimized ? '✅   ❌'}</span>
-                      <span className="text-gray-300>Readability" Optimized</span >
-                    </div>
-                  </div>
-                </div> 
-                <div className= flex space-x-3>
+                    ))}</div>
+                  </div></div>
+                </div></div>
+                <div className="mb-4"></div>
+                  <p className="text-sm:text-gray-400" mb-2>AI Features </p></div>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs"></div>
+                    </div><div className="flex" items-center space-x-1> '</div>
+                      <span>{item.aiFeatures.autoGenerated ? '✅   ❌'}</span></div>
+                      <span className="text-gray-300">Auto Generated</span></div>
+                    </div></div>
+                    <div className="flex" items-center space-x-1"> '</div>
+                      <span>{item.aiFeatures.seoOptimized ? ✅   '❌'}</span></div>
+                      <span className="text-gray-300>SEO Optimized</span>"</div>
+                    </div>"</div>
+                    <div className="flex" items-center space-x-1">'</div>
+                      <span>{item.aiFeatures.sentimentAnalyzed ? '✅   ❌'}</span></div>
+                      <span className=" text-gray-300>Sentiment Analyzed</span></div>
+                    </div>"</div>
+                    <div className="flex items-center space-x-1"> '</div>
+                      <span>{item.aiFeatures.keywordOptimized ? ✅   '❌'}</span>"</div>
+                      <span className="text-gray-300>Keyword" Optimized</span></div>
+                    </div></div>
+                    <div className="flex items-center space-x-1">'</div>
+                      <span>{item.aiFeatures.readabilityOptimized ? '✅   ❌'}</span></div>
+                      <span className="text-gray-300>Readability" Optimized</span ></div>
+                    </div></div>
+                  </div></div>
+                </div> </div>
+                <div className=" flex space-x-3"></div>
                   <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
-                    Edit Content
-                  </button>
-                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
-                    View Analytics
-                  </button>
-                </div>
+                    Edit Content</div>
+                  </button></div>
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                    View Analytics</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}
         {/* Templates */}, '
-{selectedView === templat'e's && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-            {templates.map((template) => (
-              </div><div key={template.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-                <div className=flex" items-center justify-between mb-4 >
-                  </div><div className="text-3xl>{getTypeIcon(template.type)}</div>
-                  <span className=text-sm" text-gray-400>{template.usageCount} uses</span>
+{selectedView === templat'e's && (</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>"
+            {templates.map((template) => ("</div>
+              </div><div key={template.id} className="bg-gradient-to-br  from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>"</div>
+                <div className="flex" items-center justify-between mb-4 "></div>
+                  </div><div className="text-3xl>{getTypeIcon(template.type)}</div>"</div>
+                  <span className="text-sm" text-gray-400">{template.usageCount} uses</span></div>
                 </div>
-                "
-                <h3 className=text-lg font-semibold text-white mb-2>{template.name}</h3>
+                "</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{template.name}</h3></div>
                 <p className="text-gray-300" text-sm:mb-4>{template.description}</p>
-                
-                <div className=mb-4> 
+                </div>
+                <div className="mb-4"> </div>
                   </div><div className="flex flex-wrap" gap-2>
-                    {template.tags.map((tag, index) => (
-                      <span key={index} className=px-4 py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30>
-                        {tag}
+                    {template.tags.map((tag, index) => (</div>
+                      <span key={index} className="px-4 py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30">
+                        {tag}</div>
                       </span>
-                    ))}
-                  </div>
+                    ))}</div>
+                  </div></div>
                 </div>
-                
-                <div className="flex" items-center justify-between text-sm text-gray-400 mb-4 >
-                  <span>Last used: {template.lastUsed.toLocaleDateString()}</span>
-                  <span>{template.aiGenerated ? '🤖 AI Generated' : 👤 Manual}</span>
                 </div>
-                <div className= flex space-x-3>
+                <div className="flex" items-center justify-between text-sm text-gray-400 mb-4 ></div>
+                  <span>Last used: {template.lastUsed.toLocaleDateString()}</span></div>
+                  <span>{template.aiGenerated ? '🤖 AI Generated' : 👤 Manual}</span></div>
+                </div></div>
+                <div className=" flex space-x-3"></div>
                   <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> 
-                    Use Template
-                  </button>
+                    Use Template"</div>
+                  </button>"</div>
                   <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
-                    Edit Template
-                  </button>
-                </div>
+                    Edit Template</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
         )}
-        {/* Workflows */},
-{selectedView === 'workflo'ws && (
+        {/* Workflows */},"
+{selectedView === 'workflo'ws && ("</div>
           <div className="space-y-6>" 
-            {workflows.map((workflow) => (
-              </div><div key={workflow.id} className=bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
-                <div className="flex" items-start justify-between mb-4> 
-                  </div><div>
-                    <h3 className=text-lg font-semibold text-white mb-2>{workflow.name}</h3>
-                    <p className="text-gray-300" text-sm >{workflow.description}</p>`
-                  </div>``
-                  <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(workflow.status)}`}>
-                    {workflow.status.toUpperCase()}
-                  </span>
-                </div>
-                <div className="mb-4">
-                  <p className=text-sm:text-gray-400" mb-3>Workflow Steps </p>
-                  <div className="space-y-2>
-                    {workflow.steps.map((step) => (
-                      </div><div key={step.id} className= flex items-center justify-between p-3 bg-white/5" rounded-lg>`
-                        <div className=" flex items-center space-x-3>``
-                          <span className={`px-4" py-3 rounded text-xs font-medium ${getWorkflowStepColor(step.status)}`}>
-                            {step.status.toUpperCase()}
-                          </span>
-                          <span className="text-white>{step.name}</span>
-                        </div>'
-                        <span className=text-sm:text-gray-400>"
-                          {step.aiAssisted ? '🤖 AI Assisted   👤 Manual'}
-                        </span>
+            {workflows.map((workflow) => (</div>
+              </div><div key={workflow.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6"></div>
+                <div className="flex" items-start justify-between mb-4> </div>
+                  </div><div></div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{workflow.name}</h3></div>
+                    <p className="text-gray-300" text-sm >{workflow.description}</p>`</div>
+                  </div>``</div>
+                  <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(workflow.status)}`}">
+                    {workflow.status.toUpperCase()}</div>
+                  </span></div>
+                </div></div>
+                <div className="mb-4"></div>
+                  <p className="text-sm:text-gray-400" mb-3">Workflow Steps </p></div>
+                  <div className="space-y-2>"
+                    {workflow.steps.map((step) => ("</div>
+                      </div><div key={step.id} className=" flex items-center justify-between p-3 bg-white/5" rounded-lg">`</div>
+                        <div className=" flex items-center space-x-3>``"</div>
+                          <span className="{`px-4" py-3 rounded text-xs font-medium ${getWorkflowStepColor(step.status)}`}">
+                            {step.status.toUpperCase()}</div>
+                          </span></div>
+                          <span className="text-white>{step.name}</span>"</div>
+                        </div>'"</div>
+                        <span className="text-sm:text-gray-400">"
+                          {step.aiAssisted ? '🤖 AI Assisted   👤 Manual'}</div>
+                        </span></div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex space-x-3>
-                  <button className=bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
-                    Run Workflow
-                  </button>
+                    ))}</div>
+                  </div></div>
+                </div></div>
+                <div className="flex space-x-3>"</div>
+                  <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
+                    Run Workflow</div>
+                  </button></div>
                   <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
-                    Edit Workflow
-                  </button>
-                </div>
+                    Edit Workflow</div>
+                  </button></div>
+                </div></div>
               </div>
-            ))}
+            ))}</div>
           </div>
-        )}
-        {/* Call to Action */}
-        <div className="mt-12" text-center> 
-          </div><div className=bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8>
+        )}"
+        {/* Call to Action */}"</div>
+        <div className="mt-12" text-center> </div>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8"></div>
             <h2 className="text-3xl" font-bold text-white mb-4>
-              Manage Content with AI
-            </h2>
-            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto >
+              Manage Content with AI</div>
+            </h2></div>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto ">
               Leverage intelligent content management to create, optimize, and "
-              schedule content with AI-driven automation and analytics.
-            </p>
-            <div className=" flex flex-col sm flex-row gap-4 justify-center>
-              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105> 
-                Create Content
-              </button>
-              <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
-              </Link href=/service-marketplace  className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
-            </div>
-          </div>
-        </div>
-      </div>
+              schedule content with AI-driven automation and analytics.</div>
+            </p></div>
+            <div className=" flex flex-col sm flex-row gap-4 justify-center>"</div>
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"> 
+                Create Content</div>
+              </button>"</div>
+              <Link href=/service-marketplace className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services</div>
+              </Link href=/service-marketplace  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm "></Link></div>
+            </div></div>
+          </div></div>
+        </div></div>
+      </div></div>
     </div>
-  
   </div>
-
-  </div> 
+  </div>
+</div>
+  </div> </div>
   </div>
 ;
 };
-'`
-export default AIPoweredContentManagementPage "))))""'`
+'`;}
+export default AIPoweredContentManagementPage "))))""'`</div>

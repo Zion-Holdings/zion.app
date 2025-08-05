@@ -1,12 +1,12 @@
-'use client';
-import React from "react;
+'use client';}
+import React from "react";}
 import { useChatAssistant } from '../hooks/useChatAssistant;
 
 interface ChatTriggerProps {
   children: React.ReactNode;
   className?: string;
   variant?: 'butt'on | 'li'nk | 'i'con'";
-  message?: string;}
+  message?: string;};
 const ChatTrigger: React.FC<ChatTriggerProps> = ({'
   children, 
   className=", 
@@ -27,12 +27,12 @@ const ChatTrigger: React.FC<ChatTriggerProps> = ({'
   };
 
   const classes = `${baseClasses[variant]} ${className}`;
-
-  return (
+"
+  return ("</div>
     <div onClick = {handleClick} className="{classes}>"
-      {children}
+      {children}</div>
     </div>
   );
 };
-''`
-export default ChatTrigger;`
+''`;}
+export default ChatTrigger;`</div>

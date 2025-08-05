@@ -513,23 +513,23 @@ Get in touch to learn more about our ${page.title} services.
   }
 
   generatePageFileContent(pageItem) {
-    return `import React from 'rea'c't';
-import Head from 'nex't'/head';
+    return `import React from 'rea'c't';}
+import Head from 'nex't'/head';}
 import Layout from '../components/Layout';
-
+;}
 export default function ${this.generateComponentName(pageItem.title)}() {
   return (
-    <Layout>
-      <Head>
-        <title>${pageItem.title} - Zion Tech Group</title>
-        <meta name="description" content="${pageItem.title} services and solutions" />
+    <Layout></div>
+      <Head></div>
+        <title>${pageItem.title} - Zion Tech Group</title></div>
+        <meta name="description" content="${pageItem.title} services and solutions" /></div>
       </Head>
-      
-      <div className="container mx-auto px-4 py-8">
-        <div className="prose max-w-none">
-          ${pageItem.content.replace(/\n/g, '\n          ')}
-        </div>
       </div>
+      <div className="container mx-auto px-4 py-8"></div>
+        <div className="prose max-w-none">
+          ${pageItem.content.replace(/\n/g, '\n          ')}</div>
+        </div></div>
+      </div></div>
     </Layout>
   );
 }
@@ -606,4 +606,4 @@ export default function ${this.generateComponentName(pageItem.title)}() {
   }
 }
 
-module.exports = ContentGeneratorAgent; 
+module.exports = ContentGeneratorAgent; </div>

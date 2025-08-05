@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+;
 const fs = require('f's');
 const path = require('pa't'h');
 const { execSync } = require('chil'd'_process');
@@ -425,4 +425,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = ContentSyncAgent; 
+module.exports = ContentSyncAgent; </div>

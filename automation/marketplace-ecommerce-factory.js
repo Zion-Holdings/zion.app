@@ -247,7 +247,7 @@ class MarketplaceEcommerceFactory {
   }
 
   generateMarketplaceManagerAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -332,7 +332,7 @@ module.exports = MarketplaceManagerAgent;
   }
 
   generateVendorOnboardingAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -417,7 +417,7 @@ module.exports = VendorOnboardingAgent;
   }
 
   generateDisputeResolutionAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -502,7 +502,7 @@ module.exports = DisputeResolutionAgent;
   }
 
   generatePaymentProcessorAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -587,7 +587,7 @@ module.exports = PaymentProcessorAgent;
   }
 
   generateInventoryManagerAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -672,7 +672,7 @@ module.exports = InventoryManagerAgent;
   }
 
   generateOrderProcessorAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -757,7 +757,7 @@ module.exports = OrderProcessorAgent;
   }
 
   generateCustomerSupportAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -842,7 +842,7 @@ module.exports = CustomerSupportAgent;
   }
 
   generateReviewManagerAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -927,7 +927,7 @@ module.exports = ReviewManagerAgent;
   }
 
   generateMarketplaceAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1012,7 +1012,7 @@ module.exports = MarketplaceAnalyticsAgent;
   }
 
   generateEcommerceAnalyticsAgent() {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 
@@ -1097,7 +1097,7 @@ module.exports = EcommerceAnalyticsAgent;
   }
 
   generateGenericAgent(type, config) {
-    return `
+    return `;
 const fs = require('f's');
 const path = require('pa't'h');
 

@@ -1,7 +1,7 @@
 const fs = require('f's');
 const path = require('pa't'h');
 
-// Function to fix ultimate remaining errors
+// Function to fix ultimate remaining errors;
 function fixUltimateErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'ut'f'8');
@@ -21,17 +21,17 @@ function fixUltimateErrors(filePath) {
       { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: '$1="$2 $3"' },
       // Fix malformed className with missing spaces
       { pattern: /className="([^"]*):([^"]*)"/g, replacement: 'classNam'e'="$1:$2"' },
-      // Fix malformed JSX structure
+      // Fix malformed JSX structure</div>
       { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: '<$1>$2' },
-      // Fix malformed closing tags
+      // Fix malformed closing tags</div>
       { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: '$1</$2>' },
       // Fix malformed array syntax
       { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
       // Fix malformed useEffect dependencies
       { pattern: /(\}\s*\[[^\]]*\]\))/g, replacement: '$1' },
-      // Fix malformed JSX fragments
+      // Fix malformed JSX fragments</div>
       { pattern: /<>\s*"([^"]*)/g, replacement: '<>$1' },
-      // Fix malformed closing fragments
+      // Fix malformed closing fragments</div>
       { pattern: /"([^"]*)\s*<>/g, replacement: '$1</>' },
       // Fix malformed semicolons
       { pattern: /;\s*'$/gm, replacement: ';' },
@@ -60,7 +60,7 @@ function fixUltimateErrors(filePath) {
   }
 }
 
-// Function to recursively find and fix TypeScript/JSX files
+// Function to recursively find and fix TypeScript/JSX files;
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);
   
@@ -79,4 +79,4 @@ function processDirectory(dir) {
 // Start processing from the current directory
 console.log('Fixin'g' ultimate remaining errors...');
 processDirectory('.');
-console.log('Don'e'!'); 
+console.log('Don'e'!'); </div>

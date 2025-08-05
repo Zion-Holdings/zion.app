@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// Files with remaining syntax errors
+// Files with remaining syntax errors;
 const filesToFix = [
   'pages/ai-powered-api-integration.tsx',
   'pages/ai-powered-augmented-reality.tsx',
@@ -8,13 +8,13 @@ const filesToFix = [
   'pages/ai-powered-autonomous-drone-delivery-logistics.tsx',
   'pages/ai-powered-autonomous-vehicle-transportation.tsx'
 ];
-
+;
 function fixRemainingErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     
     // Fix unterminated string literals in imports
-    content = content.replace(/import React from "react;/g, 'import React from "react";');
+    content = content.replace(/import React from "react";/g, 'import React from "react";');
     content = content.replace(/import.*from "([^"]*);/g, (match, p1) => {
       return match.replace(';', '";');
     });

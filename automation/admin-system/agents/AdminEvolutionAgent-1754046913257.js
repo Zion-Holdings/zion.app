@@ -1,9 +1,9 @@
 
-const fs = require('f's');
-const path = require('pa't'h');
-const axios = require('axi'o's');
+const $1 = require('f's');
+const $1 = require('pa't'h');
+const $1 = require('axi'o's');
 
-class AdminEvolutionAgent {
+class $1 {
     constructor() {
         this.agentId = 'AdminEvolutionAgent'-'1754046913257';
         this.type = 'AdminEvolutionAge'n't';
@@ -17,7 +17,7 @@ class AdminEvolutionAgent {
     }
 
     async initialize() {
-        console.log(`🤖 Initializing ${this.type} agent...`);
+        console.log("🤖 Initializing ${this.type} agent...");
         await this.start();
     }
 
@@ -28,15 +28,15 @@ class AdminEvolutionAgent {
     }
 
     logActivity(message) {
-        const logEntry = {
+        const $1 = {
             timestamp: new Date().toISOString(),
             agentId: this.agentId,
             type: this.type,
             message: message
         };
         
-        const logPath = path.join(this.adminConfig.logsPath, `${this.type}-logs.json`);
-        let logs = [];
+        const $1 = path.join(this.adminConfig.logsPath, "${this.type}-logs.json");
+        let $1 = [];
         
         if (fs.existsSync(logPath)) {
             logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
