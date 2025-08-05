@@ -1,4 +1,5 @@
-import React from 'react';
+
+import { Home, Search, User } from 'lucide-react';import React from 'react';
 import ModernLayout from '../components/layout/ModernLayout';
 import { 
   Zap, 

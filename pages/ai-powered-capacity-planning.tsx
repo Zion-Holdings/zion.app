@@ -703,7 +703,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
-export default AIPoweredCapacityPlanningPage; 
+export default AIPoweredCapacityPlanningPage;

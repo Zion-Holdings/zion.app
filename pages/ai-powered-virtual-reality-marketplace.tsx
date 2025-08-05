@@ -3,6 +3,7 @@ import type { NextPage } from 'next';import ModernLayout from '../components/lay
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { Home, Search, User } from 'lucide-react';
 
 interface VRProduct {
   id: string

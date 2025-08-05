@@ -1036,7 +1036,7 @@ const ResumeBuilder = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
-export default ResumeBuilder; 
+export default ResumeBuilder;

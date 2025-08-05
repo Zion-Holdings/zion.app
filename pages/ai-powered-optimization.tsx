@@ -293,7 +293,7 @@ const AiPoweredOptimization = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default AiPoweredOptimization;

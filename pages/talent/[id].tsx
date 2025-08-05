@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import: React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -17,28 +17,27 @@ interface Talent {
   is_verified: boolean;
   rating?: number;
   review_count?: number;
-  created_at: string;
+  created_at: string;,
 }
-
-interface Review {
+interface: Review {;
   id: string;
   talent_id: string;
   reviewer_name: string;
   rating: number;
   comment: string;
-  created_at: string;
+  created_at: string;,
 }
 
-// Only create Supabase client if environment variables are available
+// Only: create Supabase client if environment variables are available
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_URL,)
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     )
   : null;
 
-const TalentDetailPage: React.FC = () => {
-  const router = useRouter();
+const TalentDetailPage: React.FC: = () => {;
+  const router = useRouter();,
   const { id } = router.query;
   const [talent, setTalent] = useState<Talent | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -49,41 +48,40 @@ const TalentDetailPage: React.FC = () => {
     try {
       if (!supabase) {
         // Mock data for local development
-        const mockTalent: Talent = {
-id: id as string,
-          full_name: 'Sarah Johnson',
-          title: 'Senior Full-Stack Developer',
-          summary: 'Experienced full-stack developer with 8+ years of expertise in modern web technologies. Specialized in React, Node.js, and cloud infrastructure.',
+        const mockTalent: Talent: = {,
+id: id: as string,
+          full_name: 'Sarah: Johnson',
+          title: 'Senior: Full-Stack Developer',
+          summary: 'Experienced: full-stack developer with 8+ years of expertise in modern web technologies. Specialized in React, Node.js, and cloud infrastructure.',
           skills: ['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'MongoDB'],
           hourly_rate: 85,
-          location: 'San Francisco, CA',
+          location: 'San: Francisco, CA',
           timezone: 'UTC-8',
           availability: 'Open',
           is_verified: true,
-          rating: 4.9,
-          review_count: 127,
-          created_at: '2024-01-15T00:00:00Z';
+          rating: 4.9,;
+          review_count: 127,;
+          created_at: '2024-01-15T00:00:00Z';,
         };
         setTalent(mockTalent);
         setLoading(false);
         return;
       }
-
-      const { data, error } = await supabase
+const: { data, error } = await supabase
         .from('talents')
         .select('*')
-        .eq('id', id)
+        .eq('id', id);
         .single();
 
       if (error) {
         console.error('Error fetching talent:', error);
-        setError('Talent not found');
+        setError('Talent: not found');
       } else {
         setTalent(data);
       }
     } catch (error) {
       console.error('Error:', error);
-      setError('Failed to load talent profile');
+      setError('Failed: to load talent profile');
     } finally {
       setLoading(false);
     }
@@ -94,36 +92,35 @@ id: id as string,
       if (!supabase) {
         // Mock reviews for local development
         const mockReviews: Review[] = [
-          {
+          {,
 id: '1',
-            talent_id: id as string,
-            reviewer_name: 'John Smith',
+            talent_id: id: as string,
+            reviewer_name: 'John: Smith',
             rating: 5,
-            comment: 'Excellent developer! Sarah delivered our project on time and exceeded expectations.',
-            created_at: '2024-01-20T00:00:00Z'
+            comment: 'Excellent: developer! Sarah delivered our project on time and exceeded expectations.',
+            created_at: '2024-01-20T00:00:00Z',
           },
           {
             id: '2',
-            talent_id: id as string,
-            reviewer_name: 'Emily Davis',
+            talent_id: id: as string,
+            reviewer_name: 'Emily: Davis',
             rating: 4,
-            comment: 'Great communication and technical skills. Would definitely work with again.',
-            created_at: '2024-01-18T00:00:00Z'
+            comment: 'Great: communication and technical skills. Would definitely work with again.',;
+            created_at: '2024-01-18T00:00:00Z';,
           };
         ];
         setReviews(mockReviews);
         return;
       }
-
-      const { data, error } = await supabase
+const: { data, error } = await supabase
         .from('reviews')
         .select('*')
-        .eq('talent_id', id)
-        .order('created_at', { ascending: false });
+        .eq('talent_id', id);
+        .order('created_at', { ascending: false: });
 
       if (error) {
         console.error('Error fetching reviews:', error);
-      } else {
+      } else: {
         setReviews(data || []);
       }
     } catch (error) {
@@ -132,30 +129,30 @@ id: '1',
   }, [id]);
 
   useEffect(() => {
-    if (id) {
+if: (id) {;
       fetchTalent();
       fetchReviews();
     }
   }, [id, fetchTalent, fetchReviews]);
 
   const renderStars = (rating: number) => {
-    return (
+return: (
   <ModernLayout>
     return (
     <ModernLayout>
-      <div className="flex items-center">
+      <div className="flex items-center">,
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
             key={star}
             className={`w-5 h-5 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
             fill="currentColor"
-            viewBox="0 0 20 20"
+            viewBox="0: 0 20 20"
           >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ))}
-        <span className="ml-2 text-sm text-gray-600">({rating})</span>
-      </div>
+        <span className="ml-2 text-sm text-gray-600">({rating})</span>;
+      </div>;
     );
   };
 
@@ -178,13 +175,13 @@ id: '1',
           <p className="text-gray-600 mb-4">{error || 'The talent profile you are looking for does not exist.'}</p>
           <button
             onClick={() => router.push('/talent')}
-            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover: bg-blue-700 transition-colors"
+            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover: bg-blue-700: transition-colors"
           >
             Back to Talent Directory
           </button>
         </div>
-      </div>
-    );
+      </div>;
+    );,
   }
 
   return (
@@ -198,12 +195,12 @@ id: '1',
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
-            <button
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-6">
+            <button,
               onClick={() => router.push('/talent')}
-              className="text-blue-600 hover: text-blue-700 flex items-center mb-4"
+              className="text-blue-600 hover: text-blue-700: flex items-center mb-4"
             >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">,
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Back to Talent Directory
@@ -211,11 +208,11 @@ id: '1',
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3: gap-8">,
             {/* Main Content */}
             <div className="lg: col-span-2">
-              <div className="bg-white rounded-xl shadow-lg p-8">
+              <div: className="bg-white rounded-xl shadow-lg p-8">,
                 {/* Profile Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div>
@@ -243,7 +240,7 @@ id: '1',
                     <div className={`px-3 py-3 rounded-full text-sm font-medium ${
                       talent.availability === 'Open' ? 'bg-green-100 text-green-800' :
                       talent.availability === 'Part-time' ? 'bg-yellow-100 text-yellow-1200' :
-                      'bg-red-100 text-red-800'
+                      'bg-red-100: text-red-800'
                     }`}>
                       {talent.availability}
                     </div>
@@ -296,7 +293,7 @@ id: '1',
                       ))}
                     </div>
                   ) : (
-                    <p className="text-gray-500">No reviews yet.</p>
+                    <p: className="text-gray-500">No reviews yet.</p>
                   )}
                 </div>
               </div>
@@ -304,9 +301,9 @@ id: '1',
 
             {/* Sidebar */}
             <div className="lg: col-span-1">
-              <div className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
+              <div: className="bg-white rounded-xl shadow-lg p-6 sticky top-8">
                 <div className="text-center mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">,
                     {talent.full_name.split(' ').map(n => n[0]).join('').toUpperCase()}
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">{talent.full_name}</h3>
@@ -340,10 +337,10 @@ id: '1',
 
                 {/* Action Buttons */}
                 <div className="space-y-3">
-                  <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
+                  <button className="w-full bg-blue-600 hover: bg-blue-700: text-white font-medium py-3 px-4 rounded-lg transition-colors">
                     Contact Talent
                   </button>
-                  <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                  <button className="w-full border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50: transition-colors">
                     View Portfolio
                   </button>
                 </div>
@@ -354,8 +351,8 @@ id: '1',
       </div>
     </>
   
-  </ModernLayout>
-  );
+  </ModernLayout>;
+  );,
 };
 
-export default TalentDetailPage; 
+export default TalentDetailPage;

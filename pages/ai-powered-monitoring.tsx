@@ -293,7 +293,7 @@ const AiPoweredMonitoring = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default AiPoweredMonitoring;

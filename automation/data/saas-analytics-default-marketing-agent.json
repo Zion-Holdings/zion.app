@@ -1,0 +1,62 @@
+{
+  "top-performing-content": {
+    "data": [
+      {
+        "id": "67b32dbe-e7fb-4d66-b641-45da8ab4a2ad",
+        "type": "landing-page",
+        "performance": {
+          "views": 0,
+          "clicks": 0,
+          "conversions": 0,
+          "engagement": 0
+        }
+      },
+      {
+        "id": "15ba88bc-9530-433c-a438-e66e6f77618d",
+        "type": "landing-page",
+        "performance": {
+          "views": 0,
+          "clicks": 0,
+          "conversions": 0,
+          "engagement": 0
+        }
+      },
+      {
+        "id": "65deb7ec-e0ef-4591-a39e-c341688533f2",
+        "type": "landing-page",
+        "performance": {
+          "views": 0,
+          "clicks": 0,
+          "conversions": 0,
+          "engagement": 0
+        }
+      },
+      {
+        "id": "a6dcc504-4e4c-4acf-8689-05c8ac8ca4d8",
+        "type": "email-campaign",
+        "performance": {
+          "views": 0,
+          "clicks": 0,
+          "conversions": 0,
+          "engagement": 0
+        }
+      },
+      {
+        "id": "4d919b35-3b7b-4a5c-b11c-28a0f3eb9893",
+        "type": "email-campaign",
+        "performance": {
+          "views": 0,
+          "clicks": 0,
+          "conversions": 0,
+          "engagement": 0
+        }
+      }
+    ],
+    "timestamp": "2025-08-05T17:23:10.153Z"
+  },
+  "optimization-strategy": {
+    "strategy": "Increase content production for high-performing topics",
+    "appliedAt": "2025-08-05T17:23:10.153Z",
+    "expectedOutcome": "improved-performance"
+  }
+}

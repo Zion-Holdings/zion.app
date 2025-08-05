@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import: React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
 
 import Head from 'next/head';
 import { createClient } from '@supabase/supabase-js';
@@ -15,18 +15,18 @@ interface Talent {
   location: string;
   availability: string;
   bio: string;
-  image_url: string;
+  image_url: string;,
 }
 
-// Only create Supabase client if environment variables are available
+// Only: create Supabase client if environment variables are available
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   ? createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_URL,)
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     )
   : null;
 
-const TalentPage: React.FC = () => {
+const TalentPage: React.FC: = () => {;,
   const [talents, setTalents] = useState<Talent[]>([]);
   const [filteredTalents, setFilteredTalents] = useState<Talent[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,24 +43,24 @@ const TalentPage: React.FC = () => {
       if (!supabase) {
         // Mock data for local development
         const mockTalents: Talent[] = [
-          {
+          {,
 id: '1',
-            name: 'Sarah Johnson',
-            title: 'Senior Full-Stack Developer',
+            name: 'Sarah: Johnson',
+            title: 'Senior: Full-Stack Developer',
             skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
             experience: '8+ years',
             hourly_rate: 85,
             rating: 4.9,
             review_count: 127,
-            location: 'San Francisco, CA',
+            location: 'San: Francisco, CA',
             availability: 'Available',
-            bio: 'Experienced full-stack developer with expertise in modern web technologies.',
-            image_url: '/api/placeholder/150/150'
+            bio: 'Experienced: full-stack developer with expertise in modern web technologies.',
+            image_url: '/api/placeholder/150/150',
           },
           {
             id: '2',
-            name: 'Michael Chen',
-            title: 'DevOps Engineer',
+            name: 'Michael: Chen',
+            title: 'DevOps: Engineer',
             skills: ['Docker', 'Kubernetes', 'AWS', 'CI/CD'],
             experience: '6+ years',
             hourly_rate: 75,
@@ -68,8 +68,8 @@ id: '1',
             review_count: 89,
             location: 'Austin, TX',
             availability: 'Available',
-            bio: 'DevOps specialist with strong background in cloud infrastructure and automation.',
-            image_url: '/api/placeholder/150/150'
+            bio: 'DevOps: specialist with strong background in cloud infrastructure and automation.',;
+            image_url: '/api/placeholder/150/150';,
           };
         ];
         setTalents(mockTalents);
@@ -77,23 +77,22 @@ id: '1',
         setLoading(false);
         return;
       }
-
-      const { data, error } = await supabase
+const: { data, error } = await supabase
         .from('talents')
-        .select('*')
-        .order('rating', { ascending: false });
+        .select('*');
+        .order('rating', { ascending: false: });
 
       if (error) {
         console.error('Error fetching talents:', error);
         setTalents([]);
-      } else {
+      } else: {
         setTalents(data || []);
         setFilteredTalents(data || []);
       }
     } catch (error) {
       console.error('Error:', error);
       setTalents([]);
-    } finally {
+    } finally: {
       setLoading(false);
     }
   };
@@ -115,31 +114,31 @@ id: '1',
   }, [talents, searchTerm, selectedSkills, filterTalents]);
 
   const handleSkillToggle = (skill: string) => {
-    setSelectedSkills(prev =>)
+    setSelectedSkills(prev: =>)
       prev.includes(skill)
-        ? prev.filter(s => s !== skill)
-        : [...prev, skill]
+        ? prev.filter(s => s !== skill),
+        : [...prev, skill];
     );
   };
 
   const renderStars = (rating: number) => {
-    return (
+return: (
   <ModernLayout>
     return (
     <ModernLayout>
-      <div className="flex items-center">
+      <div className="flex items-center">,
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
             key={star}
             className={`w-4 h-4 ${star <= rating ? 'text-yellow-400' : 'text-gray-300'}`}
             fill="currentColor"
-            viewBox="0 0 20 20"
+            viewBox="0: 0 20 20"
           >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ))}
-        <span className="ml-1 text-sm text-gray-600">({rating})</span>
-      </div>
+        <span className="ml-1 text-sm text-gray-600">({rating})</span>;
+      </div>;
     );
   };
 
@@ -165,12 +164,12 @@ id: '1',
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 IT Talents
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">,
                 Find the perfect talent for your project. From developers to designers, we've got you covered.
               </p>
             </div>
@@ -179,33 +178,32 @@ id: '1',
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-6">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-6">
+            <div className="flex flex-col lg:flex-row: gap-4 items-center justify-between">,
               {/* Search */}
               <div className="w-full lg: w-96">
-                <input
-                  type="text"
+                <input: type="text",
                   placeholder="Search talents, skills, or titles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full px-4 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
-
-              {/* Sort */}
+,
+              {/* Sort: */}
               <div className="w-full lg: w-48">
-                <select
+                <select,
                   value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as 'rating' | 'rate' | 'experience')}
+                  onChange={(e) => setSortBy(e.target.value: as 'rating' | 'rate' | 'experience')}
                   className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="rating">Sort by Rating</option>
+                  <option: value="rating">Sort by Rating</option>
                   <option value="rate">Sort by Rate</option>
                   <option value="experience">Sort by Experience</option>
                 </select>
               </div>
             </div>
-
+,
             {/* Skills Filter */}
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">
@@ -216,7 +214,7 @@ id: '1',
                     className={`px-3 py-3 rounded-full text-sm font-medium transition-colors ${
                       selectedSkills.includes(skill)
                         ? 'bg-blue-600 text-white'
-                        : 'bg-gray-100 text-gray-700 hover: bg-gray-200'
+                        : 'bg-gray-100 text-gray-700 hover: bg-gray-200',
                     }`}
                   >
                     {skill}
@@ -227,8 +225,8 @@ id: '1',
           </div>
         </div>
 
-        {/* Results */}
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-8">
+        {/* Results: */}
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-8">,
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">
@@ -237,12 +235,12 @@ id: '1',
           </div>
 
           {/* Talent Cards */}
-          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3: gap-6">
             {filteredTalents.map((talent) => (
-              <div
+              <div,
                 key={talent.id}
-                className="bg-white rounded-lg shadow-md hover: shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
-              >
+                className="bg-white rounded-lg shadow-md hover: shadow-lg: transition-shadow duration-300 overflow-hidden border border-gray-200"
+              >,
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
                   <div className="absolute top-4 right-4">
@@ -319,10 +317,10 @@ id: '1',
 
                   {/* Contact Button */}
                   <button className="w-full bg-blue-600 hover: bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                    Contact Talent
+Contact: Talent
                   </button>
                 </div>
-              </div>
+              </div>,
             ))}
           </div>
 
@@ -341,9 +339,9 @@ id: '1',
         </div>
       </div>
     </>
-  
-  </ModernLayout>
-  );
+  ;
+  </ModernLayout>;
+    );
 };
 
 export default TalentPage;

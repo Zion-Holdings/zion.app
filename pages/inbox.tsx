@@ -711,7 +711,7 @@ const InboxPage: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
-export default InboxPage; 
+export default InboxPage;

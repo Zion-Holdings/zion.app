@@ -17,6 +17,7 @@ import {
   User,
   Shield
 } from 'lucide-react';
+import { Home, Search, User } from 'lucide-react';
 
 interface Patient {
   id: string;
@@ -523,7 +524,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-    );
+      );
 };
 
-export default AIPoweredHealthcareMedicalDiagnosticsPage; 
+export default AIPoweredHealthcareMedicalDiagnosticsPage;

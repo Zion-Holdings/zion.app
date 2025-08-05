@@ -7,9 +7,7 @@ import AuthLayout from '../../components/layout/AuthLayout';
 
 const Login: NextPage = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <AuthLayout>
       <Head>

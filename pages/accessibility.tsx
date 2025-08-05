@@ -2,7 +2,7 @@ import type { NextPage } from 'next';import ModernLayout from '../components/lay
 
 import Head from 'next/head';
 import Link from 'next/link';
-import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe } from 'lucide-react';
+import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe , Home, Search, User } from 'lucide-react';
 
 const Accessibility: NextPage = () => {
   return (

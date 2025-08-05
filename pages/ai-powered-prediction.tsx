@@ -293,7 +293,7 @@ const AiPoweredPrediction = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default AiPoweredPrediction;

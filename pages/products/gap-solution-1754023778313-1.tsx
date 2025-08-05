@@ -5,8 +5,6 @@ import { NextPage } from 'next';
 
 const gap_solution_1754023778313_1Page: NextPage = () => {
   return (
-  <ModernLayout>
-    return (
     <ModernLayout>
       <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -202,8 +200,7 @@ const gap_solution_1754023778313_1Page: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default gap_solution_1754023778313_1Page;
-        

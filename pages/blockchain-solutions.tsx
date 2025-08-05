@@ -293,7 +293,7 @@ const BlockchainSolutions = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default BlockchainSolutions;

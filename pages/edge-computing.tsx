@@ -293,7 +293,7 @@ const EdgeComputing = () => {
   </ModernLayout>
 
   </ModernLayout>
-  );
+    );
 };
 
 export default EdgeComputing;

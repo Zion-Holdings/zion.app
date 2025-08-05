@@ -17,6 +17,7 @@ import {
   Target,
   Activity
 } from 'lucide-react';
+import { Home, Search, User } from 'lucide-react';
 
 interface ChangeInitiative {
   id: string;
@@ -506,7 +507,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-    );
+      );
 };
 
-export default AIPoweredChangeManagementPage; 
+export default AIPoweredChangeManagementPage;

@@ -6,9 +6,7 @@ import AuthLayout from '../../components/layout/AuthLayout';
 
 const ForgotPassword: NextPage = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <AuthLayout>
       <Head>
