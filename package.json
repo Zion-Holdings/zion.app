@@ -33,7 +33,7 @@
     "mcp:weekly": "node automation/mcp-integration-orchestrator.js weekly-audit",
     "mcp:monitor": "node automation/mcp-integration-orchestrator.js performance-monitor",
     "mcp:status": "node automation/mcp-integration-orchestrator.js status",
-    "mcp:test": "node test-mcp-integration.js"
+    "mcp:test": "node simple-mcp-test.js"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
