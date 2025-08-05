@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-05T12:03:57.367Z",
+  "timestamp": "2025-08-05T12:10:28.881Z",
   "summary": {
     "totalPages": 11,
     "missingPages": 15,
@@ -222,11 +222,6 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },
@@ -257,11 +252,6 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },
@@ -272,11 +262,6 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },

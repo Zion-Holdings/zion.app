@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-05T12:03:41.094Z",
+  "timestamp": "2025-08-05T12:10:14.288Z",
   "pageInfo": {
     "title": "Equipment - Zion",
     "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
@@ -8,7 +8,7 @@
     "headings": [
       {
         "level": "h1",
-        "text": "Bolt.new"
+        "text": "Zion App"
       },
       {
         "level": "h1",
@@ -27,7 +27,7 @@
         "text": "Network Equipment"
       }
     ],
-    "content": "Bolt.newMainAI ServicesBusinessCommunicationToolsProfileSettingsLogoutHigh-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"oqWwP7nMIGEF5UZ7YoKiL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutHigh-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"PAh7cF5RmDwCIVgwM0l8h\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,7 +48,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-222c6a65c788caad.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-fb816b7dfdf31a8b.js",
         "type": "text/javascript"
       },
       {
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -68,11 +68,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-024049e453dc2f35.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40aad1ed57b2c680.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40aad1ed57b2c680.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-024049e453dc2f35.js",
         "type": "text/javascript"
       },
       {
@@ -82,13 +82,13 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/8f2a0ca9fe769e61.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/0374927e7d760269.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 476,
+    "contentLength": 520,
     "headingCount": 5,
     "imageCount": 0,
     "formCount": 0,

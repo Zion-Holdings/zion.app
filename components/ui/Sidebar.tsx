@@ -387,18 +387,21 @@ const Sidebar: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-gray-700">
-          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
-            <User className="w-5 h-5" />
-            <span className="text-sm">Profile</span>
+        <div className="p-4 border-t border-gray-700/50">
+          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-xl transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <User className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-sm relative z-10">Profile</span>
           </div>
-          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
-            <Settings className="w-5 h-5" />
-            <span className="text-sm">Settings</span>
+          <div className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-xl transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Settings className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-sm relative z-10">Settings</span>
           </div>
-          <div className="flex items-center space-x-3 p-3 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded-lg transition-colors cursor-pointer">
-            <LogOut className="w-5 h-5" />
-            <span className="text-sm">Logout</span>
+          <div className="flex items-center space-x-3 p-3 text-red-400 hover:text-red-300 hover:bg-red-900/20 rounded-xl transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-red-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <LogOut className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-sm relative z-10">Logout</span>
           </div>
         </div>
       </div>

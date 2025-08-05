@@ -76,29 +76,15 @@ echo ""
 print_status "Checking automation processes..."
 
 # Check and start key automation processes
-declare -A processes=(
-    ["master-orchestrator"]="autonomous-master-orchestrator.js"
-    ["enhanced-content-generator"]="enhanced-content-generator.js"
-    ["performance-monitor"]="performance-monitor.js"
-    ["website-analyzer"]="enhanced-website-analyzer-agent.js"
-    ["agent-orchestrator"]="agent-orchestrator.js"
-    ["enhanced-autonomous-system"]="enhanced-autonomous-system.js"
-    ["enhanced-cron-system"]="enhanced-cron-system.js"
-    ["marketing-automation"]="marketing-automation.js"
-    ["monitor-automation"]="monitor-automation.js"
-)
-
-# Check each process
-for process_name in "${!processes[@]}"; do
-    script_name="${processes[$process_name]}"
-    if ! check_process "$process_name" "$script_name"; then
-        if [ -f "$script_name" ]; then
-            start_process "$process_name" "$script_name"
-        else
-            print_warning "$script_name not found"
-        fi
-    fi
-done
+check_process "master-orchestrator" "autonomous-master-orchestrator.js" || start_process "master-orchestrator" "autonomous-master-orchestrator.js"
+check_process "enhanced-content-generator" "enhanced-content-generator.js" || start_process "enhanced-content-generator" "enhanced-content-generator.js"
+check_process "performance-monitor" "performance-monitor.js" || start_process "performance-monitor" "performance-monitor.js"
+check_process "website-analyzer" "enhanced-website-analyzer-agent.js" || start_process "website-analyzer" "enhanced-website-analyzer-agent.js"
+check_process "agent-orchestrator" "agent-orchestrator.js" || start_process "agent-orchestrator" "agent-orchestrator.js"
+check_process "enhanced-autonomous-system" "enhanced-autonomous-system.js" || start_process "enhanced-autonomous-system" "enhanced-autonomous-system.js"
+check_process "enhanced-cron-system" "enhanced-cron-system.js" || start_process "enhanced-cron-system" "enhanced-cron-system.js"
+check_process "marketing-automation" "marketing-automation.js" || start_process "marketing-automation" "marketing-automation.js"
+check_process "monitor-automation" "monitor-automation.js" || start_process "monitor-automation" "monitor-automation.js"
 
 echo ""
 print_status "Checking cron jobs..."

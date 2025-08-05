@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/",
-  "timestamp": "2025-08-05T12:03:38.129Z",
+  "timestamp": "2025-08-05T12:10:11.672Z",
   "pageInfo": {
     "title": "Our Services - Zion Tech Group",
     "description": "Explore our comprehensive service offerings",
@@ -8,7 +8,7 @@
     "headings": [
       {
         "level": "h1",
-        "text": "Bolt.new"
+        "text": "Zion App"
       },
       {
         "level": "h1",
@@ -35,7 +35,7 @@
         "text": "Support"
       }
     ],
-    "content": "Bolt.newMainAI ServicesBusinessCommunicationToolsProfileSettingsLogoutZionMarketplaceAboutLoginJoin ZionOur Services - Zion Tech GroupExplore our comprehensive service offeringsExplore MarketplaceGet StartedZionThe future of AI-powered marketplace technology.MarketplaceBrowse ServicesAI TalentsEquipmentCompanyAboutContactBlogSupportHelp CenterPrivacyTerms© 2024 Zion. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/services\",\"query\":{},\"buildId\":\"oqWwP7nMIGEF5UZ7YoKiL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion AppNext Generation PlatformMainAI ServicesBusinessCommunicationToolsDevelopmentResourcesProfileSettingsLogoutZionMarketplaceAboutLoginJoin ZionOur Services - Zion Tech GroupExplore our comprehensive service offeringsExplore MarketplaceGet StartedZionThe future of AI-powered marketplace technology.MarketplaceBrowse ServicesAI TalentsEquipmentCompanyAboutContactBlogSupportHelp CenterPrivacyTerms© 2024 Zion. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/services\",\"query\":{},\"buildId\":\"PAh7cF5RmDwCIVgwM0l8h\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,7 +56,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-222c6a65c788caad.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-fb816b7dfdf31a8b.js",
         "type": "text/javascript"
       },
       {
@@ -64,11 +64,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/PAh7cF5RmDwCIVgwM0l8h/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -76,11 +76,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-b984b49231b602aa.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-e88cae8efa6a2986.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
         "type": "text/javascript"
       },
       {
@@ -88,15 +88,15 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-646d751ad4b812b0.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-154a1db97f4241d6.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-efe7ac125329edb9.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-646d751ad4b812b0.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-31be7cf55ffbbfff.js",
         "type": "text/javascript"
       },
       {
@@ -104,11 +104,15 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-6b747cd29cb2c142.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-14fd75382f95bded.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog-b5bee86a27add935.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-efe7ac125329edb9.js",
         "type": "text/javascript"
       },
       {
@@ -118,21 +122,17 @@
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/terms-153a0d50ae1a4c34.js",
         "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-31be7cf55ffbbfff.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/8f2a0ca9fe769e61.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/0374927e7d760269.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 553,
+    "contentLength": 597,
     "headingCount": 7,
     "imageCount": 0,
     "formCount": 0,
