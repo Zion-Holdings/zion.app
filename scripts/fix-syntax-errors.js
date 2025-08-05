@@ -175,6 +175,20 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/priority: medium,/g, "priority: 'medium',");
     content = content.replace(/startDate: 2023-09-01,/g, "startDate: '2023-09-01',");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/status: 'pending' \| 'approved' \| 'implemented' \| 'rejected/g, "status: 'pending' | 'approved' | 'implemented' | 'rejected';");
+    content = content.replace(/endDate: 2024-03-31',/g, "endDate: '2024-03-31',");
+    content = content.replace(/currentCapacity: '100,/g, "currentCapacity: 100,");
+    content = content.replace(/type: 'technology' \| 'process' \| 'organizational' \| 'cultural/g, "type: 'technology' | 'process' | 'organizational' | 'cultural';");
+    content = content.replace(/status: 'planning' \| 'implementation' \| 'monitoring' \| 'completed/g, "status: 'planning' | 'implementation' | 'monitoring' | 'completed';");
+    content = content.replace(/riskLevel: 'low' \| 'medium' \| 'high/g, "riskLevel: 'low' | 'medium' | 'high';");
+    content = content.replace(/id: 'change-2,/g, "id: 'change-2',");
+    content = content.replace(/name: Process Automation Implementation,/g, "name: 'Process Automation Implementation',");
+    content = content.replace(/type: process,/g, "type: 'process',");
+    content = content.replace(/status: planning,/g, "status: 'planning',");
+    content = content.replace(/type: 'service' \| 'product' \| 'partnership' \| 'employment/g, "type: 'service' | 'product' | 'partnership' | 'employment';");
+    content = content.replace(/status: 'draft' \| 'negotiation' \| 'active' \| 'completed' \| 'terminated/g, "status: 'draft' | 'negotiation' | 'active' | 'completed' | 'terminated';");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
