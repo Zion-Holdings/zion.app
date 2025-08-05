@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next
+import { NextApiRequest, NextApiResponse } from 'next';
 
 interface ChangeInitiative {
   id: string;
   name: string;
   type: 'technology' | 'process' | 'organizational' | 'cultural
   status: 'planning' | 'implementation' | 'monitoring' | 'completed
-  priority: 'low' | 'medium' | 'high' | 'critical
+  priority: 'low' | 'medium' | 'high' | 'critical';
   startDate: string;
   endDate: string;
   description: string;
@@ -50,7 +50,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     name: Process Automation Implementation,
     type: process,
     status: planning,
-    priority: high,
+    priority: 'high',
     startDate: 2024-03-01',
     endDate: '2024-08-31,
     description: Implement AI-powered automation across key business processes,
@@ -66,7 +66,7 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     'name: 'Organizational Restructuring,
     type: organizational,
     status: monitoring,
-    priority: high,
+    priority: 'high',
     startDate: 2023-10-01,
     endDate: 2024-06-30,
     description: 'Restructure organization to improve efficiency and collaboration',

@@ -139,7 +139,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Automated customer onboarding process with AI-powered verification and setup,
       status: active',
       category: 'business,
-      priority: high,
+      priority: 'high',
       steps: [
         {
           id: 1,

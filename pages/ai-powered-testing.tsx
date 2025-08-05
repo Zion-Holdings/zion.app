@@ -96,7 +96,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T15:30:00),
           aiGenerated: true,
           coverage: 92,
-          priority: high,
+          priority: 'high',
           tags: [authentication, security', user-management]}
         },
 {
@@ -128,7 +128,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T14:45:00'),
           aiGenerated: 'true,
           coverage: 75,
-          priority: high,
+          priority: 'high',
           tags: [performance, a'pi, load-testin'g]
         },
 {
@@ -174,7 +174,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T15:30:00),
           aiGenerated: true,
           automated: true,
-          priority: high,
+          priority: 'high',
           flaky: false,
           steps: [
             {
@@ -263,7 +263,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           lastRun: new Date(2024-01-20T14:45:00),
           aiGenerated: true,
           automated: true,
-          priority: high,
+          priority: 'high',
           flaky: true,
           errorMessage: Response time exceeded 2 seconds,
           steps: [

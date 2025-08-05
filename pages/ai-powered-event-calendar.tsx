@@ -203,7 +203,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Quarterly strategy review and planning session,
       'type: 'meeting,
       status: upcoming,
-      priority: high,
+      priority: 'high',
       startDate: new Date(2024-01-25T14:00:00),
       endDate: new Date(2024-01-25T16:00:00),
       location: Conference' Room A,
@@ -361,7 +361,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           title: Marketin'g' Materials Ready,
           description: 'Launch marketing materials and campaign assets,
           dueDate: new Date(2024-02-05),
-          priority: high,
+          priority: 'high',
           status: pending,
           assignedTo: Marketing Team}
       ],

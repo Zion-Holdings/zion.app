@@ -37,7 +37,7 @@ const QualityAssuranceTestingChatPage: NextPage = () => {
                 Expert discussion about quality assurance testing implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • how-to-guide • innovation-spotlight</span>
+                <span>innovative-futuristic • case-study • technical-tutorial</span>
               </div>
             </div>
           </div>

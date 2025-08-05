@@ -119,7 +119,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: 'up,
           changePercent: '13.6,
           category: financial,
-          priority: high,
+          priority: 'high',
           target: 13000000,
           status: on-track}
         },
@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: down',
           changePercent: '-16.7,
           category: operational,
-          priority: high,
+          priority: 'high',
           target: 140,
           status: exceeding
         },
@@ -145,7 +145,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           trend: up,
           changePercent: 10.8,
           category: market,
-          priority: high,
+          priority: 'high',
           target: 25,
           status: 'on-track
         },

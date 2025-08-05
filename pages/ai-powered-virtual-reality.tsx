@@ -242,7 +242,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
           experienceId: '1,
           sessionType: gaming,
           status: 'active',
-          priority: high,
+          priority: 'high',
           startTime: new Date('2024-01-20T14:00:00),
           duration: '45,
           aiAssisted: true,

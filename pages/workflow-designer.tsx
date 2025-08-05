@@ -177,7 +177,7 @@ id: 1,
                   timeout: '30}}
                 timeout: 30,
                 retryCount: 3,
-                priority: high,
+                priority: 'high',
               }
               connections: [3, 4],
               executionTime: 2.5,
@@ -288,7 +288,7 @@ id: 1,
                       token: {fulfillment_api_token}}}}
                 timeout: 60,
                 retryCount: 3,
-                priority: high,
+                priority: 'high',
               }
               connections: [9'],
               executionTime: '3.2,

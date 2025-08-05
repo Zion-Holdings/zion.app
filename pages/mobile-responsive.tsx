@@ -52,7 +52,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Flexible' grid system and adaptive layouts that work across all device sizes.,
       icon: '📱,
       status: implemented,
-      priority: high,
+      priority: 'high',
       impact: 90,
       effort: 9
     },
@@ -62,7 +62,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Hamburger menu, bottom navigation, and mobile-optimized navigation patterns.,
       icon: 🍔,
       status: implemented,
-      priority: high,
+      priority: 'high',
       impact: 88,
       effort: 7
     },
@@ -102,7 +102,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Optimized loading times, caching", and performance for mobile networks.,
       icon: "⚡,
       status: implemented,
-      priority: high,
+      priority: 'high',
       impact: 92,
       effort: 9
     },
@@ -122,7 +122,7 @@ const AIPoweredPredictiveAnalytics: 'NextPage = () => {
       description: Optimized payment flows, mobile wallets, and secure mobile transactions.,
       icon: 💳,
       status: implemented,
-      priority: high,
+      priority: 'high',
       impact: 88,
       effort: 8
     },

@@ -69,7 +69,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         title: Payment Processing Issue,
         description: Unable to complete payment transaction. Getting error code 500.',
         status: 'in-progress,
-        priority: high,
+        priority: 'high',
         category: billing,'
         customer: '{
           id: 1,

@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Major feature release with new user interface,
       version: 2.1.0',
       status: 'deployed,
-      priority: high,
+      priority: 'high',
       releaseDate: new Date(2024-01-20T14:00:00),
       aiOptimization: {
         id: 1',

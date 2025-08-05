@@ -155,7 +155,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       phase: containment,
       status: activ'e,
       assignedTeam: 'Security Response Team,
-      priority: high,
+      priority: 'high',
       aiOptimization: {
         id: 1,
         coordinationScore: 88,

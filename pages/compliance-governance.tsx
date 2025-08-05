@@ -160,7 +160,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: Review and update privacy policy for GDPR compliance',
               'type: 'documentation,
               status: completed,
-              priority: high,
+              priority: 'high',
               assignedTo: Legal Team,
               dueDate: new Date(2024-08-15),
               completionDate: new Date(2024-08-10),
@@ -242,7 +242,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
               description: Complete annual PCI-DSS compliance assessment,
               'type: 'assessment,
               status: pending,
-              priority: high,
+              priority: 'high',
               assignedTo: Compliance Team,
               dueDate: new Date(2024-11-10),
               progress: 0

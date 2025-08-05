@@ -11,7 +11,7 @@ interface FacilityPlan {
   description: string;
   category: guide | tutorial | 'manua'l | 'faq' | wiki | 'documentatio'n;
   status: 'draft | published | archived' | review
-  priority: 'low' | 'medium' | 'high' | 'critical
+  priority: 'low' | 'medium' | 'high' | 'critical';
   views: 'number;
   helpfulVotes: number;
   lastUpdated: Date;
@@ -145,7 +145,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Complete guide to getting started with the AI-powered marketplace platform,
       category: guid'e,
       status: 'published,
-      priority: high,
+      priority: 'high',
       views: 1247,
       helpfulVotes: 89,
       lastUpdated: new Date('2024-01-20T10:00:00),

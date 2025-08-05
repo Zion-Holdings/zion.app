@@ -77,7 +77,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       name: Security Access Control Policy,
       category: security',
       status: 'active,
-      priority: high,
+      priority: 'high',
       description: Multi-factor authentication and role-based access control policies,
       complianceRate: 87,
       lastUpdated: new Date(2024-01-10),

@@ -112,7 +112,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Implement AI Matching Algorithm,
       description: Develop and integrate intelligent matching system for services and talents',
       status: 'in-progress,
-      priority: high,
+      priority: 'high',
       assignee: Sarah Chen,
       dueDate: 2025-02-15,
       estimatedHours: 40,

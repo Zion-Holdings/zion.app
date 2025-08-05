@@ -150,6 +150,23 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/';/g, "");
     content = content.replace(/export default async function handler\(req: "'NextApiRequest, res: NextApiResponse\)/g, "export default async function handler(req: NextApiRequest, res: NextApiResponse)");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/import \{ NextApiRequest, NextApiResponse \} from 'next/g, "import { NextApiRequest, NextApiResponse } from 'next';");
+    content = content.replace(/import fs from 'fs/g, "import fs from 'fs';");
+    content = content.replace(/import path from 'path/g, "import path from 'path';");
+    content = content.replace(/status: 'active' \| 'idle' \| 'error' \| 'stopped/g, "status: 'active' | 'idle' | 'error' | 'stopped';");
+    content = content.replace(/systemHealth: 'healthy' \| 'warning' \| 'error/g, "systemHealth: 'healthy' | 'warning' | 'error';");
+    content = content.replace(/type: 'infrastructure' \| 'workforce' \| 'technology' \| 'financial/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
+    content = content.replace(/status: 'draft' \| 'active' \| 'completed' \| 'archived/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
+    content = content.replace(/priority: 'low' \| 'medium' \| 'high' \| 'critical/g, "priority: 'low' | 'medium' | 'high' | 'critical';");
+    content = content.replace(/trend: 'increasing' \| 'decreasing' \| 'stable/g, "trend: 'increasing' | 'decreasing' | 'stable';");
+    content = content.replace(/type: 'scaling' \| 'efficiency' \| 'cost' \| 'timing/g, "type: 'scaling' | 'efficiency' | 'cost' | 'timing';");
+    content = content.replace(/status: pending \| approved \| implemented \| 'rejected/g, "status: 'pending' | 'approved' | 'implemented' | 'rejected';");
+    content = content.replace(/id: plan-2,/g, "id: 'plan-2',");
+    content = content.replace(/'name: 'Workforce Expansion,/g, "name: 'Workforce Expansion',");
+    content = content.replace(/type: workforce,/g, "type: 'workforce',");
+    content = content.replace(/priority: high,/g, "priority: 'high',");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");

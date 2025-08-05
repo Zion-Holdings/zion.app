@@ -97,7 +97,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       description: Collecting feedback on overall platform user experience and interface design',
       'type: 'general,
       status: 'active',
-      priority: high,
+      priority: 'high',
       responses: 156,
       averageRating: 4.2,
       satisfactionScore: 84,

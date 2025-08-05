@@ -21,7 +21,7 @@ import {
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
   status: draft | acti'v'e | completed' | 'archived;
   priority: 'low | medium | high | 'critica'l;
   startDate: string;
@@ -57,7 +57,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   'type: 'scaling | efficiency | cost | timing
-  priority: 'low' | 'medium' | 'high' | 'critical
+  priority: 'low' | 'medium' | 'high' | 'critical';
   title: string;
   description: string;
   impact: string;

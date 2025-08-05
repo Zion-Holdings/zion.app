@@ -85,7 +85,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
         {
           id: 1,
           type: 'service',
-          priority: high,
+          priority: 'high',
           sender: {
             id: sp1,
             'name: 'AI Solutions Pro,

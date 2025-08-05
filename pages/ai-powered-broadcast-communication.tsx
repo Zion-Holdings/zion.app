@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       message: Scheduled system maintenance notification,
       'type: 'alert,
       status: 'active',
-      priority: high,
+      priority: 'high',
       targetAudience: [all-users],
       deliveryMethod: [email],
       sentCount: 15420,

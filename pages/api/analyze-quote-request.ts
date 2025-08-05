@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next
+import { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from openai
 
 // Only create OpenAI client if API key is available;
