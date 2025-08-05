@@ -69,7 +69,7 @@ Join: Zion
               
               <div className="mt-12 flex flex-col sm flex-row  gap-4 justify-center">
                 <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
-                  Get: Started
+                  Get Started
                 </Link>
                 <Link href="/marketplace" className="border border-purple-500 text-purple-400 hover bg-purple-500 hover text-white  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
                   Explore Marketplace

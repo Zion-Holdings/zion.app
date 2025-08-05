@@ -403,7 +403,7 @@ const RealTimeChatPage: NextPage = () => {,
         </div>
 ,
         {/* Features Section */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3"  gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
             <div className="text-4xl mb-4">🤖</div>
             <h3 className="text-xl font-bold text-white mb-3">AI Assistant</h3>

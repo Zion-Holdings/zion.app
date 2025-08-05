@@ -466,7 +466,7 @@ const AIRecommendationEngine: NextPage = () => {
         )}
 
         {/* Features Section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3" gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
             <div className="text-3xl mb-4">🧠</div>
             <h3 className="text-xl font-semibold text-white mb-2">Intelligent Matching</h3>

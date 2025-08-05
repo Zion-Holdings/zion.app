@@ -122,7 +122,7 @@ const blockchainNetworkPage: NextPage = () => {
           {/* Pricing */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-8">Pricing Plans</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
                 <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 ">
                   <h3 className="text-2xl font-bold text-white mb-4">Basic</h3>

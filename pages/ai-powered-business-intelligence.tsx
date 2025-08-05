@@ -221,7 +221,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10">
               <div className="text-3xl mb-4">🏢</div>
               <h3 className="text-lg font-semibold text-white mb-2">Enterprise</h3>

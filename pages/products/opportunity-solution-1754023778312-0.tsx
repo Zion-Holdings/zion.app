@@ -143,7 +143,7 @@ const opportunity_solution_1754023778312_0Page: NextPage = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Pricing Plans
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -152,7 +152,7 @@ const opportunity_solution_1754023778312_0Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $199/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -164,7 +164,7 @@ const opportunity_solution_1754023778312_0Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $398/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -176,7 +176,7 @@ const opportunity_solution_1754023778312_0Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $796/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -188,7 +188,7 @@ const opportunity_solution_1754023778312_0Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 Contact sales
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>

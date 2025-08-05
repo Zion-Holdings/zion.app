@@ -256,7 +256,7 @@ const FAQ: NextPage = () => {
         </div>
 
         {/* Additional Help */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3" gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
             <div className="text-3xl mb-4">📧</div>
             <h3 className="text-xl font-semibold text-white mb-2">Still Need Help?</h3>

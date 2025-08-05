@@ -439,7 +439,7 @@ const MarketplacePricingPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white text-center mb-8">Choose Your Plan</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {pricingTiers.map((tier) => (
                 <div key={tier.id} className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8 hover:bg-white/10 transition-all duration-300 ${
                   tier.popular ? 'border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-pink-500/10' : ''

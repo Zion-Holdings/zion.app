@@ -38,7 +38,7 @@ export default function Home() {
           </motion.div>
         </section>
         {/* Features Section */}
-        <section className="max-w-12xl mx-auto px-4 py-32 grid grid-cols-1 md:grid-cols-3" gap-8">
+        <section className="max-w-12xl mx-auto px-4 py-32 grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="bg-black/30 rounded-xl p-8 shadow-lg border border-white/10">
             <h2 className="text-2xl font-bold mb-4 text-purple-400">AI Services</h2>
             <p className="text-gray-200 mb-4">Access a wide range of AI-powered business solutions, from automation to analytics, tailored for your needs.</p>
