@@ -1,10 +1,10 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';
+import type { NextPage }  from 'next';;
+import ModernLayout  from '../components/layout/ModernLayout';;
 
-import Head from 'next/head';
-import Link from 'next/link';
-import ResponsiveNavigation from '../components/ResponsiveNavigation';
-import { Home, Search, User } from 'lucide-react';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import ResponsiveNavigation  from '../components/ResponsiveNavigation';;
+import { Home, Search, User }  from 'lucide-react';;
 
 const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
   const navigationItems = [

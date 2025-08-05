@@ -1,9 +1,9 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Home, Search, User } from 'lucide-react';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import { useState }  from 'react';;
+import { Home, Search, User }  from 'lucide-react';;
 
 const FAQ: NextPage = () => {
   const [activeCategory, setActiveCategory] = useState('general')

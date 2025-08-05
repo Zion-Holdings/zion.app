@@ -1,16 +1,16 @@
-import type { AppProps } from 'next/app';import ModernLayout from '../components/layout/ModernLayout'
+import type { AppProps }  from 'next/app';;
 
 import '../styles/globals.css'
-import { ChatProvider } from '../src/contexts/ChatContext';
-import { AuthProvider } from '../src/contexts/AuthContext';
+import { ChatProvider }  from '../src/contexts/ChatContext';;
+import { AuthProvider }  from '../src/contexts/AuthContext';;
 
-import { NavigationProvider } from '../src/contexts/NavigationContext';
-import ChatAssistant from '../src/components/ChatAssistant';
-import { useChat } from '../src/contexts/ChatContext';
-import MessageChannelDebugger from '../components/MessageChannelDebugger';
-import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary';
-import Sidebar from '../components/ui/Sidebar';
-import ParticleEffect from '../components/ParticleEffect';
+import { NavigationProvider }  from '../src/contexts/NavigationContext';;
+import ChatAssistant  from '../src/components/ChatAssistant';;
+import { useChat }  from '../src/contexts/ChatContext';;
+import MessageChannelDebugger  from '../components/MessageChannelDebugger';;
+import MessageChannelErrorBoundary  from '../components/MessageChannelErrorBoundary';;
+import Sidebar  from '../components/ui/Sidebar';;
+import ParticleEffect  from '../components/ParticleEffect';;
 import '../utils/messageChannelHandler' // Initialize the handler
 
 function ChatWrapper() {
@@ -20,8 +20,6 @@ function ChatWrapper() {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ModernLayout>
-    return (
     <MessageChannelErrorBoundary>
       <AuthProvider>
         <NavigationProvider>
@@ -29,7 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <div className="relative min-h-screen cyber-bg flex">
               <ParticleEffect />
               <Sidebar />
-              <div className="flex-1 lg ml-80 relative z-10">
+              <div className="flex-1 lg:ml-80 relative z-10">
                 <Component {...pageProps} />
                 <ChatWrapper />
                 <MessageChannelDebugger />
@@ -39,9 +37,5 @@ export default function App({ Component, pageProps }: AppProps) {
         </NavigationProvider>
       </AuthProvider>
     </MessageChannelErrorBoundary>
-  
-  </ModernLayout>
-
-  </ModernLayout>
-)
+  );
 } 

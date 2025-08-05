@@ -1,8 +1,8 @@
-import React, { useState, useEffect , useCallback } from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
-import Link from 'next/link';
-import PageLayout from '../components/layout/PageLayout';
+import React, { useState, useEffect , useCallback }  from 'react';;
+import { NextPage }  from 'next';;
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import PageLayout  from '../components/layout/PageLayout';;
 import { 
   Users, 
   TrendingUp, 
@@ -16,8 +16,8 @@ import {
   Clock,
   Target,
   Activity
-} from 'lucide-react';
-import { Home, Search, User } from 'lucide-react';
+}  from 'lucide-react';;
+import { Home, Search, User }  from 'lucide-react';;
 
 interface ChangeInitiative {
   id: string;

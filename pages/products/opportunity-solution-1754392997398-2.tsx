@@ -1,7 +1,8 @@
 
-import React from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React  from 'react';;
+import ModernLayout  from '../components/layout/ModernLayout';;
 
-import { NextPage } from 'next';
+import { NextPage }  from 'next';;
 
 const AI_Powered_market_gap_SolutionPage: NextPage = () => {
   return (

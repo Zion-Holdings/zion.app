@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect, useCallback }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
 
-import { useRouter } from 'next/router';
-import { useAuth } from '../src/contexts/AuthContext';
-import Head from 'next/head';
+import { useRouter }  from 'next/router';;
+import { useAuth }  from '../src/contexts/AuthContext';;
+import Head  from 'next/head';;
 
 interface Agent {
   id: string;

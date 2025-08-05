@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Head  from 'next/head';;
+import { useState, useEffect, useRef }  from 'react';;
+import Link  from 'next/link';;
 
 interface QuantumAICosmicConsciousness {
   id: string

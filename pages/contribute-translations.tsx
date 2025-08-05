@@ -1,7 +1,7 @@
-import React, { useState } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState }  from 'react';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import Link from 'next/link';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
 
 const languages = [
   { code: 'en', name: 'English' },

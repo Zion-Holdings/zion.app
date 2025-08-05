@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import { useState, useEffect }  from 'react';;
 
 const AIPoweredAutomation: NextPage = () => {
   const [automationStatus, setAutomationStatus] = useState({

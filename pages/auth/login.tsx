@@ -1,9 +1,9 @@
 
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import Link from 'next/link';
-import AuthLayout from '../../components/layout/AuthLayout';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import AuthLayout  from '../../components/layout/AuthLayout';;
 
 const Login: NextPage = () => {
   return (

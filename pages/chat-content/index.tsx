@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import Head  from 'next/head';;
+import Link  from 'next/link';;
+import { motion }  from 'framer-motion';;
 
 const ChatContentIndex: NextPage = () => {
   const chatTopics = [

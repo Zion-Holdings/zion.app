@@ -1,9 +1,9 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';;import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers';
+import Head  from 'next/head';;
+import { useState, useEffect, useMemo }  from 'react';;
+import Link  from 'next/link';;
+import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';;
 
 interface BiometricAuthentication {
   id: string;

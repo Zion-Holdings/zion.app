@@ -1,9 +1,9 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import Head  from 'next/head';;
+import { useState, useEffect, useMemo }  from 'react';;
+import Link  from 'next/link';;
+import Image  from 'next/image';;
 
 interface Talent {
   id: string;

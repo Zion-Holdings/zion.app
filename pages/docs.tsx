@@ -1,6 +1,7 @@
-import React from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React  from 'react';;
+import ModernLayout  from '../components/layout/ModernLayout';;
 
-import Head from 'next/head';
+import Head  from 'next/head';;
 
 export default function Docs() {
   return (

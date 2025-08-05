@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import ModernLayout from '../components/layout/ModernLayout'
 import FuturisticCard from '../components/ui/FuturisticCard'
-import FuturisticDataTable from '../components/ui/FuturisticDataTable'
+import FuturisticDataTable  from '../components/ui/FuturisticDataTable';
 
 const Marketplace: NextPage = () => {
   const marketplaceCategories = [

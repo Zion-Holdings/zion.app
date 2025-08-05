@@ -1,305 +1,238 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import fs from 'fs';
+import path from 'path';
 
-// Mock data for demonstration - in production this would connect to the actual automation system
-const mockAutomationStatus = {
-  systemHealth: 94,
-  totalAgents: 12,
-  activeAgents: 10,
-  totalOrchestrators: 3,
-  activeOrchestrators: 3,
-  totalTasks: 8567,
-  completedTasks: 8421,
-  failedTasks: 146,
-  systemUptime: '5d 2h 15m',
-  memoryUsage: 67,
-  cpuUsage: 45,
-  automations: [
-    {
-      id: 'master-controller',
-      name: 'Master Automation Controller',
-      status: 'running',
-      health: 95,
-      uptime: '2d 14h 32m',
-      lastActivity: '2 minutes ago',
-      tasksCompleted: 1247,
-      errors: 3,
-      performance: 98,
-      type: 'Controller',
-      description: 'Main orchestration and control system'
-    },
-    {
-      id: 'agent-factory',
-      name: 'Autonomous Agent Factory',
-      status: 'running',
-      health: 92,
-      uptime: '1d 8h 15m',
-      lastActivity: '5 minutes ago',
-      tasksCompleted: 892,
-      errors: 1,
-      performance: 96,
-      type: 'Factory',
-      description: 'Creates and manages autonomous agents'
-    },
-    {
-      id: 'content-generator',
-      name: 'Content Generation Agent',
-      status: 'running',
-      health: 88,
-      uptime: '3d 2h 45m',
-      lastActivity: '1 minute ago',
-      tasksCompleted: 2156,
-      errors: 7,
-      performance: 94,
-      type: 'Agent',
-      description: 'Generates and optimizes content automatically'
-    },
-    {
-      id: 'research-agent',
-      name: 'AI Research Agent',
-      status: 'running',
-      health: 90,
-      uptime: '1d 12h 30m',
-      lastActivity: '3 minutes ago',
-      tasksCompleted: 567,
-      errors: 2,
-      performance: 93,
-      type: 'Agent',
-      description: 'Researches latest AI trends and capabilities'
-    },
-    {
-      id: 'orchestrator',
-      name: 'Workload Orchestrator',
-      status: 'running',
-      health: 94,
-      uptime: '4d 6h 20m',
-      lastActivity: '30 seconds ago',
-      tasksCompleted: 3421,
-      errors: 5,
-      performance: 97,
-      type: 'Orchestrator',
-      description: 'Distributes and manages workload across agents'
-    },
-    {
-      id: 'monitor-agent',
-      name: 'System Monitor Agent',
-      status: 'running',
-      health: 96,
-      uptime: '5d 1h 10m',
-      lastActivity: '10 seconds ago',
-      tasksCompleted: 1890,
-      errors: 0,
-      performance: 99,
-      type: 'Monitor',
-      description: 'Monitors system health and performance'
-    },
-    {
-      id: 'enhanced-autonomous-system',
-      name: 'Enhanced Autonomous System',
-      status: 'running',
-      health: 93,
-      uptime: '1d 6h 45m',
-      lastActivity: '45 seconds ago',
-      tasksCompleted: 1234,
-      errors: 2,
-      performance: 95,
-      type: 'System',
-      description: 'Advanced autonomous system with continuous improvement'
-    },
-    {
-      id: 'enhanced-cron-system',
-      name: 'Enhanced Cron System',
-      status: 'running',
-      health: 91,
-      uptime: '1d 4h 20m',
-      lastActivity: '1 minute ago',
-      tasksCompleted: 789,
-      errors: 1,
-      performance: 94,
-      type: 'Cron',
-      description: 'Automated job scheduling and execution system'
-    }
-  ],
-  cronJobs: [
-    {
-      id: 'agent-creation',
-      name: 'Autonomous Agent Creation',
-      status: 'active',
-      lastRun: '25 minutes ago',
-      nextRun: '5 minutes',
-      schedule: '30 minutes',
-      enabled: true
-    },
-    {
-      id: 'orchestrator-creation',
-      name: 'Orchestrator Creation',
-      status: 'active',
-      lastRun: '45 minutes ago',
-      nextRun: '15 minutes',
-      schedule: '1 hour',
-      enabled: true
-    },
-    {
-      id: 'health-check',
-      name: 'System Health Check',
-      status: 'active',
-      lastRun: '30 seconds ago',
-      nextRun: '30 seconds',
-      schedule: '1 minute',
-      enabled: true
-    },
-    {
-      id: 'research-cycle',
-      name: 'Research and Discovery',
-      status: 'active',
-      lastRun: '1 hour ago',
-      nextRun: '1 hour',
-      schedule: '2 hours',
-      enabled: true
-    },
-    {
-      id: 'improvement-cycle',
-      name: 'System Improvement',
-      status: 'active',
-      lastRun: '30 minutes ago',
-      nextRun: '30 minutes',
-      schedule: '1.5 hours',
-      enabled: true
-    },
-    {
-      id: 'backup-cycle',
-      name: 'System Backup',
-      status: 'active',
-      lastRun: '12 hours ago',
-      nextRun: '12 hours',
-      schedule: '24 hours',
-      enabled: true
-    }
-  ],
-  researchFindings: [
-    {
-      title: 'Multi-modal AI Agents',
-      description: 'Agents that can process text, images, audio, and video simultaneously',
-      impact: 'high',
-      source: 'arxiv',
-      timestamp: '2 hours ago'
-    },
-    {
-      title: 'Autonomous Agent Swarms',
-      description: 'Coordinated groups of specialized agents working together',
-      impact: 'medium',
-      source: 'github',
-      timestamp: '4 hours ago'
-    },
-    {
-      title: 'Self-Improving AI Systems',
-      description: 'AI systems that can modify and improve their own capabilities',
-      impact: 'high',
-      source: 'research_papers',
-      timestamp: '6 hours ago'
-    }
-  ],
-  newCapabilities: [
-    {
-      name: 'Advanced Workflow Orchestration',
-      description: 'Enhanced workflow management with dynamic task distribution',
-      implementation: 'orchestrator_enhancement',
-      priority: 'high',
-      status: 'implementing'
-    },
-    {
-      name: 'Natural Language Processing Enhancement',
-      description: 'Improved NLP capabilities for better content generation',
-      implementation: 'nlp_upgrade',
-      priority: 'high',
-      status: 'planned'
-    },
-    {
-      name: 'Computer Vision Integration',
-      description: 'Add image and video processing capabilities',
-      implementation: 'vision_agent',
-      priority: 'medium',
-      status: 'researching'
-    }
-  ]
-};
+interface AgentStatus {
+  agentId: string;
+  type: string;
+  status: 'active' | 'idle' | 'error' | 'stopped';
+  lastActivity: string;
+  pid?: number;
+  workload?: number;
+  currentTask?: string;
+  performance?: {
+    tasksCompleted?: number;
+    successRate?: number;
+    avgResponseTime?: number;
+  };
+}
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Check authentication
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return res.status(401).json({ error: 'Unauthorized' });
+interface SystemHealth {
+  timestamp: string;
+  activeAgents: number;
+  totalAgents: number;
+  systemHealth: 'healthy' | 'warning' | 'error';
+  memoryUsage?: {
+    rss: number;
+    heapTotal: number;
+    heapUsed: number;
+    external: number;
+    arrayBuffers: number;
+  };
+  uptime?: number;
+}
+
+interface AutomationReport {
+  id: string;
+  type: string;
+  timestamp: string;
+  status: string;
+  data?: any;
+}
+
+interface AdminDashboardData {
+  agents: AgentStatus[];
+  systemHealth: SystemHealth;
+  reports: AutomationReport[];
+  orchestrators: any[];
+  monetization: any;
+  contentGeneration: any;
+  analytics: any;
+  lastUpdate: string;
+}
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // In a real implementation, you would verify the token
-  // For now, we'll just check if it's the admin user
-  const token = authHeader.substring(7);
-  if (token !== 'admin-token') {
-    return res.status(401).json({ error: 'Invalid token' });
-  }
-
-  if (req.method === 'GET') {
-    // Simulate real-time updates
-    const updatedStatus = {
-      ...mockAutomationStatus,
-      timestamp: new Date().toISOString(),
-      // Add some random fluctuations to simulate real-time data
-      systemHealth: Math.max(85, Math.min(100, mockAutomationStatus.systemHealth + (Math.random() - 0.5) * 10)),
-      memoryUsage: Math.max(50, Math.min(90, mockAutomationStatus.memoryUsage + (Math.random() - 0.5) * 10)),
-      cpuUsage: Math.max(30, Math.min(70, mockAutomationStatus.cpuUsage + (Math.random() - 0.5) * 10))
+  try {
+    const automationPath = path.join(process.cwd(), 'automation');
+    const data: AdminDashboardData = {
+      agents: [],
+      systemHealth: {
+        timestamp: new Date().toISOString(),
+        activeAgents: 0,
+        totalAgents: 0,
+        systemHealth: 'healthy'
+      },
+      reports: [],
+      orchestrators: [],
+      monetization: {},
+      contentGeneration: {},
+      analytics: {},
+      lastUpdate: new Date().toISOString()
     };
 
-    // Update automation statuses with some random variations
-    updatedStatus.automations = updatedStatus.automations.map(automation => ({
-      ...automation,
-      health: Math.max(70, Math.min(100, automation.health + (Math.random() - 0.5) * 5)),
-      performance: Math.max(85, Math.min(100, automation.performance + (Math.random() - 0.5) * 3)),
-      lastActivity: `${Math.floor(Math.random() * 5) + 1} minutes ago`
-    }));
+    // Read admin system status
+    const adminStatusPath = path.join(automationPath, 'admin-system', 'status');
+    if (fs.existsSync(adminStatusPath)) {
+      const statusFiles = fs.readdirSync(adminStatusPath);
+      
+      for (const file of statusFiles) {
+        if (file.endsWith('-status.json')) {
+          try {
+            const filePath = path.join(adminStatusPath, file);
+            const content = fs.readFileSync(filePath, 'utf8');
+            const agentStatus: AgentStatus = JSON.parse(content);
+            data.agents.push(agentStatus);
+          } catch (error) {
+            console.error(`Error reading status file ${file}:`, error);
+          }
+        }
+      }
 
-    res.status(200).json(updatedStatus);
-  } else if (req.method === 'POST') {
-    const { action, automationId } = req.body;
-
-    if (!action || !automationId) {
-      return res.status(400).json({ error: 'Missing action or automationId' });
+      // Read system health
+      const systemHealthPath = path.join(adminStatusPath, 'system-health.json');
+      if (fs.existsSync(systemHealthPath)) {
+        try {
+          const content = fs.readFileSync(systemHealthPath, 'utf8');
+          data.systemHealth = JSON.parse(content);
+        } catch (error) {
+          console.error('Error reading system health:', error);
+        }
+      }
     }
 
-    // Simulate action execution
-    const automation = mockAutomationStatus.automations.find(a => a.id === automationId);
-    if (!automation) {
-      return res.status(404).json({ error: 'Automation not found' });
+    // Read orchestrator status
+    const orchestratorStatusPath = path.join(adminStatusPath, 'orchestrator-status.json');
+    if (fs.existsSync(orchestratorStatusPath)) {
+      try {
+        const content = fs.readFileSync(orchestratorStatusPath, 'utf8');
+        data.orchestrators = [JSON.parse(content)];
+      } catch (error) {
+        console.error('Error reading orchestrator status:', error);
+      }
     }
 
-    let result;
-    switch (action) {
-      case 'start':
-        automation.status = 'starting';
-        setTimeout(() => {
-          automation.status = 'running';
-        }, 1000);
-        result = { message: `Starting ${automation.name}...` };
-        break;
-      case 'stop':
-        automation.status = 'stopping';
-        setTimeout(() => {
-          automation.status = 'stopped';
-        }, 1000);
-        result = { message: `Stopping ${automation.name}...` };
-        break;
-      case 'restart':
-        automation.status = 'restarting';
-        setTimeout(() => {
-          automation.status = 'running';
-        }, 2000);
-        result = { message: `Restarting ${automation.name}...` };
-        break;
-      default:
-        return res.status(400).json({ error: 'Invalid action' });
+    // Read monetization data
+    const monetizationPath = path.join(automationPath, 'monetization-orchestrator');
+    if (fs.existsSync(monetizationPath)) {
+      try {
+        const monetizationStatusPath = path.join(monetizationPath, 'status');
+        if (fs.existsSync(monetizationStatusPath)) {
+          const statusFiles = fs.readdirSync(monetizationStatusPath);
+          const monetizationData: any = {};
+          
+          for (const file of statusFiles) {
+            if (file.endsWith('.json')) {
+              try {
+                const filePath = path.join(monetizationStatusPath, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+                monetizationData[file.replace('.json', '')] = JSON.parse(content);
+              } catch (error) {
+                console.error(`Error reading monetization file ${file}:`, error);
+              }
+            }
+          }
+          data.monetization = monetizationData;
+        }
+      } catch (error) {
+        console.error('Error reading monetization data:', error);
+      }
     }
 
-    res.status(200).json(result);
-  } else {
-    res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).json({ error: 'Method not allowed' });
+    // Read content generation data
+    const contentGenerationPath = path.join(automationPath, 'diversified-content');
+    if (fs.existsSync(contentGenerationPath)) {
+      try {
+        const contentFiles = fs.readdirSync(contentGenerationPath);
+        const contentData: any = {
+          totalFiles: contentFiles.length,
+          recentFiles: contentFiles.slice(-5).map(file => ({
+            name: file,
+            timestamp: fs.statSync(path.join(contentGenerationPath, file)).mtime.toISOString()
+          }))
+        };
+        data.contentGeneration = contentData;
+      } catch (error) {
+        console.error('Error reading content generation data:', error);
+      }
+    }
+
+    // Read analytics data
+    const analyticsPath = path.join(automationPath, 'analytics');
+    if (fs.existsSync(analyticsPath)) {
+      try {
+        const analyticsFiles = fs.readdirSync(analyticsPath);
+        const analyticsData: any = {
+          totalReports: analyticsFiles.length,
+          reports: []
+        };
+        
+        for (const file of analyticsFiles) {
+          if (file.endsWith('.json')) {
+            try {
+              const filePath = path.join(analyticsPath, file);
+              const content = fs.readFileSync(filePath, 'utf8');
+              analyticsData.reports.push({
+                name: file,
+                data: JSON.parse(content)
+              });
+            } catch (error) {
+              console.error(`Error reading analytics file ${file}:`, error);
+            }
+          }
+        }
+        data.analytics = analyticsData;
+      } catch (error) {
+        console.error('Error reading analytics data:', error);
+      }
+    }
+
+    // Read recent reports
+    const reportsPaths = [
+      path.join(automationPath, 'monetization-reports'),
+      path.join(automationPath, 'orchestration-reports'),
+      path.join(automationPath, 'intelligence-reports'),
+      path.join(automationPath, 'diversification-reports')
+    ];
+
+    for (const reportsPath of reportsPaths) {
+      if (fs.existsSync(reportsPath)) {
+        try {
+          const reportFiles = fs.readdirSync(reportsPath);
+          for (const file of reportFiles.slice(-3)) { // Get last 3 reports from each directory
+            if (file.endsWith('.json')) {
+              try {
+                const filePath = path.join(reportsPath, file);
+                const content = fs.readFileSync(filePath, 'utf8');
+                const reportData = JSON.parse(content);
+                data.reports.push({
+                  id: file.replace('.json', ''),
+                  type: path.basename(reportsPath),
+                  timestamp: fs.statSync(filePath).mtime.toISOString(),
+                  status: 'completed',
+                  data: reportData
+                });
+              } catch (error) {
+                console.error(`Error reading report file ${file}:`, error);
+              }
+            }
+          }
+        } catch (error) {
+          console.error(`Error reading reports from ${reportsPath}:`, error);
+        }
+      }
+    }
+
+    // Update counts
+    data.systemHealth.activeAgents = data.agents.filter(a => a.status === 'active').length;
+    data.systemHealth.totalAgents = data.agents.length;
+
+    res.status(200).json(data);
+  } catch (error) {
+    console.error('Error fetching automation status:', error);
+    res.status(500).json({ error: 'Failed to fetch automation status' });
   }
 } 
