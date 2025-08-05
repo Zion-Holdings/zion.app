@@ -285,18 +285,24 @@ const Home: NextPage = () => {
               <p className="text-responsive-lg text-high-contrast-secondary mb-8 max-w-2xl mx-auto">
                 Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.
               </p>
-              <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/auth/signup"
-                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover:shadow-neon-blue transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started Now
                 </Link>
                 <Link
                   href="/marketplace"
-                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105"
+                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover:border-neon-blue/60 transition-all duration-300 transform hover:scale-105"
                 >
                   Explore Marketplace
+                </Link>
+                <Link
+                  href="/agent-chat"
+                  className="px-8 py-4 glass border border-neon-green/30 rounded-lg text-white font-semibold text-lg hover:border-neon-green/60 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start AI Chat
                 </Link>
               </div>
             </div>

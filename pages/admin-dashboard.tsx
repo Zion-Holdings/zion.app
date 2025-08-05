@@ -235,59 +235,27 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Real-Time Monitor */}
+          {dashboardData && (
+            <div className="mb-8">
+              <RealTimeMonitor
+                data={{
+                  timestamp: dashboardData.lastUpdate,
+                  agents: dashboardData.agents,
+                  systemHealth: dashboardData.systemHealth,
+                  alerts: []
+                }}
+                onRefresh={fetchDashboardData}
+                isLoading={isLoading}
+              />
+            </div>
+          )}
+
           {/* System Health Overview */}
           {dashboardData?.systemHealth && (
-            <div className="bg-white rounded-lg shadow p-6 mb-8">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">System Health</h2>
-              <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">{dashboardData.systemHealth.totalAgents}</div>
-                  <div className="text-sm text-blue-600">Total Agents</div>
-                </div>
-                <div className="bg-green-50 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-green-600">{dashboardData.systemHealth.activeAgents}</div>
-                  <div className="text-sm text-green-600">Active Agents</div>
-                </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getSystemHealthColor(dashboardData.systemHealth.systemHealth)}`}>
-                      {dashboardData.systemHealth.systemHealth}
-                    </span>
-                  </div>
-                  <div className="text-sm text-purple-600">System Status</div>
-                </div>
-                <div className="bg-orange-50 p-4 rounded-lg">
-                  <div className="text-2xl font-bold text-orange-600">
-                    {dashboardData.systemHealth.uptime ? formatUptime(dashboardData.systemHealth.uptime) : 'N/A'}
-                  </div>
-                  <div className="text-sm text-orange-600">Uptime</div>
-                </div>
-              </div>
-              
-              {dashboardData.systemHealth.memoryUsage && (
-                <div className="mt-6">
-                  <h3 className="text-lg font-medium text-gray-900 mb-3">Memory Usage</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-sm font-medium text-gray-600">RSS</div>
-                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.rss)}</div>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-sm font-medium text-gray-600">Heap Total</div>
-                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.heapTotal)}</div>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-sm font-medium text-gray-600">Heap Used</div>
-                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.heapUsed)}</div>
-                    </div>
-                    <div className="bg-gray-50 p-3 rounded">
-                      <div className="text-sm font-medium text-gray-600">External</div>
-                      <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.external)}</div>
-                    </div>
-                  </div>
-                </div>
-              )}
+            <div className="mb-8">
+              <SystemHealthMonitor systemHealth={dashboardData.systemHealth} />
             </div>
           )}
 
