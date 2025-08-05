@@ -116,6 +116,26 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/location: Downtown Business District,/g, "location: 'Downtown Business District',");
     content = content.replace(/status: operational,/g, "status: 'operational',");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/const mockCapacityPlans: 'CapacityPlan\[\] = \[/g, "const mockCapacityPlans: CapacityPlan[] = [");
+    content = content.replace(/id: plan-1,/g, "id: 'plan-1',");
+    content = content.replace(/name: Infrastructure Scaling Plan,/g, "name: 'Infrastructure Scaling Plan',");
+    content = content.replace(/type: infrastructure,/g, "type: 'infrastructure',");
+    content = content.replace(/status: 'active',/g, "status: 'active',");
+    content = content.replace(/priority: critical,/g, "priority: 'critical',");
+    content = content.replace(/startDate: '2024-01-01,/g, "startDate: '2024-01-01',");
+    content = content.replace(/endDate: 2024-12-31,/g, "endDate: '2024-12-31',");
+    content = content.replace(/description: Comprehensive digital transformation to modernize all business processes,/g, "description: 'Comprehensive digital transformation to modernize all business processes',");
+    content = content.replace(/impact: 'High - Will improve efficiency by 40% and reduce costs by 25%',/g, "impact: 'High - Will improve efficiency by 40% and reduce costs by 25%',");
+    content = content.replace(/stakeholders: '\[IT Department, Operations, Finance, 'HR'\],/g, "stakeholders: ['IT Department', 'Operations', 'Finance', 'HR'],");
+    content = content.replace(/aiAnalysis: '{/g, "aiAnalysis: {");
+    content = content.replace(/id: analysis-1,/g, "id: 'analysis-1',");
+    content = content.replace(/lastInspection: 2024-01-15,/g, "lastInspection: '2024-01-15',");
+    content = content.replace(/nextInspection: 2024-04-15,/g, "nextInspection: '2024-04-15',");
+    content = content.replace(/id: 'opt-1,/g, "id: 'opt-1',");
+    content = content.replace(/energyScore: '88,/g, "energyScore: 88,");
+    content = content.replace(/recommendations: \[Implement smart lighting system, Upgrade HVAC controls, Add occupancy sensors'\]/g, "recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
