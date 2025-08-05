@@ -1,23 +1,23 @@
 import { useChat } from '../contexts/ChatContext;
-;}
+;};
 export const $1 = () => {;
   const { isChatOpen, toggleChat, openChat, closeChat } = useChat();
-
-  const $1 = (message?: string) => {
+;
+  const $1 = (message?: string) => {;
     if (!isChatOpen) {;
-      openChat();}
-    // If a specific message is provided, we could potentially
-    // pre-populate the chat input (future enhancement)
-    if (message) {
-      // This could be enhanced to send a specific message
-      console.log(Chat triggered with message: ", message);}
+      openChat();};
+    // If a specific message is provided, we could potentially;
+    // pre-populate the chat input (future enhancement);
+    if (message) {;
+      // This could be enhanced to send a specific message;
+      console.log(Chat triggered with message: ", message);};
   };
-
-  return {
-    isChatOpen,
-    toggleChat,
-    openChat,
-    closeChat,"
-    triggerChat,
-  };
-}; '
+;
+  return {;
+    isChatOpen,;";
+    toggleChat,;";";
+    openChat,";";";
+    closeChat,";
+    triggerChat,;";
+  };";";
+}; '";";";

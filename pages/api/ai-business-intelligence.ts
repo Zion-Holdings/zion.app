@@ -1,14 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-
-interface BusinessIntelligenceReport {
-  id: string;
-  title: string;
-  type: 'performance' | 'trend' | 'forecast' | 'insight';
-  data: any;
-  insights: string[];
-  recommendations: string[];
-  generatedAt: string;
-}
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -16,38 +6,77 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { reportType, timeframe, filters } = req.body;
+    const { timeframe, action } = req.body;
 
-    // Mock business intelligence report
-    const report: BusinessIntelligenceReport = {
-      id: 'bi-report-1',
-      title: 'Q1 2024 Business Performance Analysis',
-      type: 'performance',
-      data: {
-        revenue: 2500000,
-        growth: 15.3,
-        customerSatisfaction: 92.5,
-        marketShare: 8.7,
-        efficiency: 87.2
-      },
+    const businessData = {
+      kpis: [
+        {
+          id: 1,
+          name: 'Revenue',
+          value: 1250000,
+          change: 12.5,
+          trend: 'up'
+        },
+        {
+          id: 2,
+          name: 'Profit Margin',
+          value: 23.4,
+          change: 2.1,
+          trend: 'up'
+        },
+        {
+          id: 3,
+          name: 'Customer Acquisition',
+          value: 456,
+          change: -5.2,
+          trend: 'down'
+        },
+        {
+          id: 4,
+          name: 'Customer Retention',
+          value: 94.2,
+          change: 1.8,
+          trend: 'up'
+        }
+      ],
       insights: [
-        'Revenue growth exceeded projections by 3.2%',
-        'Customer satisfaction improved by 5.1%',
-        'Market share increased in key segments',
-        'Operational efficiency optimized through AI'
+        {
+          id: 1,
+          title: 'Revenue Growth Trend',
+          description: 'Strong revenue growth observed in Q3',
+          impact: 'positive',
+          confidence: 0.92
+        },
+        {
+          id: 2,
+          title: 'Customer Churn Risk',
+          description: 'Increased churn risk in premium segment',
+          impact: 'negative',
+          confidence: 0.78
+        }
       ],
-      recommendations: [
-        'Invest in customer retention programs',
-        'Expand market presence in emerging segments',
-        'Implement additional AI optimization',
-        'Focus on high-growth product lines'
-      ],
-      generatedAt: new Date().toISOString()
+      predictions: [
+        {
+          metric: 'Revenue',
+          predicted_value: 1350000,
+          confidence: 0.85,
+          timeframe: 'next_quarter'
+        },
+        {
+          metric: 'Customer Acquisition',
+          predicted_value: 520,
+          confidence: 0.72,
+          timeframe: 'next_month'
+        }
+      ]
     };
 
-    res.status(200).json(report);
+    return res.status(200).json({
+      success: true,
+      data: businessData
+    });
   } catch (error) {
-    console.error('Error generating business intelligence report:', error);
-    res.status(500).json({ error: 'Internal server error' });
+    console.error('Error processing business intelligence request:', error);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }

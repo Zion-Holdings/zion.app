@@ -311,4 +311,4 @@ function fixAllFiles(dir) {
 const pagesDir = path.join(__dirname, '..', 'pages');
 console.log('Starting syntax error fixes...');
 const fixedCount = fixAllFiles(pagesDir);
-console.log(`Fixed ${fixedCount} files with syntax errors.`);
+console.log(`Fixed ${fixedCount} files with syntax errors.`); 
