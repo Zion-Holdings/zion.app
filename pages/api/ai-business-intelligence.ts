@@ -1,78 +1,77 @@
-import type { NextApiRequest, NextApiResponse } from 'next;
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
-  if (req.method !== 'POST') {;
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
-  };
-  try {;
+  }
+
+  try {
     const { timeframe, action } = req.body;
-    const businessData = {;
-      kpis: [;
-        {;
-          id: 1,;
-          name: 'Revenue',;
-          value: 1250000,;
-          change: 12.5,;
-          trend: 'up;
-        },;
-        {;
-          id: 2,;
-          name: 'Profit Margin',;
-          value: 23.4,;
-          change: 2.1,;
-          trend: 'up;
-        },;
-        {;
-          id: 3,;
-          name: 'Customer Acquisition',;
-          value: 456,;
-          change: -5.2,;
-          trend: 'down;
-        },;
-        {;
-          id: 4,;
-          name: 'Customer Retention',;
-          value: 94.2,;
-          change: 1.8,;
-          trend: 'up;
-        };
-      ],;
-      insights: [;
-        {;
-          id: 1,;
-          title: 'Revenue Growth Trend',;
-          description: 'Strong revenue growth observed in Q3',;
-          impact: 'positive',;
-          confidence: 0.92;
-        },;
-        {;
-          id: 2,;
-          title: 'Customer Churn Risk',;
-          description: 'Increased churn risk in premium segment',;
-          impact: 'negative',;
-          confidence: 0.78;
-        };
-      ],;
-      predictions: [;
-        {;
-          metric: 'Revenue',;
-          predicted_value: 1350000,;
-          confidence: 0.85,;
-          timeframe: 'next_quarter;
-        },;
-        {;
-          metric: 'Customer Acquisition',;
-          predicted_value: 520,;
-          confidence: 0.72,;
-          timeframe: 'next_month;
-        };
-      ];
+
+    const businessData = {
+      kpis: [
+        {
+          id: 1,
+          name: 'Revenue Growth',
+          value: 15.2,
+          target: 12.0,
+          trend: 'up',
+          period: 'Q1 2024'
+        },
+        {
+          id: 2,
+          name: 'Customer Acquisition',
+          value: 1250,
+          target: 1000,
+          trend: 'up',
+          period: 'Q1 2024'
+        },
+        {
+          id: 3,
+          name: 'Customer Retention',
+          value: 94.5,
+          target: 90.0,
+          trend: 'up',
+          period: 'Q1 2024'
+        }
+      ],
+      insights: [
+        {
+          id: 1,
+          title: 'Revenue Growth Exceeds Target',
+          description: 'Q1 revenue growth of 15.2% exceeds the target of 12%',
+          impact: 'positive',
+          confidence: 0.95
+        },
+        {
+          id: 2,
+          title: 'Customer Acquisition Strong',
+          description: 'Customer acquisition rate is 25% above target',
+          impact: 'positive',
+          confidence: 0.92
+        }
+      ],
+      recommendations: [
+        {
+          id: 1,
+          title: 'Expand Marketing Campaign',
+          description: 'Increase marketing budget by 20% to capitalize on strong acquisition',
+          priority: 'high',
+          impact: 'positive'
+        },
+        {
+          id: 2,
+          title: 'Optimize Customer Onboarding',
+          description: 'Improve onboarding process to increase retention rate',
+          priority: 'medium',
+          impact: 'positive'
+        }
+      ]
     };
-    return res.status(200).json({;
-      success: true,;
-      data: businessData;
-    });
-  } catch (error) {;
+
+    res.status(200).json(businessData);
+  } catch (error) {
     console.error('Error processing business intelligence request:', error);
-    return res.status(500).json({ error: 'Internal server error' });
-  };
-};
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
