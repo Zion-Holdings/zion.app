@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect } from 'react
 interface ResponsiveState {
   isMobile: boolean
   isTablet: boolean
@@ -7,7 +6,7 @@ interface ResponsiveState {
   isLargeDesktop: boolean
   screenWidth: number
   screenHeight: number
-  orientation: 'portrait' | 'landscape'
+  orientation: 'portrait' | 'landscape
 }
 
 export const useResponsive = (): ResponsiveState => {
@@ -18,7 +17,7 @@ export const useResponsive = (): ResponsiveState => {
     isLargeDesktop: false,
     screenWidth: 0,
     screenHeight: 0,
-    orientation: 'portrait'
+    orientation: 'portrait
   })
 
   useEffect(() => {
@@ -33,7 +32,7 @@ export const useResponsive = (): ResponsiveState => {
         isLargeDesktop: width >= 1536,
         screenWidth: width,
         screenHeight: height,
-        orientation: width > height ? 'landscape' : 'portrait'
+        orientation: width > height ? 'landscape' : 'portrait
       })
     }
 

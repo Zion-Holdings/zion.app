@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';'''
+import { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
 
 const openai = new OpenAI({
@@ -34,26 +34,26 @@ PLATFORM POLICIES:
 `;
 
 export default async function handler(
-  req: NextApiRequest,'
-  res: NextApiResponse''
-) {'''
-  if (req.method !== 'POST') {'''
+  req: NextApiRequest,
+  res: NextApiResponse'
+) {
+  if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });}
   try {
-    const { message, conversationHistory } = req.body;'
-''
-    if (!message) {'''
+    const { message, conversationHistory } = req.body;
+'
+    if (!message) {
       return res.status(400).json({ error: 'Message is required' });}
-    // Prepare conversation context'
-    const messages = [''
-      {'''`
+    // Prepare conversation context
+    const messages = ['
+      {`
         role: 'system' as const,``
         content: `You are a helpful AI assistant for the Zion AI Marketplace. You help users navigate the platform, answer questions about AI tools, and provide guidance on using the marketplace effectively.
 
 ${ZION_KNOWLEDGE}
-IMPORTANT GUIDELINES: ""
-- Always be helpful, friendly, and professional''
-- Provide accurate information about the Zion AI Marketplace'''
+IMPORTANT GUIDELINES: 
+- Always be helpful, friendly, and professional'
+- Provide accurate information about the Zion AI Marketplace
 - If you don't know something specific, suggest contacting support
 - Keep responses concise but informative
 - Encourage users to explore the platform features
@@ -61,41 +61,39 @@ IMPORTANT GUIDELINES: ""
 - If asked about pricing, direct users to individual tool pages`
 - If asked about technical issues, suggest contacting support``
 - Always maintain a positive and helpful tone`
-      },'
-      ...conversationHistory,''
-      {'''
+      },
+      ...conversationHistory,'
+      {
         role: 'user' as const,
         content: message
       };
-    ];'
-''
-    const completion = await openai.chat.completions.create({'''
+    ];
+'
+    const completion = await openai.chat.completions.create({
       model: 'gpt-4',
       messages,
       max_tokens: 500,
       temperature: 0.7,
       presence_penalty: 0.1,
-      frequency_penalty: 0.1,;'
-    });''
-'''
+      frequency_penalty: 0.1,;
+    });'
     const response = completion.choices[0]?.message?.content || 'I apologize, but I\'m having trouble processing your request right now. Please try again.';
-'
-    res.status(200).json({ response });''
-  } catch (error) {'''
-    console.error('Chat API error: "", error);"
-    '
-    // Handle specific OpenAI errors''
-    if (error instanceof Error) {'''
-      if (error.message.includes('API key')) {''
-        return res.status(500).json({ '''
-          error: 'OpenAI API configuration error. Please contact support.' '
-        });''
-      }'''
-      if (error.message.includes('rate limit')) {''
-        return res.status(429).json({ '''
-          error: 'Too many requests. Please try again in a moment.' '
-        });}}''
-    res.status(500).json({ '''
-      error: 'An error occurred while processing your request. Please try again.' "'
-    });""''`
+    res.status(200).json({ response });'
+  } catch (error) {
+    console.error('Chat API error: , error);"
+    
+    // Handle specific OpenAI errors'
+    if (error instanceof Error) {
+      if (error.message.includes('API key')) {'
+        return res.status(500).json({ 
+          error: 'OpenAI API configuration error. Please contact support.' 
+        });'
+      }
+      if (error.message.includes('rate limit')) {'
+        return res.status(429).json({ 
+          error: 'Too many requests. Please try again in a moment.' 
+        });}}'
+    res.status(500).json({ 
+      error: 'An error occurred while processing your request. Please try again.' "
+    });''`
   };"'"'`

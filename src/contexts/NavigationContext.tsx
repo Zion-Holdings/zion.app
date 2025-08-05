@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react''''
-import { useRouter } from 'next/router'
-
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react
+import { useRouter } from 'next/router
 interface NavigationState {
   isSearchOpen: boolean
   isMobileMenuOpen: boolean
@@ -70,56 +69,55 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
       activeDropdown: null // Close dropdowns when toggling mobile menu
     }))}
   const setActiveDropdown = (dropdown: string | null) => {
-    setState(prev => ({ ...prev, activeDropdown: dropdown }))}'
-  // Load favorites from localStorage (SSR-safe)''
-  useEffect(() => {'''
-    if (typeof window !== 'undefined') {'''
+    setState(prev => ({ ...prev, activeDropdown: dropdown }))}
+  // Load favorites from localStorage (SSR-safe)'
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       const savedFavorites = localStorage.getItem('navigation-favorites')
       if (savedFavorites) {
         try {
-          const favorites = JSON.parse(savedFavorites)'
-          setState(prev => ({ ...prev, favorites }))''
-        } catch (error) {'''
-          console.error('Error loading navigation favorites: "", error)}}}
-  }, [])'
-  // Save favorites to localStorage (SSR-safe)''
-  useEffect(() => {'''
-    if (typeof window !== 'undefined') {'''
+          const favorites = JSON.parse(savedFavorites)
+          setState(prev => ({ ...prev, favorites }))'
+        } catch (error) {
+          console.error('Error loading navigation favorites: , error)}}}
+  }, [])
+  // Save favorites to localStorage (SSR-safe)'
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       localStorage.setItem('navigation-favorites', JSON.stringify(state.favorites))}
   }, [state.favorites])
-  useEffect(() => {'
-    const handleKeyDown = (event: KeyboardEvent) => {''
-      // Escape: Close search and mobile menu'''
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {'
+      // Escape: Close search and mobile menu
       if (event.key === 'Escape') {
         if (state.isSearchOpen) {
           closeSearch()}
         if (state.isMobileMenuOpen) {
-          toggleMobileMenu()}'
-        setActiveDropdown(null)}''
-      // Cmd/Ctrl + K: Open search'''
+          toggleMobileMenu()}
+        setActiveDropdown(null)}'
+      // Cmd/Ctrl + K: Open search
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-        event.preventDefault()'
-        openSearch()}''
-      // Cmd/Ctrl + B: Toggle mobile menu'''
+        event.preventDefault()
+        openSearch()}'
+      // Cmd/Ctrl + B: Toggle mobile menu
       if ((event.metaKey || event.ctrlKey) && event.key === 'b') {
-        event.preventDefault()'
-        toggleMobileMenu()}''
-      // Cmd/Ctrl + Left Arrow: Go back'''
+        event.preventDefault()
+        toggleMobileMenu()}'
+      // Cmd/Ctrl + Left Arrow: Go back
       if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowLeft') {
-        event.preventDefault()'
-        goBack()}''
-      // Cmd/Ctrl + Right Arrow: Go forward'''
+        event.preventDefault()
+        goBack()}'
+      // Cmd/Ctrl + Right Arrow: Go forward
       if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowRight') {
-        event.preventDefault()'
-        goForward()}''
-      // Cmd/Ctrl + 1-9: Quick navigation to favorites'''
+        event.preventDefault()
+        goForward()}'
+      // Cmd/Ctrl + 1-9: Quick navigation to favorites
       if (event.key >= '1' && event.key <= '9' && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
         const index = parseInt(event.key) - 1
-        if (state.favorites[index]) {'
-          navigateTo(state.favorites[index])}}}''
-'''
-    document.addEventListener('keydown', handleKeyDown)'''
+        if (state.favorites[index]) {
+          navigateTo(state.favorites[index])}}}'
+    document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [state.isSearchOpen, state.isMobileMenuOpen, state.activeDropdown, state.favorites, goBack, goForward, navigateTo])
   const value: NavigationContextType = {
@@ -141,9 +139,9 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
   );
 };
 
-export const useNavigation = (): NavigationContextType => {'
-  const context = useContext(NavigationContext)''
-  if (context === undefined) {'''
-    throw new Error('useNavigation must be used within a NavigationProvider')}'
-  return context''
-} ';'
+export const useNavigation = (): NavigationContextType => {
+  const context = useContext(NavigationContext)'
+  if (context === undefined) {
+    throw new Error('useNavigation must be used within a NavigationProvider')}
+  return context'
+} ';

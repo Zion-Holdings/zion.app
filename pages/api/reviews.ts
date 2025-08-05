@@ -1,14 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
-  req: NextApiRequest,'
-  res: NextApiResponse''
-) {'''
-  if (req.method !== 'POST') {'''
-    return res.status(405).json({ message: 'Method not allowed' });}'
-  try {''
-    // Review API implementation'''
-    res.status(200).json({ success: true, reviewId: 'rev_123' });''
-  } catch (error) {'''
-    res.status(500).json({ error: 'Review submission failed' });''
-  };''
+  req: NextApiRequest,
+  res: NextApiResponse'
+) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });}
+  try {'
+    // Review API implementation
+    res.status(200).json({ success: true, reviewId: 'rev_123' });'
+  } catch (error) {
+    res.status(500).json({ error: 'Review submission failed' });'
+  };'

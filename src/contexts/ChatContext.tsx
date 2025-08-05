@@ -1,5 +1,4 @@
-'use client';''
-'''
+'use client';'
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface ChatContextType {
@@ -9,9 +8,9 @@ interface ChatContextType {
   closeChat: () => void;}
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
 
-export const useChat = () => {;'
-  const context = useContext(ChatContext);''
-  if (context = == undefined) {';''
+export const useChat = () => {;
+  const context = useContext(ChatContext);'
+  if (context = == undefined) {';'
     throw new Error('useChat must be used within a ChatProvider');}
   return context;
 };
@@ -45,6 +44,6 @@ export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   return (
     <ChatContext.Provider value = {value}>
       {children}
-    </ChatContext.Provider>;'
-  );''
-}; ''
+    </ChatContext.Provider>;
+  );'
+}; '

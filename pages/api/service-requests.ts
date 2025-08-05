@@ -1,22 +1,21 @@
-import type { NextApiRequest, NextApiResponse } from 'next''''
-import { createClient } from '@supabase/supabase-js'
-
+import type { NextApiRequest, NextApiResponse } from 'next
+import { createClient } from '@supabase/supabase-js
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-);'
-''
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {'''
+);
+'
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method = == 'POST') {
     try {
       const { title, description, category, budget, timeline, priority, userId } = req.body
-'
-      // Validate required fields''
-      if (!title || !description || !category || !budget || !timeline || !priority) {'''
-        return res.status(400).json({ error: 'Missing required fields'}}'
-      // Create service request''
-      const { data, error } = await supabase'''
-        .from('service_requests'
+
+      // Validate required fields'
+      if (!title || !description || !category || !budget || !timeline || !priority) {
+        return res.status(400).json({ error: 'Missing required fields'}}
+      // Create service request'
+      const { data, error } = await supabase
+        .from('service_requests
         .insert([
           {
             title,
@@ -24,82 +23,77 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             category,
             budget_min: budget.min,
             budget_max: budget.max,
-            budget_currency: budget.currency,'
-            timeline,''
-            priority,'''
+            budget_currency: budget.currency,
+            timeline,'
+            priority,
             status: 'submitted',
             user_id: userId,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(
-          }]'
-        .select(''
-      if (error) {'''
-        console.error('Error creating service request: "", error'''
+          }]
+        .select('
+      if (error) {
+        console.error('Error creating service request: , error
         return res.status(500).json({ error: 'Failed to create service request'}}
-      return res.status(201).json({'
-        success: true, ''
-        data: data[0],'''
-        message: 'Service request created successfully'}''
-    } catch (error) {'''
-      console.error('Error in service request creation: "", error'''
-      return res.status(500).json({ error: 'Internal server error'}}}''
-'''
+      return res.status(201).json({
+        success: true, '
+        data: data[0],
+        message: 'Service request created successfully'}'
+    } catch (error) {
+      console.error('Error in service request creation: , error
+      return res.status(500).json({ error: 'Internal server error'}}}'
   if (req.method === 'GET') {
     try {
-      const { userId, status, category } = req.query'
-''
-      let query = supabase'''
-        .from('service_requests''''
-        .select('*''''
-        .order('created_at', { ascending: false}''
-      if (userId) {'''
-        query = query.eq('user_id', userId}''
-'''
-      if (status && status !== 'all') {'''
-        query = query.eq('status', status}''
-'''
-      if (category && category !== 'all') {'''
+      const { userId, status, category } = req.query
+'
+      let query = supabase
+        .from('service_requests
+        .select('*
+        .order('created_at', { ascending: false}'
+      if (userId) {
+        query = query.eq('user_id', userId}'
+      if (status && status !== 'all') {
+        query = query.eq('status', status}'
+      if (category && category !== 'all') {
         query = query.eq('category', category}
-      const { data, error } = await query'
-''
-      if (error) {'''
-        console.error('Error fetching service requests: "", error'''
+      const { data, error } = await query
+'
+      if (error) {
+        console.error('Error fetching service requests: , error
         return res.status(500).json({ error: 'Failed to fetch service requests'}}
       return res.status(200).json({
         success: true, 
-        data: data || [],'
-        count: data?.length || 0}''
-    } catch (error) {'''
-      console.error('Error in service request fetch: "", error'''
-      return res.status(500).json({ error: 'Internal server error'}}}''
-'''
+        data: data || [],
+        count: data?.length || 0}'
+    } catch (error) {
+      console.error('Error in service request fetch: , error
+      return res.status(500).json({ error: 'Internal server error'}}}'
   if (req.method === 'PUT') {
     try {
-      const { id, status, aiAnalysis } = req.body'
-''
-      if (!id) {'''
+      const { id, status, aiAnalysis } = req.body
+'
+      if (!id) {
         return res.status(400).json({ error: 'Request ID is required'}}
       const updateData: any = {
         updated_at: new Date().toISOString(}
       if (status) {
         updateData.status = status}
-      if (aiAnalysis) {'
-        updateData.ai_analysis = aiAnalysis}''
-      const { data, error } = await supabase'''
-        .from('service_requests'''
-        .update(updateData'''
-        .eq('id', id'
-        .select(''
-      if (error) {'''
-        console.error('Error updating service request: "", error'''
+      if (aiAnalysis) {
+        updateData.ai_analysis = aiAnalysis}'
+      const { data, error } = await supabase
+        .from('service_requests
+        .update(updateData
+        .eq('id', id
+        .select('
+      if (error) {
+        console.error('Error updating service request: , error
         return res.status(500).json({ error: 'Failed to update service request'}}
-      return res.status(200).json({'
-        success: true, ''
-        data: data[0],'''
-        message: 'Service request updated successfully'}''
-    } catch (error) {'''
-      console.error('Error in service request update: "", error'''
-      return res.status(500).json({ error: 'Internal server error'}}}''
-'''
-  return res.status(405).json({ error: 'Method not allowed'}''
-} )))))))))))))))))))))))))))))))))';'
+      return res.status(200).json({
+        success: true, '
+        data: data[0],
+        message: 'Service request updated successfully'}'
+    } catch (error) {
+      console.error('Error in service request update: , error
+      return res.status(500).json({ error: 'Internal server error'}}}'
+  return res.status(405).json({ error: 'Method not allowed'}'
+} )))))))))))))))))))))))))))))))))';

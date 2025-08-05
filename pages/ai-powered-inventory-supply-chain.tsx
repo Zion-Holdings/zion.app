@@ -1,13 +1,13 @@
-import type { NextPage } from 'next';'''
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
-import { useState, useEffect, useMemo } from 'react';'''
+import type { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
+import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 
-interface InventoryItem {'
-  id: string;''
-  name: string;'''
-  category: 'physical' | 'digital' | 'service' | 'talent';'''
-  type: 'product' | 'service' | 'equipment' | 'material';'''
+interface InventoryItem {
+  id: string;'
+  name: string;
+  category: 'physical' | 'digital' | 'service' | 'talent';
+  type: 'product' | 'service' | 'equipment' | 'material';
   status: 'in-stock' | 'low-stock' | 'out-of-stock' | 'discontinued';
   quantity: number;
   reserved: number;
@@ -24,15 +24,15 @@ interface AIInventoryAnalysis {
   demandForecast: number;
   reorderPoint: number;
   safetyStock: number;
-  leadTime: number;'
-  confidence: number;''
-  recommendations: string[];'''
+  leadTime: number;
+  confidence: number;'
+  recommendations: string[];
   riskLevel: 'low' | 'medium' | 'high' | 'critical';}
-interface SupplyChainNode {'
-  id: string;''
-  name: string;'''
-  type: 'supplier' | 'manufacturer' | 'distributor' | 'warehouse' | 'retailer';''
-  location: string;'''
+interface SupplyChainNode {
+  id: string;'
+  name: string;
+  type: 'supplier' | 'manufacturer' | 'distributor' | 'warehouse' | 'retailer';'
+  location: string;
   status: 'active' | 'inactive' | 'delayed' | 'blocked';
   performance: number;
   reliability: number;
@@ -57,10 +57,10 @@ interface SupplyChainRoute {
   aiScore: number;}
 interface LogisticsOrder {
   id: string;
-  orderNumber: string;'
-  customer: string;''
-  items: LogisticsOrderItem[];'''
-  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';'''
+  orderNumber: string;
+  customer: string;'
+  items: LogisticsOrderItem[];
+  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   priority: 'low' | 'medium' | 'high' | 'urgent';
   orderDate: Date;
   estimatedDelivery: Date;
@@ -71,9 +71,9 @@ interface LogisticsOrder {
 interface LogisticsOrderItem {
   id: string;
   itemId: string;
-  quantity: number;'
-  unitPrice: number;''
-  totalPrice: number;'''
+  quantity: number;
+  unitPrice: number;'
+  totalPrice: number;
   status: 'available' | 'backordered' | 'substituted';}
 interface AILogisticsOptimization {
   id: string;
@@ -93,119 +93,119 @@ interface InventoryAnalytics {
   topCategories: string[];
   aiInsights: InventoryInsight[];}
 interface InventoryInsight {
-  id: string;'
-  title: string;''
-  description: string;'''
+  id: string;
+  title: string;'
+  description: string;
   impact: 'positive' | 'negative' | 'neutral';
   confidence: number;
   recommendations: string[];}
 const AIPoweredInventorySupplyChainPage: NextPage = () => {
   const [inventoryItems, setInventoryItems] = useState<InventoryItem[]>([]
-  const [supplyChainNodes, setSupplyChainNodes] = useState<SupplyChainNode[]>([]'
-  const [logisticsOrders, setLogisticsOrders] = useState<LogisticsOrder[]>([]''
-  const [analytics, setAnalytics] = useState<InventoryAnalytics | null>(null'''
-  const [activeTab, setActiveTab] = useState<'inventory' | 'supply-chain' | 'logistics' | 'analytics'>('inventory''''
-  const [selectedCategory, setSelectedCategory] = useState<string>('all'
+  const [supplyChainNodes, setSupplyChainNodes] = useState<SupplyChainNode[]>([]
+  const [logisticsOrders, setLogisticsOrders] = useState<LogisticsOrder[]>([]'
+  const [analytics, setAnalytics] = useState<InventoryAnalytics | null>(null
+  const [activeTab, setActiveTab] = useState<'inventory' | 'supply-chain' | 'logistics' | 'analytics'>('inventory
+  const [selectedCategory, setSelectedCategory] = useState<string>('all
   const [isLoading, setIsLoading] = useState(true
-  // Mock data'
-  const mockInventoryItems: InventoryItem[] = [''
-    {'''
-      id: '1','''
-      name: 'AI Development Workstation','''
-      category: 'physical','''
-      type: 'equipment','''
+  // Mock data
+  const mockInventoryItems: InventoryItem[] = ['
+    {
+      id: '1',
+      name: 'AI Development Workstation',
+      category: 'physical',
+      type: 'equipment',
       status: 'in-stock',
-      quantity: 25,'
-      reserved: 5,''
-      available: 20,'''
-      unit: 'units','
-      unitPrice: 2500,''
-      totalValue: 62500,'''
-      location: 'Main Warehouse','''
-      supplier: 'TechCorp Solutions','''
-      lastUpdated: new Date('2024-01-20T10:00:00'),''
-      aiAnalysis: {'''
+      quantity: 25,
+      reserved: 5,'
+      available: 20,
+      unit: 'units',
+      unitPrice: 2500,'
+      totalValue: 62500,
+      location: 'Main Warehouse',
+      supplier: 'TechCorp Solutions',
+      lastUpdated: new Date('2024-01-20T10:00:00'),'
+      aiAnalysis: {
         id: '1',
         demandForecast: 30,
         reorderPoint: 10,
-        safetyStock: 5,'
-        leadTime: 7,''
-        confidence: 0.92,'''
-        recommendations: ['Increase stock by 5 units', 'Negotiate better supplier terms'],'''
-        riskLevel: 'low'}}}''
-    {'''
-      id: '2','''
-      name: 'Cloud Computing Credits','''
-      category: 'digital','''
-      type: 'service','''
+        safetyStock: 5,
+        leadTime: 7,'
+        confidence: 0.92,
+        recommendations: ['Increase stock by 5 units', 'Negotiate better supplier terms'],
+        riskLevel: 'low'}}}'
+    {
+      id: '2',
+      name: 'Cloud Computing Credits',
+      category: 'digital',
+      type: 'service',
       status: 'low-stock',
-      quantity: 1500,'
-      reserved: 200,''
-      available: 1300,'''
-      unit: 'credits','
-      unitPrice: 0.10,''
-      totalValue: 150,'''
-      location: 'Digital Inventory','''
-      supplier: 'CloudTech Inc','''
-      lastUpdated: new Date('2024-01-20T11:00:00'),''
-      aiAnalysis: {'''
+      quantity: 1500,
+      reserved: 200,'
+      available: 1300,
+      unit: 'credits',
+      unitPrice: 0.10,'
+      totalValue: 150,
+      location: 'Digital Inventory',
+      supplier: 'CloudTech Inc',
+      lastUpdated: new Date('2024-01-20T11:00:00'),'
+      aiAnalysis: {
         id: '2',
         demandForecast: 2000,
         reorderPoint: 500,
-        safetyStock: 200,'
-        leadTime: 1,''
-        confidence: 0.88,'''
-        recommendations: ['Purchase additional 500 credits', 'Monitor usage patterns'],'''
+        safetyStock: 200,
+        leadTime: 1,'
+        confidence: 0.88,
+        recommendations: ['Purchase additional 500 credits', 'Monitor usage patterns'],
         riskLevel: 'medium'}
-}]'
-  const mockSupplyChainNodes: SupplyChainNode[] = [''
-    {'''
-      id: '1','''
-      name: 'TechCorp Solutions','''
-      type: 'supplier','''
-      location: "San Francisco", CA','''
+}]
+  const mockSupplyChainNodes: SupplyChainNode[] = ['
+    {
+      id: '1',
+      name: 'TechCorp Solutions',
+      type: 'supplier',
+      location: "San Francisco", CA',
       status: 'active',
       performance: 95,
       reliability: 98,
-      leadTime: 7,'
-      cost: 2500,''
-      aiOptimization: {'''
+      leadTime: 7,
+      cost: 2500,'
+      aiOptimization: {
         id: '1',
-        efficiency: 92,'
-        costSavings: 15000,''
-        riskReduction: 25,'''
-        recommendations: ['Extend contract terms', 'Implement JIT delivery'],'
-        alternativeRoutes: [''
-          {'''
-            id: '1','''
-            fromNode: 'TechCorp Solutions','''
+        efficiency: 92,
+        costSavings: 15000,'
+        riskReduction: 25,
+        recommendations: ['Extend contract terms', 'Implement JIT delivery'],
+        alternativeRoutes: ['
+          {
+            id: '1',
+            fromNode: 'TechCorp Solutions',
             toNode: 'Main Warehouse',
             distance: 50,
             cost: 2500,
             time: 7,
             reliability: 98,
-            aiScore: 95'
-          }]}}''
-    {'''
-      id: '2','''
-      name: 'CloudTech Inc','''
-      type: 'supplier','''
-      location: "Austin, TX','''
+            aiScore: 95
+          }]}}'
+    {
+      id: '2',
+      name: 'CloudTech Inc',
+      type: 'supplier',
+      location: Austin, TX',
       status: 'active',
       performance: 88,
       reliability: 92,
-      leadTime: 1,'
-      cost: 0.10,''
-      aiOptimization: {'''
+      leadTime: 1,
+      cost: 0.10,'
+      aiOptimization: {
         id: '2',
-        efficiency: 85,'
-        costSavings: 5000,''
-        riskReduction: 15,'''
-        recommendations: ['Bulk purchase discounts', 'Automated provisioning'],'
-        alternativeRoutes: [''
-          {'''
-            id: '2','''
-            fromNode: 'CloudTech Inc','''
+        efficiency: 85,
+        costSavings: 5000,'
+        riskReduction: 15,
+        recommendations: ['Bulk purchase discounts', 'Automated provisioning'],
+        alternativeRoutes: ['
+          {
+            id: '2',
+            fromNode: 'CloudTech Inc',
             toNode: 'Digital Inventory',
             distance: 0,
             cost: 0.10,
@@ -213,33 +213,33 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
             reliability: 92,
             aiScore: 88
           }]}
-}]'
-  const mockLogisticsOrders: LogisticsOrder[] = [''
-    {'''
-      id: '1','''
-      orderNumber: 'ORD-2024-001','''
-      customer: 'TechStartup Inc','
-      items: [''
-        {'''
-          id: '1','''
+}]
+  const mockLogisticsOrders: LogisticsOrder[] = ['
+    {
+      id: '1',
+      orderNumber: 'ORD-2024-001',
+      customer: 'TechStartup Inc',
+      items: ['
+        {
+          id: '1',
           itemId: '1',
-          quantity: 2,'
-          unitPrice: 2500,''
-          totalPrice: 5000,'''
-          status: 'available'}''
-      ],'''
-      status: 'processing','''
-      priority: 'high','''
-      orderDate: new Date('2024-01-20T09:00:00'),'''
+          quantity: 2,
+          unitPrice: 2500,'
+          totalPrice: 5000,
+          status: 'available'}'
+      ],
+      status: 'processing',
+      priority: 'high',
+      orderDate: new Date('2024-01-20T09:00:00'),
       estimatedDelivery: new Date('2024-01-27T09:00:00'),
-      totalValue: 5000,'
-      shippingCost: 150,''
-      aiOptimization: {'''
-        id: '1','''
+      totalValue: 5000,
+      shippingCost: 150,'
+      aiOptimization: {
+        id: '1',
         optimalRoute: 'TechCorp → Main Warehouse → Customer',
-        estimatedTime: 7,'
-        costSavings: 200,''
-        carbonFootprint: 45,'''
+        estimatedTime: 7,
+        costSavings: 200,'
+        carbonFootprint: 45,
         recommendations: ['Use local warehouse', 'Optimize packaging']}
 }]
   const mockAnalytics: InventoryAnalytics = {
@@ -247,25 +247,25 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
     totalValue: 1250000,
     lowStockItems: 45,
     outOfStockItems: 12,
-    averageLeadTime: 5.2,'
-    supplyChainEfficiency: 87,''
-    aiAccuracy: 94,'''
-    topCategories: ['Equipment', 'Digital Services', 'Materials', 'Software'],'
-    aiInsights: [''
-      {'''
-        id: '1','''
-        title: 'High Demand for AI Equipment','''
-        description: 'AI development workstations show 40% higher demand than forecasted','''
-        impact: 'positive',''
-        confidence: 0.92,'''
-        recommendations: ['Increase stock levels', 'Negotiate better supplier terms']'
-      },''
-{'''
-        id: '2','''
-        title: 'Supply Chain Optimization Opportunity','''
-        description: 'AI analysis suggests 15% cost savings through route optimization','''
-        impact: 'positive',''
-        confidence: 0.88,'''
+    averageLeadTime: 5.2,
+    supplyChainEfficiency: 87,'
+    aiAccuracy: 94,
+    topCategories: ['Equipment', 'Digital Services', 'Materials', 'Software'],
+    aiInsights: ['
+      {
+        id: '1',
+        title: 'High Demand for AI Equipment',
+        description: 'AI development workstations show 40% higher demand than forecasted',
+        impact: 'positive','
+        confidence: 0.92,
+        recommendations: ['Increase stock levels', 'Negotiate better supplier terms']
+      },'
+{
+        id: '2',
+        title: 'Supply Chain Optimization Opportunity',
+        description: 'AI analysis suggests 15% cost savings through route optimization',
+        impact: 'positive','
+        confidence: 0.88,
         recommendations: ['Implement JIT delivery', 'Consolidate shipments']
       }]}
   useEffect(() => {
@@ -277,277 +277,275 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
       setIsLoading(false
     } 1000
   } []
-  const filteredItems = useMemo(() => {'
-    let filtered = inventoryItems''
-'''
+  const filteredItems = useMemo(() => {
+    let filtered = inventoryItems'
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(item => item.category === selectedCategory}
     return filtered;
-  } [inventoryItems, selectedCategory]'
-  const getStatusColor = (status: string) => {''
-    switch (status) {'''
-      case 'in-stock': return 'bg-green-500/20 text-green-300''''
-      case 'low-stock': return 'bg-yellow-500/20 text-yellow-300''''
-      case 'out-of-stock': return 'bg-red-500/20 text-red-300''''
-      case 'discontinued': return 'bg-gray-500/20 text-gray-300''''
-      default: return 'bg-gray-500/20 text-gray-300'}}'
-  const getPriorityColor = (priority: string) => {''
-    switch (priority) {'''
-      case 'urgent': return 'bg-red-500/20 text-red-300''''
-      case 'high': return 'bg-orange-500/20 text-orange-300''''
-      case 'medium': return 'bg-yellow-500/20 text-yellow-300''''
-      case 'low': return 'bg-green-500/20 text-green-300''''
-      default: return 'bg-gray-500/20 text-gray-300'}}'
-  const getRiskColor = (risk: string) => {''
-    switch (risk) {'''
-      case 'critical': return 'bg-red-500/20 text-red-300''''
-      case 'high': return 'bg-orange-500/20 text-orange-300''''
-      case 'medium': return 'bg-yellow-500/20 text-yellow-300''''
-      case 'low': return 'bg-green-500/20 text-green-300''''
+  } [inventoryItems, selectedCategory]
+  const getStatusColor = (status: string) => {'
+    switch (status) {
+      case 'in-stock': return 'bg-green-500/20 text-green-300
+      case 'low-stock': return 'bg-yellow-500/20 text-yellow-300
+      case 'out-of-stock': return 'bg-red-500/20 text-red-300
+      case 'discontinued': return 'bg-gray-500/20 text-gray-300
+      default: return 'bg-gray-500/20 text-gray-300'}}
+  const getPriorityColor = (priority: string) => {'
+    switch (priority) {
+      case 'urgent': return 'bg-red-500/20 text-red-300
+      case 'high': return 'bg-orange-500/20 text-orange-300
+      case 'medium': return 'bg-yellow-500/20 text-yellow-300
+      case 'low': return 'bg-green-500/20 text-green-300
+      default: return 'bg-gray-500/20 text-gray-300'}}
+  const getRiskColor = (risk: string) => {'
+    switch (risk) {
+      case 'critical': return 'bg-red-500/20 text-red-300
+      case 'high': return 'bg-orange-500/20 text-orange-300
+      case 'medium': return 'bg-yellow-500/20 text-yellow-300
+      case 'low': return 'bg-green-500/20 text-green-300
       default: return 'bg-gray-500/20 text-gray-300'}}
   return (
     <div>
-      </div><div className="relative z-10 container-responsive" py-8>"
-        """
-        {/* Background Effects */}"""
-        <div className=fixed inset-0 z-0>"
-          </div><div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
+      </div><div className=" relative z-10 container-responsive" py-8>
+        "
+        {/* Background Effects */}"
+        <div className="fixed" inset-0 z-0> 
+          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
-      <Head>"
-        <title>AI-Powered Inventory & Supply Chain Management | Zion Tech Group</title>""
-        <meta name="description" content=Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by AI. > </meta" name="description" content="Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by" AI." ><meta name="keywords" content=inventory, supply chain, logistics, fulfillment, AI management, tracking > </meta" name="keywords" content="inventory, supply chain, logistics, fulfillment, AI management," tracking" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
+      <Head> 
+        <title>AI-Powered Inventory & Supply Chain Management | Zion Tech Group</title>
+        <meta name="description content=Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by AI. > </meta" name="description" content="Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by" AI." ><meta name="keywords content=inventory, supply chain, logistics, fulfillment, AI management, tracking > </meta" name="keywords" content="inventory, supply chain, logistics, fulfillment, AI management," tracking" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
       {/* Header */}"
-      <div className=relative overflow-hidden>
-        </div><div className=absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>""
-        <div className=""relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>"
-          </div><div className=text-center>
-            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
+      <div className="relative" overflow-hidden>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20></div>
+        <div className="relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44> 
+          </div><div className="text-center>"
+            <h1 className="text-5xl" md text-6xl font-bold text-white mb-6>
               AI-Powered Inventory & Supply Chain Management
             </h1>
-            <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+            <p className="text-xl" text-gray-300 mb-8 max-w-3xl mx-auto>
               Inventory tracking, supply chain optimization, logistics management, "
-              and fulfillment automation powered by advanced AI for marketplace efficiency."
-            </p>""
-            <div className=""flex flex-wrap justify-center gap-4>"
+              and fulfillment automation powered by advanced AI for marketplace efficiency.
+            </p>
+            <div className="flex" flex-wrap justify-center gap-4> 
               </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>📦 Inventory Tracking</span>"
-              </div>""
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3>"""
-                <span className="text-white font-semibold>🔗 Supply Chain</span>
-              </div>""
-              <div className=bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
-                <span className=text-white font-semibold>🚚 Logistics</span>
+                <span className="text-white" font-semibold>📦 Inventory Tracking</span> 
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6" py-3>
+                <span className="text-white" font-semibold>🔗 Supply Chain</span>
+              </div>
+              <div className="bg-white/10" backdrop-blur-sm:rounded-lg px-6 py-3 >
+                <span className="text-white" font-semibold>🚚 Logistics</span>
               </div>
             </div">
           </div>
         </div>
-      </div>"
-"""
-      {/* Main Content */}""""
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-32>"
-        {isLoading ? (""
-          </div><div className="flex justify-center items-center py-40>
-            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
+      </div>
+"
+      {/* Main Content */}
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
+        {isLoading ? (
+          </div><div className="flex" justify-center items-center py-40>
+            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-purple-500 ></div>
           </div>
         ) : ("
-          </>"
-            {/* Tabs */}"""'
-            <div className="flex flex-wrap justify-center" mb-8>"''
-              "'""''
-                onClick={() => setActiveTab('inventory')}"''
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${'''
-                  activeTab === 'inventory''''
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`
+          </>
+            {/* Tabs */}"
+            <div className=" flex flex-wrap justify-center" mb-8>'
+              "''
+                onClick={() => setActiveTab('inventory')}"'
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === 'inventory
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
                       'bg-white/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
-                Inventory ({inventoryItems.length}'
-              </button>"''
-              "'""''`
-                onClick={() => setActiveTab('supply-chain')}""""''``
-                className="{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${'''
-                  activeTab === 'supply-chain''''
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`
+                Inventory ({inventoryItems.length}
+              </button> '
+              "'''`
+                onClick={() => setActiveTab('supply-chain')}''``
+                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                  activeTab === 'supply-chain
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Supply Chain ({supplyChainNodes.length}'
-              </button>''
-              '''`
+                Supply Chain ({supplyChainNodes.length}
+              </button>'
+              `
                 onClick={() => setActiveTab('logistics')}''``
-                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${'''
-                  activeTab === 'logistics''''
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`
+                className="{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                  activeTab === 'logistics
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Logistics ({logisticsOrders.length}'
-              </button>''
-              '''`
+                Logistics ({logisticsOrders.length}
+              </button>'
+              `
                 onClick={() => setActiveTab('analytics')}''``
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${'''
-                  activeTab === 'analytics''''
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white''''`
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${
+                  activeTab === 'analytics
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'`
                       'bg-white/10 text-gray-300 hover bg-white/20'``
                 }`}
               >
                 Analytics
               </button>
-            </div>'
-""''
-            {/* Inventory Tab */},"'""''
-{activeTab === 'inventory' && (""""
-              <div className="space-y-8">"
-                {/* Controls */}""
-                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl" p-6>""
-                  <div className=""flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0>"
-                    </div><div className="flex items-center" space-x-4>"
-                      """
-                        onChange={(e) => setSelectedCategory(e.target.value)}""""
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-purple-500"""
-                      >""""
-                        <option value=all" className=bg-slate-800>All Categories</option>""
-                        <option value=physical className=bg-slate-800>Physical</option>
-                        <option value=digital className=bg-slate-800>Digital</option>""
-                        <option value=service className=bg-slate-800>Service</option>
-                        <option value=talent className=bg-slate-800>Talent</option>
+            </div>
+'
+            {/* Inventory Tab */},"''
+{activeTab === 'inventory' && (
+              <div className=" space-y-8>
+                {/* Controls */}
+                </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl" p-6>
+                  <div className="flex"  flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0>
+                    </div><div className=" flex items-center" space-x-4>"
+                      "
+                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        className=" bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus" ring-purple-500"
+                      >
+                        <option value=all" className="bg-slate-800>All" Categories</option>
+                        <option value=physical className="bg-slate-800>Physical</option>"
+                        <option value=digital className="bg-slate-800>Digital</option>"
+                        <option value=service className="bg-slate-800>Service</option>"
+                        <option value=talent className="bg-slate-800>Talent</option>"
                       </select>
                     </div>
-                    <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
+                    <button className="bg-gradient-to-r" from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
                       Add Item
                     </button>
                   </div>
-                </div>""
-"""
-                {/* Inventory Grid */}""""
-                <div className=""grid grid-cols-1 lg:grid-cols-2 gap-6>"
-                  {filteredItems.map((item) => (""
-                    </div><div key={item.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
-                      <div className=flex items-start justify-between mb-4>
+                </div>
+ 
+                {/* Inventory Grid */}
+                <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6>
+                  {filteredItems.map((item) => (
+                    </div><div key={item.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                      <div className="flex" items-start justify-between mb-4>
                         </div><div>
-                          <h3 className=text-xl font-semibold text-white mb-2>{item.name}</h3>""
-                          <p className="text-gray-300 text-sm:capitalize>{item.category} • {item.type}</p>`
+                          <h3 className="text-xl" font-semibold text-white mb-2>{item.name}</h3>
+                          <p className="text-gray-300" text-sm:capitalize>{item.category} • {item.type}</p>`
                         </div>``
-                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(item.status)}`}>
+                        <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(item.status)}`}>
                           {item.status}
                         </span>
                       </div>
-""
-                      <div className=grid grid-cols-2 gap-4 mb-4>"
-                        </div><div className="bg-white/5 rounded-lg" p-4>"""
-                          <div className="text-sm:text-gray-400 mb-1>Available</div>
-                          <div className=text-2xl font-bold text-white >{item.available}</div>
-                          <div className=text-gray-300 text-sm>of {item.quantity},
+
+                      <div className="grid" grid-cols-2 gap-4 mb-4>
+                        </div><div className=" bg-white/5 rounded-lg" p-4>"
+                          <div className="text-sm:text-gray-400" mb-1>Available</div>
+                          <div className="text-2xl" font-bold text-white >{item.available}</div>
+                          <div className="text-gray-300" text-sm>of {item.quantity},
 {item.unit}</div>
-                        </div>""
-                        <div className="bg-white/5 rounded-lg" p-4>"
-                          </div><div className="text-sm:text-gray-400 mb-1>Total Value</div>
-                          <div className=text-2xl font-bold text-white >${item.totalValue.toLocaleString()}</div>
-                          <div className=text-gray-300 text-sm>${item.unitPrice} per {item.unit}</div>
                         </div>
-                      </div>""
-"""
-                      {/* AI Analysis */}""""
-                      <div className="mb-4">
-                        <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4>""
-                        <div className=""bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
-                          </div><div className=grid grid-cols-2 gap-4 text-sm>
-                            <div>"
-                              </div><div className=text-gray-400 mb-1>Demand Forecast</div>""
-                              <div className="text-white font-semibold>{item.aiAnalysis.demandForecast}</div>
+                        <div className="bg-white/5 rounded-lg p-4>
+                          </div><div className="text-sm:text-gray-400" mb-1>Total Value</div>
+                          <div className="text-2xl" font-bold text-white >${item.totalValue.toLocaleString()}</div>
+                          <div className="text-gray-300" text-sm>${item.unitPrice} per {item.unit}</div>
+                        </div>
+                      </div>
+                      {/* AI Analysis */}
+                      <div className=" mb-4">
+                        <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>
+                        <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg:p-4>
+                          </div><div className="grid" grid-cols-2 gap-4 text-sm>
+                            <div> 
+                              </div><div className="text-gray-400" mb-1>Demand Forecast</div>
+                              <div className="text-white" font-semibold>{item.aiAnalysis.demandForecast}</div>
                             </div>
                             <div>
-                              </div><div className=text-gray-400 mb-1 >Reorder Point</div>
-                              <div className=text-white font-semibold>{item.aiAnalysis.reorderPoint}</div>
+                              </div><div className="text-gray-400" mb-1 >Reorder Point</div>
+                              <div className="text-white" font-semibold>{item.aiAnalysis.reorderPoint}</div>
                             </div>
-                            <div>"
-                              </div><div className=text-gray-400 mb-1>Lead Time</div>""
-                              <div className="text-white font-semibold>{item.aiAnalysis.leadTime} days</div>
+                            <div> 
+                              </div><div className="text-gray-400" mb-1>Lead Time</div>
+                              <div className="text-white" font-semibold>{item.aiAnalysis.leadTime} days</div>
                             </div>
                             <div>`
-                              </div><div className=text-gray-400 mb-1 >Risk Level</div>``
-                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(item.aiAnalysis.riskLevel)}`}>
+                              </div><div className="text-gray-400" mb-1 >Risk Level</div>``
+                              <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getRiskColor(item.aiAnalysis.riskLevel)}`}>
                                 {item.aiAnalysis.riskLevel}
                               </span>
-                            </div>"
-                          </div>""
-                          <div className="mt-3">
-                            </div><div className=text-sm font-medium text-gray-400 mb-1>AI Confidence  {Math.round(item.aiAnalysis.confidence * 100)}%</div>""
-                            <div className=""text-xs text-gray-300>
+                            </div> 
+                          </div>
+                          <div className="mt-3>
+                            </div><div className="text-sm" font-medium text-gray-400 mb-1>AI Confidence  {Math.round(item.aiAnalysis.confidence * 100)}%</div>
+                            <div className="text-xs" text-gray-300>
                               {item.aiAnalysis.recommendations[0]}
                             </div>
                           </div>
                         </div>
-                      </div>""
-"""
+                      </div>
+ 
                       <div className="flex" space-x-2>
-                        <button className=flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>"
-                          Update Stock"
-                        </button>""
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300> 
+                          Update Stock
+                        </button>
+                        <button className="flex-1" border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg:font-medium transition-all duration-300>
                           View Details
                         </button>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>'
-            )}''
-            {/* Supply Chain Tab */},'''
+              </div>
+            )}'
+            {/* Supply Chain Tab */},
 {activeTab === 'supply-chain' && ("
-              <div className=space-y-8>"
-                {supplyChainNodes.map((node) => (""
+              <div className="space-y-8>" 
+                {supplyChainNodes.map((node) => (
                   </div><div key={node.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>
-                    <div className=flex items-start justify-between mb-6>"
-                      </div><div>""
-                        <h3 className="text-xl font-semibold text-white mb-2>{node.name}</h3>
-                        <p className=text-gray-300 text-sm capitalize >{node.type} • {node.location}</p>
+                    <div className="flex" items-start justify-between mb-6> 
+                      </div><div>
+                        <h3 className="text-xl" font-semibold text-white mb-2>{node.name}</h3>
+                        <p className="text-gray-300" text-sm capitalize >{node.type} • {node.location}</p>
                       </div>`
                       ``
                       }`}>
                         {node.status}
                       </span>
-                    </div>""
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-6" mb-6>"
-                      </div><div className=""bg-white/5 rounded-lg:p-4>
-                        <div className=text-sm text-gray-400 mb-1 >Performance</div>
-                        <div className=text-2xl font-bold text-white>{node.performance}%</div>"
-                      </div>""
-                      <div className="bg-white/5 rounded-lg" p-4>"
-                        </div><div className="text-sm:text-gray-400 mb-1>Reliability</div>
-                        <div className=text-2xl font-bold text-white >{node.reliability}%</div>
+                    </div>
+                    <div className="grid" grid-cols-1 md grid-cols-4 gap-6 mb-6>
+                      </div><div className="bg-white/5" rounded-lg:p-4>
+                        <div className="text-sm" text-gray-400 mb-1 >Performance</div>
+                        <div className="text-2xl" font-bold text-white>{node.performance}%</div> 
                       </div>
-                      <div className=bg-white/5 rounded-lg p-4>"
-                        </div><div className=text-sm text-gray-400 mb-1>Lead Time</div>""
-                        <div className="text-2xl font-bold text-white>{node.leadTime} days</div>
+                      <div className="bg-white/5 rounded-lg p-4>
+                        </div><div className="text-sm:text-gray-400" mb-1>Reliability</div>
+                        <div className="text-2xl" font-bold text-white >{node.reliability}%</div>
                       </div>
-                      <div className=bg-white/5 rounded-lg p-4 >
-                        </div><div className=text-sm text-gray-400 mb-1>Cost</div>
-                        <div className=text-2xl font-bold text-white>${node.cost.toLocaleString()}</div>
+                      <div className="bg-white/5" rounded-lg p-4>
+                        </div><div className="text-sm" text-gray-400 mb-1>Lead Time</div>
+                        <div className="text-2xl" font-bold text-white>{node.leadTime} days</div>
+                      </div>
+                      <div className="bg-white/5" rounded-lg p-4 >
+                        </div><div className="text-sm" text-gray-400 mb-1>Cost</div>
+                        <div className="text-2xl" font-bold text-white>${node.cost.toLocaleString()}</div>
                       </div>
                     </div>
-                    {/* AI Optimization */}""
-                    <div>""
-                      <h4 className="text-lg font-semibold text-white mb-3>AI Optimization</h4>
-                      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4 >
-                        </div><div className=grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
-                          <div>"
-                            </div><div className=text-gray-400 mb-1>Efficiency</div>""
-                            <div className=text-white font-semibold>{node.aiOptimization.efficiency}%</div>
+                    {/* AI Optimization */}
+                    <div>
+                      <h4 className="text-lg" font-semibold text-white mb-3>AI Optimization</h4>
+                      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg p-4 >
+                        </div><div className="grid" grid-cols-1 md grid-cols-3 gap-4 text-sm>
+                          <div> 
+                            </div><div className="text-gray-400" mb-1>Efficiency</div>
+                            <div className="text-white" font-semibold>{node.aiOptimization.efficiency}%</div>
                           </div>
                           <div>
-                            </div><div className=text-gray-400 mb-1 >Cost Savings</div">
-                            <div className=text-white font-semibold>${node.aiOptimization.costSavings.toLocaleString()}</div>
-                          </div>"
+                            </div><div className="text-gray-400" mb-1 >Cost Savings</div">
+                            <div className="text-white" font-semibold>${node.aiOptimization.costSavings.toLocaleString()}</div>
+                          </div> 
                           <div>
-                            </div><div className=text-gray-400 mb-1>Risk Reduction</div>""
-                            <div className="text-white font-semibold>{node.aiOptimization.riskReduction}%</div>
+                            </div><div className="text-gray-400" mb-1>Risk Reduction</div>
+                            <div className="text-white" font-semibold>{node.aiOptimization.riskReduction}%</div>
                           </div>
                         </div>
-                        <div className=mt-3>'
-                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>''
-                          <div className=text-xs text-gray-300>'''
+                        <div className="mt-3>"
+                          </div><div className="text-sm" font-medium text-gray-400 mb-1>Recommendations </div>'
+                          <div className="text-xs" text-gray-300>
                             {node.aiOptimization.recommendations.join(', ')}
                           </div>
                         </div>
@@ -555,73 +553,73 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     </div>
                   </div>
                 ))}
-              </div>'
-            )}""''
-            {/* Logistics Tab */},"'""''
-{activeTab === 'logistics' && (""""
-              <div className=""space-y-8>"
-                {logisticsOrders.map((order) => (""
-                  </div><div key={order.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
-                    <div className=flex items-start justify-between mb-6>
+              </div>
+            )}'
+            {/* Logistics Tab */}, ''
+{activeTab === 'logistics' && (
+              <div className="space-y-8>"
+                {logisticsOrders.map((order) => (
+                  </div><div key={order.id} className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10" >
+                    <div className="flex" items-start justify-between mb-6>
                       </div><div>
-                        <h3 className=text-xl font-semibold text-white mb-2>{order.orderNumber}</h3>""
-                        <p className="text-gray-300 text-sm>Customer: {order.customer}</p>
+                        <h3 className="text-xl" font-semibold text-white mb-2>{order.orderNumber}</h3>
+                        <p className="text-gray-300" text-sm>Customer: {order.customer}</p>
                       </div>
-                      <div className=text-right>`
+                      <div className="text-right>`"
                         ``
                         }`}>"
-                          {order.status}"
-                        </span>""`
-                        <div className="mt-2>``
-                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(order.priority)}`}>
+                          {order.status}
+                        </span>`
+                        <div className="mt-2>``"
+                          <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(order.priority)}`}>
                             {order.priority}
                           </span>
                         </div>
-                      </div>"
-                    </div>""
-                    <div className=""grid" grid-cols-1 md:grid-cols-3" gap-6 mb-6>"
-                      </div><div className="bg-white/5 rounded-lg" p-4>
-                        <div className=text-sm text-gray-400 mb-1>Total Value</div>""
-                        <div className="text-2xl font-bold text-white>${order.totalValue.toLocaleString()}</div>
-                        <div className=text-gray-300 text-sm >Shipping: ${order.shippingCost}</div>
                       </div>
-                      <div className=bg-white/5 rounded-lg p-4>"
-                        </div><div className=text-sm text-gray-400 mb-1>Items</div>""
-                        <div className="text-2xl font-bold text-white>{order.items.length}</div>
-                        <div className=text-gray-300 text-sm >Total Qty: {order.items.reduce((sum, item) => sum + item.quantity, 0)}</div>
+                    </div>
+                    <div className="grid  grid-cols-1 md:grid-cols-3" gap-6 mb-6>
+                      </div><div className=" bg-white/5 rounded-lg" p-4>
+                        <div className="text-sm" text-gray-400 mb-1>Total Value</div>
+                        <div className="text-2xl" font-bold text-white>${order.totalValue.toLocaleString()}</div>
+                        <div className="text-gray-300" text-sm >Shipping: ${order.shippingCost}</div>
                       </div>
-                      <div className=bg-white/5 rounded-lg p-4>"
-                        </div><div className=text-sm text-gray-400 mb-1>Estimated Delivery</div>""
-                        <div className="text-white font-semibold>{order.estimatedDelivery.toLocaleDateString()}</div>
-                        <div className=text-gray-300 text-sm >Order: {order.orderDate.toLocaleDateString()}</div>
+                      <div className="bg-white/5" rounded-lg p-4>
+                        </div><div className="text-sm" text-gray-400 mb-1>Items</div>
+                        <div className="text-2xl" font-bold text-white>{order.items.length}</div>
+                        <div className="text-gray-300" text-sm >Total Qty: {order.items.reduce((sum, item) => sum + item.quantity, 0)}</div>
+                      </div>
+                      <div className="bg-white/5" rounded-lg p-4>
+                        </div><div className="text-sm" text-gray-400 mb-1>Estimated Delivery</div>
+                        <div className="text-white" font-semibold>{order.estimatedDelivery.toLocaleDateString()}</div>
+                        <div className="text-gray-300" text-sm >Order: {order.orderDate.toLocaleDateString()}</div>
                       </div>
                     </div>
 
                     {/* AI Optimization */}"
                     <div>
-                      <h4 className=text-lg font-semibold text-white mb-3>AI Optimization</h4>""
-                      <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg" p-4>"
-                        </div><div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm>
+                      <h4 className="text-lg" font-semibold text-white mb-3>AI Optimization</h4>
+                      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 rounded-lg p-4>
+                        </div><div className="grid" grid-cols-1 md:grid-cols-2 gap-4 text-sm>
                           <div>
-                            </div><div className=text-gray-400 mb-1 >Optimal Route</div>
-                            <div className=text-white font-semibold>{order.aiOptimization.optimalRoute}</div>
-                          </div>
-                          <div>"
-                            </div><div className=text-gray-400 mb-1>Estimated Time</div>""
-                            <div className="text-white font-semibold>{order.aiOptimization.estimatedTime} days</div>
+                            </div><div className="text-gray-400" mb-1 >Optimal Route</div>
+                            <div className="text-white" font-semibold>{order.aiOptimization.optimalRoute}</div>
                           </div>
                           <div>
-                            </div><div className=text-gray-400 mb-1 >Cost Savings</div>
-                            <div className=text-white font-semibold>${order.aiOptimization.costSavings}</div>
+                            </div><div className="text-gray-400" mb-1>Estimated Time</div>
+                            <div className="text-white" font-semibold>{order.aiOptimization.estimatedTime} days</div>
                           </div>
-                          <div>"
-                            </div><div className=text-gray-400 mb-1>Carbon Footprint</div>""
-                            <div className="text-white font-semibold>{order.aiOptimization.carbonFootprint} kg CO2</div>
+                          <div>
+                            </div><div className="text-gray-400" mb-1 >Cost Savings</div>
+                            <div className="text-white" font-semibold>${order.aiOptimization.costSavings}</div>
+                          </div>
+                          <div>
+                            </div><div className="text-gray-400" mb-1>Carbon Footprint</div>
+                            <div className="text-white" font-semibold>{order.aiOptimization.carbonFootprint} kg CO2</div>
                           </div>
                         </div>
-                        <div className=mt-3>'
-                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>''
-                          <div className=text-xs text-gray-300>'''
+                        <div className="mt-3>"
+                          </div><div className="text-sm" font-medium text-gray-400 mb-1>Recommendations </div>'
+                          <div className="text-xs" text-gray-300>
                             {order.aiOptimization.recommendations.join(', ')}
                           </div>
                         </div>
@@ -629,88 +627,88 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
                     </div>
                   </div>
                 ))}
-              </div>'
-            )}""''
-            {/* Analytics Tab */},"'""''
-{activeTab === 'analytics' && analytics && (""""
-              <div className=""space-y-8>"
+              </div>
+            )}'
+            {/* Analytics Tab */},"''
+{activeTab === 'analytics' && analytics && (
+              <div className="space-y-8>" 
                 </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6" >
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div>""
-                    <div className="text-gray-400 text-sm>Total Items</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10> 
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalItems.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm>Total Items</div>
                   </div>
-                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
-                    </div><div className=text-3xl font-bold text-white mb-2>${analytics.totalValue.toLocaleString()}</div>
-                    <div className=text-gray-400 text-sm>Total Value</div>"
-                  </div>""
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className=text-3xl font-bold text-white mb-2 >{analytics.lowStockItems}</div>
-                    <div className=text-gray-400 text-sm>Low Stock Items</div>"
-                  </div>""
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>"
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div>
-                    <div className=text-gray-400 text-sm >Supply Chain Efficiency</div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
+                    </div><div className="text-3xl" font-bold text-white mb-2>${analytics.totalValue.toLocaleString()}</div>
+                    <div className="text-gray-400" text-sm>Total Value</div> 
+                  </div>
+                  <div className="bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    </div><div className="text-3xl" font-bold text-white mb-2 >{analytics.lowStockItems}</div>
+                    <div className="text-gray-400" text-sm>Low Stock Items</div> 
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.supplyChainEfficiency}%</div>
+                    <div className="text-gray-400" text-sm >Supply Chain Efficiency</div>
                   </div>
                 </div>
-""
-                <div className=grid grid-cols-1 md grid-cols-2 gap-6>"
-                  </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>"""
-                    <h3 className="text-xl font-semibold text-white mb-4>Performance Metrics</h3>
-                    <div className=space-y-4>"
-                      </div><div>""
-                        <div className="flex justify-between text-sm" mb-1>""
-                          <span className="text-gray-400">AI Accuracy</span>""
-                          <span className=text-white>{analytics.aiAccuracy}%</span>
+
+                <div className="grid" grid-cols-1 md grid-cols-2 gap-6>
+                  </div><div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>"
+                    <h3 className="text-xl" font-semibold text-white mb-4>Performance Metrics</h3>
+                    <div className="space-y-4>"
+                      </div><div>
+                        <div className=" flex justify-between text-sm" mb-1>
+                          <span className=" text-gray-400>AI Accuracy</span>
+                          <span className="text-white>{analytics.aiAccuracy}%</span>"
                         </div>
-                        <div className=w-full bg-gray-700 rounded-full h-2 >
-                          </div">
+                        <div className="w-full" bg-gray-700 rounded-full h-2 >
+                          </div >
                           ></div>
                         </div>
-                      </div>"
-                      <div>"
-                        </div><div className="flex justify-between text-sm" mb-1>"""
-                          <span className="text-gray-400>Average Lead Time</span>
-                          <span className=text-white>{analytics.averageLeadTime} days</span>
+                      </div>
+                      <div>
+                        </div><div className=" flex justify-between text-sm" mb-1>
+                          <span className="text-gray-400>Average" Lead Time</span>
+                          <span className="text-white>{analytics.averageLeadTime}" days</span>
                         </div>
-                        <div className=w-full bg-gray-700 rounded-full h-2>
+                        <div className="w-full" bg-gray-700 rounded-full h-2>
                           </div>
                           ></div>
                         </div>
                       </div>
-                    </div>"
-                  </div>""
-                  <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    <h3 className=text-xl font-semibold text-white mb-4 >Top Categories</h3>""
-                    <div className="space-y-2">"
-                      {analytics.topCategories.map((category, index) => (""
-                        </div><div key={index} className="flex justify-between" items-center>""
-                          <span className="text-gray-300>{category}</span>
-                          <div className=w-20 bg-gray-700 rounded-full h-2 >
+                    </div>
+                  </div>
+                  <div className="bg-white/10"  backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    <h3 className="text-xl" font-semibold text-white mb-4 >Top Categories</h3>
+                    <div className="space-y-2>
+                      {analytics.topCategories.map((category, index) => (
+                        </div><div key={index} className=" flex justify-between" items-center>
+                          <span className="text-gray-300>{category}</span>"
+                          <div className="w-20" bg-gray-700 rounded-full h-2 >
                             </div>
                             ></div>
                           </div>
                         </div>
                       ))}
                     </div>
-                  </div>"
-                </div>""
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>"""
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>
-                  <div className=space-y-4>""
-                    {analytics.aiInsights.map((insight) => (""
-                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg" p-4>""
-                        <div className="flex items-start justify-between" mb-2>"""
-                          <h4 className="text-white font-semibold>{insight.title}</h4>`
+                  </div>
+                </div>
+                <div className=" bg-white/10 backdrop-blur-sm:rounded-xl p-6 border" border-white/10>"
+                  <h3 className="text-xl" font-semibold text-white mb-6>AI Insights</h3>
+                  <div className="space-y-4>"
+                    {analytics.aiInsights.map((insight) => (
+                      </div><div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg" p-4>
+                        <div className=" flex items-start justify-between" mb-2>
+                          <h4 className="text-white" font-semibold>{insight.title}</h4>`
                           ``
                           }`}>
                             {insight.impact}
                           </span>
                         </div>
-                        <p className=text-gray-300 text-sm mb-3>{insight.description}</p>
-                        <div className=text-xs text-gray-400 mb-2>
-                          Confidence  {Math.round(insight.confidence * 100)}%"'
-                        </div>""''
-                        <div className="text-xs text-gray-400>'''
+                        <p className="text-gray-300" text-sm mb-3>{insight.description}</p>
+                        <div className="text-xs" text-gray-400 mb-2>
+                          Confidence  {Math.round(insight.confidence * 100)}%
+                        </div>'
+                        <div className="text-xs" text-gray-400>
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
                         </div>
                       </div>
@@ -722,22 +720,22 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
           </>
         )}
       </div>
-      {/* CTA Section */}""
-      <div className=bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16 >"
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>""
-          <div className="text-center">
-            <h2 className=text-3xl font-bold text-white mb-4>
-              Ready to Optimize Your Supply Chain?"
-            </h2>""
-            <p className=""text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
+      {/* CTA Section */}
+      <div className="bg-gradient-to-r" from-purple-600/20 to-pink-600/20 mt-16 >
+        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-36>
+          <div className=" text-center">
+            <h2 className="text-3xl" font-bold text-white mb-4>
+              Ready to Optimize Your Supply Chain? 
+            </h2>
+            <p className="text-xl"" text-gray-300 mb-8 max-w-2xl:mx-auto>
               Start your inventory and supply chain optimization journey with our AI-powered "
-              management system for maximum efficiency and cost savings."
-            </p>""
-            <div className="flex flex-col sm flex-row gap-4" justify-center>"
-              <Link href=/ai-service-matcher className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Optimization""
-              </Link href=/ai-service-matcher className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>""
-              <Link href=/talent-directory"" className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More""
-              </Link href=/talent-directory  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
+              management system for maximum efficiency and cost savings.
+            </p>
+            <div className=" flex flex-col sm flex-row gap-4" justify-center>
+              <Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Start Optimization
+              </Link href=/ai-service-matcher className="bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105" ></Link>
+              <Link href=/talent-directory className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
+              </Link href=/talent-directory  className="border" border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>
@@ -748,7 +746,7 @@ const AIPoweredInventorySupplyChainPage: NextPage = () => {
 
   </div> 
   </div>
-;""
-};"""'
-""""''`
+;
+};"
+''`
 export default AIPoweredInventorySupplyChainPage "))))))))))))))))))))"'"'`

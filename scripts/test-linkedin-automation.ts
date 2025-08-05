@@ -14,7 +14,7 @@ function testEnvironment() {
   const requiredFiles = [
     'scripts/linkedin-automation.ts',
     'automation/linkedin-advertising-factory.js',
-    'automation/launch-linkedin-advertising.js'
+    'automation/launch-linkedin-advertising.js
   ];
   
   for (const file of requiredFiles) {
@@ -33,7 +33,7 @@ function testLinkedInAutomation() {
   try {
     const result = execSync('npx ts-node scripts/linkedin-automation.ts --help', { 
       encoding: 'utf8',
-      stdio: 'pipe'
+      stdio: 'pipe
     });
     console.log('✅ LinkedIn automation script is executable');
     console.log('📝 Help output:', result.substring(0, 200) + '...');

@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next''''
-import { createClient } from '@supabase/supabase-js''
-''
-const supabase = createClient('''
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co','''
+import { NextApiRequest, NextApiResponse } from 'next
+import { createClient } from '@supabase/supabase-js'
+'
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
 );
 
@@ -18,10 +18,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { data: { user } error: userError } = await supabase.auth.getUser(
     return res.status(200).json({
       success: true,
-      environment: {'
-        hasSupabaseUrl: !!supabaseUrl,''
-        hasSupabaseKey: !!supabaseKey,'''
-        supabaseUrl: supabaseUrl ? 'Set' : 'Not set','''
+      environment: {
+        hasSupabaseUrl: !!supabaseUrl,'
+        hasSupabaseKey: !!supabaseKey,
+        supabaseUrl: supabaseUrl ? 'Set' : 'Not set',
         supabaseKey: supabaseKey ? 'Set' : 'Not set'}
       session: {
         exists: !!session,
@@ -31,8 +31,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         id: user?.id || null,
         email: user?.email || null,
         error: userError?.message || null}}
-  } catch (error) {'
-    return res.status(500).json({''
-      success: false,'''
-      error: error instanceof Error ? error.message : 'Unknown error'}}''
-} ))))';'
+  } catch (error) {
+    return res.status(500).json({'
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown error'}}'
+} ))))';

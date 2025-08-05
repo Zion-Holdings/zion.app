@@ -1,102 +1,82 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to completely reconstruct problematic files
-function fixUltimateRemainingErrors(filePath) {
+// Function to fix ultimate remaining errors
+function fixUltimateErrors(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
-    
-    // Check if the file has parsing errors
-    if (content.includes('Declaration or statement expected') || content.includes('Identifier expected') || content.includes('\')\' expected') || content.includes('Unterminated string literal') || content.includes('Property or signature expected')) {
-      // Completely reconstruct the file from scratch
-      const fileName = path.basename(filePath, '.tsx');
-      const componentName = fileName
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join('');
+    let modified = false;
 
-      // Create a basic React component structure
-      const newContent = `import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { Home, Search, User } from 'lucide-react';
-import ModernLayout from '../../components/layout/ModernLayout';
+    // Fix unterminated string constants
+    const fixes = [
+      // Fix unterminated string constants with triple quotes
+      { pattern: /'''/g, replacement: '' },
+      // Fix unterminated string constants with double quotes
+      { pattern: /""/g, replacement: '' },
+      // Fix malformed JSX attributes
+      { pattern: /className\s*=\s*([^"]*)\s*"([^"]*)"/g, replacement: 'className="$1 $2"' },
+      // Fix malformed JSX closing tags
+      { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: '<$1>$2</$1>' },
+      // Fix malformed quotes in attributes
+      { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: '$1="$2 $3"' },
+      // Fix malformed className with missing spaces
+      { pattern: /className="([^"]*):([^"]*)"/g, replacement: 'className="$1:$2"' },
+      // Fix malformed JSX structure
+      { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: '<$1>$2' },
+      // Fix malformed closing tags
+      { pattern: /"([^"]*)\s*<\/([^>]+)>/g, replacement: '$1</$2>' },
+      // Fix malformed array syntax
+      { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
+      // Fix malformed useEffect dependencies
+      { pattern: /(\}\s*\[[^\]]*\]\))/g, replacement: '$1' },
+      // Fix malformed JSX fragments
+      { pattern: /<>\s*"([^"]*)/g, replacement: '<>$1' },
+      // Fix malformed closing fragments
+      { pattern: /"([^"]*)\s*<>/g, replacement: '$1</>' },
+      // Fix malformed semicolons
+      { pattern: /;\s*'$/gm, replacement: ';' },
+      // Fix malformed quotes
+      { pattern: /'\s*$/gm, replacement: '' },
+      // Fix malformed JSX attributes with missing quotes
+      { pattern: /className\s*=\s*([^"\s]+)/g, replacement: 'className="$1"' },
+      // Fix malformed JSX attributes with missing spaces
+      { pattern: /className=([^"\s]+)/g, replacement: 'className="$1"' },
+    ];
 
-const ${componentName}: NextPage = () => {
-  return (
-    <ModernLayout>
-      <div className="relative z-10 container-responsive py-8" role="main">
-        <Head>
-          <title>${componentName} - Zion</title>
-          <meta name="description" content="${componentName} page for Zion marketplace." />
-        </Head>
-        
-        {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
-        </div>
+    fixes.forEach(fix => {
+      const newContent = content.replace(fix.pattern, fix.replacement);
+      if (newContent !== content) {
+        content = newContent;
+        modified = true;
+      }
+    });
 
-        {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white mb-8">
-              ${componentName}
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Welcome to the ${componentName} page.
-            </p>
-          </div>
-        </div>
-      </div>
-    </ModernLayout>
-  );
-};
-
-export default ${componentName};`;
-
-      fs.writeFileSync(filePath, newContent, 'utf8');
-      console.log(`Reconstructed: ${filePath}`);
-      return true;
+    if (modified) {
+      fs.writeFileSync(filePath, content, 'utf8');
+      console.log(`Fixed ultimate errors: ${filePath}`);
     }
-
-    return false;
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
-    return false;
   }
 }
 
-// Function to recursively find TypeScript files
-function findTsxFiles(dir) {
-  const files = [];
-  const items = fs.readdirSync(dir);
+// Function to recursively find and fix TypeScript/JSX files
+function processDirectory(dir) {
+  const files = fs.readdirSync(dir);
   
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
-      files.push(...findTsxFiles(fullPath));
-    } else if (item.endsWith('.tsx')) {
-      files.push(fullPath);
+    if (stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
+      processDirectory(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+      fixUltimateErrors(filePath);
     }
-  }
-  
-  return files;
+  });
 }
 
-// Main execution
-const pagesDir = path.join(__dirname, 'pages');
-const files = findTsxFiles(pagesDir);
-
-console.log(`Found ${files.length} TypeScript files to process...`);
-
-let fixedCount = 0;
-for (const file of files) {
-  if (fixUltimateRemainingErrors(file)) {
-    fixedCount++;
-  }
-}
-
-console.log(`Fixed ${fixedCount} files.`); 
+// Start processing from the current directory
+console.log('Fixing ultimate remaining errors...');
+processDirectory('.');
+console.log('Done!'); 
