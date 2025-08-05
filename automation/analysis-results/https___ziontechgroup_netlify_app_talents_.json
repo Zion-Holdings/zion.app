@@ -1,11 +1,15 @@
 {
   "url": "https://ziontechgroup.netlify.app/talents/",
-  "timestamp": "2025-08-05T00:10:59.191Z",
+  "timestamp": "2025-08-05T12:03:39.594Z",
   "pageInfo": {
     "title": "AI Talents - Zion",
     "description": "Find AI experts and technology professionals on Zion's marketplace.",
     "keywords": "",
     "headings": [
+      {
+        "level": "h1",
+        "text": "Bolt.new"
+      },
       {
         "level": "h1",
         "text": "AI Talents"
@@ -23,7 +27,7 @@
         "text": "AI Matcher"
       }
     ],
-    "content": "ZZionAI MarketplaceMarketplaceToolsBusinessSupportBlogAboutContactSearchKProfileLoginGet StartedAI TalentsConnect with verified AI experts, developers, and technology professionals from around the world.Talent DirectoryBrowse verified professionalsSkill VerificationVerified skills and certificationsAI MatcherFind the perfect match{\"props\":{\"pageProps\":{}},\"page\":\"/talents\",\"query\":{},\"buildId\":\"NH7KKG2DQU0uJ3UUKzRP2\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Bolt.newMainAI ServicesBusinessCommunicationToolsProfileSettingsLogoutAI TalentsConnect with verified AI experts, developers, and technology professionals from around the world.Talent DirectoryBrowse verified professionalsSkill VerificationVerified skills and certificationsAI MatcherFind the perfect match{\"props\":{\"pageProps\":{}},\"page\":\"/talents\",\"query\":{},\"buildId\":\"oqWwP7nMIGEF5UZ7YoKiL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,7 +48,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-7e468c761a8cd1ee.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-222c6a65c788caad.js",
         "type": "text/javascript"
       },
       {
@@ -52,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -64,35 +68,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/profile-e801879bab01539a.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/89091-d54e94d86c8ad8b9.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-48afa93dcd5ca0ff.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-26a5531c9d4e9966.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/54417-1368fa5a734b92b2.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/notifications-d1acac947eb34b03.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-25485d3a311367ed.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talent-directory-2a97a276780c5abe.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-826bdea3a4372f64.js",
         "type": "text/javascript"
       },
       {
@@ -100,23 +76,23 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-826bdea3a4372f64.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talent-directory-2a97a276780c5abe.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/cd99be8369d815c8.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/8f2a0ca9fe769e61.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 494,
-    "headingCount": 4,
+    "contentLength": 468,
+    "headingCount": 5,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 19,
+    "scriptCount": 12,
     "stylesheetCount": 1
   }
 }

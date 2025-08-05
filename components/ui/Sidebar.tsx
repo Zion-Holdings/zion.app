@@ -106,7 +106,20 @@ import {
   Bot,
   Wifi,
   Building,
-  Workflow
+  Workflow,
+  Store,
+  Briefcase,
+  PenTool,
+  Handshake,
+  Monitor,
+  CheckSquare,
+  Terminal,
+  TestTube,
+  Activity,
+  Gauge,
+  LifeBuoy,
+  Signal,
+  DollarSign
 } from 'lucide-react'
 
 interface SidebarItem {

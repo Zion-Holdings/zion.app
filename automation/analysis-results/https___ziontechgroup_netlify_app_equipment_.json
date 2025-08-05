@@ -1,11 +1,15 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-05T00:11:00.559Z",
+  "timestamp": "2025-08-05T12:03:41.094Z",
   "pageInfo": {
     "title": "Equipment - Zion",
     "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
     "keywords": "",
     "headings": [
+      {
+        "level": "h1",
+        "text": "Bolt.new"
+      },
       {
         "level": "h1",
         "text": "High-Performance Equipment"
@@ -23,7 +27,7 @@
         "text": "Network Equipment"
       }
     ],
-    "content": "ZZionAI MarketplaceMarketplaceToolsBusinessSupportBlogAboutContactSearchKProfileLoginGet StartedHigh-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"NH7KKG2DQU0uJ3UUKzRP2\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Bolt.newMainAI ServicesBusinessCommunicationToolsProfileSettingsLogoutHigh-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"oqWwP7nMIGEF5UZ7YoKiL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,7 +48,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-7e468c761a8cd1ee.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-222c6a65c788caad.js",
         "type": "text/javascript"
       },
       {
@@ -52,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/NH7KKG2DQU0uJ3UUKzRP2/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/oqWwP7nMIGEF5UZ7YoKiL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -64,59 +68,31 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/profile-e801879bab01539a.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/54417-1368fa5a734b92b2.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/notifications-d1acac947eb34b03.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/89091-d54e94d86c8ad8b9.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-26a5531c9d4e9966.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-48afa93dcd5ca0ff.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-25485d3a311367ed.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-024049e453dc2f35.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-8ab3bb33ccb35e26.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40aad1ed57b2c680.js",
         "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-8ab3bb33ccb35e26.js",
+        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/cd99be8369d815c8.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/8f2a0ca9fe769e61.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 502,
-    "headingCount": 4,
+    "contentLength": 476,
+    "headingCount": 5,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 19,
+    "scriptCount": 12,
     "stylesheetCount": 1
   }
 }

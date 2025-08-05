@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-08-05T00:11:48.362Z",
+  "timestamp": "2025-08-05T12:03:57.367Z",
   "summary": {
-    "totalPages": 18,
-    "missingPages": 19,
-    "contentGaps": 18,
+    "totalPages": 11,
+    "missingPages": 15,
+    "contentGaps": 11,
     "errors": 0
   },
   "priorities": {
@@ -97,34 +97,6 @@
         "type": "expected-page",
         "priority": "high",
         "description": "Missing expected page: /admin"
-      },
-      {
-        "url": "https://ziontechgroup.netlify.app/search/",
-        "type": "broken-link",
-        "priority": "high",
-        "description": "Broken link: Request failed with status code 404",
-        "error": "Request failed with status code 404"
-      },
-      {
-        "url": "https://ziontechgroup.netlify.app/create/",
-        "type": "broken-link",
-        "priority": "high",
-        "description": "Broken link: Request failed with status code 404",
-        "error": "Request failed with status code 404"
-      },
-      {
-        "url": "https://ziontechgroup.netlify.app/messages/",
-        "type": "broken-link",
-        "priority": "high",
-        "description": "Broken link: Request failed with status code 404",
-        "error": "Request failed with status code 404"
-      },
-      {
-        "url": "https://ziontechgroup.netlify.app/auth/",
-        "type": "broken-link",
-        "priority": "high",
-        "description": "Broken link: Request failed with status code 404",
-        "error": "Request failed with status code 404"
       }
     ],
     "medium": [],
@@ -225,34 +197,6 @@
           "type": "expected-page",
           "priority": "high",
           "description": "Missing expected page: /admin"
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/search/",
-          "type": "broken-link",
-          "priority": "high",
-          "description": "Broken link: Request failed with status code 404",
-          "error": "Request failed with status code 404"
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/create/",
-          "type": "broken-link",
-          "priority": "high",
-          "description": "Broken link: Request failed with status code 404",
-          "error": "Request failed with status code 404"
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/messages/",
-          "type": "broken-link",
-          "priority": "high",
-          "description": "Broken link: Request failed with status code 404",
-          "error": "Request failed with status code 404"
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/auth/",
-          "type": "broken-link",
-          "priority": "high",
-          "description": "Broken link: Request failed with status code 404",
-          "error": "Request failed with status code 404"
         }
       ]
     },
@@ -272,97 +216,17 @@
           ]
         },
         {
-          "url": "https://ziontechgroup.netlify.app/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/blog/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/about/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/contact/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/notifications/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/profile/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            }
-          ]
-        },
-        {
-          "url": "https://ziontechgroup.netlify.app/auth/login/",
-          "gaps": [
-            {
-              "type": "missing-images",
-              "severity": "low",
-              "description": "Page could benefit from visual content"
-            }
-          ]
-        },
-        {
           "url": "https://ziontechgroup.netlify.app/auth/signup/",
           "gaps": [
             {
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
             }
           ]
         },
@@ -408,6 +272,11 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
             }
           ]
         },
