@@ -328,7 +328,7 @@ const MobileResponsivePage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -356,7 +356,7 @@ const MobileResponsivePage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -441,7 +441,7 @@ const MobileResponsivePage: NextPage = () => {
         {/* Responsive Breakpoints */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6">Responsive Breakpoints</h2>
-          <div className="grid grid-cols-1 md grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3" gap-6">
             {responsiveBreakpoints.map((breakpoint, index) => (
               <div key={index} className="bg-white/5 rounded-lg p-6">
                 <div className="flex items-center justify-between mb-4">

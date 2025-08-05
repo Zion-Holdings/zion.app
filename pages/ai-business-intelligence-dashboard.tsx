@@ -267,7 +267,7 @@ export functionality
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
             <div className="flex justify-between items-center">
               <div>
                 <h1 className="text-4xl md text-5xl font-bold text-white mb-2">
@@ -300,7 +300,7 @@ export functionality
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (

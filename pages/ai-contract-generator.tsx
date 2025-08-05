@@ -116,7 +116,7 @@ const ContractGenerator = () => {
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
             <div className="text-center">
               <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Contract Generator
@@ -129,7 +129,7 @@ const ContractGenerator = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">

@@ -486,7 +486,7 @@ const ComplianceGovernancePage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Compliance & Governance Center</h1>
@@ -504,7 +504,7 @@ const ComplianceGovernancePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Key Metrics Overview */}
         {analytics && (
           <div className="grid grid-cols-2 md grid-cols-4 lg grid-cols-7 gap-4 mb-8">
@@ -716,7 +716,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3" gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Last Assessment</span>
                         <p className="text-white font-medium">{formatDate(framework.lastAssessment)}</p>
@@ -886,7 +886,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3" gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Owner</span>
                         <p className="text-white font-medium">{risk.owner}</p>
@@ -938,7 +938,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3" gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Type</span>
                         <p className="text-white font-medium capitalize">{action.type}</p>

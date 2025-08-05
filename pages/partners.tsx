@@ -148,7 +148,7 @@ const Partners: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -179,7 +179,7 @@ const Partners: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
@@ -276,7 +276,7 @@ const Partners: NextPage = () => {
               that share our vision of democratizing access to technology and innovation.
             </p>
             
-            <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3" gap-6 mb-8">
               <div className="text-center">
                 <div className="text-3xl mb-4">📋</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Submit Application</h3>
@@ -387,7 +387,7 @@ const Partners: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>

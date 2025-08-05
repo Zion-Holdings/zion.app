@@ -17,7 +17,7 @@ const DevopsAutomationPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -52,7 +52,7 @@ const DevopsAutomationPage: NextPage = () => {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44 lg py-32">
             <div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -78,7 +78,7 @@ const DevopsAutomationPage: NextPage = () => {
         </div>
         
         {/* Content Section */}
-        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8" py-36">
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               <p className="mb-6">Discover top professionals and services in the devops-automation space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p>
@@ -103,7 +103,7 @@ const DevopsAutomationPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>

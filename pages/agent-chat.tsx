@@ -318,7 +318,7 @@ const AgentChat: NextPage = () => {
             >
               <div className="glass-dark border border-neon-blue/30 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold text-high-contrast mb-4">Quick Actions</h3>
-                <div className="grid grid-cols-1 md grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3" gap-4">
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

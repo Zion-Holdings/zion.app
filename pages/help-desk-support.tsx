@@ -269,7 +269,7 @@ const HelpDeskSupport: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
@@ -288,7 +288,7 @@ const HelpDeskSupport: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
             Help Desk & Support Ticket System

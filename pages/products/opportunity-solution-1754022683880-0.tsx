@@ -8,7 +8,7 @@ const opportunity_solution_1754022683880_0Page: NextPage = () => {
   return (
     <ModernLayout>
       <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             AI-Powered business opportunity Solution
@@ -18,7 +18,7 @@ const opportunity_solution_1754022683880_0Page: NextPage = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3" gap-8 mt-12">
           
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -143,7 +143,7 @@ const opportunity_solution_1754022683880_0Page: NextPage = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Pricing Plans
           </h2>
-          <div className="grid grid-cols-1 md grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
             
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">

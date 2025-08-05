@@ -27,7 +27,7 @@ const TalentProfile: NextPage = () => {,
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -57,7 +57,7 @@ Join: Zion
 ,
       {/* Hero Section */}
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-32">,
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-32">,
           {/* Profile Hero Card */}
           <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl border border-white/10 p-8 mb-12">
             <div className="flex flex-col lg  flex-row items-start lg items-center  gap-8">,
@@ -507,7 +507,7 @@ Join: Zion
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-32">;
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-32">;
           <div className="text-center text-gray-400">;
             <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Marketplace</p>
           </div>

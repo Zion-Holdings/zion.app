@@ -15,7 +15,7 @@ const DevopsToolsPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-white">
@@ -30,7 +30,7 @@ const DevopsToolsPage: NextPage = () => {
 
       <main className="flex-1">
         <div className="relative overflow-hidden">
-          <div className="relative max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-44 lg py-32">
             <div className="text-center">
               <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -44,7 +44,7 @@ const DevopsToolsPage: NextPage = () => {
           </div>
         </div>
         
-        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8" py-36">
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               <p className="mb-6">Discover top professionals and services in the devops-tools space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p>

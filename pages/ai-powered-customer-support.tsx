@@ -39,7 +39,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -66,7 +66,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Hero Section */}
       <section className="py-40">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
               AI-Powered Customer Support
@@ -103,7 +103,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Support Dashboard */}
       <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-12">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Support Dashboard
@@ -147,7 +147,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
                 {chatbot.isActive ? 'Active' : 'Inactive'}
               </div>
             </div>
-            <div className="grid grid-cols-1 md grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3" gap-6">
               <div className="bg-white/5 rounded-lg p-4">
                 <div className="text-2xl font-bold text-white mb-2">{chatbot.conversations.toLocaleString()}</div>
                 <div className="text-gray-400 text-sm">Conversations Today</div>
@@ -167,7 +167,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Features */}
       <section className="py-40">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Advanced Support Features
@@ -215,7 +215,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Use Cases */}
       <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Support Applications
@@ -225,7 +225,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10">
               <div className="text-3xl mb-4">🛒</div>
               <h3 className="text-lg font-semibold text-white mb-2">E-commerce</h3>
@@ -258,7 +258,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* CTA Section */}
       <section className="py-40 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8" text-center">
           <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
             Ready to Transform Support?
           </h2>
@@ -278,7 +278,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-32">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-bold mb-4">

@@ -313,7 +313,7 @@ const AIHRManagement: React.FC = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-white font-bold text-xl">
@@ -333,7 +333,7 @@ const AIHRManagement: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -784,7 +784,7 @@ const AIHRManagement: React.FC = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 backdrop-blur-sm border-t border-white/10 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>

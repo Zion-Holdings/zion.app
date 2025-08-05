@@ -254,7 +254,7 @@ const PaymentProcessingPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -285,7 +285,7 @@ const PaymentProcessingPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -298,7 +298,7 @@ const PaymentProcessingPage: NextPage = () => {
         </div>
 
         {/* Balance Cards */}
-        <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3" gap-6 mb-8">
           <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -369,7 +369,7 @@ const PaymentProcessingPage: NextPage = () => {
               </div>
 
               {/* Quick Payment Options */}
-              <div className="grid grid-cols-1 md grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3" gap-6">
                 <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-4">👨‍💻</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Service Providers</h4>
@@ -487,7 +487,7 @@ const PaymentProcessingPage: NextPage = () => {
           {selectedTab === 'analytics' && (
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Payment Analytics</h3>
-              <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3" gap-6 mb-8">
                 <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
                   <h4 className="text-lg font-semibold text-white mb-2">Total Payments</h4>
                   <p className="text-3xl font-bold text-green-400">
@@ -533,7 +533,7 @@ const PaymentProcessingPage: NextPage = () => {
         </div>
 
         {/* Security Features */}
-        <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3" gap-8 mb-8">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
             <div className="text-4xl mb-4">🔒</div>
             <h3 className="text-xl font-bold text-white mb-3">Bank-Level Security</h3>

@@ -224,7 +224,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -257,7 +257,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -632,7 +632,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Cryptography & Secure Communication | Zion Tech Group

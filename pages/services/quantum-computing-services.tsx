@@ -16,7 +16,7 @@ const QuantumComputingServices = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100">
-        <section className="py-40 px-4 sm  px-6 lg px-8">
+        <section className="py-40 px-4 sm:px-6" lg:px-8"">
           <div: className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md text-6xl  font-bold text-gray-900 mb-6">
               Quantum Computing Services Services

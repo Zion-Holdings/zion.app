@@ -236,7 +236,7 @@ const AIRecommendationEngine: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -257,7 +257,7 @@ const AIRecommendationEngine: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -466,7 +466,7 @@ const AIRecommendationEngine: NextPage = () => {
         )}
 
         {/* Features Section */}
-        <div className="mt-16 grid grid-cols-1 md grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3" gap-8">
           <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
             <div className="text-3xl mb-4">🧠</div>
             <h3 className="text-xl font-semibold text-white mb-2">Intelligent Matching</h3>

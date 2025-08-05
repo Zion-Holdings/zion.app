@@ -448,7 +448,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
@@ -502,7 +502,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -821,7 +821,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>

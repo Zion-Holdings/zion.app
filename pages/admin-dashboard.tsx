@@ -193,7 +193,7 @@ export default function AdminDashboard() {
       
       <div className="min-h-screen bg-gray-100">
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
             <div className="flex justify-between items-center py-6">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">Real-Time Automation Dashboard</h1>
@@ -291,7 +291,7 @@ export default function AdminDashboard() {
               {/* Overview Tab */}
               {activeTab === 'overview' && (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-1 md grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3" gap-6">
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <h3 className="text-lg font-semibold text-blue-900 mb-2">Active Agents</h3>
                       <div className="text-3xl font-bold text-blue-600">{dashboardData?.agents.filter(a => a.status === 'active').length || 0}</div>
@@ -346,57 +346,13 @@ export default function AdminDashboard() {
               {/* Agents Tab */}
               {activeTab === 'agents' && (
                 <div>
-                  <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Agent</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PID</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Activity</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Performance</th>
-                        </tr>
-                      </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
-                        {dashboardData?.agents.map((agent) => (
-                          <tr key={agent.agentId} className="hover bg-gray-50">
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm font-medium text-gray-900">{agent.agentId}</div>
-                              <div className="text-sm text-gray-500">{agent.type}</div>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.type}</td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(agent.status)}`}>
-                                {agent.status}
-                              </span>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.pid || 'N/A'}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {new Date(agent.lastActivity).toLocaleString()}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                              {agent.performance ? (
-                                <div>
-                                  <div>Tasks: {agent.performance.tasksCompleted || 0}</div>
-                                  <div>Success: {agent.performance.successRate || 0}%</div>
-                                </div>
-                              ) : (
-                                'N/A'
-                              )}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  
-                  {(!dashboardData?.agents || dashboardData.agents.length === 0) && (
-                    <div className="text-center py-8">
-                      <div className="text-gray-500">No agents found</div>
-                      <p className="text-sm text-gray-400 mt-2">Agents will appear here when they are created and running</p>
-                    </div>
-                  )}
+                  <AgentMonitor 
+                    agents={dashboardData?.agents || []}
+                    onAgentClick={(agent) => {
+                      console.log('Agent clicked:', agent);
+                      // TODO: Implement agent detail modal
+                    }}
+                  />
                 </div>
               )}
 
@@ -411,7 +367,7 @@ export default function AdminDashboard() {
                           {orch.systemHealth}
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 md grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3" gap-4">
                         <div>
                           <div className="text-sm font-medium text-gray-600">Active Agents</div>
                           <div className="text-2xl font-bold text-gray-900">{orch.activeAgents}</div>

@@ -213,7 +213,7 @@ const InvoiceBillingPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -234,7 +234,7 @@ const InvoiceBillingPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
@@ -277,7 +277,7 @@ const InvoiceBillingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -558,7 +558,7 @@ const InvoiceBillingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Streamline Your Billing
@@ -581,7 +581,7 @@ const InvoiceBillingPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>

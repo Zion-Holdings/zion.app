@@ -164,7 +164,7 @@ return: (
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 IT Talents
@@ -178,7 +178,7 @@ return: (
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-6">
             <div className="flex flex-col lg flex-row  gap-4 items-center justify-between">,
               {/* Search */}
               <div className="w-full lg  w-96">
@@ -226,7 +226,7 @@ return: (
         </div>
 
         {/* Results: */}
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-8">,
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">

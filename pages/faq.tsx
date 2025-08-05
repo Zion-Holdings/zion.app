@@ -160,7 +160,7 @@ const FAQ: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -191,7 +191,7 @@ const FAQ: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -203,7 +203,7 @@ const FAQ: NextPage = () => {
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-2 md grid-cols-3 lg grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3" lg grid-cols-6 gap-4 mb-12">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -256,7 +256,7 @@ const FAQ: NextPage = () => {
         </div>
 
         {/* Additional Help */}
-        <div className="mt-16 grid grid-cols-1 md grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3" gap-8">
           <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
             <div className="text-3xl mb-4">📧</div>
             <h3 className="text-xl font-semibold text-white mb-2">Still Need Help?</h3>
@@ -294,7 +294,7 @@ const FAQ: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>

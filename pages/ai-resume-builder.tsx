@@ -284,7 +284,7 @@ const ResumeBuilder = () => {
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-6">
             <div className="text-center">
               <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Resume Builder
@@ -297,7 +297,7 @@ const ResumeBuilder = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
@@ -513,7 +513,7 @@ const ResumeBuilder = () => {
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md:grid-cols-3" gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Start Date
@@ -654,7 +654,7 @@ const ResumeBuilder = () => {
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md:grid-cols-3" gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Field of Study
@@ -750,7 +750,7 @@ const ResumeBuilder = () => {
                             )}
                           </div>
 
-                          <div className="grid grid-cols-1 md grid-cols-3 gap-4">
+                          <div className="grid grid-cols-1 md:grid-cols-3" gap-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Skill Name *

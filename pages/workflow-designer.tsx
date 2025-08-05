@@ -632,7 +632,7 @@ id: '1',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Workflow Designer & Process Builder</h1>
@@ -650,7 +650,7 @@ id: '1',
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
         {/* Workflow Selection */}
         <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 mb-8">
           <div className="flex items-center justify-between mb-4">

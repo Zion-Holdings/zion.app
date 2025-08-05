@@ -303,7 +303,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
       ,
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
             <div: className="flex items-center justify-between h-16">
               <div className="flex items-center space-x-4">
                 <Link href="/" className="text-white font-bold text-xl">
@@ -327,7 +327,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
           {/* Page Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-white mb-4">
@@ -409,7 +409,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md  grid-cols-3  gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3"  gap-6">
                   <div>
                     <label className="block text-white font-medium mb-2">Budget Range *</label>
                     <div className="flex space-x-2">
@@ -718,7 +718,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     <p className="text-gray-300">{selectedRequest.description}</p>
                   </div>
 
-                  <div className="grid grid-cols-1 md  grid-cols-3  gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3"  gap-4">
                     <div>
                       <span className="text-gray-400">Category:</span>,
                       <div: className="text-white">{selectedRequest.category}</div>

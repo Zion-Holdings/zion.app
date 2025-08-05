@@ -48,7 +48,7 @@ const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
           <div className="relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
             
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44 lg py-32">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" py-44 lg py-32">
               <div className="text-center">
                 <div className="mb-8">
                   <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -76,7 +76,7 @@ const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
 
         {/* Footer */}
         <footer className="bg-black/20 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
             <div className="grid grid-cols-1 md grid-cols-4 gap-8">
               <div>
                 <h3 className="text-white font-semibold mb-4">Zion</h3>

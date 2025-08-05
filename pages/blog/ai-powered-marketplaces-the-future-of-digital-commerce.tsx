@@ -17,7 +17,7 @@ const AiPoweredMarketplacesTheFutureOfDigitalCommercePage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -52,7 +52,7 @@ const AiPoweredMarketplacesTheFutureOfDigitalCommercePage: NextPage = () => {
 
       {/* Blog Content */}
       <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="mb-8">
             <Link href="/blog" className="text-purple-400 hover text-purple-300 transition-colors mb-4 inline-block">
               ← Back to Blog
@@ -102,7 +102,7 @@ const AiPoweredMarketplacesTheFutureOfDigitalCommercePage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>

@@ -74,7 +74,7 @@ const ResetPassword: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm px-6 lg px-8 py-40">
+      <div className="max-w-md mx-auto px-4 sm:px-6" lg:px-8" py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Reset Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Password</span>

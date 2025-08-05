@@ -201,7 +201,7 @@ const RealTimeChatPage: NextPage = () => {,
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -235,7 +235,7 @@ const RealTimeChatPage: NextPage = () => {,
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4">
@@ -403,7 +403,7 @@ const RealTimeChatPage: NextPage = () => {,
         </div>
 ,
         {/* Features Section */}
-        <div className="mt-12 grid grid-cols-1 md  grid-cols-3  gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-3"  gap-8">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
             <div className="text-4xl mb-4">🤖</div>
             <h3 className="text-xl font-bold text-white mb-3">AI Assistant</h3>

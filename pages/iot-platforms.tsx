@@ -24,7 +24,7 @@ const IotPlatforms = () => {
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <section className="relative py-40 px-4 sm px-6 lg px-8">
+        <section className="relative py-40 px-4 sm:px-6" lg:px-8"">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const IotPlatforms = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm px-6 lg px-8 bg-white">
+        <section className="py-40 px-4 sm:px-6" lg:px-8" bg-white">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -168,7 +168,7 @@ const IotPlatforms = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm px-6 lg px-8 bg-gray-50">
+        <section className="py-40 px-4 sm:px-6" lg:px-8" bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ const IotPlatforms = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm px-6 lg px-8 bg-blue-600">
+        <section className="py-40 px-4 sm:px-6" lg:px-8" bg-blue-600">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

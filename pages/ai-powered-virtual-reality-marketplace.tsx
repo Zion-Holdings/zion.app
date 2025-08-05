@@ -273,7 +273,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -297,7 +297,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       <main className="flex-1">
         {!isVRMode ? (
           /* VR Experience Selection */
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
             <div className="text-center mb-12">
               <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
                 AI-Powered Virtual Reality Marketplace
@@ -324,7 +324,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
             </div>
 
             {/* VR Features */}
-            <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3" gap-8 mb-12">
               <div className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-6 rounded-lg border border-white/10">
                 <div className="text-4xl mb-4">🥽</div>
                 <h3 className="text-xl font-semibold text-white mb-2">Immersive Experience</h3>
@@ -345,7 +345,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
             {/* VR Experiences */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">Available VR Experiences</h2>
-              <div className="grid grid-cols-1 md grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
                 {vrExperiences.map((experience) => (
                   <div
                     key={experience.id}
@@ -515,7 +515,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       {/* Footer */}
       {!isVRMode && (
         <footer className="bg-black/40 backdrop-blur-md border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
             <div className="text-center text-gray-400">
               <p>© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
             </div>

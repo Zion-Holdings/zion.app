@@ -362,7 +362,7 @@ id: 'tech-development',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -383,7 +383,7 @@ id: 'tech-development',
       </div>
 ,
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl  font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -426,7 +426,7 @@ id: 'tech-development',
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  pb-12">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  pb-12">,
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -636,7 +636,7 @@ id: 'tech-development',
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Category Analytics</h2>
             
-            <div className="grid grid-cols-1 md  grid-cols-3  gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-3"  gap-6 mb-8">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">,
                 <div className="text-3xl font-bold text-white mb-2">{analytics.totalCategories}</div>
                 <p className="text-gray-300 text-sm">Total Categories</p>
@@ -688,7 +688,7 @@ id: 'tech-development',
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Find Your Perfect Service Match
@@ -711,7 +711,7 @@ id: 'tech-development',
 ,
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"  py-8">
           <div className="grid grid-cols-1 md grid-cols-4  gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>

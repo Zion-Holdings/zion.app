@@ -39,7 +39,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -66,7 +66,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Hero Section */}
       <section className="py-40">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
               AI-Powered Business Intelligence
@@ -103,7 +103,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Dashboard Overview */}
       <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-12">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Business Intelligence Dashboard
@@ -163,7 +163,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Features */}
       <section className="py-40">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Advanced BI Features
@@ -211,7 +211,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Use Cases */}
       <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="text-center mb-16">
             <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
               Business Applications
@@ -221,7 +221,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3" gap-8">
             <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10">
               <div className="text-3xl mb-4">🏢</div>
               <h3 className="text-lg font-semibold text-white mb-2">Enterprise</h3>
@@ -254,7 +254,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* CTA Section */}
       <section className="py-40 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6" lg:px-8" text-center">
           <h2 className="text-3xl md text-4xl font-bold text-white mb-6">
             Ready for Data-Driven Decisions?
           </h2>
@@ -274,7 +274,7 @@ const AIPoweredBusinessIntelligence: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-32">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-bold mb-4">

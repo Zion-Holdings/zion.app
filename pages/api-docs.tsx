@@ -26,7 +26,7 @@ const ApiDocs: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8"">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -57,7 +57,7 @@ const ApiDocs: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
@@ -269,7 +269,7 @@ print(data)`}</code>
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6" lg:px-8" py-8">
           <div className="text-center text-gray-400">
             <p>&copy;
  2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
