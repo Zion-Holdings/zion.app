@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754392522479-4",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Nvidia thinks AI can solve electrical grid problems caused by AI",
+  "status": "Active",
+  "createdAt": "2025-08-05T11:15:22.479Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9585167384200656,
+    "accuracy": 0.9304503661584117,
+    "reliability": 0.9020153581762969,
+    "scalability": 0.7058919847158649
+  },
+  "recommendations": []
+}
