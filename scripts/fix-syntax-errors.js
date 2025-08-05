@@ -109,6 +109,26 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/type: service,/g, "type: 'service',");
     content = content.replace(/status: active,/g, "status: 'active',");
     
+    // Fix additional patterns
+    content = content.replace(/reports: '\[,/g, "reports: [],");
+    content = content.replace(/'type: 'scaling \| efficiency \| cost \| timing;/g, "type: 'scaling' | 'efficiency' | 'cost' | 'timing';");
+    content = content.replace(/priority: low \| medium \| 'high' \| critical;/g, "priority: 'low' | 'medium' | 'high' | 'critical';");
+    content = content.replace(/title: 'string;/g, "title: string;");
+    content = content.replace(/id: change-1,/g, "id: 'change-1',");
+    content = content.replace(/name: Digital Transformation Initiative,/g, "name: 'Digital Transformation Initiative',");
+    content = content.replace(/type: technology,/g, "type: 'technology',");
+    content = content.replace(/status: implementation,/g, "status: 'implementation',");
+    content = content.replace(/priority: 'critical,/g, "priority: 'critical',");
+    content = content.replace(/startDate: 2024-01-01',/g, "startDate: '2024-01-01',");
+    content = content.replace(/endDate: '2024-12-31,/g, "endDate: '2024-12-31',");
+    content = content.replace(/parties: \[Company A, 'Cloud Provider B\],/g, "parties: ['Company A', 'Cloud Provider B'],");
+    content = content.replace(/terms: '\[Monthly payment terms, 99\.9% uptime guarantee, 24\/7 support'\],/g, "terms: ['Monthly payment terms', '99.9% uptime guarantee', '24/7 support'],");
+    content = content.replace(/id: facility-1,/g, "id: 'facility-1',");
+    content = content.replace(/name: Main Office Building,/g, "name: 'Main Office Building',");
+    content = content.replace(/'type: 'Office,/g, "type: 'Office',");
+    content = content.replace(/location: Downtown Business District,/g, "location: 'Downtown Business District',");
+    content = content.replace(/status: operational,/g, "status: 'operational',");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");
